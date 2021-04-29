@@ -230,9 +230,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def search_catalog(self) -> Callable[
             [datacatalog.SearchCatalogRequest],
             Awaitable[datacatalog.SearchCatalogResponse]]:
-        r"""Return a callable for the
-        search catalog
-          method over gRPC.
+        r"""Return a callable for the search catalog method over gRPC.
 
         Searches Data Catalog for multiple resources like entries, tags
         that match a query.
@@ -274,9 +272,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def create_entry_group(self) -> Callable[
             [datacatalog.CreateEntryGroupRequest],
             Awaitable[datacatalog.EntryGroup]]:
-        r"""Return a callable for the
-        create entry group
-          method over gRPC.
+        r"""Return a callable for the create entry group method over gRPC.
 
         A maximum of 10,000 entry groups may be created per organization
         across all locations.
@@ -309,9 +305,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def update_entry_group(self) -> Callable[
             [datacatalog.UpdateEntryGroupRequest],
             Awaitable[datacatalog.EntryGroup]]:
-        r"""Return a callable for the
-        update entry group
-          method over gRPC.
+        r"""Return a callable for the update entry group method over gRPC.
 
         Updates an EntryGroup. The user should enable the Data Catalog
         API in the project identified by the ``entry_group.name``
@@ -341,9 +335,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def get_entry_group(self) -> Callable[
             [datacatalog.GetEntryGroupRequest],
             Awaitable[datacatalog.EntryGroup]]:
-        r"""Return a callable for the
-        get entry group
-          method over gRPC.
+        r"""Return a callable for the get entry group method over gRPC.
 
         Gets an EntryGroup.
 
@@ -369,9 +361,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def delete_entry_group(self) -> Callable[
             [datacatalog.DeleteEntryGroupRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete entry group
-          method over gRPC.
+        r"""Return a callable for the delete entry group method over gRPC.
 
         Deletes an EntryGroup. Only entry groups that do not contain
         entries can be deleted. Users should enable the Data Catalog API
@@ -402,9 +392,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def list_entry_groups(self) -> Callable[
             [datacatalog.ListEntryGroupsRequest],
             Awaitable[datacatalog.ListEntryGroupsResponse]]:
-        r"""Return a callable for the
-        list entry groups
-          method over gRPC.
+        r"""Return a callable for the list entry groups method over gRPC.
 
         Lists entry groups.
 
@@ -430,9 +418,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def create_entry(self) -> Callable[
             [datacatalog.CreateEntryRequest],
             Awaitable[datacatalog.Entry]]:
-        r"""Return a callable for the
-        create entry
-          method over gRPC.
+        r"""Return a callable for the create entry method over gRPC.
 
         Creates an entry. Only entries of 'FILESET' type or
         user-specified type can be created.
@@ -467,9 +453,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def update_entry(self) -> Callable[
             [datacatalog.UpdateEntryRequest],
             Awaitable[datacatalog.Entry]]:
-        r"""Return a callable for the
-        update entry
-          method over gRPC.
+        r"""Return a callable for the update entry method over gRPC.
 
         Updates an existing entry. Users should enable the Data Catalog
         API in the project identified by the ``entry.name`` parameter
@@ -499,9 +483,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def delete_entry(self) -> Callable[
             [datacatalog.DeleteEntryRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete entry
-          method over gRPC.
+        r"""Return a callable for the delete entry method over gRPC.
 
         Deletes an existing entry. Only entries created through
         [CreateEntry][google.cloud.datacatalog.v1beta1.DataCatalog.CreateEntry]
@@ -533,9 +515,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def get_entry(self) -> Callable[
             [datacatalog.GetEntryRequest],
             Awaitable[datacatalog.Entry]]:
-        r"""Return a callable for the
-        get entry
-          method over gRPC.
+        r"""Return a callable for the get entry method over gRPC.
 
         Gets an entry.
 
@@ -561,9 +541,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def lookup_entry(self) -> Callable[
             [datacatalog.LookupEntryRequest],
             Awaitable[datacatalog.Entry]]:
-        r"""Return a callable for the
-        lookup entry
-          method over gRPC.
+        r"""Return a callable for the lookup entry method over gRPC.
 
         Get an entry by target resource name. This method
         allows clients to use the resource name from the source
@@ -592,9 +570,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def list_entries(self) -> Callable[
             [datacatalog.ListEntriesRequest],
             Awaitable[datacatalog.ListEntriesResponse]]:
-        r"""Return a callable for the
-        list entries
-          method over gRPC.
+        r"""Return a callable for the list entries method over gRPC.
 
         Lists entries.
 
@@ -620,9 +596,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def create_tag_template(self) -> Callable[
             [datacatalog.CreateTagTemplateRequest],
             Awaitable[tags.TagTemplate]]:
-        r"""Return a callable for the
-        create tag template
-          method over gRPC.
+        r"""Return a callable for the create tag template method over gRPC.
 
         Creates a tag template. The user should enable the Data Catalog
         API in the project identified by the ``parent`` parameter (see
@@ -652,9 +626,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def get_tag_template(self) -> Callable[
             [datacatalog.GetTagTemplateRequest],
             Awaitable[tags.TagTemplate]]:
-        r"""Return a callable for the
-        get tag template
-          method over gRPC.
+        r"""Return a callable for the get tag template method over gRPC.
 
         Gets a tag template.
 
@@ -680,9 +652,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def update_tag_template(self) -> Callable[
             [datacatalog.UpdateTagTemplateRequest],
             Awaitable[tags.TagTemplate]]:
-        r"""Return a callable for the
-        update tag template
-          method over gRPC.
+        r"""Return a callable for the update tag template method over gRPC.
 
         Updates a tag template. This method cannot be used to update the
         fields of a template. The tag template fields are represented as
@@ -716,9 +686,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def delete_tag_template(self) -> Callable[
             [datacatalog.DeleteTagTemplateRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete tag template
-          method over gRPC.
+        r"""Return a callable for the delete tag template method over gRPC.
 
         Deletes a tag template and all tags using the template. Users
         should enable the Data Catalog API in the project identified by
@@ -748,9 +716,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def create_tag_template_field(self) -> Callable[
             [datacatalog.CreateTagTemplateFieldRequest],
             Awaitable[tags.TagTemplateField]]:
-        r"""Return a callable for the
-        create tag template field
-          method over gRPC.
+        r"""Return a callable for the create tag template field method over gRPC.
 
         Creates a field in a tag template. The user should enable the
         Data Catalog API in the project identified by the ``parent``
@@ -780,9 +746,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def update_tag_template_field(self) -> Callable[
             [datacatalog.UpdateTagTemplateFieldRequest],
             Awaitable[tags.TagTemplateField]]:
-        r"""Return a callable for the
-        update tag template field
-          method over gRPC.
+        r"""Return a callable for the update tag template field method over gRPC.
 
         Updates a field in a tag template. This method cannot be used to
         update the field type. Users should enable the Data Catalog API
@@ -813,9 +777,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def rename_tag_template_field(self) -> Callable[
             [datacatalog.RenameTagTemplateFieldRequest],
             Awaitable[tags.TagTemplateField]]:
-        r"""Return a callable for the
-        rename tag template field
-          method over gRPC.
+        r"""Return a callable for the rename tag template field method over gRPC.
 
         Renames a field in a tag template. The user should enable the
         Data Catalog API in the project identified by the ``name``
@@ -845,9 +807,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def delete_tag_template_field(self) -> Callable[
             [datacatalog.DeleteTagTemplateFieldRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete tag template field
-          method over gRPC.
+        r"""Return a callable for the delete tag template field method over gRPC.
 
         Deletes a field in a tag template and all uses of that field.
         Users should enable the Data Catalog API in the project
@@ -878,9 +838,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def create_tag(self) -> Callable[
             [datacatalog.CreateTagRequest],
             Awaitable[tags.Tag]]:
-        r"""Return a callable for the
-        create tag
-          method over gRPC.
+        r"""Return a callable for the create tag method over gRPC.
 
         Creates a tag on an
         [Entry][google.cloud.datacatalog.v1beta1.Entry]. Note: The
@@ -912,9 +870,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def update_tag(self) -> Callable[
             [datacatalog.UpdateTagRequest],
             Awaitable[tags.Tag]]:
-        r"""Return a callable for the
-        update tag
-          method over gRPC.
+        r"""Return a callable for the update tag method over gRPC.
 
         Updates an existing tag.
 
@@ -940,9 +896,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def delete_tag(self) -> Callable[
             [datacatalog.DeleteTagRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete tag
-          method over gRPC.
+        r"""Return a callable for the delete tag method over gRPC.
 
         Deletes a tag.
 
@@ -968,9 +922,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def list_tags(self) -> Callable[
             [datacatalog.ListTagsRequest],
             Awaitable[datacatalog.ListTagsResponse]]:
-        r"""Return a callable for the
-        list tags
-          method over gRPC.
+        r"""Return a callable for the list tags method over gRPC.
 
         Lists the tags on an
         [Entry][google.cloud.datacatalog.v1beta1.Entry].
@@ -997,9 +949,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy for a resource. Replaces any
         existing policy. Supported resources are:
@@ -1041,9 +991,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for a resource. A ``NOT_FOUND``
         error is returned if the resource does not exist. An empty
@@ -1089,9 +1037,7 @@ class DataCatalogGrpcAsyncIOTransport(DataCatalogTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns the caller's permissions on a resource. If the resource
         does not exist, an empty set of permissions is returned (We

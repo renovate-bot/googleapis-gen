@@ -221,9 +221,7 @@ class WebRiskServiceV1Beta1GrpcTransport(WebRiskServiceV1Beta1Transport):
     def compute_threat_list_diff(self) -> Callable[
             [webrisk.ComputeThreatListDiffRequest],
             webrisk.ComputeThreatListDiffResponse]:
-        r"""Return a callable for the
-        compute threat list diff
-          method over gRPC.
+        r"""Return a callable for the compute threat list diff method over gRPC.
 
         Gets the most recent threat list diffs.
 
@@ -249,9 +247,7 @@ class WebRiskServiceV1Beta1GrpcTransport(WebRiskServiceV1Beta1Transport):
     def search_uris(self) -> Callable[
             [webrisk.SearchUrisRequest],
             webrisk.SearchUrisResponse]:
-        r"""Return a callable for the
-        search uris
-          method over gRPC.
+        r"""Return a callable for the search uris method over gRPC.
 
         This method is used to check whether a URI is on a
         given threatList.
@@ -278,9 +274,7 @@ class WebRiskServiceV1Beta1GrpcTransport(WebRiskServiceV1Beta1Transport):
     def search_hashes(self) -> Callable[
             [webrisk.SearchHashesRequest],
             webrisk.SearchHashesResponse]:
-        r"""Return a callable for the
-        search hashes
-          method over gRPC.
+        r"""Return a callable for the search hashes method over gRPC.
 
         Gets the full hashes that match the requested hash
         prefix. This is used after a hash prefix is looked up in

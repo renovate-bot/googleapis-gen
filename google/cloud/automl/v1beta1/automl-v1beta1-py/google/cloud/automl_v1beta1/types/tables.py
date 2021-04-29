@@ -120,7 +120,7 @@ class TablesDatasetMetadata(proto.Message):
     target_column_correlations = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=6
+        number=6,
         message=data_stats.CorrelationStats,
     )
     stats_update_time = proto.Field(

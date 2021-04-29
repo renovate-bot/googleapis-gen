@@ -159,8 +159,7 @@ class LookupServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicedirectory_v1beta1.types.ResolveServiceRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
                 Looks up a service by its name, returns the service and
                 its endpoints.

@@ -161,8 +161,7 @@ class LoggingServiceV2AsyncClient:
 
         Args:
             request (:class:`google.cloud.logging_v2.types.DeleteLogRequest`):
-                The request object.
-                The parameters to DeleteLog.
+                The request object. The parameters to DeleteLog.
             log_name (:class:`str`):
                 Required. The resource name of the log to delete:
 
@@ -256,8 +255,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.logging_v2.types.WriteLogEntriesRequest`):
-                The request object.
-                The parameters to WriteLogEntries.
+                The request object. The parameters to WriteLogEntries.
             log_name (:class:`str`):
                 Optional. A default log resource name that is assigned
                 to all log entries in ``entries`` that do not specify a
@@ -422,8 +420,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.logging_v2.types.ListLogEntriesRequest`):
-                The request object.
-                The parameters to `ListLogEntries`.
+                The request object. The parameters to `ListLogEntries`.
             resource_names (:class:`Sequence[str]`):
                 Required. Names of one or more parent resources from
                 which to retrieve log entries:
@@ -555,8 +552,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.logging_v2.types.ListMonitoredResourceDescriptorsRequest`):
-                The request object.
-                The parameters to
+                The request object. The parameters to
                 ListMonitoredResourceDescriptors
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -626,8 +622,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.logging_v2.types.ListLogsRequest`):
-                The request object.
-                The parameters to ListLogs.
+                The request object. The parameters to ListLogs.
             parent (:class:`str`):
                 Required. The resource name that owns the logs:
 
@@ -727,8 +722,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             requests (AsyncIterator[`google.cloud.logging_v2.types.TailLogEntriesRequest`]):
-                The request object AsyncIterator.
-                The parameters to `TailLogEntries`.
+                The request object AsyncIterator. The parameters to `TailLogEntries`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

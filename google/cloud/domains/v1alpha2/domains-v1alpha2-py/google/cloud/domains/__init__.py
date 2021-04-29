@@ -14,18 +14,16 @@
 # limitations under the License.
 #
 
-from google.cloud.domains_v1alpha2.services.domains.async_client import DomainsAsyncClient
 from google.cloud.domains_v1alpha2.services.domains.client import DomainsClient
+from google.cloud.domains_v1alpha2.services.domains.async_client import DomainsAsyncClient
+
 from google.cloud.domains_v1alpha2.types.domains import AuthorizationCode
 from google.cloud.domains_v1alpha2.types.domains import ConfigureContactSettingsRequest
 from google.cloud.domains_v1alpha2.types.domains import ConfigureDnsSettingsRequest
 from google.cloud.domains_v1alpha2.types.domains import ConfigureManagementSettingsRequest
-from google.cloud.domains_v1alpha2.types.domains import ContactNotice
-from google.cloud.domains_v1alpha2.types.domains import ContactPrivacy
 from google.cloud.domains_v1alpha2.types.domains import ContactSettings
 from google.cloud.domains_v1alpha2.types.domains import DeleteRegistrationRequest
 from google.cloud.domains_v1alpha2.types.domains import DnsSettings
-from google.cloud.domains_v1alpha2.types.domains import DomainNotice
 from google.cloud.domains_v1alpha2.types.domains import ExportRegistrationRequest
 from google.cloud.domains_v1alpha2.types.domains import GetRegistrationRequest
 from google.cloud.domains_v1alpha2.types.domains import ListRegistrationsRequest
@@ -41,21 +39,21 @@ from google.cloud.domains_v1alpha2.types.domains import RetrieveRegisterParamete
 from google.cloud.domains_v1alpha2.types.domains import RetrieveRegisterParametersResponse
 from google.cloud.domains_v1alpha2.types.domains import SearchDomainsRequest
 from google.cloud.domains_v1alpha2.types.domains import SearchDomainsResponse
-from google.cloud.domains_v1alpha2.types.domains import TransferLockState
 from google.cloud.domains_v1alpha2.types.domains import UpdateRegistrationRequest
+from google.cloud.domains_v1alpha2.types.domains import ContactNotice
+from google.cloud.domains_v1alpha2.types.domains import ContactPrivacy
+from google.cloud.domains_v1alpha2.types.domains import DomainNotice
+from google.cloud.domains_v1alpha2.types.domains import TransferLockState
 
-__all__ = ('AuthorizationCode',
+__all__ = ('DomainsClient',
+    'DomainsAsyncClient',
+    'AuthorizationCode',
     'ConfigureContactSettingsRequest',
     'ConfigureDnsSettingsRequest',
     'ConfigureManagementSettingsRequest',
-    'ContactNotice',
-    'ContactPrivacy',
     'ContactSettings',
     'DeleteRegistrationRequest',
     'DnsSettings',
-    'DomainNotice',
-    'DomainsAsyncClient',
-    'DomainsClient',
     'ExportRegistrationRequest',
     'GetRegistrationRequest',
     'ListRegistrationsRequest',
@@ -71,6 +69,9 @@ __all__ = ('AuthorizationCode',
     'RetrieveRegisterParametersResponse',
     'SearchDomainsRequest',
     'SearchDomainsResponse',
-    'TransferLockState',
     'UpdateRegistrationRequest',
+    'ContactNotice',
+    'ContactPrivacy',
+    'DomainNotice',
+    'TransferLockState',
 )

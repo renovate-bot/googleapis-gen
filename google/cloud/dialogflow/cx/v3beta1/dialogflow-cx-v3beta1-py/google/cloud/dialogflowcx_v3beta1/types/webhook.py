@@ -99,7 +99,7 @@ class Webhook(proto.Message):
         request_headers = proto.MapField(
             proto.STRING,
             proto.STRING,
-            number=4
+            number=4,
         )
 
     name = proto.Field(
@@ -409,7 +409,7 @@ class WebhookRequest(proto.Message):
         parameters = proto.MapField(
             proto.STRING,
             proto.MESSAGE,
-            number=2
+            number=2,
             message='WebhookRequest.IntentInfo.IntentParameterValue',
         )
         confidence = proto.Field(
@@ -748,7 +748,7 @@ class SessionInfo(proto.Message):
     parameters = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=2
+        number=2,
         message=struct.Value,
     )
 

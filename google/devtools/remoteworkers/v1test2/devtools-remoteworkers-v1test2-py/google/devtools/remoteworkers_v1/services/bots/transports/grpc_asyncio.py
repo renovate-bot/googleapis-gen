@@ -254,9 +254,7 @@ class BotsGrpcAsyncIOTransport(BotsTransport):
     def create_bot_session(self) -> Callable[
             [bots.CreateBotSessionRequest],
             Awaitable[bots.BotSession]]:
-        r"""Return a callable for the
-        create bot session
-          method over gRPC.
+        r"""Return a callable for the create bot session method over gRPC.
 
         CreateBotSession is called when the bot first joins
         the farm, and establishes a session ID to ensure that
@@ -285,9 +283,7 @@ class BotsGrpcAsyncIOTransport(BotsTransport):
     def update_bot_session(self) -> Callable[
             [bots.UpdateBotSessionRequest],
             Awaitable[bots.BotSession]]:
-        r"""Return a callable for the
-        update bot session
-          method over gRPC.
+        r"""Return a callable for the update bot session method over gRPC.
 
         UpdateBotSession must be called periodically by the
         bot (on a schedule determined by the server) to let the

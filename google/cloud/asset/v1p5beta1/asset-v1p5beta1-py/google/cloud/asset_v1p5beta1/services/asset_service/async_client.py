@@ -156,8 +156,7 @@ class AssetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.asset_v1p5beta1.types.ListAssetsRequest`):
-                The request object.
-                ListAssets request.
+                The request object. ListAssets request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

@@ -325,8 +325,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig.agentendpoint_v1beta.types.ReceiveTaskNotificationRequest):
-                The request object.
-                A request message to receive task
+                The request object. A request message to receive task
                 notifications.
             instance_id_token (str):
                 Required. This is the Compute Engine
@@ -374,7 +373,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, agentendpoint.ReceiveTaskNotificationRequest):
             request = agentendpoint.ReceiveTaskNotificationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if instance_id_token is not None:
                 request.instance_id_token = instance_id_token
@@ -409,8 +408,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig.agentendpoint_v1beta.types.StartNextTaskRequest):
-                The request object.
-                A request message for signaling the
+                The request object. A request message for signaling the
                 start of a task execution.
             instance_id_token (str):
                 Required. This is the Compute Engine
@@ -449,7 +447,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, agentendpoint.StartNextTaskRequest):
             request = agentendpoint.StartNextTaskRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if instance_id_token is not None:
                 request.instance_id_token = instance_id_token
@@ -484,8 +482,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig.agentendpoint_v1beta.types.ReportTaskProgressRequest):
-                The request object.
-                A request message for reporting the
+                The request object. A request message for reporting the
                 progress of current task.
             instance_id_token (str):
                 Required. This is the Compute Engine
@@ -542,7 +539,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, agentendpoint.ReportTaskProgressRequest):
             request = agentendpoint.ReportTaskProgressRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if instance_id_token is not None:
                 request.instance_id_token = instance_id_token
@@ -582,8 +579,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig.agentendpoint_v1beta.types.ReportTaskCompleteRequest):
-                The request object.
-                A request message for signaling the
+                The request object. A request message for signaling the
                 completion of a task execution.
             instance_id_token (str):
                 Required. This is the Compute Engine
@@ -646,7 +642,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, agentendpoint.ReportTaskCompleteRequest):
             request = agentendpoint.ReportTaskCompleteRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if instance_id_token is not None:
                 request.instance_id_token = instance_id_token
@@ -689,8 +685,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig.agentendpoint_v1beta.types.LookupEffectiveGuestPolicyRequest):
-                The request object.
-                A request message for getting
+                The request object. A request message for getting
                 effective policy assigned to the instance.
             instance_id_token (str):
                 Required. This is the GCE instance
@@ -757,7 +752,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, guest_policies.LookupEffectiveGuestPolicyRequest):
             request = guest_policies.LookupEffectiveGuestPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if instance_id_token is not None:
                 request.instance_id_token = instance_id_token
@@ -797,8 +792,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig.agentendpoint_v1beta.types.RegisterAgentRequest):
-                The request object.
-                The request message for registering
+                The request object. The request message for registering
                 the agent.
             instance_id_token (str):
                 Required. This is the Compute Engine
@@ -849,7 +843,7 @@ class AgentEndpointServiceClient(metaclass=AgentEndpointServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, agentendpoint.RegisterAgentRequest):
             request = agentendpoint.RegisterAgentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if instance_id_token is not None:
                 request.instance_id_token = instance_id_token

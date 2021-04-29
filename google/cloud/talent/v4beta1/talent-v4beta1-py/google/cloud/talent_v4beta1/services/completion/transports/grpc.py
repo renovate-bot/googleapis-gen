@@ -220,9 +220,7 @@ class CompletionGrpcTransport(CompletionTransport):
     def complete_query(self) -> Callable[
             [completion_service.CompleteQueryRequest],
             completion_service.CompleteQueryResponse]:
-        r"""Return a callable for the
-        complete query
-          method over gRPC.
+        r"""Return a callable for the complete query method over gRPC.
 
         Completes the specified prefix with keyword
         suggestions. Intended for use by a job search auto-

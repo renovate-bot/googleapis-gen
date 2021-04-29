@@ -35,30 +35,30 @@ from .types.rpcmessages import GetPhotoRequest
 from .types.rpcmessages import ListPhotosRequest
 from .types.rpcmessages import ListPhotosResponse
 from .types.rpcmessages import PhotoResponse
-from .types.rpcmessages import PhotoView
 from .types.rpcmessages import UpdatePhotoRequest
+from .types.rpcmessages import PhotoView
 
 __all__ = (
+    'StreetViewPublishServiceClient',
+    'Connection',
+    'Level',
+    'Photo',
+    'PhotoId',
+    'Place',
+    'Pose',
+    'UploadRef',
     'BatchDeletePhotosRequest',
     'BatchDeletePhotosResponse',
     'BatchGetPhotosRequest',
     'BatchGetPhotosResponse',
     'BatchUpdatePhotosRequest',
     'BatchUpdatePhotosResponse',
-    'Connection',
     'CreatePhotoRequest',
     'DeletePhotoRequest',
     'GetPhotoRequest',
-    'Level',
     'ListPhotosRequest',
     'ListPhotosResponse',
-    'Photo',
-    'PhotoId',
     'PhotoResponse',
-    'PhotoView',
-    'Place',
-    'Pose',
     'UpdatePhotoRequest',
-    'UploadRef',
-'StreetViewPublishServiceClient',
+    'PhotoView',
 )

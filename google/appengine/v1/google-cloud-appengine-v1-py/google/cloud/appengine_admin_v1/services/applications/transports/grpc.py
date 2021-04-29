@@ -240,9 +240,7 @@ class ApplicationsGrpcTransport(ApplicationsTransport):
     def get_application(self) -> Callable[
             [appengine.GetApplicationRequest],
             application.Application]:
-        r"""Return a callable for the
-        get application
-          method over gRPC.
+        r"""Return a callable for the get application method over gRPC.
 
         Gets information about an application.
 
@@ -268,9 +266,7 @@ class ApplicationsGrpcTransport(ApplicationsTransport):
     def create_application(self) -> Callable[
             [appengine.CreateApplicationRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create application
-          method over gRPC.
+        r"""Return a callable for the create application method over gRPC.
 
         Creates an App Engine application for a Google Cloud Platform
         project. Required fields:
@@ -306,9 +302,7 @@ class ApplicationsGrpcTransport(ApplicationsTransport):
     def update_application(self) -> Callable[
             [appengine.UpdateApplicationRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update application
-          method over gRPC.
+        r"""Return a callable for the update application method over gRPC.
 
         Updates the specified Application resource. You can update the
         following fields:
@@ -340,9 +334,7 @@ class ApplicationsGrpcTransport(ApplicationsTransport):
     def repair_application(self) -> Callable[
             [appengine.RepairApplicationRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        repair application
-          method over gRPC.
+        r"""Return a callable for the repair application method over gRPC.
 
         Recreates the required App Engine features for the specified App
         Engine application, for example a Cloud Storage bucket or App

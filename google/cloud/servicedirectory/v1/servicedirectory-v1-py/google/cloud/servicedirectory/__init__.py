@@ -14,10 +14,11 @@
 # limitations under the License.
 #
 
-from google.cloud.servicedirectory_v1.services.lookup_service.async_client import LookupServiceAsyncClient
 from google.cloud.servicedirectory_v1.services.lookup_service.client import LookupServiceClient
-from google.cloud.servicedirectory_v1.services.registration_service.async_client import RegistrationServiceAsyncClient
+from google.cloud.servicedirectory_v1.services.lookup_service.async_client import LookupServiceAsyncClient
 from google.cloud.servicedirectory_v1.services.registration_service.client import RegistrationServiceClient
+from google.cloud.servicedirectory_v1.services.registration_service.async_client import RegistrationServiceAsyncClient
+
 from google.cloud.servicedirectory_v1.types.endpoint import Endpoint
 from google.cloud.servicedirectory_v1.types.lookup_service import ResolveServiceRequest
 from google.cloud.servicedirectory_v1.types.lookup_service import ResolveServiceResponse
@@ -42,13 +43,20 @@ from google.cloud.servicedirectory_v1.types.registration_service import UpdateNa
 from google.cloud.servicedirectory_v1.types.registration_service import UpdateServiceRequest
 from google.cloud.servicedirectory_v1.types.service import Service
 
-__all__ = ('CreateEndpointRequest',
+__all__ = ('LookupServiceClient',
+    'LookupServiceAsyncClient',
+    'RegistrationServiceClient',
+    'RegistrationServiceAsyncClient',
+    'Endpoint',
+    'ResolveServiceRequest',
+    'ResolveServiceResponse',
+    'Namespace',
+    'CreateEndpointRequest',
     'CreateNamespaceRequest',
     'CreateServiceRequest',
     'DeleteEndpointRequest',
     'DeleteNamespaceRequest',
     'DeleteServiceRequest',
-    'Endpoint',
     'GetEndpointRequest',
     'GetNamespaceRequest',
     'GetServiceRequest',
@@ -58,15 +66,8 @@ __all__ = ('CreateEndpointRequest',
     'ListNamespacesResponse',
     'ListServicesRequest',
     'ListServicesResponse',
-    'LookupServiceAsyncClient',
-    'LookupServiceClient',
-    'Namespace',
-    'RegistrationServiceAsyncClient',
-    'RegistrationServiceClient',
-    'ResolveServiceRequest',
-    'ResolveServiceResponse',
-    'Service',
     'UpdateEndpointRequest',
     'UpdateNamespaceRequest',
     'UpdateServiceRequest',
+    'Service',
 )

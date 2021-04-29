@@ -227,8 +227,7 @@ class DatastoreAdminAsyncClient:
 
         Args:
             request (:class:`google.cloud.datastore_admin_v1.types.ExportEntitiesRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.ExportEntities][google.datastore.admin.v1.DatastoreAdmin.ExportEntities].
             project_id (:class:`str`):
                 Required. Project ID against which to
@@ -362,8 +361,7 @@ class DatastoreAdminAsyncClient:
 
         Args:
             request (:class:`google.cloud.datastore_admin_v1.types.ImportEntitiesRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.ImportEntities][google.datastore.admin.v1.DatastoreAdmin.ImportEntities].
             project_id (:class:`str`):
                 Required. Project ID against which to
@@ -507,8 +505,7 @@ class DatastoreAdminAsyncClient:
 
         Args:
             request (:class:`google.cloud.datastore_admin_v1.types.CreateIndexRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.CreateIndex][google.datastore.admin.v1.DatastoreAdmin.CreateIndex].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -579,8 +576,7 @@ class DatastoreAdminAsyncClient:
 
         Args:
             request (:class:`google.cloud.datastore_admin_v1.types.DeleteIndexRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.DeleteIndex][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -638,8 +634,7 @@ class DatastoreAdminAsyncClient:
 
         Args:
             request (:class:`google.cloud.datastore_admin_v1.types.GetIndexRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.GetIndex][google.datastore.admin.v1.DatastoreAdmin.GetIndex].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -694,8 +689,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datastore_admin_v1.types.ListIndexesRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [google.datastore.admin.v1.DatastoreAdmin.ListIndexes][google.datastore.admin.v1.DatastoreAdmin.ListIndexes].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

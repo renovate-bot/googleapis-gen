@@ -167,8 +167,7 @@ class FirestoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.GetDocumentRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [Firestore.GetDocument][google.firestore.v1.Firestore.GetDocument].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -232,8 +231,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.ListDocumentsRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [Firestore.ListDocuments][google.firestore.v1.Firestore.ListDocuments].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -311,8 +309,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.UpdateDocumentRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [Firestore.UpdateDocument][google.firestore.v1.Firestore.UpdateDocument].
             document (:class:`google.cloud.firestore_v1.types.Document`):
                 Required. The updated document.
@@ -411,8 +408,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.DeleteDocumentRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [Firestore.DeleteDocument][google.firestore.v1.Firestore.DeleteDocument].
             name (:class:`str`):
                 Required. The resource name of the Document to delete.
@@ -489,8 +485,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.BatchGetDocumentsRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [Firestore.BatchGetDocuments][google.firestore.v1.Firestore.BatchGetDocuments].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -555,8 +550,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.BeginTransactionRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [Firestore.BeginTransaction][google.firestore.v1.Firestore.BeginTransaction].
             database (:class:`str`):
                 Required. The database name. In the format:
@@ -642,8 +636,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.CommitRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [Firestore.Commit][google.firestore.v1.Firestore.Commit].
             database (:class:`str`):
                 Required. The database name. In the format:
@@ -735,8 +728,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.RollbackRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [Firestore.Rollback][google.firestore.v1.Firestore.Rollback].
             database (:class:`str`):
                 Required. The database name. In the format:
@@ -819,8 +811,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.RunQueryRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [Firestore.RunQuery][google.firestore.v1.Firestore.RunQuery].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -888,8 +879,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.PartitionQueryRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [Firestore.PartitionQuery][google.firestore.v1.Firestore.PartitionQuery].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -966,8 +956,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             requests (AsyncIterator[`google.cloud.firestore_v1.types.WriteRequest`]):
-                The request object AsyncIterator.
-                The request for
+                The request object AsyncIterator. The request for
                 [Firestore.Write][google.firestore.v1.Firestore.Write].
                 The first request creates a stream, or resumes an
                 existing one from a token.
@@ -1029,8 +1018,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             requests (AsyncIterator[`google.cloud.firestore_v1.types.ListenRequest`]):
-                The request object AsyncIterator.
-                A request for
+                The request object AsyncIterator. A request for
                 [Firestore.Listen][google.firestore.v1.Firestore.Listen]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1092,8 +1080,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.ListCollectionIdsRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [Firestore.ListCollectionIds][google.firestore.v1.Firestore.ListCollectionIds].
             parent (:class:`str`):
                 Required. The parent document. In the format:
@@ -1200,8 +1187,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.BatchWriteRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [Firestore.BatchWrite][google.firestore.v1.Firestore.BatchWrite].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1264,8 +1250,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_v1.types.CreateDocumentRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [Firestore.CreateDocument][google.firestore.v1.Firestore.CreateDocument].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

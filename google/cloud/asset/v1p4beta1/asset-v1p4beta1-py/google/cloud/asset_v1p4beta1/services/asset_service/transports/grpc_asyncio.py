@@ -244,9 +244,7 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def analyze_iam_policy(self) -> Callable[
             [asset_service.AnalyzeIamPolicyRequest],
             Awaitable[asset_service.AnalyzeIamPolicyResponse]]:
-        r"""Return a callable for the
-        analyze iam policy
-          method over gRPC.
+        r"""Return a callable for the analyze iam policy method over gRPC.
 
         Analyzes IAM policies based on the specified request. Returns a
         list of
@@ -275,9 +273,7 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def export_iam_policy_analysis(self) -> Callable[
             [asset_service.ExportIamPolicyAnalysisRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        export iam policy analysis
-          method over gRPC.
+        r"""Return a callable for the export iam policy analysis method over gRPC.
 
         Exports IAM policy analysis based on the specified request. This
         API implements the

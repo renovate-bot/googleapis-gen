@@ -157,8 +157,7 @@ class EnvironmentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ListEnvironmentsRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.ListEnvironments][google.cloud.dialogflow.v2.Environments.ListEnvironments].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

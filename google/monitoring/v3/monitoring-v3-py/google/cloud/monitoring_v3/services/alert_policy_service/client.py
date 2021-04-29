@@ -359,8 +359,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.ListAlertPoliciesRequest):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `ListAlertPolicies` request.
             name (str):
                 Required. The project whose alert policies are to be
@@ -407,7 +406,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, alert_service.ListAlertPoliciesRequest):
             request = alert_service.ListAlertPoliciesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -456,8 +455,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.GetAlertPolicyRequest):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `GetAlertPolicy` request.
             name (str):
                 Required. The alerting policy to retrieve. The format
@@ -499,7 +497,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, alert_service.GetAlertPolicyRequest):
             request = alert_service.GetAlertPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -540,8 +538,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.CreateAlertPolicyRequest):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `CreateAlertPolicy` request.
             name (str):
                 Required. The project in which to create the alerting
@@ -602,7 +599,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, alert_service.CreateAlertPolicyRequest):
             request = alert_service.CreateAlertPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -644,8 +641,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.DeleteAlertPolicyRequest):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `DeleteAlertPolicy` request.
             name (str):
                 Required. The alerting policy to delete. The format is:
@@ -680,7 +676,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, alert_service.DeleteAlertPolicyRequest):
             request = alert_service.DeleteAlertPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -721,8 +717,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.UpdateAlertPolicyRequest):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `UpdateAlertPolicy` request.
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
                 Optional. A list of alerting policy field names. If this
@@ -795,7 +790,7 @@ class AlertPolicyServiceClient(metaclass=AlertPolicyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, alert_service.UpdateAlertPolicyRequest):
             request = alert_service.UpdateAlertPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if update_mask is not None:
                 request.update_mask = update_mask

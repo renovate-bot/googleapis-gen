@@ -164,8 +164,7 @@ class FirewallAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.ListIngressRulesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Firewall.ListIngressRules`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -237,8 +236,7 @@ class FirewallAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.BatchUpdateIngressRulesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Firewall.BatchUpdateIngressRules`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -291,8 +289,7 @@ class FirewallAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.CreateIngressRuleRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Firewall.CreateIngressRule`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -349,8 +346,7 @@ class FirewallAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.GetIngressRuleRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Firewall.GetIngressRule`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -407,8 +403,7 @@ class FirewallAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.UpdateIngressRuleRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Firewall.UpdateIngressRule`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -465,8 +460,7 @@ class FirewallAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.DeleteIngressRuleRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Firewall.DeleteIngressRule`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

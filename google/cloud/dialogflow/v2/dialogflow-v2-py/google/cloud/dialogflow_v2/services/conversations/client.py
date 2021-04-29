@@ -381,8 +381,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.CreateConversationRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Conversations.CreateConversation][google.cloud.dialogflow.v2.Conversations.CreateConversation].
             parent (str):
                 Required. Resource identifier of the project creating
@@ -428,7 +427,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_conversation.CreateConversationRequest):
             request = gcd_conversation.CreateConversationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -471,8 +470,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ListConversationsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Conversations.ListConversations][google.cloud.dialogflow.v2.Conversations.ListConversations].
             parent (str):
                 Required. The project from which to list all
@@ -511,7 +509,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation.ListConversationsRequest):
             request = conversation.ListConversationsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -560,8 +558,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.GetConversationRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Conversations.GetConversation][google.cloud.dialogflow.v2.Conversations.GetConversation].
             name (str):
                 Required. The name of the conversation. Format:
@@ -601,7 +598,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation.GetConversationRequest):
             request = conversation.GetConversationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -643,8 +640,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.CompleteConversationRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Conversations.CompleteConversation][google.cloud.dialogflow.v2.Conversations.CompleteConversation].
             name (str):
                 Required. Resource identifier of the conversation to
@@ -685,7 +681,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation.CompleteConversationRequest):
             request = conversation.CompleteConversationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -729,8 +725,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ListMessagesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Conversations.ListMessages][google.cloud.dialogflow.v2.Conversations.ListMessages].
             parent (str):
                 Required. The name of the conversation to list messages
@@ -769,7 +764,7 @@ class ConversationsClient(metaclass=ConversationsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation.ListMessagesRequest):
             request = conversation.ListMessagesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

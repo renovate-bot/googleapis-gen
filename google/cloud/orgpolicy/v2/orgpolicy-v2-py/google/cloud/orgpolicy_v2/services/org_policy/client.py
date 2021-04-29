@@ -368,8 +368,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
         Args:
             request (google.cloud.orgpolicy_v2.types.ListConstraintsRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [ListConstraints]
                 [google.cloud.orgpolicy.v2.OrgPolicy.ListConstraints]
                 method.
@@ -415,7 +414,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # there are no flattened fields.
         if not isinstance(request, orgpolicy.ListConstraintsRequest):
             request = orgpolicy.ListConstraintsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -465,8 +464,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
         Args:
             request (google.cloud.orgpolicy_v2.types.ListPoliciesRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [ListPolicies]
                 [google.cloud.orgpolicy.v2.OrgPolicy.ListPolicies]
                 method.
@@ -514,7 +512,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # there are no flattened fields.
         if not isinstance(request, orgpolicy.ListPoliciesRequest):
             request = orgpolicy.ListPoliciesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -567,8 +565,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
         Args:
             request (google.cloud.orgpolicy_v2.types.GetPolicyRequest):
-                The request object.
-                The request sent to the [GetPolicy]
+                The request object. The request sent to the [GetPolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.GetPolicy] method.
             name (str):
                 Required. Resource name of the policy. See ``Policy``
@@ -603,7 +600,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # there are no flattened fields.
         if not isinstance(request, orgpolicy.GetPolicyRequest):
             request = orgpolicy.GetPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -648,8 +645,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
         Args:
             request (google.cloud.orgpolicy_v2.types.GetEffectivePolicyRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [GetEffectivePolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.GetEffectivePolicy]
                 method.
@@ -686,7 +682,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # there are no flattened fields.
         if not isinstance(request, orgpolicy.GetEffectivePolicyRequest):
             request = orgpolicy.GetEffectivePolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -733,8 +729,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
         Args:
             request (google.cloud.orgpolicy_v2.types.CreatePolicyRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [CreatePolicyRequest]
                 [google.cloud.orgpolicy.v2.OrgPolicy.CreatePolicy]
                 method.
@@ -781,7 +776,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # there are no flattened fields.
         if not isinstance(request, orgpolicy.CreatePolicyRequest):
             request = orgpolicy.CreatePolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -832,8 +827,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
         Args:
             request (google.cloud.orgpolicy_v2.types.UpdatePolicyRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [UpdatePolicyRequest]
                 [google.cloud.orgpolicy.v2.OrgPolicy.UpdatePolicy]
                 method.
@@ -868,7 +862,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # there are no flattened fields.
         if not isinstance(request, orgpolicy.UpdatePolicyRequest):
             request = orgpolicy.UpdatePolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if policy_ is not None:
                 request.policy_ = policy_
@@ -912,8 +906,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
         Args:
             request (google.cloud.orgpolicy_v2.types.DeletePolicyRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [DeletePolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.DeletePolicy]
                 method.
@@ -944,7 +937,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # there are no flattened fields.
         if not isinstance(request, orgpolicy.DeletePolicyRequest):
             request = orgpolicy.DeletePolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

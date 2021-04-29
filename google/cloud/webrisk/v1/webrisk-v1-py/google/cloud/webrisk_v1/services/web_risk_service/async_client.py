@@ -164,8 +164,7 @@ class WebRiskServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.webrisk_v1.types.ComputeThreatListDiffRequest`):
-                The request object.
-                Describes an API diff request.
+                The request object. Describes an API diff request.
             threat_type (:class:`google.cloud.webrisk_v1.types.ThreatType`):
                 Required. The threat list to update.
                 Only a single ThreatType should be
@@ -268,8 +267,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.webrisk_v1.types.SearchUrisRequest`):
-                The request object.
-                Request to check URI entries against
+                The request object. Request to check URI entries against
                 threatLists.
             uri (:class:`str`):
                 Required. The URI to be checked for
@@ -357,8 +355,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.webrisk_v1.types.SearchHashesRequest`):
-                The request object.
-                Request to return full hashes
+                The request object. Request to return full hashes
                 matched by the provided hash prefixes.
             hash_prefix (:class:`bytes`):
                 A hash prefix, consisting of the most
@@ -450,8 +447,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.webrisk_v1.types.CreateSubmissionRequest`):
-                The request object.
-                Request to send a potentially phishy
+                The request object. Request to send a potentially phishy
                 URI to WebRisk.
             parent (:class:`str`):
                 Required. The name of the project that is making the

@@ -169,8 +169,7 @@ class FoldersAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.GetFolderRequest`):
-                The request object.
-                The GetFolder request message.
+                The request object. The GetFolder request message.
             name (:class:`str`):
                 Required. The resource name of the folder to retrieve.
                 Must be of the form ``folders/{folder_id}``.
@@ -257,8 +256,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.ListFoldersRequest`):
-                The request object.
-                The ListFolders request message.
+                The request object. The ListFolders request message.
             parent (:class:`str`):
                 Required. The resource name of the organization or
                 folder whose folders are being listed. Must be of the
@@ -352,8 +350,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.SearchFoldersRequest`):
-                The request object.
-                The request message for searching
+                The request object. The request message for searching
                 folders.
             query (:class:`str`):
                 Optional. Search criteria used to select the folders to
@@ -491,8 +488,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.CreateFolderRequest`):
-                The request object.
-                The CreateFolder request message.
+                The request object. The CreateFolder request message.
             folder (:class:`google.cloud.resourcemanager_v3.types.Folder`):
                 Required. The folder being created,
                 only the display name and parent will be
@@ -588,8 +584,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.UpdateFolderRequest`):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [UpdateFolder][google.cloud.resourcemanager.v3.Folder.UpdateFolder]
                 method.
 
@@ -707,8 +702,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.MoveFolderRequest`):
-                The request object.
-                The MoveFolder request message.
+                The request object. The MoveFolder request message.
             name (:class:`str`):
                 Required. The resource name of the Folder to move. Must
                 be of the form folders/{folder_id}
@@ -814,8 +808,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.DeleteFolderRequest`):
-                The request object.
-                The DeleteFolder request message.
+                The request object. The DeleteFolder request message.
             name (:class:`str`):
                 Required. The resource name of the folder to be deleted.
                 Must be of the form ``folders/{folder_id}``.
@@ -911,8 +904,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.UndeleteFolderRequest`):
-                The request object.
-                The UndeleteFolder request message.
+                The request object. The UndeleteFolder request message.
             name (:class:`str`):
                 Required. The resource name of the folder to undelete.
                 Must be of the form ``folders/{folder_id}``.
@@ -1001,8 +993,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1142,8 +1133,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1278,8 +1268,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the

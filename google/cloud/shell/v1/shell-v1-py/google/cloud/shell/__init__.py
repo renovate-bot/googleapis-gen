@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.shell_v1.services.cloud_shell_service.async_client import CloudShellServiceAsyncClient
 from google.cloud.shell_v1.services.cloud_shell_service.client import CloudShellServiceClient
+from google.cloud.shell_v1.services.cloud_shell_service.async_client import CloudShellServiceAsyncClient
+
 from google.cloud.shell_v1.types.cloudshell import AddPublicKeyMetadata
 from google.cloud.shell_v1.types.cloudshell import AddPublicKeyRequest
 from google.cloud.shell_v1.types.cloudshell import AddPublicKeyResponse
@@ -34,15 +35,15 @@ from google.cloud.shell_v1.types.cloudshell import StartEnvironmentMetadata
 from google.cloud.shell_v1.types.cloudshell import StartEnvironmentRequest
 from google.cloud.shell_v1.types.cloudshell import StartEnvironmentResponse
 
-__all__ = ('AddPublicKeyMetadata',
+__all__ = ('CloudShellServiceClient',
+    'CloudShellServiceAsyncClient',
+    'AddPublicKeyMetadata',
     'AddPublicKeyRequest',
     'AddPublicKeyResponse',
     'AuthorizeEnvironmentMetadata',
     'AuthorizeEnvironmentRequest',
     'AuthorizeEnvironmentResponse',
     'CloudShellErrorDetails',
-    'CloudShellServiceAsyncClient',
-    'CloudShellServiceClient',
     'CreateEnvironmentMetadata',
     'DeleteEnvironmentMetadata',
     'Environment',

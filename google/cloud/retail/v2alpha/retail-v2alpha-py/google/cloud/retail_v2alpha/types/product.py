@@ -269,7 +269,7 @@ class Product(proto.Message):
     attributes = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=12
+        number=12,
         message=common.CustomAttribute,
     )
     tags = proto.RepeatedField(

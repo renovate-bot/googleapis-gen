@@ -228,9 +228,7 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def start_upload(self) -> Callable[
             [empty.Empty],
             Awaitable[resources.UploadRef]]:
-        r"""Return a callable for the
-        start upload
-          method over gRPC.
+        r"""Return a callable for the start upload method over gRPC.
 
         Creates an upload session to start uploading photo bytes. The
         method uses the upload URL of the returned
@@ -278,9 +276,7 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def create_photo(self) -> Callable[
             [rpcmessages.CreatePhotoRequest],
             Awaitable[resources.Photo]]:
-        r"""Return a callable for the
-        create photo
-          method over gRPC.
+        r"""Return a callable for the create photo method over gRPC.
 
         After the client finishes uploading the photo with the returned
         [UploadRef][google.streetview.publish.v1.UploadRef],
@@ -328,9 +324,7 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def get_photo(self) -> Callable[
             [rpcmessages.GetPhotoRequest],
             Awaitable[resources.Photo]]:
-        r"""Return a callable for the
-        get photo
-          method over gRPC.
+        r"""Return a callable for the get photo method over gRPC.
 
         Gets the metadata of the specified
         [Photo][google.streetview.publish.v1.Photo].
@@ -369,9 +363,7 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def batch_get_photos(self) -> Callable[
             [rpcmessages.BatchGetPhotosRequest],
             Awaitable[rpcmessages.BatchGetPhotosResponse]]:
-        r"""Return a callable for the
-        batch get photos
-          method over gRPC.
+        r"""Return a callable for the batch get photos method over gRPC.
 
         Gets the metadata of the specified
         [Photo][google.streetview.publish.v1.Photo] batch.
@@ -412,9 +404,7 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def list_photos(self) -> Callable[
             [rpcmessages.ListPhotosRequest],
             Awaitable[rpcmessages.ListPhotosResponse]]:
-        r"""Return a callable for the
-        list photos
-          method over gRPC.
+        r"""Return a callable for the list photos method over gRPC.
 
         Lists all the [Photos][google.streetview.publish.v1.Photo] that
         belong to the user.
@@ -446,9 +436,7 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def update_photo(self) -> Callable[
             [rpcmessages.UpdatePhotoRequest],
             Awaitable[resources.Photo]]:
-        r"""Return a callable for the
-        update photo
-          method over gRPC.
+        r"""Return a callable for the update photo method over gRPC.
 
         Updates the metadata of a
         [Photo][google.streetview.publish.v1.Photo], such as pose, place
@@ -494,9 +482,7 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def batch_update_photos(self) -> Callable[
             [rpcmessages.BatchUpdatePhotosRequest],
             Awaitable[rpcmessages.BatchUpdatePhotosResponse]]:
-        r"""Return a callable for the
-        batch update photos
-          method over gRPC.
+        r"""Return a callable for the batch update photos method over gRPC.
 
         Updates the metadata of
         [Photos][google.streetview.publish.v1.Photo], such as pose,
@@ -557,9 +543,7 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def delete_photo(self) -> Callable[
             [rpcmessages.DeletePhotoRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete photo
-          method over gRPC.
+        r"""Return a callable for the delete photo method over gRPC.
 
         Deletes a [Photo][google.streetview.publish.v1.Photo] and its
         metadata.
@@ -593,9 +577,7 @@ class StreetViewPublishServiceGrpcAsyncIOTransport(StreetViewPublishServiceTrans
     def batch_delete_photos(self) -> Callable[
             [rpcmessages.BatchDeletePhotosRequest],
             Awaitable[rpcmessages.BatchDeletePhotosResponse]]:
-        r"""Return a callable for the
-        batch delete photos
-          method over gRPC.
+        r"""Return a callable for the batch delete photos method over gRPC.
 
         Deletes a list of [Photos][google.streetview.publish.v1.Photo]
         and their metadata.

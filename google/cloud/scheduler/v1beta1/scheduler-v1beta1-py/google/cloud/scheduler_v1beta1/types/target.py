@@ -122,7 +122,7 @@ class HttpTarget(proto.Message):
     headers = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3
+        number=3,
     )
     body = proto.Field(
         proto.BYTES,
@@ -232,7 +232,7 @@ class AppEngineHttpTarget(proto.Message):
     headers = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     body = proto.Field(
         proto.BYTES,
@@ -276,7 +276,7 @@ class PubsubTarget(proto.Message):
     attributes = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
 
 

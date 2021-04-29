@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.language_v1.services.language_service.async_client import LanguageServiceAsyncClient
 from google.cloud.language_v1.services.language_service.client import LanguageServiceClient
+from google.cloud.language_v1.services.language_service.async_client import LanguageServiceAsyncClient
+
 from google.cloud.language_v1.types.language_service import AnalyzeEntitiesRequest
 from google.cloud.language_v1.types.language_service import AnalyzeEntitiesResponse
 from google.cloud.language_v1.types.language_service import AnalyzeEntitySentimentRequest
@@ -31,7 +32,6 @@ from google.cloud.language_v1.types.language_service import ClassifyTextRequest
 from google.cloud.language_v1.types.language_service import ClassifyTextResponse
 from google.cloud.language_v1.types.language_service import DependencyEdge
 from google.cloud.language_v1.types.language_service import Document
-from google.cloud.language_v1.types.language_service import EncodingType
 from google.cloud.language_v1.types.language_service import Entity
 from google.cloud.language_v1.types.language_service import EntityMention
 from google.cloud.language_v1.types.language_service import PartOfSpeech
@@ -39,8 +39,11 @@ from google.cloud.language_v1.types.language_service import Sentence
 from google.cloud.language_v1.types.language_service import Sentiment
 from google.cloud.language_v1.types.language_service import TextSpan
 from google.cloud.language_v1.types.language_service import Token
+from google.cloud.language_v1.types.language_service import EncodingType
 
-__all__ = ('AnalyzeEntitiesRequest',
+__all__ = ('LanguageServiceClient',
+    'LanguageServiceAsyncClient',
+    'AnalyzeEntitiesRequest',
     'AnalyzeEntitiesResponse',
     'AnalyzeEntitySentimentRequest',
     'AnalyzeEntitySentimentResponse',
@@ -55,14 +58,12 @@ __all__ = ('AnalyzeEntitiesRequest',
     'ClassifyTextResponse',
     'DependencyEdge',
     'Document',
-    'EncodingType',
     'Entity',
     'EntityMention',
-    'LanguageServiceAsyncClient',
-    'LanguageServiceClient',
     'PartOfSpeech',
     'Sentence',
     'Sentiment',
     'TextSpan',
     'Token',
+    'EncodingType',
 )

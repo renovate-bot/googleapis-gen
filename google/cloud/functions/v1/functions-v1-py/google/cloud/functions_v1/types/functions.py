@@ -264,12 +264,12 @@ class CloudFunction(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=15
+        number=15,
     )
     environment_variables = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=17
+        number=17,
     )
     network = proto.Field(
         proto.STRING,

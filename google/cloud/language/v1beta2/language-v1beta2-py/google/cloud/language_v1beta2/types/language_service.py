@@ -204,7 +204,7 @@ class Entity(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3
+        number=3,
     )
     salience = proto.Field(
         proto.FLOAT,

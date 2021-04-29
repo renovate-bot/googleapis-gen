@@ -228,9 +228,7 @@ class TranscoderServiceGrpcTransport(TranscoderServiceTransport):
     def create_job(self) -> Callable[
             [services.CreateJobRequest],
             resources.Job]:
-        r"""Return a callable for the
-        create job
-          method over gRPC.
+        r"""Return a callable for the create job method over gRPC.
 
         Creates a job in the specified region.
 
@@ -256,9 +254,7 @@ class TranscoderServiceGrpcTransport(TranscoderServiceTransport):
     def list_jobs(self) -> Callable[
             [services.ListJobsRequest],
             services.ListJobsResponse]:
-        r"""Return a callable for the
-        list jobs
-          method over gRPC.
+        r"""Return a callable for the list jobs method over gRPC.
 
         Lists jobs in the specified region.
 
@@ -284,9 +280,7 @@ class TranscoderServiceGrpcTransport(TranscoderServiceTransport):
     def get_job(self) -> Callable[
             [services.GetJobRequest],
             resources.Job]:
-        r"""Return a callable for the
-        get job
-          method over gRPC.
+        r"""Return a callable for the get job method over gRPC.
 
         Returns the job data.
 
@@ -312,9 +306,7 @@ class TranscoderServiceGrpcTransport(TranscoderServiceTransport):
     def delete_job(self) -> Callable[
             [services.DeleteJobRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete job
-          method over gRPC.
+        r"""Return a callable for the delete job method over gRPC.
 
         Deletes a job.
 
@@ -340,9 +332,7 @@ class TranscoderServiceGrpcTransport(TranscoderServiceTransport):
     def create_job_template(self) -> Callable[
             [services.CreateJobTemplateRequest],
             resources.JobTemplate]:
-        r"""Return a callable for the
-        create job template
-          method over gRPC.
+        r"""Return a callable for the create job template method over gRPC.
 
         Creates a job template in the specified region.
 
@@ -368,9 +358,7 @@ class TranscoderServiceGrpcTransport(TranscoderServiceTransport):
     def list_job_templates(self) -> Callable[
             [services.ListJobTemplatesRequest],
             services.ListJobTemplatesResponse]:
-        r"""Return a callable for the
-        list job templates
-          method over gRPC.
+        r"""Return a callable for the list job templates method over gRPC.
 
         Lists job templates in the specified region.
 
@@ -396,9 +384,7 @@ class TranscoderServiceGrpcTransport(TranscoderServiceTransport):
     def get_job_template(self) -> Callable[
             [services.GetJobTemplateRequest],
             resources.JobTemplate]:
-        r"""Return a callable for the
-        get job template
-          method over gRPC.
+        r"""Return a callable for the get job template method over gRPC.
 
         Returns the job template data.
 
@@ -424,9 +410,7 @@ class TranscoderServiceGrpcTransport(TranscoderServiceTransport):
     def delete_job_template(self) -> Callable[
             [services.DeleteJobTemplateRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete job template
-          method over gRPC.
+        r"""Return a callable for the delete job template method over gRPC.
 
         Deletes a job template.
 

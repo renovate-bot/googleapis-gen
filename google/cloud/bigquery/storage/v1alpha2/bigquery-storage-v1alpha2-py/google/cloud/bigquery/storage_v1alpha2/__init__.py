@@ -33,6 +33,9 @@ from .types.table import TableFieldSchema
 from .types.table import TableSchema
 
 __all__ = (
+    'BigQueryWriteClient',
+    'ProtoRows',
+    'ProtoSchema',
     'AppendRowsRequest',
     'AppendRowsResponse',
     'BatchCommitWriteStreamsRequest',
@@ -43,10 +46,7 @@ __all__ = (
     'FlushRowsRequest',
     'FlushRowsResponse',
     'GetWriteStreamRequest',
-    'ProtoRows',
-    'ProtoSchema',
+    'WriteStream',
     'TableFieldSchema',
     'TableSchema',
-    'WriteStream',
-'BigQueryWriteClient',
 )

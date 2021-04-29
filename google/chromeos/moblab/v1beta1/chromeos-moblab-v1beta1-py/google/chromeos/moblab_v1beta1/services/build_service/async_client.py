@@ -166,8 +166,7 @@ class BuildServiceAsyncClient:
 
         Args:
             request (:class:`google.chromeos.moblab_v1beta1.types.ListBuildsRequest`):
-                The request object.
-                Request message for listing builds.
+                The request object. Request message for listing builds.
                 NEXT_TAG: 7
             parent (:class:`str`):
                 Required. The full resource name of
@@ -264,8 +263,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.chromeos.moblab_v1beta1.types.CheckBuildStageStatusRequest`):
-                The request object.
-                Request message for checking if the
+                The request object. Request message for checking if the
                 build artifact is staged.
             name (:class:`str`):
                 Required. The full resource name of
@@ -354,8 +352,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.chromeos.moblab_v1beta1.types.StageBuildRequest`):
-                The request object.
-                Request message for staging a build
+                The request object. Request message for staging a build
                 artifact.
             name (:class:`str`):
                 Required. The full resource name of

@@ -191,8 +191,7 @@ class BotsAsyncClient:
 
         Args:
             request (:class:`google.devtools.remoteworkers_v1.types.CreateBotSessionRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateBotSession.
             parent (:class:`str`):
                 Required. The farm resource.
@@ -287,8 +286,7 @@ class BotsAsyncClient:
 
         Args:
             request (:class:`google.devtools.remoteworkers_v1.types.UpdateBotSessionRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateBotSession.
             name (:class:`str`):
                 Required. The bot session name. Must match

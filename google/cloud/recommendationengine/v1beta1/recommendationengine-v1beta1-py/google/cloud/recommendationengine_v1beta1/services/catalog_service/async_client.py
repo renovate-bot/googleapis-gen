@@ -166,8 +166,7 @@ class CatalogServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.CreateCatalogItemRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateCatalogItem method.
             parent (:class:`str`):
                 Required. The parent catalog resource name, such as
@@ -256,8 +255,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.GetCatalogItemRequest`):
-                The request object.
-                Request message for GetCatalogItem
+                The request object. Request message for GetCatalogItem
                 method.
             name (:class:`str`):
                 Required. Full resource name of catalog item, such as
@@ -340,8 +338,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.ListCatalogItemsRequest`):
-                The request object.
-                Request message for ListCatalogItems
+                The request object. Request message for ListCatalogItems
                 method.
             parent (:class:`str`):
                 Required. The parent catalog resource name, such as
@@ -447,8 +444,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.UpdateCatalogItemRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateCatalogItem method.
             name (:class:`str`):
                 Required. Full resource name of catalog item, such as
@@ -549,8 +545,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.DeleteCatalogItemRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteCatalogItem method.
             name (:class:`str`):
                 Required. Full resource name of catalog item, such as
@@ -632,8 +627,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.ImportCatalogItemsRequest`):
-                The request object.
-                Request message for Import methods.
+                The request object. Request message for Import methods.
             parent (:class:`str`):
                 Required.
                 ``projects/1234/locations/global/catalogs/default_catalog``

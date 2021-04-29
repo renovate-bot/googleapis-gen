@@ -388,7 +388,7 @@ class BatchPredictionJob(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=19
+        number=19,
     )
     encryption_spec = proto.Field(
         proto.MESSAGE,

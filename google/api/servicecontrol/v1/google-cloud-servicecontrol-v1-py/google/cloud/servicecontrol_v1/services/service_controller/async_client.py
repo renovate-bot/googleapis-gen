@@ -175,8 +175,7 @@ class ServiceControllerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicecontrol_v1.types.CheckRequest`):
-                The request object.
-                Request message for the Check
+                The request object. Request message for the Check
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -240,8 +239,7 @@ class ServiceControllerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicecontrol_v1.types.ReportRequest`):
-                The request object.
-                Request message for the Report
+                The request object. Request message for the Report
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

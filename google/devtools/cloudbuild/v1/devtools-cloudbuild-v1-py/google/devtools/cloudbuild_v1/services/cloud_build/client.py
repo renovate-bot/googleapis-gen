@@ -416,8 +416,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.CreateBuildRequest):
-                The request object.
-                Request to create a new build.
+                The request object. Request to create a new build.
             project_id (str):
                 Required. ID of the project.
                 This corresponds to the ``project_id`` field
@@ -479,7 +478,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudbuild.CreateBuildRequest):
             request = cloudbuild.CreateBuildRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -526,8 +525,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.GetBuildRequest):
-                The request object.
-                Request to get a build.
+                The request object. Request to get a build.
             project_id (str):
                 Required. ID of the project.
                 This corresponds to the ``project_id`` field
@@ -585,7 +583,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudbuild.GetBuildRequest):
             request = cloudbuild.GetBuildRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -622,8 +620,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.ListBuildsRequest):
-                The request object.
-                Request to list builds.
+                The request object. Request to list builds.
             project_id (str):
                 Required. ID of the project.
                 This corresponds to the ``project_id`` field
@@ -664,7 +661,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudbuild.ListBuildsRequest):
             request = cloudbuild.ListBuildsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -708,8 +705,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.CancelBuildRequest):
-                The request object.
-                Request to cancel an ongoing build.
+                The request object. Request to cancel an ongoing build.
             project_id (str):
                 Required. ID of the project.
                 This corresponds to the ``project_id`` field
@@ -767,7 +763,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudbuild.CancelBuildRequest):
             request = cloudbuild.CancelBuildRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -831,8 +827,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.RetryBuildRequest):
-                The request object.
-                Specifies a build to retry.
+                The request object. Specifies a build to retry.
             project_id (str):
                 Required. ID of the project.
                 This corresponds to the ``project_id`` field
@@ -896,7 +891,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudbuild.RetryBuildRequest):
             request = cloudbuild.RetryBuildRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -941,8 +936,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.CreateBuildTriggerRequest):
-                The request object.
-                Request to create a new
+                The request object. Request to create a new
                 `BuildTrigger`.
             project_id (str):
                 Required. ID of the project for which
@@ -983,7 +977,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudbuild.CreateBuildTriggerRequest):
             request = cloudbuild.CreateBuildTriggerRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -1020,8 +1014,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.GetBuildTriggerRequest):
-                The request object.
-                Returns the `BuildTrigger` with the
+                The request object. Returns the `BuildTrigger` with the
                 specified ID.
             project_id (str):
                 Required. ID of the project that owns
@@ -1064,7 +1057,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudbuild.GetBuildTriggerRequest):
             request = cloudbuild.GetBuildTriggerRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -1100,8 +1093,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.ListBuildTriggersRequest):
-                The request object.
-                Request to list existing
+                The request object. Request to list existing
                 `BuildTriggers`.
             project_id (str):
                 Required. ID of the project for which
@@ -1138,7 +1130,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudbuild.ListBuildTriggersRequest):
             request = cloudbuild.ListBuildTriggersRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -1182,8 +1174,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.DeleteBuildTriggerRequest):
-                The request object.
-                Request to delete a `BuildTrigger`.
+                The request object. Request to delete a `BuildTrigger`.
             project_id (str):
                 Required. ID of the project that owns
                 the trigger.
@@ -1216,7 +1207,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudbuild.DeleteBuildTriggerRequest):
             request = cloudbuild.DeleteBuildTriggerRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -1251,8 +1242,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.UpdateBuildTriggerRequest):
-                The request object.
-                Request to update an existing
+                The request object. Request to update an existing
                 `BuildTrigger`.
             project_id (str):
                 Required. ID of the project that owns
@@ -1298,7 +1288,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudbuild.UpdateBuildTriggerRequest):
             request = cloudbuild.UpdateBuildTriggerRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -1336,8 +1326,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.RunBuildTriggerRequest):
-                The request object.
-                Specifies a build trigger to run and
+                The request object. Specifies a build trigger to run and
                 the source to use.
             project_id (str):
                 Required. ID of the project.
@@ -1405,7 +1394,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudbuild.RunBuildTriggerRequest):
             request = cloudbuild.RunBuildTriggerRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -1449,8 +1438,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.ReceiveTriggerWebhookRequest):
-                The request object.
-                ReceiveTriggerWebhookRequest
+                The request object. ReceiveTriggerWebhookRequest
                 [Experimental] is the request object accepted by the
                 ReceiveTriggerWebhook method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1502,8 +1490,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.CreateWorkerPoolRequest):
-                The request object.
-                Request to create a new
+                The request object. Request to create a new
                 `WorkerPool`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1563,8 +1550,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.GetWorkerPoolRequest):
-                The request object.
-                Request to get a `WorkerPool` with
+                The request object. Request to get a `WorkerPool` with
                 the specified name.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1624,8 +1610,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.DeleteWorkerPoolRequest):
-                The request object.
-                Request to delete a `WorkerPool`.
+                The request object. Request to delete a `WorkerPool`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1665,8 +1650,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.UpdateWorkerPoolRequest):
-                The request object.
-                Request to update a `WorkerPool`.
+                The request object. Request to update a `WorkerPool`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1725,8 +1709,7 @@ class CloudBuildClient(metaclass=CloudBuildClientMeta):
 
         Args:
             request (google.devtools.cloudbuild_v1.types.ListWorkerPoolsRequest):
-                The request object.
-                Request to list `WorkerPools`.
+                The request object. Request to list `WorkerPools`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

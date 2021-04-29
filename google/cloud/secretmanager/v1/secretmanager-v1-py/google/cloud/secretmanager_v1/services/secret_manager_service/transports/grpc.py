@@ -230,9 +230,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def list_secrets(self) -> Callable[
             [service.ListSecretsRequest],
             service.ListSecretsResponse]:
-        r"""Return a callable for the
-        list secrets
-          method over gRPC.
+        r"""Return a callable for the list secrets method over gRPC.
 
         Lists [Secrets][google.cloud.secretmanager.v1.Secret].
 
@@ -258,9 +256,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def create_secret(self) -> Callable[
             [service.CreateSecretRequest],
             resources.Secret]:
-        r"""Return a callable for the
-        create secret
-          method over gRPC.
+        r"""Return a callable for the create secret method over gRPC.
 
         Creates a new [Secret][google.cloud.secretmanager.v1.Secret]
         containing no
@@ -288,9 +284,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def add_secret_version(self) -> Callable[
             [service.AddSecretVersionRequest],
             resources.SecretVersion]:
-        r"""Return a callable for the
-        add secret version
-          method over gRPC.
+        r"""Return a callable for the add secret version method over gRPC.
 
         Creates a new
         [SecretVersion][google.cloud.secretmanager.v1.SecretVersion]
@@ -319,9 +313,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def get_secret(self) -> Callable[
             [service.GetSecretRequest],
             resources.Secret]:
-        r"""Return a callable for the
-        get secret
-          method over gRPC.
+        r"""Return a callable for the get secret method over gRPC.
 
         Gets metadata for a given
         [Secret][google.cloud.secretmanager.v1.Secret].
@@ -348,9 +340,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def update_secret(self) -> Callable[
             [service.UpdateSecretRequest],
             resources.Secret]:
-        r"""Return a callable for the
-        update secret
-          method over gRPC.
+        r"""Return a callable for the update secret method over gRPC.
 
         Updates metadata of an existing
         [Secret][google.cloud.secretmanager.v1.Secret].
@@ -377,9 +367,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def delete_secret(self) -> Callable[
             [service.DeleteSecretRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete secret
-          method over gRPC.
+        r"""Return a callable for the delete secret method over gRPC.
 
         Deletes a [Secret][google.cloud.secretmanager.v1.Secret].
 
@@ -405,9 +393,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def list_secret_versions(self) -> Callable[
             [service.ListSecretVersionsRequest],
             service.ListSecretVersionsResponse]:
-        r"""Return a callable for the
-        list secret versions
-          method over gRPC.
+        r"""Return a callable for the list secret versions method over gRPC.
 
         Lists
         [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
@@ -435,9 +421,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def get_secret_version(self) -> Callable[
             [service.GetSecretVersionRequest],
             resources.SecretVersion]:
-        r"""Return a callable for the
-        get secret version
-          method over gRPC.
+        r"""Return a callable for the get secret version method over gRPC.
 
         Gets metadata for a
         [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
@@ -468,9 +452,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def access_secret_version(self) -> Callable[
             [service.AccessSecretVersionRequest],
             service.AccessSecretVersionResponse]:
-        r"""Return a callable for the
-        access secret version
-          method over gRPC.
+        r"""Return a callable for the access secret version method over gRPC.
 
         Accesses a
         [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
@@ -502,9 +484,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def disable_secret_version(self) -> Callable[
             [service.DisableSecretVersionRequest],
             resources.SecretVersion]:
-        r"""Return a callable for the
-        disable secret version
-          method over gRPC.
+        r"""Return a callable for the disable secret version method over gRPC.
 
         Disables a
         [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
@@ -537,9 +517,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def enable_secret_version(self) -> Callable[
             [service.EnableSecretVersionRequest],
             resources.SecretVersion]:
-        r"""Return a callable for the
-        enable secret version
-          method over gRPC.
+        r"""Return a callable for the enable secret version method over gRPC.
 
         Enables a
         [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
@@ -572,9 +550,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def destroy_secret_version(self) -> Callable[
             [service.DestroySecretVersionRequest],
             resources.SecretVersion]:
-        r"""Return a callable for the
-        destroy secret version
-          method over gRPC.
+        r"""Return a callable for the destroy secret version method over gRPC.
 
         Destroys a
         [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
@@ -608,9 +584,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on the specified secret. Replaces
         any existing policy.
@@ -642,9 +616,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for a secret.
         Returns empty policy if the secret exists and does not
@@ -672,9 +644,7 @@ class SecretManagerServiceGrpcTransport(SecretManagerServiceTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns permissions that a caller has for the specified secret.
         If the secret does not exist, this call returns an empty set of

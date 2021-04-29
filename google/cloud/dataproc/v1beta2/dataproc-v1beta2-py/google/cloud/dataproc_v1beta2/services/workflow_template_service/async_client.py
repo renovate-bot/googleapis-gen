@@ -165,8 +165,7 @@ class WorkflowTemplateServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.CreateWorkflowTemplateRequest`):
-                The request object.
-                A request to create a workflow
+                The request object. A request to create a workflow
                 template.
             parent (:class:`str`):
                 Required. The resource name of the region or location,
@@ -268,8 +267,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.GetWorkflowTemplateRequest`):
-                The request object.
-                A request to fetch a workflow
+                The request object. A request to fetch a workflow
                 template.
             name (:class:`str`):
                 Required. The resource name of the workflow template, as
@@ -384,8 +382,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.InstantiateWorkflowTemplateRequest`):
-                The request object.
-                A request to instantiate a workflow
+                The request object. A request to instantiate a workflow
                 template.
             name (:class:`str`):
                 Required. The resource name of the workflow template, as
@@ -538,8 +535,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.InstantiateInlineWorkflowTemplateRequest`):
-                The request object.
-                A request to instantiate an inline
+                The request object. A request to instantiate an inline
                 workflow template.
             parent (:class:`str`):
                 Required. The resource name of the region or location,
@@ -664,8 +660,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.UpdateWorkflowTemplateRequest`):
-                The request object.
-                A request to update a workflow
+                The request object. A request to update a workflow
                 template.
             template (:class:`google.cloud.dataproc_v1beta2.types.WorkflowTemplate`):
                 Required. The updated workflow template.
@@ -749,8 +744,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.ListWorkflowTemplatesRequest`):
-                The request object.
-                A request to list workflow templates
+                The request object. A request to list workflow templates
                 in a project.
             parent (:class:`str`):
                 Required. The resource name of the region or location,
@@ -856,8 +850,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.DeleteWorkflowTemplateRequest`):
-                The request object.
-                A request to delete a workflow
+                The request object. A request to delete a workflow
                 template.
                 Currently started workflows will remain running.
             name (:class:`str`):

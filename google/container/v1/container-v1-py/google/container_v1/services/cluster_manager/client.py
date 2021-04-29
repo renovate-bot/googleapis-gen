@@ -325,8 +325,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.ListClustersRequest):
-                The request object.
-                ListClustersRequest lists clusters.
+                The request object. ListClustersRequest lists clusters.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
                 project
@@ -382,7 +381,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.ListClustersRequest):
             request = cluster_service.ListClustersRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -429,8 +428,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.GetClusterRequest):
-                The request object.
-                GetClusterRequest gets the settings
+                The request object. GetClusterRequest gets the settings
                 of a cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -492,7 +490,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.GetClusterRequest):
             request = cluster_service.GetClusterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -553,8 +551,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.CreateClusterRequest):
-                The request object.
-                CreateClusterRequest creates a
+                The request object. CreateClusterRequest creates a
                 cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -618,7 +615,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.CreateClusterRequest):
             request = cluster_service.CreateClusterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -668,8 +665,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.UpdateClusterRequest):
-                The request object.
-                UpdateClusterRequest updates the
+                The request object. UpdateClusterRequest updates the
                 settings of a cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -742,7 +738,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.UpdateClusterRequest):
             request = cluster_service.UpdateClusterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -790,8 +786,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.UpdateNodePoolRequest):
-                The request object.
-                UpdateNodePoolRequests update a node
+                The request object. UpdateNodePoolRequests update a node
                 pool's image and/or version.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -850,8 +845,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.SetNodePoolAutoscalingRequest):
-                The request object.
-                SetNodePoolAutoscalingRequest sets
+                The request object. SetNodePoolAutoscalingRequest sets
                 the autoscaler settings of a node pool.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -914,8 +908,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.SetLoggingServiceRequest):
-                The request object.
-                SetLoggingServiceRequest sets the
+                The request object. SetLoggingServiceRequest sets the
                 logging service of a cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -1000,7 +993,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.SetLoggingServiceRequest):
             request = cluster_service.SetLoggingServiceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -1052,8 +1045,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.SetMonitoringServiceRequest):
-                The request object.
-                SetMonitoringServiceRequest sets the
+                The request object. SetMonitoringServiceRequest sets the
                 monitoring service of a cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -1140,7 +1132,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.SetMonitoringServiceRequest):
             request = cluster_service.SetMonitoringServiceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -1192,8 +1184,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.SetAddonsConfigRequest):
-                The request object.
-                SetAddonsConfigRequest sets the
+                The request object. SetAddonsConfigRequest sets the
                 addons associated with the cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -1267,7 +1258,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.SetAddonsConfigRequest):
             request = cluster_service.SetAddonsConfigRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -1321,8 +1312,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.SetLocationsRequest):
-                The request object.
-                SetLocationsRequest sets the
+                The request object. SetLocationsRequest sets the
                 locations of the cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -1402,7 +1392,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.SetLocationsRequest):
             request = cluster_service.SetLocationsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -1454,8 +1444,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.UpdateMasterRequest):
-                The request object.
-                UpdateMasterRequest updates the
+                The request object. UpdateMasterRequest updates the
                 master of the cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -1540,7 +1529,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.UpdateMasterRequest):
             request = cluster_service.UpdateMasterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -1590,8 +1579,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.SetMasterAuthRequest):
-                The request object.
-                SetMasterAuthRequest updates the
+                The request object. SetMasterAuthRequest updates the
                 admin password of a cluster.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1662,8 +1650,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.DeleteClusterRequest):
-                The request object.
-                DeleteClusterRequest deletes a
+                The request object. DeleteClusterRequest deletes a
                 cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -1729,7 +1716,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.DeleteClusterRequest):
             request = cluster_service.DeleteClusterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -1777,8 +1764,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.ListOperationsRequest):
-                The request object.
-                ListOperationsRequest lists
+                The request object. ListOperationsRequest lists
                 operations.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -1826,7 +1812,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.ListOperationsRequest):
             request = cluster_service.ListOperationsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -1871,8 +1857,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.GetOperationRequest):
-                The request object.
-                GetOperationRequest gets a single
+                The request object. GetOperationRequest gets a single
                 operation.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -1937,7 +1922,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.GetOperationRequest):
             request = cluster_service.GetOperationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -1986,8 +1971,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.CancelOperationRequest):
-                The request object.
-                CancelOperationRequest cancels a
+                The request object. CancelOperationRequest cancels a
                 single operation.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -2044,7 +2028,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.CancelOperationRequest):
             request = cluster_service.CancelOperationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -2090,8 +2074,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.GetServerConfigRequest):
-                The request object.
-                Gets the current Kubernetes Engine
+                The request object. Gets the current Kubernetes Engine
                 service configuration.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -2145,7 +2128,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.GetServerConfigRequest):
             request = cluster_service.GetServerConfigRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -2191,8 +2174,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.GetJSONWebKeysRequest):
-                The request object.
-                GetJSONWebKeysRequest gets the
+                The request object. GetJSONWebKeysRequest gets the
                 public component of the keys used by the cluster to sign
                 token requests. This will be the jwks_uri for the
                 discover document returned by getOpenIDConfig. See the
@@ -2256,8 +2238,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.ListNodePoolsRequest):
-                The request object.
-                ListNodePoolsRequest lists the node
+                The request object. ListNodePoolsRequest lists the node
                 pool(s) for a cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -2320,7 +2301,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.ListNodePoolsRequest):
             request = cluster_service.ListNodePoolsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -2370,8 +2351,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.GetNodePoolRequest):
-                The request object.
-                GetNodePoolRequest retrieves a node
+                The request object. GetNodePoolRequest retrieves a node
                 pool for a cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -2450,7 +2430,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.GetNodePoolRequest):
             request = cluster_service.GetNodePoolRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -2502,8 +2482,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.CreateNodePoolRequest):
-                The request object.
-                CreateNodePoolRequest creates a node
+                The request object. CreateNodePoolRequest creates a node
                 pool for a cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -2573,7 +2552,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.CreateNodePoolRequest):
             request = cluster_service.CreateNodePoolRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -2625,8 +2604,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.DeleteNodePoolRequest):
-                The request object.
-                DeleteNodePoolRequest deletes a node
+                The request object. DeleteNodePoolRequest deletes a node
                 pool for a cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -2700,7 +2678,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.DeleteNodePoolRequest):
             request = cluster_service.DeleteNodePoolRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -2754,8 +2732,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.RollbackNodePoolUpgradeRequest):
-                The request object.
-                RollbackNodePoolUpgradeRequest
+                The request object. RollbackNodePoolUpgradeRequest
                 rollbacks the previously Aborted or Failed NodePool
                 upgrade. This will be an no-op if the last upgrade
                 successfully completed.
@@ -2833,7 +2810,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.RollbackNodePoolUpgradeRequest):
             request = cluster_service.RollbackNodePoolUpgradeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -2880,8 +2857,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.SetNodePoolManagementRequest):
-                The request object.
-                SetNodePoolManagementRequest sets
+                The request object. SetNodePoolManagementRequest sets
                 the node management properties of a node pool.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2939,8 +2915,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.SetLabelsRequest):
-                The request object.
-                SetLabelsRequest sets the Google
+                The request object. SetLabelsRequest sets the Google
                 Cloud Platform labels on a Google Container Engine
                 cluster, which will in turn set them for Google Compute
                 Engine resources used by that cluster
@@ -3006,8 +2981,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.SetLegacyAbacRequest):
-                The request object.
-                SetLegacyAbacRequest enables or
+                The request object. SetLegacyAbacRequest enables or
                 disables the ABAC authorization mechanism for a cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -3080,7 +3054,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.SetLegacyAbacRequest):
             request = cluster_service.SetLegacyAbacRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -3131,8 +3105,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.StartIPRotationRequest):
-                The request object.
-                StartIPRotationRequest creates a new
+                The request object. StartIPRotationRequest creates a new
                 IP for the cluster and then performs a node upgrade on
                 each node pool to point to the new IP.
             project_id (str):
@@ -3198,7 +3171,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.StartIPRotationRequest):
             request = cluster_service.StartIPRotationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -3247,8 +3220,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.CompleteIPRotationRequest):
-                The request object.
-                CompleteIPRotationRequest moves the
+                The request object. CompleteIPRotationRequest moves the
                 cluster master back into single-IP mode.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -3313,7 +3285,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.CompleteIPRotationRequest):
             request = cluster_service.CompleteIPRotationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -3358,8 +3330,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.SetNodePoolSizeRequest):
-                The request object.
-                SetNodePoolSizeRequest sets the size
+                The request object. SetNodePoolSizeRequest sets the size
                 a node pool.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -3422,8 +3393,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.SetNetworkPolicyRequest):
-                The request object.
-                SetNetworkPolicyRequest
+                The request object. SetNetworkPolicyRequest
                 enables/disables network policy for a cluster.
             project_id (str):
                 Deprecated. The Google Developers Console `project ID or
@@ -3495,7 +3465,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.SetNetworkPolicyRequest):
             request = cluster_service.SetNetworkPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -3547,8 +3517,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.SetMaintenancePolicyRequest):
-                The request object.
-                SetMaintenancePolicyRequest sets the
+                The request object. SetMaintenancePolicyRequest sets the
                 maintenance policy for a cluster.
             project_id (str):
                 Required. The Google Developers Console `project ID or
@@ -3617,7 +3586,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cluster_service.SetMaintenancePolicyRequest):
             request = cluster_service.SetMaintenancePolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -3665,8 +3634,7 @@ class ClusterManagerClient(metaclass=ClusterManagerClientMeta):
 
         Args:
             request (google.container_v1.types.ListUsableSubnetworksRequest):
-                The request object.
-                ListUsableSubnetworksRequest
+                The request object. ListUsableSubnetworksRequest
                 requests the list of usable subnetworks available to a
                 user for creating clusters.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,

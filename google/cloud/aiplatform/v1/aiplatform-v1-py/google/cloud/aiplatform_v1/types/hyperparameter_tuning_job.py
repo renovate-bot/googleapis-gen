@@ -170,7 +170,7 @@ class HyperparameterTuningJob(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=16
+        number=16,
     )
     encryption_spec = proto.Field(
         proto.MESSAGE,

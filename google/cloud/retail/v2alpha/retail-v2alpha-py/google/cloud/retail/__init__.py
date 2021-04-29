@@ -14,14 +14,15 @@
 # limitations under the License.
 #
 
-from google.cloud.retail_v2alpha.services.catalog_service.async_client import CatalogServiceAsyncClient
 from google.cloud.retail_v2alpha.services.catalog_service.client import CatalogServiceClient
-from google.cloud.retail_v2alpha.services.prediction_service.async_client import PredictionServiceAsyncClient
+from google.cloud.retail_v2alpha.services.catalog_service.async_client import CatalogServiceAsyncClient
 from google.cloud.retail_v2alpha.services.prediction_service.client import PredictionServiceClient
-from google.cloud.retail_v2alpha.services.product_service.async_client import ProductServiceAsyncClient
+from google.cloud.retail_v2alpha.services.prediction_service.async_client import PredictionServiceAsyncClient
 from google.cloud.retail_v2alpha.services.product_service.client import ProductServiceClient
-from google.cloud.retail_v2alpha.services.user_event_service.async_client import UserEventServiceAsyncClient
+from google.cloud.retail_v2alpha.services.product_service.async_client import ProductServiceAsyncClient
 from google.cloud.retail_v2alpha.services.user_event_service.client import UserEventServiceClient
+from google.cloud.retail_v2alpha.services.user_event_service.async_client import UserEventServiceAsyncClient
+
 from google.cloud.retail_v2alpha.types.catalog import Catalog
 from google.cloud.retail_v2alpha.types.catalog import ProductLevelConfig
 from google.cloud.retail_v2alpha.types.catalog_service import ListCatalogsRequest
@@ -63,52 +64,52 @@ from google.cloud.retail_v2alpha.types.user_event_service import RejoinUserEvent
 from google.cloud.retail_v2alpha.types.user_event_service import RejoinUserEventsResponse
 from google.cloud.retail_v2alpha.types.user_event_service import WriteUserEventRequest
 
-__all__ = ('BigQuerySource',
-    'Catalog',
+__all__ = ('CatalogServiceClient',
     'CatalogServiceAsyncClient',
-    'CatalogServiceClient',
-    'CollectUserEventRequest',
-    'CreateProductRequest',
+    'PredictionServiceClient',
+    'PredictionServiceAsyncClient',
+    'ProductServiceClient',
+    'ProductServiceAsyncClient',
+    'UserEventServiceClient',
+    'UserEventServiceAsyncClient',
+    'Catalog',
+    'ProductLevelConfig',
+    'ListCatalogsRequest',
+    'ListCatalogsResponse',
+    'UpdateCatalogRequest',
     'CustomAttribute',
-    'DeleteProductRequest',
-    'GcsSource',
-    'GetProductRequest',
     'Image',
+    'PriceInfo',
+    'UserInfo',
+    'BigQuerySource',
+    'GcsSource',
     'ImportErrorsConfig',
     'ImportMetadata',
     'ImportProductsRequest',
     'ImportProductsResponse',
     'ImportUserEventsRequest',
     'ImportUserEventsResponse',
-    'ListCatalogsRequest',
-    'ListCatalogsResponse',
-    'PredictRequest',
-    'PredictResponse',
-    'PredictionServiceAsyncClient',
-    'PredictionServiceClient',
-    'PriceInfo',
-    'Product',
-    'ProductDetail',
     'ProductInlineSource',
     'ProductInputConfig',
-    'ProductLevelConfig',
-    'ProductServiceAsyncClient',
-    'ProductServiceClient',
-    'PurchaseTransaction',
-    'PurgeMetadata',
-    'PurgeUserEventsRequest',
-    'PurgeUserEventsResponse',
-    'RejoinUserEventsMetadata',
-    'RejoinUserEventsRequest',
-    'RejoinUserEventsResponse',
-    'UpdateCatalogRequest',
-    'UpdateProductRequest',
-    'UserEvent',
     'UserEventImportSummary',
     'UserEventInlineSource',
     'UserEventInputConfig',
-    'UserEventServiceAsyncClient',
-    'UserEventServiceClient',
-    'UserInfo',
+    'PredictRequest',
+    'PredictResponse',
+    'Product',
+    'CreateProductRequest',
+    'DeleteProductRequest',
+    'GetProductRequest',
+    'UpdateProductRequest',
+    'PurgeMetadata',
+    'PurgeUserEventsRequest',
+    'PurgeUserEventsResponse',
+    'ProductDetail',
+    'PurchaseTransaction',
+    'UserEvent',
+    'CollectUserEventRequest',
+    'RejoinUserEventsMetadata',
+    'RejoinUserEventsRequest',
+    'RejoinUserEventsResponse',
     'WriteUserEventRequest',
 )

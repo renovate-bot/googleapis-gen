@@ -3431,7 +3431,9 @@ def test_dataset_service_base_transport_with_credentials_file():
         )
         load_creds.assert_called_once_with("credentials.json",
             scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
             quota_project_id="octopus",
         )
 
@@ -3473,7 +3475,6 @@ def test_dataset_service_auth_adc():
             default_scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
 ),
-
             quota_project_id=None,
         )
 
@@ -3554,11 +3555,13 @@ def test_dataset_service_transport_create_channel(transport_class, grpc_helpers)
         )
 
         create_channel.assert_called_with(
-            "aiplatform.googleapis.com",
+            "aiplatform.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            default_scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+),
             scopes=["1", "2"],
             default_host="aiplatform.googleapis.com",
             ssl_credentials=None,
@@ -3592,7 +3595,9 @@ def test_dataset_service_transport_create_channel_old_api_core(transport_class, 
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+),
             ssl_credentials=None,
             options=[
                 ("grpc.max_send_message_length", -1),

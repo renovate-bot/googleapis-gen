@@ -186,8 +186,7 @@ class SecurityCenterAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.CreateSourceRequest`):
-                The request object.
-                Request message for creating a
+                The request object. Request message for creating a
                 source.
             parent (:class:`str`):
                 Required. Resource name of the new source's parent. Its
@@ -279,8 +278,7 @@ class SecurityCenterAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.CreateFindingRequest`):
-                The request object.
-                Request message for creating a
+                The request object. Request message for creating a
                 finding.
             parent (:class:`str`):
                 Required. Resource name of the new finding's parent. Its
@@ -384,8 +382,7 @@ class SecurityCenterAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.CreateNotificationConfigRequest`):
-                The request object.
-                Request message for creating a
+                The request object. Request message for creating a
                 notification config.
             parent (:class:`str`):
                 Required. Resource name of the new notification config's
@@ -488,8 +485,7 @@ class SecurityCenterAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.DeleteNotificationConfigRequest`):
-                The request object.
-                Request message for deleting a
+                The request object. Request message for deleting a
                 notification config.
             name (:class:`str`):
                 Required. Name of the notification config to delete. Its
@@ -557,8 +553,7 @@ class SecurityCenterAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -695,8 +690,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.GetNotificationConfigRequest`):
-                The request object.
-                Request message for getting a
+                The request object. Request message for getting a
                 notification config.
             name (:class:`str`):
                 Required. Name of the notification config to get. Its
@@ -784,8 +778,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.GetOrganizationSettingsRequest`):
-                The request object.
-                Request message for getting
+                The request object. Request message for getting
                 organization settings.
             name (:class:`str`):
                 Required. Name of the organization to get organization
@@ -869,8 +862,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.GetSourceRequest`):
-                The request object.
-                Request message for getting a
+                The request object. Request message for getting a
                 source.
             name (:class:`str`):
                 Required. Relative resource name of the source. Its
@@ -957,8 +949,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.GroupAssetsRequest`):
-                The request object.
-                Request message for grouping by
+                The request object. Request message for grouping by
                 assets.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1039,8 +1030,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.GroupFindingsRequest`):
-                The request object.
-                Request message for grouping by
+                The request object. Request message for grouping by
                 findings.
             parent (:class:`str`):
                 Required. Name of the source to groupBy. Its format is
@@ -1161,8 +1151,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.ListAssetsRequest`):
-                The request object.
-                Request message for listing assets.
+                The request object. Request message for listing assets.
             parent (:class:`str`):
                 Required. Name of the organization assets should belong
                 to. Its format is "organizations/[organization_id]".
@@ -1258,8 +1247,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.ListFindingsRequest`):
-                The request object.
-                Request message for listing
+                The request object. Request message for listing
                 findings.
             parent (:class:`str`):
                 Required. Name of the source the findings belong to. Its
@@ -1356,8 +1344,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.ListNotificationConfigsRequest`):
-                The request object.
-                Request message for listing
+                The request object. Request message for listing
                 notification configs.
             parent (:class:`str`):
                 Required. Name of the organization to list notification
@@ -1452,8 +1439,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.ListSourcesRequest`):
-                The request object.
-                Request message for listing sources.
+                The request object. Request message for listing sources.
             parent (:class:`str`):
                 Required. Resource name of the parent of sources to
                 list. Its format should be
@@ -1551,8 +1537,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.RunAssetDiscoveryRequest`):
-                The request object.
-                Request message for running asset
+                The request object. Request message for running asset
                 discovery for an organization.
             parent (:class:`str`):
                 Required. Name of the organization to run asset
@@ -1641,8 +1626,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.SetFindingStateRequest`):
-                The request object.
-                Request message for updating a
+                The request object. Request message for updating a
                 finding's state.
             name (:class:`str`):
                 Required. The relative resource name of the finding.
@@ -1746,8 +1730,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1879,8 +1862,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1973,8 +1955,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.UpdateFindingRequest`):
-                The request object.
-                Request message for updating or
+                The request object. Request message for updating or
                 creating a finding.
             finding (:class:`google.cloud.securitycenter_v1p1beta1.types.Finding`):
                 Required. The finding resource to update or create if it
@@ -2079,8 +2060,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.UpdateNotificationConfigRequest`):
-                The request object.
-                Request message for updating a
+                The request object. Request message for updating a
                 notification config.
             notification_config (:class:`google.cloud.securitycenter_v1p1beta1.types.NotificationConfig`):
                 Required. The notification config to
@@ -2171,8 +2151,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.UpdateOrganizationSettingsRequest`):
-                The request object.
-                Request message for updating an
+                The request object. Request message for updating an
                 organization's settings.
             organization_settings (:class:`google.cloud.securitycenter_v1p1beta1.types.OrganizationSettings`):
                 Required. The organization settings
@@ -2249,8 +2228,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.UpdateSourceRequest`):
-                The request object.
-                Request message for updating a
+                The request object. Request message for updating a
                 source.
             source (:class:`google.cloud.securitycenter_v1p1beta1.types.Source`):
                 Required. The source resource to
@@ -2341,8 +2319,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter_v1p1beta1.types.UpdateSecurityMarksRequest`):
-                The request object.
-                Request message for updating a
+                The request object. Request message for updating a
                 SecurityMarks resource.
             security_marks (:class:`google.cloud.securitycenter_v1p1beta1.types.SecurityMarks`):
                 Required. The security marks resource

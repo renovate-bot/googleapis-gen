@@ -154,8 +154,7 @@ class SubscriberServiceAsyncClient:
 
         Args:
             requests (AsyncIterator[`google.cloud.pubsublite_v1.types.SubscribeRequest`]):
-                The request object AsyncIterator.
-                A request sent from the client to
+                The request object AsyncIterator. A request sent from the client to
                 the server on a stream.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

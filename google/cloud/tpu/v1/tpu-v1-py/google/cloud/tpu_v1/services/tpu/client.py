@@ -360,8 +360,7 @@ class TpuClient(metaclass=TpuClientMeta):
 
         Args:
             request (google.cloud.tpu_v1.types.ListNodesRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [ListNodes][google.cloud.tpu.v1.Tpu.ListNodes].
             parent (str):
                 Required. The parent resource name.
@@ -397,7 +396,7 @@ class TpuClient(metaclass=TpuClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_tpu.ListNodesRequest):
             request = cloud_tpu.ListNodesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -446,8 +445,7 @@ class TpuClient(metaclass=TpuClientMeta):
 
         Args:
             request (google.cloud.tpu_v1.types.GetNodeRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [GetNode][google.cloud.tpu.v1.Tpu.GetNode].
             name (str):
                 Required. The resource name.
@@ -478,7 +476,7 @@ class TpuClient(metaclass=TpuClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_tpu.GetNodeRequest):
             request = cloud_tpu.GetNodeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -520,8 +518,7 @@ class TpuClient(metaclass=TpuClientMeta):
 
         Args:
             request (google.cloud.tpu_v1.types.CreateNodeRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [CreateNode][google.cloud.tpu.v1.Tpu.CreateNode].
             parent (str):
                 Required. The parent resource name.
@@ -566,7 +563,7 @@ class TpuClient(metaclass=TpuClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_tpu.CreateNodeRequest):
             request = cloud_tpu.CreateNodeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -618,8 +615,7 @@ class TpuClient(metaclass=TpuClientMeta):
 
         Args:
             request (google.cloud.tpu_v1.types.DeleteNodeRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [DeleteNode][google.cloud.tpu.v1.Tpu.DeleteNode].
             name (str):
                 Required. The resource name.
@@ -654,7 +650,7 @@ class TpuClient(metaclass=TpuClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_tpu.DeleteNodeRequest):
             request = cloud_tpu.DeleteNodeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -701,8 +697,7 @@ class TpuClient(metaclass=TpuClientMeta):
 
         Args:
             request (google.cloud.tpu_v1.types.ReimageNodeRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [ReimageNode][google.cloud.tpu.v1.Tpu.ReimageNode].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -768,8 +763,7 @@ class TpuClient(metaclass=TpuClientMeta):
 
         Args:
             request (google.cloud.tpu_v1.types.StopNodeRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [StopNode][google.cloud.tpu.v1.Tpu.StopNode].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -835,8 +829,7 @@ class TpuClient(metaclass=TpuClientMeta):
 
         Args:
             request (google.cloud.tpu_v1.types.StartNodeRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [StartNode][google.cloud.tpu.v1.Tpu.StartNode].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -903,8 +896,7 @@ class TpuClient(metaclass=TpuClientMeta):
 
         Args:
             request (google.cloud.tpu_v1.types.ListTensorFlowVersionsRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [ListTensorFlowVersions][google.cloud.tpu.v1.Tpu.ListTensorFlowVersions].
             parent (str):
                 Required. The parent resource name.
@@ -940,7 +932,7 @@ class TpuClient(metaclass=TpuClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_tpu.ListTensorFlowVersionsRequest):
             request = cloud_tpu.ListTensorFlowVersionsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -989,8 +981,7 @@ class TpuClient(metaclass=TpuClientMeta):
 
         Args:
             request (google.cloud.tpu_v1.types.GetTensorFlowVersionRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [GetTensorFlowVersion][google.cloud.tpu.v1.Tpu.GetTensorFlowVersion].
             name (str):
                 Required. The resource name.
@@ -1023,7 +1014,7 @@ class TpuClient(metaclass=TpuClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_tpu.GetTensorFlowVersionRequest):
             request = cloud_tpu.GetTensorFlowVersionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1063,8 +1054,7 @@ class TpuClient(metaclass=TpuClientMeta):
 
         Args:
             request (google.cloud.tpu_v1.types.ListAcceleratorTypesRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [ListAcceleratorTypes][google.cloud.tpu.v1.Tpu.ListAcceleratorTypes].
             parent (str):
                 Required. The parent resource name.
@@ -1100,7 +1090,7 @@ class TpuClient(metaclass=TpuClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_tpu.ListAcceleratorTypesRequest):
             request = cloud_tpu.ListAcceleratorTypesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1149,8 +1139,7 @@ class TpuClient(metaclass=TpuClientMeta):
 
         Args:
             request (google.cloud.tpu_v1.types.GetAcceleratorTypeRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [GetAcceleratorType][google.cloud.tpu.v1.Tpu.GetAcceleratorType].
             name (str):
                 Required. The resource name.
@@ -1183,7 +1172,7 @@ class TpuClient(metaclass=TpuClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_tpu.GetAcceleratorTypeRequest):
             request = cloud_tpu.GetAcceleratorTypeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

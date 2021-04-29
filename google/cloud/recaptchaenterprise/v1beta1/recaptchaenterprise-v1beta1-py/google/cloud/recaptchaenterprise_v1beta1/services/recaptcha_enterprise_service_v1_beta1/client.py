@@ -346,8 +346,7 @@ class RecaptchaEnterpriseServiceV1Beta1Client(metaclass=RecaptchaEnterpriseServi
 
         Args:
             request (google.cloud.recaptchaenterprise_v1beta1.types.CreateAssessmentRequest):
-                The request object.
-                The create assessment request
+                The request object. The create assessment request
                 message.
             parent (str):
                 Required. The name of the project in which the
@@ -386,7 +385,7 @@ class RecaptchaEnterpriseServiceV1Beta1Client(metaclass=RecaptchaEnterpriseServi
         # there are no flattened fields.
         if not isinstance(request, recaptchaenterprise.CreateAssessmentRequest):
             request = recaptchaenterprise.CreateAssessmentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -431,8 +430,7 @@ class RecaptchaEnterpriseServiceV1Beta1Client(metaclass=RecaptchaEnterpriseServi
 
         Args:
             request (google.cloud.recaptchaenterprise_v1beta1.types.AnnotateAssessmentRequest):
-                The request object.
-                The request message to annotate an
+                The request object. The request message to annotate an
                 Assessment.
             name (str):
                 Required. The resource name of the Assessment, in the
@@ -475,7 +473,7 @@ class RecaptchaEnterpriseServiceV1Beta1Client(metaclass=RecaptchaEnterpriseServi
         # there are no flattened fields.
         if not isinstance(request, recaptchaenterprise.AnnotateAssessmentRequest):
             request = recaptchaenterprise.AnnotateAssessmentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -516,8 +514,7 @@ class RecaptchaEnterpriseServiceV1Beta1Client(metaclass=RecaptchaEnterpriseServi
 
         Args:
             request (google.cloud.recaptchaenterprise_v1beta1.types.CreateKeyRequest):
-                The request object.
-                The create key request message.
+                The request object. The create key request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -574,8 +571,7 @@ class RecaptchaEnterpriseServiceV1Beta1Client(metaclass=RecaptchaEnterpriseServi
 
         Args:
             request (google.cloud.recaptchaenterprise_v1beta1.types.ListKeysRequest):
-                The request object.
-                The list keys request message.
+                The request object. The list keys request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -642,8 +638,7 @@ class RecaptchaEnterpriseServiceV1Beta1Client(metaclass=RecaptchaEnterpriseServi
 
         Args:
             request (google.cloud.recaptchaenterprise_v1beta1.types.GetKeyRequest):
-                The request object.
-                The get key request message.
+                The request object. The get key request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -699,8 +694,7 @@ class RecaptchaEnterpriseServiceV1Beta1Client(metaclass=RecaptchaEnterpriseServi
 
         Args:
             request (google.cloud.recaptchaenterprise_v1beta1.types.UpdateKeyRequest):
-                The request object.
-                The update key request message.
+                The request object. The update key request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -756,8 +750,7 @@ class RecaptchaEnterpriseServiceV1Beta1Client(metaclass=RecaptchaEnterpriseServi
 
         Args:
             request (google.cloud.recaptchaenterprise_v1beta1.types.DeleteKeyRequest):
-                The request object.
-                The delete key request message.
+                The request object. The delete key request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

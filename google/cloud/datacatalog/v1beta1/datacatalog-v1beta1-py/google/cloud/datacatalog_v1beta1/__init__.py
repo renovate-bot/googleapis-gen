@@ -31,7 +31,6 @@ from .types.datacatalog import DeleteTagTemplateFieldRequest
 from .types.datacatalog import DeleteTagTemplateRequest
 from .types.datacatalog import Entry
 from .types.datacatalog import EntryGroup
-from .types.datacatalog import EntryType
 from .types.datacatalog import GetEntryGroupRequest
 from .types.datacatalog import GetEntryRequest
 from .types.datacatalog import GetTagTemplateRequest
@@ -50,8 +49,9 @@ from .types.datacatalog import UpdateEntryRequest
 from .types.datacatalog import UpdateTagRequest
 from .types.datacatalog import UpdateTagTemplateFieldRequest
 from .types.datacatalog import UpdateTagTemplateRequest
-from .types.gcs_fileset_spec import GcsFileSpec
+from .types.datacatalog import EntryType
 from .types.gcs_fileset_spec import GcsFilesetSpec
+from .types.gcs_fileset_spec import GcsFileSpec
 from .types.policytagmanager import CreatePolicyTagRequest
 from .types.policytagmanager import CreateTaxonomyRequest
 from .types.policytagmanager import DeletePolicyTagRequest
@@ -79,9 +79,9 @@ from .types.search import SearchCatalogResult
 from .types.search import SearchResultType
 from .types.table_spec import BigQueryDateShardedSpec
 from .types.table_spec import BigQueryTableSpec
-from .types.table_spec import TableSourceType
 from .types.table_spec import TableSpec
 from .types.table_spec import ViewSpec
+from .types.table_spec import TableSourceType
 from .types.tags import FieldType
 from .types.tags import Tag
 from .types.tags import TagField
@@ -90,77 +90,77 @@ from .types.tags import TagTemplateField
 from .types.timestamps import SystemTimestamps
 
 __all__ = (
-    'BigQueryDateShardedSpec',
-    'BigQueryTableSpec',
-    'ColumnSchema',
+    'DataCatalogClient',
+    'PolicyTagManagerClient',
+    'PolicyTagManagerSerializationClient',
+    'IntegratedSystem',
     'CreateEntryGroupRequest',
     'CreateEntryRequest',
-    'CreatePolicyTagRequest',
     'CreateTagRequest',
     'CreateTagTemplateFieldRequest',
     'CreateTagTemplateRequest',
-    'CreateTaxonomyRequest',
-    'DataCatalogClient',
     'DeleteEntryGroupRequest',
     'DeleteEntryRequest',
-    'DeletePolicyTagRequest',
     'DeleteTagRequest',
     'DeleteTagTemplateFieldRequest',
     'DeleteTagTemplateRequest',
-    'DeleteTaxonomyRequest',
     'Entry',
     'EntryGroup',
-    'EntryType',
-    'ExportTaxonomiesRequest',
-    'ExportTaxonomiesResponse',
-    'FieldType',
-    'GcsFileSpec',
-    'GcsFilesetSpec',
     'GetEntryGroupRequest',
     'GetEntryRequest',
-    'GetPolicyTagRequest',
     'GetTagTemplateRequest',
-    'GetTaxonomyRequest',
-    'ImportTaxonomiesRequest',
-    'ImportTaxonomiesResponse',
-    'InlineSource',
-    'IntegratedSystem',
     'ListEntriesRequest',
     'ListEntriesResponse',
     'ListEntryGroupsRequest',
     'ListEntryGroupsResponse',
-    'ListPolicyTagsRequest',
-    'ListPolicyTagsResponse',
     'ListTagsRequest',
     'ListTagsResponse',
-    'ListTaxonomiesRequest',
-    'ListTaxonomiesResponse',
     'LookupEntryRequest',
-    'PolicyTag',
-    'PolicyTagManagerClient',
     'RenameTagTemplateFieldRequest',
-    'Schema',
     'SearchCatalogRequest',
     'SearchCatalogResponse',
-    'SearchCatalogResult',
-    'SearchResultType',
+    'UpdateEntryGroupRequest',
+    'UpdateEntryRequest',
+    'UpdateTagRequest',
+    'UpdateTagTemplateFieldRequest',
+    'UpdateTagTemplateRequest',
+    'EntryType',
+    'GcsFilesetSpec',
+    'GcsFileSpec',
+    'CreatePolicyTagRequest',
+    'CreateTaxonomyRequest',
+    'DeletePolicyTagRequest',
+    'DeleteTaxonomyRequest',
+    'GetPolicyTagRequest',
+    'GetTaxonomyRequest',
+    'ListPolicyTagsRequest',
+    'ListPolicyTagsResponse',
+    'ListTaxonomiesRequest',
+    'ListTaxonomiesResponse',
+    'PolicyTag',
+    'Taxonomy',
+    'UpdatePolicyTagRequest',
+    'UpdateTaxonomyRequest',
+    'ExportTaxonomiesRequest',
+    'ExportTaxonomiesResponse',
+    'ImportTaxonomiesRequest',
+    'ImportTaxonomiesResponse',
+    'InlineSource',
     'SerializedPolicyTag',
     'SerializedTaxonomy',
-    'SystemTimestamps',
-    'TableSourceType',
+    'ColumnSchema',
+    'Schema',
+    'SearchCatalogResult',
+    'SearchResultType',
+    'BigQueryDateShardedSpec',
+    'BigQueryTableSpec',
     'TableSpec',
+    'ViewSpec',
+    'TableSourceType',
+    'FieldType',
     'Tag',
     'TagField',
     'TagTemplate',
     'TagTemplateField',
-    'Taxonomy',
-    'UpdateEntryGroupRequest',
-    'UpdateEntryRequest',
-    'UpdatePolicyTagRequest',
-    'UpdateTagRequest',
-    'UpdateTagTemplateFieldRequest',
-    'UpdateTagTemplateRequest',
-    'UpdateTaxonomyRequest',
-    'ViewSpec',
-'PolicyTagManagerSerializationClient',
+    'SystemTimestamps',
 )

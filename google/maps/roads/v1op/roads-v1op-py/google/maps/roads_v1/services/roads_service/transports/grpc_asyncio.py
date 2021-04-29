@@ -223,9 +223,7 @@ class RoadsServiceGrpcAsyncIOTransport(RoadsServiceTransport):
     def snap_to_roads(self) -> Callable[
             [roads.SnapToRoadsRequest],
             Awaitable[roads.SnapToRoadsResponse]]:
-        r"""Return a callable for the
-        snap to roads
-          method over gRPC.
+        r"""Return a callable for the snap to roads method over gRPC.
 
         This method takes a sequence of latitude,longitude
         points and snaps them to the most likely road segments.
@@ -255,9 +253,7 @@ class RoadsServiceGrpcAsyncIOTransport(RoadsServiceTransport):
     def list_nearest_roads(self) -> Callable[
             [roads.ListNearestRoadsRequest],
             Awaitable[roads.ListNearestRoadsResponse]]:
-        r"""Return a callable for the
-        list nearest roads
-          method over gRPC.
+        r"""Return a callable for the list nearest roads method over gRPC.
 
         This method takes a list of latitude,longitude points
         and snaps them each to their nearest road. Also returns

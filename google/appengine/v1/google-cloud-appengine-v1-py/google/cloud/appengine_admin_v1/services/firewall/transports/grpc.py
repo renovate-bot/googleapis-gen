@@ -232,9 +232,7 @@ class FirewallGrpcTransport(FirewallTransport):
     def list_ingress_rules(self) -> Callable[
             [appengine.ListIngressRulesRequest],
             appengine.ListIngressRulesResponse]:
-        r"""Return a callable for the
-        list ingress rules
-          method over gRPC.
+        r"""Return a callable for the list ingress rules method over gRPC.
 
         Lists the firewall rules of an application.
 
@@ -260,9 +258,7 @@ class FirewallGrpcTransport(FirewallTransport):
     def batch_update_ingress_rules(self) -> Callable[
             [appengine.BatchUpdateIngressRulesRequest],
             appengine.BatchUpdateIngressRulesResponse]:
-        r"""Return a callable for the
-        batch update ingress rules
-          method over gRPC.
+        r"""Return a callable for the batch update ingress rules method over gRPC.
 
         Replaces the entire firewall ruleset in one bulk operation. This
         overrides and replaces the rules of an existing firewall with
@@ -294,9 +290,7 @@ class FirewallGrpcTransport(FirewallTransport):
     def create_ingress_rule(self) -> Callable[
             [appengine.CreateIngressRuleRequest],
             firewall.FirewallRule]:
-        r"""Return a callable for the
-        create ingress rule
-          method over gRPC.
+        r"""Return a callable for the create ingress rule method over gRPC.
 
         Creates a firewall rule for the application.
 
@@ -322,9 +316,7 @@ class FirewallGrpcTransport(FirewallTransport):
     def get_ingress_rule(self) -> Callable[
             [appengine.GetIngressRuleRequest],
             firewall.FirewallRule]:
-        r"""Return a callable for the
-        get ingress rule
-          method over gRPC.
+        r"""Return a callable for the get ingress rule method over gRPC.
 
         Gets the specified firewall rule.
 
@@ -350,9 +342,7 @@ class FirewallGrpcTransport(FirewallTransport):
     def update_ingress_rule(self) -> Callable[
             [appengine.UpdateIngressRuleRequest],
             firewall.FirewallRule]:
-        r"""Return a callable for the
-        update ingress rule
-          method over gRPC.
+        r"""Return a callable for the update ingress rule method over gRPC.
 
         Updates the specified firewall rule.
 
@@ -378,9 +368,7 @@ class FirewallGrpcTransport(FirewallTransport):
     def delete_ingress_rule(self) -> Callable[
             [appengine.DeleteIngressRuleRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete ingress rule
-          method over gRPC.
+        r"""Return a callable for the delete ingress rule method over gRPC.
 
         Deletes the specified firewall rule.
 

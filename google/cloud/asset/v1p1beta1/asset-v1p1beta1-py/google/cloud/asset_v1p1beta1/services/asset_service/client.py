@@ -331,8 +331,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p1beta1.types.SearchAllResourcesRequest):
-                The request object.
-                Search all resources request.
+                The request object. Search all resources request.
             scope (str):
                 Required. The relative name of an asset. The search is
                 limited to the resources within the ``scope``. The
@@ -388,7 +387,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.SearchAllResourcesRequest):
             request = asset_service.SearchAllResourcesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if scope is not None:
                 request.scope = scope
@@ -449,8 +448,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p1beta1.types.SearchAllIamPoliciesRequest):
-                The request object.
-                Search all IAM policies request.
+                The request object. Search all IAM policies request.
             scope (str):
                 Required. The relative name of an asset. The search is
                 limited to the resources within the ``scope``. The
@@ -501,7 +499,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.SearchAllIamPoliciesRequest):
             request = asset_service.SearchAllIamPoliciesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if scope is not None:
                 request.scope = scope

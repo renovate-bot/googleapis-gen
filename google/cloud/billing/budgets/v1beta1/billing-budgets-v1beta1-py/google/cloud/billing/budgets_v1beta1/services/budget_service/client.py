@@ -339,8 +339,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1beta1.types.CreateBudgetRequest):
-                The request object.
-                Request for CreateBudget
+                The request object. Request for CreateBudget
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -406,8 +405,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1beta1.types.UpdateBudgetRequest):
-                The request object.
-                Request for UpdateBudget
+                The request object. Request for UpdateBudget
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -474,8 +472,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1beta1.types.GetBudgetRequest):
-                The request object.
-                Request for GetBudget
+                The request object. Request for GetBudget
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -542,8 +539,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1beta1.types.ListBudgetsRequest):
-                The request object.
-                Request for ListBudgets
+                The request object. Request for ListBudgets
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -610,8 +606,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1beta1.types.DeleteBudgetRequest):
-                The request object.
-                Request for DeleteBudget
+                The request object. Request for DeleteBudget
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

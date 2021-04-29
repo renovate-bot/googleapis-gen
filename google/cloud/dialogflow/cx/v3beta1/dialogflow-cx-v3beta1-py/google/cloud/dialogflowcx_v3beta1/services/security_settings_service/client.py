@@ -336,8 +336,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.CreateSecuritySettingsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SecuritySettings.CreateSecuritySettings][].
             parent (str):
                 Required. The location to create an
@@ -385,7 +384,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, gcdc_security_settings.CreateSecuritySettingsRequest):
             request = gcdc_security_settings.CreateSecuritySettingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -429,8 +428,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.GetSecuritySettingsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SecuritySettingsService.GetSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.GetSecuritySettings].
             name (str):
                 Required. Resource name of the settings. Format:
@@ -469,7 +467,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, security_settings.GetSecuritySettingsRequest):
             request = security_settings.GetSecuritySettingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -511,8 +509,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.UpdateSecuritySettingsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings].
             security_settings (google.cloud.dialogflowcx_v3beta1.types.SecuritySettings):
                 Required. [SecuritySettings] object that contains values
@@ -559,7 +556,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, gcdc_security_settings.UpdateSecuritySettingsRequest):
             request = gcdc_security_settings.UpdateSecuritySettingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if security_settings is not None:
                 request.security_settings = security_settings
@@ -602,8 +599,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.ListSecuritySettingsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SecuritySettings.ListSecuritySettings][].
             parent (str):
                 Required. The location to list all security settings
@@ -642,7 +638,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, security_settings.ListSecuritySettingsRequest):
             request = security_settings.ListSecuritySettingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -692,8 +688,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.DeleteSecuritySettingsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SecuritySettings.DeleteSecuritySettings][].
             name (str):
                 Required. The name of the
@@ -724,7 +719,7 @@ class SecuritySettingsServiceClient(metaclass=SecuritySettingsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, security_settings.DeleteSecuritySettingsRequest):
             request = security_settings.DeleteSecuritySettingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

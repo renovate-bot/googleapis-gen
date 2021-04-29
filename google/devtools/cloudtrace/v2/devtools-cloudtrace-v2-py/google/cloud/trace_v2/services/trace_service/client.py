@@ -344,8 +344,7 @@ class TraceServiceClient(metaclass=TraceServiceClientMeta):
 
         Args:
             request (google.cloud.trace_v2.types.BatchWriteSpansRequest):
-                The request object.
-                The request message for the
+                The request object. The request message for the
                 `BatchWriteSpans` method.
             name (str):
                 Required. The name of the project where the spans
@@ -382,7 +381,7 @@ class TraceServiceClient(metaclass=TraceServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tracing.BatchWriteSpansRequest):
             request = tracing.BatchWriteSpansRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -420,8 +419,7 @@ class TraceServiceClient(metaclass=TraceServiceClientMeta):
 
         Args:
             request (google.cloud.trace_v2.types.Span):
-                The request object.
-                A span represents a single operation
+                The request object. A span represents a single operation
                 within a trace. Spans can be nested to form a trace
                 tree. Often, a trace contains a root span that describes
                 the end-to-end latency, and one or more subspans for its

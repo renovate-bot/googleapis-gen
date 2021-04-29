@@ -213,7 +213,7 @@ class Assignment(proto.Message):
         labels = proto.MapField(
             proto.STRING,
             proto.STRING,
-            number=1
+            number=1,
         )
 
     class OsType(proto.Message):

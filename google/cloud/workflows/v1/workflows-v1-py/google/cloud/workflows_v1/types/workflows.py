@@ -136,7 +136,7 @@ class Workflow(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=8
+        number=8,
     )
     service_account = proto.Field(
         proto.STRING,

@@ -344,8 +344,7 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.ListTagBindingsRequest):
-                The request object.
-                The request message to list all
+                The request object. The request message to list all
                 TagBindings for a parent.
             parent (str):
                 Required. The full resource name of a
@@ -384,7 +383,7 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_bindings.ListTagBindingsRequest):
             request = tag_bindings.ListTagBindingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -426,8 +425,7 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.CreateTagBindingRequest):
-                The request object.
-                The request message to create a
+                The request object. The request message to create a
                 TagBinding.
             tag_binding (google.cloud.resourcemanager_v3.types.TagBinding):
                 Required. The TagBinding to be
@@ -467,7 +465,7 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_bindings.CreateTagBindingRequest):
             request = tag_bindings.CreateTagBindingRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if tag_binding is not None:
                 request.tag_binding = tag_binding
@@ -507,8 +505,7 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.DeleteTagBindingRequest):
-                The request object.
-                The request message to delete a
+                The request object. The request message to delete a
                 TagBinding.
             name (str):
                 Required. The name of the TagBinding. This is a String
@@ -557,7 +554,7 @@ class TagBindingsClient(metaclass=TagBindingsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_bindings.DeleteTagBindingRequest):
             request = tag_bindings.DeleteTagBindingRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

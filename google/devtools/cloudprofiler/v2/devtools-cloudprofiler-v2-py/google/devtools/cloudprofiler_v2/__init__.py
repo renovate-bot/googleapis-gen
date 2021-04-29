@@ -20,15 +20,15 @@ from .types.profiler import CreateOfflineProfileRequest
 from .types.profiler import CreateProfileRequest
 from .types.profiler import Deployment
 from .types.profiler import Profile
-from .types.profiler import ProfileType
 from .types.profiler import UpdateProfileRequest
+from .types.profiler import ProfileType
 
 __all__ = (
+    'ProfilerServiceClient',
     'CreateOfflineProfileRequest',
     'CreateProfileRequest',
     'Deployment',
     'Profile',
-    'ProfileType',
     'UpdateProfileRequest',
-'ProfilerServiceClient',
+    'ProfileType',
 )

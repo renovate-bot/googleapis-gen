@@ -61,7 +61,7 @@ class LoginProfile(proto.Message):
     ssh_public_keys = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=3
+        number=3,
         message=common.SshPublicKey,
     )
 

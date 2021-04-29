@@ -164,8 +164,7 @@ class InstancesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.ListInstancesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Instances.ListInstances`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -231,8 +230,7 @@ class InstancesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.GetInstanceRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Instances.GetInstance`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -302,8 +300,7 @@ class InstancesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.DeleteInstanceRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Instances.DeleteInstance`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -388,8 +385,7 @@ class InstancesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.DebugInstanceRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Instances.DebugInstance`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

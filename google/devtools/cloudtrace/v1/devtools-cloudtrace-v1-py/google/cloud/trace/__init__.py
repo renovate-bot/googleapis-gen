@@ -14,23 +14,24 @@
 # limitations under the License.
 #
 
-from google.cloud.trace_v1.services.trace_service.async_client import TraceServiceAsyncClient
 from google.cloud.trace_v1.services.trace_service.client import TraceServiceClient
+from google.cloud.trace_v1.services.trace_service.async_client import TraceServiceAsyncClient
+
 from google.cloud.trace_v1.types.trace import GetTraceRequest
 from google.cloud.trace_v1.types.trace import ListTracesRequest
 from google.cloud.trace_v1.types.trace import ListTracesResponse
 from google.cloud.trace_v1.types.trace import PatchTracesRequest
 from google.cloud.trace_v1.types.trace import Trace
-from google.cloud.trace_v1.types.trace import TraceSpan
 from google.cloud.trace_v1.types.trace import Traces
+from google.cloud.trace_v1.types.trace import TraceSpan
 
-__all__ = ('GetTraceRequest',
+__all__ = ('TraceServiceClient',
+    'TraceServiceAsyncClient',
+    'GetTraceRequest',
     'ListTracesRequest',
     'ListTracesResponse',
     'PatchTracesRequest',
     'Trace',
-    'TraceServiceAsyncClient',
-    'TraceServiceClient',
-    'TraceSpan',
     'Traces',
+    'TraceSpan',
 )

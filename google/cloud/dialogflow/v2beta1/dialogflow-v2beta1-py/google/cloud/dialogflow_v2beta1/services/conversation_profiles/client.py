@@ -373,8 +373,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.ListConversationProfilesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [ConversationProfiles.ListConversationProfiles][google.cloud.dialogflow.v2beta1.ConversationProfiles.ListConversationProfiles].
             parent (str):
                 Required. The project to list all conversation profiles
@@ -413,7 +412,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation_profile.ListConversationProfilesRequest):
             request = conversation_profile.ListConversationProfilesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -462,8 +461,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.GetConversationProfileRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [ConversationProfiles.GetConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.GetConversationProfile].
             name (str):
                 Required. The resource name of the conversation profile.
@@ -499,7 +497,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation_profile.GetConversationProfileRequest):
             request = conversation_profile.GetConversationProfileRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -546,8 +544,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.CreateConversationProfileRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [ConversationProfiles.CreateConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.CreateConversationProfile].
             parent (str):
                 Required. The project to create a conversation profile
@@ -590,7 +587,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_conversation_profile.CreateConversationProfileRequest):
             request = gcd_conversation_profile.CreateConversationProfileRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -639,8 +636,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.UpdateConversationProfileRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [ConversationProfiles.UpdateConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.UpdateConversationProfile].
             conversation_profile (google.cloud.dialogflow_v2beta1.types.ConversationProfile):
                 Required. The conversation profile to
@@ -682,7 +678,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_conversation_profile.UpdateConversationProfileRequest):
             request = gcd_conversation_profile.UpdateConversationProfileRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if conversation_profile is not None:
                 request.conversation_profile = conversation_profile
@@ -724,8 +720,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.DeleteConversationProfileRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [ConversationProfiles.DeleteConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfiles.DeleteConversationProfile].
                 This operation fails if the conversation profile is
                 still referenced from a phone number.
@@ -757,7 +752,7 @@ class ConversationProfilesClient(metaclass=ConversationProfilesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, conversation_profile.DeleteConversationProfileRequest):
             request = conversation_profile.DeleteConversationProfileRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

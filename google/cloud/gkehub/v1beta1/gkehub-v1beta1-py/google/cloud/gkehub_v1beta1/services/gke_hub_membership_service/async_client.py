@@ -164,8 +164,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.ListMembershipsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `GkeHubMembershipService.ListMemberships` method.
             parent (:class:`str`):
                 Required. The parent (project and location) where the
@@ -253,8 +252,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.GetMembershipRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `GkeHubMembershipService.GetMembership` method.
             name (:class:`str`):
                 Required. The Membership resource name in the format
@@ -331,8 +329,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.CreateMembershipRequest`):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `GkeHubMembershipService.CreateMembership` method.
             parent (:class:`str`):
                 Required. The parent (project and location) where the
@@ -445,8 +442,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.DeleteMembershipRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `GkeHubMembershipService.DeleteMembership` method.
             name (:class:`str`):
                 Required. The Membership resource name in the format
@@ -544,8 +540,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.UpdateMembershipRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `GkeHubMembershipService.UpdateMembership` method.
             name (:class:`str`):
                 Required. The membership resource name in the format:
@@ -655,8 +650,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.GenerateConnectManifestRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `GkeHubMembershipService.GenerateConnectManifest`
                 method. .
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -715,8 +709,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.ValidateExclusivityRequest`):
-                The request object.
-                The request to validate the existing
+                The request object. The request to validate the existing
                 state of the membership CR in the cluster.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -784,8 +777,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.GenerateExclusivityManifestRequest`):
-                The request object.
-                The request to generate the
+                The request object. The request to generate the
                 manifests for exclusivity artifacts.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

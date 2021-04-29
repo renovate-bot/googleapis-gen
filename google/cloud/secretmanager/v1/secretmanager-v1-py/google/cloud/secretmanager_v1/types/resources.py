@@ -109,7 +109,7 @@ class Secret(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     topics = proto.RepeatedField(
         proto.MESSAGE,

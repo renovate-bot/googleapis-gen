@@ -337,8 +337,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.SetBreakpointRequest):
-                The request object.
-                Request to set a breakpoint
+                The request object. Request to set a breakpoint
             debuggee_id (str):
                 Required. ID of the debuggee where
                 the breakpoint is to be set.
@@ -385,7 +384,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, debugger.SetBreakpointRequest):
             request = debugger.SetBreakpointRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if debuggee_id is not None:
                 request.debuggee_id = debuggee_id
@@ -423,8 +422,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.GetBreakpointRequest):
-                The request object.
-                Request to get breakpoint
+                The request object. Request to get breakpoint
                 information.
             debuggee_id (str):
                 Required. ID of the debuggee whose
@@ -474,7 +472,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, debugger.GetBreakpointRequest):
             request = debugger.GetBreakpointRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if debuggee_id is not None:
                 request.debuggee_id = debuggee_id
@@ -512,8 +510,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.DeleteBreakpointRequest):
-                The request object.
-                Request to delete a breakpoint.
+                The request object. Request to delete a breakpoint.
             debuggee_id (str):
                 Required. ID of the debuggee whose
                 breakpoint to delete.
@@ -556,7 +553,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, debugger.DeleteBreakpointRequest):
             request = debugger.DeleteBreakpointRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if debuggee_id is not None:
                 request.debuggee_id = debuggee_id
@@ -590,8 +587,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.ListBreakpointsRequest):
-                The request object.
-                Request to list breakpoints.
+                The request object. Request to list breakpoints.
             debuggee_id (str):
                 Required. ID of the debuggee whose
                 breakpoints to list.
@@ -631,7 +627,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, debugger.ListBreakpointsRequest):
             request = debugger.ListBreakpointsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if debuggee_id is not None:
                 request.debuggee_id = debuggee_id
@@ -666,8 +662,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.ListDebuggeesRequest):
-                The request object.
-                Request to list debuggees.
+                The request object. Request to list debuggees.
             project (str):
                 Required. Project number of a Google
                 Cloud project whose debuggees to list.
@@ -707,7 +702,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, debugger.ListDebuggeesRequest):
             request = debugger.ListDebuggeesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project is not None:
                 request.project = project

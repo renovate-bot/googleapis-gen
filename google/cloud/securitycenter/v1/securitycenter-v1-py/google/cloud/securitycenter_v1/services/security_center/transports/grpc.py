@@ -251,9 +251,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def create_source(self) -> Callable[
             [securitycenter_service.CreateSourceRequest],
             gcs_source.Source]:
-        r"""Return a callable for the
-        create source
-          method over gRPC.
+        r"""Return a callable for the create source method over gRPC.
 
         Creates a source.
 
@@ -279,9 +277,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def create_finding(self) -> Callable[
             [securitycenter_service.CreateFindingRequest],
             gcs_finding.Finding]:
-        r"""Return a callable for the
-        create finding
-          method over gRPC.
+        r"""Return a callable for the create finding method over gRPC.
 
         Creates a finding. The corresponding source must
         exist for finding creation to succeed.
@@ -308,9 +304,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def create_notification_config(self) -> Callable[
             [securitycenter_service.CreateNotificationConfigRequest],
             gcs_notification_config.NotificationConfig]:
-        r"""Return a callable for the
-        create notification config
-          method over gRPC.
+        r"""Return a callable for the create notification config method over gRPC.
 
         Creates a notification config.
 
@@ -336,9 +330,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def delete_notification_config(self) -> Callable[
             [securitycenter_service.DeleteNotificationConfigRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete notification config
-          method over gRPC.
+        r"""Return a callable for the delete notification config method over gRPC.
 
         Deletes a notification config.
 
@@ -364,9 +356,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy on the specified
         Source.
@@ -393,9 +383,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def get_notification_config(self) -> Callable[
             [securitycenter_service.GetNotificationConfigRequest],
             notification_config.NotificationConfig]:
-        r"""Return a callable for the
-        get notification config
-          method over gRPC.
+        r"""Return a callable for the get notification config method over gRPC.
 
         Gets a notification config.
 
@@ -421,9 +409,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def get_organization_settings(self) -> Callable[
             [securitycenter_service.GetOrganizationSettingsRequest],
             organization_settings.OrganizationSettings]:
-        r"""Return a callable for the
-        get organization settings
-          method over gRPC.
+        r"""Return a callable for the get organization settings method over gRPC.
 
         Gets the settings for an organization.
 
@@ -449,9 +435,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def get_source(self) -> Callable[
             [securitycenter_service.GetSourceRequest],
             source.Source]:
-        r"""Return a callable for the
-        get source
-          method over gRPC.
+        r"""Return a callable for the get source method over gRPC.
 
         Gets a source.
 
@@ -477,9 +461,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def group_assets(self) -> Callable[
             [securitycenter_service.GroupAssetsRequest],
             securitycenter_service.GroupAssetsResponse]:
-        r"""Return a callable for the
-        group assets
-          method over gRPC.
+        r"""Return a callable for the group assets method over gRPC.
 
         Filters an organization's assets and  groups them by
         their specified properties.
@@ -506,9 +488,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def group_findings(self) -> Callable[
             [securitycenter_service.GroupFindingsRequest],
             securitycenter_service.GroupFindingsResponse]:
-        r"""Return a callable for the
-        group findings
-          method over gRPC.
+        r"""Return a callable for the group findings method over gRPC.
 
         Filters an organization or source's findings and groups them by
         their specified properties.
@@ -538,9 +518,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def list_assets(self) -> Callable[
             [securitycenter_service.ListAssetsRequest],
             securitycenter_service.ListAssetsResponse]:
-        r"""Return a callable for the
-        list assets
-          method over gRPC.
+        r"""Return a callable for the list assets method over gRPC.
 
         Lists an organization's assets.
 
@@ -566,9 +544,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def list_findings(self) -> Callable[
             [securitycenter_service.ListFindingsRequest],
             securitycenter_service.ListFindingsResponse]:
-        r"""Return a callable for the
-        list findings
-          method over gRPC.
+        r"""Return a callable for the list findings method over gRPC.
 
         Lists an organization or source's findings.
 
@@ -597,9 +573,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def list_notification_configs(self) -> Callable[
             [securitycenter_service.ListNotificationConfigsRequest],
             securitycenter_service.ListNotificationConfigsResponse]:
-        r"""Return a callable for the
-        list notification configs
-          method over gRPC.
+        r"""Return a callable for the list notification configs method over gRPC.
 
         Lists notification configs.
 
@@ -625,9 +599,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def list_sources(self) -> Callable[
             [securitycenter_service.ListSourcesRequest],
             securitycenter_service.ListSourcesResponse]:
-        r"""Return a callable for the
-        list sources
-          method over gRPC.
+        r"""Return a callable for the list sources method over gRPC.
 
         Lists all sources belonging to an organization.
 
@@ -653,9 +625,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def run_asset_discovery(self) -> Callable[
             [securitycenter_service.RunAssetDiscoveryRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        run asset discovery
-          method over gRPC.
+        r"""Return a callable for the run asset discovery method over gRPC.
 
         Runs asset discovery. The discovery is tracked with a
         long-running operation.
@@ -686,9 +656,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def set_finding_state(self) -> Callable[
             [securitycenter_service.SetFindingStateRequest],
             finding.Finding]:
-        r"""Return a callable for the
-        set finding state
-          method over gRPC.
+        r"""Return a callable for the set finding state method over gRPC.
 
         Updates the state of a finding.
 
@@ -714,9 +682,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on the specified
         Source.
@@ -743,9 +709,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns the permissions that a caller has on the
         specified source.
@@ -772,9 +736,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def update_finding(self) -> Callable[
             [securitycenter_service.UpdateFindingRequest],
             gcs_finding.Finding]:
-        r"""Return a callable for the
-        update finding
-          method over gRPC.
+        r"""Return a callable for the update finding method over gRPC.
 
         Creates or updates a finding. The corresponding
         source must exist for a finding creation to succeed.
@@ -801,9 +763,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def update_notification_config(self) -> Callable[
             [securitycenter_service.UpdateNotificationConfigRequest],
             gcs_notification_config.NotificationConfig]:
-        r"""Return a callable for the
-        update notification config
-          method over gRPC.
+        r"""Return a callable for the update notification config method over gRPC.
 
         Updates a notification config. The following update fields are
         allowed: description, pubsub_topic, streaming_config.filter
@@ -830,9 +790,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def update_organization_settings(self) -> Callable[
             [securitycenter_service.UpdateOrganizationSettingsRequest],
             gcs_organization_settings.OrganizationSettings]:
-        r"""Return a callable for the
-        update organization settings
-          method over gRPC.
+        r"""Return a callable for the update organization settings method over gRPC.
 
         Updates an organization's settings.
 
@@ -858,9 +816,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def update_source(self) -> Callable[
             [securitycenter_service.UpdateSourceRequest],
             gcs_source.Source]:
-        r"""Return a callable for the
-        update source
-          method over gRPC.
+        r"""Return a callable for the update source method over gRPC.
 
         Updates a source.
 
@@ -886,9 +842,7 @@ class SecurityCenterGrpcTransport(SecurityCenterTransport):
     def update_security_marks(self) -> Callable[
             [securitycenter_service.UpdateSecurityMarksRequest],
             gcs_security_marks.SecurityMarks]:
-        r"""Return a callable for the
-        update security marks
-          method over gRPC.
+        r"""Return a callable for the update security marks method over gRPC.
 
         Updates security marks.
 

@@ -111,7 +111,7 @@ class OperationMetadata(proto.Message):
     operation_status = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=9
+        number=9,
         message='OperationStatus',
     )
 
@@ -159,7 +159,7 @@ class LabelSelector(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=1
+        number=1,
     )
 
 

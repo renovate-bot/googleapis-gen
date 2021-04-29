@@ -188,8 +188,7 @@ class BigQueryReadAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_storage_v1.types.CreateReadSessionRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `CreateReadSession`.
             parent (:class:`str`):
                 Required. The request project that owns the session, in
@@ -305,8 +304,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_storage_v1.types.ReadRowsRequest`):
-                The request object.
-                Request message for `ReadRows`.
+                The request object. Request message for `ReadRows`.
             read_stream (:class:`str`):
                 Required. Stream to read rows from.
                 This corresponds to the ``read_stream`` field
@@ -407,8 +405,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_storage_v1.types.SplitReadStreamRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `SplitReadStream`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

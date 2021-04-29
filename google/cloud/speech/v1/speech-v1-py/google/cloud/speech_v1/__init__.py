@@ -35,6 +35,7 @@ from .types.cloud_speech import StreamingRecognizeResponse
 from .types.cloud_speech import WordInfo
 
 __all__ = (
+    'SpeechClient',
     'LongRunningRecognizeMetadata',
     'LongRunningRecognizeRequest',
     'LongRunningRecognizeResponse',
@@ -52,5 +53,4 @@ __all__ = (
     'StreamingRecognizeRequest',
     'StreamingRecognizeResponse',
     'WordInfo',
-'SpeechClient',
 )

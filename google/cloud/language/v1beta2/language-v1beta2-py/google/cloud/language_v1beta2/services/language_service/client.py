@@ -324,8 +324,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
 
         Args:
             request (google.cloud.language_v1beta2.types.AnalyzeSentimentRequest):
-                The request object.
-                The sentiment analysis request
+                The request object. The sentiment analysis request
                 message.
             document (google.cloud.language_v1beta2.types.Document):
                 Required. Input document.
@@ -366,7 +365,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, language_service.AnalyzeSentimentRequest):
             request = language_service.AnalyzeSentimentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if document is not None:
                 request.document = document
@@ -404,8 +403,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
 
         Args:
             request (google.cloud.language_v1beta2.types.AnalyzeEntitiesRequest):
-                The request object.
-                The entity analysis request message.
+                The request object. The entity analysis request message.
             document (google.cloud.language_v1beta2.types.Document):
                 Required. Input document.
                 This corresponds to the ``document`` field
@@ -442,7 +440,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, language_service.AnalyzeEntitiesRequest):
             request = language_service.AnalyzeEntitiesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if document is not None:
                 request.document = document
@@ -480,8 +478,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
 
         Args:
             request (google.cloud.language_v1beta2.types.AnalyzeEntitySentimentRequest):
-                The request object.
-                The entity-level sentiment analysis
+                The request object. The entity-level sentiment analysis
                 request message.
             document (google.cloud.language_v1beta2.types.Document):
                 Required. Input document.
@@ -521,7 +518,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, language_service.AnalyzeEntitySentimentRequest):
             request = language_service.AnalyzeEntitySentimentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if document is not None:
                 request.document = document
@@ -558,8 +555,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
 
         Args:
             request (google.cloud.language_v1beta2.types.AnalyzeSyntaxRequest):
-                The request object.
-                The syntax analysis request message.
+                The request object. The syntax analysis request message.
             document (google.cloud.language_v1beta2.types.Document):
                 Required. Input document.
                 This corresponds to the ``document`` field
@@ -596,7 +592,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, language_service.AnalyzeSyntaxRequest):
             request = language_service.AnalyzeSyntaxRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if document is not None:
                 request.document = document
@@ -630,8 +626,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
 
         Args:
             request (google.cloud.language_v1beta2.types.ClassifyTextRequest):
-                The request object.
-                The document classification request
+                The request object. The document classification request
                 message.
             document (google.cloud.language_v1beta2.types.Document):
                 Required. Input document.
@@ -664,7 +659,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, language_service.ClassifyTextRequest):
             request = language_service.ClassifyTextRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if document is not None:
                 request.document = document
@@ -700,8 +695,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
 
         Args:
             request (google.cloud.language_v1beta2.types.AnnotateTextRequest):
-                The request object.
-                The request message for the text
+                The request object. The request message for the text
                 annotation API, which can perform multiple analysis
                 types (sentiment, entities, and syntax) in one call.
             document (google.cloud.language_v1beta2.types.Document):
@@ -747,7 +741,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, language_service.AnnotateTextRequest):
             request = language_service.AnnotateTextRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if document is not None:
                 request.document = document

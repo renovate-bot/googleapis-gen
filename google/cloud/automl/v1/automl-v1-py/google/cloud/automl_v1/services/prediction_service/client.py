@@ -380,8 +380,7 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.PredictRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [PredictionService.Predict][google.cloud.automl.v1.PredictionService.Predict].
             name (str):
                 Required. Name of the model requested
@@ -460,7 +459,7 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, prediction_service.PredictRequest):
             request = prediction_service.PredictRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -526,8 +525,7 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.BatchPredictRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [PredictionService.BatchPredict][google.cloud.automl.v1.PredictionService.BatchPredict].
             name (str):
                 Required. Name of the model requested
@@ -670,7 +668,7 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, prediction_service.BatchPredictRequest):
             request = prediction_service.BatchPredictRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

@@ -226,9 +226,7 @@ class LanguageServiceGrpcAsyncIOTransport(LanguageServiceTransport):
     def analyze_sentiment(self) -> Callable[
             [language_service.AnalyzeSentimentRequest],
             Awaitable[language_service.AnalyzeSentimentResponse]]:
-        r"""Return a callable for the
-        analyze sentiment
-          method over gRPC.
+        r"""Return a callable for the analyze sentiment method over gRPC.
 
         Analyzes the sentiment of the provided text.
 
@@ -254,9 +252,7 @@ class LanguageServiceGrpcAsyncIOTransport(LanguageServiceTransport):
     def analyze_entities(self) -> Callable[
             [language_service.AnalyzeEntitiesRequest],
             Awaitable[language_service.AnalyzeEntitiesResponse]]:
-        r"""Return a callable for the
-        analyze entities
-          method over gRPC.
+        r"""Return a callable for the analyze entities method over gRPC.
 
         Finds named entities (currently proper names and
         common nouns) in the text along with entity types,
@@ -285,9 +281,7 @@ class LanguageServiceGrpcAsyncIOTransport(LanguageServiceTransport):
     def analyze_entity_sentiment(self) -> Callable[
             [language_service.AnalyzeEntitySentimentRequest],
             Awaitable[language_service.AnalyzeEntitySentimentResponse]]:
-        r"""Return a callable for the
-        analyze entity sentiment
-          method over gRPC.
+        r"""Return a callable for the analyze entity sentiment method over gRPC.
 
         Finds entities, similar to
         [AnalyzeEntities][google.cloud.language.v1.LanguageService.AnalyzeEntities]
@@ -316,9 +310,7 @@ class LanguageServiceGrpcAsyncIOTransport(LanguageServiceTransport):
     def analyze_syntax(self) -> Callable[
             [language_service.AnalyzeSyntaxRequest],
             Awaitable[language_service.AnalyzeSyntaxResponse]]:
-        r"""Return a callable for the
-        analyze syntax
-          method over gRPC.
+        r"""Return a callable for the analyze syntax method over gRPC.
 
         Analyzes the syntax of the text and provides sentence
         boundaries and tokenization along with part of speech
@@ -346,9 +338,7 @@ class LanguageServiceGrpcAsyncIOTransport(LanguageServiceTransport):
     def classify_text(self) -> Callable[
             [language_service.ClassifyTextRequest],
             Awaitable[language_service.ClassifyTextResponse]]:
-        r"""Return a callable for the
-        classify text
-          method over gRPC.
+        r"""Return a callable for the classify text method over gRPC.
 
         Classifies a document into categories.
 
@@ -374,9 +364,7 @@ class LanguageServiceGrpcAsyncIOTransport(LanguageServiceTransport):
     def annotate_text(self) -> Callable[
             [language_service.AnnotateTextRequest],
             Awaitable[language_service.AnnotateTextResponse]]:
-        r"""Return a callable for the
-        annotate text
-          method over gRPC.
+        r"""Return a callable for the annotate text method over gRPC.
 
         A convenience method that provides all the features
         that analyzeSentiment, analyzeEntities, and

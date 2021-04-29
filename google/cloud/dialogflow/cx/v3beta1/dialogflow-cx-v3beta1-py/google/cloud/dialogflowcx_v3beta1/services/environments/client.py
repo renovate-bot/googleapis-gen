@@ -353,8 +353,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.ListEnvironmentsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.ListEnvironments][google.cloud.dialogflow.cx.v3beta1.Environments.ListEnvironments].
             parent (str):
                 Required. The
@@ -394,7 +393,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, environment.ListEnvironmentsRequest):
             request = environment.ListEnvironmentsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -444,8 +443,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.GetEnvironmentRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.GetEnvironment][google.cloud.dialogflow.cx.v3beta1.Environments.GetEnvironment].
             name (str):
                 Required. The name of the
@@ -495,7 +493,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, environment.GetEnvironmentRequest):
             request = environment.GetEnvironmentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -538,8 +536,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.CreateEnvironmentRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.CreateEnvironment][google.cloud.dialogflow.cx.v3beta1.Environments.CreateEnvironment].
             parent (str):
                 Required. The
@@ -594,7 +591,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_environment.CreateEnvironmentRequest):
             request = gcdc_environment.CreateEnvironmentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -646,8 +643,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.UpdateEnvironmentRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.UpdateEnvironment][google.cloud.dialogflow.cx.v3beta1.Environments.UpdateEnvironment].
             environment (google.cloud.dialogflowcx_v3beta1.types.Environment):
                 Required. The environment to update.
@@ -698,7 +694,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_environment.UpdateEnvironmentRequest):
             request = gcdc_environment.UpdateEnvironmentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if environment is not None:
                 request.environment = environment
@@ -749,8 +745,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.DeleteEnvironmentRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.DeleteEnvironment][google.cloud.dialogflow.cx.v3beta1.Environments.DeleteEnvironment].
             name (str):
                 Required. The name of the
@@ -781,7 +776,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, environment.DeleteEnvironmentRequest):
             request = environment.DeleteEnvironmentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -819,8 +814,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.LookupEnvironmentHistoryRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.LookupEnvironmentHistory][google.cloud.dialogflow.cx.v3beta1.Environments.LookupEnvironmentHistory].
             name (str):
                 Required. Resource name of the environment to look up
@@ -859,7 +853,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, environment.LookupEnvironmentHistoryRequest):
             request = environment.LookupEnvironmentHistoryRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

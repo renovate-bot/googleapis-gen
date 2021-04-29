@@ -169,8 +169,7 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1beta1.types.ListSecretsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SecretManagerService.ListSecrets][google.cloud.secrets.v1beta1.SecretManagerService.ListSecrets].
             parent (:class:`str`):
                 Required. The resource name of the project associated
@@ -262,8 +261,7 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1beta1.types.CreateSecretRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SecretManagerService.CreateSecret][google.cloud.secrets.v1beta1.SecretManagerService.CreateSecret].
             parent (:class:`str`):
                 Required. The resource name of the project to associate
@@ -371,8 +369,7 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1beta1.types.AddSecretVersionRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SecretManagerService.AddSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.AddSecretVersion].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -460,8 +457,7 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1beta1.types.GetSecretRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SecretManagerService.GetSecret][google.cloud.secrets.v1beta1.SecretManagerService.GetSecret].
             name (:class:`str`):
                 Required. The resource name of the
@@ -544,8 +540,7 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1beta1.types.UpdateSecretRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SecretManagerService.UpdateSecret][google.cloud.secrets.v1beta1.SecretManagerService.UpdateSecret].
             secret (:class:`google.cloud.secretmanager_v1beta1.types.Secret`):
                 Required. [Secret][google.cloud.secrets.v1beta1.Secret]
@@ -634,8 +629,7 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1beta1.types.DeleteSecretRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SecretManagerService.DeleteSecret][google.cloud.secrets.v1beta1.SecretManagerService.DeleteSecret].
             name (:class:`str`):
                 Required. The resource name of the
@@ -704,8 +698,7 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1beta1.types.ListSecretVersionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SecretManagerService.ListSecretVersions][google.cloud.secrets.v1beta1.SecretManagerService.ListSecretVersions].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -800,8 +793,7 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1beta1.types.GetSecretVersionRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SecretManagerService.GetSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.GetSecretVersion].
             name (:class:`str`):
                 Required. The resource name of the
@@ -886,8 +878,7 @@ class SecretManagerServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.secretmanager_v1beta1.types.AccessSecretVersionRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SecretManagerService.AccessSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.AccessSecretVersion].
             name (:class:`str`):
                 Required. The resource name of the
@@ -976,8 +967,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.secretmanager_v1beta1.types.DisableSecretVersionRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SecretManagerService.DisableSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.DisableSecretVersion].
             name (:class:`str`):
                 Required. The resource name of the
@@ -1060,8 +1050,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.secretmanager_v1beta1.types.EnableSecretVersionRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SecretManagerService.EnableSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.EnableSecretVersion].
             name (:class:`str`):
                 Required. The resource name of the
@@ -1145,8 +1134,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.secretmanager_v1beta1.types.DestroySecretVersionRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SecretManagerService.DestroySecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.DestroySecretVersion].
             name (:class:`str`):
                 Required. The resource name of the
@@ -1228,8 +1216,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1342,8 +1329,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1461,8 +1447,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

@@ -178,8 +178,7 @@ class BigQueryStorageAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.storage_v1beta1.types.CreateReadSessionRequest`):
-                The request object.
-                Creates a new read session, which
+                The request object. Creates a new read session, which
                 may include additional options such as requested
                 parallelism, projection filters and constraints.
             table_reference (:class:`google.cloud.bigquery.storage_v1beta1.types.TableReference`):
@@ -299,8 +298,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.storage_v1beta1.types.ReadRowsRequest`):
-                The request object.
-                Requesting row data via `ReadRows`
+                The request object. Requesting row data via `ReadRows`
                 must provide Stream position information.
             read_position (:class:`google.cloud.bigquery.storage_v1beta1.types.StreamPosition`):
                 Required. Identifier of the position
@@ -388,8 +386,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.storage_v1beta1.types.BatchCreateReadSessionStreamsRequest`):
-                The request object.
-                Information needed to request
+                The request object. Information needed to request
                 additional streams for an established read session.
             session (:class:`google.cloud.bigquery.storage_v1beta1.types.ReadSession`):
                 Required. Must be a non-expired
@@ -501,8 +498,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.storage_v1beta1.types.FinalizeStreamRequest`):
-                The request object.
-                Request information for invoking
+                The request object. Request information for invoking
                 `FinalizeStream`.
             stream (:class:`google.cloud.bigquery.storage_v1beta1.types.Stream`):
                 Required. Stream to finalize.
@@ -586,8 +582,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.storage_v1beta1.types.SplitReadStreamRequest`):
-                The request object.
-                Request information for
+                The request object. Request information for
                 `SplitReadStream`.
             original_stream (:class:`google.cloud.bigquery.storage_v1beta1.types.Stream`):
                 Required. Stream to split.

@@ -162,8 +162,7 @@ class PolicyTagManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.CreateTaxonomyRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateTaxonomy][google.cloud.datacatalog.v1beta1.PolicyTagManager.CreateTaxonomy].
             parent (:class:`str`):
                 Required. Resource name of the
@@ -252,8 +251,7 @@ class PolicyTagManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.DeleteTaxonomyRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DeleteTaxonomy][google.cloud.datacatalog.v1beta1.PolicyTagManager.DeleteTaxonomy].
             name (:class:`str`):
                 Required. Resource name of the
@@ -320,8 +318,7 @@ class PolicyTagManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.UpdateTaxonomyRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UpdateTaxonomy][google.cloud.datacatalog.v1beta1.PolicyTagManager.UpdateTaxonomy].
             taxonomy (:class:`google.cloud.datacatalog_v1beta1.types.Taxonomy`):
                 The taxonomy to update. Only description, display_name,
@@ -401,8 +398,7 @@ class PolicyTagManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.ListTaxonomiesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ListTaxonomies][google.cloud.datacatalog.v1beta1.PolicyTagManager.ListTaxonomies].
             parent (:class:`str`):
                 Required. Resource name of the
@@ -489,8 +485,7 @@ class PolicyTagManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.GetTaxonomyRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [GetTaxonomy][google.cloud.datacatalog.v1beta1.PolicyTagManager.GetTaxonomy].
             name (:class:`str`):
                 Required. Resource name of the
@@ -570,8 +565,7 @@ class PolicyTagManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.CreatePolicyTagRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreatePolicyTag][google.cloud.datacatalog.v1beta1.PolicyTagManager.CreatePolicyTag].
             parent (:class:`str`):
                 Required. Resource name of the
@@ -661,8 +655,7 @@ class PolicyTagManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.DeletePolicyTagRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DeletePolicyTag][google.cloud.datacatalog.v1beta1.PolicyTagManager.DeletePolicyTag].
             name (:class:`str`):
                 Required. Resource name of the policy
@@ -729,8 +722,7 @@ class PolicyTagManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.UpdatePolicyTagRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UpdatePolicyTag][google.cloud.datacatalog.v1beta1.PolicyTagManager.UpdatePolicyTag].
             policy_tag (:class:`google.cloud.datacatalog_v1beta1.types.PolicyTag`):
                 The policy tag to update. Only the description,
@@ -812,8 +804,7 @@ class PolicyTagManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.ListPolicyTagsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ListPolicyTags][google.cloud.datacatalog.v1beta1.PolicyTagManager.ListPolicyTags].
             parent (:class:`str`):
                 Required. Resource name of the
@@ -900,8 +891,7 @@ class PolicyTagManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.GetPolicyTagRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [GetPolicyTag][google.cloud.datacatalog.v1beta1.PolicyTagManager.GetPolicyTag].
             name (:class:`str`):
                 Required. Resource name of the
@@ -981,8 +971,7 @@ class PolicyTagManagerAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1093,8 +1082,7 @@ class PolicyTagManagerAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1206,8 +1194,7 @@ class PolicyTagManagerAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

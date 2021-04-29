@@ -190,7 +190,7 @@ class LogMetric(proto.Message):
     label_extractors = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=7
+        number=7,
     )
     bucket_options = proto.Field(
         proto.MESSAGE,

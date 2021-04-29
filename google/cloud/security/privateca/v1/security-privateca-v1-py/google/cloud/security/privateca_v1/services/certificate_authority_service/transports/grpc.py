@@ -242,9 +242,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def create_certificate(self) -> Callable[
             [service.CreateCertificateRequest],
             resources.Certificate]:
-        r"""Return a callable for the
-        create certificate
-          method over gRPC.
+        r"""Return a callable for the create certificate method over gRPC.
 
         Create a new
         [Certificate][google.cloud.security.privateca.v1.Certificate] in
@@ -273,9 +271,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def get_certificate(self) -> Callable[
             [service.GetCertificateRequest],
             resources.Certificate]:
-        r"""Return a callable for the
-        get certificate
-          method over gRPC.
+        r"""Return a callable for the get certificate method over gRPC.
 
         Returns a
         [Certificate][google.cloud.security.privateca.v1.Certificate].
@@ -302,9 +298,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def list_certificates(self) -> Callable[
             [service.ListCertificatesRequest],
             service.ListCertificatesResponse]:
-        r"""Return a callable for the
-        list certificates
-          method over gRPC.
+        r"""Return a callable for the list certificates method over gRPC.
 
         Lists
         [Certificates][google.cloud.security.privateca.v1.Certificate].
@@ -331,9 +325,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def revoke_certificate(self) -> Callable[
             [service.RevokeCertificateRequest],
             resources.Certificate]:
-        r"""Return a callable for the
-        revoke certificate
-          method over gRPC.
+        r"""Return a callable for the revoke certificate method over gRPC.
 
         Revoke a
         [Certificate][google.cloud.security.privateca.v1.Certificate].
@@ -360,9 +352,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def update_certificate(self) -> Callable[
             [service.UpdateCertificateRequest],
             resources.Certificate]:
-        r"""Return a callable for the
-        update certificate
-          method over gRPC.
+        r"""Return a callable for the update certificate method over gRPC.
 
         Update a
         [Certificate][google.cloud.security.privateca.v1.Certificate].
@@ -392,9 +382,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def activate_certificate_authority(self) -> Callable[
             [service.ActivateCertificateAuthorityRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        activate certificate authority
-          method over gRPC.
+        r"""Return a callable for the activate certificate authority method over gRPC.
 
         Activate a
         [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
@@ -429,9 +417,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def create_certificate_authority(self) -> Callable[
             [service.CreateCertificateAuthorityRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create certificate authority
-          method over gRPC.
+        r"""Return a callable for the create certificate authority method over gRPC.
 
         Create a new
         [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
@@ -459,9 +445,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def disable_certificate_authority(self) -> Callable[
             [service.DisableCertificateAuthorityRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        disable certificate authority
-          method over gRPC.
+        r"""Return a callable for the disable certificate authority method over gRPC.
 
         Disable a
         [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
@@ -488,9 +472,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def enable_certificate_authority(self) -> Callable[
             [service.EnableCertificateAuthorityRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        enable certificate authority
-          method over gRPC.
+        r"""Return a callable for the enable certificate authority method over gRPC.
 
         Enable a
         [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
@@ -517,10 +499,8 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def fetch_certificate_authority_csr(self) -> Callable[
             [service.FetchCertificateAuthorityCsrRequest],
             service.FetchCertificateAuthorityCsrResponse]:
-        r"""Return a callable for the
-        fetch certificate authority
-        csr
-          method over gRPC.
+        r"""Return a callable for the fetch certificate authority
+        csr method over gRPC.
 
         Fetch a certificate signing request (CSR) from a
         [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
@@ -556,9 +536,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def get_certificate_authority(self) -> Callable[
             [service.GetCertificateAuthorityRequest],
             resources.CertificateAuthority]:
-        r"""Return a callable for the
-        get certificate authority
-          method over gRPC.
+        r"""Return a callable for the get certificate authority method over gRPC.
 
         Returns a
         [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
@@ -585,9 +563,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def list_certificate_authorities(self) -> Callable[
             [service.ListCertificateAuthoritiesRequest],
             service.ListCertificateAuthoritiesResponse]:
-        r"""Return a callable for the
-        list certificate authorities
-          method over gRPC.
+        r"""Return a callable for the list certificate authorities method over gRPC.
 
         Lists
         [CertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthority].
@@ -614,9 +590,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def undelete_certificate_authority(self) -> Callable[
             [service.UndeleteCertificateAuthorityRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        undelete certificate authority
-          method over gRPC.
+        r"""Return a callable for the undelete certificate authority method over gRPC.
 
         Undelete a
         [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
@@ -644,9 +618,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def delete_certificate_authority(self) -> Callable[
             [service.DeleteCertificateAuthorityRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete certificate authority
-          method over gRPC.
+        r"""Return a callable for the delete certificate authority method over gRPC.
 
         Delete a
         [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
@@ -673,9 +645,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def update_certificate_authority(self) -> Callable[
             [service.UpdateCertificateAuthorityRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update certificate authority
-          method over gRPC.
+        r"""Return a callable for the update certificate authority method over gRPC.
 
         Update a
         [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
@@ -702,9 +672,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def create_ca_pool(self) -> Callable[
             [service.CreateCaPoolRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create ca pool
-          method over gRPC.
+        r"""Return a callable for the create ca pool method over gRPC.
 
         Create a [CaPool][google.cloud.security.privateca.v1.CaPool].
 
@@ -730,9 +698,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def update_ca_pool(self) -> Callable[
             [service.UpdateCaPoolRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update ca pool
-          method over gRPC.
+        r"""Return a callable for the update ca pool method over gRPC.
 
         Update a [CaPool][google.cloud.security.privateca.v1.CaPool].
 
@@ -758,9 +724,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def get_ca_pool(self) -> Callable[
             [service.GetCaPoolRequest],
             resources.CaPool]:
-        r"""Return a callable for the
-        get ca pool
-          method over gRPC.
+        r"""Return a callable for the get ca pool method over gRPC.
 
         Returns a [CaPool][google.cloud.security.privateca.v1.CaPool].
 
@@ -786,9 +750,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def list_ca_pools(self) -> Callable[
             [service.ListCaPoolsRequest],
             service.ListCaPoolsResponse]:
-        r"""Return a callable for the
-        list ca pools
-          method over gRPC.
+        r"""Return a callable for the list ca pools method over gRPC.
 
         Lists [CaPools][google.cloud.security.privateca.v1.CaPool].
 
@@ -814,9 +776,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def delete_ca_pool(self) -> Callable[
             [service.DeleteCaPoolRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete ca pool
-          method over gRPC.
+        r"""Return a callable for the delete ca pool method over gRPC.
 
         Delete a [CaPool][google.cloud.security.privateca.v1.CaPool].
 
@@ -842,9 +802,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def fetch_ca_certs(self) -> Callable[
             [service.FetchCaCertsRequest],
             service.FetchCaCertsResponse]:
-        r"""Return a callable for the
-        fetch ca certs
-          method over gRPC.
+        r"""Return a callable for the fetch ca certs method over gRPC.
 
         FetchCaCerts returns the current trust anchor for the
         [CaPool][google.cloud.security.privateca.v1.CaPool]. This will
@@ -875,10 +833,8 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def get_certificate_revocation_list(self) -> Callable[
             [service.GetCertificateRevocationListRequest],
             resources.CertificateRevocationList]:
-        r"""Return a callable for the
-        get certificate revocation
-        list
-          method over gRPC.
+        r"""Return a callable for the get certificate revocation
+        list method over gRPC.
 
         Returns a
         [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
@@ -905,10 +861,8 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def list_certificate_revocation_lists(self) -> Callable[
             [service.ListCertificateRevocationListsRequest],
             service.ListCertificateRevocationListsResponse]:
-        r"""Return a callable for the
-        list certificate revocation
-        lists
-          method over gRPC.
+        r"""Return a callable for the list certificate revocation
+        lists method over gRPC.
 
         Lists
         [CertificateRevocationLists][google.cloud.security.privateca.v1.CertificateRevocationList].
@@ -935,10 +889,8 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def update_certificate_revocation_list(self) -> Callable[
             [service.UpdateCertificateRevocationListRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update certificate revocation
-        list
-          method over gRPC.
+        r"""Return a callable for the update certificate revocation
+        list method over gRPC.
 
         Update a
         [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList].
@@ -965,9 +917,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def create_certificate_template(self) -> Callable[
             [service.CreateCertificateTemplateRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create certificate template
-          method over gRPC.
+        r"""Return a callable for the create certificate template method over gRPC.
 
         Create a new
         [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate]
@@ -995,9 +945,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def delete_certificate_template(self) -> Callable[
             [service.DeleteCertificateTemplateRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete certificate template
-          method over gRPC.
+        r"""Return a callable for the delete certificate template method over gRPC.
 
         DeleteCertificateTemplate deletes a
         [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
@@ -1024,9 +972,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def get_certificate_template(self) -> Callable[
             [service.GetCertificateTemplateRequest],
             resources.CertificateTemplate]:
-        r"""Return a callable for the
-        get certificate template
-          method over gRPC.
+        r"""Return a callable for the get certificate template method over gRPC.
 
         Returns a
         [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].
@@ -1053,9 +999,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def list_certificate_templates(self) -> Callable[
             [service.ListCertificateTemplatesRequest],
             service.ListCertificateTemplatesResponse]:
-        r"""Return a callable for the
-        list certificate templates
-          method over gRPC.
+        r"""Return a callable for the list certificate templates method over gRPC.
 
         Lists
         [CertificateTemplates][google.cloud.security.privateca.v1.CertificateTemplate].
@@ -1082,9 +1026,7 @@ class CertificateAuthorityServiceGrpcTransport(CertificateAuthorityServiceTransp
     def update_certificate_template(self) -> Callable[
             [service.UpdateCertificateTemplateRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update certificate template
-          method over gRPC.
+        r"""Return a callable for the update certificate template method over gRPC.
 
         Update a
         [CertificateTemplate][google.cloud.security.privateca.v1.CertificateTemplate].

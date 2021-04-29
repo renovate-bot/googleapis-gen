@@ -100,7 +100,7 @@ class Policy(proto.Message):
     cluster_admission_rules = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=3
+        number=3,
         message='AdmissionRule',
     )
     default_admission_rule = proto.Field(

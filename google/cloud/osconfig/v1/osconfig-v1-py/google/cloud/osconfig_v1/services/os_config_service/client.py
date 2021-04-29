@@ -362,8 +362,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1.types.ExecutePatchJobRequest):
-                The request object.
-                A request message to initiate
+                The request object. A request message to initiate
                 patching across Compute Engine instances.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -430,8 +429,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1.types.GetPatchJobRequest):
-                The request object.
-                Request to get an active or
+                The request object. Request to get an active or
                 completed patch job.
             name (str):
                 Required. Name of the patch in the form
@@ -474,7 +472,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, patch_jobs.GetPatchJobRequest):
             request = patch_jobs.GetPatchJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -514,8 +512,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1.types.CancelPatchJobRequest):
-                The request object.
-                Message for canceling a patch job.
+                The request object. Message for canceling a patch job.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -579,8 +576,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1.types.ListPatchJobsRequest):
-                The request object.
-                A request message for listing patch
+                The request object. A request message for listing patch
                 jobs.
             parent (str):
                 Required. In the form of ``projects/*``
@@ -616,7 +612,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, patch_jobs.ListPatchJobsRequest):
             request = patch_jobs.ListPatchJobsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -665,8 +661,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1.types.ListPatchJobInstanceDetailsRequest):
-                The request object.
-                Request to list details for all
+                The request object. Request to list details for all
                 instances that are part of a patch job.
             parent (str):
                 Required. The parent for the instances are in the form
@@ -704,7 +699,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, patch_jobs.ListPatchJobInstanceDetailsRequest):
             request = patch_jobs.ListPatchJobInstanceDetailsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -755,8 +750,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1.types.CreatePatchDeploymentRequest):
-                The request object.
-                A request message for creating a
+                The request object. A request message for creating a
                 patch deployment.
             parent (str):
                 Required. The project to apply this patch deployment to
@@ -816,7 +810,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, patch_deployments.CreatePatchDeploymentRequest):
             request = patch_deployments.CreatePatchDeploymentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -860,8 +854,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1.types.GetPatchDeploymentRequest):
-                The request object.
-                A request message for retrieving a
+                The request object. A request message for retrieving a
                 patch deployment.
             name (str):
                 Required. The resource name of the patch deployment in
@@ -900,7 +893,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, patch_deployments.GetPatchDeploymentRequest):
             request = patch_deployments.GetPatchDeploymentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -940,8 +933,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1.types.ListPatchDeploymentsRequest):
-                The request object.
-                A request message for listing patch
+                The request object. A request message for listing patch
                 deployments.
             parent (str):
                 Required. The resource name of the parent in the form
@@ -979,7 +971,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, patch_deployments.ListPatchDeploymentsRequest):
             request = patch_deployments.ListPatchDeploymentsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1028,8 +1020,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1.types.DeletePatchDeploymentRequest):
-                The request object.
-                A request message for deleting a
+                The request object. A request message for deleting a
                 patch deployment.
             name (str):
                 Required. The resource name of the patch deployment in
@@ -1058,7 +1049,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, patch_deployments.DeletePatchDeploymentRequest):
             request = patch_deployments.DeletePatchDeploymentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

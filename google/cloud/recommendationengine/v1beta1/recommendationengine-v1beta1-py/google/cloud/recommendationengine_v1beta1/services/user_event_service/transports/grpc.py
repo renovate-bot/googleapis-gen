@@ -243,9 +243,7 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def write_user_event(self) -> Callable[
             [user_event_service.WriteUserEventRequest],
             gcr_user_event.UserEvent]:
-        r"""Return a callable for the
-        write user event
-          method over gRPC.
+        r"""Return a callable for the write user event method over gRPC.
 
         Writes a single user event.
 
@@ -271,9 +269,7 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def collect_user_event(self) -> Callable[
             [user_event_service.CollectUserEventRequest],
             httpbody.HttpBody]:
-        r"""Return a callable for the
-        collect user event
-          method over gRPC.
+        r"""Return a callable for the collect user event method over gRPC.
 
         Writes a single user event from the browser. This
         uses a GET request to due to browser restriction of
@@ -304,9 +300,7 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def list_user_events(self) -> Callable[
             [user_event_service.ListUserEventsRequest],
             user_event_service.ListUserEventsResponse]:
-        r"""Return a callable for the
-        list user events
-          method over gRPC.
+        r"""Return a callable for the list user events method over gRPC.
 
         Gets a list of user events within a time range, with
         potential filtering.
@@ -333,9 +327,7 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def purge_user_events(self) -> Callable[
             [user_event_service.PurgeUserEventsRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        purge user events
-          method over gRPC.
+        r"""Return a callable for the purge user events method over gRPC.
 
         Deletes permanently all user events specified by the
         filter provided. Depending on the number of events
@@ -365,9 +357,7 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def import_user_events(self) -> Callable[
             [import_.ImportUserEventsRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        import user events
-          method over gRPC.
+        r"""Return a callable for the import user events method over gRPC.
 
         Bulk import of User events. Request processing might
         be synchronous. Events that already exist are skipped.

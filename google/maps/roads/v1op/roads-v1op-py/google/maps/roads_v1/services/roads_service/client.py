@@ -325,8 +325,7 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
 
         Args:
             request (google.maps.roads_v1.types.SnapToRoadsRequest):
-                The request object.
-                A request to the SnapToRoads method,
+                The request object. A request to the SnapToRoads method,
                 requesting that a sequence of points be snapped to road
                 segments.
             path (str):
@@ -363,7 +362,7 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, roads.SnapToRoadsRequest):
             request = roads.SnapToRoadsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if path is not None:
                 request.path = path
@@ -397,8 +396,7 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
 
         Args:
             request (google.maps.roads_v1.types.ListNearestRoadsRequest):
-                The request object.
-                A request to the ListNearestRoads
+                The request object. A request to the ListNearestRoads
                 method, requesting that a sequence of points be snapped
                 individually to the road segment that each is closest
                 to.
@@ -436,7 +434,7 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, roads.ListNearestRoadsRequest):
             request = roads.ListNearestRoadsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if points is not None:
                 request.points = points

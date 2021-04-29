@@ -228,9 +228,7 @@ class SessionEntityTypesGrpcAsyncIOTransport(SessionEntityTypesTransport):
     def list_session_entity_types(self) -> Callable[
             [session_entity_type.ListSessionEntityTypesRequest],
             Awaitable[session_entity_type.ListSessionEntityTypesResponse]]:
-        r"""Return a callable for the
-        list session entity types
-          method over gRPC.
+        r"""Return a callable for the list session entity types method over gRPC.
 
         Returns the list of all session entity types in the
         specified session.
@@ -260,9 +258,7 @@ class SessionEntityTypesGrpcAsyncIOTransport(SessionEntityTypesTransport):
     def get_session_entity_type(self) -> Callable[
             [session_entity_type.GetSessionEntityTypeRequest],
             Awaitable[session_entity_type.SessionEntityType]]:
-        r"""Return a callable for the
-        get session entity type
-          method over gRPC.
+        r"""Return a callable for the get session entity type method over gRPC.
 
         Retrieves the specified session entity type.
         This method doesn't work with Google Assistant
@@ -291,9 +287,7 @@ class SessionEntityTypesGrpcAsyncIOTransport(SessionEntityTypesTransport):
     def create_session_entity_type(self) -> Callable[
             [gcd_session_entity_type.CreateSessionEntityTypeRequest],
             Awaitable[gcd_session_entity_type.SessionEntityType]]:
-        r"""Return a callable for the
-        create session entity type
-          method over gRPC.
+        r"""Return a callable for the create session entity type method over gRPC.
 
         Creates a session entity type.
         If the specified session entity type already exists,
@@ -325,9 +319,7 @@ class SessionEntityTypesGrpcAsyncIOTransport(SessionEntityTypesTransport):
     def update_session_entity_type(self) -> Callable[
             [gcd_session_entity_type.UpdateSessionEntityTypeRequest],
             Awaitable[gcd_session_entity_type.SessionEntityType]]:
-        r"""Return a callable for the
-        update session entity type
-          method over gRPC.
+        r"""Return a callable for the update session entity type method over gRPC.
 
         Updates the specified session entity type.
         This method doesn't work with Google Assistant
@@ -356,9 +348,7 @@ class SessionEntityTypesGrpcAsyncIOTransport(SessionEntityTypesTransport):
     def delete_session_entity_type(self) -> Callable[
             [session_entity_type.DeleteSessionEntityTypeRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete session entity type
-          method over gRPC.
+        r"""Return a callable for the delete session entity type method over gRPC.
 
         Deletes the specified session entity type.
         This method doesn't work with Google Assistant

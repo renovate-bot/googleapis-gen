@@ -27,7 +27,6 @@ from .types.agentendpoint import ReportTaskProgressResponse
 from .types.agentendpoint import StartNextTaskRequest
 from .types.agentendpoint import StartNextTaskResponse
 from .types.guest_policies import AptRepository
-from .types.guest_policies import DesiredState
 from .types.guest_policies import EffectiveGuestPolicy
 from .types.guest_policies import GooRepository
 from .types.guest_policies import LookupEffectiveGuestPolicyRequest
@@ -36,6 +35,7 @@ from .types.guest_policies import PackageRepository
 from .types.guest_policies import SoftwareRecipe
 from .types.guest_policies import YumRepository
 from .types.guest_policies import ZypperRepository
+from .types.guest_policies import DesiredState
 from .types.patch_jobs import AptSettings
 from .types.patch_jobs import ExecStep
 from .types.patch_jobs import ExecStepConfig
@@ -57,25 +57,7 @@ from .types.tasks import TaskDirective
 from .types.tasks import TaskType
 
 __all__ = (
-    'ApplyPatchesTask',
-    'ApplyPatchesTaskOutput',
-    'ApplyPatchesTaskProgress',
-    'AptRepository',
-    'AptSettings',
-    'DesiredState',
-    'EffectiveGuestPolicy',
-    'ExecStep',
-    'ExecStepConfig',
-    'ExecStepTask',
-    'ExecStepTaskOutput',
-    'ExecStepTaskProgress',
-    'GcsObject',
-    'GooRepository',
-    'GooSettings',
-    'LookupEffectiveGuestPolicyRequest',
-    'Package',
-    'PackageRepository',
-    'PatchConfig',
+    'AgentEndpointServiceClient',
     'ReceiveTaskNotificationRequest',
     'ReceiveTaskNotificationResponse',
     'RegisterAgentRequest',
@@ -84,17 +66,35 @@ __all__ = (
     'ReportTaskCompleteResponse',
     'ReportTaskProgressRequest',
     'ReportTaskProgressResponse',
-    'RetryStrategy',
-    'SoftwareRecipe',
     'StartNextTaskRequest',
     'StartNextTaskResponse',
+    'AptRepository',
+    'EffectiveGuestPolicy',
+    'GooRepository',
+    'LookupEffectiveGuestPolicyRequest',
+    'Package',
+    'PackageRepository',
+    'SoftwareRecipe',
+    'YumRepository',
+    'ZypperRepository',
+    'DesiredState',
+    'AptSettings',
+    'ExecStep',
+    'ExecStepConfig',
+    'GcsObject',
+    'GooSettings',
+    'PatchConfig',
+    'RetryStrategy',
+    'WindowsUpdateSettings',
+    'YumSettings',
+    'ZypperSettings',
+    'ApplyPatchesTask',
+    'ApplyPatchesTaskOutput',
+    'ApplyPatchesTaskProgress',
+    'ExecStepTask',
+    'ExecStepTaskOutput',
+    'ExecStepTaskProgress',
     'Task',
     'TaskDirective',
     'TaskType',
-    'WindowsUpdateSettings',
-    'YumRepository',
-    'YumSettings',
-    'ZypperRepository',
-    'ZypperSettings',
-'AgentEndpointServiceClient',
 )

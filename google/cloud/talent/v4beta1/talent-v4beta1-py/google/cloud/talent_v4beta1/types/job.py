@@ -463,7 +463,7 @@ class Job(proto.Message):
     custom_attributes = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=10
+        number=10,
         message=common.CustomAttribute,
     )
     degree_types = proto.RepeatedField(

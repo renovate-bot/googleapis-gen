@@ -162,7 +162,7 @@ class Service(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     network = proto.Field(
         proto.STRING,
@@ -267,7 +267,7 @@ class HiveMetastoreConfig(proto.Message):
     config_overrides = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2
+        number=2,
     )
     kerberos_config = proto.Field(
         proto.MESSAGE,

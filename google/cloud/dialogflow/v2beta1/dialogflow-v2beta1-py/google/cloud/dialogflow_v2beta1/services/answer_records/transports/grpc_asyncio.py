@@ -227,9 +227,7 @@ class AnswerRecordsGrpcAsyncIOTransport(AnswerRecordsTransport):
     def get_answer_record(self) -> Callable[
             [answer_record.GetAnswerRecordRequest],
             Awaitable[answer_record.AnswerRecord]]:
-        r"""Return a callable for the
-        get answer record
-          method over gRPC.
+        r"""Return a callable for the get answer record method over gRPC.
 
         Deprecated.
         Retrieves a specific answer record.
@@ -256,9 +254,7 @@ class AnswerRecordsGrpcAsyncIOTransport(AnswerRecordsTransport):
     def list_answer_records(self) -> Callable[
             [answer_record.ListAnswerRecordsRequest],
             Awaitable[answer_record.ListAnswerRecordsResponse]]:
-        r"""Return a callable for the
-        list answer records
-          method over gRPC.
+        r"""Return a callable for the list answer records method over gRPC.
 
         Returns the list of all answer records in the
         specified project in reverse chronological order.
@@ -285,9 +281,7 @@ class AnswerRecordsGrpcAsyncIOTransport(AnswerRecordsTransport):
     def update_answer_record(self) -> Callable[
             [gcd_answer_record.UpdateAnswerRecordRequest],
             Awaitable[gcd_answer_record.AnswerRecord]]:
-        r"""Return a callable for the
-        update answer record
-          method over gRPC.
+        r"""Return a callable for the update answer record method over gRPC.
 
         Updates the specified answer record.
 

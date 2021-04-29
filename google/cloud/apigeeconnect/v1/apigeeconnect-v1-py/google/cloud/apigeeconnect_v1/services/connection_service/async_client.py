@@ -158,8 +158,7 @@ class ConnectionServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.apigeeconnect_v1.types.ListConnectionsRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ListConnections][Management.ListConnections].
             parent (:class:`str`):
                 Required. Parent name of the form:

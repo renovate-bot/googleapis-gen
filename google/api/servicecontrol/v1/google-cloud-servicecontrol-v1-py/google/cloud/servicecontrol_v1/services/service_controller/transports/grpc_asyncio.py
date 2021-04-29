@@ -229,9 +229,7 @@ class ServiceControllerGrpcAsyncIOTransport(ServiceControllerTransport):
     def check(self) -> Callable[
             [service_controller.CheckRequest],
             Awaitable[service_controller.CheckResponse]]:
-        r"""Return a callable for the
-        check
-          method over gRPC.
+        r"""Return a callable for the check method over gRPC.
 
         Checks whether an operation on a service should be allowed to
         proceed based on the configuration of the service and related
@@ -275,9 +273,7 @@ class ServiceControllerGrpcAsyncIOTransport(ServiceControllerTransport):
     def report(self) -> Callable[
             [service_controller.ReportRequest],
             Awaitable[service_controller.ReportResponse]]:
-        r"""Return a callable for the
-        report
-          method over gRPC.
+        r"""Return a callable for the report method over gRPC.
 
         Reports operation results to Google Service Control, such as
         logs and metrics. It should be called after an operation is

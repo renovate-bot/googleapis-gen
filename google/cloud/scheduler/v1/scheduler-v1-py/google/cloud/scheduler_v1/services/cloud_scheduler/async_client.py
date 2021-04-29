@@ -166,8 +166,7 @@ class CloudSchedulerAsyncClient:
 
         Args:
             request (:class:`google.cloud.scheduler_v1.types.ListJobsRequest`):
-                The request object.
-                Request message for listing jobs
+                The request object. Request message for listing jobs
                 using
                 [ListJobs][google.cloud.scheduler.v1.CloudScheduler.ListJobs].
             parent (:class:`str`):
@@ -262,8 +261,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.scheduler_v1.types.GetJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [GetJob][google.cloud.scheduler.v1.CloudScheduler.GetJob].
             name (:class:`str`):
                 Required. The job name. For example:
@@ -347,8 +345,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.scheduler_v1.types.CreateJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateJob][google.cloud.scheduler.v1.CloudScheduler.CreateJob].
             parent (:class:`str`):
                 Required. The location name. For example:
@@ -451,8 +448,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.scheduler_v1.types.UpdateJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UpdateJob][google.cloud.scheduler.v1.CloudScheduler.UpdateJob].
             job (:class:`google.cloud.scheduler_v1.types.Job`):
                 Required. The new job properties.
@@ -542,8 +538,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.scheduler_v1.types.DeleteJobRequest`):
-                The request object.
-                Request message for deleting a job
+                The request object. Request message for deleting a job
                 using
                 [DeleteJob][google.cloud.scheduler.v1.CloudScheduler.DeleteJob].
             name (:class:`str`):
@@ -628,8 +623,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.scheduler_v1.types.PauseJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [PauseJob][google.cloud.scheduler.v1.CloudScheduler.PauseJob].
             name (:class:`str`):
                 Required. The job name. For example:
@@ -715,8 +709,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.scheduler_v1.types.ResumeJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ResumeJob][google.cloud.scheduler.v1.CloudScheduler.ResumeJob].
             name (:class:`str`):
                 Required. The job name. For example:
@@ -794,8 +787,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.scheduler_v1.types.RunJobRequest`):
-                The request object.
-                Request message for forcing a job to
+                The request object. Request message for forcing a job to
                 run now using
                 [RunJob][google.cloud.scheduler.v1.CloudScheduler.RunJob].
             name (:class:`str`):

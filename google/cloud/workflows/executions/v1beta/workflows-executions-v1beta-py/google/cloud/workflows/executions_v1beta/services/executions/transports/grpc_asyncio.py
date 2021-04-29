@@ -227,9 +227,7 @@ class ExecutionsGrpcAsyncIOTransport(ExecutionsTransport):
     def list_executions(self) -> Callable[
             [executions.ListExecutionsRequest],
             Awaitable[executions.ListExecutionsResponse]]:
-        r"""Return a callable for the
-        list executions
-          method over gRPC.
+        r"""Return a callable for the list executions method over gRPC.
 
         Returns a list of executions which belong to the
         workflow with the given name. The method returns
@@ -259,9 +257,7 @@ class ExecutionsGrpcAsyncIOTransport(ExecutionsTransport):
     def create_execution(self) -> Callable[
             [executions.CreateExecutionRequest],
             Awaitable[executions.Execution]]:
-        r"""Return a callable for the
-        create execution
-          method over gRPC.
+        r"""Return a callable for the create execution method over gRPC.
 
         Creates a new execution using the latest revision of
         the given workflow.
@@ -288,9 +284,7 @@ class ExecutionsGrpcAsyncIOTransport(ExecutionsTransport):
     def get_execution(self) -> Callable[
             [executions.GetExecutionRequest],
             Awaitable[executions.Execution]]:
-        r"""Return a callable for the
-        get execution
-          method over gRPC.
+        r"""Return a callable for the get execution method over gRPC.
 
         Returns an execution of the given name.
 
@@ -316,9 +310,7 @@ class ExecutionsGrpcAsyncIOTransport(ExecutionsTransport):
     def cancel_execution(self) -> Callable[
             [executions.CancelExecutionRequest],
             Awaitable[executions.Execution]]:
-        r"""Return a callable for the
-        cancel execution
-          method over gRPC.
+        r"""Return a callable for the cancel execution method over gRPC.
 
         Cancels an execution of the given name.
 

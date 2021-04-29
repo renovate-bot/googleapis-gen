@@ -21,16 +21,16 @@ from .types.trace import ListTracesRequest
 from .types.trace import ListTracesResponse
 from .types.trace import PatchTracesRequest
 from .types.trace import Trace
-from .types.trace import TraceSpan
 from .types.trace import Traces
+from .types.trace import TraceSpan
 
 __all__ = (
+    'TraceServiceClient',
     'GetTraceRequest',
     'ListTracesRequest',
     'ListTracesResponse',
     'PatchTracesRequest',
     'Trace',
-    'TraceSpan',
     'Traces',
-'TraceServiceClient',
+    'TraceSpan',
 )

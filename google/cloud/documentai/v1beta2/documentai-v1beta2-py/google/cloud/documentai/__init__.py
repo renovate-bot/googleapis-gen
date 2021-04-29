@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.documentai_v1beta2.services.document_understanding_service.async_client import DocumentUnderstandingServiceAsyncClient
 from google.cloud.documentai_v1beta2.services.document_understanding_service.client import DocumentUnderstandingServiceClient
+from google.cloud.documentai_v1beta2.services.document_understanding_service.async_client import DocumentUnderstandingServiceAsyncClient
+
 from google.cloud.documentai_v1beta2.types.document import Document
 from google.cloud.documentai_v1beta2.types.document_understanding import AutoMlParams
 from google.cloud.documentai_v1beta2.types.document_understanding import BatchProcessDocumentsRequest
@@ -37,20 +38,18 @@ from google.cloud.documentai_v1beta2.types.geometry import BoundingPoly
 from google.cloud.documentai_v1beta2.types.geometry import NormalizedVertex
 from google.cloud.documentai_v1beta2.types.geometry import Vertex
 
-__all__ = ('AutoMlParams',
+__all__ = ('DocumentUnderstandingServiceClient',
+    'DocumentUnderstandingServiceAsyncClient',
+    'Document',
+    'AutoMlParams',
     'BatchProcessDocumentsRequest',
     'BatchProcessDocumentsResponse',
-    'BoundingPoly',
-    'Document',
-    'DocumentUnderstandingServiceAsyncClient',
-    'DocumentUnderstandingServiceClient',
     'EntityExtractionParams',
     'FormExtractionParams',
     'GcsDestination',
     'GcsSource',
     'InputConfig',
     'KeyValuePairHint',
-    'NormalizedVertex',
     'OcrParams',
     'OperationMetadata',
     'OutputConfig',
@@ -58,5 +57,7 @@ __all__ = ('AutoMlParams',
     'ProcessDocumentResponse',
     'TableBoundHint',
     'TableExtractionParams',
+    'BoundingPoly',
+    'NormalizedVertex',
     'Vertex',
 )

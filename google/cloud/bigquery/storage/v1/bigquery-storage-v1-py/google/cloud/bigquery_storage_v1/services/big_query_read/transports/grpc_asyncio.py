@@ -227,9 +227,7 @@ class BigQueryReadGrpcAsyncIOTransport(BigQueryReadTransport):
     def create_read_session(self) -> Callable[
             [storage.CreateReadSessionRequest],
             Awaitable[stream.ReadSession]]:
-        r"""Return a callable for the
-        create read session
-          method over gRPC.
+        r"""Return a callable for the create read session method over gRPC.
 
         Creates a new read session. A read session divides
         the contents of a BigQuery table into one or more
@@ -277,9 +275,7 @@ class BigQueryReadGrpcAsyncIOTransport(BigQueryReadTransport):
     def read_rows(self) -> Callable[
             [storage.ReadRowsRequest],
             Awaitable[storage.ReadRowsResponse]]:
-        r"""Return a callable for the
-        read rows
-          method over gRPC.
+        r"""Return a callable for the read rows method over gRPC.
 
         Reads rows from the stream in the format prescribed
         by the ReadSession. Each response contains one or more
@@ -312,9 +308,7 @@ class BigQueryReadGrpcAsyncIOTransport(BigQueryReadTransport):
     def split_read_stream(self) -> Callable[
             [storage.SplitReadStreamRequest],
             Awaitable[storage.SplitReadStreamResponse]]:
-        r"""Return a callable for the
-        split read stream
-          method over gRPC.
+        r"""Return a callable for the split read stream method over gRPC.
 
         Splits a given ``ReadStream`` into two ``ReadStream`` objects.
         These ``ReadStream`` objects are referred to as the primary and

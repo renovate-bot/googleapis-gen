@@ -345,8 +345,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1.types.CreateScanConfigRequest):
-                The request object.
-                Request for the `CreateScanConfig`
+                The request object. Request for the `CreateScanConfig`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -403,8 +402,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1.types.DeleteScanConfigRequest):
-                The request object.
-                Request for the `DeleteScanConfig`
+                The request object. Request for the `DeleteScanConfig`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -451,8 +449,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1.types.GetScanConfigRequest):
-                The request object.
-                Request for the `GetScanConfig`
+                The request object. Request for the `GetScanConfig`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -508,8 +505,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1.types.ListScanConfigsRequest):
-                The request object.
-                Request for the `ListScanConfigs`
+                The request object. Request for the `ListScanConfigs`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -577,8 +573,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1.types.UpdateScanConfigRequest):
-                The request object.
-                Request for the
+                The request object. Request for the
                 `UpdateScanConfigRequest` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -634,8 +629,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1.types.StartScanRunRequest):
-                The request object.
-                Request for the `StartScanRun`
+                The request object. Request for the `StartScanRun`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -692,8 +686,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1.types.GetScanRunRequest):
-                The request object.
-                Request for the `GetScanRun` method.
+                The request object. Request for the `GetScanRun` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -750,8 +743,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1.types.ListScanRunsRequest):
-                The request object.
-                Request for the `ListScanRuns`
+                The request object. Request for the `ListScanRuns`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -818,8 +810,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1.types.StopScanRunRequest):
-                The request object.
-                Request for the `StopScanRun`
+                The request object. Request for the `StopScanRun`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -876,8 +867,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1.types.ListCrawledUrlsRequest):
-                The request object.
-                Request for the `ListCrawledUrls`
+                The request object. Request for the `ListCrawledUrls`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -944,8 +934,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1.types.GetFindingRequest):
-                The request object.
-                Request for the `GetFinding` method.
+                The request object. Request for the `GetFinding` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1001,8 +990,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1.types.ListFindingsRequest):
-                The request object.
-                Request for the `ListFindings`
+                The request object. Request for the `ListFindings`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1069,8 +1057,7 @@ class WebSecurityScannerClient(metaclass=WebSecurityScannerClientMeta):
 
         Args:
             request (google.cloud.websecurityscanner_v1.types.ListFindingTypeStatsRequest):
-                The request object.
-                Request for the
+                The request object. Request for the
                 `ListFindingTypeStats` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

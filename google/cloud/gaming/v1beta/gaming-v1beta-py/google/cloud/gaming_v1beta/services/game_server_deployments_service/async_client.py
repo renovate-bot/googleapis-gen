@@ -166,8 +166,7 @@ class GameServerDeploymentsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.ListGameServerDeploymentsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.ListGameServerDeployments.
             parent (:class:`str`):
                 Required. The parent resource name. Uses the form:
@@ -260,8 +259,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.GetGameServerDeploymentRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.GetGameServerDeployment.
             name (:class:`str`):
                 Required. The name of the game server delpoyment to
@@ -344,8 +342,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.CreateGameServerDeploymentRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.CreateGameServerDeployment.
             parent (:class:`str`):
                 Required. The parent resource name. Uses the form:
@@ -440,8 +437,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.DeleteGameServerDeploymentRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.DeleteGameServerDeployment.
             name (:class:`str`):
                 Required. The name of the game server delpoyment to
@@ -540,8 +536,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.UpdateGameServerDeploymentRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.UpdateGameServerDeployment.
                 Only allows updates for labels.
             game_server_deployment (:class:`google.cloud.gaming_v1beta.types.GameServerDeployment`):
@@ -641,8 +636,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.GetGameServerDeploymentRolloutRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.GetGameServerDeploymentRollout.
             name (:class:`str`):
                 Required. The name of the game server delpoyment to
@@ -733,8 +727,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.UpdateGameServerDeploymentRolloutRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.UpdateGameServerRolloutDeployment.
             rollout (:class:`google.cloud.gaming_v1beta.types.GameServerDeploymentRollout`):
                 Required. The game server delpoyment rollout to be
@@ -834,8 +827,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.PreviewGameServerDeploymentRolloutRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 PreviewGameServerDeploymentRollout.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -901,8 +893,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.FetchDeploymentStateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.FetchDeploymentState.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

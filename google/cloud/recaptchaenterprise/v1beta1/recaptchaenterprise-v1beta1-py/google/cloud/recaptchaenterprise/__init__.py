@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.recaptchaenterprise_v1beta1.services.recaptcha_enterprise_service_v1_beta1.async_client import RecaptchaEnterpriseServiceV1Beta1AsyncClient
 from google.cloud.recaptchaenterprise_v1beta1.services.recaptcha_enterprise_service_v1_beta1.client import RecaptchaEnterpriseServiceV1Beta1Client
+from google.cloud.recaptchaenterprise_v1beta1.services.recaptcha_enterprise_service_v1_beta1.async_client import RecaptchaEnterpriseServiceV1Beta1AsyncClient
+
 from google.cloud.recaptchaenterprise_v1beta1.types.recaptchaenterprise import AndroidKeySettings
 from google.cloud.recaptchaenterprise_v1beta1.types.recaptchaenterprise import AnnotateAssessmentRequest
 from google.cloud.recaptchaenterprise_v1beta1.types.recaptchaenterprise import AnnotateAssessmentResponse
@@ -33,7 +34,9 @@ from google.cloud.recaptchaenterprise_v1beta1.types.recaptchaenterprise import T
 from google.cloud.recaptchaenterprise_v1beta1.types.recaptchaenterprise import UpdateKeyRequest
 from google.cloud.recaptchaenterprise_v1beta1.types.recaptchaenterprise import WebKeySettings
 
-__all__ = ('AndroidKeySettings',
+__all__ = ('RecaptchaEnterpriseServiceV1Beta1Client',
+    'RecaptchaEnterpriseServiceV1Beta1AsyncClient',
+    'AndroidKeySettings',
     'AnnotateAssessmentRequest',
     'AnnotateAssessmentResponse',
     'Assessment',
@@ -46,8 +49,6 @@ __all__ = ('AndroidKeySettings',
     'Key',
     'ListKeysRequest',
     'ListKeysResponse',
-    'RecaptchaEnterpriseServiceV1Beta1AsyncClient',
-    'RecaptchaEnterpriseServiceV1Beta1Client',
     'TokenProperties',
     'UpdateKeyRequest',
     'WebKeySettings',

@@ -247,9 +247,7 @@ class EntityTypesGrpcAsyncIOTransport(EntityTypesTransport):
     def list_entity_types(self) -> Callable[
             [entity_type.ListEntityTypesRequest],
             Awaitable[entity_type.ListEntityTypesResponse]]:
-        r"""Return a callable for the
-        list entity types
-          method over gRPC.
+        r"""Return a callable for the list entity types method over gRPC.
 
         Returns the list of all entity types in the specified
         agent.
@@ -276,9 +274,7 @@ class EntityTypesGrpcAsyncIOTransport(EntityTypesTransport):
     def get_entity_type(self) -> Callable[
             [entity_type.GetEntityTypeRequest],
             Awaitable[entity_type.EntityType]]:
-        r"""Return a callable for the
-        get entity type
-          method over gRPC.
+        r"""Return a callable for the get entity type method over gRPC.
 
         Retrieves the specified entity type.
 
@@ -304,9 +300,7 @@ class EntityTypesGrpcAsyncIOTransport(EntityTypesTransport):
     def create_entity_type(self) -> Callable[
             [gcd_entity_type.CreateEntityTypeRequest],
             Awaitable[gcd_entity_type.EntityType]]:
-        r"""Return a callable for the
-        create entity type
-          method over gRPC.
+        r"""Return a callable for the create entity type method over gRPC.
 
         Creates an entity type in the specified agent.
 
@@ -332,9 +326,7 @@ class EntityTypesGrpcAsyncIOTransport(EntityTypesTransport):
     def update_entity_type(self) -> Callable[
             [gcd_entity_type.UpdateEntityTypeRequest],
             Awaitable[gcd_entity_type.EntityType]]:
-        r"""Return a callable for the
-        update entity type
-          method over gRPC.
+        r"""Return a callable for the update entity type method over gRPC.
 
         Updates the specified entity type.
 
@@ -360,9 +352,7 @@ class EntityTypesGrpcAsyncIOTransport(EntityTypesTransport):
     def delete_entity_type(self) -> Callable[
             [entity_type.DeleteEntityTypeRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete entity type
-          method over gRPC.
+        r"""Return a callable for the delete entity type method over gRPC.
 
         Deletes the specified entity type.
 
@@ -388,9 +378,7 @@ class EntityTypesGrpcAsyncIOTransport(EntityTypesTransport):
     def batch_update_entity_types(self) -> Callable[
             [entity_type.BatchUpdateEntityTypesRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        batch update entity types
-          method over gRPC.
+        r"""Return a callable for the batch update entity types method over gRPC.
 
         Updates/Creates multiple entity types in the specified agent.
         Operation <response:
@@ -418,9 +406,7 @@ class EntityTypesGrpcAsyncIOTransport(EntityTypesTransport):
     def batch_delete_entity_types(self) -> Callable[
             [entity_type.BatchDeleteEntityTypesRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        batch delete entity types
-          method over gRPC.
+        r"""Return a callable for the batch delete entity types method over gRPC.
 
         Deletes entity types in the specified agent. Operation
         <response: [google.protobuf.Empty][google.protobuf.Empty]>
@@ -447,9 +433,7 @@ class EntityTypesGrpcAsyncIOTransport(EntityTypesTransport):
     def batch_create_entities(self) -> Callable[
             [entity_type.BatchCreateEntitiesRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        batch create entities
-          method over gRPC.
+        r"""Return a callable for the batch create entities method over gRPC.
 
         Creates multiple new entities in the specified entity type.
 
@@ -478,9 +462,7 @@ class EntityTypesGrpcAsyncIOTransport(EntityTypesTransport):
     def batch_update_entities(self) -> Callable[
             [entity_type.BatchUpdateEntitiesRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        batch update entities
-          method over gRPC.
+        r"""Return a callable for the batch update entities method over gRPC.
 
         Updates or creates multiple entities in the specified entity
         type. This method does not affect entities in the entity type
@@ -511,9 +493,7 @@ class EntityTypesGrpcAsyncIOTransport(EntityTypesTransport):
     def batch_delete_entities(self) -> Callable[
             [entity_type.BatchDeleteEntitiesRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        batch delete entities
-          method over gRPC.
+        r"""Return a callable for the batch delete entities method over gRPC.
 
         Deletes entities in the specified entity type.
 

@@ -247,9 +247,7 @@ class DocumentUnderstandingServiceGrpcAsyncIOTransport(DocumentUnderstandingServ
     def batch_process_documents(self) -> Callable[
             [document_understanding.BatchProcessDocumentsRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        batch process documents
-          method over gRPC.
+        r"""Return a callable for the batch process documents method over gRPC.
 
         LRO endpoint to batch process many documents. The output is
         written to Cloud Storage as JSON in the [Document] format.
@@ -276,9 +274,7 @@ class DocumentUnderstandingServiceGrpcAsyncIOTransport(DocumentUnderstandingServ
     def process_document(self) -> Callable[
             [document_understanding.ProcessDocumentRequest],
             Awaitable[document.Document]]:
-        r"""Return a callable for the
-        process document
-          method over gRPC.
+        r"""Return a callable for the process document method over gRPC.
 
         Processes a single document.
 

@@ -351,8 +351,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.CreateCompanyRequest):
-                The request object.
-                The Request of the CreateCompany
+                The request object. The Request of the CreateCompany
                 method.
             parent (str):
                 Required. Resource name of the tenant under which the
@@ -400,7 +399,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, company_service.CreateCompanyRequest):
             request = company_service.CreateCompanyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -442,8 +441,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.GetCompanyRequest):
-                The request object.
-                Request for getting a company by
+                The request object. Request for getting a company by
                 name.
             name (str):
                 Required. The resource name of the company to be
@@ -487,7 +485,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, company_service.GetCompanyRequest):
             request = company_service.GetCompanyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -528,8 +526,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.UpdateCompanyRequest):
-                The request object.
-                Request for updating a specified
+                The request object. Request for updating a specified
                 company.
             company (google.cloud.talent_v4.types.Company):
                 Required. The company resource to
@@ -585,7 +582,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, company_service.UpdateCompanyRequest):
             request = company_service.UpdateCompanyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if company is not None:
                 request.company = company
@@ -629,8 +626,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.DeleteCompanyRequest):
-                The request object.
-                Request to delete a company.
+                The request object. Request to delete a company.
             name (str):
                 Required. The resource name of the company to be
                 deleted.
@@ -662,7 +658,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, company_service.DeleteCompanyRequest):
             request = company_service.DeleteCompanyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -699,8 +695,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4.types.ListCompaniesRequest):
-                The request object.
-                List companies for which the client
+                The request object. List companies for which the client
                 has ACL visibility.
             parent (str):
                 Required. Resource name of the tenant under which the
@@ -741,7 +736,7 @@ class CompanyServiceClient(metaclass=CompanyServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, company_service.ListCompaniesRequest):
             request = company_service.ListCompaniesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

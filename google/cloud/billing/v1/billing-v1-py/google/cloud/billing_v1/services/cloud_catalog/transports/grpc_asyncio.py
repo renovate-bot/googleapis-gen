@@ -227,9 +227,7 @@ class CloudCatalogGrpcAsyncIOTransport(CloudCatalogTransport):
     def list_services(self) -> Callable[
             [cloud_catalog.ListServicesRequest],
             Awaitable[cloud_catalog.ListServicesResponse]]:
-        r"""Return a callable for the
-        list services
-          method over gRPC.
+        r"""Return a callable for the list services method over gRPC.
 
         Lists all public cloud services.
 
@@ -255,9 +253,7 @@ class CloudCatalogGrpcAsyncIOTransport(CloudCatalogTransport):
     def list_skus(self) -> Callable[
             [cloud_catalog.ListSkusRequest],
             Awaitable[cloud_catalog.ListSkusResponse]]:
-        r"""Return a callable for the
-        list skus
-          method over gRPC.
+        r"""Return a callable for the list skus method over gRPC.
 
         Lists all publicly available SKUs for a given cloud
         service.

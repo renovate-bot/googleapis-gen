@@ -88,7 +88,7 @@ class Repository(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     create_time = proto.Field(
         proto.MESSAGE,

@@ -255,7 +255,7 @@ class ProductCatalogItem(proto.Message):
     costs = proto.MapField(
         proto.STRING,
         proto.FLOAT,
-        number=3
+        number=3,
     )
     currency_code = proto.Field(
         proto.STRING,

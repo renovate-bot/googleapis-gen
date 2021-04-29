@@ -14,10 +14,11 @@
 # limitations under the License.
 #
 
-from google.cloud.servicecontrol_v1.services.quota_controller.async_client import QuotaControllerAsyncClient
 from google.cloud.servicecontrol_v1.services.quota_controller.client import QuotaControllerClient
-from google.cloud.servicecontrol_v1.services.service_controller.async_client import ServiceControllerAsyncClient
+from google.cloud.servicecontrol_v1.services.quota_controller.async_client import QuotaControllerAsyncClient
 from google.cloud.servicecontrol_v1.services.service_controller.client import ServiceControllerClient
+from google.cloud.servicecontrol_v1.services.service_controller.async_client import ServiceControllerAsyncClient
+
 from google.cloud.servicecontrol_v1.types.check_error import CheckError
 from google.cloud.servicecontrol_v1.types.distribution import Distribution
 from google.cloud.servicecontrol_v1.types.http_request import HttpRequest
@@ -36,11 +37,11 @@ from google.cloud.servicecontrol_v1.types.service_controller import CheckRespons
 from google.cloud.servicecontrol_v1.types.service_controller import ReportRequest
 from google.cloud.servicecontrol_v1.types.service_controller import ReportResponse
 
-__all__ = ('AllocateQuotaRequest',
-    'AllocateQuotaResponse',
+__all__ = ('QuotaControllerClient',
+    'QuotaControllerAsyncClient',
+    'ServiceControllerClient',
+    'ServiceControllerAsyncClient',
     'CheckError',
-    'CheckRequest',
-    'CheckResponse',
     'Distribution',
     'HttpRequest',
     'LogEntry',
@@ -49,12 +50,12 @@ __all__ = ('AllocateQuotaRequest',
     'MetricValue',
     'MetricValueSet',
     'Operation',
-    'QuotaControllerAsyncClient',
-    'QuotaControllerClient',
+    'AllocateQuotaRequest',
+    'AllocateQuotaResponse',
     'QuotaError',
     'QuotaOperation',
+    'CheckRequest',
+    'CheckResponse',
     'ReportRequest',
     'ReportResponse',
-    'ServiceControllerAsyncClient',
-    'ServiceControllerClient',
 )

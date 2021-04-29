@@ -222,9 +222,7 @@ class ContextsGrpcTransport(ContextsTransport):
     def list_contexts(self) -> Callable[
             [context.ListContextsRequest],
             context.ListContextsResponse]:
-        r"""Return a callable for the
-        list contexts
-          method over gRPC.
+        r"""Return a callable for the list contexts method over gRPC.
 
         Returns the list of all contexts in the specified
         session.
@@ -251,9 +249,7 @@ class ContextsGrpcTransport(ContextsTransport):
     def get_context(self) -> Callable[
             [context.GetContextRequest],
             context.Context]:
-        r"""Return a callable for the
-        get context
-          method over gRPC.
+        r"""Return a callable for the get context method over gRPC.
 
         Retrieves the specified context.
 
@@ -279,9 +275,7 @@ class ContextsGrpcTransport(ContextsTransport):
     def create_context(self) -> Callable[
             [gcd_context.CreateContextRequest],
             gcd_context.Context]:
-        r"""Return a callable for the
-        create context
-          method over gRPC.
+        r"""Return a callable for the create context method over gRPC.
 
         Creates a context.
         If the specified context already exists, overrides the
@@ -309,9 +303,7 @@ class ContextsGrpcTransport(ContextsTransport):
     def update_context(self) -> Callable[
             [gcd_context.UpdateContextRequest],
             gcd_context.Context]:
-        r"""Return a callable for the
-        update context
-          method over gRPC.
+        r"""Return a callable for the update context method over gRPC.
 
         Updates the specified context.
 
@@ -337,9 +329,7 @@ class ContextsGrpcTransport(ContextsTransport):
     def delete_context(self) -> Callable[
             [context.DeleteContextRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete context
-          method over gRPC.
+        r"""Return a callable for the delete context method over gRPC.
 
         Deletes the specified context.
 
@@ -365,9 +355,7 @@ class ContextsGrpcTransport(ContextsTransport):
     def delete_all_contexts(self) -> Callable[
             [context.DeleteAllContextsRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete all contexts
-          method over gRPC.
+        r"""Return a callable for the delete all contexts method over gRPC.
 
         Deletes all active contexts in the specified session.
 

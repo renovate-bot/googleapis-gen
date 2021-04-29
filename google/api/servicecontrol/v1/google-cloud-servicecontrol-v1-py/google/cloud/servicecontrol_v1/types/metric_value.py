@@ -61,7 +61,7 @@ class MetricValue(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=1
+        number=1,
     )
     start_time = proto.Field(
         proto.MESSAGE,

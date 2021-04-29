@@ -164,8 +164,7 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.CreatePhraseSetRequest`):
-                The request object.
-                Message sent by the client for the
+                The request object. Message sent by the client for the
                 `CreatePhraseSet` method.
             parent (:class:`str`):
                 Required. The parent resource where this phrase set will
@@ -261,8 +260,7 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.GetPhraseSetRequest`):
-                The request object.
-                Message sent by the client for the
+                The request object. Message sent by the client for the
                 `GetPhraseSet` method.
             name (:class:`str`):
                 Required. The name of the phrase set to retrieve.
@@ -339,8 +337,7 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.ListPhraseSetRequest`):
-                The request object.
-                Message sent by the client for the
+                The request object. Message sent by the client for the
                 `ListPhraseSet` method.
             parent (:class:`str`):
                 Required. The parent, which owns this
@@ -429,8 +426,7 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.UpdatePhraseSetRequest`):
-                The request object.
-                Message sent by the client for the
+                The request object. Message sent by the client for the
                 `UpdatePhraseSet` method.
             phrase_set (:class:`google.cloud.speech_v1p1beta1.types.PhraseSet`):
                 Required. The phrase set to update.
@@ -516,8 +512,7 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.DeletePhraseSetRequest`):
-                The request object.
-                Message sent by the client for the
+                The request object. Message sent by the client for the
                 `DeletePhraseSet` method.
             name (:class:`str`):
                 Required. The name of the phrase set to delete. Format:
@@ -585,8 +580,7 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.CreateCustomClassRequest`):
-                The request object.
-                Message sent by the client for the
+                The request object. Message sent by the client for the
                 `CreateCustomClass` method.
             parent (:class:`str`):
                 Required. The parent resource where this custom class
@@ -686,8 +680,7 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.GetCustomClassRequest`):
-                The request object.
-                Message sent by the client for the
+                The request object. Message sent by the client for the
                 `GetCustomClass` method.
             name (:class:`str`):
                 Required. The name of the custom class to retrieve.
@@ -768,8 +761,7 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.ListCustomClassesRequest`):
-                The request object.
-                Message sent by the client for the
+                The request object. Message sent by the client for the
                 `ListCustomClasses` method.
             parent (:class:`str`):
                 Required. The parent, which owns this collection of
@@ -858,8 +850,7 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.UpdateCustomClassRequest`):
-                The request object.
-                Message sent by the client for the
+                The request object. Message sent by the client for the
                 `UpdateCustomClass` method.
             custom_class (:class:`google.cloud.speech_v1p1beta1.types.CustomClass`):
                 Required. The custom class to update.
@@ -949,8 +940,7 @@ class AdaptationAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1p1beta1.types.DeleteCustomClassRequest`):
-                The request object.
-                Message sent by the client for the
+                The request object. Message sent by the client for the
                 `DeleteCustomClass` method.
             name (:class:`str`):
                 Required. The name of the custom class to delete.

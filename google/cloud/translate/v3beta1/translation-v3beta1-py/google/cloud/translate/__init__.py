@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.translate_v3beta1.services.translation_service.async_client import TranslationServiceAsyncClient
 from google.cloud.translate_v3beta1.services.translation_service.client import TranslationServiceClient
+from google.cloud.translate_v3beta1.services.translation_service.async_client import TranslationServiceAsyncClient
+
 from google.cloud.translate_v3beta1.types.translation_service import BatchDocumentInputConfig
 from google.cloud.translate_v3beta1.types.translation_service import BatchDocumentOutputConfig
 from google.cloud.translate_v3beta1.types.translation_service import BatchTranslateDocumentMetadata
@@ -29,9 +30,9 @@ from google.cloud.translate_v3beta1.types.translation_service import CreateGloss
 from google.cloud.translate_v3beta1.types.translation_service import DeleteGlossaryMetadata
 from google.cloud.translate_v3beta1.types.translation_service import DeleteGlossaryRequest
 from google.cloud.translate_v3beta1.types.translation_service import DeleteGlossaryResponse
+from google.cloud.translate_v3beta1.types.translation_service import DetectedLanguage
 from google.cloud.translate_v3beta1.types.translation_service import DetectLanguageRequest
 from google.cloud.translate_v3beta1.types.translation_service import DetectLanguageResponse
-from google.cloud.translate_v3beta1.types.translation_service import DetectedLanguage
 from google.cloud.translate_v3beta1.types.translation_service import DocumentInputConfig
 from google.cloud.translate_v3beta1.types.translation_service import DocumentOutputConfig
 from google.cloud.translate_v3beta1.types.translation_service import DocumentTranslation
@@ -54,7 +55,9 @@ from google.cloud.translate_v3beta1.types.translation_service import TranslateTe
 from google.cloud.translate_v3beta1.types.translation_service import TranslateTextResponse
 from google.cloud.translate_v3beta1.types.translation_service import Translation
 
-__all__ = ('BatchDocumentInputConfig',
+__all__ = ('TranslationServiceClient',
+    'TranslationServiceAsyncClient',
+    'BatchDocumentInputConfig',
     'BatchDocumentOutputConfig',
     'BatchTranslateDocumentMetadata',
     'BatchTranslateDocumentRequest',
@@ -67,9 +70,9 @@ __all__ = ('BatchDocumentInputConfig',
     'DeleteGlossaryMetadata',
     'DeleteGlossaryRequest',
     'DeleteGlossaryResponse',
+    'DetectedLanguage',
     'DetectLanguageRequest',
     'DetectLanguageResponse',
-    'DetectedLanguage',
     'DocumentInputConfig',
     'DocumentOutputConfig',
     'DocumentTranslation',
@@ -91,6 +94,4 @@ __all__ = ('BatchDocumentInputConfig',
     'TranslateTextRequest',
     'TranslateTextResponse',
     'Translation',
-    'TranslationServiceAsyncClient',
-    'TranslationServiceClient',
 )

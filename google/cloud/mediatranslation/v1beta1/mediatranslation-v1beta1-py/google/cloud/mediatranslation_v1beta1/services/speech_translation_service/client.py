@@ -323,8 +323,7 @@ class SpeechTranslationServiceClient(metaclass=SpeechTranslationServiceClientMet
 
         Args:
             requests (Iterator[google.cloud.mediatranslation_v1beta1.types.StreamingTranslateSpeechRequest]):
-                The request object iterator.
-                The top-level message sent by the
+                The request object iterator. The top-level message sent by the
                 client for the `StreamingTranslateSpeech` method.
                 Multiple `StreamingTranslateSpeechRequest` messages are
                 sent. The first message must contain a

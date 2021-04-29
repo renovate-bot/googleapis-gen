@@ -328,8 +328,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
 
         Args:
             request (google.cloud.billing_v1.types.GetBillingAccountRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `GetBillingAccount`.
             name (str):
                 Required. The resource name of the billing account to
@@ -366,7 +365,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_billing.GetBillingAccountRequest):
             request = cloud_billing.GetBillingAccountRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -407,8 +406,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
 
         Args:
             request (google.cloud.billing_v1.types.ListBillingAccountsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `ListBillingAccounts`.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -474,8 +472,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
 
         Args:
             request (google.cloud.billing_v1.types.UpdateBillingAccountRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `UpdateBillingAccount`.
             name (str):
                 Required. The name of the billing
@@ -519,7 +516,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_billing.UpdateBillingAccountRequest):
             request = cloud_billing.UpdateBillingAccountRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -570,8 +567,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
 
         Args:
             request (google.cloud.billing_v1.types.CreateBillingAccountRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `CreateBillingAccount`.
             billing_account (google.cloud.billing_v1.types.BillingAccount):
                 Required. The billing account
@@ -611,7 +607,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_billing.CreateBillingAccountRequest):
             request = cloud_billing.CreateBillingAccountRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if billing_account is not None:
                 request.billing_account = billing_account
@@ -647,8 +643,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
 
         Args:
             request (google.cloud.billing_v1.types.ListProjectBillingInfoRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `ListProjectBillingInfo`.
             name (str):
                 Required. The resource name of the billing account
@@ -686,7 +681,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_billing.ListProjectBillingInfoRequest):
             request = cloud_billing.ListProjectBillingInfoRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -737,8 +732,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
 
         Args:
             request (google.cloud.billing_v1.types.GetProjectBillingInfoRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `GetProjectBillingInfo`.
             name (str):
                 Required. The resource name of the project for which
@@ -777,7 +771,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_billing.GetProjectBillingInfoRequest):
             request = cloud_billing.GetProjectBillingInfoRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -853,8 +847,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
 
         Args:
             request (google.cloud.billing_v1.types.UpdateProjectBillingInfoRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `UpdateProjectBillingInfo`.
             name (str):
                 Required. The resource name of the project associated
@@ -901,7 +894,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_billing.UpdateProjectBillingInfoRequest):
             request = cloud_billing.UpdateProjectBillingInfoRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -946,8 +939,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1031,14 +1023,14 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.GetIamPolicyRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1080,8 +1072,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1165,14 +1156,14 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.SetIamPolicyRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1215,8 +1206,7 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1254,14 +1244,14 @@ class CloudBillingClient(metaclass=CloudBillingClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.TestIamPermissionsRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
             if permissions:
                 request.permissions.extend(permissions)

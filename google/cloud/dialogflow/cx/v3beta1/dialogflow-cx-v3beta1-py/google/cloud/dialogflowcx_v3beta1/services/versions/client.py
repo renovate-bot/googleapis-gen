@@ -344,8 +344,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.ListVersionsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.ListVersions][google.cloud.dialogflow.cx.v3beta1.Versions.ListVersions].
             parent (str):
                 Required. The
@@ -385,7 +384,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, version.ListVersionsRequest):
             request = version.ListVersionsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -435,8 +434,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.GetVersionRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.GetVersion][google.cloud.dialogflow.cx.v3beta1.Versions.GetVersion].
             name (str):
                 Required. The name of the
@@ -471,7 +469,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, version.GetVersionRequest):
             request = version.GetVersionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -514,8 +512,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.CreateVersionRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.CreateVersion][google.cloud.dialogflow.cx.v3beta1.Versions.CreateVersion].
             parent (str):
                 Required. The
@@ -562,7 +559,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_version.CreateVersionRequest):
             request = gcdc_version.CreateVersionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -614,8 +611,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.UpdateVersionRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3beta1.Versions.UpdateVersion].
             version (google.cloud.dialogflowcx_v3beta1.types.Version):
                 Required. The version to update.
@@ -654,7 +650,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_version.UpdateVersionRequest):
             request = gcdc_version.UpdateVersionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if version is not None:
                 request.version = version
@@ -697,8 +693,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.DeleteVersionRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.DeleteVersion][google.cloud.dialogflow.cx.v3beta1.Versions.DeleteVersion].
             name (str):
                 Required. The name of the
@@ -729,7 +724,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, version.DeleteVersionRequest):
             request = version.DeleteVersionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -766,8 +761,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.LoadVersionRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.LoadVersion][google.cloud.dialogflow.cx.v3beta1.Versions.LoadVersion].
             name (str):
                 Required. The
@@ -817,7 +811,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, version.LoadVersionRequest):
             request = version.LoadVersionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

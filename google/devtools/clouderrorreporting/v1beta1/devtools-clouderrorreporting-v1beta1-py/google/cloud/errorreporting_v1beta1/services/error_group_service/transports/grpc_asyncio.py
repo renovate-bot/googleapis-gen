@@ -226,9 +226,7 @@ class ErrorGroupServiceGrpcAsyncIOTransport(ErrorGroupServiceTransport):
     def get_group(self) -> Callable[
             [error_group_service.GetGroupRequest],
             Awaitable[common.ErrorGroup]]:
-        r"""Return a callable for the
-        get group
-          method over gRPC.
+        r"""Return a callable for the get group method over gRPC.
 
         Get the specified group.
 
@@ -254,9 +252,7 @@ class ErrorGroupServiceGrpcAsyncIOTransport(ErrorGroupServiceTransport):
     def update_group(self) -> Callable[
             [error_group_service.UpdateGroupRequest],
             Awaitable[common.ErrorGroup]]:
-        r"""Return a callable for the
-        update group
-          method over gRPC.
+        r"""Return a callable for the update group method over gRPC.
 
         Replace the data for the specified group.
         Fails if the group does not exist.

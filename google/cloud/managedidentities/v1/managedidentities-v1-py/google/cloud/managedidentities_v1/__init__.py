@@ -33,11 +33,11 @@ from .types.resource import Domain
 from .types.resource import Trust
 
 __all__ = (
+    'ManagedIdentitiesServiceClient',
     'AttachTrustRequest',
     'CreateMicrosoftAdDomainRequest',
     'DeleteDomainRequest',
     'DetachTrustRequest',
-    'Domain',
     'GetDomainRequest',
     'ListDomainsRequest',
     'ListDomainsResponse',
@@ -45,8 +45,8 @@ __all__ = (
     'ReconfigureTrustRequest',
     'ResetAdminPasswordRequest',
     'ResetAdminPasswordResponse',
-    'Trust',
     'UpdateDomainRequest',
     'ValidateTrustRequest',
-'ManagedIdentitiesServiceClient',
+    'Domain',
+    'Trust',
 )

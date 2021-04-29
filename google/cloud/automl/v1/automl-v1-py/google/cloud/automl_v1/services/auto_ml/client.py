@@ -402,8 +402,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.CreateDatasetRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.CreateDataset][google.cloud.automl.v1.AutoMl.CreateDataset].
             parent (str):
                 Required. The resource name of the
@@ -445,7 +444,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.CreateDatasetRequest):
             request = service.CreateDatasetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -495,8 +494,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.GetDatasetRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.GetDataset][google.cloud.automl.v1.AutoMl.GetDataset].
             name (str):
                 Required. The resource name of the
@@ -533,7 +531,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetDatasetRequest):
             request = service.GetDatasetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -573,8 +571,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.ListDatasetsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ListDatasets][google.cloud.automl.v1.AutoMl.ListDatasets].
             parent (str):
                 Required. The resource name of the
@@ -612,7 +609,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ListDatasetsRequest):
             request = service.ListDatasetsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -662,8 +659,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.UpdateDatasetRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.UpdateDataset][google.cloud.automl.v1.AutoMl.UpdateDataset]
             dataset (google.cloud.automl_v1.types.Dataset):
                 Required. The dataset which replaces
@@ -707,7 +703,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.UpdateDatasetRequest):
             request = service.UpdateDatasetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if dataset is not None:
                 request.dataset = dataset
@@ -753,8 +749,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.DeleteDatasetRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.DeleteDataset][google.cloud.automl.v1.AutoMl.DeleteDataset].
             name (str):
                 Required. The resource name of the
@@ -802,7 +797,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DeleteDatasetRequest):
             request = service.DeleteDatasetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -860,8 +855,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.ImportDataRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ImportData][google.cloud.automl.v1.AutoMl.ImportData].
             name (str):
                 Required. Dataset name. Dataset must
@@ -918,7 +912,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ImportDataRequest):
             request = service.ImportDataRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -972,8 +966,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.ExportDataRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ExportData][google.cloud.automl.v1.AutoMl.ExportData].
             name (str):
                 Required. The resource name of the
@@ -1028,7 +1021,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ExportDataRequest):
             request = service.ExportDataRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1078,8 +1071,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.GetAnnotationSpecRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.GetAnnotationSpec][google.cloud.automl.v1.AutoMl.GetAnnotationSpec].
             name (str):
                 Required. The resource name of the
@@ -1112,7 +1104,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetAnnotationSpecRequest):
             request = service.GetAnnotationSpecRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1157,8 +1149,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.CreateModelRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.CreateModel][google.cloud.automl.v1.AutoMl.CreateModel].
             parent (str):
                 Required. Resource name of the parent
@@ -1202,7 +1193,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.CreateModelRequest):
             request = service.CreateModelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1252,8 +1243,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.GetModelRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.GetModel][google.cloud.automl.v1.AutoMl.GetModel].
             name (str):
                 Required. Resource name of the model.
@@ -1286,7 +1276,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetModelRequest):
             request = service.GetModelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1326,8 +1316,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.ListModelsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ListModels][google.cloud.automl.v1.AutoMl.ListModels].
             parent (str):
                 Required. Resource name of the
@@ -1365,7 +1354,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ListModelsRequest):
             request = service.ListModelsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1417,8 +1406,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.DeleteModelRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.DeleteModel][google.cloud.automl.v1.AutoMl.DeleteModel].
             name (str):
                 Required. Resource name of the model
@@ -1466,7 +1454,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DeleteModelRequest):
             request = service.DeleteModelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1515,8 +1503,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.UpdateModelRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.UpdateModel][google.cloud.automl.v1.AutoMl.UpdateModel]
             model (google.cloud.automl_v1.types.Model):
                 Required. The model which replaces
@@ -1558,7 +1545,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.UpdateModelRequest):
             request = service.UpdateModelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if model is not None:
                 request.model = model
@@ -1614,8 +1601,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.DeployModelRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.DeployModel][google.cloud.automl.v1.AutoMl.DeployModel].
             name (str):
                 Required. Resource name of the model
@@ -1663,7 +1649,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DeployModelRequest):
             request = service.DeployModelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1719,8 +1705,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.UndeployModelRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.UndeployModel][google.cloud.automl.v1.AutoMl.UndeployModel].
             name (str):
                 Required. Resource name of the model
@@ -1768,7 +1753,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.UndeployModelRequest):
             request = service.UndeployModelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1824,8 +1809,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.ExportModelRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ExportModel][google.cloud.automl.v1.AutoMl.ExportModel].
                 Models need to be enabled for exporting, otherwise an
                 error code will be returned.
@@ -1882,7 +1866,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ExportModelRequest):
             request = service.ExportModelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1932,8 +1916,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.GetModelEvaluationRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.GetModelEvaluation][google.cloud.automl.v1.AutoMl.GetModelEvaluation].
             name (str):
                 Required. Resource name for the model
@@ -1966,7 +1949,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetModelEvaluationRequest):
             request = service.GetModelEvaluationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2007,8 +1990,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
 
         Args:
             request (google.cloud.automl_v1.types.ListModelEvaluationsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ListModelEvaluations][google.cloud.automl.v1.AutoMl.ListModelEvaluations].
             parent (str):
                 Required. Resource name of the model
@@ -2067,7 +2049,7 @@ class AutoMlClient(metaclass=AutoMlClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ListModelEvaluationsRequest):
             request = service.ListModelEvaluationsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

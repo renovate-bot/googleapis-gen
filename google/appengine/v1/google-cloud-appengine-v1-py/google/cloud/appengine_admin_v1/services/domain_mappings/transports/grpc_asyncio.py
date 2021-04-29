@@ -245,9 +245,7 @@ class DomainMappingsGrpcAsyncIOTransport(DomainMappingsTransport):
     def list_domain_mappings(self) -> Callable[
             [appengine.ListDomainMappingsRequest],
             Awaitable[appengine.ListDomainMappingsResponse]]:
-        r"""Return a callable for the
-        list domain mappings
-          method over gRPC.
+        r"""Return a callable for the list domain mappings method over gRPC.
 
         Lists the domain mappings on an application.
 
@@ -273,9 +271,7 @@ class DomainMappingsGrpcAsyncIOTransport(DomainMappingsTransport):
     def get_domain_mapping(self) -> Callable[
             [appengine.GetDomainMappingRequest],
             Awaitable[domain_mapping.DomainMapping]]:
-        r"""Return a callable for the
-        get domain mapping
-          method over gRPC.
+        r"""Return a callable for the get domain mapping method over gRPC.
 
         Gets the specified domain mapping.
 
@@ -301,9 +297,7 @@ class DomainMappingsGrpcAsyncIOTransport(DomainMappingsTransport):
     def create_domain_mapping(self) -> Callable[
             [appengine.CreateDomainMappingRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create domain mapping
-          method over gRPC.
+        r"""Return a callable for the create domain mapping method over gRPC.
 
         Maps a domain to an application. A user must be authorized to
         administer a domain in order to map it to an application. For a
@@ -332,9 +326,7 @@ class DomainMappingsGrpcAsyncIOTransport(DomainMappingsTransport):
     def update_domain_mapping(self) -> Callable[
             [appengine.UpdateDomainMappingRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update domain mapping
-          method over gRPC.
+        r"""Return a callable for the update domain mapping method over gRPC.
 
         Updates the specified domain mapping. To map an SSL certificate
         to a domain mapping, update ``certificate_id`` to point to an
@@ -364,9 +356,7 @@ class DomainMappingsGrpcAsyncIOTransport(DomainMappingsTransport):
     def delete_domain_mapping(self) -> Callable[
             [appengine.DeleteDomainMappingRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete domain mapping
-          method over gRPC.
+        r"""Return a callable for the delete domain mapping method over gRPC.
 
         Deletes the specified domain mapping. A user must be authorized
         to administer the associated domain in order to delete a

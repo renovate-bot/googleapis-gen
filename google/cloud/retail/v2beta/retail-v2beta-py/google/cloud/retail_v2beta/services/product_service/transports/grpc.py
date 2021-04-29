@@ -244,9 +244,7 @@ class ProductServiceGrpcTransport(ProductServiceTransport):
     def create_product(self) -> Callable[
             [product_service.CreateProductRequest],
             gcr_product.Product]:
-        r"""Return a callable for the
-        create product
-          method over gRPC.
+        r"""Return a callable for the create product method over gRPC.
 
         Creates a [Product][google.cloud.retail.v2beta.Product].
 
@@ -272,9 +270,7 @@ class ProductServiceGrpcTransport(ProductServiceTransport):
     def get_product(self) -> Callable[
             [product_service.GetProductRequest],
             product.Product]:
-        r"""Return a callable for the
-        get product
-          method over gRPC.
+        r"""Return a callable for the get product method over gRPC.
 
         Gets a [Product][google.cloud.retail.v2beta.Product].
 
@@ -300,9 +296,7 @@ class ProductServiceGrpcTransport(ProductServiceTransport):
     def update_product(self) -> Callable[
             [product_service.UpdateProductRequest],
             gcr_product.Product]:
-        r"""Return a callable for the
-        update product
-          method over gRPC.
+        r"""Return a callable for the update product method over gRPC.
 
         Updates a [Product][google.cloud.retail.v2beta.Product].
 
@@ -328,9 +322,7 @@ class ProductServiceGrpcTransport(ProductServiceTransport):
     def delete_product(self) -> Callable[
             [product_service.DeleteProductRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete product
-          method over gRPC.
+        r"""Return a callable for the delete product method over gRPC.
 
         Deletes a [Product][google.cloud.retail.v2beta.Product].
 
@@ -356,9 +348,7 @@ class ProductServiceGrpcTransport(ProductServiceTransport):
     def import_products(self) -> Callable[
             [import_config.ImportProductsRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        import products
-          method over gRPC.
+        r"""Return a callable for the import products method over gRPC.
 
         Bulk import of multiple
         [Product][google.cloud.retail.v2beta.Product]s.

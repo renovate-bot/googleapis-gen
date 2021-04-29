@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.spanner_admin_instance_v1.services.instance_admin.async_client import InstanceAdminAsyncClient
 from google.cloud.spanner_admin_instance_v1.services.instance_admin.client import InstanceAdminClient
+from google.cloud.spanner_admin_instance_v1.services.instance_admin.async_client import InstanceAdminAsyncClient
+
 from google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin import CreateInstanceMetadata
 from google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin import CreateInstanceRequest
 from google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin import DeleteInstanceRequest
@@ -31,14 +32,14 @@ from google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin import 
 from google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin import UpdateInstanceMetadata
 from google.cloud.spanner_admin_instance_v1.types.spanner_instance_admin import UpdateInstanceRequest
 
-__all__ = ('CreateInstanceMetadata',
+__all__ = ('InstanceAdminClient',
+    'InstanceAdminAsyncClient',
+    'CreateInstanceMetadata',
     'CreateInstanceRequest',
     'DeleteInstanceRequest',
     'GetInstanceConfigRequest',
     'GetInstanceRequest',
     'Instance',
-    'InstanceAdminAsyncClient',
-    'InstanceAdminClient',
     'InstanceConfig',
     'ListInstanceConfigsRequest',
     'ListInstanceConfigsResponse',

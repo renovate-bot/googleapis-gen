@@ -392,8 +392,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.CreateSourceRequest):
-                The request object.
-                Request message for creating a
+                The request object. Request message for creating a
                 source.
             parent (str):
                 Required. Resource name of the new source's parent. Its
@@ -440,7 +439,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # there are no flattened fields.
         if not isinstance(request, securitycenter_service.CreateSourceRequest):
             request = securitycenter_service.CreateSourceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -485,8 +484,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.CreateFindingRequest):
-                The request object.
-                Request message for creating a
+                The request object. Request message for creating a
                 finding.
             parent (str):
                 Required. Resource name of the new finding's parent. Its
@@ -547,7 +545,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # there are no flattened fields.
         if not isinstance(request, securitycenter_service.CreateFindingRequest):
             request = securitycenter_service.CreateFindingRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -592,8 +590,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -677,14 +674,14 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.GetIamPolicyRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -722,8 +719,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.GetOrganizationSettingsRequest):
-                The request object.
-                Request message for getting
+                The request object. Request message for getting
                 organization settings.
             name (str):
                 Required. Name of the organization to get organization
@@ -760,7 +756,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # there are no flattened fields.
         if not isinstance(request, securitycenter_service.GetOrganizationSettingsRequest):
             request = securitycenter_service.GetOrganizationSettingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -800,8 +796,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.GetSourceRequest):
-                The request object.
-                Request message for getting a
+                The request object. Request message for getting a
                 source.
             name (str):
                 Required. Relative resource name of the source. Its
@@ -841,7 +836,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # there are no flattened fields.
         if not isinstance(request, securitycenter_service.GetSourceRequest):
             request = securitycenter_service.GetSourceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -881,8 +876,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.GroupAssetsRequest):
-                The request object.
-                Request message for grouping by
+                The request object. Request message for grouping by
                 assets.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -957,8 +951,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.GroupFindingsRequest):
-                The request object.
-                Request message for grouping by
+                The request object. Request message for grouping by
                 findings.
             parent (str):
                 Required. Name of the source to groupBy. Its format is
@@ -1015,7 +1008,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # there are no flattened fields.
         if not isinstance(request, securitycenter_service.GroupFindingsRequest):
             request = securitycenter_service.GroupFindingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1065,8 +1058,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.ListAssetsRequest):
-                The request object.
-                Request message for listing assets.
+                The request object. Request message for listing assets.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1136,8 +1128,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.ListFindingsRequest):
-                The request object.
-                Request message for listing
+                The request object. Request message for listing
                 findings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1206,8 +1197,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.ListSourcesRequest):
-                The request object.
-                Request message for listing sources.
+                The request object. Request message for listing sources.
             parent (str):
                 Required. Resource name of the parent of sources to
                 list. Its format should be
@@ -1244,7 +1234,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # there are no flattened fields.
         if not isinstance(request, securitycenter_service.ListSourcesRequest):
             request = securitycenter_service.ListSourcesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1298,8 +1288,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.RunAssetDiscoveryRequest):
-                The request object.
-                Request message for running asset
+                The request object. Request message for running asset
                 discovery for an organization.
             parent (str):
                 Required. Name of the organization to run asset
@@ -1348,7 +1337,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # there are no flattened fields.
         if not isinstance(request, securitycenter_service.RunAssetDiscoveryRequest):
             request = securitycenter_service.RunAssetDiscoveryRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1398,8 +1387,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.SetFindingStateRequest):
-                The request object.
-                Request message for updating a
+                The request object. Request message for updating a
                 finding's state.
             name (str):
                 Required. The relative resource name of the finding.
@@ -1458,7 +1446,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # there are no flattened fields.
         if not isinstance(request, securitycenter_service.SetFindingStateRequest):
             request = securitycenter_service.SetFindingStateRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1503,8 +1491,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1588,14 +1575,14 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.SetIamPolicyRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1635,8 +1622,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1674,14 +1660,14 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.TestIamPermissionsRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
             if permissions:
                 request.permissions.extend(permissions)
@@ -1722,8 +1708,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.UpdateFindingRequest):
-                The request object.
-                Request message for updating or
+                The request object. Request message for updating or
                 creating a finding.
             finding (google.cloud.securitycenter_v1beta1.types.Finding):
                 Required. The finding resource to update or create if it
@@ -1770,7 +1755,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # there are no flattened fields.
         if not isinstance(request, securitycenter_service.UpdateFindingRequest):
             request = securitycenter_service.UpdateFindingRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if finding is not None:
                 request.finding = finding
@@ -1810,8 +1795,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.UpdateOrganizationSettingsRequest):
-                The request object.
-                Request message for updating an
+                The request object. Request message for updating an
                 organization's settings.
             organization_settings (google.cloud.securitycenter_v1beta1.types.OrganizationSettings):
                 Required. The organization settings
@@ -1847,7 +1831,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # there are no flattened fields.
         if not isinstance(request, securitycenter_service.UpdateOrganizationSettingsRequest):
             request = securitycenter_service.UpdateOrganizationSettingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if organization_settings is not None:
                 request.organization_settings = organization_settings
@@ -1887,8 +1871,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.UpdateSourceRequest):
-                The request object.
-                Request message for updating a
+                The request object. Request message for updating a
                 source.
             source (google.cloud.securitycenter_v1beta1.types.Source):
                 Required. The source resource to
@@ -1927,7 +1910,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # there are no flattened fields.
         if not isinstance(request, securitycenter_service.UpdateSourceRequest):
             request = securitycenter_service.UpdateSourceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if source is not None:
                 request.source = source
@@ -1967,8 +1950,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
 
         Args:
             request (google.cloud.securitycenter_v1beta1.types.UpdateSecurityMarksRequest):
-                The request object.
-                Request message for updating a
+                The request object. Request message for updating a
                 SecurityMarks resource.
             security_marks (google.cloud.securitycenter_v1beta1.types.SecurityMarks):
                 Required. The security marks resource
@@ -2009,7 +1991,7 @@ class SecurityCenterClient(metaclass=SecurityCenterClientMeta):
         # there are no flattened fields.
         if not isinstance(request, securitycenter_service.UpdateSecurityMarksRequest):
             request = securitycenter_service.UpdateSecurityMarksRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if security_marks is not None:
                 request.security_marks = security_marks

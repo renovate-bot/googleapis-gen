@@ -371,8 +371,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
 
         Args:
             request (google.chromeos.moblab_v1beta1.types.ListBuildsRequest):
-                The request object.
-                Request message for listing builds.
+                The request object. Request message for listing builds.
                 NEXT_TAG: 7
             parent (str):
                 Required. The full resource name of
@@ -413,7 +412,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, build_service.ListBuildsRequest):
             request = build_service.ListBuildsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -463,8 +462,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
 
         Args:
             request (google.chromeos.moblab_v1beta1.types.CheckBuildStageStatusRequest):
-                The request object.
-                Request message for checking if the
+                The request object. Request message for checking if the
                 build artifact is staged.
             name (str):
                 Required. The full resource name of
@@ -501,7 +499,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, build_service.CheckBuildStageStatusRequest):
             request = build_service.CheckBuildStageStatusRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -547,8 +545,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
 
         Args:
             request (google.chromeos.moblab_v1beta1.types.StageBuildRequest):
-                The request object.
-                Request message for staging a build
+                The request object. Request message for staging a build
                 artifact.
             name (str):
                 Required. The full resource name of
@@ -588,7 +585,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, build_service.StageBuildRequest):
             request = build_service.StageBuildRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

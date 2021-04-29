@@ -186,8 +186,7 @@ class Controller2AsyncClient:
 
         Args:
             request (:class:`google.devtools.clouddebugger_v2.types.RegisterDebuggeeRequest`):
-                The request object.
-                Request to register a debuggee.
+                The request object. Request to register a debuggee.
             debuggee (:class:`google.devtools.clouddebugger_v2.types.Debuggee`):
                 Required. Debuggee information to register. The fields
                 ``project``, ``uniquifier``, ``description`` and
@@ -265,8 +264,7 @@ class Controller2AsyncClient:
 
         Args:
             request (:class:`google.devtools.clouddebugger_v2.types.ListActiveBreakpointsRequest`):
-                The request object.
-                Request to list active breakpoints.
+                The request object. Request to list active breakpoints.
             debuggee_id (:class:`str`):
                 Required. Identifies the debuggee.
                 This corresponds to the ``debuggee_id`` field
@@ -346,8 +344,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.devtools.clouddebugger_v2.types.UpdateActiveBreakpointRequest`):
-                The request object.
-                Request to update an active
+                The request object. Request to update an active
                 breakpoint.
             debuggee_id (:class:`str`):
                 Required. Identifies the debuggee

@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.home.enterprise.sdm_v1.services.smart_device_management_service.async_client import SmartDeviceManagementServiceAsyncClient
 from google.home.enterprise.sdm_v1.services.smart_device_management_service.client import SmartDeviceManagementServiceClient
+from google.home.enterprise.sdm_v1.services.smart_device_management_service.async_client import SmartDeviceManagementServiceAsyncClient
+
 from google.home.enterprise.sdm_v1.types.device import Device
 from google.home.enterprise.sdm_v1.types.device import ParentRelation
 from google.home.enterprise.sdm_v1.types.site import Room
@@ -32,7 +33,12 @@ from google.home.enterprise.sdm_v1.types.smart_device_management_service import 
 from google.home.enterprise.sdm_v1.types.smart_device_management_service import ListStructuresRequest
 from google.home.enterprise.sdm_v1.types.smart_device_management_service import ListStructuresResponse
 
-__all__ = ('Device',
+__all__ = ('SmartDeviceManagementServiceClient',
+    'SmartDeviceManagementServiceAsyncClient',
+    'Device',
+    'ParentRelation',
+    'Room',
+    'Structure',
     'ExecuteDeviceCommandRequest',
     'ExecuteDeviceCommandResponse',
     'GetDeviceRequest',
@@ -44,9 +50,4 @@ __all__ = ('Device',
     'ListRoomsResponse',
     'ListStructuresRequest',
     'ListStructuresResponse',
-    'ParentRelation',
-    'Room',
-    'SmartDeviceManagementServiceAsyncClient',
-    'SmartDeviceManagementServiceClient',
-    'Structure',
 )

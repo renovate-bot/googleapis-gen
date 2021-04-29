@@ -246,9 +246,7 @@ class Controller2GrpcAsyncIOTransport(Controller2Transport):
     def register_debuggee(self) -> Callable[
             [controller.RegisterDebuggeeRequest],
             Awaitable[controller.RegisterDebuggeeResponse]]:
-        r"""Return a callable for the
-        register debuggee
-          method over gRPC.
+        r"""Return a callable for the register debuggee method over gRPC.
 
         Registers the debuggee with the controller service.
 
@@ -285,9 +283,7 @@ class Controller2GrpcAsyncIOTransport(Controller2Transport):
     def list_active_breakpoints(self) -> Callable[
             [controller.ListActiveBreakpointsRequest],
             Awaitable[controller.ListActiveBreakpointsResponse]]:
-        r"""Return a callable for the
-        list active breakpoints
-          method over gRPC.
+        r"""Return a callable for the list active breakpoints method over gRPC.
 
         Returns the list of all active breakpoints for the debuggee.
 
@@ -326,9 +322,7 @@ class Controller2GrpcAsyncIOTransport(Controller2Transport):
     def update_active_breakpoint(self) -> Callable[
             [controller.UpdateActiveBreakpointRequest],
             Awaitable[controller.UpdateActiveBreakpointResponse]]:
-        r"""Return a callable for the
-        update active breakpoint
-          method over gRPC.
+        r"""Return a callable for the update active breakpoint method over gRPC.
 
         Updates the breakpoint state or mutable fields. The entire
         Breakpoint message must be sent back to the controller service.

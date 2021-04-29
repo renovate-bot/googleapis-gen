@@ -326,8 +326,7 @@ class DocumentUnderstandingServiceClient(metaclass=DocumentUnderstandingServiceC
 
         Args:
             request (google.cloud.documentai_v1beta1.types.BatchProcessDocumentsRequest):
-                The request object.
-                Request to batch process documents
+                The request object. Request to batch process documents
                 as an asynchronous operation.
             requests (Sequence[google.cloud.documentai_v1beta1.types.ProcessDocumentRequest]):
                 Required. Individual requests for
@@ -364,7 +363,7 @@ class DocumentUnderstandingServiceClient(metaclass=DocumentUnderstandingServiceC
         # there are no flattened fields.
         if not isinstance(request, document_understanding.BatchProcessDocumentsRequest):
             request = document_understanding.BatchProcessDocumentsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if requests is not None:
                 request.requests = requests

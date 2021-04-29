@@ -382,8 +382,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         Args:
             request (grafeas.grafeas_v1.types.GetOccurrenceRequest):
-                The request object.
-                Request to get an occurrence.
+                The request object. Request to get an occurrence.
             name (str):
                 The name of the occurrence in the form of
                 ``projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]``.
@@ -417,7 +416,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.GetOccurrenceRequest):
             request = grafeas.GetOccurrenceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -458,8 +457,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         Args:
             request (grafeas.grafeas_v1.types.ListOccurrencesRequest):
-                The request object.
-                Request to list occurrences.
+                The request object. Request to list occurrences.
             parent (str):
                 The name of the project to list occurrences for in the
                 form of ``projects/[PROJECT_ID]``.
@@ -500,7 +498,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.ListOccurrencesRequest):
             request = grafeas.ListOccurrencesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -553,8 +551,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         Args:
             request (grafeas.grafeas_v1.types.DeleteOccurrenceRequest):
-                The request object.
-                Request to delete an occurrence.
+                The request object. Request to delete an occurrence.
             name (str):
                 The name of the occurrence in the form of
                 ``projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]``.
@@ -582,7 +579,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.DeleteOccurrenceRequest):
             request = grafeas.DeleteOccurrenceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -620,8 +617,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         Args:
             request (grafeas.grafeas_v1.types.CreateOccurrenceRequest):
-                The request object.
-                Request to create a new occurrence.
+                The request object. Request to create a new occurrence.
             parent (str):
                 The name of the project in the form of
                 ``projects/[PROJECT_ID]``, under which the occurrence is
@@ -661,7 +657,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.CreateOccurrenceRequest):
             request = grafeas.CreateOccurrenceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -704,8 +700,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         Args:
             request (grafeas.grafeas_v1.types.BatchCreateOccurrencesRequest):
-                The request object.
-                Request to create occurrences in
+                The request object. Request to create occurrences in
                 batch.
             parent (str):
                 The name of the project in the form of
@@ -748,7 +743,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.BatchCreateOccurrencesRequest):
             request = grafeas.BatchCreateOccurrencesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -792,8 +787,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         Args:
             request (grafeas.grafeas_v1.types.UpdateOccurrenceRequest):
-                The request object.
-                Request to update an occurrence.
+                The request object. Request to update an occurrence.
             name (str):
                 The name of the occurrence in the form of
                 ``projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]``.
@@ -837,7 +831,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.UpdateOccurrenceRequest):
             request = grafeas.UpdateOccurrenceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -883,8 +877,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         Args:
             request (grafeas.grafeas_v1.types.GetOccurrenceNoteRequest):
-                The request object.
-                Request to get the note to which the
+                The request object. Request to get the note to which the
                 specified occurrence is attached.
             name (str):
                 The name of the occurrence in the form of
@@ -919,7 +912,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.GetOccurrenceNoteRequest):
             request = grafeas.GetOccurrenceNoteRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -959,8 +952,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         Args:
             request (grafeas.grafeas_v1.types.GetNoteRequest):
-                The request object.
-                Request to get a note.
+                The request object. Request to get a note.
             name (str):
                 The name of the note in the form of
                 ``projects/[PROVIDER_ID]/notes/[NOTE_ID]``.
@@ -994,7 +986,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.GetNoteRequest):
             request = grafeas.GetNoteRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1035,8 +1027,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         Args:
             request (grafeas.grafeas_v1.types.ListNotesRequest):
-                The request object.
-                Request to list notes.
+                The request object. Request to list notes.
             parent (str):
                 The name of the project to list notes for in the form of
                 ``projects/[PROJECT_ID]``.
@@ -1077,7 +1068,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.ListNotesRequest):
             request = grafeas.ListNotesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1128,8 +1119,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         Args:
             request (grafeas.grafeas_v1.types.DeleteNoteRequest):
-                The request object.
-                Request to delete a note.
+                The request object. Request to delete a note.
             name (str):
                 The name of the note in the form of
                 ``projects/[PROVIDER_ID]/notes/[NOTE_ID]``.
@@ -1157,7 +1147,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.DeleteNoteRequest):
             request = grafeas.DeleteNoteRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1196,8 +1186,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         Args:
             request (grafeas.grafeas_v1.types.CreateNoteRequest):
-                The request object.
-                Request to create a new note.
+                The request object. Request to create a new note.
             parent (str):
                 The name of the project in the form of
                 ``projects/[PROJECT_ID]``, under which the note is to be
@@ -1242,7 +1231,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.CreateNoteRequest):
             request = grafeas.CreateNoteRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1287,8 +1276,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         Args:
             request (grafeas.grafeas_v1.types.BatchCreateNotesRequest):
-                The request object.
-                Request to create notes in batch.
+                The request object. Request to create notes in batch.
             parent (str):
                 The name of the project in the form of
                 ``projects/[PROJECT_ID]``, under which the notes are to
@@ -1328,7 +1316,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.BatchCreateNotesRequest):
             request = grafeas.BatchCreateNotesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1372,8 +1360,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         Args:
             request (grafeas.grafeas_v1.types.UpdateNoteRequest):
-                The request object.
-                Request to update a note.
+                The request object. Request to update a note.
             name (str):
                 The name of the note in the form of
                 ``projects/[PROVIDER_ID]/notes/[NOTE_ID]``.
@@ -1417,7 +1404,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.UpdateNoteRequest):
             request = grafeas.UpdateNoteRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1465,8 +1452,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
 
         Args:
             request (grafeas.grafeas_v1.types.ListNoteOccurrencesRequest):
-                The request object.
-                Request to list occurrences for a
+                The request object. Request to list occurrences for a
                 note.
             name (str):
                 The name of the note to list occurrences for in the form
@@ -1509,7 +1495,7 @@ class GrafeasClient(metaclass=GrafeasClientMeta):
         # there are no flattened fields.
         if not isinstance(request, grafeas.ListNoteOccurrencesRequest):
             request = grafeas.ListNoteOccurrencesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

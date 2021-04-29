@@ -154,8 +154,7 @@ class SpeechTranslationServiceAsyncClient:
 
         Args:
             requests (AsyncIterator[`google.cloud.mediatranslation_v1beta1.types.StreamingTranslateSpeechRequest`]):
-                The request object AsyncIterator.
-                The top-level message sent by the
+                The request object AsyncIterator. The top-level message sent by the
                 client for the `StreamingTranslateSpeech` method.
                 Multiple `StreamingTranslateSpeechRequest` messages are
                 sent. The first message must contain a

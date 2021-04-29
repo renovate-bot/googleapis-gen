@@ -229,9 +229,7 @@ class ProfileServiceGrpcAsyncIOTransport(ProfileServiceTransport):
     def list_profiles(self) -> Callable[
             [profile_service.ListProfilesRequest],
             Awaitable[profile_service.ListProfilesResponse]]:
-        r"""Return a callable for the
-        list profiles
-          method over gRPC.
+        r"""Return a callable for the list profiles method over gRPC.
 
         Lists profiles by filter. The order is unspecified.
 
@@ -257,9 +255,7 @@ class ProfileServiceGrpcAsyncIOTransport(ProfileServiceTransport):
     def create_profile(self) -> Callable[
             [profile_service.CreateProfileRequest],
             Awaitable[gct_profile.Profile]]:
-        r"""Return a callable for the
-        create profile
-          method over gRPC.
+        r"""Return a callable for the create profile method over gRPC.
 
         Creates and returns a new profile.
 
@@ -285,9 +281,7 @@ class ProfileServiceGrpcAsyncIOTransport(ProfileServiceTransport):
     def get_profile(self) -> Callable[
             [profile_service.GetProfileRequest],
             Awaitable[profile.Profile]]:
-        r"""Return a callable for the
-        get profile
-          method over gRPC.
+        r"""Return a callable for the get profile method over gRPC.
 
         Gets the specified profile.
 
@@ -313,9 +307,7 @@ class ProfileServiceGrpcAsyncIOTransport(ProfileServiceTransport):
     def update_profile(self) -> Callable[
             [profile_service.UpdateProfileRequest],
             Awaitable[gct_profile.Profile]]:
-        r"""Return a callable for the
-        update profile
-          method over gRPC.
+        r"""Return a callable for the update profile method over gRPC.
 
         Updates the specified profile and returns the updated
         result.
@@ -342,9 +334,7 @@ class ProfileServiceGrpcAsyncIOTransport(ProfileServiceTransport):
     def delete_profile(self) -> Callable[
             [profile_service.DeleteProfileRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete profile
-          method over gRPC.
+        r"""Return a callable for the delete profile method over gRPC.
 
         Deletes the specified profile.
         Prerequisite: The profile has no associated applications
@@ -372,9 +362,7 @@ class ProfileServiceGrpcAsyncIOTransport(ProfileServiceTransport):
     def search_profiles(self) -> Callable[
             [profile_service.SearchProfilesRequest],
             Awaitable[profile_service.SearchProfilesResponse]]:
-        r"""Return a callable for the
-        search profiles
-          method over gRPC.
+        r"""Return a callable for the search profiles method over gRPC.
 
         Searches for profiles within a tenant.
 

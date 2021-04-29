@@ -157,8 +157,7 @@ class AssetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.asset_v1p4beta1.types.AnalyzeIamPolicyRequest`):
-                The request object.
-                A request message for
+                The request object. A request message for
                 [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1p4beta1.AssetService.AnalyzeIamPolicy].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -223,8 +222,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.asset_v1p4beta1.types.ExportIamPolicyAnalysisRequest`):
-                The request object.
-                A request message for
+                The request object. A request message for
                 [AssetService.ExportIamPolicyAnalysis][google.cloud.asset.v1p4beta1.AssetService.ExportIamPolicyAnalysis].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

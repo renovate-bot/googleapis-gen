@@ -221,9 +221,7 @@ class RecaptchaEnterpriseServiceV1Beta1GrpcTransport(RecaptchaEnterpriseServiceV
     def create_assessment(self) -> Callable[
             [recaptchaenterprise.CreateAssessmentRequest],
             recaptchaenterprise.Assessment]:
-        r"""Return a callable for the
-        create assessment
-          method over gRPC.
+        r"""Return a callable for the create assessment method over gRPC.
 
         Creates an Assessment of the likelihood an event is
         legitimate.
@@ -250,9 +248,7 @@ class RecaptchaEnterpriseServiceV1Beta1GrpcTransport(RecaptchaEnterpriseServiceV
     def annotate_assessment(self) -> Callable[
             [recaptchaenterprise.AnnotateAssessmentRequest],
             recaptchaenterprise.AnnotateAssessmentResponse]:
-        r"""Return a callable for the
-        annotate assessment
-          method over gRPC.
+        r"""Return a callable for the annotate assessment method over gRPC.
 
         Annotates a previously created Assessment to provide
         additional information on whether the event turned out
@@ -280,9 +276,7 @@ class RecaptchaEnterpriseServiceV1Beta1GrpcTransport(RecaptchaEnterpriseServiceV
     def create_key(self) -> Callable[
             [recaptchaenterprise.CreateKeyRequest],
             recaptchaenterprise.Key]:
-        r"""Return a callable for the
-        create key
-          method over gRPC.
+        r"""Return a callable for the create key method over gRPC.
 
         Creates a new reCAPTCHA Enterprise key.
 
@@ -308,9 +302,7 @@ class RecaptchaEnterpriseServiceV1Beta1GrpcTransport(RecaptchaEnterpriseServiceV
     def list_keys(self) -> Callable[
             [recaptchaenterprise.ListKeysRequest],
             recaptchaenterprise.ListKeysResponse]:
-        r"""Return a callable for the
-        list keys
-          method over gRPC.
+        r"""Return a callable for the list keys method over gRPC.
 
         Returns the list of all keys that belong to a
         project.
@@ -337,9 +329,7 @@ class RecaptchaEnterpriseServiceV1Beta1GrpcTransport(RecaptchaEnterpriseServiceV
     def get_key(self) -> Callable[
             [recaptchaenterprise.GetKeyRequest],
             recaptchaenterprise.Key]:
-        r"""Return a callable for the
-        get key
-          method over gRPC.
+        r"""Return a callable for the get key method over gRPC.
 
         Returns the specified key.
 
@@ -365,9 +355,7 @@ class RecaptchaEnterpriseServiceV1Beta1GrpcTransport(RecaptchaEnterpriseServiceV
     def update_key(self) -> Callable[
             [recaptchaenterprise.UpdateKeyRequest],
             recaptchaenterprise.Key]:
-        r"""Return a callable for the
-        update key
-          method over gRPC.
+        r"""Return a callable for the update key method over gRPC.
 
         Updates the specified key.
 
@@ -393,9 +381,7 @@ class RecaptchaEnterpriseServiceV1Beta1GrpcTransport(RecaptchaEnterpriseServiceV
     def delete_key(self) -> Callable[
             [recaptchaenterprise.DeleteKeyRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete key
-          method over gRPC.
+        r"""Return a callable for the delete key method over gRPC.
 
         Deletes the specified key.
 

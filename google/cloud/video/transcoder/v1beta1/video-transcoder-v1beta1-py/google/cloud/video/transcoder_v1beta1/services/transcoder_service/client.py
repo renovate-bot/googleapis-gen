@@ -354,8 +354,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
 
         Args:
             request (google.cloud.video.transcoder_v1beta1.types.CreateJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.CreateJob`.
             parent (str):
                 Required. The parent location to create and process this
@@ -395,7 +394,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, services.CreateJobRequest):
             request = services.CreateJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -437,8 +436,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
 
         Args:
             request (google.cloud.video.transcoder_v1beta1.types.ListJobsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.ListJobs`. The parent location from
                 which to retrieve the collection of jobs.
             parent (str):
@@ -476,7 +474,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, services.ListJobsRequest):
             request = services.ListJobsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -525,8 +523,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
 
         Args:
             request (google.cloud.video.transcoder_v1beta1.types.GetJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.GetJob`.
             name (str):
                 Required. The name of the job to retrieve. Format:
@@ -559,7 +556,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, services.GetJobRequest):
             request = services.GetJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -599,8 +596,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
 
         Args:
             request (google.cloud.video.transcoder_v1beta1.types.DeleteJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.DeleteJob`.
             name (str):
                 Required. The name of the job to delete. Format:
@@ -629,7 +625,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, services.DeleteJobRequest):
             request = services.DeleteJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -668,8 +664,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
 
         Args:
             request (google.cloud.video.transcoder_v1beta1.types.CreateJobTemplateRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.CreateJobTemplate`.
             parent (str):
                 Required. The parent location to create this job
@@ -722,7 +717,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, services.CreateJobTemplateRequest):
             request = services.CreateJobTemplateRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -766,8 +761,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
 
         Args:
             request (google.cloud.video.transcoder_v1beta1.types.ListJobTemplatesRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.ListJobTemplates`.
             parent (str):
                 Required. The parent location from which to retrieve the
@@ -805,7 +799,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, services.ListJobTemplatesRequest):
             request = services.ListJobTemplatesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -854,8 +848,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
 
         Args:
             request (google.cloud.video.transcoder_v1beta1.types.GetJobTemplateRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.GetJobTemplate`.
             name (str):
                 Required. The name of the job template to retrieve.
@@ -889,7 +882,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, services.GetJobTemplateRequest):
             request = services.GetJobTemplateRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -929,8 +922,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
 
         Args:
             request (google.cloud.video.transcoder_v1beta1.types.DeleteJobTemplateRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.DeleteJobTemplate`.
             name (str):
                 Required. The name of the job template to delete.
@@ -959,7 +951,7 @@ class TranscoderServiceClient(metaclass=TranscoderServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, services.DeleteJobTemplateRequest):
             request = services.DeleteJobTemplateRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

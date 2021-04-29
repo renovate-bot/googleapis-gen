@@ -621,7 +621,7 @@ class CertificateAuthority(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=18
+        number=18,
     )
 
 
@@ -745,7 +745,7 @@ class CertificateRevocationList(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=9
+        number=9,
     )
 
 
@@ -877,7 +877,7 @@ class Certificate(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=11
+        number=11,
     )
 
 
@@ -939,7 +939,7 @@ class ReusableConfig(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=6
+        number=6,
     )
 
 

@@ -16,7 +16,6 @@
 
 from .services.web_risk_service import WebRiskServiceClient
 
-from .types.webrisk import CompressionType
 from .types.webrisk import ComputeThreatListDiffRequest
 from .types.webrisk import ComputeThreatListDiffResponse
 from .types.webrisk import CreateSubmissionRequest
@@ -30,10 +29,11 @@ from .types.webrisk import SearchUrisResponse
 from .types.webrisk import Submission
 from .types.webrisk import ThreatEntryAdditions
 from .types.webrisk import ThreatEntryRemovals
+from .types.webrisk import CompressionType
 from .types.webrisk import ThreatType
 
 __all__ = (
-    'CompressionType',
+    'WebRiskServiceClient',
     'ComputeThreatListDiffRequest',
     'ComputeThreatListDiffResponse',
     'CreateSubmissionRequest',
@@ -47,6 +47,6 @@ __all__ = (
     'Submission',
     'ThreatEntryAdditions',
     'ThreatEntryRemovals',
+    'CompressionType',
     'ThreatType',
-'WebRiskServiceClient',
 )

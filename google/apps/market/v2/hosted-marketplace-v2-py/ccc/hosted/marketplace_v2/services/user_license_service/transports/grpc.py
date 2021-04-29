@@ -219,9 +219,7 @@ class UserLicenseServiceGrpcTransport(UserLicenseServiceTransport):
     def get(self) -> Callable[
             [services.UserLicenseGetRequest],
             resources.UserLicense]:
-        r"""Return a callable for the
-        get
-          method over gRPC.
+        r"""Return a callable for the get method over gRPC.
 
         Get the user's licensing status for their permission
         to use a given app.

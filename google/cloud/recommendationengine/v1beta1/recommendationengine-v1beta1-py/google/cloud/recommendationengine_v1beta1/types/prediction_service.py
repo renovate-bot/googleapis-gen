@@ -168,13 +168,13 @@ class PredictRequest(proto.Message):
     params = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=6
+        number=6,
         message=struct.Value,
     )
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=9
+        number=9,
     )
 
 
@@ -231,7 +231,7 @@ class PredictResponse(proto.Message):
         item_metadata = proto.MapField(
             proto.STRING,
             proto.MESSAGE,
-            number=2
+            number=2,
             message=struct.Value,
         )
 
@@ -259,7 +259,7 @@ class PredictResponse(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=5
+        number=5,
         message=struct.Value,
     )
     next_page_token = proto.Field(

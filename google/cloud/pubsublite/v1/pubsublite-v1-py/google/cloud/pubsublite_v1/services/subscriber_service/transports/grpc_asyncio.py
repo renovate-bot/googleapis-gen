@@ -226,9 +226,7 @@ class SubscriberServiceGrpcAsyncIOTransport(SubscriberServiceTransport):
     def subscribe(self) -> Callable[
             [subscriber.SubscribeRequest],
             Awaitable[subscriber.SubscribeResponse]]:
-        r"""Return a callable for the
-        subscribe
-          method over gRPC.
+        r"""Return a callable for the subscribe method over gRPC.
 
         Establishes a stream with the server for receiving
         messages.

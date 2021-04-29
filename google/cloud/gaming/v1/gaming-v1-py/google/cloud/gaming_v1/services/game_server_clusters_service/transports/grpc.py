@@ -240,9 +240,7 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
     def list_game_server_clusters(self) -> Callable[
             [game_server_clusters.ListGameServerClustersRequest],
             game_server_clusters.ListGameServerClustersResponse]:
-        r"""Return a callable for the
-        list game server clusters
-          method over gRPC.
+        r"""Return a callable for the list game server clusters method over gRPC.
 
         Lists game server clusters in a given project and
         location.
@@ -269,9 +267,7 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
     def get_game_server_cluster(self) -> Callable[
             [game_server_clusters.GetGameServerClusterRequest],
             game_server_clusters.GameServerCluster]:
-        r"""Return a callable for the
-        get game server cluster
-          method over gRPC.
+        r"""Return a callable for the get game server cluster method over gRPC.
 
         Gets details of a single game server cluster.
 
@@ -297,9 +293,7 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
     def create_game_server_cluster(self) -> Callable[
             [game_server_clusters.CreateGameServerClusterRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create game server cluster
-          method over gRPC.
+        r"""Return a callable for the create game server cluster method over gRPC.
 
         Creates a new game server cluster in a given project
         and location.
@@ -326,10 +320,8 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
     def preview_create_game_server_cluster(self) -> Callable[
             [game_server_clusters.PreviewCreateGameServerClusterRequest],
             game_server_clusters.PreviewCreateGameServerClusterResponse]:
-        r"""Return a callable for the
-        preview create game server
-        cluster
-          method over gRPC.
+        r"""Return a callable for the preview create game server
+        cluster method over gRPC.
 
         Previews creation of a new game server cluster in a
         given project and location.
@@ -356,9 +348,7 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
     def delete_game_server_cluster(self) -> Callable[
             [game_server_clusters.DeleteGameServerClusterRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete game server cluster
-          method over gRPC.
+        r"""Return a callable for the delete game server cluster method over gRPC.
 
         Deletes a single game server cluster.
 
@@ -384,10 +374,8 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
     def preview_delete_game_server_cluster(self) -> Callable[
             [game_server_clusters.PreviewDeleteGameServerClusterRequest],
             game_server_clusters.PreviewDeleteGameServerClusterResponse]:
-        r"""Return a callable for the
-        preview delete game server
-        cluster
-          method over gRPC.
+        r"""Return a callable for the preview delete game server
+        cluster method over gRPC.
 
         Previews deletion of a single game server cluster.
 
@@ -413,9 +401,7 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
     def update_game_server_cluster(self) -> Callable[
             [game_server_clusters.UpdateGameServerClusterRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update game server cluster
-          method over gRPC.
+        r"""Return a callable for the update game server cluster method over gRPC.
 
         Patches a single game server cluster.
 
@@ -441,10 +427,8 @@ class GameServerClustersServiceGrpcTransport(GameServerClustersServiceTransport)
     def preview_update_game_server_cluster(self) -> Callable[
             [game_server_clusters.PreviewUpdateGameServerClusterRequest],
             game_server_clusters.PreviewUpdateGameServerClusterResponse]:
-        r"""Return a callable for the
-        preview update game server
-        cluster
-          method over gRPC.
+        r"""Return a callable for the preview update game server
+        cluster method over gRPC.
 
         Previews updating a GameServerCluster.
 

@@ -326,8 +326,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
 
         Args:
             request (google.cloud.vision_v1p1beta1.types.BatchAnnotateImagesRequest):
-                The request object.
-                Multiple image annotation requests
+                The request object. Multiple image annotation requests
                 are batched into a single service call.
             requests (Sequence[google.cloud.vision_v1p1beta1.types.AnnotateImageRequest]):
                 Required. Individual image annotation
@@ -362,7 +361,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         # there are no flattened fields.
         if not isinstance(request, image_annotator.BatchAnnotateImagesRequest):
             request = image_annotator.BatchAnnotateImagesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if requests is not None:
                 request.requests = requests

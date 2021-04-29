@@ -225,9 +225,7 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
     def get_model(self) -> Callable[
             [model.GetModelRequest],
             Awaitable[model.Model]]:
-        r"""Return a callable for the
-        get model
-          method over gRPC.
+        r"""Return a callable for the get model method over gRPC.
 
         Gets the specified model resource by model ID.
 
@@ -253,9 +251,7 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
     def list_models(self) -> Callable[
             [model.ListModelsRequest],
             Awaitable[model.ListModelsResponse]]:
-        r"""Return a callable for the
-        list models
-          method over gRPC.
+        r"""Return a callable for the list models method over gRPC.
 
         Lists all models in the specified dataset. Requires
         the READER dataset role.
@@ -282,9 +278,7 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
     def patch_model(self) -> Callable[
             [gcb_model.PatchModelRequest],
             Awaitable[gcb_model.Model]]:
-        r"""Return a callable for the
-        patch model
-          method over gRPC.
+        r"""Return a callable for the patch model method over gRPC.
 
         Patch specific fields in the specified model.
 
@@ -310,9 +304,7 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
     def delete_model(self) -> Callable[
             [model.DeleteModelRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete model
-          method over gRPC.
+        r"""Return a callable for the delete model method over gRPC.
 
         Deletes the model specified by modelId from the
         dataset.

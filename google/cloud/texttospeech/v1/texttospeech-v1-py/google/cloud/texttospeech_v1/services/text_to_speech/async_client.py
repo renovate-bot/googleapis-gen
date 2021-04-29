@@ -152,8 +152,7 @@ class TextToSpeechAsyncClient:
 
         Args:
             request (:class:`google.cloud.texttospeech_v1.types.ListVoicesRequest`):
-                The request object.
-                The top-level message sent by the
+                The request object. The top-level message sent by the
                 client for the `ListVoices` method.
             language_code (:class:`str`):
                 Optional. Recommended.
@@ -238,8 +237,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.texttospeech_v1.types.SynthesizeSpeechRequest`):
-                The request object.
-                The top-level message sent by the
+                The request object. The top-level message sent by the
                 client for the `SynthesizeSpeech` method.
             input (:class:`google.cloud.texttospeech_v1.types.SynthesisInput`):
                 Required. The Synthesizer requires

@@ -14,19 +14,20 @@
 # limitations under the License.
 #
 
-from google.cloud.asset_v1p5beta1.services.asset_service.async_client import AssetServiceAsyncClient
 from google.cloud.asset_v1p5beta1.services.asset_service.client import AssetServiceClient
-from google.cloud.asset_v1p5beta1.types.asset_service import ContentType
+from google.cloud.asset_v1p5beta1.services.asset_service.async_client import AssetServiceAsyncClient
+
 from google.cloud.asset_v1p5beta1.types.asset_service import ListAssetsRequest
 from google.cloud.asset_v1p5beta1.types.asset_service import ListAssetsResponse
+from google.cloud.asset_v1p5beta1.types.asset_service import ContentType
 from google.cloud.asset_v1p5beta1.types.assets import Asset
 from google.cloud.asset_v1p5beta1.types.assets import Resource
 
-__all__ = ('Asset',
+__all__ = ('AssetServiceClient',
     'AssetServiceAsyncClient',
-    'AssetServiceClient',
-    'ContentType',
     'ListAssetsRequest',
     'ListAssetsResponse',
+    'ContentType',
+    'Asset',
     'Resource',
 )

@@ -294,7 +294,7 @@ class Realm(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     time_zone = proto.Field(
         proto.STRING,

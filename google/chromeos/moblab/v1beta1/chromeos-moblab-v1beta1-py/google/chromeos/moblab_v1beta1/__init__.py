@@ -30,17 +30,17 @@ from .types.resources import Milestone
 from .types.resources import Model
 
 __all__ = (
-    'Build',
-    'BuildArtifact',
-    'BuildTarget',
+    'BuildServiceClient',
     'CheckBuildStageStatusRequest',
     'CheckBuildStageStatusResponse',
     'ListBuildsRequest',
     'ListBuildsResponse',
-    'Milestone',
-    'Model',
     'StageBuildMetadata',
     'StageBuildRequest',
     'StageBuildResponse',
-'BuildServiceClient',
+    'Build',
+    'BuildArtifact',
+    'BuildTarget',
+    'Milestone',
+    'Model',
 )

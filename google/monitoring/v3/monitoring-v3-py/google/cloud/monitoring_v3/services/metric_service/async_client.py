@@ -168,8 +168,7 @@ class MetricServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListMonitoredResourceDescriptorsRequest`):
-                The request object.
-                The
+                The request object. The
                 `ListMonitoredResourceDescriptors` request.
             name (:class:`str`):
                 Required. The project on which to execute the request.
@@ -267,8 +266,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.GetMonitoredResourceDescriptorRequest`):
-                The request object.
-                The `GetMonitoredResourceDescriptor`
+                The request object. The `GetMonitoredResourceDescriptor`
                 request.
             name (:class:`str`):
                 Required. The monitored resource descriptor to get. The
@@ -367,8 +365,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListMetricDescriptorsRequest`):
-                The request object.
-                The `ListMetricDescriptors` request.
+                The request object. The `ListMetricDescriptors` request.
             name (:class:`str`):
                 Required. The project on which to execute the request.
                 The format is:
@@ -465,8 +462,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.GetMetricDescriptorRequest`):
-                The request object.
-                The `GetMetricDescriptor` request.
+                The request object. The `GetMetricDescriptor` request.
             name (:class:`str`):
                 Required. The metric descriptor on which to execute the
                 request. The format is:
@@ -560,8 +556,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.CreateMetricDescriptorRequest`):
-                The request object.
-                The `CreateMetricDescriptor`
+                The request object. The `CreateMetricDescriptor`
                 request.
             name (:class:`str`):
                 Required. The project on which to execute the request.
@@ -655,8 +650,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.DeleteMetricDescriptorRequest`):
-                The request object.
-                The `DeleteMetricDescriptor`
+                The request object. The `DeleteMetricDescriptor`
                 request.
             name (:class:`str`):
                 Required. The metric descriptor on which to execute the
@@ -740,8 +734,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListTimeSeriesRequest`):
-                The request object.
-                The `ListTimeSeries` request.
+                The request object. The `ListTimeSeries` request.
             name (:class:`str`):
                 Required. The project, organization or folder on which
                 to execute the request. The format is:
@@ -883,8 +876,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.CreateTimeSeriesRequest`):
-                The request object.
-                The `CreateTimeSeries` request.
+                The request object. The `CreateTimeSeries` request.
             name (:class:`str`):
                 Required. The project on which to execute the request.
                 The format is:

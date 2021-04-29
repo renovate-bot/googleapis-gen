@@ -227,9 +227,7 @@ class MigrationServiceGrpcAsyncIOTransport(MigrationServiceTransport):
     def create_migration_workflow(self) -> Callable[
             [migration_service.CreateMigrationWorkflowRequest],
             Awaitable[migration_entities.MigrationWorkflow]]:
-        r"""Return a callable for the
-        create migration workflow
-          method over gRPC.
+        r"""Return a callable for the create migration workflow method over gRPC.
 
         Creates a migration workflow.
 
@@ -255,9 +253,7 @@ class MigrationServiceGrpcAsyncIOTransport(MigrationServiceTransport):
     def get_migration_workflow(self) -> Callable[
             [migration_service.GetMigrationWorkflowRequest],
             Awaitable[migration_entities.MigrationWorkflow]]:
-        r"""Return a callable for the
-        get migration workflow
-          method over gRPC.
+        r"""Return a callable for the get migration workflow method over gRPC.
 
         Gets a previously created migration workflow.
 
@@ -283,9 +279,7 @@ class MigrationServiceGrpcAsyncIOTransport(MigrationServiceTransport):
     def list_migration_workflows(self) -> Callable[
             [migration_service.ListMigrationWorkflowsRequest],
             Awaitable[migration_service.ListMigrationWorkflowsResponse]]:
-        r"""Return a callable for the
-        list migration workflows
-          method over gRPC.
+        r"""Return a callable for the list migration workflows method over gRPC.
 
         Lists previously created migration workflow.
 
@@ -311,9 +305,7 @@ class MigrationServiceGrpcAsyncIOTransport(MigrationServiceTransport):
     def delete_migration_workflow(self) -> Callable[
             [migration_service.DeleteMigrationWorkflowRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete migration workflow
-          method over gRPC.
+        r"""Return a callable for the delete migration workflow method over gRPC.
 
         Deletes a migration workflow by name.
 
@@ -339,9 +331,7 @@ class MigrationServiceGrpcAsyncIOTransport(MigrationServiceTransport):
     def start_migration_workflow(self) -> Callable[
             [migration_service.StartMigrationWorkflowRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        start migration workflow
-          method over gRPC.
+        r"""Return a callable for the start migration workflow method over gRPC.
 
         Starts a previously created migration workflow. I.e.,
         the state transitions from DRAFT to RUNNING. This is a
@@ -371,9 +361,7 @@ class MigrationServiceGrpcAsyncIOTransport(MigrationServiceTransport):
     def get_migration_subtask(self) -> Callable[
             [migration_service.GetMigrationSubtaskRequest],
             Awaitable[migration_entities.MigrationSubtask]]:
-        r"""Return a callable for the
-        get migration subtask
-          method over gRPC.
+        r"""Return a callable for the get migration subtask method over gRPC.
 
         Gets a previously created migration subtask.
 
@@ -399,9 +387,7 @@ class MigrationServiceGrpcAsyncIOTransport(MigrationServiceTransport):
     def list_migration_subtasks(self) -> Callable[
             [migration_service.ListMigrationSubtasksRequest],
             Awaitable[migration_service.ListMigrationSubtasksResponse]]:
-        r"""Return a callable for the
-        list migration subtasks
-          method over gRPC.
+        r"""Return a callable for the list migration subtasks method over gRPC.
 
         Lists previously created migration subtasks.
 

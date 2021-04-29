@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.trace_v2.services.trace_service.async_client import TraceServiceAsyncClient
 from google.cloud.trace_v2.services.trace_service.client import TraceServiceClient
+from google.cloud.trace_v2.services.trace_service.async_client import TraceServiceAsyncClient
+
 from google.cloud.trace_v2.types.trace import AttributeValue
 from google.cloud.trace_v2.types.trace import Module
 from google.cloud.trace_v2.types.trace import Span
@@ -23,12 +24,12 @@ from google.cloud.trace_v2.types.trace import StackTrace
 from google.cloud.trace_v2.types.trace import TruncatableString
 from google.cloud.trace_v2.types.tracing import BatchWriteSpansRequest
 
-__all__ = ('AttributeValue',
-    'BatchWriteSpansRequest',
+__all__ = ('TraceServiceClient',
+    'TraceServiceAsyncClient',
+    'AttributeValue',
     'Module',
     'Span',
     'StackTrace',
-    'TraceServiceAsyncClient',
-    'TraceServiceClient',
     'TruncatableString',
+    'BatchWriteSpansRequest',
 )

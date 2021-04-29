@@ -247,9 +247,7 @@ class ImageAnnotatorGrpcAsyncIOTransport(ImageAnnotatorTransport):
     def batch_annotate_images(self) -> Callable[
             [image_annotator.BatchAnnotateImagesRequest],
             Awaitable[image_annotator.BatchAnnotateImagesResponse]]:
-        r"""Return a callable for the
-        batch annotate images
-          method over gRPC.
+        r"""Return a callable for the batch annotate images method over gRPC.
 
         Run image detection and annotation for a batch of
         images.
@@ -276,9 +274,7 @@ class ImageAnnotatorGrpcAsyncIOTransport(ImageAnnotatorTransport):
     def async_batch_annotate_files(self) -> Callable[
             [image_annotator.AsyncBatchAnnotateFilesRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        async batch annotate files
-          method over gRPC.
+        r"""Return a callable for the async batch annotate files method over gRPC.
 
         Run asynchronous image detection and annotation for a list of
         generic files, such as PDF files, which may contain multiple

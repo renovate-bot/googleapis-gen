@@ -21,18 +21,18 @@ from .types.resource_settings import ListSettingsRequest
 from .types.resource_settings import ListSettingsResponse
 from .types.resource_settings import Setting
 from .types.resource_settings import SettingMetadata
-from .types.resource_settings import SettingView
 from .types.resource_settings import UpdateSettingRequest
 from .types.resource_settings import Value
+from .types.resource_settings import SettingView
 
 __all__ = (
+    'ResourceSettingsServiceClient',
     'GetSettingRequest',
     'ListSettingsRequest',
     'ListSettingsResponse',
     'Setting',
     'SettingMetadata',
-    'SettingView',
     'UpdateSettingRequest',
     'Value',
-'ResourceSettingsServiceClient',
+    'SettingView',
 )

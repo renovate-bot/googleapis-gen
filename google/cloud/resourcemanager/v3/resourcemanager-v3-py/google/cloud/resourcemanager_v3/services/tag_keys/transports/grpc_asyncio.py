@@ -246,9 +246,7 @@ class TagKeysGrpcAsyncIOTransport(TagKeysTransport):
     def list_tag_keys(self) -> Callable[
             [tag_keys.ListTagKeysRequest],
             Awaitable[tag_keys.ListTagKeysResponse]]:
-        r"""Return a callable for the
-        list tag keys
-          method over gRPC.
+        r"""Return a callable for the list tag keys method over gRPC.
 
         Lists all TagKeys for a parent resource.
 
@@ -274,9 +272,7 @@ class TagKeysGrpcAsyncIOTransport(TagKeysTransport):
     def get_tag_key(self) -> Callable[
             [tag_keys.GetTagKeyRequest],
             Awaitable[tag_keys.TagKey]]:
-        r"""Return a callable for the
-        get tag key
-          method over gRPC.
+        r"""Return a callable for the get tag key method over gRPC.
 
         Retrieves a TagKey. This method will return
         ``PERMISSION_DENIED`` if the key does not exist or the user does
@@ -304,9 +300,7 @@ class TagKeysGrpcAsyncIOTransport(TagKeysTransport):
     def create_tag_key(self) -> Callable[
             [tag_keys.CreateTagKeyRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create tag key
-          method over gRPC.
+        r"""Return a callable for the create tag key method over gRPC.
 
         Creates a new TagKey. If another request with the
         same parameters is sent while the original request is in
@@ -336,9 +330,7 @@ class TagKeysGrpcAsyncIOTransport(TagKeysTransport):
     def update_tag_key(self) -> Callable[
             [tag_keys.UpdateTagKeyRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update tag key
-          method over gRPC.
+        r"""Return a callable for the update tag key method over gRPC.
 
         Updates the attributes of the TagKey resource.
 
@@ -364,9 +356,7 @@ class TagKeysGrpcAsyncIOTransport(TagKeysTransport):
     def delete_tag_key(self) -> Callable[
             [tag_keys.DeleteTagKeyRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete tag key
-          method over gRPC.
+        r"""Return a callable for the delete tag key method over gRPC.
 
         Deletes a TagKey. The TagKey cannot be deleted if it
         has any child TagValues.
@@ -393,9 +383,7 @@ class TagKeysGrpcAsyncIOTransport(TagKeysTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for a TagKey. The returned policy
         may be empty if no such policy or resource exists. The
@@ -426,9 +414,7 @@ class TagKeysGrpcAsyncIOTransport(TagKeysTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on a TagKey, replacing any
         existing policy. The ``resource`` field should be the TagKey's
@@ -458,9 +444,7 @@ class TagKeysGrpcAsyncIOTransport(TagKeysTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns permissions that a caller has on the specified TagKey.
         The ``resource`` field should be the TagKey's resource name. For

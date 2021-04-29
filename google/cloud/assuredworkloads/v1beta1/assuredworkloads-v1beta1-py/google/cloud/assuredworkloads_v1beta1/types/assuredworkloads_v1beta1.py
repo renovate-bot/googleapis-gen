@@ -473,7 +473,7 @@ class Workload(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=10
+        number=10,
     )
     provisioned_resources_parent = proto.Field(
         proto.STRING,

@@ -336,8 +336,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
 
         Args:
             request (google.cloud.apigeeconnect_v1.types.ListConnectionsRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ListConnections][Management.ListConnections].
             parent (str):
                 Required. Parent name of the form:
@@ -375,7 +374,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, connection.ListConnectionsRequest):
             request = connection.ListConnectionsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

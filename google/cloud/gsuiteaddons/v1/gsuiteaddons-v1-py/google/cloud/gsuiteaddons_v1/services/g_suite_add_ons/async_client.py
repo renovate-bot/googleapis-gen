@@ -190,8 +190,7 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.GetAuthorizationRequest`):
-                The request object.
-                Request message to get Google
+                The request object. Request message to get Google
                 Workspace Add-ons authorization information.
             name (:class:`str`):
                 Required. Name of the project for which to get the
@@ -271,8 +270,7 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.CreateDeploymentRequest`):
-                The request object.
-                Request message to create a
+                The request object. Request message to create a
                 deployment.
             parent (:class:`str`):
                 Required. Name of the project in which to create the
@@ -367,8 +365,7 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.ReplaceDeploymentRequest`):
-                The request object.
-                Request message to create or replace
+                The request object. Request message to create or replace
                 a deployment.
             deployment (:class:`google.cloud.gsuiteaddons_v1.types.Deployment`):
                 Required. The deployment to create or
@@ -441,8 +438,7 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.GetDeploymentRequest`):
-                The request object.
-                Request message to get a deployment.
+                The request object. Request message to get a deployment.
             name (:class:`str`):
                 Required. The full resource name of the deployment to
                 get.
@@ -517,8 +513,7 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.ListDeploymentsRequest`):
-                The request object.
-                Request message to list deployments
+                The request object. Request message to list deployments
                 for a project.
             parent (:class:`str`):
                 Required. Name of the project in which to create the
@@ -606,8 +601,7 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.DeleteDeploymentRequest`):
-                The request object.
-                Request message to delete a
+                The request object. Request message to delete a
                 deployment.
             name (:class:`str`):
                 Required. The full resource name of the deployment to
@@ -679,8 +673,7 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.InstallDeploymentRequest`):
-                The request object.
-                Request message to install a
+                The request object. Request message to install a
                 developer mode deployment.
             name (:class:`str`):
                 Required. The full resource name of the deployment to
@@ -752,8 +745,7 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.UninstallDeploymentRequest`):
-                The request object.
-                Request message to uninstall a
+                The request object. Request message to uninstall a
                 developer mode deployment.
             name (:class:`str`):
                 Required. The full resource name of the deployment to
@@ -823,8 +815,7 @@ class GSuiteAddOnsAsyncClient:
 
         Args:
             request (:class:`google.cloud.gsuiteaddons_v1.types.GetInstallStatusRequest`):
-                The request object.
-                Request message to get the install
+                The request object. Request message to get the install
                 status of a developer mode deployment.
             name (:class:`str`):
                 Required. The full resource name of the deployment.

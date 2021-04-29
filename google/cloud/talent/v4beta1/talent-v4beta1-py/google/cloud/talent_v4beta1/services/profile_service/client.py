@@ -352,8 +352,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.ListProfilesRequest):
-                The request object.
-                List profiles request.
+                The request object. List profiles request.
             parent (str):
                 Required. The resource name of the tenant under which
                 the profile is created.
@@ -393,7 +392,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, profile_service.ListProfilesRequest):
             request = profile_service.ListProfilesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -443,8 +442,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.CreateProfileRequest):
-                The request object.
-                Create profile request.
+                The request object. Create profile request.
             parent (str):
                 Required. The name of the tenant this profile belongs
                 to.
@@ -489,7 +487,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, profile_service.CreateProfileRequest):
             request = profile_service.CreateProfileRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -531,8 +529,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.GetProfileRequest):
-                The request object.
-                Get profile request.
+                The request object. Get profile request.
             name (str):
                 Required. Resource name of the profile to get.
 
@@ -571,7 +568,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, profile_service.GetProfileRequest):
             request = profile_service.GetProfileRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -612,8 +609,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.UpdateProfileRequest):
-                The request object.
-                Update profile request
+                The request object. Update profile request
             profile (google.cloud.talent_v4beta1.types.Profile):
                 Required. Profile to be updated.
                 This corresponds to the ``profile`` field
@@ -647,7 +643,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, profile_service.UpdateProfileRequest):
             request = profile_service.UpdateProfileRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if profile is not None:
                 request.profile = profile
@@ -689,8 +685,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.DeleteProfileRequest):
-                The request object.
-                Delete profile request.
+                The request object. Delete profile request.
             name (str):
                 Required. Resource name of the profile to be deleted.
 
@@ -721,7 +716,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, profile_service.DeleteProfileRequest):
             request = profile_service.DeleteProfileRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -765,8 +760,7 @@ class ProfileServiceClient(metaclass=ProfileServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.SearchProfilesRequest):
-                The request object.
-                The request body of the
+                The request object. The request body of the
                 `SearchProfiles` call.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

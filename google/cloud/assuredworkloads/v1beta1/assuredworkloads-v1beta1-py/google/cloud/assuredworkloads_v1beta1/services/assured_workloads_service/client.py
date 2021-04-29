@@ -338,8 +338,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
 
         Args:
             request (google.cloud.assuredworkloads_v1beta1.types.CreateWorkloadRequest):
-                The request object.
-                Request for creating a workload.
+                The request object. Request for creating a workload.
             parent (str):
                 Required. The resource name of the new Workload's
                 parent. Must be of the form
@@ -381,7 +380,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, assuredworkloads_v1beta1.CreateWorkloadRequest):
             request = assuredworkloads_v1beta1.CreateWorkloadRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -435,8 +434,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
 
         Args:
             request (google.cloud.assuredworkloads_v1beta1.types.UpdateWorkloadRequest):
-                The request object.
-                Request for Updating a workload.
+                The request object. Request for Updating a workload.
             workload (google.cloud.assuredworkloads_v1beta1.types.Workload):
                 Required. The workload to update. The workload’s
                 ``name`` field is used to identify the workload to be
@@ -480,7 +478,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, assuredworkloads_v1beta1.UpdateWorkloadRequest):
             request = assuredworkloads_v1beta1.UpdateWorkloadRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if workload is not None:
                 request.workload = workload
@@ -524,8 +522,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
 
         Args:
             request (google.cloud.assuredworkloads_v1beta1.types.DeleteWorkloadRequest):
-                The request object.
-                Request for deleting a Workload.
+                The request object. Request for deleting a Workload.
             name (str):
                 Required. The ``name`` field is used to identify the
                 workload. Format:
@@ -554,7 +551,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, assuredworkloads_v1beta1.DeleteWorkloadRequest):
             request = assuredworkloads_v1beta1.DeleteWorkloadRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -591,8 +588,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
 
         Args:
             request (google.cloud.assuredworkloads_v1beta1.types.GetWorkloadRequest):
-                The request object.
-                Request for fetching a workload.
+                The request object. Request for fetching a workload.
             name (str):
                 Required. The resource name of the Workload to fetch.
                 This is the workloads's relative path in the API,
@@ -631,7 +627,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, assuredworkloads_v1beta1.GetWorkloadRequest):
             request = assuredworkloads_v1beta1.GetWorkloadRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -671,8 +667,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
 
         Args:
             request (google.cloud.assuredworkloads_v1beta1.types.ListWorkloadsRequest):
-                The request object.
-                Request for fetching workloads in an
+                The request object. Request for fetching workloads in an
                 organization.
             parent (str):
                 Required. Parent Resource to list workloads from. Must
@@ -710,7 +705,7 @@ class AssuredWorkloadsServiceClient(metaclass=AssuredWorkloadsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, assuredworkloads_v1beta1.ListWorkloadsRequest):
             request = assuredworkloads_v1beta1.ListWorkloadsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

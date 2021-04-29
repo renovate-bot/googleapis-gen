@@ -367,7 +367,7 @@ class Filter(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=6
+        number=6,
         message=struct.ListValue,
     )
     calendar_period = proto.Field(

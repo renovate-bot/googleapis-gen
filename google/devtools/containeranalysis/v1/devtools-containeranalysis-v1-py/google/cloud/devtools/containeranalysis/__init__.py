@@ -14,13 +14,14 @@
 # limitations under the License.
 #
 
-from google.cloud.devtools.containeranalysis_v1.services.container_analysis.async_client import ContainerAnalysisAsyncClient
 from google.cloud.devtools.containeranalysis_v1.services.container_analysis.client import ContainerAnalysisClient
+from google.cloud.devtools.containeranalysis_v1.services.container_analysis.async_client import ContainerAnalysisAsyncClient
+
 from google.cloud.devtools.containeranalysis_v1.types.containeranalysis import GetVulnerabilityOccurrencesSummaryRequest
 from google.cloud.devtools.containeranalysis_v1.types.containeranalysis import VulnerabilityOccurrencesSummary
 
-__all__ = ('ContainerAnalysisAsyncClient',
-    'ContainerAnalysisClient',
+__all__ = ('ContainerAnalysisClient',
+    'ContainerAnalysisAsyncClient',
     'GetVulnerabilityOccurrencesSummaryRequest',
     'VulnerabilityOccurrencesSummary',
 )

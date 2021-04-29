@@ -186,8 +186,7 @@ class DlpServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.InspectContentRequest`):
-                The request object.
-                Request to search for potentially
+                The request object. Request to search for potentially
                 sensitive info in a ContentItem.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -256,8 +255,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.RedactImageRequest`):
-                The request object.
-                Request to search for potentially
+                The request object. Request to search for potentially
                 sensitive info in an image and redact it by covering it
                 with a colored rectangle.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -327,8 +325,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.DeidentifyContentRequest`):
-                The request object.
-                Request to de-identify a list of
+                The request object. Request to de-identify a list of
                 items.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -392,8 +389,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ReidentifyContentRequest`):
-                The request object.
-                Request to re-identify an item.
+                The request object. Request to re-identify an item.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -456,8 +452,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ListInfoTypesRequest`):
-                The request object.
-                Request for the list of infoTypes.
+                The request object. Request for the list of infoTypes.
             parent (:class:`str`):
                 The parent resource name.
 
@@ -539,8 +534,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.CreateInspectTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateInspectTemplate.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -655,8 +649,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.UpdateInspectTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateInspectTemplate.
             name (:class:`str`):
                 Required. Resource name of organization and
@@ -756,8 +749,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.GetInspectTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetInspectTemplate.
             name (:class:`str`):
                 Required. Resource name of the organization and
@@ -848,8 +840,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ListInspectTemplatesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListInspectTemplates.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -967,8 +958,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.DeleteInspectTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteInspectTemplate.
             name (:class:`str`):
                 Required. Resource name of the organization and
@@ -1048,8 +1038,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.CreateDeidentifyTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateDeidentifyTemplate.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -1162,8 +1151,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.UpdateDeidentifyTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateDeidentifyTemplate.
             name (:class:`str`):
                 Required. Resource name of organization and deidentify
@@ -1261,8 +1249,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.GetDeidentifyTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetDeidentifyTemplate.
             name (:class:`str`):
                 Required. Resource name of the organization and
@@ -1351,8 +1338,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ListDeidentifyTemplatesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListDeidentifyTemplates.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -1470,8 +1456,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.DeleteDeidentifyTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteDeidentifyTemplate.
             name (:class:`str`):
                 Required. Resource name of the organization and
@@ -1551,8 +1536,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.CreateJobTriggerRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateJobTrigger.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -1657,8 +1641,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.UpdateJobTriggerRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateJobTrigger.
             name (:class:`str`):
                 Required. Resource name of the project and the
@@ -1759,8 +1742,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.HybridInspectJobTriggerRequest`):
-                The request object.
-                Request to search for potentially
+                The request object. Request to search for potentially
                 sensitive info in a custom location.
             name (:class:`str`):
                 Required. Resource name of the trigger to execute a
@@ -1838,8 +1820,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.GetJobTriggerRequest`):
-                The request object.
-                Request message for GetJobTrigger.
+                The request object. Request message for GetJobTrigger.
             name (:class:`str`):
                 Required. Resource name of the project and the
                 triggeredJob, for example
@@ -1925,8 +1906,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ListJobTriggersRequest`):
-                The request object.
-                Request message for ListJobTriggers.
+                The request object. Request message for ListJobTriggers.
             parent (:class:`str`):
                 Required. Parent resource name.
 
@@ -2037,8 +2017,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.DeleteJobTriggerRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteJobTrigger.
             name (:class:`str`):
                 Required. Resource name of the project and the
@@ -2113,8 +2092,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ActivateJobTriggerRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ActivateJobTrigger.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2180,8 +2158,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.CreateDlpJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateDlpJobRequest. Used to initiate long running jobs
                 such as calculating risk metrics or inspecting Google
                 Cloud Storage.
@@ -2297,8 +2274,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ListDlpJobsRequest`):
-                The request object.
-                The request message for listing DLP
+                The request object. The request message for listing DLP
                 jobs.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -2412,8 +2388,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.GetDlpJobRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [DlpJobs.GetDlpJob][].
             name (:class:`str`):
                 Required. The name of the DlpJob
@@ -2500,8 +2475,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.DeleteDlpJobRequest`):
-                The request object.
-                The request message for deleting a
+                The request object. The request message for deleting a
                 DLP job.
             name (:class:`str`):
                 Required. The name of the DlpJob
@@ -2578,8 +2552,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.CancelDlpJobRequest`):
-                The request object.
-                The request message for canceling a
+                The request object. The request message for canceling a
                 DLP job.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2630,8 +2603,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.CreateStoredInfoTypeRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateStoredInfoType.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -2744,8 +2716,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.UpdateStoredInfoTypeRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateStoredInfoType.
             name (:class:`str`):
                 Required. Resource name of organization and
@@ -2845,8 +2816,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.GetStoredInfoTypeRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetStoredInfoType.
             name (:class:`str`):
                 Required. Resource name of the organization and
@@ -2933,8 +2903,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.ListStoredInfoTypesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListStoredInfoTypes.
             parent (:class:`str`):
                 Required. Parent resource name.
@@ -3052,8 +3021,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.DeleteStoredInfoTypeRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteStoredInfoType.
             name (:class:`str`):
                 Required. Resource name of the organization and
@@ -3134,8 +3102,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.HybridInspectDlpJobRequest`):
-                The request object.
-                Request to search for potentially
+                The request object. Request to search for potentially
                 sensitive info in a custom location.
             name (:class:`str`):
                 Required. Resource name of the job to execute a hybrid
@@ -3215,8 +3182,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dlp_v2.types.FinishDlpJobRequest`):
-                The request object.
-                The request message for finishing a
+                The request object. The request message for finishing a
                 DLP hybrid job.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

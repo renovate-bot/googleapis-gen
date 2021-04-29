@@ -230,9 +230,7 @@ class AlertPolicyServiceGrpcTransport(AlertPolicyServiceTransport):
     def list_alert_policies(self) -> Callable[
             [alert_service.ListAlertPoliciesRequest],
             alert_service.ListAlertPoliciesResponse]:
-        r"""Return a callable for the
-        list alert policies
-          method over gRPC.
+        r"""Return a callable for the list alert policies method over gRPC.
 
         Lists the existing alerting policies for the
         workspace.
@@ -259,9 +257,7 @@ class AlertPolicyServiceGrpcTransport(AlertPolicyServiceTransport):
     def get_alert_policy(self) -> Callable[
             [alert_service.GetAlertPolicyRequest],
             alert.AlertPolicy]:
-        r"""Return a callable for the
-        get alert policy
-          method over gRPC.
+        r"""Return a callable for the get alert policy method over gRPC.
 
         Gets a single alerting policy.
 
@@ -287,9 +283,7 @@ class AlertPolicyServiceGrpcTransport(AlertPolicyServiceTransport):
     def create_alert_policy(self) -> Callable[
             [alert_service.CreateAlertPolicyRequest],
             alert.AlertPolicy]:
-        r"""Return a callable for the
-        create alert policy
-          method over gRPC.
+        r"""Return a callable for the create alert policy method over gRPC.
 
         Creates a new alerting policy.
 
@@ -315,9 +309,7 @@ class AlertPolicyServiceGrpcTransport(AlertPolicyServiceTransport):
     def delete_alert_policy(self) -> Callable[
             [alert_service.DeleteAlertPolicyRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete alert policy
-          method over gRPC.
+        r"""Return a callable for the delete alert policy method over gRPC.
 
         Deletes an alerting policy.
 
@@ -343,9 +335,7 @@ class AlertPolicyServiceGrpcTransport(AlertPolicyServiceTransport):
     def update_alert_policy(self) -> Callable[
             [alert_service.UpdateAlertPolicyRequest],
             alert.AlertPolicy]:
-        r"""Return a callable for the
-        update alert policy
-          method over gRPC.
+        r"""Return a callable for the update alert policy method over gRPC.
 
         Updates an alerting policy. You can either replace the entire
         policy with a new one or replace only certain fields in the

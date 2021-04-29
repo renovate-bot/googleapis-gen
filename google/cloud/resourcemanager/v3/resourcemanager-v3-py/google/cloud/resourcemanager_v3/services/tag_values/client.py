@@ -339,8 +339,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.ListTagValuesRequest):
-                The request object.
-                The request message for listing
+                The request object. The request message for listing
                 TagValues for the specified TagKey.
             parent (str):
                 Required. Resource name for TagKey, parent of the
@@ -377,7 +376,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_values.ListTagValuesRequest):
             request = tag_values.ListTagValuesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -420,8 +419,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.GetTagValueRequest):
-                The request object.
-                The request message for getting a
+                The request object. The request message for getting a
                 TagValue.
             name (str):
                 Required. Resource name for TagValue to be fetched in
@@ -458,7 +456,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_values.GetTagValueRequest):
             request = tag_values.GetTagValueRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -502,8 +500,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.CreateTagValueRequest):
-                The request object.
-                The request message for creating a
+                The request object. The request message for creating a
                 TagValue.
             tag_value (google.cloud.resourcemanager_v3.types.TagValue):
                 Required. The TagValue to be created. Only fields
@@ -542,7 +539,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_values.CreateTagValueRequest):
             request = tag_values.CreateTagValueRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if tag_value is not None:
                 request.tag_value = tag_value
@@ -583,8 +580,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.UpdateTagValueRequest):
-                The request object.
-                The request message for updating a
+                The request object. The request message for updating a
                 TagValue.
             tag_value (google.cloud.resourcemanager_v3.types.TagValue):
                 Required. The new definition of the TagValue. Only
@@ -631,7 +627,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_values.UpdateTagValueRequest):
             request = tag_values.UpdateTagValueRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if tag_value is not None:
                 request.tag_value = tag_value
@@ -682,8 +678,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.DeleteTagValueRequest):
-                The request object.
-                The request message for deleting a
+                The request object. The request message for deleting a
                 TagValue.
             name (str):
                 Required. Resource name for TagValue
@@ -722,7 +717,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_values.DeleteTagValueRequest):
             request = tag_values.DeleteTagValueRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -776,8 +771,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -861,14 +855,14 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.GetIamPolicyRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -910,8 +904,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -995,14 +988,14 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.SetIamPolicyRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1045,8 +1038,7 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1084,14 +1076,14 @@ class TagValuesClient(metaclass=TagValuesClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.TestIamPermissionsRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
             if permissions:
                 request.permissions.extend(permissions)

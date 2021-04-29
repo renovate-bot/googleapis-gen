@@ -76,7 +76,7 @@ class PubSubMessage(proto.Message):
     attributes = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=3
+        number=3,
         message='AttributeValues',
     )
     event_time = proto.Field(

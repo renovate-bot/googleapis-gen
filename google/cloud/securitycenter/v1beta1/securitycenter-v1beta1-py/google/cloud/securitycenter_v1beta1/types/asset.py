@@ -128,7 +128,7 @@ class Asset(proto.Message):
     resource_properties = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=7
+        number=7,
         message=struct.Value,
     )
     security_marks = proto.Field(

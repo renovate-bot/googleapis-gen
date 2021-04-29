@@ -165,8 +165,7 @@ class CloudFunctionsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.functions_v1.types.ListFunctionsRequest`):
-                The request object.
-                Request for the `ListFunctions`
+                The request object. Request for the `ListFunctions`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -241,8 +240,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.functions_v1.types.GetFunctionRequest`):
-                The request object.
-                Request for the `GetFunction`
+                The request object. Request for the `GetFunction`
                 method.
             name (:class:`str`):
                 Required. The name of the function
@@ -329,8 +327,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.functions_v1.types.CreateFunctionRequest`):
-                The request object.
-                Request for the `CreateFunction`
+                The request object. Request for the `CreateFunction`
                 method.
             location (:class:`str`):
                 Required. The project and location in which the function
@@ -424,8 +421,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.functions_v1.types.UpdateFunctionRequest`):
-                The request object.
-                Request for the `UpdateFunction`
+                The request object. Request for the `UpdateFunction`
                 method.
             function (:class:`google.cloud.functions_v1.types.CloudFunction`):
                 Required. New version of the
@@ -521,8 +517,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.functions_v1.types.DeleteFunctionRequest`):
-                The request object.
-                Request for the `DeleteFunction`
+                The request object. Request for the `DeleteFunction`
                 method.
             name (:class:`str`):
                 Required. The name of the function
@@ -629,8 +624,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.functions_v1.types.CallFunctionRequest`):
-                The request object.
-                Request for the `CallFunction`
+                The request object. Request for the `CallFunction`
                 method.
             name (:class:`str`):
                 Required. The name of the function to
@@ -738,8 +732,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.functions_v1.types.GenerateUploadUrlRequest`):
-                The request object.
-                Request of `GenerateSourceUploadUrl`
+                The request object. Request of `GenerateSourceUploadUrl`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -798,8 +791,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.functions_v1.types.GenerateDownloadUrlRequest`):
-                The request object.
-                Request of `GenerateDownloadUrl`
+                The request object. Request of `GenerateDownloadUrl`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -853,8 +845,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -967,8 +958,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1081,8 +1071,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

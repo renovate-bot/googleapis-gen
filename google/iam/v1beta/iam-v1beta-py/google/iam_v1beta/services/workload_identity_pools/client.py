@@ -351,8 +351,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
 
         Args:
             request (google.iam_v1beta.types.ListWorkloadIdentityPoolsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListWorkloadIdentityPools.
             parent (str):
                 Required. The parent resource to list
@@ -390,7 +389,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workload_identity_pool.ListWorkloadIdentityPoolsRequest):
             request = workload_identity_pool.ListWorkloadIdentityPoolsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -440,8 +439,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
 
         Args:
             request (google.iam_v1beta.types.GetWorkloadIdentityPoolRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetWorkloadIdentityPool.
             name (str):
                 Required. The name of the pool to
@@ -478,7 +476,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workload_identity_pool.GetWorkloadIdentityPoolRequest):
             request = workload_identity_pool.GetWorkloadIdentityPoolRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -524,8 +522,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
 
         Args:
             request (google.iam_v1beta.types.CreateWorkloadIdentityPoolRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateWorkloadIdentityPool.
             parent (str):
                 Required. The parent resource to create the pool in. The
@@ -578,7 +575,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gi_workload_identity_pool.CreateWorkloadIdentityPoolRequest):
             request = gi_workload_identity_pool.CreateWorkloadIdentityPoolRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -632,8 +629,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
 
         Args:
             request (google.iam_v1beta.types.UpdateWorkloadIdentityPoolRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateWorkloadIdentityPool.
             workload_identity_pool (google.iam_v1beta.types.WorkloadIdentityPool):
                 Required. The pool to update. The ``name`` field is used
@@ -676,7 +672,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gi_workload_identity_pool.UpdateWorkloadIdentityPoolRequest):
             request = gi_workload_identity_pool.UpdateWorkloadIdentityPoolRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if workload_identity_pool is not None:
                 request.workload_identity_pool = workload_identity_pool
@@ -736,8 +732,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
 
         Args:
             request (google.iam_v1beta.types.DeleteWorkloadIdentityPoolRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteWorkloadIdentityPool.
             name (str):
                 Required. The name of the pool to
@@ -775,7 +770,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workload_identity_pool.DeleteWorkloadIdentityPoolRequest):
             request = workload_identity_pool.DeleteWorkloadIdentityPoolRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -825,8 +820,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
 
         Args:
             request (google.iam_v1beta.types.UndeleteWorkloadIdentityPoolRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UndeleteWorkloadIdentityPool.
             name (str):
                 Required. The name of the pool to
@@ -864,7 +858,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workload_identity_pool.UndeleteWorkloadIdentityPoolRequest):
             request = workload_identity_pool.UndeleteWorkloadIdentityPoolRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -917,8 +911,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
 
         Args:
             request (google.iam_v1beta.types.ListWorkloadIdentityPoolProvidersRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListWorkloadIdentityPoolProviders.
             parent (str):
                 Required. The pool to list providers
@@ -956,7 +949,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workload_identity_pool.ListWorkloadIdentityPoolProvidersRequest):
             request = workload_identity_pool.ListWorkloadIdentityPoolProvidersRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1006,8 +999,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
 
         Args:
             request (google.iam_v1beta.types.GetWorkloadIdentityPoolProviderRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetWorkloadIdentityPoolProvider.
             name (str):
                 Required. The name of the provider to
@@ -1042,7 +1034,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workload_identity_pool.GetWorkloadIdentityPoolProviderRequest):
             request = workload_identity_pool.GetWorkloadIdentityPoolProviderRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1090,8 +1082,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
 
         Args:
             request (google.iam_v1beta.types.CreateWorkloadIdentityPoolProviderRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateWorkloadIdentityPoolProvider.
             parent (str):
                 Required. The pool to create this
@@ -1144,7 +1135,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workload_identity_pool.CreateWorkloadIdentityPoolProviderRequest):
             request = workload_identity_pool.CreateWorkloadIdentityPoolProviderRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1198,8 +1189,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
 
         Args:
             request (google.iam_v1beta.types.UpdateWorkloadIdentityPoolProviderRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateWorkloadIdentityPoolProvider.
             workload_identity_pool_provider (google.iam_v1beta.types.WorkloadIdentityPoolProvider):
                 Required. The provider to update.
@@ -1242,7 +1232,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workload_identity_pool.UpdateWorkloadIdentityPoolProviderRequest):
             request = workload_identity_pool.UpdateWorkloadIdentityPoolProviderRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if workload_identity_pool_provider is not None:
                 request.workload_identity_pool_provider = workload_identity_pool_provider
@@ -1298,8 +1288,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
 
         Args:
             request (google.iam_v1beta.types.DeleteWorkloadIdentityPoolProviderRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteWorkloadIdentityPoolProvider.
             name (str):
                 Required. The name of the provider to
@@ -1337,7 +1326,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest):
             request = workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1387,8 +1376,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
 
         Args:
             request (google.iam_v1beta.types.UndeleteWorkloadIdentityPoolProviderRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UndeleteWorkloadIdentityPoolProvider.
             name (str):
                 Required. The name of the provider to
@@ -1426,7 +1414,7 @@ class WorkloadIdentityPoolsClient(metaclass=WorkloadIdentityPoolsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest):
             request = workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

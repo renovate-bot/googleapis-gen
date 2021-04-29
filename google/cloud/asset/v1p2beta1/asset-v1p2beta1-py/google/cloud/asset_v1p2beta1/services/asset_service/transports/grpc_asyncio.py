@@ -226,9 +226,7 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def create_feed(self) -> Callable[
             [asset_service.CreateFeedRequest],
             Awaitable[asset_service.Feed]]:
-        r"""Return a callable for the
-        create feed
-          method over gRPC.
+        r"""Return a callable for the create feed method over gRPC.
 
         Creates a feed in a parent
         project/folder/organization to listen to its asset
@@ -256,9 +254,7 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def get_feed(self) -> Callable[
             [asset_service.GetFeedRequest],
             Awaitable[asset_service.Feed]]:
-        r"""Return a callable for the
-        get feed
-          method over gRPC.
+        r"""Return a callable for the get feed method over gRPC.
 
         Gets details about an asset feed.
 
@@ -284,9 +280,7 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def list_feeds(self) -> Callable[
             [asset_service.ListFeedsRequest],
             Awaitable[asset_service.ListFeedsResponse]]:
-        r"""Return a callable for the
-        list feeds
-          method over gRPC.
+        r"""Return a callable for the list feeds method over gRPC.
 
         Lists all asset feeds in a parent
         project/folder/organization.
@@ -313,9 +307,7 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def update_feed(self) -> Callable[
             [asset_service.UpdateFeedRequest],
             Awaitable[asset_service.Feed]]:
-        r"""Return a callable for the
-        update feed
-          method over gRPC.
+        r"""Return a callable for the update feed method over gRPC.
 
         Updates an asset feed configuration.
 
@@ -341,9 +333,7 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def delete_feed(self) -> Callable[
             [asset_service.DeleteFeedRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete feed
-          method over gRPC.
+        r"""Return a callable for the delete feed method over gRPC.
 
         Deletes an asset feed.
 

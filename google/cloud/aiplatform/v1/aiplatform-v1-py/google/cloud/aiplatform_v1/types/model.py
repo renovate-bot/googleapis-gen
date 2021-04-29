@@ -345,7 +345,7 @@ class Model(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=17
+        number=17,
     )
     encryption_spec = proto.Field(
         proto.MESSAGE,

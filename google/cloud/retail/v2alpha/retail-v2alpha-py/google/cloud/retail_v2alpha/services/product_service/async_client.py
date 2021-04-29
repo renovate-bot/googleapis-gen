@@ -169,8 +169,7 @@ class ProductServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.retail_v2alpha.types.CreateProductRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateProduct][] method.
             parent (:class:`str`):
                 Required. The parent catalog resource name, such as
@@ -282,8 +281,7 @@ class ProductServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.retail_v2alpha.types.GetProductRequest`):
-                The request object.
-                Request message for [GetProduct][]
+                The request object. Request message for [GetProduct][]
                 method.
             name (:class:`str`):
                 Required. Full resource name of
@@ -370,8 +368,7 @@ class ProductServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.retail_v2alpha.types.UpdateProductRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UpdateProduct][] method.
             product (:class:`google.cloud.retail_v2alpha.types.Product`):
                 Required. The product to update/create.
@@ -469,8 +466,7 @@ class ProductServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.retail_v2alpha.types.DeleteProductRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DeleteProduct][] method.
             name (:class:`str`):
                 Required. Full resource name of
@@ -552,8 +548,7 @@ class ProductServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.retail_v2alpha.types.ImportProductsRequest`):
-                The request object.
-                Request message for Import methods.
+                The request object. Request message for Import methods.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

@@ -337,8 +337,7 @@ class CursorServiceClient(metaclass=CursorServiceClientMeta):
 
         Args:
             requests (Iterator[google.cloud.pubsublite_v1.types.StreamingCommitCursorRequest]):
-                The request object iterator.
-                A request sent from the client to
+                The request object iterator. A request sent from the client to
                 the server on a stream.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -379,8 +378,7 @@ class CursorServiceClient(metaclass=CursorServiceClientMeta):
 
         Args:
             request (google.cloud.pubsublite_v1.types.CommitCursorRequest):
-                The request object.
-                Request for CommitCursor.
+                The request object. Request for CommitCursor.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -427,8 +425,7 @@ class CursorServiceClient(metaclass=CursorServiceClientMeta):
 
         Args:
             request (google.cloud.pubsublite_v1.types.ListPartitionCursorsRequest):
-                The request object.
-                Request for ListPartitionCursors.
+                The request object. Request for ListPartitionCursors.
             parent (str):
                 Required. The subscription for which to retrieve
                 cursors. Structured like
@@ -465,7 +462,7 @@ class CursorServiceClient(metaclass=CursorServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cursor.ListPartitionCursorsRequest):
             request = cursor.ListPartitionCursorsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

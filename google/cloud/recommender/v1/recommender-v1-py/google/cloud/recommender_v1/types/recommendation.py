@@ -297,13 +297,13 @@ class Operation(proto.Message):
     path_filters = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=8
+        number=8,
         message=struct.Value,
     )
     path_value_matchers = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=11
+        number=11,
         message='ValueMatcher',
     )
 
@@ -413,7 +413,7 @@ class RecommendationStateInfo(proto.Message):
     state_metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2
+        number=2,
     )
 
 

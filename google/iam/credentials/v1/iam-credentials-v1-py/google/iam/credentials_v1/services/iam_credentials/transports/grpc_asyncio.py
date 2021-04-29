@@ -234,9 +234,7 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
     def generate_access_token(self) -> Callable[
             [common.GenerateAccessTokenRequest],
             Awaitable[common.GenerateAccessTokenResponse]]:
-        r"""Return a callable for the
-        generate access token
-          method over gRPC.
+        r"""Return a callable for the generate access token method over gRPC.
 
         Generates an OAuth 2.0 access token for a service
         account.
@@ -263,9 +261,7 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
     def generate_id_token(self) -> Callable[
             [common.GenerateIdTokenRequest],
             Awaitable[common.GenerateIdTokenResponse]]:
-        r"""Return a callable for the
-        generate id token
-          method over gRPC.
+        r"""Return a callable for the generate id token method over gRPC.
 
         Generates an OpenID Connect ID token for a service
         account.
@@ -292,9 +288,7 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
     def sign_blob(self) -> Callable[
             [common.SignBlobRequest],
             Awaitable[common.SignBlobResponse]]:
-        r"""Return a callable for the
-        sign blob
-          method over gRPC.
+        r"""Return a callable for the sign blob method over gRPC.
 
         Signs a blob using a service account's system-managed
         private key.
@@ -321,9 +315,7 @@ class IAMCredentialsGrpcAsyncIOTransport(IAMCredentialsTransport):
     def sign_jwt(self) -> Callable[
             [common.SignJwtRequest],
             Awaitable[common.SignJwtResponse]]:
-        r"""Return a callable for the
-        sign jwt
-          method over gRPC.
+        r"""Return a callable for the sign jwt method over gRPC.
 
         Signs a JWT using a service account's system-managed
         private key.

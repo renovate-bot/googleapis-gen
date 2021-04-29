@@ -229,9 +229,7 @@ class UptimeCheckServiceGrpcTransport(UptimeCheckServiceTransport):
     def list_uptime_check_configs(self) -> Callable[
             [uptime_service.ListUptimeCheckConfigsRequest],
             uptime_service.ListUptimeCheckConfigsResponse]:
-        r"""Return a callable for the
-        list uptime check configs
-          method over gRPC.
+        r"""Return a callable for the list uptime check configs method over gRPC.
 
         Lists the existing valid Uptime check configurations
         for the project (leaving out any invalid
@@ -259,9 +257,7 @@ class UptimeCheckServiceGrpcTransport(UptimeCheckServiceTransport):
     def get_uptime_check_config(self) -> Callable[
             [uptime_service.GetUptimeCheckConfigRequest],
             uptime.UptimeCheckConfig]:
-        r"""Return a callable for the
-        get uptime check config
-          method over gRPC.
+        r"""Return a callable for the get uptime check config method over gRPC.
 
         Gets a single Uptime check configuration.
 
@@ -287,9 +283,7 @@ class UptimeCheckServiceGrpcTransport(UptimeCheckServiceTransport):
     def create_uptime_check_config(self) -> Callable[
             [uptime_service.CreateUptimeCheckConfigRequest],
             uptime.UptimeCheckConfig]:
-        r"""Return a callable for the
-        create uptime check config
-          method over gRPC.
+        r"""Return a callable for the create uptime check config method over gRPC.
 
         Creates a new Uptime check configuration.
 
@@ -315,9 +309,7 @@ class UptimeCheckServiceGrpcTransport(UptimeCheckServiceTransport):
     def update_uptime_check_config(self) -> Callable[
             [uptime_service.UpdateUptimeCheckConfigRequest],
             uptime.UptimeCheckConfig]:
-        r"""Return a callable for the
-        update uptime check config
-          method over gRPC.
+        r"""Return a callable for the update uptime check config method over gRPC.
 
         Updates an Uptime check configuration. You can either replace
         the entire configuration with a new one or replace only certain
@@ -347,9 +339,7 @@ class UptimeCheckServiceGrpcTransport(UptimeCheckServiceTransport):
     def delete_uptime_check_config(self) -> Callable[
             [uptime_service.DeleteUptimeCheckConfigRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete uptime check config
-          method over gRPC.
+        r"""Return a callable for the delete uptime check config method over gRPC.
 
         Deletes an Uptime check configuration. Note that this
         method will fail if the Uptime check configuration is
@@ -378,9 +368,7 @@ class UptimeCheckServiceGrpcTransport(UptimeCheckServiceTransport):
     def list_uptime_check_ips(self) -> Callable[
             [uptime_service.ListUptimeCheckIpsRequest],
             uptime_service.ListUptimeCheckIpsResponse]:
-        r"""Return a callable for the
-        list uptime check ips
-          method over gRPC.
+        r"""Return a callable for the list uptime check ips method over gRPC.
 
         Returns the list of IP addresses that checkers run
         from

@@ -221,9 +221,7 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
     def create_contact(self) -> Callable[
             [service.CreateContactRequest],
             service.Contact]:
-        r"""Return a callable for the
-        create contact
-          method over gRPC.
+        r"""Return a callable for the create contact method over gRPC.
 
         Adds a new contact for a resource.
 
@@ -249,9 +247,7 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
     def update_contact(self) -> Callable[
             [service.UpdateContactRequest],
             service.Contact]:
-        r"""Return a callable for the
-        update contact
-          method over gRPC.
+        r"""Return a callable for the update contact method over gRPC.
 
         Updates a contact.
         Note: A contact's email address cannot be changed.
@@ -278,9 +274,7 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
     def list_contacts(self) -> Callable[
             [service.ListContactsRequest],
             service.ListContactsResponse]:
-        r"""Return a callable for the
-        list contacts
-          method over gRPC.
+        r"""Return a callable for the list contacts method over gRPC.
 
         Lists the contacts that have been set on a resource.
 
@@ -306,9 +300,7 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
     def get_contact(self) -> Callable[
             [service.GetContactRequest],
             service.Contact]:
-        r"""Return a callable for the
-        get contact
-          method over gRPC.
+        r"""Return a callable for the get contact method over gRPC.
 
         Gets a single contact.
 
@@ -334,9 +326,7 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
     def delete_contact(self) -> Callable[
             [service.DeleteContactRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete contact
-          method over gRPC.
+        r"""Return a callable for the delete contact method over gRPC.
 
         Deletes a contact.
 
@@ -362,9 +352,7 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
     def compute_contacts(self) -> Callable[
             [service.ComputeContactsRequest],
             service.ComputeContactsResponse]:
-        r"""Return a callable for the
-        compute contacts
-          method over gRPC.
+        r"""Return a callable for the compute contacts method over gRPC.
 
         Lists all contacts for the resource that are
         subscribed to the specified notification categories,
@@ -392,9 +380,7 @@ class EssentialContactsServiceGrpcTransport(EssentialContactsServiceTransport):
     def send_test_message(self) -> Callable[
             [service.SendTestMessageRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        send test message
-          method over gRPC.
+        r"""Return a callable for the send test message method over gRPC.
 
         Allows a contact admin to send a test message to
         contact to verify that it has been configured correctly.

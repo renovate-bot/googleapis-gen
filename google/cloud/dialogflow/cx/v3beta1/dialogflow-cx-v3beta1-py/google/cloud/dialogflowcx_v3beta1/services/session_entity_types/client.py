@@ -339,8 +339,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.ListSessionEntityTypesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SessionEntityTypes.ListSessionEntityTypes][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.ListSessionEntityTypes].
             parent (str):
                 Required. The session to list all session entity types
@@ -383,7 +382,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, session_entity_type.ListSessionEntityTypesRequest):
             request = session_entity_type.ListSessionEntityTypesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -432,8 +431,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.GetSessionEntityTypeRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SessionEntityTypes.GetSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.GetSessionEntityType].
             name (str):
                 Required. The name of the session entity type. Format:
@@ -487,7 +485,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, session_entity_type.GetSessionEntityTypeRequest):
             request = session_entity_type.GetSessionEntityTypeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -528,8 +526,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.CreateSessionEntityTypeRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SessionEntityTypes.CreateSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.CreateSessionEntityType].
             parent (str):
                 Required. The session to create a session entity type
@@ -591,7 +588,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_session_entity_type.CreateSessionEntityTypeRequest):
             request = gcdc_session_entity_type.CreateSessionEntityTypeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -634,8 +631,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.UpdateSessionEntityTypeRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.UpdateSessionEntityType].
             session_entity_type (google.cloud.dialogflowcx_v3beta1.types.SessionEntityType):
                 Required. The session entity type to update. Format:
@@ -696,7 +692,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_session_entity_type.UpdateSessionEntityTypeRequest):
             request = gcdc_session_entity_type.UpdateSessionEntityTypeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if session_entity_type is not None:
                 request.session_entity_type = session_entity_type
@@ -738,8 +734,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.DeleteSessionEntityTypeRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SessionEntityTypes.DeleteSessionEntityType][google.cloud.dialogflow.cx.v3beta1.SessionEntityTypes.DeleteSessionEntityType].
             name (str):
                 Required. The name of the session entity type to delete.
@@ -773,7 +768,7 @@ class SessionEntityTypesClient(metaclass=SessionEntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, session_entity_type.DeleteSessionEntityTypeRequest):
             request = session_entity_type.DeleteSessionEntityTypeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

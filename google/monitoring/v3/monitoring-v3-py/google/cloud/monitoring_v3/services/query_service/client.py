@@ -326,8 +326,7 @@ class QueryServiceClient(metaclass=QueryServiceClientMeta):
 
         Args:
             request (google.cloud.monitoring_v3.types.QueryTimeSeriesRequest):
-                The request object.
-                The `QueryTimeSeries` request.
+                The request object. The `QueryTimeSeries` request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

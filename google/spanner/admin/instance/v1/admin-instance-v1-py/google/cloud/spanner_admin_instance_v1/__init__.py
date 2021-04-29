@@ -32,6 +32,7 @@ from .types.spanner_instance_admin import UpdateInstanceMetadata
 from .types.spanner_instance_admin import UpdateInstanceRequest
 
 __all__ = (
+    'InstanceAdminClient',
     'CreateInstanceMetadata',
     'CreateInstanceRequest',
     'DeleteInstanceRequest',
@@ -46,5 +47,4 @@ __all__ = (
     'ReplicaInfo',
     'UpdateInstanceMetadata',
     'UpdateInstanceRequest',
-'InstanceAdminClient',
 )

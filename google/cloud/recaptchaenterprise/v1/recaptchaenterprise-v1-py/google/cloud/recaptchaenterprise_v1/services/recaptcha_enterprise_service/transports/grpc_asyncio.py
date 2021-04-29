@@ -226,9 +226,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
     def create_assessment(self) -> Callable[
             [recaptchaenterprise.CreateAssessmentRequest],
             Awaitable[recaptchaenterprise.Assessment]]:
-        r"""Return a callable for the
-        create assessment
-          method over gRPC.
+        r"""Return a callable for the create assessment method over gRPC.
 
         Creates an Assessment of the likelihood an event is
         legitimate.
@@ -255,9 +253,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
     def annotate_assessment(self) -> Callable[
             [recaptchaenterprise.AnnotateAssessmentRequest],
             Awaitable[recaptchaenterprise.AnnotateAssessmentResponse]]:
-        r"""Return a callable for the
-        annotate assessment
-          method over gRPC.
+        r"""Return a callable for the annotate assessment method over gRPC.
 
         Annotates a previously created Assessment to provide
         additional information on whether the event turned out
@@ -285,9 +281,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
     def create_key(self) -> Callable[
             [recaptchaenterprise.CreateKeyRequest],
             Awaitable[recaptchaenterprise.Key]]:
-        r"""Return a callable for the
-        create key
-          method over gRPC.
+        r"""Return a callable for the create key method over gRPC.
 
         Creates a new reCAPTCHA Enterprise key.
 
@@ -313,9 +307,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
     def list_keys(self) -> Callable[
             [recaptchaenterprise.ListKeysRequest],
             Awaitable[recaptchaenterprise.ListKeysResponse]]:
-        r"""Return a callable for the
-        list keys
-          method over gRPC.
+        r"""Return a callable for the list keys method over gRPC.
 
         Returns the list of all keys that belong to a
         project.
@@ -342,9 +334,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
     def get_key(self) -> Callable[
             [recaptchaenterprise.GetKeyRequest],
             Awaitable[recaptchaenterprise.Key]]:
-        r"""Return a callable for the
-        get key
-          method over gRPC.
+        r"""Return a callable for the get key method over gRPC.
 
         Returns the specified key.
 
@@ -370,9 +360,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
     def update_key(self) -> Callable[
             [recaptchaenterprise.UpdateKeyRequest],
             Awaitable[recaptchaenterprise.Key]]:
-        r"""Return a callable for the
-        update key
-          method over gRPC.
+        r"""Return a callable for the update key method over gRPC.
 
         Updates the specified key.
 
@@ -398,9 +386,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
     def delete_key(self) -> Callable[
             [recaptchaenterprise.DeleteKeyRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete key
-          method over gRPC.
+        r"""Return a callable for the delete key method over gRPC.
 
         Deletes the specified key.
 

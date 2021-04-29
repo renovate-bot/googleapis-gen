@@ -280,7 +280,7 @@ class DeployModelRequest(proto.Message):
     traffic_split = proto.MapField(
         proto.STRING,
         proto.INT32,
-        number=3
+        number=3,
     )
 
 
@@ -351,7 +351,7 @@ class UndeployModelRequest(proto.Message):
     traffic_split = proto.MapField(
         proto.STRING,
         proto.INT32,
-        number=3
+        number=3,
     )
 
 

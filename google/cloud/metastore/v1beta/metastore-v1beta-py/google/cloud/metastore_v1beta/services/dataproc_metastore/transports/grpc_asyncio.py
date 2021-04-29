@@ -266,9 +266,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def list_services(self) -> Callable[
             [metastore.ListServicesRequest],
             Awaitable[metastore.ListServicesResponse]]:
-        r"""Return a callable for the
-        list services
-          method over gRPC.
+        r"""Return a callable for the list services method over gRPC.
 
         Lists services in a project and location.
 
@@ -294,9 +292,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def get_service(self) -> Callable[
             [metastore.GetServiceRequest],
             Awaitable[metastore.Service]]:
-        r"""Return a callable for the
-        get service
-          method over gRPC.
+        r"""Return a callable for the get service method over gRPC.
 
         Gets the details of a single service.
 
@@ -322,9 +318,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def create_service(self) -> Callable[
             [metastore.CreateServiceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create service
-          method over gRPC.
+        r"""Return a callable for the create service method over gRPC.
 
         Creates a metastore service in a project and
         location.
@@ -351,9 +345,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def update_service(self) -> Callable[
             [metastore.UpdateServiceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update service
-          method over gRPC.
+        r"""Return a callable for the update service method over gRPC.
 
         Updates the parameters of a single service.
 
@@ -379,9 +371,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def delete_service(self) -> Callable[
             [metastore.DeleteServiceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete service
-          method over gRPC.
+        r"""Return a callable for the delete service method over gRPC.
 
         Deletes a single service.
 
@@ -407,9 +397,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def list_metadata_imports(self) -> Callable[
             [metastore.ListMetadataImportsRequest],
             Awaitable[metastore.ListMetadataImportsResponse]]:
-        r"""Return a callable for the
-        list metadata imports
-          method over gRPC.
+        r"""Return a callable for the list metadata imports method over gRPC.
 
         Lists imports in a service.
 
@@ -435,9 +423,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def get_metadata_import(self) -> Callable[
             [metastore.GetMetadataImportRequest],
             Awaitable[metastore.MetadataImport]]:
-        r"""Return a callable for the
-        get metadata import
-          method over gRPC.
+        r"""Return a callable for the get metadata import method over gRPC.
 
         Gets details of a single import.
 
@@ -463,9 +449,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def create_metadata_import(self) -> Callable[
             [metastore.CreateMetadataImportRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create metadata import
-          method over gRPC.
+        r"""Return a callable for the create metadata import method over gRPC.
 
         Creates a new MetadataImport in a given project and
         location.
@@ -492,9 +476,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def update_metadata_import(self) -> Callable[
             [metastore.UpdateMetadataImportRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update metadata import
-          method over gRPC.
+        r"""Return a callable for the update metadata import method over gRPC.
 
         Updates a single import.
         Only the description field of MetadataImport is
@@ -522,9 +504,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def export_metadata(self) -> Callable[
             [metastore.ExportMetadataRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        export metadata
-          method over gRPC.
+        r"""Return a callable for the export metadata method over gRPC.
 
         Exports metadata from a service.
 
@@ -550,9 +530,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def restore_service(self) -> Callable[
             [metastore.RestoreServiceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        restore service
-          method over gRPC.
+        r"""Return a callable for the restore service method over gRPC.
 
         Restores a service from a backup.
 
@@ -578,9 +556,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def list_backups(self) -> Callable[
             [metastore.ListBackupsRequest],
             Awaitable[metastore.ListBackupsResponse]]:
-        r"""Return a callable for the
-        list backups
-          method over gRPC.
+        r"""Return a callable for the list backups method over gRPC.
 
         Lists backups in a service.
 
@@ -606,9 +582,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def get_backup(self) -> Callable[
             [metastore.GetBackupRequest],
             Awaitable[metastore.Backup]]:
-        r"""Return a callable for the
-        get backup
-          method over gRPC.
+        r"""Return a callable for the get backup method over gRPC.
 
         Gets details of a single backup.
 
@@ -634,9 +608,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def create_backup(self) -> Callable[
             [metastore.CreateBackupRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create backup
-          method over gRPC.
+        r"""Return a callable for the create backup method over gRPC.
 
         Creates a new Backup in a given project and location.
 
@@ -662,9 +634,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def delete_backup(self) -> Callable[
             [metastore.DeleteBackupRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete backup
-          method over gRPC.
+        r"""Return a callable for the delete backup method over gRPC.
 
         Deletes a single backup.
 

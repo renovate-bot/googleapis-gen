@@ -353,8 +353,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1beta1.types.ListJobsRequest):
-                The request object.
-                Request message for listing jobs
+                The request object. Request message for listing jobs
                 using
                 [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
             parent (str):
@@ -393,7 +392,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.ListJobsRequest):
             request = cloudscheduler.ListJobsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -442,8 +441,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1beta1.types.GetJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [GetJob][google.cloud.scheduler.v1beta1.CloudScheduler.GetJob].
             name (str):
                 Required. The job name. For example:
@@ -479,7 +477,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.GetJobRequest):
             request = cloudscheduler.GetJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -520,8 +518,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1beta1.types.CreateJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob].
             parent (str):
                 Required. The location name. For example:
@@ -571,7 +568,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.CreateJobRequest):
             request = cloudscheduler.CreateJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -625,8 +622,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1beta1.types.UpdateJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
             job (google.cloud.scheduler_v1beta1.types.Job):
                 Required. The new job properties.
@@ -674,7 +670,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.UpdateJobRequest):
             request = cloudscheduler.UpdateJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if job is not None:
                 request.job = job
@@ -716,8 +712,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1beta1.types.DeleteJobRequest):
-                The request object.
-                Request message for deleting a job
+                The request object. Request message for deleting a job
                 using
                 [DeleteJob][google.cloud.scheduler.v1beta1.CloudScheduler.DeleteJob].
             name (str):
@@ -747,7 +742,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.DeleteJobRequest):
             request = cloudscheduler.DeleteJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -795,8 +790,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1beta1.types.PauseJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [PauseJob][google.cloud.scheduler.v1beta1.CloudScheduler.PauseJob].
             name (str):
                 Required. The job name. For example:
@@ -832,7 +826,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.PauseJobRequest):
             request = cloudscheduler.PauseJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -882,8 +876,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1beta1.types.ResumeJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob].
             name (str):
                 Required. The job name. For example:
@@ -919,7 +912,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.ResumeJobRequest):
             request = cloudscheduler.ResumeJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -961,8 +954,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1beta1.types.RunJobRequest):
-                The request object.
-                Request message for forcing a job to
+                The request object. Request message for forcing a job to
                 run now using
                 [RunJob][google.cloud.scheduler.v1beta1.CloudScheduler.RunJob].
             name (str):
@@ -999,7 +991,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.RunJobRequest):
             request = cloudscheduler.RunJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

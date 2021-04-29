@@ -321,8 +321,7 @@ class TextToSpeechClient(metaclass=TextToSpeechClientMeta):
 
         Args:
             request (google.cloud.texttospeech_v1.types.ListVoicesRequest):
-                The request object.
-                The top-level message sent by the
+                The request object. The top-level message sent by the
                 client for the `ListVoices` method.
             language_code (str):
                 Optional. Recommended.
@@ -365,7 +364,7 @@ class TextToSpeechClient(metaclass=TextToSpeechClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_tts.ListVoicesRequest):
             request = cloud_tts.ListVoicesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if language_code is not None:
                 request.language_code = language_code
@@ -400,8 +399,7 @@ class TextToSpeechClient(metaclass=TextToSpeechClientMeta):
 
         Args:
             request (google.cloud.texttospeech_v1.types.SynthesizeSpeechRequest):
-                The request object.
-                The top-level message sent by the
+                The request object. The top-level message sent by the
                 client for the `SynthesizeSpeech` method.
             input (google.cloud.texttospeech_v1.types.SynthesisInput):
                 Required. The Synthesizer requires
@@ -450,7 +448,7 @@ class TextToSpeechClient(metaclass=TextToSpeechClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_tts.SynthesizeSpeechRequest):
             request = cloud_tts.SynthesizeSpeechRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if input is not None:
                 request.input = input

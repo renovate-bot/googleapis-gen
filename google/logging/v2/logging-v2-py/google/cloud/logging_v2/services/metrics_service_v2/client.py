@@ -337,8 +337,7 @@ class MetricsServiceV2Client(metaclass=MetricsServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.ListLogMetricsRequest):
-                The request object.
-                The parameters to ListLogMetrics.
+                The request object. The parameters to ListLogMetrics.
             parent (str):
                 Required. The name of the project containing the
                 metrics:
@@ -378,7 +377,7 @@ class MetricsServiceV2Client(metaclass=MetricsServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_metrics.ListLogMetricsRequest):
             request = logging_metrics.ListLogMetricsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -427,8 +426,7 @@ class MetricsServiceV2Client(metaclass=MetricsServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.GetLogMetricRequest):
-                The request object.
-                The parameters to GetLogMetric.
+                The request object. The parameters to GetLogMetric.
             metric_name (str):
                 Required. The resource name of the desired metric:
 
@@ -474,7 +472,7 @@ class MetricsServiceV2Client(metaclass=MetricsServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_metrics.GetLogMetricRequest):
             request = logging_metrics.GetLogMetricRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if metric_name is not None:
                 request.metric_name = metric_name
@@ -515,8 +513,7 @@ class MetricsServiceV2Client(metaclass=MetricsServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.CreateLogMetricRequest):
-                The request object.
-                The parameters to CreateLogMetric.
+                The request object. The parameters to CreateLogMetric.
             parent (str):
                 Required. The resource name of the project in which to
                 create the metric:
@@ -573,7 +570,7 @@ class MetricsServiceV2Client(metaclass=MetricsServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_metrics.CreateLogMetricRequest):
             request = logging_metrics.CreateLogMetricRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -616,8 +613,7 @@ class MetricsServiceV2Client(metaclass=MetricsServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.UpdateLogMetricRequest):
-                The request object.
-                The parameters to UpdateLogMetric.
+                The request object. The parameters to UpdateLogMetric.
             metric_name (str):
                 Required. The resource name of the metric to update:
 
@@ -673,7 +669,7 @@ class MetricsServiceV2Client(metaclass=MetricsServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_metrics.UpdateLogMetricRequest):
             request = logging_metrics.UpdateLogMetricRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if metric_name is not None:
                 request.metric_name = metric_name
@@ -715,8 +711,7 @@ class MetricsServiceV2Client(metaclass=MetricsServiceV2ClientMeta):
 
         Args:
             request (google.cloud.logging_v2.types.DeleteLogMetricRequest):
-                The request object.
-                The parameters to DeleteLogMetric.
+                The request object. The parameters to DeleteLogMetric.
             metric_name (str):
                 Required. The resource name of the metric to delete:
 
@@ -747,7 +742,7 @@ class MetricsServiceV2Client(metaclass=MetricsServiceV2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, logging_metrics.DeleteLogMetricRequest):
             request = logging_metrics.DeleteLogMetricRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if metric_name is not None:
                 request.metric_name = metric_name

@@ -239,9 +239,7 @@ class EndpointServiceGrpcTransport(EndpointServiceTransport):
     def create_endpoint(self) -> Callable[
             [endpoint_service.CreateEndpointRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create endpoint
-          method over gRPC.
+        r"""Return a callable for the create endpoint method over gRPC.
 
         Creates an Endpoint.
 
@@ -267,9 +265,7 @@ class EndpointServiceGrpcTransport(EndpointServiceTransport):
     def get_endpoint(self) -> Callable[
             [endpoint_service.GetEndpointRequest],
             endpoint.Endpoint]:
-        r"""Return a callable for the
-        get endpoint
-          method over gRPC.
+        r"""Return a callable for the get endpoint method over gRPC.
 
         Gets an Endpoint.
 
@@ -295,9 +291,7 @@ class EndpointServiceGrpcTransport(EndpointServiceTransport):
     def list_endpoints(self) -> Callable[
             [endpoint_service.ListEndpointsRequest],
             endpoint_service.ListEndpointsResponse]:
-        r"""Return a callable for the
-        list endpoints
-          method over gRPC.
+        r"""Return a callable for the list endpoints method over gRPC.
 
         Lists Endpoints in a Location.
 
@@ -323,9 +317,7 @@ class EndpointServiceGrpcTransport(EndpointServiceTransport):
     def update_endpoint(self) -> Callable[
             [endpoint_service.UpdateEndpointRequest],
             gca_endpoint.Endpoint]:
-        r"""Return a callable for the
-        update endpoint
-          method over gRPC.
+        r"""Return a callable for the update endpoint method over gRPC.
 
         Updates an Endpoint.
 
@@ -351,9 +343,7 @@ class EndpointServiceGrpcTransport(EndpointServiceTransport):
     def delete_endpoint(self) -> Callable[
             [endpoint_service.DeleteEndpointRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete endpoint
-          method over gRPC.
+        r"""Return a callable for the delete endpoint method over gRPC.
 
         Deletes an Endpoint.
 
@@ -379,9 +369,7 @@ class EndpointServiceGrpcTransport(EndpointServiceTransport):
     def deploy_model(self) -> Callable[
             [endpoint_service.DeployModelRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        deploy model
-          method over gRPC.
+        r"""Return a callable for the deploy model method over gRPC.
 
         Deploys a Model into this Endpoint, creating a
         DeployedModel within it.
@@ -408,9 +396,7 @@ class EndpointServiceGrpcTransport(EndpointServiceTransport):
     def undeploy_model(self) -> Callable[
             [endpoint_service.UndeployModelRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        undeploy model
-          method over gRPC.
+        r"""Return a callable for the undeploy model method over gRPC.
 
         Undeploys a Model from an Endpoint, removing a
         DeployedModel from it, and freeing all resources it's

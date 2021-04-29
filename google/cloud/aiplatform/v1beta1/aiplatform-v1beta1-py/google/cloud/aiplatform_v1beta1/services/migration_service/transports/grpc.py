@@ -241,9 +241,7 @@ class MigrationServiceGrpcTransport(MigrationServiceTransport):
     def search_migratable_resources(self) -> Callable[
             [migration_service.SearchMigratableResourcesRequest],
             migration_service.SearchMigratableResourcesResponse]:
-        r"""Return a callable for the
-        search migratable resources
-          method over gRPC.
+        r"""Return a callable for the search migratable resources method over gRPC.
 
         Searches all of the resources in
         automl.googleapis.com, datalabeling.googleapis.com and
@@ -272,9 +270,7 @@ class MigrationServiceGrpcTransport(MigrationServiceTransport):
     def batch_migrate_resources(self) -> Callable[
             [migration_service.BatchMigrateResourcesRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        batch migrate resources
-          method over gRPC.
+        r"""Return a callable for the batch migrate resources method over gRPC.
 
         Batch migrates resources from ml.googleapis.com,
         automl.googleapis.com, and datalabeling.googleapis.com

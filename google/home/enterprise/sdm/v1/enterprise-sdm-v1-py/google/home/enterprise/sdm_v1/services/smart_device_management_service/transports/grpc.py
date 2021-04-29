@@ -223,9 +223,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
     def get_device(self) -> Callable[
             [smart_device_management_service.GetDeviceRequest],
             device.Device]:
-        r"""Return a callable for the
-        get device
-          method over gRPC.
+        r"""Return a callable for the get device method over gRPC.
 
         Gets a device managed by the enterprise.
 
@@ -251,9 +249,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
     def list_devices(self) -> Callable[
             [smart_device_management_service.ListDevicesRequest],
             smart_device_management_service.ListDevicesResponse]:
-        r"""Return a callable for the
-        list devices
-          method over gRPC.
+        r"""Return a callable for the list devices method over gRPC.
 
         Lists devices managed by the enterprise.
 
@@ -279,9 +275,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
     def execute_device_command(self) -> Callable[
             [smart_device_management_service.ExecuteDeviceCommandRequest],
             smart_device_management_service.ExecuteDeviceCommandResponse]:
-        r"""Return a callable for the
-        execute device command
-          method over gRPC.
+        r"""Return a callable for the execute device command method over gRPC.
 
         Executes a command to device managed by the
         enterprise.
@@ -308,9 +302,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
     def get_structure(self) -> Callable[
             [smart_device_management_service.GetStructureRequest],
             site.Structure]:
-        r"""Return a callable for the
-        get structure
-          method over gRPC.
+        r"""Return a callable for the get structure method over gRPC.
 
         Gets a structure managed by the enterprise.
 
@@ -336,9 +328,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
     def list_structures(self) -> Callable[
             [smart_device_management_service.ListStructuresRequest],
             smart_device_management_service.ListStructuresResponse]:
-        r"""Return a callable for the
-        list structures
-          method over gRPC.
+        r"""Return a callable for the list structures method over gRPC.
 
         Lists structures managed by the enterprise.
 
@@ -364,9 +354,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
     def get_room(self) -> Callable[
             [smart_device_management_service.GetRoomRequest],
             site.Room]:
-        r"""Return a callable for the
-        get room
-          method over gRPC.
+        r"""Return a callable for the get room method over gRPC.
 
         Gets a room managed by the enterprise.
 
@@ -392,9 +380,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
     def list_rooms(self) -> Callable[
             [smart_device_management_service.ListRoomsRequest],
             smart_device_management_service.ListRoomsResponse]:
-        r"""Return a callable for the
-        list rooms
-          method over gRPC.
+        r"""Return a callable for the list rooms method over gRPC.
 
         Lists rooms managed by the enterprise.
 

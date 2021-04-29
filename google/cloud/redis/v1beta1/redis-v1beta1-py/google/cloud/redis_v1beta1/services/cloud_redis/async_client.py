@@ -191,8 +191,7 @@ class CloudRedisAsyncClient:
 
         Args:
             request (:class:`google.cloud.redis_v1beta1.types.ListInstancesRequest`):
-                The request object.
-                Request for
+                The request object. Request for
                 [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
             parent (:class:`str`):
                 Required. The resource name of the instance location
@@ -281,8 +280,7 @@ class CloudRedisAsyncClient:
 
         Args:
             request (:class:`google.cloud.redis_v1beta1.types.GetInstanceRequest`):
-                The request object.
-                Request for
+                The request object. Request for
                 [GetInstance][google.cloud.redis.v1beta1.CloudRedis.GetInstance].
             name (:class:`str`):
                 Required. Redis instance resource name using the form:
@@ -371,8 +369,7 @@ class CloudRedisAsyncClient:
 
         Args:
             request (:class:`google.cloud.redis_v1beta1.types.CreateInstanceRequest`):
-                The request object.
-                Request for
+                The request object. Request for
                 [CreateInstance][google.cloud.redis.v1beta1.CloudRedis.CreateInstance].
             parent (:class:`str`):
                 Required. The resource name of the instance location
@@ -489,8 +486,7 @@ class CloudRedisAsyncClient:
 
         Args:
             request (:class:`google.cloud.redis_v1beta1.types.UpdateInstanceRequest`):
-                The request object.
-                Request for
+                The request object. Request for
                 [UpdateInstance][google.cloud.redis.v1beta1.CloudRedis.UpdateInstance].
             update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
                 Required. Mask of fields to update. At least one path
@@ -594,8 +590,7 @@ class CloudRedisAsyncClient:
 
         Args:
             request (:class:`google.cloud.redis_v1beta1.types.UpgradeInstanceRequest`):
-                The request object.
-                Request for
+                The request object. Request for
                 [UpgradeInstance][google.cloud.redis.v1beta1.CloudRedis.UpgradeInstance].
             name (:class:`str`):
                 Required. Redis instance resource name using the form:
@@ -700,8 +695,7 @@ class CloudRedisAsyncClient:
 
         Args:
             request (:class:`google.cloud.redis_v1beta1.types.ImportInstanceRequest`):
-                The request object.
-                Request for
+                The request object. Request for
                 [Import][google.cloud.redis.v1beta1.CloudRedis.ImportInstance].
             name (:class:`str`):
                 Required. Redis instance resource name using the form:
@@ -802,8 +796,7 @@ class CloudRedisAsyncClient:
 
         Args:
             request (:class:`google.cloud.redis_v1beta1.types.ExportInstanceRequest`):
-                The request object.
-                Request for
+                The request object. Request for
                 [Export][google.cloud.redis.v1beta1.CloudRedis.ExportInstance].
             name (:class:`str`):
                 Required. Redis instance resource name using the form:
@@ -902,8 +895,7 @@ class CloudRedisAsyncClient:
 
         Args:
             request (:class:`google.cloud.redis_v1beta1.types.FailoverInstanceRequest`):
-                The request object.
-                Request for
+                The request object. Request for
                 [Failover][google.cloud.redis.v1beta1.CloudRedis.FailoverInstance].
             name (:class:`str`):
                 Required. Redis instance resource name using the form:
@@ -1001,8 +993,7 @@ class CloudRedisAsyncClient:
 
         Args:
             request (:class:`google.cloud.redis_v1beta1.types.DeleteInstanceRequest`):
-                The request object.
-                Request for
+                The request object. Request for
                 [DeleteInstance][google.cloud.redis.v1beta1.CloudRedis.DeleteInstance].
             name (:class:`str`):
                 Required. Redis instance resource name using the form:

@@ -223,9 +223,7 @@ class ConversationProfilesGrpcTransport(ConversationProfilesTransport):
     def list_conversation_profiles(self) -> Callable[
             [conversation_profile.ListConversationProfilesRequest],
             conversation_profile.ListConversationProfilesResponse]:
-        r"""Return a callable for the
-        list conversation profiles
-          method over gRPC.
+        r"""Return a callable for the list conversation profiles method over gRPC.
 
         Returns the list of all conversation profiles in the
         specified project.
@@ -252,9 +250,7 @@ class ConversationProfilesGrpcTransport(ConversationProfilesTransport):
     def get_conversation_profile(self) -> Callable[
             [conversation_profile.GetConversationProfileRequest],
             conversation_profile.ConversationProfile]:
-        r"""Return a callable for the
-        get conversation profile
-          method over gRPC.
+        r"""Return a callable for the get conversation profile method over gRPC.
 
         Retrieves the specified conversation profile.
 
@@ -280,9 +276,7 @@ class ConversationProfilesGrpcTransport(ConversationProfilesTransport):
     def create_conversation_profile(self) -> Callable[
             [gcd_conversation_profile.CreateConversationProfileRequest],
             gcd_conversation_profile.ConversationProfile]:
-        r"""Return a callable for the
-        create conversation profile
-          method over gRPC.
+        r"""Return a callable for the create conversation profile method over gRPC.
 
         Creates a conversation profile in the specified project.
 
@@ -314,9 +308,7 @@ class ConversationProfilesGrpcTransport(ConversationProfilesTransport):
     def update_conversation_profile(self) -> Callable[
             [gcd_conversation_profile.UpdateConversationProfileRequest],
             gcd_conversation_profile.ConversationProfile]:
-        r"""Return a callable for the
-        update conversation profile
-          method over gRPC.
+        r"""Return a callable for the update conversation profile method over gRPC.
 
         Updates the specified conversation profile.
 
@@ -348,9 +340,7 @@ class ConversationProfilesGrpcTransport(ConversationProfilesTransport):
     def delete_conversation_profile(self) -> Callable[
             [conversation_profile.DeleteConversationProfileRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete conversation profile
-          method over gRPC.
+        r"""Return a callable for the delete conversation profile method over gRPC.
 
         Deletes the specified conversation profile.
 

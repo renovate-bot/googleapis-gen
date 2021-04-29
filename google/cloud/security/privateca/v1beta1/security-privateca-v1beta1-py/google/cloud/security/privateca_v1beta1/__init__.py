@@ -27,11 +27,11 @@ from .types.resources import PublicKey
 from .types.resources import ReusableConfig
 from .types.resources import ReusableConfigValues
 from .types.resources import ReusableConfigWrapper
-from .types.resources import RevocationReason
 from .types.resources import Subject
 from .types.resources import SubjectAltNames
 from .types.resources import SubordinateConfig
 from .types.resources import X509Extension
+from .types.resources import RevocationReason
 from .types.service import ActivateCertificateAuthorityRequest
 from .types.service import CreateCertificateAuthorityRequest
 from .types.service import CreateCertificateRequest
@@ -60,12 +60,24 @@ from .types.service import UpdateCertificateRequest
 from .types.service import UpdateCertificateRevocationListRequest
 
 __all__ = (
-    'ActivateCertificateAuthorityRequest',
+    'CertificateAuthorityServiceClient',
     'Certificate',
     'CertificateAuthority',
     'CertificateConfig',
     'CertificateDescription',
     'CertificateRevocationList',
+    'KeyUsage',
+    'ObjectId',
+    'PublicKey',
+    'ReusableConfig',
+    'ReusableConfigValues',
+    'ReusableConfigWrapper',
+    'Subject',
+    'SubjectAltNames',
+    'SubordinateConfig',
+    'X509Extension',
+    'RevocationReason',
+    'ActivateCertificateAuthorityRequest',
     'CreateCertificateAuthorityRequest',
     'CreateCertificateRequest',
     'DisableCertificateAuthorityRequest',
@@ -76,7 +88,6 @@ __all__ = (
     'GetCertificateRequest',
     'GetCertificateRevocationListRequest',
     'GetReusableConfigRequest',
-    'KeyUsage',
     'ListCertificateAuthoritiesRequest',
     'ListCertificateAuthoritiesResponse',
     'ListCertificateRevocationListsRequest',
@@ -85,22 +96,11 @@ __all__ = (
     'ListCertificatesResponse',
     'ListReusableConfigsRequest',
     'ListReusableConfigsResponse',
-    'ObjectId',
     'OperationMetadata',
-    'PublicKey',
     'RestoreCertificateAuthorityRequest',
-    'ReusableConfig',
-    'ReusableConfigValues',
-    'ReusableConfigWrapper',
-    'RevocationReason',
     'RevokeCertificateRequest',
     'ScheduleDeleteCertificateAuthorityRequest',
-    'Subject',
-    'SubjectAltNames',
-    'SubordinateConfig',
     'UpdateCertificateAuthorityRequest',
     'UpdateCertificateRequest',
     'UpdateCertificateRevocationListRequest',
-    'X509Extension',
-'CertificateAuthorityServiceClient',
 )

@@ -176,8 +176,7 @@ class FirestoreAdminAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_admin_v1.types.CreateIndexRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [FirestoreAdmin.CreateIndex][google.firestore.admin.v1.FirestoreAdmin.CreateIndex].
             parent (:class:`str`):
                 Required. A parent name of the form
@@ -271,8 +270,7 @@ class FirestoreAdminAsyncClient:
 
         Args:
             request (:class:`google.cloud.firestore_admin_v1.types.ListIndexesRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [FirestoreAdmin.ListIndexes][google.firestore.admin.v1.FirestoreAdmin.ListIndexes].
             parent (:class:`str`):
                 Required. A parent name of the form
@@ -367,8 +365,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_admin_v1.types.GetIndexRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [FirestoreAdmin.GetIndex][google.firestore.admin.v1.FirestoreAdmin.GetIndex].
             name (:class:`str`):
                 Required. A name of the form
@@ -452,8 +449,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_admin_v1.types.DeleteIndexRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [FirestoreAdmin.DeleteIndex][google.firestore.admin.v1.FirestoreAdmin.DeleteIndex].
             name (:class:`str`):
                 Required. A name of the form
@@ -527,8 +523,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_admin_v1.types.GetFieldRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [FirestoreAdmin.GetField][google.firestore.admin.v1.FirestoreAdmin.GetField].
             name (:class:`str`):
                 Required. A name of the form
@@ -629,8 +624,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_admin_v1.types.UpdateFieldRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [FirestoreAdmin.UpdateField][google.firestore.admin.v1.FirestoreAdmin.UpdateField].
             field (:class:`google.cloud.firestore_admin_v1.types.Field`):
                 Required. The field to be updated.
@@ -725,8 +719,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_admin_v1.types.ListFieldsRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields].
             parent (:class:`str`):
                 Required. A parent name of the form
@@ -830,8 +823,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_admin_v1.types.ExportDocumentsRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [FirestoreAdmin.ExportDocuments][google.firestore.admin.v1.FirestoreAdmin.ExportDocuments].
             name (:class:`str`):
                 Required. Database to export. Should be of the form:
@@ -925,8 +917,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.firestore_admin_v1.types.ImportDocumentsRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [FirestoreAdmin.ImportDocuments][google.firestore.admin.v1.FirestoreAdmin.ImportDocuments].
             name (:class:`str`):
                 Required. Database to import into. Should be of the

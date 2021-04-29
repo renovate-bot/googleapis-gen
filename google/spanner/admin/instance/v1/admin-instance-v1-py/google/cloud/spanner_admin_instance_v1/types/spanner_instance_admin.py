@@ -215,7 +215,7 @@ class Instance(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=7
+        number=7,
     )
     endpoint_uris = proto.RepeatedField(
         proto.STRING,

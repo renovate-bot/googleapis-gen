@@ -355,8 +355,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.CreateJobRequest):
-                The request object.
-                Create job request.
+                The request object. Create job request.
             parent (str):
                 Required. The resource name of the tenant under which
                 the job is created.
@@ -403,7 +402,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.CreateJobRequest):
             request = job_service.CreateJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -446,8 +445,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.BatchCreateJobsRequest):
-                The request object.
-                Request to create a batch of jobs.
+                The request object. Request to create a batch of jobs.
             parent (str):
                 Required. The resource name of the tenant under which
                 the job is created.
@@ -497,7 +495,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.BatchCreateJobsRequest):
             request = job_service.BatchCreateJobsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -548,8 +546,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.GetJobRequest):
-                The request object.
-                Get job request.
+                The request object. Get job request.
             name (str):
                 Required. The resource name of the job to retrieve.
 
@@ -591,7 +588,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.GetJobRequest):
             request = job_service.GetJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -634,8 +631,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.UpdateJobRequest):
-                The request object.
-                Update job request.
+                The request object. Update job request.
             job (google.cloud.talent_v4beta1.types.Job):
                 Required. The Job to be updated.
                 This corresponds to the ``job`` field
@@ -669,7 +665,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.UpdateJobRequest):
             request = job_service.UpdateJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if job is not None:
                 request.job = job
@@ -710,8 +706,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.BatchUpdateJobsRequest):
-                The request object.
-                Request to update a batch of jobs.
+                The request object. Request to update a batch of jobs.
             parent (str):
                 Required. The resource name of the tenant under which
                 the job is created.
@@ -761,7 +756,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.BatchUpdateJobsRequest):
             request = job_service.BatchUpdateJobsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -813,8 +808,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.DeleteJobRequest):
-                The request object.
-                Delete job request.
+                The request object. Delete job request.
             name (str):
                 Required. The resource name of the job to be deleted.
 
@@ -848,7 +842,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.DeleteJobRequest):
             request = job_service.DeleteJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -887,8 +881,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.BatchDeleteJobsRequest):
-                The request object.
-                Batch delete jobs request.
+                The request object. Batch delete jobs request.
             parent (str):
                 Required. The resource name of the tenant under which
                 the job is created.
@@ -939,7 +932,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.BatchDeleteJobsRequest):
             request = job_service.BatchDeleteJobsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -979,8 +972,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.ListJobsRequest):
-                The request object.
-                List jobs request.
+                The request object. List jobs request.
             parent (str):
                 Required. The resource name of the tenant under which
                 the job is created.
@@ -1049,7 +1041,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, job_service.ListJobsRequest):
             request = job_service.ListJobsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1105,8 +1097,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.SearchJobsRequest):
-                The request object.
-                The Request body of the `SearchJobs`
+                The request object. The Request body of the `SearchJobs`
                 call.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1185,8 +1176,7 @@ class JobServiceClient(metaclass=JobServiceClientMeta):
 
         Args:
             request (google.cloud.talent_v4beta1.types.SearchJobsRequest):
-                The request object.
-                The Request body of the `SearchJobs`
+                The request object. The Request body of the `SearchJobs`
                 call.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

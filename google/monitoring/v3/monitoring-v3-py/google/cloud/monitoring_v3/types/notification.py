@@ -233,12 +233,12 @@ class NotificationChannel(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=5
+        number=5,
     )
     user_labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=8
+        number=8,
     )
     verification_status = proto.Field(
         proto.ENUM,

@@ -244,9 +244,7 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def write_user_event(self) -> Callable[
             [user_event_service.WriteUserEventRequest],
             user_event.UserEvent]:
-        r"""Return a callable for the
-        write user event
-          method over gRPC.
+        r"""Return a callable for the write user event method over gRPC.
 
         Writes a single user event.
 
@@ -272,9 +270,7 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def collect_user_event(self) -> Callable[
             [user_event_service.CollectUserEventRequest],
             httpbody.HttpBody]:
-        r"""Return a callable for the
-        collect user event
-          method over gRPC.
+        r"""Return a callable for the collect user event method over gRPC.
 
         Writes a single user event from the browser. This
         uses a GET request to due to browser restriction of
@@ -305,9 +301,7 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def purge_user_events(self) -> Callable[
             [purge_config.PurgeUserEventsRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        purge user events
-          method over gRPC.
+        r"""Return a callable for the purge user events method over gRPC.
 
         Deletes permanently all user events specified by the
         filter provided. Depending on the number of events
@@ -337,9 +331,7 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def import_user_events(self) -> Callable[
             [import_config.ImportUserEventsRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        import user events
-          method over gRPC.
+        r"""Return a callable for the import user events method over gRPC.
 
         Bulk import of User events. Request processing might
         be synchronous. Events that already exist are skipped.
@@ -371,9 +363,7 @@ class UserEventServiceGrpcTransport(UserEventServiceTransport):
     def rejoin_user_events(self) -> Callable[
             [user_event_service.RejoinUserEventsRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        rejoin user events
-          method over gRPC.
+        r"""Return a callable for the rejoin user events method over gRPC.
 
         Triggers a user event rejoin operation with latest
         product catalog. Events will not be annotated with

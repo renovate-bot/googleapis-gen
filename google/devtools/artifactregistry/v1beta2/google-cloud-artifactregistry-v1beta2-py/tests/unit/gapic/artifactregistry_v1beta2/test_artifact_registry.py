@@ -6201,7 +6201,10 @@ def test_artifact_registry_base_transport_with_credentials_file():
         )
         load_creds.assert_called_once_with("credentials.json",
             scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/cloud-platform.read-only',            ),
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/cloud-platform.read-only',
+),
             quota_project_id="octopus",
         )
 
@@ -6245,7 +6248,6 @@ def test_artifact_registry_auth_adc():
             'https://www.googleapis.com/auth/cloud-platform',
             'https://www.googleapis.com/auth/cloud-platform.read-only',
 ),
-
             quota_project_id=None,
         )
 
@@ -6327,11 +6329,14 @@ def test_artifact_registry_transport_create_channel(transport_class, grpc_helper
         )
 
         create_channel.assert_called_with(
-            "artifactregistry.googleapis.com",
+            "artifactregistry.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            default_scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/cloud-platform.read-only',
+),
             scopes=["1", "2"],
             default_host="artifactregistry.googleapis.com",
             ssl_credentials=None,
@@ -6365,7 +6370,10 @@ def test_artifact_registry_transport_create_channel_old_api_core(transport_class
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/cloud-platform.read-only',
+),
             ssl_credentials=None,
             options=[
                 ("grpc.max_send_message_length", -1),

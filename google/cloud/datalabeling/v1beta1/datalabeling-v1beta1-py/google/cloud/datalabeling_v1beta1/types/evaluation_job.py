@@ -306,7 +306,7 @@ class EvaluationJobConfig(proto.Message):
     bigquery_import_keys = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=9
+        number=9,
     )
     example_count = proto.Field(
         proto.INT32,

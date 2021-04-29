@@ -369,8 +369,7 @@ class BotsClient(metaclass=BotsClientMeta):
 
         Args:
             request (google.devtools.remoteworkers_v1.types.CreateBotSessionRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateBotSession.
             parent (str):
                 Required. The farm resource.
@@ -418,7 +417,7 @@ class BotsClient(metaclass=BotsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, bots.CreateBotSessionRequest):
             request = bots.CreateBotSessionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -465,8 +464,7 @@ class BotsClient(metaclass=BotsClientMeta):
 
         Args:
             request (google.devtools.remoteworkers_v1.types.UpdateBotSessionRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateBotSession.
             name (str):
                 Required. The bot session name. Must match
@@ -524,7 +522,7 @@ class BotsClient(metaclass=BotsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, bots.UpdateBotSessionRequest):
             request = bots.UpdateBotSessionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

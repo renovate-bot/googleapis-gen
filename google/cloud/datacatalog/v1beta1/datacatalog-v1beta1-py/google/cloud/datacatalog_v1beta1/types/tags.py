@@ -94,7 +94,7 @@ class Tag(proto.Message):
     fields = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=3
+        number=3,
         message='TagField',
     )
 
@@ -228,7 +228,7 @@ class TagTemplate(proto.Message):
     fields = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=3
+        number=3,
         message='TagTemplateField',
     )
 

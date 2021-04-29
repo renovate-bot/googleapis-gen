@@ -19,7 +19,6 @@ from .services.cloud_functions_service import CloudFunctionsServiceClient
 from .types.functions import CallFunctionRequest
 from .types.functions import CallFunctionResponse
 from .types.functions import CloudFunction
-from .types.functions import CloudFunctionStatus
 from .types.functions import CreateFunctionRequest
 from .types.functions import DeleteFunctionRequest
 from .types.functions import EventTrigger
@@ -34,14 +33,15 @@ from .types.functions import ListFunctionsRequest
 from .types.functions import ListFunctionsResponse
 from .types.functions import SourceRepository
 from .types.functions import UpdateFunctionRequest
+from .types.functions import CloudFunctionStatus
 from .types.operations import OperationMetadataV1
 from .types.operations import OperationType
 
 __all__ = (
+    'CloudFunctionsServiceClient',
     'CallFunctionRequest',
     'CallFunctionResponse',
     'CloudFunction',
-    'CloudFunctionStatus',
     'CreateFunctionRequest',
     'DeleteFunctionRequest',
     'EventTrigger',
@@ -54,9 +54,9 @@ __all__ = (
     'HttpsTrigger',
     'ListFunctionsRequest',
     'ListFunctionsResponse',
-    'OperationMetadataV1',
-    'OperationType',
     'SourceRepository',
     'UpdateFunctionRequest',
-'CloudFunctionsServiceClient',
+    'CloudFunctionStatus',
+    'OperationMetadataV1',
+    'OperationType',
 )

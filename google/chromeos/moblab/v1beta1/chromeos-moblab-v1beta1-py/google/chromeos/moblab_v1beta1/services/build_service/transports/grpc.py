@@ -239,9 +239,7 @@ class BuildServiceGrpcTransport(BuildServiceTransport):
     def list_builds(self) -> Callable[
             [build_service.ListBuildsRequest],
             build_service.ListBuildsResponse]:
-        r"""Return a callable for the
-        list builds
-          method over gRPC.
+        r"""Return a callable for the list builds method over gRPC.
 
         Lists all builds for the given build target and model
         in descending order for the milestones and build
@@ -269,9 +267,7 @@ class BuildServiceGrpcTransport(BuildServiceTransport):
     def check_build_stage_status(self) -> Callable[
             [build_service.CheckBuildStageStatusRequest],
             build_service.CheckBuildStageStatusResponse]:
-        r"""Return a callable for the
-        check build stage status
-          method over gRPC.
+        r"""Return a callable for the check build stage status method over gRPC.
 
         Checks the stage status for a given build artifact in
         a partner Google Cloud Storage bucket.
@@ -298,9 +294,7 @@ class BuildServiceGrpcTransport(BuildServiceTransport):
     def stage_build(self) -> Callable[
             [build_service.StageBuildRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        stage build
-          method over gRPC.
+        r"""Return a callable for the stage build method over gRPC.
 
         Stages a given build artifact from a internal Google Cloud
         Storage bucket to a partner Google Cloud Storage bucket. If any

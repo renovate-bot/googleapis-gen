@@ -41,6 +41,7 @@ from .types.metastore import UpdateMetadataImportRequest
 from .types.metastore import UpdateServiceRequest
 
 __all__ = (
+    'DataprocMetastoreClient',
     'CreateMetadataImportRequest',
     'CreateServiceRequest',
     'DatabaseDumpSpec',
@@ -64,5 +65,4 @@ __all__ = (
     'Service',
     'UpdateMetadataImportRequest',
     'UpdateServiceRequest',
-'DataprocMetastoreClient',
 )

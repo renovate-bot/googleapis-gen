@@ -349,7 +349,6 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         Args:
             request (google.iam.credentials_v1.types.GenerateAccessTokenRequest):
                 The request object.
-
             name (str):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
@@ -425,7 +424,7 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, common.GenerateAccessTokenRequest):
             request = common.GenerateAccessTokenRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -476,7 +475,6 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         Args:
             request (google.iam.credentials_v1.types.GenerateIdTokenRequest):
                 The request object.
-
             name (str):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
@@ -546,7 +544,7 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, common.GenerateIdTokenRequest):
             request = common.GenerateIdTokenRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -596,7 +594,6 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         Args:
             request (google.iam.credentials_v1.types.SignBlobRequest):
                 The request object.
-
             name (str):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
@@ -655,7 +652,7 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, common.SignBlobRequest):
             request = common.SignBlobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -703,7 +700,6 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         Args:
             request (google.iam.credentials_v1.types.SignJwtRequest):
                 The request object.
-
             name (str):
                 Required. The resource name of the service account for
                 which the credentials are requested, in the following
@@ -765,7 +761,7 @@ class IAMCredentialsClient(metaclass=IAMCredentialsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, common.SignJwtRequest):
             request = common.SignJwtRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

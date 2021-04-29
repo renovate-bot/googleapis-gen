@@ -220,9 +220,7 @@ class BetaAnalyticsDataGrpcTransport(BetaAnalyticsDataTransport):
     def run_report(self) -> Callable[
             [analytics_data_api.RunReportRequest],
             analytics_data_api.RunReportResponse]:
-        r"""Return a callable for the
-        run report
-          method over gRPC.
+        r"""Return a callable for the run report method over gRPC.
 
         Returns a customized report of your Google Analytics
         event data. Reports contain statistics derived from data
@@ -256,9 +254,7 @@ class BetaAnalyticsDataGrpcTransport(BetaAnalyticsDataTransport):
     def run_pivot_report(self) -> Callable[
             [analytics_data_api.RunPivotReportRequest],
             analytics_data_api.RunPivotReportResponse]:
-        r"""Return a callable for the
-        run pivot report
-          method over gRPC.
+        r"""Return a callable for the run pivot report method over gRPC.
 
         Returns a customized pivot report of your Google
         Analytics event data. Pivot reports are more advanced
@@ -289,9 +285,7 @@ class BetaAnalyticsDataGrpcTransport(BetaAnalyticsDataTransport):
     def batch_run_reports(self) -> Callable[
             [analytics_data_api.BatchRunReportsRequest],
             analytics_data_api.BatchRunReportsResponse]:
-        r"""Return a callable for the
-        batch run reports
-          method over gRPC.
+        r"""Return a callable for the batch run reports method over gRPC.
 
         Returns multiple reports in a batch. All reports must
         be for the same GA4 Property.
@@ -318,9 +312,7 @@ class BetaAnalyticsDataGrpcTransport(BetaAnalyticsDataTransport):
     def batch_run_pivot_reports(self) -> Callable[
             [analytics_data_api.BatchRunPivotReportsRequest],
             analytics_data_api.BatchRunPivotReportsResponse]:
-        r"""Return a callable for the
-        batch run pivot reports
-          method over gRPC.
+        r"""Return a callable for the batch run pivot reports method over gRPC.
 
         Returns multiple pivot reports in a batch. All
         reports must be for the same GA4 Property.
@@ -347,9 +339,7 @@ class BetaAnalyticsDataGrpcTransport(BetaAnalyticsDataTransport):
     def get_metadata(self) -> Callable[
             [analytics_data_api.GetMetadataRequest],
             analytics_data_api.Metadata]:
-        r"""Return a callable for the
-        get metadata
-          method over gRPC.
+        r"""Return a callable for the get metadata method over gRPC.
 
         Returns metadata for dimensions and metrics available in
         reporting methods. Used to explore the dimensions and metrics.
@@ -385,9 +375,7 @@ class BetaAnalyticsDataGrpcTransport(BetaAnalyticsDataTransport):
     def run_realtime_report(self) -> Callable[
             [analytics_data_api.RunRealtimeReportRequest],
             analytics_data_api.RunRealtimeReportResponse]:
-        r"""Return a callable for the
-        run realtime report
-          method over gRPC.
+        r"""Return a callable for the run realtime report method over gRPC.
 
         The Google Analytics Realtime API returns a
         customized report of realtime event data for your

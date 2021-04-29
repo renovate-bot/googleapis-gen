@@ -240,9 +240,7 @@ class ServicesGrpcTransport(ServicesTransport):
     def list_services(self) -> Callable[
             [appengine.ListServicesRequest],
             appengine.ListServicesResponse]:
-        r"""Return a callable for the
-        list services
-          method over gRPC.
+        r"""Return a callable for the list services method over gRPC.
 
         Lists all the services in the application.
 
@@ -268,9 +266,7 @@ class ServicesGrpcTransport(ServicesTransport):
     def get_service(self) -> Callable[
             [appengine.GetServiceRequest],
             service.Service]:
-        r"""Return a callable for the
-        get service
-          method over gRPC.
+        r"""Return a callable for the get service method over gRPC.
 
         Gets the current configuration of the specified
         service.
@@ -297,9 +293,7 @@ class ServicesGrpcTransport(ServicesTransport):
     def update_service(self) -> Callable[
             [appengine.UpdateServiceRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update service
-          method over gRPC.
+        r"""Return a callable for the update service method over gRPC.
 
         Updates the configuration of the specified service.
 
@@ -325,9 +319,7 @@ class ServicesGrpcTransport(ServicesTransport):
     def delete_service(self) -> Callable[
             [appengine.DeleteServiceRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete service
-          method over gRPC.
+        r"""Return a callable for the delete service method over gRPC.
 
         Deletes the specified service and all enclosed
         versions.

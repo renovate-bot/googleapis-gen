@@ -245,9 +245,7 @@ class GameServerDeploymentsServiceGrpcAsyncIOTransport(GameServerDeploymentsServ
     def list_game_server_deployments(self) -> Callable[
             [game_server_deployments.ListGameServerDeploymentsRequest],
             Awaitable[game_server_deployments.ListGameServerDeploymentsResponse]]:
-        r"""Return a callable for the
-        list game server deployments
-          method over gRPC.
+        r"""Return a callable for the list game server deployments method over gRPC.
 
         Lists game server deployments in a given project and
         location.
@@ -274,9 +272,7 @@ class GameServerDeploymentsServiceGrpcAsyncIOTransport(GameServerDeploymentsServ
     def get_game_server_deployment(self) -> Callable[
             [game_server_deployments.GetGameServerDeploymentRequest],
             Awaitable[game_server_deployments.GameServerDeployment]]:
-        r"""Return a callable for the
-        get game server deployment
-          method over gRPC.
+        r"""Return a callable for the get game server deployment method over gRPC.
 
         Gets details of a single game server deployment.
 
@@ -302,9 +298,7 @@ class GameServerDeploymentsServiceGrpcAsyncIOTransport(GameServerDeploymentsServ
     def create_game_server_deployment(self) -> Callable[
             [game_server_deployments.CreateGameServerDeploymentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create game server deployment
-          method over gRPC.
+        r"""Return a callable for the create game server deployment method over gRPC.
 
         Creates a new game server deployment in a given
         project and location.
@@ -331,9 +325,7 @@ class GameServerDeploymentsServiceGrpcAsyncIOTransport(GameServerDeploymentsServ
     def delete_game_server_deployment(self) -> Callable[
             [game_server_deployments.DeleteGameServerDeploymentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete game server deployment
-          method over gRPC.
+        r"""Return a callable for the delete game server deployment method over gRPC.
 
         Deletes a single game server deployment.
 
@@ -359,9 +351,7 @@ class GameServerDeploymentsServiceGrpcAsyncIOTransport(GameServerDeploymentsServ
     def update_game_server_deployment(self) -> Callable[
             [game_server_deployments.UpdateGameServerDeploymentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update game server deployment
-          method over gRPC.
+        r"""Return a callable for the update game server deployment method over gRPC.
 
         Patches a game server deployment.
 
@@ -387,10 +377,8 @@ class GameServerDeploymentsServiceGrpcAsyncIOTransport(GameServerDeploymentsServ
     def get_game_server_deployment_rollout(self) -> Callable[
             [game_server_deployments.GetGameServerDeploymentRolloutRequest],
             Awaitable[game_server_deployments.GameServerDeploymentRollout]]:
-        r"""Return a callable for the
-        get game server deployment
-        rollout
-          method over gRPC.
+        r"""Return a callable for the get game server deployment
+        rollout method over gRPC.
 
         Gets details a single game server deployment rollout.
 
@@ -416,10 +404,8 @@ class GameServerDeploymentsServiceGrpcAsyncIOTransport(GameServerDeploymentsServ
     def update_game_server_deployment_rollout(self) -> Callable[
             [game_server_deployments.UpdateGameServerDeploymentRolloutRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update game server deployment
-        rollout
-          method over gRPC.
+        r"""Return a callable for the update game server deployment
+        rollout method over gRPC.
 
         Patches a single game server deployment rollout. The method will
         not return an error if the update does not affect any existing
@@ -451,10 +437,8 @@ class GameServerDeploymentsServiceGrpcAsyncIOTransport(GameServerDeploymentsServ
     def preview_game_server_deployment_rollout(self) -> Callable[
             [game_server_deployments.PreviewGameServerDeploymentRolloutRequest],
             Awaitable[game_server_deployments.PreviewGameServerDeploymentRolloutResponse]]:
-        r"""Return a callable for the
-        preview game server deployment
-        rollout
-          method over gRPC.
+        r"""Return a callable for the preview game server deployment
+        rollout method over gRPC.
 
         Previews the game server deployment rollout. This API
         does not mutate the rollout resource.
@@ -481,9 +465,7 @@ class GameServerDeploymentsServiceGrpcAsyncIOTransport(GameServerDeploymentsServ
     def fetch_deployment_state(self) -> Callable[
             [game_server_deployments.FetchDeploymentStateRequest],
             Awaitable[game_server_deployments.FetchDeploymentStateResponse]]:
-        r"""Return a callable for the
-        fetch deployment state
-          method over gRPC.
+        r"""Return a callable for the fetch deployment state method over gRPC.
 
         Retrieves information about the current state of the
         game server deployment. Gathers all the Agones fleets

@@ -191,8 +191,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.ListServicesRequest`):
-                The request object.
-                Request message for `ListServices`
+                The request object. Request message for `ListServices`
                 method.
             producer_project_id (:class:`str`):
                 Include services produced by the
@@ -284,8 +283,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.GetServiceRequest`):
-                The request object.
-                Request message for `GetService`
+                The request object. Request message for `GetService`
                 method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -357,8 +355,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.CreateServiceRequest`):
-                The request object.
-                Request message for CreateService
+                The request object. Request message for CreateService
                 method.
             service (:class:`google.cloud.servicemanagement_v1.types.ManagedService`):
                 Required. Initial values for the
@@ -442,8 +439,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.DeleteServiceRequest`):
-                The request object.
-                Request message for DeleteService
+                The request object. Request message for DeleteService
                 method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -539,8 +535,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.UndeleteServiceRequest`):
-                The request object.
-                Request message for UndeleteService
+                The request object. Request message for UndeleteService
                 method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -621,8 +616,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.ListServiceConfigsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListServiceConfigs method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -706,8 +700,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.GetServiceConfigRequest`):
-                The request object.
-                Request message for GetServiceConfig
+                The request object. Request message for GetServiceConfig
                 method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -823,8 +816,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.CreateServiceConfigRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateServiceConfig method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -933,8 +925,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.SubmitConfigSourceRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 SubmitConfigSource method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -1037,8 +1028,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.ListServiceRolloutsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'ListServiceRollouts'
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -1137,8 +1127,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.GetServiceRolloutRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetServiceRollout method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -1237,8 +1226,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.CreateServiceRolloutRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'CreateServiceRollout'
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -1340,8 +1328,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.GenerateConfigReportRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GenerateConfigReport method.
             new_config (:class:`google.protobuf.any_pb2.Any`):
                 Required. Service configuration for which we want to
@@ -1432,8 +1419,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.EnableServiceRequest`):
-                The request object.
-                Request message for EnableService
+                The request object. Request message for EnableService
                 method.
             service_name (:class:`str`):
                 Required. Name of the service to
@@ -1536,8 +1522,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.DisableServiceRequest`):
-                The request object.
-                Request message for DisableService
+                The request object. Request message for DisableService
                 method.
             service_name (:class:`str`):
                 Required. Name of the service to

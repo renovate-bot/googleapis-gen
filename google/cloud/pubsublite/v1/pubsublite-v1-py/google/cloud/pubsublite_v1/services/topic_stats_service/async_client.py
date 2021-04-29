@@ -158,8 +158,7 @@ class TopicStatsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.ComputeMessageStatsRequest`):
-                The request object.
-                Compute statistics about a range of
+                The request object. Compute statistics about a range of
                 messages in a given topic and partition.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -221,8 +220,7 @@ class TopicStatsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.ComputeHeadCursorRequest`):
-                The request object.
-                Compute the current head cursor for
+                The request object. Compute the current head cursor for
                 a partition.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -278,8 +276,7 @@ class TopicStatsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.pubsublite_v1.types.ComputeTimeCursorRequest`):
-                The request object.
-                Compute the corresponding cursor for
+                The request object. Compute the corresponding cursor for
                 a publish or event time in a topic partition.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

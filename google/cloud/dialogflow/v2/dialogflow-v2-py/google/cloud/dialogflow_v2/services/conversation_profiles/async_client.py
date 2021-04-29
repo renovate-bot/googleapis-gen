@@ -168,8 +168,7 @@ class ConversationProfilesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ListConversationProfilesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [ConversationProfiles.ListConversationProfiles][google.cloud.dialogflow.v2.ConversationProfiles.ListConversationProfiles].
             parent (:class:`str`):
                 Required. The project to list all conversation profiles
@@ -257,8 +256,7 @@ class ConversationProfilesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.GetConversationProfileRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [ConversationProfiles.GetConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.GetConversationProfile].
             name (:class:`str`):
                 Required. The resource name of the conversation profile.
@@ -341,8 +339,7 @@ class ConversationProfilesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.CreateConversationProfileRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [ConversationProfiles.CreateConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.CreateConversationProfile].
             parent (:class:`str`):
                 Required. The project to create a conversation profile
@@ -434,8 +431,7 @@ class ConversationProfilesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.UpdateConversationProfileRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [ConversationProfiles.UpdateConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.UpdateConversationProfile].
             conversation_profile (:class:`google.cloud.dialogflow_v2.types.ConversationProfile`):
                 Required. The conversation profile to
@@ -519,8 +515,7 @@ class ConversationProfilesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.DeleteConversationProfileRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [ConversationProfiles.DeleteConversationProfile][google.cloud.dialogflow.v2.ConversationProfiles.DeleteConversationProfile].
                 This operation fails if the conversation profile is
                 still referenced from a phone number.

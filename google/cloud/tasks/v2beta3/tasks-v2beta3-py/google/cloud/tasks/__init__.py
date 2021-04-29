@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.tasks_v2beta3.services.cloud_tasks.async_client import CloudTasksAsyncClient
 from google.cloud.tasks_v2beta3.services.cloud_tasks.client import CloudTasksClient
+from google.cloud.tasks_v2beta3.services.cloud_tasks.async_client import CloudTasksAsyncClient
+
 from google.cloud.tasks_v2beta3.types.cloudtasks import CreateQueueRequest
 from google.cloud.tasks_v2beta3.types.cloudtasks import CreateTaskRequest
 from google.cloud.tasks_v2beta3.types.cloudtasks import DeleteQueueRequest
@@ -39,44 +40,44 @@ from google.cloud.tasks_v2beta3.types.queue import StackdriverLoggingConfig
 from google.cloud.tasks_v2beta3.types.target import AppEngineHttpQueue
 from google.cloud.tasks_v2beta3.types.target import AppEngineHttpRequest
 from google.cloud.tasks_v2beta3.types.target import AppEngineRouting
-from google.cloud.tasks_v2beta3.types.target import HttpMethod
 from google.cloud.tasks_v2beta3.types.target import HttpRequest
 from google.cloud.tasks_v2beta3.types.target import OAuthToken
 from google.cloud.tasks_v2beta3.types.target import OidcToken
 from google.cloud.tasks_v2beta3.types.target import PullMessage
+from google.cloud.tasks_v2beta3.types.target import HttpMethod
 from google.cloud.tasks_v2beta3.types.task import Attempt
 from google.cloud.tasks_v2beta3.types.task import Task
 
-__all__ = ('AppEngineHttpQueue',
-    'AppEngineHttpRequest',
-    'AppEngineRouting',
-    'Attempt',
+__all__ = ('CloudTasksClient',
     'CloudTasksAsyncClient',
-    'CloudTasksClient',
     'CreateQueueRequest',
     'CreateTaskRequest',
     'DeleteQueueRequest',
     'DeleteTaskRequest',
     'GetQueueRequest',
     'GetTaskRequest',
-    'HttpMethod',
-    'HttpRequest',
     'ListQueuesRequest',
     'ListQueuesResponse',
     'ListTasksRequest',
     'ListTasksResponse',
-    'OAuthToken',
-    'OidcToken',
     'PauseQueueRequest',
-    'PullMessage',
     'PurgeQueueRequest',
+    'ResumeQueueRequest',
+    'RunTaskRequest',
+    'UpdateQueueRequest',
     'Queue',
     'QueueStats',
     'RateLimits',
-    'ResumeQueueRequest',
     'RetryConfig',
-    'RunTaskRequest',
     'StackdriverLoggingConfig',
+    'AppEngineHttpQueue',
+    'AppEngineHttpRequest',
+    'AppEngineRouting',
+    'HttpRequest',
+    'OAuthToken',
+    'OidcToken',
+    'PullMessage',
+    'HttpMethod',
+    'Attempt',
     'Task',
-    'UpdateQueueRequest',
 )

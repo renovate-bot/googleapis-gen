@@ -723,7 +723,7 @@ class Finding(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=10
+        number=10,
     )
     job_create_time = proto.Field(
         proto.MESSAGE,
@@ -6327,7 +6327,7 @@ class HybridFindingDetails(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=5
+        number=5,
     )
 
 

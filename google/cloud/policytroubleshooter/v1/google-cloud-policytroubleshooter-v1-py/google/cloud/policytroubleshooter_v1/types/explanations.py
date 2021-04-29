@@ -289,7 +289,7 @@ class BindingExplanation(proto.Message):
     memberships = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=5
+        number=5,
         message=AnnotatedMembership,
     )
     relevance = proto.Field(

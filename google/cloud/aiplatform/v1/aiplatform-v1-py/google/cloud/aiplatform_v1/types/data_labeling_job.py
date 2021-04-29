@@ -152,7 +152,7 @@ class DataLabelingJob(proto.Message):
     annotation_labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=12
+        number=12,
     )
     labeler_count = proto.Field(
         proto.INT32,
@@ -203,7 +203,7 @@ class DataLabelingJob(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=11
+        number=11,
     )
     specialist_pools = proto.RepeatedField(
         proto.STRING,

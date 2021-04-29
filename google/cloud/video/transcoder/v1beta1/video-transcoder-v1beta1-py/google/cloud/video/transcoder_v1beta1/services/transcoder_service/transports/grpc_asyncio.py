@@ -233,9 +233,7 @@ class TranscoderServiceGrpcAsyncIOTransport(TranscoderServiceTransport):
     def create_job(self) -> Callable[
             [services.CreateJobRequest],
             Awaitable[resources.Job]]:
-        r"""Return a callable for the
-        create job
-          method over gRPC.
+        r"""Return a callable for the create job method over gRPC.
 
         Creates a job in the specified region.
 
@@ -261,9 +259,7 @@ class TranscoderServiceGrpcAsyncIOTransport(TranscoderServiceTransport):
     def list_jobs(self) -> Callable[
             [services.ListJobsRequest],
             Awaitable[services.ListJobsResponse]]:
-        r"""Return a callable for the
-        list jobs
-          method over gRPC.
+        r"""Return a callable for the list jobs method over gRPC.
 
         Lists jobs in the specified region.
 
@@ -289,9 +285,7 @@ class TranscoderServiceGrpcAsyncIOTransport(TranscoderServiceTransport):
     def get_job(self) -> Callable[
             [services.GetJobRequest],
             Awaitable[resources.Job]]:
-        r"""Return a callable for the
-        get job
-          method over gRPC.
+        r"""Return a callable for the get job method over gRPC.
 
         Returns the job data.
 
@@ -317,9 +311,7 @@ class TranscoderServiceGrpcAsyncIOTransport(TranscoderServiceTransport):
     def delete_job(self) -> Callable[
             [services.DeleteJobRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete job
-          method over gRPC.
+        r"""Return a callable for the delete job method over gRPC.
 
         Deletes a job.
 
@@ -345,9 +337,7 @@ class TranscoderServiceGrpcAsyncIOTransport(TranscoderServiceTransport):
     def create_job_template(self) -> Callable[
             [services.CreateJobTemplateRequest],
             Awaitable[resources.JobTemplate]]:
-        r"""Return a callable for the
-        create job template
-          method over gRPC.
+        r"""Return a callable for the create job template method over gRPC.
 
         Creates a job template in the specified region.
 
@@ -373,9 +363,7 @@ class TranscoderServiceGrpcAsyncIOTransport(TranscoderServiceTransport):
     def list_job_templates(self) -> Callable[
             [services.ListJobTemplatesRequest],
             Awaitable[services.ListJobTemplatesResponse]]:
-        r"""Return a callable for the
-        list job templates
-          method over gRPC.
+        r"""Return a callable for the list job templates method over gRPC.
 
         Lists job templates in the specified region.
 
@@ -401,9 +389,7 @@ class TranscoderServiceGrpcAsyncIOTransport(TranscoderServiceTransport):
     def get_job_template(self) -> Callable[
             [services.GetJobTemplateRequest],
             Awaitable[resources.JobTemplate]]:
-        r"""Return a callable for the
-        get job template
-          method over gRPC.
+        r"""Return a callable for the get job template method over gRPC.
 
         Returns the job template data.
 
@@ -429,9 +415,7 @@ class TranscoderServiceGrpcAsyncIOTransport(TranscoderServiceTransport):
     def delete_job_template(self) -> Callable[
             [services.DeleteJobTemplateRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete job template
-          method over gRPC.
+        r"""Return a callable for the delete job template method over gRPC.
 
         Deletes a job template.
 

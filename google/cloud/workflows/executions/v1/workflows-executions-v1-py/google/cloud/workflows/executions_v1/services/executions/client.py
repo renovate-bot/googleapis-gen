@@ -351,8 +351,7 @@ class ExecutionsClient(metaclass=ExecutionsClientMeta):
 
         Args:
             request (google.cloud.workflows.executions_v1.types.ListExecutionsRequest):
-                The request object.
-                Request for the
+                The request object. Request for the
                 [ListExecutions][]
                 method.
             parent (str):
@@ -394,7 +393,7 @@ class ExecutionsClient(metaclass=ExecutionsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, executions.ListExecutionsRequest):
             request = executions.ListExecutionsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -445,8 +444,7 @@ class ExecutionsClient(metaclass=ExecutionsClientMeta):
 
         Args:
             request (google.cloud.workflows.executions_v1.types.CreateExecutionRequest):
-                The request object.
-                Request for the
+                The request object. Request for the
                 [CreateExecution][google.cloud.workflows.executions.v1.Executions.CreateExecution]
                 method.
             parent (str):
@@ -491,7 +489,7 @@ class ExecutionsClient(metaclass=ExecutionsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, executions.CreateExecutionRequest):
             request = executions.CreateExecutionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -533,8 +531,7 @@ class ExecutionsClient(metaclass=ExecutionsClientMeta):
 
         Args:
             request (google.cloud.workflows.executions_v1.types.GetExecutionRequest):
-                The request object.
-                Request for the
+                The request object. Request for the
                 [GetExecution][google.cloud.workflows.executions.v1.Executions.GetExecution]
                 method.
             name (str):
@@ -571,7 +568,7 @@ class ExecutionsClient(metaclass=ExecutionsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, executions.GetExecutionRequest):
             request = executions.GetExecutionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -611,8 +608,7 @@ class ExecutionsClient(metaclass=ExecutionsClientMeta):
 
         Args:
             request (google.cloud.workflows.executions_v1.types.CancelExecutionRequest):
-                The request object.
-                Request for the
+                The request object. Request for the
                 [CancelExecution][google.cloud.workflows.executions.v1.Executions.CancelExecution]
                 method.
             name (str):
@@ -649,7 +645,7 @@ class ExecutionsClient(metaclass=ExecutionsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, executions.CancelExecutionRequest):
             request = executions.CancelExecutionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

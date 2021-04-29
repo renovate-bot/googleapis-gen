@@ -232,7 +232,7 @@ class RepoSource(proto.Message):
     substitutions = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=9
+        number=9,
     )
 
 
@@ -793,7 +793,7 @@ class Build(proto.Message):
     substitutions = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=29
+        number=29,
     )
     tags = proto.RepeatedField(
         proto.STRING,
@@ -807,7 +807,7 @@ class Build(proto.Message):
     timing = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=33
+        number=33,
         message='TimeSpan',
     )
     service_account = proto.Field(
@@ -973,7 +973,7 @@ class SourceProvenance(proto.Message):
     file_hashes = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=4
+        number=4,
         message='FileHashes',
     )
 
@@ -1070,7 +1070,7 @@ class InlineSecret(proto.Message):
     env_map = proto.MapField(
         proto.STRING,
         proto.BYTES,
-        number=2
+        number=2,
     )
 
 
@@ -1127,7 +1127,7 @@ class Secret(proto.Message):
     secret_env = proto.MapField(
         proto.STRING,
         proto.BYTES,
-        number=3
+        number=3,
     )
 
 
@@ -1416,7 +1416,7 @@ class BuildTrigger(proto.Message):
     substitutions = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=11
+        number=11,
     )
     ignored_files = proto.RepeatedField(
         proto.STRING,

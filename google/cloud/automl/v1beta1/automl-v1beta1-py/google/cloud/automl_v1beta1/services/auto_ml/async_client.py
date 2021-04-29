@@ -209,8 +209,7 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.CreateDatasetRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.CreateDataset][google.cloud.automl.v1beta1.AutoMl.CreateDataset].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -294,8 +293,7 @@ class AutoMlAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.GetDatasetRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.GetDataset][google.cloud.automl.v1beta1.AutoMl.GetDataset].
             name (:class:`str`):
                 Required. The resource name of the
@@ -379,8 +377,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.ListDatasetsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -474,8 +471,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.UpdateDatasetRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.UpdateDataset][google.cloud.automl.v1beta1.AutoMl.UpdateDataset]
             dataset (:class:`google.cloud.automl_v1beta1.types.Dataset`):
                 Required. The dataset which replaces
@@ -556,8 +552,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.DeleteDatasetRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.DeleteDataset][google.cloud.automl.v1beta1.AutoMl.DeleteDataset].
             name (:class:`str`):
                 Required. The resource name of the
@@ -670,8 +665,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.ImportDataRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ImportData][google.cloud.automl.v1beta1.AutoMl.ImportData].
             name (:class:`str`):
                 Required. Dataset name. Dataset must
@@ -782,8 +776,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.ExportDataRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ExportData][google.cloud.automl.v1beta1.AutoMl.ExportData].
             name (:class:`str`):
                 Required. The resource name of the
@@ -888,8 +881,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.GetAnnotationSpecRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.GetAnnotationSpec][google.cloud.automl.v1beta1.AutoMl.GetAnnotationSpec].
             name (:class:`str`):
                 Required. The resource name of the
@@ -969,8 +961,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.GetTableSpecRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.GetTableSpec][google.cloud.automl.v1beta1.AutoMl.GetTableSpec].
             name (:class:`str`):
                 Required. The resource name of the
@@ -1060,8 +1051,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.ListTableSpecsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ListTableSpecs][google.cloud.automl.v1beta1.AutoMl.ListTableSpecs].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -1155,8 +1145,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.UpdateTableSpecRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.UpdateTableSpec][google.cloud.automl.v1beta1.AutoMl.UpdateTableSpec]
             table_spec (:class:`google.cloud.automl_v1beta1.types.TableSpec`):
                 Required. The table spec which
@@ -1239,8 +1228,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.GetColumnSpecRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.GetColumnSpec][google.cloud.automl.v1beta1.AutoMl.GetColumnSpec].
             name (:class:`str`):
                 Required. The resource name of the
@@ -1322,8 +1310,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.ListColumnSpecsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ListColumnSpecs][google.cloud.automl.v1beta1.AutoMl.ListColumnSpecs].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -1417,8 +1404,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.UpdateColumnSpecRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.UpdateColumnSpec][google.cloud.automl.v1beta1.AutoMl.UpdateColumnSpec]
             column_spec (:class:`google.cloud.automl_v1beta1.types.ColumnSpec`):
                 Required. The column spec which
@@ -1498,8 +1484,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.CreateModelRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.CreateModel][google.cloud.automl.v1beta1.AutoMl.CreateModel].
             parent (:class:`str`):
                 Required. Resource name of the parent
@@ -1593,8 +1578,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.GetModelRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.GetModel][google.cloud.automl.v1beta1.AutoMl.GetModel].
             name (:class:`str`):
                 Required. Resource name of the model.
@@ -1674,8 +1658,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.ListModelsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ListModels][google.cloud.automl.v1beta1.AutoMl.ListModels].
             parent (:class:`str`):
                 Required. Resource name of the
@@ -1772,8 +1755,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.DeleteModelRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.DeleteModel][google.cloud.automl.v1beta1.AutoMl.DeleteModel].
             name (:class:`str`):
                 Required. Resource name of the model
@@ -1890,8 +1872,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.DeployModelRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.DeployModel][google.cloud.automl.v1beta1.AutoMl.DeployModel].
             name (:class:`str`):
                 Required. Resource name of the model
@@ -1995,8 +1976,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.UndeployModelRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.UndeployModel][google.cloud.automl.v1beta1.AutoMl.UndeployModel].
             name (:class:`str`):
                 Required. Resource name of the model
@@ -2101,8 +2081,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.ExportModelRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ExportModel][google.cloud.automl.v1beta1.AutoMl.ExportModel].
                 Models need to be enabled for exporting, otherwise an
                 error code will be returned.
@@ -2224,8 +2203,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.ExportEvaluatedExamplesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ExportEvaluatedExamples][google.cloud.automl.v1beta1.AutoMl.ExportEvaluatedExamples].
             name (:class:`str`):
                 Required. The resource name of the
@@ -2331,8 +2309,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.GetModelEvaluationRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.GetModelEvaluation][google.cloud.automl.v1beta1.AutoMl.GetModelEvaluation].
             name (:class:`str`):
                 Required. Resource name for the model
@@ -2412,8 +2389,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.automl_v1beta1.types.ListModelEvaluationsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AutoMl.ListModelEvaluations][google.cloud.automl.v1beta1.AutoMl.ListModelEvaluations].
             parent (:class:`str`):
                 Required. Resource name of the model

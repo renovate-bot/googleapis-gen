@@ -190,7 +190,7 @@ class TraceSpan(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=7
+        number=7,
     )
 
 

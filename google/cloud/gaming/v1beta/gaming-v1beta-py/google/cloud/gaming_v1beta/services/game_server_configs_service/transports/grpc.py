@@ -240,9 +240,7 @@ class GameServerConfigsServiceGrpcTransport(GameServerConfigsServiceTransport):
     def list_game_server_configs(self) -> Callable[
             [game_server_configs.ListGameServerConfigsRequest],
             game_server_configs.ListGameServerConfigsResponse]:
-        r"""Return a callable for the
-        list game server configs
-          method over gRPC.
+        r"""Return a callable for the list game server configs method over gRPC.
 
         Lists game server configs in a given project,
         location, and game server deployment.
@@ -269,9 +267,7 @@ class GameServerConfigsServiceGrpcTransport(GameServerConfigsServiceTransport):
     def get_game_server_config(self) -> Callable[
             [game_server_configs.GetGameServerConfigRequest],
             game_server_configs.GameServerConfig]:
-        r"""Return a callable for the
-        get game server config
-          method over gRPC.
+        r"""Return a callable for the get game server config method over gRPC.
 
         Gets details of a single game server config.
 
@@ -297,9 +293,7 @@ class GameServerConfigsServiceGrpcTransport(GameServerConfigsServiceTransport):
     def create_game_server_config(self) -> Callable[
             [game_server_configs.CreateGameServerConfigRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create game server config
-          method over gRPC.
+        r"""Return a callable for the create game server config method over gRPC.
 
         Creates a new game server config in a given project,
         location, and game server deployment. Game server
@@ -329,9 +323,7 @@ class GameServerConfigsServiceGrpcTransport(GameServerConfigsServiceTransport):
     def delete_game_server_config(self) -> Callable[
             [game_server_configs.DeleteGameServerConfigRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete game server config
-          method over gRPC.
+        r"""Return a callable for the delete game server config method over gRPC.
 
         Deletes a single game server config. The deletion
         will fail if the game server config is referenced in a

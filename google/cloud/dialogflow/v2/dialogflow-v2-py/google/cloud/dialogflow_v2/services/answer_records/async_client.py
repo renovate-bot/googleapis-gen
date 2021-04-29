@@ -160,8 +160,7 @@ class AnswerRecordsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ListAnswerRecordsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AnswerRecords.ListAnswerRecords][google.cloud.dialogflow.v2.AnswerRecords.ListAnswerRecords].
             parent (:class:`str`):
                 Required. The project to list all answer records for in
@@ -250,8 +249,7 @@ class AnswerRecordsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.UpdateAnswerRecordRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord].
             answer_record (:class:`google.cloud.dialogflow_v2.types.AnswerRecord`):
                 Required. Answer record to update.

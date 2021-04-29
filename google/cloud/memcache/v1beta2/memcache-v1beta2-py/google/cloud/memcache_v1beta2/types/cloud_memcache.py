@@ -256,7 +256,7 @@ class Instance(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3
+        number=3,
     )
     authorized_network = proto.Field(
         proto.STRING,
@@ -637,7 +637,7 @@ class MemcacheParameters(proto.Message):
     params = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3
+        number=3,
     )
 
 
@@ -717,7 +717,7 @@ class LocationMetadata(proto.Message):
     available_zones = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=1
+        number=1,
         message='ZoneMetadata',
     )
 

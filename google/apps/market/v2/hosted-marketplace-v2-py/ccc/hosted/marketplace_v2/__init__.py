@@ -27,14 +27,14 @@ from .types.services import LicenseNotificationListRequest
 from .types.services import UserLicenseGetRequest
 
 __all__ = (
+    'CustomerLicenseServiceClient',
+    'LicenseNotificationServiceClient',
+    'UserLicenseServiceClient',
     'CustomerLicense',
-    'CustomerLicenseGetRequest',
     'LicenseNotification',
     'LicenseNotificationList',
-    'LicenseNotificationListRequest',
-    'LicenseNotificationServiceClient',
     'UserLicense',
+    'CustomerLicenseGetRequest',
+    'LicenseNotificationListRequest',
     'UserLicenseGetRequest',
-    'UserLicenseServiceClient',
-'CustomerLicenseServiceClient',
 )

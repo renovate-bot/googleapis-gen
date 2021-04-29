@@ -431,13 +431,13 @@ class ExplanationMetadata(proto.Message):
     inputs = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=1
+        number=1,
         message=InputMetadata,
     )
     outputs = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=2
+        number=2,
         message=OutputMetadata,
     )
     feature_attributions_schema_uri = proto.Field(

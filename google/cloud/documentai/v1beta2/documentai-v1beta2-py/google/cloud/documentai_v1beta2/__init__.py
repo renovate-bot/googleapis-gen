@@ -38,18 +38,17 @@ from .types.geometry import NormalizedVertex
 from .types.geometry import Vertex
 
 __all__ = (
+    'DocumentUnderstandingServiceClient',
+    'Document',
     'AutoMlParams',
     'BatchProcessDocumentsRequest',
     'BatchProcessDocumentsResponse',
-    'BoundingPoly',
-    'Document',
     'EntityExtractionParams',
     'FormExtractionParams',
     'GcsDestination',
     'GcsSource',
     'InputConfig',
     'KeyValuePairHint',
-    'NormalizedVertex',
     'OcrParams',
     'OperationMetadata',
     'OutputConfig',
@@ -57,6 +56,7 @@ __all__ = (
     'ProcessDocumentResponse',
     'TableBoundHint',
     'TableExtractionParams',
+    'BoundingPoly',
+    'NormalizedVertex',
     'Vertex',
-'DocumentUnderstandingServiceClient',
 )

@@ -165,8 +165,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.ListMigrationJobsRequest`):
-                The request object.
-                Retrieve a list of all migration
+                The request object. Retrieve a list of all migration
                 jobs in a given project and location.
             parent (:class:`str`):
                 Required. The parent, which owns this
@@ -253,8 +252,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.GetMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'GetMigrationJob' request.
             name (:class:`str`):
                 Required. Name of the migration job
@@ -332,8 +330,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.CreateMigrationJobRequest`):
-                The request object.
-                Request message to create a new
+                The request object. Request message to create a new
                 Database Migration Service migration job in the
                 specified project and region.
             parent (:class:`str`):
@@ -441,8 +438,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.UpdateMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'UpdateMigrationJob' request.
             migration_job (:class:`google.cloud.clouddms_v1.types.MigrationJob`):
                 Required. The migration job
@@ -540,8 +536,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.DeleteMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'DeleteMigrationJob' request.
             name (:class:`str`):
                 Required. Name of the migration job
@@ -636,8 +631,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.StartMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'StartMigrationJob' request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -704,8 +698,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.StopMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'StopMigrationJob' request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -773,8 +766,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.ResumeMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'ResumeMigrationJob' request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -843,8 +835,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.PromoteMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'PromoteMigrationJob' request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -913,8 +904,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.VerifyMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'VerifyMigrationJob' request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -983,8 +973,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.RestartMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'RestartMigrationJob' request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1052,8 +1041,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.GenerateSshScriptRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'GenerateSshScript' request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1110,8 +1098,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.ListConnectionProfilesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'ListConnectionProfiles' request.
             parent (:class:`str`):
                 Required. The parent, which owns this
@@ -1198,8 +1185,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.GetConnectionProfileRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'GetConnectionProfile' request.
             name (:class:`str`):
                 Required. Name of the connection
@@ -1275,8 +1261,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.CreateConnectionProfileRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'CreateConnectionProfile' request.
             parent (:class:`str`):
                 Required. The parent, which owns this
@@ -1382,8 +1367,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.UpdateConnectionProfileRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'UpdateConnectionProfile' request.
             connection_profile (:class:`google.cloud.clouddms_v1.types.ConnectionProfile`):
                 Required. The connection profile
@@ -1483,8 +1467,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.DeleteConnectionProfileRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'DeleteConnectionProfile' request.
             name (:class:`str`):
                 Required. Name of the connection

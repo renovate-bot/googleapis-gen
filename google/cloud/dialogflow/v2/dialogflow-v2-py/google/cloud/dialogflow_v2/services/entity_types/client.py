@@ -342,8 +342,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ListEntityTypesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.ListEntityTypes][google.cloud.dialogflow.v2.EntityTypes.ListEntityTypes].
             parent (str):
                 Required. The agent to list all entity types from.
@@ -391,7 +390,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.ListEntityTypesRequest):
             request = entity_type.ListEntityTypesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -443,8 +442,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.GetEntityTypeRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.GetEntityType][google.cloud.dialogflow.v2.EntityTypes.GetEntityType].
             name (str):
                 Required. The name of the entity type. Format:
@@ -502,7 +500,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.GetEntityTypeRequest):
             request = entity_type.GetEntityTypeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -546,8 +544,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.CreateEntityTypeRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.CreateEntityType][google.cloud.dialogflow.v2.EntityTypes.CreateEntityType].
             parent (str):
                 Required. The agent to create a entity type for. Format:
@@ -610,7 +607,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_entity_type.CreateEntityTypeRequest):
             request = gcd_entity_type.CreateEntityTypeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -655,8 +652,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.UpdateEntityTypeRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2.EntityTypes.UpdateEntityType].
             entity_type (google.cloud.dialogflow_v2.types.EntityType):
                 Required. The entity type to update.
@@ -712,7 +708,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_entity_type.UpdateEntityTypeRequest):
             request = gcd_entity_type.UpdateEntityTypeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if entity_type is not None:
                 request.entity_type = entity_type
@@ -754,8 +750,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.DeleteEntityTypeRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.DeleteEntityType][google.cloud.dialogflow.v2.EntityTypes.DeleteEntityType].
             name (str):
                 Required. The name of the entity type to delete. Format:
@@ -784,7 +779,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.DeleteEntityTypeRequest):
             request = entity_type.DeleteEntityTypeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -823,8 +818,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.BatchUpdateEntityTypesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -897,8 +891,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.BatchDeleteEntityTypesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchDeleteEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchDeleteEntityTypes].
             parent (str):
                 Required. The name of the agent to delete all entities
@@ -953,7 +946,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.BatchDeleteEntityTypesRequest):
             request = entity_type.BatchDeleteEntityTypesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1008,8 +1001,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.BatchCreateEntitiesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchCreateEntities][google.cloud.dialogflow.v2.EntityTypes.BatchCreateEntities].
             parent (str):
                 Required. The name of the entity type to create entities
@@ -1073,7 +1065,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.BatchCreateEntitiesRequest):
             request = entity_type.BatchCreateEntitiesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1132,8 +1124,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.BatchUpdateEntitiesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchUpdateEntities][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntities].
             parent (str):
                 Required. The name of the entity type to update or
@@ -1199,7 +1190,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.BatchUpdateEntitiesRequest):
             request = entity_type.BatchUpdateEntitiesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1256,8 +1247,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.BatchDeleteEntitiesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchDeleteEntities][google.cloud.dialogflow.v2.EntityTypes.BatchDeleteEntities].
             parent (str):
                 Required. The name of the entity type to delete entries
@@ -1324,7 +1314,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.BatchDeleteEntitiesRequest):
             request = entity_type.BatchDeleteEntitiesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

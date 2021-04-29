@@ -220,9 +220,7 @@ class StreamingVideoIntelligenceServiceGrpcTransport(StreamingVideoIntelligenceS
     def streaming_annotate_video(self) -> Callable[
             [video_intelligence.StreamingAnnotateVideoRequest],
             video_intelligence.StreamingAnnotateVideoResponse]:
-        r"""Return a callable for the
-        streaming annotate video
-          method over gRPC.
+        r"""Return a callable for the streaming annotate video method over gRPC.
 
         Performs video annotation with bidirectional
         streaming: emitting results while sending video/audio

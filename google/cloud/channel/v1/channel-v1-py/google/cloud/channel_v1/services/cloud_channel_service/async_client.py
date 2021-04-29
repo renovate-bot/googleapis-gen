@@ -208,8 +208,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListCustomersRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -290,8 +289,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.GetCustomerRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.GetCustomer][google.cloud.channel.v1.CloudChannelService.GetCustomer].
             name (:class:`str`):
                 Required. The resource name of the customer to retrieve.
@@ -385,8 +383,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.CheckCloudIdentityAccountsExistRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.CheckCloudIdentityAccountsExist][google.cloud.channel.v1.CloudChannelService.CheckCloudIdentityAccountsExist].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -454,8 +451,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.CreateCustomerRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.CreateCustomer][google.cloud.channel.v1.CloudChannelService.CreateCustomer]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -523,8 +519,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.UpdateCustomerRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.UpdateCustomer][google.cloud.channel.v1.CloudChannelService.UpdateCustomer].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -591,8 +586,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.DeleteCustomerRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.DeleteCustomer][google.cloud.channel.v1.CloudChannelService.DeleteCustomer].
             name (:class:`str`):
                 Required. The resource name of the
@@ -679,8 +673,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ProvisionCloudIdentityRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ProvisionCloudIdentity][google.cloud.channel.v1.CloudChannelService.ProvisionCloudIdentity]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -757,8 +750,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListEntitlementsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ListEntitlements][google.cloud.channel.v1.CloudChannelService.ListEntitlements]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -847,8 +839,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListTransferableSkusRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -939,8 +930,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListTransferableOffersRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1019,8 +1009,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.GetEntitlementRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.GetEntitlement][google.cloud.channel.v1.CloudChannelService.GetEntitlement].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1119,8 +1108,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.CreateEntitlementRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.CreateEntitlement][google.cloud.channel.v1.CloudChannelService.CreateEntitlement]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1211,8 +1199,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ChangeParametersRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ChangeParametersRequest][].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1305,8 +1292,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ChangeRenewalSettingsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ChangeRenewalSettings][google.cloud.channel.v1.CloudChannelService.ChangeRenewalSettings].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1395,8 +1381,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ChangeOfferRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ChangeOffer][google.cloud.channel.v1.CloudChannelService.ChangeOffer].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1488,8 +1473,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.StartPaidServiceRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.StartPaidService][google.cloud.channel.v1.CloudChannelService.StartPaidService].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1578,8 +1562,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.SuspendEntitlementRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.SuspendEntitlement][google.cloud.channel.v1.CloudChannelService.SuspendEntitlement].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1673,8 +1656,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.CancelEntitlementRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.CancelEntitlement][google.cloud.channel.v1.CloudChannelService.CancelEntitlement].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1779,8 +1761,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ActivateEntitlementRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ActivateEntitlement][google.cloud.channel.v1.CloudChannelService.ActivateEntitlement].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1882,8 +1863,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.TransferEntitlementsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.TransferEntitlements][google.cloud.channel.v1.CloudChannelService.TransferEntitlements].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1984,8 +1964,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.TransferEntitlementsToGoogleRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.TransferEntitlementsToGoogle][google.cloud.channel.v1.CloudChannelService.TransferEntitlementsToGoogle].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2075,8 +2054,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListChannelPartnerLinksRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ListChannelPartnerLinks][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2158,8 +2136,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.GetChannelPartnerLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.GetChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.GetChannelPartnerLink].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2239,8 +2216,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.CreateChannelPartnerLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.CreateChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.CreateChannelPartnerLink]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2320,8 +2296,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.UpdateChannelPartnerLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.UpdateChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.UpdateChannelPartnerLink]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2382,8 +2357,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListProductsRequest`):
-                The request object.
-                Request message for ListProducts.
+                The request object. Request message for ListProducts.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2445,8 +2419,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListSkusRequest`):
-                The request object.
-                Request message for ListSkus.
+                The request object. Request message for ListSkus.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2516,8 +2489,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListOffersRequest`):
-                The request object.
-                Request message for ListOffers.
+                The request object. Request message for ListOffers.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2592,8 +2564,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListPurchasableSkusRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListPurchasableSkus.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2670,8 +2641,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListPurchasableOffersRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListPurchasableOffers.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2756,8 +2726,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.RegisterSubscriberRequest`):
-                The request object.
-                Request Message for
+                The request object. Request Message for
                 RegisterSubscriber.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2833,8 +2802,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.UnregisterSubscriberRequest`):
-                The request object.
-                Request Message for
+                The request object. Request Message for
                 UnregisterSubscriber.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2905,8 +2873,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListSubscribersRequest`):
-                The request object.
-                Request Message for ListSubscribers.
+                The request object. Request Message for ListSubscribers.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

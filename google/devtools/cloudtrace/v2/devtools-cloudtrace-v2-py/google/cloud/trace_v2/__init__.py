@@ -24,11 +24,11 @@ from .types.trace import TruncatableString
 from .types.tracing import BatchWriteSpansRequest
 
 __all__ = (
+    'TraceServiceClient',
     'AttributeValue',
-    'BatchWriteSpansRequest',
     'Module',
     'Span',
     'StackTrace',
     'TruncatableString',
-'TraceServiceClient',
+    'BatchWriteSpansRequest',
 )

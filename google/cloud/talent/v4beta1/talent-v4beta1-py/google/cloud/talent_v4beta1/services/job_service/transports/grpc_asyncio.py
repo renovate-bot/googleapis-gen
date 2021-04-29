@@ -248,9 +248,7 @@ class JobServiceGrpcAsyncIOTransport(JobServiceTransport):
     def create_job(self) -> Callable[
             [job_service.CreateJobRequest],
             Awaitable[gct_job.Job]]:
-        r"""Return a callable for the
-        create job
-          method over gRPC.
+        r"""Return a callable for the create job method over gRPC.
 
         Creates a new job.
         Typically, the job becomes searchable within 10 seconds,
@@ -278,9 +276,7 @@ class JobServiceGrpcAsyncIOTransport(JobServiceTransport):
     def batch_create_jobs(self) -> Callable[
             [job_service.BatchCreateJobsRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        batch create jobs
-          method over gRPC.
+        r"""Return a callable for the batch create jobs method over gRPC.
 
         Begins executing a batch create jobs operation.
 
@@ -306,9 +302,7 @@ class JobServiceGrpcAsyncIOTransport(JobServiceTransport):
     def get_job(self) -> Callable[
             [job_service.GetJobRequest],
             Awaitable[job.Job]]:
-        r"""Return a callable for the
-        get job
-          method over gRPC.
+        r"""Return a callable for the get job method over gRPC.
 
         Retrieves the specified job, whose status is OPEN or
         recently EXPIRED within the last 90 days.
@@ -335,9 +329,7 @@ class JobServiceGrpcAsyncIOTransport(JobServiceTransport):
     def update_job(self) -> Callable[
             [job_service.UpdateJobRequest],
             Awaitable[gct_job.Job]]:
-        r"""Return a callable for the
-        update job
-          method over gRPC.
+        r"""Return a callable for the update job method over gRPC.
 
         Updates specified job.
         Typically, updated contents become visible in search
@@ -366,9 +358,7 @@ class JobServiceGrpcAsyncIOTransport(JobServiceTransport):
     def batch_update_jobs(self) -> Callable[
             [job_service.BatchUpdateJobsRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        batch update jobs
-          method over gRPC.
+        r"""Return a callable for the batch update jobs method over gRPC.
 
         Begins executing a batch update jobs operation.
 
@@ -394,9 +384,7 @@ class JobServiceGrpcAsyncIOTransport(JobServiceTransport):
     def delete_job(self) -> Callable[
             [job_service.DeleteJobRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete job
-          method over gRPC.
+        r"""Return a callable for the delete job method over gRPC.
 
         Deletes the specified job.
         Typically, the job becomes unsearchable within 10
@@ -424,9 +412,7 @@ class JobServiceGrpcAsyncIOTransport(JobServiceTransport):
     def batch_delete_jobs(self) -> Callable[
             [job_service.BatchDeleteJobsRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        batch delete jobs
-          method over gRPC.
+        r"""Return a callable for the batch delete jobs method over gRPC.
 
         Deletes a list of [Job][google.cloud.talent.v4beta1.Job]s by
         filter.
@@ -453,9 +439,7 @@ class JobServiceGrpcAsyncIOTransport(JobServiceTransport):
     def list_jobs(self) -> Callable[
             [job_service.ListJobsRequest],
             Awaitable[job_service.ListJobsResponse]]:
-        r"""Return a callable for the
-        list jobs
-          method over gRPC.
+        r"""Return a callable for the list jobs method over gRPC.
 
         Lists jobs by filter.
 
@@ -481,9 +465,7 @@ class JobServiceGrpcAsyncIOTransport(JobServiceTransport):
     def search_jobs(self) -> Callable[
             [job_service.SearchJobsRequest],
             Awaitable[job_service.SearchJobsResponse]]:
-        r"""Return a callable for the
-        search jobs
-          method over gRPC.
+        r"""Return a callable for the search jobs method over gRPC.
 
         Searches for jobs using the provided
         [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].
@@ -515,9 +497,7 @@ class JobServiceGrpcAsyncIOTransport(JobServiceTransport):
     def search_jobs_for_alert(self) -> Callable[
             [job_service.SearchJobsRequest],
             Awaitable[job_service.SearchJobsResponse]]:
-        r"""Return a callable for the
-        search jobs for alert
-          method over gRPC.
+        r"""Return a callable for the search jobs for alert method over gRPC.
 
         Searches for jobs using the provided
         [SearchJobsRequest][google.cloud.talent.v4beta1.SearchJobsRequest].

@@ -157,8 +157,7 @@ class SpeechAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1.types.RecognizeRequest`):
-                The request object.
-                The top-level message sent by the
+                The request object. The top-level message sent by the
                 client for the `Recognize` method.
             config (:class:`google.cloud.speech_v1.types.RecognitionConfig`):
                 Required. Provides information to the
@@ -249,8 +248,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.speech_v1.types.LongRunningRecognizeRequest`):
-                The request object.
-                The top-level message sent by the
+                The request object. The top-level message sent by the
                 client for the `LongRunningRecognize` method.
             config (:class:`google.cloud.speech_v1.types.RecognitionConfig`):
                 Required. Provides information to the
@@ -342,8 +340,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             requests (AsyncIterator[`google.cloud.speech_v1.types.StreamingRecognizeRequest`]):
-                The request object AsyncIterator.
-                The top-level message sent by the
+                The request object AsyncIterator. The top-level message sent by the
                 client for the `StreamingRecognize` method. Multiple
                 `StreamingRecognizeRequest` messages are sent. The first
                 message must contain a `streaming_config` message and

@@ -181,8 +181,7 @@ class OrgPolicyAsyncClient:
 
         Args:
             request (:class:`google.cloud.orgpolicy_v2.types.ListConstraintsRequest`):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [ListConstraints]
                 [google.cloud.orgpolicy.v2.OrgPolicy.ListConstraints]
                 method.
@@ -285,8 +284,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.orgpolicy_v2.types.ListPoliciesRequest`):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [ListPolicies]
                 [google.cloud.orgpolicy.v2.OrgPolicy.ListPolicies]
                 method.
@@ -394,8 +392,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.orgpolicy_v2.types.GetPolicyRequest`):
-                The request object.
-                The request sent to the [GetPolicy]
+                The request object. The request sent to the [GetPolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.GetPolicy] method.
             name (:class:`str`):
                 Required. Resource name of the policy. See ``Policy``
@@ -482,8 +479,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.orgpolicy_v2.types.GetEffectivePolicyRequest`):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [GetEffectivePolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.GetEffectivePolicy]
                 method.
@@ -574,8 +570,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.orgpolicy_v2.types.CreatePolicyRequest`):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [CreatePolicyRequest]
                 [google.cloud.orgpolicy.v2.OrgPolicy.CreatePolicy]
                 method.
@@ -680,8 +675,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.orgpolicy_v2.types.UpdatePolicyRequest`):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [UpdatePolicyRequest]
                 [google.cloud.orgpolicy.v2.OrgPolicy.UpdatePolicy]
                 method.
@@ -767,8 +761,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.orgpolicy_v2.types.DeletePolicyRequest`):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [DeletePolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.DeletePolicy]
                 method.

@@ -396,8 +396,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.ListKeyRingsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.ListKeyRings][google.cloud.kms.v1.KeyManagementService.ListKeyRings].
             parent (str):
                 Required. The resource name of the location associated
@@ -436,7 +435,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ListKeyRingsRequest):
             request = service.ListKeyRingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -485,8 +484,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.ListCryptoKeysRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.ListCryptoKeys][google.cloud.kms.v1.KeyManagementService.ListCryptoKeys].
             parent (str):
                 Required. The resource name of the
@@ -525,7 +523,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ListCryptoKeysRequest):
             request = service.ListCryptoKeysRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -574,8 +572,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.ListCryptoKeyVersionsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.ListCryptoKeyVersions][google.cloud.kms.v1.KeyManagementService.ListCryptoKeyVersions].
             parent (str):
                 Required. The resource name of the
@@ -615,7 +612,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ListCryptoKeyVersionsRequest):
             request = service.ListCryptoKeyVersionsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -664,8 +661,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.ListImportJobsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.ListImportJobs][google.cloud.kms.v1.KeyManagementService.ListImportJobs].
             parent (str):
                 Required. The resource name of the
@@ -704,7 +700,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.ListImportJobsRequest):
             request = service.ListImportJobsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -754,8 +750,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.GetKeyRingRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.GetKeyRing][google.cloud.kms.v1.KeyManagementService.GetKeyRing].
             name (str):
                 Required. The [name][google.cloud.kms.v1.KeyRing.name]
@@ -791,7 +786,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetKeyRingRequest):
             request = service.GetKeyRingRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -834,8 +829,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.GetCryptoKeyRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.GetCryptoKey][google.cloud.kms.v1.KeyManagementService.GetCryptoKey].
             name (str):
                 Required. The [name][google.cloud.kms.v1.CryptoKey.name]
@@ -877,7 +871,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetCryptoKeyRequest):
             request = service.GetCryptoKeyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -918,8 +912,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.GetCryptoKeyVersionRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.GetCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.GetCryptoKeyVersion].
             name (str):
                 Required. The
@@ -967,7 +960,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetCryptoKeyVersionRequest):
             request = service.GetCryptoKeyVersionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1013,8 +1006,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.GetPublicKeyRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
             name (str):
                 Required. The
@@ -1051,7 +1043,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetPublicKeyRequest):
             request = service.GetPublicKeyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1092,8 +1084,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.GetImportJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.GetImportJob][google.cloud.kms.v1.KeyManagementService.GetImportJob].
             name (str):
                 Required. The [name][google.cloud.kms.v1.ImportJob.name]
@@ -1172,7 +1163,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.GetImportJobRequest):
             request = service.GetImportJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1215,8 +1206,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.CreateKeyRingRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.CreateKeyRing][google.cloud.kms.v1.KeyManagementService.CreateKeyRing].
             parent (str):
                 Required. The resource name of the location associated
@@ -1267,7 +1257,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.CreateKeyRingRequest):
             request = service.CreateKeyRingRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1318,8 +1308,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.CreateCryptoKeyRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.CreateCryptoKey][google.cloud.kms.v1.KeyManagementService.CreateCryptoKey].
             parent (str):
                 Required. The [name][google.cloud.kms.v1.KeyRing.name]
@@ -1375,7 +1364,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.CreateCryptoKeyRequest):
             request = service.CreateCryptoKeyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1427,8 +1416,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.CreateCryptoKeyVersionRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion].
             parent (str):
                 Required. The [name][google.cloud.kms.v1.CryptoKey.name]
@@ -1484,7 +1472,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.CreateCryptoKeyVersionRequest):
             request = service.CreateCryptoKeyVersionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1531,8 +1519,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.ImportCryptoKeyVersionRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.ImportCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.ImportCryptoKeyVersion].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1606,8 +1593,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.CreateImportJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.CreateImportJob][google.cloud.kms.v1.KeyManagementService.CreateImportJob].
             parent (str):
                 Required. The [name][google.cloud.kms.v1.KeyRing.name]
@@ -1700,7 +1686,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.CreateImportJobRequest):
             request = service.CreateImportJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1745,8 +1731,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.UpdateCryptoKeyRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.UpdateCryptoKey][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKey].
             crypto_key (google.cloud.kms_v1.types.CryptoKey):
                 Required. [CryptoKey][google.cloud.kms.v1.CryptoKey]
@@ -1794,7 +1779,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCryptoKeyRequest):
             request = service.UpdateCryptoKeyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if crypto_key is not None:
                 request.crypto_key = crypto_key
@@ -1850,8 +1835,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.UpdateCryptoKeyVersionRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.UpdateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyVersion].
             crypto_key_version (google.cloud.kms_v1.types.CryptoKeyVersion):
                 Required.
@@ -1905,7 +1889,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCryptoKeyVersionRequest):
             request = service.UpdateCryptoKeyVersionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if crypto_key_version is not None:
                 request.crypto_key_version = crypto_key_version
@@ -1952,8 +1936,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.EncryptRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
             name (str):
                 Required. The resource name of the
@@ -2011,7 +1994,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.EncryptRequest):
             request = service.EncryptRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2058,8 +2041,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.DecryptRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.Decrypt][google.cloud.kms.v1.KeyManagementService.Decrypt].
             name (str):
                 Required. The resource name of the
@@ -2103,7 +2085,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DecryptRequest):
             request = service.DecryptRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2151,8 +2133,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.AsymmetricSignRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign].
             name (str):
                 Required. The resource name of the
@@ -2197,7 +2178,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.AsymmetricSignRequest):
             request = service.AsymmetricSignRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2246,8 +2227,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.AsymmetricDecryptRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.AsymmetricDecrypt][google.cloud.kms.v1.KeyManagementService.AsymmetricDecrypt].
             name (str):
                 Required. The resource name of the
@@ -2291,7 +2271,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.AsymmetricDecryptRequest):
             request = service.AsymmetricDecryptRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2338,8 +2318,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.UpdateCryptoKeyPrimaryVersionRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
             name (str):
                 Required. The resource name of the
@@ -2388,7 +2367,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.UpdateCryptoKeyPrimaryVersionRequest):
             request = service.UpdateCryptoKeyPrimaryVersionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2450,8 +2429,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.DestroyCryptoKeyVersionRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion].
             name (str):
                 Required. The resource name of the
@@ -2498,7 +2476,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.DestroyCryptoKeyVersionRequest):
             request = service.DestroyCryptoKeyVersionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -2549,8 +2527,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
 
         Args:
             request (google.cloud.kms_v1.types.RestoreCryptoKeyVersionRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeyManagementService.RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion].
             name (str):
                 Required. The resource name of the
@@ -2597,7 +2574,7 @@ class KeyManagementServiceClient(metaclass=KeyManagementServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, service.RestoreCryptoKeyVersionRequest):
             request = service.RestoreCryptoKeyVersionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

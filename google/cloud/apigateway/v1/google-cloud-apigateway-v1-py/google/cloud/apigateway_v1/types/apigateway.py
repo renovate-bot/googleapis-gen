@@ -103,7 +103,7 @@ class Api(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     display_name = proto.Field(
         proto.STRING,
@@ -267,7 +267,7 @@ class ApiConfig(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     display_name = proto.Field(
         proto.STRING,
@@ -362,7 +362,7 @@ class Gateway(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     display_name = proto.Field(
         proto.STRING,

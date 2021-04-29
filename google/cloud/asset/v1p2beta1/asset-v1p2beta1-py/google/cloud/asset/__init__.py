@@ -14,9 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.asset_v1p2beta1.services.asset_service.async_client import AssetServiceAsyncClient
 from google.cloud.asset_v1p2beta1.services.asset_service.client import AssetServiceClient
-from google.cloud.asset_v1p2beta1.types.asset_service import ContentType
+from google.cloud.asset_v1p2beta1.services.asset_service.async_client import AssetServiceAsyncClient
+
 from google.cloud.asset_v1p2beta1.types.asset_service import CreateFeedRequest
 from google.cloud.asset_v1p2beta1.types.asset_service import DeleteFeedRequest
 from google.cloud.asset_v1p2beta1.types.asset_service import Feed
@@ -28,15 +28,14 @@ from google.cloud.asset_v1p2beta1.types.asset_service import ListFeedsResponse
 from google.cloud.asset_v1p2beta1.types.asset_service import OutputConfig
 from google.cloud.asset_v1p2beta1.types.asset_service import PubsubDestination
 from google.cloud.asset_v1p2beta1.types.asset_service import UpdateFeedRequest
+from google.cloud.asset_v1p2beta1.types.asset_service import ContentType
 from google.cloud.asset_v1p2beta1.types.assets import Asset
 from google.cloud.asset_v1p2beta1.types.assets import Resource
 from google.cloud.asset_v1p2beta1.types.assets import TemporalAsset
 from google.cloud.asset_v1p2beta1.types.assets import TimeWindow
 
-__all__ = ('Asset',
+__all__ = ('AssetServiceClient',
     'AssetServiceAsyncClient',
-    'AssetServiceClient',
-    'ContentType',
     'CreateFeedRequest',
     'DeleteFeedRequest',
     'Feed',
@@ -47,8 +46,10 @@ __all__ = ('Asset',
     'ListFeedsResponse',
     'OutputConfig',
     'PubsubDestination',
+    'UpdateFeedRequest',
+    'ContentType',
+    'Asset',
     'Resource',
     'TemporalAsset',
     'TimeWindow',
-    'UpdateFeedRequest',
 )

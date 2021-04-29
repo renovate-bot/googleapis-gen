@@ -36,11 +36,9 @@ from .types.service_controller import ReportRequest
 from .types.service_controller import ReportResponse
 
 __all__ = (
-    'AllocateQuotaRequest',
-    'AllocateQuotaResponse',
+    'QuotaControllerClient',
+    'ServiceControllerClient',
     'CheckError',
-    'CheckRequest',
-    'CheckResponse',
     'Distribution',
     'HttpRequest',
     'LogEntry',
@@ -49,10 +47,12 @@ __all__ = (
     'MetricValue',
     'MetricValueSet',
     'Operation',
-    'QuotaControllerClient',
+    'AllocateQuotaRequest',
+    'AllocateQuotaResponse',
     'QuotaError',
     'QuotaOperation',
+    'CheckRequest',
+    'CheckResponse',
     'ReportRequest',
     'ReportResponse',
-'ServiceControllerClient',
 )

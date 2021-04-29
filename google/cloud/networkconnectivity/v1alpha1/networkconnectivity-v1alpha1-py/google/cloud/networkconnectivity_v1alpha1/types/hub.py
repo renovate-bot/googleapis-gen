@@ -100,7 +100,7 @@ class Hub(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     description = proto.Field(
         proto.STRING,
@@ -174,7 +174,7 @@ class Spoke(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     description = proto.Field(
         proto.STRING,

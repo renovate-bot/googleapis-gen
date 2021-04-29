@@ -160,8 +160,7 @@ class AssuredWorkloadsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.assuredworkloads_v1beta1.types.CreateWorkloadRequest`):
-                The request object.
-                Request for creating a workload.
+                The request object. Request for creating a workload.
             parent (:class:`str`):
                 Required. The resource name of the new Workload's
                 parent. Must be of the form
@@ -257,8 +256,7 @@ class AssuredWorkloadsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.assuredworkloads_v1beta1.types.UpdateWorkloadRequest`):
-                The request object.
-                Request for Updating a workload.
+                The request object. Request for Updating a workload.
             workload (:class:`google.cloud.assuredworkloads_v1beta1.types.Workload`):
                 Required. The workload to update. The workload’s
                 ``name`` field is used to identify the workload to be
@@ -346,8 +344,7 @@ class AssuredWorkloadsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.assuredworkloads_v1beta1.types.DeleteWorkloadRequest`):
-                The request object.
-                Request for deleting a Workload.
+                The request object. Request for deleting a Workload.
             name (:class:`str`):
                 Required. The ``name`` field is used to identify the
                 workload. Format:
@@ -419,8 +416,7 @@ initial=0.2,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.assuredworkloads_v1beta1.types.GetWorkloadRequest`):
-                The request object.
-                Request for fetching a workload.
+                The request object. Request for fetching a workload.
             name (:class:`str`):
                 Required. The resource name of the Workload to fetch.
                 This is the workloads's relative path in the API,
@@ -505,8 +501,7 @@ initial=0.2,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.assuredworkloads_v1beta1.types.ListWorkloadsRequest`):
-                The request object.
-                Request for fetching workloads in an
+                The request object. Request for fetching workloads in an
                 organization.
             parent (:class:`str`):
                 Required. Parent Resource to list workloads from. Must

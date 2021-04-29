@@ -223,9 +223,7 @@ class DashboardsServiceGrpcTransport(DashboardsServiceTransport):
     def create_dashboard(self) -> Callable[
             [dashboards_service.CreateDashboardRequest],
             dashboard.Dashboard]:
-        r"""Return a callable for the
-        create dashboard
-          method over gRPC.
+        r"""Return a callable for the create dashboard method over gRPC.
 
         Creates a new custom dashboard. For examples on how you can use
         this API to create dashboards, see `Managing dashboards by
@@ -257,9 +255,7 @@ class DashboardsServiceGrpcTransport(DashboardsServiceTransport):
     def list_dashboards(self) -> Callable[
             [dashboards_service.ListDashboardsRequest],
             dashboards_service.ListDashboardsResponse]:
-        r"""Return a callable for the
-        list dashboards
-          method over gRPC.
+        r"""Return a callable for the list dashboards method over gRPC.
 
         Lists the existing dashboards.
 
@@ -290,9 +286,7 @@ class DashboardsServiceGrpcTransport(DashboardsServiceTransport):
     def get_dashboard(self) -> Callable[
             [dashboards_service.GetDashboardRequest],
             dashboard.Dashboard]:
-        r"""Return a callable for the
-        get dashboard
-          method over gRPC.
+        r"""Return a callable for the get dashboard method over gRPC.
 
         Fetches a specific dashboard.
 
@@ -323,9 +317,7 @@ class DashboardsServiceGrpcTransport(DashboardsServiceTransport):
     def delete_dashboard(self) -> Callable[
             [dashboards_service.DeleteDashboardRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete dashboard
-          method over gRPC.
+        r"""Return a callable for the delete dashboard method over gRPC.
 
         Deletes an existing custom dashboard.
 
@@ -356,9 +348,7 @@ class DashboardsServiceGrpcTransport(DashboardsServiceTransport):
     def update_dashboard(self) -> Callable[
             [dashboards_service.UpdateDashboardRequest],
             dashboard.Dashboard]:
-        r"""Return a callable for the
-        update dashboard
-          method over gRPC.
+        r"""Return a callable for the update dashboard method over gRPC.
 
         Replaces an existing custom dashboard with a new definition.
 

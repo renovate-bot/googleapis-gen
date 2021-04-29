@@ -156,8 +156,7 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1.types.EnableServiceRequest`):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `EnableService` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -231,8 +230,7 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1.types.DisableServiceRequest`):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `DisableService` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -300,8 +298,7 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1.types.GetServiceRequest`):
-                The request object.
-                Request message for the `GetService`
+                The request object. Request message for the `GetService`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -369,8 +366,7 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1.types.ListServicesRequest`):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `ListServices` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -439,8 +435,7 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1.types.BatchEnableServicesRequest`):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `BatchEnableServices` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -508,8 +503,7 @@ class ServiceUsageAsyncClient:
 
         Args:
             request (:class:`google.api.serviceusage_v1.types.BatchGetServicesRequest`):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `BatchGetServices` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

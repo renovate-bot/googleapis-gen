@@ -187,8 +187,7 @@ class SecurityCenterSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.GetServiceAccountRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetServiceAccount.
             name (:class:`str`):
                 Required. The relative resource name of the service
@@ -273,8 +272,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.GetSettingsRequest`):
-                The request object.
-                Request message for GetSettings.
+                The request object. Request message for GetSettings.
             name (:class:`str`):
                 Required. The name of the settings to retrieve. Formats:
 
@@ -362,8 +360,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.UpdateSettingsRequest`):
-                The request object.
-                Request message for UpdateSettings.
+                The request object. Request message for UpdateSettings.
             settings (:class:`google.cloud.securitycenter.settings_v1beta1.types.Settings`):
                 Required. The settings to update.
 
@@ -471,8 +468,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.ResetSettingsRequest`):
-                The request object.
-                Request message for ResetSettings.
+                The request object. Request message for ResetSettings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -524,8 +520,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.BatchGetSettingsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 BatchGetSettings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -599,8 +594,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.CalculateEffectiveSettingsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CalculateEffectiveSettings.
             name (:class:`str`):
                 Required. The name of the effective settings to
@@ -688,8 +682,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.BatchCalculateEffectiveSettingsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 BatchGetEffectiveSettings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -752,8 +745,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.GetComponentSettingsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetComponentSettings.
             name (:class:`str`):
                 Required. The component settings to retrieve.
@@ -844,8 +836,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.UpdateComponentSettingsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateComponentSettings.
             component_settings (:class:`google.cloud.securitycenter.settings_v1beta1.types.ComponentSettings`):
                 Required. The component settings to update.
@@ -949,8 +940,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.ResetComponentSettingsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ResetComponentSettings.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1004,8 +994,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.CalculateEffectiveComponentSettingsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CalculateEffectiveComponentSettings.
             name (:class:`str`):
                 Required. The effective component settings to retrieve.
@@ -1095,8 +1084,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.ListDetectorsRequest`):
-                The request object.
-                Request message for ListDetectors.
+                The request object. Request message for ListDetectors.
             parent (:class:`str`):
                 Required. The parent, which owns this collection of
                 detectors. Format:
@@ -1191,8 +1179,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.securitycenter.settings_v1beta1.types.ListComponentsRequest`):
-                The request object.
-                Request message for ListComponents.
+                The request object. Request message for ListComponents.
             parent (:class:`str`):
                 Required. The parent, which owns this collection of
                 components. Format:

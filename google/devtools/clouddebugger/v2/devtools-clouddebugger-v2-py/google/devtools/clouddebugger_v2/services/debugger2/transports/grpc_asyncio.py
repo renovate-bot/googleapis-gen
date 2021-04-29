@@ -238,9 +238,7 @@ class Debugger2GrpcAsyncIOTransport(Debugger2Transport):
     def set_breakpoint(self) -> Callable[
             [debugger.SetBreakpointRequest],
             Awaitable[debugger.SetBreakpointResponse]]:
-        r"""Return a callable for the
-        set breakpoint
-          method over gRPC.
+        r"""Return a callable for the set breakpoint method over gRPC.
 
         Sets the breakpoint to the debuggee.
 
@@ -266,9 +264,7 @@ class Debugger2GrpcAsyncIOTransport(Debugger2Transport):
     def get_breakpoint(self) -> Callable[
             [debugger.GetBreakpointRequest],
             Awaitable[debugger.GetBreakpointResponse]]:
-        r"""Return a callable for the
-        get breakpoint
-          method over gRPC.
+        r"""Return a callable for the get breakpoint method over gRPC.
 
         Gets breakpoint information.
 
@@ -294,9 +290,7 @@ class Debugger2GrpcAsyncIOTransport(Debugger2Transport):
     def delete_breakpoint(self) -> Callable[
             [debugger.DeleteBreakpointRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete breakpoint
-          method over gRPC.
+        r"""Return a callable for the delete breakpoint method over gRPC.
 
         Deletes the breakpoint from the debuggee.
 
@@ -322,9 +316,7 @@ class Debugger2GrpcAsyncIOTransport(Debugger2Transport):
     def list_breakpoints(self) -> Callable[
             [debugger.ListBreakpointsRequest],
             Awaitable[debugger.ListBreakpointsResponse]]:
-        r"""Return a callable for the
-        list breakpoints
-          method over gRPC.
+        r"""Return a callable for the list breakpoints method over gRPC.
 
         Lists all breakpoints for the debuggee.
 
@@ -350,9 +342,7 @@ class Debugger2GrpcAsyncIOTransport(Debugger2Transport):
     def list_debuggees(self) -> Callable[
             [debugger.ListDebuggeesRequest],
             Awaitable[debugger.ListDebuggeesResponse]]:
-        r"""Return a callable for the
-        list debuggees
-          method over gRPC.
+        r"""Return a callable for the list debuggees method over gRPC.
 
         Lists all the debuggees that the user has access to.
 

@@ -347,8 +347,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.GetFolderRequest):
-                The request object.
-                The GetFolder request message.
+                The request object. The GetFolder request message.
             name (str):
                 Required. The resource name of the folder to retrieve.
                 Must be of the form ``folders/{folder_id}``.
@@ -383,7 +382,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
         # there are no flattened fields.
         if not isinstance(request, folders.GetFolderRequest):
             request = folders.GetFolderRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -429,8 +428,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.ListFoldersRequest):
-                The request object.
-                The ListFolders request message.
+                The request object. The ListFolders request message.
             parent (str):
                 Required. The resource name of the organization or
                 folder whose folders are being listed. Must be of the
@@ -471,7 +469,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
         # there are no flattened fields.
         if not isinstance(request, folders.ListFoldersRequest):
             request = folders.ListFoldersRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -518,8 +516,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.SearchFoldersRequest):
-                The request object.
-                The request message for searching
+                The request object. The request message for searching
                 folders.
             query (str):
                 Optional. Search criteria used to select the folders to
@@ -588,7 +585,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
         # there are no flattened fields.
         if not isinstance(request, folders.SearchFoldersRequest):
             request = folders.SearchFoldersRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if query is not None:
                 request.query = query
@@ -657,8 +654,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.CreateFolderRequest):
-                The request object.
-                The CreateFolder request message.
+                The request object. The CreateFolder request message.
             folder (google.cloud.resourcemanager_v3.types.Folder):
                 Required. The folder being created,
                 only the display name and parent will be
@@ -696,7 +692,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
         # there are no flattened fields.
         if not isinstance(request, folders.CreateFolderRequest):
             request = folders.CreateFolderRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if folder is not None:
                 request.folder = folder
@@ -754,8 +750,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.UpdateFolderRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [UpdateFolder][google.cloud.resourcemanager.v3.Folder.UpdateFolder]
                 method.
 
@@ -805,7 +800,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
         # there are no flattened fields.
         if not isinstance(request, folders.UpdateFolderRequest):
             request = folders.UpdateFolderRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if folder is not None:
                 request.folder = folder
@@ -873,8 +868,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.MoveFolderRequest):
-                The request object.
-                The MoveFolder request message.
+                The request object. The MoveFolder request message.
             name (str):
                 Required. The resource name of the Folder to move. Must
                 be of the form folders/{folder_id}
@@ -919,7 +913,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
         # there are no flattened fields.
         if not isinstance(request, folders.MoveFolderRequest):
             request = folders.MoveFolderRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -980,8 +974,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.DeleteFolderRequest):
-                The request object.
-                The DeleteFolder request message.
+                The request object. The DeleteFolder request message.
             name (str):
                 Required. The resource name of the folder to be deleted.
                 Must be of the form ``folders/{folder_id}``.
@@ -1017,7 +1010,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
         # there are no flattened fields.
         if not isinstance(request, folders.DeleteFolderRequest):
             request = folders.DeleteFolderRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1077,8 +1070,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.UndeleteFolderRequest):
-                The request object.
-                The UndeleteFolder request message.
+                The request object. The UndeleteFolder request message.
             name (str):
                 Required. The resource name of the folder to undelete.
                 Must be of the form ``folders/{folder_id}``.
@@ -1114,7 +1106,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
         # there are no flattened fields.
         if not isinstance(request, folders.UndeleteFolderRequest):
             request = folders.UndeleteFolderRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1167,8 +1159,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1252,14 +1243,14 @@ class FoldersClient(metaclass=FoldersClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.GetIamPolicyRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1301,8 +1292,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1386,14 +1376,14 @@ class FoldersClient(metaclass=FoldersClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.SetIamPolicyRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1436,8 +1426,7 @@ class FoldersClient(metaclass=FoldersClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1475,14 +1464,14 @@ class FoldersClient(metaclass=FoldersClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.TestIamPermissionsRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
             if permissions:
                 request.permissions.extend(permissions)

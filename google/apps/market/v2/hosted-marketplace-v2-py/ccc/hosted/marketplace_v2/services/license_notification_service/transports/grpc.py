@@ -219,9 +219,7 @@ class LicenseNotificationServiceGrpcTransport(LicenseNotificationServiceTranspor
     def list(self) -> Callable[
             [services.LicenseNotificationListRequest],
             resources.LicenseNotificationList]:
-        r"""Return a callable for the
-        list
-          method over gRPC.
+        r"""Return a callable for the list method over gRPC.
 
         Get a list of licensing notifications with regards to
         a given app.

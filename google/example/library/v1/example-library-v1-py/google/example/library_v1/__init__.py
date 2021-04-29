@@ -33,6 +33,7 @@ from .types.library import Shelf
 from .types.library import UpdateBookRequest
 
 __all__ = (
+    'LibraryServiceClient',
     'Book',
     'CreateBookRequest',
     'CreateShelfRequest',
@@ -48,5 +49,4 @@ __all__ = (
     'MoveBookRequest',
     'Shelf',
     'UpdateBookRequest',
-'LibraryServiceClient',
 )

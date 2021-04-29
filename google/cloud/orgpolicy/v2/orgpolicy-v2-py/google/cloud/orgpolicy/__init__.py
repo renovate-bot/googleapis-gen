@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.orgpolicy_v2.services.org_policy.async_client import OrgPolicyAsyncClient
 from google.cloud.orgpolicy_v2.services.org_policy.client import OrgPolicyClient
+from google.cloud.orgpolicy_v2.services.org_policy.async_client import OrgPolicyAsyncClient
+
 from google.cloud.orgpolicy_v2.types.constraint import Constraint
 from google.cloud.orgpolicy_v2.types.orgpolicy import AlternatePolicySpec
 from google.cloud.orgpolicy_v2.types.orgpolicy import CreatePolicyRequest
@@ -30,8 +31,10 @@ from google.cloud.orgpolicy_v2.types.orgpolicy import Policy
 from google.cloud.orgpolicy_v2.types.orgpolicy import PolicySpec
 from google.cloud.orgpolicy_v2.types.orgpolicy import UpdatePolicyRequest
 
-__all__ = ('AlternatePolicySpec',
+__all__ = ('OrgPolicyClient',
+    'OrgPolicyAsyncClient',
     'Constraint',
+    'AlternatePolicySpec',
     'CreatePolicyRequest',
     'DeletePolicyRequest',
     'GetEffectivePolicyRequest',
@@ -40,8 +43,6 @@ __all__ = ('AlternatePolicySpec',
     'ListConstraintsResponse',
     'ListPoliciesRequest',
     'ListPoliciesResponse',
-    'OrgPolicyAsyncClient',
-    'OrgPolicyClient',
     'Policy',
     'PolicySpec',
     'UpdatePolicyRequest',

@@ -232,9 +232,7 @@ class HomeGraphApiServiceGrpcAsyncIOTransport(HomeGraphApiServiceTransport):
     def request_sync_devices(self) -> Callable[
             [homegraph.RequestSyncDevicesRequest],
             Awaitable[homegraph.RequestSyncDevicesResponse]]:
-        r"""Return a callable for the
-        request sync devices
-          method over gRPC.
+        r"""Return a callable for the request sync devices method over gRPC.
 
         Requests Google to send an ``action.devices.SYNC``
         `intent <https://developers.google.com/assistant/smarthome/reference/intent/sync>`__
@@ -269,9 +267,7 @@ class HomeGraphApiServiceGrpcAsyncIOTransport(HomeGraphApiServiceTransport):
     def report_state_and_notification(self) -> Callable[
             [homegraph.ReportStateAndNotificationRequest],
             Awaitable[homegraph.ReportStateAndNotificationResponse]]:
-        r"""Return a callable for the
-        report state and notification
-          method over gRPC.
+        r"""Return a callable for the report state and notification method over gRPC.
 
         Reports device state and optionally sends device notifications.
         Called by your smart home Action when the state of a third-party
@@ -313,9 +309,7 @@ class HomeGraphApiServiceGrpcAsyncIOTransport(HomeGraphApiServiceTransport):
     def delete_agent_user(self) -> Callable[
             [homegraph.DeleteAgentUserRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete agent user
-          method over gRPC.
+        r"""Return a callable for the delete agent user method over gRPC.
 
         Unlinks the given third-party user from your smart home Action.
         All data related to this user will be deleted.
@@ -352,9 +346,7 @@ class HomeGraphApiServiceGrpcAsyncIOTransport(HomeGraphApiServiceTransport):
     def query(self) -> Callable[
             [homegraph.QueryRequest],
             Awaitable[homegraph.QueryResponse]]:
-        r"""Return a callable for the
-        query
-          method over gRPC.
+        r"""Return a callable for the query method over gRPC.
 
         Gets the current states in Home Graph for the given set of the
         third-party user's devices.
@@ -387,9 +379,7 @@ class HomeGraphApiServiceGrpcAsyncIOTransport(HomeGraphApiServiceTransport):
     def sync(self) -> Callable[
             [homegraph.SyncRequest],
             Awaitable[homegraph.SyncResponse]]:
-        r"""Return a callable for the
-        sync
-          method over gRPC.
+        r"""Return a callable for the sync method over gRPC.
 
         Gets all the devices associated with the given third-party user.
 

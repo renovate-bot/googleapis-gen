@@ -231,10 +231,8 @@ class PredictionApiKeyRegistryGrpcAsyncIOTransport(PredictionApiKeyRegistryTrans
     def create_prediction_api_key_registration(self) -> Callable[
             [prediction_apikey_registry_service.CreatePredictionApiKeyRegistrationRequest],
             Awaitable[prediction_apikey_registry_service.PredictionApiKeyRegistration]]:
-        r"""Return a callable for the
-        create prediction api key
-        registration
-          method over gRPC.
+        r"""Return a callable for the create prediction api key
+        registration method over gRPC.
 
         Register an API key for use with predict method.
 
@@ -260,10 +258,8 @@ class PredictionApiKeyRegistryGrpcAsyncIOTransport(PredictionApiKeyRegistryTrans
     def list_prediction_api_key_registrations(self) -> Callable[
             [prediction_apikey_registry_service.ListPredictionApiKeyRegistrationsRequest],
             Awaitable[prediction_apikey_registry_service.ListPredictionApiKeyRegistrationsResponse]]:
-        r"""Return a callable for the
-        list prediction api key
-        registrations
-          method over gRPC.
+        r"""Return a callable for the list prediction api key
+        registrations method over gRPC.
 
         List the registered apiKeys for use with predict
         method.
@@ -290,10 +286,8 @@ class PredictionApiKeyRegistryGrpcAsyncIOTransport(PredictionApiKeyRegistryTrans
     def delete_prediction_api_key_registration(self) -> Callable[
             [prediction_apikey_registry_service.DeletePredictionApiKeyRegistrationRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete prediction api key
-        registration
-          method over gRPC.
+        r"""Return a callable for the delete prediction api key
+        registration method over gRPC.
 
         Unregister an apiKey from using for predict method.
 

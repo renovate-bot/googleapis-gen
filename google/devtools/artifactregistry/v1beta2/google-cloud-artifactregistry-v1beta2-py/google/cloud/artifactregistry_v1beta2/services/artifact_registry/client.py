@@ -371,8 +371,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.ListRepositoriesRequest):
-                The request object.
-                The request to list repositories.
+                The request object. The request to list repositories.
             parent (str):
                 The name of the parent resource whose
                 repositories will be listed.
@@ -409,7 +408,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, repository.ListRepositoriesRequest):
             request = repository.ListRepositoriesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -458,8 +457,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.GetRepositoryRequest):
-                The request object.
-                The request to retrieve a
+                The request object. The request to retrieve a
                 repository.
             name (str):
                 The name of the repository to
@@ -494,7 +492,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, repository.GetRepositoryRequest):
             request = repository.GetRepositoryRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -538,8 +536,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.CreateRepositoryRequest):
-                The request object.
-                The request to create a new
+                The request object. The request to create a new
                 repository.
             parent (str):
                 The name of the parent resource where
@@ -590,7 +587,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gda_repository.CreateRepositoryRequest):
             request = gda_repository.CreateRepositoryRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -643,8 +640,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.UpdateRepositoryRequest):
-                The request object.
-                The request to update a repository.
+                The request object. The request to update a repository.
             repository (google.cloud.artifactregistry_v1beta2.types.Repository):
                 The repository that replaces the
                 resource on the server.
@@ -686,7 +682,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gda_repository.UpdateRepositoryRequest):
             request = gda_repository.UpdateRepositoryRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if repository is not None:
                 request.repository = repository
@@ -731,8 +727,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.DeleteRepositoryRequest):
-                The request object.
-                The request to delete a repository.
+                The request object. The request to delete a repository.
             name (str):
                 The name of the repository to delete.
                 This corresponds to the ``name`` field
@@ -777,7 +772,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, repository.DeleteRepositoryRequest):
             request = repository.DeleteRepositoryRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -825,8 +820,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.ListPackagesRequest):
-                The request object.
-                The request to list packages.
+                The request object. The request to list packages.
             parent (str):
                 The name of the parent resource whose
                 packages will be listed.
@@ -862,7 +856,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, package.ListPackagesRequest):
             request = package.ListPackagesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -911,8 +905,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.GetPackageRequest):
-                The request object.
-                The request to retrieve a package.
+                The request object. The request to retrieve a package.
             name (str):
                 The name of the package to retrieve.
                 This corresponds to the ``name`` field
@@ -944,7 +937,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, package.GetPackageRequest):
             request = package.GetPackageRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -986,8 +979,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.DeletePackageRequest):
-                The request object.
-                The request to delete a package.
+                The request object. The request to delete a package.
             name (str):
                 The name of the package to delete.
                 This corresponds to the ``name`` field
@@ -1032,7 +1024,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, package.DeletePackageRequest):
             request = package.DeletePackageRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1080,8 +1072,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.ListVersionsRequest):
-                The request object.
-                The request to list versions.
+                The request object. The request to list versions.
             parent (str):
                 The name of the parent resource whose
                 versions will be listed.
@@ -1117,7 +1108,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, version.ListVersionsRequest):
             request = version.ListVersionsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1166,8 +1157,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.GetVersionRequest):
-                The request object.
-                The request to retrieve a version.
+                The request object. The request to retrieve a version.
             name (str):
                 The name of the version to retrieve.
                 This corresponds to the ``name`` field
@@ -1202,7 +1192,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, version.GetVersionRequest):
             request = version.GetVersionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1244,8 +1234,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.DeleteVersionRequest):
-                The request object.
-                The request to delete a version.
+                The request object. The request to delete a version.
             name (str):
                 The name of the version to delete.
                 This corresponds to the ``name`` field
@@ -1290,7 +1279,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, version.DeleteVersionRequest):
             request = version.DeleteVersionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1338,8 +1327,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.ListFilesRequest):
-                The request object.
-                The request to list files.
+                The request object. The request to list files.
             parent (str):
                 The name of the parent resource whose
                 files will be listed.
@@ -1375,7 +1363,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, file.ListFilesRequest):
             request = file.ListFilesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1424,8 +1412,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.GetFileRequest):
-                The request object.
-                The request to retrieve a file.
+                The request object. The request to retrieve a file.
             name (str):
                 The name of the file to retrieve.
                 This corresponds to the ``name`` field
@@ -1458,7 +1445,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, file.GetFileRequest):
             request = file.GetFileRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1498,8 +1485,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.ListTagsRequest):
-                The request object.
-                The request to list tags.
+                The request object. The request to list tags.
             parent (str):
                 The name of the parent resource whose
                 tags will be listed.
@@ -1535,7 +1521,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag.ListTagsRequest):
             request = tag.ListTagsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1584,8 +1570,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.GetTagRequest):
-                The request object.
-                The request to retrieve a tag.
+                The request object. The request to retrieve a tag.
             name (str):
                 The name of the tag to retrieve.
                 This corresponds to the ``name`` field
@@ -1618,7 +1603,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag.GetTagRequest):
             request = tag.GetTagRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1660,8 +1645,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.CreateTagRequest):
-                The request object.
-                The request to create a new tag.
+                The request object. The request to create a new tag.
             parent (str):
                 The name of the parent resource where
                 the tag will be created.
@@ -1708,7 +1692,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gda_tag.CreateTagRequest):
             request = gda_tag.CreateTagRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1753,8 +1737,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.UpdateTagRequest):
-                The request object.
-                The request to create or update a
+                The request object. The request to create or update a
                 tag.
             tag (google.cloud.artifactregistry_v1beta2.types.Tag):
                 The tag that replaces the resource on
@@ -1798,7 +1781,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gda_tag.UpdateTagRequest):
             request = gda_tag.UpdateTagRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if tag is not None:
                 request.tag = tag
@@ -1840,8 +1823,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.cloud.artifactregistry_v1beta2.types.DeleteTagRequest):
-                The request object.
-                The request to delete a tag.
+                The request object. The request to delete a tag.
             name (str):
                 The name of the tag to delete.
                 This corresponds to the ``name`` field
@@ -1867,7 +1849,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag.DeleteTagRequest):
             request = tag.DeleteTagRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1903,8 +1885,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1972,7 +1953,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
@@ -2014,8 +1995,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2083,7 +2063,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
@@ -2126,8 +2106,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2140,7 +2119,7 @@ class ArtifactRegistryClient(metaclass=ArtifactRegistryClientMeta):
                 Response message for TestIamPermissions method.
         """
         # Create or coerce a protobuf request object.
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)

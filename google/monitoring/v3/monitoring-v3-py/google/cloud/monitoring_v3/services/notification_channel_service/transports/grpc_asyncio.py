@@ -228,10 +228,8 @@ class NotificationChannelServiceGrpcAsyncIOTransport(NotificationChannelServiceT
     def list_notification_channel_descriptors(self) -> Callable[
             [notification_service.ListNotificationChannelDescriptorsRequest],
             Awaitable[notification_service.ListNotificationChannelDescriptorsResponse]]:
-        r"""Return a callable for the
-        list notification channel
-        descriptors
-          method over gRPC.
+        r"""Return a callable for the list notification channel
+        descriptors method over gRPC.
 
         Lists the descriptors for supported channel types.
         The use of descriptors makes it possible for new channel
@@ -259,10 +257,8 @@ class NotificationChannelServiceGrpcAsyncIOTransport(NotificationChannelServiceT
     def get_notification_channel_descriptor(self) -> Callable[
             [notification_service.GetNotificationChannelDescriptorRequest],
             Awaitable[notification.NotificationChannelDescriptor]]:
-        r"""Return a callable for the
-        get notification channel
-        descriptor
-          method over gRPC.
+        r"""Return a callable for the get notification channel
+        descriptor method over gRPC.
 
         Gets a single channel descriptor. The descriptor
         indicates which fields are expected / permitted for a
@@ -290,9 +286,7 @@ class NotificationChannelServiceGrpcAsyncIOTransport(NotificationChannelServiceT
     def list_notification_channels(self) -> Callable[
             [notification_service.ListNotificationChannelsRequest],
             Awaitable[notification_service.ListNotificationChannelsResponse]]:
-        r"""Return a callable for the
-        list notification channels
-          method over gRPC.
+        r"""Return a callable for the list notification channels method over gRPC.
 
         Lists the notification channels that have been
         created for the project.
@@ -319,9 +313,7 @@ class NotificationChannelServiceGrpcAsyncIOTransport(NotificationChannelServiceT
     def get_notification_channel(self) -> Callable[
             [notification_service.GetNotificationChannelRequest],
             Awaitable[notification.NotificationChannel]]:
-        r"""Return a callable for the
-        get notification channel
-          method over gRPC.
+        r"""Return a callable for the get notification channel method over gRPC.
 
         Gets a single notification channel. The channel
         includes the relevant configuration details with which
@@ -353,9 +345,7 @@ class NotificationChannelServiceGrpcAsyncIOTransport(NotificationChannelServiceT
     def create_notification_channel(self) -> Callable[
             [notification_service.CreateNotificationChannelRequest],
             Awaitable[notification.NotificationChannel]]:
-        r"""Return a callable for the
-        create notification channel
-          method over gRPC.
+        r"""Return a callable for the create notification channel method over gRPC.
 
         Creates a new notification channel, representing a
         single notification endpoint such as an email address,
@@ -383,9 +373,7 @@ class NotificationChannelServiceGrpcAsyncIOTransport(NotificationChannelServiceT
     def update_notification_channel(self) -> Callable[
             [notification_service.UpdateNotificationChannelRequest],
             Awaitable[notification.NotificationChannel]]:
-        r"""Return a callable for the
-        update notification channel
-          method over gRPC.
+        r"""Return a callable for the update notification channel method over gRPC.
 
         Updates a notification channel. Fields not specified
         in the field mask remain unchanged.
@@ -412,9 +400,7 @@ class NotificationChannelServiceGrpcAsyncIOTransport(NotificationChannelServiceT
     def delete_notification_channel(self) -> Callable[
             [notification_service.DeleteNotificationChannelRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete notification channel
-          method over gRPC.
+        r"""Return a callable for the delete notification channel method over gRPC.
 
         Deletes a notification channel.
 
@@ -440,10 +426,8 @@ class NotificationChannelServiceGrpcAsyncIOTransport(NotificationChannelServiceT
     def send_notification_channel_verification_code(self) -> Callable[
             [notification_service.SendNotificationChannelVerificationCodeRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        send notification channel
-        verification code
-          method over gRPC.
+        r"""Return a callable for the send notification channel
+        verification code method over gRPC.
 
         Causes a verification code to be delivered to the channel. The
         code can then be supplied in ``VerifyNotificationChannel`` to
@@ -471,10 +455,8 @@ class NotificationChannelServiceGrpcAsyncIOTransport(NotificationChannelServiceT
     def get_notification_channel_verification_code(self) -> Callable[
             [notification_service.GetNotificationChannelVerificationCodeRequest],
             Awaitable[notification_service.GetNotificationChannelVerificationCodeResponse]]:
-        r"""Return a callable for the
-        get notification channel
-        verification code
-          method over gRPC.
+        r"""Return a callable for the get notification channel
+        verification code method over gRPC.
 
         Requests a verification code for an already verified
         channel that can then be used in a call to
@@ -527,9 +509,7 @@ class NotificationChannelServiceGrpcAsyncIOTransport(NotificationChannelServiceT
     def verify_notification_channel(self) -> Callable[
             [notification_service.VerifyNotificationChannelRequest],
             Awaitable[notification.NotificationChannel]]:
-        r"""Return a callable for the
-        verify notification channel
-          method over gRPC.
+        r"""Return a callable for the verify notification channel method over gRPC.
 
         Verifies a ``NotificationChannel`` by proving receipt of the
         code delivered to the channel as a result of calling

@@ -31,6 +31,7 @@ from .types.private_catalog import SearchVersionsResponse
 from .types.private_catalog import Version
 
 __all__ = (
+    'PrivateCatalogClient',
     'AssetReference',
     'Catalog',
     'GcsSource',
@@ -44,5 +45,4 @@ __all__ = (
     'SearchVersionsRequest',
     'SearchVersionsResponse',
     'Version',
-'PrivateCatalogClient',
 )

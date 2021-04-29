@@ -169,8 +169,7 @@ class ClusterControllerAsyncClient:
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.CreateClusterRequest`):
-                The request object.
-                A request to create a cluster.
+                The request object. A request to create a cluster.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project that the cluster
@@ -276,8 +275,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.UpdateClusterRequest`):
-                The request object.
-                A request to update a cluster.
+                The request object. A request to update a cluster.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project the cluster belongs to.
@@ -450,8 +448,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.StopClusterRequest`):
-                The request object.
-                A request to stop a cluster.
+                The request object. A request to stop a cluster.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -507,8 +504,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.StartClusterRequest`):
-                The request object.
-                A request to start a cluster.
+                The request object. A request to start a cluster.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -570,8 +566,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.DeleteClusterRequest`):
-                The request object.
-                A request to delete a cluster.
+                The request object. A request to delete a cluster.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project that the cluster
@@ -684,8 +679,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.GetClusterRequest`):
-                The request object.
-                Request to get the resource
+                The request object. Request to get the resource
                 representation for a cluster in a project.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
@@ -781,8 +775,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.ListClustersRequest`):
-                The request object.
-                A request to list the clusters in a
+                The request object. A request to list the clusters in a
                 project.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
@@ -918,8 +911,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.DiagnoseClusterRequest`):
-                The request object.
-                A request to collect cluster
+                The request object. A request to collect cluster
                 diagnostic information.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud

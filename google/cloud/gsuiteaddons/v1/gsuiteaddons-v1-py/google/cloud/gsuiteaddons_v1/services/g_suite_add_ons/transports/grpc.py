@@ -249,9 +249,7 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def get_authorization(self) -> Callable[
             [gsuiteaddons.GetAuthorizationRequest],
             gsuiteaddons.Authorization]:
-        r"""Return a callable for the
-        get authorization
-          method over gRPC.
+        r"""Return a callable for the get authorization method over gRPC.
 
         Gets the authorization information for deployments in
         a given project.
@@ -278,9 +276,7 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def create_deployment(self) -> Callable[
             [gsuiteaddons.CreateDeploymentRequest],
             gsuiteaddons.Deployment]:
-        r"""Return a callable for the
-        create deployment
-          method over gRPC.
+        r"""Return a callable for the create deployment method over gRPC.
 
         Creates a deployment with the specified name and
         configuration.
@@ -307,9 +303,7 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def replace_deployment(self) -> Callable[
             [gsuiteaddons.ReplaceDeploymentRequest],
             gsuiteaddons.Deployment]:
-        r"""Return a callable for the
-        replace deployment
-          method over gRPC.
+        r"""Return a callable for the replace deployment method over gRPC.
 
         Creates or replaces a deployment with the specified
         name.
@@ -336,9 +330,7 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def get_deployment(self) -> Callable[
             [gsuiteaddons.GetDeploymentRequest],
             gsuiteaddons.Deployment]:
-        r"""Return a callable for the
-        get deployment
-          method over gRPC.
+        r"""Return a callable for the get deployment method over gRPC.
 
         Gets the deployment with the specified name.
 
@@ -364,9 +356,7 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def list_deployments(self) -> Callable[
             [gsuiteaddons.ListDeploymentsRequest],
             gsuiteaddons.ListDeploymentsResponse]:
-        r"""Return a callable for the
-        list deployments
-          method over gRPC.
+        r"""Return a callable for the list deployments method over gRPC.
 
         Lists all deployments in a particular project.
 
@@ -392,9 +382,7 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def delete_deployment(self) -> Callable[
             [gsuiteaddons.DeleteDeploymentRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete deployment
-          method over gRPC.
+        r"""Return a callable for the delete deployment method over gRPC.
 
         Deletes the deployment with the given name.
 
@@ -420,9 +408,7 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def install_deployment(self) -> Callable[
             [gsuiteaddons.InstallDeploymentRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        install deployment
-          method over gRPC.
+        r"""Return a callable for the install deployment method over gRPC.
 
         Installs a deployment in developer mode.
         See:
@@ -451,9 +437,7 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def uninstall_deployment(self) -> Callable[
             [gsuiteaddons.UninstallDeploymentRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        uninstall deployment
-          method over gRPC.
+        r"""Return a callable for the uninstall deployment method over gRPC.
 
         Uninstalls a developer mode deployment.
         See:
@@ -482,9 +466,7 @@ class GSuiteAddOnsGrpcTransport(GSuiteAddOnsTransport):
     def get_install_status(self) -> Callable[
             [gsuiteaddons.GetInstallStatusRequest],
             gsuiteaddons.InstallStatus]:
-        r"""Return a callable for the
-        get install status
-          method over gRPC.
+        r"""Return a callable for the get install status method over gRPC.
 
         Fetches the install status of a developer mode
         deployment.

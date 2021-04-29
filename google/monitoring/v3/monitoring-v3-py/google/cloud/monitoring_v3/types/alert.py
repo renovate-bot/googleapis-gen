@@ -526,7 +526,7 @@ class AlertPolicy(proto.Message):
     user_labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=16
+        number=16,
     )
     conditions = proto.RepeatedField(
         proto.MESSAGE,

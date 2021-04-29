@@ -77,13 +77,13 @@ class FeatureMap(proto.Message):
     categorical_features = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=1
+        number=1,
         message=StringList,
     )
     numerical_features = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=2
+        number=2,
         message=FloatList,
     )
 

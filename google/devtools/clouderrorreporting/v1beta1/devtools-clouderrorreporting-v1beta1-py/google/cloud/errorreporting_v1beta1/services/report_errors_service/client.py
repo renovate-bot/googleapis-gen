@@ -337,8 +337,7 @@ class ReportErrorsServiceClient(metaclass=ReportErrorsServiceClientMeta):
 
         Args:
             request (google.cloud.errorreporting_v1beta1.types.ReportErrorEventRequest):
-                The request object.
-                A request for reporting an
+                The request object. A request for reporting an
                 individual error event.
             project_name (str):
                 Required. The resource name of the Google Cloud Platform
@@ -385,7 +384,7 @@ class ReportErrorsServiceClient(metaclass=ReportErrorsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, report_errors_service.ReportErrorEventRequest):
             request = report_errors_service.ReportErrorEventRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_name is not None:
                 request.project_name = project_name

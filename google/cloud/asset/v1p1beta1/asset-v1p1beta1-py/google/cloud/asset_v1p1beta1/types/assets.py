@@ -101,7 +101,7 @@ class StandardResourceMetadata(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=12
+        number=12,
     )
     network_tags = proto.RepeatedField(
         proto.STRING,
@@ -152,7 +152,7 @@ class IamPolicySearchResult(proto.Message):
         matched_permissions = proto.MapField(
             proto.STRING,
             proto.MESSAGE,
-            number=1
+            number=1,
             message='Permissions',
         )
 

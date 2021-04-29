@@ -160,7 +160,6 @@ class ModelServiceAsyncClient:
         Args:
             request (:class:`google.cloud.bigquery_v2.types.GetModelRequest`):
                 The request object.
-
             project_id (:class:`str`):
                 Required. Project ID of the requested
                 model.
@@ -246,7 +245,6 @@ class ModelServiceAsyncClient:
         Args:
             request (:class:`google.cloud.bigquery_v2.types.ListModelsRequest`):
                 The request object.
-
             project_id (:class:`str`):
                 Required. Project ID of the models to
                 list.
@@ -334,7 +332,6 @@ class ModelServiceAsyncClient:
         Args:
             request (:class:`google.cloud.bigquery_v2.types.PatchModelRequest`):
                 The request object.
-
             project_id (:class:`str`):
                 Required. Project ID of the model to
                 patch.
@@ -431,7 +428,6 @@ class ModelServiceAsyncClient:
         Args:
             request (:class:`google.cloud.bigquery_v2.types.DeleteModelRequest`):
                 The request object.
-
             project_id (:class:`str`):
                 Required. Project ID of the model to
                 delete.

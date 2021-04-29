@@ -14,13 +14,11 @@
 # limitations under the License.
 #
 
-from google.cloud.datalabeling_v1beta1.services.data_labeling_service.async_client import DataLabelingServiceAsyncClient
 from google.cloud.datalabeling_v1beta1.services.data_labeling_service.client import DataLabelingServiceClient
+from google.cloud.datalabeling_v1beta1.services.data_labeling_service.async_client import DataLabelingServiceAsyncClient
+
 from google.cloud.datalabeling_v1beta1.types.annotation import Annotation
 from google.cloud.datalabeling_v1beta1.types.annotation import AnnotationMetadata
-from google.cloud.datalabeling_v1beta1.types.annotation import AnnotationSentiment
-from google.cloud.datalabeling_v1beta1.types.annotation import AnnotationSource
-from google.cloud.datalabeling_v1beta1.types.annotation import AnnotationType
 from google.cloud.datalabeling_v1beta1.types.annotation import AnnotationValue
 from google.cloud.datalabeling_v1beta1.types.annotation import BoundingPoly
 from google.cloud.datalabeling_v1beta1.types.annotation import ImageBoundingPolyAnnotation
@@ -41,6 +39,9 @@ from google.cloud.datalabeling_v1beta1.types.annotation import Vertex
 from google.cloud.datalabeling_v1beta1.types.annotation import VideoClassificationAnnotation
 from google.cloud.datalabeling_v1beta1.types.annotation import VideoEventAnnotation
 from google.cloud.datalabeling_v1beta1.types.annotation import VideoObjectTrackingAnnotation
+from google.cloud.datalabeling_v1beta1.types.annotation import AnnotationSentiment
+from google.cloud.datalabeling_v1beta1.types.annotation import AnnotationSource
+from google.cloud.datalabeling_v1beta1.types.annotation import AnnotationType
 from google.cloud.datalabeling_v1beta1.types.annotation_spec_set import AnnotationSpec
 from google.cloud.datalabeling_v1beta1.types.annotation_spec_set import AnnotationSpecSet
 from google.cloud.datalabeling_v1beta1.types.data_labeling_service import CreateAnnotationSpecSetRequest
@@ -95,7 +96,6 @@ from google.cloud.datalabeling_v1beta1.types.dataset import AnnotatedDatasetMeta
 from google.cloud.datalabeling_v1beta1.types.dataset import BigQuerySource
 from google.cloud.datalabeling_v1beta1.types.dataset import ClassificationMetadata
 from google.cloud.datalabeling_v1beta1.types.dataset import DataItem
-from google.cloud.datalabeling_v1beta1.types.dataset import DataType
 from google.cloud.datalabeling_v1beta1.types.dataset import Dataset
 from google.cloud.datalabeling_v1beta1.types.dataset import Example
 from google.cloud.datalabeling_v1beta1.types.dataset import GcsDestination
@@ -105,6 +105,7 @@ from google.cloud.datalabeling_v1beta1.types.dataset import InputConfig
 from google.cloud.datalabeling_v1beta1.types.dataset import LabelStats
 from google.cloud.datalabeling_v1beta1.types.dataset import OutputConfig
 from google.cloud.datalabeling_v1beta1.types.dataset import TextMetadata
+from google.cloud.datalabeling_v1beta1.types.dataset import DataType
 from google.cloud.datalabeling_v1beta1.types.evaluation import BoundingBoxEvaluationOptions
 from google.cloud.datalabeling_v1beta1.types.evaluation import ClassificationMetrics
 from google.cloud.datalabeling_v1beta1.types.evaluation import ConfusionMatrix
@@ -126,10 +127,10 @@ from google.cloud.datalabeling_v1beta1.types.human_annotation_config import Obje
 from google.cloud.datalabeling_v1beta1.types.human_annotation_config import PolylineConfig
 from google.cloud.datalabeling_v1beta1.types.human_annotation_config import SegmentationConfig
 from google.cloud.datalabeling_v1beta1.types.human_annotation_config import SentimentConfig
-from google.cloud.datalabeling_v1beta1.types.human_annotation_config import StringAggregationType
 from google.cloud.datalabeling_v1beta1.types.human_annotation_config import TextClassificationConfig
 from google.cloud.datalabeling_v1beta1.types.human_annotation_config import TextEntityExtractionConfig
 from google.cloud.datalabeling_v1beta1.types.human_annotation_config import VideoClassificationConfig
+from google.cloud.datalabeling_v1beta1.types.human_annotation_config import StringAggregationType
 from google.cloud.datalabeling_v1beta1.types.instruction import CsvInstruction
 from google.cloud.datalabeling_v1beta1.types.instruction import Instruction
 from google.cloud.datalabeling_v1beta1.types.instruction import PdfInstruction
@@ -152,54 +153,45 @@ from google.cloud.datalabeling_v1beta1.types.operations import LabelVideoEventOp
 from google.cloud.datalabeling_v1beta1.types.operations import LabelVideoObjectDetectionOperationMetadata
 from google.cloud.datalabeling_v1beta1.types.operations import LabelVideoObjectTrackingOperationMetadata
 
-__all__ = ('AnnotatedDataset',
-    'AnnotatedDatasetMetadata',
+__all__ = ('DataLabelingServiceClient',
+    'DataLabelingServiceAsyncClient',
     'Annotation',
     'AnnotationMetadata',
+    'AnnotationValue',
+    'BoundingPoly',
+    'ImageBoundingPolyAnnotation',
+    'ImageClassificationAnnotation',
+    'ImagePolylineAnnotation',
+    'ImageSegmentationAnnotation',
+    'NormalizedBoundingPoly',
+    'NormalizedPolyline',
+    'NormalizedVertex',
+    'ObjectTrackingFrame',
+    'OperatorMetadata',
+    'Polyline',
+    'SequentialSegment',
+    'TextClassificationAnnotation',
+    'TextEntityExtractionAnnotation',
+    'TimeSegment',
+    'Vertex',
+    'VideoClassificationAnnotation',
+    'VideoEventAnnotation',
+    'VideoObjectTrackingAnnotation',
     'AnnotationSentiment',
     'AnnotationSource',
+    'AnnotationType',
     'AnnotationSpec',
     'AnnotationSpecSet',
-    'AnnotationType',
-    'AnnotationValue',
-    'Attempt',
-    'BigQuerySource',
-    'BoundingBoxEvaluationOptions',
-    'BoundingPoly',
-    'BoundingPolyConfig',
-    'ClassificationMetadata',
-    'ClassificationMetrics',
-    'ConfusionMatrix',
     'CreateAnnotationSpecSetRequest',
     'CreateDatasetRequest',
     'CreateEvaluationJobRequest',
-    'CreateInstructionMetadata',
     'CreateInstructionRequest',
-    'CsvInstruction',
-    'DataItem',
-    'DataLabelingServiceAsyncClient',
-    'DataLabelingServiceClient',
-    'DataType',
-    'Dataset',
     'DeleteAnnotatedDatasetRequest',
     'DeleteAnnotationSpecSetRequest',
     'DeleteDatasetRequest',
     'DeleteEvaluationJobRequest',
     'DeleteInstructionRequest',
-    'Evaluation',
-    'EvaluationConfig',
-    'EvaluationJob',
-    'EvaluationJobAlertConfig',
-    'EvaluationJobConfig',
-    'EvaluationMetrics',
-    'EventConfig',
-    'Example',
-    'ExportDataOperationMetadata',
-    'ExportDataOperationResponse',
     'ExportDataRequest',
-    'GcsDestination',
-    'GcsFolderDestination',
-    'GcsSource',
     'GetAnnotatedDatasetRequest',
     'GetAnnotationSpecSetRequest',
     'GetDataItemRequest',
@@ -208,34 +200,9 @@ __all__ = ('AnnotatedDataset',
     'GetEvaluationRequest',
     'GetExampleRequest',
     'GetInstructionRequest',
-    'HumanAnnotationConfig',
-    'ImageBoundingPolyAnnotation',
-    'ImageClassificationAnnotation',
-    'ImageClassificationConfig',
-    'ImagePayload',
-    'ImagePolylineAnnotation',
-    'ImageSegmentationAnnotation',
-    'ImportDataOperationMetadata',
-    'ImportDataOperationResponse',
     'ImportDataRequest',
-    'InputConfig',
-    'Instruction',
-    'LabelImageBoundingBoxOperationMetadata',
-    'LabelImageBoundingPolyOperationMetadata',
-    'LabelImageClassificationOperationMetadata',
-    'LabelImageOrientedBoundingBoxOperationMetadata',
-    'LabelImagePolylineOperationMetadata',
     'LabelImageRequest',
-    'LabelImageSegmentationOperationMetadata',
-    'LabelOperationMetadata',
-    'LabelStats',
-    'LabelTextClassificationOperationMetadata',
-    'LabelTextEntityExtractionOperationMetadata',
     'LabelTextRequest',
-    'LabelVideoClassificationOperationMetadata',
-    'LabelVideoEventOperationMetadata',
-    'LabelVideoObjectDetectionOperationMetadata',
-    'LabelVideoObjectTrackingOperationMetadata',
     'LabelVideoRequest',
     'ListAnnotatedDatasetsRequest',
     'ListAnnotatedDatasetsResponse',
@@ -251,42 +218,76 @@ __all__ = ('AnnotatedDataset',
     'ListExamplesResponse',
     'ListInstructionsRequest',
     'ListInstructionsResponse',
-    'NormalizedBoundingPoly',
-    'NormalizedPolyline',
-    'NormalizedVertex',
-    'ObjectDetectionConfig',
-    'ObjectDetectionMetrics',
-    'ObjectTrackingConfig',
-    'ObjectTrackingFrame',
-    'OperatorMetadata',
-    'OutputConfig',
     'PauseEvaluationJobRequest',
-    'PdfInstruction',
-    'Polyline',
-    'PolylineConfig',
-    'PrCurve',
     'ResumeEvaluationJobRequest',
     'SearchEvaluationsRequest',
     'SearchEvaluationsResponse',
     'SearchExampleComparisonsRequest',
     'SearchExampleComparisonsResponse',
-    'SegmentationConfig',
-    'SentimentConfig',
-    'SequentialSegment',
-    'StringAggregationType',
-    'TextClassificationAnnotation',
-    'TextClassificationConfig',
-    'TextEntityExtractionAnnotation',
-    'TextEntityExtractionConfig',
-    'TextMetadata',
-    'TextPayload',
-    'TimeSegment',
     'UpdateEvaluationJobRequest',
-    'Vertex',
-    'VideoClassificationAnnotation',
-    'VideoClassificationConfig',
-    'VideoEventAnnotation',
-    'VideoObjectTrackingAnnotation',
+    'ImagePayload',
+    'TextPayload',
     'VideoPayload',
     'VideoThumbnail',
+    'AnnotatedDataset',
+    'AnnotatedDatasetMetadata',
+    'BigQuerySource',
+    'ClassificationMetadata',
+    'DataItem',
+    'Dataset',
+    'Example',
+    'GcsDestination',
+    'GcsFolderDestination',
+    'GcsSource',
+    'InputConfig',
+    'LabelStats',
+    'OutputConfig',
+    'TextMetadata',
+    'DataType',
+    'BoundingBoxEvaluationOptions',
+    'ClassificationMetrics',
+    'ConfusionMatrix',
+    'Evaluation',
+    'EvaluationConfig',
+    'EvaluationMetrics',
+    'ObjectDetectionMetrics',
+    'PrCurve',
+    'Attempt',
+    'EvaluationJob',
+    'EvaluationJobAlertConfig',
+    'EvaluationJobConfig',
+    'BoundingPolyConfig',
+    'EventConfig',
+    'HumanAnnotationConfig',
+    'ImageClassificationConfig',
+    'ObjectDetectionConfig',
+    'ObjectTrackingConfig',
+    'PolylineConfig',
+    'SegmentationConfig',
+    'SentimentConfig',
+    'TextClassificationConfig',
+    'TextEntityExtractionConfig',
+    'VideoClassificationConfig',
+    'StringAggregationType',
+    'CsvInstruction',
+    'Instruction',
+    'PdfInstruction',
+    'CreateInstructionMetadata',
+    'ExportDataOperationMetadata',
+    'ExportDataOperationResponse',
+    'ImportDataOperationMetadata',
+    'ImportDataOperationResponse',
+    'LabelImageBoundingBoxOperationMetadata',
+    'LabelImageBoundingPolyOperationMetadata',
+    'LabelImageClassificationOperationMetadata',
+    'LabelImageOrientedBoundingBoxOperationMetadata',
+    'LabelImagePolylineOperationMetadata',
+    'LabelImageSegmentationOperationMetadata',
+    'LabelOperationMetadata',
+    'LabelTextClassificationOperationMetadata',
+    'LabelTextEntityExtractionOperationMetadata',
+    'LabelVideoClassificationOperationMetadata',
+    'LabelVideoEventOperationMetadata',
+    'LabelVideoObjectDetectionOperationMetadata',
+    'LabelVideoObjectTrackingOperationMetadata',
 )

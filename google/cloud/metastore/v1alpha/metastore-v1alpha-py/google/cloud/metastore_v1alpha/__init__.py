@@ -20,8 +20,8 @@ from .types.metastore import Backup
 from .types.metastore import CreateBackupRequest
 from .types.metastore import CreateMetadataImportRequest
 from .types.metastore import CreateServiceRequest
-from .types.metastore import DataCatalogConfig
 from .types.metastore import DatabaseDumpSpec
+from .types.metastore import DataCatalogConfig
 from .types.metastore import DeleteBackupRequest
 from .types.metastore import DeleteServiceRequest
 from .types.metastore import ExportMetadataRequest
@@ -51,12 +51,13 @@ from .types.metastore import UpdateMetadataImportRequest
 from .types.metastore import UpdateServiceRequest
 
 __all__ = (
+    'DataprocMetastoreClient',
     'Backup',
     'CreateBackupRequest',
     'CreateMetadataImportRequest',
     'CreateServiceRequest',
-    'DataCatalogConfig',
     'DatabaseDumpSpec',
+    'DataCatalogConfig',
     'DeleteBackupRequest',
     'DeleteServiceRequest',
     'ExportMetadataRequest',
@@ -84,5 +85,4 @@ __all__ = (
     'Service',
     'UpdateMetadataImportRequest',
     'UpdateServiceRequest',
-'DataprocMetastoreClient',
 )

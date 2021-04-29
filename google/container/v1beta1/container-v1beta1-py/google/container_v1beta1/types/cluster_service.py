@@ -178,7 +178,7 @@ class LinuxNodeConfig(proto.Message):
     sysctls = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=1
+        number=1,
     )
 
 
@@ -433,7 +433,7 @@ class NodeConfig(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     image_type = proto.Field(
         proto.STRING,
@@ -442,7 +442,7 @@ class NodeConfig(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=6
+        number=6,
     )
     local_ssd_count = proto.Field(
         proto.INT32,
@@ -1854,7 +1854,7 @@ class Cluster(proto.Message):
     resource_labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=15
+        number=15,
     )
     label_fingerprint = proto.Field(
         proto.STRING,
@@ -4092,7 +4092,7 @@ class MaintenanceWindow(proto.Message):
     maintenance_exclusions = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=4
+        number=4,
         message='TimeWindow',
     )
 
@@ -4665,7 +4665,7 @@ class SetLabelsRequest(proto.Message):
     resource_labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     label_fingerprint = proto.Field(
         proto.STRING,

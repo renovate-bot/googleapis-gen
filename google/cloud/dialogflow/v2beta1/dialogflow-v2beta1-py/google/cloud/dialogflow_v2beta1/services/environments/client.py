@@ -336,8 +336,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.ListEnvironmentsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.ListEnvironments][google.cloud.dialogflow.v2beta1.Environments.ListEnvironments].
             parent (str):
                 Required. The agent to list all environments from.
@@ -378,7 +377,7 @@ class EnvironmentsClient(metaclass=EnvironmentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, environment.ListEnvironmentsRequest):
             request = environment.ListEnvironmentsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

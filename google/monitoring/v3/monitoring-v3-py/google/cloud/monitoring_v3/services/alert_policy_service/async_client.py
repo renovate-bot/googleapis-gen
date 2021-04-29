@@ -172,8 +172,7 @@ class AlertPolicyServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListAlertPoliciesRequest`):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `ListAlertPolicies` request.
             name (:class:`str`):
                 Required. The project whose alert policies are to be
@@ -276,8 +275,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.GetAlertPolicyRequest`):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `GetAlertPolicy` request.
             name (:class:`str`):
                 Required. The alerting policy to retrieve. The format
@@ -367,8 +365,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.CreateAlertPolicyRequest`):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `CreateAlertPolicy` request.
             name (:class:`str`):
                 Required. The project in which to create the alerting
@@ -471,8 +468,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.DeleteAlertPolicyRequest`):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `DeleteAlertPolicy` request.
             name (:class:`str`):
                 Required. The alerting policy to delete. The format is:
@@ -555,8 +551,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.UpdateAlertPolicyRequest`):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `UpdateAlertPolicy` request.
             update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
                 Optional. A list of alerting policy field names. If this

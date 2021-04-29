@@ -164,8 +164,7 @@ class DocumentProcessorServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.documentai_v1.types.ProcessRequest`):
-                The request object.
-                Request message for the process
+                The request object. Request message for the process
                 document method.
             name (:class:`str`):
                 Required. The processor resource
@@ -248,8 +247,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.documentai_v1.types.BatchProcessRequest`):
-                The request object.
-                Request message for batch process
+                The request object. Request message for batch process
                 document method.
             name (:class:`str`):
                 Required. The processor resource
@@ -343,8 +341,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.documentai_v1.types.ReviewDocumentRequest`):
-                The request object.
-                Request message for review document
+                The request object. Request message for review document
                 method.
             human_review_config (:class:`str`):
                 Required. The resource name of the

@@ -164,8 +164,7 @@ class PredictionApiKeyRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.CreatePredictionApiKeyRegistrationRequest`):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `CreatePredictionApiKeyRegistration` method.
             parent (:class:`str`):
                 Required. The parent resource path.
@@ -255,8 +254,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.ListPredictionApiKeyRegistrationsRequest`):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `ListPredictionApiKeyRegistrations`.
             parent (:class:`str`):
                 Required. The parent placement resource name such as
@@ -350,8 +348,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.DeletePredictionApiKeyRegistrationRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `DeletePredictionApiKeyRegistration` method.
             name (:class:`str`):
                 Required. The API key to unregister including full

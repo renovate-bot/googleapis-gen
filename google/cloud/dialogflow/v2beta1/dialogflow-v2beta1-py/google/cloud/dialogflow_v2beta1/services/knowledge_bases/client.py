@@ -340,8 +340,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.ListKnowledgeBasesRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.ListKnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBases.ListKnowledgeBases].
             parent (str):
                 Required. The project to list of knowledge bases for.
@@ -380,7 +379,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, knowledge_base.ListKnowledgeBasesRequest):
             request = knowledge_base.ListKnowledgeBasesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -432,8 +431,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.GetKnowledgeBaseRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.GetKnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBases.GetKnowledgeBase].
             name (str):
                 Required. The name of the knowledge base to retrieve.
@@ -479,7 +477,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, knowledge_base.GetKnowledgeBaseRequest):
             request = knowledge_base.GetKnowledgeBaseRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -523,8 +521,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.CreateKnowledgeBaseRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.CreateKnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBases.CreateKnowledgeBase].
             parent (str):
                 Required. The project to create a knowledge base for.
@@ -577,7 +574,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_knowledge_base.CreateKnowledgeBaseRequest):
             request = gcd_knowledge_base.CreateKnowledgeBaseRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -622,8 +619,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.DeleteKnowledgeBaseRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.DeleteKnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBases.DeleteKnowledgeBase].
             name (str):
                 Required. The name of the knowledge base to delete.
@@ -653,7 +649,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, knowledge_base.DeleteKnowledgeBaseRequest):
             request = knowledge_base.DeleteKnowledgeBaseRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -694,8 +690,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.UpdateKnowledgeBaseRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.UpdateKnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBases.UpdateKnowledgeBase].
             knowledge_base (google.cloud.dialogflow_v2beta1.types.KnowledgeBase):
                 Required. The knowledge base to
@@ -748,7 +743,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_knowledge_base.UpdateKnowledgeBaseRequest):
             request = gcd_knowledge_base.UpdateKnowledgeBaseRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if knowledge_base is not None:
                 request.knowledge_base = knowledge_base

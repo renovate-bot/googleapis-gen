@@ -169,8 +169,7 @@ class ResourceSettingsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcesettings_v1.types.ListSettingsRequest`):
-                The request object.
-                The request for ListSettings.
+                The request object. The request for ListSettings.
             parent (:class:`str`):
                 Required. The Cloud resource that parents the setting.
                 Must be in one of the following forms:
@@ -270,8 +269,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcesettings_v1.types.GetSettingRequest`):
-                The request object.
-                The request for GetSetting.
+                The request object. The request for GetSetting.
             name (:class:`str`):
                 Required. The name of the setting to get. See
                 [Setting][google.cloud.resourcesettings.v1.Setting] for
@@ -358,8 +356,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcesettings_v1.types.UpdateSettingRequest`):
-                The request object.
-                The request for UpdateSetting.
+                The request object. The request for UpdateSetting.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

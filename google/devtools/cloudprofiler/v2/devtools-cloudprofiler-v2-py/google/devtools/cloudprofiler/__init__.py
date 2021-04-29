@@ -14,21 +14,22 @@
 # limitations under the License.
 #
 
-from google.devtools.cloudprofiler_v2.services.profiler_service.async_client import ProfilerServiceAsyncClient
 from google.devtools.cloudprofiler_v2.services.profiler_service.client import ProfilerServiceClient
+from google.devtools.cloudprofiler_v2.services.profiler_service.async_client import ProfilerServiceAsyncClient
+
 from google.devtools.cloudprofiler_v2.types.profiler import CreateOfflineProfileRequest
 from google.devtools.cloudprofiler_v2.types.profiler import CreateProfileRequest
 from google.devtools.cloudprofiler_v2.types.profiler import Deployment
 from google.devtools.cloudprofiler_v2.types.profiler import Profile
-from google.devtools.cloudprofiler_v2.types.profiler import ProfileType
 from google.devtools.cloudprofiler_v2.types.profiler import UpdateProfileRequest
+from google.devtools.cloudprofiler_v2.types.profiler import ProfileType
 
-__all__ = ('CreateOfflineProfileRequest',
+__all__ = ('ProfilerServiceClient',
+    'ProfilerServiceAsyncClient',
+    'CreateOfflineProfileRequest',
     'CreateProfileRequest',
     'Deployment',
     'Profile',
-    'ProfileType',
-    'ProfilerServiceAsyncClient',
-    'ProfilerServiceClient',
     'UpdateProfileRequest',
+    'ProfileType',
 )

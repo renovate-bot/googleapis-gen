@@ -217,7 +217,7 @@ class UserEvent(proto.Message):
     attributes = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=7
+        number=7,
         message=common.CustomAttribute,
     )
     cart_id = proto.Field(

@@ -513,7 +513,7 @@ class Breakpoint(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=17
+        number=17,
     )
 
 
@@ -625,7 +625,7 @@ class Debuggee(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=11
+        number=11,
     )
 
 

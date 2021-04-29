@@ -421,8 +421,7 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.DetectIntentRequest):
-                The request object.
-                The request to detect user's intent.
+                The request object. The request to detect user's intent.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -484,8 +483,7 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         Args:
             requests (Iterator[google.cloud.dialogflowcx_v3beta1.types.StreamingDetectIntentRequest]):
-                The request object iterator.
-                The top-level message sent by the
+                The request object iterator. The top-level message sent by the
                 client to the
                 [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent]
                 method.
@@ -568,8 +566,7 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.MatchIntentRequest):
-                The request object.
-                Request of [MatchIntent][].
+                The request object. Request of [MatchIntent][].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -628,8 +625,7 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.FulfillIntentRequest):
-                The request object.
-                Request of [FulfillIntent][]
+                The request object. Request of [FulfillIntent][]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

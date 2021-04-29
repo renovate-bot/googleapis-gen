@@ -352,8 +352,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.ListMigrationJobsRequest):
-                The request object.
-                Retrieve a list of all migration
+                The request object. Retrieve a list of all migration
                 jobs in a given project and location.
             parent (str):
                 Required. The parent, which owns this
@@ -391,7 +390,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clouddms.ListMigrationJobsRequest):
             request = clouddms.ListMigrationJobsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -440,8 +439,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.GetMigrationJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'GetMigrationJob' request.
             name (str):
                 Required. Name of the migration job
@@ -476,7 +474,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clouddms.GetMigrationJobRequest):
             request = clouddms.GetMigrationJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -519,8 +517,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.CreateMigrationJobRequest):
-                The request object.
-                Request message to create a new
+                The request object. Request message to create a new
                 Database Migration Service migration job in the
                 specified project and region.
             parent (str):
@@ -575,7 +572,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clouddms.CreateMigrationJobRequest):
             request = clouddms.CreateMigrationJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -628,8 +625,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.UpdateMigrationJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'UpdateMigrationJob' request.
             migration_job (google.cloud.clouddms_v1.types.MigrationJob):
                 Required. The migration job
@@ -677,7 +673,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clouddms.UpdateMigrationJobRequest):
             request = clouddms.UpdateMigrationJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if migration_job is not None:
                 request.migration_job = migration_job
@@ -727,8 +723,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.DeleteMigrationJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'DeleteMigrationJob' request.
             name (str):
                 Required. Name of the migration job
@@ -776,7 +771,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clouddms.DeleteMigrationJobRequest):
             request = clouddms.DeleteMigrationJobRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -823,8 +818,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.StartMigrationJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'StartMigrationJob' request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -892,8 +886,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.StopMigrationJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'StopMigrationJob' request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -962,8 +955,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.ResumeMigrationJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'ResumeMigrationJob' request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1033,8 +1025,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.PromoteMigrationJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'PromoteMigrationJob' request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1104,8 +1095,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.VerifyMigrationJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'VerifyMigrationJob' request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1175,8 +1165,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.RestartMigrationJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'RestartMigrationJob' request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1245,8 +1234,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.GenerateSshScriptRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'GenerateSshScript' request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1304,8 +1292,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.ListConnectionProfilesRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'ListConnectionProfiles' request.
             parent (str):
                 Required. The parent, which owns this
@@ -1343,7 +1330,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clouddms.ListConnectionProfilesRequest):
             request = clouddms.ListConnectionProfilesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1392,8 +1379,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.GetConnectionProfileRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'GetConnectionProfile' request.
             name (str):
                 Required. Name of the connection
@@ -1426,7 +1412,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clouddms.GetConnectionProfileRequest):
             request = clouddms.GetConnectionProfileRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1469,8 +1455,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.CreateConnectionProfileRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'CreateConnectionProfile' request.
             parent (str):
                 Required. The parent, which owns this
@@ -1522,7 +1507,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clouddms.CreateConnectionProfileRequest):
             request = clouddms.CreateConnectionProfileRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1576,8 +1561,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.UpdateConnectionProfileRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'UpdateConnectionProfile' request.
             connection_profile (google.cloud.clouddms_v1.types.ConnectionProfile):
                 Required. The connection profile
@@ -1624,7 +1608,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clouddms.UpdateConnectionProfileRequest):
             request = clouddms.UpdateConnectionProfileRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if connection_profile is not None:
                 request.connection_profile = connection_profile
@@ -1677,8 +1661,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
 
         Args:
             request (google.cloud.clouddms_v1.types.DeleteConnectionProfileRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'DeleteConnectionProfile' request.
             name (str):
                 Required. Name of the connection
@@ -1726,7 +1709,7 @@ class DataMigrationServiceClient(metaclass=DataMigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clouddms.DeleteConnectionProfileRequest):
             request = clouddms.DeleteConnectionProfileRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

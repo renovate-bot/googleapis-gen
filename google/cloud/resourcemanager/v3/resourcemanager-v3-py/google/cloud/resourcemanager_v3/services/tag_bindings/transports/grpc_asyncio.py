@@ -246,9 +246,7 @@ class TagBindingsGrpcAsyncIOTransport(TagBindingsTransport):
     def list_tag_bindings(self) -> Callable[
             [tag_bindings.ListTagBindingsRequest],
             Awaitable[tag_bindings.ListTagBindingsResponse]]:
-        r"""Return a callable for the
-        list tag bindings
-          method over gRPC.
+        r"""Return a callable for the list tag bindings method over gRPC.
 
         Lists the TagBindings for the given cloud resource, as specified
         with ``parent``.
@@ -279,9 +277,7 @@ class TagBindingsGrpcAsyncIOTransport(TagBindingsTransport):
     def create_tag_binding(self) -> Callable[
             [tag_bindings.CreateTagBindingRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create tag binding
-          method over gRPC.
+        r"""Return a callable for the create tag binding method over gRPC.
 
         Creates a TagBinding between a TagValue and a cloud
         resource (currently project, folder, or organization).
@@ -308,9 +304,7 @@ class TagBindingsGrpcAsyncIOTransport(TagBindingsTransport):
     def delete_tag_binding(self) -> Callable[
             [tag_bindings.DeleteTagBindingRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete tag binding
-          method over gRPC.
+        r"""Return a callable for the delete tag binding method over gRPC.
 
         Deletes a TagBinding.
 

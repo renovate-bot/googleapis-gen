@@ -246,9 +246,7 @@ class TagValuesGrpcAsyncIOTransport(TagValuesTransport):
     def list_tag_values(self) -> Callable[
             [tag_values.ListTagValuesRequest],
             Awaitable[tag_values.ListTagValuesResponse]]:
-        r"""Return a callable for the
-        list tag values
-          method over gRPC.
+        r"""Return a callable for the list tag values method over gRPC.
 
         Lists all TagValues for a specific TagKey.
 
@@ -274,9 +272,7 @@ class TagValuesGrpcAsyncIOTransport(TagValuesTransport):
     def get_tag_value(self) -> Callable[
             [tag_values.GetTagValueRequest],
             Awaitable[tag_values.TagValue]]:
-        r"""Return a callable for the
-        get tag value
-          method over gRPC.
+        r"""Return a callable for the get tag value method over gRPC.
 
         Retrieves TagValue. If the TagValue or namespaced name does not
         exist, or if the user does not have permission to view it, this
@@ -304,9 +300,7 @@ class TagValuesGrpcAsyncIOTransport(TagValuesTransport):
     def create_tag_value(self) -> Callable[
             [tag_values.CreateTagValueRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create tag value
-          method over gRPC.
+        r"""Return a callable for the create tag value method over gRPC.
 
         Creates a TagValue as a child of the specified
         TagKey. If a another request with the same parameters is
@@ -336,9 +330,7 @@ class TagValuesGrpcAsyncIOTransport(TagValuesTransport):
     def update_tag_value(self) -> Callable[
             [tag_values.UpdateTagValueRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update tag value
-          method over gRPC.
+        r"""Return a callable for the update tag value method over gRPC.
 
         Updates the attributes of the TagValue resource.
 
@@ -364,9 +356,7 @@ class TagValuesGrpcAsyncIOTransport(TagValuesTransport):
     def delete_tag_value(self) -> Callable[
             [tag_values.DeleteTagValueRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete tag value
-          method over gRPC.
+        r"""Return a callable for the delete tag value method over gRPC.
 
         Deletes a TagValue. The TagValue cannot have any
         bindings when it is deleted.
@@ -393,9 +383,7 @@ class TagValuesGrpcAsyncIOTransport(TagValuesTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for a TagValue. The returned
         policy may be empty if no such policy or resource exists. The
@@ -427,9 +415,7 @@ class TagValuesGrpcAsyncIOTransport(TagValuesTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on a TagValue, replacing any
         existing policy. The ``resource`` field should be the TagValue's
@@ -459,9 +445,7 @@ class TagValuesGrpcAsyncIOTransport(TagValuesTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns permissions that a caller has on the specified TagValue.
         The ``resource`` field should be the TagValue's resource name.

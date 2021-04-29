@@ -182,8 +182,7 @@ class PrivateCatalogAsyncClient:
 
         Args:
             request (:class:`google.cloud.privatecatalog_v1beta1.types.SearchCatalogsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [PrivateCatalog.SearchCatalogs][google.cloud.privatecatalog.v1beta1.PrivateCatalog.SearchCatalogs].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -252,8 +251,7 @@ class PrivateCatalogAsyncClient:
 
         Args:
             request (:class:`google.cloud.privatecatalog_v1beta1.types.SearchProductsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [PrivateCatalog.SearchProducts][google.cloud.privatecatalog.v1beta1.PrivateCatalog.SearchProducts].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -322,8 +320,7 @@ class PrivateCatalogAsyncClient:
 
         Args:
             request (:class:`google.cloud.privatecatalog_v1beta1.types.SearchVersionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [PrivateCatalog.SearchVersions][google.cloud.privatecatalog.v1beta1.PrivateCatalog.SearchVersions].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

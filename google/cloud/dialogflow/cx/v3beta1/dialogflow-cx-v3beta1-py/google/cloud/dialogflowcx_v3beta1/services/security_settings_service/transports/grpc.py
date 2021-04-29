@@ -222,9 +222,7 @@ class SecuritySettingsServiceGrpcTransport(SecuritySettingsServiceTransport):
     def create_security_settings(self) -> Callable[
             [gcdc_security_settings.CreateSecuritySettingsRequest],
             gcdc_security_settings.SecuritySettings]:
-        r"""Return a callable for the
-        create security settings
-          method over gRPC.
+        r"""Return a callable for the create security settings method over gRPC.
 
         Create security settings in the specified location.
 
@@ -250,9 +248,7 @@ class SecuritySettingsServiceGrpcTransport(SecuritySettingsServiceTransport):
     def get_security_settings(self) -> Callable[
             [security_settings.GetSecuritySettingsRequest],
             security_settings.SecuritySettings]:
-        r"""Return a callable for the
-        get security settings
-          method over gRPC.
+        r"""Return a callable for the get security settings method over gRPC.
 
         Retrieves the specified
         [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].
@@ -280,9 +276,7 @@ class SecuritySettingsServiceGrpcTransport(SecuritySettingsServiceTransport):
     def update_security_settings(self) -> Callable[
             [gcdc_security_settings.UpdateSecuritySettingsRequest],
             gcdc_security_settings.SecuritySettings]:
-        r"""Return a callable for the
-        update security settings
-          method over gRPC.
+        r"""Return a callable for the update security settings method over gRPC.
 
         Updates the specified
         [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].
@@ -309,9 +303,7 @@ class SecuritySettingsServiceGrpcTransport(SecuritySettingsServiceTransport):
     def list_security_settings(self) -> Callable[
             [security_settings.ListSecuritySettingsRequest],
             security_settings.ListSecuritySettingsResponse]:
-        r"""Return a callable for the
-        list security settings
-          method over gRPC.
+        r"""Return a callable for the list security settings method over gRPC.
 
         Returns the list of all security settings in the
         specified location.
@@ -338,9 +330,7 @@ class SecuritySettingsServiceGrpcTransport(SecuritySettingsServiceTransport):
     def delete_security_settings(self) -> Callable[
             [security_settings.DeleteSecuritySettingsRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete security settings
-          method over gRPC.
+        r"""Return a callable for the delete security settings method over gRPC.
 
         Deletes the specified
         [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].

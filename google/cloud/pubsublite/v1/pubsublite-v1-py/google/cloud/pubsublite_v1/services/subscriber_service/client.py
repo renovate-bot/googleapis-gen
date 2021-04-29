@@ -323,8 +323,7 @@ class SubscriberServiceClient(metaclass=SubscriberServiceClientMeta):
 
         Args:
             requests (Iterator[google.cloud.pubsublite_v1.types.SubscribeRequest]):
-                The request object iterator.
-                A request sent from the client to
+                The request object iterator. A request sent from the client to
                 the server on a stream.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

@@ -329,8 +329,7 @@ class DocumentUnderstandingServiceClient(metaclass=DocumentUnderstandingServiceC
 
         Args:
             request (google.cloud.documentai_v1beta2.types.BatchProcessDocumentsRequest):
-                The request object.
-                Request to batch process documents
+                The request object. Request to batch process documents
                 as an asynchronous operation. The output is written to
                 Cloud Storage as JSON in the [Document] format.
             requests (Sequence[google.cloud.documentai_v1beta2.types.ProcessDocumentRequest]):
@@ -368,7 +367,7 @@ class DocumentUnderstandingServiceClient(metaclass=DocumentUnderstandingServiceC
         # there are no flattened fields.
         if not isinstance(request, document_understanding.BatchProcessDocumentsRequest):
             request = document_understanding.BatchProcessDocumentsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if requests is not None:
                 request.requests = requests
@@ -415,8 +414,7 @@ class DocumentUnderstandingServiceClient(metaclass=DocumentUnderstandingServiceC
 
         Args:
             request (google.cloud.documentai_v1beta2.types.ProcessDocumentRequest):
-                The request object.
-                Request to process one document.
+                The request object. Request to process one document.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

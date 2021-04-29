@@ -353,8 +353,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
 
         Args:
             request (google.cloud.monitoring_v3.types.CreateServiceRequest):
-                The request object.
-                The `CreateService` request.
+                The request object. The `CreateService` request.
             parent (str):
                 Required. Resource name of the parent workspace. The
                 format is:
@@ -401,7 +400,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service_service.CreateServiceRequest):
             request = service_service.CreateServiceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -443,8 +442,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
 
         Args:
             request (google.cloud.monitoring_v3.types.GetServiceRequest):
-                The request object.
-                The `GetService` request.
+                The request object. The `GetService` request.
             name (str):
                 Required. Resource name of the ``Service``. The format
                 is:
@@ -486,7 +484,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service_service.GetServiceRequest):
             request = service_service.GetServiceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -526,8 +524,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
 
         Args:
             request (google.cloud.monitoring_v3.types.ListServicesRequest):
-                The request object.
-                The `ListServices` request.
+                The request object. The `ListServices` request.
             parent (str):
                 Required. Resource name of the parent containing the
                 listed services, either a project or a Monitoring
@@ -569,7 +566,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service_service.ListServicesRequest):
             request = service_service.ListServicesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -618,8 +615,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
 
         Args:
             request (google.cloud.monitoring_v3.types.UpdateServiceRequest):
-                The request object.
-                The `UpdateService` request.
+                The request object. The `UpdateService` request.
             service (google.cloud.monitoring_v3.types.Service):
                 Required. The ``Service`` to draw updates from. The
                 given ``name`` specifies the resource to update.
@@ -657,7 +653,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service_service.UpdateServiceRequest):
             request = service_service.UpdateServiceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service is not None:
                 request.service = service
@@ -697,8 +693,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
 
         Args:
             request (google.cloud.monitoring_v3.types.DeleteServiceRequest):
-                The request object.
-                The `DeleteService` request.
+                The request object. The `DeleteService` request.
             name (str):
                 Required. Resource name of the ``Service`` to delete.
                 The format is:
@@ -730,7 +725,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service_service.DeleteServiceRequest):
             request = service_service.DeleteServiceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -768,8 +763,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
 
         Args:
             request (google.cloud.monitoring_v3.types.CreateServiceLevelObjectiveRequest):
-                The request object.
-                The `CreateServiceLevelObjective`
+                The request object. The `CreateServiceLevelObjective`
                 request.
             parent (str):
                 Required. Resource name of the parent ``Service``. The
@@ -827,7 +821,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service_service.CreateServiceLevelObjectiveRequest):
             request = service_service.CreateServiceLevelObjectiveRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -869,8 +863,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
 
         Args:
             request (google.cloud.monitoring_v3.types.GetServiceLevelObjectiveRequest):
-                The request object.
-                The `GetServiceLevelObjective`
+                The request object. The `GetServiceLevelObjective`
                 request.
             name (str):
                 Required. Resource name of the ``ServiceLevelObjective``
@@ -920,7 +913,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service_service.GetServiceLevelObjectiveRequest):
             request = service_service.GetServiceLevelObjectiveRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -960,8 +953,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
 
         Args:
             request (google.cloud.monitoring_v3.types.ListServiceLevelObjectivesRequest):
-                The request object.
-                The `ListServiceLevelObjectives`
+                The request object. The `ListServiceLevelObjectives`
                 request.
             parent (str):
                 Required. Resource name of the parent containing the
@@ -1004,7 +996,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service_service.ListServiceLevelObjectivesRequest):
             request = service_service.ListServiceLevelObjectivesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1053,8 +1045,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
 
         Args:
             request (google.cloud.monitoring_v3.types.UpdateServiceLevelObjectiveRequest):
-                The request object.
-                The `UpdateServiceLevelObjective`
+                The request object. The `UpdateServiceLevelObjective`
                 request.
             service_level_objective (google.cloud.monitoring_v3.types.ServiceLevelObjective):
                 Required. The ``ServiceLevelObjective`` to draw updates
@@ -1101,7 +1092,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service_service.UpdateServiceLevelObjectiveRequest):
             request = service_service.UpdateServiceLevelObjectiveRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service_level_objective is not None:
                 request.service_level_objective = service_level_objective
@@ -1141,8 +1132,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
 
         Args:
             request (google.cloud.monitoring_v3.types.DeleteServiceLevelObjectiveRequest):
-                The request object.
-                The `DeleteServiceLevelObjective`
+                The request object. The `DeleteServiceLevelObjective`
                 request.
             name (str):
                 Required. Resource name of the ``ServiceLevelObjective``
@@ -1175,7 +1165,7 @@ class ServiceMonitoringServiceClient(metaclass=ServiceMonitoringServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service_service.DeleteServiceLevelObjectiveRequest):
             request = service_service.DeleteServiceLevelObjectiveRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

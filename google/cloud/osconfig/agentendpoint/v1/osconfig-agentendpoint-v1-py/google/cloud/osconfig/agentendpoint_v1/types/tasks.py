@@ -116,7 +116,7 @@ class Task(proto.Message):
     service_labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=6
+        number=6,
     )
 
 

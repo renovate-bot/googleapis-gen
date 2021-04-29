@@ -164,8 +164,7 @@ class VpcAccessServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.vpcaccess_v1.types.CreateConnectorRequest`):
-                The request object.
-                Request for creating a Serverless
+                The request object. Request for creating a Serverless
                 VPC Access connector.
             parent (:class:`str`):
                 Required. The project and location in which the
@@ -269,8 +268,7 @@ class VpcAccessServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.vpcaccess_v1.types.GetConnectorRequest`):
-                The request object.
-                Request for getting a Serverless VPC
+                The request object. Request for getting a Serverless VPC
                 Access connector.
             name (:class:`str`):
                 Required. Name of a Serverless VPC
@@ -345,8 +343,7 @@ class VpcAccessServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.vpcaccess_v1.types.ListConnectorsRequest`):
-                The request object.
-                Request for listing Serverless VPC
+                The request object. Request for listing Serverless VPC
                 Access connectors in a location.
             parent (:class:`str`):
                 Required. The project and location
@@ -434,8 +431,7 @@ class VpcAccessServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.vpcaccess_v1.types.DeleteConnectorRequest`):
-                The request object.
-                Request for deleting a Serverless
+                The request object. Request for deleting a Serverless
                 VPC Access connector.
             name (:class:`str`):
                 Required. Name of a Serverless VPC

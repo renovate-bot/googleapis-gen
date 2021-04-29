@@ -220,9 +220,7 @@ class AgentEndpointServiceGrpcTransport(AgentEndpointServiceTransport):
     def receive_task_notification(self) -> Callable[
             [agentendpoint.ReceiveTaskNotificationRequest],
             agentendpoint.ReceiveTaskNotificationResponse]:
-        r"""Return a callable for the
-        receive task notification
-          method over gRPC.
+        r"""Return a callable for the receive task notification method over gRPC.
 
         Stream established by client to receive Task
         notifications.
@@ -249,9 +247,7 @@ class AgentEndpointServiceGrpcTransport(AgentEndpointServiceTransport):
     def start_next_task(self) -> Callable[
             [agentendpoint.StartNextTaskRequest],
             agentendpoint.StartNextTaskResponse]:
-        r"""Return a callable for the
-        start next task
-          method over gRPC.
+        r"""Return a callable for the start next task method over gRPC.
 
         Signals the start of a task execution and returns the
         task info.
@@ -278,9 +274,7 @@ class AgentEndpointServiceGrpcTransport(AgentEndpointServiceTransport):
     def report_task_progress(self) -> Callable[
             [agentendpoint.ReportTaskProgressRequest],
             agentendpoint.ReportTaskProgressResponse]:
-        r"""Return a callable for the
-        report task progress
-          method over gRPC.
+        r"""Return a callable for the report task progress method over gRPC.
 
         Signals an intermediary progress checkpoint in task
         execution.
@@ -307,9 +301,7 @@ class AgentEndpointServiceGrpcTransport(AgentEndpointServiceTransport):
     def report_task_complete(self) -> Callable[
             [agentendpoint.ReportTaskCompleteRequest],
             agentendpoint.ReportTaskCompleteResponse]:
-        r"""Return a callable for the
-        report task complete
-          method over gRPC.
+        r"""Return a callable for the report task complete method over gRPC.
 
         Signals that the task execution is complete and
         optionally returns the next task.
@@ -336,9 +328,7 @@ class AgentEndpointServiceGrpcTransport(AgentEndpointServiceTransport):
     def register_agent(self) -> Callable[
             [agentendpoint.RegisterAgentRequest],
             agentendpoint.RegisterAgentResponse]:
-        r"""Return a callable for the
-        register agent
-          method over gRPC.
+        r"""Return a callable for the register agent method over gRPC.
 
         Registers the agent running on the VM.
 
@@ -364,9 +354,7 @@ class AgentEndpointServiceGrpcTransport(AgentEndpointServiceTransport):
     def report_inventory(self) -> Callable[
             [agentendpoint.ReportInventoryRequest],
             agentendpoint.ReportInventoryResponse]:
-        r"""Return a callable for the
-        report inventory
-          method over gRPC.
+        r"""Return a callable for the report inventory method over gRPC.
 
         Reports the VMs current inventory.
 

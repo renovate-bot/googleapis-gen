@@ -172,8 +172,7 @@ class ApiGatewayServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.ListGatewaysRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.ListGateways
             parent (:class:`str`):
                 Required. Parent resource of the Gateway, of the form:
@@ -260,8 +259,7 @@ class ApiGatewayServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.GetGatewayRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.GetGateway
             name (:class:`str`):
                 Required. Resource name of the form:
@@ -343,8 +341,7 @@ class ApiGatewayServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.CreateGatewayRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.CreateGateway
             parent (:class:`str`):
                 Required. Parent resource of the Gateway, of the form:
@@ -456,8 +453,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.UpdateGatewayRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.UpdateGateway
             gateway (:class:`google.cloud.apigateway_v1.types.Gateway`):
                 Required. Gateway resource.
@@ -562,8 +558,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.DeleteGatewayRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.DeleteGateway
             name (:class:`str`):
                 Required. Resource name of the form:
@@ -666,8 +661,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.ListApisRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.ListApis
             parent (:class:`str`):
                 Required. Parent resource of the API, of the form:
@@ -754,8 +748,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.GetApiRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.GetApi
             name (:class:`str`):
                 Required. Resource name of the form:
@@ -832,8 +825,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.CreateApiRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.CreateApi
             parent (:class:`str`):
                 Required. Parent resource of the API, of the form:
@@ -944,8 +936,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.UpdateApiRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.UpdateApi
             api (:class:`google.cloud.apigateway_v1.types.Api`):
                 Required. API resource.
@@ -1049,8 +1040,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.DeleteApiRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.DeleteApi
             name (:class:`str`):
                 Required. Resource name of the form:
@@ -1153,8 +1143,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.ListApiConfigsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.ListApiConfigs
             parent (:class:`str`):
                 Required. Parent resource of the API Config, of the
@@ -1241,8 +1230,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.GetApiConfigRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.GetApiConfig
             name (:class:`str`):
                 Required. Resource name of the form:
@@ -1321,8 +1309,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.CreateApiConfigRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.CreateApiConfig
             parent (:class:`str`):
                 Required. Parent resource of the API Config, of the
@@ -1432,8 +1419,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.UpdateApiConfigRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.UpdateApiConfig
             api_config (:class:`google.cloud.apigateway_v1.types.ApiConfig`):
                 Required. API Config resource.
@@ -1536,8 +1522,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.DeleteApiConfigRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.DeleteApiConfig
             name (:class:`str`):
                 Required. Resource name of the form:

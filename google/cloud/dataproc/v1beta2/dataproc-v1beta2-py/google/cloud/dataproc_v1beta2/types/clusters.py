@@ -111,7 +111,7 @@ class Cluster(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=8
+        number=8,
     )
     status = proto.Field(
         proto.MESSAGE,
@@ -335,7 +335,7 @@ class EndpointConfig(proto.Message):
     http_ports = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=1
+        number=1,
     )
     enable_http_port_access = proto.Field(
         proto.BOOL,
@@ -501,7 +501,7 @@ class GceClusterConfig(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=5
+        number=5,
     )
     reservation_affinity = proto.Field(
         proto.MESSAGE,
@@ -1069,7 +1069,7 @@ class SoftwareConfig(proto.Message):
     properties = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2
+        number=2,
     )
     optional_components = proto.RepeatedField(
         proto.ENUM,
@@ -1094,12 +1094,12 @@ class ClusterMetrics(proto.Message):
     hdfs_metrics = proto.MapField(
         proto.STRING,
         proto.INT64,
-        number=1
+        number=1,
     )
     yarn_metrics = proto.MapField(
         proto.STRING,
         proto.INT64,
-        number=2
+        number=2,
     )
 
 

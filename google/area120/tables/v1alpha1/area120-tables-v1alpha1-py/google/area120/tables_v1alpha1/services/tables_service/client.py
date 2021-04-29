@@ -370,8 +370,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.GetTableRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 TablesService.GetTable.
             name (str):
                 Required. The name of the table to
@@ -404,7 +403,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tables.GetTableRequest):
             request = tables.GetTableRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -443,8 +442,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.ListTablesRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 TablesService.ListTables.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -506,8 +504,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.GetWorkspaceRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 TablesService.GetWorkspace.
             name (str):
                 Required. The name of the workspace
@@ -541,7 +538,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tables.GetWorkspaceRequest):
             request = tables.GetWorkspaceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -580,8 +577,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.ListWorkspacesRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 TablesService.ListWorkspaces.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -643,8 +639,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.GetRowRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 TablesService.GetRow.
             name (str):
                 Required. The name of the row to
@@ -678,7 +673,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tables.GetRowRequest):
             request = tables.GetRowRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -719,8 +714,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.ListRowsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 TablesService.ListRows.
             parent (str):
                 Required. The parent table.
@@ -758,7 +752,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tables.ListRowsRequest):
             request = tables.ListRowsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -808,8 +802,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.CreateRowRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 TablesService.CreateRow.
             parent (str):
                 Required. The parent table where this
@@ -848,7 +841,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tables.CreateRowRequest):
             request = tables.CreateRowRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -889,8 +882,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.BatchCreateRowsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 TablesService.BatchCreateRows.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -948,8 +940,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.UpdateRowRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 TablesService.UpdateRow.
             row (google.area120.tables_v1alpha1.types.Row):
                 Required. The row to update.
@@ -985,7 +976,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tables.UpdateRowRequest):
             request = tables.UpdateRowRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if row is not None:
                 request.row = row
@@ -1026,8 +1017,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.BatchUpdateRowsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 TablesService.BatchUpdateRows.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1084,8 +1074,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.DeleteRowRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 TablesService.DeleteRow
             name (str):
                 Required. The name of the row to
@@ -1115,7 +1104,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tables.DeleteRowRequest):
             request = tables.DeleteRowRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1151,8 +1140,7 @@ class TablesServiceClient(metaclass=TablesServiceClientMeta):
 
         Args:
             request (google.area120.tables_v1alpha1.types.BatchDeleteRowsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 TablesService.BatchDeleteRows
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

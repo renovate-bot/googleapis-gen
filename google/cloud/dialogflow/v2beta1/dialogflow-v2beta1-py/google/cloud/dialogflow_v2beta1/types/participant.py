@@ -713,7 +713,7 @@ class ArticleAnswer(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=5
+        number=5,
     )
     answer_record = proto.Field(
         proto.STRING,
@@ -766,7 +766,7 @@ class FaqAnswer(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=5
+        number=5,
     )
     answer_record = proto.Field(
         proto.STRING,
@@ -1147,7 +1147,7 @@ class Suggestion(proto.Message):
         metadata = proto.MapField(
             proto.STRING,
             proto.STRING,
-            number=5
+            number=5,
         )
         answer_record = proto.Field(
             proto.STRING,
@@ -1203,7 +1203,7 @@ class Suggestion(proto.Message):
         metadata = proto.MapField(
             proto.STRING,
             proto.STRING,
-            number=5
+            number=5,
         )
         answer_record = proto.Field(
             proto.STRING,

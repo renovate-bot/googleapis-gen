@@ -164,8 +164,7 @@ class OsLoginServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.oslogin_v1beta.types.DeletePosixAccountRequest`):
-                The request object.
-                A request message for deleting a
+                The request object. A request message for deleting a
                 POSIX account entry.
             name (:class:`str`):
                 Required. A reference to the POSIX account to update.
@@ -240,8 +239,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.oslogin_v1beta.types.DeleteSshPublicKeyRequest`):
-                The request object.
-                A request message for deleting an
+                The request object. A request message for deleting an
                 SSH public key.
             name (:class:`str`):
                 Required. The fingerprint of the public key to update.
@@ -317,8 +315,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.oslogin_v1beta.types.GetLoginProfileRequest`):
-                The request object.
-                A request message for retrieving the
+                The request object. A request message for retrieving the
                 login profile information for a user.
             name (:class:`str`):
                 Required. The unique ID for the user in format
@@ -401,8 +398,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.oslogin_v1beta.types.GetSshPublicKeyRequest`):
-                The request object.
-                A request message for retrieving an
+                The request object. A request message for retrieving an
                 SSH public key.
             name (:class:`str`):
                 Required. The fingerprint of the public key to retrieve.
@@ -491,8 +487,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.oslogin_v1beta.types.ImportSshPublicKeyRequest`):
-                The request object.
-                A request message for importing an
+                The request object. A request message for importing an
                 SSH public key.
             parent (:class:`str`):
                 The unique ID for the user in format ``users/{user}``.
@@ -593,8 +588,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.oslogin_v1beta.types.UpdateSshPublicKeyRequest`):
-                The request object.
-                A request message for updating an
+                The request object. A request message for updating an
                 SSH public key.
             name (:class:`str`):
                 Required. The fingerprint of the public key to update.

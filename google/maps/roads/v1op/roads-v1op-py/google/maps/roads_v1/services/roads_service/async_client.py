@@ -156,8 +156,7 @@ class RoadsServiceAsyncClient:
 
         Args:
             request (:class:`google.maps.roads_v1.types.SnapToRoadsRequest`):
-                The request object.
-                A request to the SnapToRoads method,
+                The request object. A request to the SnapToRoads method,
                 requesting that a sequence of points be snapped to road
                 segments.
             path (:class:`str`):
@@ -228,8 +227,7 @@ class RoadsServiceAsyncClient:
 
         Args:
             request (:class:`google.maps.roads_v1.types.ListNearestRoadsRequest`):
-                The request object.
-                A request to the ListNearestRoads
+                The request object. A request to the ListNearestRoads
                 method, requesting that a sequence of points be snapped
                 individually to the road segment that each is closest
                 to.

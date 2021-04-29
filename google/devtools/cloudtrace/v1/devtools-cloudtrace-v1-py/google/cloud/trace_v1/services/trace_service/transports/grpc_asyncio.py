@@ -231,9 +231,7 @@ class TraceServiceGrpcAsyncIOTransport(TraceServiceTransport):
     def list_traces(self) -> Callable[
             [trace.ListTracesRequest],
             Awaitable[trace.ListTracesResponse]]:
-        r"""Return a callable for the
-        list traces
-          method over gRPC.
+        r"""Return a callable for the list traces method over gRPC.
 
         Returns of a list of traces that match the specified
         filter conditions.
@@ -260,9 +258,7 @@ class TraceServiceGrpcAsyncIOTransport(TraceServiceTransport):
     def get_trace(self) -> Callable[
             [trace.GetTraceRequest],
             Awaitable[trace.Trace]]:
-        r"""Return a callable for the
-        get trace
-          method over gRPC.
+        r"""Return a callable for the get trace method over gRPC.
 
         Gets a single trace by its ID.
 
@@ -288,9 +284,7 @@ class TraceServiceGrpcAsyncIOTransport(TraceServiceTransport):
     def patch_traces(self) -> Callable[
             [trace.PatchTracesRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        patch traces
-          method over gRPC.
+        r"""Return a callable for the patch traces method over gRPC.
 
         Sends new traces to Stackdriver Trace or updates
         existing traces. If the ID of a trace that you send

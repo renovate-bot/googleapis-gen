@@ -2077,7 +2077,10 @@ def test_contexts_base_transport_with_credentials_file():
         )
         load_creds.assert_called_once_with("credentials.json",
             scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/dialogflow',            ),
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/dialogflow',
+),
             quota_project_id="octopus",
         )
 
@@ -2121,7 +2124,6 @@ def test_contexts_auth_adc():
             'https://www.googleapis.com/auth/cloud-platform',
             'https://www.googleapis.com/auth/dialogflow',
 ),
-
             quota_project_id=None,
         )
 
@@ -2203,11 +2205,14 @@ def test_contexts_transport_create_channel(transport_class, grpc_helpers):
         )
 
         create_channel.assert_called_with(
-            "dialogflow.googleapis.com",
+            "dialogflow.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
+            default_scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/dialogflow',
+),
             scopes=["1", "2"],
             default_host="dialogflow.googleapis.com",
             ssl_credentials=None,
@@ -2241,7 +2246,10 @@ def test_contexts_transport_create_channel_old_api_core(transport_class, grpc_he
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
+            scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/dialogflow',
+),
             ssl_credentials=None,
             options=[
                 ("grpc.max_send_message_length", -1),

@@ -46,13 +46,8 @@ from .types.iam import QueryGrantableRolesResponse
 from .types.iam import QueryTestablePermissionsRequest
 from .types.iam import QueryTestablePermissionsResponse
 from .types.iam import Role
-from .types.iam import RoleView
 from .types.iam import ServiceAccount
 from .types.iam import ServiceAccountKey
-from .types.iam import ServiceAccountKeyAlgorithm
-from .types.iam import ServiceAccountKeyOrigin
-from .types.iam import ServiceAccountPrivateKeyType
-from .types.iam import ServiceAccountPublicKeyType
 from .types.iam import SignBlobRequest
 from .types.iam import SignBlobResponse
 from .types.iam import SignJwtRequest
@@ -62,8 +57,14 @@ from .types.iam import UndeleteServiceAccountRequest
 from .types.iam import UndeleteServiceAccountResponse
 from .types.iam import UpdateRoleRequest
 from .types.iam import UploadServiceAccountKeyRequest
+from .types.iam import RoleView
+from .types.iam import ServiceAccountKeyAlgorithm
+from .types.iam import ServiceAccountKeyOrigin
+from .types.iam import ServiceAccountPrivateKeyType
+from .types.iam import ServiceAccountPublicKeyType
 
 __all__ = (
+    'IAMClient',
     'AuditData',
     'CreateRoleRequest',
     'CreateServiceAccountKeyRequest',
@@ -94,13 +95,8 @@ __all__ = (
     'QueryTestablePermissionsRequest',
     'QueryTestablePermissionsResponse',
     'Role',
-    'RoleView',
     'ServiceAccount',
     'ServiceAccountKey',
-    'ServiceAccountKeyAlgorithm',
-    'ServiceAccountKeyOrigin',
-    'ServiceAccountPrivateKeyType',
-    'ServiceAccountPublicKeyType',
     'SignBlobRequest',
     'SignBlobResponse',
     'SignJwtRequest',
@@ -110,5 +106,9 @@ __all__ = (
     'UndeleteServiceAccountResponse',
     'UpdateRoleRequest',
     'UploadServiceAccountKeyRequest',
-'IAMClient',
+    'RoleView',
+    'ServiceAccountKeyAlgorithm',
+    'ServiceAccountKeyOrigin',
+    'ServiceAccountPrivateKeyType',
+    'ServiceAccountPublicKeyType',
 )

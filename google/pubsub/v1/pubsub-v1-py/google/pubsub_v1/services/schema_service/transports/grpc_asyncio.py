@@ -229,9 +229,7 @@ class SchemaServiceGrpcAsyncIOTransport(SchemaServiceTransport):
     def create_schema(self) -> Callable[
             [gp_schema.CreateSchemaRequest],
             Awaitable[gp_schema.Schema]]:
-        r"""Return a callable for the
-        create schema
-          method over gRPC.
+        r"""Return a callable for the create schema method over gRPC.
 
         Creates a schema.
 
@@ -257,9 +255,7 @@ class SchemaServiceGrpcAsyncIOTransport(SchemaServiceTransport):
     def get_schema(self) -> Callable[
             [schema.GetSchemaRequest],
             Awaitable[schema.Schema]]:
-        r"""Return a callable for the
-        get schema
-          method over gRPC.
+        r"""Return a callable for the get schema method over gRPC.
 
         Gets a schema.
 
@@ -285,9 +281,7 @@ class SchemaServiceGrpcAsyncIOTransport(SchemaServiceTransport):
     def list_schemas(self) -> Callable[
             [schema.ListSchemasRequest],
             Awaitable[schema.ListSchemasResponse]]:
-        r"""Return a callable for the
-        list schemas
-          method over gRPC.
+        r"""Return a callable for the list schemas method over gRPC.
 
         Lists schemas in a project.
 
@@ -313,9 +307,7 @@ class SchemaServiceGrpcAsyncIOTransport(SchemaServiceTransport):
     def delete_schema(self) -> Callable[
             [schema.DeleteSchemaRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete schema
-          method over gRPC.
+        r"""Return a callable for the delete schema method over gRPC.
 
         Deletes a schema.
 
@@ -341,9 +333,7 @@ class SchemaServiceGrpcAsyncIOTransport(SchemaServiceTransport):
     def validate_schema(self) -> Callable[
             [gp_schema.ValidateSchemaRequest],
             Awaitable[gp_schema.ValidateSchemaResponse]]:
-        r"""Return a callable for the
-        validate schema
-          method over gRPC.
+        r"""Return a callable for the validate schema method over gRPC.
 
         Validates a schema.
 
@@ -369,9 +359,7 @@ class SchemaServiceGrpcAsyncIOTransport(SchemaServiceTransport):
     def validate_message(self) -> Callable[
             [schema.ValidateMessageRequest],
             Awaitable[schema.ValidateMessageResponse]]:
-        r"""Return a callable for the
-        validate message
-          method over gRPC.
+        r"""Return a callable for the validate message method over gRPC.
 
         Validates a message against a schema.
 

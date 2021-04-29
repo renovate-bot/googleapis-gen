@@ -290,7 +290,7 @@ class GameServerConfig(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     fleet_configs = proto.RepeatedField(
         proto.MESSAGE,

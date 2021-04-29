@@ -337,8 +337,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ListContextsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Contexts.ListContexts][google.cloud.dialogflow.v2.Contexts.ListContexts].
             parent (str):
                 Required. The session to list all contexts from. Format:
@@ -380,7 +379,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, context.ListContextsRequest):
             request = context.ListContextsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -429,8 +428,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.GetContextRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Contexts.GetContext][google.cloud.dialogflow.v2.Contexts.GetContext].
             name (str):
                 Required. The name of the context. Format:
@@ -487,7 +485,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, context.GetContextRequest):
             request = context.GetContextRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -530,8 +528,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.CreateContextRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Contexts.CreateContext][google.cloud.dialogflow.v2.Contexts.CreateContext].
             parent (str):
                 Required. The session to create a context for. Format:
@@ -592,7 +589,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_context.CreateContextRequest):
             request = gcd_context.CreateContextRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -635,8 +632,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.UpdateContextRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Contexts.UpdateContext][google.cloud.dialogflow.v2.Contexts.UpdateContext].
             context (google.cloud.dialogflow_v2.types.Context):
                 Required. The context to update.
@@ -693,7 +689,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_context.UpdateContextRequest):
             request = gcd_context.UpdateContextRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if context is not None:
                 request.context = context
@@ -735,8 +731,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.DeleteContextRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Contexts.DeleteContext][google.cloud.dialogflow.v2.Contexts.DeleteContext].
             name (str):
                 Required. The name of the context to delete. Format:
@@ -770,7 +765,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, context.DeleteContextRequest):
             request = context.DeleteContextRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -807,8 +802,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.DeleteAllContextsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Contexts.DeleteAllContexts][google.cloud.dialogflow.v2.Contexts.DeleteAllContexts].
             parent (str):
                 Required. The name of the session to delete all contexts
@@ -842,7 +836,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, context.DeleteAllContextsRequest):
             request = context.DeleteAllContextsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

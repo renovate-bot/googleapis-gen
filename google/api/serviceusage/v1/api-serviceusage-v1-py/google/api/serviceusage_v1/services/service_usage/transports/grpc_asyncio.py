@@ -245,9 +245,7 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def enable_service(self) -> Callable[
             [serviceusage.EnableServiceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        enable service
-          method over gRPC.
+        r"""Return a callable for the enable service method over gRPC.
 
         Enable a service so that it can be used with a
         project.
@@ -274,9 +272,7 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def disable_service(self) -> Callable[
             [serviceusage.DisableServiceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        disable service
-          method over gRPC.
+        r"""Return a callable for the disable service method over gRPC.
 
         Disable a service so that it can no longer be used with a
         project. This prevents unintended usage that may cause
@@ -309,9 +305,7 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def get_service(self) -> Callable[
             [serviceusage.GetServiceRequest],
             Awaitable[resources.Service]]:
-        r"""Return a callable for the
-        get service
-          method over gRPC.
+        r"""Return a callable for the get service method over gRPC.
 
         Returns the service configuration and enabled state
         for a given service.
@@ -338,9 +332,7 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def list_services(self) -> Callable[
             [serviceusage.ListServicesRequest],
             Awaitable[serviceusage.ListServicesResponse]]:
-        r"""Return a callable for the
-        list services
-          method over gRPC.
+        r"""Return a callable for the list services method over gRPC.
 
         List all services available to the specified project, and the
         current state of those services with respect to the project. The
@@ -379,9 +371,7 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def batch_enable_services(self) -> Callable[
             [serviceusage.BatchEnableServicesRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        batch enable services
-          method over gRPC.
+        r"""Return a callable for the batch enable services method over gRPC.
 
         Enable multiple services on a project. The operation is atomic:
         if enabling any service fails, then the entire batch fails, and
@@ -410,9 +400,7 @@ class ServiceUsageGrpcAsyncIOTransport(ServiceUsageTransport):
     def batch_get_services(self) -> Callable[
             [serviceusage.BatchGetServicesRequest],
             Awaitable[serviceusage.BatchGetServicesResponse]]:
-        r"""Return a callable for the
-        batch get services
-          method over gRPC.
+        r"""Return a callable for the batch get services method over gRPC.
 
         Returns the service configurations and enabled states
         for a given list of services.

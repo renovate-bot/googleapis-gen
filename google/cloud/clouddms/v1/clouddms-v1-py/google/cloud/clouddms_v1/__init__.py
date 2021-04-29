@@ -42,8 +42,6 @@ from .types.clouddms import VmSelectionConfig
 from .types.clouddms_resources import CloudSqlConnectionProfile
 from .types.clouddms_resources import CloudSqlSettings
 from .types.clouddms_resources import ConnectionProfile
-from .types.clouddms_resources import DatabaseEngine
-from .types.clouddms_resources import DatabaseProvider
 from .types.clouddms_resources import DatabaseType
 from .types.clouddms_resources import MigrationJob
 from .types.clouddms_resources import MigrationJobVerificationError
@@ -55,16 +53,13 @@ from .types.clouddms_resources import SqlIpConfig
 from .types.clouddms_resources import SslConfig
 from .types.clouddms_resources import StaticIpConnectivity
 from .types.clouddms_resources import VpcPeeringConnectivity
+from .types.clouddms_resources import DatabaseEngine
+from .types.clouddms_resources import DatabaseProvider
 
 __all__ = (
-    'CloudSqlConnectionProfile',
-    'CloudSqlSettings',
-    'ConnectionProfile',
+    'DataMigrationServiceClient',
     'CreateConnectionProfileRequest',
     'CreateMigrationJobRequest',
-    'DatabaseEngine',
-    'DatabaseProvider',
-    'DatabaseType',
     'DeleteConnectionProfileRequest',
     'DeleteMigrationJobRequest',
     'GenerateSshScriptRequest',
@@ -74,27 +69,32 @@ __all__ = (
     'ListConnectionProfilesResponse',
     'ListMigrationJobsRequest',
     'ListMigrationJobsResponse',
-    'MigrationJob',
-    'MigrationJobVerificationError',
-    'MySqlConnectionProfile',
     'OperationMetadata',
-    'PostgreSqlConnectionProfile',
     'PromoteMigrationJobRequest',
     'RestartMigrationJobRequest',
     'ResumeMigrationJobRequest',
-    'ReverseSshConnectivity',
-    'SqlAclEntry',
-    'SqlIpConfig',
     'SshScript',
-    'SslConfig',
     'StartMigrationJobRequest',
-    'StaticIpConnectivity',
     'StopMigrationJobRequest',
     'UpdateConnectionProfileRequest',
     'UpdateMigrationJobRequest',
     'VerifyMigrationJobRequest',
     'VmCreationConfig',
     'VmSelectionConfig',
+    'CloudSqlConnectionProfile',
+    'CloudSqlSettings',
+    'ConnectionProfile',
+    'DatabaseType',
+    'MigrationJob',
+    'MigrationJobVerificationError',
+    'MySqlConnectionProfile',
+    'PostgreSqlConnectionProfile',
+    'ReverseSshConnectivity',
+    'SqlAclEntry',
+    'SqlIpConfig',
+    'SslConfig',
+    'StaticIpConnectivity',
     'VpcPeeringConnectivity',
-'DataMigrationServiceClient',
+    'DatabaseEngine',
+    'DatabaseProvider',
 )

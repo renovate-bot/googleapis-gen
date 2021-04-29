@@ -168,8 +168,7 @@ class UptimeCheckServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListUptimeCheckConfigsRequest`):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `ListUptimeCheckConfigs` request.
             parent (:class:`str`):
                 Required. The project whose Uptime check configurations
@@ -266,8 +265,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.GetUptimeCheckConfigRequest`):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `GetUptimeCheckConfig` request.
             name (:class:`str`):
                 Required. The Uptime check configuration to retrieve.
@@ -355,8 +353,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.CreateUptimeCheckConfigRequest`):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `CreateUptimeCheckConfig` request.
             parent (:class:`str`):
                 Required. The project in which to create the Uptime
@@ -449,8 +446,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.UpdateUptimeCheckConfigRequest`):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `UpdateUptimeCheckConfig` request.
             uptime_check_config (:class:`google.cloud.monitoring_v3.types.UptimeCheckConfig`):
                 Required. If an ``updateMask`` has been specified, this
@@ -540,8 +536,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.DeleteUptimeCheckConfigRequest`):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `DeleteUptimeCheckConfig` request.
             name (:class:`str`):
                 Required. The Uptime check configuration to delete. The
@@ -618,8 +613,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListUptimeCheckIpsRequest`):
-                The request object.
-                The protocol for the
+                The request object. The protocol for the
                 `ListUptimeCheckIps` request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

@@ -261,9 +261,7 @@ class DataprocMetastoreGrpcTransport(DataprocMetastoreTransport):
     def list_services(self) -> Callable[
             [metastore.ListServicesRequest],
             metastore.ListServicesResponse]:
-        r"""Return a callable for the
-        list services
-          method over gRPC.
+        r"""Return a callable for the list services method over gRPC.
 
         Lists services in a project and location.
 
@@ -289,9 +287,7 @@ class DataprocMetastoreGrpcTransport(DataprocMetastoreTransport):
     def get_service(self) -> Callable[
             [metastore.GetServiceRequest],
             metastore.Service]:
-        r"""Return a callable for the
-        get service
-          method over gRPC.
+        r"""Return a callable for the get service method over gRPC.
 
         Gets the details of a single service.
 
@@ -317,9 +313,7 @@ class DataprocMetastoreGrpcTransport(DataprocMetastoreTransport):
     def create_service(self) -> Callable[
             [metastore.CreateServiceRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create service
-          method over gRPC.
+        r"""Return a callable for the create service method over gRPC.
 
         Creates a metastore service in a project and
         location.
@@ -346,9 +340,7 @@ class DataprocMetastoreGrpcTransport(DataprocMetastoreTransport):
     def update_service(self) -> Callable[
             [metastore.UpdateServiceRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update service
-          method over gRPC.
+        r"""Return a callable for the update service method over gRPC.
 
         Updates the parameters of a single service.
 
@@ -374,9 +366,7 @@ class DataprocMetastoreGrpcTransport(DataprocMetastoreTransport):
     def delete_service(self) -> Callable[
             [metastore.DeleteServiceRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete service
-          method over gRPC.
+        r"""Return a callable for the delete service method over gRPC.
 
         Deletes a single service.
 
@@ -402,9 +392,7 @@ class DataprocMetastoreGrpcTransport(DataprocMetastoreTransport):
     def list_metadata_imports(self) -> Callable[
             [metastore.ListMetadataImportsRequest],
             metastore.ListMetadataImportsResponse]:
-        r"""Return a callable for the
-        list metadata imports
-          method over gRPC.
+        r"""Return a callable for the list metadata imports method over gRPC.
 
         Lists imports in a service.
 
@@ -430,9 +418,7 @@ class DataprocMetastoreGrpcTransport(DataprocMetastoreTransport):
     def get_metadata_import(self) -> Callable[
             [metastore.GetMetadataImportRequest],
             metastore.MetadataImport]:
-        r"""Return a callable for the
-        get metadata import
-          method over gRPC.
+        r"""Return a callable for the get metadata import method over gRPC.
 
         Gets details of a single import.
 
@@ -458,9 +444,7 @@ class DataprocMetastoreGrpcTransport(DataprocMetastoreTransport):
     def create_metadata_import(self) -> Callable[
             [metastore.CreateMetadataImportRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create metadata import
-          method over gRPC.
+        r"""Return a callable for the create metadata import method over gRPC.
 
         Creates a new MetadataImport in a given project and
         location.
@@ -487,9 +471,7 @@ class DataprocMetastoreGrpcTransport(DataprocMetastoreTransport):
     def update_metadata_import(self) -> Callable[
             [metastore.UpdateMetadataImportRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update metadata import
-          method over gRPC.
+        r"""Return a callable for the update metadata import method over gRPC.
 
         Updates a single import.
         Only the description field of MetadataImport is
@@ -517,9 +499,7 @@ class DataprocMetastoreGrpcTransport(DataprocMetastoreTransport):
     def export_metadata(self) -> Callable[
             [metastore.ExportMetadataRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        export metadata
-          method over gRPC.
+        r"""Return a callable for the export metadata method over gRPC.
 
         Exports metadata from a service.
 

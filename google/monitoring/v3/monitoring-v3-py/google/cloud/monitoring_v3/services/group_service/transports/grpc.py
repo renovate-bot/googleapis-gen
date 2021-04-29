@@ -234,9 +234,7 @@ class GroupServiceGrpcTransport(GroupServiceTransport):
     def list_groups(self) -> Callable[
             [group_service.ListGroupsRequest],
             group_service.ListGroupsResponse]:
-        r"""Return a callable for the
-        list groups
-          method over gRPC.
+        r"""Return a callable for the list groups method over gRPC.
 
         Lists the existing groups.
 
@@ -262,9 +260,7 @@ class GroupServiceGrpcTransport(GroupServiceTransport):
     def get_group(self) -> Callable[
             [group_service.GetGroupRequest],
             group.Group]:
-        r"""Return a callable for the
-        get group
-          method over gRPC.
+        r"""Return a callable for the get group method over gRPC.
 
         Gets a single group.
 
@@ -290,9 +286,7 @@ class GroupServiceGrpcTransport(GroupServiceTransport):
     def create_group(self) -> Callable[
             [group_service.CreateGroupRequest],
             gm_group.Group]:
-        r"""Return a callable for the
-        create group
-          method over gRPC.
+        r"""Return a callable for the create group method over gRPC.
 
         Creates a new group.
 
@@ -318,9 +312,7 @@ class GroupServiceGrpcTransport(GroupServiceTransport):
     def update_group(self) -> Callable[
             [group_service.UpdateGroupRequest],
             gm_group.Group]:
-        r"""Return a callable for the
-        update group
-          method over gRPC.
+        r"""Return a callable for the update group method over gRPC.
 
         Updates an existing group. You can change any group attributes
         except ``name``.
@@ -347,9 +339,7 @@ class GroupServiceGrpcTransport(GroupServiceTransport):
     def delete_group(self) -> Callable[
             [group_service.DeleteGroupRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete group
-          method over gRPC.
+        r"""Return a callable for the delete group method over gRPC.
 
         Deletes an existing group.
 
@@ -375,9 +365,7 @@ class GroupServiceGrpcTransport(GroupServiceTransport):
     def list_group_members(self) -> Callable[
             [group_service.ListGroupMembersRequest],
             group_service.ListGroupMembersResponse]:
-        r"""Return a callable for the
-        list group members
-          method over gRPC.
+        r"""Return a callable for the list group members method over gRPC.
 
         Lists the monitored resources that are members of a
         group.

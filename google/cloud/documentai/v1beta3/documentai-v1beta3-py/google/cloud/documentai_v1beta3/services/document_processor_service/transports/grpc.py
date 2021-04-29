@@ -243,9 +243,7 @@ class DocumentProcessorServiceGrpcTransport(DocumentProcessorServiceTransport):
     def process_document(self) -> Callable[
             [document_processor_service.ProcessRequest],
             document_processor_service.ProcessResponse]:
-        r"""Return a callable for the
-        process document
-          method over gRPC.
+        r"""Return a callable for the process document method over gRPC.
 
         Processes a single document.
 
@@ -271,9 +269,7 @@ class DocumentProcessorServiceGrpcTransport(DocumentProcessorServiceTransport):
     def batch_process_documents(self) -> Callable[
             [document_processor_service.BatchProcessRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        batch process documents
-          method over gRPC.
+        r"""Return a callable for the batch process documents method over gRPC.
 
         LRO endpoint to batch process many documents. The output is
         written to Cloud Storage as JSON in the [Document] format.
@@ -300,9 +296,7 @@ class DocumentProcessorServiceGrpcTransport(DocumentProcessorServiceTransport):
     def review_document(self) -> Callable[
             [document_processor_service.ReviewDocumentRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        review document
-          method over gRPC.
+        r"""Return a callable for the review document method over gRPC.
 
         Send a document for Human Review. The input document
         should be processed by the specified processor.

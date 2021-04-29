@@ -395,8 +395,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.ListGatewaysRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.ListGateways
             parent (str):
                 Required. Parent resource of the Gateway, of the form:
@@ -434,7 +433,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.ListGatewaysRequest):
             request = apigateway.ListGatewaysRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -483,8 +482,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.GetGatewayRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.GetGateway
             name (str):
                 Required. Resource name of the form:
@@ -523,7 +521,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.GetGatewayRequest):
             request = apigateway.GetGatewayRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -566,8 +564,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.CreateGatewayRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.CreateGateway
             parent (str):
                 Required. Parent resource of the Gateway, of the form:
@@ -619,7 +616,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.CreateGatewayRequest):
             request = apigateway.CreateGatewayRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -672,8 +669,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.UpdateGatewayRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.UpdateGateway
             gateway (google.cloud.apigateway_v1.types.Gateway):
                 Required. Gateway resource.
@@ -721,7 +717,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.UpdateGatewayRequest):
             request = apigateway.UpdateGatewayRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if gateway is not None:
                 request.gateway = gateway
@@ -771,8 +767,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.DeleteGatewayRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.DeleteGateway
             name (str):
                 Required. Resource name of the form:
@@ -820,7 +815,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.DeleteGatewayRequest):
             request = apigateway.DeleteGatewayRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -868,8 +863,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.ListApisRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.ListApis
             parent (str):
                 Required. Parent resource of the API, of the form:
@@ -907,7 +901,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.ListApisRequest):
             request = apigateway.ListApisRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -956,8 +950,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.GetApiRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.GetApi
             name (str):
                 Required. Resource name of the form:
@@ -992,7 +985,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.GetApiRequest):
             request = apigateway.GetApiRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1034,8 +1027,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.CreateApiRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.CreateApi
             parent (str):
                 Required. Parent resource of the API, of the form:
@@ -1086,7 +1078,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.CreateApiRequest):
             request = apigateway.CreateApiRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1139,8 +1131,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.UpdateApiRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.UpdateApi
             api (google.cloud.apigateway_v1.types.Api):
                 Required. API resource.
@@ -1187,7 +1178,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.UpdateApiRequest):
             request = apigateway.UpdateApiRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if api is not None:
                 request.api = api
@@ -1237,8 +1228,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.DeleteApiRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.DeleteApi
             name (str):
                 Required. Resource name of the form:
@@ -1286,7 +1276,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.DeleteApiRequest):
             request = apigateway.DeleteApiRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1334,8 +1324,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.ListApiConfigsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.ListApiConfigs
             parent (str):
                 Required. Parent resource of the API Config, of the
@@ -1373,7 +1362,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.ListApiConfigsRequest):
             request = apigateway.ListApiConfigsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1422,8 +1411,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.GetApiConfigRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.GetApiConfig
             name (str):
                 Required. Resource name of the form:
@@ -1459,7 +1447,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.GetApiConfigRequest):
             request = apigateway.GetApiConfigRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1502,8 +1490,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.CreateApiConfigRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.CreateApiConfig
             parent (str):
                 Required. Parent resource of the API Config, of the
@@ -1553,7 +1540,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.CreateApiConfigRequest):
             request = apigateway.CreateApiConfigRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1606,8 +1593,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.UpdateApiConfigRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.UpdateApiConfig
             api_config (google.cloud.apigateway_v1.types.ApiConfig):
                 Required. API Config resource.
@@ -1653,7 +1639,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.UpdateApiConfigRequest):
             request = apigateway.UpdateApiConfigRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if api_config is not None:
                 request.api_config = api_config
@@ -1703,8 +1689,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
 
         Args:
             request (google.cloud.apigateway_v1.types.DeleteApiConfigRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.DeleteApiConfig
             name (str):
                 Required. Resource name of the form:
@@ -1752,7 +1737,7 @@ class ApiGatewayServiceClient(metaclass=ApiGatewayServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, apigateway.DeleteApiConfigRequest):
             request = apigateway.DeleteApiConfigRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

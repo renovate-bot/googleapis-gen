@@ -236,9 +236,7 @@ class ContainerAnalysisGrpcTransport(ContainerAnalysisTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on the specified note or
         occurrence. Requires ``containeranalysis.notes.setIamPolicy`` or
@@ -272,9 +270,7 @@ class ContainerAnalysisGrpcTransport(ContainerAnalysisTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for a note or an occurrence
         resource. Requires ``containeranalysis.notes.setIamPolicy`` or
@@ -308,9 +304,7 @@ class ContainerAnalysisGrpcTransport(ContainerAnalysisTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns the permissions that a caller has on the specified note
         or occurrence. Requires list permission on the project (for
@@ -343,10 +337,8 @@ class ContainerAnalysisGrpcTransport(ContainerAnalysisTransport):
     def get_vulnerability_occurrences_summary(self) -> Callable[
             [containeranalysis.GetVulnerabilityOccurrencesSummaryRequest],
             containeranalysis.VulnerabilityOccurrencesSummary]:
-        r"""Return a callable for the
-        get vulnerability occurrences
-        summary
-          method over gRPC.
+        r"""Return a callable for the get vulnerability occurrences
+        summary method over gRPC.
 
         Gets a summary of the number and severity of
         occurrences.

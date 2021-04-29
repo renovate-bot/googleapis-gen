@@ -240,9 +240,7 @@ class ClusterControllerGrpcTransport(ClusterControllerTransport):
     def create_cluster(self) -> Callable[
             [clusters.CreateClusterRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create cluster
-          method over gRPC.
+        r"""Return a callable for the create cluster method over gRPC.
 
         Creates a cluster in a project. The returned
         [Operation.metadata][google.longrunning.Operation.metadata] will
@@ -271,9 +269,7 @@ class ClusterControllerGrpcTransport(ClusterControllerTransport):
     def update_cluster(self) -> Callable[
             [clusters.UpdateClusterRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update cluster
-          method over gRPC.
+        r"""Return a callable for the update cluster method over gRPC.
 
         Updates a cluster in a project. The returned
         [Operation.metadata][google.longrunning.Operation.metadata] will
@@ -302,9 +298,7 @@ class ClusterControllerGrpcTransport(ClusterControllerTransport):
     def stop_cluster(self) -> Callable[
             [clusters.StopClusterRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        stop cluster
-          method over gRPC.
+        r"""Return a callable for the stop cluster method over gRPC.
 
         Stops a cluster in a project.
 
@@ -330,9 +324,7 @@ class ClusterControllerGrpcTransport(ClusterControllerTransport):
     def start_cluster(self) -> Callable[
             [clusters.StartClusterRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        start cluster
-          method over gRPC.
+        r"""Return a callable for the start cluster method over gRPC.
 
         Starts a cluster in a project.
 
@@ -358,9 +350,7 @@ class ClusterControllerGrpcTransport(ClusterControllerTransport):
     def delete_cluster(self) -> Callable[
             [clusters.DeleteClusterRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete cluster
-          method over gRPC.
+        r"""Return a callable for the delete cluster method over gRPC.
 
         Deletes a cluster in a project. The returned
         [Operation.metadata][google.longrunning.Operation.metadata] will
@@ -389,9 +379,7 @@ class ClusterControllerGrpcTransport(ClusterControllerTransport):
     def get_cluster(self) -> Callable[
             [clusters.GetClusterRequest],
             clusters.Cluster]:
-        r"""Return a callable for the
-        get cluster
-          method over gRPC.
+        r"""Return a callable for the get cluster method over gRPC.
 
         Gets the resource representation for a cluster in a
         project.
@@ -418,9 +406,7 @@ class ClusterControllerGrpcTransport(ClusterControllerTransport):
     def list_clusters(self) -> Callable[
             [clusters.ListClustersRequest],
             clusters.ListClustersResponse]:
-        r"""Return a callable for the
-        list clusters
-          method over gRPC.
+        r"""Return a callable for the list clusters method over gRPC.
 
         Lists all regions/{region}/clusters in a project
         alphabetically.
@@ -447,9 +433,7 @@ class ClusterControllerGrpcTransport(ClusterControllerTransport):
     def diagnose_cluster(self) -> Callable[
             [clusters.DiagnoseClusterRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        diagnose cluster
-          method over gRPC.
+        r"""Return a callable for the diagnose cluster method over gRPC.
 
         Gets cluster diagnostic information. The returned
         [Operation.metadata][google.longrunning.Operation.metadata] will

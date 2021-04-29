@@ -375,7 +375,7 @@ class GameServerDeployment(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     etag = proto.Field(
         proto.STRING,

@@ -383,8 +383,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.ListServicesRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.ListServices][google.cloud.metastore.v1.DataprocMetastore.ListServices].
             parent (str):
                 Required. The relative resource name of the location of
@@ -424,7 +423,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.ListServicesRequest):
             request = metastore.ListServicesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -473,8 +472,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.GetServiceRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.GetService][google.cloud.metastore.v1.DataprocMetastore.GetService].
             name (str):
                 Required. The relative resource name of the metastore
@@ -511,7 +509,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.GetServiceRequest):
             request = metastore.GetServiceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -554,8 +552,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.CreateServiceRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.CreateService][google.cloud.metastore.v1.DataprocMetastore.CreateService].
             parent (str):
                 Required. The relative resource name of the location in
@@ -619,7 +616,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.CreateServiceRequest):
             request = metastore.CreateServiceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -672,8 +669,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.UpdateServiceRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.UpdateService][google.cloud.metastore.v1.DataprocMetastore.UpdateService].
             service (google.cloud.metastore_v1.types.Service):
                 Required. The metastore service to update. The server
@@ -725,7 +721,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.UpdateServiceRequest):
             request = metastore.UpdateServiceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if service is not None:
                 request.service = service
@@ -775,8 +771,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.DeleteServiceRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.DeleteService][google.cloud.metastore.v1.DataprocMetastore.DeleteService].
             name (str):
                 Required. The relative resource name of the metastore
@@ -826,7 +821,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.DeleteServiceRequest):
             request = metastore.DeleteServiceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -874,8 +869,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.ListMetadataImportsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.ListMetadataImports][google.cloud.metastore.v1.DataprocMetastore.ListMetadataImports].
             parent (str):
                 Required. The relative resource name of the service
@@ -915,7 +909,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.ListMetadataImportsRequest):
             request = metastore.ListMetadataImportsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -964,8 +958,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.GetMetadataImportRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.GetMetadataImport][google.cloud.metastore.v1.DataprocMetastore.GetMetadataImport].
             name (str):
                 Required. The relative resource name of the metadata
@@ -1002,7 +995,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.GetMetadataImportRequest):
             request = metastore.GetMetadataImportRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1045,8 +1038,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.CreateMetadataImportRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.CreateMetadataImport][google.cloud.metastore.v1.DataprocMetastore.CreateMetadataImport].
             parent (str):
                 Required. The relative resource name of the service in
@@ -1109,7 +1101,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.CreateMetadataImportRequest):
             request = metastore.CreateMetadataImportRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1164,8 +1156,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.UpdateMetadataImportRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.UpdateMetadataImport][google.cloud.metastore.v1.DataprocMetastore.UpdateMetadataImport].
             metadata_import (google.cloud.metastore_v1.types.MetadataImport):
                 Required. The metadata import to update. The server only
@@ -1217,7 +1208,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
         # there are no flattened fields.
         if not isinstance(request, metastore.UpdateMetadataImportRequest):
             request = metastore.UpdateMetadataImportRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if metadata_import is not None:
                 request.metadata_import = metadata_import
@@ -1266,8 +1257,7 @@ class DataprocMetastoreClient(metaclass=DataprocMetastoreClientMeta):
 
         Args:
             request (google.cloud.metastore_v1.types.ExportMetadataRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.ExportMetadata][google.cloud.metastore.v1.DataprocMetastore.ExportMetadata].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

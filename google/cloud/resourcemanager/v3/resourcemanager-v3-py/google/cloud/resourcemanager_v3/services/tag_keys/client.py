@@ -339,8 +339,7 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.ListTagKeysRequest):
-                The request object.
-                The request message for listing all
+                The request object. The request message for listing all
                 TagKeys under a parent resource.
             parent (str):
                 Required. The resource name of the new TagKey's parent.
@@ -378,7 +377,7 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_keys.ListTagKeysRequest):
             request = tag_keys.ListTagKeysRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -421,8 +420,7 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.GetTagKeyRequest):
-                The request object.
-                The request message for getting a
+                The request object. The request message for getting a
                 TagKey.
             name (str):
                 Required. A resource name in the format
@@ -457,7 +455,7 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_keys.GetTagKeyRequest):
             request = tag_keys.GetTagKeyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -501,8 +499,7 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.CreateTagKeyRequest):
-                The request object.
-                The request message for creating a
+                The request object. The request message for creating a
                 TagKey.
             tag_key (google.cloud.resourcemanager_v3.types.TagKey):
                 Required. The TagKey to be created. Only fields
@@ -541,7 +538,7 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_keys.CreateTagKeyRequest):
             request = tag_keys.CreateTagKeyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if tag_key is not None:
                 request.tag_key = tag_key
@@ -582,8 +579,7 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.UpdateTagKeyRequest):
-                The request object.
-                The request message for updating a
+                The request object. The request message for updating a
                 TagKey.
             tag_key (google.cloud.resourcemanager_v3.types.TagKey):
                 Required. The new definition of the TagKey. Only the
@@ -633,7 +629,7 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_keys.UpdateTagKeyRequest):
             request = tag_keys.UpdateTagKeyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if tag_key is not None:
                 request.tag_key = tag_key
@@ -684,8 +680,7 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.DeleteTagKeyRequest):
-                The request object.
-                The request message for deleting a
+                The request object. The request message for deleting a
                 TagKey.
             name (str):
                 Required. The resource name of a TagKey to be deleted in
@@ -725,7 +720,7 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
         # there are no flattened fields.
         if not isinstance(request, tag_keys.DeleteTagKeyRequest):
             request = tag_keys.DeleteTagKeyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -778,8 +773,7 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -863,14 +857,14 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.GetIamPolicyRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -912,8 +906,7 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -997,14 +990,14 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.SetIamPolicyRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1047,8 +1040,7 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1086,14 +1078,14 @@ class TagKeysClient(metaclass=TagKeysClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.TestIamPermissionsRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
             if permissions:
                 request.permissions.extend(permissions)

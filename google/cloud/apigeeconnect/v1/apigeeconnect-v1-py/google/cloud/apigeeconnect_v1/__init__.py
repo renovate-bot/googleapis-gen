@@ -21,34 +21,34 @@ from .types.connection import Cluster
 from .types.connection import Connection
 from .types.connection import ListConnectionsRequest
 from .types.connection import ListConnectionsResponse
-from .types.tether import Action
 from .types.tether import EgressRequest
 from .types.tether import EgressResponse
 from .types.tether import Header
 from .types.tether import HttpRequest
 from .types.tether import HttpResponse
 from .types.tether import Payload
-from .types.tether import Scheme
 from .types.tether import StreamInfo
-from .types.tether import TetherEndpoint
 from .types.tether import Url
+from .types.tether import Action
+from .types.tether import Scheme
+from .types.tether import TetherEndpoint
 
 __all__ = (
-    'Action',
+    'ConnectionServiceClient',
+    'TetherClient',
     'Cluster',
     'Connection',
-    'ConnectionServiceClient',
+    'ListConnectionsRequest',
+    'ListConnectionsResponse',
     'EgressRequest',
     'EgressResponse',
     'Header',
     'HttpRequest',
     'HttpResponse',
-    'ListConnectionsRequest',
-    'ListConnectionsResponse',
     'Payload',
-    'Scheme',
     'StreamInfo',
-    'TetherEndpoint',
     'Url',
-'TetherClient',
+    'Action',
+    'Scheme',
+    'TetherEndpoint',
 )

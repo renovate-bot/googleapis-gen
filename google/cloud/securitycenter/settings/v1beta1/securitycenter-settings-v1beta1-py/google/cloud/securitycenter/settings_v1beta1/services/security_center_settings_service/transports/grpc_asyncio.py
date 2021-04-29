@@ -236,9 +236,7 @@ class SecurityCenterSettingsServiceGrpcAsyncIOTransport(SecurityCenterSettingsSe
     def get_service_account(self) -> Callable[
             [securitycenter_settings_service.GetServiceAccountRequest],
             Awaitable[securitycenter_settings_service.ServiceAccount]]:
-        r"""Return a callable for the
-        get service account
-          method over gRPC.
+        r"""Return a callable for the get service account method over gRPC.
 
         Retrieves the organizations service account, if it
         exists, otherwise it creates the organization service
@@ -276,9 +274,7 @@ class SecurityCenterSettingsServiceGrpcAsyncIOTransport(SecurityCenterSettingsSe
     def get_settings(self) -> Callable[
             [securitycenter_settings_service.GetSettingsRequest],
             Awaitable[settings.Settings]]:
-        r"""Return a callable for the
-        get settings
-          method over gRPC.
+        r"""Return a callable for the get settings method over gRPC.
 
         Gets the Settings.
 
@@ -304,9 +300,7 @@ class SecurityCenterSettingsServiceGrpcAsyncIOTransport(SecurityCenterSettingsSe
     def update_settings(self) -> Callable[
             [securitycenter_settings_service.UpdateSettingsRequest],
             Awaitable[gcss_settings.Settings]]:
-        r"""Return a callable for the
-        update settings
-          method over gRPC.
+        r"""Return a callable for the update settings method over gRPC.
 
         Updates the Settings.
 
@@ -332,9 +326,7 @@ class SecurityCenterSettingsServiceGrpcAsyncIOTransport(SecurityCenterSettingsSe
     def reset_settings(self) -> Callable[
             [securitycenter_settings_service.ResetSettingsRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        reset settings
-          method over gRPC.
+        r"""Return a callable for the reset settings method over gRPC.
 
         Reset the organization, folder or project's settings
         and return the settings of just that resource to the
@@ -370,9 +362,7 @@ class SecurityCenterSettingsServiceGrpcAsyncIOTransport(SecurityCenterSettingsSe
     def batch_get_settings(self) -> Callable[
             [securitycenter_settings_service.BatchGetSettingsRequest],
             Awaitable[securitycenter_settings_service.BatchGetSettingsResponse]]:
-        r"""Return a callable for the
-        batch get settings
-          method over gRPC.
+        r"""Return a callable for the batch get settings method over gRPC.
 
         Gets a list of settings.
 
@@ -398,9 +388,7 @@ class SecurityCenterSettingsServiceGrpcAsyncIOTransport(SecurityCenterSettingsSe
     def calculate_effective_settings(self) -> Callable[
             [securitycenter_settings_service.CalculateEffectiveSettingsRequest],
             Awaitable[settings.Settings]]:
-        r"""Return a callable for the
-        calculate effective settings
-          method over gRPC.
+        r"""Return a callable for the calculate effective settings method over gRPC.
 
         CalculateEffectiveSettings looks up all of the Security Center
         Settings resources in the GCP resource hierarchy, and calculates
@@ -437,10 +425,8 @@ class SecurityCenterSettingsServiceGrpcAsyncIOTransport(SecurityCenterSettingsSe
     def batch_calculate_effective_settings(self) -> Callable[
             [securitycenter_settings_service.BatchCalculateEffectiveSettingsRequest],
             Awaitable[securitycenter_settings_service.BatchCalculateEffectiveSettingsResponse]]:
-        r"""Return a callable for the
-        batch calculate effective
-        settings
-          method over gRPC.
+        r"""Return a callable for the batch calculate effective
+        settings method over gRPC.
 
         Gets a list of effective settings.
 
@@ -466,9 +452,7 @@ class SecurityCenterSettingsServiceGrpcAsyncIOTransport(SecurityCenterSettingsSe
     def get_component_settings(self) -> Callable[
             [securitycenter_settings_service.GetComponentSettingsRequest],
             Awaitable[component_settings.ComponentSettings]]:
-        r"""Return a callable for the
-        get component settings
-          method over gRPC.
+        r"""Return a callable for the get component settings method over gRPC.
 
         Gets the Component Settings.
 
@@ -494,9 +478,7 @@ class SecurityCenterSettingsServiceGrpcAsyncIOTransport(SecurityCenterSettingsSe
     def update_component_settings(self) -> Callable[
             [securitycenter_settings_service.UpdateComponentSettingsRequest],
             Awaitable[gcss_component_settings.ComponentSettings]]:
-        r"""Return a callable for the
-        update component settings
-          method over gRPC.
+        r"""Return a callable for the update component settings method over gRPC.
 
         Updates the Component Settings.
 
@@ -522,9 +504,7 @@ class SecurityCenterSettingsServiceGrpcAsyncIOTransport(SecurityCenterSettingsSe
     def reset_component_settings(self) -> Callable[
             [securitycenter_settings_service.ResetComponentSettingsRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        reset component settings
-          method over gRPC.
+        r"""Return a callable for the reset component settings method over gRPC.
 
         Reset the organization, folder or project's component
         settings and return the settings to the default.
@@ -555,10 +535,8 @@ class SecurityCenterSettingsServiceGrpcAsyncIOTransport(SecurityCenterSettingsSe
     def calculate_effective_component_settings(self) -> Callable[
             [securitycenter_settings_service.CalculateEffectiveComponentSettingsRequest],
             Awaitable[component_settings.ComponentSettings]]:
-        r"""Return a callable for the
-        calculate effective component
-        settings
-          method over gRPC.
+        r"""Return a callable for the calculate effective component
+        settings method over gRPC.
 
         Gets the Effective Component Settings.
 
@@ -584,9 +562,7 @@ class SecurityCenterSettingsServiceGrpcAsyncIOTransport(SecurityCenterSettingsSe
     def list_detectors(self) -> Callable[
             [securitycenter_settings_service.ListDetectorsRequest],
             Awaitable[securitycenter_settings_service.ListDetectorsResponse]]:
-        r"""Return a callable for the
-        list detectors
-          method over gRPC.
+        r"""Return a callable for the list detectors method over gRPC.
 
         Retrieves an unordered list of available detectors.
 
@@ -612,9 +588,7 @@ class SecurityCenterSettingsServiceGrpcAsyncIOTransport(SecurityCenterSettingsSe
     def list_components(self) -> Callable[
             [securitycenter_settings_service.ListComponentsRequest],
             Awaitable[securitycenter_settings_service.ListComponentsResponse]]:
-        r"""Return a callable for the
-        list components
-          method over gRPC.
+        r"""Return a callable for the list components method over gRPC.
 
         Retrieves an unordered list of available SCC
         components.

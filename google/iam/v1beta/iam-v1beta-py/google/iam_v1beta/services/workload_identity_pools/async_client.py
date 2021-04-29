@@ -164,8 +164,7 @@ class WorkloadIdentityPoolsAsyncClient:
 
         Args:
             request (:class:`google.iam_v1beta.types.ListWorkloadIdentityPoolsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListWorkloadIdentityPools.
             parent (:class:`str`):
                 Required. The parent resource to list
@@ -260,8 +259,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam_v1beta.types.GetWorkloadIdentityPoolRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetWorkloadIdentityPool.
             name (:class:`str`):
                 Required. The name of the pool to
@@ -351,8 +349,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam_v1beta.types.CreateWorkloadIdentityPoolRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateWorkloadIdentityPool.
             parent (:class:`str`):
                 Required. The parent resource to create the pool in. The
@@ -466,8 +463,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam_v1beta.types.UpdateWorkloadIdentityPoolRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateWorkloadIdentityPool.
             workload_identity_pool (:class:`google.iam_v1beta.types.WorkloadIdentityPool`):
                 Required. The pool to update. The ``name`` field is used
@@ -577,8 +573,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam_v1beta.types.DeleteWorkloadIdentityPoolRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteWorkloadIdentityPool.
             name (:class:`str`):
                 Required. The name of the pool to
@@ -673,8 +668,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam_v1beta.types.UndeleteWorkloadIdentityPoolRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UndeleteWorkloadIdentityPool.
             name (:class:`str`):
                 Required. The name of the pool to
@@ -772,8 +766,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam_v1beta.types.ListWorkloadIdentityPoolProvidersRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListWorkloadIdentityPoolProviders.
             parent (:class:`str`):
                 Required. The pool to list providers
@@ -868,8 +861,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam_v1beta.types.GetWorkloadIdentityPoolProviderRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetWorkloadIdentityPoolProvider.
             name (:class:`str`):
                 Required. The name of the provider to
@@ -959,8 +951,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam_v1beta.types.CreateWorkloadIdentityPoolProviderRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateWorkloadIdentityPoolProvider.
             parent (:class:`str`):
                 Required. The pool to create this
@@ -1074,8 +1065,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam_v1beta.types.UpdateWorkloadIdentityPoolProviderRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateWorkloadIdentityPoolProvider.
             workload_identity_pool_provider (:class:`google.iam_v1beta.types.WorkloadIdentityPoolProvider`):
                 Required. The provider to update.
@@ -1181,8 +1171,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam_v1beta.types.DeleteWorkloadIdentityPoolProviderRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteWorkloadIdentityPoolProvider.
             name (:class:`str`):
                 Required. The name of the provider to
@@ -1277,8 +1266,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam_v1beta.types.UndeleteWorkloadIdentityPoolProviderRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UndeleteWorkloadIdentityPoolProvider.
             name (:class:`str`):
                 Required. The name of the provider to

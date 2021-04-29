@@ -239,9 +239,7 @@ class AIStreamsGrpcTransport(AIStreamsTransport):
     def list_clusters(self) -> Callable[
             [aistreams.ListClustersRequest],
             aistreams.ListClustersResponse]:
-        r"""Return a callable for the
-        list clusters
-          method over gRPC.
+        r"""Return a callable for the list clusters method over gRPC.
 
         Lists Clusters in a given project and location.
 
@@ -267,9 +265,7 @@ class AIStreamsGrpcTransport(AIStreamsTransport):
     def get_cluster(self) -> Callable[
             [aistreams.GetClusterRequest],
             aistreams.Cluster]:
-        r"""Return a callable for the
-        get cluster
-          method over gRPC.
+        r"""Return a callable for the get cluster method over gRPC.
 
         Gets details of a single Cluster.
 
@@ -295,9 +291,7 @@ class AIStreamsGrpcTransport(AIStreamsTransport):
     def create_cluster(self) -> Callable[
             [aistreams.CreateClusterRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create cluster
-          method over gRPC.
+        r"""Return a callable for the create cluster method over gRPC.
 
         Creates a new Cluster in a given project and
         location.
@@ -324,9 +318,7 @@ class AIStreamsGrpcTransport(AIStreamsTransport):
     def update_cluster(self) -> Callable[
             [aistreams.UpdateClusterRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update cluster
-          method over gRPC.
+        r"""Return a callable for the update cluster method over gRPC.
 
         Updates the parameters of a single Cluster.
 
@@ -352,9 +344,7 @@ class AIStreamsGrpcTransport(AIStreamsTransport):
     def delete_cluster(self) -> Callable[
             [aistreams.DeleteClusterRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete cluster
-          method over gRPC.
+        r"""Return a callable for the delete cluster method over gRPC.
 
         Deletes a single Cluster.
 
@@ -380,9 +370,7 @@ class AIStreamsGrpcTransport(AIStreamsTransport):
     def list_streams(self) -> Callable[
             [aistreams.ListStreamsRequest],
             aistreams.ListStreamsResponse]:
-        r"""Return a callable for the
-        list streams
-          method over gRPC.
+        r"""Return a callable for the list streams method over gRPC.
 
         Lists Streams in a given project, location and
         cluster.
@@ -409,9 +397,7 @@ class AIStreamsGrpcTransport(AIStreamsTransport):
     def get_stream(self) -> Callable[
             [aistreams.GetStreamRequest],
             aistreams.Stream]:
-        r"""Return a callable for the
-        get stream
-          method over gRPC.
+        r"""Return a callable for the get stream method over gRPC.
 
         Gets details of a single Stream.
 
@@ -437,9 +423,7 @@ class AIStreamsGrpcTransport(AIStreamsTransport):
     def create_stream(self) -> Callable[
             [aistreams.CreateStreamRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create stream
-          method over gRPC.
+        r"""Return a callable for the create stream method over gRPC.
 
         Creates a new Stream in a given project and location.
 
@@ -465,9 +449,7 @@ class AIStreamsGrpcTransport(AIStreamsTransport):
     def update_stream(self) -> Callable[
             [aistreams.UpdateStreamRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update stream
-          method over gRPC.
+        r"""Return a callable for the update stream method over gRPC.
 
         Updates the parameters of a single Stream.
 
@@ -493,9 +475,7 @@ class AIStreamsGrpcTransport(AIStreamsTransport):
     def delete_stream(self) -> Callable[
             [aistreams.DeleteStreamRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete stream
-          method over gRPC.
+        r"""Return a callable for the delete stream method over gRPC.
 
         Deletes a single Stream.
 

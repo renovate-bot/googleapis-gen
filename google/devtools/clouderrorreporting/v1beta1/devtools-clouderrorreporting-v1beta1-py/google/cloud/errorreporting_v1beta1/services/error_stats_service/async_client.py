@@ -159,8 +159,7 @@ class ErrorStatsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.errorreporting_v1beta1.types.ListGroupStatsRequest`):
-                The request object.
-                Specifies a set of `ErrorGroupStats`
+                The request object. Specifies a set of `ErrorGroupStats`
                 to return.
             project_name (:class:`str`):
                 Required. The resource name of the Google Cloud Platform
@@ -269,8 +268,7 @@ class ErrorStatsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.errorreporting_v1beta1.types.ListEventsRequest`):
-                The request object.
-                Specifies a set of error events to
+                The request object. Specifies a set of error events to
                 return.
             project_name (:class:`str`):
                 Required. The resource name of the Google Cloud Platform
@@ -370,8 +368,7 @@ class ErrorStatsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.errorreporting_v1beta1.types.DeleteEventsRequest`):
-                The request object.
-                Deletes all events in the project.
+                The request object. Deletes all events in the project.
             project_name (:class:`str`):
                 Required. The resource name of the Google Cloud Platform
                 project. Written as ``projects/{projectID}``, where

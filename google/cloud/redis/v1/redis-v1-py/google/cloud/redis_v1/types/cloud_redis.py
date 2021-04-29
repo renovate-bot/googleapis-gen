@@ -198,7 +198,7 @@ class Instance(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3
+        number=3,
     )
     location_id = proto.Field(
         proto.STRING,
@@ -245,7 +245,7 @@ class Instance(proto.Message):
     redis_configs = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=16
+        number=16,
     )
     tier = proto.Field(
         proto.ENUM,
@@ -694,7 +694,7 @@ class LocationMetadata(proto.Message):
     available_zones = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=1
+        number=1,
         message='ZoneMetadata',
     )
 

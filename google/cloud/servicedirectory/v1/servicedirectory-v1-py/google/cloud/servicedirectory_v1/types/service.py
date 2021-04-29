@@ -75,7 +75,7 @@ class Service(proto.Message):
     annotations = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     endpoints = proto.RepeatedField(
         proto.MESSAGE,

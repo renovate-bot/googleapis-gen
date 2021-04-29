@@ -227,9 +227,7 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
     def create_conversation(self) -> Callable[
             [gcd_conversation.CreateConversationRequest],
             Awaitable[gcd_conversation.Conversation]]:
-        r"""Return a callable for the
-        create conversation
-          method over gRPC.
+        r"""Return a callable for the create conversation method over gRPC.
 
         Creates a new conversation. Conversations are auto-completed
         after 24 hours.
@@ -275,9 +273,7 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
     def list_conversations(self) -> Callable[
             [conversation.ListConversationsRequest],
             Awaitable[conversation.ListConversationsResponse]]:
-        r"""Return a callable for the
-        list conversations
-          method over gRPC.
+        r"""Return a callable for the list conversations method over gRPC.
 
         Returns the list of all conversations in the
         specified project.
@@ -304,9 +300,7 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
     def get_conversation(self) -> Callable[
             [conversation.GetConversationRequest],
             Awaitable[conversation.Conversation]]:
-        r"""Return a callable for the
-        get conversation
-          method over gRPC.
+        r"""Return a callable for the get conversation method over gRPC.
 
         Retrieves the specific conversation.
 
@@ -332,9 +326,7 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
     def complete_conversation(self) -> Callable[
             [conversation.CompleteConversationRequest],
             Awaitable[conversation.Conversation]]:
-        r"""Return a callable for the
-        complete conversation
-          method over gRPC.
+        r"""Return a callable for the complete conversation method over gRPC.
 
         Completes the specified conversation. Finished
         conversations are purged from the database after 30
@@ -362,9 +354,7 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
     def batch_create_messages(self) -> Callable[
             [conversation.BatchCreateMessagesRequest],
             Awaitable[conversation.BatchCreateMessagesResponse]]:
-        r"""Return a callable for the
-        batch create messages
-          method over gRPC.
+        r"""Return a callable for the batch create messages method over gRPC.
 
         Batch ingests messages to conversation. Customers can
         use this RPC to ingest historical messages to
@@ -392,9 +382,7 @@ class ConversationsGrpcAsyncIOTransport(ConversationsTransport):
     def list_messages(self) -> Callable[
             [conversation.ListMessagesRequest],
             Awaitable[conversation.ListMessagesResponse]]:
-        r"""Return a callable for the
-        list messages
-          method over gRPC.
+        r"""Return a callable for the list messages method over gRPC.
 
         Lists messages that belong to a given conversation. ``messages``
         are ordered by ``create_time`` in descending order. To fetch

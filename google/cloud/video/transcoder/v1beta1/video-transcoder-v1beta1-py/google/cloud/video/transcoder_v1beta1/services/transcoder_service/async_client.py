@@ -167,8 +167,7 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.CreateJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.CreateJob`.
             parent (:class:`str`):
                 Required. The parent location to create and process this
@@ -250,8 +249,7 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.ListJobsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.ListJobs`. The parent location from
                 which to retrieve the collection of jobs.
             parent (:class:`str`):
@@ -338,8 +336,7 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.GetJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.GetJob`.
             name (:class:`str`):
                 Required. The name of the job to retrieve. Format:
@@ -412,8 +409,7 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.DeleteJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.DeleteJob`.
             name (:class:`str`):
                 Required. The name of the job to delete. Format:
@@ -481,8 +477,7 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.CreateJobTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.CreateJobTemplate`.
             parent (:class:`str`):
                 Required. The parent location to create this job
@@ -579,8 +574,7 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.ListJobTemplatesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.ListJobTemplates`.
             parent (:class:`str`):
                 Required. The parent location from which to retrieve the
@@ -667,8 +661,7 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.GetJobTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.GetJobTemplate`.
             name (:class:`str`):
                 Required. The name of the job template to retrieve.
@@ -742,8 +735,7 @@ class TranscoderServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.video.transcoder_v1beta1.types.DeleteJobTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TranscoderService.DeleteJobTemplate`.
             name (:class:`str`):
                 Required. The name of the job template to delete.

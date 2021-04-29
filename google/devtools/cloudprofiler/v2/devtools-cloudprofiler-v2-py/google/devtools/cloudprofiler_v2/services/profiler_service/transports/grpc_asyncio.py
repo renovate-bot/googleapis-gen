@@ -234,9 +234,7 @@ class ProfilerServiceGrpcAsyncIOTransport(ProfilerServiceTransport):
     def create_profile(self) -> Callable[
             [profiler.CreateProfileRequest],
             Awaitable[profiler.Profile]]:
-        r"""Return a callable for the
-        create profile
-          method over gRPC.
+        r"""Return a callable for the create profile method over gRPC.
 
         CreateProfile creates a new profile resource in the
         online mode.
@@ -276,9 +274,7 @@ class ProfilerServiceGrpcAsyncIOTransport(ProfilerServiceTransport):
     def create_offline_profile(self) -> Callable[
             [profiler.CreateOfflineProfileRequest],
             Awaitable[profiler.Profile]]:
-        r"""Return a callable for the
-        create offline profile
-          method over gRPC.
+        r"""Return a callable for the create offline profile method over gRPC.
 
         CreateOfflineProfile creates a new profile resource
         in the offline mode. The client provides the profile to
@@ -307,9 +303,7 @@ class ProfilerServiceGrpcAsyncIOTransport(ProfilerServiceTransport):
     def update_profile(self) -> Callable[
             [profiler.UpdateProfileRequest],
             Awaitable[profiler.Profile]]:
-        r"""Return a callable for the
-        update profile
-          method over gRPC.
+        r"""Return a callable for the update profile method over gRPC.
 
         UpdateProfile updates the profile bytes and labels on
         the profile resource created in the online mode.

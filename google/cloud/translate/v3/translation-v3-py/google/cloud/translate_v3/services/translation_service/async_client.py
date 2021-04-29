@@ -163,8 +163,7 @@ class TranslationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.translate_v3.types.TranslateTextRequest`):
-                The request object.
-                The request message for synchronous
+                The request object. The request message for synchronous
                 translation.
             parent (:class:`str`):
                 Required. Project or location to make a call. Must refer
@@ -327,8 +326,7 @@ class TranslationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.translate_v3.types.DetectLanguageRequest`):
-                The request object.
-                The request message for language
+                The request object. The request message for language
                 detection.
             parent (:class:`str`):
                 Required. Project or location to make a call. Must refer
@@ -455,8 +453,7 @@ class TranslationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.translate_v3.types.GetSupportedLanguagesRequest`):
-                The request object.
-                The request message for discovering
+                The request object. The request message for discovering
                 supported languages.
             parent (:class:`str`):
                 Required. Project or location to make a call. Must refer
@@ -591,8 +588,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.translate_v3.types.BatchTranslateTextRequest`):
-                The request object.
-                The batch translation request.
+                The request object. The batch translation request.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -661,8 +657,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.translate_v3.types.CreateGlossaryRequest`):
-                The request object.
-                Request message for CreateGlossary.
+                The request object. Request message for CreateGlossary.
             parent (:class:`str`):
                 Required. The project name.
                 This corresponds to the ``parent`` field
@@ -753,8 +748,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.translate_v3.types.ListGlossariesRequest`):
-                The request object.
-                Request message for ListGlossaries.
+                The request object. Request message for ListGlossaries.
             parent (:class:`str`):
                 Required. The name of the project
                 from which to list all of the
@@ -848,8 +842,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.translate_v3.types.GetGlossaryRequest`):
-                The request object.
-                Request message for GetGlossary.
+                The request object. Request message for GetGlossary.
             name (:class:`str`):
                 Required. The name of the glossary to
                 retrieve.
@@ -932,8 +925,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.translate_v3.types.DeleteGlossaryRequest`):
-                The request object.
-                Request message for DeleteGlossary.
+                The request object. Request message for DeleteGlossary.
             name (:class:`str`):
                 Required. The name of the glossary to
                 delete.

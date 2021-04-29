@@ -221,9 +221,7 @@ class ErrorStatsServiceGrpcTransport(ErrorStatsServiceTransport):
     def list_group_stats(self) -> Callable[
             [error_stats_service.ListGroupStatsRequest],
             error_stats_service.ListGroupStatsResponse]:
-        r"""Return a callable for the
-        list group stats
-          method over gRPC.
+        r"""Return a callable for the list group stats method over gRPC.
 
         Lists the specified groups.
 
@@ -249,9 +247,7 @@ class ErrorStatsServiceGrpcTransport(ErrorStatsServiceTransport):
     def list_events(self) -> Callable[
             [error_stats_service.ListEventsRequest],
             error_stats_service.ListEventsResponse]:
-        r"""Return a callable for the
-        list events
-          method over gRPC.
+        r"""Return a callable for the list events method over gRPC.
 
         Lists the specified events.
 
@@ -277,9 +273,7 @@ class ErrorStatsServiceGrpcTransport(ErrorStatsServiceTransport):
     def delete_events(self) -> Callable[
             [error_stats_service.DeleteEventsRequest],
             error_stats_service.DeleteEventsResponse]:
-        r"""Return a callable for the
-        delete events
-          method over gRPC.
+        r"""Return a callable for the delete events method over gRPC.
 
         Deletes all error events of a given project.
 

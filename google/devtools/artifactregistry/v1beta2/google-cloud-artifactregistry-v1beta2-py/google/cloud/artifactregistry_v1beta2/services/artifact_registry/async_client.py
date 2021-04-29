@@ -184,8 +184,7 @@ class ArtifactRegistryAsyncClient:
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.ListRepositoriesRequest`):
-                The request object.
-                The request to list repositories.
+                The request object. The request to list repositories.
             parent (:class:`str`):
                 The name of the parent resource whose
                 repositories will be listed.
@@ -277,8 +276,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.GetRepositoryRequest`):
-                The request object.
-                The request to retrieve a
+                The request object. The request to retrieve a
                 repository.
             name (:class:`str`):
                 The name of the repository to
@@ -363,8 +361,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.CreateRepositoryRequest`):
-                The request object.
-                The request to create a new
+                The request object. The request to create a new
                 repository.
             parent (:class:`str`):
                 The name of the parent resource where
@@ -468,8 +465,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.UpdateRepositoryRequest`):
-                The request object.
-                The request to update a repository.
+                The request object. The request to update a repository.
             repository (:class:`google.cloud.artifactregistry_v1beta2.types.Repository`):
                 The repository that replaces the
                 resource on the server.
@@ -556,8 +552,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.DeleteRepositoryRequest`):
-                The request object.
-                The request to delete a repository.
+                The request object. The request to delete a repository.
             name (:class:`str`):
                 The name of the repository to delete.
                 This corresponds to the ``name`` field
@@ -656,8 +651,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.ListPackagesRequest`):
-                The request object.
-                The request to list packages.
+                The request object. The request to list packages.
             parent (:class:`str`):
                 The name of the parent resource whose
                 packages will be listed.
@@ -748,8 +742,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.GetPackageRequest`):
-                The request object.
-                The request to retrieve a package.
+                The request object. The request to retrieve a package.
             name (:class:`str`):
                 The name of the package to retrieve.
                 This corresponds to the ``name`` field
@@ -829,8 +822,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.DeletePackageRequest`):
-                The request object.
-                The request to delete a package.
+                The request object. The request to delete a package.
             name (:class:`str`):
                 The name of the package to delete.
                 This corresponds to the ``name`` field
@@ -929,8 +921,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.ListVersionsRequest`):
-                The request object.
-                The request to list versions.
+                The request object. The request to list versions.
             parent (:class:`str`):
                 The name of the parent resource whose
                 versions will be listed.
@@ -1021,8 +1012,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.GetVersionRequest`):
-                The request object.
-                The request to retrieve a version.
+                The request object. The request to retrieve a version.
             name (:class:`str`):
                 The name of the version to retrieve.
                 This corresponds to the ``name`` field
@@ -1105,8 +1095,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.DeleteVersionRequest`):
-                The request object.
-                The request to delete a version.
+                The request object. The request to delete a version.
             name (:class:`str`):
                 The name of the version to delete.
                 This corresponds to the ``name`` field
@@ -1205,8 +1194,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.ListFilesRequest`):
-                The request object.
-                The request to list files.
+                The request object. The request to list files.
             parent (:class:`str`):
                 The name of the parent resource whose
                 files will be listed.
@@ -1297,8 +1285,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.GetFileRequest`):
-                The request object.
-                The request to retrieve a file.
+                The request object. The request to retrieve a file.
             name (:class:`str`):
                 The name of the file to retrieve.
                 This corresponds to the ``name`` field
@@ -1377,8 +1364,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.ListTagsRequest`):
-                The request object.
-                The request to list tags.
+                The request object. The request to list tags.
             parent (:class:`str`):
                 The name of the parent resource whose
                 tags will be listed.
@@ -1469,8 +1455,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.GetTagRequest`):
-                The request object.
-                The request to retrieve a tag.
+                The request object. The request to retrieve a tag.
             name (:class:`str`):
                 The name of the tag to retrieve.
                 This corresponds to the ``name`` field
@@ -1551,8 +1536,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.CreateTagRequest`):
-                The request object.
-                The request to create a new tag.
+                The request object. The request to create a new tag.
             parent (:class:`str`):
                 The name of the parent resource where
                 the tag will be created.
@@ -1644,8 +1628,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.UpdateTagRequest`):
-                The request object.
-                The request to create or update a
+                The request object. The request to create or update a
                 tag.
             tag (:class:`google.cloud.artifactregistry_v1beta2.types.Tag`):
                 The tag that replaces the resource on
@@ -1731,8 +1714,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.artifactregistry_v1beta2.types.DeleteTagRequest`):
-                The request object.
-                The request to delete a tag.
+                The request object. The request to delete a tag.
             name (:class:`str`):
                 The name of the tag to delete.
                 This corresponds to the ``name`` field
@@ -1800,8 +1782,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1912,8 +1893,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -2031,8 +2011,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

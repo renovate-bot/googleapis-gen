@@ -189,8 +189,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.ListServicesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.ListServices][google.cloud.metastore.v1alpha.DataprocMetastore.ListServices].
             parent (:class:`str`):
                 Required. The relative resource name of the location of
@@ -279,8 +278,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.GetServiceRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.GetService][google.cloud.metastore.v1alpha.DataprocMetastore.GetService].
             name (:class:`str`):
                 Required. The relative resource name of the metastore
@@ -360,8 +358,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.CreateServiceRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.CreateService][google.cloud.metastore.v1alpha.DataprocMetastore.CreateService].
             parent (:class:`str`):
                 Required. The relative resource name of the location in
@@ -478,8 +475,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.UpdateServiceRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.UpdateService][google.cloud.metastore.v1alpha.DataprocMetastore.UpdateService].
             service (:class:`google.cloud.metastore_v1alpha.types.Service`):
                 Required. The metastore service to update. The server
@@ -581,8 +577,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.DeleteServiceRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.DeleteService][google.cloud.metastore.v1alpha.DataprocMetastore.DeleteService].
             name (:class:`str`):
                 Required. The relative resource name of the metastore
@@ -680,8 +675,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.ListMetadataImportsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.ListMetadataImports][google.cloud.metastore.v1alpha.DataprocMetastore.ListMetadataImports].
             parent (:class:`str`):
                 Required. The relative resource name of the service
@@ -770,8 +764,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.GetMetadataImportRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.GetMetadataImport][google.cloud.metastore.v1alpha.DataprocMetastore.GetMetadataImport].
             name (:class:`str`):
                 Required. The relative resource name of the metadata
@@ -851,8 +844,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.CreateMetadataImportRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.CreateMetadataImport][google.cloud.metastore.v1alpha.DataprocMetastore.CreateMetadataImport].
             parent (:class:`str`):
                 Required. The relative resource name of the service in
@@ -970,8 +962,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.UpdateMetadataImportRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.UpdateMetadataImport][google.cloud.metastore.v1alpha.DataprocMetastore.UpdateMetadataImport].
             metadata_import (:class:`google.cloud.metastore_v1alpha.types.MetadataImport`):
                 Required. The metadata import to update. The server only
@@ -1072,8 +1063,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.ExportMetadataRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.ExportMetadata][google.cloud.metastore.v1alpha.DataprocMetastore.ExportMetadata].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1141,8 +1131,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.RestoreServiceRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.Restore][].
             service (:class:`str`):
                 Required. The relative resource name of the metastore
@@ -1241,8 +1230,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.ListBackupsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.ListBackups][google.cloud.metastore.v1alpha.DataprocMetastore.ListBackups].
             parent (:class:`str`):
                 Required. The relative resource name of the service
@@ -1331,8 +1319,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.GetBackupRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.GetBackup][google.cloud.metastore.v1alpha.DataprocMetastore.GetBackup].
             name (:class:`str`):
                 Required. The relative resource name of the backup to
@@ -1409,8 +1396,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.CreateBackupRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.CreateBackup][google.cloud.metastore.v1alpha.DataprocMetastore.CreateBackup].
             parent (:class:`str`):
                 Required. The relative resource name of the service in
@@ -1523,8 +1509,7 @@ class DataprocMetastoreAsyncClient:
 
         Args:
             request (:class:`google.cloud.metastore_v1alpha.types.DeleteBackupRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DataprocMetastore.DeleteBackup][google.cloud.metastore.v1alpha.DataprocMetastore.DeleteBackup].
             name (:class:`str`):
                 Required. The relative resource name of the backup to

@@ -244,9 +244,7 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def export_assets(self) -> Callable[
             [asset_service.ExportAssetsRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        export assets
-          method over gRPC.
+        r"""Return a callable for the export assets method over gRPC.
 
         Exports assets with time and resource types to a given Cloud
         Storage location/BigQuery table. For Cloud Storage location

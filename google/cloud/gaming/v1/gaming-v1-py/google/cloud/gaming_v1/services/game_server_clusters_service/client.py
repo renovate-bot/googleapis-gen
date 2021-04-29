@@ -342,8 +342,7 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1.types.ListGameServerClustersRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.ListGameServerClusters.
             parent (str):
                 Required. The parent resource name.
@@ -382,7 +381,7 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
         # there are no flattened fields.
         if not isinstance(request, game_server_clusters.ListGameServerClustersRequest):
             request = game_server_clusters.ListGameServerClustersRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -431,8 +430,7 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1.types.GetGameServerClusterRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.GetGameServerCluster.
             name (str):
                 Required. The name of the game server cluster to
@@ -467,7 +465,7 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
         # there are no flattened fields.
         if not isinstance(request, game_server_clusters.GetGameServerClusterRequest):
             request = game_server_clusters.GetGameServerClusterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -510,8 +508,7 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1.types.CreateGameServerClusterRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.CreateGameServerCluster.
             parent (str):
                 Required. The parent resource name. Uses the form:
@@ -563,7 +560,7 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
         # there are no flattened fields.
         if not isinstance(request, game_server_clusters.CreateGameServerClusterRequest):
             request = game_server_clusters.CreateGameServerClusterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -615,8 +612,7 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1.types.PreviewCreateGameServerClusterRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.PreviewCreateGameServerCluster.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -673,8 +669,7 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1.types.DeleteGameServerClusterRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.DeleteGameServerCluster.
             name (str):
                 Required. The name of the game server cluster to delete.
@@ -723,7 +718,7 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
         # there are no flattened fields.
         if not isinstance(request, game_server_clusters.DeleteGameServerClusterRequest):
             request = game_server_clusters.DeleteGameServerClusterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -770,8 +765,7 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1.types.PreviewDeleteGameServerClusterRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.PreviewDeleteGameServerCluster.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -829,8 +823,7 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1.types.UpdateGameServerClusterRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.UpdateGameServerCluster.
             game_server_cluster (google.cloud.gaming_v1.types.GameServerCluster):
                 Required. The game server cluster to be updated. Only
@@ -879,7 +872,7 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
         # there are no flattened fields.
         if not isinstance(request, game_server_clusters.UpdateGameServerClusterRequest):
             request = game_server_clusters.UpdateGameServerClusterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if game_server_cluster is not None:
                 request.game_server_cluster = game_server_cluster
@@ -928,8 +921,7 @@ class GameServerClustersServiceClient(metaclass=GameServerClustersServiceClientM
 
         Args:
             request (google.cloud.gaming_v1.types.PreviewUpdateGameServerClusterRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.UpdateGameServerCluster.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

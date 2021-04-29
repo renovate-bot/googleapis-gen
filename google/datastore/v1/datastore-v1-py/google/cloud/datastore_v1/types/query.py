@@ -370,7 +370,7 @@ class GqlQuery(proto.Message):
     named_bindings = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=5
+        number=5,
         message='GqlQueryParameter',
     )
     positional_bindings = proto.RepeatedField(

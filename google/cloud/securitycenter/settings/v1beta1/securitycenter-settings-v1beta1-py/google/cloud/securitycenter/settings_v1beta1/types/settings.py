@@ -126,13 +126,13 @@ class Settings(proto.Message):
     component_settings = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=7
+        number=7,
         message=gcss_component_settings.ComponentSettings,
     )
     detector_group_settings = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=8
+        number=8,
         message=DetectorGroupSettings,
     )
     etag = proto.Field(

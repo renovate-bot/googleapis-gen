@@ -49,15 +49,19 @@ from .types.servicemanager import UndeleteServiceRequest
 from .types.servicemanager import UndeleteServiceResponse
 
 __all__ = (
+    'ServiceManagerClient',
     'ChangeReport',
     'ConfigFile',
     'ConfigRef',
     'ConfigSource',
+    'Diagnostic',
+    'ManagedService',
+    'OperationMetadata',
+    'Rollout',
     'CreateServiceConfigRequest',
     'CreateServiceRequest',
     'CreateServiceRolloutRequest',
     'DeleteServiceRequest',
-    'Diagnostic',
     'DisableServiceRequest',
     'DisableServiceResponse',
     'EnableServiceRequest',
@@ -73,12 +77,8 @@ __all__ = (
     'ListServiceRolloutsResponse',
     'ListServicesRequest',
     'ListServicesResponse',
-    'ManagedService',
-    'OperationMetadata',
-    'Rollout',
     'SubmitConfigSourceRequest',
     'SubmitConfigSourceResponse',
     'UndeleteServiceRequest',
     'UndeleteServiceResponse',
-'ServiceManagerClient',
 )

@@ -367,7 +367,7 @@ class UptimeCheckConfig(proto.Message):
         headers = proto.MapField(
             proto.STRING,
             proto.STRING,
-            number=6
+            number=6,
         )
         content_type = proto.Field(
             proto.ENUM,

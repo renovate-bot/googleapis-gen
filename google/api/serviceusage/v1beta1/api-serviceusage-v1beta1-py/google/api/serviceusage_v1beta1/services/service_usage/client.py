@@ -327,8 +327,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.EnableServiceRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `EnableService` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -414,8 +413,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.DisableServiceRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `DisableService` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -493,8 +491,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.GetServiceRequest):
-                The request object.
-                Request message for the `GetService`
+                The request object. Request message for the `GetService`
                 method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -557,8 +554,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.ListServicesRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `ListServices` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -629,8 +625,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.BatchEnableServicesRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `BatchEnableServices` method.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -713,8 +708,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.ListConsumerQuotaMetricsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListConsumerQuotaMetrics
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -783,8 +777,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.GetConsumerQuotaMetricRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetConsumerQuotaMetric
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -841,8 +834,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.GetConsumerQuotaLimitRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetConsumerQuotaLimit
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -904,8 +896,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.CreateAdminOverrideRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateAdminOverride.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -972,8 +963,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.UpdateAdminOverrideRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateAdminOverride.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1040,8 +1030,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.DeleteAdminOverrideRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteAdminOverride.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1118,8 +1107,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.ListAdminOverridesRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListAdminOverrides
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1190,8 +1178,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.ImportAdminOverridesRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ImportAdminOverrides
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1263,8 +1250,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.CreateConsumerOverrideRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateConsumerOverride.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1331,8 +1317,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.UpdateConsumerOverrideRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateConsumerOverride.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1399,8 +1384,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.DeleteConsumerOverrideRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteConsumerOverride.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1477,8 +1461,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.ListConsumerOverridesRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListConsumerOverrides
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1549,8 +1532,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.ImportConsumerOverridesRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ImportConsumerOverrides
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -1617,8 +1599,7 @@ class ServiceUsageClient(metaclass=ServiceUsageClientMeta):
 
         Args:
             request (google.api.serviceusage_v1beta1.types.GenerateServiceIdentityRequest):
-                The request object.
-                Request message for generating
+                The request object. Request message for generating
                 service identity.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

@@ -145,7 +145,7 @@ class Membership(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2
+        number=2,
     )
     description = proto.Field(
         proto.STRING,

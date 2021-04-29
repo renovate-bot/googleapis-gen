@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.networkconnectivity_v1alpha1.services.hub_service.async_client import HubServiceAsyncClient
 from google.cloud.networkconnectivity_v1alpha1.services.hub_service.client import HubServiceClient
+from google.cloud.networkconnectivity_v1alpha1.services.hub_service.async_client import HubServiceAsyncClient
+
 from google.cloud.networkconnectivity_v1alpha1.types.common import OperationMetadata
 from google.cloud.networkconnectivity_v1alpha1.types.hub import CreateHubRequest
 from google.cloud.networkconnectivity_v1alpha1.types.hub import CreateSpokeRequest
@@ -30,27 +31,27 @@ from google.cloud.networkconnectivity_v1alpha1.types.hub import ListSpokesReques
 from google.cloud.networkconnectivity_v1alpha1.types.hub import ListSpokesResponse
 from google.cloud.networkconnectivity_v1alpha1.types.hub import RouterApplianceInstance
 from google.cloud.networkconnectivity_v1alpha1.types.hub import Spoke
-from google.cloud.networkconnectivity_v1alpha1.types.hub import State
 from google.cloud.networkconnectivity_v1alpha1.types.hub import UpdateHubRequest
 from google.cloud.networkconnectivity_v1alpha1.types.hub import UpdateSpokeRequest
+from google.cloud.networkconnectivity_v1alpha1.types.hub import State
 
-__all__ = ('CreateHubRequest',
+__all__ = ('HubServiceClient',
+    'HubServiceAsyncClient',
+    'OperationMetadata',
+    'CreateHubRequest',
     'CreateSpokeRequest',
     'DeleteHubRequest',
     'DeleteSpokeRequest',
     'GetHubRequest',
     'GetSpokeRequest',
     'Hub',
-    'HubServiceAsyncClient',
-    'HubServiceClient',
     'ListHubsRequest',
     'ListHubsResponse',
     'ListSpokesRequest',
     'ListSpokesResponse',
-    'OperationMetadata',
     'RouterApplianceInstance',
     'Spoke',
-    'State',
     'UpdateHubRequest',
     'UpdateSpokeRequest',
+    'State',
 )

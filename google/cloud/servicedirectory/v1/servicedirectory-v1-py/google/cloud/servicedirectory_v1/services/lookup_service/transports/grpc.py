@@ -220,9 +220,7 @@ class LookupServiceGrpcTransport(LookupServiceTransport):
     def resolve_service(self) -> Callable[
             [lookup_service.ResolveServiceRequest],
             lookup_service.ResolveServiceResponse]:
-        r"""Return a callable for the
-        resolve service
-          method over gRPC.
+        r"""Return a callable for the resolve service method over gRPC.
 
         Returns a [service][google.cloud.servicedirectory.v1.Service]
         and its associated endpoints. Resolving a service is not

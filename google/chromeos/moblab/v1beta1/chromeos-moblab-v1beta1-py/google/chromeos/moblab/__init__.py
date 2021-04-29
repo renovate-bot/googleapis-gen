@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.chromeos.moblab_v1beta1.services.build_service.async_client import BuildServiceAsyncClient
 from google.chromeos.moblab_v1beta1.services.build_service.client import BuildServiceClient
+from google.chromeos.moblab_v1beta1.services.build_service.async_client import BuildServiceAsyncClient
+
 from google.chromeos.moblab_v1beta1.types.build_service import CheckBuildStageStatusRequest
 from google.chromeos.moblab_v1beta1.types.build_service import CheckBuildStageStatusResponse
 from google.chromeos.moblab_v1beta1.types.build_service import ListBuildsRequest
@@ -29,18 +30,18 @@ from google.chromeos.moblab_v1beta1.types.resources import BuildTarget
 from google.chromeos.moblab_v1beta1.types.resources import Milestone
 from google.chromeos.moblab_v1beta1.types.resources import Model
 
-__all__ = ('Build',
-    'BuildArtifact',
+__all__ = ('BuildServiceClient',
     'BuildServiceAsyncClient',
-    'BuildServiceClient',
-    'BuildTarget',
     'CheckBuildStageStatusRequest',
     'CheckBuildStageStatusResponse',
     'ListBuildsRequest',
     'ListBuildsResponse',
-    'Milestone',
-    'Model',
     'StageBuildMetadata',
     'StageBuildRequest',
     'StageBuildResponse',
+    'Build',
+    'BuildArtifact',
+    'BuildTarget',
+    'Milestone',
+    'Model',
 )

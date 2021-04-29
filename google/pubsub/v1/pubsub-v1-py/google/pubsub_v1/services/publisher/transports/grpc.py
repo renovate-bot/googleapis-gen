@@ -224,9 +224,7 @@ class PublisherGrpcTransport(PublisherTransport):
     def create_topic(self) -> Callable[
             [pubsub.Topic],
             pubsub.Topic]:
-        r"""Return a callable for the
-        create topic
-          method over gRPC.
+        r"""Return a callable for the create topic method over gRPC.
 
         Creates the given topic with the given name. See the [resource
         name rules]
@@ -254,9 +252,7 @@ class PublisherGrpcTransport(PublisherTransport):
     def update_topic(self) -> Callable[
             [pubsub.UpdateTopicRequest],
             pubsub.Topic]:
-        r"""Return a callable for the
-        update topic
-          method over gRPC.
+        r"""Return a callable for the update topic method over gRPC.
 
         Updates an existing topic. Note that certain
         properties of a topic are not modifiable.
@@ -283,9 +279,7 @@ class PublisherGrpcTransport(PublisherTransport):
     def publish(self) -> Callable[
             [pubsub.PublishRequest],
             pubsub.PublishResponse]:
-        r"""Return a callable for the
-        publish
-          method over gRPC.
+        r"""Return a callable for the publish method over gRPC.
 
         Adds one or more messages to the topic. Returns ``NOT_FOUND`` if
         the topic does not exist.
@@ -312,9 +306,7 @@ class PublisherGrpcTransport(PublisherTransport):
     def get_topic(self) -> Callable[
             [pubsub.GetTopicRequest],
             pubsub.Topic]:
-        r"""Return a callable for the
-        get topic
-          method over gRPC.
+        r"""Return a callable for the get topic method over gRPC.
 
         Gets the configuration of a topic.
 
@@ -340,9 +332,7 @@ class PublisherGrpcTransport(PublisherTransport):
     def list_topics(self) -> Callable[
             [pubsub.ListTopicsRequest],
             pubsub.ListTopicsResponse]:
-        r"""Return a callable for the
-        list topics
-          method over gRPC.
+        r"""Return a callable for the list topics method over gRPC.
 
         Lists matching topics.
 
@@ -368,9 +358,7 @@ class PublisherGrpcTransport(PublisherTransport):
     def list_topic_subscriptions(self) -> Callable[
             [pubsub.ListTopicSubscriptionsRequest],
             pubsub.ListTopicSubscriptionsResponse]:
-        r"""Return a callable for the
-        list topic subscriptions
-          method over gRPC.
+        r"""Return a callable for the list topic subscriptions method over gRPC.
 
         Lists the names of the attached subscriptions on this
         topic.
@@ -397,9 +385,7 @@ class PublisherGrpcTransport(PublisherTransport):
     def list_topic_snapshots(self) -> Callable[
             [pubsub.ListTopicSnapshotsRequest],
             pubsub.ListTopicSnapshotsResponse]:
-        r"""Return a callable for the
-        list topic snapshots
-          method over gRPC.
+        r"""Return a callable for the list topic snapshots method over gRPC.
 
         Lists the names of the snapshots on this topic. Snapshots are
         used in
@@ -430,9 +416,7 @@ class PublisherGrpcTransport(PublisherTransport):
     def delete_topic(self) -> Callable[
             [pubsub.DeleteTopicRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete topic
-          method over gRPC.
+        r"""Return a callable for the delete topic method over gRPC.
 
         Deletes the topic with the given name. Returns ``NOT_FOUND`` if
         the topic does not exist. After a topic is deleted, a new topic
@@ -463,9 +447,7 @@ class PublisherGrpcTransport(PublisherTransport):
     def detach_subscription(self) -> Callable[
             [pubsub.DetachSubscriptionRequest],
             pubsub.DetachSubscriptionResponse]:
-        r"""Return a callable for the
-        detach subscription
-          method over gRPC.
+        r"""Return a callable for the detach subscription method over gRPC.
 
         Detaches a subscription from this topic. All messages retained
         in the subscription are dropped. Subsequent ``Pull`` and

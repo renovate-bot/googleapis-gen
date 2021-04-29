@@ -227,9 +227,7 @@ class OrganizationsGrpcAsyncIOTransport(OrganizationsTransport):
     def get_organization(self) -> Callable[
             [organizations.GetOrganizationRequest],
             Awaitable[organizations.Organization]]:
-        r"""Return a callable for the
-        get organization
-          method over gRPC.
+        r"""Return a callable for the get organization method over gRPC.
 
         Fetches an organization resource identified by the
         specified resource name.
@@ -256,9 +254,7 @@ class OrganizationsGrpcAsyncIOTransport(OrganizationsTransport):
     def search_organizations(self) -> Callable[
             [organizations.SearchOrganizationsRequest],
             Awaitable[organizations.SearchOrganizationsResponse]]:
-        r"""Return a callable for the
-        search organizations
-          method over gRPC.
+        r"""Return a callable for the search organizations method over gRPC.
 
         Searches organization resources that are visible to the user and
         satisfy the specified filter. This method returns organizations
@@ -291,9 +287,7 @@ class OrganizationsGrpcAsyncIOTransport(OrganizationsTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for an organization resource. The
         policy may be empty if no such policy or resource exists. The
@@ -326,9 +320,7 @@ class OrganizationsGrpcAsyncIOTransport(OrganizationsTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on an organization resource.
         Replaces any existing policy. The ``resource`` field should be
@@ -361,9 +353,7 @@ class OrganizationsGrpcAsyncIOTransport(OrganizationsTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns the permissions that a caller has on the specified
         organization. The ``resource`` field should be the

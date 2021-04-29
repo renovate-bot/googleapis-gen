@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.speech_v1.services.speech.async_client import SpeechAsyncClient
 from google.cloud.speech_v1.services.speech.client import SpeechClient
+from google.cloud.speech_v1.services.speech.async_client import SpeechAsyncClient
+
 from google.cloud.speech_v1.types.cloud_speech import LongRunningRecognizeMetadata
 from google.cloud.speech_v1.types.cloud_speech import LongRunningRecognizeRequest
 from google.cloud.speech_v1.types.cloud_speech import LongRunningRecognizeResponse
@@ -34,7 +35,9 @@ from google.cloud.speech_v1.types.cloud_speech import StreamingRecognizeRequest
 from google.cloud.speech_v1.types.cloud_speech import StreamingRecognizeResponse
 from google.cloud.speech_v1.types.cloud_speech import WordInfo
 
-__all__ = ('LongRunningRecognizeMetadata',
+__all__ = ('SpeechClient',
+    'SpeechAsyncClient',
+    'LongRunningRecognizeMetadata',
     'LongRunningRecognizeRequest',
     'LongRunningRecognizeResponse',
     'RecognitionAudio',
@@ -43,8 +46,6 @@ __all__ = ('LongRunningRecognizeMetadata',
     'RecognizeRequest',
     'RecognizeResponse',
     'SpeakerDiarizationConfig',
-    'SpeechAsyncClient',
-    'SpeechClient',
     'SpeechContext',
     'SpeechRecognitionAlternative',
     'SpeechRecognitionResult',

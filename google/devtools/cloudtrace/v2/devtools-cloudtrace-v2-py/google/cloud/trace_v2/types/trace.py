@@ -153,7 +153,7 @@ class Span(proto.Message):
         attribute_map = proto.MapField(
             proto.STRING,
             proto.MESSAGE,
-            number=1
+            number=1,
             message='AttributeValue',
         )
         dropped_attributes_count = proto.Field(

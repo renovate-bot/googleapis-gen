@@ -169,8 +169,7 @@ class NotificationChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListNotificationChannelDescriptorsRequest`):
-                The request object.
-                The
+                The request object. The
                 `ListNotificationChannelDescriptors` request.
             name (:class:`str`):
                 Required. The REST resource name of the parent from
@@ -276,8 +275,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.GetNotificationChannelDescriptorRequest`):
-                The request object.
-                The
+                The request object. The
                 `GetNotificationChannelDescriptor` response.
             name (:class:`str`):
                 Required. The channel type for which to execute the
@@ -367,8 +365,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListNotificationChannelsRequest`):
-                The request object.
-                The `ListNotificationChannels`
+                The request object. The `ListNotificationChannels`
                 request.
             name (:class:`str`):
                 Required. The project on which to execute the request.
@@ -478,8 +475,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.GetNotificationChannelRequest`):
-                The request object.
-                The `GetNotificationChannel`
+                The request object. The `GetNotificationChannel`
                 request.
             name (:class:`str`):
                 Required. The channel for which to execute the request.
@@ -573,8 +569,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.CreateNotificationChannelRequest`):
-                The request object.
-                The `CreateNotificationChannel`
+                The request object. The `CreateNotificationChannel`
                 request.
             name (:class:`str`):
                 Required. The project on which to execute the request.
@@ -676,8 +671,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.UpdateNotificationChannelRequest`):
-                The request object.
-                The `UpdateNotificationChannel`
+                The request object. The `UpdateNotificationChannel`
                 request.
             update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
                 The fields to update.
@@ -768,8 +762,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.DeleteNotificationChannelRequest`):
-                The request object.
-                The `DeleteNotificationChannel`
+                The request object. The `DeleteNotificationChannel`
                 request.
             name (:class:`str`):
                 Required. The channel for which to execute the request.
@@ -863,8 +856,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.SendNotificationChannelVerificationCodeRequest`):
-                The request object.
-                The
+                The request object. The
                 `SendNotificationChannelVerificationCode` request.
             name (:class:`str`):
                 Required. The notification channel to
@@ -957,8 +949,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.GetNotificationChannelVerificationCodeRequest`):
-                The request object.
-                The
+                The request object. The
                 `GetNotificationChannelVerificationCode` request.
             name (:class:`str`):
                 Required. The notification channel
@@ -1045,8 +1036,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.VerifyNotificationChannelRequest`):
-                The request object.
-                The `VerifyNotificationChannel`
+                The request object. The `VerifyNotificationChannel`
                 request.
             name (:class:`str`):
                 Required. The notification channel to

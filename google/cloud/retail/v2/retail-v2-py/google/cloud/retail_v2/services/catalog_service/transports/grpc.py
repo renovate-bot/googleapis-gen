@@ -221,9 +221,7 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
     def list_catalogs(self) -> Callable[
             [catalog_service.ListCatalogsRequest],
             catalog_service.ListCatalogsResponse]:
-        r"""Return a callable for the
-        list catalogs
-          method over gRPC.
+        r"""Return a callable for the list catalogs method over gRPC.
 
         Lists all the [Catalog][google.cloud.retail.v2.Catalog]s
         associated with the project.
@@ -250,9 +248,7 @@ class CatalogServiceGrpcTransport(CatalogServiceTransport):
     def update_catalog(self) -> Callable[
             [catalog_service.UpdateCatalogRequest],
             gcr_catalog.Catalog]:
-        r"""Return a callable for the
-        update catalog
-          method over gRPC.
+        r"""Return a callable for the update catalog method over gRPC.
 
         Updates the [Catalog][google.cloud.retail.v2.Catalog]s.
 

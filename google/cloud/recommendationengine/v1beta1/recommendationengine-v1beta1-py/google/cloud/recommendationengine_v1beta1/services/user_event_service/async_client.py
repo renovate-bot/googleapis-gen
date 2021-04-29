@@ -166,8 +166,7 @@ class UserEventServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.WriteUserEventRequest`):
-                The request object.
-                Request message for WriteUserEvent
+                The request object. Request message for WriteUserEvent
                 method.
             parent (:class:`str`):
                 Required. The parent eventStore resource name, such as
@@ -266,8 +265,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.CollectUserEventRequest`):
-                The request object.
-                Request message for CollectUserEvent
+                The request object. Request message for CollectUserEvent
                 method.
             parent (:class:`str`):
                 Required. The parent eventStore name, such as
@@ -430,8 +428,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.ListUserEventsRequest`):
-                The request object.
-                Request message for ListUserEvents
+                The request object. Request message for ListUserEvents
                 method.
             parent (:class:`str`):
                 Required. The parent eventStore resource name, such as
@@ -574,8 +571,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.PurgeUserEventsRequest`):
-                The request object.
-                Request message for PurgeUserEvents
+                The request object. Request message for PurgeUserEvents
                 method.
             parent (:class:`str`):
                 Required. The resource name of the event_store under
@@ -716,8 +712,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.ImportUserEventsRequest`):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 ImportUserEvents request.
             parent (:class:`str`):
                 Required.

@@ -184,8 +184,7 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.CreateReservationRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.CreateReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.CreateReservation].
             parent (:class:`str`):
                 Required. Project, location. E.g.,
@@ -281,8 +280,7 @@ class ReservationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.ListReservationsRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1beta1.ReservationService.ListReservations].
             parent (:class:`str`):
                 Required. The parent resource name containing project
@@ -376,8 +374,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.GetReservationRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.GetReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.GetReservation].
             name (:class:`str`):
                 Required. Resource name of the reservation to retrieve.
@@ -462,8 +459,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.DeleteReservationRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.DeleteReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.DeleteReservation].
             name (:class:`str`):
                 Required. Resource name of the reservation to retrieve.
@@ -538,8 +534,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.UpdateReservationRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.UpdateReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.UpdateReservation].
             reservation (:class:`google.cloud.bigquery.reservation_v1beta1.types.Reservation`):
                 Content of the reservation to update.
@@ -622,8 +617,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.CreateCapacityCommitmentRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.CreateCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.CreateCapacityCommitment].
             parent (:class:`str`):
                 Required. Resource name of the parent reservation. E.g.,
@@ -719,8 +713,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.ListCapacityCommitmentsRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.ListCapacityCommitments][google.cloud.bigquery.reservation.v1beta1.ReservationService.ListCapacityCommitments].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -795,8 +788,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.GetCapacityCommitmentRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.GetCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.GetCapacityCommitment].
             name (:class:`str`):
                 Required. Resource name of the capacity commitment to
@@ -893,8 +885,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.DeleteCapacityCommitmentRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.DeleteCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.DeleteCapacityCommitment].
             name (:class:`str`):
                 Required. Resource name of the capacity commitment to
@@ -976,8 +967,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.UpdateCapacityCommitmentRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.UpdateCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.UpdateCapacityCommitment].
             capacity_commitment (:class:`google.cloud.bigquery.reservation_v1beta1.types.CapacityCommitment`):
                 Content of the capacity commitment to
@@ -1082,8 +1072,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.SplitCapacityCommitmentRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.SplitCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.SplitCapacityCommitment].
             name (:class:`str`):
                 Required. The resource name e.g.,:
@@ -1177,8 +1166,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.MergeCapacityCommitmentsRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.MergeCapacityCommitments][google.cloud.bigquery.reservation.v1beta1.ReservationService.MergeCapacityCommitments].
             parent (:class:`str`):
                 Parent resource that identifies admin project and
@@ -1308,8 +1296,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.CreateAssignmentRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.CreateAssignment][google.cloud.bigquery.reservation.v1beta1.ReservationService.CreateAssignment].
                 Note: "bigquery.reservationAssignments.create"
                 permission is required on the related assignee.
@@ -1416,8 +1403,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.ListAssignmentsRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.ListAssignments][google.cloud.bigquery.reservation.v1beta1.ReservationService.ListAssignments].
             parent (:class:`str`):
                 Required. The parent resource name e.g.:
@@ -1531,8 +1517,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.DeleteAssignmentRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.DeleteAssignment][google.cloud.bigquery.reservation.v1beta1.ReservationService.DeleteAssignment].
                 Note: "bigquery.reservationAssignments.delete"
                 permission is required on the related assignee.
@@ -1632,8 +1617,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.SearchAssignmentsRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.SearchAssignments][google.cloud.bigquery.reservation.v1beta1.ReservationService.SearchAssignments].
                 Note: "bigquery.reservationAssignments.search"
                 permission is required on the related assignee.
@@ -1749,8 +1733,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.MoveAssignmentRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.MoveAssignment][google.cloud.bigquery.reservation.v1beta1.ReservationService.MoveAssignment].
                 **Note**: "bigquery.reservationAssignments.create"
                 permission is required on the destination_id.
@@ -1841,8 +1824,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.GetBiReservationRequest`):
-                The request object.
-                A request to get a singleton BI
+                The request object. A request to get a singleton BI
                 reservation.
             name (:class:`str`):
                 Required. Name of the requested reservation, for
@@ -1931,8 +1913,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.reservation_v1beta1.types.UpdateBiReservationRequest`):
-                The request object.
-                A request to update a BI
+                The request object. A request to update a BI
                 reservation.
             reservation (:class:`google.cloud.bigquery.reservation_v1beta1.types.BiReservation`):
                 A reservation to update.

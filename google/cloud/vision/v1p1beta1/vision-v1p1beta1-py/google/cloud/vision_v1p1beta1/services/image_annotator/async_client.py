@@ -157,8 +157,7 @@ class ImageAnnotatorAsyncClient:
 
         Args:
             request (:class:`google.cloud.vision_v1p1beta1.types.BatchAnnotateImagesRequest`):
-                The request object.
-                Multiple image annotation requests
+                The request object. Multiple image annotation requests
                 are batched into a single service call.
             requests (:class:`Sequence[google.cloud.vision_v1p1beta1.types.AnnotateImageRequest]`):
                 Required. Individual image annotation

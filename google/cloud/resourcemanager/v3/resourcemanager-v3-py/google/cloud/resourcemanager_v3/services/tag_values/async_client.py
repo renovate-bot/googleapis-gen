@@ -161,8 +161,7 @@ class TagValuesAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.ListTagValuesRequest`):
-                The request object.
-                The request message for listing
+                The request object. The request message for listing
                 TagValues for the specified TagKey.
             parent (:class:`str`):
                 Required. Resource name for TagKey, parent of the
@@ -248,8 +247,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.GetTagValueRequest`):
-                The request object.
-                The request message for getting a
+                The request object. The request message for getting a
                 TagValue.
             name (:class:`str`):
                 Required. Resource name for TagValue to be fetched in
@@ -336,8 +334,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.CreateTagValueRequest`):
-                The request object.
-                The request message for creating a
+                The request object. The request message for creating a
                 TagValue.
             tag_value (:class:`google.cloud.resourcemanager_v3.types.TagValue`):
                 Required. The TagValue to be created. Only fields
@@ -417,8 +414,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.UpdateTagValueRequest`):
-                The request object.
-                The request message for updating a
+                The request object. The request message for updating a
                 TagValue.
             tag_value (:class:`google.cloud.resourcemanager_v3.types.TagValue`):
                 Required. The new definition of the TagValue. Only
@@ -516,8 +512,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.DeleteTagValueRequest`):
-                The request object.
-                The request message for deleting a
+                The request object. The request message for deleting a
                 TagValue.
             name (:class:`str`):
                 Required. Resource name for TagValue
@@ -610,8 +605,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -751,8 +745,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -887,8 +880,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the

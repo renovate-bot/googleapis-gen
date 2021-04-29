@@ -1148,7 +1148,9 @@ def test_migration_service_base_transport_with_credentials_file():
         )
         load_creds.assert_called_once_with("credentials.json",
             scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+),
             quota_project_id="octopus",
         )
 
@@ -1190,7 +1192,6 @@ def test_migration_service_auth_adc():
             default_scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
 ),
-
             quota_project_id=None,
         )
 
@@ -1271,11 +1272,13 @@ def test_migration_service_transport_create_channel(transport_class, grpc_helper
         )
 
         create_channel.assert_called_with(
-            "aiplatform.googleapis.com",
+            "aiplatform.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            default_scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+),
             scopes=["1", "2"],
             default_host="aiplatform.googleapis.com",
             ssl_credentials=None,
@@ -1309,7 +1312,9 @@ def test_migration_service_transport_create_channel_old_api_core(transport_class
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
+            scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+),
             ssl_credentials=None,
             options=[
                 ("grpc.max_send_message_length", -1),
@@ -1581,16 +1586,18 @@ def test_parse_annotated_dataset_path():
 
 def test_dataset_path():
     project = "cuttlefish"
-    dataset = "mussel"
-    expected = "projects/{project}/datasets/{dataset}".format(project=project, dataset=dataset, )
-    actual = MigrationServiceClient.dataset_path(project, dataset)
+    location = "mussel"
+    dataset = "winkle"
+    expected = "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
+    actual = MigrationServiceClient.dataset_path(project, location, dataset)
     assert expected == actual
 
 
 def test_parse_dataset_path():
     expected = {
-        "project": "winkle",
-        "dataset": "nautilus",
+        "project": "nautilus",
+        "location": "scallop",
+        "dataset": "abalone",
     }
     path = MigrationServiceClient.dataset_path(**expected)
 
@@ -1599,18 +1606,16 @@ def test_parse_dataset_path():
     assert expected == actual
 
 def test_dataset_path():
-    project = "scallop"
-    location = "abalone"
-    dataset = "squid"
-    expected = "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
-    actual = MigrationServiceClient.dataset_path(project, location, dataset)
+    project = "squid"
+    dataset = "clam"
+    expected = "projects/{project}/datasets/{dataset}".format(project=project, dataset=dataset, )
+    actual = MigrationServiceClient.dataset_path(project, dataset)
     assert expected == actual
 
 
 def test_parse_dataset_path():
     expected = {
-        "project": "clam",
-        "location": "whelk",
+        "project": "whelk",
         "dataset": "octopus",
     }
     path = MigrationServiceClient.dataset_path(**expected)

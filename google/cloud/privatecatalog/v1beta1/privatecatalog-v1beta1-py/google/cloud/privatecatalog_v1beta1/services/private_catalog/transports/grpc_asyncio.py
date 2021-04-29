@@ -246,9 +246,7 @@ class PrivateCatalogGrpcAsyncIOTransport(PrivateCatalogTransport):
     def search_catalogs(self) -> Callable[
             [private_catalog.SearchCatalogsRequest],
             Awaitable[private_catalog.SearchCatalogsResponse]]:
-        r"""Return a callable for the
-        search catalogs
-          method over gRPC.
+        r"""Return a callable for the search catalogs method over gRPC.
 
         Search [Catalog][google.cloud.privatecatalog.v1beta1.Catalog]
         resources that consumers have access to, within the scope of the
@@ -276,9 +274,7 @@ class PrivateCatalogGrpcAsyncIOTransport(PrivateCatalogTransport):
     def search_products(self) -> Callable[
             [private_catalog.SearchProductsRequest],
             Awaitable[private_catalog.SearchProductsResponse]]:
-        r"""Return a callable for the
-        search products
-          method over gRPC.
+        r"""Return a callable for the search products method over gRPC.
 
         Search [Product][google.cloud.privatecatalog.v1beta1.Product]
         resources that consumers have access to, within the scope of the
@@ -306,9 +302,7 @@ class PrivateCatalogGrpcAsyncIOTransport(PrivateCatalogTransport):
     def search_versions(self) -> Callable[
             [private_catalog.SearchVersionsRequest],
             Awaitable[private_catalog.SearchVersionsResponse]]:
-        r"""Return a callable for the
-        search versions
-          method over gRPC.
+        r"""Return a callable for the search versions method over gRPC.
 
         Search [Version][google.cloud.privatecatalog.v1beta1.Version]
         resources that consumers have access to, within the scope of the

@@ -82,7 +82,7 @@ class Cluster(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     certificate = proto.Field(
         proto.STRING,
@@ -348,7 +348,7 @@ class Stream(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
 
 

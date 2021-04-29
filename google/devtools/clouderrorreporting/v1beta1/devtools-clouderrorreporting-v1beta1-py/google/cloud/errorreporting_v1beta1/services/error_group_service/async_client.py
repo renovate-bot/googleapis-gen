@@ -155,8 +155,7 @@ class ErrorGroupServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.errorreporting_v1beta1.types.GetGroupRequest`):
-                The request object.
-                A request to return an individual
+                The request object. A request to return an individual
                 group.
             group_name (:class:`str`):
                 Required. The group resource name. Written as
@@ -236,8 +235,7 @@ class ErrorGroupServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.errorreporting_v1beta1.types.UpdateGroupRequest`):
-                The request object.
-                A request to replace the existing
+                The request object. A request to replace the existing
                 data for the given group.
             group (:class:`google.cloud.errorreporting_v1beta1.types.ErrorGroup`):
                 Required. The group which replaces

@@ -244,9 +244,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def list_clusters(self) -> Callable[
             [aistreams.ListClustersRequest],
             Awaitable[aistreams.ListClustersResponse]]:
-        r"""Return a callable for the
-        list clusters
-          method over gRPC.
+        r"""Return a callable for the list clusters method over gRPC.
 
         Lists Clusters in a given project and location.
 
@@ -272,9 +270,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def get_cluster(self) -> Callable[
             [aistreams.GetClusterRequest],
             Awaitable[aistreams.Cluster]]:
-        r"""Return a callable for the
-        get cluster
-          method over gRPC.
+        r"""Return a callable for the get cluster method over gRPC.
 
         Gets details of a single Cluster.
 
@@ -300,9 +296,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def create_cluster(self) -> Callable[
             [aistreams.CreateClusterRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create cluster
-          method over gRPC.
+        r"""Return a callable for the create cluster method over gRPC.
 
         Creates a new Cluster in a given project and
         location.
@@ -329,9 +323,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def update_cluster(self) -> Callable[
             [aistreams.UpdateClusterRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update cluster
-          method over gRPC.
+        r"""Return a callable for the update cluster method over gRPC.
 
         Updates the parameters of a single Cluster.
 
@@ -357,9 +349,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def delete_cluster(self) -> Callable[
             [aistreams.DeleteClusterRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete cluster
-          method over gRPC.
+        r"""Return a callable for the delete cluster method over gRPC.
 
         Deletes a single Cluster.
 
@@ -385,9 +375,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def list_streams(self) -> Callable[
             [aistreams.ListStreamsRequest],
             Awaitable[aistreams.ListStreamsResponse]]:
-        r"""Return a callable for the
-        list streams
-          method over gRPC.
+        r"""Return a callable for the list streams method over gRPC.
 
         Lists Streams in a given project, location and
         cluster.
@@ -414,9 +402,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def get_stream(self) -> Callable[
             [aistreams.GetStreamRequest],
             Awaitable[aistreams.Stream]]:
-        r"""Return a callable for the
-        get stream
-          method over gRPC.
+        r"""Return a callable for the get stream method over gRPC.
 
         Gets details of a single Stream.
 
@@ -442,9 +428,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def create_stream(self) -> Callable[
             [aistreams.CreateStreamRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create stream
-          method over gRPC.
+        r"""Return a callable for the create stream method over gRPC.
 
         Creates a new Stream in a given project and location.
 
@@ -470,9 +454,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def update_stream(self) -> Callable[
             [aistreams.UpdateStreamRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update stream
-          method over gRPC.
+        r"""Return a callable for the update stream method over gRPC.
 
         Updates the parameters of a single Stream.
 
@@ -498,9 +480,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def delete_stream(self) -> Callable[
             [aistreams.DeleteStreamRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete stream
-          method over gRPC.
+        r"""Return a callable for the delete stream method over gRPC.
 
         Deletes a single Stream.
 

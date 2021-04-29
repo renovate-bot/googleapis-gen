@@ -177,13 +177,13 @@ class PredictRequest(proto.Message):
     params = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=7
+        number=7,
         message=struct.Value,
     )
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=8
+        number=8,
     )
 
 
@@ -234,7 +234,7 @@ class PredictResponse(proto.Message):
         metadata = proto.MapField(
             proto.STRING,
             proto.MESSAGE,
-            number=2
+            number=2,
             message=struct.Value,
         )
 

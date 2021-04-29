@@ -166,8 +166,7 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.CreateDeviceRegistryRequest`):
-                The request object.
-                Request for `CreateDeviceRegistry`.
+                The request object. Request for `CreateDeviceRegistry`.
             parent (:class:`str`):
                 Required. The project and cloud region where this device
                 registry must be created. For example,
@@ -251,8 +250,7 @@ class DeviceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.iot_v1.types.GetDeviceRegistryRequest`):
-                The request object.
-                Request for `GetDeviceRegistry`.
+                The request object. Request for `GetDeviceRegistry`.
             name (:class:`str`):
                 Required. The name of the device registry. For example,
                 ``projects/example-project/locations/us-central1/registries/my-registry``.
@@ -332,8 +330,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.iot_v1.types.UpdateDeviceRegistryRequest`):
-                The request object.
-                Request for `UpdateDeviceRegistry`.
+                The request object. Request for `UpdateDeviceRegistry`.
             device_registry (:class:`google.cloud.iot_v1.types.DeviceRegistry`):
                 Required. The new values for the device registry. The
                 ``id`` field must be empty, and the ``name`` field must
@@ -420,8 +417,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.iot_v1.types.DeleteDeviceRegistryRequest`):
-                The request object.
-                Request for `DeleteDeviceRegistry`.
+                The request object. Request for `DeleteDeviceRegistry`.
             name (:class:`str`):
                 Required. The name of the device registry. For example,
                 ``projects/example-project/locations/us-central1/registries/my-registry``.
@@ -493,8 +489,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.iot_v1.types.ListDeviceRegistriesRequest`):
-                The request object.
-                Request for `ListDeviceRegistries`.
+                The request object. Request for `ListDeviceRegistries`.
             parent (:class:`str`):
                 Required. The project and cloud region path. For
                 example,
@@ -588,8 +583,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.iot_v1.types.CreateDeviceRequest`):
-                The request object.
-                Request for `CreateDevice`.
+                The request object. Request for `CreateDevice`.
             parent (:class:`str`):
                 Required. The name of the device registry where this
                 device should be created. For example,
@@ -673,8 +667,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.iot_v1.types.GetDeviceRequest`):
-                The request object.
-                Request for `GetDevice`.
+                The request object. Request for `GetDevice`.
             name (:class:`str`):
                 Required. The name of the device. For example,
                 ``projects/p0/locations/us-central1/registries/registry0/devices/device0``
@@ -756,8 +749,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.iot_v1.types.UpdateDeviceRequest`):
-                The request object.
-                Request for `UpdateDevice`.
+                The request object. Request for `UpdateDevice`.
             device (:class:`google.cloud.iot_v1.types.Device`):
                 Required. The new values for the device. The ``id`` and
                 ``num_id`` fields must be empty, and the field ``name``
@@ -844,8 +836,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.iot_v1.types.DeleteDeviceRequest`):
-                The request object.
-                Request for `DeleteDevice`.
+                The request object. Request for `DeleteDevice`.
             name (:class:`str`):
                 Required. The name of the device. For example,
                 ``projects/p0/locations/us-central1/registries/registry0/devices/device0``
@@ -919,8 +910,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.iot_v1.types.ListDevicesRequest`):
-                The request object.
-                Request for `ListDevices`.
+                The request object. Request for `ListDevices`.
             parent (:class:`str`):
                 Required. The device registry path. Required. For
                 example,
@@ -1016,8 +1006,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.iot_v1.types.ModifyCloudToDeviceConfigRequest`):
-                The request object.
-                Request for
+                The request object. Request for
                 `ModifyCloudToDeviceConfig`.
             name (:class:`str`):
                 Required. The name of the device. For example,
@@ -1112,8 +1101,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.iot_v1.types.ListDeviceConfigVersionsRequest`):
-                The request object.
-                Request for
+                The request object. Request for
                 `ListDeviceConfigVersions`.
             name (:class:`str`):
                 Required. The name of the device. For example,
@@ -1196,8 +1184,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.iot_v1.types.ListDeviceStatesRequest`):
-                The request object.
-                Request for `ListDeviceStates`.
+                The request object. Request for `ListDeviceStates`.
             name (:class:`str`):
                 Required. The name of the device. For example,
                 ``projects/p0/locations/us-central1/registries/registry0/devices/device0``
@@ -1279,8 +1266,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1412,8 +1398,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1546,8 +1531,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1649,8 +1633,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.iot_v1.types.SendCommandToDeviceRequest`):
-                The request object.
-                Request for `SendCommandToDevice`.
+                The request object. Request for `SendCommandToDevice`.
             name (:class:`str`):
                 Required. The name of the device. For example,
                 ``projects/p0/locations/us-central1/registries/registry0/devices/device0``
@@ -1760,8 +1743,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.iot_v1.types.BindDeviceToGatewayRequest`):
-                The request object.
-                Request for `BindDeviceToGateway`.
+                The request object. Request for `BindDeviceToGateway`.
             parent (:class:`str`):
                 Required. The name of the registry. For example,
                 ``projects/example-project/locations/us-central1/registries/my-registry``.
@@ -1855,8 +1837,7 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.iot_v1.types.UnbindDeviceFromGatewayRequest`):
-                The request object.
-                Request for
+                The request object. Request for
                 `UnbindDeviceFromGateway`.
             parent (:class:`str`):
                 Required. The name of the registry. For example,

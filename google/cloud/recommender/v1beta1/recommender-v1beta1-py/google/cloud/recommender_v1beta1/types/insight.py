@@ -163,7 +163,7 @@ class InsightStateInfo(proto.Message):
     state_metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2
+        number=2,
     )
 
 

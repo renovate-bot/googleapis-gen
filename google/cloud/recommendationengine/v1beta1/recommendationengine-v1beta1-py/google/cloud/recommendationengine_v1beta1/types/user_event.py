@@ -416,12 +416,12 @@ class PurchaseTransaction(proto.Message):
     taxes = proto.MapField(
         proto.STRING,
         proto.FLOAT,
-        number=3
+        number=3,
     )
     costs = proto.MapField(
         proto.STRING,
         proto.FLOAT,
-        number=4
+        number=4,
     )
     currency_code = proto.Field(
         proto.STRING,

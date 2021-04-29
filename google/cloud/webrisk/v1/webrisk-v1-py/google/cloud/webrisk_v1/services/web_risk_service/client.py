@@ -333,8 +333,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
 
         Args:
             request (google.cloud.webrisk_v1.types.ComputeThreatListDiffRequest):
-                The request object.
-                Describes an API diff request.
+                The request object. Describes an API diff request.
             threat_type (google.cloud.webrisk_v1.types.ThreatType):
                 Required. The threat list to update.
                 Only a single ThreatType should be
@@ -388,7 +387,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, webrisk.ComputeThreatListDiffRequest):
             request = webrisk.ComputeThreatListDiffRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if threat_type is not None:
                 request.threat_type = threat_type
@@ -430,8 +429,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
 
         Args:
             request (google.cloud.webrisk_v1.types.SearchUrisRequest):
-                The request object.
-                Request to check URI entries against
+                The request object. Request to check URI entries against
                 threatLists.
             uri (str):
                 Required. The URI to be checked for
@@ -472,7 +470,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, webrisk.SearchUrisRequest):
             request = webrisk.SearchUrisRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if uri is not None:
                 request.uri = uri
@@ -512,8 +510,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
 
         Args:
             request (google.cloud.webrisk_v1.types.SearchHashesRequest):
-                The request object.
-                Request to return full hashes
+                The request object. Request to return full hashes
                 matched by the provided hash prefixes.
             hash_prefix (bytes):
                 A hash prefix, consisting of the most
@@ -556,7 +553,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, webrisk.SearchHashesRequest):
             request = webrisk.SearchHashesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if hash_prefix is not None:
                 request.hash_prefix = hash_prefix
@@ -598,8 +595,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
 
         Args:
             request (google.cloud.webrisk_v1.types.CreateSubmissionRequest):
-                The request object.
-                Request to send a potentially phishy
+                The request object. Request to send a potentially phishy
                 URI to WebRisk.
             parent (str):
                 Required. The name of the project that is making the
@@ -643,7 +639,7 @@ class WebRiskServiceClient(metaclass=WebRiskServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, webrisk.CreateSubmissionRequest):
             request = webrisk.CreateSubmissionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

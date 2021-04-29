@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.asset_v1p4beta1.services.asset_service.async_client import AssetServiceAsyncClient
 from google.cloud.asset_v1p4beta1.services.asset_service.client import AssetServiceClient
+from google.cloud.asset_v1p4beta1.services.asset_service.async_client import AssetServiceAsyncClient
+
 from google.cloud.asset_v1p4beta1.types.asset_service import AnalyzeIamPolicyRequest
 from google.cloud.asset_v1p4beta1.types.asset_service import AnalyzeIamPolicyResponse
 from google.cloud.asset_v1p4beta1.types.asset_service import ExportIamPolicyAnalysisRequest
@@ -24,10 +25,10 @@ from google.cloud.asset_v1p4beta1.types.asset_service import IamPolicyAnalysisOu
 from google.cloud.asset_v1p4beta1.types.asset_service import IamPolicyAnalysisQuery
 from google.cloud.asset_v1p4beta1.types.assets import IamPolicyAnalysisResult
 
-__all__ = ('AnalyzeIamPolicyRequest',
-    'AnalyzeIamPolicyResponse',
+__all__ = ('AssetServiceClient',
     'AssetServiceAsyncClient',
-    'AssetServiceClient',
+    'AnalyzeIamPolicyRequest',
+    'AnalyzeIamPolicyResponse',
     'ExportIamPolicyAnalysisRequest',
     'ExportIamPolicyAnalysisResponse',
     'IamPolicyAnalysisOutputConfig',

@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.workflows_v1.services.workflows.async_client import WorkflowsAsyncClient
 from google.cloud.workflows_v1.services.workflows.client import WorkflowsClient
+from google.cloud.workflows_v1.services.workflows.async_client import WorkflowsAsyncClient
+
 from google.cloud.workflows_v1.types.workflows import CreateWorkflowRequest
 from google.cloud.workflows_v1.types.workflows import DeleteWorkflowRequest
 from google.cloud.workflows_v1.types.workflows import GetWorkflowRequest
@@ -25,7 +26,9 @@ from google.cloud.workflows_v1.types.workflows import OperationMetadata
 from google.cloud.workflows_v1.types.workflows import UpdateWorkflowRequest
 from google.cloud.workflows_v1.types.workflows import Workflow
 
-__all__ = ('CreateWorkflowRequest',
+__all__ = ('WorkflowsClient',
+    'WorkflowsAsyncClient',
+    'CreateWorkflowRequest',
     'DeleteWorkflowRequest',
     'GetWorkflowRequest',
     'ListWorkflowsRequest',
@@ -33,6 +36,4 @@ __all__ = ('CreateWorkflowRequest',
     'OperationMetadata',
     'UpdateWorkflowRequest',
     'Workflow',
-    'WorkflowsAsyncClient',
-    'WorkflowsClient',
 )

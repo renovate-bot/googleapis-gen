@@ -465,7 +465,7 @@ class CloudSqlSettings(proto.Message):
     user_labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=2
+        number=2,
     )
     tier = proto.Field(
         proto.STRING,
@@ -494,7 +494,7 @@ class CloudSqlSettings(proto.Message):
     database_flags = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=8
+        number=8,
     )
     data_disk_type = proto.Field(
         proto.ENUM,
@@ -740,7 +740,7 @@ class MigrationJob(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     display_name = proto.Field(
         proto.STRING,
@@ -890,7 +890,7 @@ class ConnectionProfile(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     state = proto.Field(
         proto.ENUM,

@@ -25,6 +25,7 @@ from .types.vpc_access import ListConnectorsResponse
 from .types.vpc_access import OperationMetadata
 
 __all__ = (
+    'VpcAccessServiceClient',
     'Connector',
     'CreateConnectorRequest',
     'DeleteConnectorRequest',
@@ -32,5 +33,4 @@ __all__ = (
     'ListConnectorsRequest',
     'ListConnectorsResponse',
     'OperationMetadata',
-'VpcAccessServiceClient',
 )

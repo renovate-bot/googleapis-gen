@@ -242,9 +242,7 @@ class AgentsGrpcTransport(AgentsTransport):
     def list_agents(self) -> Callable[
             [agent.ListAgentsRequest],
             agent.ListAgentsResponse]:
-        r"""Return a callable for the
-        list agents
-          method over gRPC.
+        r"""Return a callable for the list agents method over gRPC.
 
         Returns the list of all agents in the specified
         location.
@@ -271,9 +269,7 @@ class AgentsGrpcTransport(AgentsTransport):
     def get_agent(self) -> Callable[
             [agent.GetAgentRequest],
             agent.Agent]:
-        r"""Return a callable for the
-        get agent
-          method over gRPC.
+        r"""Return a callable for the get agent method over gRPC.
 
         Retrieves the specified agent.
 
@@ -299,9 +295,7 @@ class AgentsGrpcTransport(AgentsTransport):
     def create_agent(self) -> Callable[
             [gcdc_agent.CreateAgentRequest],
             gcdc_agent.Agent]:
-        r"""Return a callable for the
-        create agent
-          method over gRPC.
+        r"""Return a callable for the create agent method over gRPC.
 
         Creates an agent in the specified location.
 
@@ -327,9 +321,7 @@ class AgentsGrpcTransport(AgentsTransport):
     def update_agent(self) -> Callable[
             [gcdc_agent.UpdateAgentRequest],
             gcdc_agent.Agent]:
-        r"""Return a callable for the
-        update agent
-          method over gRPC.
+        r"""Return a callable for the update agent method over gRPC.
 
         Updates the specified agent.
 
@@ -355,9 +347,7 @@ class AgentsGrpcTransport(AgentsTransport):
     def delete_agent(self) -> Callable[
             [agent.DeleteAgentRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete agent
-          method over gRPC.
+        r"""Return a callable for the delete agent method over gRPC.
 
         Deletes the specified agent.
 
@@ -383,9 +373,7 @@ class AgentsGrpcTransport(AgentsTransport):
     def export_agent(self) -> Callable[
             [agent.ExportAgentRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        export agent
-          method over gRPC.
+        r"""Return a callable for the export agent method over gRPC.
 
         Exports the specified agent to a binary file.
 
@@ -411,9 +399,7 @@ class AgentsGrpcTransport(AgentsTransport):
     def restore_agent(self) -> Callable[
             [agent.RestoreAgentRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        restore agent
-          method over gRPC.
+        r"""Return a callable for the restore agent method over gRPC.
 
         Restores the specified agent from a binary file.
         Replaces the current agent with a new one. Note that all
@@ -442,9 +428,7 @@ class AgentsGrpcTransport(AgentsTransport):
     def validate_agent(self) -> Callable[
             [agent.ValidateAgentRequest],
             agent.AgentValidationResult]:
-        r"""Return a callable for the
-        validate agent
-          method over gRPC.
+        r"""Return a callable for the validate agent method over gRPC.
 
         Validates the specified agent and creates or updates
         validation results. The agent in draft version is
@@ -473,9 +457,7 @@ class AgentsGrpcTransport(AgentsTransport):
     def get_agent_validation_result(self) -> Callable[
             [agent.GetAgentValidationResultRequest],
             agent.AgentValidationResult]:
-        r"""Return a callable for the
-        get agent validation result
-          method over gRPC.
+        r"""Return a callable for the get agent validation result method over gRPC.
 
         Gets the latest agent validation result. Agent
         validation is performed when ValidateAgent is called.

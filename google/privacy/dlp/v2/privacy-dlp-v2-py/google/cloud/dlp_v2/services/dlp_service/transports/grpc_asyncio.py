@@ -234,9 +234,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def inspect_content(self) -> Callable[
             [dlp.InspectContentRequest],
             Awaitable[dlp.InspectContentResponse]]:
-        r"""Return a callable for the
-        inspect content
-          method over gRPC.
+        r"""Return a callable for the inspect content method over gRPC.
 
         Finds potentially sensitive info in content.
         This method has limits on input size, processing time,
@@ -271,9 +269,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def redact_image(self) -> Callable[
             [dlp.RedactImageRequest],
             Awaitable[dlp.RedactImageResponse]]:
-        r"""Return a callable for the
-        redact image
-          method over gRPC.
+        r"""Return a callable for the redact image method over gRPC.
 
         Redacts potentially sensitive info from an image.
         This method has limits on input size, processing time,
@@ -308,9 +304,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def deidentify_content(self) -> Callable[
             [dlp.DeidentifyContentRequest],
             Awaitable[dlp.DeidentifyContentResponse]]:
-        r"""Return a callable for the
-        deidentify content
-          method over gRPC.
+        r"""Return a callable for the deidentify content method over gRPC.
 
         De-identifies potentially sensitive info from a
         ContentItem. This method has limits on input size and
@@ -345,9 +339,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def reidentify_content(self) -> Callable[
             [dlp.ReidentifyContentRequest],
             Awaitable[dlp.ReidentifyContentResponse]]:
-        r"""Return a callable for the
-        reidentify content
-          method over gRPC.
+        r"""Return a callable for the reidentify content method over gRPC.
 
         Re-identifies content that has been de-identified. See
         https://cloud.google.com/dlp/docs/pseudonymization#re-identification_in_free_text_code_example
@@ -375,9 +367,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def list_info_types(self) -> Callable[
             [dlp.ListInfoTypesRequest],
             Awaitable[dlp.ListInfoTypesResponse]]:
-        r"""Return a callable for the
-        list info types
-          method over gRPC.
+        r"""Return a callable for the list info types method over gRPC.
 
         Returns a list of the sensitive information types
         that the DLP API supports. See
@@ -406,9 +396,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def create_inspect_template(self) -> Callable[
             [dlp.CreateInspectTemplateRequest],
             Awaitable[dlp.InspectTemplate]]:
-        r"""Return a callable for the
-        create inspect template
-          method over gRPC.
+        r"""Return a callable for the create inspect template method over gRPC.
 
         Creates an InspectTemplate for re-using frequently
         used configuration for inspecting content, images, and
@@ -437,9 +425,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def update_inspect_template(self) -> Callable[
             [dlp.UpdateInspectTemplateRequest],
             Awaitable[dlp.InspectTemplate]]:
-        r"""Return a callable for the
-        update inspect template
-          method over gRPC.
+        r"""Return a callable for the update inspect template method over gRPC.
 
         Updates the InspectTemplate.
         See https://cloud.google.com/dlp/docs/creating-templates
@@ -467,9 +453,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def get_inspect_template(self) -> Callable[
             [dlp.GetInspectTemplateRequest],
             Awaitable[dlp.InspectTemplate]]:
-        r"""Return a callable for the
-        get inspect template
-          method over gRPC.
+        r"""Return a callable for the get inspect template method over gRPC.
 
         Gets an InspectTemplate.
         See https://cloud.google.com/dlp/docs/creating-templates
@@ -497,9 +481,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def list_inspect_templates(self) -> Callable[
             [dlp.ListInspectTemplatesRequest],
             Awaitable[dlp.ListInspectTemplatesResponse]]:
-        r"""Return a callable for the
-        list inspect templates
-          method over gRPC.
+        r"""Return a callable for the list inspect templates method over gRPC.
 
         Lists InspectTemplates.
         See https://cloud.google.com/dlp/docs/creating-templates
@@ -527,9 +509,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def delete_inspect_template(self) -> Callable[
             [dlp.DeleteInspectTemplateRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete inspect template
-          method over gRPC.
+        r"""Return a callable for the delete inspect template method over gRPC.
 
         Deletes an InspectTemplate.
         See https://cloud.google.com/dlp/docs/creating-templates
@@ -557,9 +537,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def create_deidentify_template(self) -> Callable[
             [dlp.CreateDeidentifyTemplateRequest],
             Awaitable[dlp.DeidentifyTemplate]]:
-        r"""Return a callable for the
-        create deidentify template
-          method over gRPC.
+        r"""Return a callable for the create deidentify template method over gRPC.
 
         Creates a DeidentifyTemplate for re-using frequently
         used configuration for de-identifying content, images,
@@ -589,9 +567,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def update_deidentify_template(self) -> Callable[
             [dlp.UpdateDeidentifyTemplateRequest],
             Awaitable[dlp.DeidentifyTemplate]]:
-        r"""Return a callable for the
-        update deidentify template
-          method over gRPC.
+        r"""Return a callable for the update deidentify template method over gRPC.
 
         Updates the DeidentifyTemplate.
         See https://cloud.google.com/dlp/docs/creating-
@@ -619,9 +595,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def get_deidentify_template(self) -> Callable[
             [dlp.GetDeidentifyTemplateRequest],
             Awaitable[dlp.DeidentifyTemplate]]:
-        r"""Return a callable for the
-        get deidentify template
-          method over gRPC.
+        r"""Return a callable for the get deidentify template method over gRPC.
 
         Gets a DeidentifyTemplate.
         See https://cloud.google.com/dlp/docs/creating-
@@ -649,9 +623,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def list_deidentify_templates(self) -> Callable[
             [dlp.ListDeidentifyTemplatesRequest],
             Awaitable[dlp.ListDeidentifyTemplatesResponse]]:
-        r"""Return a callable for the
-        list deidentify templates
-          method over gRPC.
+        r"""Return a callable for the list deidentify templates method over gRPC.
 
         Lists DeidentifyTemplates.
         See https://cloud.google.com/dlp/docs/creating-
@@ -679,9 +651,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def delete_deidentify_template(self) -> Callable[
             [dlp.DeleteDeidentifyTemplateRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete deidentify template
-          method over gRPC.
+        r"""Return a callable for the delete deidentify template method over gRPC.
 
         Deletes a DeidentifyTemplate.
         See https://cloud.google.com/dlp/docs/creating-
@@ -709,9 +679,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def create_job_trigger(self) -> Callable[
             [dlp.CreateJobTriggerRequest],
             Awaitable[dlp.JobTrigger]]:
-        r"""Return a callable for the
-        create job trigger
-          method over gRPC.
+        r"""Return a callable for the create job trigger method over gRPC.
 
         Creates a job trigger to run DLP actions such as
         scanning storage for sensitive information on a set
@@ -741,9 +709,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def update_job_trigger(self) -> Callable[
             [dlp.UpdateJobTriggerRequest],
             Awaitable[dlp.JobTrigger]]:
-        r"""Return a callable for the
-        update job trigger
-          method over gRPC.
+        r"""Return a callable for the update job trigger method over gRPC.
 
         Updates a job trigger.
         See https://cloud.google.com/dlp/docs/creating-job-
@@ -771,9 +737,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def hybrid_inspect_job_trigger(self) -> Callable[
             [dlp.HybridInspectJobTriggerRequest],
             Awaitable[dlp.HybridInspectResponse]]:
-        r"""Return a callable for the
-        hybrid inspect job trigger
-          method over gRPC.
+        r"""Return a callable for the hybrid inspect job trigger method over gRPC.
 
         Inspect hybrid content and store findings to a
         trigger. The inspection will be processed
@@ -806,9 +770,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def get_job_trigger(self) -> Callable[
             [dlp.GetJobTriggerRequest],
             Awaitable[dlp.JobTrigger]]:
-        r"""Return a callable for the
-        get job trigger
-          method over gRPC.
+        r"""Return a callable for the get job trigger method over gRPC.
 
         Gets a job trigger.
         See https://cloud.google.com/dlp/docs/creating-job-
@@ -836,9 +798,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def list_job_triggers(self) -> Callable[
             [dlp.ListJobTriggersRequest],
             Awaitable[dlp.ListJobTriggersResponse]]:
-        r"""Return a callable for the
-        list job triggers
-          method over gRPC.
+        r"""Return a callable for the list job triggers method over gRPC.
 
         Lists job triggers.
         See https://cloud.google.com/dlp/docs/creating-job-
@@ -866,9 +826,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def delete_job_trigger(self) -> Callable[
             [dlp.DeleteJobTriggerRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete job trigger
-          method over gRPC.
+        r"""Return a callable for the delete job trigger method over gRPC.
 
         Deletes a job trigger.
         See https://cloud.google.com/dlp/docs/creating-job-
@@ -896,9 +854,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def activate_job_trigger(self) -> Callable[
             [dlp.ActivateJobTriggerRequest],
             Awaitable[dlp.DlpJob]]:
-        r"""Return a callable for the
-        activate job trigger
-          method over gRPC.
+        r"""Return a callable for the activate job trigger method over gRPC.
 
         Activate a job trigger. Causes the immediate execute
         of a trigger instead of waiting on the trigger event to
@@ -926,9 +882,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def create_dlp_job(self) -> Callable[
             [dlp.CreateDlpJobRequest],
             Awaitable[dlp.DlpJob]]:
-        r"""Return a callable for the
-        create dlp job
-          method over gRPC.
+        r"""Return a callable for the create dlp job method over gRPC.
 
         Creates a new job to inspect storage or calculate
         risk metrics. See
@@ -962,9 +916,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def list_dlp_jobs(self) -> Callable[
             [dlp.ListDlpJobsRequest],
             Awaitable[dlp.ListDlpJobsResponse]]:
-        r"""Return a callable for the
-        list dlp jobs
-          method over gRPC.
+        r"""Return a callable for the list dlp jobs method over gRPC.
 
         Lists DlpJobs that match the specified filter in the
         request. See
@@ -994,9 +946,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def get_dlp_job(self) -> Callable[
             [dlp.GetDlpJobRequest],
             Awaitable[dlp.DlpJob]]:
-        r"""Return a callable for the
-        get dlp job
-          method over gRPC.
+        r"""Return a callable for the get dlp job method over gRPC.
 
         Gets the latest state of a long-running DlpJob.
         See https://cloud.google.com/dlp/docs/inspecting-storage
@@ -1025,9 +975,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def delete_dlp_job(self) -> Callable[
             [dlp.DeleteDlpJobRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete dlp job
-          method over gRPC.
+        r"""Return a callable for the delete dlp job method over gRPC.
 
         Deletes a long-running DlpJob. This method indicates
         that the client is no longer interested in the DlpJob
@@ -1058,9 +1006,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def cancel_dlp_job(self) -> Callable[
             [dlp.CancelDlpJobRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        cancel dlp job
-          method over gRPC.
+        r"""Return a callable for the cancel dlp job method over gRPC.
 
         Starts asynchronous cancellation on a long-running
         DlpJob. The server makes a best effort to cancel the
@@ -1091,9 +1037,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def create_stored_info_type(self) -> Callable[
             [dlp.CreateStoredInfoTypeRequest],
             Awaitable[dlp.StoredInfoType]]:
-        r"""Return a callable for the
-        create stored info type
-          method over gRPC.
+        r"""Return a callable for the create stored info type method over gRPC.
 
         Creates a pre-built stored infoType to be used for
         inspection. See
@@ -1122,9 +1066,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def update_stored_info_type(self) -> Callable[
             [dlp.UpdateStoredInfoTypeRequest],
             Awaitable[dlp.StoredInfoType]]:
-        r"""Return a callable for the
-        update stored info type
-          method over gRPC.
+        r"""Return a callable for the update stored info type method over gRPC.
 
         Updates the stored infoType by creating a new
         version. The existing version will continue to be used
@@ -1154,9 +1096,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def get_stored_info_type(self) -> Callable[
             [dlp.GetStoredInfoTypeRequest],
             Awaitable[dlp.StoredInfoType]]:
-        r"""Return a callable for the
-        get stored info type
-          method over gRPC.
+        r"""Return a callable for the get stored info type method over gRPC.
 
         Gets a stored infoType.
         See https://cloud.google.com/dlp/docs/creating-stored-
@@ -1184,9 +1124,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def list_stored_info_types(self) -> Callable[
             [dlp.ListStoredInfoTypesRequest],
             Awaitable[dlp.ListStoredInfoTypesResponse]]:
-        r"""Return a callable for the
-        list stored info types
-          method over gRPC.
+        r"""Return a callable for the list stored info types method over gRPC.
 
         Lists stored infoTypes.
         See https://cloud.google.com/dlp/docs/creating-stored-
@@ -1214,9 +1152,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def delete_stored_info_type(self) -> Callable[
             [dlp.DeleteStoredInfoTypeRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete stored info type
-          method over gRPC.
+        r"""Return a callable for the delete stored info type method over gRPC.
 
         Deletes a stored infoType.
         See https://cloud.google.com/dlp/docs/creating-stored-
@@ -1244,9 +1180,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def hybrid_inspect_dlp_job(self) -> Callable[
             [dlp.HybridInspectDlpJobRequest],
             Awaitable[dlp.HybridInspectResponse]]:
-        r"""Return a callable for the
-        hybrid inspect dlp job
-          method over gRPC.
+        r"""Return a callable for the hybrid inspect dlp job method over gRPC.
 
         Inspect hybrid content and store findings to a job.
         To review the findings inspect the job. Inspection will
@@ -1278,9 +1212,7 @@ class DlpServiceGrpcAsyncIOTransport(DlpServiceTransport):
     def finish_dlp_job(self) -> Callable[
             [dlp.FinishDlpJobRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        finish dlp job
-          method over gRPC.
+        r"""Return a callable for the finish dlp job method over gRPC.
 
         Finish a running hybrid DlpJob. Triggers the
         finalization steps and running of any enabled actions

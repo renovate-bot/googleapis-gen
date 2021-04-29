@@ -233,9 +233,7 @@ class BinauthzManagementServiceV1Beta1GrpcAsyncIOTransport(BinauthzManagementSer
     def get_policy(self) -> Callable[
             [service.GetPolicyRequest],
             Awaitable[resources.Policy]]:
-        r"""Return a callable for the
-        get policy
-          method over gRPC.
+        r"""Return a callable for the get policy method over gRPC.
 
         A [policy][google.cloud.binaryauthorization.v1beta1.Policy]
         specifies the
@@ -273,9 +271,7 @@ class BinauthzManagementServiceV1Beta1GrpcAsyncIOTransport(BinauthzManagementSer
     def update_policy(self) -> Callable[
             [service.UpdatePolicyRequest],
             Awaitable[resources.Policy]]:
-        r"""Return a callable for the
-        update policy
-          method over gRPC.
+        r"""Return a callable for the update policy method over gRPC.
 
         Creates or updates a project's
         [policy][google.cloud.binaryauthorization.v1beta1.Policy], and
@@ -308,9 +304,7 @@ class BinauthzManagementServiceV1Beta1GrpcAsyncIOTransport(BinauthzManagementSer
     def create_attestor(self) -> Callable[
             [service.CreateAttestorRequest],
             Awaitable[resources.Attestor]]:
-        r"""Return a callable for the
-        create attestor
-          method over gRPC.
+        r"""Return a callable for the create attestor method over gRPC.
 
         Creates an
         [attestor][google.cloud.binaryauthorization.v1beta1.Attestor],
@@ -344,9 +338,7 @@ class BinauthzManagementServiceV1Beta1GrpcAsyncIOTransport(BinauthzManagementSer
     def get_attestor(self) -> Callable[
             [service.GetAttestorRequest],
             Awaitable[resources.Attestor]]:
-        r"""Return a callable for the
-        get attestor
-          method over gRPC.
+        r"""Return a callable for the get attestor method over gRPC.
 
         Gets an
         [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
@@ -376,9 +368,7 @@ class BinauthzManagementServiceV1Beta1GrpcAsyncIOTransport(BinauthzManagementSer
     def update_attestor(self) -> Callable[
             [service.UpdateAttestorRequest],
             Awaitable[resources.Attestor]]:
-        r"""Return a callable for the
-        update attestor
-          method over gRPC.
+        r"""Return a callable for the update attestor method over gRPC.
 
         Updates an
         [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].
@@ -408,9 +398,7 @@ class BinauthzManagementServiceV1Beta1GrpcAsyncIOTransport(BinauthzManagementSer
     def list_attestors(self) -> Callable[
             [service.ListAttestorsRequest],
             Awaitable[service.ListAttestorsResponse]]:
-        r"""Return a callable for the
-        list attestors
-          method over gRPC.
+        r"""Return a callable for the list attestors method over gRPC.
 
         Lists
         [attestors][google.cloud.binaryauthorization.v1beta1.Attestor].
@@ -438,9 +426,7 @@ class BinauthzManagementServiceV1Beta1GrpcAsyncIOTransport(BinauthzManagementSer
     def delete_attestor(self) -> Callable[
             [service.DeleteAttestorRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete attestor
-          method over gRPC.
+        r"""Return a callable for the delete attestor method over gRPC.
 
         Deletes an
         [attestor][google.cloud.binaryauthorization.v1beta1.Attestor].

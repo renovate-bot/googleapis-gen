@@ -16,17 +16,17 @@
 
 from .services.asset_service import AssetServiceClient
 
-from .types.asset_service import ContentType
 from .types.asset_service import ListAssetsRequest
 from .types.asset_service import ListAssetsResponse
+from .types.asset_service import ContentType
 from .types.assets import Asset
 from .types.assets import Resource
 
 __all__ = (
-    'Asset',
-    'ContentType',
+    'AssetServiceClient',
     'ListAssetsRequest',
     'ListAssetsResponse',
+    'ContentType',
+    'Asset',
     'Resource',
-'AssetServiceClient',
 )

@@ -5448,7 +5448,10 @@ def test_device_manager_base_transport_with_credentials_file():
         )
         load_creds.assert_called_once_with("credentials.json",
             scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/cloudiot',            ),
+            default_scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/cloudiot',
+),
             quota_project_id="octopus",
         )
 
@@ -5492,7 +5495,6 @@ def test_device_manager_auth_adc():
             'https://www.googleapis.com/auth/cloud-platform',
             'https://www.googleapis.com/auth/cloudiot',
 ),
-
             quota_project_id=None,
         )
 
@@ -5574,11 +5576,14 @@ def test_device_manager_transport_create_channel(transport_class, grpc_helpers):
         )
 
         create_channel.assert_called_with(
-            "cloudiot.googleapis.com",
+            "cloudiot.googleapis.com:443",
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloudiot',),
+            default_scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/cloudiot',
+),
             scopes=["1", "2"],
             default_host="cloudiot.googleapis.com",
             ssl_credentials=None,
@@ -5612,7 +5617,10 @@ def test_device_manager_transport_create_channel_old_api_core(transport_class, g
             credentials=creds,
             credentials_file=None,
             quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloudiot',),
+            scopes=(
+                'https://www.googleapis.com/auth/cloud-platform',
+                'https://www.googleapis.com/auth/cloudiot',
+),
             ssl_credentials=None,
             options=[
                 ("grpc.max_send_message_length", -1),

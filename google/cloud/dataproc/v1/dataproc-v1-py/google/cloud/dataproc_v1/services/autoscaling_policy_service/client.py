@@ -336,8 +336,7 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
 
         Args:
             request (google.cloud.dataproc_v1.types.CreateAutoscalingPolicyRequest):
-                The request object.
-                A request to create an autoscaling
+                The request object. A request to create an autoscaling
                 policy.
             parent (str):
                 Required. The "resource name" of the region or location,
@@ -390,7 +389,7 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, autoscaling_policies.CreateAutoscalingPolicyRequest):
             request = autoscaling_policies.CreateAutoscalingPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -435,8 +434,7 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
 
         Args:
             request (google.cloud.dataproc_v1.types.UpdateAutoscalingPolicyRequest):
-                The request object.
-                A request to update an autoscaling
+                The request object. A request to update an autoscaling
                 policy.
             policy_ (google.cloud.dataproc_v1.types.AutoscalingPolicy):
                 Required. The updated autoscaling
@@ -471,7 +469,7 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, autoscaling_policies.UpdateAutoscalingPolicyRequest):
             request = autoscaling_policies.UpdateAutoscalingPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if policy_ is not None:
                 request.policy_ = policy_
@@ -511,8 +509,7 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
 
         Args:
             request (google.cloud.dataproc_v1.types.GetAutoscalingPolicyRequest):
-                The request object.
-                A request to fetch an autoscaling
+                The request object. A request to fetch an autoscaling
                 policy.
             name (str):
                 Required. The "resource name" of the autoscaling policy,
@@ -557,7 +554,7 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, autoscaling_policies.GetAutoscalingPolicyRequest):
             request = autoscaling_policies.GetAutoscalingPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -597,8 +594,7 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
 
         Args:
             request (google.cloud.dataproc_v1.types.ListAutoscalingPoliciesRequest):
-                The request object.
-                A request to list autoscaling
+                The request object. A request to list autoscaling
                 policies in a project.
             parent (str):
                 Required. The "resource name" of the region or location,
@@ -646,7 +642,7 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, autoscaling_policies.ListAutoscalingPoliciesRequest):
             request = autoscaling_policies.ListAutoscalingPoliciesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -697,8 +693,7 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
 
         Args:
             request (google.cloud.dataproc_v1.types.DeleteAutoscalingPolicyRequest):
-                The request object.
-                A request to delete an autoscaling
+                The request object. A request to delete an autoscaling
                 policy.
                 Autoscaling policies in use by one or more clusters will
                 not be deleted.
@@ -741,7 +736,7 @@ class AutoscalingPolicyServiceClient(metaclass=AutoscalingPolicyServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, autoscaling_policies.DeleteAutoscalingPolicyRequest):
             request = autoscaling_policies.DeleteAutoscalingPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

@@ -168,7 +168,7 @@ class WriteLogEntriesRequest(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3
+        number=3,
     )
     entries = proto.RepeatedField(
         proto.MESSAGE,
@@ -205,7 +205,7 @@ class WriteLogEntriesPartialErrors(proto.Message):
     log_entry_errors = proto.MapField(
         proto.INT32,
         proto.MESSAGE,
-        number=1
+        number=1,
         message=status.Status,
     )
 

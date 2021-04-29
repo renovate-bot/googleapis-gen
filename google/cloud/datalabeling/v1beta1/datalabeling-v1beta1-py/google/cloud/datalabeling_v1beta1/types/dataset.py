@@ -479,7 +479,7 @@ class LabelStats(proto.Message):
     example_count = proto.MapField(
         proto.STRING,
         proto.INT64,
-        number=1
+        number=1,
     )
 
 

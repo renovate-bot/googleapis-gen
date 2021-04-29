@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.memcache_v1beta2.services.cloud_memcache.async_client import CloudMemcacheAsyncClient
 from google.cloud.memcache_v1beta2.services.cloud_memcache.client import CloudMemcacheClient
+from google.cloud.memcache_v1beta2.services.cloud_memcache.async_client import CloudMemcacheAsyncClient
+
 from google.cloud.memcache_v1beta2.types.cloud_memcache import ApplyParametersRequest
 from google.cloud.memcache_v1beta2.types.cloud_memcache import ApplySoftwareUpdateRequest
 from google.cloud.memcache_v1beta2.types.cloud_memcache import CreateInstanceRequest
@@ -26,16 +27,16 @@ from google.cloud.memcache_v1beta2.types.cloud_memcache import ListInstancesRequ
 from google.cloud.memcache_v1beta2.types.cloud_memcache import ListInstancesResponse
 from google.cloud.memcache_v1beta2.types.cloud_memcache import LocationMetadata
 from google.cloud.memcache_v1beta2.types.cloud_memcache import MemcacheParameters
-from google.cloud.memcache_v1beta2.types.cloud_memcache import MemcacheVersion
 from google.cloud.memcache_v1beta2.types.cloud_memcache import OperationMetadata
 from google.cloud.memcache_v1beta2.types.cloud_memcache import UpdateInstanceRequest
 from google.cloud.memcache_v1beta2.types.cloud_memcache import UpdateParametersRequest
 from google.cloud.memcache_v1beta2.types.cloud_memcache import ZoneMetadata
+from google.cloud.memcache_v1beta2.types.cloud_memcache import MemcacheVersion
 
-__all__ = ('ApplyParametersRequest',
-    'ApplySoftwareUpdateRequest',
+__all__ = ('CloudMemcacheClient',
     'CloudMemcacheAsyncClient',
-    'CloudMemcacheClient',
+    'ApplyParametersRequest',
+    'ApplySoftwareUpdateRequest',
     'CreateInstanceRequest',
     'DeleteInstanceRequest',
     'GetInstanceRequest',
@@ -44,9 +45,9 @@ __all__ = ('ApplyParametersRequest',
     'ListInstancesResponse',
     'LocationMetadata',
     'MemcacheParameters',
-    'MemcacheVersion',
     'OperationMetadata',
     'UpdateInstanceRequest',
     'UpdateParametersRequest',
     'ZoneMetadata',
+    'MemcacheVersion',
 )

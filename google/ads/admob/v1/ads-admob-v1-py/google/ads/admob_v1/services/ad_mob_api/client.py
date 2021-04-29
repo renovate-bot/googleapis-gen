@@ -337,8 +337,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
 
         Args:
             request (google.ads.admob_v1.types.GetPublisherAccountRequest):
-                The request object.
-                Request to retrieve the specified
+                The request object. Request to retrieve the specified
                 publisher account.
             name (str):
                 Resource name of the publisher
@@ -376,7 +375,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
         # there are no flattened fields.
         if not isinstance(request, admob_api.GetPublisherAccountRequest):
             request = admob_api.GetPublisherAccountRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -417,8 +416,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
 
         Args:
             request (google.ads.admob_v1.types.ListPublisherAccountsRequest):
-                The request object.
-                Request to retrieve the AdMob
+                The request object. Request to retrieve the AdMob
                 publisher account accessible with the client credential.
                 Currently all credentials have access to at most 1
                 account.
@@ -481,8 +479,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
 
         Args:
             request (google.ads.admob_v1.types.GenerateNetworkReportRequest):
-                The request object.
-                Request to generate an AdMob Network
+                The request object. Request to generate an AdMob Network
                 report.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -562,8 +559,7 @@ class AdMobApiClient(metaclass=AdMobApiClientMeta):
 
         Args:
             request (google.ads.admob_v1.types.GenerateMediationReportRequest):
-                The request object.
-                Request to generate an AdMob
+                The request object. Request to generate an AdMob
                 Mediation report.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

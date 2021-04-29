@@ -229,9 +229,7 @@ class AdminServiceGrpcAsyncIOTransport(AdminServiceTransport):
     def create_topic(self) -> Callable[
             [admin.CreateTopicRequest],
             Awaitable[common.Topic]]:
-        r"""Return a callable for the
-        create topic
-          method over gRPC.
+        r"""Return a callable for the create topic method over gRPC.
 
         Creates a new topic.
 
@@ -257,9 +255,7 @@ class AdminServiceGrpcAsyncIOTransport(AdminServiceTransport):
     def get_topic(self) -> Callable[
             [admin.GetTopicRequest],
             Awaitable[common.Topic]]:
-        r"""Return a callable for the
-        get topic
-          method over gRPC.
+        r"""Return a callable for the get topic method over gRPC.
 
         Returns the topic configuration.
 
@@ -285,9 +281,7 @@ class AdminServiceGrpcAsyncIOTransport(AdminServiceTransport):
     def get_topic_partitions(self) -> Callable[
             [admin.GetTopicPartitionsRequest],
             Awaitable[admin.TopicPartitions]]:
-        r"""Return a callable for the
-        get topic partitions
-          method over gRPC.
+        r"""Return a callable for the get topic partitions method over gRPC.
 
         Returns the partition information for the requested
         topic.
@@ -314,9 +308,7 @@ class AdminServiceGrpcAsyncIOTransport(AdminServiceTransport):
     def list_topics(self) -> Callable[
             [admin.ListTopicsRequest],
             Awaitable[admin.ListTopicsResponse]]:
-        r"""Return a callable for the
-        list topics
-          method over gRPC.
+        r"""Return a callable for the list topics method over gRPC.
 
         Returns the list of topics for the given project.
 
@@ -342,9 +334,7 @@ class AdminServiceGrpcAsyncIOTransport(AdminServiceTransport):
     def update_topic(self) -> Callable[
             [admin.UpdateTopicRequest],
             Awaitable[common.Topic]]:
-        r"""Return a callable for the
-        update topic
-          method over gRPC.
+        r"""Return a callable for the update topic method over gRPC.
 
         Updates properties of the specified topic.
 
@@ -370,9 +360,7 @@ class AdminServiceGrpcAsyncIOTransport(AdminServiceTransport):
     def delete_topic(self) -> Callable[
             [admin.DeleteTopicRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete topic
-          method over gRPC.
+        r"""Return a callable for the delete topic method over gRPC.
 
         Deletes the specified topic.
 
@@ -398,9 +386,7 @@ class AdminServiceGrpcAsyncIOTransport(AdminServiceTransport):
     def list_topic_subscriptions(self) -> Callable[
             [admin.ListTopicSubscriptionsRequest],
             Awaitable[admin.ListTopicSubscriptionsResponse]]:
-        r"""Return a callable for the
-        list topic subscriptions
-          method over gRPC.
+        r"""Return a callable for the list topic subscriptions method over gRPC.
 
         Lists the subscriptions attached to the specified
         topic.
@@ -427,9 +413,7 @@ class AdminServiceGrpcAsyncIOTransport(AdminServiceTransport):
     def create_subscription(self) -> Callable[
             [admin.CreateSubscriptionRequest],
             Awaitable[common.Subscription]]:
-        r"""Return a callable for the
-        create subscription
-          method over gRPC.
+        r"""Return a callable for the create subscription method over gRPC.
 
         Creates a new subscription.
 
@@ -455,9 +439,7 @@ class AdminServiceGrpcAsyncIOTransport(AdminServiceTransport):
     def get_subscription(self) -> Callable[
             [admin.GetSubscriptionRequest],
             Awaitable[common.Subscription]]:
-        r"""Return a callable for the
-        get subscription
-          method over gRPC.
+        r"""Return a callable for the get subscription method over gRPC.
 
         Returns the subscription configuration.
 
@@ -483,9 +465,7 @@ class AdminServiceGrpcAsyncIOTransport(AdminServiceTransport):
     def list_subscriptions(self) -> Callable[
             [admin.ListSubscriptionsRequest],
             Awaitable[admin.ListSubscriptionsResponse]]:
-        r"""Return a callable for the
-        list subscriptions
-          method over gRPC.
+        r"""Return a callable for the list subscriptions method over gRPC.
 
         Returns the list of subscriptions for the given
         project.
@@ -512,9 +492,7 @@ class AdminServiceGrpcAsyncIOTransport(AdminServiceTransport):
     def update_subscription(self) -> Callable[
             [admin.UpdateSubscriptionRequest],
             Awaitable[common.Subscription]]:
-        r"""Return a callable for the
-        update subscription
-          method over gRPC.
+        r"""Return a callable for the update subscription method over gRPC.
 
         Updates properties of the specified subscription.
 
@@ -540,9 +518,7 @@ class AdminServiceGrpcAsyncIOTransport(AdminServiceTransport):
     def delete_subscription(self) -> Callable[
             [admin.DeleteSubscriptionRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete subscription
-          method over gRPC.
+        r"""Return a callable for the delete subscription method over gRPC.
 
         Deletes the specified subscription.
 

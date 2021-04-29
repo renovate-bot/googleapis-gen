@@ -169,8 +169,7 @@ class SpecialistPoolServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.CreateSpecialistPoolRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SpecialistPoolService.CreateSpecialistPool][google.cloud.aiplatform.v1.SpecialistPoolService.CreateSpecialistPool].
             parent (:class:`str`):
                 Required. The parent Project name for the new
@@ -271,8 +270,7 @@ class SpecialistPoolServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.GetSpecialistPoolRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SpecialistPoolService.GetSpecialistPool][google.cloud.aiplatform.v1.SpecialistPoolService.GetSpecialistPool].
             name (:class:`str`):
                 Required. The name of the SpecialistPool resource. The
@@ -358,8 +356,7 @@ class SpecialistPoolServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.ListSpecialistPoolsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SpecialistPoolService.ListSpecialistPools][google.cloud.aiplatform.v1.SpecialistPoolService.ListSpecialistPools].
             parent (:class:`str`):
                 Required. The name of the SpecialistPool's parent
@@ -448,8 +445,7 @@ class SpecialistPoolServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.DeleteSpecialistPoolRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SpecialistPoolService.DeleteSpecialistPool][google.cloud.aiplatform.v1.SpecialistPoolService.DeleteSpecialistPool].
             name (:class:`str`):
                 Required. The resource name of the SpecialistPool to
@@ -547,8 +543,7 @@ class SpecialistPoolServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.aiplatform_v1.types.UpdateSpecialistPoolRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SpecialistPoolService.UpdateSpecialistPool][google.cloud.aiplatform.v1.SpecialistPoolService.UpdateSpecialistPool].
             specialist_pool (:class:`google.cloud.aiplatform_v1.types.SpecialistPool`):
                 Required. The SpecialistPool which

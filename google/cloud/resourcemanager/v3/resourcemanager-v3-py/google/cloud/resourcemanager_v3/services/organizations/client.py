@@ -337,8 +337,7 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.GetOrganizationRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 `GetOrganization` method. The `name` field is required.
                 `organization_id` is no longer accepted.
             name (str):
@@ -378,7 +377,7 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, organizations.GetOrganizationRequest):
             request = organizations.GetOrganizationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -425,8 +424,7 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.SearchOrganizationsRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 `SearchOrganizations` method.
             query (str):
                 Optional. An optional query string used to filter the
@@ -482,7 +480,7 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, organizations.SearchOrganizationsRequest):
             request = organizations.SearchOrganizationsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if query is not None:
                 request.query = query
@@ -530,8 +528,7 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -615,14 +612,14 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.GetIamPolicyRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -667,8 +664,7 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -752,14 +748,14 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.SetIamPolicyRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -802,8 +798,7 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -841,14 +836,14 @@ class OrganizationsClient(metaclass=OrganizationsClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.TestIamPermissionsRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
             if permissions:
                 request.permissions.extend(permissions)

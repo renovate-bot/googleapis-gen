@@ -78,7 +78,7 @@ class LoggingConfig(proto.Message):
     driver_log_levels = proto.MapField(
         proto.STRING,
         proto.ENUM,
-        number=2
+        number=2,
         enum=Level,
     )
 
@@ -160,7 +160,7 @@ class HadoopJob(proto.Message):
     properties = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=7
+        number=7,
     )
     logging_config = proto.Field(
         proto.MESSAGE,
@@ -239,7 +239,7 @@ class SparkJob(proto.Message):
     properties = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=7
+        number=7,
     )
     logging_config = proto.Field(
         proto.MESSAGE,
@@ -318,7 +318,7 @@ class PySparkJob(proto.Message):
     properties = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=7
+        number=7,
     )
     logging_config = proto.Field(
         proto.MESSAGE,
@@ -404,12 +404,12 @@ class HiveJob(proto.Message):
     script_variables = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     properties = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=5
+        number=5,
     )
     jar_file_uris = proto.RepeatedField(
         proto.STRING,
@@ -458,12 +458,12 @@ class SparkSqlJob(proto.Message):
     script_variables = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3
+        number=3,
     )
     properties = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     jar_file_uris = proto.RepeatedField(
         proto.STRING,
@@ -526,12 +526,12 @@ class PigJob(proto.Message):
     script_variables = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     properties = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=5
+        number=5,
     )
     jar_file_uris = proto.RepeatedField(
         proto.STRING,
@@ -599,7 +599,7 @@ class SparkRJob(proto.Message):
     properties = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=5
+        number=5,
     )
     logging_config = proto.Field(
         proto.MESSAGE,
@@ -668,7 +668,7 @@ class PrestoJob(proto.Message):
     properties = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=6
+        number=6,
     )
     logging_config = proto.Field(
         proto.MESSAGE,
@@ -702,7 +702,7 @@ class JobPlacement(proto.Message):
     cluster_labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3
+        number=3,
     )
 
 
@@ -1002,7 +1002,7 @@ class Job(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=18
+        number=18,
     )
     scheduling = proto.Field(
         proto.MESSAGE,

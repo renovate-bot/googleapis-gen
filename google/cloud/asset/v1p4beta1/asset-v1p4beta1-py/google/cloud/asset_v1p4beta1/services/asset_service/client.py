@@ -326,8 +326,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p4beta1.types.AnalyzeIamPolicyRequest):
-                The request object.
-                A request message for
+                The request object. A request message for
                 [AssetService.AnalyzeIamPolicy][google.cloud.asset.v1p4beta1.AssetService.AnalyzeIamPolicy].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -387,8 +386,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p4beta1.types.ExportIamPolicyAnalysisRequest):
-                The request object.
-                A request message for
+                The request object. A request message for
                 [AssetService.ExportIamPolicyAnalysis][google.cloud.asset.v1p4beta1.AssetService.ExportIamPolicyAnalysis].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.

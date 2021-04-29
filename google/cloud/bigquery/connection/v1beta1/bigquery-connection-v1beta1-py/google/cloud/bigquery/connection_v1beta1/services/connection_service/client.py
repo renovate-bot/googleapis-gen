@@ -339,8 +339,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.connection_v1beta1.types.CreateConnectionRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ConnectionService.CreateConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.CreateConnection].
             parent (str):
                 Required. Parent resource name. Must be in the format
@@ -388,7 +387,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcbc_connection.CreateConnectionRequest):
             request = gcbc_connection.CreateConnectionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -432,8 +431,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.connection_v1beta1.types.GetConnectionRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ConnectionService.GetConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.GetConnection].
             name (str):
                 Required. Name of the requested connection, for example:
@@ -469,7 +467,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, connection.GetConnectionRequest):
             request = connection.GetConnectionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -510,8 +508,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.connection_v1beta1.types.ListConnectionsRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1beta1.ConnectionService.ListConnections].
             parent (str):
                 Required. Parent resource name. Must be in the form:
@@ -553,7 +550,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, connection.ListConnectionsRequest):
             request = connection.ListConnectionsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -599,8 +596,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.connection_v1beta1.types.UpdateConnectionRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ConnectionService.UpdateConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.UpdateConnection].
             name (str):
                 Required. Name of the connection to update, for example:
@@ -650,7 +646,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcbc_connection.UpdateConnectionRequest):
             request = gcbc_connection.UpdateConnectionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -695,8 +691,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.connection_v1beta1.types.UpdateConnectionCredentialRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ConnectionService.UpdateConnectionCredential][google.cloud.bigquery.connection.v1beta1.ConnectionService.UpdateConnectionCredential].
             name (str):
                 Required. Name of the connection, for example:
@@ -732,7 +727,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, connection.UpdateConnectionCredentialRequest):
             request = connection.UpdateConnectionCredentialRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -771,8 +766,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.connection_v1beta1.types.DeleteConnectionRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ConnectionService.DeleteConnectionRequest][].
             name (str):
                 Required. Name of the deleted connection, for example:
@@ -801,7 +795,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, connection.DeleteConnectionRequest):
             request = connection.DeleteConnectionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -840,8 +834,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -925,14 +918,14 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.GetIamPolicyRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -974,8 +967,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1059,14 +1051,14 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.SetIamPolicyRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1112,8 +1104,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1151,14 +1142,14 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.TestIamPermissionsRequest()
-             if resource is not None:
+            if resource is not None:
                 request.resource = resource
             if permissions:
                 request.permissions.extend(permissions)

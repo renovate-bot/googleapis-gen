@@ -369,8 +369,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
 
         Args:
             request (google.cloud.redis_v1beta1.types.ListInstancesRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
             parent (str):
                 Required. The resource name of the instance location
@@ -410,7 +409,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_redis.ListInstancesRequest):
             request = cloud_redis.ListInstancesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -459,8 +458,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
 
         Args:
             request (google.cloud.redis_v1beta1.types.GetInstanceRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [GetInstance][google.cloud.redis.v1beta1.CloudRedis.GetInstance].
             name (str):
                 Required. Redis instance resource name using the form:
@@ -494,7 +492,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_redis.GetInstanceRequest):
             request = cloud_redis.GetInstanceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -549,8 +547,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
 
         Args:
             request (google.cloud.redis_v1beta1.types.CreateInstanceRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [CreateInstance][google.cloud.redis.v1beta1.CloudRedis.CreateInstance].
             parent (str):
                 Required. The resource name of the instance location
@@ -609,7 +606,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_redis.CreateInstanceRequest):
             request = cloud_redis.CreateInstanceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -667,8 +664,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
 
         Args:
             request (google.cloud.redis_v1beta1.types.UpdateInstanceRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [UpdateInstance][google.cloud.redis.v1beta1.CloudRedis.UpdateInstance].
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
                 Required. Mask of fields to update. At least one path
@@ -720,7 +716,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_redis.UpdateInstanceRequest):
             request = cloud_redis.UpdateInstanceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if update_mask is not None:
                 request.update_mask = update_mask
@@ -772,8 +768,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
 
         Args:
             request (google.cloud.redis_v1beta1.types.UpgradeInstanceRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [UpgradeInstance][google.cloud.redis.v1beta1.CloudRedis.UpgradeInstance].
             name (str):
                 Required. Redis instance resource name using the form:
@@ -819,7 +814,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_redis.UpgradeInstanceRequest):
             request = cloud_redis.UpgradeInstanceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -878,8 +873,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
 
         Args:
             request (google.cloud.redis_v1beta1.types.ImportInstanceRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [Import][google.cloud.redis.v1beta1.CloudRedis.ImportInstance].
             name (str):
                 Required. Redis instance resource name using the form:
@@ -925,7 +919,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_redis.ImportInstanceRequest):
             request = cloud_redis.ImportInstanceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -980,8 +974,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
 
         Args:
             request (google.cloud.redis_v1beta1.types.ExportInstanceRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [Export][google.cloud.redis.v1beta1.CloudRedis.ExportInstance].
             name (str):
                 Required. Redis instance resource name using the form:
@@ -1027,7 +1020,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_redis.ExportInstanceRequest):
             request = cloud_redis.ExportInstanceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1080,8 +1073,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
 
         Args:
             request (google.cloud.redis_v1beta1.types.FailoverInstanceRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [Failover][google.cloud.redis.v1beta1.CloudRedis.FailoverInstance].
             name (str):
                 Required. Redis instance resource name using the form:
@@ -1128,7 +1120,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_redis.FailoverInstanceRequest):
             request = cloud_redis.FailoverInstanceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1179,8 +1171,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
 
         Args:
             request (google.cloud.redis_v1beta1.types.DeleteInstanceRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 [DeleteInstance][google.cloud.redis.v1beta1.CloudRedis.DeleteInstance].
             name (str):
                 Required. Redis instance resource name using the form:
@@ -1229,7 +1220,7 @@ class CloudRedisClient(metaclass=CloudRedisClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_redis.DeleteInstanceRequest):
             request = cloud_redis.DeleteInstanceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

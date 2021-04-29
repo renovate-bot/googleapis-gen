@@ -246,9 +246,7 @@ class VpcAccessServiceGrpcAsyncIOTransport(VpcAccessServiceTransport):
     def create_connector(self) -> Callable[
             [vpc_access.CreateConnectorRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create connector
-          method over gRPC.
+        r"""Return a callable for the create connector method over gRPC.
 
         Creates a Serverless VPC Access connector, returns an
         operation.
@@ -275,9 +273,7 @@ class VpcAccessServiceGrpcAsyncIOTransport(VpcAccessServiceTransport):
     def get_connector(self) -> Callable[
             [vpc_access.GetConnectorRequest],
             Awaitable[vpc_access.Connector]]:
-        r"""Return a callable for the
-        get connector
-          method over gRPC.
+        r"""Return a callable for the get connector method over gRPC.
 
         Gets a Serverless VPC Access connector. Returns NOT_FOUND if the
         resource does not exist.
@@ -304,9 +300,7 @@ class VpcAccessServiceGrpcAsyncIOTransport(VpcAccessServiceTransport):
     def list_connectors(self) -> Callable[
             [vpc_access.ListConnectorsRequest],
             Awaitable[vpc_access.ListConnectorsResponse]]:
-        r"""Return a callable for the
-        list connectors
-          method over gRPC.
+        r"""Return a callable for the list connectors method over gRPC.
 
         Lists Serverless VPC Access connectors.
 
@@ -332,9 +326,7 @@ class VpcAccessServiceGrpcAsyncIOTransport(VpcAccessServiceTransport):
     def delete_connector(self) -> Callable[
             [vpc_access.DeleteConnectorRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete connector
-          method over gRPC.
+        r"""Return a callable for the delete connector method over gRPC.
 
         Deletes a Serverless VPC Access connector. Returns NOT_FOUND if
         the resource does not exist.

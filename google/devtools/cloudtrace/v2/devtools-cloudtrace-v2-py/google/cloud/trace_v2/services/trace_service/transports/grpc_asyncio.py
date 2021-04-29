@@ -232,9 +232,7 @@ class TraceServiceGrpcAsyncIOTransport(TraceServiceTransport):
     def batch_write_spans(self) -> Callable[
             [tracing.BatchWriteSpansRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        batch write spans
-          method over gRPC.
+        r"""Return a callable for the batch write spans method over gRPC.
 
         Sends new spans to new or existing traces. You cannot
         update existing spans.
@@ -261,9 +259,7 @@ class TraceServiceGrpcAsyncIOTransport(TraceServiceTransport):
     def create_span(self) -> Callable[
             [trace.Span],
             Awaitable[trace.Span]]:
-        r"""Return a callable for the
-        create span
-          method over gRPC.
+        r"""Return a callable for the create span method over gRPC.
 
         Creates a new span.
 

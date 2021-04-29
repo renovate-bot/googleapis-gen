@@ -225,9 +225,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def create_device_registry(self) -> Callable[
             [device_manager.CreateDeviceRegistryRequest],
             resources.DeviceRegistry]:
-        r"""Return a callable for the
-        create device registry
-          method over gRPC.
+        r"""Return a callable for the create device registry method over gRPC.
 
         Creates a device registry that contains devices.
 
@@ -253,9 +251,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def get_device_registry(self) -> Callable[
             [device_manager.GetDeviceRegistryRequest],
             resources.DeviceRegistry]:
-        r"""Return a callable for the
-        get device registry
-          method over gRPC.
+        r"""Return a callable for the get device registry method over gRPC.
 
         Gets a device registry configuration.
 
@@ -281,9 +277,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def update_device_registry(self) -> Callable[
             [device_manager.UpdateDeviceRegistryRequest],
             resources.DeviceRegistry]:
-        r"""Return a callable for the
-        update device registry
-          method over gRPC.
+        r"""Return a callable for the update device registry method over gRPC.
 
         Updates a device registry configuration.
 
@@ -309,9 +303,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def delete_device_registry(self) -> Callable[
             [device_manager.DeleteDeviceRegistryRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete device registry
-          method over gRPC.
+        r"""Return a callable for the delete device registry method over gRPC.
 
         Deletes a device registry configuration.
 
@@ -337,9 +329,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def list_device_registries(self) -> Callable[
             [device_manager.ListDeviceRegistriesRequest],
             device_manager.ListDeviceRegistriesResponse]:
-        r"""Return a callable for the
-        list device registries
-          method over gRPC.
+        r"""Return a callable for the list device registries method over gRPC.
 
         Lists device registries.
 
@@ -365,9 +355,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def create_device(self) -> Callable[
             [device_manager.CreateDeviceRequest],
             resources.Device]:
-        r"""Return a callable for the
-        create device
-          method over gRPC.
+        r"""Return a callable for the create device method over gRPC.
 
         Creates a device in a device registry.
 
@@ -393,9 +381,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def get_device(self) -> Callable[
             [device_manager.GetDeviceRequest],
             resources.Device]:
-        r"""Return a callable for the
-        get device
-          method over gRPC.
+        r"""Return a callable for the get device method over gRPC.
 
         Gets details about a device.
 
@@ -421,9 +407,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def update_device(self) -> Callable[
             [device_manager.UpdateDeviceRequest],
             resources.Device]:
-        r"""Return a callable for the
-        update device
-          method over gRPC.
+        r"""Return a callable for the update device method over gRPC.
 
         Updates a device.
 
@@ -449,9 +433,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def delete_device(self) -> Callable[
             [device_manager.DeleteDeviceRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete device
-          method over gRPC.
+        r"""Return a callable for the delete device method over gRPC.
 
         Deletes a device.
 
@@ -477,9 +459,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def list_devices(self) -> Callable[
             [device_manager.ListDevicesRequest],
             device_manager.ListDevicesResponse]:
-        r"""Return a callable for the
-        list devices
-          method over gRPC.
+        r"""Return a callable for the list devices method over gRPC.
 
         List devices in a device registry.
 
@@ -505,9 +485,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def modify_cloud_to_device_config(self) -> Callable[
             [device_manager.ModifyCloudToDeviceConfigRequest],
             resources.DeviceConfig]:
-        r"""Return a callable for the
-        modify cloud to device config
-          method over gRPC.
+        r"""Return a callable for the modify cloud to device config method over gRPC.
 
         Modifies the configuration for the device, which is
         eventually sent from the Cloud IoT Core servers. Returns
@@ -535,9 +513,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def list_device_config_versions(self) -> Callable[
             [device_manager.ListDeviceConfigVersionsRequest],
             device_manager.ListDeviceConfigVersionsResponse]:
-        r"""Return a callable for the
-        list device config versions
-          method over gRPC.
+        r"""Return a callable for the list device config versions method over gRPC.
 
         Lists the last few versions of the device
         configuration in descending order (i.e.: newest first).
@@ -564,9 +540,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def list_device_states(self) -> Callable[
             [device_manager.ListDeviceStatesRequest],
             device_manager.ListDeviceStatesResponse]:
-        r"""Return a callable for the
-        list device states
-          method over gRPC.
+        r"""Return a callable for the list device states method over gRPC.
 
         Lists the last few versions of the device state in
         descending order (i.e.: newest first).
@@ -593,9 +567,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on the specified
         resource. Replaces any existing policy.
@@ -622,9 +594,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             gi_policy.Policy]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for a resource.
         Returns an empty policy if the resource exists and does
@@ -652,9 +622,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns permissions that a caller has on the specified resource.
         If the resource does not exist, this will return an empty set of
@@ -682,9 +650,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def send_command_to_device(self) -> Callable[
             [device_manager.SendCommandToDeviceRequest],
             device_manager.SendCommandToDeviceResponse]:
-        r"""Return a callable for the
-        send command to device
-          method over gRPC.
+        r"""Return a callable for the send command to device method over gRPC.
 
         Sends a command to the specified device. In order for a device
         to be able to receive commands, it must:
@@ -726,9 +692,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def bind_device_to_gateway(self) -> Callable[
             [device_manager.BindDeviceToGatewayRequest],
             device_manager.BindDeviceToGatewayResponse]:
-        r"""Return a callable for the
-        bind device to gateway
-          method over gRPC.
+        r"""Return a callable for the bind device to gateway method over gRPC.
 
         Associates the device with the gateway.
 
@@ -754,9 +718,7 @@ class DeviceManagerGrpcTransport(DeviceManagerTransport):
     def unbind_device_from_gateway(self) -> Callable[
             [device_manager.UnbindDeviceFromGatewayRequest],
             device_manager.UnbindDeviceFromGatewayResponse]:
-        r"""Return a callable for the
-        unbind device from gateway
-          method over gRPC.
+        r"""Return a callable for the unbind device from gateway method over gRPC.
 
         Deletes the association between the device and the
         gateway.

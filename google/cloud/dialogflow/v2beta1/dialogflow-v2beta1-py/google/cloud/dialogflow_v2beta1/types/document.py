@@ -190,7 +190,7 @@ class Document(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=7
+        number=7,
     )
 
 
@@ -403,7 +403,7 @@ class ImportDocumentTemplate(proto.Message):
     metadata = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=3
+        number=3,
     )
 
 

@@ -14,8 +14,9 @@
 # limitations under the License.
 #
 
-from google.cloud.clouddms_v1.services.data_migration_service.async_client import DataMigrationServiceAsyncClient
 from google.cloud.clouddms_v1.services.data_migration_service.client import DataMigrationServiceClient
+from google.cloud.clouddms_v1.services.data_migration_service.async_client import DataMigrationServiceAsyncClient
+
 from google.cloud.clouddms_v1.types.clouddms import CreateConnectionProfileRequest
 from google.cloud.clouddms_v1.types.clouddms import CreateMigrationJobRequest
 from google.cloud.clouddms_v1.types.clouddms import DeleteConnectionProfileRequest
@@ -42,8 +43,6 @@ from google.cloud.clouddms_v1.types.clouddms import VmSelectionConfig
 from google.cloud.clouddms_v1.types.clouddms_resources import CloudSqlConnectionProfile
 from google.cloud.clouddms_v1.types.clouddms_resources import CloudSqlSettings
 from google.cloud.clouddms_v1.types.clouddms_resources import ConnectionProfile
-from google.cloud.clouddms_v1.types.clouddms_resources import DatabaseEngine
-from google.cloud.clouddms_v1.types.clouddms_resources import DatabaseProvider
 from google.cloud.clouddms_v1.types.clouddms_resources import DatabaseType
 from google.cloud.clouddms_v1.types.clouddms_resources import MigrationJob
 from google.cloud.clouddms_v1.types.clouddms_resources import MigrationJobVerificationError
@@ -55,17 +54,13 @@ from google.cloud.clouddms_v1.types.clouddms_resources import SqlIpConfig
 from google.cloud.clouddms_v1.types.clouddms_resources import SslConfig
 from google.cloud.clouddms_v1.types.clouddms_resources import StaticIpConnectivity
 from google.cloud.clouddms_v1.types.clouddms_resources import VpcPeeringConnectivity
+from google.cloud.clouddms_v1.types.clouddms_resources import DatabaseEngine
+from google.cloud.clouddms_v1.types.clouddms_resources import DatabaseProvider
 
-__all__ = ('CloudSqlConnectionProfile',
-    'CloudSqlSettings',
-    'ConnectionProfile',
+__all__ = ('DataMigrationServiceClient',
+    'DataMigrationServiceAsyncClient',
     'CreateConnectionProfileRequest',
     'CreateMigrationJobRequest',
-    'DataMigrationServiceAsyncClient',
-    'DataMigrationServiceClient',
-    'DatabaseEngine',
-    'DatabaseProvider',
-    'DatabaseType',
     'DeleteConnectionProfileRequest',
     'DeleteMigrationJobRequest',
     'GenerateSshScriptRequest',
@@ -75,26 +70,32 @@ __all__ = ('CloudSqlConnectionProfile',
     'ListConnectionProfilesResponse',
     'ListMigrationJobsRequest',
     'ListMigrationJobsResponse',
-    'MigrationJob',
-    'MigrationJobVerificationError',
-    'MySqlConnectionProfile',
     'OperationMetadata',
-    'PostgreSqlConnectionProfile',
     'PromoteMigrationJobRequest',
     'RestartMigrationJobRequest',
     'ResumeMigrationJobRequest',
-    'ReverseSshConnectivity',
-    'SqlAclEntry',
-    'SqlIpConfig',
     'SshScript',
-    'SslConfig',
     'StartMigrationJobRequest',
-    'StaticIpConnectivity',
     'StopMigrationJobRequest',
     'UpdateConnectionProfileRequest',
     'UpdateMigrationJobRequest',
     'VerifyMigrationJobRequest',
     'VmCreationConfig',
     'VmSelectionConfig',
+    'CloudSqlConnectionProfile',
+    'CloudSqlSettings',
+    'ConnectionProfile',
+    'DatabaseType',
+    'MigrationJob',
+    'MigrationJobVerificationError',
+    'MySqlConnectionProfile',
+    'PostgreSqlConnectionProfile',
+    'ReverseSshConnectivity',
+    'SqlAclEntry',
+    'SqlIpConfig',
+    'SslConfig',
+    'StaticIpConnectivity',
     'VpcPeeringConnectivity',
+    'DatabaseEngine',
+    'DatabaseProvider',
 )

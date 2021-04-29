@@ -224,9 +224,7 @@ class PublisherServiceGrpcTransport(PublisherServiceTransport):
     def publish(self) -> Callable[
             [publisher.PublishRequest],
             publisher.PublishResponse]:
-        r"""Return a callable for the
-        publish
-          method over gRPC.
+        r"""Return a callable for the publish method over gRPC.
 
         Establishes a stream with the server for publishing
         messages. Once the stream is initialized, the client

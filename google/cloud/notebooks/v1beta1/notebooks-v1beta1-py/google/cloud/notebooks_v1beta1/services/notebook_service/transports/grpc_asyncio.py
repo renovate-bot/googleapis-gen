@@ -246,9 +246,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def list_instances(self) -> Callable[
             [service.ListInstancesRequest],
             Awaitable[service.ListInstancesResponse]]:
-        r"""Return a callable for the
-        list instances
-          method over gRPC.
+        r"""Return a callable for the list instances method over gRPC.
 
         Lists instances in a given project and location.
 
@@ -274,9 +272,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def get_instance(self) -> Callable[
             [service.GetInstanceRequest],
             Awaitable[instance.Instance]]:
-        r"""Return a callable for the
-        get instance
-          method over gRPC.
+        r"""Return a callable for the get instance method over gRPC.
 
         Gets details of a single Instance.
 
@@ -302,9 +298,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def create_instance(self) -> Callable[
             [service.CreateInstanceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create instance
-          method over gRPC.
+        r"""Return a callable for the create instance method over gRPC.
 
         Creates a new Instance in a given project and
         location.
@@ -331,9 +325,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def register_instance(self) -> Callable[
             [service.RegisterInstanceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        register instance
-          method over gRPC.
+        r"""Return a callable for the register instance method over gRPC.
 
         Registers an existing legacy notebook instance to the
         Notebooks API server. Legacy instances are instances
@@ -364,9 +356,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def set_instance_accelerator(self) -> Callable[
             [service.SetInstanceAcceleratorRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        set instance accelerator
-          method over gRPC.
+        r"""Return a callable for the set instance accelerator method over gRPC.
 
         Updates the guest accelerators of a single Instance.
 
@@ -392,9 +382,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def set_instance_machine_type(self) -> Callable[
             [service.SetInstanceMachineTypeRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        set instance machine type
-          method over gRPC.
+        r"""Return a callable for the set instance machine type method over gRPC.
 
         Updates the machine type of a single Instance.
 
@@ -420,9 +408,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def set_instance_labels(self) -> Callable[
             [service.SetInstanceLabelsRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        set instance labels
-          method over gRPC.
+        r"""Return a callable for the set instance labels method over gRPC.
 
         Updates the labels of an Instance.
 
@@ -448,9 +434,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def delete_instance(self) -> Callable[
             [service.DeleteInstanceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete instance
-          method over gRPC.
+        r"""Return a callable for the delete instance method over gRPC.
 
         Deletes a single Instance.
 
@@ -476,9 +460,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def start_instance(self) -> Callable[
             [service.StartInstanceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        start instance
-          method over gRPC.
+        r"""Return a callable for the start instance method over gRPC.
 
         Starts a notebook instance.
 
@@ -504,9 +486,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def stop_instance(self) -> Callable[
             [service.StopInstanceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        stop instance
-          method over gRPC.
+        r"""Return a callable for the stop instance method over gRPC.
 
         Stops a notebook instance.
 
@@ -532,9 +512,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def reset_instance(self) -> Callable[
             [service.ResetInstanceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        reset instance
-          method over gRPC.
+        r"""Return a callable for the reset instance method over gRPC.
 
         Resets a notebook instance.
 
@@ -560,9 +538,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def report_instance_info(self) -> Callable[
             [service.ReportInstanceInfoRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        report instance info
-          method over gRPC.
+        r"""Return a callable for the report instance info method over gRPC.
 
         Allows notebook instances to
         report their latest instance information to the
@@ -592,9 +568,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def is_instance_upgradeable(self) -> Callable[
             [service.IsInstanceUpgradeableRequest],
             Awaitable[service.IsInstanceUpgradeableResponse]]:
-        r"""Return a callable for the
-        is instance upgradeable
-          method over gRPC.
+        r"""Return a callable for the is instance upgradeable method over gRPC.
 
         Check if a notebook instance is upgradable.
 
@@ -620,9 +594,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def upgrade_instance(self) -> Callable[
             [service.UpgradeInstanceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        upgrade instance
-          method over gRPC.
+        r"""Return a callable for the upgrade instance method over gRPC.
 
         Upgrades a notebook instance to the latest version.
 
@@ -648,9 +620,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def upgrade_instance_internal(self) -> Callable[
             [service.UpgradeInstanceInternalRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        upgrade instance internal
-          method over gRPC.
+        r"""Return a callable for the upgrade instance internal method over gRPC.
 
         Allows notebook instances to
         call this endpoint to upgrade themselves. Do not use
@@ -678,9 +648,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def list_environments(self) -> Callable[
             [service.ListEnvironmentsRequest],
             Awaitable[service.ListEnvironmentsResponse]]:
-        r"""Return a callable for the
-        list environments
-          method over gRPC.
+        r"""Return a callable for the list environments method over gRPC.
 
         Lists environments in a project.
 
@@ -706,9 +674,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def get_environment(self) -> Callable[
             [service.GetEnvironmentRequest],
             Awaitable[environment.Environment]]:
-        r"""Return a callable for the
-        get environment
-          method over gRPC.
+        r"""Return a callable for the get environment method over gRPC.
 
         Gets details of a single Environment.
 
@@ -734,9 +700,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def create_environment(self) -> Callable[
             [service.CreateEnvironmentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create environment
-          method over gRPC.
+        r"""Return a callable for the create environment method over gRPC.
 
         Creates a new Environment.
 
@@ -762,9 +726,7 @@ class NotebookServiceGrpcAsyncIOTransport(NotebookServiceTransport):
     def delete_environment(self) -> Callable[
             [service.DeleteEnvironmentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete environment
-          method over gRPC.
+        r"""Return a callable for the delete environment method over gRPC.
 
         Deletes a single Environment.
 

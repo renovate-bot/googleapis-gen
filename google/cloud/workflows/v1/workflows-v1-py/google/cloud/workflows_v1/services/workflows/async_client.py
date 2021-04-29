@@ -164,8 +164,7 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1.types.ListWorkflowsRequest`):
-                The request object.
-                Request for the
+                The request object. Request for the
                 [ListWorkflows][google.cloud.workflows.v1.Workflows.ListWorkflows]
                 method.
             parent (:class:`str`):
@@ -256,8 +255,7 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1.types.GetWorkflowRequest`):
-                The request object.
-                Request for the
+                The request object. Request for the
                 [GetWorkflow][google.cloud.workflows.v1.Workflows.GetWorkflow]
                 method.
             name (:class:`str`):
@@ -339,8 +337,7 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1.types.CreateWorkflowRequest`):
-                The request object.
-                Request for the
+                The request object. Request for the
                 [CreateWorkflow][google.cloud.workflows.v1.Workflows.CreateWorkflow]
                 method.
             parent (:class:`str`):
@@ -455,8 +452,7 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1.types.DeleteWorkflowRequest`):
-                The request object.
-                Request for the
+                The request object. Request for the
                 [DeleteWorkflow][google.cloud.workflows.v1.Workflows.DeleteWorkflow]
                 method.
             name (:class:`str`):
@@ -560,8 +556,7 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1.types.UpdateWorkflowRequest`):
-                The request object.
-                Request for the
+                The request object. Request for the
                 [UpdateWorkflow][google.cloud.workflows.v1.Workflows.UpdateWorkflow]
                 method.
             workflow (:class:`google.cloud.workflows_v1.types.Workflow`):

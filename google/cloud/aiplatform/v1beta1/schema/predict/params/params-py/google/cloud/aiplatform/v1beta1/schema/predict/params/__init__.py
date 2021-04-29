@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 
+
 from google.cloud.aiplatform.v1beta1.schema.predict.params_v1beta1.types.image_classification import ImageClassificationPredictionParams
 from google.cloud.aiplatform.v1beta1.schema.predict.params_v1beta1.types.image_object_detection import ImageObjectDetectionPredictionParams
 from google.cloud.aiplatform.v1beta1.schema.predict.params_v1beta1.types.image_segmentation import ImageSegmentationPredictionParams

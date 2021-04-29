@@ -329,7 +329,6 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         Args:
             request (google.cloud.bigquery_v2.types.GetModelRequest):
                 The request object.
-
             project_id (str):
                 Required. Project ID of the requested
                 model.
@@ -375,7 +374,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model.GetModelRequest):
             request = model.GetModelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -415,7 +414,6 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         Args:
             request (google.cloud.bigquery_v2.types.ListModelsRequest):
                 The request object.
-
             project_id (str):
                 Required. Project ID of the models to
                 list.
@@ -463,7 +461,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model.ListModelsRequest):
             request = model.ListModelsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -503,7 +501,6 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         Args:
             request (google.cloud.bigquery_v2.types.PatchModelRequest):
                 The request object.
-
             project_id (str):
                 Required. Project ID of the model to
                 patch.
@@ -558,7 +555,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcb_model.PatchModelRequest):
             request = gcb_model.PatchModelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id
@@ -600,7 +597,6 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         Args:
             request (google.cloud.bigquery_v2.types.DeleteModelRequest):
                 The request object.
-
             project_id (str):
                 Required. Project ID of the model to
                 delete.
@@ -642,7 +638,7 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, model.DeleteModelRequest):
             request = model.DeleteModelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if project_id is not None:
                 request.project_id = project_id

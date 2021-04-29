@@ -328,8 +328,7 @@ class VideoIntelligenceServiceClient(metaclass=VideoIntelligenceServiceClientMet
 
         Args:
             request (google.cloud.videointelligence_v1p1beta1.types.AnnotateVideoRequest):
-                The request object.
-                Video annotation request.
+                The request object. Video annotation request.
             input_uri (str):
                 Input video location. Currently, only `Google Cloud
                 Storage <https://cloud.google.com/storage/>`__ URIs are
@@ -385,7 +384,7 @@ class VideoIntelligenceServiceClient(metaclass=VideoIntelligenceServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, video_intelligence.AnnotateVideoRequest):
             request = video_intelligence.AnnotateVideoRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if input_uri is not None:
                 request.input_uri = input_uri

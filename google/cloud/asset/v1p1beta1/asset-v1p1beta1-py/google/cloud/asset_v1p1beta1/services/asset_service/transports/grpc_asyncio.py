@@ -225,9 +225,7 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def search_all_resources(self) -> Callable[
             [asset_service.SearchAllResourcesRequest],
             Awaitable[asset_service.SearchAllResourcesResponse]]:
-        r"""Return a callable for the
-        search all resources
-          method over gRPC.
+        r"""Return a callable for the search all resources method over gRPC.
 
         Searches all the resources under a given accessible
         CRM scope (project/folder/organization). This RPC gives
@@ -259,9 +257,7 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def search_all_iam_policies(self) -> Callable[
             [asset_service.SearchAllIamPoliciesRequest],
             Awaitable[asset_service.SearchAllIamPoliciesResponse]]:
-        r"""Return a callable for the
-        search all iam policies
-          method over gRPC.
+        r"""Return a callable for the search all iam policies method over gRPC.
 
         Searches all the IAM policies under a given
         accessible CRM scope (project/folder/organization). This

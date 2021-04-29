@@ -160,8 +160,7 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.ListEntityTypesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.ListEntityTypes][google.cloud.dialogflow.cx.v3beta1.EntityTypes.ListEntityTypes].
             parent (:class:`str`):
                 Required. The agent to list all entity types for.
@@ -249,8 +248,7 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.GetEntityTypeRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.GetEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.GetEntityType].
             name (:class:`str`):
                 Required. The name of the entity type. Format:
@@ -358,8 +356,7 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.CreateEntityTypeRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.CreateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.CreateEntityType].
             parent (:class:`str`):
                 Required. The agent to create a entity type for. Format:
@@ -474,8 +471,7 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.UpdateEntityTypeRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.UpdateEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.UpdateEntityType].
             entity_type (:class:`google.cloud.dialogflowcx_v3beta1.types.EntityType`):
                 Required. The entity type to update.
@@ -589,8 +585,7 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.DeleteEntityTypeRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.DeleteEntityType][google.cloud.dialogflow.cx.v3beta1.EntityTypes.DeleteEntityType].
             name (:class:`str`):
                 Required. The name of the entity type to delete. Format:

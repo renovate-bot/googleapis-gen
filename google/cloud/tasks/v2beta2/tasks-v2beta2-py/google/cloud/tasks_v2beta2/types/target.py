@@ -302,7 +302,7 @@ class AppEngineHttpRequest(proto.Message):
     headers = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=4
+        number=4,
     )
     payload = proto.Field(
         proto.BYTES,

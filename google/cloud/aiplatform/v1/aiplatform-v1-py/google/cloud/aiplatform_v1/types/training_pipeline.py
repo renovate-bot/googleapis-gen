@@ -212,7 +212,7 @@ class TrainingPipeline(proto.Message):
     labels = proto.MapField(
         proto.STRING,
         proto.STRING,
-        number=15
+        number=15,
     )
     encryption_spec = proto.Field(
         proto.MESSAGE,

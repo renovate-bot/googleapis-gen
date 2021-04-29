@@ -342,8 +342,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1.types.CreateBudgetRequest):
-                The request object.
-                Request for CreateBudget
+                The request object. Request for CreateBudget
             parent (str):
                 Required. The name of the billing account to create the
                 budget in. Values are of the form
@@ -390,7 +389,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, budget_service.CreateBudgetRequest):
             request = budget_service.CreateBudgetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -437,8 +436,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1.types.UpdateBudgetRequest):
-                The request object.
-                Request for UpdateBudget
+                The request object. Request for UpdateBudget
             budget (google.cloud.billing.budgets_v1.types.Budget):
                 Required. The updated budget object.
                 The budget to update is specified by the
@@ -491,7 +489,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, budget_service.UpdateBudgetRequest):
             request = budget_service.UpdateBudgetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if budget is not None:
                 request.budget = budget
@@ -538,8 +536,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1.types.GetBudgetRequest):
-                The request object.
-                Request for GetBudget
+                The request object. Request for GetBudget
             name (str):
                 Required. Name of budget to get. Values are of the form
                 ``billingAccounts/{billingAccountId}/budgets/{budgetId}``.
@@ -580,7 +577,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, budget_service.GetBudgetRequest):
             request = budget_service.GetBudgetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -625,8 +622,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1.types.ListBudgetsRequest):
-                The request object.
-                Request for ListBudgets
+                The request object. Request for ListBudgets
             parent (str):
                 Required. Name of billing account to list budgets under.
                 Values are of the form
@@ -663,7 +659,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, budget_service.ListBudgetsRequest):
             request = budget_service.ListBudgetsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -713,8 +709,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1.types.DeleteBudgetRequest):
-                The request object.
-                Request for DeleteBudget
+                The request object. Request for DeleteBudget
             name (str):
                 Required. Name of the budget to delete. Values are of
                 the form
@@ -743,7 +738,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, budget_service.DeleteBudgetRequest):
             request = budget_service.DeleteBudgetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

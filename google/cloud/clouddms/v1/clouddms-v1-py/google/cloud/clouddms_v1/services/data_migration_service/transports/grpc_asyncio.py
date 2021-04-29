@@ -245,9 +245,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def list_migration_jobs(self) -> Callable[
             [clouddms.ListMigrationJobsRequest],
             Awaitable[clouddms.ListMigrationJobsResponse]]:
-        r"""Return a callable for the
-        list migration jobs
-          method over gRPC.
+        r"""Return a callable for the list migration jobs method over gRPC.
 
         Lists migration jobs in a given project and location.
 
@@ -273,9 +271,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def get_migration_job(self) -> Callable[
             [clouddms.GetMigrationJobRequest],
             Awaitable[clouddms_resources.MigrationJob]]:
-        r"""Return a callable for the
-        get migration job
-          method over gRPC.
+        r"""Return a callable for the get migration job method over gRPC.
 
         Gets details of a single migration job.
 
@@ -301,9 +297,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def create_migration_job(self) -> Callable[
             [clouddms.CreateMigrationJobRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create migration job
-          method over gRPC.
+        r"""Return a callable for the create migration job method over gRPC.
 
         Creates a new migration job in a given project and
         location.
@@ -330,9 +324,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def update_migration_job(self) -> Callable[
             [clouddms.UpdateMigrationJobRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update migration job
-          method over gRPC.
+        r"""Return a callable for the update migration job method over gRPC.
 
         Updates the parameters of a single migration job.
 
@@ -358,9 +350,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def delete_migration_job(self) -> Callable[
             [clouddms.DeleteMigrationJobRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete migration job
-          method over gRPC.
+        r"""Return a callable for the delete migration job method over gRPC.
 
         Deletes a single migration job.
 
@@ -386,9 +376,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def start_migration_job(self) -> Callable[
             [clouddms.StartMigrationJobRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        start migration job
-          method over gRPC.
+        r"""Return a callable for the start migration job method over gRPC.
 
         Start an already created migration job.
 
@@ -414,9 +402,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def stop_migration_job(self) -> Callable[
             [clouddms.StopMigrationJobRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        stop migration job
-          method over gRPC.
+        r"""Return a callable for the stop migration job method over gRPC.
 
         Stops a running migration job.
 
@@ -442,9 +428,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def resume_migration_job(self) -> Callable[
             [clouddms.ResumeMigrationJobRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        resume migration job
-          method over gRPC.
+        r"""Return a callable for the resume migration job method over gRPC.
 
         Resume a migration job that is currently stopped and
         is resumable (was stopped during CDC phase).
@@ -471,9 +455,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def promote_migration_job(self) -> Callable[
             [clouddms.PromoteMigrationJobRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        promote migration job
-          method over gRPC.
+        r"""Return a callable for the promote migration job method over gRPC.
 
         Promote a migration job, stopping replication to the
         destination and promoting the destination to be a
@@ -501,9 +483,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def verify_migration_job(self) -> Callable[
             [clouddms.VerifyMigrationJobRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        verify migration job
-          method over gRPC.
+        r"""Return a callable for the verify migration job method over gRPC.
 
         Verify a migration job, making sure the destination
         can reach the source and that all configuration and
@@ -531,9 +511,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def restart_migration_job(self) -> Callable[
             [clouddms.RestartMigrationJobRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        restart migration job
-          method over gRPC.
+        r"""Return a callable for the restart migration job method over gRPC.
 
         Restart a stopped or failed migration job, resetting
         the destination instance to its original state and
@@ -561,9 +539,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def generate_ssh_script(self) -> Callable[
             [clouddms.GenerateSshScriptRequest],
             Awaitable[clouddms.SshScript]]:
-        r"""Return a callable for the
-        generate ssh script
-          method over gRPC.
+        r"""Return a callable for the generate ssh script method over gRPC.
 
         Generate a SSH configuration script to configure the
         reverse SSH connectivity.
@@ -590,9 +566,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def list_connection_profiles(self) -> Callable[
             [clouddms.ListConnectionProfilesRequest],
             Awaitable[clouddms.ListConnectionProfilesResponse]]:
-        r"""Return a callable for the
-        list connection profiles
-          method over gRPC.
+        r"""Return a callable for the list connection profiles method over gRPC.
 
         Retrieve a list of all connection profiles in a given
         project and location.
@@ -619,9 +593,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def get_connection_profile(self) -> Callable[
             [clouddms.GetConnectionProfileRequest],
             Awaitable[clouddms_resources.ConnectionProfile]]:
-        r"""Return a callable for the
-        get connection profile
-          method over gRPC.
+        r"""Return a callable for the get connection profile method over gRPC.
 
         Gets details of a single connection profile.
 
@@ -647,9 +619,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def create_connection_profile(self) -> Callable[
             [clouddms.CreateConnectionProfileRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create connection profile
-          method over gRPC.
+        r"""Return a callable for the create connection profile method over gRPC.
 
         Creates a new connection profile in a given project
         and location.
@@ -676,9 +646,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def update_connection_profile(self) -> Callable[
             [clouddms.UpdateConnectionProfileRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update connection profile
-          method over gRPC.
+        r"""Return a callable for the update connection profile method over gRPC.
 
         Update the configuration of a single connection
         profile.
@@ -705,9 +673,7 @@ class DataMigrationServiceGrpcAsyncIOTransport(DataMigrationServiceTransport):
     def delete_connection_profile(self) -> Callable[
             [clouddms.DeleteConnectionProfileRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete connection profile
-          method over gRPC.
+        r"""Return a callable for the delete connection profile method over gRPC.
 
         Deletes a single Database Migration Service
         connection profile. A connection profile can only be

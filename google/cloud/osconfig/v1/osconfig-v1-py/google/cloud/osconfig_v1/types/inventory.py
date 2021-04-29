@@ -454,7 +454,7 @@ class Inventory(proto.Message):
     items = proto.MapField(
         proto.STRING,
         proto.MESSAGE,
-        number=2
+        number=2,
         message=Item,
     )
 

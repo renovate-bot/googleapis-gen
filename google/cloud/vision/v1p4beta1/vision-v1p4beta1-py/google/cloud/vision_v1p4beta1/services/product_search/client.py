@@ -389,8 +389,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.CreateProductSetRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `CreateProductSet` method.
             parent (str):
                 Required. The project in which the ProductSet should be
@@ -445,7 +444,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.CreateProductSetRequest):
             request = product_search_service.CreateProductSetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -494,8 +493,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.ListProductSetsRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `ListProductSets` method.
             parent (str):
                 Required. The project from which ProductSets should be
@@ -534,7 +532,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.ListProductSetsRequest):
             request = product_search_service.ListProductSetsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -587,8 +585,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.GetProductSetRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `GetProductSet` method.
             name (str):
                 Required. Resource name of the ProductSet to get.
@@ -628,7 +625,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.GetProductSetRequest):
             request = product_search_service.GetProductSetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -677,8 +674,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.UpdateProductSetRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `UpdateProductSet` method.
             product_set (google.cloud.vision_v1p4beta1.types.ProductSet):
                 Required. The ProductSet resource
@@ -725,7 +721,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.UpdateProductSetRequest):
             request = product_search_service.UpdateProductSetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if product_set is not None:
                 request.product_set = product_set
@@ -770,8 +766,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.DeleteProductSetRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `DeleteProductSet` method.
             name (str):
                 Required. Resource name of the ProductSet to delete.
@@ -802,7 +797,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.DeleteProductSetRequest):
             request = product_search_service.DeleteProductSetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -850,8 +845,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.CreateProductRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `CreateProduct` method.
             parent (str):
                 Required. The project in which the Product should be
@@ -901,7 +895,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.CreateProductRequest):
             request = product_search_service.CreateProductRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -950,8 +944,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.ListProductsRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `ListProducts` method.
             parent (str):
                 Required. The project OR ProductSet from which Products
@@ -990,7 +983,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.ListProductsRequest):
             request = product_search_service.ListProductsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1043,8 +1036,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.GetProductRequest):
-                The request object.
-                Request message for the `GetProduct`
+                The request object. Request message for the `GetProduct`
                 method.
             name (str):
                 Required. Resource name of the Product to get.
@@ -1079,7 +1071,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.GetProductRequest):
             request = product_search_service.GetProductRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1135,8 +1127,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.UpdateProductRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `UpdateProduct` method.
             product (google.cloud.vision_v1p4beta1.types.Product):
                 Required. The Product resource which
@@ -1180,7 +1171,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.UpdateProductRequest):
             request = product_search_service.UpdateProductRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if product is not None:
                 request.product = product
@@ -1227,8 +1218,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.DeleteProductRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `DeleteProduct` method.
             name (str):
                 Required. Resource name of product to delete.
@@ -1259,7 +1249,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.DeleteProductRequest):
             request = product_search_service.DeleteProductRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1319,8 +1309,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.CreateReferenceImageRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `CreateReferenceImage` method.
             parent (str):
                 Required. Resource name of the product in which to
@@ -1376,7 +1365,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.CreateReferenceImageRequest):
             request = product_search_service.CreateReferenceImageRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1426,8 +1415,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.DeleteReferenceImageRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `DeleteReferenceImage` method.
             name (str):
                 Required. The resource name of the reference image to
@@ -1460,7 +1448,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.DeleteReferenceImageRequest):
             request = product_search_service.DeleteReferenceImageRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1503,8 +1491,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.ListReferenceImagesRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `ListReferenceImages` method.
             parent (str):
                 Required. Resource name of the product containing the
@@ -1544,7 +1531,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.ListReferenceImagesRequest):
             request = product_search_service.ListReferenceImagesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -1597,8 +1584,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.GetReferenceImageRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `GetReferenceImage` method.
             name (str):
                 Required. The resource name of the ReferenceImage to
@@ -1637,7 +1623,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.GetReferenceImageRequest):
             request = product_search_service.GetReferenceImageRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1686,8 +1672,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.AddProductToProductSetRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `AddProductToProductSet` method.
             name (str):
                 Required. The resource name for the ProductSet to
@@ -1729,7 +1714,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.AddProductToProductSetRequest):
             request = product_search_service.AddProductToProductSetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1769,8 +1754,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.RemoveProductFromProductSetRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `RemoveProductFromProductSet` method.
             name (str):
                 Required. The resource name for the ProductSet to
@@ -1812,7 +1796,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.RemoveProductFromProductSetRequest):
             request = product_search_service.RemoveProductFromProductSetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1858,8 +1842,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.ListProductsInProductSetRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `ListProductsInProductSet` method.
             name (str):
                 Required. The ProductSet resource for which to retrieve
@@ -1900,7 +1883,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.ListProductsInProductSetRequest):
             request = product_search_service.ListProductsInProductSetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -1961,8 +1944,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.ImportProductSetsRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `ImportProductSets` method.
             parent (str):
                 Required. The project in which the ProductSets should be
@@ -2015,7 +1997,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.ImportProductSetsRequest):
             request = product_search_service.ImportProductSetsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -2091,8 +2073,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         Args:
             request (google.cloud.vision_v1p4beta1.types.PurgeProductsRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `PurgeProducts` method.
             parent (str):
                 Required. The project and location in which the Products
@@ -2142,7 +2123,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         # there are no flattened fields.
         if not isinstance(request, product_search_service.PurgeProductsRequest):
             request = product_search_service.PurgeProductsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent

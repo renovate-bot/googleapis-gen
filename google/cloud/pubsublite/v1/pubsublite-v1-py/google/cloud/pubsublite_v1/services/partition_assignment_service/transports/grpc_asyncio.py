@@ -226,9 +226,7 @@ class PartitionAssignmentServiceGrpcAsyncIOTransport(PartitionAssignmentServiceT
     def assign_partitions(self) -> Callable[
             [subscriber.PartitionAssignmentRequest],
             Awaitable[subscriber.PartitionAssignment]]:
-        r"""Return a callable for the
-        assign partitions
-          method over gRPC.
+        r"""Return a callable for the assign partitions method over gRPC.
 
         Assign partitions for this client to handle for the
         specified subscription.
