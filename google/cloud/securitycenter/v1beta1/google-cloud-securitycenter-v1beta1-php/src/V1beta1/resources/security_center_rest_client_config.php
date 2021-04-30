@@ -3,10 +3,10 @@
 return [
     'interfaces' => [
         'google.cloud.securitycenter.v1beta1.SecurityCenter' => [
-            'CreateSource' => [
+            'CreateFinding' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1beta1/{parent=organizations/*}/sources',
-                'body' => 'source',
+                'uriTemplate' => '/v1beta1/{parent=organizations/*/sources/*}/findings',
+                'body' => 'finding',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -15,10 +15,10 @@ return [
                     ],
                 ],
             ],
-            'CreateFinding' => [
+            'CreateSource' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1beta1/{parent=organizations/*/sources/*}/findings',
-                'body' => 'finding',
+                'uriTemplate' => '/v1beta1/{parent=organizations/*}/sources',
+                'body' => 'source',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -192,19 +192,6 @@ return [
                     ],
                 ],
             ],
-            'UpdateSource' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v1beta1/{source.name=organizations/*/sources/*}',
-                'body' => 'source',
-                'placeholders' => [
-                    'source.name' => [
-                        'getters' => [
-                            'getSource',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'UpdateSecurityMarks' => [
                 'method' => 'patch',
                 'uriTemplate' => '/v1beta1/{security_marks.name=organizations/*/assets/*/securityMarks}',
@@ -220,6 +207,19 @@ return [
                     'security_marks.name' => [
                         'getters' => [
                             'getSecurityMarks',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateSource' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1beta1/{source.name=organizations/*/sources/*}',
+                'body' => 'source',
+                'placeholders' => [
+                    'source.name' => [
+                        'getters' => [
+                            'getSource',
                             'getName',
                         ],
                     ],

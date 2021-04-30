@@ -1,0 +1,108 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.securitycenter.v1beta1",
+    "libraryPackage": "Google\\Cloud\\Securitycenter\\V1beta1",
+    "services": {
+        "SecurityCenter": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "SecurityCenterGapicClient",
+                    "rpcs": {
+                        "CreateFinding": {
+                            "methods": [
+                                "createFinding"
+                            ]
+                        },
+                        "CreateSource": {
+                            "methods": [
+                                "createSource"
+                            ]
+                        },
+                        "GetIamPolicy": {
+                            "methods": [
+                                "getIamPolicy"
+                            ]
+                        },
+                        "GetOrganizationSettings": {
+                            "methods": [
+                                "getOrganizationSettings"
+                            ]
+                        },
+                        "GetSource": {
+                            "methods": [
+                                "getSource"
+                            ]
+                        },
+                        "GroupAssets": {
+                            "methods": [
+                                "groupAssets"
+                            ]
+                        },
+                        "GroupFindings": {
+                            "methods": [
+                                "groupFindings"
+                            ]
+                        },
+                        "ListAssets": {
+                            "methods": [
+                                "listAssets"
+                            ]
+                        },
+                        "ListFindings": {
+                            "methods": [
+                                "listFindings"
+                            ]
+                        },
+                        "ListSources": {
+                            "methods": [
+                                "listSources"
+                            ]
+                        },
+                        "RunAssetDiscovery": {
+                            "methods": [
+                                "runAssetDiscovery"
+                            ]
+                        },
+                        "SetFindingState": {
+                            "methods": [
+                                "setFindingState"
+                            ]
+                        },
+                        "SetIamPolicy": {
+                            "methods": [
+                                "setIamPolicy"
+                            ]
+                        },
+                        "TestIamPermissions": {
+                            "methods": [
+                                "testIamPermissions"
+                            ]
+                        },
+                        "UpdateFinding": {
+                            "methods": [
+                                "updateFinding"
+                            ]
+                        },
+                        "UpdateOrganizationSettings": {
+                            "methods": [
+                                "updateOrganizationSettings"
+                            ]
+                        },
+                        "UpdateSecurityMarks": {
+                            "methods": [
+                                "updateSecurityMarks"
+                            ]
+                        },
+                        "UpdateSource": {
+                            "methods": [
+                                "updateSource"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
