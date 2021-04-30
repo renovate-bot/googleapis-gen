@@ -1,0 +1,63 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.streetview.publish.v1",
+    "libraryPackage": "Google\\Streetview\\Publish\\V1",
+    "services": {
+        "StreetViewPublishService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "StreetViewPublishServiceGapicClient",
+                    "rpcs": {
+                        "BatchDeletePhotos": {
+                            "methods": [
+                                "batchDeletePhotos"
+                            ]
+                        },
+                        "BatchGetPhotos": {
+                            "methods": [
+                                "batchGetPhotos"
+                            ]
+                        },
+                        "BatchUpdatePhotos": {
+                            "methods": [
+                                "batchUpdatePhotos"
+                            ]
+                        },
+                        "CreatePhoto": {
+                            "methods": [
+                                "createPhoto"
+                            ]
+                        },
+                        "DeletePhoto": {
+                            "methods": [
+                                "deletePhoto"
+                            ]
+                        },
+                        "GetPhoto": {
+                            "methods": [
+                                "getPhoto"
+                            ]
+                        },
+                        "ListPhotos": {
+                            "methods": [
+                                "listPhotos"
+                            ]
+                        },
+                        "StartUpload": {
+                            "methods": [
+                                "startUpload"
+                            ]
+                        },
+                        "UpdatePhoto": {
+                            "methods": [
+                                "updatePhoto"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

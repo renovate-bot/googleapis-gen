@@ -3,15 +3,35 @@
 return [
     'interfaces' => [
         'google.streetview.publish.v1.StreetViewPublishService' => [
-            'StartUpload' => [
+            'BatchDeletePhotos' => [
                 'method' => 'post',
-                'uriTemplate' => '/v1/photo:startUpload',
+                'uriTemplate' => '/v1/photos:batchDelete',
+                'body' => '*',
+            ],
+            'BatchGetPhotos' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/photos:batchGet',
+            ],
+            'BatchUpdatePhotos' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/photos:batchUpdate',
                 'body' => '*',
             ],
             'CreatePhoto' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1/photo',
                 'body' => 'photo',
+            ],
+            'DeletePhoto' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/photo/{photo_id}',
+                'placeholders' => [
+                    'photo_id' => [
+                        'getters' => [
+                            'getPhotoId',
+                        ],
+                    ],
+                ],
             ],
             'GetPhoto' => [
                 'method' => 'get',
@@ -24,13 +44,14 @@ return [
                     ],
                 ],
             ],
-            'BatchGetPhotos' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/photos:batchGet',
-            ],
             'ListPhotos' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1/photos',
+            ],
+            'StartUpload' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/photo:startUpload',
+                'body' => '*',
             ],
             'UpdatePhoto' => [
                 'method' => 'put',
@@ -45,27 +66,6 @@ return [
                         ],
                     ],
                 ],
-            ],
-            'BatchUpdatePhotos' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/photos:batchUpdate',
-                'body' => '*',
-            ],
-            'DeletePhoto' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/photo/{photo_id}',
-                'placeholders' => [
-                    'photo_id' => [
-                        'getters' => [
-                            'getPhotoId',
-                        ],
-                    ],
-                ],
-            ],
-            'BatchDeletePhotos' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/photos:batchDelete',
-                'body' => '*',
             ],
         ],
     ],
