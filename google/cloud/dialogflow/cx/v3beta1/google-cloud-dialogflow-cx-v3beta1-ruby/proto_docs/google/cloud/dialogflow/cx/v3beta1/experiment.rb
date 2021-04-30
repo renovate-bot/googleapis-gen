@@ -148,7 +148,7 @@ module Google
               # @!attribute [rw] version
               #   @return [::String]
               #     The name of the flow {::Google::Cloud::Dialogflow::Cx::V3beta1::Version Version}.
-              #     Format: `projects/<Project Number>/locations/<Location
+              #     Format: `projects/<Project ID>/locations/<Location
               #     ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>`.
               # @!attribute [rw] metrics
               #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment::Result::Metric>]

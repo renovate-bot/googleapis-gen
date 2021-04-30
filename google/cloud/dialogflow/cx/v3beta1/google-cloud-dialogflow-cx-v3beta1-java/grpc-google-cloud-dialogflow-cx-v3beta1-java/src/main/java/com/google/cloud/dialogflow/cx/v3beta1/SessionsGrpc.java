@@ -5,8 +5,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  * <pre>
  * A session represents an interaction with a user. You retrieve user input
- * and pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to determine
- * user intent and respond.
+ * and pass it to the
+ * [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent]
+ * method to determine user intent and respond.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -190,8 +191,9 @@ public final class SessionsGrpc {
   /**
    * <pre>
    * A session represents an interaction with a user. You retrieve user input
-   * and pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to determine
-   * user intent and respond.
+   * and pass it to the
+   * [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent]
+   * method to determine user intent and respond.
    * </pre>
    */
   public static abstract class SessionsImplBase implements io.grpc.BindableService {
@@ -240,9 +242,13 @@ public final class SessionsGrpc {
 
     /**
      * <pre>
-     * Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
-     * Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
-     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
+     * Fulfills a matched intent returned by
+     * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+     * Must be called after
+     * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent],
+     * with input from
+     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse].
+     * Otherwise, the behavior is undefined.
      * </pre>
      */
     public void fulfillIntent(com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest request,
@@ -287,8 +293,9 @@ public final class SessionsGrpc {
   /**
    * <pre>
    * A session represents an interaction with a user. You retrieve user input
-   * and pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to determine
-   * user intent and respond.
+   * and pass it to the
+   * [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent]
+   * method to determine user intent and respond.
    * </pre>
    */
   public static final class SessionsStub extends io.grpc.stub.AbstractAsyncStub<SessionsStub> {
@@ -350,9 +357,13 @@ public final class SessionsGrpc {
 
     /**
      * <pre>
-     * Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
-     * Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
-     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
+     * Fulfills a matched intent returned by
+     * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+     * Must be called after
+     * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent],
+     * with input from
+     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse].
+     * Otherwise, the behavior is undefined.
      * </pre>
      */
     public void fulfillIntent(com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest request,
@@ -365,8 +376,9 @@ public final class SessionsGrpc {
   /**
    * <pre>
    * A session represents an interaction with a user. You retrieve user input
-   * and pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to determine
-   * user intent and respond.
+   * and pass it to the
+   * [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent]
+   * method to determine user intent and respond.
    * </pre>
    */
   public static final class SessionsBlockingStub extends io.grpc.stub.AbstractBlockingStub<SessionsBlockingStub> {
@@ -410,9 +422,13 @@ public final class SessionsGrpc {
 
     /**
      * <pre>
-     * Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
-     * Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
-     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
+     * Fulfills a matched intent returned by
+     * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+     * Must be called after
+     * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent],
+     * with input from
+     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse].
+     * Otherwise, the behavior is undefined.
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentResponse fulfillIntent(com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest request) {
@@ -424,8 +440,9 @@ public final class SessionsGrpc {
   /**
    * <pre>
    * A session represents an interaction with a user. You retrieve user input
-   * and pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to determine
-   * user intent and respond.
+   * and pass it to the
+   * [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent]
+   * method to determine user intent and respond.
    * </pre>
    */
   public static final class SessionsFutureStub extends io.grpc.stub.AbstractFutureStub<SessionsFutureStub> {
@@ -471,9 +488,13 @@ public final class SessionsGrpc {
 
     /**
      * <pre>
-     * Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
-     * Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
-     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
+     * Fulfills a matched intent returned by
+     * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+     * Must be called after
+     * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent],
+     * with input from
+     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse].
+     * Otherwise, the behavior is undefined.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentResponse> fulfillIntent(

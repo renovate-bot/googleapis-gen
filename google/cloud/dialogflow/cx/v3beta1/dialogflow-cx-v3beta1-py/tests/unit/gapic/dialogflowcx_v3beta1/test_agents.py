@@ -815,6 +815,7 @@ def test_get_agent(transport: str = 'grpc', request_type=agent.GetAgentRequest):
             name='name_value',
             display_name='display_name_value',
             default_language_code='default_language_code_value',
+            supported_language_codes=['supported_language_codes_value'],
             time_zone='time_zone_value',
             description='description_value',
             avatar_uri='avatar_uri_value',
@@ -835,6 +836,7 @@ def test_get_agent(transport: str = 'grpc', request_type=agent.GetAgentRequest):
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.default_language_code == 'default_language_code_value'
+    assert response.supported_language_codes == ['supported_language_codes_value']
     assert response.time_zone == 'time_zone_value'
     assert response.description == 'description_value'
     assert response.avatar_uri == 'avatar_uri_value'
@@ -886,6 +888,7 @@ async def test_get_agent_async(transport: str = 'grpc_asyncio', request_type=age
             name='name_value',
             display_name='display_name_value',
             default_language_code='default_language_code_value',
+            supported_language_codes=['supported_language_codes_value'],
             time_zone='time_zone_value',
             description='description_value',
             avatar_uri='avatar_uri_value',
@@ -906,6 +909,7 @@ async def test_get_agent_async(transport: str = 'grpc_asyncio', request_type=age
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.default_language_code == 'default_language_code_value'
+    assert response.supported_language_codes == ['supported_language_codes_value']
     assert response.time_zone == 'time_zone_value'
     assert response.description == 'description_value'
     assert response.avatar_uri == 'avatar_uri_value'
@@ -1082,6 +1086,7 @@ def test_create_agent(transport: str = 'grpc', request_type=gcdc_agent.CreateAge
             name='name_value',
             display_name='display_name_value',
             default_language_code='default_language_code_value',
+            supported_language_codes=['supported_language_codes_value'],
             time_zone='time_zone_value',
             description='description_value',
             avatar_uri='avatar_uri_value',
@@ -1102,6 +1107,7 @@ def test_create_agent(transport: str = 'grpc', request_type=gcdc_agent.CreateAge
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.default_language_code == 'default_language_code_value'
+    assert response.supported_language_codes == ['supported_language_codes_value']
     assert response.time_zone == 'time_zone_value'
     assert response.description == 'description_value'
     assert response.avatar_uri == 'avatar_uri_value'
@@ -1153,6 +1159,7 @@ async def test_create_agent_async(transport: str = 'grpc_asyncio', request_type=
             name='name_value',
             display_name='display_name_value',
             default_language_code='default_language_code_value',
+            supported_language_codes=['supported_language_codes_value'],
             time_zone='time_zone_value',
             description='description_value',
             avatar_uri='avatar_uri_value',
@@ -1173,6 +1180,7 @@ async def test_create_agent_async(transport: str = 'grpc_asyncio', request_type=
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.default_language_code == 'default_language_code_value'
+    assert response.supported_language_codes == ['supported_language_codes_value']
     assert response.time_zone == 'time_zone_value'
     assert response.description == 'description_value'
     assert response.avatar_uri == 'avatar_uri_value'
@@ -1355,6 +1363,7 @@ def test_update_agent(transport: str = 'grpc', request_type=gcdc_agent.UpdateAge
             name='name_value',
             display_name='display_name_value',
             default_language_code='default_language_code_value',
+            supported_language_codes=['supported_language_codes_value'],
             time_zone='time_zone_value',
             description='description_value',
             avatar_uri='avatar_uri_value',
@@ -1375,6 +1384,7 @@ def test_update_agent(transport: str = 'grpc', request_type=gcdc_agent.UpdateAge
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.default_language_code == 'default_language_code_value'
+    assert response.supported_language_codes == ['supported_language_codes_value']
     assert response.time_zone == 'time_zone_value'
     assert response.description == 'description_value'
     assert response.avatar_uri == 'avatar_uri_value'
@@ -1426,6 +1436,7 @@ async def test_update_agent_async(transport: str = 'grpc_asyncio', request_type=
             name='name_value',
             display_name='display_name_value',
             default_language_code='default_language_code_value',
+            supported_language_codes=['supported_language_codes_value'],
             time_zone='time_zone_value',
             description='description_value',
             avatar_uri='avatar_uri_value',
@@ -1446,6 +1457,7 @@ async def test_update_agent_async(transport: str = 'grpc_asyncio', request_type=
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.default_language_code == 'default_language_code_value'
+    assert response.supported_language_codes == ['supported_language_codes_value']
     assert response.time_zone == 'time_zone_value'
     assert response.description == 'description_value'
     assert response.avatar_uri == 'avatar_uri_value'
@@ -3103,11 +3115,34 @@ def test_parse_agent_validation_result_path():
     actual = AgentsClient.parse_agent_validation_result_path(path)
     assert expected == actual
 
-def test_flow_path():
+def test_environment_path():
     project = "squid"
     location = "clam"
     agent = "whelk"
-    flow = "octopus"
+    environment = "octopus"
+    expected = "projects/{project}/locations/{location}/agents/{agent}/environments/{environment}".format(project=project, location=location, agent=agent, environment=environment, )
+    actual = AgentsClient.environment_path(project, location, agent, environment)
+    assert expected == actual
+
+
+def test_parse_environment_path():
+    expected = {
+        "project": "oyster",
+        "location": "nudibranch",
+        "agent": "cuttlefish",
+        "environment": "mussel",
+    }
+    path = AgentsClient.environment_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = AgentsClient.parse_environment_path(path)
+    assert expected == actual
+
+def test_flow_path():
+    project = "winkle"
+    location = "nautilus"
+    agent = "scallop"
+    flow = "abalone"
     expected = "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}".format(project=project, location=location, agent=agent, flow=flow, )
     actual = AgentsClient.flow_path(project, location, agent, flow)
     assert expected == actual
@@ -3115,10 +3150,10 @@ def test_flow_path():
 
 def test_parse_flow_path():
     expected = {
-        "project": "oyster",
-        "location": "nudibranch",
-        "agent": "cuttlefish",
-        "flow": "mussel",
+        "project": "squid",
+        "location": "clam",
+        "agent": "whelk",
+        "flow": "octopus",
     }
     path = AgentsClient.flow_path(**expected)
 
@@ -3127,10 +3162,10 @@ def test_parse_flow_path():
     assert expected == actual
 
 def test_flow_validation_result_path():
-    project = "winkle"
-    location = "nautilus"
-    agent = "scallop"
-    flow = "abalone"
+    project = "oyster"
+    location = "nudibranch"
+    agent = "cuttlefish"
+    flow = "mussel"
     expected = "projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/validationResult".format(project=project, location=location, agent=agent, flow=flow, )
     actual = AgentsClient.flow_validation_result_path(project, location, agent, flow)
     assert expected == actual
@@ -3138,10 +3173,10 @@ def test_flow_validation_result_path():
 
 def test_parse_flow_validation_result_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
-        "agent": "whelk",
-        "flow": "octopus",
+        "project": "winkle",
+        "location": "nautilus",
+        "agent": "scallop",
+        "flow": "abalone",
     }
     path = AgentsClient.flow_validation_result_path(**expected)
 
@@ -3150,9 +3185,9 @@ def test_parse_flow_validation_result_path():
     assert expected == actual
 
 def test_security_settings_path():
-    project = "oyster"
-    location = "nudibranch"
-    security_settings = "cuttlefish"
+    project = "squid"
+    location = "clam"
+    security_settings = "whelk"
     expected = "projects/{project}/locations/{location}/securitySettings/{security_settings}".format(project=project, location=location, security_settings=security_settings, )
     actual = AgentsClient.security_settings_path(project, location, security_settings)
     assert expected == actual
@@ -3160,9 +3195,9 @@ def test_security_settings_path():
 
 def test_parse_security_settings_path():
     expected = {
-        "project": "mussel",
-        "location": "winkle",
-        "security_settings": "nautilus",
+        "project": "octopus",
+        "location": "oyster",
+        "security_settings": "nudibranch",
     }
     path = AgentsClient.security_settings_path(**expected)
 
@@ -3171,7 +3206,7 @@ def test_parse_security_settings_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "scallop"
+    billing_account = "cuttlefish"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AgentsClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -3179,7 +3214,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "abalone",
+        "billing_account": "mussel",
     }
     path = AgentsClient.common_billing_account_path(**expected)
 
@@ -3188,7 +3223,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "squid"
+    folder = "winkle"
     expected = "folders/{folder}".format(folder=folder, )
     actual = AgentsClient.common_folder_path(folder)
     assert expected == actual
@@ -3196,7 +3231,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "clam",
+        "folder": "nautilus",
     }
     path = AgentsClient.common_folder_path(**expected)
 
@@ -3205,7 +3240,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "whelk"
+    organization = "scallop"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AgentsClient.common_organization_path(organization)
     assert expected == actual
@@ -3213,7 +3248,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "octopus",
+        "organization": "abalone",
     }
     path = AgentsClient.common_organization_path(**expected)
 
@@ -3222,7 +3257,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "oyster"
+    project = "squid"
     expected = "projects/{project}".format(project=project, )
     actual = AgentsClient.common_project_path(project)
     assert expected == actual
@@ -3230,7 +3265,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nudibranch",
+        "project": "clam",
     }
     path = AgentsClient.common_project_path(**expected)
 
@@ -3239,8 +3274,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "cuttlefish"
-    location = "mussel"
+    project = "whelk"
+    location = "octopus"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AgentsClient.common_location_path(project, location)
     assert expected == actual
@@ -3248,8 +3283,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "winkle",
-        "location": "nautilus",
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = AgentsClient.common_location_path(**expected)
 

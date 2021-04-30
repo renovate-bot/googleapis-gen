@@ -108,7 +108,7 @@ class VersionsGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Loads a specified version to draft version.
+     * Loads resources in the specified version to the draft flow.
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\LoadVersionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

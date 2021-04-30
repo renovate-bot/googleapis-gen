@@ -95,10 +95,14 @@ from google.cloud.dialogflowcx_v3beta1.types.experiment import VariantsHistory
 from google.cloud.dialogflowcx_v3beta1.types.experiment import VersionVariants
 from google.cloud.dialogflowcx_v3beta1.types.flow import CreateFlowRequest
 from google.cloud.dialogflowcx_v3beta1.types.flow import DeleteFlowRequest
+from google.cloud.dialogflowcx_v3beta1.types.flow import ExportFlowRequest
+from google.cloud.dialogflowcx_v3beta1.types.flow import ExportFlowResponse
 from google.cloud.dialogflowcx_v3beta1.types.flow import Flow
 from google.cloud.dialogflowcx_v3beta1.types.flow import FlowValidationResult
 from google.cloud.dialogflowcx_v3beta1.types.flow import GetFlowRequest
 from google.cloud.dialogflowcx_v3beta1.types.flow import GetFlowValidationResultRequest
+from google.cloud.dialogflowcx_v3beta1.types.flow import ImportFlowRequest
+from google.cloud.dialogflowcx_v3beta1.types.flow import ImportFlowResponse
 from google.cloud.dialogflowcx_v3beta1.types.flow import ListFlowsRequest
 from google.cloud.dialogflowcx_v3beta1.types.flow import ListFlowsResponse
 from google.cloud.dialogflowcx_v3beta1.types.flow import NluSettings
@@ -302,10 +306,14 @@ __all__ = ('AgentsClient',
     'VersionVariants',
     'CreateFlowRequest',
     'DeleteFlowRequest',
+    'ExportFlowRequest',
+    'ExportFlowResponse',
     'Flow',
     'FlowValidationResult',
     'GetFlowRequest',
     'GetFlowValidationResultRequest',
+    'ImportFlowRequest',
+    'ImportFlowResponse',
     'ListFlowsRequest',
     'ListFlowsResponse',
     'NluSettings',

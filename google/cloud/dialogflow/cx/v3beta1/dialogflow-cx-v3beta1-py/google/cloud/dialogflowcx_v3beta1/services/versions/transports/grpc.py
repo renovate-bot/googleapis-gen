@@ -380,7 +380,8 @@ class VersionsGrpcTransport(VersionsTransport):
             operations.Operation]:
         r"""Return a callable for the load version method over gRPC.
 
-        Loads a specified version to draft version.
+        Loads resources in the specified version to the draft
+        flow.
 
         Returns:
             Callable[[~.LoadVersionRequest],

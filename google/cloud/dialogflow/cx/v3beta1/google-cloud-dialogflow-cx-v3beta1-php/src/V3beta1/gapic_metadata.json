@@ -54,6 +54,11 @@
                                 "deleteFlow"
                             ]
                         },
+                        "ExportFlow": {
+                            "methods": [
+                                "exportFlow"
+                            ]
+                        },
                         "GetFlow": {
                             "methods": [
                                 "getFlow"
@@ -62,6 +67,11 @@
                         "GetFlowValidationResult": {
                             "methods": [
                                 "getFlowValidationResult"
+                            ]
+                        },
+                        "ImportFlow": {
+                            "methods": [
+                                "importFlow"
                             ]
                         },
                         "ListFlows": {

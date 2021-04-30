@@ -21,6 +21,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :name, :string, 1
       optional :display_name, :string, 2
       optional :default_language_code, :string, 3
+      repeated :supported_language_codes, :string, 4
       optional :time_zone, :string, 5
       optional :description, :string, 6
       optional :avatar_uri, :string, 7
@@ -56,6 +57,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest" do
       optional :name, :string, 1
       optional :agent_uri, :string, 2
+      optional :environment, :string, 5
     end
     add_message "google.cloud.dialogflow.cx.v3beta1.ExportAgentResponse" do
       oneof :agent do

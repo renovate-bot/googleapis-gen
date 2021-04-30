@@ -87,6 +87,9 @@ class Agent(proto.Message):
             field cannot be set by the
             [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
             method.
+        supported_language_codes (Sequence[str]):
+            The list of all languages supported by the agent (except for
+            the ``default_language_code``).
         time_zone (str):
             Required. The time zone of the agent from the `time zone
             database <https://www.iana.org/time-zones>`__, e.g.,
@@ -132,6 +135,10 @@ class Agent(proto.Message):
     default_language_code = proto.Field(
         proto.STRING,
         number=3,
+    )
+    supported_language_codes = proto.RepeatedField(
+        proto.STRING,
+        number=4,
     )
     time_zone = proto.Field(
         proto.STRING,
@@ -321,6 +328,10 @@ class ExportAgentRequest(proto.Message):
             export the agent to. The format of this URI must be
             ``gs://<bucket-name>/<object-name>``. If left unspecified,
             the serialized agent is returned inline.
+        environment (str):
+            Optional. Environment name. If not set, draft environment is
+            assumed. Format:
+            ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/environments/<Environment ID>``.
     """
 
     name = proto.Field(
@@ -330,6 +341,10 @@ class ExportAgentRequest(proto.Message):
     agent_uri = proto.Field(
         proto.STRING,
         number=2,
+    )
+    environment = proto.Field(
+        proto.STRING,
+        number=5,
     )
 
 

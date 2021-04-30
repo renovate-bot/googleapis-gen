@@ -20,8 +20,9 @@ namespace Google\Cloud\Dialogflow\Cx\V3beta1;
 
 /**
  * A session represents an interaction with a user. You retrieve user input
- * and pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to determine
- * user intent and respond.
+ * and pass it to the
+ * [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent]
+ * method to determine user intent and respond.
  */
 class SessionsGrpcClient extends \Grpc\BaseStub {
 
@@ -91,9 +92,13 @@ class SessionsGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
-     * Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
-     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
+     * Fulfills a matched intent returned by
+     * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+     * Must be called after
+     * [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent],
+     * with input from
+     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse].
+     * Otherwise, the behavior is undefined.
      * @param \Google\Cloud\Dialogflow\Cx\V3beta1\FulfillIntentRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

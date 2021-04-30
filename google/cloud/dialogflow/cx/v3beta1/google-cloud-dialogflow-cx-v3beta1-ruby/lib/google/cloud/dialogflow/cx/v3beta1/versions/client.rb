@@ -522,7 +522,7 @@ module Google
               end
 
               ##
-              # Loads a specified version to draft version.
+              # Loads resources in the specified version to the draft flow.
               #
               # @overload load_version(request, options = nil)
               #   Pass arguments to `load_version` via a request object, either of type
@@ -540,14 +540,14 @@ module Google
               #   the default parameter values, pass an empty Hash as a request object (see above).
               #
               #   @param name [::String]
-              #     Required. The {::Google::Cloud::Dialogflow::Cx::V3beta1::Version Version} to be loaded to draft version.
+              #     Required. The {::Google::Cloud::Dialogflow::Cx::V3beta1::Version Version} to be loaded to draft flow.
               #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
               #     ID>/flows/<Flow ID>/versions/<Version ID>`.
               #   @param allow_override_agent_resources [::Boolean]
-              #     This field is used to prevent accidental overwrite of other agent resources
-              #     in the draft version, which can potentially impact other flow's behavior.
-              #     If `allow_override_agent_resources` is false, conflicted agent-level
-              #     resources will not be overridden (i.e. intents, entities, webhooks).
+              #     This field is used to prevent accidental overwrite of other agent
+              #     resources, which can potentially impact other flow's behavior. If
+              #     `allow_override_agent_resources` is false, conflicted agent-level resources
+              #     will not be overridden (i.e. intents, entities, webhooks).
               #
               # @yield [response, operation] Access the result along with the RPC operation
               # @yieldparam response [::Gapic::Operation]

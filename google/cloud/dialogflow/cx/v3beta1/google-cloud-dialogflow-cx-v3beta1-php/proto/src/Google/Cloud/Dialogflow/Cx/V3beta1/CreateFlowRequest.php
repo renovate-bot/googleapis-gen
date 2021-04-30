@@ -31,7 +31,9 @@ class CreateFlowRequest extends \Google\Protobuf\Internal\Message
     /**
      * The language of the following fields in `flow`:
      * *  `Flow.event_handlers.trigger_fulfillment.messages`
+     * *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
      * *  `Flow.transition_routes.trigger_fulfillment.messages`
+     * *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -56,7 +58,9 @@ class CreateFlowRequest extends \Google\Protobuf\Internal\Message
      *     @type string $language_code
      *           The language of the following fields in `flow`:
      *           *  `Flow.event_handlers.trigger_fulfillment.messages`
+     *           *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
      *           *  `Flow.transition_routes.trigger_fulfillment.messages`
+     *           *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
      *           If not specified, the agent's default language is used.
      *           [Many
      *           languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -136,7 +140,9 @@ class CreateFlowRequest extends \Google\Protobuf\Internal\Message
     /**
      * The language of the following fields in `flow`:
      * *  `Flow.event_handlers.trigger_fulfillment.messages`
+     * *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
      * *  `Flow.transition_routes.trigger_fulfillment.messages`
+     * *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
@@ -154,7 +160,9 @@ class CreateFlowRequest extends \Google\Protobuf\Internal\Message
     /**
      * The language of the following fields in `flow`:
      * *  `Flow.event_handlers.trigger_fulfillment.messages`
+     * *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
      * *  `Flow.transition_routes.trigger_fulfillment.messages`
+     * *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
      * If not specified, the agent's default language is used.
      * [Many
      * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)

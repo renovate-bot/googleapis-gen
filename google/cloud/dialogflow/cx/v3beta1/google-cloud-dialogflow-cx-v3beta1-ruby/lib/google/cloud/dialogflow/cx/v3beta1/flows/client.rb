@@ -198,7 +198,9 @@ module Google
               #     The language of the following fields in `flow`:
               #
               #     *  `Flow.event_handlers.trigger_fulfillment.messages`
+              #     *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
               #     *  `Flow.transition_routes.trigger_fulfillment.messages`
+              #     *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
               #
               #     If not specified, the agent's default language is used.
               #     [Many
@@ -361,7 +363,9 @@ module Google
               #     dependent:
               #
               #     *  `Flow.event_handlers.trigger_fulfillment.messages`
+              #     *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
               #     *  `Flow.transition_routes.trigger_fulfillment.messages`
+              #     *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
               #
               #     If not specified, the agent's default language is used.
               #     [Many
@@ -442,7 +446,9 @@ module Google
               #     dependent:
               #
               #     *  `Flow.event_handlers.trigger_fulfillment.messages`
+              #     *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
               #     *  `Flow.transition_routes.trigger_fulfillment.messages`
+              #     *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
               #
               #     If not specified, the agent's default language is used.
               #     [Many
@@ -522,7 +528,9 @@ module Google
               #     The language of the following fields in `flow`:
               #
               #     *  `Flow.event_handlers.trigger_fulfillment.messages`
+              #     *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
               #     *  `Flow.transition_routes.trigger_fulfillment.messages`
+              #     *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
               #
               #     If not specified, the agent's default language is used.
               #     [Many
@@ -789,6 +797,161 @@ module Google
               end
 
               ##
+              # Imports the specified flow to the specified agent from a binary file.
+              #
+              # @overload import_flow(request, options = nil)
+              #   Pass arguments to `import_flow` via a request object, either of type
+              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::ImportFlowRequest} or an equivalent Hash.
+              #
+              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::ImportFlowRequest, ::Hash]
+              #     A request object representing the call parameters. Required. To specify no
+              #     parameters, or to keep all the default parameter values, pass an empty Hash.
+              #   @param options [::Gapic::CallOptions, ::Hash]
+              #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+              #
+              # @overload import_flow(parent: nil, flow_uri: nil, flow_content: nil, import_option: nil)
+              #   Pass arguments to `import_flow` via keyword arguments. Note that at
+              #   least one keyword argument is required. To specify no parameters, or to keep all
+              #   the default parameter values, pass an empty Hash as a request object (see above).
+              #
+              #   @param parent [::String]
+              #     Required. The agent to import the flow into.
+              #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
+              #   @param flow_uri [::String]
+              #     The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
+              #     to import flow from. The format of this URI must be
+              #     `gs://<bucket-name>/<object-name>`.
+              #   @param flow_content [::String]
+              #     Uncompressed raw byte content for flow.
+              #   @param import_option [::Google::Cloud::Dialogflow::Cx::V3beta1::ImportFlowRequest::ImportOption]
+              #     Flow import mode. If not specified, `KEEP` is assumed.
+              #
+              # @yield [response, operation] Access the result along with the RPC operation
+              # @yieldparam response [::Gapic::Operation]
+              # @yieldparam operation [::GRPC::ActiveCall::Operation]
+              #
+              # @return [::Gapic::Operation]
+              #
+              # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              def import_flow request, options = nil
+                raise ::ArgumentError, "request must be provided" if request.nil?
+
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::ImportFlowRequest
+
+                # Converts hash and nil to an options object
+                options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+                # Customize the options with defaults
+                metadata = @config.rpcs.import_flow.metadata.to_h
+
+                # Set x-goog-api-client and x-goog-user-project headers
+                metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                  lib_name: @config.lib_name, lib_version: @config.lib_version,
+                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+                header_params = {
+                  "parent" => request.parent
+                }
+                request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+                metadata[:"x-goog-request-params"] ||= request_params_header
+
+                options.apply_defaults timeout:      @config.rpcs.import_flow.timeout,
+                                       metadata:     metadata,
+                                       retry_policy: @config.rpcs.import_flow.retry_policy
+                options.apply_defaults metadata:     @config.metadata,
+                                       retry_policy: @config.retry_policy
+
+                @flows_stub.call_rpc :import_flow, request, options: options do |response, operation|
+                  response = ::Gapic::Operation.new response, @operations_client, options: options
+                  yield response, operation if block_given?
+                  return response
+                end
+              rescue ::GRPC::BadStatus => e
+                raise ::Google::Cloud::Error.from_error(e)
+              end
+
+              ##
+              # Exports the specified flow to a binary file.
+              #
+              # Note that resources (e.g. intents, entities, webhooks) that the flow
+              # references will also be exported.
+              #
+              # @overload export_flow(request, options = nil)
+              #   Pass arguments to `export_flow` via a request object, either of type
+              #   {::Google::Cloud::Dialogflow::Cx::V3beta1::ExportFlowRequest} or an equivalent Hash.
+              #
+              #   @param request [::Google::Cloud::Dialogflow::Cx::V3beta1::ExportFlowRequest, ::Hash]
+              #     A request object representing the call parameters. Required. To specify no
+              #     parameters, or to keep all the default parameter values, pass an empty Hash.
+              #   @param options [::Gapic::CallOptions, ::Hash]
+              #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+              #
+              # @overload export_flow(name: nil, flow_uri: nil, include_referenced_flows: nil)
+              #   Pass arguments to `export_flow` via keyword arguments. Note that at
+              #   least one keyword argument is required. To specify no parameters, or to keep all
+              #   the default parameter values, pass an empty Hash as a request object (see above).
+              #
+              #   @param name [::String]
+              #     Required. The name of the flow to export.
+              #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+              #     ID>/flows/<Flow ID>`.
+              #   @param flow_uri [::String]
+              #     Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+              #     export the flow to. The format of this URI must be
+              #     `gs://<bucket-name>/<object-name>`.
+              #     If left unspecified, the serialized flow is returned inline.
+              #   @param include_referenced_flows [::Boolean]
+              #     Optional. Whether to export flows referenced by the specified flow.
+              #
+              # @yield [response, operation] Access the result along with the RPC operation
+              # @yieldparam response [::Gapic::Operation]
+              # @yieldparam operation [::GRPC::ActiveCall::Operation]
+              #
+              # @return [::Gapic::Operation]
+              #
+              # @raise [::Google::Cloud::Error] if the RPC is aborted.
+              #
+              def export_flow request, options = nil
+                raise ::ArgumentError, "request must be provided" if request.nil?
+
+                request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::Dialogflow::Cx::V3beta1::ExportFlowRequest
+
+                # Converts hash and nil to an options object
+                options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+                # Customize the options with defaults
+                metadata = @config.rpcs.export_flow.metadata.to_h
+
+                # Set x-goog-api-client and x-goog-user-project headers
+                metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                  lib_name: @config.lib_name, lib_version: @config.lib_version,
+                  gapic_version: ::Google::Cloud::Dialogflow::Cx::V3beta1::VERSION
+                metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+                header_params = {
+                  "name" => request.name
+                }
+                request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+                metadata[:"x-goog-request-params"] ||= request_params_header
+
+                options.apply_defaults timeout:      @config.rpcs.export_flow.timeout,
+                                       metadata:     metadata,
+                                       retry_policy: @config.rpcs.export_flow.retry_policy
+                options.apply_defaults metadata:     @config.metadata,
+                                       retry_policy: @config.retry_policy
+
+                @flows_stub.call_rpc :export_flow, request, options: options do |response, operation|
+                  response = ::Gapic::Operation.new response, @operations_client, options: options
+                  yield response, operation if block_given?
+                  return response
+                end
+              rescue ::GRPC::BadStatus => e
+                raise ::Google::Cloud::Error.from_error(e)
+              end
+
+              ##
               # Configuration class for the Flows API.
               #
               # This class represents the configuration for Flows,
@@ -964,6 +1127,16 @@ module Google
                   # @return [::Gapic::Config::Method]
                   #
                   attr_reader :get_flow_validation_result
+                  ##
+                  # RPC-specific configuration for `import_flow`
+                  # @return [::Gapic::Config::Method]
+                  #
+                  attr_reader :import_flow
+                  ##
+                  # RPC-specific configuration for `export_flow`
+                  # @return [::Gapic::Config::Method]
+                  #
+                  attr_reader :export_flow
 
                   # @private
                   def initialize parent_rpcs = nil
@@ -983,6 +1156,10 @@ module Google
                     @validate_flow = ::Gapic::Config::Method.new validate_flow_config
                     get_flow_validation_result_config = parent_rpcs.get_flow_validation_result if parent_rpcs.respond_to? :get_flow_validation_result
                     @get_flow_validation_result = ::Gapic::Config::Method.new get_flow_validation_result_config
+                    import_flow_config = parent_rpcs.import_flow if parent_rpcs.respond_to? :import_flow
+                    @import_flow = ::Gapic::Config::Method.new import_flow_config
+                    export_flow_config = parent_rpcs.export_flow if parent_rpcs.respond_to? :export_flow
+                    @export_flow = ::Gapic::Config::Method.new export_flow_config
 
                     yield self if block_given?
                   end

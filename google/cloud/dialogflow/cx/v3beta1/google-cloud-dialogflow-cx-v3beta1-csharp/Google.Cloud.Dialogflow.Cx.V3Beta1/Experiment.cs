@@ -2118,7 +2118,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
             private string version_ = "";
             /// <summary>
             /// The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
-            /// Format: `projects/&lt;Project Number>/locations/&lt;Location
+            /// Format: `projects/&lt;Project ID>/locations/&lt;Location
             /// ID>/agents/&lt;Agent ID>/flows/&lt;Flow ID>/versions/&lt;Version ID>`.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

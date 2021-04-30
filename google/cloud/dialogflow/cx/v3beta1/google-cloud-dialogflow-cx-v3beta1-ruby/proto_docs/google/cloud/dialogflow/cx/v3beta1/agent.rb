@@ -55,6 +55,10 @@ module Google
           #     Support](https://cloud.google.com/dialogflow/cx/docs/reference/language)
           #     for a list of the currently supported language codes.
           #     This field cannot be set by the {::Google::Cloud::Dialogflow::Cx::V3beta1::Agents::Client#update_agent Agents.UpdateAgent} method.
+          # @!attribute [rw] supported_language_codes
+          #   @return [::Array<::String>]
+          #     The list of all languages supported by the agent (except for the
+          #     `default_language_code`).
           # @!attribute [rw] time_zone
           #   @return [::String]
           #     Required. The time zone of the agent from the [time zone
@@ -185,6 +189,11 @@ module Google
           #     export the agent to. The format of this URI must be
           #     `gs://<bucket-name>/<object-name>`.
           #     If left unspecified, the serialized agent is returned inline.
+          # @!attribute [rw] environment
+          #   @return [::String]
+          #     Optional. Environment name. If not set, draft environment is assumed.
+          #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+          #     ID>/environments/<Environment ID>`.
           class ExportAgentRequest
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

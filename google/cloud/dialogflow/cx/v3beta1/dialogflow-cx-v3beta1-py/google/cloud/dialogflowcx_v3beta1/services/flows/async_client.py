@@ -853,6 +853,143 @@ class FlowsAsyncClient:
         # Done; return the response.
         return response
 
+    async def import_flow(self,
+            request: flow.ImportFlowRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> operation_async.AsyncOperation:
+        r"""Imports the specified flow to the specified agent
+        from a binary file.
+
+        Args:
+            request (:class:`google.cloud.dialogflowcx_v3beta1.types.ImportFlowRequest`):
+                The request object. The request message for
+                [Flows.ImportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ImportFlow].
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.api_core.operation_async.AsyncOperation:
+                An object representing a long-running operation.
+
+                The result type for the operation will be
+                :class:`google.cloud.dialogflowcx_v3beta1.types.ImportFlowResponse`
+                The response message for
+                [Flows.ImportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ImportFlow].
+
+        """
+        # Create or coerce a protobuf request object.
+        request = flow.ImportFlowRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.import_flow,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('parent', request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = await rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Wrap the response in an operation future.
+        response = operation_async.from_gapic(
+            response,
+            self._client._transport.operations_client,
+            flow.ImportFlowResponse,
+            metadata_type=struct.Struct,
+        )
+
+        # Done; return the response.
+        return response
+
+    async def export_flow(self,
+            request: flow.ExportFlowRequest = None,
+            *,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> operation_async.AsyncOperation:
+        r"""Exports the specified flow to a binary file.
+        Note that resources (e.g. intents, entities, webhooks)
+        that the flow references will also be exported.
+
+        Args:
+            request (:class:`google.cloud.dialogflowcx_v3beta1.types.ExportFlowRequest`):
+                The request object. The request message for
+                [Flows.ExportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ExportFlow].
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.api_core.operation_async.AsyncOperation:
+                An object representing a long-running operation.
+
+                The result type for the operation will be
+                :class:`google.cloud.dialogflowcx_v3beta1.types.ExportFlowResponse`
+                The response message for
+                [Flows.ExportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ExportFlow].
+
+        """
+        # Create or coerce a protobuf request object.
+        request = flow.ExportFlowRequest(request)
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.export_flow,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ('name', request.name),
+            )),
+        )
+
+        # Send the request.
+        response = await rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Wrap the response in an operation future.
+        response = operation_async.from_gapic(
+            response,
+            self._client._transport.operations_client,
+            flow.ExportFlowResponse,
+            metadata_type=struct.Struct,
+        )
+
+        # Done; return the response.
+        return response
+
 
 
 

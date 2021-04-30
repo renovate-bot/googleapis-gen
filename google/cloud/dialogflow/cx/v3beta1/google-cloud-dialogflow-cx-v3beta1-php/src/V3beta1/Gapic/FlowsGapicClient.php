@@ -33,8 +33,8 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 
 use Google\ApiCore\LongRunning\OperationsClient;
-use Google\ApiCore\OperationResponse;
 
+use Google\ApiCore\OperationResponse;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -43,16 +43,19 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Dialogflow\Cx\V3beta1\CreateFlowRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\DeleteFlowRequest;
+use Google\Cloud\Dialogflow\Cx\V3beta1\ExportFlowRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\Flow;
 use Google\Cloud\Dialogflow\Cx\V3beta1\FlowValidationResult;
 use Google\Cloud\Dialogflow\Cx\V3beta1\GetFlowRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\GetFlowValidationResultRequest;
+use Google\Cloud\Dialogflow\Cx\V3beta1\ImportFlowRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListFlowsRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ListFlowsResponse;
 use Google\Cloud\Dialogflow\Cx\V3beta1\TrainFlowRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\UpdateFlowRequest;
 use Google\Cloud\Dialogflow\Cx\V3beta1\ValidateFlowRequest;
 use Google\LongRunning\Operation;
+
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 
@@ -449,7 +452,9 @@ class FlowsGapicClient
      *           The language of the following fields in `flow`:
      *
      *           *  `Flow.event_handlers.trigger_fulfillment.messages`
+     *           *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
      *           *  `Flow.transition_routes.trigger_fulfillment.messages`
+     *           *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
      *
      *           If not specified, the agent's default language is used.
      *           [Many
@@ -543,6 +548,93 @@ class FlowsGapicClient
     }
 
     /**
+     * Exports the specified flow to a binary file.
+     *
+     * Note that resources (e.g. intents, entities, webhooks) that the flow
+     * references will also be exported.
+     *
+     * Sample code:
+     * ```
+     * $flowsClient = new FlowsClient();
+     * try {
+     *     $formattedName = $flowsClient->flowName('[PROJECT]', '[LOCATION]', '[AGENT]', '[FLOW]');
+     *     $operationResponse = $flowsClient->exportFlow($formattedName);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $flowsClient->exportFlow($formattedName);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $flowsClient->resumeOperation($operationName, 'exportFlow');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $flowsClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the flow to export.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *                             ID>/flows/<Flow ID>`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $flowUri
+     *           Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+     *           export the flow to. The format of this URI must be
+     *           `gs://<bucket-name>/<object-name>`.
+     *           If left unspecified, the serialized flow is returned inline.
+     *     @type bool $includeReferencedFlows
+     *           Optional. Whether to export flows referenced by the specified flow.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function exportFlow($name, array $optionalArgs = [])
+    {
+        $request = new ExportFlowRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        if (isset($optionalArgs['flowUri'])) {
+            $request->setFlowUri($optionalArgs['flowUri']);
+        }
+
+        if (isset($optionalArgs['includeReferencedFlows'])) {
+            $request->setIncludeReferencedFlows($optionalArgs['includeReferencedFlows']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('ExportFlow', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
      * Retrieves the specified flow.
      *
      * Sample code:
@@ -567,7 +659,9 @@ class FlowsGapicClient
      *           dependent:
      *
      *           *  `Flow.event_handlers.trigger_fulfillment.messages`
+     *           *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
      *           *  `Flow.transition_routes.trigger_fulfillment.messages`
+     *           *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
      *
      *           If not specified, the agent's default language is used.
      *           [Many
@@ -654,6 +748,95 @@ class FlowsGapicClient
     }
 
     /**
+     * Imports the specified flow to the specified agent from a binary file.
+     *
+     * Sample code:
+     * ```
+     * $flowsClient = new FlowsClient();
+     * try {
+     *     $formattedParent = $flowsClient->agentName('[PROJECT]', '[LOCATION]', '[AGENT]');
+     *     $operationResponse = $flowsClient->importFlow($formattedParent);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $flowsClient->importFlow($formattedParent);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $flowsClient->resumeOperation($operationName, 'importFlow');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $flowsClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The agent to import the flow into.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>`.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $flowUri
+     *           The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI
+     *           to import flow from. The format of this URI must be
+     *           `gs://<bucket-name>/<object-name>`.
+     *     @type string $flowContent
+     *           Uncompressed raw byte content for flow.
+     *     @type int $importOption
+     *           Flow import mode. If not specified, `KEEP` is assumed.
+     *           For allowed values, use constants defined on {@see \Google\Cloud\Dialogflow\Cx\V3beta1\ImportFlowRequest\ImportOption}
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function importFlow($parent, array $optionalArgs = [])
+    {
+        $request = new ImportFlowRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['flowUri'])) {
+            $request->setFlowUri($optionalArgs['flowUri']);
+        }
+
+        if (isset($optionalArgs['flowContent'])) {
+            $request->setFlowContent($optionalArgs['flowContent']);
+        }
+
+        if (isset($optionalArgs['importOption'])) {
+            $request->setImportOption($optionalArgs['importOption']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('ImportFlow', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
      * Returns the list of all flows in the specified agent.
      *
      * Sample code:
@@ -698,7 +881,9 @@ class FlowsGapicClient
      *           dependent:
      *
      *           *  `Flow.event_handlers.trigger_fulfillment.messages`
+     *           *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
      *           *  `Flow.transition_routes.trigger_fulfillment.messages`
+     *           *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
      *
      *           If not specified, the agent's default language is used.
      *           [Many
@@ -834,7 +1019,9 @@ class FlowsGapicClient
      *           The language of the following fields in `flow`:
      *
      *           *  `Flow.event_handlers.trigger_fulfillment.messages`
+     *           *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
      *           *  `Flow.transition_routes.trigger_fulfillment.messages`
+     *           *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
      *
      *           If not specified, the agent's default language is used.
      *           [Many

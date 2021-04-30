@@ -36,6 +36,10 @@ __protobuf__ = proto.module(
         'ValidateFlowRequest',
         'GetFlowValidationResultRequest',
         'FlowValidationResult',
+        'ImportFlowRequest',
+        'ImportFlowResponse',
+        'ExportFlowRequest',
+        'ExportFlowResponse',
     },
 )
 
@@ -212,7 +216,9 @@ class CreateFlowRequest(proto.Message):
             The language of the following fields in ``flow``:
 
             -  ``Flow.event_handlers.trigger_fulfillment.messages``
+            -  ``Flow.event_handlers.trigger_fulfillment.conditional_cases``
             -  ``Flow.transition_routes.trigger_fulfillment.messages``
+            -  ``Flow.transition_routes.trigger_fulfillment.conditional_cases``
 
             If not specified, the agent's default language is used.
             `Many
@@ -287,7 +293,9 @@ class ListFlowsRequest(proto.Message):
             language dependent:
 
             -  ``Flow.event_handlers.trigger_fulfillment.messages``
+            -  ``Flow.event_handlers.trigger_fulfillment.conditional_cases``
             -  ``Flow.transition_routes.trigger_fulfillment.messages``
+            -  ``Flow.transition_routes.trigger_fulfillment.conditional_cases``
 
             If not specified, the agent's default language is used.
             `Many
@@ -356,7 +364,9 @@ class GetFlowRequest(proto.Message):
             are language dependent:
 
             -  ``Flow.event_handlers.trigger_fulfillment.messages``
+            -  ``Flow.event_handlers.trigger_fulfillment.conditional_cases``
             -  ``Flow.transition_routes.trigger_fulfillment.messages``
+            -  ``Flow.transition_routes.trigger_fulfillment.conditional_cases``
 
             If not specified, the agent's default language is used.
             `Many
@@ -389,7 +399,9 @@ class UpdateFlowRequest(proto.Message):
             The language of the following fields in ``flow``:
 
             -  ``Flow.event_handlers.trigger_fulfillment.messages``
+            -  ``Flow.event_handlers.trigger_fulfillment.conditional_cases``
             -  ``Flow.transition_routes.trigger_fulfillment.messages``
+            -  ``Flow.transition_routes.trigger_fulfillment.conditional_cases``
 
             If not specified, the agent's default language is used.
             `Many
@@ -503,6 +515,125 @@ class FlowValidationResult(proto.Message):
         proto.MESSAGE,
         number=3,
         message=timestamp.Timestamp,
+    )
+
+
+class ImportFlowRequest(proto.Message):
+    r"""The request message for
+    [Flows.ImportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ImportFlow].
+
+    Attributes:
+        parent (str):
+            Required. The agent to import the flow into. Format:
+            ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>``.
+        flow_uri (str):
+            The `Google Cloud
+            Storage <https://cloud.google.com/storage/docs/>`__ URI to
+            import flow from. The format of this URI must be
+            ``gs://<bucket-name>/<object-name>``.
+        flow_content (bytes):
+            Uncompressed raw byte content for flow.
+        import_option (google.cloud.dialogflowcx_v3beta1.types.ImportFlowRequest.ImportOption):
+            Flow import mode. If not specified, ``KEEP`` is assumed.
+    """
+    class ImportOption(proto.Enum):
+        r"""Import option."""
+        IMPORT_OPTION_UNSPECIFIED = 0
+        KEEP = 1
+        FALLBACK = 2
+
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    flow_uri = proto.Field(
+        proto.STRING,
+        number=2,
+        oneof='flow',
+    )
+    flow_content = proto.Field(
+        proto.BYTES,
+        number=3,
+        oneof='flow',
+    )
+    import_option = proto.Field(
+        proto.ENUM,
+        number=4,
+        enum=ImportOption,
+    )
+
+
+class ImportFlowResponse(proto.Message):
+    r"""The response message for
+    [Flows.ImportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ImportFlow].
+
+    Attributes:
+        flow (str):
+            The unique identifier of the new flow. Format:
+            ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>``.
+    """
+
+    flow = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+
+
+class ExportFlowRequest(proto.Message):
+    r"""The request message for
+    [Flows.ExportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ExportFlow].
+
+    Attributes:
+        name (str):
+            Required. The name of the flow to export. Format:
+            ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>``.
+        flow_uri (str):
+            Optional. The `Google Cloud
+            Storage <https://cloud.google.com/storage/docs/>`__ URI to
+            export the flow to. The format of this URI must be
+            ``gs://<bucket-name>/<object-name>``. If left unspecified,
+            the serialized flow is returned inline.
+        include_referenced_flows (bool):
+            Optional. Whether to export flows referenced
+            by the specified flow.
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    flow_uri = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    include_referenced_flows = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
+
+
+class ExportFlowResponse(proto.Message):
+    r"""The response message for
+    [Flows.ExportFlow][google.cloud.dialogflow.cx.v3beta1.Flows.ExportFlow].
+
+    Attributes:
+        flow_uri (str):
+            The URI to a file containing the exported flow. This field
+            is populated only if ``flow_uri`` is specified in
+            [ExportFlowRequest][google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest].
+        flow_content (bytes):
+            Uncompressed raw byte content for flow.
+    """
+
+    flow_uri = proto.Field(
+        proto.STRING,
+        number=1,
+        oneof='flow',
+    )
+    flow_content = proto.Field(
+        proto.BYTES,
+        number=2,
+        oneof='flow',
     )
 
 

@@ -81,10 +81,14 @@ from .types.experiment import VariantsHistory
 from .types.experiment import VersionVariants
 from .types.flow import CreateFlowRequest
 from .types.flow import DeleteFlowRequest
+from .types.flow import ExportFlowRequest
+from .types.flow import ExportFlowResponse
 from .types.flow import Flow
 from .types.flow import FlowValidationResult
 from .types.flow import GetFlowRequest
 from .types.flow import GetFlowValidationResultRequest
+from .types.flow import ImportFlowRequest
+from .types.flow import ImportFlowResponse
 from .types.flow import ListFlowsRequest
 from .types.flow import ListFlowsResponse
 from .types.flow import NluSettings
@@ -275,10 +279,14 @@ __all__ = (
     'VersionVariants',
     'CreateFlowRequest',
     'DeleteFlowRequest',
+    'ExportFlowRequest',
+    'ExportFlowResponse',
     'Flow',
     'FlowValidationResult',
     'GetFlowRequest',
     'GetFlowValidationResultRequest',
+    'ImportFlowRequest',
+    'ImportFlowResponse',
     'ListFlowsRequest',
     'ListFlowsResponse',
     'NluSettings',

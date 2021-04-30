@@ -353,9 +353,10 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.dialogflow.cx.v3beta1.Intent intent_;
   /**
    * <pre>
-   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
-   * this message, including but not limited to: `name` and `display_name`. Only
-   * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
+   * query. Some, not all fields are filled in this message, including but not
+   * limited to: `name` and `display_name`. Only filled for
+   * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
@@ -367,9 +368,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
-   * this message, including but not limited to: `name` and `display_name`. Only
-   * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
+   * query. Some, not all fields are filled in this message, including but not
+   * limited to: `name` and `display_name`. Only filled for
+   * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
@@ -381,9 +383,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
-   * this message, including but not limited to: `name` and `display_name`. Only
-   * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+   * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
+   * query. Some, not all fields are filled in this message, including but not
+   * limited to: `name` and `display_name`. Only filled for
+   * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
@@ -1038,9 +1041,10 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.dialogflow.cx.v3beta1.Intent, com.google.cloud.dialogflow.cx.v3beta1.Intent.Builder, com.google.cloud.dialogflow.cx.v3beta1.IntentOrBuilder> intentBuilder_;
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
-     * this message, including but not limited to: `name` and `display_name`. Only
-     * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
+     * query. Some, not all fields are filled in this message, including but not
+     * limited to: `name` and `display_name`. Only filled for
+     * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
@@ -1051,9 +1055,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
-     * this message, including but not limited to: `name` and `display_name`. Only
-     * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
+     * query. Some, not all fields are filled in this message, including but not
+     * limited to: `name` and `display_name`. Only filled for
+     * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
@@ -1068,9 +1073,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
-     * this message, including but not limited to: `name` and `display_name`. Only
-     * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
+     * query. Some, not all fields are filled in this message, including but not
+     * limited to: `name` and `display_name`. Only filled for
+     * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
@@ -1090,9 +1096,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
-     * this message, including but not limited to: `name` and `display_name`. Only
-     * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
+     * query. Some, not all fields are filled in this message, including but not
+     * limited to: `name` and `display_name`. Only filled for
+     * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
@@ -1110,9 +1117,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
-     * this message, including but not limited to: `name` and `display_name`. Only
-     * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
+     * query. Some, not all fields are filled in this message, including but not
+     * limited to: `name` and `display_name`. Only filled for
+     * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
@@ -1134,9 +1142,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
-     * this message, including but not limited to: `name` and `display_name`. Only
-     * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
+     * query. Some, not all fields are filled in this message, including but not
+     * limited to: `name` and `display_name`. Only filled for
+     * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
@@ -1154,9 +1163,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
-     * this message, including but not limited to: `name` and `display_name`. Only
-     * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
+     * query. Some, not all fields are filled in this message, including but not
+     * limited to: `name` and `display_name`. Only filled for
+     * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
@@ -1168,9 +1178,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
-     * this message, including but not limited to: `name` and `display_name`. Only
-     * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
+     * query. Some, not all fields are filled in this message, including but not
+     * limited to: `name` and `display_name`. Only filled for
+     * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>
@@ -1185,9 +1196,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the query. Some, not all fields are filled in
-     * this message, including but not limited to: `name` and `display_name`. Only
-     * filled for [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
+     * The [Intent][google.cloud.dialogflow.cx.v3beta1.Intent] that matched the
+     * query. Some, not all fields are filled in this message, including but not
+     * limited to: `name` and `display_name`. Only filled for
+     * [`INTENT`][google.cloud.dialogflow.cx.v3beta1.Match.MatchType] match type.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 1;</code>

@@ -182,8 +182,9 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
     /// <summary>Sessions client wrapper, for convenient use.</summary>
     /// <remarks>
     /// A session represents an interaction with a user. You retrieve user input
-    /// and pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to determine
-    /// user intent and respond.
+    /// and pass it to the
+    /// [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent]
+    /// method to determine user intent and respond.
     /// </remarks>
     public abstract partial class SessionsClient
     {
@@ -365,9 +366,13 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
             MatchIntentAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
         /// <summary>
-        /// Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
-        /// Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
-        /// [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
+        /// Fulfills a matched intent returned by
+        /// [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+        /// Must be called after
+        /// [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent],
+        /// with input from
+        /// [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse].
+        /// Otherwise, the behavior is undefined.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -376,9 +381,13 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
             throw new sys::NotImplementedException();
 
         /// <summary>
-        /// Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
-        /// Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
-        /// [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
+        /// Fulfills a matched intent returned by
+        /// [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+        /// Must be called after
+        /// [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent],
+        /// with input from
+        /// [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse].
+        /// Otherwise, the behavior is undefined.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -387,9 +396,13 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
             throw new sys::NotImplementedException();
 
         /// <summary>
-        /// Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
-        /// Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
-        /// [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
+        /// Fulfills a matched intent returned by
+        /// [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+        /// Must be called after
+        /// [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent],
+        /// with input from
+        /// [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse].
+        /// Otherwise, the behavior is undefined.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -401,8 +414,9 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
     /// <summary>Sessions client wrapper implementation, for convenient use.</summary>
     /// <remarks>
     /// A session represents an interaction with a user. You retrieve user input
-    /// and pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to determine
-    /// user intent and respond.
+    /// and pass it to the
+    /// [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent]
+    /// method to determine user intent and respond.
     /// </remarks>
     public sealed partial class SessionsClientImpl : SessionsClient
     {
@@ -597,9 +611,13 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
         }
 
         /// <summary>
-        /// Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
-        /// Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
-        /// [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
+        /// Fulfills a matched intent returned by
+        /// [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+        /// Must be called after
+        /// [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent],
+        /// with input from
+        /// [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse].
+        /// Otherwise, the behavior is undefined.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -611,9 +629,13 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1
         }
 
         /// <summary>
-        /// Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
-        /// Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
-        /// [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
+        /// Fulfills a matched intent returned by
+        /// [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+        /// Must be called after
+        /// [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent],
+        /// with input from
+        /// [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse].
+        /// Otherwise, the behavior is undefined.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>

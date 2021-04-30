@@ -68,9 +68,9 @@ module Google
           #     The audio data bytes encoded as specified in the request.
           #     Note: The output audio is generated based on the values of default platform
           #     text responses found in the
-          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryResult#response_messages `query_result.response_messages`} field. If
-          #     multiple default text responses exist, they will be concatenated when
-          #     generating audio. If no default platform text responses exist, the
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryResult#response_messages `query_result.response_messages`}
+          #     field. If multiple default text responses exist, they will be concatenated
+          #     when generating audio. If no default platform text responses exist, the
           #     generated audio content will be empty.
           #
           #     In some scenarios, multiple output audio fields may be present in the
@@ -85,24 +85,29 @@ module Google
           end
 
           # The top-level message sent by the client to the
-          # {::Google::Cloud::Dialogflow::Cx::V3beta1::Sessions::Client#streaming_detect_intent Sessions.StreamingDetectIntent} method.
+          # {::Google::Cloud::Dialogflow::Cx::V3beta1::Sessions::Client#streaming_detect_intent Sessions.StreamingDetectIntent}
+          # method.
           #
           # Multiple request messages should be sent in order:
           #
           # 1.  The first message must contain
           # {::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest#session session},
-          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest#query_input query_input} plus optionally
-          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest#query_params query_params}. If the client
-          #     wants to receive an audio response, it should also contain
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest#query_input query_input}
+          #     plus optionally
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest#query_params query_params}.
+          #     If the client wants to receive an audio response, it should also contain
           #     {::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest#output_audio_config output_audio_config}.
           #
-          # 2.  If {::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest#query_input query_input} was set to
-          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::AudioInput#config query_input.audio.config}, all subsequent messages
-          #     must contain {::Google::Cloud::Dialogflow::Cx::V3beta1::AudioInput#audio query_input.audio.audio} to continue with
-          #     Speech recognition.
-          #     If you decide to rather detect an intent from text
-          #     input after you already started Speech recognition, please send a message
-          #     with {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryInput#text query_input.text}.
+          # 2.  If
+          # {::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingDetectIntentRequest#query_input query_input}
+          # was set to
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::AudioInput#config query_input.audio.config},
+          #     all subsequent messages must contain
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::AudioInput#audio query_input.audio.audio}
+          #     to continue with Speech recognition. If you decide to rather detect an
+          #     intent from text input after you already started Speech recognition,
+          #     please send a message with
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryInput#text query_input.text}.
           #
           #     However, note that:
           #
@@ -154,7 +159,12 @@ module Google
           #     complete transcript of what the user said. The last `recognition_result`
           #     has `is_final` set to `true`.
           #
-          # 2.  The last message contains `detect_intent_response`.
+          # 2.  If `enable_partial_response` is true, the following N messages
+          #     (currently 1 <= N <= 4) contain `detect_intent_response`. The first (N-1)
+          #     `detect_intent_response`s will have `response_type` set to `PARTIAL`.
+          #     The last `detect_intent_response` has `response_type` set to `FINAL`.
+          #     If `response_type` is false, response stream only contains
+          #     the final `detect_intent_response`.
           # @!attribute [rw] recognition_result
           #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingRecognitionResult]
           #     The result of speech recognition.
@@ -233,7 +243,8 @@ module Google
           # @!attribute [rw] speech_word_info
           #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::SpeechWordInfo>]
           #     Word-specific information for the words recognized by Speech in
-          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingRecognitionResult#transcript transcript}. Populated if and only if `message_type` = `TRANSCRIPT` and
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::StreamingRecognitionResult#transcript transcript}.
+          #     Populated if and only if `message_type` = `TRANSCRIPT` and
           #     [InputAudioConfig.enable_word_info] is set.
           # @!attribute [rw] speech_end_offset
           #   @return [::Google::Protobuf::Duration]
@@ -258,8 +269,8 @@ module Google
               # additional results). The client should stop sending additional audio
               # data, half-close the gRPC connection, and wait for any additional results
               # until the server closes the gRPC connection. This message is only sent if
-              # {::Google::Cloud::Dialogflow::Cx::V3beta1::InputAudioConfig#single_utterance `single_utterance`} was set to
-              # `true`, and is not used otherwise.
+              # {::Google::Cloud::Dialogflow::Cx::V3beta1::InputAudioConfig#single_utterance `single_utterance`}
+              # was set to `true`, and is not used otherwise.
               END_OF_SINGLE_UTTERANCE = 2
             end
           end
@@ -283,6 +294,17 @@ module Google
           #   @return [::Google::Protobuf::Struct]
           #     This field can be used to pass custom data into the webhook associated with
           #     the agent. Arbitrary JSON objects are supported.
+          #     Some integrations that query a Dialogflow agent may provide additional
+          #     information in the payload.
+          #     In particular, for the Dialogflow Phone Gateway integration, this field has
+          #     the form:
+          #     ```
+          #     {
+          #      "telephony": {
+          #        "caller_id": "+18558363987"
+          #      }
+          #     }
+          #     ```
           # @!attribute [rw] parameters
           #   @return [::Google::Protobuf::Struct]
           #     Additional parameters to be put into [session
@@ -306,7 +328,8 @@ module Google
           #         -   Else: parameter value
           # @!attribute [rw] current_page
           #   @return [::String]
-          #     The unique identifier of the {::Google::Cloud::Dialogflow::Cx::V3beta1::Page page} to override the [current
+          #     The unique identifier of the
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::Page page} to override the [current
           #     page][QueryResult.current_page] in the session. Format: `projects/<Project
           #     ID>/locations/<Location ID>/agents/<Agent ID>/pages/<page ID>`.
           #
@@ -314,9 +337,11 @@ module Google
           #     ignored by Dialogflow, including the [previous
           #     page][QueryResult.current_page] and the [previous session
           #     parameters][QueryResult.parameters].
-          #     In most cases, {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryParameters#current_page current_page} and
-          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryParameters#parameters parameters} should be configured together to
-          #     direct a session to a specific state.
+          #     In most cases,
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryParameters#current_page current_page}
+          #     and
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryParameters#parameters parameters}
+          #     should be configured together to direct a session to a specific state.
           # @!attribute [rw] disable_webhook
           #   @return [::Boolean]
           #     Whether to disable webhook calls for this request.
@@ -386,22 +411,23 @@ module Google
           # Represents the result of a conversational query.
           # @!attribute [rw] text
           #   @return [::String]
-          #     If {::Google::Cloud::Dialogflow::Cx::V3beta1::TextInput natural language text} was provided as input, this field
-          #     will contain a copy of the text.
+          #     If {::Google::Cloud::Dialogflow::Cx::V3beta1::TextInput natural language text}
+          #     was provided as input, this field will contain a copy of the text.
           # @!attribute [rw] trigger_intent
           #   @return [::String]
-          #     If an {::Google::Cloud::Dialogflow::Cx::V3beta1::IntentInput intent} was provided as input, this field will
-          #     contain a copy of the intent identifier.
-          #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-          #     ID>/intents/<Intent ID>`.
+          #     If an {::Google::Cloud::Dialogflow::Cx::V3beta1::IntentInput intent} was
+          #     provided as input, this field will contain a copy of the intent
+          #     identifier. Format: `projects/<Project ID>/locations/<Location
+          #     ID>/agents/<Agent ID>/intents/<Intent ID>`.
           # @!attribute [rw] transcript
           #   @return [::String]
-          #     If {::Google::Cloud::Dialogflow::Cx::V3beta1::AudioInput natural language speech audio} was provided as input,
-          #     this field will contain the transcript for the audio.
+          #     If [natural language speech
+          #     audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as
+          #     input, this field will contain the transcript for the audio.
           # @!attribute [rw] trigger_event
           #   @return [::String]
-          #     If an {::Google::Cloud::Dialogflow::Cx::V3beta1::EventInput event} was provided as input, this field will contain
-          #     the name of the event.
+          #     If an {::Google::Cloud::Dialogflow::Cx::V3beta1::EventInput event} was provided
+          #     as input, this field will contain the name of the event.
           # @!attribute [rw] language_code
           #   @return [::String]
           #     The language that was triggered during intent detection.
@@ -410,7 +436,8 @@ module Google
           #     for a list of the currently supported language codes.
           # @!attribute [rw] parameters
           #   @return [::Google::Protobuf::Struct]
-          #     The collected {::Google::Cloud::Dialogflow::Cx::V3beta1::SessionInfo#parameters session parameters}.
+          #     The collected [session
+          #     parameters][google.cloud.dialogflow.cx.v3beta1.SessionInfo.parameters].
           #
           #     Depending on your protocol or client library language, this is a
           #     map, associative array, symbol table, dictionary, or JSON object
@@ -436,19 +463,23 @@ module Google
           #     The list of webhook call status in the order of call sequence.
           # @!attribute [rw] webhook_payloads
           #   @return [::Array<::Google::Protobuf::Struct>]
-          #     The list of webhook payload in {::Google::Cloud::Dialogflow::Cx::V3beta1::WebhookResponse#payload WebhookResponse.payload}, in
-          #     the order of call sequence. If some webhook call fails or doesn't return
+          #     The list of webhook payload in
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::WebhookResponse#payload WebhookResponse.payload},
+          #     in the order of call sequence. If some webhook call fails or doesn't return
           #     any payload, an empty `Struct` would be used instead.
           # @!attribute [rw] current_page
           #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Page]
-          #     The current {::Google::Cloud::Dialogflow::Cx::V3beta1::Page Page}. Some, not all fields are filled in this message,
-          #     including but not limited to `name` and `display_name`.
+          #     The current {::Google::Cloud::Dialogflow::Cx::V3beta1::Page Page}. Some, not all
+          #     fields are filled in this message, including but not limited to `name` and
+          #     `display_name`.
           # @!attribute [rw] intent
           #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Intent]
-          #     The {::Google::Cloud::Dialogflow::Cx::V3beta1::Intent Intent} that matched the conversational query. Some, not all fields
-          #     are filled in this message, including but not limited to: `name` and
-          #     `display_name`.
-          #     This field is deprecated, please use {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryResult#match QueryResult.match} instead.
+          #     The {::Google::Cloud::Dialogflow::Cx::V3beta1::Intent Intent} that matched the
+          #     conversational query. Some, not all fields are filled in this message,
+          #     including but not limited to: `name` and `display_name`. This field is
+          #     deprecated, please use
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryResult#match QueryResult.match}
+          #     instead.
           # @!attribute [rw] intent_detection_confidence
           #   @return [::Float]
           #     The intent detection confidence. Values range from 0.0 (completely
@@ -457,7 +488,9 @@ module Google
           #     help match the best intent within the classification threshold.
           #     This value may change for the same end-user expression at any time due to a
           #     model retraining or change in implementation.
-          #     This field is deprecated, please use {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryResult#match QueryResult.match} instead.
+          #     This field is deprecated, please use
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryResult#match QueryResult.match}
+          #     instead.
           # @!attribute [rw] match
           #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Match]
           #     Intent match result, could be an intent or an event.
@@ -470,7 +503,8 @@ module Google
           #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::SentimentAnalysisResult]
           #     The sentiment analyss result, which depends on
           #     [`analyze_query_text_sentiment`]
-          #     [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment], specified in the request.
+          #     [google.cloud.dialogflow.cx.v3beta1.QueryParameters.analyze_query_text_sentiment],
+          #     specified in the request.
           class QueryResult
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -479,8 +513,8 @@ module Google
           # Represents the natural language text to be processed.
           # @!attribute [rw] text
           #   @return [::String]
-          #     Required. The UTF-8 encoded natural language text to be processed. Text length must
-          #     not exceed 256 characters.
+          #     Required. The UTF-8 encoded natural language text to be processed. Text
+          #     length must not exceed 256 characters.
           class TextInput
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -506,8 +540,9 @@ module Google
           #   @return [::String]
           #     The natural language speech audio to be processed.
           #     A single request can contain up to 1 minute of speech audio data.
-          #     The {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryResult#transcript transcribed text} cannot contain more than 256
-          #     bytes.
+          #     The [transcribed
+          #     text][google.cloud.dialogflow.cx.v3beta1.QueryResult.transcript] cannot
+          #     contain more than 256 bytes.
           #
           #     For non-streaming audio detect intent, both `config` and `audio` must be
           #     provided.
@@ -542,9 +577,10 @@ module Google
           # Represents one match result of [MatchIntent][].
           # @!attribute [rw] intent
           #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Intent]
-          #     The {::Google::Cloud::Dialogflow::Cx::V3beta1::Intent Intent} that matched the query. Some, not all fields are filled in
-          #     this message, including but not limited to: `name` and `display_name`. Only
-          #     filled for {::Google::Cloud::Dialogflow::Cx::V3beta1::Match::MatchType `INTENT`} match type.
+          #     The {::Google::Cloud::Dialogflow::Cx::V3beta1::Intent Intent} that matched the
+          #     query. Some, not all fields are filled in this message, including but not
+          #     limited to: `name` and `display_name`. Only filled for
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::Match::MatchType `INTENT`} match type.
           # @!attribute [rw] event
           #   @return [::String]
           #     The event that matched the query. Only filled for
@@ -641,30 +677,32 @@ module Google
           # Response of [MatchIntent][].
           # @!attribute [rw] text
           #   @return [::String]
-          #     If {::Google::Cloud::Dialogflow::Cx::V3beta1::TextInput natural language text} was provided as input, this field
-          #     will contain a copy of the text.
+          #     If {::Google::Cloud::Dialogflow::Cx::V3beta1::TextInput natural language text}
+          #     was provided as input, this field will contain a copy of the text.
           # @!attribute [rw] trigger_intent
           #   @return [::String]
-          #     If an {::Google::Cloud::Dialogflow::Cx::V3beta1::IntentInput intent} was provided as input, this field will
-          #     contain a copy of the intent identifier.
-          #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-          #     ID>/intents/<Intent ID>`.
+          #     If an {::Google::Cloud::Dialogflow::Cx::V3beta1::IntentInput intent} was
+          #     provided as input, this field will contain a copy of the intent
+          #     identifier. Format: `projects/<Project ID>/locations/<Location
+          #     ID>/agents/<Agent ID>/intents/<Intent ID>`.
           # @!attribute [rw] transcript
           #   @return [::String]
-          #     If {::Google::Cloud::Dialogflow::Cx::V3beta1::AudioInput natural language speech audio} was provided as input,
-          #     this field will contain the transcript for the audio.
+          #     If [natural language speech
+          #     audio][google.cloud.dialogflow.cx.v3beta1.AudioInput] was provided as
+          #     input, this field will contain the transcript for the audio.
           # @!attribute [rw] trigger_event
           #   @return [::String]
-          #     If an {::Google::Cloud::Dialogflow::Cx::V3beta1::EventInput event} was provided as input, this field will
-          #     contain a copy of the event name.
+          #     If an {::Google::Cloud::Dialogflow::Cx::V3beta1::EventInput event} was provided
+          #     as input, this field will contain a copy of the event name.
           # @!attribute [rw] matches
           #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::Match>]
           #     Match results, if more than one, ordered descendingly by the confidence
           #     we have that the particular intent matches the query.
           # @!attribute [rw] current_page
           #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Page]
-          #     The current {::Google::Cloud::Dialogflow::Cx::V3beta1::Page Page}. Some, not all fields are filled in this message,
-          #     including but not limited to `name` and `display_name`.
+          #     The current {::Google::Cloud::Dialogflow::Cx::V3beta1::Page Page}. Some, not all
+          #     fields are filled in this message, including but not limited to `name` and
+          #     `display_name`.
           class MatchIntentResponse
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -699,9 +737,9 @@ module Google
           #     The audio data bytes encoded as specified in the request.
           #     Note: The output audio is generated based on the values of default platform
           #     text responses found in the
-          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryResult#response_messages `query_result.response_messages`} field. If
-          #     multiple default text responses exist, they will be concatenated when
-          #     generating audio. If no default platform text responses exist, the
+          #     {::Google::Cloud::Dialogflow::Cx::V3beta1::QueryResult#response_messages `query_result.response_messages`}
+          #     field. If multiple default text responses exist, they will be concatenated
+          #     when generating audio. If no default platform text responses exist, the
           #     generated audio content will be empty.
           #
           #     In some scenarios, multiple output audio fields may be present in the

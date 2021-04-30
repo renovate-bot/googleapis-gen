@@ -32,6 +32,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             {
                 AgentName = AgentName.FromProjectLocationAgent("[PROJECT]", "[LOCATION]", "[AGENT]"),
                 AgentUri = "",
+                EnvironmentAsEnvironmentName = EnvironmentName.FromProjectLocationAgentEnvironment("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]"),
             };
             // Make the request
             Operation<ExportAgentResponse, Struct> response = agentsClient.ExportAgent(request);

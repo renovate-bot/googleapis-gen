@@ -156,4 +156,37 @@ class FlowsGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Imports the specified flow to the specified agent from a binary file.
+     * @param \Google\Cloud\Dialogflow\Cx\V3beta1\ImportFlowRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ImportFlow(\Google\Cloud\Dialogflow\Cx\V3beta1\ImportFlowRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.dialogflow.cx.v3beta1.Flows/ImportFlow',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Exports the specified flow to a binary file.
+     *
+     * Note that resources (e.g. intents, entities, webhooks) that the flow
+     * references will also be exported.
+     * @param \Google\Cloud\Dialogflow\Cx\V3beta1\ExportFlowRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ExportFlow(\Google\Cloud\Dialogflow\Cx\V3beta1\ExportFlowRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.dialogflow.cx.v3beta1.Flows/ExportFlow',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
 }

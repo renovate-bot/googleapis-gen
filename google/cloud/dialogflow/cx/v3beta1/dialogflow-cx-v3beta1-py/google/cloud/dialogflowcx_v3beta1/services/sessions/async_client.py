@@ -251,6 +251,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 client to the
                 [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.StreamingDetectIntent]
                 method.
+
                 Multiple request messages should be sent in order:
 
                 1.  The first message must contain
@@ -258,19 +259,19 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 [query_input][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_input]
                 plus optionally
                 [query_params][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_params].
-                If the client     wants to receive an audio response, it
+                If the client wants to receive an audio response, it
                 should also contain
                 [output_audio_config][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.output_audio_config].
                 2.  If
                 [query_input][google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest.query_input]
                 was set to
                 [query_input.audio.config][google.cloud.dialogflow.cx.v3beta1.AudioInput.config],
-                all subsequent messages     must contain
+                all subsequent messages must contain
                 [query_input.audio.audio][google.cloud.dialogflow.cx.v3beta1.AudioInput.audio]
-                to continue with     Speech recognition.
-                    If you decide to rather detect an intent from text
-                input after you already started Speech recognition,
-                please send a message     with
+                to continue with Speech recognition. If you decide to
+                rather detect an     intent from text input after you
+                already started Speech recognition,     please send a
+                message with
                 [query_input.text][google.cloud.dialogflow.cx.v3beta1.QueryInput.text].
                     However, note that:
 
@@ -299,7 +300,14 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                       Each recognition_result represents a more complete
                       transcript of what the user said. The last
                       recognition_result has is_final set to true.
-                   2. The last message contains detect_intent_response.
+                   2. If enable_partial_response is true, the following
+                      N messages (currently 1 <= N <= 4) contain
+                      detect_intent_response. The first (N-1)
+                      detect_intent_responses will have response_type
+                      set to PARTIAL. The last detect_intent_response
+                      has response_type set to FINAL. If response_type
+                      is false, response stream only contains the final
+                      detect_intent_response.
 
         """
 

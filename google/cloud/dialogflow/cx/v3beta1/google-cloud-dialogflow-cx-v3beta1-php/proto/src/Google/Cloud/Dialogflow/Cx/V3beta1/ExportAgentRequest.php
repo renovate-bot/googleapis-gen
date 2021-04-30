@@ -31,6 +31,14 @@ class ExportAgentRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string agent_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $agent_uri = '';
+    /**
+     * Optional. Environment name. If not set, draft environment is assumed.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/environments/<Environment ID>`.
+     *
+     * Generated from protobuf field <code>string environment = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = {</code>
+     */
+    protected $environment = '';
 
     /**
      * Constructor.
@@ -46,6 +54,10 @@ class ExportAgentRequest extends \Google\Protobuf\Internal\Message
      *           export the agent to. The format of this URI must be
      *           `gs://<bucket-name>/<object-name>`.
      *           If left unspecified, the serialized agent is returned inline.
+     *     @type string $environment
+     *           Optional. Environment name. If not set, draft environment is assumed.
+     *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *           ID>/environments/<Environment ID>`.
      * }
      */
     public function __construct($data = NULL) {
@@ -109,6 +121,36 @@ class ExportAgentRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->agent_uri = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Environment name. If not set, draft environment is assumed.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/environments/<Environment ID>`.
+     *
+     * Generated from protobuf field <code>string environment = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getEnvironment()
+    {
+        return $this->environment;
+    }
+
+    /**
+     * Optional. Environment name. If not set, draft environment is assumed.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/environments/<Environment ID>`.
+     *
+     * Generated from protobuf field <code>string environment = 5 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEnvironment($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->environment = $var;
 
         return $this;
     }

@@ -83,6 +83,33 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :validation_messages, :message, 2, "google.cloud.dialogflow.cx.v3beta1.ValidationMessage"
       optional :update_time, :message, 3, "google.protobuf.Timestamp"
     end
+    add_message "google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest" do
+      optional :parent, :string, 1
+      optional :import_option, :enum, 4, "google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest.ImportOption"
+      oneof :flow do
+        optional :flow_uri, :string, 2
+        optional :flow_content, :bytes, 3
+      end
+    end
+    add_enum "google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest.ImportOption" do
+      value :IMPORT_OPTION_UNSPECIFIED, 0
+      value :KEEP, 1
+      value :FALLBACK, 2
+    end
+    add_message "google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse" do
+      optional :flow, :string, 1
+    end
+    add_message "google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest" do
+      optional :name, :string, 1
+      optional :flow_uri, :string, 2
+      optional :include_referenced_flows, :bool, 4
+    end
+    add_message "google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse" do
+      oneof :flow do
+        optional :flow_uri, :string, 1
+        optional :flow_content, :bytes, 2
+      end
+    end
   end
 end
 
@@ -105,6 +132,11 @@ module Google
           ValidateFlowRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest").msgclass
           GetFlowValidationResultRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest").msgclass
           FlowValidationResult = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.FlowValidationResult").msgclass
+          ImportFlowRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest").msgclass
+          ImportFlowRequest::ImportOption = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest.ImportOption").enummodule
+          ImportFlowResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse").msgclass
+          ExportFlowRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest").msgclass
+          ExportFlowResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.ExportFlowResponse").msgclass
         end
       end
     end

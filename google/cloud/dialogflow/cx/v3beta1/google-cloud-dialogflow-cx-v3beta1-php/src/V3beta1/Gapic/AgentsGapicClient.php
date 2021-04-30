@@ -118,6 +118,8 @@ class AgentsGapicClient
 
     private static $agentValidationResultNameTemplate;
 
+    private static $environmentNameTemplate;
+
     private static $flowNameTemplate;
 
     private static $locationNameTemplate;
@@ -165,6 +167,15 @@ class AgentsGapicClient
         return self::$agentValidationResultNameTemplate;
     }
 
+    private static function getEnvironmentNameTemplate()
+    {
+        if (self::$environmentNameTemplate == null) {
+            self::$environmentNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}/environments/{environment}');
+        }
+
+        return self::$environmentNameTemplate;
+    }
+
     private static function getFlowNameTemplate()
     {
         if (self::$flowNameTemplate == null) {
@@ -198,6 +209,7 @@ class AgentsGapicClient
             self::$pathTemplateMap = [
                 'agent' => self::getAgentNameTemplate(),
                 'agentValidationResult' => self::getAgentValidationResultNameTemplate(),
+                'environment' => self::getEnvironmentNameTemplate(),
                 'flow' => self::getFlowNameTemplate(),
                 'location' => self::getLocationNameTemplate(),
                 'securitySettings' => self::getSecuritySettingsNameTemplate(),
@@ -246,6 +258,29 @@ class AgentsGapicClient
             'project' => $project,
             'location' => $location,
             'agent' => $agent,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a environment
+     * resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $agent
+     * @param string $environment
+     *
+     * @return string The formatted environment resource.
+     *
+     * @experimental
+     */
+    public static function environmentName($project, $location, $agent, $environment)
+    {
+        return self::getEnvironmentNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'agent' => $agent,
+            'environment' => $environment,
         ]);
     }
 
@@ -318,6 +353,7 @@ class AgentsGapicClient
      * Template: Pattern
      * - agent: projects/{project}/locations/{location}/agents/{agent}
      * - agentValidationResult: projects/{project}/locations/{location}/agents/{agent}/validationResult
+     * - environment: projects/{project}/locations/{location}/agents/{agent}/environments/{environment}
      * - flow: projects/{project}/locations/{location}/agents/{agent}/flows/{flow}
      * - location: projects/{project}/locations/{location}
      * - securitySettings: projects/{project}/locations/{location}/securitySettings/{security_settings}
@@ -588,6 +624,10 @@ class AgentsGapicClient
      *           export the agent to. The format of this URI must be
      *           `gs://<bucket-name>/<object-name>`.
      *           If left unspecified, the serialized agent is returned inline.
+     *     @type string $environment
+     *           Optional. Environment name. If not set, draft environment is assumed.
+     *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *           ID>/environments/<Environment ID>`.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -609,6 +649,10 @@ class AgentsGapicClient
         $requestParamHeaders['name'] = $name;
         if (isset($optionalArgs['agentUri'])) {
             $request->setAgentUri($optionalArgs['agentUri']);
+        }
+
+        if (isset($optionalArgs['environment'])) {
+            $request->setEnvironment($optionalArgs['environment']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);

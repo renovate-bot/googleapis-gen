@@ -1311,7 +1311,7 @@ type Experiment_Result_VersionMetrics struct {
 	unknownFields protoimpl.UnknownFields
 
 	// The name of the flow [Version][google.cloud.dialogflow.cx.v3beta1.Version].
-	// Format: `projects/<Project Number>/locations/<Location
+	// Format: `projects/<Project ID>/locations/<Location
 	// ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>`.
 	Version string `protobuf:"bytes,1,opt,name=version,proto3" json:"version,omitempty"`
 	// The metrics and corresponding confidence intervals in the inference
