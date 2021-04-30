@@ -228,9 +228,7 @@ class IntentsGrpcAsyncIOTransport(IntentsTransport):
     def list_intents(self) -> Callable[
             [intent.ListIntentsRequest],
             Awaitable[intent.ListIntentsResponse]]:
-        r"""Return a callable for the
-        list intents
-          method over gRPC.
+        r"""Return a callable for the list intents method over gRPC.
 
         Returns the list of all intents in the specified
         agent.
@@ -257,9 +255,7 @@ class IntentsGrpcAsyncIOTransport(IntentsTransport):
     def get_intent(self) -> Callable[
             [intent.GetIntentRequest],
             Awaitable[intent.Intent]]:
-        r"""Return a callable for the
-        get intent
-          method over gRPC.
+        r"""Return a callable for the get intent method over gRPC.
 
         Retrieves the specified intent.
 
@@ -285,9 +281,7 @@ class IntentsGrpcAsyncIOTransport(IntentsTransport):
     def create_intent(self) -> Callable[
             [gcdc_intent.CreateIntentRequest],
             Awaitable[gcdc_intent.Intent]]:
-        r"""Return a callable for the
-        create intent
-          method over gRPC.
+        r"""Return a callable for the create intent method over gRPC.
 
         Creates an intent in the specified agent.
 
@@ -313,9 +307,7 @@ class IntentsGrpcAsyncIOTransport(IntentsTransport):
     def update_intent(self) -> Callable[
             [gcdc_intent.UpdateIntentRequest],
             Awaitable[gcdc_intent.Intent]]:
-        r"""Return a callable for the
-        update intent
-          method over gRPC.
+        r"""Return a callable for the update intent method over gRPC.
 
         Updates the specified intent.
 
@@ -341,9 +333,7 @@ class IntentsGrpcAsyncIOTransport(IntentsTransport):
     def delete_intent(self) -> Callable[
             [intent.DeleteIntentRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete intent
-          method over gRPC.
+        r"""Return a callable for the delete intent method over gRPC.
 
         Deletes the specified intent.
 

@@ -181,8 +181,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ListTestCasesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.ListTestCases][google.cloud.dialogflow.cx.v3.TestCases.ListTestCases].
             parent (:class:`str`):
                 Required. The agent to list all pages for. Format:
@@ -269,8 +268,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.BatchDeleteTestCasesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.BatchDeleteTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchDeleteTestCases].
             parent (:class:`str`):
                 Required. The agent to delete test cases from. Format:
@@ -336,8 +334,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.GetTestCaseRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.GetTestCase][google.cloud.dialogflow.cx.v3.TestCases.GetTestCase].
             name (:class:`str`):
                 Required. The name of the testcase. Format:
@@ -411,8 +408,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.CreateTestCaseRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3.TestCases.CreateTestCase].
             parent (:class:`str`):
                 Required. The agent to create the test case for. Format:
@@ -493,8 +489,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.UpdateTestCaseRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.UpdateTestCase][google.cloud.dialogflow.cx.v3.TestCases.UpdateTestCase].
             test_case (:class:`google.cloud.dialogflowcx_v3.types.TestCase`):
                 Required. The test case to update.
@@ -577,8 +572,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.RunTestCaseRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3.TestCases.RunTestCase].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -645,8 +639,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.BatchRunTestCasesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3.TestCases.BatchRunTestCases].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -713,8 +706,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.CalculateCoverageRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.CalculateCoverage][google.cloud.dialogflow.cx.v3.TestCases.CalculateCoverage].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -772,8 +764,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ImportTestCasesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.ImportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ImportTestCases].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -842,8 +833,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ExportTestCasesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.ExportTestCases][google.cloud.dialogflow.cx.v3.TestCases.ExportTestCases].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -911,8 +901,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ListTestCaseResultsRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.ListTestCaseResults][google.cloud.dialogflow.cx.v3.TestCases.ListTestCaseResults].
             parent (:class:`str`):
                 Required. The test case to list results for. Format:
@@ -1001,8 +990,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.GetTestCaseResultRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.GetTestCaseResult][google.cloud.dialogflow.cx.v3.TestCases.GetTestCaseResult].
             name (:class:`str`):
                 Required. The name of the testcase. Format:

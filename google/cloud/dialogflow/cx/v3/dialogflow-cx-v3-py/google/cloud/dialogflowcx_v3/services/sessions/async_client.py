@@ -180,8 +180,7 @@ class SessionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.DetectIntentRequest`):
-                The request object.
-                The request to detect user's intent.
+                The request object. The request to detect user's intent.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -248,8 +247,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             requests (AsyncIterator[`google.cloud.dialogflowcx_v3.types.StreamingDetectIntentRequest`]):
-                The request object AsyncIterator.
-                The top-level message sent by the
+                The request object AsyncIterator. The top-level message sent by the
                 client to the
                 [Sessions.StreamingDetectIntent][google.cloud.dialogflow.cx.v3.Sessions.StreamingDetectIntent]
                 method.
@@ -344,8 +342,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.MatchIntentRequest`):
-                The request object.
-                Request of [MatchIntent][].
+                The request object. Request of [MatchIntent][].
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -403,8 +400,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.FulfillIntentRequest`):
-                The request object.
-                Request of [FulfillIntent][]
+                The request object. Request of [FulfillIntent][]
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

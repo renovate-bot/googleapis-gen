@@ -166,8 +166,7 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ListVersionsRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.ListVersions][google.cloud.dialogflow.cx.v3.Versions.ListVersions].
             parent (:class:`str`):
                 Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow]
@@ -256,8 +255,7 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.GetVersionRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.GetVersion][google.cloud.dialogflow.cx.v3.Versions.GetVersion].
             name (:class:`str`):
                 Required. The name of the
@@ -334,8 +332,7 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.CreateVersionRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.CreateVersion][google.cloud.dialogflow.cx.v3.Versions.CreateVersion].
             parent (:class:`str`):
                 Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow]
@@ -433,8 +430,7 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.UpdateVersionRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3.Versions.UpdateVersion].
             version (:class:`google.cloud.dialogflowcx_v3.types.Version`):
                 Required. The version to update.
@@ -516,8 +512,7 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.DeleteVersionRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.DeleteVersion][google.cloud.dialogflow.cx.v3.Versions.DeleteVersion].
             name (:class:`str`):
                 Required. The name of the
@@ -586,8 +581,7 @@ class VersionsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.LoadVersionRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Versions.LoadVersion][google.cloud.dialogflow.cx.v3.Versions.LoadVersion].
             name (:class:`str`):
                 Required. The

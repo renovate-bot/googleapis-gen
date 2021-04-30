@@ -391,8 +391,7 @@ class PagesClient(metaclass=PagesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ListPagesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Pages.ListPages][google.cloud.dialogflow.cx.v3.Pages.ListPages].
             parent (str):
                 Required. The flow to list all pages for. Format:
@@ -430,7 +429,7 @@ class PagesClient(metaclass=PagesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, page.ListPagesRequest):
             request = page.ListPagesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -479,8 +478,7 @@ class PagesClient(metaclass=PagesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetPageRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Pages.GetPage][google.cloud.dialogflow.cx.v3.Pages.GetPage].
             name (str):
                 Required. The name of the page. Format:
@@ -535,7 +533,7 @@ class PagesClient(metaclass=PagesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, page.GetPageRequest):
             request = page.GetPageRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -576,8 +574,7 @@ class PagesClient(metaclass=PagesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.CreatePageRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Pages.CreatePage][google.cloud.dialogflow.cx.v3.Pages.CreatePage].
             parent (str):
                 Required. The flow to create a page for. Format:
@@ -637,7 +634,7 @@ class PagesClient(metaclass=PagesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_page.CreatePageRequest):
             request = gcdc_page.CreatePageRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -680,8 +677,7 @@ class PagesClient(metaclass=PagesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.UpdatePageRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Pages.UpdatePage][google.cloud.dialogflow.cx.v3.Pages.UpdatePage].
             page (google.cloud.dialogflowcx_v3.types.Page):
                 Required. The page to update.
@@ -742,7 +738,7 @@ class PagesClient(metaclass=PagesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_page.UpdatePageRequest):
             request = gcdc_page.UpdatePageRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if page is not None:
                 request.page = page
@@ -784,8 +780,7 @@ class PagesClient(metaclass=PagesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.DeletePageRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Pages.DeletePage][google.cloud.dialogflow.cx.v3.Pages.DeletePage].
             name (str):
                 Required. The name of the page to delete. Format:
@@ -814,7 +809,7 @@ class PagesClient(metaclass=PagesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, page.DeletePageRequest):
             request = page.DeletePageRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name

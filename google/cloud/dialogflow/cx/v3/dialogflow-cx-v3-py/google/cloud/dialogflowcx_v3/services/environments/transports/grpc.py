@@ -242,9 +242,7 @@ class EnvironmentsGrpcTransport(EnvironmentsTransport):
     def list_environments(self) -> Callable[
             [environment.ListEnvironmentsRequest],
             environment.ListEnvironmentsResponse]:
-        r"""Return a callable for the
-        list environments
-          method over gRPC.
+        r"""Return a callable for the list environments method over gRPC.
 
         Returns the list of all environments in the specified
         [Agent][google.cloud.dialogflow.cx.v3.Agent].
@@ -271,9 +269,7 @@ class EnvironmentsGrpcTransport(EnvironmentsTransport):
     def get_environment(self) -> Callable[
             [environment.GetEnvironmentRequest],
             environment.Environment]:
-        r"""Return a callable for the
-        get environment
-          method over gRPC.
+        r"""Return a callable for the get environment method over gRPC.
 
         Retrieves the specified
         [Environment][google.cloud.dialogflow.cx.v3.Environment].
@@ -300,9 +296,7 @@ class EnvironmentsGrpcTransport(EnvironmentsTransport):
     def create_environment(self) -> Callable[
             [gcdc_environment.CreateEnvironmentRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create environment
-          method over gRPC.
+        r"""Return a callable for the create environment method over gRPC.
 
         Creates an
         [Environment][google.cloud.dialogflow.cx.v3.Environment] in the
@@ -330,9 +324,7 @@ class EnvironmentsGrpcTransport(EnvironmentsTransport):
     def update_environment(self) -> Callable[
             [gcdc_environment.UpdateEnvironmentRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update environment
-          method over gRPC.
+        r"""Return a callable for the update environment method over gRPC.
 
         Updates the specified
         [Environment][google.cloud.dialogflow.cx.v3.Environment].
@@ -359,9 +351,7 @@ class EnvironmentsGrpcTransport(EnvironmentsTransport):
     def delete_environment(self) -> Callable[
             [environment.DeleteEnvironmentRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete environment
-          method over gRPC.
+        r"""Return a callable for the delete environment method over gRPC.
 
         Deletes the specified
         [Environment][google.cloud.dialogflow.cx.v3.Environment].
@@ -388,9 +378,7 @@ class EnvironmentsGrpcTransport(EnvironmentsTransport):
     def lookup_environment_history(self) -> Callable[
             [environment.LookupEnvironmentHistoryRequest],
             environment.LookupEnvironmentHistoryResponse]:
-        r"""Return a callable for the
-        lookup environment history
-          method over gRPC.
+        r"""Return a callable for the lookup environment history method over gRPC.
 
         Looks up the history of the specified
         [Environment][google.cloud.dialogflow.cx.v3.Environment].

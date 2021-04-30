@@ -228,9 +228,7 @@ class TransitionRouteGroupsGrpcAsyncIOTransport(TransitionRouteGroupsTransport):
     def list_transition_route_groups(self) -> Callable[
             [transition_route_group.ListTransitionRouteGroupsRequest],
             Awaitable[transition_route_group.ListTransitionRouteGroupsResponse]]:
-        r"""Return a callable for the
-        list transition route groups
-          method over gRPC.
+        r"""Return a callable for the list transition route groups method over gRPC.
 
         Returns the list of all transition route groups in
         the specified flow.
@@ -257,9 +255,7 @@ class TransitionRouteGroupsGrpcAsyncIOTransport(TransitionRouteGroupsTransport):
     def get_transition_route_group(self) -> Callable[
             [transition_route_group.GetTransitionRouteGroupRequest],
             Awaitable[transition_route_group.TransitionRouteGroup]]:
-        r"""Return a callable for the
-        get transition route group
-          method over gRPC.
+        r"""Return a callable for the get transition route group method over gRPC.
 
         Retrieves the specified
         [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
@@ -286,9 +282,7 @@ class TransitionRouteGroupsGrpcAsyncIOTransport(TransitionRouteGroupsTransport):
     def create_transition_route_group(self) -> Callable[
             [gcdc_transition_route_group.CreateTransitionRouteGroupRequest],
             Awaitable[gcdc_transition_route_group.TransitionRouteGroup]]:
-        r"""Return a callable for the
-        create transition route group
-          method over gRPC.
+        r"""Return a callable for the create transition route group method over gRPC.
 
         Creates an
         [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup]
@@ -316,9 +310,7 @@ class TransitionRouteGroupsGrpcAsyncIOTransport(TransitionRouteGroupsTransport):
     def update_transition_route_group(self) -> Callable[
             [gcdc_transition_route_group.UpdateTransitionRouteGroupRequest],
             Awaitable[gcdc_transition_route_group.TransitionRouteGroup]]:
-        r"""Return a callable for the
-        update transition route group
-          method over gRPC.
+        r"""Return a callable for the update transition route group method over gRPC.
 
         Updates the specified
         [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
@@ -345,9 +337,7 @@ class TransitionRouteGroupsGrpcAsyncIOTransport(TransitionRouteGroupsTransport):
     def delete_transition_route_group(self) -> Callable[
             [transition_route_group.DeleteTransitionRouteGroupRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete transition route group
-          method over gRPC.
+        r"""Return a callable for the delete transition route group method over gRPC.
 
         Deletes the specified
         [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].

@@ -247,9 +247,7 @@ class VersionsGrpcAsyncIOTransport(VersionsTransport):
     def list_versions(self) -> Callable[
             [version.ListVersionsRequest],
             Awaitable[version.ListVersionsResponse]]:
-        r"""Return a callable for the
-        list versions
-          method over gRPC.
+        r"""Return a callable for the list versions method over gRPC.
 
         Returns the list of all versions in the specified
         [Flow][google.cloud.dialogflow.cx.v3.Flow].
@@ -276,9 +274,7 @@ class VersionsGrpcAsyncIOTransport(VersionsTransport):
     def get_version(self) -> Callable[
             [version.GetVersionRequest],
             Awaitable[version.Version]]:
-        r"""Return a callable for the
-        get version
-          method over gRPC.
+        r"""Return a callable for the get version method over gRPC.
 
         Retrieves the specified
         [Version][google.cloud.dialogflow.cx.v3.Version].
@@ -305,9 +301,7 @@ class VersionsGrpcAsyncIOTransport(VersionsTransport):
     def create_version(self) -> Callable[
             [gcdc_version.CreateVersionRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create version
-          method over gRPC.
+        r"""Return a callable for the create version method over gRPC.
 
         Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in
         the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
@@ -334,9 +328,7 @@ class VersionsGrpcAsyncIOTransport(VersionsTransport):
     def update_version(self) -> Callable[
             [gcdc_version.UpdateVersionRequest],
             Awaitable[gcdc_version.Version]]:
-        r"""Return a callable for the
-        update version
-          method over gRPC.
+        r"""Return a callable for the update version method over gRPC.
 
         Updates the specified
         [Version][google.cloud.dialogflow.cx.v3.Version].
@@ -363,9 +355,7 @@ class VersionsGrpcAsyncIOTransport(VersionsTransport):
     def delete_version(self) -> Callable[
             [version.DeleteVersionRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete version
-          method over gRPC.
+        r"""Return a callable for the delete version method over gRPC.
 
         Deletes the specified
         [Version][google.cloud.dialogflow.cx.v3.Version].
@@ -392,9 +382,7 @@ class VersionsGrpcAsyncIOTransport(VersionsTransport):
     def load_version(self) -> Callable[
             [version.LoadVersionRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        load version
-          method over gRPC.
+        r"""Return a callable for the load version method over gRPC.
 
         Loads resources in the specified version to the draft
         flow.

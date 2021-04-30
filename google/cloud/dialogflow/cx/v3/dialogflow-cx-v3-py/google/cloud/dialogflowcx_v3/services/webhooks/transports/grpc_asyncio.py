@@ -228,9 +228,7 @@ class WebhooksGrpcAsyncIOTransport(WebhooksTransport):
     def list_webhooks(self) -> Callable[
             [webhook.ListWebhooksRequest],
             Awaitable[webhook.ListWebhooksResponse]]:
-        r"""Return a callable for the
-        list webhooks
-          method over gRPC.
+        r"""Return a callable for the list webhooks method over gRPC.
 
         Returns the list of all webhooks in the specified
         agent.
@@ -257,9 +255,7 @@ class WebhooksGrpcAsyncIOTransport(WebhooksTransport):
     def get_webhook(self) -> Callable[
             [webhook.GetWebhookRequest],
             Awaitable[webhook.Webhook]]:
-        r"""Return a callable for the
-        get webhook
-          method over gRPC.
+        r"""Return a callable for the get webhook method over gRPC.
 
         Retrieves the specified webhook.
 
@@ -285,9 +281,7 @@ class WebhooksGrpcAsyncIOTransport(WebhooksTransport):
     def create_webhook(self) -> Callable[
             [gcdc_webhook.CreateWebhookRequest],
             Awaitable[gcdc_webhook.Webhook]]:
-        r"""Return a callable for the
-        create webhook
-          method over gRPC.
+        r"""Return a callable for the create webhook method over gRPC.
 
         Creates a webhook in the specified agent.
 
@@ -313,9 +307,7 @@ class WebhooksGrpcAsyncIOTransport(WebhooksTransport):
     def update_webhook(self) -> Callable[
             [gcdc_webhook.UpdateWebhookRequest],
             Awaitable[gcdc_webhook.Webhook]]:
-        r"""Return a callable for the
-        update webhook
-          method over gRPC.
+        r"""Return a callable for the update webhook method over gRPC.
 
         Updates the specified webhook.
 
@@ -341,9 +333,7 @@ class WebhooksGrpcAsyncIOTransport(WebhooksTransport):
     def delete_webhook(self) -> Callable[
             [webhook.DeleteWebhookRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete webhook
-          method over gRPC.
+        r"""Return a callable for the delete webhook method over gRPC.
 
         Deletes the specified webhook.
 

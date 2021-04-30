@@ -166,8 +166,7 @@ class EnvironmentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.ListEnvironmentsRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.ListEnvironments][google.cloud.dialogflow.cx.v3.Environments.ListEnvironments].
             parent (:class:`str`):
                 Required. The
@@ -257,8 +256,7 @@ class EnvironmentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.GetEnvironmentRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.GetEnvironment][google.cloud.dialogflow.cx.v3.Environments.GetEnvironment].
             name (:class:`str`):
                 Required. The name of the
@@ -351,8 +349,7 @@ class EnvironmentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.CreateEnvironmentRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.CreateEnvironment][google.cloud.dialogflow.cx.v3.Environments.CreateEnvironment].
             parent (:class:`str`):
                 Required. The
@@ -459,8 +456,7 @@ class EnvironmentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.UpdateEnvironmentRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.UpdateEnvironment][google.cloud.dialogflow.cx.v3.Environments.UpdateEnvironment].
             environment (:class:`google.cloud.dialogflowcx_v3.types.Environment`):
                 Required. The environment to update.
@@ -562,8 +558,7 @@ class EnvironmentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.DeleteEnvironmentRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.DeleteEnvironment][google.cloud.dialogflow.cx.v3.Environments.DeleteEnvironment].
             name (:class:`str`):
                 Required. The name of the
@@ -632,8 +627,7 @@ class EnvironmentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3.types.LookupEnvironmentHistoryRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.LookupEnvironmentHistory][google.cloud.dialogflow.cx.v3.Environments.LookupEnvironmentHistory].
             name (:class:`str`):
                 Required. Resource name of the environment to look up

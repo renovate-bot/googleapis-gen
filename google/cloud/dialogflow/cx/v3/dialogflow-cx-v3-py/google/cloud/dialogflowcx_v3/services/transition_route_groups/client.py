@@ -383,8 +383,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.ListTransitionRouteGroupsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.ListTransitionRouteGroups][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.ListTransitionRouteGroups].
             parent (str):
                 Required. The flow to list all transition route groups
@@ -423,7 +422,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, transition_route_group.ListTransitionRouteGroupsRequest):
             request = transition_route_group.ListTransitionRouteGroupsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -473,8 +472,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.GetTransitionRouteGroupRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.GetTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.GetTransitionRouteGroup].
             name (str):
                 Required. The name of the
@@ -513,7 +511,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, transition_route_group.GetTransitionRouteGroupRequest):
             request = transition_route_group.GetTransitionRouteGroupRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
@@ -556,8 +554,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.CreateTransitionRouteGroupRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup].
             parent (str):
                 Required. The flow to create an
@@ -603,7 +600,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_transition_route_group.CreateTransitionRouteGroupRequest):
             request = gcdc_transition_route_group.CreateTransitionRouteGroupRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if parent is not None:
                 request.parent = parent
@@ -647,8 +644,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.UpdateTransitionRouteGroupRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.UpdateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.UpdateTransitionRouteGroup].
             transition_route_group (google.cloud.dialogflowcx_v3.types.TransitionRouteGroup):
                 Required. The transition route group
@@ -692,7 +688,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_transition_route_group.UpdateTransitionRouteGroupRequest):
             request = gcdc_transition_route_group.UpdateTransitionRouteGroupRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if transition_route_group is not None:
                 request.transition_route_group = transition_route_group
@@ -735,8 +731,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3.types.DeleteTransitionRouteGroupRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.DeleteTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.DeleteTransitionRouteGroup].
             name (str):
                 Required. The name of the
@@ -767,7 +762,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, transition_route_group.DeleteTransitionRouteGroupRequest):
             request = transition_route_group.DeleteTransitionRouteGroupRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
             if name is not None:
                 request.name = name
