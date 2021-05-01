@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const moblab = require('moblab');
+const moblab = require('@google-cloud/moblab');
 
 function main() {
   const buildServiceClient = new moblab.BuildServiceClient();

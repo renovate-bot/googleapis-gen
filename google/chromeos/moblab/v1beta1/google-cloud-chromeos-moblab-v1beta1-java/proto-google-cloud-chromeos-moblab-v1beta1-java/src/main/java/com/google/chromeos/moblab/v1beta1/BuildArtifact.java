@@ -6,7 +6,7 @@ package com.google.chromeos.moblab.v1beta1;
 /**
  * <pre>
  * Resource that represents a build artifact stored in Google Cloud Storage for
- * the given build target, model, build version and bucket. NEXT_TAG: 6
+ * the given build target, model, build version and bucket.
  * </pre>
  *
  * Protobuf type {@code google.chromeos.moblab.v1beta1.BuildArtifact}
@@ -525,7 +525,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Resource that represents a build artifact stored in Google Cloud Storage for
-   * the given build target, model, build version and bucket. NEXT_TAG: 6
+   * the given build target, model, build version and bucket.
    * </pre>
    *
    * Protobuf type {@code google.chromeos.moblab.v1beta1.BuildArtifact}

@@ -31,6 +31,7 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
             CheckBuildStageStatusRequest request = new CheckBuildStageStatusRequest
             {
                 BuildArtifactName = BuildArtifactName.FromBuildTargetModelBuildArtifact("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]"),
+                Filter = "",
             };
             // Make the request
             CheckBuildStageStatusResponse response = await buildServiceClient.CheckBuildStageStatusAsync(request);

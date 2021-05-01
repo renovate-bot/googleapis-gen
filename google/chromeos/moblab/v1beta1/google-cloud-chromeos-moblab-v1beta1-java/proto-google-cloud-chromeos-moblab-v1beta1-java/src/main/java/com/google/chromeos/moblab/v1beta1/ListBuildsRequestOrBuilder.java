@@ -68,7 +68,7 @@ public interface ListBuildsRequestOrBuilder extends
   /**
    * <pre>
    * Optional. Filter that specifies value constraints of fields. For example, the
-   * filter can be set as "filter='milestone=milestones/80'" to only select
+   * filter can be set as `filter='milestone=milestones/80'` to only select
    * builds in milestone 80.
    * </pre>
    *
@@ -79,7 +79,7 @@ public interface ListBuildsRequestOrBuilder extends
   /**
    * <pre>
    * Optional. Filter that specifies value constraints of fields. For example, the
-   * filter can be set as "filter='milestone=milestones/80'" to only select
+   * filter can be set as `filter='milestone=milestones/80'` to only select
    * builds in milestone 80.
    * </pre>
    *
@@ -94,7 +94,7 @@ public interface ListBuildsRequestOrBuilder extends
    * Optional. Read mask that specifies which Build fields to return. If empty, all Build
    * fields will be returned.
    * Valid fields: name, milestone, build_version.
-   * For example, if the read_mask is set as "read_mask='milestone'", the
+   * For example, if the read_mask is set as `read_mask='milestone'`, the
    * ListBuilds will return a list of Builds object with only the milestone
    * field.
    * </pre>
@@ -108,7 +108,7 @@ public interface ListBuildsRequestOrBuilder extends
    * Optional. Read mask that specifies which Build fields to return. If empty, all Build
    * fields will be returned.
    * Valid fields: name, milestone, build_version.
-   * For example, if the read_mask is set as "read_mask='milestone'", the
+   * For example, if the read_mask is set as `read_mask='milestone'`, the
    * ListBuilds will return a list of Builds object with only the milestone
    * field.
    * </pre>
@@ -122,7 +122,7 @@ public interface ListBuildsRequestOrBuilder extends
    * Optional. Read mask that specifies which Build fields to return. If empty, all Build
    * fields will be returned.
    * Valid fields: name, milestone, build_version.
-   * For example, if the read_mask is set as "read_mask='milestone'", the
+   * For example, if the read_mask is set as `read_mask='milestone'`, the
    * ListBuilds will return a list of Builds object with only the milestone
    * field.
    * </pre>

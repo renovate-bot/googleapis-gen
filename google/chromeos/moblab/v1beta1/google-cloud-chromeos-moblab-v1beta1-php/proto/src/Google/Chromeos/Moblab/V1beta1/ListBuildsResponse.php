@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Response message for listing builds.
- * NEXT_TAG: 4
  *
  * Generated from protobuf message <code>google.chromeos.moblab.v1beta1.ListBuildsResponse</code>
  */

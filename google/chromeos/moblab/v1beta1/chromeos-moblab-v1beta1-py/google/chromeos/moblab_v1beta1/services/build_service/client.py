@@ -372,7 +372,6 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         Args:
             request (google.chromeos.moblab_v1beta1.types.ListBuildsRequest):
                 The request object. Request message for listing builds.
-                NEXT_TAG: 7
             parent (str):
                 Required. The full resource name of
                 the model. The model id is the same as
@@ -392,10 +391,9 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         Returns:
             google.chromeos.moblab_v1beta1.services.build_service.pagers.ListBuildsPager:
                 Response message for listing builds.
-                   NEXT_TAG: 4
-
-                Iterating over this object will yield results and
-                resolve additional pages automatically.
+                Iterating over this object will yield
+                results and resolve additional pages
+                automatically.
 
         """
         # Create or coerce a protobuf request object.
@@ -481,8 +479,8 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
 
         Returns:
             google.chromeos.moblab_v1beta1.types.CheckBuildStageStatusResponse:
-                Response message for checking the stage status of a build artifact.
-                   NEXT_TAG: 4
+                Response message for checking the
+                stage status of a build artifact.
 
         """
         # Create or coerce a protobuf request object.

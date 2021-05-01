@@ -22,7 +22,6 @@ module Google
     module Moblab
       module V1beta1
         # Request message for listing builds.
-        # NEXT_TAG: 7
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The full resource name of the model. The model id is the same as
@@ -39,14 +38,14 @@ module Google
         # @!attribute [rw] filter
         #   @return [::String]
         #     Optional. Filter that specifies value constraints of fields. For example, the
-        #     filter can be set as "filter='milestone=milestones/80'" to only select
+        #     filter can be set as `filter='milestone=milestones/80'` to only select
         #     builds in milestone 80.
         # @!attribute [rw] read_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Optional. Read mask that specifies which Build fields to return. If empty, all Build
         #     fields will be returned.
         #     Valid fields: name, milestone, build_version.
-        #     For example, if the read_mask is set as "read_mask='milestone'", the
+        #     For example, if the read_mask is set as `read_mask='milestone'`, the
         #     ListBuilds will return a list of Builds object with only the milestone
         #     field.
         # @!attribute [rw] group_by
@@ -60,7 +59,6 @@ module Google
         end
 
         # Response message for listing builds.
-        # NEXT_TAG: 4
         # @!attribute [rw] builds
         #   @return [::Array<::Google::Chromeos::Moblab::V1beta1::Build>]
         #     The list of builds.
@@ -82,13 +80,17 @@ module Google
         #     Required. The full resource name of the build artifact.
         #     For example,
         #     'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-moblab-peng-staging'.
+        # @!attribute [rw] filter
+        #   @return [::String]
+        #     Optional. Filter that specifies value constraints of fields. For example, the
+        #     filter can be set as `filter='type=release'` to only check the release
+        #     builds.
         class CheckBuildStageStatusRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
         # Response message for checking the stage status of a build artifact.
-        # NEXT_TAG: 4
         # @!attribute [rw] is_build_staged
         #   @return [::Boolean]
         #     The status to represent if the build is staged or not.
@@ -109,6 +111,11 @@ module Google
         #     Required. The full resource name of the build artifact.
         #     For example,
         #     'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-moblab-peng-staging'.
+        # @!attribute [rw] filter
+        #   @return [::String]
+        #     Optional. Filter that specifies value constraints of fields. For example, the
+        #     filter can be set as `filter='type=release'` to only check the release
+        #     builds.
         class StageBuildRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -124,7 +131,6 @@ module Google
         end
 
         # Metadata message for staging a build artifact.
-        # NEXT_TAG: 4
         # @!attribute [rw] progress_percent
         #   @return [::Float]
         #     Approximate percentage of progress, e.g. "50" means 50%.

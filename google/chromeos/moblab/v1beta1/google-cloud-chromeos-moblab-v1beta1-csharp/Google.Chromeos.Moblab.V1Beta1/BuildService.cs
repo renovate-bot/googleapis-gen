@@ -40,49 +40,50 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
             "cm90b2J1Zi5GaWVsZE1hc2tCA+BBASJ4ChJMaXN0QnVpbGRzUmVzcG9uc2US",
             "NQoGYnVpbGRzGAEgAygLMiUuZ29vZ2xlLmNocm9tZW9zLm1vYmxhYi52MWJl",
             "dGExLkJ1aWxkEhcKD25leHRfcGFnZV90b2tlbhgCIAEoCRISCgp0b3RhbF9z",
-            "aXplGAMgASgFImEKHENoZWNrQnVpbGRTdGFnZVN0YXR1c1JlcXVlc3QSQQoE",
+            "aXplGAMgASgFInYKHENoZWNrQnVpbGRTdGFnZVN0YXR1c1JlcXVlc3QSQQoE",
             "bmFtZRgBIAEoCUIz4EEC+kEtCitjaHJvbWVvc21vYmxhYi5nb29nbGVhcGlz",
-            "LmNvbS9CdWlsZEFydGlmYWN0ItQBCh1DaGVja0J1aWxkU3RhZ2VTdGF0dXNS",
-            "ZXNwb25zZRIXCg9pc19idWlsZF9zdGFnZWQYASABKAgSTAoVc3RhZ2VkX2J1",
-            "aWxkX2FydGlmYWN0GAIgASgLMi0uZ29vZ2xlLmNocm9tZW9zLm1vYmxhYi52",
-            "MWJldGExLkJ1aWxkQXJ0aWZhY3QSTAoVc291cmNlX2J1aWxkX2FydGlmYWN0",
-            "GAMgASgLMi0uZ29vZ2xlLmNocm9tZW9zLm1vYmxhYi52MWJldGExLkJ1aWxk",
-            "QXJ0aWZhY3QiVgoRU3RhZ2VCdWlsZFJlcXVlc3QSQQoEbmFtZRgBIAEoCUIz",
-            "4EEC+kEtCitjaHJvbWVvc21vYmxhYi5nb29nbGVhcGlzLmNvbS9CdWlsZEFy",
-            "dGlmYWN0ImIKElN0YWdlQnVpbGRSZXNwb25zZRJMChVzdGFnZWRfYnVpbGRf",
-            "YXJ0aWZhY3QYASABKAsyLS5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0",
-            "YTEuQnVpbGRBcnRpZmFjdCKMAQoSU3RhZ2VCdWlsZE1ldGFkYXRhEhgKEHBy",
-            "b2dyZXNzX3BlcmNlbnQYASABKAISLgoKc3RhcnRfdGltZRgCIAEoCzIaLmdv",
-            "b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kX3RpbWUYAyABKAsyGi5n",
-            "b29nbGUucHJvdG9idWYuVGltZXN0YW1wMuEFCgxCdWlsZFNlcnZpY2UStgEK",
-            "Ckxpc3RCdWlsZHMSMS5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTEu",
-            "TGlzdEJ1aWxkc1JlcXVlc3QaMi5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYx",
-            "YmV0YTEuTGlzdEJ1aWxkc1Jlc3BvbnNlIkGC0+STAjISMC92MWJldGExL3tw",
-            "YXJlbnQ9YnVpbGRUYXJnZXRzLyovbW9kZWxzLyp9L2J1aWxkc9pBBnBhcmVu",
-            "dBLnAQoVQ2hlY2tCdWlsZFN0YWdlU3RhdHVzEjwuZ29vZ2xlLmNocm9tZW9z",
-            "Lm1vYmxhYi52MWJldGExLkNoZWNrQnVpbGRTdGFnZVN0YXR1c1JlcXVlc3Qa",
-            "PS5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTEuQ2hlY2tCdWlsZFN0",
-            "YWdlU3RhdHVzUmVzcG9uc2UiUYLT5JMCRBJCL3YxYmV0YTEve25hbWU9YnVp",
-            "bGRUYXJnZXRzLyovbW9kZWxzLyovYnVpbGRzLyovYXJ0aWZhY3RzLyp9OmNo",
-            "ZWNr2kEEbmFtZRLfAQoKU3RhZ2VCdWlsZBIxLmdvb2dsZS5jaHJvbWVvcy5t",
-            "b2JsYWIudjFiZXRhMS5TdGFnZUJ1aWxkUmVxdWVzdBodLmdvb2dsZS5sb25n",
-            "cnVubmluZy5PcGVyYXRpb24if4LT5JMCRyJCL3YxYmV0YTEve25hbWU9YnVp",
-            "bGRUYXJnZXRzLyovbW9kZWxzLyovYnVpbGRzLyovYXJ0aWZhY3RzLyp9OnN0",
-            "YWdlOgEq2kEEbmFtZcpBKAoSU3RhZ2VCdWlsZFJlc3BvbnNlEhJTdGFnZUJ1",
-            "aWxkTWV0YWRhdGEaTMpBHWNocm9tZW9zbW9ibGFiLmdvb2dsZWFwaXMuY29t",
-            "0kEpaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9tb2JsYWJhcGlC",
-            "gQEKImNvbS5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTFCEUJ1aWxk",
-            "U2VydmljZVByb3RvSAFQAVpEZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8v",
-            "Z29vZ2xlYXBpcy9jaHJvbWVvcy9tb2JsYWIvdjFiZXRhMTttb2JsYWJiBnBy",
-            "b3RvMw=="));
+            "LmNvbS9CdWlsZEFydGlmYWN0EhMKBmZpbHRlchgCIAEoCUID4EEBItQBCh1D",
+            "aGVja0J1aWxkU3RhZ2VTdGF0dXNSZXNwb25zZRIXCg9pc19idWlsZF9zdGFn",
+            "ZWQYASABKAgSTAoVc3RhZ2VkX2J1aWxkX2FydGlmYWN0GAIgASgLMi0uZ29v",
+            "Z2xlLmNocm9tZW9zLm1vYmxhYi52MWJldGExLkJ1aWxkQXJ0aWZhY3QSTAoV",
+            "c291cmNlX2J1aWxkX2FydGlmYWN0GAMgASgLMi0uZ29vZ2xlLmNocm9tZW9z",
+            "Lm1vYmxhYi52MWJldGExLkJ1aWxkQXJ0aWZhY3QiawoRU3RhZ2VCdWlsZFJl",
+            "cXVlc3QSQQoEbmFtZRgBIAEoCUIz4EEC+kEtCitjaHJvbWVvc21vYmxhYi5n",
+            "b29nbGVhcGlzLmNvbS9CdWlsZEFydGlmYWN0EhMKBmZpbHRlchgCIAEoCUID",
+            "4EEBImIKElN0YWdlQnVpbGRSZXNwb25zZRJMChVzdGFnZWRfYnVpbGRfYXJ0",
+            "aWZhY3QYASABKAsyLS5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTEu",
+            "QnVpbGRBcnRpZmFjdCKMAQoSU3RhZ2VCdWlsZE1ldGFkYXRhEhgKEHByb2dy",
+            "ZXNzX3BlcmNlbnQYASABKAISLgoKc3RhcnRfdGltZRgCIAEoCzIaLmdvb2ds",
+            "ZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kX3RpbWUYAyABKAsyGi5nb29n",
+            "bGUucHJvdG9idWYuVGltZXN0YW1wMuEFCgxCdWlsZFNlcnZpY2UStgEKCkxp",
+            "c3RCdWlsZHMSMS5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTEuTGlz",
+            "dEJ1aWxkc1JlcXVlc3QaMi5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0",
+            "YTEuTGlzdEJ1aWxkc1Jlc3BvbnNlIkGC0+STAjISMC92MWJldGExL3twYXJl",
+            "bnQ9YnVpbGRUYXJnZXRzLyovbW9kZWxzLyp9L2J1aWxkc9pBBnBhcmVudBLn",
+            "AQoVQ2hlY2tCdWlsZFN0YWdlU3RhdHVzEjwuZ29vZ2xlLmNocm9tZW9zLm1v",
+            "YmxhYi52MWJldGExLkNoZWNrQnVpbGRTdGFnZVN0YXR1c1JlcXVlc3QaPS5n",
+            "b29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTEuQ2hlY2tCdWlsZFN0YWdl",
+            "U3RhdHVzUmVzcG9uc2UiUYLT5JMCRBJCL3YxYmV0YTEve25hbWU9YnVpbGRU",
+            "YXJnZXRzLyovbW9kZWxzLyovYnVpbGRzLyovYXJ0aWZhY3RzLyp9OmNoZWNr",
+            "2kEEbmFtZRLfAQoKU3RhZ2VCdWlsZBIxLmdvb2dsZS5jaHJvbWVvcy5tb2Js",
+            "YWIudjFiZXRhMS5TdGFnZUJ1aWxkUmVxdWVzdBodLmdvb2dsZS5sb25ncnVu",
+            "bmluZy5PcGVyYXRpb24if4LT5JMCRyJCL3YxYmV0YTEve25hbWU9YnVpbGRU",
+            "YXJnZXRzLyovbW9kZWxzLyovYnVpbGRzLyovYXJ0aWZhY3RzLyp9OnN0YWdl",
+            "OgEq2kEEbmFtZcpBKAoSU3RhZ2VCdWlsZFJlc3BvbnNlEhJTdGFnZUJ1aWxk",
+            "TWV0YWRhdGEaTMpBHWNocm9tZW9zbW9ibGFiLmdvb2dsZWFwaXMuY29t0kEp",
+            "aHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9tb2JsYWJhcGlCgQEK",
+            "ImNvbS5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTFCEUJ1aWxkU2Vy",
+            "dmljZVByb3RvSAFQAVpEZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29v",
+            "Z2xlYXBpcy9jaHJvbWVvcy9tb2JsYWIvdjFiZXRhMTttb2JsYWJiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Chromeos.Moblab.V1Beta1.ResourcesReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.ListBuildsRequest), global::Google.Chromeos.Moblab.V1Beta1.ListBuildsRequest.Parser, new[]{ "Parent", "PageSize", "PageToken", "Filter", "ReadMask", "GroupBy" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.ListBuildsResponse), global::Google.Chromeos.Moblab.V1Beta1.ListBuildsResponse.Parser, new[]{ "Builds", "NextPageToken", "TotalSize" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusRequest), global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusRequest), global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusRequest.Parser, new[]{ "Name", "Filter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusResponse), global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusResponse.Parser, new[]{ "IsBuildStaged", "StagedBuildArtifact", "SourceBuildArtifact" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.StageBuildRequest), global::Google.Chromeos.Moblab.V1Beta1.StageBuildRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.StageBuildRequest), global::Google.Chromeos.Moblab.V1Beta1.StageBuildRequest.Parser, new[]{ "Name", "Filter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.StageBuildResponse), global::Google.Chromeos.Moblab.V1Beta1.StageBuildResponse.Parser, new[]{ "StagedBuildArtifact" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.StageBuildMetadata), global::Google.Chromeos.Moblab.V1Beta1.StageBuildMetadata.Parser, new[]{ "ProgressPercent", "StartTime", "EndTime" }, null, null, null, null)
           }));
@@ -93,7 +94,6 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
   #region Messages
   /// <summary>
   /// Request message for listing builds.
-  /// NEXT_TAG: 7
   /// </summary>
   public sealed partial class ListBuildsRequest : pb::IMessage<ListBuildsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -189,7 +189,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
     private string filter_ = "";
     /// <summary>
     /// Optional. Filter that specifies value constraints of fields. For example, the
-    /// filter can be set as "filter='milestone=milestones/80'" to only select
+    /// filter can be set as `filter='milestone=milestones/80'` to only select
     /// builds in milestone 80.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -207,7 +207,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
     /// Optional. Read mask that specifies which Build fields to return. If empty, all Build
     /// fields will be returned.
     /// Valid fields: name, milestone, build_version.
-    /// For example, if the read_mask is set as "read_mask='milestone'", the
+    /// For example, if the read_mask is set as `read_mask='milestone'`, the
     /// ListBuilds will return a list of Builds object with only the milestone
     /// field.
     /// </summary>
@@ -498,7 +498,6 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
 
   /// <summary>
   /// Response message for listing builds.
-  /// NEXT_TAG: 4
   /// </summary>
   public sealed partial class ListBuildsResponse : pb::IMessage<ListBuildsResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -776,6 +775,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CheckBuildStageStatusRequest(CheckBuildStageStatusRequest other) : this() {
       name_ = other.name_;
+      filter_ = other.filter_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -800,6 +800,22 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       }
     }
 
+    /// <summary>Field number for the "filter" field.</summary>
+    public const int FilterFieldNumber = 2;
+    private string filter_ = "";
+    /// <summary>
+    /// Optional. Filter that specifies value constraints of fields. For example, the
+    /// filter can be set as `filter='type=release'` to only check the release
+    /// builds.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Filter {
+      get { return filter_; }
+      set {
+        filter_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CheckBuildStageStatusRequest);
@@ -814,6 +830,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
         return true;
       }
       if (Name != other.Name) return false;
+      if (Filter != other.Filter) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -821,6 +838,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Filter.Length != 0) hash ^= Filter.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -841,6 +859,10 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
+      if (Filter.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Filter);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -854,6 +876,10 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
+      if (Filter.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Filter);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -865,6 +891,9 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       int size = 0;
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Filter.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Filter);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -879,6 +908,9 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
+      }
+      if (other.Filter.Length != 0) {
+        Filter = other.Filter;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -896,6 +928,10 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
             break;
           case 10: {
             Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            Filter = input.ReadString();
             break;
           }
         }
@@ -916,6 +952,10 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
             Name = input.ReadString();
             break;
           }
+          case 18: {
+            Filter = input.ReadString();
+            break;
+          }
         }
       }
     }
@@ -925,7 +965,6 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
 
   /// <summary>
   /// Response message for checking the stage status of a build artifact.
-  /// NEXT_TAG: 4
   /// </summary>
   public sealed partial class CheckBuildStageStatusResponse : pb::IMessage<CheckBuildStageStatusResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1231,6 +1270,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public StageBuildRequest(StageBuildRequest other) : this() {
       name_ = other.name_;
+      filter_ = other.filter_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1255,6 +1295,22 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       }
     }
 
+    /// <summary>Field number for the "filter" field.</summary>
+    public const int FilterFieldNumber = 2;
+    private string filter_ = "";
+    /// <summary>
+    /// Optional. Filter that specifies value constraints of fields. For example, the
+    /// filter can be set as `filter='type=release'` to only check the release
+    /// builds.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Filter {
+      get { return filter_; }
+      set {
+        filter_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as StageBuildRequest);
@@ -1269,6 +1325,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
         return true;
       }
       if (Name != other.Name) return false;
+      if (Filter != other.Filter) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1276,6 +1333,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Filter.Length != 0) hash ^= Filter.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1296,6 +1354,10 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
+      if (Filter.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Filter);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1309,6 +1371,10 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
+      if (Filter.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Filter);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1320,6 +1386,9 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       int size = 0;
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Filter.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Filter);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1334,6 +1403,9 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
+      }
+      if (other.Filter.Length != 0) {
+        Filter = other.Filter;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1353,6 +1425,10 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
             Name = input.ReadString();
             break;
           }
+          case 18: {
+            Filter = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -1369,6 +1445,10 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
             break;
           case 10: {
             Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            Filter = input.ReadString();
             break;
           }
         }
@@ -1567,7 +1647,6 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
 
   /// <summary>
   /// Metadata message for staging a build artifact.
-  /// NEXT_TAG: 4
   /// </summary>
   public sealed partial class StageBuildMetadata : pb::IMessage<StageBuildMetadata>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

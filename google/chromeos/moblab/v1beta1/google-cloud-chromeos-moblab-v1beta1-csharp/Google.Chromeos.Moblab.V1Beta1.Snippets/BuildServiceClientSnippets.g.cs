@@ -318,6 +318,7 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
             CheckBuildStageStatusRequest request = new CheckBuildStageStatusRequest
             {
                 BuildArtifactName = BuildArtifactName.FromBuildTargetModelBuildArtifact("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]"),
+                Filter = "",
             };
             // Make the request
             CheckBuildStageStatusResponse response = buildServiceClient.CheckBuildStageStatus(request);
@@ -335,6 +336,7 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
             CheckBuildStageStatusRequest request = new CheckBuildStageStatusRequest
             {
                 BuildArtifactName = BuildArtifactName.FromBuildTargetModelBuildArtifact("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]"),
+                Filter = "",
             };
             // Make the request
             CheckBuildStageStatusResponse response = await buildServiceClient.CheckBuildStageStatusAsync(request);
@@ -405,6 +407,7 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
             StageBuildRequest request = new StageBuildRequest
             {
                 BuildArtifactName = BuildArtifactName.FromBuildTargetModelBuildArtifact("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]"),
+                Filter = "",
             };
             // Make the request
             Operation<StageBuildResponse, StageBuildMetadata> response = buildServiceClient.StageBuild(request);
@@ -438,6 +441,7 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
             StageBuildRequest request = new StageBuildRequest
             {
                 BuildArtifactName = BuildArtifactName.FromBuildTargetModelBuildArtifact("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]"),
+                Filter = "",
             };
             // Make the request
             Operation<StageBuildResponse, StageBuildMetadata> response = await buildServiceClient.StageBuildAsync(request);

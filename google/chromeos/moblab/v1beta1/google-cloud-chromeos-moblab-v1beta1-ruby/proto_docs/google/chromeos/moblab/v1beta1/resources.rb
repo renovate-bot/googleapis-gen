@@ -54,7 +54,6 @@ module Google
 
         # Resource that represents a build for the given build target, model, milestone
         # and build version.
-        # NEXT_TAG: 4
         # @!attribute [rw] name
         #   @return [::String]
         #     The resource name of the build.
@@ -67,13 +66,52 @@ module Google
         # @!attribute [rw] build_version
         #   @return [::String]
         #     The build version of the build, e.g. 1234.0.0.
+        # @!attribute [rw] status
+        #   @return [::Google::Chromeos::Moblab::V1beta1::Build::BuildStatus]
+        #     The status of the build.
+        # @!attribute [rw] type
+        #   @return [::Google::Chromeos::Moblab::V1beta1::Build::BuildType]
+        #     The type of the build.
+        # @!attribute [rw] branch
+        #   @return [::String]
+        #     The branch of the build.
         class Build
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
+
+          # The build status types.
+          module BuildStatus
+            # No build status is specified.
+            BUILD_STATUS_UNSPECIFIED = 0
+
+            # Complete Status: The build passed.
+            PASS = 1
+
+            # Complete Status: The build failed.
+            FAIL = 2
+
+            # Intermediate Status: The build is still running.
+            RUNNING = 3
+
+            # Complete Status: The build was aborted.
+            ABORTED = 4
+          end
+
+          # The build types.
+          module BuildType
+            # Invalid build type.
+            BUILD_TYPE_UNSPECIFIED = 0
+
+            # The release build.
+            RELEASE = 1
+
+            # The firmware build.
+            FIRMWARE = 2
+          end
         end
 
         # Resource that represents a build artifact stored in Google Cloud Storage for
-        # the given build target, model, build version and bucket. NEXT_TAG: 6
+        # the given build target, model, build version and bucket.
         # @!attribute [rw] name
         #   @return [::String]
         #     The resource name of the build artifact.

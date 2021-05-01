@@ -28,6 +28,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest" do
       optional :name, :string, 1
+      optional :filter, :string, 2
     end
     add_message "google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse" do
       optional :is_build_staged, :bool, 1
@@ -36,6 +37,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.chromeos.moblab.v1beta1.StageBuildRequest" do
       optional :name, :string, 1
+      optional :filter, :string, 2
     end
     add_message "google.chromeos.moblab.v1beta1.StageBuildResponse" do
       optional :staged_build_artifact, :message, 1, "google.chromeos.moblab.v1beta1.BuildArtifact"

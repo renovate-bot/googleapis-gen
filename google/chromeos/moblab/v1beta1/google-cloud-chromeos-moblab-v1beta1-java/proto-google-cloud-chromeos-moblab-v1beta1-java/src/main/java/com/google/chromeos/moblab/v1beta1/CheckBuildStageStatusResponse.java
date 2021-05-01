@@ -6,7 +6,6 @@ package com.google.chromeos.moblab.v1beta1;
 /**
  * <pre>
  * Response message for checking the stage status of a build artifact.
- * NEXT_TAG: 4
  * </pre>
  *
  * Protobuf type {@code google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse}
@@ -398,7 +397,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Response message for checking the stage status of a build artifact.
-   * NEXT_TAG: 4
    * </pre>
    *
    * Protobuf type {@code google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse}

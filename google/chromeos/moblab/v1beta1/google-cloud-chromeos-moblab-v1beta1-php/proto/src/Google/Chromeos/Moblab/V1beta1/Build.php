@@ -11,7 +11,6 @@ use Google\Protobuf\Internal\GPBUtil;
 /**
  * Resource that represents a build for the given build target, model, milestone
  * and build version.
- * NEXT_TAG: 4
  *
  * Generated from protobuf message <code>google.chromeos.moblab.v1beta1.Build</code>
  */
@@ -38,6 +37,24 @@ class Build extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string build_version = 3;</code>
      */
     protected $build_version = '';
+    /**
+     * The status of the build.
+     *
+     * Generated from protobuf field <code>.google.chromeos.moblab.v1beta1.Build.BuildStatus status = 4;</code>
+     */
+    protected $status = 0;
+    /**
+     * The type of the build.
+     *
+     * Generated from protobuf field <code>.google.chromeos.moblab.v1beta1.Build.BuildType type = 5;</code>
+     */
+    protected $type = 0;
+    /**
+     * The branch of the build.
+     *
+     * Generated from protobuf field <code>string branch = 6;</code>
+     */
+    protected $branch = '';
 
     /**
      * Constructor.
@@ -54,6 +71,12 @@ class Build extends \Google\Protobuf\Internal\Message
      *           Format: milestones/{milestone}
      *     @type string $build_version
      *           The build version of the build, e.g. 1234.0.0.
+     *     @type int $status
+     *           The status of the build.
+     *     @type int $type
+     *           The type of the build.
+     *     @type string $branch
+     *           The branch of the build.
      * }
      */
     public function __construct($data = NULL) {
@@ -141,6 +164,84 @@ class Build extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->build_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * The status of the build.
+     *
+     * Generated from protobuf field <code>.google.chromeos.moblab.v1beta1.Build.BuildStatus status = 4;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * The status of the build.
+     *
+     * Generated from protobuf field <code>.google.chromeos.moblab.v1beta1.Build.BuildStatus status = 4;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Chromeos\Moblab\V1beta1\Build\BuildStatus::class);
+        $this->status = $var;
+
+        return $this;
+    }
+
+    /**
+     * The type of the build.
+     *
+     * Generated from protobuf field <code>.google.chromeos.moblab.v1beta1.Build.BuildType type = 5;</code>
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * The type of the build.
+     *
+     * Generated from protobuf field <code>.google.chromeos.moblab.v1beta1.Build.BuildType type = 5;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setType($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Chromeos\Moblab\V1beta1\Build\BuildType::class);
+        $this->type = $var;
+
+        return $this;
+    }
+
+    /**
+     * The branch of the build.
+     *
+     * Generated from protobuf field <code>string branch = 6;</code>
+     * @return string
+     */
+    public function getBranch()
+    {
+        return $this->branch;
+    }
+
+    /**
+     * The branch of the build.
+     *
+     * Generated from protobuf field <code>string branch = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setBranch($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->branch = $var;
 
         return $this;
     }

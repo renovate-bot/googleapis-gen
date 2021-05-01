@@ -6,7 +6,6 @@ package com.google.chromeos.moblab.v1beta1;
 /**
  * <pre>
  * Metadata message for staging a build artifact.
- * NEXT_TAG: 4
  * </pre>
  *
  * Protobuf type {@code google.chromeos.moblab.v1beta1.StageBuildMetadata}
@@ -399,7 +398,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Metadata message for staging a build artifact.
-   * NEXT_TAG: 4
    * </pre>
    *
    * Protobuf type {@code google.chromeos.moblab.v1beta1.StageBuildMetadata}

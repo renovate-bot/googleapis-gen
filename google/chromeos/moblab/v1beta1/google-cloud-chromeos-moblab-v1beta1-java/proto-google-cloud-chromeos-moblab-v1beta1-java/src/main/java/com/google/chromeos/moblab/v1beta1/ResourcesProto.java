@@ -58,22 +58,30 @@ public final class ResourcesProto {
       "buildTargets/{build_target}/models/{mode" +
       "l}\"_\n\tMilestone\022\014\n\004name\030\001 \001(\t:D\352AA\n\'chro" +
       "meosmoblab.googleapis.com/Milestone\022\026mil" +
-      "estones/{milestone}\"\322\001\n\005Build\022\014\n\004name\030\001 " +
+      "estones/{milestone}\"\203\004\n\005Build\022\014\n\004name\030\001 " +
       "\001(\t\022?\n\tmilestone\030\002 \001(\tB,\372A)\n\'chromeosmob" +
       "lab.googleapis.com/Milestone\022\025\n\rbuild_ve" +
-      "rsion\030\003 \001(\t:c\352A`\n#chromeosmoblab.googlea" +
-      "pis.com/Build\0229buildTargets/{build_targe" +
-      "t}/models/{model}/builds/{build}\"\215\002\n\rBui" +
-      "ldArtifact\022\014\n\004name\030\001 \001(\t\0227\n\005build\030\002 \001(\tB" +
-      "(\372A%\n#chromeosmoblab.googleapis.com/Buil" +
-      "d\022\016\n\006bucket\030\003 \001(\t\022\014\n\004path\030\004 \001(\t\022\024\n\014objec" +
-      "t_count\030\005 \001(\r:\200\001\352A}\n+chromeosmoblab.goog" +
-      "leapis.com/BuildArtifact\022NbuildTargets/{" +
-      "build_target}/models/{model}/builds/{bui" +
-      "ld}/artifacts/{artifact}B~\n\"com.google.c" +
-      "hromeos.moblab.v1beta1B\016ResourcesProtoH\001" +
-      "P\001ZDgoogle.golang.org/genproto/googleapi" +
-      "s/chromeos/moblab/v1beta1;moblabb\006proto3"
+      "rsion\030\003 \001(\t\022A\n\006status\030\004 \001(\01621.google.chr" +
+      "omeos.moblab.v1beta1.Build.BuildStatus\022=" +
+      "\n\004type\030\005 \001(\0162/.google.chromeos.moblab.v1" +
+      "beta1.Build.BuildType\022\016\n\006branch\030\006 \001(\t\"Y\n" +
+      "\013BuildStatus\022\034\n\030BUILD_STATUS_UNSPECIFIED" +
+      "\020\000\022\010\n\004PASS\020\001\022\010\n\004FAIL\020\002\022\013\n\007RUNNING\020\003\022\013\n\007A" +
+      "BORTED\020\004\"B\n\tBuildType\022\032\n\026BUILD_TYPE_UNSP" +
+      "ECIFIED\020\000\022\013\n\007RELEASE\020\001\022\014\n\010FIRMWARE\020\002:c\352A" +
+      "`\n#chromeosmoblab.googleapis.com/Build\0229" +
+      "buildTargets/{build_target}/models/{mode" +
+      "l}/builds/{build}\"\215\002\n\rBuildArtifact\022\014\n\004n" +
+      "ame\030\001 \001(\t\0227\n\005build\030\002 \001(\tB(\372A%\n#chromeosm" +
+      "oblab.googleapis.com/Build\022\016\n\006bucket\030\003 \001" +
+      "(\t\022\014\n\004path\030\004 \001(\t\022\024\n\014object_count\030\005 \001(\r:\200" +
+      "\001\352A}\n+chromeosmoblab.googleapis.com/Buil" +
+      "dArtifact\022NbuildTargets/{build_target}/m" +
+      "odels/{model}/builds/{build}/artifacts/{" +
+      "artifact}B~\n\"com.google.chromeos.moblab." +
+      "v1beta1B\016ResourcesProtoH\001P\001ZDgoogle.gola" +
+      "ng.org/genproto/googleapis/chromeos/mobl" +
+      "ab/v1beta1;moblabb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -103,7 +111,7 @@ public final class ResourcesProto {
     internal_static_google_chromeos_moblab_v1beta1_Build_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_chromeos_moblab_v1beta1_Build_descriptor,
-        new java.lang.String[] { "Name", "Milestone", "BuildVersion", });
+        new java.lang.String[] { "Name", "Milestone", "BuildVersion", "Status", "Type", "Branch", });
     internal_static_google_chromeos_moblab_v1beta1_BuildArtifact_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_google_chromeos_moblab_v1beta1_BuildArtifact_fieldAccessorTable = new

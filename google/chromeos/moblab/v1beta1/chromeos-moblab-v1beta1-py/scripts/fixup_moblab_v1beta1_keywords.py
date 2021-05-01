@@ -39,9 +39,9 @@ def partition(
 class moblabCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'check_build_stage_status': ('name', ),
+          'check_build_stage_status': ('name', 'filter', ),
           'list_builds': ('parent', 'page_size', 'page_token', 'filter', 'read_mask', 'group_by', ),
-          'stage_build': ('name', ),
+          'stage_build': ('name', 'filter', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:

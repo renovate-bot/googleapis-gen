@@ -19,9 +19,11 @@
 
 module Google
   module Cloud
-    module Moblab
-      module V1beta1
-        VERSION = "0.0.1"
+    module Chromeos
+      module Moblab
+        module V1beta1
+          VERSION = "0.0.1"
+        end
       end
     end
   end

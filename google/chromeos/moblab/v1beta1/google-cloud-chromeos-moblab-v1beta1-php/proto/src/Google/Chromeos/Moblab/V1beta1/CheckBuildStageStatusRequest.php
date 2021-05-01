@@ -23,6 +23,14 @@ class CheckBuildStageStatusRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $name = '';
+    /**
+     * Optional. Filter that specifies value constraints of fields. For example, the
+     * filter can be set as `filter='type=release'` to only check the release
+     * builds.
+     *
+     * Generated from protobuf field <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $filter = '';
 
     /**
      * Constructor.
@@ -34,6 +42,10 @@ class CheckBuildStageStatusRequest extends \Google\Protobuf\Internal\Message
      *           Required. The full resource name of the build artifact.
      *           For example,
      *           'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-moblab-peng-staging'.
+     *     @type string $filter
+     *           Optional. Filter that specifies value constraints of fields. For example, the
+     *           filter can be set as `filter='type=release'` to only check the release
+     *           builds.
      * }
      */
     public function __construct($data = NULL) {
@@ -67,6 +79,36 @@ class CheckBuildStageStatusRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Filter that specifies value constraints of fields. For example, the
+     * filter can be set as `filter='type=release'` to only check the release
+     * builds.
+     *
+     * Generated from protobuf field <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return string
+     */
+    public function getFilter()
+    {
+        return $this->filter;
+    }
+
+    /**
+     * Optional. Filter that specifies value constraints of fields. For example, the
+     * filter can be set as `filter='type=release'` to only check the release
+     * builds.
+     *
+     * Generated from protobuf field <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setFilter($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->filter = $var;
 
         return $this;
     }

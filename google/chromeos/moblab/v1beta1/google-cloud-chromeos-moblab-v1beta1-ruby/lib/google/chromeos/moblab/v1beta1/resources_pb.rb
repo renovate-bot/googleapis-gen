@@ -19,6 +19,21 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :name, :string, 1
       optional :milestone, :string, 2
       optional :build_version, :string, 3
+      optional :status, :enum, 4, "google.chromeos.moblab.v1beta1.Build.BuildStatus"
+      optional :type, :enum, 5, "google.chromeos.moblab.v1beta1.Build.BuildType"
+      optional :branch, :string, 6
+    end
+    add_enum "google.chromeos.moblab.v1beta1.Build.BuildStatus" do
+      value :BUILD_STATUS_UNSPECIFIED, 0
+      value :PASS, 1
+      value :FAIL, 2
+      value :RUNNING, 3
+      value :ABORTED, 4
+    end
+    add_enum "google.chromeos.moblab.v1beta1.Build.BuildType" do
+      value :BUILD_TYPE_UNSPECIFIED, 0
+      value :RELEASE, 1
+      value :FIRMWARE, 2
     end
     add_message "google.chromeos.moblab.v1beta1.BuildArtifact" do
       optional :name, :string, 1
@@ -38,6 +53,8 @@ module Google
         Model = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.Model").msgclass
         Milestone = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.Milestone").msgclass
         Build = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.Build").msgclass
+        Build::BuildStatus = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.Build.BuildStatus").enummodule
+        Build::BuildType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.Build.BuildType").enummodule
         BuildArtifact = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.BuildArtifact").msgclass
       end
     end

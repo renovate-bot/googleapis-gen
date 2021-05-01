@@ -1,5 +1,5 @@
 {
-  "name": "moblab",
+  "name": "@google-cloud/moblab",
   "version": "0.1.0",
   "description": "Moblab client for Node.js",
   "repository": "googleapis/nodejs-moblab",

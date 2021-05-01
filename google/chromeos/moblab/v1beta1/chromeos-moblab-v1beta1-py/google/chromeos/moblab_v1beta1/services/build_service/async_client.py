@@ -167,7 +167,6 @@ class BuildServiceAsyncClient:
         Args:
             request (:class:`google.chromeos.moblab_v1beta1.types.ListBuildsRequest`):
                 The request object. Request message for listing builds.
-                NEXT_TAG: 7
             parent (:class:`str`):
                 Required. The full resource name of
                 the model. The model id is the same as
@@ -187,10 +186,9 @@ class BuildServiceAsyncClient:
         Returns:
             google.chromeos.moblab_v1beta1.services.build_service.pagers.ListBuildsAsyncPager:
                 Response message for listing builds.
-                   NEXT_TAG: 4
-
-                Iterating over this object will yield results and
-                resolve additional pages automatically.
+                Iterating over this object will yield
+                results and resolve additional pages
+                automatically.
 
         """
         # Create or coerce a protobuf request object.
@@ -282,8 +280,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Returns:
             google.chromeos.moblab_v1beta1.types.CheckBuildStageStatusResponse:
-                Response message for checking the stage status of a build artifact.
-                   NEXT_TAG: 4
+                Response message for checking the
+                stage status of a build artifact.
 
         """
         # Create or coerce a protobuf request object.

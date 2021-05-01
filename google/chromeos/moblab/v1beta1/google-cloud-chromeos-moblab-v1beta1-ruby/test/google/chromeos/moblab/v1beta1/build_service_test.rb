@@ -129,11 +129,13 @@ class ::Google::Chromeos::Moblab::V1beta1::BuildService::ClientTest < Minitest::
 
     # Create request parameters for a unary method.
     name = "hello world"
+    filter = "hello world"
 
     check_build_stage_status_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :check_build_stage_status, name
       assert_kind_of ::Google::Chromeos::Moblab::V1beta1::CheckBuildStageStatusRequest, request
       assert_equal "hello world", request["name"]
+      assert_equal "hello world", request["filter"]
       refute_nil options
     end
 
@@ -144,31 +146,31 @@ class ::Google::Chromeos::Moblab::V1beta1::BuildService::ClientTest < Minitest::
       end
 
       # Use hash object
-      client.check_build_stage_status({ name: name }) do |response, operation|
+      client.check_build_stage_status({ name: name, filter: filter }) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use named arguments
-      client.check_build_stage_status name: name do |response, operation|
+      client.check_build_stage_status name: name, filter: filter do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object
-      client.check_build_stage_status ::Google::Chromeos::Moblab::V1beta1::CheckBuildStageStatusRequest.new(name: name) do |response, operation|
+      client.check_build_stage_status ::Google::Chromeos::Moblab::V1beta1::CheckBuildStageStatusRequest.new(name: name, filter: filter) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use hash object with options
-      client.check_build_stage_status({ name: name }, grpc_options) do |response, operation|
+      client.check_build_stage_status({ name: name, filter: filter }, grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object with options
-      client.check_build_stage_status(::Google::Chromeos::Moblab::V1beta1::CheckBuildStageStatusRequest.new(name: name), grpc_options) do |response, operation|
+      client.check_build_stage_status(::Google::Chromeos::Moblab::V1beta1::CheckBuildStageStatusRequest.new(name: name, filter: filter), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -187,11 +189,13 @@ class ::Google::Chromeos::Moblab::V1beta1::BuildService::ClientTest < Minitest::
 
     # Create request parameters for a unary method.
     name = "hello world"
+    filter = "hello world"
 
     stage_build_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :stage_build, name
       assert_kind_of ::Google::Chromeos::Moblab::V1beta1::StageBuildRequest, request
       assert_equal "hello world", request["name"]
+      assert_equal "hello world", request["filter"]
       refute_nil options
     end
 
@@ -202,35 +206,35 @@ class ::Google::Chromeos::Moblab::V1beta1::BuildService::ClientTest < Minitest::
       end
 
       # Use hash object
-      client.stage_build({ name: name }) do |response, operation|
+      client.stage_build({ name: name, filter: filter }) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use named arguments
-      client.stage_build name: name do |response, operation|
+      client.stage_build name: name, filter: filter do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object
-      client.stage_build ::Google::Chromeos::Moblab::V1beta1::StageBuildRequest.new(name: name) do |response, operation|
+      client.stage_build ::Google::Chromeos::Moblab::V1beta1::StageBuildRequest.new(name: name, filter: filter) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use hash object with options
-      client.stage_build({ name: name }, grpc_options) do |response, operation|
+      client.stage_build({ name: name, filter: filter }, grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object with options
-      client.stage_build(::Google::Chromeos::Moblab::V1beta1::StageBuildRequest.new(name: name), grpc_options) do |response, operation|
+      client.stage_build(::Google::Chromeos::Moblab::V1beta1::StageBuildRequest.new(name: name, filter: filter), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation

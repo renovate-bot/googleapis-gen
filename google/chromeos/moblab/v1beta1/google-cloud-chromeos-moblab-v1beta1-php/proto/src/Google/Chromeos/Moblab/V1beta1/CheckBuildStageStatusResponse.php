@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Response message for checking the stage status of a build artifact.
- * NEXT_TAG: 4
  *
  * Generated from protobuf message <code>google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse</code>
  */

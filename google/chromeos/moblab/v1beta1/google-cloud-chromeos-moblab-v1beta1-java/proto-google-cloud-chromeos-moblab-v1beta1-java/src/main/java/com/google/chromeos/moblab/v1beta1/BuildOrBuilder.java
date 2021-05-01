@@ -72,4 +72,62 @@ public interface BuildOrBuilder extends
    */
   com.google.protobuf.ByteString
       getBuildVersionBytes();
+
+  /**
+   * <pre>
+   * The status of the build.
+   * </pre>
+   *
+   * <code>.google.chromeos.moblab.v1beta1.Build.BuildStatus status = 4;</code>
+   * @return The enum numeric value on the wire for status.
+   */
+  int getStatusValue();
+  /**
+   * <pre>
+   * The status of the build.
+   * </pre>
+   *
+   * <code>.google.chromeos.moblab.v1beta1.Build.BuildStatus status = 4;</code>
+   * @return The status.
+   */
+  com.google.chromeos.moblab.v1beta1.Build.BuildStatus getStatus();
+
+  /**
+   * <pre>
+   * The type of the build.
+   * </pre>
+   *
+   * <code>.google.chromeos.moblab.v1beta1.Build.BuildType type = 5;</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  int getTypeValue();
+  /**
+   * <pre>
+   * The type of the build.
+   * </pre>
+   *
+   * <code>.google.chromeos.moblab.v1beta1.Build.BuildType type = 5;</code>
+   * @return The type.
+   */
+  com.google.chromeos.moblab.v1beta1.Build.BuildType getType();
+
+  /**
+   * <pre>
+   * The branch of the build.
+   * </pre>
+   *
+   * <code>string branch = 6;</code>
+   * @return The branch.
+   */
+  java.lang.String getBranch();
+  /**
+   * <pre>
+   * The branch of the build.
+   * </pre>
+   *
+   * <code>string branch = 6;</code>
+   * @return The bytes for branch.
+   */
+  com.google.protobuf.ByteString
+      getBranchBytes();
 }

@@ -30,4 +30,28 @@ public interface StageBuildRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <pre>
+   * Optional. Filter that specifies value constraints of fields. For example, the
+   * filter can be set as `filter='type=release'` to only check the release
+   * builds.
+   * </pre>
+   *
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   * <pre>
+   * Optional. Filter that specifies value constraints of fields. For example, the
+   * filter can be set as `filter='type=release'` to only check the release
+   * builds.
+   * </pre>
+   *
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString
+      getFilterBytes();
 }

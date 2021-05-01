@@ -10,7 +10,6 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Metadata message for staging a build artifact.
- * NEXT_TAG: 4
  *
  * Generated from protobuf message <code>google.chromeos.moblab.v1beta1.StageBuildMetadata</code>
  */

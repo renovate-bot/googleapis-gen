@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private CheckBuildStageStatusRequest() {
     name_ = "";
+    filter_ = "";
   }
 
   @java.lang.Override
@@ -57,6 +58,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             name_ = s;
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            filter_ = s;
             break;
           }
           default: {
@@ -141,6 +148,56 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int FILTER_FIELD_NUMBER = 2;
+  private volatile java.lang.Object filter_;
+  /**
+   * <pre>
+   * Optional. Filter that specifies value constraints of fields. For example, the
+   * filter can be set as `filter='type=release'` to only check the release
+   * builds.
+   * </pre>
+   *
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The filter.
+   */
+  @java.lang.Override
+  public java.lang.String getFilter() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filter_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. Filter that specifies value constraints of fields. For example, the
+   * filter can be set as `filter='type=release'` to only check the release
+   * builds.
+   * </pre>
+   *
+   * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for filter.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFilterBytes() {
+    java.lang.Object ref = filter_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -158,6 +215,9 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (!getFilterBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -169,6 +229,9 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (!getFilterBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -187,6 +250,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
+    if (!getFilter()
+        .equals(other.getFilter())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -200,6 +265,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + FILTER_FIELD_NUMBER;
+    hash = (53 * hash) + getFilter().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -339,6 +406,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
+      filter_ = "";
+
       return this;
     }
 
@@ -366,6 +435,7 @@ private static final long serialVersionUID = 0L;
     public com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest buildPartial() {
       com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest result = new com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest(this);
       result.name_ = name_;
+      result.filter_ = filter_;
       onBuilt();
       return result;
     }
@@ -416,6 +486,10 @@ private static final long serialVersionUID = 0L;
       if (other == com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
+        onChanged();
+      }
+      if (!other.getFilter().isEmpty()) {
+        filter_ = other.filter_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -549,6 +623,112 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object filter_ = "";
+    /**
+     * <pre>
+     * Optional. Filter that specifies value constraints of fields. For example, the
+     * filter can be set as `filter='type=release'` to only check the release
+     * builds.
+     * </pre>
+     *
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The filter.
+     */
+    public java.lang.String getFilter() {
+      java.lang.Object ref = filter_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filter_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Filter that specifies value constraints of fields. For example, the
+     * filter can be set as `filter='type=release'` to only check the release
+     * builds.
+     * </pre>
+     *
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for filter.
+     */
+    public com.google.protobuf.ByteString
+        getFilterBytes() {
+      java.lang.Object ref = filter_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        filter_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Filter that specifies value constraints of fields. For example, the
+     * filter can be set as `filter='type=release'` to only check the release
+     * builds.
+     * </pre>
+     *
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilter(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      filter_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Filter that specifies value constraints of fields. For example, the
+     * filter can be set as `filter='type=release'` to only check the release
+     * builds.
+     * </pre>
+     *
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearFilter() {
+      
+      filter_ = getDefaultInstance().getFilter();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Filter that specifies value constraints of fields. For example, the
+     * filter can be set as `filter='type=release'` to only check the release
+     * builds.
+     * </pre>
+     *
+     * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for filter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFilterBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      filter_ = value;
       onChanged();
       return this;
     }

@@ -375,6 +375,7 @@ public class BuildServiceClient implements BackgroundResource {
    *           .setName(
    *               BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
    *                   .toString())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   CheckBuildStageStatusResponse response = buildServiceClient.checkBuildStageStatus(request);
    * }
@@ -401,6 +402,7 @@ public class BuildServiceClient implements BackgroundResource {
    *           .setName(
    *               BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
    *                   .toString())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<CheckBuildStageStatusResponse> future =
    *       buildServiceClient.checkBuildStageStatusCallable().futureCall(request);
@@ -488,6 +490,7 @@ public class BuildServiceClient implements BackgroundResource {
    *           .setName(
    *               BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
    *                   .toString())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   StageBuildResponse response = buildServiceClient.stageBuildAsync(request).get();
    * }
@@ -518,6 +521,7 @@ public class BuildServiceClient implements BackgroundResource {
    *           .setName(
    *               BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
    *                   .toString())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   OperationFuture<StageBuildResponse, StageBuildMetadata> future =
    *       buildServiceClient.stageBuildOperationCallable().futureCall(request);
@@ -548,6 +552,7 @@ public class BuildServiceClient implements BackgroundResource {
    *           .setName(
    *               BuildArtifactName.of("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]")
    *                   .toString())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<Operation> future = buildServiceClient.stageBuildCallable().futureCall(request);
    *   // Do something.

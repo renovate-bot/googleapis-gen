@@ -65,6 +65,24 @@ module Google
                                 end
                 default_config = Client::Configuration.new parent_config
 
+                default_config.rpcs.list_builds.timeout = 60.0
+                default_config.rpcs.list_builds.retry_policy = {
+                  initial_delay: 1.0,
+              max_delay: 10.0,
+              multiplier: 1.3,
+              retry_codes: [14]
+                }
+
+                default_config.rpcs.check_build_stage_status.timeout = 60.0
+                default_config.rpcs.check_build_stage_status.retry_policy = {
+                  initial_delay: 1.0,
+              max_delay: 10.0,
+              multiplier: 1.3,
+              retry_codes: [14]
+                }
+
+                default_config.rpcs.stage_build.timeout = 60.0
+
                 default_config
               end
               yield @configure if block_given?
@@ -193,13 +211,13 @@ module Google
             #     retrieve the subsequent page.
             #   @param filter [::String]
             #     Optional. Filter that specifies value constraints of fields. For example, the
-            #     filter can be set as "filter='milestone=milestones/80'" to only select
+            #     filter can be set as `filter='milestone=milestones/80'` to only select
             #     builds in milestone 80.
             #   @param read_mask [::Google::Protobuf::FieldMask, ::Hash]
             #     Optional. Read mask that specifies which Build fields to return. If empty, all Build
             #     fields will be returned.
             #     Valid fields: name, milestone, build_version.
-            #     For example, if the read_mask is set as "read_mask='milestone'", the
+            #     For example, if the read_mask is set as `read_mask='milestone'`, the
             #     ListBuilds will return a list of Builds object with only the milestone
             #     field.
             #   @param group_by [::Google::Protobuf::FieldMask, ::Hash]
@@ -229,7 +247,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Moblab::V1beta1::VERSION
+                gapic_version: ::Google::Cloud::Chromeos::Moblab::V1beta1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {
@@ -267,7 +285,7 @@ module Google
             #   @param options [::Gapic::CallOptions, ::Hash]
             #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
             #
-            # @overload check_build_stage_status(name: nil)
+            # @overload check_build_stage_status(name: nil, filter: nil)
             #   Pass arguments to `check_build_stage_status` via keyword arguments. Note that at
             #   least one keyword argument is required. To specify no parameters, or to keep all
             #   the default parameter values, pass an empty Hash as a request object (see above).
@@ -276,6 +294,10 @@ module Google
             #     Required. The full resource name of the build artifact.
             #     For example,
             #     'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-moblab-peng-staging'.
+            #   @param filter [::String]
+            #     Optional. Filter that specifies value constraints of fields. For example, the
+            #     filter can be set as `filter='type=release'` to only check the release
+            #     builds.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Google::Chromeos::Moblab::V1beta1::CheckBuildStageStatusResponse]
@@ -299,7 +321,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Moblab::V1beta1::VERSION
+                gapic_version: ::Google::Cloud::Chromeos::Moblab::V1beta1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {
@@ -339,7 +361,7 @@ module Google
             #   @param options [::Gapic::CallOptions, ::Hash]
             #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
             #
-            # @overload stage_build(name: nil)
+            # @overload stage_build(name: nil, filter: nil)
             #   Pass arguments to `stage_build` via keyword arguments. Note that at
             #   least one keyword argument is required. To specify no parameters, or to keep all
             #   the default parameter values, pass an empty Hash as a request object (see above).
@@ -348,6 +370,10 @@ module Google
             #     Required. The full resource name of the build artifact.
             #     For example,
             #     'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-moblab-peng-staging'.
+            #   @param filter [::String]
+            #     Optional. Filter that specifies value constraints of fields. For example, the
+            #     filter can be set as `filter='type=release'` to only check the release
+            #     builds.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]
@@ -371,7 +397,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Moblab::V1beta1::VERSION
+                gapic_version: ::Google::Cloud::Chromeos::Moblab::V1beta1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {

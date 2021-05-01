@@ -35,6 +35,7 @@ namespace Google.Chromeos.Moblab.V1Beta1.Tests
             CheckBuildStageStatusRequest request = new CheckBuildStageStatusRequest
             {
                 BuildArtifactName = BuildArtifactName.FromBuildTargetModelBuildArtifact("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]"),
+                Filter = "filtere47ac9b2",
             };
             CheckBuildStageStatusResponse expectedResponse = new CheckBuildStageStatusResponse
             {
@@ -57,6 +58,7 @@ namespace Google.Chromeos.Moblab.V1Beta1.Tests
             CheckBuildStageStatusRequest request = new CheckBuildStageStatusRequest
             {
                 BuildArtifactName = BuildArtifactName.FromBuildTargetModelBuildArtifact("[BUILD_TARGET]", "[MODEL]", "[BUILD]", "[ARTIFACT]"),
+                Filter = "filtere47ac9b2",
             };
             CheckBuildStageStatusResponse expectedResponse = new CheckBuildStageStatusResponse
             {

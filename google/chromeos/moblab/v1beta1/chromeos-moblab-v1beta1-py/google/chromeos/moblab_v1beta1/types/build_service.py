@@ -35,7 +35,7 @@ __protobuf__ = proto.module(
 
 
 class ListBuildsRequest(proto.Message):
-    r"""Request message for listing builds. NEXT_TAG: 7
+    r"""Request message for listing builds.
     Attributes:
         parent (str):
             Required. The full resource name of the
@@ -50,17 +50,17 @@ class ListBuildsRequest(proto.Message):
             ``ListBuilds`` call. Provide this to retrieve the subsequent
             page.
         filter (str):
-            Optional. Filter that specifies value
-            constraints of fields. For example, the filter
-            can be set as "filter='milestone=milestones/80'"
-            to only select builds in milestone 80.
+            Optional. Filter that specifies value constraints of fields.
+            For example, the filter can be set as
+            ``filter='milestone=milestones/80'`` to only select builds
+            in milestone 80.
         read_mask (google.protobuf.field_mask_pb2.FieldMask):
             Optional. Read mask that specifies which Build fields to
             return. If empty, all Build fields will be returned. Valid
             fields: name, milestone, build_version. For example, if the
-            read_mask is set as "read_mask='milestone'", the ListBuilds
-            will return a list of Builds object with only the milestone
-            field.
+            read_mask is set as ``read_mask='milestone'``, the
+            ListBuilds will return a list of Builds object with only the
+            milestone field.
         group_by (google.protobuf.field_mask_pb2.FieldMask):
             Optional. The operation that groups by all the Build fields
             specified in the read mask. The group_by field should be the
@@ -96,7 +96,7 @@ class ListBuildsRequest(proto.Message):
 
 
 class ListBuildsResponse(proto.Message):
-    r"""Response message for listing builds. NEXT_TAG: 4
+    r"""Response message for listing builds.
     Attributes:
         builds (Sequence[google.chromeos.moblab_v1beta1.types.Build]):
             The list of builds.
@@ -135,17 +135,25 @@ class CheckBuildStageStatusRequest(proto.Message):
             artifact. For example,
             'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-
             moblab-peng-staging'.
+        filter (str):
+            Optional. Filter that specifies value constraints of fields.
+            For example, the filter can be set as
+            ``filter='type=release'`` to only check the release builds.
     """
 
     name = proto.Field(
         proto.STRING,
         number=1,
     )
+    filter = proto.Field(
+        proto.STRING,
+        number=2,
+    )
 
 
 class CheckBuildStageStatusResponse(proto.Message):
-    r"""Response message for checking the stage status of a build artifact.
-    NEXT_TAG: 4
+    r"""Response message for checking the stage status of a build
+    artifact.
 
     Attributes:
         is_build_staged (bool):
@@ -183,11 +191,19 @@ class StageBuildRequest(proto.Message):
             artifact. For example,
             'buildTargets/octopus/models/bobba/builds/12607.6.0/artifacts/chromeos-
             moblab-peng-staging'.
+        filter (str):
+            Optional. Filter that specifies value constraints of fields.
+            For example, the filter can be set as
+            ``filter='type=release'`` to only check the release builds.
     """
 
     name = proto.Field(
         proto.STRING,
         number=1,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=2,
     )
 
 
@@ -206,7 +222,7 @@ class StageBuildResponse(proto.Message):
 
 
 class StageBuildMetadata(proto.Message):
-    r"""Metadata message for staging a build artifact. NEXT_TAG: 4
+    r"""Metadata message for staging a build artifact.
     Attributes:
         progress_percent (float):
             Approximate percentage of progress, e.g. "50"

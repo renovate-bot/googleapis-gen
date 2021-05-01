@@ -24,7 +24,7 @@ class BuildService
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-°
+Ú
 2google/chromeos/moblab/v1beta1/build_service.protogoogle.chromeos.moblab.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto.google/chromeos/moblab/v1beta1/resources.proto#google/longrunning/operations.proto google/protobuf/field_mask.protogoogle/protobuf/timestamp.proto"ý
 ListBuildsRequest;
 parent (	B+àAúA%
@@ -39,17 +39,19 @@ page_token (	BàA
 builds (2%.google.chromeos.moblab.v1beta1.Build
 next_page_token (	
 
-total_size ("a
+total_size ("v
 CheckBuildStageStatusRequestA
 name (	B3àAúA-
-+chromeosmoblab.googleapis.com/BuildArtifact"Ô
++chromeosmoblab.googleapis.com/BuildArtifact
+filter (	BàA"Ô
 CheckBuildStageStatusResponse
 is_build_staged (L
 staged_build_artifact (2-.google.chromeos.moblab.v1beta1.BuildArtifactL
-source_build_artifact (2-.google.chromeos.moblab.v1beta1.BuildArtifact"V
+source_build_artifact (2-.google.chromeos.moblab.v1beta1.BuildArtifact"k
 StageBuildRequestA
 name (	B3àAúA-
-+chromeosmoblab.googleapis.com/BuildArtifact"b
++chromeosmoblab.googleapis.com/BuildArtifact
+filter (	BàA"b
 StageBuildResponseL
 staged_build_artifact (2-.google.chromeos.moblab.v1beta1.BuildArtifact"Œ
 StageBuildMetadata

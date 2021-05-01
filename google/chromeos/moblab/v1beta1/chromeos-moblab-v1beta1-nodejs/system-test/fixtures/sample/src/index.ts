@@ -16,7 +16,7 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {BuildServiceClient} from 'moblab';
+import {BuildServiceClient} from '@google-cloud/moblab';
 
 // check that the client class type name can be used
 function doStuffWithBuildServiceClient(client: BuildServiceClient) {

@@ -10,7 +10,7 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * Resource that represents a build artifact stored in Google Cloud Storage for
- * the given build target, model, build version and bucket. NEXT_TAG: 6
+ * the given build target, model, build version and bucket.
  *
  * Generated from protobuf message <code>google.chromeos.moblab.v1beta1.BuildArtifact</code>
  */

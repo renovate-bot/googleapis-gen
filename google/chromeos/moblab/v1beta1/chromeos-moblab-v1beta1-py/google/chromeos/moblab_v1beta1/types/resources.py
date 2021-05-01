@@ -74,8 +74,8 @@ class Milestone(proto.Message):
 
 
 class Build(proto.Message):
-    r"""Resource that represents a build for the given build target, model,
-    milestone and build version. NEXT_TAG: 4
+    r"""Resource that represents a build for the given build target,
+    model, milestone and build version.
 
     Attributes:
         name (str):
@@ -88,7 +88,26 @@ class Build(proto.Message):
         build_version (str):
             The build version of the build, e.g.
             1234.0.0.
+        status (google.chromeos.moblab_v1beta1.types.Build.BuildStatus):
+            The status of the build.
+        type_ (google.chromeos.moblab_v1beta1.types.Build.BuildType):
+            The type of the build.
+        branch (str):
+            The branch of the build.
     """
+    class BuildStatus(proto.Enum):
+        r"""The build status types."""
+        BUILD_STATUS_UNSPECIFIED = 0
+        PASS = 1
+        FAIL = 2
+        RUNNING = 3
+        ABORTED = 4
+
+    class BuildType(proto.Enum):
+        r"""The build types."""
+        BUILD_TYPE_UNSPECIFIED = 0
+        RELEASE = 1
+        FIRMWARE = 2
 
     name = proto.Field(
         proto.STRING,
@@ -102,12 +121,26 @@ class Build(proto.Message):
         proto.STRING,
         number=3,
     )
+    status = proto.Field(
+        proto.ENUM,
+        number=4,
+        enum=BuildStatus,
+    )
+    type_ = proto.Field(
+        proto.ENUM,
+        number=5,
+        enum=BuildType,
+    )
+    branch = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class BuildArtifact(proto.Message):
-    r"""Resource that represents a build artifact stored in Google Cloud
-    Storage for the given build target, model, build version and bucket.
-    NEXT_TAG: 6
+    r"""Resource that represents a build artifact stored in Google
+    Cloud Storage for the given build target, model, build version
+    and bucket.
 
     Attributes:
         name (str):

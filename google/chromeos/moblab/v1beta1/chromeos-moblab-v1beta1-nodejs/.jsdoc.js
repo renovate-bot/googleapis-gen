@@ -43,7 +43,7 @@ module.exports = {
     copyright: 'Copyright 2021 Google LLC',
     includeDate: false,
     sourceFiles: false,
-    systemName: 'moblab',
+    systemName: '@google-cloud/moblab',
     theme: 'lumen',
     default: {
       outputSourceFiles: false

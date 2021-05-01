@@ -7,7 +7,6 @@ package com.google.chromeos.moblab.v1beta1;
  * <pre>
  * Resource that represents a build for the given build target, model, milestone
  * and build version.
- * NEXT_TAG: 4
  * </pre>
  *
  * Protobuf type {@code google.chromeos.moblab.v1beta1.Build}
@@ -25,6 +24,9 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     milestone_ = "";
     buildVersion_ = "";
+    status_ = 0;
+    type_ = 0;
+    branch_ = "";
   }
 
   @java.lang.Override
@@ -75,6 +77,24 @@ private static final long serialVersionUID = 0L;
             buildVersion_ = s;
             break;
           }
+          case 32: {
+            int rawValue = input.readEnum();
+
+            status_ = rawValue;
+            break;
+          }
+          case 40: {
+            int rawValue = input.readEnum();
+
+            type_ = rawValue;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            branch_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -105,6 +125,330 @@ private static final long serialVersionUID = 0L;
     return com.google.chromeos.moblab.v1beta1.ResourcesProto.internal_static_google_chromeos_moblab_v1beta1_Build_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.chromeos.moblab.v1beta1.Build.class, com.google.chromeos.moblab.v1beta1.Build.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * The build status types.
+   * </pre>
+   *
+   * Protobuf enum {@code google.chromeos.moblab.v1beta1.Build.BuildStatus}
+   */
+  public enum BuildStatus
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * No build status is specified.
+     * </pre>
+     *
+     * <code>BUILD_STATUS_UNSPECIFIED = 0;</code>
+     */
+    BUILD_STATUS_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * Complete Status: The build passed.
+     * </pre>
+     *
+     * <code>PASS = 1;</code>
+     */
+    PASS(1),
+    /**
+     * <pre>
+     * Complete Status: The build failed.
+     * </pre>
+     *
+     * <code>FAIL = 2;</code>
+     */
+    FAIL(2),
+    /**
+     * <pre>
+     * Intermediate Status: The build is still running.
+     * </pre>
+     *
+     * <code>RUNNING = 3;</code>
+     */
+    RUNNING(3),
+    /**
+     * <pre>
+     * Complete Status: The build was aborted.
+     * </pre>
+     *
+     * <code>ABORTED = 4;</code>
+     */
+    ABORTED(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * No build status is specified.
+     * </pre>
+     *
+     * <code>BUILD_STATUS_UNSPECIFIED = 0;</code>
+     */
+    public static final int BUILD_STATUS_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * Complete Status: The build passed.
+     * </pre>
+     *
+     * <code>PASS = 1;</code>
+     */
+    public static final int PASS_VALUE = 1;
+    /**
+     * <pre>
+     * Complete Status: The build failed.
+     * </pre>
+     *
+     * <code>FAIL = 2;</code>
+     */
+    public static final int FAIL_VALUE = 2;
+    /**
+     * <pre>
+     * Intermediate Status: The build is still running.
+     * </pre>
+     *
+     * <code>RUNNING = 3;</code>
+     */
+    public static final int RUNNING_VALUE = 3;
+    /**
+     * <pre>
+     * Complete Status: The build was aborted.
+     * </pre>
+     *
+     * <code>ABORTED = 4;</code>
+     */
+    public static final int ABORTED_VALUE = 4;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BuildStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BuildStatus forNumber(int value) {
+      switch (value) {
+        case 0: return BUILD_STATUS_UNSPECIFIED;
+        case 1: return PASS;
+        case 2: return FAIL;
+        case 3: return RUNNING;
+        case 4: return ABORTED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BuildStatus>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        BuildStatus> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<BuildStatus>() {
+            public BuildStatus findValueByNumber(int number) {
+              return BuildStatus.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.chromeos.moblab.v1beta1.Build.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final BuildStatus[] VALUES = values();
+
+    public static BuildStatus valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BuildStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.chromeos.moblab.v1beta1.Build.BuildStatus)
+  }
+
+  /**
+   * <pre>
+   * The build types.
+   * </pre>
+   *
+   * Protobuf enum {@code google.chromeos.moblab.v1beta1.Build.BuildType}
+   */
+  public enum BuildType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Invalid build type.
+     * </pre>
+     *
+     * <code>BUILD_TYPE_UNSPECIFIED = 0;</code>
+     */
+    BUILD_TYPE_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * The release build.
+     * </pre>
+     *
+     * <code>RELEASE = 1;</code>
+     */
+    RELEASE(1),
+    /**
+     * <pre>
+     * The firmware build.
+     * </pre>
+     *
+     * <code>FIRMWARE = 2;</code>
+     */
+    FIRMWARE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Invalid build type.
+     * </pre>
+     *
+     * <code>BUILD_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int BUILD_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * The release build.
+     * </pre>
+     *
+     * <code>RELEASE = 1;</code>
+     */
+    public static final int RELEASE_VALUE = 1;
+    /**
+     * <pre>
+     * The firmware build.
+     * </pre>
+     *
+     * <code>FIRMWARE = 2;</code>
+     */
+    public static final int FIRMWARE_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static BuildType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static BuildType forNumber(int value) {
+      switch (value) {
+        case 0: return BUILD_TYPE_UNSPECIFIED;
+        case 1: return RELEASE;
+        case 2: return FIRMWARE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BuildType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        BuildType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<BuildType>() {
+            public BuildType findValueByNumber(int number) {
+              return BuildType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.chromeos.moblab.v1beta1.Build.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final BuildType[] VALUES = values();
+
+    public static BuildType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private BuildType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.chromeos.moblab.v1beta1.Build.BuildType)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -251,6 +595,106 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int STATUS_FIELD_NUMBER = 4;
+  private int status_;
+  /**
+   * <pre>
+   * The status of the build.
+   * </pre>
+   *
+   * <code>.google.chromeos.moblab.v1beta1.Build.BuildStatus status = 4;</code>
+   * @return The enum numeric value on the wire for status.
+   */
+  @java.lang.Override public int getStatusValue() {
+    return status_;
+  }
+  /**
+   * <pre>
+   * The status of the build.
+   * </pre>
+   *
+   * <code>.google.chromeos.moblab.v1beta1.Build.BuildStatus status = 4;</code>
+   * @return The status.
+   */
+  @java.lang.Override public com.google.chromeos.moblab.v1beta1.Build.BuildStatus getStatus() {
+    @SuppressWarnings("deprecation")
+    com.google.chromeos.moblab.v1beta1.Build.BuildStatus result = com.google.chromeos.moblab.v1beta1.Build.BuildStatus.valueOf(status_);
+    return result == null ? com.google.chromeos.moblab.v1beta1.Build.BuildStatus.UNRECOGNIZED : result;
+  }
+
+  public static final int TYPE_FIELD_NUMBER = 5;
+  private int type_;
+  /**
+   * <pre>
+   * The type of the build.
+   * </pre>
+   *
+   * <code>.google.chromeos.moblab.v1beta1.Build.BuildType type = 5;</code>
+   * @return The enum numeric value on the wire for type.
+   */
+  @java.lang.Override public int getTypeValue() {
+    return type_;
+  }
+  /**
+   * <pre>
+   * The type of the build.
+   * </pre>
+   *
+   * <code>.google.chromeos.moblab.v1beta1.Build.BuildType type = 5;</code>
+   * @return The type.
+   */
+  @java.lang.Override public com.google.chromeos.moblab.v1beta1.Build.BuildType getType() {
+    @SuppressWarnings("deprecation")
+    com.google.chromeos.moblab.v1beta1.Build.BuildType result = com.google.chromeos.moblab.v1beta1.Build.BuildType.valueOf(type_);
+    return result == null ? com.google.chromeos.moblab.v1beta1.Build.BuildType.UNRECOGNIZED : result;
+  }
+
+  public static final int BRANCH_FIELD_NUMBER = 6;
+  private volatile java.lang.Object branch_;
+  /**
+   * <pre>
+   * The branch of the build.
+   * </pre>
+   *
+   * <code>string branch = 6;</code>
+   * @return The branch.
+   */
+  @java.lang.Override
+  public java.lang.String getBranch() {
+    java.lang.Object ref = branch_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      branch_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The branch of the build.
+   * </pre>
+   *
+   * <code>string branch = 6;</code>
+   * @return The bytes for branch.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getBranchBytes() {
+    java.lang.Object ref = branch_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      branch_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -274,6 +718,15 @@ private static final long serialVersionUID = 0L;
     if (!getBuildVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, buildVersion_);
     }
+    if (status_ != com.google.chromeos.moblab.v1beta1.Build.BuildStatus.BUILD_STATUS_UNSPECIFIED.getNumber()) {
+      output.writeEnum(4, status_);
+    }
+    if (type_ != com.google.chromeos.moblab.v1beta1.Build.BuildType.BUILD_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(5, type_);
+    }
+    if (!getBranchBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, branch_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -291,6 +744,17 @@ private static final long serialVersionUID = 0L;
     }
     if (!getBuildVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, buildVersion_);
+    }
+    if (status_ != com.google.chromeos.moblab.v1beta1.Build.BuildStatus.BUILD_STATUS_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(4, status_);
+    }
+    if (type_ != com.google.chromeos.moblab.v1beta1.Build.BuildType.BUILD_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(5, type_);
+    }
+    if (!getBranchBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, branch_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -313,6 +777,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMilestone())) return false;
     if (!getBuildVersion()
         .equals(other.getBuildVersion())) return false;
+    if (status_ != other.status_) return false;
+    if (type_ != other.type_) return false;
+    if (!getBranch()
+        .equals(other.getBranch())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -330,6 +798,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getMilestone().hashCode();
     hash = (37 * hash) + BUILD_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getBuildVersion().hashCode();
+    hash = (37 * hash) + STATUS_FIELD_NUMBER;
+    hash = (53 * hash) + status_;
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
+    hash = (37 * hash) + BRANCH_FIELD_NUMBER;
+    hash = (53 * hash) + getBranch().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -429,7 +903,6 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Resource that represents a build for the given build target, model, milestone
    * and build version.
-   * NEXT_TAG: 4
    * </pre>
    *
    * Protobuf type {@code google.chromeos.moblab.v1beta1.Build}
@@ -475,6 +948,12 @@ private static final long serialVersionUID = 0L;
 
       buildVersion_ = "";
 
+      status_ = 0;
+
+      type_ = 0;
+
+      branch_ = "";
+
       return this;
     }
 
@@ -504,6 +983,9 @@ private static final long serialVersionUID = 0L;
       result.name_ = name_;
       result.milestone_ = milestone_;
       result.buildVersion_ = buildVersion_;
+      result.status_ = status_;
+      result.type_ = type_;
+      result.branch_ = branch_;
       onBuilt();
       return result;
     }
@@ -562,6 +1044,16 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getBuildVersion().isEmpty()) {
         buildVersion_ = other.buildVersion_;
+        onChanged();
+      }
+      if (other.status_ != 0) {
+        setStatusValue(other.getStatusValue());
+      }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
+      }
+      if (!other.getBranch().isEmpty()) {
+        branch_ = other.branch_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -892,6 +1384,250 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       buildVersion_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int status_ = 0;
+    /**
+     * <pre>
+     * The status of the build.
+     * </pre>
+     *
+     * <code>.google.chromeos.moblab.v1beta1.Build.BuildStatus status = 4;</code>
+     * @return The enum numeric value on the wire for status.
+     */
+    @java.lang.Override public int getStatusValue() {
+      return status_;
+    }
+    /**
+     * <pre>
+     * The status of the build.
+     * </pre>
+     *
+     * <code>.google.chromeos.moblab.v1beta1.Build.BuildStatus status = 4;</code>
+     * @param value The enum numeric value on the wire for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusValue(int value) {
+      
+      status_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The status of the build.
+     * </pre>
+     *
+     * <code>.google.chromeos.moblab.v1beta1.Build.BuildStatus status = 4;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public com.google.chromeos.moblab.v1beta1.Build.BuildStatus getStatus() {
+      @SuppressWarnings("deprecation")
+      com.google.chromeos.moblab.v1beta1.Build.BuildStatus result = com.google.chromeos.moblab.v1beta1.Build.BuildStatus.valueOf(status_);
+      return result == null ? com.google.chromeos.moblab.v1beta1.Build.BuildStatus.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * The status of the build.
+     * </pre>
+     *
+     * <code>.google.chromeos.moblab.v1beta1.Build.BuildStatus status = 4;</code>
+     * @param value The status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatus(com.google.chromeos.moblab.v1beta1.Build.BuildStatus value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      status_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The status of the build.
+     * </pre>
+     *
+     * <code>.google.chromeos.moblab.v1beta1.Build.BuildStatus status = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearStatus() {
+      
+      status_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int type_ = 0;
+    /**
+     * <pre>
+     * The type of the build.
+     * </pre>
+     *
+     * <code>.google.chromeos.moblab.v1beta1.Build.BuildType type = 5;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <pre>
+     * The type of the build.
+     * </pre>
+     *
+     * <code>.google.chromeos.moblab.v1beta1.Build.BuildType type = 5;</code>
+     * @param value The enum numeric value on the wire for type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTypeValue(int value) {
+      
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The type of the build.
+     * </pre>
+     *
+     * <code>.google.chromeos.moblab.v1beta1.Build.BuildType type = 5;</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.chromeos.moblab.v1beta1.Build.BuildType getType() {
+      @SuppressWarnings("deprecation")
+      com.google.chromeos.moblab.v1beta1.Build.BuildType result = com.google.chromeos.moblab.v1beta1.Build.BuildType.valueOf(type_);
+      return result == null ? com.google.chromeos.moblab.v1beta1.Build.BuildType.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * The type of the build.
+     * </pre>
+     *
+     * <code>.google.chromeos.moblab.v1beta1.Build.BuildType type = 5;</code>
+     * @param value The type to set.
+     * @return This builder for chaining.
+     */
+    public Builder setType(com.google.chromeos.moblab.v1beta1.Build.BuildType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The type of the build.
+     * </pre>
+     *
+     * <code>.google.chromeos.moblab.v1beta1.Build.BuildType type = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearType() {
+      
+      type_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object branch_ = "";
+    /**
+     * <pre>
+     * The branch of the build.
+     * </pre>
+     *
+     * <code>string branch = 6;</code>
+     * @return The branch.
+     */
+    public java.lang.String getBranch() {
+      java.lang.Object ref = branch_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        branch_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The branch of the build.
+     * </pre>
+     *
+     * <code>string branch = 6;</code>
+     * @return The bytes for branch.
+     */
+    public com.google.protobuf.ByteString
+        getBranchBytes() {
+      java.lang.Object ref = branch_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        branch_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The branch of the build.
+     * </pre>
+     *
+     * <code>string branch = 6;</code>
+     * @param value The branch to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBranch(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      branch_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The branch of the build.
+     * </pre>
+     *
+     * <code>string branch = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearBranch() {
+      
+      branch_ = getDefaultInstance().getBranch();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The branch of the build.
+     * </pre>
+     *
+     * <code>string branch = 6;</code>
+     * @param value The bytes for branch to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBranchBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      branch_ = value;
       onChanged();
       return this;
     }

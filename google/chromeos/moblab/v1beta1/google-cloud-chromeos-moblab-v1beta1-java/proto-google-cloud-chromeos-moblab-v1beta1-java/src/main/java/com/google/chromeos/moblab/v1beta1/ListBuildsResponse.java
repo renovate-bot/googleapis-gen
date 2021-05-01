@@ -6,7 +6,6 @@ package com.google.chromeos.moblab.v1beta1;
 /**
  * <pre>
  * Response message for listing builds.
- * NEXT_TAG: 4
  * </pre>
  *
  * Protobuf type {@code google.chromeos.moblab.v1beta1.ListBuildsResponse}
@@ -415,7 +414,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Response message for listing builds.
-   * NEXT_TAG: 4
    * </pre>
    *
    * Protobuf type {@code google.chromeos.moblab.v1beta1.ListBuildsResponse}

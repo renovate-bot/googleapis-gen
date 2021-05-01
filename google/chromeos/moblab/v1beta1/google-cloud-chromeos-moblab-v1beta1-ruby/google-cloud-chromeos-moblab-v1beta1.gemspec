@@ -1,16 +1,16 @@
 # -*- ruby -*-
 # encoding: utf-8
 
-require File.expand_path("lib/google/cloud/moblab/v1beta1/version", __dir__)
+require File.expand_path("lib/google/cloud/chromeos/moblab/v1beta1/version", __dir__)
 
 Gem::Specification.new do |gem|
-  gem.name          = "google-cloud-moblab-v1beta1"
-  gem.version       = Google::Cloud::Moblab::V1beta1::VERSION
+  gem.name          = "google-cloud-chromeos-moblab-v1beta1"
+  gem.version       = Google::Cloud::Chromeos::Moblab::V1beta1::VERSION
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-moblab-v1beta1 is the official client library for the Google Cloud Moblab V1beta1 API. Note that google-cloud-moblab-v1beta1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-moblab instead. See the readme for more details."
-  gem.summary       = "API Client library for the Google Cloud Moblab V1beta1 API"
+  gem.description   = "google-cloud-chromeos-moblab-v1beta1 is the official client library for the Google Cloud Chromeos Moblab V1beta1 API. Note that google-cloud-chromeos-moblab-v1beta1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-chromeos-moblab instead. See the readme for more details."
+  gem.summary       = "API Client library for the Google Cloud Chromeos Moblab V1beta1 API"
   gem.homepage      = "https://github.com/googleapis/google-cloud-ruby"
   gem.license       = "Apache-2.0"
 

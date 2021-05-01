@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/moblab/v1beta1/version"
+require "google/cloud/chromeos/moblab/v1beta1/version"
 
 require "google/chromeos/moblab/v1beta1/build_service/credentials"
 require "google/chromeos/moblab/v1beta1/build_service/paths"

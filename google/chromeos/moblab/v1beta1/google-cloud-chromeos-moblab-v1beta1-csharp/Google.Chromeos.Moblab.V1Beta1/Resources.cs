@@ -33,28 +33,34 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
             "b20vTW9kZWwSKmJ1aWxkVGFyZ2V0cy97YnVpbGRfdGFyZ2V0fS9tb2RlbHMv",
             "e21vZGVsfSJfCglNaWxlc3RvbmUSDAoEbmFtZRgBIAEoCTpE6kFBCidjaHJv",
             "bWVvc21vYmxhYi5nb29nbGVhcGlzLmNvbS9NaWxlc3RvbmUSFm1pbGVzdG9u",
-            "ZXMve21pbGVzdG9uZX0i0gEKBUJ1aWxkEgwKBG5hbWUYASABKAkSPwoJbWls",
+            "ZXMve21pbGVzdG9uZX0igwQKBUJ1aWxkEgwKBG5hbWUYASABKAkSPwoJbWls",
             "ZXN0b25lGAIgASgJQiz6QSkKJ2Nocm9tZW9zbW9ibGFiLmdvb2dsZWFwaXMu",
-            "Y29tL01pbGVzdG9uZRIVCg1idWlsZF92ZXJzaW9uGAMgASgJOmPqQWAKI2No",
-            "cm9tZW9zbW9ibGFiLmdvb2dsZWFwaXMuY29tL0J1aWxkEjlidWlsZFRhcmdl",
-            "dHMve2J1aWxkX3RhcmdldH0vbW9kZWxzL3ttb2RlbH0vYnVpbGRzL3tidWls",
-            "ZH0ijQIKDUJ1aWxkQXJ0aWZhY3QSDAoEbmFtZRgBIAEoCRI3CgVidWlsZBgC",
-            "IAEoCUIo+kElCiNjaHJvbWVvc21vYmxhYi5nb29nbGVhcGlzLmNvbS9CdWls",
-            "ZBIOCgZidWNrZXQYAyABKAkSDAoEcGF0aBgEIAEoCRIUCgxvYmplY3RfY291",
-            "bnQYBSABKA06gAHqQX0KK2Nocm9tZW9zbW9ibGFiLmdvb2dsZWFwaXMuY29t",
-            "L0J1aWxkQXJ0aWZhY3QSTmJ1aWxkVGFyZ2V0cy97YnVpbGRfdGFyZ2V0fS9t",
-            "b2RlbHMve21vZGVsfS9idWlsZHMve2J1aWxkfS9hcnRpZmFjdHMve2FydGlm",
-            "YWN0fUJ+CiJjb20uZ29vZ2xlLmNocm9tZW9zLm1vYmxhYi52MWJldGExQg5S",
-            "ZXNvdXJjZXNQcm90b0gBUAFaRGdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3Rv",
-            "L2dvb2dsZWFwaXMvY2hyb21lb3MvbW9ibGFiL3YxYmV0YTE7bW9ibGFiYgZw",
-            "cm90bzM="));
+            "Y29tL01pbGVzdG9uZRIVCg1idWlsZF92ZXJzaW9uGAMgASgJEkEKBnN0YXR1",
+            "cxgEIAEoDjIxLmdvb2dsZS5jaHJvbWVvcy5tb2JsYWIudjFiZXRhMS5CdWls",
+            "ZC5CdWlsZFN0YXR1cxI9CgR0eXBlGAUgASgOMi8uZ29vZ2xlLmNocm9tZW9z",
+            "Lm1vYmxhYi52MWJldGExLkJ1aWxkLkJ1aWxkVHlwZRIOCgZicmFuY2gYBiAB",
+            "KAkiWQoLQnVpbGRTdGF0dXMSHAoYQlVJTERfU1RBVFVTX1VOU1BFQ0lGSUVE",
+            "EAASCAoEUEFTUxABEggKBEZBSUwQAhILCgdSVU5OSU5HEAMSCwoHQUJPUlRF",
+            "RBAEIkIKCUJ1aWxkVHlwZRIaChZCVUlMRF9UWVBFX1VOU1BFQ0lGSUVEEAAS",
+            "CwoHUkVMRUFTRRABEgwKCEZJUk1XQVJFEAI6Y+pBYAojY2hyb21lb3Ntb2Js",
+            "YWIuZ29vZ2xlYXBpcy5jb20vQnVpbGQSOWJ1aWxkVGFyZ2V0cy97YnVpbGRf",
+            "dGFyZ2V0fS9tb2RlbHMve21vZGVsfS9idWlsZHMve2J1aWxkfSKNAgoNQnVp",
+            "bGRBcnRpZmFjdBIMCgRuYW1lGAEgASgJEjcKBWJ1aWxkGAIgASgJQij6QSUK",
+            "I2Nocm9tZW9zbW9ibGFiLmdvb2dsZWFwaXMuY29tL0J1aWxkEg4KBmJ1Y2tl",
+            "dBgDIAEoCRIMCgRwYXRoGAQgASgJEhQKDG9iamVjdF9jb3VudBgFIAEoDTqA",
+            "AepBfQorY2hyb21lb3Ntb2JsYWIuZ29vZ2xlYXBpcy5jb20vQnVpbGRBcnRp",
+            "ZmFjdBJOYnVpbGRUYXJnZXRzL3tidWlsZF90YXJnZXR9L21vZGVscy97bW9k",
+            "ZWx9L2J1aWxkcy97YnVpbGR9L2FydGlmYWN0cy97YXJ0aWZhY3R9Qn4KImNv",
+            "bS5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTFCDlJlc291cmNlc1By",
+            "b3RvSAFQAVpEZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBp",
+            "cy9jaHJvbWVvcy9tb2JsYWIvdjFiZXRhMTttb2JsYWJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.ResourceReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.BuildTarget), global::Google.Chromeos.Moblab.V1Beta1.BuildTarget.Parser, new[]{ "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.Model), global::Google.Chromeos.Moblab.V1Beta1.Model.Parser, new[]{ "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.Milestone), global::Google.Chromeos.Moblab.V1Beta1.Milestone.Parser, new[]{ "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.Build), global::Google.Chromeos.Moblab.V1Beta1.Build.Parser, new[]{ "Name", "Milestone", "BuildVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.Build), global::Google.Chromeos.Moblab.V1Beta1.Build.Parser, new[]{ "Name", "Milestone", "BuildVersion", "Status", "Type", "Branch" }, null, new[]{ typeof(global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildStatus), typeof(global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildType) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.BuildArtifact), global::Google.Chromeos.Moblab.V1Beta1.BuildArtifact.Parser, new[]{ "Name", "Build", "Bucket", "Path", "ObjectCount" }, null, null, null, null)
           }));
     }
@@ -603,7 +609,6 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
   /// <summary>
   /// Resource that represents a build for the given build target, model, milestone
   /// and build version.
-  /// NEXT_TAG: 4
   /// </summary>
   public sealed partial class Build : pb::IMessage<Build>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -637,6 +642,9 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       name_ = other.name_;
       milestone_ = other.milestone_;
       buildVersion_ = other.buildVersion_;
+      status_ = other.status_;
+      type_ = other.type_;
+      branch_ = other.branch_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -690,6 +698,48 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       }
     }
 
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 4;
+    private global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildStatus status_ = global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildStatus.Unspecified;
+    /// <summary>
+    /// The status of the build.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildStatus Status {
+      get { return status_; }
+      set {
+        status_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 5;
+    private global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildType type_ = global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildType.Unspecified;
+    /// <summary>
+    /// The type of the build.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildType Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "branch" field.</summary>
+    public const int BranchFieldNumber = 6;
+    private string branch_ = "";
+    /// <summary>
+    /// The branch of the build.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Branch {
+      get { return branch_; }
+      set {
+        branch_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Build);
@@ -706,6 +756,9 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       if (Name != other.Name) return false;
       if (Milestone != other.Milestone) return false;
       if (BuildVersion != other.BuildVersion) return false;
+      if (Status != other.Status) return false;
+      if (Type != other.Type) return false;
+      if (Branch != other.Branch) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -715,6 +768,9 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Milestone.Length != 0) hash ^= Milestone.GetHashCode();
       if (BuildVersion.Length != 0) hash ^= BuildVersion.GetHashCode();
+      if (Status != global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildStatus.Unspecified) hash ^= Status.GetHashCode();
+      if (Type != global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildType.Unspecified) hash ^= Type.GetHashCode();
+      if (Branch.Length != 0) hash ^= Branch.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -743,6 +799,18 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
         output.WriteRawTag(26);
         output.WriteString(BuildVersion);
       }
+      if (Status != global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildStatus.Unspecified) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Status);
+      }
+      if (Type != global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildType.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Type);
+      }
+      if (Branch.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Branch);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -764,6 +832,18 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
         output.WriteRawTag(26);
         output.WriteString(BuildVersion);
       }
+      if (Status != global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildStatus.Unspecified) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Status);
+      }
+      if (Type != global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildType.Unspecified) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Type);
+      }
+      if (Branch.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Branch);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -781,6 +861,15 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       }
       if (BuildVersion.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(BuildVersion);
+      }
+      if (Status != global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildStatus.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
+      }
+      if (Type != global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildType.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (Branch.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Branch);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -801,6 +890,15 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       }
       if (other.BuildVersion.Length != 0) {
         BuildVersion = other.BuildVersion;
+      }
+      if (other.Status != global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildStatus.Unspecified) {
+        Status = other.Status;
+      }
+      if (other.Type != global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildType.Unspecified) {
+        Type = other.Type;
+      }
+      if (other.Branch.Length != 0) {
+        Branch = other.Branch;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -826,6 +924,18 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
           }
           case 26: {
             BuildVersion = input.ReadString();
+            break;
+          }
+          case 32: {
+            Status = (global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildStatus) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            Type = (global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildType) input.ReadEnum();
+            break;
+          }
+          case 50: {
+            Branch = input.ReadString();
             break;
           }
         }
@@ -854,16 +964,79 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
             BuildVersion = input.ReadString();
             break;
           }
+          case 32: {
+            Status = (global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildStatus) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            Type = (global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildType) input.ReadEnum();
+            break;
+          }
+          case 50: {
+            Branch = input.ReadString();
+            break;
+          }
         }
       }
     }
     #endif
 
+    #region Nested types
+    /// <summary>Container for nested types declared in the Build message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      /// <summary>
+      /// The build status types.
+      /// </summary>
+      public enum BuildStatus {
+        /// <summary>
+        /// No build status is specified.
+        /// </summary>
+        [pbr::OriginalName("BUILD_STATUS_UNSPECIFIED")] Unspecified = 0,
+        /// <summary>
+        /// Complete Status: The build passed.
+        /// </summary>
+        [pbr::OriginalName("PASS")] Pass = 1,
+        /// <summary>
+        /// Complete Status: The build failed.
+        /// </summary>
+        [pbr::OriginalName("FAIL")] Fail = 2,
+        /// <summary>
+        /// Intermediate Status: The build is still running.
+        /// </summary>
+        [pbr::OriginalName("RUNNING")] Running = 3,
+        /// <summary>
+        /// Complete Status: The build was aborted.
+        /// </summary>
+        [pbr::OriginalName("ABORTED")] Aborted = 4,
+      }
+
+      /// <summary>
+      /// The build types.
+      /// </summary>
+      public enum BuildType {
+        /// <summary>
+        /// Invalid build type.
+        /// </summary>
+        [pbr::OriginalName("BUILD_TYPE_UNSPECIFIED")] Unspecified = 0,
+        /// <summary>
+        /// The release build.
+        /// </summary>
+        [pbr::OriginalName("RELEASE")] Release = 1,
+        /// <summary>
+        /// The firmware build.
+        /// </summary>
+        [pbr::OriginalName("FIRMWARE")] Firmware = 2,
+      }
+
+    }
+    #endregion
+
   }
 
   /// <summary>
   /// Resource that represents a build artifact stored in Google Cloud Storage for
-  /// the given build target, model, build version and bucket. NEXT_TAG: 6
+  /// the given build target, model, build version and bucket.
   /// </summary>
   public sealed partial class BuildArtifact : pb::IMessage<BuildArtifact>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
