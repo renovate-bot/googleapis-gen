@@ -3,10 +3,10 @@
 return [
     'interfaces' => [
         'google.devtools.cloudprofiler.v2.ProfilerService' => [
-            'CreateProfile' => [
+            'CreateOfflineProfile' => [
                 'method' => 'post',
-                'uriTemplate' => '/v2/{parent=projects/*}/profiles',
-                'body' => '*',
+                'uriTemplate' => '/v2/{parent=projects/*}/profiles:createOffline',
+                'body' => 'profile',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -15,10 +15,10 @@ return [
                     ],
                 ],
             ],
-            'CreateOfflineProfile' => [
+            'CreateProfile' => [
                 'method' => 'post',
-                'uriTemplate' => '/v2/{parent=projects/*}/profiles:createOffline',
-                'body' => 'profile',
+                'uriTemplate' => '/v2/{parent=projects/*}/profiles',
+                'body' => '*',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [

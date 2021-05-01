@@ -2,7 +2,6 @@
 
 return [
     'interfaces' => [
-        'google.devtools.cloudprofiler.v2.ProfilerService' => [
-        ],
+        'google.devtools.cloudprofiler.v2.ProfilerService' => [],
     ],
 ];
