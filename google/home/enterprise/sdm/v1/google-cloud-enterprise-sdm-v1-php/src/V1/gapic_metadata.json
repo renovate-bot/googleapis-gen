@@ -1,0 +1,53 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.home.enterprise.sdm.v1",
+    "libraryPackage": "Google\\Home\\Enterprise\\Sdm\\V1",
+    "services": {
+        "SmartDeviceManagementService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "SmartDeviceManagementServiceGapicClient",
+                    "rpcs": {
+                        "ExecuteDeviceCommand": {
+                            "methods": [
+                                "executeDeviceCommand"
+                            ]
+                        },
+                        "GetDevice": {
+                            "methods": [
+                                "getDevice"
+                            ]
+                        },
+                        "GetRoom": {
+                            "methods": [
+                                "getRoom"
+                            ]
+                        },
+                        "GetStructure": {
+                            "methods": [
+                                "getStructure"
+                            ]
+                        },
+                        "ListDevices": {
+                            "methods": [
+                                "listDevices"
+                            ]
+                        },
+                        "ListRooms": {
+                            "methods": [
+                                "listRooms"
+                            ]
+                        },
+                        "ListStructures": {
+                            "methods": [
+                                "listStructures"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
