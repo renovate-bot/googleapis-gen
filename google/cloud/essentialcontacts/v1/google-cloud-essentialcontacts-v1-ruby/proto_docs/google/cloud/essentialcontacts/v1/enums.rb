@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Essentialcontacts
+    module EssentialContacts
       module V1
         # The notification categories that an essential contact can be subscribed to.
         # Each notification will be categorized by the sender into one of the following

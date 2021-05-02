@@ -64,7 +64,7 @@ end
 
 module Google
   module Cloud
-    module Essentialcontacts
+    module EssentialContacts
       module V1
         Contact = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.essentialcontacts.v1.Contact").msgclass
         ListContactsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.essentialcontacts.v1.ListContactsRequest").msgclass

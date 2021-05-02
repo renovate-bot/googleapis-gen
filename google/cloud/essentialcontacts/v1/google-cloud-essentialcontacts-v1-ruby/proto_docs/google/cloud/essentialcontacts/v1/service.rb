@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Essentialcontacts
+    module EssentialContacts
       module V1
         # A contact that will receive notifications from Google Cloud.
         # @!attribute [rw] name
@@ -31,7 +31,7 @@ module Google
         #     Required. The email address to send notifications to. This does not need to
         #     be a Google account.
         # @!attribute [rw] notification_category_subscriptions
-        #   @return [::Array<::Google::Cloud::Essentialcontacts::V1::NotificationCategory>]
+        #   @return [::Array<::Google::Cloud::EssentialContacts::V1::NotificationCategory>]
         #     The categories of notifications that the contact will receive
         #     communications for.
         # @!attribute [rw] language_tag
@@ -41,7 +41,7 @@ module Google
         #     languages](https://cloud.google.com/resource-manager/docs/managing-notification-contacts#supported-languages)
         #     for a list of supported languages.
         # @!attribute [rw] validation_state
-        #   @return [::Google::Cloud::Essentialcontacts::V1::ValidationState]
+        #   @return [::Google::Cloud::EssentialContacts::V1::ValidationState]
         #     The validity of the contact. A contact is considered valid if it is the
         #     correct recipient for notifications for a particular resource.
         # @!attribute [rw] validate_time
@@ -79,7 +79,7 @@ module Google
 
         # Response message for the ListContacts method.
         # @!attribute [rw] contacts
-        #   @return [::Array<::Google::Cloud::Essentialcontacts::V1::Contact>]
+        #   @return [::Array<::Google::Cloud::EssentialContacts::V1::Contact>]
         #     The contacts for the specified resource.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -123,7 +123,7 @@ module Google
         #     Format: organizations/\\{organization_id}, folders/\\{folder_id} or
         #     projects/\\{project_id}
         # @!attribute [rw] contact
-        #   @return [::Google::Cloud::Essentialcontacts::V1::Contact]
+        #   @return [::Google::Cloud::EssentialContacts::V1::Contact]
         #     Required. The contact to create. Must specify an email address and language
         #     tag.
         class CreateContactRequest
@@ -133,7 +133,7 @@ module Google
 
         # Request message for the UpdateContact method.
         # @!attribute [rw] contact
-        #   @return [::Google::Cloud::Essentialcontacts::V1::Contact]
+        #   @return [::Google::Cloud::EssentialContacts::V1::Contact]
         #     Required. The contact resource to replace the existing saved contact. Note:
         #     the email address of the contact cannot be modified.
         # @!attribute [rw] update_mask
@@ -153,7 +153,7 @@ module Google
         #     Format: organizations/\\{organization_id},
         #     folders/\\{folder_id} or projects/\\{project_id}
         # @!attribute [rw] notification_categories
-        #   @return [::Array<::Google::Cloud::Essentialcontacts::V1::NotificationCategory>]
+        #   @return [::Array<::Google::Cloud::EssentialContacts::V1::NotificationCategory>]
         #     The categories of notifications to compute contacts for. If ALL is included
         #     in this list, contacts subscribed to any notification category will be
         #     returned.
@@ -176,7 +176,7 @@ module Google
 
         # Response message for the ComputeContacts method.
         # @!attribute [rw] contacts
-        #   @return [::Array<::Google::Cloud::Essentialcontacts::V1::Contact>]
+        #   @return [::Array<::Google::Cloud::EssentialContacts::V1::Contact>]
         #     All contacts for the resource that are subscribed to the specified
         #     notification categories, including contacts inherited from any parent
         #     resources.
@@ -206,7 +206,7 @@ module Google
         #     organizations/\\{organization_id}, folders/\\{folder_id} or
         #     projects/\\{project_id}
         # @!attribute [rw] notification_category
-        #   @return [::Google::Cloud::Essentialcontacts::V1::NotificationCategory]
+        #   @return [::Google::Cloud::EssentialContacts::V1::NotificationCategory]
         #     Required. The notification category to send the test message for. All
         #     contacts must be subscribed to this category.
         class SendTestMessageRequest

@@ -24,9 +24,9 @@
 
 declare(strict_types=1);
 
-namespace Google\Cloud\Essentialcontacts\V1;
+namespace Google\Cloud\EssentialContacts\V1;
 
-use Google\Cloud\Essentialcontacts\V1\Gapic\EssentialContactsServiceGapicClient;
+use Google\Cloud\EssentialContacts\V1\Gapic\EssentialContactsServiceGapicClient;
 
 /** {@inheritdoc} */
 class EssentialContactsServiceClient extends EssentialContactsServiceGapicClient

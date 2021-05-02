@@ -22,7 +22,7 @@
 
 declare(strict_types=1);
 
-namespace Google\Cloud\Essentialcontacts\Tests\Unit\V1;
+namespace Google\Cloud\EssentialContacts\Tests\Unit\V1;
 
 use Google\ApiCore\ApiException;
 
@@ -30,11 +30,11 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
 
-use Google\Cloud\Essentialcontacts\V1\ComputeContactsResponse;
-use Google\Cloud\Essentialcontacts\V1\Contact;
-use Google\Cloud\Essentialcontacts\V1\EssentialContactsServiceClient;
-use Google\Cloud\Essentialcontacts\V1\ListContactsResponse;
-use Google\Cloud\Essentialcontacts\V1\NotificationCategory;
+use Google\Cloud\EssentialContacts\V1\ComputeContactsResponse;
+use Google\Cloud\EssentialContacts\V1\Contact;
+use Google\Cloud\EssentialContacts\V1\EssentialContactsServiceClient;
+use Google\Cloud\EssentialContacts\V1\ListContactsResponse;
+use Google\Cloud\EssentialContacts\V1\NotificationCategory;
 use Google\Protobuf\GPBEmpty;
 use Google\Rpc\Code;
 use stdClass;

@@ -26,7 +26,7 @@ end
 
 module Google
   module Cloud
-    module Essentialcontacts
+    module EssentialContacts
       module V1
         NotificationCategory = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.essentialcontacts.v1.NotificationCategory").enummodule
         ValidationState = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.essentialcontacts.v1.ValidationState").enummodule

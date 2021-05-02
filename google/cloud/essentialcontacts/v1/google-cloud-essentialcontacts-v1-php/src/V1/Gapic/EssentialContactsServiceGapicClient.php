@@ -24,7 +24,7 @@
 
 declare(strict_types=1);
 
-namespace Google\Cloud\Essentialcontacts\V1\Gapic;
+namespace Google\Cloud\EssentialContacts\V1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -36,17 +36,17 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Essentialcontacts\V1\ComputeContactsRequest;
-use Google\Cloud\Essentialcontacts\V1\ComputeContactsResponse;
-use Google\Cloud\Essentialcontacts\V1\Contact;
-use Google\Cloud\Essentialcontacts\V1\CreateContactRequest;
-use Google\Cloud\Essentialcontacts\V1\DeleteContactRequest;
-use Google\Cloud\Essentialcontacts\V1\GetContactRequest;
-use Google\Cloud\Essentialcontacts\V1\ListContactsRequest;
-use Google\Cloud\Essentialcontacts\V1\ListContactsResponse;
-use Google\Cloud\Essentialcontacts\V1\NotificationCategory;
-use Google\Cloud\Essentialcontacts\V1\SendTestMessageRequest;
-use Google\Cloud\Essentialcontacts\V1\UpdateContactRequest;
+use Google\Cloud\EssentialContacts\V1\ComputeContactsRequest;
+use Google\Cloud\EssentialContacts\V1\ComputeContactsResponse;
+use Google\Cloud\EssentialContacts\V1\Contact;
+use Google\Cloud\EssentialContacts\V1\CreateContactRequest;
+use Google\Cloud\EssentialContacts\V1\DeleteContactRequest;
+use Google\Cloud\EssentialContacts\V1\GetContactRequest;
+use Google\Cloud\EssentialContacts\V1\ListContactsRequest;
+use Google\Cloud\EssentialContacts\V1\ListContactsResponse;
+use Google\Cloud\EssentialContacts\V1\NotificationCategory;
+use Google\Cloud\EssentialContacts\V1\SendTestMessageRequest;
+use Google\Cloud\EssentialContacts\V1\UpdateContactRequest;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 
@@ -484,7 +484,7 @@ class EssentialContactsServiceGapicClient
      *           The categories of notifications to compute contacts for. If ALL is included
      *           in this list, contacts subscribed to any notification category will be
      *           returned.
-     *           For allowed values, use constants defined on {@see \Google\Cloud\Essentialcontacts\V1\NotificationCategory}
+     *           For allowed values, use constants defined on {@see \Google\Cloud\EssentialContacts\V1\NotificationCategory}
      *     @type int $pageSize
      *           The maximum number of resources contained in the underlying API
      *           response. The API may return fewer values in a page, even if
@@ -558,7 +558,7 @@ class EssentialContactsServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Essentialcontacts\V1\Contact
+     * @return \Google\Cloud\EssentialContacts\V1\Contact
      *
      * @throws ApiException if the remote call fails
      */
@@ -643,7 +643,7 @@ class EssentialContactsServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Essentialcontacts\V1\Contact
+     * @return \Google\Cloud\EssentialContacts\V1\Contact
      *
      * @throws ApiException if the remote call fails
      */
@@ -759,7 +759,7 @@ class EssentialContactsServiceGapicClient
      *                                       projects/{project_id}
      * @param int      $notificationCategory Required. The notification category to send the test message for. All
      *                                       contacts must be subscribed to this category.
-     *                                       For allowed values, use constants defined on {@see \Google\Cloud\Essentialcontacts\V1\NotificationCategory}
+     *                                       For allowed values, use constants defined on {@see \Google\Cloud\EssentialContacts\V1\NotificationCategory}
      * @param array    $optionalArgs         {
      *     Optional.
      *
@@ -816,7 +816,7 @@ class EssentialContactsServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Essentialcontacts\V1\Contact
+     * @return \Google\Cloud\EssentialContacts\V1\Contact
      *
      * @throws ApiException if the remote call fails
      */

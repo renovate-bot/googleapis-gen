@@ -29,9 +29,9 @@ In order to use this library, you first need to go through the following steps:
 ## Quick Start
 
 ```ruby
-require "google/cloud/essentialcontacts/v1"
+require "google/cloud/essential_contacts/v1"
 
-client = ::Google::Cloud::Essentialcontacts::V1::EssentialContactsService::Client.new
+client = ::Google::Cloud::EssentialContacts::V1::EssentialContactsService::Client.new
 request = my_create_request
 response = client.create_contact request
 ```
