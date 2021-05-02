@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.common.types import criteria
 from google.ads.googleads.v6.common.types import custom_parameter
@@ -36,6 +39,7 @@ __protobuf__ = proto.module(
 
 class AdGroupCriterion(proto.Message):
     r"""An ad group criterion.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad group criterion. Ad
@@ -183,9 +187,9 @@ class AdGroupCriterion(proto.Message):
         combined_audience (google.ads.googleads.v6.common.types.CombinedAudienceInfo):
             Immutable. Combined Audience.
     """
-
     class QualityInfo(proto.Message):
         r"""A container for ad group criterion quality information.
+
         Attributes:
             quality_score (int):
                 Output only. The quality score.
@@ -203,29 +207,20 @@ class AdGroupCriterion(proto.Message):
                 to that of other advertisers.
         """
 
-        quality_score = proto.Field(
-            proto.INT32,
-            number=5,
-            optional=True,
-        )
-        creative_quality_score = proto.Field(
-            proto.ENUM,
-            number=2,
+        quality_score = proto.Field(proto.INT32, number=5, optional=True)
+        creative_quality_score = proto.Field(proto.ENUM, number=2,
             enum=quality_score_bucket.QualityScoreBucketEnum.QualityScoreBucket,
         )
-        post_click_quality_score = proto.Field(
-            proto.ENUM,
-            number=3,
+        post_click_quality_score = proto.Field(proto.ENUM, number=3,
             enum=quality_score_bucket.QualityScoreBucketEnum.QualityScoreBucket,
         )
-        search_predicted_ctr = proto.Field(
-            proto.ENUM,
-            number=4,
+        search_predicted_ctr = proto.Field(proto.ENUM, number=4,
             enum=quality_score_bucket.QualityScoreBucketEnum.QualityScoreBucket,
         )
 
     class PositionEstimates(proto.Message):
         r"""Estimates for criterion bids at various positions.
+
         Attributes:
             first_page_cpc_micros (int):
                 Output only. The estimate of the CPC bid
@@ -250,291 +245,121 @@ class AdGroupCriterion(proto.Message):
                 first_position_cpc_micros.
         """
 
-        first_page_cpc_micros = proto.Field(
-            proto.INT64,
-            number=6,
-            optional=True,
-        )
-        first_position_cpc_micros = proto.Field(
-            proto.INT64,
-            number=7,
-            optional=True,
-        )
-        top_of_page_cpc_micros = proto.Field(
-            proto.INT64,
-            number=8,
-            optional=True,
-        )
-        estimated_add_clicks_at_first_position_cpc = proto.Field(
-            proto.INT64,
-            number=9,
-            optional=True,
-        )
-        estimated_add_cost_at_first_position_cpc = proto.Field(
-            proto.INT64,
-            number=10,
-            optional=True,
-        )
+        first_page_cpc_micros = proto.Field(proto.INT64, number=6, optional=True)
+        first_position_cpc_micros = proto.Field(proto.INT64, number=7, optional=True)
+        top_of_page_cpc_micros = proto.Field(proto.INT64, number=8, optional=True)
+        estimated_add_clicks_at_first_position_cpc = proto.Field(proto.INT64, number=9, optional=True)
+        estimated_add_cost_at_first_position_cpc = proto.Field(proto.INT64, number=10, optional=True)
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    criterion_id = proto.Field(
-        proto.INT64,
-        number=56,
-        optional=True,
-    )
-    status = proto.Field(
-        proto.ENUM,
-        number=3,
+    resource_name = proto.Field(proto.STRING, number=1)
+    criterion_id = proto.Field(proto.INT64, number=56, optional=True)
+    status = proto.Field(proto.ENUM, number=3,
         enum=ad_group_criterion_status.AdGroupCriterionStatusEnum.AdGroupCriterionStatus,
     )
-    quality_info = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    quality_info = proto.Field(proto.MESSAGE, number=4,
         message=QualityInfo,
     )
-    ad_group = proto.Field(
-        proto.STRING,
-        number=57,
-        optional=True,
-    )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=25,
+    ad_group = proto.Field(proto.STRING, number=57, optional=True)
+    type_ = proto.Field(proto.ENUM, number=25,
         enum=criterion_type.CriterionTypeEnum.CriterionType,
     )
-    negative = proto.Field(
-        proto.BOOL,
-        number=58,
-        optional=True,
-    )
-    system_serving_status = proto.Field(
-        proto.ENUM,
-        number=52,
+    negative = proto.Field(proto.BOOL, number=58, optional=True)
+    system_serving_status = proto.Field(proto.ENUM, number=52,
         enum=criterion_system_serving_status.CriterionSystemServingStatusEnum.CriterionSystemServingStatus,
     )
-    approval_status = proto.Field(
-        proto.ENUM,
-        number=53,
+    approval_status = proto.Field(proto.ENUM, number=53,
         enum=ad_group_criterion_approval_status.AdGroupCriterionApprovalStatusEnum.AdGroupCriterionApprovalStatus,
     )
-    disapproval_reasons = proto.RepeatedField(
-        proto.STRING,
-        number=59,
-    )
-    bid_modifier = proto.Field(
-        proto.DOUBLE,
-        number=61,
-        optional=True,
-    )
-    cpc_bid_micros = proto.Field(
-        proto.INT64,
-        number=62,
-        optional=True,
-    )
-    cpm_bid_micros = proto.Field(
-        proto.INT64,
-        number=63,
-        optional=True,
-    )
-    cpv_bid_micros = proto.Field(
-        proto.INT64,
-        number=64,
-        optional=True,
-    )
-    percent_cpc_bid_micros = proto.Field(
-        proto.INT64,
-        number=65,
-        optional=True,
-    )
-    effective_cpc_bid_micros = proto.Field(
-        proto.INT64,
-        number=66,
-        optional=True,
-    )
-    effective_cpm_bid_micros = proto.Field(
-        proto.INT64,
-        number=67,
-        optional=True,
-    )
-    effective_cpv_bid_micros = proto.Field(
-        proto.INT64,
-        number=68,
-        optional=True,
-    )
-    effective_percent_cpc_bid_micros = proto.Field(
-        proto.INT64,
-        number=69,
-        optional=True,
-    )
-    effective_cpc_bid_source = proto.Field(
-        proto.ENUM,
-        number=21,
+    disapproval_reasons = proto.RepeatedField(proto.STRING, number=59)
+    bid_modifier = proto.Field(proto.DOUBLE, number=61, optional=True)
+    cpc_bid_micros = proto.Field(proto.INT64, number=62, optional=True)
+    cpm_bid_micros = proto.Field(proto.INT64, number=63, optional=True)
+    cpv_bid_micros = proto.Field(proto.INT64, number=64, optional=True)
+    percent_cpc_bid_micros = proto.Field(proto.INT64, number=65, optional=True)
+    effective_cpc_bid_micros = proto.Field(proto.INT64, number=66, optional=True)
+    effective_cpm_bid_micros = proto.Field(proto.INT64, number=67, optional=True)
+    effective_cpv_bid_micros = proto.Field(proto.INT64, number=68, optional=True)
+    effective_percent_cpc_bid_micros = proto.Field(proto.INT64, number=69, optional=True)
+    effective_cpc_bid_source = proto.Field(proto.ENUM, number=21,
         enum=bidding_source.BiddingSourceEnum.BiddingSource,
     )
-    effective_cpm_bid_source = proto.Field(
-        proto.ENUM,
-        number=22,
+    effective_cpm_bid_source = proto.Field(proto.ENUM, number=22,
         enum=bidding_source.BiddingSourceEnum.BiddingSource,
     )
-    effective_cpv_bid_source = proto.Field(
-        proto.ENUM,
-        number=23,
+    effective_cpv_bid_source = proto.Field(proto.ENUM, number=23,
         enum=bidding_source.BiddingSourceEnum.BiddingSource,
     )
-    effective_percent_cpc_bid_source = proto.Field(
-        proto.ENUM,
-        number=35,
+    effective_percent_cpc_bid_source = proto.Field(proto.ENUM, number=35,
         enum=bidding_source.BiddingSourceEnum.BiddingSource,
     )
-    position_estimates = proto.Field(
-        proto.MESSAGE,
-        number=10,
+    position_estimates = proto.Field(proto.MESSAGE, number=10,
         message=PositionEstimates,
     )
-    final_urls = proto.RepeatedField(
-        proto.STRING,
-        number=70,
-    )
-    final_mobile_urls = proto.RepeatedField(
-        proto.STRING,
-        number=71,
-    )
-    final_url_suffix = proto.Field(
-        proto.STRING,
-        number=72,
-        optional=True,
-    )
-    tracking_url_template = proto.Field(
-        proto.STRING,
-        number=73,
-        optional=True,
-    )
-    url_custom_parameters = proto.RepeatedField(
-        proto.MESSAGE,
-        number=14,
+    final_urls = proto.RepeatedField(proto.STRING, number=70)
+    final_mobile_urls = proto.RepeatedField(proto.STRING, number=71)
+    final_url_suffix = proto.Field(proto.STRING, number=72, optional=True)
+    tracking_url_template = proto.Field(proto.STRING, number=73, optional=True)
+    url_custom_parameters = proto.RepeatedField(proto.MESSAGE, number=14,
         message=custom_parameter.CustomParameter,
     )
-    keyword = proto.Field(
-        proto.MESSAGE,
-        number=27,
-        oneof='criterion',
+    keyword = proto.Field(proto.MESSAGE, number=27, oneof='criterion',
         message=criteria.KeywordInfo,
     )
-    placement = proto.Field(
-        proto.MESSAGE,
-        number=28,
-        oneof='criterion',
+    placement = proto.Field(proto.MESSAGE, number=28, oneof='criterion',
         message=criteria.PlacementInfo,
     )
-    mobile_app_category = proto.Field(
-        proto.MESSAGE,
-        number=29,
-        oneof='criterion',
+    mobile_app_category = proto.Field(proto.MESSAGE, number=29, oneof='criterion',
         message=criteria.MobileAppCategoryInfo,
     )
-    mobile_application = proto.Field(
-        proto.MESSAGE,
-        number=30,
-        oneof='criterion',
+    mobile_application = proto.Field(proto.MESSAGE, number=30, oneof='criterion',
         message=criteria.MobileApplicationInfo,
     )
-    listing_group = proto.Field(
-        proto.MESSAGE,
-        number=32,
-        oneof='criterion',
+    listing_group = proto.Field(proto.MESSAGE, number=32, oneof='criterion',
         message=criteria.ListingGroupInfo,
     )
-    age_range = proto.Field(
-        proto.MESSAGE,
-        number=36,
-        oneof='criterion',
+    age_range = proto.Field(proto.MESSAGE, number=36, oneof='criterion',
         message=criteria.AgeRangeInfo,
     )
-    gender = proto.Field(
-        proto.MESSAGE,
-        number=37,
-        oneof='criterion',
+    gender = proto.Field(proto.MESSAGE, number=37, oneof='criterion',
         message=criteria.GenderInfo,
     )
-    income_range = proto.Field(
-        proto.MESSAGE,
-        number=38,
-        oneof='criterion',
+    income_range = proto.Field(proto.MESSAGE, number=38, oneof='criterion',
         message=criteria.IncomeRangeInfo,
     )
-    parental_status = proto.Field(
-        proto.MESSAGE,
-        number=39,
-        oneof='criterion',
+    parental_status = proto.Field(proto.MESSAGE, number=39, oneof='criterion',
         message=criteria.ParentalStatusInfo,
     )
-    user_list = proto.Field(
-        proto.MESSAGE,
-        number=42,
-        oneof='criterion',
+    user_list = proto.Field(proto.MESSAGE, number=42, oneof='criterion',
         message=criteria.UserListInfo,
     )
-    youtube_video = proto.Field(
-        proto.MESSAGE,
-        number=40,
-        oneof='criterion',
+    youtube_video = proto.Field(proto.MESSAGE, number=40, oneof='criterion',
         message=criteria.YouTubeVideoInfo,
     )
-    youtube_channel = proto.Field(
-        proto.MESSAGE,
-        number=41,
-        oneof='criterion',
+    youtube_channel = proto.Field(proto.MESSAGE, number=41, oneof='criterion',
         message=criteria.YouTubeChannelInfo,
     )
-    topic = proto.Field(
-        proto.MESSAGE,
-        number=43,
-        oneof='criterion',
+    topic = proto.Field(proto.MESSAGE, number=43, oneof='criterion',
         message=criteria.TopicInfo,
     )
-    user_interest = proto.Field(
-        proto.MESSAGE,
-        number=45,
-        oneof='criterion',
+    user_interest = proto.Field(proto.MESSAGE, number=45, oneof='criterion',
         message=criteria.UserInterestInfo,
     )
-    webpage = proto.Field(
-        proto.MESSAGE,
-        number=46,
-        oneof='criterion',
+    webpage = proto.Field(proto.MESSAGE, number=46, oneof='criterion',
         message=criteria.WebpageInfo,
     )
-    app_payment_model = proto.Field(
-        proto.MESSAGE,
-        number=47,
-        oneof='criterion',
+    app_payment_model = proto.Field(proto.MESSAGE, number=47, oneof='criterion',
         message=criteria.AppPaymentModelInfo,
     )
-    custom_affinity = proto.Field(
-        proto.MESSAGE,
-        number=48,
-        oneof='criterion',
+    custom_affinity = proto.Field(proto.MESSAGE, number=48, oneof='criterion',
         message=criteria.CustomAffinityInfo,
     )
-    custom_intent = proto.Field(
-        proto.MESSAGE,
-        number=49,
-        oneof='criterion',
+    custom_intent = proto.Field(proto.MESSAGE, number=49, oneof='criterion',
         message=criteria.CustomIntentInfo,
     )
-    custom_audience = proto.Field(
-        proto.MESSAGE,
-        number=74,
-        oneof='criterion',
+    custom_audience = proto.Field(proto.MESSAGE, number=74, oneof='criterion',
         message=criteria.CustomAudienceInfo,
     )
-    combined_audience = proto.Field(
-        proto.MESSAGE,
-        number=75,
-        oneof='criterion',
+    combined_audience = proto.Field(proto.MESSAGE, number=75, oneof='criterion',
         message=criteria.CombinedAudienceInfo,
     )
 

@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
 {
+    using Google.Cloud.BigQuery.DataTransfer.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedDataTransferServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateTransferConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateTransferConfig()
         {
-            // Snippet: UpdateTransferConfig(TransferConfig, FieldMask, CallSettings)
             // Create client
             DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             TransferConfig response = dataTransferServiceClient.UpdateTransferConfig(transferConfig, updateMask);
-            // End snippet
         }
     }
 }

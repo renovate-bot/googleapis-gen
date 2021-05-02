@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCarrierConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCarrierConstantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCarrierConstantAsync()
         {
-            // Snippet: GetCarrierConstantAsync(string, CallSettings)
-            // Additional: GetCarrierConstantAsync(string, CancellationToken)
             // Create client
             CarrierConstantServiceClient carrierConstantServiceClient = await CarrierConstantServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "carrierConstants/[CARRIER_CONSTANT]";
             // Make the request
             CarrierConstant response = await carrierConstantServiceClient.GetCarrierConstantAsync(resourceName);
-            // End snippet
         }
     }
 }

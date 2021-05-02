@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -265,20 +267,29 @@ def test_get_product_bidding_category_constant(transport: str = 'grpc', request_
         # Designate an appropriate return value for the call.
         call.return_value = product_bidding_category_constant.ProductBiddingCategoryConstant(
             resource_name='resource_name_value',
+
             level=product_bidding_category_level.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel.UNKNOWN,
+
             status=product_bidding_category_status.ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus.UNKNOWN,
+
         )
+
         response = client.get_product_bidding_category_constant(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == product_bidding_category_constant_service.GetProductBiddingCategoryConstantRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, product_bidding_category_constant.ProductBiddingCategoryConstant)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.level == product_bidding_category_level.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel.UNKNOWN
+
     assert response.status == product_bidding_category_status.ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus.UNKNOWN
 
 
@@ -294,7 +305,6 @@ def test_get_product_bidding_category_constant_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = product_bidding_category_constant_service.GetProductBiddingCategoryConstantRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -302,6 +312,7 @@ def test_get_product_bidding_category_constant_field_headers():
             type(client.transport.get_product_bidding_category_constant),
             '__call__') as call:
         call.return_value = product_bidding_category_constant.ProductBiddingCategoryConstant()
+
         client.get_product_bidding_category_constant(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -328,6 +339,7 @@ def test_get_product_bidding_category_constant_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = product_bidding_category_constant.ProductBiddingCategoryConstant()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_product_bidding_category_constant(
@@ -338,6 +350,7 @@ def test_get_product_bidding_category_constant_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -418,7 +431,7 @@ def test_product_bidding_category_constant_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_product_bidding_category_constant',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -569,6 +582,7 @@ def test_product_bidding_category_constant_service_transport_channel_mtls_with_a
 
 def test_product_bidding_category_constant_path():
     product_bidding_category_constant = "squid"
+
     expected = "productBiddingCategoryConstants/{product_bidding_category_constant}".format(product_bidding_category_constant=product_bidding_category_constant, )
     actual = ProductBiddingCategoryConstantServiceClient.product_bidding_category_constant_path(product_bidding_category_constant)
     assert expected == actual
@@ -576,7 +590,8 @@ def test_product_bidding_category_constant_path():
 
 def test_parse_product_bidding_category_constant_path():
     expected = {
-        "product_bidding_category_constant": "clam",
+    "product_bidding_category_constant": "clam",
+
     }
     path = ProductBiddingCategoryConstantServiceClient.product_bidding_category_constant_path(**expected)
 
@@ -586,6 +601,7 @@ def test_parse_product_bidding_category_constant_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ProductBiddingCategoryConstantServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -593,7 +609,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = ProductBiddingCategoryConstantServiceClient.common_billing_account_path(**expected)
 
@@ -603,6 +620,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ProductBiddingCategoryConstantServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -610,7 +628,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = ProductBiddingCategoryConstantServiceClient.common_folder_path(**expected)
 
@@ -620,6 +639,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ProductBiddingCategoryConstantServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -627,7 +647,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = ProductBiddingCategoryConstantServiceClient.common_organization_path(**expected)
 
@@ -637,6 +658,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = ProductBiddingCategoryConstantServiceClient.common_project_path(project)
     assert expected == actual
@@ -644,7 +666,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = ProductBiddingCategoryConstantServiceClient.common_project_path(**expected)
 
@@ -655,6 +678,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ProductBiddingCategoryConstantServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -662,8 +686,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = ProductBiddingCategoryConstantServiceClient.common_location_path(**expected)
 

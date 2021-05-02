@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedCampaignDraftServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignDraft</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCampaignDraft()
         {
-            // Snippet: GetCampaignDraft(string, CallSettings)
             // Create client
             CampaignDraftServiceClient campaignDraftServiceClient = CampaignDraftServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/campaignDrafts/[BASE_CAMPAIGN_ID]~[DRAFT_ID]";
             // Make the request
             CampaignDraft response = campaignDraftServiceClient.GetCampaignDraft(resourceName);
-            // End snippet
         }
     }
 }

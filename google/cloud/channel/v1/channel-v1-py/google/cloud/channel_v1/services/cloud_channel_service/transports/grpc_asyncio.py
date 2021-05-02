@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
@@ -22,7 +24,6 @@ from google.api_core import operations_v1              # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -33,6 +34,7 @@ from google.cloud.channel_v1.types import entitlements
 from google.cloud.channel_v1.types import service
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import CloudChannelServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import CloudChannelServiceGrpcTransport
 
@@ -104,15 +106,13 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -132,8 +132,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -192,6 +191,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -270,9 +270,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def list_customers(self) -> Callable[
             [service.ListCustomersRequest],
             Awaitable[service.ListCustomersResponse]]:
-        r"""Return a callable for the
-        list customers
-          method over gRPC.
+        r"""Return a callable for the list customers method over gRPC.
 
         List [Customer][google.cloud.channel.v1.Customer]s.
 
@@ -309,9 +307,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def get_customer(self) -> Callable[
             [service.GetCustomerRequest],
             Awaitable[customers.Customer]]:
-        r"""Return a callable for the
-        get customer
-          method over gRPC.
+        r"""Return a callable for the get customer method over gRPC.
 
         Returns a requested [Customer][google.cloud.channel.v1.Customer]
         resource.
@@ -350,10 +346,8 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def check_cloud_identity_accounts_exist(self) -> Callable[
             [service.CheckCloudIdentityAccountsExistRequest],
             Awaitable[service.CheckCloudIdentityAccountsExistResponse]]:
-        r"""Return a callable for the
-        check cloud identity accounts
-        exist
-          method over gRPC.
+        r"""Return a callable for the check cloud identity accounts
+        exist method over gRPC.
 
         Confirms the existence of Cloud Identity accounts based on the
         domain and if the Cloud Identity accounts are owned by the
@@ -398,9 +392,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def create_customer(self) -> Callable[
             [service.CreateCustomerRequest],
             Awaitable[customers.Customer]]:
-        r"""Return a callable for the
-        create customer
-          method over gRPC.
+        r"""Return a callable for the create customer method over gRPC.
 
         Creates a new [Customer][google.cloud.channel.v1.Customer]
         resource under the reseller or distributor account.
@@ -439,9 +431,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def update_customer(self) -> Callable[
             [service.UpdateCustomerRequest],
             Awaitable[customers.Customer]]:
-        r"""Return a callable for the
-        update customer
-          method over gRPC.
+        r"""Return a callable for the update customer method over gRPC.
 
         Updates an existing [Customer][google.cloud.channel.v1.Customer]
         resource for the reseller or distributor.
@@ -480,9 +470,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def delete_customer(self) -> Callable[
             [service.DeleteCustomerRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete customer
-          method over gRPC.
+        r"""Return a callable for the delete customer method over gRPC.
 
         Deletes the given [Customer][google.cloud.channel.v1.Customer]
         permanently and irreversibly.
@@ -519,9 +507,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def provision_cloud_identity(self) -> Callable[
             [service.ProvisionCloudIdentityRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        provision cloud identity
-          method over gRPC.
+        r"""Return a callable for the provision cloud identity method over gRPC.
 
         Creates a Cloud Identity for the given customer using the
         customer's information, or the information provided here.
@@ -569,9 +555,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def list_entitlements(self) -> Callable[
             [service.ListEntitlementsRequest],
             Awaitable[service.ListEntitlementsResponse]]:
-        r"""Return a callable for the
-        list entitlements
-          method over gRPC.
+        r"""Return a callable for the list entitlements method over gRPC.
 
         Lists [Entitlement][google.cloud.channel.v1.Entitlement]s
         belonging to a customer.
@@ -608,9 +592,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def list_transferable_skus(self) -> Callable[
             [service.ListTransferableSkusRequest],
             Awaitable[service.ListTransferableSkusResponse]]:
-        r"""Return a callable for the
-        list transferable skus
-          method over gRPC.
+        r"""Return a callable for the list transferable skus method over gRPC.
 
         List [TransferableSku][google.cloud.channel.v1.TransferableSku]s
         of a customer based on the Cloud Identity ID or Customer Name in
@@ -658,9 +640,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def list_transferable_offers(self) -> Callable[
             [service.ListTransferableOffersRequest],
             Awaitable[service.ListTransferableOffersResponse]]:
-        r"""Return a callable for the
-        list transferable offers
-          method over gRPC.
+        r"""Return a callable for the list transferable offers method over gRPC.
 
         List
         [TransferableOffer][google.cloud.channel.v1.TransferableOffer]s
@@ -710,9 +690,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def get_entitlement(self) -> Callable[
             [service.GetEntitlementRequest],
             Awaitable[entitlements.Entitlement]]:
-        r"""Return a callable for the
-        get entitlement
-          method over gRPC.
+        r"""Return a callable for the get entitlement method over gRPC.
 
         Returns a requested
         [Entitlement][google.cloud.channel.v1.Entitlement] resource.
@@ -750,9 +728,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def create_entitlement(self) -> Callable[
             [service.CreateEntitlementRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create entitlement
-          method over gRPC.
+        r"""Return a callable for the create entitlement method over gRPC.
 
         Creates an entitlement for a customer.
 
@@ -822,9 +798,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def change_parameters(self) -> Callable[
             [service.ChangeParametersRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        change parameters
-          method over gRPC.
+        r"""Return a callable for the change parameters method over gRPC.
 
         Change parameters of the entitlement.
 
@@ -874,9 +848,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def change_renewal_settings(self) -> Callable[
             [service.ChangeRenewalSettingsRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        change renewal settings
-          method over gRPC.
+        r"""Return a callable for the change renewal settings method over gRPC.
 
         Updates the renewal settings for an existing customer
         entitlement.
@@ -928,9 +900,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def change_offer(self) -> Callable[
             [service.ChangeOfferRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        change offer
-          method over gRPC.
+        r"""Return a callable for the change offer method over gRPC.
 
         Updates the Offer for an existing customer entitlement.
 
@@ -978,9 +948,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def start_paid_service(self) -> Callable[
             [service.StartPaidServiceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        start paid service
-          method over gRPC.
+        r"""Return a callable for the start paid service method over gRPC.
 
         Starts paid service for a trial entitlement.
 
@@ -1031,9 +999,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def suspend_entitlement(self) -> Callable[
             [service.SuspendEntitlementRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        suspend entitlement
-          method over gRPC.
+        r"""Return a callable for the suspend entitlement method over gRPC.
 
         Suspends a previously fulfilled entitlement.
 
@@ -1081,9 +1047,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def cancel_entitlement(self) -> Callable[
             [service.CancelEntitlementRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        cancel entitlement
-          method over gRPC.
+        r"""Return a callable for the cancel entitlement method over gRPC.
 
         Cancels a previously fulfilled entitlement.
 
@@ -1136,9 +1100,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def activate_entitlement(self) -> Callable[
             [service.ActivateEntitlementRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        activate entitlement
-          method over gRPC.
+        r"""Return a callable for the activate entitlement method over gRPC.
 
         Activates a previously suspended entitlement. Entitlements
         suspended for pending ToS acceptance can't be activated using
@@ -1193,9 +1155,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def transfer_entitlements(self) -> Callable[
             [service.TransferEntitlementsRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        transfer entitlements
-          method over gRPC.
+        r"""Return a callable for the transfer entitlements method over gRPC.
 
         Transfers customer entitlements to new reseller.
 
@@ -1256,10 +1216,8 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def transfer_entitlements_to_google(self) -> Callable[
             [service.TransferEntitlementsToGoogleRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        transfer entitlements to
-        google
-          method over gRPC.
+        r"""Return a callable for the transfer entitlements to
+        google method over gRPC.
 
         Transfers customer entitlements from their current reseller to
         Google.
@@ -1320,9 +1278,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def list_channel_partner_links(self) -> Callable[
             [service.ListChannelPartnerLinksRequest],
             Awaitable[service.ListChannelPartnerLinksResponse]]:
-        r"""Return a callable for the
-        list channel partner links
-          method over gRPC.
+        r"""Return a callable for the list channel partner links method over gRPC.
 
         List
         [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]s
@@ -1362,9 +1318,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def get_channel_partner_link(self) -> Callable[
             [service.GetChannelPartnerLinkRequest],
             Awaitable[channel_partner_links.ChannelPartnerLink]]:
-        r"""Return a callable for the
-        get channel partner link
-          method over gRPC.
+        r"""Return a callable for the get channel partner link method over gRPC.
 
         Returns a requested
         [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]
@@ -1405,9 +1359,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def create_channel_partner_link(self) -> Callable[
             [service.CreateChannelPartnerLinkRequest],
             Awaitable[channel_partner_links.ChannelPartnerLink]]:
-        r"""Return a callable for the
-        create channel partner link
-          method over gRPC.
+        r"""Return a callable for the create channel partner link method over gRPC.
 
         Initiates a channel partner link between a distributor and a
         reseller, or between resellers in an n-tier reseller channel.
@@ -1457,9 +1409,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def update_channel_partner_link(self) -> Callable[
             [service.UpdateChannelPartnerLinkRequest],
             Awaitable[channel_partner_links.ChannelPartnerLink]]:
-        r"""Return a callable for the
-        update channel partner link
-          method over gRPC.
+        r"""Return a callable for the update channel partner link method over gRPC.
 
         Updates a channel partner link. Distributors call this method to
         change a link's status. For example, to suspend a partner link.
@@ -1509,9 +1459,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def list_products(self) -> Callable[
             [service.ListProductsRequest],
             Awaitable[service.ListProductsResponse]]:
-        r"""Return a callable for the
-        list products
-          method over gRPC.
+        r"""Return a callable for the list products method over gRPC.
 
         Lists the Products the reseller is authorized to sell.
 
@@ -1542,9 +1490,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def list_skus(self) -> Callable[
             [service.ListSkusRequest],
             Awaitable[service.ListSkusResponse]]:
-        r"""Return a callable for the
-        list skus
-          method over gRPC.
+        r"""Return a callable for the list skus method over gRPC.
 
         Lists the SKUs for a product the reseller is authorized to sell.
 
@@ -1575,9 +1521,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def list_offers(self) -> Callable[
             [service.ListOffersRequest],
             Awaitable[service.ListOffersResponse]]:
-        r"""Return a callable for the
-        list offers
-          method over gRPC.
+        r"""Return a callable for the list offers method over gRPC.
 
         Lists the Offers the reseller can sell.
 
@@ -1608,9 +1552,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def list_purchasable_skus(self) -> Callable[
             [service.ListPurchasableSkusRequest],
             Awaitable[service.ListPurchasableSkusResponse]]:
-        r"""Return a callable for the
-        list purchasable skus
-          method over gRPC.
+        r"""Return a callable for the list purchasable skus method over gRPC.
 
         Lists the following:
 
@@ -1646,9 +1588,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def list_purchasable_offers(self) -> Callable[
             [service.ListPurchasableOffersRequest],
             Awaitable[service.ListPurchasableOffersResponse]]:
-        r"""Return a callable for the
-        list purchasable offers
-          method over gRPC.
+        r"""Return a callable for the list purchasable offers method over gRPC.
 
         Lists the following:
 
@@ -1684,9 +1624,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def register_subscriber(self) -> Callable[
             [service.RegisterSubscriberRequest],
             Awaitable[service.RegisterSubscriberResponse]]:
-        r"""Return a callable for the
-        register subscriber
-          method over gRPC.
+        r"""Return a callable for the register subscriber method over gRPC.
 
         Registers a service account with subscriber privileges on the
         Cloud Pub/Sub topic for this Channel Services account. After you
@@ -1730,9 +1668,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def unregister_subscriber(self) -> Callable[
             [service.UnregisterSubscriberRequest],
             Awaitable[service.UnregisterSubscriberResponse]]:
-        r"""Return a callable for the
-        unregister subscriber
-          method over gRPC.
+        r"""Return a callable for the unregister subscriber method over gRPC.
 
         Unregisters a service account with subscriber privileges on the
         Cloud Pub/Sub topic created for this Channel Services account.
@@ -1779,9 +1715,7 @@ class CloudChannelServiceGrpcAsyncIOTransport(CloudChannelServiceTransport):
     def list_subscribers(self) -> Callable[
             [service.ListSubscribersRequest],
             Awaitable[service.ListSubscribersResponse]]:
-        r"""Return a callable for the
-        list subscribers
-          method over gRPC.
+        r"""Return a callable for the list subscribers method over gRPC.
 
         Lists service accounts with subscriber privileges on the Cloud
         Pub/Sub topic created for this Channel Services account.

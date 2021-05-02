@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -262,34 +264,57 @@ def test_get_customer_client(transport: str = 'grpc', request_type=customer_clie
         # Designate an appropriate return value for the call.
         call.return_value = customer_client.CustomerClient(
             resource_name='resource_name_value',
+
             client_customer='client_customer_value',
+
             hidden=True,
+
             level=536,
+
             time_zone='time_zone_value',
+
             test_account=True,
+
             manager=True,
+
             descriptive_name='descriptive_name_value',
+
             currency_code='currency_code_value',
+
             id=205,
+
         )
+
         response = client.get_customer_client(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == customer_client_service.GetCustomerClientRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, customer_client.CustomerClient)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.client_customer == 'client_customer_value'
+
     assert response.hidden is True
+
     assert response.level == 536
+
     assert response.time_zone == 'time_zone_value'
+
     assert response.test_account is True
+
     assert response.manager is True
+
     assert response.descriptive_name == 'descriptive_name_value'
+
     assert response.currency_code == 'currency_code_value'
+
     assert response.id == 205
 
 
@@ -305,7 +330,6 @@ def test_get_customer_client_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_client_service.GetCustomerClientRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -313,6 +337,7 @@ def test_get_customer_client_field_headers():
             type(client.transport.get_customer_client),
             '__call__') as call:
         call.return_value = customer_client.CustomerClient()
+
         client.get_customer_client(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -339,6 +364,7 @@ def test_get_customer_client_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_client.CustomerClient()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_customer_client(
@@ -349,6 +375,7 @@ def test_get_customer_client_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -429,7 +456,7 @@ def test_customer_client_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_customer_client',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -580,6 +607,7 @@ def test_customer_client_service_transport_channel_mtls_with_adc(
 
 def test_customer_path():
     customer_id = "squid"
+
     expected = "customers/{customer_id}".format(customer_id=customer_id, )
     actual = CustomerClientServiceClient.customer_path(customer_id)
     assert expected == actual
@@ -587,7 +615,8 @@ def test_customer_path():
 
 def test_parse_customer_path():
     expected = {
-        "customer_id": "clam",
+    "customer_id": "clam",
+
     }
     path = CustomerClientServiceClient.customer_path(**expected)
 
@@ -598,6 +627,7 @@ def test_parse_customer_path():
 def test_customer_client_path():
     customer_id = "whelk"
     client_customer_id = "octopus"
+
     expected = "customers/{customer_id}/customerClients/{client_customer_id}".format(customer_id=customer_id, client_customer_id=client_customer_id, )
     actual = CustomerClientServiceClient.customer_client_path(customer_id, client_customer_id)
     assert expected == actual
@@ -605,8 +635,9 @@ def test_customer_client_path():
 
 def test_parse_customer_client_path():
     expected = {
-        "customer_id": "oyster",
-        "client_customer_id": "nudibranch",
+    "customer_id": "oyster",
+    "client_customer_id": "nudibranch",
+
     }
     path = CustomerClientServiceClient.customer_client_path(**expected)
 
@@ -616,6 +647,7 @@ def test_parse_customer_client_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CustomerClientServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -623,7 +655,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "mussel",
+    "billing_account": "mussel",
+
     }
     path = CustomerClientServiceClient.common_billing_account_path(**expected)
 
@@ -633,6 +666,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = CustomerClientServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -640,7 +674,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nautilus",
+    "folder": "nautilus",
+
     }
     path = CustomerClientServiceClient.common_folder_path(**expected)
 
@@ -650,6 +685,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CustomerClientServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -657,7 +693,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "abalone",
+    "organization": "abalone",
+
     }
     path = CustomerClientServiceClient.common_organization_path(**expected)
 
@@ -667,6 +704,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
+
     expected = "projects/{project}".format(project=project, )
     actual = CustomerClientServiceClient.common_project_path(project)
     assert expected == actual
@@ -674,7 +712,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "clam",
+    "project": "clam",
+
     }
     path = CustomerClientServiceClient.common_project_path(**expected)
 
@@ -685,6 +724,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CustomerClientServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -692,8 +732,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "oyster",
-        "location": "nudibranch",
+    "project": "oyster",
+    "location": "nudibranch",
+
     }
     path = CustomerClientServiceClient.common_location_path(**expected)
 

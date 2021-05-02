@@ -1185,7 +1185,7 @@ namespace Google.Ads.GoogleAds.V7.Services
             _callSearch = clientHelper.BuildApiCall<SearchGoogleAdsRequest, SearchGoogleAdsResponse>(grpcClient.SearchAsync, grpcClient.Search, effectiveSettings.SearchSettings).WithGoogleRequestParam("customer_id", request => request.CustomerId);
             Modify_ApiCall(ref _callSearch);
             Modify_SearchApiCall(ref _callSearch);
-            _callSearchStream = clientHelper.BuildApiCall<SearchGoogleAdsStreamRequest, SearchGoogleAdsStreamResponse>(grpcClient.SearchStream, effectiveSettings.SearchStreamSettings);
+            _callSearchStream = clientHelper.BuildApiCall<SearchGoogleAdsStreamRequest, SearchGoogleAdsStreamResponse>(grpcClient.SearchStream, effectiveSettings.SearchStreamSettings).WithGoogleRequestParam("customer_id", request => request.CustomerId);
             Modify_ApiCall(ref _callSearchStream);
             Modify_SearchStreamApiCall(ref _callSearchStream);
             _callMutate = clientHelper.BuildApiCall<MutateGoogleAdsRequest, MutateGoogleAdsResponse>(grpcClient.MutateAsync, grpcClient.Mutate, effectiveSettings.MutateSettings).WithGoogleRequestParam("customer_id", request => request.CustomerId);

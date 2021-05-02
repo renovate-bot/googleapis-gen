@@ -16,16 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFeedServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateFeedsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateFeedsAsync()
         {
-            // Snippet: MutateFeedsAsync(string, IEnumerable<FeedOperation>, CallSettings)
-            // Additional: MutateFeedsAsync(string, IEnumerable<FeedOperation>, CancellationToken)
             // Create client
             FeedServiceClient feedServiceClient = await FeedServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateFeedsResponse response = await feedServiceClient.MutateFeedsAsync(customerId, operations);
-            // End snippet
         }
     }
 }

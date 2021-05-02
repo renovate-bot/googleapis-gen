@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.SecretManager.V1Beta1.Snippets
 {
+    using Google.Cloud.SecretManager.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecretManagerServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateSecretAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateSecretAsync()
         {
-            // Snippet: UpdateSecretAsync(Secret, FieldMask, CallSettings)
-            // Additional: UpdateSecretAsync(Secret, FieldMask, CancellationToken)
             // Create client
             SecretManagerServiceClient secretManagerServiceClient = await SecretManagerServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.SecretManager.V1Beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Secret response = await secretManagerServiceClient.UpdateSecretAsync(secret, updateMask);
-            // End snippet
         }
     }
 }

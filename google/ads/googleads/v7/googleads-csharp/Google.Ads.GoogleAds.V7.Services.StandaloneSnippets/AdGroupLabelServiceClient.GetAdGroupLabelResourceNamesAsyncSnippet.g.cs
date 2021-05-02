@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupLabelAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdGroupLabelResourceNamesAsync()
         {
-            // Snippet: GetAdGroupLabelAsync(AdGroupLabelName, CallSettings)
-            // Additional: GetAdGroupLabelAsync(AdGroupLabelName, CancellationToken)
             // Create client
             AdGroupLabelServiceClient adGroupLabelServiceClient = await AdGroupLabelServiceClient.CreateAsync();
             // Initialize request argument(s)
             AdGroupLabelName resourceName = AdGroupLabelName.FromCustomerAdGroupLabel("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[LABEL_ID]");
             // Make the request
             AdGroupLabel response = await adGroupLabelServiceClient.GetAdGroupLabelAsync(resourceName);
-            // End snippet
         }
     }
 }

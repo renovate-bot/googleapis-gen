@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,6 @@
 
 from .services.lookup_service import LookupServiceClient
 from .services.registration_service import RegistrationServiceClient
-
 from .types.endpoint import Endpoint
 from .types.lookup_service import ResolveServiceRequest
 from .types.lookup_service import ResolveServiceResponse
@@ -40,6 +40,7 @@ from .types.registration_service import UpdateEndpointRequest
 from .types.registration_service import UpdateNamespaceRequest
 from .types.registration_service import UpdateServiceRequest
 from .types.service import Service
+
 
 __all__ = (
     'CreateEndpointRequest',

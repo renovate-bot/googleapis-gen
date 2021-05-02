@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Bigquery.Storage.V1Beta2.Snippets
 {
+    using Google.Cloud.Bigquery.Storage.V1Beta2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigQueryWriteClientStandaloneSnippets
     {
         /// <summary>Snippet for GetWriteStreamAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetWriteStreamRequestObjectAsync()
         {
-            // Snippet: GetWriteStreamAsync(GetWriteStreamRequest, CallSettings)
-            // Additional: GetWriteStreamAsync(GetWriteStreamRequest, CancellationToken)
             // Create client
             BigQueryWriteClient bigQueryWriteClient = await BigQueryWriteClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Bigquery.Storage.V1Beta2.Snippets
             };
             // Make the request
             WriteStream response = await bigQueryWriteClient.GetWriteStreamAsync(request);
-            // End snippet
         }
     }
 }

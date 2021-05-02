@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v7.resources.types import keyword_plan_campaign_keyword
 from google.ads.googleads.v7.services.types import keyword_plan_campaign_keyword_service
+
 from .base import KeywordPlanCampaignKeywordServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -60,8 +63,7 @@ class KeywordPlanCampaignKeywordServiceGrpcTransport(KeywordPlanCampaignKeywordS
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -205,10 +207,8 @@ class KeywordPlanCampaignKeywordServiceGrpcTransport(KeywordPlanCampaignKeywordS
     def get_keyword_plan_campaign_keyword(self) -> Callable[
             [keyword_plan_campaign_keyword_service.GetKeywordPlanCampaignKeywordRequest],
             keyword_plan_campaign_keyword.KeywordPlanCampaignKeyword]:
-        r"""Return a callable for the
-        get keyword plan campaign
-        keyword
-          method over gRPC.
+        r"""Return a callable for the get keyword plan campaign
+        keyword method over gRPC.
 
         Returns the requested plan in full detail.
 
@@ -238,10 +238,8 @@ class KeywordPlanCampaignKeywordServiceGrpcTransport(KeywordPlanCampaignKeywordS
     def mutate_keyword_plan_campaign_keywords(self) -> Callable[
             [keyword_plan_campaign_keyword_service.MutateKeywordPlanCampaignKeywordsRequest],
             keyword_plan_campaign_keyword_service.MutateKeywordPlanCampaignKeywordsResponse]:
-        r"""Return a callable for the
-        mutate keyword plan campaign
-        keywords
-          method over gRPC.
+        r"""Return a callable for the mutate keyword plan campaign
+        keywords method over gRPC.
 
         Creates, updates, or removes Keyword Plan campaign keywords.
         Operation statuses are returned.

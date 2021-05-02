@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for CompileSuggestionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CompileSuggestionRequestObjectAsync()
         {
-            // Snippet: CompileSuggestionAsync(CompileSuggestionRequest, CallSettings)
-            // Additional: CompileSuggestionAsync(CompileSuggestionRequest, CancellationToken)
             // Create client
             ParticipantsClient participantsClient = await ParticipantsClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 #pragma warning disable CS0612
             CompileSuggestionResponse response = await participantsClient.CompileSuggestionAsync(request);
 #pragma warning restore CS0612
-            // End snippet
         }
     }
 }

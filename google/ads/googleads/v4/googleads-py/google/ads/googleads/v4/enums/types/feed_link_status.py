@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -28,7 +30,7 @@ __protobuf__ = proto.module(
 class FeedLinkStatusEnum(proto.Message):
     r"""Container for an enum describing possible statuses of a feed
     link.
-        """
+    """
     class FeedLinkStatus(proto.Enum):
         r"""Possible statuses of a feed link."""
         UNSPECIFIED = 0

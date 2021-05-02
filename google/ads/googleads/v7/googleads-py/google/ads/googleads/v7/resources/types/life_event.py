@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.common.types import criterion_category_availability
 
@@ -53,29 +56,12 @@ class LifeEvent(proto.Message):
             life event.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.INT64,
-        number=2,
-    )
-    name = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    parent = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    launched_to_all = proto.Field(
-        proto.BOOL,
-        number=5,
-    )
-    availabilities = proto.RepeatedField(
-        proto.MESSAGE,
-        number=6,
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.INT64, number=2)
+    name = proto.Field(proto.STRING, number=3)
+    parent = proto.Field(proto.STRING, number=4)
+    launched_to_all = proto.Field(proto.BOOL, number=5)
+    availabilities = proto.RepeatedField(proto.MESSAGE, number=6,
         message=criterion_category_availability.CriterionCategoryAvailability,
     )
 

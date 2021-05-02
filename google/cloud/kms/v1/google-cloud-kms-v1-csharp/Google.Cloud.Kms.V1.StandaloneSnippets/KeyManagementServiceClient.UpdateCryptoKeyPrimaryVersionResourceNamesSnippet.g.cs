@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Kms.V1.Snippets
 {
+    using Google.Cloud.Kms.V1;
+
     public sealed partial class GeneratedKeyManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateCryptoKeyPrimaryVersion</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateCryptoKeyPrimaryVersionResourceNames()
         {
-            // Snippet: UpdateCryptoKeyPrimaryVersion(CryptoKeyName, string, CallSettings)
             // Create client
             KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Kms.V1.Snippets
             string cryptoKeyVersionId = "";
             // Make the request
             CryptoKey response = keyManagementServiceClient.UpdateCryptoKeyPrimaryVersion(name, cryptoKeyVersionId);
-            // End snippet
         }
     }
 }

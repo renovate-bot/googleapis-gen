@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Spanner.V1.Snippets
 {
+    using Google.Cloud.Spanner.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for BeginTransactionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BeginTransactionRequestObjectAsync()
         {
-            // Snippet: BeginTransactionAsync(BeginTransactionRequest, CallSettings)
-            // Additional: BeginTransactionAsync(BeginTransactionRequest, CancellationToken)
             // Create client
             SpannerClient spannerClient = await SpannerClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Spanner.V1.Snippets
             };
             // Make the request
             Transaction response = await spannerClient.BeginTransactionAsync(request);
-            // End snippet
         }
     }
 }

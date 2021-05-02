@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.ad_mob_api import AdMobApiClient
-
 from .types.admob_api import GenerateMediationReportRequest
 from .types.admob_api import GenerateMediationReportResponse
 from .types.admob_api import GenerateNetworkReportRequest
@@ -34,6 +34,7 @@ from .types.admob_resources import ReportRow
 from .types.admob_resources import ReportWarning
 from .types.admob_resources import SortOrder
 from .types.admob_resources import StringList
+
 
 __all__ = (
     'DateRange',

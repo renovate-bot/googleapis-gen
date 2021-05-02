@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupExtensionSettingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateAdGroupExtensionSettingsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateAdGroupExtensionSettingsRequestObjectAsync()
         {
-            // Snippet: MutateAdGroupExtensionSettingsAsync(MutateAdGroupExtensionSettingsRequest, CallSettings)
-            // Additional: MutateAdGroupExtensionSettingsAsync(MutateAdGroupExtensionSettingsRequest, CancellationToken)
             // Create client
             AdGroupExtensionSettingServiceClient adGroupExtensionSettingServiceClient = await AdGroupExtensionSettingServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateAdGroupExtensionSettingsResponse response = await adGroupExtensionSettingServiceClient.MutateAdGroupExtensionSettingsAsync(request);
-            // End snippet
         }
     }
 }

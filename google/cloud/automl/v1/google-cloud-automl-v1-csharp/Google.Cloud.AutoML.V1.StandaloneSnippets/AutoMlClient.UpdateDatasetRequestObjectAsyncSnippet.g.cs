@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.AutoML.V1.Snippets
 {
+    using Google.Cloud.AutoML.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateDatasetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateDatasetRequestObjectAsync()
         {
-            // Snippet: UpdateDatasetAsync(UpdateDatasetRequest, CallSettings)
-            // Additional: UpdateDatasetAsync(UpdateDatasetRequest, CancellationToken)
             // Create client
             AutoMlClient autoMlClient = await AutoMlClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.AutoML.V1.Snippets
             };
             // Make the request
             Dataset response = await autoMlClient.UpdateDatasetAsync(request);
-            // End snippet
         }
     }
 }

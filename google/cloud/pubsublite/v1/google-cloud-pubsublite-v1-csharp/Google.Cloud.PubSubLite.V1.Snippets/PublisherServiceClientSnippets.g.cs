@@ -55,7 +55,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
                 PublishRequest request = new PublishRequest
                 {
                     InitialRequest = new InitialPublishRequest(),
-                    MessagePublishRequest = new MessagePublishRequest(),
                 };
                 // Stream a request to the server
                 await response.WriteAsync(request);

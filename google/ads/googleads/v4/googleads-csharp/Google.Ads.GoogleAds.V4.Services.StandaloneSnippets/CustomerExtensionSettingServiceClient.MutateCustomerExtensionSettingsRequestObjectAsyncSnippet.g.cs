@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomerExtensionSettingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCustomerExtensionSettingsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateCustomerExtensionSettingsRequestObjectAsync()
         {
-            // Snippet: MutateCustomerExtensionSettingsAsync(MutateCustomerExtensionSettingsRequest, CallSettings)
-            // Additional: MutateCustomerExtensionSettingsAsync(MutateCustomerExtensionSettingsRequest, CancellationToken)
             // Create client
             CustomerExtensionSettingServiceClient customerExtensionSettingServiceClient = await CustomerExtensionSettingServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             MutateCustomerExtensionSettingsResponse response = await customerExtensionSettingServiceClient.MutateCustomerExtensionSettingsAsync(request);
-            // End snippet
         }
     }
 }

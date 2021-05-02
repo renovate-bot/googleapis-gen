@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
 {
+    using Google.Cloud.BigQuery.DataTransfer.V1;
+
     public sealed partial class GeneratedDataTransferServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteTransferRun</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteTransferRunResourceNames()
         {
-            // Snippet: DeleteTransferRun(RunName, CallSettings)
             // Create client
             DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.Create();
             // Initialize request argument(s)
             RunName name = RunName.FromProjectTransferConfigRun("[PROJECT]", "[TRANSFER_CONFIG]", "[RUN]");
             // Make the request
             dataTransferServiceClient.DeleteTransferRun(name);
-            // End snippet
         }
     }
 }

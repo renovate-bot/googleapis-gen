@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.reservation_service import ReservationServiceClient
-
 from .types.reservation import Assignment
 from .types.reservation import BiReservation
 from .types.reservation import CapacityCommitment
@@ -44,6 +44,7 @@ from .types.reservation import SplitCapacityCommitmentResponse
 from .types.reservation import UpdateBiReservationRequest
 from .types.reservation import UpdateCapacityCommitmentRequest
 from .types.reservation import UpdateReservationRequest
+
 
 __all__ = (
     'Assignment',

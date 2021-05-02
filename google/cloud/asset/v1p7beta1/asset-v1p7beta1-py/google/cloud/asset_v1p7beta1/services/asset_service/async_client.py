@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -29,6 +31,7 @@ from google.oauth2 import service_account              # type: ignore
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.asset_v1p7beta1.types import asset_service
+
 from .transports.base import AssetServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AssetServiceGrpcAsyncIOTransport
 from .client import AssetServiceClient
@@ -44,14 +47,19 @@ class AssetServiceAsyncClient:
 
     asset_path = staticmethod(AssetServiceClient.asset_path)
     parse_asset_path = staticmethod(AssetServiceClient.parse_asset_path)
+
     common_billing_account_path = staticmethod(AssetServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AssetServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(AssetServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(AssetServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(AssetServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(AssetServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(AssetServiceClient.common_project_path)
     parse_common_project_path = staticmethod(AssetServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(AssetServiceClient.common_location_path)
     parse_common_location_path = staticmethod(AssetServiceClient.parse_common_location_path)
 
@@ -136,6 +144,7 @@ class AssetServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = AssetServiceClient(
             credentials=credentials,
             transport=transport,
@@ -167,8 +176,8 @@ class AssetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.asset_v1p7beta1.types.ExportAssetsRequest`):
-                The request object.
-                Export asset request.
+                The request object. Export asset request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -187,6 +196,7 @@ class AssetServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = asset_service.ExportAssetsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -194,7 +204,10 @@ class AssetServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.export_assets,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -230,6 +243,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

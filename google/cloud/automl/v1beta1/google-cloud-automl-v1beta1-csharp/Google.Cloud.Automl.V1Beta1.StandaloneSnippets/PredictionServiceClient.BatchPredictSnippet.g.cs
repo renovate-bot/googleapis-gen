@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Automl.V1Beta1.Snippets
 {
+    using Google.Cloud.Automl.V1Beta1;
     using Google.LongRunning;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedPredictionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchPredict</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BatchPredict()
         {
-            // Snippet: BatchPredict(string, BatchPredictInputConfig, BatchPredictOutputConfig, IDictionary<string,string>, CallSettings)
             // Create client
             PredictionServiceClient predictionServiceClient = PredictionServiceClient.Create();
             // Initialize request argument(s)
@@ -50,7 +54,6 @@ namespace Google.Cloud.Automl.V1Beta1.Snippets
                 // If it has completed, then access the result
                 BatchPredictResult retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

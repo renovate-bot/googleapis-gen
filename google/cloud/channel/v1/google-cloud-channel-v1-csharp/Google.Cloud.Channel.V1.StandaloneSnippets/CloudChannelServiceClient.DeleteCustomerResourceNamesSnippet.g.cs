@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Channel.V1.Snippets
 {
+    using Google.Cloud.Channel.V1;
+
     public sealed partial class GeneratedCloudChannelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteCustomer</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteCustomerResourceNames()
         {
-            // Snippet: DeleteCustomer(CustomerName, CallSettings)
             // Create client
             CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.Create();
             // Initialize request argument(s)
             CustomerName name = CustomerName.FromAccountCustomer("[ACCOUNT]", "[CUSTOMER]");
             // Make the request
             cloudChannelServiceClient.DeleteCustomer(name);
-            // End snippet
         }
     }
 }

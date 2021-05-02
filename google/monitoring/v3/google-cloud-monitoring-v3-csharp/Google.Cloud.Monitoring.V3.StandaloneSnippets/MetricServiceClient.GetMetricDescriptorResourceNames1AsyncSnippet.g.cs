@@ -17,22 +17,24 @@
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api;
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMetricServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMetricDescriptorAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetMetricDescriptorResourceNames1Async()
         {
-            // Snippet: GetMetricDescriptorAsync(MetricDescriptorName, CallSettings)
-            // Additional: GetMetricDescriptorAsync(MetricDescriptorName, CancellationToken)
             // Create client
             MetricServiceClient metricServiceClient = await MetricServiceClient.CreateAsync();
             // Initialize request argument(s)
             MetricDescriptorName name = MetricDescriptorName.FromProjectMetricDescriptor("[PROJECT]", "[METRIC_DESCRIPTOR]");
             // Make the request
             MetricDescriptor response = await metricServiceClient.GetMetricDescriptorAsync(name);
-            // End snippet
         }
     }
 }

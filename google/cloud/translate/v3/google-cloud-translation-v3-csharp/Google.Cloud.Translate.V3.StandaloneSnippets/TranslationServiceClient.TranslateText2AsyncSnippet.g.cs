@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Translate.V3.Snippets
 {
+    using Google.Cloud.Translate.V3;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTranslationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for TranslateTextAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task TranslateText2Async()
         {
-            // Snippet: TranslateTextAsync(string, string, string, string, string, IEnumerable<string>, CallSettings)
-            // Additional: TranslateTextAsync(string, string, string, string, string, IEnumerable<string>, CancellationToken)
             // Create client
             TranslationServiceClient translationServiceClient = await TranslationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Translate.V3.Snippets
             IEnumerable<string> contents = new string[] { "", };
             // Make the request
             TranslateTextResponse response = await translationServiceClient.TranslateTextAsync(parent, model, mimeType, sourceLanguageCode, targetLanguageCode, contents);
-            // End snippet
         }
     }
 }

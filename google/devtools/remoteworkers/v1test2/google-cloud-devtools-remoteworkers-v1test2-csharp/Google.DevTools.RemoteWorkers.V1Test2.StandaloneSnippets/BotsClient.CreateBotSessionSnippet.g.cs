@@ -16,12 +16,17 @@
 
 namespace Google.DevTools.RemoteWorkers.V1Test2.Snippets
 {
+    using Google.DevTools.RemoteWorkers.V1Test2;
+
     public sealed partial class GeneratedBotsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateBotSession</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateBotSession()
         {
-            // Snippet: CreateBotSession(string, BotSession, CallSettings)
             // Create client
             BotsClient botsClient = BotsClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.DevTools.RemoteWorkers.V1Test2.Snippets
             BotSession botSession = new BotSession();
             // Make the request
             BotSession response = botsClient.CreateBotSession(parent, botSession);
-            // End snippet
         }
     }
 }

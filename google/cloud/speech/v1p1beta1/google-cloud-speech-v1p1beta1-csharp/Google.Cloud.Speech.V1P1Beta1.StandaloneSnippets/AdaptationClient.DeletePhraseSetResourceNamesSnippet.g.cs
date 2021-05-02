@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Speech.V1P1Beta1.Snippets
 {
+    using Google.Cloud.Speech.V1P1Beta1;
+
     public sealed partial class GeneratedAdaptationClientStandaloneSnippets
     {
         /// <summary>Snippet for DeletePhraseSet</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeletePhraseSetResourceNames()
         {
-            // Snippet: DeletePhraseSet(PhraseSetName, CallSettings)
             // Create client
             AdaptationClient adaptationClient = AdaptationClient.Create();
             // Initialize request argument(s)
             PhraseSetName name = PhraseSetName.FromProjectLocationPhraseSet("[PROJECT]", "[LOCATION]", "[PHRASE_SET]");
             // Make the request
             adaptationClient.DeletePhraseSet(name);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -44,7 +45,8 @@ from google.cloud.tasks_v2.types.target import OidcToken
 from google.cloud.tasks_v2.types.task import Attempt
 from google.cloud.tasks_v2.types.task import Task
 
-__all__ = ('AppEngineHttpRequest',
+__all__ = (
+    'AppEngineHttpRequest',
     'AppEngineRouting',
     'Attempt',
     'CloudTasksAsyncClient',

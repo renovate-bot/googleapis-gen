@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Kms.V1.Snippets
 {
+    using Google.Cloud.Kms.V1;
+
     public sealed partial class GeneratedKeyManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for AsymmetricSign</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void AsymmetricSignResourceNames()
         {
-            // Snippet: AsymmetricSign(CryptoKeyVersionName, Digest, CallSettings)
             // Create client
             KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Kms.V1.Snippets
             Digest digest = new Digest();
             // Make the request
             AsymmetricSignResponse response = keyManagementServiceClient.AsymmetricSign(name, digest);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedExperimentsClientStandaloneSnippets
     {
         /// <summary>Snippet for StartExperiment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void StartExperimentRequestObject()
         {
-            // Snippet: StartExperiment(StartExperimentRequest, CallSettings)
             // Create client
             ExperimentsClient experimentsClient = ExperimentsClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             };
             // Make the request
             Experiment response = experimentsClient.StartExperiment(request);
-            // End snippet
         }
     }
 }

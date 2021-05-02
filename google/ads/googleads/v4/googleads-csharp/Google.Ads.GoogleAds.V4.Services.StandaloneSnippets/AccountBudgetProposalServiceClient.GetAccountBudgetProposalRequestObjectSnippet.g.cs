@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedAccountBudgetProposalServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAccountBudgetProposal</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAccountBudgetProposalRequestObject()
         {
-            // Snippet: GetAccountBudgetProposal(GetAccountBudgetProposalRequest, CallSettings)
             // Create client
             AccountBudgetProposalServiceClient accountBudgetProposalServiceClient = AccountBudgetProposalServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             AccountBudgetProposal response = accountBudgetProposalServiceClient.GetAccountBudgetProposal(request);
-            // End snippet
         }
     }
 }

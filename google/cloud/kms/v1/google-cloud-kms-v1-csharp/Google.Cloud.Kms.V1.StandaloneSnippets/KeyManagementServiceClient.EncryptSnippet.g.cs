@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Kms.V1.Snippets
 {
+    using Google.Cloud.Kms.V1;
     using Google.Protobuf;
 
     public sealed partial class GeneratedKeyManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for Encrypt</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void Encrypt()
         {
-            // Snippet: Encrypt(string, ByteString, CallSettings)
             // Create client
             KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Kms.V1.Snippets
             ByteString plaintext = ByteString.Empty;
             // Make the request
             EncryptResponse response = keyManagementServiceClient.Encrypt(name, plaintext);
-            // End snippet
         }
     }
 }

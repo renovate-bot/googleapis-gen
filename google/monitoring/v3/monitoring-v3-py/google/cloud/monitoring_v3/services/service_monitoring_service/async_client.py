@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -32,6 +34,7 @@ from google.cloud.monitoring_v3.types import service as gm_service
 from google.cloud.monitoring_v3.types import service_service
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.type import calendar_period_pb2 as calendar_period  # type: ignore
+
 from .transports.base import ServiceMonitoringServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ServiceMonitoringServiceGrpcAsyncIOTransport
 from .client import ServiceMonitoringServiceClient
@@ -53,14 +56,19 @@ class ServiceMonitoringServiceAsyncClient:
     parse_service_path = staticmethod(ServiceMonitoringServiceClient.parse_service_path)
     service_level_objective_path = staticmethod(ServiceMonitoringServiceClient.service_level_objective_path)
     parse_service_level_objective_path = staticmethod(ServiceMonitoringServiceClient.parse_service_level_objective_path)
+
     common_billing_account_path = staticmethod(ServiceMonitoringServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ServiceMonitoringServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(ServiceMonitoringServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(ServiceMonitoringServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(ServiceMonitoringServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(ServiceMonitoringServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(ServiceMonitoringServiceClient.common_project_path)
     parse_common_project_path = staticmethod(ServiceMonitoringServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(ServiceMonitoringServiceClient.common_location_path)
     parse_common_location_path = staticmethod(ServiceMonitoringServiceClient.parse_common_location_path)
 
@@ -145,6 +153,7 @@ class ServiceMonitoringServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = ServiceMonitoringServiceClient(
             credentials=credentials,
             transport=transport,
@@ -166,8 +175,7 @@ class ServiceMonitoringServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.CreateServiceRequest`):
-                The request object.
-                The `CreateService` request.
+                The request object. The `CreateService` request.
             parent (:class:`str`):
                 Required. Resource name of the parent workspace. The
                 format is:
@@ -184,6 +192,7 @@ class ServiceMonitoringServiceAsyncClient:
                 This corresponds to the ``service`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -212,6 +221,7 @@ class ServiceMonitoringServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if service is not None:
@@ -256,8 +266,7 @@ class ServiceMonitoringServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.GetServiceRequest`):
-                The request object.
-                The `GetService` request.
+                The request object. The `GetService` request.
             name (:class:`str`):
                 Required. Resource name of the ``Service``. The format
                 is:
@@ -269,6 +278,7 @@ class ServiceMonitoringServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -297,6 +307,7 @@ class ServiceMonitoringServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -305,7 +316,10 @@ class ServiceMonitoringServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_service,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -346,8 +360,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListServicesRequest`):
-                The request object.
-                The `ListServices` request.
+                The request object. The `ListServices` request.
             parent (:class:`str`):
                 Required. Resource name of the parent containing the
                 listed services, either a project or a Monitoring
@@ -361,6 +374,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -387,6 +401,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -395,7 +410,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_services,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -445,8 +463,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.UpdateServiceRequest`):
-                The request object.
-                The `UpdateService` request.
+                The request object. The `UpdateService` request.
             service (:class:`google.cloud.monitoring_v3.types.Service`):
                 Required. The ``Service`` to draw updates from. The
                 given ``name`` specifies the resource to update.
@@ -454,6 +471,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``service`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -482,6 +500,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service is not None:
             request.service = service
 
@@ -524,8 +543,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.DeleteServiceRequest`):
-                The request object.
-                The `DeleteService` request.
+                The request object. The `DeleteService` request.
             name (:class:`str`):
                 Required. Resource name of the ``Service`` to delete.
                 The format is:
@@ -537,6 +555,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -555,6 +574,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -563,7 +583,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_service,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -602,8 +625,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.CreateServiceLevelObjectiveRequest`):
-                The request object.
-                The `CreateServiceLevelObjective`
+                The request object. The `CreateServiceLevelObjective`
                 request.
             parent (:class:`str`):
                 Required. Resource name of the parent ``Service``. The
@@ -624,6 +646,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``service_level_objective`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -659,6 +682,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if service_level_objective is not None:
@@ -703,8 +727,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.GetServiceLevelObjectiveRequest`):
-                The request object.
-                The `GetServiceLevelObjective`
+                The request object. The `GetServiceLevelObjective`
                 request.
             name (:class:`str`):
                 Required. Resource name of the ``ServiceLevelObjective``
@@ -717,6 +740,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -752,6 +776,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -760,7 +785,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_service_level_objective,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -801,8 +829,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.ListServiceLevelObjectivesRequest`):
-                The request object.
-                The `ListServiceLevelObjectives`
+                The request object. The `ListServiceLevelObjectives`
                 request.
             parent (:class:`str`):
                 Required. Resource name of the parent containing the
@@ -817,6 +844,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -843,6 +871,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -851,7 +880,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_service_level_objectives,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -901,8 +933,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.UpdateServiceLevelObjectiveRequest`):
-                The request object.
-                The `UpdateServiceLevelObjective`
+                The request object. The `UpdateServiceLevelObjective`
                 request.
             service_level_objective (:class:`google.cloud.monitoring_v3.types.ServiceLevelObjective`):
                 Required. The ``ServiceLevelObjective`` to draw updates
@@ -912,6 +943,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``service_level_objective`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -947,6 +979,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service_level_objective is not None:
             request.service_level_objective = service_level_objective
 
@@ -989,8 +1022,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.monitoring_v3.types.DeleteServiceLevelObjectiveRequest`):
-                The request object.
-                The `DeleteServiceLevelObjective`
+                The request object. The `DeleteServiceLevelObjective`
                 request.
             name (:class:`str`):
                 Required. Resource name of the ``ServiceLevelObjective``
@@ -1003,6 +1035,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1021,6 +1054,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1029,7 +1063,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_service_level_objective,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1054,6 +1091,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

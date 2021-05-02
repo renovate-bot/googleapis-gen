@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Metastore.V1.Snippets
 {
+    using Google.Cloud.Metastore.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataprocMetastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMetadataImportAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetMetadataImportAsync()
         {
-            // Snippet: GetMetadataImportAsync(string, CallSettings)
-            // Additional: GetMetadataImportAsync(string, CancellationToken)
             // Create client
             DataprocMetastoreClient dataprocMetastoreClient = await DataprocMetastoreClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/services/[SERVICE]/metadataImports/[METADATA_IMPORT]";
             // Make the request
             MetadataImport response = await dataprocMetastoreClient.GetMetadataImportAsync(name);
-            // End snippet
         }
     }
 }

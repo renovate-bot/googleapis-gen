@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import feed_item_set_link
 from google.ads.googleads.v6.services.types import feed_item_set_link_service
+
 from .base import FeedItemSetLinkServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class FeedItemSetLinkServiceGrpcTransport(FeedItemSetLinkServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class FeedItemSetLinkServiceGrpcTransport(FeedItemSetLinkServiceTransport):
     def get_feed_item_set_link(self) -> Callable[
             [feed_item_set_link_service.GetFeedItemSetLinkRequest],
             feed_item_set_link.FeedItemSetLink]:
-        r"""Return a callable for the
-        get feed item set link
-          method over gRPC.
+        r"""Return a callable for the get feed item set link method over gRPC.
 
         Returns the requested feed item set link in full
         detail.
@@ -230,9 +230,7 @@ class FeedItemSetLinkServiceGrpcTransport(FeedItemSetLinkServiceTransport):
     def mutate_feed_item_set_links(self) -> Callable[
             [feed_item_set_link_service.MutateFeedItemSetLinksRequest],
             feed_item_set_link_service.MutateFeedItemSetLinksResponse]:
-        r"""Return a callable for the
-        mutate feed item set links
-          method over gRPC.
+        r"""Return a callable for the mutate feed item set links method over gRPC.
 
         Creates, updates, or removes feed item set links.
 

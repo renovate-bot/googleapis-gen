@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.ServiceDirectory.V1.Snippets
 {
+    using Google.Cloud.ServiceDirectory.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRegistrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateEndpointAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateEndpointAsync()
         {
-            // Snippet: UpdateEndpointAsync(Endpoint, FieldMask, CallSettings)
-            // Additional: UpdateEndpointAsync(Endpoint, FieldMask, CancellationToken)
             // Create client
             RegistrationServiceClient registrationServiceClient = await RegistrationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.ServiceDirectory.V1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Endpoint response = await registrationServiceClient.UpdateEndpointAsync(endpoint, updateMask);
-            // End snippet
         }
     }
 }

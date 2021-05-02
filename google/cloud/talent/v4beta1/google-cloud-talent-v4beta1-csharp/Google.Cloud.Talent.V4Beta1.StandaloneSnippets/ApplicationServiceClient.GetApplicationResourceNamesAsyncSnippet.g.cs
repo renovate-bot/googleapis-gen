@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
+    using Google.Cloud.Talent.V4Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedApplicationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetApplicationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetApplicationResourceNamesAsync()
         {
-            // Snippet: GetApplicationAsync(ApplicationName, CallSettings)
-            // Additional: GetApplicationAsync(ApplicationName, CancellationToken)
             // Create client
             ApplicationServiceClient applicationServiceClient = await ApplicationServiceClient.CreateAsync();
             // Initialize request argument(s)
             ApplicationName name = ApplicationName.FromProjectTenantProfileApplication("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
             // Make the request
             Application response = await applicationServiceClient.GetApplicationAsync(name);
-            // End snippet
         }
     }
 }

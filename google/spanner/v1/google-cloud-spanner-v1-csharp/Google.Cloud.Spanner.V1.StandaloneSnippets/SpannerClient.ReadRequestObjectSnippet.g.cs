@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Spanner.V1.Snippets
 {
+    using Google.Cloud.Spanner.V1;
     using Google.Protobuf;
 
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for Read</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ReadRequestObject()
         {
-            // Snippet: Read(ReadRequest, CallSettings)
             // Create client
             SpannerClient spannerClient = SpannerClient.Create();
             // Initialize request argument(s)
@@ -42,7 +46,6 @@ namespace Google.Cloud.Spanner.V1.Snippets
             };
             // Make the request
             ResultSet response = spannerClient.Read(request);
-            // End snippet
         }
     }
 }

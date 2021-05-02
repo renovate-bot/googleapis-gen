@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedFlowsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetFlowValidationResult</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetFlowValidationResult()
         {
-            // Snippet: GetFlowValidationResult(string, CallSettings)
             // Create client
             FlowsClient flowsClient = FlowsClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/agents/[AGENT]/flows/[FLOW]/validationResult";
             // Make the request
             FlowValidationResult response = flowsClient.GetFlowValidationResult(name);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedContextsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateContextAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateContext2Async()
         {
-            // Snippet: UpdateContextAsync(Context, CallSettings)
-            // Additional: UpdateContextAsync(Context, CancellationToken)
             // Create client
             ContextsClient contextsClient = await ContextsClient.CreateAsync();
             // Initialize request argument(s)
             Context context = new Context();
             // Make the request
             Context response = await contextsClient.UpdateContextAsync(context);
-            // End snippet
         }
     }
 }

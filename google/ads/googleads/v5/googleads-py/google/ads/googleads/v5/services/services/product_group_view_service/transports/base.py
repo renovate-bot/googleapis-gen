@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import abc
 import typing
 import pkg_resources
@@ -24,6 +26,7 @@ from google.auth import credentials  # type: ignore
 
 from google.ads.googleads.v5.resources.types import product_group_view
 from google.ads.googleads.v5.services.types import product_group_view_service
+
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
@@ -51,8 +54,7 @@ class ProductGroupViewServiceTransport(metaclass=abc.ABCMeta):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -88,7 +90,8 @@ class ProductGroupViewServiceTransport(metaclass=abc.ABCMeta):
                 default_timeout=None,
                 client_info=client_info,
             ),
-         }
+
+        }
 
     @property
     def get_product_group_view(self) -> typing.Callable[

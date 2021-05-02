@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
+
     public sealed partial class GeneratedFirewallClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchUpdateIngressRules</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BatchUpdateIngressRulesRequestObject()
         {
-            // Snippet: BatchUpdateIngressRules(BatchUpdateIngressRulesRequest, CallSettings)
             // Create client
             FirewallClient firewallClient = FirewallClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.AppEngine.V1.Snippets
             };
             // Make the request
             BatchUpdateIngressRulesResponse response = firewallClient.BatchUpdateIngressRules(request);
-            // End snippet
         }
     }
 }

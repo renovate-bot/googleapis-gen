@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,66 +41,67 @@ def partition(
 class aiplatformCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'batch_migrate_resources': ('parent', 'migrate_resource_requests', ),
-          'cancel_batch_prediction_job': ('name', ),
-          'cancel_custom_job': ('name', ),
-          'cancel_data_labeling_job': ('name', ),
-          'cancel_hyperparameter_tuning_job': ('name', ),
-          'cancel_training_pipeline': ('name', ),
-          'create_batch_prediction_job': ('parent', 'batch_prediction_job', ),
-          'create_custom_job': ('parent', 'custom_job', ),
-          'create_data_labeling_job': ('parent', 'data_labeling_job', ),
-          'create_dataset': ('parent', 'dataset', ),
-          'create_endpoint': ('parent', 'endpoint', ),
-          'create_hyperparameter_tuning_job': ('parent', 'hyperparameter_tuning_job', ),
-          'create_specialist_pool': ('parent', 'specialist_pool', ),
-          'create_training_pipeline': ('parent', 'training_pipeline', ),
-          'delete_batch_prediction_job': ('name', ),
-          'delete_custom_job': ('name', ),
-          'delete_data_labeling_job': ('name', ),
-          'delete_dataset': ('name', ),
-          'delete_endpoint': ('name', ),
-          'delete_hyperparameter_tuning_job': ('name', ),
-          'delete_model': ('name', ),
-          'delete_specialist_pool': ('name', 'force', ),
-          'delete_training_pipeline': ('name', ),
-          'deploy_model': ('endpoint', 'deployed_model', 'traffic_split', ),
-          'export_data': ('name', 'export_config', ),
-          'export_model': ('name', 'output_config', ),
-          'get_annotation_spec': ('name', 'read_mask', ),
-          'get_batch_prediction_job': ('name', ),
-          'get_custom_job': ('name', ),
-          'get_data_labeling_job': ('name', ),
-          'get_dataset': ('name', 'read_mask', ),
-          'get_endpoint': ('name', ),
-          'get_hyperparameter_tuning_job': ('name', ),
-          'get_model': ('name', ),
-          'get_model_evaluation': ('name', ),
-          'get_model_evaluation_slice': ('name', ),
-          'get_specialist_pool': ('name', ),
-          'get_training_pipeline': ('name', ),
-          'import_data': ('name', 'import_configs', ),
-          'list_annotations': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', 'order_by', ),
-          'list_batch_prediction_jobs': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', ),
-          'list_custom_jobs': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', ),
-          'list_data_items': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', 'order_by', ),
-          'list_data_labeling_jobs': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', 'order_by', ),
-          'list_datasets': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', 'order_by', ),
-          'list_endpoints': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', 'order_by', ),
-          'list_hyperparameter_tuning_jobs': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', ),
-          'list_model_evaluations': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', ),
-          'list_model_evaluation_slices': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', ),
-          'list_models': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', 'order_by', ),
-          'list_specialist_pools': ('parent', 'page_size', 'page_token', 'read_mask', ),
-          'list_training_pipelines': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', ),
-          'predict': ('endpoint', 'instances', 'parameters', ),
-          'search_migratable_resources': ('parent', 'page_size', 'page_token', 'filter', ),
-          'undeploy_model': ('endpoint', 'deployed_model_id', 'traffic_split', ),
-          'update_dataset': ('dataset', 'update_mask', ),
-          'update_endpoint': ('endpoint', 'update_mask', ),
-          'update_model': ('model', 'update_mask', ),
-          'update_specialist_pool': ('specialist_pool', 'update_mask', ),
-          'upload_model': ('parent', 'model', ),
+    'batch_migrate_resources': ('parent', 'migrate_resource_requests', ),
+    'cancel_batch_prediction_job': ('name', ),
+    'cancel_custom_job': ('name', ),
+    'cancel_data_labeling_job': ('name', ),
+    'cancel_hyperparameter_tuning_job': ('name', ),
+    'cancel_training_pipeline': ('name', ),
+    'create_batch_prediction_job': ('parent', 'batch_prediction_job', ),
+    'create_custom_job': ('parent', 'custom_job', ),
+    'create_data_labeling_job': ('parent', 'data_labeling_job', ),
+    'create_dataset': ('parent', 'dataset', ),
+    'create_endpoint': ('parent', 'endpoint', ),
+    'create_hyperparameter_tuning_job': ('parent', 'hyperparameter_tuning_job', ),
+    'create_specialist_pool': ('parent', 'specialist_pool', ),
+    'create_training_pipeline': ('parent', 'training_pipeline', ),
+    'delete_batch_prediction_job': ('name', ),
+    'delete_custom_job': ('name', ),
+    'delete_data_labeling_job': ('name', ),
+    'delete_dataset': ('name', ),
+    'delete_endpoint': ('name', ),
+    'delete_hyperparameter_tuning_job': ('name', ),
+    'delete_model': ('name', ),
+    'delete_specialist_pool': ('name', 'force', ),
+    'delete_training_pipeline': ('name', ),
+    'deploy_model': ('endpoint', 'deployed_model', 'traffic_split', ),
+    'export_data': ('name', 'export_config', ),
+    'export_model': ('name', 'output_config', ),
+    'get_annotation_spec': ('name', 'read_mask', ),
+    'get_batch_prediction_job': ('name', ),
+    'get_custom_job': ('name', ),
+    'get_data_labeling_job': ('name', ),
+    'get_dataset': ('name', 'read_mask', ),
+    'get_endpoint': ('name', ),
+    'get_hyperparameter_tuning_job': ('name', ),
+    'get_model': ('name', ),
+    'get_model_evaluation': ('name', ),
+    'get_model_evaluation_slice': ('name', ),
+    'get_specialist_pool': ('name', ),
+    'get_training_pipeline': ('name', ),
+    'import_data': ('name', 'import_configs', ),
+    'list_annotations': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', 'order_by', ),
+    'list_batch_prediction_jobs': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', ),
+    'list_custom_jobs': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', ),
+    'list_data_items': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', 'order_by', ),
+    'list_data_labeling_jobs': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', 'order_by', ),
+    'list_datasets': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', 'order_by', ),
+    'list_endpoints': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', 'order_by', ),
+    'list_hyperparameter_tuning_jobs': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', ),
+    'list_model_evaluations': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', ),
+    'list_model_evaluation_slices': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', ),
+    'list_models': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', 'order_by', ),
+    'list_specialist_pools': ('parent', 'page_size', 'page_token', 'read_mask', ),
+    'list_training_pipelines': ('parent', 'filter', 'page_size', 'page_token', 'read_mask', ),
+    'predict': ('endpoint', 'instances', 'parameters', ),
+    'search_migratable_resources': ('parent', 'page_size', 'page_token', 'filter', ),
+    'undeploy_model': ('endpoint', 'deployed_model_id', 'traffic_split', ),
+    'update_dataset': ('dataset', 'update_mask', ),
+    'update_endpoint': ('endpoint', 'update_mask', ),
+    'update_model': ('model', 'update_mask', ),
+    'update_specialist_pool': ('specialist_pool', 'update_mask', ),
+    'upload_model': ('parent', 'model', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -129,7 +132,7 @@ class aiplatformCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

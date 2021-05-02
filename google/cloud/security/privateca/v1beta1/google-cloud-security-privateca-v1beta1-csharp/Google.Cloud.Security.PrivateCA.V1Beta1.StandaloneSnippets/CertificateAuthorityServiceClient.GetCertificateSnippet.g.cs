@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Security.PrivateCA.V1Beta1.Snippets
 {
+    using Google.Cloud.Security.PrivateCA.V1Beta1;
+
     public sealed partial class GeneratedCertificateAuthorityServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCertificate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCertificate()
         {
-            // Snippet: GetCertificate(string, CallSettings)
             // Create client
             CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/certificateAuthorities/[CERTIFICATE_AUTHORITY]/certificates/[CERTIFICATE]";
             // Make the request
             Certificate response = certificateAuthorityServiceClient.GetCertificate(name);
-            // End snippet
         }
     }
 }

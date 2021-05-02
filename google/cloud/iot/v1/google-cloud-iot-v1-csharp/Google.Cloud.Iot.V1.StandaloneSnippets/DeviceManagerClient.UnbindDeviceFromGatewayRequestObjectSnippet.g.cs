@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Iot.V1.Snippets
 {
+    using Google.Cloud.Iot.V1;
+
     public sealed partial class GeneratedDeviceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for UnbindDeviceFromGateway</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UnbindDeviceFromGatewayRequestObject()
         {
-            // Snippet: UnbindDeviceFromGateway(UnbindDeviceFromGatewayRequest, CallSettings)
             // Create client
             DeviceManagerClient deviceManagerClient = DeviceManagerClient.Create();
             // Initialize request argument(s)
@@ -33,7 +38,6 @@ namespace Google.Cloud.Iot.V1.Snippets
             };
             // Make the request
             UnbindDeviceFromGatewayResponse response = deviceManagerClient.UnbindDeviceFromGateway(request);
-            // End snippet
         }
     }
 }

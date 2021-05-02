@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.spanner import SpannerClient
-
 from .types.commit_response import CommitResponse
 from .types.keys import KeyRange
 from .types.keys import KeySet
@@ -53,6 +53,7 @@ from .types.transaction import TransactionSelector
 from .types.type import StructType
 from .types.type import Type
 from .types.type import TypeCode
+
 
 __all__ = (
     'BatchCreateSessionsRequest',

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.monitoring.dashboard_v1.types import metrics
 from google.protobuf import duration_pb2 as duration  # type: ignore
@@ -30,6 +33,7 @@ __protobuf__ = proto.module(
 
 class XyChart(proto.Message):
     r"""A chart that displays data on a 2D (X and Y axes) plane.
+
     Attributes:
         data_sets (Sequence[google.monitoring.dashboard_v1.types.XyChart.DataSet]):
             Required. The data displayed in this chart.
@@ -51,9 +55,9 @@ class XyChart(proto.Message):
         chart_options (google.monitoring.dashboard_v1.types.ChartOptions):
             Display options for the chart.
     """
-
     class DataSet(proto.Message):
         r"""Groups a time series query definition with charting options.
+
         Attributes:
             time_series_query (google.monitoring.dashboard_v1.types.TimeSeriesQuery):
                 Required. Fields for querying time series
@@ -82,28 +86,23 @@ class XyChart(proto.Message):
             STACKED_BAR = 3
             HEATMAP = 4
 
-        time_series_query = proto.Field(
-            proto.MESSAGE,
-            number=1,
+        time_series_query = proto.Field(proto.MESSAGE, number=1,
             message=metrics.TimeSeriesQuery,
         )
-        plot_type = proto.Field(
-            proto.ENUM,
-            number=2,
+
+        plot_type = proto.Field(proto.ENUM, number=2,
             enum='XyChart.DataSet.PlotType',
         )
-        legend_template = proto.Field(
-            proto.STRING,
-            number=3,
-        )
-        min_alignment_period = proto.Field(
-            proto.MESSAGE,
-            number=4,
+
+        legend_template = proto.Field(proto.STRING, number=3)
+
+        min_alignment_period = proto.Field(proto.MESSAGE, number=4,
             message=duration.Duration,
         )
 
     class Axis(proto.Message):
         r"""A chart axis.
+
         Attributes:
             label (str):
                 The label of the axis.
@@ -117,50 +116,40 @@ class XyChart(proto.Message):
             LINEAR = 1
             LOG10 = 2
 
-        label = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        scale = proto.Field(
-            proto.ENUM,
-            number=2,
+        label = proto.Field(proto.STRING, number=1)
+
+        scale = proto.Field(proto.ENUM, number=2,
             enum='XyChart.Axis.Scale',
         )
 
-    data_sets = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    data_sets = proto.RepeatedField(proto.MESSAGE, number=1,
         message=DataSet,
     )
-    timeshift_duration = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    timeshift_duration = proto.Field(proto.MESSAGE, number=4,
         message=duration.Duration,
     )
-    thresholds = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+
+    thresholds = proto.RepeatedField(proto.MESSAGE, number=5,
         message=metrics.Threshold,
     )
-    x_axis = proto.Field(
-        proto.MESSAGE,
-        number=6,
+
+    x_axis = proto.Field(proto.MESSAGE, number=6,
         message=Axis,
     )
-    y_axis = proto.Field(
-        proto.MESSAGE,
-        number=7,
+
+    y_axis = proto.Field(proto.MESSAGE, number=7,
         message=Axis,
     )
-    chart_options = proto.Field(
-        proto.MESSAGE,
-        number=8,
+
+    chart_options = proto.Field(proto.MESSAGE, number=8,
         message='ChartOptions',
     )
 
 
 class ChartOptions(proto.Message):
     r"""Options to control visual rendering of a chart.
+
     Attributes:
         mode (google.monitoring.dashboard_v1.types.ChartOptions.Mode):
             The chart mode.
@@ -172,9 +161,7 @@ class ChartOptions(proto.Message):
         X_RAY = 2
         STATS = 3
 
-    mode = proto.Field(
-        proto.ENUM,
-        number=1,
+    mode = proto.Field(proto.ENUM, number=1,
         enum=Mode,
     )
 

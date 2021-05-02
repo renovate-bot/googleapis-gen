@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
 {
+    using Google.Cloud.WebSecurityScanner.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWebSecurityScannerClientStandaloneSnippets
     {
         /// <summary>Snippet for StopScanRunAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task StopScanRunResourceNamesAsync()
         {
-            // Snippet: StopScanRunAsync(ScanRunName, CallSettings)
-            // Additional: StopScanRunAsync(ScanRunName, CancellationToken)
             // Create client
             WebSecurityScannerClient webSecurityScannerClient = await WebSecurityScannerClient.CreateAsync();
             // Initialize request argument(s)
             ScanRunName name = ScanRunName.FromProjectScanConfigScanRun("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
             // Make the request
             ScanRun response = await webSecurityScannerClient.StopScanRunAsync(name);
-            // End snippet
         }
     }
 }

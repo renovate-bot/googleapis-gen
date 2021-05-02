@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
+
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteInstruction</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteInstructionResourceNames()
         {
-            // Snippet: DeleteInstruction(InstructionName, CallSettings)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.Create();
             // Initialize request argument(s)
             InstructionName name = InstructionName.FromProjectInstruction("[PROJECT]", "[INSTRUCTION]");
             // Make the request
             dataLabelingServiceClient.DeleteInstruction(name);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -27,6 +29,7 @@ import grpc  # type: ignore
 from google.cloud.dialogflowcx_v3beta1.types import security_settings
 from google.cloud.dialogflowcx_v3beta1.types import security_settings as gcdc_security_settings
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import SecuritySettingsServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -60,8 +63,7 @@ class SecuritySettingsServiceGrpcTransport(SecuritySettingsServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -200,15 +202,13 @@ class SecuritySettingsServiceGrpcTransport(SecuritySettingsServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -222,9 +222,7 @@ class SecuritySettingsServiceGrpcTransport(SecuritySettingsServiceTransport):
     def create_security_settings(self) -> Callable[
             [gcdc_security_settings.CreateSecuritySettingsRequest],
             gcdc_security_settings.SecuritySettings]:
-        r"""Return a callable for the
-        create security settings
-          method over gRPC.
+        r"""Return a callable for the create security settings method over gRPC.
 
         Create security settings in the specified location.
 
@@ -250,9 +248,7 @@ class SecuritySettingsServiceGrpcTransport(SecuritySettingsServiceTransport):
     def get_security_settings(self) -> Callable[
             [security_settings.GetSecuritySettingsRequest],
             security_settings.SecuritySettings]:
-        r"""Return a callable for the
-        get security settings
-          method over gRPC.
+        r"""Return a callable for the get security settings method over gRPC.
 
         Retrieves the specified
         [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].
@@ -280,9 +276,7 @@ class SecuritySettingsServiceGrpcTransport(SecuritySettingsServiceTransport):
     def update_security_settings(self) -> Callable[
             [gcdc_security_settings.UpdateSecuritySettingsRequest],
             gcdc_security_settings.SecuritySettings]:
-        r"""Return a callable for the
-        update security settings
-          method over gRPC.
+        r"""Return a callable for the update security settings method over gRPC.
 
         Updates the specified
         [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].
@@ -309,9 +303,7 @@ class SecuritySettingsServiceGrpcTransport(SecuritySettingsServiceTransport):
     def list_security_settings(self) -> Callable[
             [security_settings.ListSecuritySettingsRequest],
             security_settings.ListSecuritySettingsResponse]:
-        r"""Return a callable for the
-        list security settings
-          method over gRPC.
+        r"""Return a callable for the list security settings method over gRPC.
 
         Returns the list of all security settings in the
         specified location.
@@ -338,9 +330,7 @@ class SecuritySettingsServiceGrpcTransport(SecuritySettingsServiceTransport):
     def delete_security_settings(self) -> Callable[
             [security_settings.DeleteSecuritySettingsRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete security settings
-          method over gRPC.
+        r"""Return a callable for the delete security settings method over gRPC.
 
         Deletes the specified
         [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].

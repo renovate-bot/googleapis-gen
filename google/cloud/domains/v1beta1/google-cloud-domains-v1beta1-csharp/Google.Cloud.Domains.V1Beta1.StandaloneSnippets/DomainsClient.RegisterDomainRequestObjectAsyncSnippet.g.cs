@@ -17,6 +17,7 @@
 namespace Google.Cloud.Domains.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Domains.V1Beta1;
     using Google.LongRunning;
     using Google.Type;
     using System.Threading.Tasks;
@@ -24,10 +25,12 @@ namespace Google.Cloud.Domains.V1Beta1.Snippets
     public sealed partial class GeneratedDomainsClientStandaloneSnippets
     {
         /// <summary>Snippet for RegisterDomainAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task RegisterDomainRequestObjectAsync()
         {
-            // Snippet: RegisterDomainAsync(RegisterDomainRequest, CallSettings)
-            // Additional: RegisterDomainAsync(RegisterDomainRequest, CancellationToken)
             // Create client
             DomainsClient domainsClient = await DomainsClient.CreateAsync();
             // Initialize request argument(s)
@@ -64,7 +67,6 @@ namespace Google.Cloud.Domains.V1Beta1.Snippets
                 // If it has completed, then access the result
                 Registration retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

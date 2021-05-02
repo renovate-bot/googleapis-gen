@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Retail.V2Beta.Snippets
 {
+    using Google.Cloud.Retail.V2Beta;
+
     public sealed partial class GeneratedUserEventServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for WriteUserEvent</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void WriteUserEventRequestObject()
         {
-            // Snippet: WriteUserEvent(WriteUserEventRequest, CallSettings)
             // Create client
             UserEventServiceClient userEventServiceClient = UserEventServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.Retail.V2Beta.Snippets
             };
             // Make the request
             UserEvent response = userEventServiceClient.WriteUserEvent(request);
-            // End snippet
         }
     }
 }

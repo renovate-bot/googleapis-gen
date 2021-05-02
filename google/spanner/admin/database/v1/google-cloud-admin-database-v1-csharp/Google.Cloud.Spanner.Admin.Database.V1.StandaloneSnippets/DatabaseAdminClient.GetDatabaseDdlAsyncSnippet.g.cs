@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
 {
+    using Google.Cloud.Spanner.Admin.Database.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDatabaseAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDatabaseDdlAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetDatabaseDdlAsync()
         {
-            // Snippet: GetDatabaseDdlAsync(string, CallSettings)
-            // Additional: GetDatabaseDdlAsync(string, CancellationToken)
             // Create client
             DatabaseAdminClient databaseAdminClient = await DatabaseAdminClient.CreateAsync();
             // Initialize request argument(s)
             string database = "projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE]";
             // Make the request
             GetDatabaseDdlResponse response = await databaseAdminClient.GetDatabaseDdlAsync(database);
-            // End snippet
         }
     }
 }

@@ -16,16 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupCriterionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateAdGroupCriteriaAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateAdGroupCriteriaAsync()
         {
-            // Snippet: MutateAdGroupCriteriaAsync(string, IEnumerable<AdGroupCriterionOperation>, CallSettings)
-            // Additional: MutateAdGroupCriteriaAsync(string, IEnumerable<AdGroupCriterionOperation>, CancellationToken)
             // Create client
             AdGroupCriterionServiceClient adGroupCriterionServiceClient = await AdGroupCriterionServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             MutateAdGroupCriteriaResponse response = await adGroupCriterionServiceClient.MutateAdGroupCriteriaAsync(customerId, operations);
-            // End snippet
         }
     }
 }

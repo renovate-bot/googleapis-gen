@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -30,6 +32,7 @@ from google.cloud.billing_v1.services.cloud_billing import pagers
 from google.cloud.billing_v1.types import cloud_billing
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
+
 from .transports.base import CloudBillingTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import CloudBillingGrpcAsyncIOTransport
 from .client import CloudBillingClient
@@ -47,12 +50,16 @@ class CloudBillingAsyncClient:
 
     common_billing_account_path = staticmethod(CloudBillingClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(CloudBillingClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(CloudBillingClient.common_folder_path)
     parse_common_folder_path = staticmethod(CloudBillingClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(CloudBillingClient.common_organization_path)
     parse_common_organization_path = staticmethod(CloudBillingClient.parse_common_organization_path)
+
     common_project_path = staticmethod(CloudBillingClient.common_project_path)
     parse_common_project_path = staticmethod(CloudBillingClient.parse_common_project_path)
+
     common_location_path = staticmethod(CloudBillingClient.common_location_path)
     parse_common_location_path = staticmethod(CloudBillingClient.parse_common_location_path)
 
@@ -137,6 +144,7 @@ class CloudBillingAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = CloudBillingClient(
             credentials=credentials,
             transport=transport,
@@ -159,8 +167,7 @@ class CloudBillingAsyncClient:
 
         Args:
             request (:class:`google.cloud.billing_v1.types.GetBillingAccountRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `GetBillingAccount`.
             name (:class:`str`):
                 Required. The resource name of the billing account to
@@ -170,6 +177,7 @@ class CloudBillingAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -195,6 +203,7 @@ class CloudBillingAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -203,7 +212,10 @@ class CloudBillingAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_billing_account,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -245,9 +257,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing_v1.types.ListBillingAccountsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `ListBillingAccounts`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -263,6 +275,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         # Create or coerce a protobuf request object.
+
         request = cloud_billing.ListBillingAccountsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -270,7 +283,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_billing_accounts,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -318,8 +334,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing_v1.types.UpdateBillingAccountRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `UpdateBillingAccount`.
             name (:class:`str`):
                 Required. The name of the billing
@@ -336,6 +351,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``account`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -361,6 +377,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if account is not None:
@@ -371,7 +388,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_billing_account,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -421,8 +441,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing_v1.types.CreateBillingAccountRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `CreateBillingAccount`.
             billing_account (:class:`google.cloud.billing_v1.types.BillingAccount`):
                 Required. The billing account
@@ -435,6 +454,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``billing_account`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -460,6 +480,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if billing_account is not None:
             request.billing_account = billing_account
 
@@ -498,8 +519,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing_v1.types.ListProjectBillingInfoRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `ListProjectBillingInfo`.
             name (:class:`str`):
                 Required. The resource name of the billing account
@@ -509,6 +529,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -535,6 +556,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -543,7 +565,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_project_billing_info,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -595,8 +620,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing_v1.types.GetProjectBillingInfoRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `GetProjectBillingInfo`.
             name (:class:`str`):
                 Required. The resource name of the project for which
@@ -606,6 +630,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -633,6 +658,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -641,7 +667,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_project_billing_info,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -718,8 +747,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing_v1.types.UpdateProjectBillingInfoRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `UpdateProjectBillingInfo`.
             name (:class:`str`):
                 Required. The resource name of the project associated
@@ -737,6 +765,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``project_billing_info`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -764,6 +793,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if project_billing_info is not None:
@@ -774,7 +804,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_project_billing_info,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -818,8 +851,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -830,6 +862,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -903,10 +936,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.GetIamPolicyRequest(**request)
+
         elif not request:
             request = iam_policy.GetIamPolicyRequest(resource=resource, )
 
@@ -915,7 +949,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_iam_policy,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -960,8 +997,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -972,6 +1008,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1045,10 +1082,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.SetIamPolicyRequest(**request)
+
         elif not request:
             request = iam_policy.SetIamPolicyRequest(resource=resource, )
 
@@ -1057,7 +1095,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.set_iam_policy,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1103,8 +1144,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1124,6 +1164,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1142,10 +1183,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.TestIamPermissionsRequest(**request)
+
         elif not request:
             request = iam_policy.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
 
@@ -1154,7 +1196,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.test_iam_permissions,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1182,6 +1227,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

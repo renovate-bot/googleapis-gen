@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Workflows.Executions.V1Beta.Snippets
 {
+    using Google.Cloud.Workflows.Executions.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedExecutionsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetExecutionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetExecutionResourceNamesAsync()
         {
-            // Snippet: GetExecutionAsync(ExecutionName, CallSettings)
-            // Additional: GetExecutionAsync(ExecutionName, CancellationToken)
             // Create client
             ExecutionsClient executionsClient = await ExecutionsClient.CreateAsync();
             // Initialize request argument(s)
             ExecutionName name = ExecutionName.FromProjectLocationWorkflowExecution("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
             // Make the request
             Execution response = await executionsClient.GetExecutionAsync(name);
-            // End snippet
         }
     }
 }

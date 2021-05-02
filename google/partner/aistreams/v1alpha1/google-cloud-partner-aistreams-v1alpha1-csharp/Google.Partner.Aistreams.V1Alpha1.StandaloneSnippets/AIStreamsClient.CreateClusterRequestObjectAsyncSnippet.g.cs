@@ -18,15 +18,18 @@ namespace Google.Partner.Aistreams.V1Alpha1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
     using Google.LongRunning;
+    using Google.Partner.Aistreams.V1Alpha1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAIStreamsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateClusterAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateClusterRequestObjectAsync()
         {
-            // Snippet: CreateClusterAsync(CreateClusterRequest, CallSettings)
-            // Additional: CreateClusterAsync(CreateClusterRequest, CancellationToken)
             // Create client
             AIStreamsClient aIStreamsClient = await AIStreamsClient.CreateAsync();
             // Initialize request argument(s)
@@ -55,7 +58,6 @@ namespace Google.Partner.Aistreams.V1Alpha1.Snippets
                 // If it has completed, then access the result
                 Cluster retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

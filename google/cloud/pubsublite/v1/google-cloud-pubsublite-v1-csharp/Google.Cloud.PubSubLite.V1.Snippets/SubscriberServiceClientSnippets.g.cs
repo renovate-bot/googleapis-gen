@@ -55,8 +55,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
                 SubscribeRequest request = new SubscribeRequest
                 {
                     Initial = new InitialSubscribeRequest(),
-                    Seek = new SeekRequest(),
-                    FlowControl = new FlowControlRequest(),
                 };
                 // Stream a request to the server
                 await response.WriteAsync(request);

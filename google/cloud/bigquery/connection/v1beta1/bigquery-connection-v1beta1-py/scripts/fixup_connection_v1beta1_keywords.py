@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,15 +41,16 @@ def partition(
 class connectionCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_connection': ('parent', 'connection', 'connection_id', ),
-          'delete_connection': ('name', ),
-          'get_connection': ('name', ),
-          'get_iam_policy': ('resource', 'options_', ),
-          'list_connections': ('parent', 'max_results', 'page_token', ),
-          'set_iam_policy': ('resource', 'policy_', ),
-          'test_iam_permissions': ('resource', 'permissions', ),
-          'update_connection': ('name', 'connection', 'update_mask', ),
-          'update_connection_credential': ('name', 'credential', ),
+    'create_connection': ('parent', 'connection', 'connection_id', ),
+    'delete_connection': ('name', ),
+    'get_connection': ('name', ),
+    'get_iam_policy': ('resource', 'options_', ),
+    'list_connections': ('parent', 'max_results', 'page_token', ),
+    'set_iam_policy': ('resource', 'policy_', ),
+    'test_iam_permissions': ('resource', 'permissions', ),
+    'update_connection': ('name', 'connection', 'update_mask', ),
+    'update_connection_credential': ('name', 'credential', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -78,7 +81,7 @@ class connectionCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

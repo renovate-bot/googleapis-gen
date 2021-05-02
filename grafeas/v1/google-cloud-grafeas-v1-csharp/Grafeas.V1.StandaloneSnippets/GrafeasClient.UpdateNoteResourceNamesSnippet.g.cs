@@ -17,13 +17,17 @@
 namespace Grafeas.V1.Snippets
 {
     using Google.Protobuf.WellKnownTypes;
+    using Grafeas.V1;
 
     public sealed partial class GeneratedGrafeasClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateNote</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateNoteResourceNames()
         {
-            // Snippet: UpdateNote(NoteName, Note, FieldMask, CallSettings)
             // Create client
             GrafeasClient grafeasClient = GrafeasClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Grafeas.V1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Note response = grafeasClient.UpdateNote(name, note, updateMask);
-            // End snippet
         }
     }
 }

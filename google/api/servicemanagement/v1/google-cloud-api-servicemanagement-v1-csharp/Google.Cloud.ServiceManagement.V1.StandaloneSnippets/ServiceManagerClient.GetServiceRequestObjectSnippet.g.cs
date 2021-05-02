@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.ServiceManagement.V1.Snippets
 {
+    using Google.Cloud.ServiceManagement.V1;
+
     public sealed partial class GeneratedServiceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetService</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetServiceRequestObject()
         {
-            // Snippet: GetService(GetServiceRequest, CallSettings)
             // Create client
             ServiceManagerClient serviceManagerClient = ServiceManagerClient.Create();
             // Initialize request argument(s)
             GetServiceRequest request = new GetServiceRequest { ServiceName = "", };
             // Make the request
             ManagedService response = serviceManagerClient.GetService(request);
-            // End snippet
         }
     }
 }

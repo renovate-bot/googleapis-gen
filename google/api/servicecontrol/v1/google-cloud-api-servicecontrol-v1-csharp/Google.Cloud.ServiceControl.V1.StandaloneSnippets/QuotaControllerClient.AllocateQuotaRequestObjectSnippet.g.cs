@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.ServiceControl.V1.Snippets
 {
+    using Google.Cloud.ServiceControl.V1;
+
     public sealed partial class GeneratedQuotaControllerClientStandaloneSnippets
     {
         /// <summary>Snippet for AllocateQuota</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void AllocateQuotaRequestObject()
         {
-            // Snippet: AllocateQuota(AllocateQuotaRequest, CallSettings)
             // Create client
             QuotaControllerClient quotaControllerClient = QuotaControllerClient.Create();
             // Initialize request argument(s)
@@ -33,7 +38,6 @@ namespace Google.Cloud.ServiceControl.V1.Snippets
             };
             // Make the request
             AllocateQuotaResponse response = quotaControllerClient.AllocateQuota(request);
-            // End snippet
         }
     }
 }

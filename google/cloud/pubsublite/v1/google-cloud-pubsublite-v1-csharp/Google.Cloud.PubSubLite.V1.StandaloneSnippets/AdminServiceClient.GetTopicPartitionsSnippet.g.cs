@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.PubSubLite.V1.Snippets
 {
+    using Google.Cloud.PubSubLite.V1;
+
     public sealed partial class GeneratedAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTopicPartitions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetTopicPartitions()
         {
-            // Snippet: GetTopicPartitions(string, CallSettings)
             // Create client
             AdminServiceClient adminServiceClient = AdminServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/topics/[TOPIC]";
             // Make the request
             TopicPartitions response = adminServiceClient.GetTopicPartitions(name);
-            // End snippet
         }
     }
 }

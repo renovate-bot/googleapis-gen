@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Datastore.V1.Snippets
 {
+    using Google.Cloud.Datastore.V1;
+
     public sealed partial class GeneratedDatastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for Lookup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void LookupRequestObject()
         {
-            // Snippet: Lookup(LookupRequest, CallSettings)
             // Create client
             DatastoreClient datastoreClient = DatastoreClient.Create();
             // Initialize request argument(s)
@@ -33,7 +38,6 @@ namespace Google.Cloud.Datastore.V1.Snippets
             };
             // Make the request
             LookupResponse response = datastoreClient.Lookup(request);
-            // End snippet
         }
     }
 }

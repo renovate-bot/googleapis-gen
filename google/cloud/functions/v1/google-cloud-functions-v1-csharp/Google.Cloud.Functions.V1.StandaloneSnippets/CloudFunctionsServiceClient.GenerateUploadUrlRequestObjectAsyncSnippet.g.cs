@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Functions.V1.Snippets
 {
+    using Google.Cloud.Functions.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudFunctionsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateUploadUrlAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GenerateUploadUrlRequestObjectAsync()
         {
-            // Snippet: GenerateUploadUrlAsync(GenerateUploadUrlRequest, CallSettings)
-            // Additional: GenerateUploadUrlAsync(GenerateUploadUrlRequest, CancellationToken)
             // Create client
             CloudFunctionsServiceClient cloudFunctionsServiceClient = await CloudFunctionsServiceClient.CreateAsync();
             // Initialize request argument(s)
             GenerateUploadUrlRequest request = new GenerateUploadUrlRequest { Parent = "", };
             // Make the request
             GenerateUploadUrlResponse response = await cloudFunctionsServiceClient.GenerateUploadUrlAsync(request);
-            // End snippet
         }
     }
 }

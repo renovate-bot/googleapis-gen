@@ -17,16 +17,20 @@
 namespace Google.Cloud.NetworkConnectivity.V1Alpha1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.NetworkConnectivity.V1Alpha1;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedHubServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListSpokes</summary>
+        /// <summary>Snippet for ListSpokesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListSpokesAsync()
         {
-            // Snippet: ListSpokesAsync(string, string, int?, CallSettings)
             // Create client
             HubServiceClient hubServiceClient = await HubServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -65,7 +69,6 @@ namespace Google.Cloud.NetworkConnectivity.V1Alpha1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
+
     public sealed partial class GeneratedSchemaServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ValidateSchema</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ValidateSchema()
         {
-            // Snippet: ValidateSchema(string, Schema, CallSettings)
             // Create client
             SchemaServiceClient schemaServiceClient = SchemaServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
             Schema schema = new Schema();
             // Make the request
             ValidateSchemaResponse response = schemaServiceClient.ValidateSchema(parent, schema);
-            // End snippet
         }
     }
 }

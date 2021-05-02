@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -84,7 +85,8 @@ from google.cloud.bigtable_admin_v2.types.table import RestoreSourceType
 from google.cloud.bigtable_admin_v2.types.table import Snapshot
 from google.cloud.bigtable_admin_v2.types.table import Table
 
-__all__ = ('AppProfile',
+__all__ = (
+    'AppProfile',
     'Backup',
     'BackupInfo',
     'BigtableInstanceAdminAsyncClient',

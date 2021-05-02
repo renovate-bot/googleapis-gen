@@ -211,7 +211,7 @@ namespace Google.Example.Library.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListShelves</summary>
+        /// <summary>Snippet for ListShelvesAsync</summary>
         public async Task ListShelvesRequestObjectAsync()
         {
             // Snippet: ListShelvesAsync(ListShelvesRequest, CallSettings)
@@ -664,7 +664,7 @@ namespace Google.Example.Library.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBooks</summary>
+        /// <summary>Snippet for ListBooksAsync</summary>
         public async Task ListBooksRequestObjectAsync()
         {
             // Snippet: ListBooksAsync(ListBooksRequest, CallSettings)
@@ -757,7 +757,7 @@ namespace Google.Example.Library.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBooks</summary>
+        /// <summary>Snippet for ListBooksAsync</summary>
         public async Task ListBooksAsync()
         {
             // Snippet: ListBooksAsync(string, string, int?, CallSettings)
@@ -847,7 +847,7 @@ namespace Google.Example.Library.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBooks</summary>
+        /// <summary>Snippet for ListBooksAsync</summary>
         public async Task ListBooksResourceNamesAsync()
         {
             // Snippet: ListBooksAsync(ShelfName, string, int?, CallSettings)

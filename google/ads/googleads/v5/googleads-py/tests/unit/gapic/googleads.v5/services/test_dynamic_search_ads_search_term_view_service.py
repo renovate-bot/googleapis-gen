@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -262,30 +264,49 @@ def test_get_dynamic_search_ads_search_term_view(transport: str = 'grpc', reques
         # Designate an appropriate return value for the call.
         call.return_value = dynamic_search_ads_search_term_view.DynamicSearchAdsSearchTermView(
             resource_name='resource_name_value',
+
             search_term='search_term_value',
+
             headline='headline_value',
+
             landing_page='landing_page_value',
+
             page_url='page_url_value',
+
             has_negative_keyword=True,
+
             has_matching_keyword=True,
+
             has_negative_url=True,
+
         )
+
         response = client.get_dynamic_search_ads_search_term_view(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == dynamic_search_ads_search_term_view_service.GetDynamicSearchAdsSearchTermViewRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, dynamic_search_ads_search_term_view.DynamicSearchAdsSearchTermView)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.search_term == 'search_term_value'
+
     assert response.headline == 'headline_value'
+
     assert response.landing_page == 'landing_page_value'
+
     assert response.page_url == 'page_url_value'
+
     assert response.has_negative_keyword is True
+
     assert response.has_matching_keyword is True
+
     assert response.has_negative_url is True
 
 
@@ -301,7 +322,6 @@ def test_get_dynamic_search_ads_search_term_view_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = dynamic_search_ads_search_term_view_service.GetDynamicSearchAdsSearchTermViewRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -309,6 +329,7 @@ def test_get_dynamic_search_ads_search_term_view_field_headers():
             type(client.transport.get_dynamic_search_ads_search_term_view),
             '__call__') as call:
         call.return_value = dynamic_search_ads_search_term_view.DynamicSearchAdsSearchTermView()
+
         client.get_dynamic_search_ads_search_term_view(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -335,6 +356,7 @@ def test_get_dynamic_search_ads_search_term_view_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = dynamic_search_ads_search_term_view.DynamicSearchAdsSearchTermView()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_dynamic_search_ads_search_term_view(
@@ -345,6 +367,7 @@ def test_get_dynamic_search_ads_search_term_view_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -425,7 +448,7 @@ def test_dynamic_search_ads_search_term_view_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_dynamic_search_ads_search_term_view',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -577,6 +600,7 @@ def test_dynamic_search_ads_search_term_view_service_transport_channel_mtls_with
 def test_dynamic_search_ads_search_term_view_path():
     customer = "squid"
     dynamic_search_ads_search_term_view = "clam"
+
     expected = "customers/{customer}/dynamicSearchAdsSearchTermViews/{dynamic_search_ads_search_term_view}".format(customer=customer, dynamic_search_ads_search_term_view=dynamic_search_ads_search_term_view, )
     actual = DynamicSearchAdsSearchTermViewServiceClient.dynamic_search_ads_search_term_view_path(customer, dynamic_search_ads_search_term_view)
     assert expected == actual
@@ -584,8 +608,9 @@ def test_dynamic_search_ads_search_term_view_path():
 
 def test_parse_dynamic_search_ads_search_term_view_path():
     expected = {
-        "customer": "whelk",
-        "dynamic_search_ads_search_term_view": "octopus",
+    "customer": "whelk",
+    "dynamic_search_ads_search_term_view": "octopus",
+
     }
     path = DynamicSearchAdsSearchTermViewServiceClient.dynamic_search_ads_search_term_view_path(**expected)
 
@@ -595,6 +620,7 @@ def test_parse_dynamic_search_ads_search_term_view_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = DynamicSearchAdsSearchTermViewServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -602,7 +628,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = DynamicSearchAdsSearchTermViewServiceClient.common_billing_account_path(**expected)
 
@@ -612,6 +639,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = DynamicSearchAdsSearchTermViewServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -619,7 +647,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = DynamicSearchAdsSearchTermViewServiceClient.common_folder_path(**expected)
 
@@ -629,6 +658,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = DynamicSearchAdsSearchTermViewServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -636,7 +666,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = DynamicSearchAdsSearchTermViewServiceClient.common_organization_path(**expected)
 
@@ -646,6 +677,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = DynamicSearchAdsSearchTermViewServiceClient.common_project_path(project)
     assert expected == actual
@@ -653,7 +685,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = DynamicSearchAdsSearchTermViewServiceClient.common_project_path(**expected)
 
@@ -664,6 +697,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = DynamicSearchAdsSearchTermViewServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -671,8 +705,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = DynamicSearchAdsSearchTermViewServiceClient.common_location_path(**expected)
 

@@ -17,15 +17,18 @@
 namespace Google.Cloud.Speech.V1P1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Speech.V1P1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdaptationClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateCustomClassAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateCustomClassResourceNamesAsync()
         {
-            // Snippet: CreateCustomClassAsync(LocationName, CustomClass, string, CallSettings)
-            // Additional: CreateCustomClassAsync(LocationName, CustomClass, string, CancellationToken)
             // Create client
             AdaptationClient adaptationClient = await AdaptationClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Speech.V1P1Beta1.Snippets
             string customClassId = "";
             // Make the request
             CustomClass response = await adaptationClient.CreateCustomClassAsync(parent, customClass, customClassId);
-            // End snippet
         }
     }
 }

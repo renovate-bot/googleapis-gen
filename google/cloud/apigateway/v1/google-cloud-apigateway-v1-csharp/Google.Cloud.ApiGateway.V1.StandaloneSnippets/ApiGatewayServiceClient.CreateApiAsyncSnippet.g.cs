@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.ApiGateway.V1.Snippets
 {
+    using Google.Cloud.ApiGateway.V1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedApiGatewayServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateApiAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateApiAsync()
         {
-            // Snippet: CreateApiAsync(string, Api, string, CallSettings)
-            // Additional: CreateApiAsync(string, Api, string, CancellationToken)
             // Create client
             ApiGatewayServiceClient apiGatewayServiceClient = await ApiGatewayServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -50,7 +53,6 @@ namespace Google.Cloud.ApiGateway.V1.Snippets
                 // If it has completed, then access the result
                 Api retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

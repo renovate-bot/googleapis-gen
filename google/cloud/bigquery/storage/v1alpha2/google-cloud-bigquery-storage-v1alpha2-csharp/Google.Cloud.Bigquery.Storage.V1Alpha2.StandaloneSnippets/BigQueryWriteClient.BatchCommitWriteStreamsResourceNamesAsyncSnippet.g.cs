@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Bigquery.Storage.V1Alpha2.Snippets
 {
+    using Google.Cloud.Bigquery.Storage.V1Alpha2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigQueryWriteClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchCommitWriteStreamsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchCommitWriteStreamsResourceNamesAsync()
         {
-            // Snippet: BatchCommitWriteStreamsAsync(TableName, CallSettings)
-            // Additional: BatchCommitWriteStreamsAsync(TableName, CancellationToken)
             // Create client
             BigQueryWriteClient bigQueryWriteClient = await BigQueryWriteClient.CreateAsync();
             // Initialize request argument(s)
             TableName parent = TableName.FromProjectDatasetTable("[PROJECT]", "[DATASET]", "[TABLE]");
             // Make the request
             BatchCommitWriteStreamsResponse response = await bigQueryWriteClient.BatchCommitWriteStreamsAsync(parent);
-            // End snippet
         }
     }
 }

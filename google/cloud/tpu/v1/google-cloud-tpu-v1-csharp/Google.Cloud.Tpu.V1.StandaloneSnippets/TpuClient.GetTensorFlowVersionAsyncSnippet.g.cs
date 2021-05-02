@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Tpu.V1.Snippets
 {
+    using Google.Cloud.Tpu.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTpuClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTensorFlowVersionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTensorFlowVersionAsync()
         {
-            // Snippet: GetTensorFlowVersionAsync(string, CallSettings)
-            // Additional: GetTensorFlowVersionAsync(string, CancellationToken)
             // Create client
             TpuClient tpuClient = await TpuClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/tensorFlowVersions/[TENSOR_FLOW_VERSION]";
             // Make the request
             TensorFlowVersion response = await tpuClient.GetTensorFlowVersionAsync(name);
-            // End snippet
         }
     }
 }

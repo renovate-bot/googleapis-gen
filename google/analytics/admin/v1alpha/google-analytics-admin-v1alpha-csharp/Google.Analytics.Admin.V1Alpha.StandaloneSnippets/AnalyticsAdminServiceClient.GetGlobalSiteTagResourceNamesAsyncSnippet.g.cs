@@ -16,22 +16,24 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGlobalSiteTagAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetGlobalSiteTagResourceNamesAsync()
         {
-            // Snippet: GetGlobalSiteTagAsync(GlobalSiteTagName, CallSettings)
-            // Additional: GetGlobalSiteTagAsync(GlobalSiteTagName, CancellationToken)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = await AnalyticsAdminServiceClient.CreateAsync();
             // Initialize request argument(s)
             GlobalSiteTagName name = GlobalSiteTagName.FromProperty("[PROPERTY]");
             // Make the request
             GlobalSiteTag response = await analyticsAdminServiceClient.GetGlobalSiteTagAsync(name);
-            // End snippet
         }
     }
 }

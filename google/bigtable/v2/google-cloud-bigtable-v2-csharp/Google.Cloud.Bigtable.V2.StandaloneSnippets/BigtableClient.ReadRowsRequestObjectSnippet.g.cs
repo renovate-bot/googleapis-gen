@@ -17,14 +17,18 @@
 namespace Google.Cloud.Bigtable.V2.Snippets
 {
     using Google.Api.Gax.Grpc;
+    using Google.Cloud.Bigtable.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigtableClientStandaloneSnippets
     {
         /// <summary>Snippet for ReadRows</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ReadRowsRequestObject()
         {
-            // Snippet: ReadRows(ReadRowsRequest, CallSettings)
             // Create client
             BigtableClient bigtableClient = BigtableClient.Create();
             // Initialize request argument(s)
@@ -48,7 +52,6 @@ namespace Google.Cloud.Bigtable.V2.Snippets
                 // Do something with streamed response
             }
             // The response stream has completed
-            // End snippet
         }
     }
 }

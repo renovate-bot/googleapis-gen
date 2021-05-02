@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedServicesClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteService</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteServiceRequestObject()
         {
-            // Snippet: DeleteService(DeleteServiceRequest, CallSettings)
             // Create client
             ServicesClient servicesClient = ServicesClient.Create();
             // Initialize request argument(s)
@@ -47,7 +51,6 @@ namespace Google.Cloud.AppEngine.V1.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

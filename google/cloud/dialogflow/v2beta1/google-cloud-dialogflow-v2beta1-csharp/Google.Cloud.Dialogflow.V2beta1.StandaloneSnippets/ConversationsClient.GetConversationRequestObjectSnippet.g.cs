@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedConversationsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetConversation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetConversationRequestObject()
         {
-            // Snippet: GetConversation(GetConversationRequest, CallSettings)
             // Create client
             ConversationsClient conversationsClient = ConversationsClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             };
             // Make the request
             Conversation response = conversationsClient.GetConversation(request);
-            // End snippet
         }
     }
 }

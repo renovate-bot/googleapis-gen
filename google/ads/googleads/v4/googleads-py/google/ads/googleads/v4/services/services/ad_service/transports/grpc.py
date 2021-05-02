@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v4.resources.types import ad
 from google.ads.googleads.v4.services.types import ad_service
+
 from .base import AdServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class AdServiceGrpcTransport(AdServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class AdServiceGrpcTransport(AdServiceTransport):
     def get_ad(self) -> Callable[
             [ad_service.GetAdRequest],
             ad.Ad]:
-        r"""Return a callable for the
-        get ad
-          method over gRPC.
+        r"""Return a callable for the get ad method over gRPC.
 
         Returns the requested ad in full detail.
 
@@ -229,9 +229,7 @@ class AdServiceGrpcTransport(AdServiceTransport):
     def mutate_ads(self) -> Callable[
             [ad_service.MutateAdsRequest],
             ad_service.MutateAdsResponse]:
-        r"""Return a callable for the
-        mutate ads
-          method over gRPC.
+        r"""Return a callable for the mutate ads method over gRPC.
 
         Updates ads. Operation statuses are returned.
         Updating ads is not supported for TextAd,

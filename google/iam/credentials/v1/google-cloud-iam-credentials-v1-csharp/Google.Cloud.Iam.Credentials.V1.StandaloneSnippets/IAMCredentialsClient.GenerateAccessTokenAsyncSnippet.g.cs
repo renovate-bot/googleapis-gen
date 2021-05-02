@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Iam.Credentials.V1.Snippets
 {
+    using Google.Cloud.Iam.Credentials.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Collections.Generic;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Iam.Credentials.V1.Snippets
     public sealed partial class GeneratedIAMCredentialsClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateAccessTokenAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GenerateAccessTokenAsync()
         {
-            // Snippet: GenerateAccessTokenAsync(string, IEnumerable<string>, IEnumerable<string>, Duration, CallSettings)
-            // Additional: GenerateAccessTokenAsync(string, IEnumerable<string>, IEnumerable<string>, Duration, CancellationToken)
             // Create client
             IAMCredentialsClient iAMCredentialsClient = await IAMCredentialsClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Iam.Credentials.V1.Snippets
             Duration lifetime = new Duration();
             // Make the request
             GenerateAccessTokenResponse response = await iAMCredentialsClient.GenerateAccessTokenAsync(name, delegates, scope, lifetime);
-            // End snippet
         }
     }
 }

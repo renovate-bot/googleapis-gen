@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.RecaptchaEnterprise.V1Beta1.Snippets
 {
+    using Google.Cloud.RecaptchaEnterprise.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRecaptchaEnterpriseServiceV1Beta1ClientStandaloneSnippets
     {
         /// <summary>Snippet for AnnotateAssessmentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task AnnotateAssessmentResourceNamesAsync()
         {
-            // Snippet: AnnotateAssessmentAsync(AssessmentName, AnnotateAssessmentRequest.Types.Annotation, CallSettings)
-            // Additional: AnnotateAssessmentAsync(AssessmentName, AnnotateAssessmentRequest.Types.Annotation, CancellationToken)
             // Create client
             RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = await RecaptchaEnterpriseServiceV1Beta1Client.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.RecaptchaEnterprise.V1Beta1.Snippets
             AnnotateAssessmentRequest.Types.Annotation annotation = AnnotateAssessmentRequest.Types.Annotation.Unspecified;
             // Make the request
             AnnotateAssessmentResponse response = await recaptchaEnterpriseServiceV1Beta1Client.AnnotateAssessmentAsync(name, annotation);
-            // End snippet
         }
     }
 }

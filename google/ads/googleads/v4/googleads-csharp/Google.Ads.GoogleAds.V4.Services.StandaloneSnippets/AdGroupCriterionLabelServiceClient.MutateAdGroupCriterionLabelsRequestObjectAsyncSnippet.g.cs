@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupCriterionLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateAdGroupCriterionLabelsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateAdGroupCriterionLabelsRequestObjectAsync()
         {
-            // Snippet: MutateAdGroupCriterionLabelsAsync(MutateAdGroupCriterionLabelsRequest, CallSettings)
-            // Additional: MutateAdGroupCriterionLabelsAsync(MutateAdGroupCriterionLabelsRequest, CancellationToken)
             // Create client
             AdGroupCriterionLabelServiceClient adGroupCriterionLabelServiceClient = await AdGroupCriterionLabelServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             MutateAdGroupCriterionLabelsResponse response = await adGroupCriterionLabelServiceClient.MutateAdGroupCriterionLabelsAsync(request);
-            // End snippet
         }
     }
 }

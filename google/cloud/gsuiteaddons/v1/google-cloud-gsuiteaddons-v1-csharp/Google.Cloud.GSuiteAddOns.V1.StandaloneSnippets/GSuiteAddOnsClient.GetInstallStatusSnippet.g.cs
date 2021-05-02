@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.GSuiteAddOns.V1.Snippets
 {
+    using Google.Cloud.GSuiteAddOns.V1;
+
     public sealed partial class GeneratedGSuiteAddOnsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInstallStatus</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetInstallStatus()
         {
-            // Snippet: GetInstallStatus(string, CallSettings)
             // Create client
             GSuiteAddOnsClient gSuiteAddOnsClient = GSuiteAddOnsClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/deployments/[DEPLOYMENT]/installStatus";
             // Make the request
             InstallStatus response = gSuiteAddOnsClient.GetInstallStatus(name);
-            // End snippet
         }
     }
 }

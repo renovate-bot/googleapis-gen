@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -38,6 +40,7 @@ from google.cloud.appengine_admin_v1.types import instance
 from google.cloud.appengine_admin_v1.types import operation as ga_operation
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import InstancesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import InstancesGrpcTransport
 from .transports.grpc_asyncio import InstancesGrpcAsyncIOTransport
@@ -342,9 +345,9 @@ class InstancesClient(metaclass=InstancesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.ListInstancesRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Instances.ListInstances`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -360,6 +363,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.ListInstancesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -410,9 +414,9 @@ class InstancesClient(metaclass=InstancesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.GetInstanceRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Instances.GetInstance`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -427,6 +431,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.GetInstanceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -482,9 +487,9 @@ class InstancesClient(metaclass=InstancesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.DeleteInstanceRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Instances.DeleteInstance`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -511,6 +516,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.DeleteInstanceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -569,9 +575,9 @@ class InstancesClient(metaclass=InstancesClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.DebugInstanceRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Instances.DebugInstance`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -587,6 +593,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.DebugInstanceRequest.
         # There's no risk of modifying the input as we've already verified
@@ -624,6 +631,8 @@ class InstancesClient(metaclass=InstancesClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

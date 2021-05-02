@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
+
     public sealed partial class GeneratedCustomerUserAccessServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCustomerUserAccess</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateCustomerUserAccess()
         {
-            // Snippet: MutateCustomerUserAccess(string, CustomerUserAccessOperation, CallSettings)
             // Create client
             CustomerUserAccessServiceClient customerUserAccessServiceClient = CustomerUserAccessServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             CustomerUserAccessOperation operation = new CustomerUserAccessOperation();
             // Make the request
             MutateCustomerUserAccessResponse response = customerUserAccessServiceClient.MutateCustomerUserAccess(customerId, operation);
-            // End snippet
         }
     }
 }

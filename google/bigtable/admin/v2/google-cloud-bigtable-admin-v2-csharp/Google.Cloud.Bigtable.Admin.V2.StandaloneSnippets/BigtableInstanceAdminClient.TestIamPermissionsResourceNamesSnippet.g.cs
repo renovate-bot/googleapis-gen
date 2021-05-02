@@ -17,15 +17,19 @@
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Bigtable.Admin.V2;
     using Google.Cloud.Iam.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedBigtableInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for TestIamPermissions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void TestIamPermissionsResourceNames()
         {
-            // Snippet: TestIamPermissions(IResourceName, IEnumerable<string>, CallSettings)
             // Create client
             BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
             IEnumerable<string> permissions = new string[] { "", };
             // Make the request
             TestIamPermissionsResponse response = bigtableInstanceAdminClient.TestIamPermissions(resource, permissions);
-            // End snippet
         }
     }
 }

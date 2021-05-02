@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.enums.types import change_client_type
 from google.ads.googleads.v6.enums.types import change_event_resource_type
@@ -98,7 +101,6 @@ class ChangeEvent(proto.Message):
             Output only. The FeedItem affected by this
             change.
     """
-
     class ChangedResource(proto.Message):
         r"""A wrapper proto presenting all supported resources. Only the
         resource of the change_resource_type will be set.
@@ -133,129 +135,69 @@ class ChangeEvent(proto.Message):
                 Output only. Set if change_resource_type == AD_GROUP_AD.
         """
 
-        ad = proto.Field(
-            proto.MESSAGE,
-            number=1,
+        ad = proto.Field(proto.MESSAGE, number=1,
             message=gagr_ad.Ad,
         )
-        ad_group = proto.Field(
-            proto.MESSAGE,
-            number=2,
+        ad_group = proto.Field(proto.MESSAGE, number=2,
             message=gagr_ad_group.AdGroup,
         )
-        ad_group_criterion = proto.Field(
-            proto.MESSAGE,
-            number=3,
+        ad_group_criterion = proto.Field(proto.MESSAGE, number=3,
             message=gagr_ad_group_criterion.AdGroupCriterion,
         )
-        campaign = proto.Field(
-            proto.MESSAGE,
-            number=4,
+        campaign = proto.Field(proto.MESSAGE, number=4,
             message=gagr_campaign.Campaign,
         )
-        campaign_budget = proto.Field(
-            proto.MESSAGE,
-            number=5,
+        campaign_budget = proto.Field(proto.MESSAGE, number=5,
             message=gagr_campaign_budget.CampaignBudget,
         )
-        ad_group_bid_modifier = proto.Field(
-            proto.MESSAGE,
-            number=6,
+        ad_group_bid_modifier = proto.Field(proto.MESSAGE, number=6,
             message=gagr_ad_group_bid_modifier.AdGroupBidModifier,
         )
-        campaign_criterion = proto.Field(
-            proto.MESSAGE,
-            number=7,
+        campaign_criterion = proto.Field(proto.MESSAGE, number=7,
             message=gagr_campaign_criterion.CampaignCriterion,
         )
-        feed = proto.Field(
-            proto.MESSAGE,
-            number=8,
+        feed = proto.Field(proto.MESSAGE, number=8,
             message=gagr_feed.Feed,
         )
-        feed_item = proto.Field(
-            proto.MESSAGE,
-            number=9,
+        feed_item = proto.Field(proto.MESSAGE, number=9,
             message=gagr_feed_item.FeedItem,
         )
-        campaign_feed = proto.Field(
-            proto.MESSAGE,
-            number=10,
+        campaign_feed = proto.Field(proto.MESSAGE, number=10,
             message=gagr_campaign_feed.CampaignFeed,
         )
-        ad_group_feed = proto.Field(
-            proto.MESSAGE,
-            number=11,
+        ad_group_feed = proto.Field(proto.MESSAGE, number=11,
             message=gagr_ad_group_feed.AdGroupFeed,
         )
-        ad_group_ad = proto.Field(
-            proto.MESSAGE,
-            number=12,
+        ad_group_ad = proto.Field(proto.MESSAGE, number=12,
             message=gagr_ad_group_ad.AdGroupAd,
         )
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    change_date_time = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    change_resource_type = proto.Field(
-        proto.ENUM,
-        number=3,
+    resource_name = proto.Field(proto.STRING, number=1)
+    change_date_time = proto.Field(proto.STRING, number=2)
+    change_resource_type = proto.Field(proto.ENUM, number=3,
         enum=change_event_resource_type.ChangeEventResourceTypeEnum.ChangeEventResourceType,
     )
-    change_resource_name = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    client_type = proto.Field(
-        proto.ENUM,
-        number=5,
+    change_resource_name = proto.Field(proto.STRING, number=4)
+    client_type = proto.Field(proto.ENUM, number=5,
         enum=change_client_type.ChangeClientTypeEnum.ChangeClientType,
     )
-    user_email = proto.Field(
-        proto.STRING,
-        number=6,
-    )
-    old_resource = proto.Field(
-        proto.MESSAGE,
-        number=7,
+    user_email = proto.Field(proto.STRING, number=6)
+    old_resource = proto.Field(proto.MESSAGE, number=7,
         message=ChangedResource,
     )
-    new_resource = proto.Field(
-        proto.MESSAGE,
-        number=8,
+    new_resource = proto.Field(proto.MESSAGE, number=8,
         message=ChangedResource,
     )
-    resource_change_operation = proto.Field(
-        proto.ENUM,
-        number=9,
+    resource_change_operation = proto.Field(proto.ENUM, number=9,
         enum=gage_resource_change_operation.ResourceChangeOperationEnum.ResourceChangeOperation,
     )
-    changed_fields = proto.Field(
-        proto.MESSAGE,
-        number=10,
+    changed_fields = proto.Field(proto.MESSAGE, number=10,
         message=field_mask.FieldMask,
     )
-    campaign = proto.Field(
-        proto.STRING,
-        number=11,
-    )
-    ad_group = proto.Field(
-        proto.STRING,
-        number=12,
-    )
-    feed = proto.Field(
-        proto.STRING,
-        number=13,
-    )
-    feed_item = proto.Field(
-        proto.STRING,
-        number=14,
-    )
+    campaign = proto.Field(proto.STRING, number=11)
+    ad_group = proto.Field(proto.STRING, number=12)
+    feed = proto.Field(proto.STRING, number=13)
+    feed_item = proto.Field(proto.STRING, number=14)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

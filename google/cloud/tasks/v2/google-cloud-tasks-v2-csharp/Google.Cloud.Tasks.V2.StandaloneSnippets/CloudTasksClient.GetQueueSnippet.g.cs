@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Tasks.V2.Snippets
 {
+    using Google.Cloud.Tasks.V2;
+
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for GetQueue</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetQueue()
         {
-            // Snippet: GetQueue(string, CallSettings)
             // Create client
             CloudTasksClient cloudTasksClient = CloudTasksClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/queues/[QUEUE]";
             // Make the request
             Queue response = cloudTasksClient.GetQueue(name);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.dialogflow_v2.types import participant
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -78,19 +81,13 @@ class AnswerRecord(proto.Message):
             assistant.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    answer_feedback = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    answer_feedback = proto.Field(proto.MESSAGE, number=2,
         message='AnswerFeedback',
     )
-    agent_assistant_record = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='record',
+
+    agent_assistant_record = proto.Field(proto.MESSAGE, number=4, oneof='record',
         message='AgentAssistantRecord',
     )
 
@@ -124,22 +121,13 @@ class ListAnswerRecordsRequest(proto.Message):
             listing on the next page.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=3,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    filter = proto.Field(proto.STRING, number=2)
+
+    page_size = proto.Field(proto.INT32, number=3)
+
+    page_token = proto.Field(proto.STRING, number=4)
 
 
 class ListAnswerRecordsResponse(proto.Message):
@@ -161,15 +149,11 @@ class ListAnswerRecordsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    answer_records = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    answer_records = proto.RepeatedField(proto.MESSAGE, number=1,
         message='AnswerRecord',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class UpdateAnswerRecordRequest(proto.Message):
@@ -184,14 +168,11 @@ class UpdateAnswerRecordRequest(proto.Message):
             get updated.
     """
 
-    answer_record = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    answer_record = proto.Field(proto.MESSAGE, number=1,
         message='AnswerRecord',
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
 
@@ -224,39 +205,30 @@ class AnswerFeedback(proto.Message):
         PARTIALLY_CORRECT = 2
         FULLY_CORRECT = 3
 
-    correctness_level = proto.Field(
-        proto.ENUM,
-        number=1,
+    correctness_level = proto.Field(proto.ENUM, number=1,
         enum=CorrectnessLevel,
     )
-    agent_assistant_detail_feedback = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='detail_feedback',
+
+    agent_assistant_detail_feedback = proto.Field(proto.MESSAGE, number=2, oneof='detail_feedback',
         message='AgentAssistantFeedback',
     )
-    clicked = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    click_time = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    clicked = proto.Field(proto.BOOL, number=3)
+
+    click_time = proto.Field(proto.MESSAGE, number=5,
         message=timestamp.Timestamp,
     )
-    displayed = proto.Field(
-        proto.BOOL,
-        number=4,
-    )
-    display_time = proto.Field(
-        proto.MESSAGE,
-        number=6,
+
+    displayed = proto.Field(proto.BOOL, number=4)
+
+    display_time = proto.Field(proto.MESSAGE, number=6,
         message=timestamp.Timestamp,
     )
 
 
 class AgentAssistantFeedback(proto.Message):
     r"""Detail feedback of Agent Assist result.
+
     Attributes:
         answer_relevance (google.cloud.dialogflow_v2.types.AgentAssistantFeedback.AnswerRelevance):
             Optional. Whether or not the suggested answer is relevant.
@@ -307,25 +279,22 @@ class AgentAssistantFeedback(proto.Message):
         INEFFICIENT = 1
         EFFICIENT = 2
 
-    answer_relevance = proto.Field(
-        proto.ENUM,
-        number=1,
+    answer_relevance = proto.Field(proto.ENUM, number=1,
         enum=AnswerRelevance,
     )
-    document_correctness = proto.Field(
-        proto.ENUM,
-        number=2,
+
+    document_correctness = proto.Field(proto.ENUM, number=2,
         enum=DocumentCorrectness,
     )
-    document_efficiency = proto.Field(
-        proto.ENUM,
-        number=3,
+
+    document_efficiency = proto.Field(proto.ENUM, number=3,
         enum=DocumentEfficiency,
     )
 
 
 class AgentAssistantRecord(proto.Message):
     r"""Represents a record of a human agent assist answer.
+
     Attributes:
         article_suggestion_answer (google.cloud.dialogflow_v2.types.ArticleAnswer):
             Output only. The article suggestion answer.
@@ -333,16 +302,11 @@ class AgentAssistantRecord(proto.Message):
             Output only. The FAQ answer.
     """
 
-    article_suggestion_answer = proto.Field(
-        proto.MESSAGE,
-        number=5,
-        oneof='answer',
+    article_suggestion_answer = proto.Field(proto.MESSAGE, number=5, oneof='answer',
         message=participant.ArticleAnswer,
     )
-    faq_answer = proto.Field(
-        proto.MESSAGE,
-        number=6,
-        oneof='answer',
+
+    faq_answer = proto.Field(proto.MESSAGE, number=6, oneof='answer',
         message=participant.FaqAnswer,
     )
 

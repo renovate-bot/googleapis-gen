@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDomainMappingsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDomainMappingAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetDomainMappingRequestObjectAsync()
         {
-            // Snippet: GetDomainMappingAsync(GetDomainMappingRequest, CallSettings)
-            // Additional: GetDomainMappingAsync(GetDomainMappingRequest, CancellationToken)
             // Create client
             DomainMappingsClient domainMappingsClient = await DomainMappingsClient.CreateAsync();
             // Initialize request argument(s)
             GetDomainMappingRequest request = new GetDomainMappingRequest { Name = "", };
             // Make the request
             DomainMapping response = await domainMappingsClient.GetDomainMappingAsync(request);
-            // End snippet
         }
     }
 }

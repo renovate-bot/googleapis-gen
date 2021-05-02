@@ -17,16 +17,20 @@
 namespace Google.Cloud.BinaryAuthorization.V1Beta1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.BinaryAuthorization.V1Beta1;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBinauthzManagementServiceV1Beta1ClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListAttestors</summary>
+        /// <summary>Snippet for ListAttestorsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListAttestorsAsync()
         {
-            // Snippet: ListAttestorsAsync(string, string, int?, CallSettings)
             // Create client
             BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client = await BinauthzManagementServiceV1Beta1Client.CreateAsync();
             // Initialize request argument(s)
@@ -65,7 +69,6 @@ namespace Google.Cloud.BinaryAuthorization.V1Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

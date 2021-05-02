@@ -24,10 +24,13 @@ namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
 
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListVersions</summary>
+        /// <summary>Snippet for ListVersionsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListVersionsAsync()
         {
-            // Snippet: ListVersionsAsync(string, string, int?, CallSettings)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = await ArtifactRegistryClient.CreateAsync();
             // Initialize request argument(s)
@@ -66,7 +69,6 @@ namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

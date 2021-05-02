@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.resources.types import remarketing_action
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -43,10 +46,7 @@ class GetRemarketingActionRequest(proto.Message):
             remarketing action to fetch.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateRemarketingActionsRequest(proto.Message):
@@ -71,27 +71,17 @@ class MutateRemarketingActionsRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operations = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operations = proto.RepeatedField(proto.MESSAGE, number=2,
         message='RemarketingActionOperation',
     )
-    partial_failure = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=4,
-    )
+    partial_failure = proto.Field(proto.BOOL, number=3)
+    validate_only = proto.Field(proto.BOOL, number=4)
 
 
 class RemarketingActionOperation(proto.Message):
     r"""A single operation (create, update) on a remarketing action.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -104,27 +94,20 @@ class RemarketingActionOperation(proto.Message):
             expected to have a valid resource name.
     """
 
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    update_mask = proto.Field(proto.MESSAGE, number=4,
         message=field_mask.FieldMask,
     )
-    create = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='operation',
+    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=remarketing_action.RemarketingAction,
     )
-    update = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='operation',
+    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
         message=remarketing_action.RemarketingAction,
     )
 
 
 class MutateRemarketingActionsResponse(proto.Message):
     r"""Response message for remarketing action mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -136,29 +119,23 @@ class MutateRemarketingActionsResponse(proto.Message):
             All results for the mutate.
     """
 
-    partial_failure_error = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    partial_failure_error = proto.Field(proto.MESSAGE, number=3,
         message=status.Status,
     )
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    results = proto.RepeatedField(proto.MESSAGE, number=2,
         message='MutateRemarketingActionResult',
     )
 
 
 class MutateRemarketingActionResult(proto.Message):
     r"""The result for the remarketing action mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

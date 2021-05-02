@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.PubSubLite.V1.Snippets
 {
+    using Google.Cloud.PubSubLite.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTopicPartitionsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTopicPartitionsRequestObjectAsync()
         {
-            // Snippet: GetTopicPartitionsAsync(GetTopicPartitionsRequest, CallSettings)
-            // Additional: GetTopicPartitionsAsync(GetTopicPartitionsRequest, CancellationToken)
             // Create client
             AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             };
             // Make the request
             TopicPartitions response = await adminServiceClient.GetTopicPartitionsAsync(request);
-            // End snippet
         }
     }
 }

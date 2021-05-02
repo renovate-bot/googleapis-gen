@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -31,6 +33,7 @@ from google.cloud.dialogflow_v2beta1.types import entity_type
 from google.cloud.dialogflow_v2beta1.types import session_entity_type
 from google.cloud.dialogflow_v2beta1.types import session_entity_type as gcd_session_entity_type
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import SessionEntityTypesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import SessionEntityTypesGrpcAsyncIOTransport
 from .client import SessionEntityTypesClient
@@ -48,14 +51,19 @@ class SessionEntityTypesAsyncClient:
 
     session_entity_type_path = staticmethod(SessionEntityTypesClient.session_entity_type_path)
     parse_session_entity_type_path = staticmethod(SessionEntityTypesClient.parse_session_entity_type_path)
+
     common_billing_account_path = staticmethod(SessionEntityTypesClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(SessionEntityTypesClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(SessionEntityTypesClient.common_folder_path)
     parse_common_folder_path = staticmethod(SessionEntityTypesClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(SessionEntityTypesClient.common_organization_path)
     parse_common_organization_path = staticmethod(SessionEntityTypesClient.parse_common_organization_path)
+
     common_project_path = staticmethod(SessionEntityTypesClient.common_project_path)
     parse_common_project_path = staticmethod(SessionEntityTypesClient.parse_common_project_path)
+
     common_location_path = staticmethod(SessionEntityTypesClient.common_location_path)
     parse_common_location_path = staticmethod(SessionEntityTypesClient.parse_common_location_path)
 
@@ -140,6 +148,7 @@ class SessionEntityTypesAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = SessionEntityTypesClient(
             credentials=credentials,
             transport=transport,
@@ -164,8 +173,7 @@ class SessionEntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.ListSessionEntityTypesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SessionEntityTypes.ListSessionEntityTypes][google.cloud.dialogflow.v2beta1.SessionEntityTypes.ListSessionEntityTypes].
             parent (:class:`str`):
                 Required. The session to list all session entity types
@@ -184,6 +192,7 @@ class SessionEntityTypesAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -211,6 +220,7 @@ class SessionEntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -265,8 +275,7 @@ class SessionEntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.GetSessionEntityTypeRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SessionEntityTypes.GetSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.GetSessionEntityType].
             name (:class:`str`):
                 Required. The name of the session entity type. Supported
@@ -285,6 +294,7 @@ class SessionEntityTypesAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -317,6 +327,7 @@ class SessionEntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -366,8 +377,7 @@ class SessionEntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.CreateSessionEntityTypeRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SessionEntityTypes.CreateSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.CreateSessionEntityType].
             parent (:class:`str`):
                 Required. The session to create a session entity type
@@ -393,6 +403,7 @@ class SessionEntityTypesAsyncClient:
                 This corresponds to the ``session_entity_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -425,6 +436,7 @@ class SessionEntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if session_entity_type is not None:
@@ -473,8 +485,7 @@ class SessionEntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.UpdateSessionEntityTypeRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.UpdateSessionEntityType].
             session_entity_type (:class:`google.cloud.dialogflow_v2beta1.types.SessionEntityType`):
                 Required. The session entity type to
@@ -490,6 +501,7 @@ class SessionEntityTypesAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -522,6 +534,7 @@ class SessionEntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if session_entity_type is not None:
             request.session_entity_type = session_entity_type
         if update_mask is not None:
@@ -569,8 +582,7 @@ class SessionEntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.DeleteSessionEntityTypeRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [SessionEntityTypes.DeleteSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.DeleteSessionEntityType].
             name (:class:`str`):
                 Required. The name of the entity type to delete.
@@ -589,6 +601,7 @@ class SessionEntityTypesAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -607,6 +620,7 @@ class SessionEntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -633,6 +647,8 @@ class SessionEntityTypesAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

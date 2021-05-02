@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +24,8 @@ from google.maps.roads_v1.types.roads import SnapToRoadsResponse
 from google.maps.roads_v1.types.roads import SnappedPoint
 from google.maps.roads_v1.types.roads import TravelMode
 
-__all__ = ('ListNearestRoadsRequest',
+__all__ = (
+    'ListNearestRoadsRequest',
     'ListNearestRoadsResponse',
     'RoadsServiceAsyncClient',
     'RoadsServiceClient',

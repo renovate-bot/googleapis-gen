@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDomainCategoryServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDomainCategoryAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetDomainCategoryRequestObjectAsync()
         {
-            // Snippet: GetDomainCategoryAsync(GetDomainCategoryRequest, CallSettings)
-            // Additional: GetDomainCategoryAsync(GetDomainCategoryRequest, CancellationToken)
             // Create client
             DomainCategoryServiceClient domainCategoryServiceClient = await DomainCategoryServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             DomainCategory response = await domainCategoryServiceClient.GetDomainCategoryAsync(request);
-            // End snippet
         }
     }
 }

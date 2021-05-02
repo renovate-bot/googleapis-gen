@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Logging.V2.Snippets
 {
+    using Google.Cloud.Logging.V2;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedConfigServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateSink</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateSink1ResourceNames()
         {
-            // Snippet: UpdateSink(LogSinkName, LogSink, FieldMask, CallSettings)
             // Create client
             ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             LogSink response = configServiceV2Client.UpdateSink(sinkName, sink, updateMask);
-            // End snippet
         }
     }
 }

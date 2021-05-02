@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
+
     public sealed partial class GeneratedSubscriberClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSubscription</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetSubscriptionResourceNames()
         {
-            // Snippet: GetSubscription(SubscriptionName, CallSettings)
             // Create client
             SubscriberClient subscriberClient = SubscriberClient.Create();
             // Initialize request argument(s)
             SubscriptionName subscription = SubscriptionName.FromProjectSubscription("[PROJECT]", "[SUBSCRIPTION]");
             // Make the request
             Subscription response = subscriberClient.GetSubscription(subscription);
-            // End snippet
         }
     }
 }

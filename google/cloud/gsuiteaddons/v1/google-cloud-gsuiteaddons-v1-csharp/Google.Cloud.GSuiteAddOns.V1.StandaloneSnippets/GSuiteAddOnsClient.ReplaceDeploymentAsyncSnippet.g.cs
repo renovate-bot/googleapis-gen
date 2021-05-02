@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.GSuiteAddOns.V1.Snippets
 {
+    using Google.Cloud.GSuiteAddOns.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGSuiteAddOnsClientStandaloneSnippets
     {
         /// <summary>Snippet for ReplaceDeploymentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ReplaceDeploymentAsync()
         {
-            // Snippet: ReplaceDeploymentAsync(Deployment, CallSettings)
-            // Additional: ReplaceDeploymentAsync(Deployment, CancellationToken)
             // Create client
             GSuiteAddOnsClient gSuiteAddOnsClient = await GSuiteAddOnsClient.CreateAsync();
             // Initialize request argument(s)
             Deployment deployment = new Deployment();
             // Make the request
             Deployment response = await gSuiteAddOnsClient.ReplaceDeploymentAsync(deployment);
-            // End snippet
         }
     }
 }

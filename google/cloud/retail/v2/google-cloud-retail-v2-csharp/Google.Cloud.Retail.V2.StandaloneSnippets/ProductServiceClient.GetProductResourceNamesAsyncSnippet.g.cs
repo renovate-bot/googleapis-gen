@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Retail.V2.Snippets
 {
+    using Google.Cloud.Retail.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedProductServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetProductAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetProductResourceNamesAsync()
         {
-            // Snippet: GetProductAsync(ProductName, CallSettings)
-            // Additional: GetProductAsync(ProductName, CancellationToken)
             // Create client
             ProductServiceClient productServiceClient = await ProductServiceClient.CreateAsync();
             // Initialize request argument(s)
             ProductName name = ProductName.FromProjectLocationCatalogBranchProduct("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]");
             // Make the request
             Product response = await productServiceClient.GetProductAsync(name);
-            // End snippet
         }
     }
 }

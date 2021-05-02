@@ -165,7 +165,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListFolders</summary>
+        /// <summary>Snippet for ListFoldersAsync</summary>
         public async Task ListFoldersRequestObjectAsync()
         {
             // Snippet: ListFoldersAsync(ListFoldersRequest, CallSettings)
@@ -259,7 +259,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListFolders</summary>
+        /// <summary>Snippet for ListFoldersAsync</summary>
         public async Task ListFoldersAsync()
         {
             // Snippet: ListFoldersAsync(string, string, int?, CallSettings)
@@ -349,7 +349,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListFolders</summary>
+        /// <summary>Snippet for ListFoldersAsync</summary>
         public async Task ListFoldersResourceNamesAsync()
         {
             // Snippet: ListFoldersAsync(IResourceName, string, int?, CallSettings)
@@ -439,7 +439,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchFolders</summary>
+        /// <summary>Snippet for SearchFoldersAsync</summary>
         public async Task SearchFoldersRequestObjectAsync()
         {
             // Snippet: SearchFoldersAsync(SearchFoldersRequest, CallSettings)
@@ -529,7 +529,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchFolders</summary>
+        /// <summary>Snippet for SearchFoldersAsync</summary>
         public async Task SearchFoldersAsync()
         {
             // Snippet: SearchFoldersAsync(string, string, int?, CallSettings)

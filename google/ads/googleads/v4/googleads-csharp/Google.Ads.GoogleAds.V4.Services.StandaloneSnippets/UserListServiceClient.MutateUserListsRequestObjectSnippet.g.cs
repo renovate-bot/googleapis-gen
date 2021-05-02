@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
+
     public sealed partial class GeneratedUserListServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateUserLists</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateUserListsRequestObject()
         {
-            // Snippet: MutateUserLists(MutateUserListsRequest, CallSettings)
             // Create client
             UserListServiceClient userListServiceClient = UserListServiceClient.Create();
             // Initialize request argument(s)
@@ -37,7 +42,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             MutateUserListsResponse response = userListServiceClient.MutateUserLists(request);
-            // End snippet
         }
     }
 }

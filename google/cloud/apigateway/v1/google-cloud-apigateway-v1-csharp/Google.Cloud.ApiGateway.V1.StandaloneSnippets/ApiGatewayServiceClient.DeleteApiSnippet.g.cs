@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.ApiGateway.V1.Snippets
 {
+    using Google.Cloud.ApiGateway.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedApiGatewayServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteApi</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteApi()
         {
-            // Snippet: DeleteApi(string, CallSettings)
             // Create client
             ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.Create();
             // Initialize request argument(s)
@@ -47,7 +51,6 @@ namespace Google.Cloud.ApiGateway.V1.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1Beta1;
+
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteTagTemplate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteTagTemplateResourceNames()
         {
-            // Snippet: DeleteTagTemplate(TagTemplateName, bool, CallSettings)
             // Create client
             DataCatalogClient dataCatalogClient = DataCatalogClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             bool force = false;
             // Make the request
             dataCatalogClient.DeleteTagTemplate(name, force);
-            // End snippet
         }
     }
 }

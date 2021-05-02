@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSubscriberClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateSnapshotAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateSnapshotAsync()
         {
-            // Snippet: CreateSnapshotAsync(string, string, CallSettings)
-            // Additional: CreateSnapshotAsync(string, string, CancellationToken)
             // Create client
             SubscriberClient subscriberClient = await SubscriberClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
             string subscription = "projects/[PROJECT]/subscriptions/[SUBSCRIPTION]";
             // Make the request
             Snapshot response = await subscriberClient.CreateSnapshotAsync(name, subscription);
-            // End snippet
         }
     }
 }

@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupCriterionLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupCriterionLabelAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdGroupCriterionLabelRequestObjectAsync()
         {
-            // Snippet: GetAdGroupCriterionLabelAsync(GetAdGroupCriterionLabelRequest, CallSettings)
-            // Additional: GetAdGroupCriterionLabelAsync(GetAdGroupCriterionLabelRequest, CancellationToken)
             // Create client
             AdGroupCriterionLabelServiceClient adGroupCriterionLabelServiceClient = await AdGroupCriterionLabelServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             AdGroupCriterionLabel response = await adGroupCriterionLabelServiceClient.GetAdGroupCriterionLabelAsync(request);
-            // End snippet
         }
     }
 }

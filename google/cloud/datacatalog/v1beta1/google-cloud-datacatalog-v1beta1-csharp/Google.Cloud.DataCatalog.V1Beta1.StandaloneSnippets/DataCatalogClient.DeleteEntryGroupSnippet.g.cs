@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1Beta1;
+
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteEntryGroup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteEntryGroup()
         {
-            // Snippet: DeleteEntryGroup(string, CallSettings)
             // Create client
             DataCatalogClient dataCatalogClient = DataCatalogClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/entryGroups/[ENTRY_GROUP]";
             // Make the request
             dataCatalogClient.DeleteEntryGroup(name);
-            // End snippet
         }
     }
 }

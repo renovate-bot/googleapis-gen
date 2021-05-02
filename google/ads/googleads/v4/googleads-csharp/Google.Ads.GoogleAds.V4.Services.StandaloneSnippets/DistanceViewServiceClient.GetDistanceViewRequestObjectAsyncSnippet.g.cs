@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDistanceViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDistanceViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetDistanceViewRequestObjectAsync()
         {
-            // Snippet: GetDistanceViewAsync(GetDistanceViewRequest, CallSettings)
-            // Additional: GetDistanceViewAsync(GetDistanceViewRequest, CancellationToken)
             // Create client
             DistanceViewServiceClient distanceViewServiceClient = await DistanceViewServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             DistanceView response = await distanceViewServiceClient.GetDistanceViewAsync(request);
-            // End snippet
         }
     }
 }

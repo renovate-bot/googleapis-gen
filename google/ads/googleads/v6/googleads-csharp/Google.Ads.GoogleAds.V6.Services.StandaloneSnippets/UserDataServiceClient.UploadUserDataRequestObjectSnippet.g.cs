@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Common;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedUserDataServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UploadUserData</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UploadUserDataRequestObject()
         {
-            // Snippet: UploadUserData(UploadUserDataRequest, CallSettings)
             // Create client
             UserDataServiceClient userDataServiceClient = UserDataServiceClient.Create();
             // Initialize request argument(s)
@@ -38,7 +42,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             UploadUserDataResponse response = userDataServiceClient.UploadUserData(request);
-            // End snippet
         }
     }
 }

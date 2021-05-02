@@ -17,15 +17,19 @@
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dialogflow.V2beta1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedAgentsClientStandaloneSnippets
     {
         /// <summary>Snippet for ExportAgent</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ExportAgentResourceNames1()
         {
-            // Snippet: ExportAgent(ProjectName, CallSettings)
             // Create client
             AgentsClient agentsClient = AgentsClient.Create();
             // Initialize request argument(s)
@@ -48,7 +52,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
                 // If it has completed, then access the result
                 ExportAgentResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

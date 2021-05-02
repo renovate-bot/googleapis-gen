@@ -16,16 +16,19 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateAndroidAppDataStreamAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateAndroidAppDataStreamRequestObjectAsync()
         {
-            // Snippet: UpdateAndroidAppDataStreamAsync(UpdateAndroidAppDataStreamRequest, CallSettings)
-            // Additional: UpdateAndroidAppDataStreamAsync(UpdateAndroidAppDataStreamRequest, CancellationToken)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = await AnalyticsAdminServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Analytics.Admin.V1Alpha.Snippets
             };
             // Make the request
             AndroidAppDataStream response = await analyticsAdminServiceClient.UpdateAndroidAppDataStreamAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1Beta1;
+
     public sealed partial class GeneratedPolicyTagManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for CreatePolicyTag</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreatePolicyTag()
         {
-            // Snippet: CreatePolicyTag(string, PolicyTag, CallSettings)
             // Create client
             PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             PolicyTag policyTag = new PolicyTag();
             // Make the request
             PolicyTag response = policyTagManagerClient.CreatePolicyTag(parent, policyTag);
-            // End snippet
         }
     }
 }

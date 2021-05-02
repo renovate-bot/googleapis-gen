@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.resources.types import account_link
 
@@ -40,10 +43,7 @@ class GetAccountLinkRequest(proto.Message):
             Required. Resource name of the account link.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateAccountLinkRequest(proto.Message):
@@ -68,27 +68,17 @@ class MutateAccountLinkRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operation = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operation = proto.Field(proto.MESSAGE, number=2,
         message='AccountLinkOperation',
     )
-    partial_failure = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=4,
-    )
+    partial_failure = proto.Field(proto.BOOL, number=3)
+    validate_only = proto.Field(proto.BOOL, number=4)
 
 
 class AccountLinkOperation(proto.Message):
     r"""A single update on an account link.
+
     Attributes:
         create (google.ads.googleads.v4.resources.types.AccountLink):
             Create operation: No resource name is
@@ -100,44 +90,34 @@ class AccountLinkOperation(proto.Message):
             ``customers/{customer_id}/accountLinks/{account_link_id}``
     """
 
-    create = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='operation',
+    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=account_link.AccountLink,
     )
-    remove = proto.Field(
-        proto.STRING,
-        number=3,
-        oneof='operation',
-    )
+    remove = proto.Field(proto.STRING, number=3, oneof='operation')
 
 
 class MutateAccountLinkResponse(proto.Message):
     r"""Response message for account link mutate.
+
     Attributes:
         result (google.ads.googleads.v4.services.types.MutateAccountLinkResult):
             Result for the mutate.
     """
 
-    result = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    result = proto.Field(proto.MESSAGE, number=1,
         message='MutateAccountLinkResult',
     )
 
 
 class MutateAccountLinkResult(proto.Message):
     r"""The result for the account link mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

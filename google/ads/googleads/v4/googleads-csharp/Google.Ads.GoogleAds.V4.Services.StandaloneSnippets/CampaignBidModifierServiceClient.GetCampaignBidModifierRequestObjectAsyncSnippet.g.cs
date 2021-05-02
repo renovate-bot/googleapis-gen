@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignBidModifierServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignBidModifierAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCampaignBidModifierRequestObjectAsync()
         {
-            // Snippet: GetCampaignBidModifierAsync(GetCampaignBidModifierRequest, CallSettings)
-            // Additional: GetCampaignBidModifierAsync(GetCampaignBidModifierRequest, CancellationToken)
             // Create client
             CampaignBidModifierServiceClient campaignBidModifierServiceClient = await CampaignBidModifierServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             CampaignBidModifier response = await campaignBidModifierServiceClient.GetCampaignBidModifierAsync(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.enums.types import placeholder_type as gage_placeholder_type
 
@@ -29,6 +32,7 @@ __protobuf__ = proto.module(
 
 class FeedPlaceholderView(proto.Message):
     r"""A feed placeholder view.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the feed placeholder view.
@@ -40,13 +44,8 @@ class FeedPlaceholderView(proto.Message):
             placeholder view.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    placeholder_type = proto.Field(
-        proto.ENUM,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    placeholder_type = proto.Field(proto.ENUM, number=2,
         enum=gage_placeholder_type.PlaceholderTypeEnum.PlaceholderType,
     )
 

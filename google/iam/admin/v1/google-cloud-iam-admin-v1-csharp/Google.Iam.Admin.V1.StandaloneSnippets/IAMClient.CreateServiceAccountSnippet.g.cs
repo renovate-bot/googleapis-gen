@@ -16,12 +16,17 @@
 
 namespace Google.Iam.Admin.V1.Snippets
 {
+    using Google.Iam.Admin.V1;
+
     public sealed partial class GeneratedIAMClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateServiceAccount</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateServiceAccount()
         {
-            // Snippet: CreateServiceAccount(string, string, ServiceAccount, CallSettings)
             // Create client
             IAMClient iAMClient = IAMClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Iam.Admin.V1.Snippets
             ServiceAccount serviceAccount = new ServiceAccount();
             // Make the request
             ServiceAccount response = iAMClient.CreateServiceAccount(name, accountId, serviceAccount);
-            // End snippet
         }
     }
 }

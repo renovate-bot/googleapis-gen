@@ -17,13 +17,17 @@
 namespace Google.Cloud.Translate.V3.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Translate.V3;
 
     public sealed partial class GeneratedTranslationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for TranslateText</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void TranslateTextRequestObject()
         {
-            // Snippet: TranslateText(TranslateTextRequest, CallSettings)
             // Create client
             TranslationServiceClient translationServiceClient = TranslationServiceClient.Create();
             // Initialize request argument(s)
@@ -40,7 +44,6 @@ namespace Google.Cloud.Translate.V3.Snippets
             };
             // Make the request
             TranslateTextResponse response = translationServiceClient.TranslateText(request);
-            // End snippet
         }
     }
 }

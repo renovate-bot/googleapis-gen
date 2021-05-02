@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Gaming.V1.Snippets
 {
+    using Google.Cloud.Gaming.V1;
+
     public sealed partial class GeneratedGameServerDeploymentsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGameServerDeployment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetGameServerDeploymentResourceNames()
         {
-            // Snippet: GetGameServerDeployment(GameServerDeploymentName, CallSettings)
             // Create client
             GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.Create();
             // Initialize request argument(s)
             GameServerDeploymentName name = GameServerDeploymentName.FromProjectLocationDeployment("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
             // Make the request
             GameServerDeployment response = gameServerDeploymentsServiceClient.GetGameServerDeployment(name);
-            // End snippet
         }
     }
 }

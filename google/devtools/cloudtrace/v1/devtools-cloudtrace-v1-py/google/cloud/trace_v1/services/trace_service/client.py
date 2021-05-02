@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -32,6 +34,7 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.trace_v1.services.trace_service import pagers
 from google.cloud.trace_v1.types import trace
+
 from .transports.base import TraceServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import TraceServiceGrpcTransport
 from .transports.grpc_asyncio import TraceServiceGrpcAsyncIOTransport
@@ -329,8 +332,7 @@ class TraceServiceClient(metaclass=TraceServiceClientMeta):
 
         Args:
             request (google.cloud.trace_v1.types.ListTracesRequest):
-                The request object.
-                The request message for the
+                The request object. The request message for the
                 `ListTraces` method. All fields are required unless
                 specified.
             project_id (str):
@@ -340,6 +342,7 @@ class TraceServiceClient(metaclass=TraceServiceClientMeta):
                 This corresponds to the ``project_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -368,8 +371,10 @@ class TraceServiceClient(metaclass=TraceServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, trace.ListTracesRequest):
             request = trace.ListTracesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project_id is not None:
                 request.project_id = project_id
 
@@ -410,8 +415,7 @@ class TraceServiceClient(metaclass=TraceServiceClientMeta):
 
         Args:
             request (google.cloud.trace_v1.types.GetTraceRequest):
-                The request object.
-                The request message for the
+                The request object. The request message for the
                 `GetTrace` method.
             project_id (str):
                 Required. ID of the Cloud project
@@ -425,6 +429,7 @@ class TraceServiceClient(metaclass=TraceServiceClientMeta):
                 This corresponds to the ``trace_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -454,8 +459,10 @@ class TraceServiceClient(metaclass=TraceServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, trace.GetTraceRequest):
             request = trace.GetTraceRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project_id is not None:
                 request.project_id = project_id
             if trace_id is not None:
@@ -495,8 +502,7 @@ class TraceServiceClient(metaclass=TraceServiceClientMeta):
 
         Args:
             request (google.cloud.trace_v1.types.PatchTracesRequest):
-                The request object.
-                The request message for the
+                The request object. The request message for the
                 `PatchTraces` method.
             project_id (str):
                 Required. ID of the Cloud project
@@ -510,6 +516,7 @@ class TraceServiceClient(metaclass=TraceServiceClientMeta):
                 This corresponds to the ``traces`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -530,8 +537,10 @@ class TraceServiceClient(metaclass=TraceServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, trace.PatchTracesRequest):
             request = trace.PatchTracesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project_id is not None:
                 request.project_id = project_id
             if traces is not None:
@@ -548,6 +557,8 @@ class TraceServiceClient(metaclass=TraceServiceClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

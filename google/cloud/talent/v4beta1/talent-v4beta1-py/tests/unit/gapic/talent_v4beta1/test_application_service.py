@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -36,8 +36,6 @@ from google.cloud.talent_v4beta1.services.application_service import Application
 from google.cloud.talent_v4beta1.services.application_service import ApplicationServiceClient
 from google.cloud.talent_v4beta1.services.application_service import pagers
 from google.cloud.talent_v4beta1.services.application_service import transports
-from google.cloud.talent_v4beta1.services.application_service.transports.base import _API_CORE_VERSION
-from google.cloud.talent_v4beta1.services.application_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.talent_v4beta1.types import application
 from google.cloud.talent_v4beta1.types import application as gct_application
 from google.cloud.talent_v4beta1.types import application_service
@@ -48,28 +46,6 @@ from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 from google.type import date_pb2 as date  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -237,10 +213,12 @@ def test_application_service_client_client_options(client_class, transport_class
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (ApplicationServiceClient, transports.ApplicationServiceGrpcTransport, "grpc", "true"),
     (ApplicationServiceAsyncClient, transports.ApplicationServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (ApplicationServiceClient, transports.ApplicationServiceGrpcTransport, "grpc", "false"),
     (ApplicationServiceAsyncClient, transports.ApplicationServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(ApplicationServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ApplicationServiceClient))
 @mock.patch.object(ApplicationServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ApplicationServiceAsyncClient))
@@ -395,34 +373,57 @@ def test_create_application(transport: str = 'grpc', request_type=application_se
         # Designate an appropriate return value for the call.
         call.return_value = gct_application.Application(
             name='name_value',
+
             external_id='external_id_value',
+
             profile='profile_value',
+
             job='job_value',
+
             company='company_value',
+
             stage=gct_application.Application.ApplicationStage.NEW,
+
             state=gct_application.Application.ApplicationState.IN_PROGRESS,
+
             outcome_notes='outcome_notes_value',
+
             outcome=common.Outcome.POSITIVE,
+
             job_title_snippet='job_title_snippet_value',
+
         )
+
         response = client.create_application(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == application_service.CreateApplicationRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gct_application.Application)
+
     assert response.name == 'name_value'
+
     assert response.external_id == 'external_id_value'
+
     assert response.profile == 'profile_value'
+
     assert response.job == 'job_value'
+
     assert response.company == 'company_value'
+
     assert response.stage == gct_application.Application.ApplicationStage.NEW
+
     assert response.state == gct_application.Application.ApplicationState.IN_PROGRESS
+
     assert response.outcome_notes == 'outcome_notes_value'
+
     assert response.outcome == common.Outcome.POSITIVE
+
     assert response.job_title_snippet == 'job_title_snippet_value'
 
 
@@ -445,8 +446,8 @@ def test_create_application_empty_call():
         client.create_application()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == application_service.CreateApplicationRequest()
 
+        assert args[0] == application_service.CreateApplicationRequest()
 
 @pytest.mark.asyncio
 async def test_create_application_async(transport: str = 'grpc_asyncio', request_type=application_service.CreateApplicationRequest):
@@ -464,7 +465,7 @@ async def test_create_application_async(transport: str = 'grpc_asyncio', request
             type(client.transport.create_application),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gct_application.Application(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gct_application.Application(
             name='name_value',
             external_id='external_id_value',
             profile='profile_value',
@@ -476,24 +477,36 @@ async def test_create_application_async(transport: str = 'grpc_asyncio', request
             outcome=common.Outcome.POSITIVE,
             job_title_snippet='job_title_snippet_value',
         ))
+
         response = await client.create_application(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == application_service.CreateApplicationRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gct_application.Application)
+
     assert response.name == 'name_value'
+
     assert response.external_id == 'external_id_value'
+
     assert response.profile == 'profile_value'
+
     assert response.job == 'job_value'
+
     assert response.company == 'company_value'
+
     assert response.stage == gct_application.Application.ApplicationStage.NEW
+
     assert response.state == gct_application.Application.ApplicationState.IN_PROGRESS
+
     assert response.outcome_notes == 'outcome_notes_value'
+
     assert response.outcome == common.Outcome.POSITIVE
+
     assert response.job_title_snippet == 'job_title_snippet_value'
 
 
@@ -510,7 +523,6 @@ def test_create_application_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = application_service.CreateApplicationRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -518,6 +530,7 @@ def test_create_application_field_headers():
             type(client.transport.create_application),
             '__call__') as call:
         call.return_value = gct_application.Application()
+
         client.create_application(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -542,7 +555,6 @@ async def test_create_application_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = application_service.CreateApplicationRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -550,6 +562,7 @@ async def test_create_application_field_headers_async():
             type(client.transport.create_application),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gct_application.Application())
+
         await client.create_application(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -576,6 +589,7 @@ def test_create_application_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gct_application.Application()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_application(
@@ -587,7 +601,9 @@ def test_create_application_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].application == gct_application.Application(name='name_value')
 
 
@@ -631,7 +647,9 @@ async def test_create_application_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].application == gct_application.Application(name='name_value')
 
 
@@ -668,34 +686,57 @@ def test_get_application(transport: str = 'grpc', request_type=application_servi
         # Designate an appropriate return value for the call.
         call.return_value = application.Application(
             name='name_value',
+
             external_id='external_id_value',
+
             profile='profile_value',
+
             job='job_value',
+
             company='company_value',
+
             stage=application.Application.ApplicationStage.NEW,
+
             state=application.Application.ApplicationState.IN_PROGRESS,
+
             outcome_notes='outcome_notes_value',
+
             outcome=common.Outcome.POSITIVE,
+
             job_title_snippet='job_title_snippet_value',
+
         )
+
         response = client.get_application(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == application_service.GetApplicationRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, application.Application)
+
     assert response.name == 'name_value'
+
     assert response.external_id == 'external_id_value'
+
     assert response.profile == 'profile_value'
+
     assert response.job == 'job_value'
+
     assert response.company == 'company_value'
+
     assert response.stage == application.Application.ApplicationStage.NEW
+
     assert response.state == application.Application.ApplicationState.IN_PROGRESS
+
     assert response.outcome_notes == 'outcome_notes_value'
+
     assert response.outcome == common.Outcome.POSITIVE
+
     assert response.job_title_snippet == 'job_title_snippet_value'
 
 
@@ -718,8 +759,8 @@ def test_get_application_empty_call():
         client.get_application()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == application_service.GetApplicationRequest()
 
+        assert args[0] == application_service.GetApplicationRequest()
 
 @pytest.mark.asyncio
 async def test_get_application_async(transport: str = 'grpc_asyncio', request_type=application_service.GetApplicationRequest):
@@ -737,7 +778,7 @@ async def test_get_application_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.get_application),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(application.Application(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(application.Application(
             name='name_value',
             external_id='external_id_value',
             profile='profile_value',
@@ -749,24 +790,36 @@ async def test_get_application_async(transport: str = 'grpc_asyncio', request_ty
             outcome=common.Outcome.POSITIVE,
             job_title_snippet='job_title_snippet_value',
         ))
+
         response = await client.get_application(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == application_service.GetApplicationRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, application.Application)
+
     assert response.name == 'name_value'
+
     assert response.external_id == 'external_id_value'
+
     assert response.profile == 'profile_value'
+
     assert response.job == 'job_value'
+
     assert response.company == 'company_value'
+
     assert response.stage == application.Application.ApplicationStage.NEW
+
     assert response.state == application.Application.ApplicationState.IN_PROGRESS
+
     assert response.outcome_notes == 'outcome_notes_value'
+
     assert response.outcome == common.Outcome.POSITIVE
+
     assert response.job_title_snippet == 'job_title_snippet_value'
 
 
@@ -783,7 +836,6 @@ def test_get_application_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = application_service.GetApplicationRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -791,6 +843,7 @@ def test_get_application_field_headers():
             type(client.transport.get_application),
             '__call__') as call:
         call.return_value = application.Application()
+
         client.get_application(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -815,7 +868,6 @@ async def test_get_application_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = application_service.GetApplicationRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -823,6 +875,7 @@ async def test_get_application_field_headers_async():
             type(client.transport.get_application),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(application.Application())
+
         await client.get_application(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -849,6 +902,7 @@ def test_get_application_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = application.Application()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_application(
@@ -859,6 +913,7 @@ def test_get_application_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -900,6 +955,7 @@ async def test_get_application_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -935,34 +991,57 @@ def test_update_application(transport: str = 'grpc', request_type=application_se
         # Designate an appropriate return value for the call.
         call.return_value = gct_application.Application(
             name='name_value',
+
             external_id='external_id_value',
+
             profile='profile_value',
+
             job='job_value',
+
             company='company_value',
+
             stage=gct_application.Application.ApplicationStage.NEW,
+
             state=gct_application.Application.ApplicationState.IN_PROGRESS,
+
             outcome_notes='outcome_notes_value',
+
             outcome=common.Outcome.POSITIVE,
+
             job_title_snippet='job_title_snippet_value',
+
         )
+
         response = client.update_application(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == application_service.UpdateApplicationRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gct_application.Application)
+
     assert response.name == 'name_value'
+
     assert response.external_id == 'external_id_value'
+
     assert response.profile == 'profile_value'
+
     assert response.job == 'job_value'
+
     assert response.company == 'company_value'
+
     assert response.stage == gct_application.Application.ApplicationStage.NEW
+
     assert response.state == gct_application.Application.ApplicationState.IN_PROGRESS
+
     assert response.outcome_notes == 'outcome_notes_value'
+
     assert response.outcome == common.Outcome.POSITIVE
+
     assert response.job_title_snippet == 'job_title_snippet_value'
 
 
@@ -985,8 +1064,8 @@ def test_update_application_empty_call():
         client.update_application()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == application_service.UpdateApplicationRequest()
 
+        assert args[0] == application_service.UpdateApplicationRequest()
 
 @pytest.mark.asyncio
 async def test_update_application_async(transport: str = 'grpc_asyncio', request_type=application_service.UpdateApplicationRequest):
@@ -1004,7 +1083,7 @@ async def test_update_application_async(transport: str = 'grpc_asyncio', request
             type(client.transport.update_application),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gct_application.Application(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gct_application.Application(
             name='name_value',
             external_id='external_id_value',
             profile='profile_value',
@@ -1016,24 +1095,36 @@ async def test_update_application_async(transport: str = 'grpc_asyncio', request
             outcome=common.Outcome.POSITIVE,
             job_title_snippet='job_title_snippet_value',
         ))
+
         response = await client.update_application(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == application_service.UpdateApplicationRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gct_application.Application)
+
     assert response.name == 'name_value'
+
     assert response.external_id == 'external_id_value'
+
     assert response.profile == 'profile_value'
+
     assert response.job == 'job_value'
+
     assert response.company == 'company_value'
+
     assert response.stage == gct_application.Application.ApplicationStage.NEW
+
     assert response.state == gct_application.Application.ApplicationState.IN_PROGRESS
+
     assert response.outcome_notes == 'outcome_notes_value'
+
     assert response.outcome == common.Outcome.POSITIVE
+
     assert response.job_title_snippet == 'job_title_snippet_value'
 
 
@@ -1050,7 +1141,6 @@ def test_update_application_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = application_service.UpdateApplicationRequest()
-
     request.application.name = 'application.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1058,6 +1148,7 @@ def test_update_application_field_headers():
             type(client.transport.update_application),
             '__call__') as call:
         call.return_value = gct_application.Application()
+
         client.update_application(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1082,7 +1173,6 @@ async def test_update_application_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = application_service.UpdateApplicationRequest()
-
     request.application.name = 'application.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1090,6 +1180,7 @@ async def test_update_application_field_headers_async():
             type(client.transport.update_application),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gct_application.Application())
+
         await client.update_application(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1116,6 +1207,7 @@ def test_update_application_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gct_application.Application()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_application(
@@ -1126,6 +1218,7 @@ def test_update_application_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].application == gct_application.Application(name='name_value')
 
 
@@ -1167,6 +1260,7 @@ async def test_update_application_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].application == gct_application.Application(name='name_value')
 
 
@@ -1201,11 +1295,13 @@ def test_delete_application(transport: str = 'grpc', request_type=application_se
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_application(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == application_service.DeleteApplicationRequest()
 
     # Establish that the response is the type that we expect.
@@ -1231,8 +1327,8 @@ def test_delete_application_empty_call():
         client.delete_application()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == application_service.DeleteApplicationRequest()
 
+        assert args[0] == application_service.DeleteApplicationRequest()
 
 @pytest.mark.asyncio
 async def test_delete_application_async(transport: str = 'grpc_asyncio', request_type=application_service.DeleteApplicationRequest):
@@ -1251,11 +1347,13 @@ async def test_delete_application_async(transport: str = 'grpc_asyncio', request
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_application(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == application_service.DeleteApplicationRequest()
 
     # Establish that the response is the type that we expect.
@@ -1275,7 +1373,6 @@ def test_delete_application_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = application_service.DeleteApplicationRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1283,6 +1380,7 @@ def test_delete_application_field_headers():
             type(client.transport.delete_application),
             '__call__') as call:
         call.return_value = None
+
         client.delete_application(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1307,7 +1405,6 @@ async def test_delete_application_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = application_service.DeleteApplicationRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1315,6 +1412,7 @@ async def test_delete_application_field_headers_async():
             type(client.transport.delete_application),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_application(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1341,6 +1439,7 @@ def test_delete_application_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_application(
@@ -1351,6 +1450,7 @@ def test_delete_application_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1392,6 +1492,7 @@ async def test_delete_application_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1427,16 +1528,21 @@ def test_list_applications(transport: str = 'grpc', request_type=application_ser
         # Designate an appropriate return value for the call.
         call.return_value = application_service.ListApplicationsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_applications(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == application_service.ListApplicationsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListApplicationsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1459,8 +1565,8 @@ def test_list_applications_empty_call():
         client.list_applications()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == application_service.ListApplicationsRequest()
 
+        assert args[0] == application_service.ListApplicationsRequest()
 
 @pytest.mark.asyncio
 async def test_list_applications_async(transport: str = 'grpc_asyncio', request_type=application_service.ListApplicationsRequest):
@@ -1478,18 +1584,21 @@ async def test_list_applications_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.list_applications),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(application_service.ListApplicationsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(application_service.ListApplicationsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_applications(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == application_service.ListApplicationsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListApplicationsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1506,7 +1615,6 @@ def test_list_applications_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = application_service.ListApplicationsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1514,6 +1622,7 @@ def test_list_applications_field_headers():
             type(client.transport.list_applications),
             '__call__') as call:
         call.return_value = application_service.ListApplicationsResponse()
+
         client.list_applications(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1538,7 +1647,6 @@ async def test_list_applications_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = application_service.ListApplicationsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1546,6 +1654,7 @@ async def test_list_applications_field_headers_async():
             type(client.transport.list_applications),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(application_service.ListApplicationsResponse())
+
         await client.list_applications(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1572,6 +1681,7 @@ def test_list_applications_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = application_service.ListApplicationsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_applications(
@@ -1582,6 +1692,7 @@ def test_list_applications_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1623,6 +1734,7 @@ async def test_list_applications_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1868,6 +1980,7 @@ def test_transport_instance():
     client = ApplicationServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ApplicationServiceGrpcTransport(
@@ -1882,6 +1995,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.ApplicationServiceGrpcTransport,
     transports.ApplicationServiceGrpcAsyncIOTransport,
@@ -1893,6 +2007,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = ApplicationServiceClient(
@@ -1902,6 +2017,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.ApplicationServiceGrpcTransport,
     )
+
 
 def test_application_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1928,33 +2044,15 @@ def test_application_service_base_transport():
         'update_application',
         'delete_application',
         'list_applications',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_application_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.talent_v4beta1.services.application_service.transports.ApplicationServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.ApplicationServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/jobs',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_application_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.talent_v4beta1.services.application_service.transports.ApplicationServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.talent_v4beta1.services.application_service.transports.ApplicationServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ApplicationServiceTransport(
@@ -1971,184 +2069,35 @@ def test_application_service_base_transport_with_credentials_file_old_google_aut
 
 def test_application_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.talent_v4beta1.services.application_service.transports.ApplicationServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.talent_v4beta1.services.application_service.transports.ApplicationServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ApplicationServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_application_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         ApplicationServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/jobs',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_application_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        ApplicationServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/jobs',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ApplicationServiceGrpcTransport,
-        transports.ApplicationServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_application_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/jobs',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ApplicationServiceGrpcTransport,
-        transports.ApplicationServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_application_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/jobs',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/jobs',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ApplicationServiceGrpcTransport, grpc_helpers),
-        (transports.ApplicationServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_application_service_transport_create_channel(transport_class, grpc_helpers):
+def test_application_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.ApplicationServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/jobs',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "jobs.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/jobs',),
-            scopes=["1", "2"],
-            default_host="jobs.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ApplicationServiceGrpcTransport, grpc_helpers),
-        (transports.ApplicationServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_application_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "jobs.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/jobs',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ApplicationServiceGrpcTransport, grpc_helpers),
-        (transports.ApplicationServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_application_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "jobs.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -2211,6 +2160,7 @@ def test_application_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='jobs.googleapis.com:8000'),
     )
     assert client.transport._host == 'jobs.googleapis.com:8000'
+
 
 def test_application_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -2333,6 +2283,7 @@ def test_application_path():
     tenant = "clam"
     profile = "whelk"
     application = "octopus"
+
     expected = "projects/{project}/tenants/{tenant}/profiles/{profile}/applications/{application}".format(project=project, tenant=tenant, profile=profile, application=application, )
     actual = ApplicationServiceClient.application_path(project, tenant, profile, application)
     assert expected == actual
@@ -2340,10 +2291,11 @@ def test_application_path():
 
 def test_parse_application_path():
     expected = {
-        "project": "oyster",
-        "tenant": "nudibranch",
-        "profile": "cuttlefish",
-        "application": "mussel",
+    "project": "oyster",
+    "tenant": "nudibranch",
+    "profile": "cuttlefish",
+    "application": "mussel",
+
     }
     path = ApplicationServiceClient.application_path(**expected)
 
@@ -2355,6 +2307,7 @@ def test_company_path():
     project = "winkle"
     tenant = "nautilus"
     company = "scallop"
+
     expected = "projects/{project}/tenants/{tenant}/companies/{company}".format(project=project, tenant=tenant, company=company, )
     actual = ApplicationServiceClient.company_path(project, tenant, company)
     assert expected == actual
@@ -2362,9 +2315,10 @@ def test_company_path():
 
 def test_parse_company_path():
     expected = {
-        "project": "abalone",
-        "tenant": "squid",
-        "company": "clam",
+    "project": "abalone",
+    "tenant": "squid",
+    "company": "clam",
+
     }
     path = ApplicationServiceClient.company_path(**expected)
 
@@ -2376,6 +2330,7 @@ def test_job_path():
     project = "whelk"
     tenant = "octopus"
     job = "oyster"
+
     expected = "projects/{project}/tenants/{tenant}/jobs/{job}".format(project=project, tenant=tenant, job=job, )
     actual = ApplicationServiceClient.job_path(project, tenant, job)
     assert expected == actual
@@ -2383,9 +2338,10 @@ def test_job_path():
 
 def test_parse_job_path():
     expected = {
-        "project": "nudibranch",
-        "tenant": "cuttlefish",
-        "job": "mussel",
+    "project": "nudibranch",
+    "tenant": "cuttlefish",
+    "job": "mussel",
+
     }
     path = ApplicationServiceClient.job_path(**expected)
 
@@ -2397,6 +2353,7 @@ def test_profile_path():
     project = "winkle"
     tenant = "nautilus"
     profile = "scallop"
+
     expected = "projects/{project}/tenants/{tenant}/profiles/{profile}".format(project=project, tenant=tenant, profile=profile, )
     actual = ApplicationServiceClient.profile_path(project, tenant, profile)
     assert expected == actual
@@ -2404,9 +2361,10 @@ def test_profile_path():
 
 def test_parse_profile_path():
     expected = {
-        "project": "abalone",
-        "tenant": "squid",
-        "profile": "clam",
+    "project": "abalone",
+    "tenant": "squid",
+    "profile": "clam",
+
     }
     path = ApplicationServiceClient.profile_path(**expected)
 
@@ -2416,6 +2374,7 @@ def test_parse_profile_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ApplicationServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2423,7 +2382,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = ApplicationServiceClient.common_billing_account_path(**expected)
 
@@ -2433,6 +2393,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ApplicationServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -2440,7 +2401,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = ApplicationServiceClient.common_folder_path(**expected)
 
@@ -2450,6 +2412,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ApplicationServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -2457,7 +2420,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = ApplicationServiceClient.common_organization_path(**expected)
 
@@ -2467,6 +2431,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = ApplicationServiceClient.common_project_path(project)
     assert expected == actual
@@ -2474,7 +2439,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = ApplicationServiceClient.common_project_path(**expected)
 
@@ -2485,6 +2451,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ApplicationServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -2492,8 +2459,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = ApplicationServiceClient.common_location_path(**expected)
 

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
 {
+    using Google.Cloud.BigQuery.Reservation.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedReservationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteAssignmentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteAssignmentResourceNamesAsync()
         {
-            // Snippet: DeleteAssignmentAsync(AssignmentName, CallSettings)
-            // Additional: DeleteAssignmentAsync(AssignmentName, CancellationToken)
             // Create client
             ReservationServiceClient reservationServiceClient = await ReservationServiceClient.CreateAsync();
             // Initialize request argument(s)
             AssignmentName name = AssignmentName.FromProjectLocationReservationAssignment("[PROJECT]", "[LOCATION]", "[RESERVATION]", "[ASSIGNMENT]");
             // Make the request
             await reservationServiceClient.DeleteAssignmentAsync(name);
-            // End snippet
         }
     }
 }

@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedExtensionFeedItemServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetExtensionFeedItem</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetExtensionFeedItem()
         {
-            // Snippet: GetExtensionFeedItem(string, CallSettings)
             // Create client
             ExtensionFeedItemServiceClient extensionFeedItemServiceClient = ExtensionFeedItemServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/extensionFeedItems/[FEED_ITEM_ID]";
             // Make the request
             ExtensionFeedItem response = extensionFeedItemServiceClient.GetExtensionFeedItem(resourceName);
-            // End snippet
         }
     }
 }

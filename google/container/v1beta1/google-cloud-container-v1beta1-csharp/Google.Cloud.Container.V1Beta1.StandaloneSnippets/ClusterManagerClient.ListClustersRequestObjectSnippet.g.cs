@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Container.V1Beta1.Snippets
 {
+    using Google.Cloud.Container.V1Beta1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for ListClusters</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListClustersRequestObject()
         {
-            // Snippet: ListClusters(ListClustersRequest, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
             ListClustersRequest request = new ListClustersRequest { Parent = "", };
             // Make the request
             ListClustersResponse response = clusterManagerClient.ListClusters(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import duration_pb2 as duration  # type: ignore
 
@@ -56,25 +59,19 @@ class Deployment(proto.Message):
             Engine flexible environment using files or zip.
     """
 
-    files = proto.MapField(
-        proto.STRING,
-        proto.MESSAGE,
-        number=1
+    files = proto.MapField(proto.STRING, proto.MESSAGE, number=1,
         message='FileInfo',
     )
-    container = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    container = proto.Field(proto.MESSAGE, number=2,
         message='ContainerInfo',
     )
-    zip_ = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    zip_ = proto.Field(proto.MESSAGE, number=3,
         message='ZipInfo',
     )
-    cloud_build_options = proto.Field(
-        proto.MESSAGE,
-        number=6,
+
+    cloud_build_options = proto.Field(proto.MESSAGE, number=6,
         message='CloudBuildOptions',
     )
 
@@ -97,18 +94,11 @@ class FileInfo(proto.Message):
             Defaults to the value from Google Cloud Storage.
     """
 
-    source_url = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    sha1_sum = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    mime_type = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    source_url = proto.Field(proto.STRING, number=1)
+
+    sha1_sum = proto.Field(proto.STRING, number=2)
+
+    mime_type = proto.Field(proto.STRING, number=3)
 
 
 class ContainerInfo(proto.Message):
@@ -125,10 +115,7 @@ class ContainerInfo(proto.Message):
             project/image@digest".
     """
 
-    image = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    image = proto.Field(proto.STRING, number=1)
 
 
 class CloudBuildOptions(proto.Message):
@@ -151,19 +138,16 @@ class CloudBuildOptions(proto.Message):
             Defaults to 10 minutes.
     """
 
-    app_yaml_path = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    cloud_build_timeout = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    app_yaml_path = proto.Field(proto.STRING, number=1)
+
+    cloud_build_timeout = proto.Field(proto.MESSAGE, number=2,
         message=duration.Duration,
     )
 
 
 class ZipInfo(proto.Message):
     r"""The zip file information for a zip deployment.
+
     Attributes:
         source_url (str):
             URL of the zip file to deploy from. Must be a
@@ -178,14 +162,9 @@ class ZipInfo(proto.Message):
             provided, deployment may be slow.
     """
 
-    source_url = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    files_count = proto.Field(
-        proto.INT32,
-        number=4,
-    )
+    source_url = proto.Field(proto.STRING, number=3)
+
+    files_count = proto.Field(proto.INT32, number=4)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

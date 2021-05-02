@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.enums.types import search_term_targeting_status
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
@@ -49,23 +52,14 @@ class SearchTermView(proto.Message):
             excluded keywords.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    search_term = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    search_term = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.StringValue,
     )
-    ad_group = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    ad_group = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.StringValue,
     )
-    status = proto.Field(
-        proto.ENUM,
-        number=4,
+    status = proto.Field(proto.ENUM, number=4,
         enum=search_term_targeting_status.SearchTermTargetingStatusEnum.SearchTermTargetingStatus,
     )
 

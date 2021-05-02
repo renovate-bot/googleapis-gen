@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdParameterServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdParameterAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdParameterAsync()
         {
-            // Snippet: GetAdParameterAsync(string, CallSettings)
-            // Additional: GetAdParameterAsync(string, CancellationToken)
             // Create client
             AdParameterServiceClient adParameterServiceClient = await AdParameterServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/adParameters/[AD_PARAMETER]";
             // Make the request
             AdParameter response = await adParameterServiceClient.GetAdParameterAsync(resourceName);
-            // End snippet
         }
     }
 }

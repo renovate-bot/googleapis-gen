@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -31,6 +33,7 @@ __protobuf__ = proto.module(
 
 class Actor(proto.Message):
     r"""The actor of a Drive activity.
+
     Attributes:
         user (google.apps.drive.activity_v2.types.User):
             An end user.
@@ -44,40 +47,30 @@ class Actor(proto.Message):
             An administrator.
     """
 
-    user = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='type',
+    user = proto.Field(proto.MESSAGE, number=1, oneof='type',
         message='User',
     )
-    anonymous = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='type',
+
+    anonymous = proto.Field(proto.MESSAGE, number=2, oneof='type',
         message='AnonymousUser',
     )
-    impersonation = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='type',
+
+    impersonation = proto.Field(proto.MESSAGE, number=3, oneof='type',
         message='Impersonation',
     )
-    system = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='type',
+
+    system = proto.Field(proto.MESSAGE, number=4, oneof='type',
         message='SystemEvent',
     )
-    administrator = proto.Field(
-        proto.MESSAGE,
-        number=5,
-        oneof='type',
+
+    administrator = proto.Field(proto.MESSAGE, number=5, oneof='type',
         message='Administrator',
     )
 
 
 class User(proto.Message):
     r"""Information about an end user.
+
     Attributes:
         known_user (google.apps.drive.activity_v2.types.User.KnownUser):
             A known user.
@@ -86,9 +79,9 @@ class User(proto.Message):
         unknown_user (google.apps.drive.activity_v2.types.User.UnknownUser):
             A user about whom nothing is currently known.
     """
-
     class KnownUser(proto.Message):
         r"""A known user.
+
         Attributes:
             person_name (str):
                 The identifier for this user that can be used with the
@@ -99,37 +92,25 @@ class User(proto.Message):
                 True if this is the user making the request.
         """
 
-        person_name = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        is_current_user = proto.Field(
-            proto.BOOL,
-            number=2,
-        )
+        person_name = proto.Field(proto.STRING, number=1)
+
+        is_current_user = proto.Field(proto.BOOL, number=2)
 
     class DeletedUser(proto.Message):
-        r"""A user whose account has since been deleted.    """
+        r"""A user whose account has since been deleted."""
 
     class UnknownUser(proto.Message):
-        r"""A user about whom nothing is currently known.    """
+        r"""A user about whom nothing is currently known."""
 
-    known_user = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='type',
+    known_user = proto.Field(proto.MESSAGE, number=2, oneof='type',
         message=KnownUser,
     )
-    deleted_user = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='type',
+
+    deleted_user = proto.Field(proto.MESSAGE, number=3, oneof='type',
         message=DeletedUser,
     )
-    unknown_user = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='type',
+
+    unknown_user = proto.Field(proto.MESSAGE, number=4, oneof='type',
         message=UnknownUser,
     )
 
@@ -137,7 +118,7 @@ class User(proto.Message):
 class AnonymousUser(proto.Message):
     r"""Empty message representing an anonymous user or indicating
     the authenticated user should be anonymized.
-        """
+    """
 
 
 class Impersonation(proto.Message):
@@ -150,15 +131,14 @@ class Impersonation(proto.Message):
             The impersonated user.
     """
 
-    impersonated_user = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    impersonated_user = proto.Field(proto.MESSAGE, number=1,
         message='User',
     )
 
 
 class SystemEvent(proto.Message):
     r"""Event triggered by system operations instead of end users.
+
     Attributes:
         type_ (google.apps.drive.activity_v2.types.SystemEvent.Type):
             The type of the system event that may
@@ -170,15 +150,13 @@ class SystemEvent(proto.Message):
         USER_DELETION = 1
         TRASH_AUTO_PURGE = 2
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=Type,
     )
 
 
 class Administrator(proto.Message):
-    r"""Empty message representing an administrator.    """
+    r"""Empty message representing an administrator."""
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

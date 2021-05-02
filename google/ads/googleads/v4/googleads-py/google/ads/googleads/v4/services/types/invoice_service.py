@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.enums.types import month_of_year
 from google.ads.googleads.v4.resources.types import invoice
@@ -51,21 +54,10 @@ class ListInvoicesRequest(proto.Message):
             invoices.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    billing_setup = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    issue_year = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    issue_month = proto.Field(
-        proto.ENUM,
-        number=4,
+    customer_id = proto.Field(proto.STRING, number=1)
+    billing_setup = proto.Field(proto.STRING, number=2)
+    issue_year = proto.Field(proto.STRING, number=3)
+    issue_month = proto.Field(proto.ENUM, number=4,
         enum=month_of_year.MonthOfYearEnum.MonthOfYear,
     )
 
@@ -80,9 +72,7 @@ class ListInvoicesResponse(proto.Message):
             setup and time period.
     """
 
-    invoices = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    invoices = proto.RepeatedField(proto.MESSAGE, number=1,
         message=invoice.Invoice,
     )
 

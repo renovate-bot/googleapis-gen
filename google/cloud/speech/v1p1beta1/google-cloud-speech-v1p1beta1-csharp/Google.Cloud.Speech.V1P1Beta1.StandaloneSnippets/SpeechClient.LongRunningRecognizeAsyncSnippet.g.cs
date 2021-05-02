@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Speech.V1P1Beta1.Snippets
 {
+    using Google.Cloud.Speech.V1P1Beta1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSpeechClientStandaloneSnippets
     {
         /// <summary>Snippet for LongRunningRecognizeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task LongRunningRecognizeAsync()
         {
-            // Snippet: LongRunningRecognizeAsync(RecognitionConfig, RecognitionAudio, CallSettings)
-            // Additional: LongRunningRecognizeAsync(RecognitionConfig, RecognitionAudio, CancellationToken)
             // Create client
             SpeechClient speechClient = await SpeechClient.CreateAsync();
             // Initialize request argument(s)
@@ -49,7 +52,6 @@ namespace Google.Cloud.Speech.V1P1Beta1.Snippets
                 // If it has completed, then access the result
                 LongRunningRecognizeResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

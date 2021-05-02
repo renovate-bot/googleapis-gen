@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v5.resources.types import ad_group_criterion
 from google.ads.googleads.v5.services.types import ad_group_criterion_service
+
 from .base import AdGroupCriterionServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class AdGroupCriterionServiceGrpcTransport(AdGroupCriterionServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class AdGroupCriterionServiceGrpcTransport(AdGroupCriterionServiceTransport):
     def get_ad_group_criterion(self) -> Callable[
             [ad_group_criterion_service.GetAdGroupCriterionRequest],
             ad_group_criterion.AdGroupCriterion]:
-        r"""Return a callable for the
-        get ad group criterion
-          method over gRPC.
+        r"""Return a callable for the get ad group criterion method over gRPC.
 
         Returns the requested criterion in full detail.
 
@@ -229,9 +229,7 @@ class AdGroupCriterionServiceGrpcTransport(AdGroupCriterionServiceTransport):
     def mutate_ad_group_criteria(self) -> Callable[
             [ad_group_criterion_service.MutateAdGroupCriteriaRequest],
             ad_group_criterion_service.MutateAdGroupCriteriaResponse]:
-        r"""Return a callable for the
-        mutate ad group criteria
-          method over gRPC.
+        r"""Return a callable for the mutate ad group criteria method over gRPC.
 
         Creates, updates, or removes criteria. Operation
         statuses are returned.

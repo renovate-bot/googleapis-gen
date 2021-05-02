@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDistanceViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDistanceViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetDistanceViewResourceNamesAsync()
         {
-            // Snippet: GetDistanceViewAsync(DistanceViewName, CallSettings)
-            // Additional: GetDistanceViewAsync(DistanceViewName, CancellationToken)
             // Create client
             DistanceViewServiceClient distanceViewServiceClient = await DistanceViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             DistanceViewName resourceName = DistanceViewName.FromCustomerPlaceholderChainDistanceBucket("[CUSTOMER_ID]", "[PLACEHOLDER_CHAIN_ID]", "[DISTANCE_BUCKET]");
             // Make the request
             DistanceView response = await distanceViewServiceClient.GetDistanceViewAsync(resourceName);
-            // End snippet
         }
     }
 }

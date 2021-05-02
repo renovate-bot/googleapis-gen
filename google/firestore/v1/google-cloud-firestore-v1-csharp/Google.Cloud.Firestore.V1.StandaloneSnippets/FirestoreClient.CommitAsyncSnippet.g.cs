@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Firestore.V1.Snippets
 {
+    using Google.Cloud.Firestore.V1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFirestoreClientStandaloneSnippets
     {
         /// <summary>Snippet for CommitAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CommitAsync()
         {
-            // Snippet: CommitAsync(string, IEnumerable<Write>, CallSettings)
-            // Additional: CommitAsync(string, IEnumerable<Write>, CancellationToken)
             // Create client
             FirestoreClient firestoreClient = await FirestoreClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Firestore.V1.Snippets
             IEnumerable<Write> writes = new Write[] { new Write(), };
             // Make the request
             CommitResponse response = await firestoreClient.CommitAsync(database, writes);
-            // End snippet
         }
     }
 }

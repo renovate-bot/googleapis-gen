@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -36,6 +38,7 @@ from google.ads.googleads.v5.resources.types import account_link
 from google.ads.googleads.v5.resources.types import account_link as gagr_account_link
 from google.ads.googleads.v5.services.types import account_link_service
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+
 from .transports.base import AccountLinkServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AccountLinkServiceGrpcTransport
 
@@ -176,6 +179,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
         """Parse a customer path into its component segments."""
         m = re.match(r"^customers/(?P<customer>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -348,8 +352,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v5.services.types.GetAccountLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AccountLinkService.GetAccountLink][google.ads.googleads.v5.services.AccountLinkService.GetAccountLink].
             resource_name (:class:`str`):
                 Required. Resource name of the
@@ -358,6 +361,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
                 This corresponds to the ``resource_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -378,14 +382,16 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a account_link_service.GetAccountLinkRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, account_link_service.GetAccountLinkRequest):
             request = account_link_service.GetAccountLinkRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if resource_name is not None:
                 request.resource_name = resource_name
 
@@ -404,7 +410,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -425,8 +431,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v5.services.types.CreateAccountLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AccountLinkService.CreateAccountLink][google.ads.googleads.v5.services.AccountLinkService.CreateAccountLink].
             customer_id (:class:`str`):
                 Required. The ID of the customer for
@@ -442,6 +447,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
                 This corresponds to the ``account_link`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -461,14 +467,16 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a account_link_service.CreateAccountLinkRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, account_link_service.CreateAccountLinkRequest):
             request = account_link_service.CreateAccountLinkRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if customer_id is not None:
                 request.customer_id = customer_id
             if account_link is not None:
@@ -489,7 +497,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -513,8 +521,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v5.services.types.MutateAccountLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AccountLinkService.MutateAccountLink][google.ads.googleads.v5.services.AccountLinkService.MutateAccountLink].
             customer_id (:class:`str`):
                 Required. The ID of the customer
@@ -530,6 +537,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
                 This corresponds to the ``operation`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -549,14 +557,16 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a account_link_service.MutateAccountLinkRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, account_link_service.MutateAccountLinkRequest):
             request = account_link_service.MutateAccountLinkRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if customer_id is not None:
                 request.customer_id = customer_id
             if operation is not None:
@@ -577,7 +587,7 @@ class AccountLinkServiceClient(metaclass=AccountLinkServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

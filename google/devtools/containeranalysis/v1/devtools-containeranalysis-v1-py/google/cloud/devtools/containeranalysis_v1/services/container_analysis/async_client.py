@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -29,6 +31,7 @@ from google.oauth2 import service_account              # type: ignore
 from google.cloud.devtools.containeranalysis_v1.types import containeranalysis
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
+
 from .transports.base import ContainerAnalysisTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ContainerAnalysisGrpcAsyncIOTransport
 from .client import ContainerAnalysisClient
@@ -59,12 +62,16 @@ class ContainerAnalysisAsyncClient:
 
     common_billing_account_path = staticmethod(ContainerAnalysisClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ContainerAnalysisClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(ContainerAnalysisClient.common_folder_path)
     parse_common_folder_path = staticmethod(ContainerAnalysisClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(ContainerAnalysisClient.common_organization_path)
     parse_common_organization_path = staticmethod(ContainerAnalysisClient.parse_common_organization_path)
+
     common_project_path = staticmethod(ContainerAnalysisClient.common_project_path)
     parse_common_project_path = staticmethod(ContainerAnalysisClient.parse_common_project_path)
+
     common_location_path = staticmethod(ContainerAnalysisClient.common_location_path)
     parse_common_location_path = staticmethod(ContainerAnalysisClient.parse_common_location_path)
 
@@ -149,6 +156,7 @@ class ContainerAnalysisAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = ContainerAnalysisClient(
             credentials=credentials,
             transport=transport,
@@ -177,8 +185,7 @@ class ContainerAnalysisAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -189,6 +196,7 @@ class ContainerAnalysisAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -262,10 +270,11 @@ class ContainerAnalysisAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.SetIamPolicyRequest(**request)
+
         elif not request:
             request = iam_policy.SetIamPolicyRequest(resource=resource, )
 
@@ -316,8 +325,7 @@ class ContainerAnalysisAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -328,6 +336,7 @@ class ContainerAnalysisAsyncClient:
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -401,10 +410,11 @@ class ContainerAnalysisAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.GetIamPolicyRequest(**request)
+
         elif not request:
             request = iam_policy.GetIamPolicyRequest(resource=resource, )
 
@@ -455,8 +465,7 @@ class ContainerAnalysisAsyncClient:
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -476,6 +485,7 @@ class ContainerAnalysisAsyncClient:
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -494,10 +504,11 @@ class ContainerAnalysisAsyncClient:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.TestIamPermissionsRequest(**request)
+
         elif not request:
             request = iam_policy.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
 
@@ -542,8 +553,7 @@ class ContainerAnalysisAsyncClient:
 
         Args:
             request (:class:`google.cloud.devtools.containeranalysis_v1.types.GetVulnerabilityOccurrencesSummaryRequest`):
-                The request object.
-                Request to get a vulnerability
+                The request object. Request to get a vulnerability
                 summary for some set of occurrences.
             parent (:class:`str`):
                 The name of the project to get a vulnerability summary
@@ -557,6 +567,7 @@ class ContainerAnalysisAsyncClient:
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -582,6 +593,7 @@ class ContainerAnalysisAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -613,6 +625,8 @@ class ContainerAnalysisAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

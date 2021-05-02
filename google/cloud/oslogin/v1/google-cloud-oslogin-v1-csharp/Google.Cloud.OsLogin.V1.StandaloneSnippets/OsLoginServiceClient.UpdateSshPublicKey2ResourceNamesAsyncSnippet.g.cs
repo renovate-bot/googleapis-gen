@@ -17,16 +17,19 @@
 namespace Google.Cloud.OsLogin.V1.Snippets
 {
     using Google.Cloud.OsLogin.Common;
+    using Google.Cloud.OsLogin.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOsLoginServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateSshPublicKeyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateSshPublicKey2ResourceNamesAsync()
         {
-            // Snippet: UpdateSshPublicKeyAsync(SshPublicKeyName, SshPublicKey, FieldMask, CallSettings)
-            // Additional: UpdateSshPublicKeyAsync(SshPublicKeyName, SshPublicKey, FieldMask, CancellationToken)
             // Create client
             OsLoginServiceClient osLoginServiceClient = await OsLoginServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.OsLogin.V1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             SshPublicKey response = await osLoginServiceClient.UpdateSshPublicKeyAsync(name, sshPublicKey, updateMask);
-            // End snippet
         }
     }
 }

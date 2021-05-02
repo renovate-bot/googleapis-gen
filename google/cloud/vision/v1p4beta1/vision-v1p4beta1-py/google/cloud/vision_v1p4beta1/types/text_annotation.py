@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.vision_v1p4beta1.types import geometry
 
@@ -47,9 +50,9 @@ class TextAnnotation(proto.Message):
         text (str):
             UTF-8 text detected on the pages.
     """
-
     class DetectedLanguage(proto.Message):
         r"""Detected language for a structural component.
+
         Attributes:
             language_code (str):
                 The BCP-47 language code, such as "en-US" or "sr-Latn". For
@@ -59,17 +62,13 @@ class TextAnnotation(proto.Message):
                 Confidence of detected language. Range [0, 1].
         """
 
-        language_code = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        confidence = proto.Field(
-            proto.FLOAT,
-            number=2,
-        )
+        language_code = proto.Field(proto.STRING, number=1)
+
+        confidence = proto.Field(proto.FLOAT, number=2)
 
     class DetectedBreak(proto.Message):
         r"""Detected start or end of a structural component.
+
         Attributes:
             type_ (google.cloud.vision_v1p4beta1.types.TextAnnotation.DetectedBreak.BreakType):
                 Detected break type.
@@ -85,18 +84,15 @@ class TextAnnotation(proto.Message):
             HYPHEN = 4
             LINE_BREAK = 5
 
-        type_ = proto.Field(
-            proto.ENUM,
-            number=1,
+        type_ = proto.Field(proto.ENUM, number=1,
             enum='TextAnnotation.DetectedBreak.BreakType',
         )
-        is_prefix = proto.Field(
-            proto.BOOL,
-            number=2,
-        )
+
+        is_prefix = proto.Field(proto.BOOL, number=2)
 
     class TextProperty(proto.Message):
         r"""Additional information detected on the structural component.
+
         Attributes:
             detected_languages (Sequence[google.cloud.vision_v1p4beta1.types.TextAnnotation.DetectedLanguage]):
                 A list of detected languages together with
@@ -105,30 +101,24 @@ class TextAnnotation(proto.Message):
                 Detected start or end of a text segment.
         """
 
-        detected_languages = proto.RepeatedField(
-            proto.MESSAGE,
-            number=1,
+        detected_languages = proto.RepeatedField(proto.MESSAGE, number=1,
             message='TextAnnotation.DetectedLanguage',
         )
-        detected_break = proto.Field(
-            proto.MESSAGE,
-            number=2,
+
+        detected_break = proto.Field(proto.MESSAGE, number=2,
             message='TextAnnotation.DetectedBreak',
         )
 
-    pages = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    pages = proto.RepeatedField(proto.MESSAGE, number=1,
         message='Page',
     )
-    text = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    text = proto.Field(proto.STRING, number=2)
 
 
 class Page(proto.Message):
     r"""Detected page from OCR.
+
     Attributes:
         property (google.cloud.vision_v1p4beta1.types.TextAnnotation.TextProperty):
             Additional information detected on the page.
@@ -145,32 +135,24 @@ class Page(proto.Message):
             Confidence of the OCR results on the page. Range [0, 1].
     """
 
-    property = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    property = proto.Field(proto.MESSAGE, number=1,
         message='TextAnnotation.TextProperty',
     )
-    width = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    height = proto.Field(
-        proto.INT32,
-        number=3,
-    )
-    blocks = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+
+    width = proto.Field(proto.INT32, number=2)
+
+    height = proto.Field(proto.INT32, number=3)
+
+    blocks = proto.RepeatedField(proto.MESSAGE, number=4,
         message='Block',
     )
-    confidence = proto.Field(
-        proto.FLOAT,
-        number=5,
-    )
+
+    confidence = proto.Field(proto.FLOAT, number=5)
 
 
 class Block(proto.Message):
     r"""Logical element on the page.
+
     Attributes:
         property (google.cloud.vision_v1p4beta1.types.TextAnnotation.TextProperty):
             Additional information detected for the
@@ -218,30 +200,23 @@ class Block(proto.Message):
         RULER = 4
         BARCODE = 5
 
-    property = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    property = proto.Field(proto.MESSAGE, number=1,
         message='TextAnnotation.TextProperty',
     )
-    bounding_box = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    bounding_box = proto.Field(proto.MESSAGE, number=2,
         message=geometry.BoundingPoly,
     )
-    paragraphs = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+
+    paragraphs = proto.RepeatedField(proto.MESSAGE, number=3,
         message='Paragraph',
     )
-    block_type = proto.Field(
-        proto.ENUM,
-        number=4,
+
+    block_type = proto.Field(proto.ENUM, number=4,
         enum=BlockType,
     )
-    confidence = proto.Field(
-        proto.FLOAT,
-        number=5,
-    )
+
+    confidence = proto.Field(proto.FLOAT, number=5)
 
 
 class Paragraph(proto.Message):
@@ -271,29 +246,24 @@ class Paragraph(proto.Message):
             1].
     """
 
-    property = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    property = proto.Field(proto.MESSAGE, number=1,
         message='TextAnnotation.TextProperty',
     )
-    bounding_box = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    bounding_box = proto.Field(proto.MESSAGE, number=2,
         message=geometry.BoundingPoly,
     )
-    words = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+
+    words = proto.RepeatedField(proto.MESSAGE, number=3,
         message='Word',
     )
-    confidence = proto.Field(
-        proto.FLOAT,
-        number=4,
-    )
+
+    confidence = proto.Field(proto.FLOAT, number=4)
 
 
 class Word(proto.Message):
     r"""A word representation.
+
     Attributes:
         property (google.cloud.vision_v1p4beta1.types.TextAnnotation.TextProperty):
             Additional information detected for the word.
@@ -317,29 +287,24 @@ class Word(proto.Message):
             Confidence of the OCR results for the word. Range [0, 1].
     """
 
-    property = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    property = proto.Field(proto.MESSAGE, number=1,
         message='TextAnnotation.TextProperty',
     )
-    bounding_box = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    bounding_box = proto.Field(proto.MESSAGE, number=2,
         message=geometry.BoundingPoly,
     )
-    symbols = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+
+    symbols = proto.RepeatedField(proto.MESSAGE, number=3,
         message='Symbol',
     )
-    confidence = proto.Field(
-        proto.FLOAT,
-        number=4,
-    )
+
+    confidence = proto.Field(proto.FLOAT, number=4)
 
 
 class Symbol(proto.Message):
     r"""A single symbol representation.
+
     Attributes:
         property (google.cloud.vision_v1p4beta1.types.TextAnnotation.TextProperty):
             Additional information detected for the
@@ -363,24 +328,17 @@ class Symbol(proto.Message):
             Confidence of the OCR results for the symbol. Range [0, 1].
     """
 
-    property = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    property = proto.Field(proto.MESSAGE, number=1,
         message='TextAnnotation.TextProperty',
     )
-    bounding_box = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    bounding_box = proto.Field(proto.MESSAGE, number=2,
         message=geometry.BoundingPoly,
     )
-    text = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    confidence = proto.Field(
-        proto.FLOAT,
-        number=4,
-    )
+
+    text = proto.Field(proto.STRING, number=3)
+
+    confidence = proto.Field(proto.FLOAT, number=4)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

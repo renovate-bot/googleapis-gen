@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -27,6 +29,7 @@ import grpc  # type: ignore
 from google.cloud.dialogflowcx_v3beta1.types import webhook
 from google.cloud.dialogflowcx_v3beta1.types import webhook as gcdc_webhook
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import WebhooksTransport, DEFAULT_CLIENT_INFO
 
 
@@ -61,8 +64,7 @@ class WebhooksGrpcTransport(WebhooksTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,15 +203,13 @@ class WebhooksGrpcTransport(WebhooksTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -223,9 +223,7 @@ class WebhooksGrpcTransport(WebhooksTransport):
     def list_webhooks(self) -> Callable[
             [webhook.ListWebhooksRequest],
             webhook.ListWebhooksResponse]:
-        r"""Return a callable for the
-        list webhooks
-          method over gRPC.
+        r"""Return a callable for the list webhooks method over gRPC.
 
         Returns the list of all webhooks in the specified
         agent.
@@ -252,9 +250,7 @@ class WebhooksGrpcTransport(WebhooksTransport):
     def get_webhook(self) -> Callable[
             [webhook.GetWebhookRequest],
             webhook.Webhook]:
-        r"""Return a callable for the
-        get webhook
-          method over gRPC.
+        r"""Return a callable for the get webhook method over gRPC.
 
         Retrieves the specified webhook.
 
@@ -280,9 +276,7 @@ class WebhooksGrpcTransport(WebhooksTransport):
     def create_webhook(self) -> Callable[
             [gcdc_webhook.CreateWebhookRequest],
             gcdc_webhook.Webhook]:
-        r"""Return a callable for the
-        create webhook
-          method over gRPC.
+        r"""Return a callable for the create webhook method over gRPC.
 
         Creates a webhook in the specified agent.
 
@@ -308,9 +302,7 @@ class WebhooksGrpcTransport(WebhooksTransport):
     def update_webhook(self) -> Callable[
             [gcdc_webhook.UpdateWebhookRequest],
             gcdc_webhook.Webhook]:
-        r"""Return a callable for the
-        update webhook
-          method over gRPC.
+        r"""Return a callable for the update webhook method over gRPC.
 
         Updates the specified webhook.
 
@@ -336,9 +328,7 @@ class WebhooksGrpcTransport(WebhooksTransport):
     def delete_webhook(self) -> Callable[
             [webhook.DeleteWebhookRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete webhook
-          method over gRPC.
+        r"""Return a callable for the delete webhook method over gRPC.
 
         Deletes the specified webhook.
 

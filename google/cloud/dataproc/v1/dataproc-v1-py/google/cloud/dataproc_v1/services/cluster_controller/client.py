@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -37,6 +39,7 @@ from google.cloud.dataproc_v1.types import clusters
 from google.cloud.dataproc_v1.types import operations
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import ClusterControllerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ClusterControllerGrpcTransport
 from .transports.grpc_asyncio import ClusterControllerGrpcAsyncIOTransport
@@ -356,8 +359,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1.types.CreateClusterRequest):
-                The request object.
-                A request to create a cluster.
+                The request object. A request to create a cluster.
             project_id (str):
                 Required. The ID of the Google Cloud
                 Platform project that the cluster
@@ -378,6 +380,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
                 This corresponds to the ``cluster`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -406,8 +409,10 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clusters.CreateClusterRequest):
             request = clusters.CreateClusterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project_id is not None:
                 request.project_id = project_id
             if region is not None:
@@ -457,8 +462,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1.types.UpdateClusterRequest):
-                The request object.
-                A request to update a cluster.
+                The request object. A request to update a cluster.
             project_id (str):
                 Required. The ID of the Google Cloud
                 Platform project the cluster belongs to.
@@ -550,6 +554,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -578,8 +583,10 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clusters.UpdateClusterRequest):
             request = clusters.UpdateClusterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project_id is not None:
                 request.project_id = project_id
             if region is not None:
@@ -625,8 +632,8 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1.types.StopClusterRequest):
-                The request object.
-                A request to stop a cluster.
+                The request object. A request to stop a cluster.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -642,6 +649,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a clusters.StopClusterRequest.
         # There's no risk of modifying the input as we've already verified
@@ -683,8 +691,8 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1.types.StartClusterRequest):
-                The request object.
-                A request to start a cluster.
+                The request object. A request to start a cluster.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -700,6 +708,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a clusters.StartClusterRequest.
         # There's no risk of modifying the input as we've already verified
@@ -747,8 +756,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1.types.DeleteClusterRequest):
-                The request object.
-                A request to delete a cluster.
+                The request object. A request to delete a cluster.
             project_id (str):
                 Required. The ID of the Google Cloud
                 Platform project that the cluster
@@ -769,6 +777,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
                 This corresponds to the ``cluster_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -808,8 +817,10 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clusters.DeleteClusterRequest):
             request = clusters.DeleteClusterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project_id is not None:
                 request.project_id = project_id
             if region is not None:
@@ -855,8 +866,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1.types.GetClusterRequest):
-                The request object.
-                Request to get the resource
+                The request object. Request to get the resource
                 representation for a cluster in a project.
             project_id (str):
                 Required. The ID of the Google Cloud
@@ -878,6 +888,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
                 This corresponds to the ``cluster_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -905,8 +916,10 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clusters.GetClusterRequest):
             request = clusters.GetClusterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project_id is not None:
                 request.project_id = project_id
             if region is not None:
@@ -944,8 +957,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1.types.ListClustersRequest):
-                The request object.
-                A request to list the clusters in a
+                The request object. A request to list the clusters in a
                 project.
             project_id (str):
                 Required. The ID of the Google Cloud
@@ -990,6 +1002,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1019,8 +1032,10 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clusters.ListClustersRequest):
             request = clusters.ListClustersRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project_id is not None:
                 request.project_id = project_id
             if region is not None:
@@ -1073,8 +1088,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
 
         Args:
             request (google.cloud.dataproc_v1.types.DiagnoseClusterRequest):
-                The request object.
-                A request to collect cluster
+                The request object. A request to collect cluster
                 diagnostic information.
             project_id (str):
                 Required. The ID of the Google Cloud
@@ -1096,6 +1110,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
                 This corresponds to the ``cluster_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1125,8 +1140,10 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, clusters.DiagnoseClusterRequest):
             request = clusters.DiagnoseClusterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project_id is not None:
                 request.project_id = project_id
             if region is not None:
@@ -1156,6 +1173,8 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

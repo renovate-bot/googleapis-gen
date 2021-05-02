@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v5.enums.types import asset_field_type
 from google.ads.googleads.v5.enums.types import asset_link_status
@@ -30,6 +33,7 @@ __protobuf__ = proto.module(
 
 class CampaignAsset(proto.Message):
     r"""A link between a Campaign and an Asset.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the campaign asset.
@@ -50,28 +54,13 @@ class CampaignAsset(proto.Message):
             This field is read-only.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    campaign = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
-    asset = proto.Field(
-        proto.STRING,
-        number=7,
-        optional=True,
-    )
-    field_type = proto.Field(
-        proto.ENUM,
-        number=4,
+    resource_name = proto.Field(proto.STRING, number=1)
+    campaign = proto.Field(proto.STRING, number=6, optional=True)
+    asset = proto.Field(proto.STRING, number=7, optional=True)
+    field_type = proto.Field(proto.ENUM, number=4,
         enum=asset_field_type.AssetFieldTypeEnum.AssetFieldType,
     )
-    status = proto.Field(
-        proto.ENUM,
-        number=5,
+    status = proto.Field(proto.ENUM, number=5,
         enum=asset_link_status.AssetLinkStatusEnum.AssetLinkStatus,
     )
 

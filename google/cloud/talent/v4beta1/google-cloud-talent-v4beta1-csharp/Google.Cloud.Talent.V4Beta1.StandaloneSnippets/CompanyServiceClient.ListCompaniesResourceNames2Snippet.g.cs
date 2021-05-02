@@ -18,14 +18,18 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Talent.V4Beta1;
     using System;
 
     public sealed partial class GeneratedCompanyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListCompanies</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListCompaniesResourceNames2()
         {
-            // Snippet: ListCompanies(ProjectName, string, int?, CallSettings)
             // Create client
             CompanyServiceClient companyServiceClient = CompanyServiceClient.Create();
             // Initialize request argument(s)
@@ -64,7 +68,6 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

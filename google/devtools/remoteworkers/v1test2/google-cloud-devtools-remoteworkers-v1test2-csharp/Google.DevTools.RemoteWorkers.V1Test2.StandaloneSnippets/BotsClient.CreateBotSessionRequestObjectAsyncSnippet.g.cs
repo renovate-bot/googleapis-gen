@@ -16,15 +16,18 @@
 
 namespace Google.DevTools.RemoteWorkers.V1Test2.Snippets
 {
+    using Google.DevTools.RemoteWorkers.V1Test2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBotsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateBotSessionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateBotSessionRequestObjectAsync()
         {
-            // Snippet: CreateBotSessionAsync(CreateBotSessionRequest, CallSettings)
-            // Additional: CreateBotSessionAsync(CreateBotSessionRequest, CancellationToken)
             // Create client
             BotsClient botsClient = await BotsClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.DevTools.RemoteWorkers.V1Test2.Snippets
             };
             // Make the request
             BotSession response = await botsClient.CreateBotSessionAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Channel.V1.Snippets
 {
+    using Google.Cloud.Channel.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedCloudChannelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateChannelPartnerLink</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateChannelPartnerLinkRequestObject()
         {
-            // Snippet: UpdateChannelPartnerLink(UpdateChannelPartnerLinkRequest, CallSettings)
             // Create client
             CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.Channel.V1.Snippets
             };
             // Make the request
             ChannelPartnerLink response = cloudChannelServiceClient.UpdateChannelPartnerLink(request);
-            // End snippet
         }
     }
 }

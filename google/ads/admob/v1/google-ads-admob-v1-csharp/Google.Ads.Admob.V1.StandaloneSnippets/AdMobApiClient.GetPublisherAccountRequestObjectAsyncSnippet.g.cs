@@ -16,22 +16,24 @@
 
 namespace Google.Ads.Admob.V1.Snippets
 {
+    using Google.Ads.Admob.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdMobApiClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPublisherAccountAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetPublisherAccountRequestObjectAsync()
         {
-            // Snippet: GetPublisherAccountAsync(GetPublisherAccountRequest, CallSettings)
-            // Additional: GetPublisherAccountAsync(GetPublisherAccountRequest, CancellationToken)
             // Create client
             AdMobApiClient adMobApiClient = await AdMobApiClient.CreateAsync();
             // Initialize request argument(s)
             GetPublisherAccountRequest request = new GetPublisherAccountRequest { Name = "", };
             // Make the request
             PublisherAccount response = await adMobApiClient.GetPublisherAccountAsync(request);
-            // End snippet
         }
     }
 }

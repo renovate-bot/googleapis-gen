@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -33,6 +35,7 @@ from google.cloud.dataproc_v1beta2.types import clusters
 from google.cloud.dataproc_v1beta2.types import operations
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import ClusterControllerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ClusterControllerGrpcAsyncIOTransport
 from .client import ClusterControllerClient
@@ -50,14 +53,19 @@ class ClusterControllerAsyncClient:
 
     cluster_path = staticmethod(ClusterControllerClient.cluster_path)
     parse_cluster_path = staticmethod(ClusterControllerClient.parse_cluster_path)
+
     common_billing_account_path = staticmethod(ClusterControllerClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ClusterControllerClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(ClusterControllerClient.common_folder_path)
     parse_common_folder_path = staticmethod(ClusterControllerClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(ClusterControllerClient.common_organization_path)
     parse_common_organization_path = staticmethod(ClusterControllerClient.parse_common_organization_path)
+
     common_project_path = staticmethod(ClusterControllerClient.common_project_path)
     parse_common_project_path = staticmethod(ClusterControllerClient.parse_common_project_path)
+
     common_location_path = staticmethod(ClusterControllerClient.common_location_path)
     parse_common_location_path = staticmethod(ClusterControllerClient.parse_common_location_path)
 
@@ -142,6 +150,7 @@ class ClusterControllerAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = ClusterControllerClient(
             credentials=credentials,
             transport=transport,
@@ -167,8 +176,7 @@ class ClusterControllerAsyncClient:
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.CreateClusterRequest`):
-                The request object.
-                A request to create a cluster.
+                The request object. A request to create a cluster.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project that the cluster
@@ -189,6 +197,7 @@ class ClusterControllerAsyncClient:
                 This corresponds to the ``cluster`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -215,6 +224,7 @@ class ClusterControllerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_id is not None:
             request.project_id = project_id
         if region is not None:
@@ -227,7 +237,10 @@ class ClusterControllerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_cluster,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=300.0,
@@ -274,8 +287,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.UpdateClusterRequest`):
-                The request object.
-                A request to update a cluster.
+                The request object. A request to update a cluster.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project the cluster belongs to.
@@ -375,6 +387,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -401,6 +414,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_id is not None:
             request.project_id = project_id
         if region is not None:
@@ -417,7 +431,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_cluster,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=300.0,
@@ -462,8 +479,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.DeleteClusterRequest`):
-                The request object.
-                A request to delete a cluster.
+                The request object. A request to delete a cluster.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project that the cluster
@@ -484,6 +500,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``cluster_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -521,6 +538,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_id is not None:
             request.project_id = project_id
         if region is not None:
@@ -533,7 +551,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_cluster,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=300.0,
@@ -576,8 +597,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.GetClusterRequest`):
-                The request object.
-                Request to get the resource
+                The request object. Request to get the resource
                 representation for a cluster in a project.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
@@ -599,6 +619,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``cluster_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -624,6 +645,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_id is not None:
             request.project_id = project_id
         if region is not None:
@@ -636,7 +658,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_cluster,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
@@ -673,8 +698,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.ListClustersRequest`):
-                The request object.
-                A request to list the clusters in a
+                The request object. A request to list the clusters in a
                 project.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
@@ -719,6 +743,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -746,6 +771,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_id is not None:
             request.project_id = project_id
         if region is not None:
@@ -758,7 +784,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_clusters,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
@@ -809,8 +838,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.DiagnoseClusterRequest`):
-                The request object.
-                A request to collect cluster
+                The request object. A request to collect cluster
                 diagnostic information.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
@@ -832,6 +860,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``cluster_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -869,6 +898,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_id is not None:
             request.project_id = project_id
         if region is not None:
@@ -881,7 +911,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.diagnose_cluster,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=300.0,
@@ -908,6 +941,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

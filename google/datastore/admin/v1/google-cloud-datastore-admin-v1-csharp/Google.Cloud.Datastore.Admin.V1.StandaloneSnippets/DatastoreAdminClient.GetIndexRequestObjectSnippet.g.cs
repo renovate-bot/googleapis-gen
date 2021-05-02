@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Datastore.Admin.V1.Snippets
 {
+    using Google.Cloud.Datastore.Admin.V1;
+
     public sealed partial class GeneratedDatastoreAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIndex</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetIndexRequestObject()
         {
-            // Snippet: GetIndex(GetIndexRequest, CallSettings)
             // Create client
             DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.Datastore.Admin.V1.Snippets
             };
             // Make the request
             Index response = datastoreAdminClient.GetIndex(request);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Bigquery.V2.Snippets
 {
+    using Google.Cloud.Bigquery.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedModelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteModelAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteModelRequestObjectAsync()
         {
-            // Snippet: DeleteModelAsync(DeleteModelRequest, CallSettings)
-            // Additional: DeleteModelAsync(DeleteModelRequest, CancellationToken)
             // Create client
             ModelServiceClient modelServiceClient = await ModelServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Bigquery.V2.Snippets
             };
             // Make the request
             await modelServiceClient.DeleteModelAsync(request);
-            // End snippet
         }
     }
 }

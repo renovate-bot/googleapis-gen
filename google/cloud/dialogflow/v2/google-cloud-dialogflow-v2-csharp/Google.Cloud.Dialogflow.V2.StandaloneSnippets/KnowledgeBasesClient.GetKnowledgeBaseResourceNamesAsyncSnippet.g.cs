@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedKnowledgeBasesClientStandaloneSnippets
     {
         /// <summary>Snippet for GetKnowledgeBaseAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetKnowledgeBaseResourceNamesAsync()
         {
-            // Snippet: GetKnowledgeBaseAsync(KnowledgeBaseName, CallSettings)
-            // Additional: GetKnowledgeBaseAsync(KnowledgeBaseName, CancellationToken)
             // Create client
             KnowledgeBasesClient knowledgeBasesClient = await KnowledgeBasesClient.CreateAsync();
             // Initialize request argument(s)
             KnowledgeBaseName name = KnowledgeBaseName.FromProjectKnowledgeBase("[PROJECT]", "[KNOWLEDGE_BASE]");
             // Make the request
             KnowledgeBase response = await knowledgeBasesClient.GetKnowledgeBaseAsync(name);
-            // End snippet
         }
     }
 }

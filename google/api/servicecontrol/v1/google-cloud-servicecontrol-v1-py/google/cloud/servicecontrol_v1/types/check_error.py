@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.rpc import status_pb2 as gr_status  # type: ignore
 
@@ -72,22 +75,15 @@ class CheckError(proto.Message):
         BILLING_STATUS_UNAVAILABLE = 302
         CLOUD_RESOURCE_MANAGER_BACKEND_UNAVAILABLE = 305
 
-    code = proto.Field(
-        proto.ENUM,
-        number=1,
+    code = proto.Field(proto.ENUM, number=1,
         enum=Code,
     )
-    subject = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    detail = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    status = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    subject = proto.Field(proto.STRING, number=4)
+
+    detail = proto.Field(proto.STRING, number=2)
+
+    status = proto.Field(proto.MESSAGE, number=3,
         message=gr_status.Status,
     )
 

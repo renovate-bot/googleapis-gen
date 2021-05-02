@@ -17,6 +17,7 @@
 namespace Google.Cloud.Asset.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Asset.V1;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -24,10 +25,13 @@ namespace Google.Cloud.Asset.V1.Snippets
 
     public sealed partial class GeneratedAssetServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for SearchAllResources</summary>
+        /// <summary>Snippet for SearchAllResourcesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SearchAllResourcesAsync()
         {
-            // Snippet: SearchAllResourcesAsync(string, string, IEnumerable<string>, string, int?, CallSettings)
             // Create client
             AssetServiceClient assetServiceClient = await AssetServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -68,7 +72,6 @@ namespace Google.Cloud.Asset.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

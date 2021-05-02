@@ -16,16 +16,19 @@
 
 namespace Google.Maps.PlayableLocations.V3.Snippets
 {
+    using Google.Maps.PlayableLocations.V3;
     using Google.Maps.PlayableLocations.V3.Sample;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPlayableLocationsClientStandaloneSnippets
     {
         /// <summary>Snippet for SamplePlayableLocationsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SamplePlayableLocationsRequestObjectAsync()
         {
-            // Snippet: SamplePlayableLocationsAsync(SamplePlayableLocationsRequest, CallSettings)
-            // Additional: SamplePlayableLocationsAsync(SamplePlayableLocationsRequest, CancellationToken)
             // Create client
             PlayableLocationsClient playableLocationsClient = await PlayableLocationsClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Maps.PlayableLocations.V3.Snippets
             };
             // Make the request
             SamplePlayableLocationsResponse response = await playableLocationsClient.SamplePlayableLocationsAsync(request);
-            // End snippet
         }
     }
 }

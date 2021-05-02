@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBatchJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBatchJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetBatchJobRequestObjectAsync()
         {
-            // Snippet: GetBatchJobAsync(GetBatchJobRequest, CallSettings)
-            // Additional: GetBatchJobAsync(GetBatchJobRequest, CancellationToken)
             // Create client
             BatchJobServiceClient batchJobServiceClient = await BatchJobServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             BatchJob response = await batchJobServiceClient.GetBatchJobAsync(request);
-            // End snippet
         }
     }
 }

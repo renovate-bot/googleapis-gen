@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.automl_v1.types import geometry
 from google.cloud.automl_v1.types import io
@@ -45,19 +48,14 @@ class Image(proto.Message):
             Output only. HTTP URI to the thumbnail image.
     """
 
-    image_bytes = proto.Field(
-        proto.BYTES,
-        number=1,
-        oneof='data',
-    )
-    thumbnail_uri = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+    image_bytes = proto.Field(proto.BYTES, number=1, oneof='data')
+
+    thumbnail_uri = proto.Field(proto.STRING, number=4)
 
 
 class TextSnippet(proto.Message):
     r"""A representation of a text snippet.
+
     Attributes:
         content (str):
             Required. The content of the text snippet as
@@ -74,22 +72,16 @@ class TextSnippet(proto.Message):
             the content.
     """
 
-    content = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    mime_type = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    content_uri = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+    content = proto.Field(proto.STRING, number=1)
+
+    mime_type = proto.Field(proto.STRING, number=2)
+
+    content_uri = proto.Field(proto.STRING, number=4)
 
 
 class DocumentDimensions(proto.Message):
     r"""Message that describes dimension of a document.
+
     Attributes:
         unit (google.cloud.automl_v1.types.DocumentDimensions.DocumentDimensionUnit):
             Unit of the dimension.
@@ -107,23 +99,18 @@ class DocumentDimensions(proto.Message):
         CENTIMETER = 2
         POINT = 3
 
-    unit = proto.Field(
-        proto.ENUM,
-        number=1,
+    unit = proto.Field(proto.ENUM, number=1,
         enum=DocumentDimensionUnit,
     )
-    width = proto.Field(
-        proto.FLOAT,
-        number=2,
-    )
-    height = proto.Field(
-        proto.FLOAT,
-        number=3,
-    )
+
+    width = proto.Field(proto.FLOAT, number=2)
+
+    height = proto.Field(proto.FLOAT, number=3)
 
 
 class Document(proto.Message):
     r"""A structured text document e.g. a PDF.
+
     Attributes:
         input_config (google.cloud.automl_v1.types.DocumentInputConfig):
             An input config specifying the content of the
@@ -138,7 +125,6 @@ class Document(proto.Message):
         page_count (int):
             Number of pages in the document.
     """
-
     class Layout(proto.Message):
         r"""Describes the layout information of a
         [text_segment][google.cloud.automl.v1.Document.Layout.text_segment]
@@ -183,54 +169,42 @@ class Document(proto.Message):
             TABLE_ROW = 8
             TABLE_CELL = 9
 
-        text_segment = proto.Field(
-            proto.MESSAGE,
-            number=1,
+        text_segment = proto.Field(proto.MESSAGE, number=1,
             message=gca_text_segment.TextSegment,
         )
-        page_number = proto.Field(
-            proto.INT32,
-            number=2,
-        )
-        bounding_poly = proto.Field(
-            proto.MESSAGE,
-            number=3,
+
+        page_number = proto.Field(proto.INT32, number=2)
+
+        bounding_poly = proto.Field(proto.MESSAGE, number=3,
             message=geometry.BoundingPoly,
         )
-        text_segment_type = proto.Field(
-            proto.ENUM,
-            number=4,
+
+        text_segment_type = proto.Field(proto.ENUM, number=4,
             enum='Document.Layout.TextSegmentType',
         )
 
-    input_config = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    input_config = proto.Field(proto.MESSAGE, number=1,
         message=io.DocumentInputConfig,
     )
-    document_text = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    document_text = proto.Field(proto.MESSAGE, number=2,
         message='TextSnippet',
     )
-    layout = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+
+    layout = proto.RepeatedField(proto.MESSAGE, number=3,
         message=Layout,
     )
-    document_dimensions = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    document_dimensions = proto.Field(proto.MESSAGE, number=4,
         message='DocumentDimensions',
     )
-    page_count = proto.Field(
-        proto.INT32,
-        number=5,
-    )
+
+    page_count = proto.Field(proto.INT32, number=5)
 
 
 class ExamplePayload(proto.Message):
     r"""Example data used for training or prediction.
+
     Attributes:
         image (google.cloud.automl_v1.types.Image):
             Example image.
@@ -240,22 +214,15 @@ class ExamplePayload(proto.Message):
             Example document.
     """
 
-    image = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='payload',
+    image = proto.Field(proto.MESSAGE, number=1, oneof='payload',
         message='Image',
     )
-    text_snippet = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='payload',
+
+    text_snippet = proto.Field(proto.MESSAGE, number=2, oneof='payload',
         message='TextSnippet',
     )
-    document = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='payload',
+
+    document = proto.Field(proto.MESSAGE, number=4, oneof='payload',
         message='Document',
     )
 

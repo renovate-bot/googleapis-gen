@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -55,6 +57,7 @@ from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import type_pb2 as gp_type  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+
 from .transports.base import ServiceManagerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ServiceManagerGrpcAsyncIOTransport
 from .client import ServiceManagerClient
@@ -72,12 +75,16 @@ class ServiceManagerAsyncClient:
 
     common_billing_account_path = staticmethod(ServiceManagerClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ServiceManagerClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(ServiceManagerClient.common_folder_path)
     parse_common_folder_path = staticmethod(ServiceManagerClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(ServiceManagerClient.common_organization_path)
     parse_common_organization_path = staticmethod(ServiceManagerClient.parse_common_organization_path)
+
     common_project_path = staticmethod(ServiceManagerClient.common_project_path)
     parse_common_project_path = staticmethod(ServiceManagerClient.parse_common_project_path)
+
     common_location_path = staticmethod(ServiceManagerClient.common_location_path)
     parse_common_location_path = staticmethod(ServiceManagerClient.parse_common_location_path)
 
@@ -162,6 +169,7 @@ class ServiceManagerAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = ServiceManagerClient(
             credentials=credentials,
             transport=transport,
@@ -191,8 +199,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.ListServicesRequest`):
-                The request object.
-                Request message for `ListServices`
+                The request object. Request message for `ListServices`
                 method.
             producer_project_id (:class:`str`):
                 Include services produced by the
@@ -212,6 +219,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``consumer_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -238,6 +246,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if producer_project_id is not None:
             request.producer_project_id = producer_project_id
         if consumer_id is not None:
@@ -284,8 +293,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.GetServiceRequest`):
-                The request object.
-                Request message for `GetService`
+                The request object. Request message for `GetService`
                 method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -295,6 +303,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -320,6 +329,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service_name is not None:
             request.service_name = service_name
 
@@ -357,8 +367,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.CreateServiceRequest`):
-                The request object.
-                Request message for CreateService
+                The request object. Request message for CreateService
                 method.
             service (:class:`google.cloud.servicemanagement_v1.types.ManagedService`):
                 Required. Initial values for the
@@ -367,6 +376,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``service`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -393,6 +403,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service is not None:
             request.service = service
 
@@ -442,8 +453,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.DeleteServiceRequest`):
-                The request object.
-                Request message for DeleteService
+                The request object. Request message for DeleteService
                 method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -454,6 +464,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -491,6 +502,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service_name is not None:
             request.service_name = service_name
 
@@ -539,8 +551,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.UndeleteServiceRequest`):
-                The request object.
-                Request message for UndeleteService
+                The request object. Request message for UndeleteService
                 method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -551,6 +562,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -578,6 +590,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service_name is not None:
             request.service_name = service_name
 
@@ -621,8 +634,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.ListServiceConfigsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListServiceConfigs method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -633,6 +645,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``service_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -660,6 +673,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service_name is not None:
             request.service_name = service_name
 
@@ -706,8 +720,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.GetServiceConfigRequest`):
-                The request object.
-                Request message for GetServiceConfig
+                The request object. Request message for GetServiceConfig
                 method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -735,6 +748,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``view`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -776,6 +790,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service_name is not None:
             request.service_name = service_name
         if config_id is not None:
@@ -823,8 +838,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.CreateServiceConfigRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateServiceConfig method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -842,6 +856,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``service_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -883,6 +898,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service_name is not None:
             request.service_name = service_name
         if service_config is not None:
@@ -933,8 +949,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.SubmitConfigSourceRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 SubmitConfigSource method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -961,6 +976,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``validate_only`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -988,6 +1004,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service_name is not None:
             request.service_name = service_name
         if config_source is not None:
@@ -1037,8 +1054,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.ListServiceRolloutsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'ListServiceRollouts'
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -1063,6 +1079,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1090,6 +1107,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service_name is not None:
             request.service_name = service_name
         if filter is not None:
@@ -1137,8 +1155,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.GetServiceRolloutRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetServiceRollout method.
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -1156,6 +1173,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``rollout_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1184,6 +1202,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service_name is not None:
             request.service_name = service_name
         if rollout_id is not None:
@@ -1237,8 +1256,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.CreateServiceRolloutRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'CreateServiceRollout'
             service_name (:class:`str`):
                 Required. The name of the service. See the
@@ -1256,6 +1274,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``rollout`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1284,6 +1303,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service_name is not None:
             request.service_name = service_name
         if rollout is not None:
@@ -1340,8 +1360,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.GenerateConfigReportRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GenerateConfigReport method.
             new_config (:class:`google.protobuf.any_pb2.Any`):
                 Required. Service configuration for which we want to
@@ -1365,6 +1384,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``old_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1389,6 +1409,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if new_config is not None:
             request.new_config = new_config
         if old_config is not None:
@@ -1432,8 +1453,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.EnableServiceRequest`):
-                The request object.
-                Request message for EnableService
+                The request object. Request message for EnableService
                 method.
             service_name (:class:`str`):
                 Required. Name of the service to
@@ -1458,6 +1478,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``consumer_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1485,6 +1506,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service_name is not None:
             request.service_name = service_name
         if consumer_id is not None:
@@ -1536,8 +1558,7 @@ class ServiceManagerAsyncClient:
 
         Args:
             request (:class:`google.cloud.servicemanagement_v1.types.DisableServiceRequest`):
-                The request object.
-                Request message for DisableService
+                The request object. Request message for DisableService
                 method.
             service_name (:class:`str`):
                 Required. Name of the service to
@@ -1562,6 +1583,7 @@ class ServiceManagerAsyncClient:
                 This corresponds to the ``consumer_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1589,6 +1611,7 @@ class ServiceManagerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if service_name is not None:
             request.service_name = service_name
         if consumer_id is not None:
@@ -1620,6 +1643,8 @@ class ServiceManagerAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

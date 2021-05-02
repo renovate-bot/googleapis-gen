@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
+    using Google.Cloud.ResourceManager.V3;
+
     public sealed partial class GeneratedTagKeysClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTagKey</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetTagKey()
         {
-            // Snippet: GetTagKey(string, CallSettings)
             // Create client
             TagKeysClient tagKeysClient = TagKeysClient.Create();
             // Initialize request argument(s)
             string name = "tagKeys/[TAG_KEY]";
             // Make the request
             TagKey response = tagKeysClient.GetTagKey(name);
-            // End snippet
         }
     }
 }

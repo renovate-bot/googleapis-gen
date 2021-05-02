@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
+
     public sealed partial class GeneratedAdGroupLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateAdGroupLabels</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateAdGroupLabelsRequestObject()
         {
-            // Snippet: MutateAdGroupLabels(MutateAdGroupLabelsRequest, CallSettings)
             // Create client
             AdGroupLabelServiceClient adGroupLabelServiceClient = AdGroupLabelServiceClient.Create();
             // Initialize request argument(s)
@@ -37,7 +42,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateAdGroupLabelsResponse response = adGroupLabelServiceClient.MutateAdGroupLabels(request);
-            // End snippet
         }
     }
 }

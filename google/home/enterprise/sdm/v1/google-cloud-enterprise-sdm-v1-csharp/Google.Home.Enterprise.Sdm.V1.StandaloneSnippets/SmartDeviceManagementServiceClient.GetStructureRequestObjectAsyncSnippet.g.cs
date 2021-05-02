@@ -16,22 +16,24 @@
 
 namespace Google.Home.Enterprise.Sdm.V1.Snippets
 {
+    using Google.Home.Enterprise.Sdm.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSmartDeviceManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetStructureAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetStructureRequestObjectAsync()
         {
-            // Snippet: GetStructureAsync(GetStructureRequest, CallSettings)
-            // Additional: GetStructureAsync(GetStructureRequest, CancellationToken)
             // Create client
             SmartDeviceManagementServiceClient smartDeviceManagementServiceClient = await SmartDeviceManagementServiceClient.CreateAsync();
             // Initialize request argument(s)
             GetStructureRequest request = new GetStructureRequest { Name = "", };
             // Make the request
             Structure response = await smartDeviceManagementServiceClient.GetStructureAsync(request);
-            // End snippet
         }
     }
 }

@@ -17,20 +17,23 @@
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Monitoring.V3;
 
     public sealed partial class GeneratedAlertPolicyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAlertPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAlertPolicyResourceNames2()
         {
-            // Snippet: GetAlertPolicy(IResourceName, CallSettings)
             // Create client
             AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.Create();
             // Initialize request argument(s)
             IResourceName name = new UnparsedResourceName("a/wildcard/resource");
             // Make the request
             AlertPolicy response = alertPolicyServiceClient.GetAlertPolicy(name);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v5.enums.types import distance_bucket as gage_distance_bucket
 
@@ -48,20 +51,11 @@ class DistanceView(proto.Message):
             using the metric system, false otherwise.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    distance_bucket = proto.Field(
-        proto.ENUM,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    distance_bucket = proto.Field(proto.ENUM, number=2,
         enum=gage_distance_bucket.DistanceBucketEnum.DistanceBucket,
     )
-    metric_system = proto.Field(
-        proto.BOOL,
-        number=4,
-        optional=True,
-    )
+    metric_system = proto.Field(proto.BOOL, number=4, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,7 +29,8 @@ from google.cloud.bigquery_connection_v1.types.connection import ListConnections
 from google.cloud.bigquery_connection_v1.types.connection import ListConnectionsResponse
 from google.cloud.bigquery_connection_v1.types.connection import UpdateConnectionRequest
 
-__all__ = ('AwsCrossAccountRole',
+__all__ = (
+    'AwsCrossAccountRole',
     'AwsProperties',
     'CloudSqlCredential',
     'CloudSqlProperties',

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +19,6 @@ from .services.autoscaling_policy_service import AutoscalingPolicyServiceClient
 from .services.cluster_controller import ClusterControllerClient
 from .services.job_controller import JobControllerClient
 from .services.workflow_template_service import WorkflowTemplateServiceClient
-
 from .types.autoscaling_policies import AutoscalingPolicy
 from .types.autoscaling_policies import BasicAutoscalingAlgorithm
 from .types.autoscaling_policies import BasicYarnAutoscalingConfig
@@ -110,6 +110,7 @@ from .types.workflow_templates import WorkflowMetadata
 from .types.workflow_templates import WorkflowNode
 from .types.workflow_templates import WorkflowTemplate
 from .types.workflow_templates import WorkflowTemplatePlacement
+
 
 __all__ = (
     'AcceleratorConfig',

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -265,18 +267,25 @@ def test_get_campaign_shared_set(transport: str = 'grpc', request_type=campaign_
         # Designate an appropriate return value for the call.
         call.return_value = campaign_shared_set.CampaignSharedSet(
             resource_name='resource_name_value',
+
             status=campaign_shared_set_status.CampaignSharedSetStatusEnum.CampaignSharedSetStatus.UNKNOWN,
+
         )
+
         response = client.get_campaign_shared_set(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_shared_set_service.GetCampaignSharedSetRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign_shared_set.CampaignSharedSet)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.status == campaign_shared_set_status.CampaignSharedSetStatusEnum.CampaignSharedSetStatus.UNKNOWN
 
 
@@ -292,7 +301,6 @@ def test_get_campaign_shared_set_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_shared_set_service.GetCampaignSharedSetRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -300,6 +308,7 @@ def test_get_campaign_shared_set_field_headers():
             type(client.transport.get_campaign_shared_set),
             '__call__') as call:
         call.return_value = campaign_shared_set.CampaignSharedSet()
+
         client.get_campaign_shared_set(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -326,6 +335,7 @@ def test_get_campaign_shared_set_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_shared_set.CampaignSharedSet()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_campaign_shared_set(
@@ -336,6 +346,7 @@ def test_get_campaign_shared_set_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -370,14 +381,17 @@ def test_mutate_campaign_shared_sets(transport: str = 'grpc', request_type=campa
         # Designate an appropriate return value for the call.
         call.return_value = campaign_shared_set_service.MutateCampaignSharedSetsResponse(
         )
+
         response = client.mutate_campaign_shared_sets(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_shared_set_service.MutateCampaignSharedSetsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign_shared_set_service.MutateCampaignSharedSetsResponse)
 
 
@@ -393,7 +407,6 @@ def test_mutate_campaign_shared_sets_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_shared_set_service.MutateCampaignSharedSetsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -401,6 +414,7 @@ def test_mutate_campaign_shared_sets_field_headers():
             type(client.transport.mutate_campaign_shared_sets),
             '__call__') as call:
         call.return_value = campaign_shared_set_service.MutateCampaignSharedSetsResponse()
+
         client.mutate_campaign_shared_sets(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -427,6 +441,7 @@ def test_mutate_campaign_shared_sets_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_shared_set_service.MutateCampaignSharedSetsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_campaign_shared_sets(
@@ -438,7 +453,9 @@ def test_mutate_campaign_shared_sets_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [campaign_shared_set_service.CampaignSharedSetOperation(create=campaign_shared_set.CampaignSharedSet(resource_name='resource_name_value'))]
 
 
@@ -521,7 +538,7 @@ def test_campaign_shared_set_service_base_transport():
     methods = (
         'get_campaign_shared_set',
         'mutate_campaign_shared_sets',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -673,6 +690,7 @@ def test_campaign_shared_set_service_transport_channel_mtls_with_adc(
 def test_campaign_path():
     customer = "squid"
     campaign = "clam"
+
     expected = "customers/{customer}/campaigns/{campaign}".format(customer=customer, campaign=campaign, )
     actual = CampaignSharedSetServiceClient.campaign_path(customer, campaign)
     assert expected == actual
@@ -680,8 +698,9 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-        "customer": "whelk",
-        "campaign": "octopus",
+    "customer": "whelk",
+    "campaign": "octopus",
+
     }
     path = CampaignSharedSetServiceClient.campaign_path(**expected)
 
@@ -692,6 +711,7 @@ def test_parse_campaign_path():
 def test_campaign_shared_set_path():
     customer = "oyster"
     campaign_shared_set = "nudibranch"
+
     expected = "customers/{customer}/campaignSharedSets/{campaign_shared_set}".format(customer=customer, campaign_shared_set=campaign_shared_set, )
     actual = CampaignSharedSetServiceClient.campaign_shared_set_path(customer, campaign_shared_set)
     assert expected == actual
@@ -699,8 +719,9 @@ def test_campaign_shared_set_path():
 
 def test_parse_campaign_shared_set_path():
     expected = {
-        "customer": "cuttlefish",
-        "campaign_shared_set": "mussel",
+    "customer": "cuttlefish",
+    "campaign_shared_set": "mussel",
+
     }
     path = CampaignSharedSetServiceClient.campaign_shared_set_path(**expected)
 
@@ -711,6 +732,7 @@ def test_parse_campaign_shared_set_path():
 def test_shared_set_path():
     customer = "winkle"
     shared_set = "nautilus"
+
     expected = "customers/{customer}/sharedSets/{shared_set}".format(customer=customer, shared_set=shared_set, )
     actual = CampaignSharedSetServiceClient.shared_set_path(customer, shared_set)
     assert expected == actual
@@ -718,8 +740,9 @@ def test_shared_set_path():
 
 def test_parse_shared_set_path():
     expected = {
-        "customer": "scallop",
-        "shared_set": "abalone",
+    "customer": "scallop",
+    "shared_set": "abalone",
+
     }
     path = CampaignSharedSetServiceClient.shared_set_path(**expected)
 
@@ -729,6 +752,7 @@ def test_parse_shared_set_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CampaignSharedSetServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -736,7 +760,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = CampaignSharedSetServiceClient.common_billing_account_path(**expected)
 
@@ -746,6 +771,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = CampaignSharedSetServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -753,7 +779,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = CampaignSharedSetServiceClient.common_folder_path(**expected)
 
@@ -763,6 +790,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CampaignSharedSetServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -770,7 +798,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = CampaignSharedSetServiceClient.common_organization_path(**expected)
 
@@ -780,6 +809,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = CampaignSharedSetServiceClient.common_project_path(project)
     assert expected == actual
@@ -787,7 +817,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = CampaignSharedSetServiceClient.common_project_path(**expected)
 
@@ -798,6 +829,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CampaignSharedSetServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -805,8 +837,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = CampaignSharedSetServiceClient.common_location_path(**expected)
 

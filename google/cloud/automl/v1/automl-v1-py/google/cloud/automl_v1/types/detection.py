@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.automl_v1.types import geometry
 
@@ -30,6 +33,7 @@ __protobuf__ = proto.module(
 
 class ImageObjectDetectionAnnotation(proto.Message):
     r"""Annotation details for image object detection.
+
     Attributes:
         bounding_box (google.cloud.automl_v1.types.BoundingPoly):
             Output only. The rectangle representing the
@@ -40,15 +44,11 @@ class ImageObjectDetectionAnnotation(proto.Message):
             positivity confidence.
     """
 
-    bounding_box = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    bounding_box = proto.Field(proto.MESSAGE, number=1,
         message=geometry.BoundingPoly,
     )
-    score = proto.Field(
-        proto.FLOAT,
-        number=2,
-    )
+
+    score = proto.Field(proto.FLOAT, number=2)
 
 
 class BoundingBoxMetricsEntry(proto.Message):
@@ -70,9 +70,9 @@ class BoundingBoxMetricsEntry(proto.Message):
             0.05,0.10,...,0.95,0.96,0.97,0.98,0.99. Precision-recall
             curve is derived from them.
     """
-
     class ConfidenceMetricsEntry(proto.Message):
         r"""Metrics for a single confidence threshold.
+
         Attributes:
             confidence_threshold (float):
                 Output only. The confidence threshold value
@@ -88,34 +88,19 @@ class BoundingBoxMetricsEntry(proto.Message):
                 precision.
         """
 
-        confidence_threshold = proto.Field(
-            proto.FLOAT,
-            number=1,
-        )
-        recall = proto.Field(
-            proto.FLOAT,
-            number=2,
-        )
-        precision = proto.Field(
-            proto.FLOAT,
-            number=3,
-        )
-        f1_score = proto.Field(
-            proto.FLOAT,
-            number=4,
-        )
+        confidence_threshold = proto.Field(proto.FLOAT, number=1)
 
-    iou_threshold = proto.Field(
-        proto.FLOAT,
-        number=1,
-    )
-    mean_average_precision = proto.Field(
-        proto.FLOAT,
-        number=2,
-    )
-    confidence_metrics_entries = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+        recall = proto.Field(proto.FLOAT, number=2)
+
+        precision = proto.Field(proto.FLOAT, number=3)
+
+        f1_score = proto.Field(proto.FLOAT, number=4)
+
+    iou_threshold = proto.Field(proto.FLOAT, number=1)
+
+    mean_average_precision = proto.Field(proto.FLOAT, number=2)
+
+    confidence_metrics_entries = proto.RepeatedField(proto.MESSAGE, number=3,
         message=ConfidenceMetricsEntry,
     )
 
@@ -141,19 +126,13 @@ class ImageObjectDetectionEvaluationMetrics(proto.Message):
             bounding_box_metrics_entries.
     """
 
-    evaluated_bounding_box_count = proto.Field(
-        proto.INT32,
-        number=1,
-    )
-    bounding_box_metrics_entries = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    evaluated_bounding_box_count = proto.Field(proto.INT32, number=1)
+
+    bounding_box_metrics_entries = proto.RepeatedField(proto.MESSAGE, number=2,
         message='BoundingBoxMetricsEntry',
     )
-    bounding_box_mean_average_precision = proto.Field(
-        proto.FLOAT,
-        number=3,
-    )
+
+    bounding_box_mean_average_precision = proto.Field(proto.FLOAT, number=3)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

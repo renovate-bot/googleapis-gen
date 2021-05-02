@@ -17,22 +17,24 @@
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedUptimeCheckServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteUptimeCheckConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteUptimeCheckConfigResourceNames2Async()
         {
-            // Snippet: DeleteUptimeCheckConfigAsync(IResourceName, CallSettings)
-            // Additional: DeleteUptimeCheckConfigAsync(IResourceName, CancellationToken)
             // Create client
             UptimeCheckServiceClient uptimeCheckServiceClient = await UptimeCheckServiceClient.CreateAsync();
             // Initialize request argument(s)
             IResourceName name = new UnparsedResourceName("a/wildcard/resource");
             // Make the request
             await uptimeCheckServiceClient.DeleteUptimeCheckConfigAsync(name);
-            // End snippet
         }
     }
 }

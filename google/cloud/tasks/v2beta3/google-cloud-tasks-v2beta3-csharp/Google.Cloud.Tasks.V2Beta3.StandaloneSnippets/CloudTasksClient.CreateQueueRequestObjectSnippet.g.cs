@@ -17,13 +17,17 @@
 namespace Google.Cloud.Tasks.V2Beta3.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Tasks.V2Beta3;
 
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateQueue</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateQueueRequestObject()
         {
-            // Snippet: CreateQueue(CreateQueueRequest, CallSettings)
             // Create client
             CloudTasksClient cloudTasksClient = CloudTasksClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Tasks.V2Beta3.Snippets
             };
             // Make the request
             Queue response = cloudTasksClient.CreateQueue(request);
-            // End snippet
         }
     }
 }

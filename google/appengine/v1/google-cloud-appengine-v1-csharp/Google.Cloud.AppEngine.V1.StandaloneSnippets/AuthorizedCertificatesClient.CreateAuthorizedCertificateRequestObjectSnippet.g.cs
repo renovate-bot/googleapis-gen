@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
+
     public sealed partial class GeneratedAuthorizedCertificatesClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateAuthorizedCertificate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateAuthorizedCertificateRequestObject()
         {
-            // Snippet: CreateAuthorizedCertificate(CreateAuthorizedCertificateRequest, CallSettings)
             // Create client
             AuthorizedCertificatesClient authorizedCertificatesClient = AuthorizedCertificatesClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.AppEngine.V1.Snippets
             };
             // Make the request
             AuthorizedCertificate response = authorizedCertificatesClient.CreateAuthorizedCertificate(request);
-            // End snippet
         }
     }
 }

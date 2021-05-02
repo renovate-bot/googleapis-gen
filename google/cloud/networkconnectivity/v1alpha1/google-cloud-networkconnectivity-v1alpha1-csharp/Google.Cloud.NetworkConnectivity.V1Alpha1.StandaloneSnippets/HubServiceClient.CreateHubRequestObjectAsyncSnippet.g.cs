@@ -17,16 +17,19 @@
 namespace Google.Cloud.NetworkConnectivity.V1Alpha1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.NetworkConnectivity.V1Alpha1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedHubServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateHubAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateHubRequestObjectAsync()
         {
-            // Snippet: CreateHubAsync(CreateHubRequest, CallSettings)
-            // Additional: CreateHubAsync(CreateHubRequest, CancellationToken)
             // Create client
             HubServiceClient hubServiceClient = await HubServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -55,7 +58,6 @@ namespace Google.Cloud.NetworkConnectivity.V1Alpha1.Snippets
                 // If it has completed, then access the result
                 Hub retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

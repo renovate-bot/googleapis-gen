@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.WebRisk.V1.Snippets
 {
+    using Google.Cloud.WebRisk.V1;
+
     public sealed partial class GeneratedWebRiskServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateSubmission</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateSubmission()
         {
-            // Snippet: CreateSubmission(string, Submission, CallSettings)
             // Create client
             WebRiskServiceClient webRiskServiceClient = WebRiskServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.WebRisk.V1.Snippets
             Submission submission = new Submission();
             // Make the request
             Submission response = webRiskServiceClient.CreateSubmission(parent, submission);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
 {
+    using Google.Cloud.Bigquery.Reservation.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedReservationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for SplitCapacityCommitmentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SplitCapacityCommitmentResourceNamesAsync()
         {
-            // Snippet: SplitCapacityCommitmentAsync(CapacityCommitmentName, long, CallSettings)
-            // Additional: SplitCapacityCommitmentAsync(CapacityCommitmentName, long, CancellationToken)
             // Create client
             ReservationServiceClient reservationServiceClient = await ReservationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             long slotCount = 0L;
             // Make the request
             SplitCapacityCommitmentResponse response = await reservationServiceClient.SplitCapacityCommitmentAsync(name, slotCount);
-            // End snippet
         }
     }
 }

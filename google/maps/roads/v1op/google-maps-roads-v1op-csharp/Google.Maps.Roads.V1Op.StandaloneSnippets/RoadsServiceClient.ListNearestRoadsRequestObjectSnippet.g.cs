@@ -16,12 +16,17 @@
 
 namespace Google.Maps.Roads.V1Op.Snippets
 {
+    using Google.Maps.Roads.V1Op;
+
     public sealed partial class GeneratedRoadsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListNearestRoads</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListNearestRoadsRequestObject()
         {
-            // Snippet: ListNearestRoads(ListNearestRoadsRequest, CallSettings)
             // Create client
             RoadsServiceClient roadsServiceClient = RoadsServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Maps.Roads.V1Op.Snippets
             };
             // Make the request
             ListNearestRoadsResponse response = roadsServiceClient.ListNearestRoads(request);
-            // End snippet
         }
     }
 }

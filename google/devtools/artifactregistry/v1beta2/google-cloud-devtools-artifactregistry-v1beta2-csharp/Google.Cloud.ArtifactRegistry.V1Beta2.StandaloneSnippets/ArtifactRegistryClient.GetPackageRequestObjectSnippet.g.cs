@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
 {
+    using Google.Cloud.ArtifactRegistry.V1Beta2;
+
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPackage</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetPackageRequestObject()
         {
-            // Snippet: GetPackage(GetPackageRequest, CallSettings)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.Create();
             // Initialize request argument(s)
             GetPackageRequest request = new GetPackageRequest { Name = "", };
             // Make the request
             Package response = artifactRegistryClient.GetPackage(request);
-            // End snippet
         }
     }
 }

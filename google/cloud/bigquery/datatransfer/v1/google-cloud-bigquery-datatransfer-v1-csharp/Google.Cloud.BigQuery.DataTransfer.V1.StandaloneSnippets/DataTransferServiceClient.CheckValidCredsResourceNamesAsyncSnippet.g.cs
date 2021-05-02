@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
 {
+    using Google.Cloud.BigQuery.DataTransfer.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataTransferServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CheckValidCredsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CheckValidCredsResourceNamesAsync()
         {
-            // Snippet: CheckValidCredsAsync(DataSourceName, CallSettings)
-            // Additional: CheckValidCredsAsync(DataSourceName, CancellationToken)
             // Create client
             DataTransferServiceClient dataTransferServiceClient = await DataTransferServiceClient.CreateAsync();
             // Initialize request argument(s)
             DataSourceName name = DataSourceName.FromProjectDataSource("[PROJECT]", "[DATA_SOURCE]");
             // Make the request
             CheckValidCredsResponse response = await dataTransferServiceClient.CheckValidCredsAsync(name);
-            // End snippet
         }
     }
 }

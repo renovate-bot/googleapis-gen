@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Logging.V2.Snippets
 {
+    using Google.Cloud.Logging.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConfigServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for UndeleteBucketAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UndeleteBucketRequestObjectAsync()
         {
-            // Snippet: UndeleteBucketAsync(UndeleteBucketRequest, CallSettings)
-            // Additional: UndeleteBucketAsync(UndeleteBucketRequest, CancellationToken)
             // Create client
             ConfigServiceV2Client configServiceV2Client = await ConfigServiceV2Client.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             };
             // Make the request
             await configServiceV2Client.UndeleteBucketAsync(request);
-            // End snippet
         }
     }
 }

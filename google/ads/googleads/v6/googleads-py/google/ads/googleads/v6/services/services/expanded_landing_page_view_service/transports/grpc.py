@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import expanded_landing_page_view
 from google.ads.googleads.v6.services.types import expanded_landing_page_view_service
+
 from .base import ExpandedLandingPageViewServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class ExpandedLandingPageViewServiceGrpcTransport(ExpandedLandingPageViewService
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class ExpandedLandingPageViewServiceGrpcTransport(ExpandedLandingPageViewService
     def get_expanded_landing_page_view(self) -> Callable[
             [expanded_landing_page_view_service.GetExpandedLandingPageViewRequest],
             expanded_landing_page_view.ExpandedLandingPageView]:
-        r"""Return a callable for the
-        get expanded landing page view
-          method over gRPC.
+        r"""Return a callable for the get expanded landing page view method over gRPC.
 
         Returns the requested expanded landing page view in
         full detail.

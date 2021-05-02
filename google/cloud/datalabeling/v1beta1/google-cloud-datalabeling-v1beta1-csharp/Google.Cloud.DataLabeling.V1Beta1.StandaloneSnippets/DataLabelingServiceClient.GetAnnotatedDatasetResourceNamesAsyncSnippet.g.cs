@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAnnotatedDatasetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAnnotatedDatasetResourceNamesAsync()
         {
-            // Snippet: GetAnnotatedDatasetAsync(AnnotatedDatasetName, CallSettings)
-            // Additional: GetAnnotatedDatasetAsync(AnnotatedDatasetName, CancellationToken)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = await DataLabelingServiceClient.CreateAsync();
             // Initialize request argument(s)
             AnnotatedDatasetName name = AnnotatedDatasetName.FromProjectDatasetAnnotatedDataset("[PROJECT]", "[DATASET]", "[ANNOTATED_DATASET]");
             // Make the request
             AnnotatedDataset response = await dataLabelingServiceClient.GetAnnotatedDatasetAsync(name);
-            // End snippet
         }
     }
 }

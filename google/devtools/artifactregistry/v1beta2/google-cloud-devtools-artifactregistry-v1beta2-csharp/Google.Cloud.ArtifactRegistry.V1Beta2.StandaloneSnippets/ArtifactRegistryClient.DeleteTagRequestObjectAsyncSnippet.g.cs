@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
 {
+    using Google.Cloud.ArtifactRegistry.V1Beta2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteTagAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteTagRequestObjectAsync()
         {
-            // Snippet: DeleteTagAsync(DeleteTagRequest, CallSettings)
-            // Additional: DeleteTagAsync(DeleteTagRequest, CancellationToken)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = await ArtifactRegistryClient.CreateAsync();
             // Initialize request argument(s)
             DeleteTagRequest request = new DeleteTagRequest { Name = "", };
             // Make the request
             await artifactRegistryClient.DeleteTagAsync(request);
-            // End snippet
         }
     }
 }

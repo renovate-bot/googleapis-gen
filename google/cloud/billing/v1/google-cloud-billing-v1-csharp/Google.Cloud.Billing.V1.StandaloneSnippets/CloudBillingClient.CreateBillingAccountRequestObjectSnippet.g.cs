@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Billing.V1.Snippets
 {
+    using Google.Cloud.Billing.V1;
+
     public sealed partial class GeneratedCloudBillingClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateBillingAccount</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateBillingAccountRequestObject()
         {
-            // Snippet: CreateBillingAccount(CreateBillingAccountRequest, CallSettings)
             // Create client
             CloudBillingClient cloudBillingClient = CloudBillingClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Billing.V1.Snippets
             };
             // Make the request
             BillingAccount response = cloudBillingClient.CreateBillingAccount(request);
-            // End snippet
         }
     }
 }

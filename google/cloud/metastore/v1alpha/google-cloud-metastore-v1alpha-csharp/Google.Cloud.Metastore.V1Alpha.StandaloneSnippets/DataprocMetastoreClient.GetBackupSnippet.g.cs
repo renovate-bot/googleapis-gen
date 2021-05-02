@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Metastore.V1Alpha.Snippets
 {
+    using Google.Cloud.Metastore.V1Alpha;
+
     public sealed partial class GeneratedDataprocMetastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBackup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetBackup()
         {
-            // Snippet: GetBackup(string, CallSettings)
             // Create client
             DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/services/[SERVICE]/backups/[BACKUP]";
             // Make the request
             Backup response = dataprocMetastoreClient.GetBackup(name);
-            // End snippet
         }
     }
 }

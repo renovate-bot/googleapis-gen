@@ -16,15 +16,18 @@
 
 namespace Google.Home.Graph.V1.Snippets
 {
+    using Google.Home.Graph.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedHomeGraphApiServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for QueryAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task QueryRequestObjectAsync()
         {
-            // Snippet: QueryAsync(QueryRequest, CallSettings)
-            // Additional: QueryAsync(QueryRequest, CancellationToken)
             // Create client
             HomeGraphApiServiceClient homeGraphApiServiceClient = await HomeGraphApiServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -39,7 +42,6 @@ namespace Google.Home.Graph.V1.Snippets
             };
             // Make the request
             QueryResponse response = await homeGraphApiServiceClient.QueryAsync(request);
-            // End snippet
         }
     }
 }

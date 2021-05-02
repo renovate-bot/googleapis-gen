@@ -17,13 +17,17 @@
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Monitoring.V3;
 
     public sealed partial class GeneratedUptimeCheckServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateUptimeCheckConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateUptimeCheckConfigRequestObject()
         {
-            // Snippet: CreateUptimeCheckConfig(CreateUptimeCheckConfigRequest, CallSettings)
             // Create client
             UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             };
             // Make the request
             UptimeCheckConfig response = uptimeCheckServiceClient.CreateUptimeCheckConfig(request);
-            // End snippet
         }
     }
 }

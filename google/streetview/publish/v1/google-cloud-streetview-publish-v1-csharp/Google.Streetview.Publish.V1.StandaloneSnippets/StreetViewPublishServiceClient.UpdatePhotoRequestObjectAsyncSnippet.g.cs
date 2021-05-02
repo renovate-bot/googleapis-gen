@@ -17,15 +17,18 @@
 namespace Google.Streetview.Publish.V1.Snippets
 {
     using Google.Protobuf.WellKnownTypes;
+    using Google.Streetview.Publish.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedStreetViewPublishServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdatePhotoAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdatePhotoRequestObjectAsync()
         {
-            // Snippet: UpdatePhotoAsync(UpdatePhotoRequest, CallSettings)
-            // Additional: UpdatePhotoAsync(UpdatePhotoRequest, CancellationToken)
             // Create client
             StreetViewPublishServiceClient streetViewPublishServiceClient = await StreetViewPublishServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Streetview.Publish.V1.Snippets
             };
             // Make the request
             Photo response = await streetViewPublishServiceClient.UpdatePhotoAsync(request);
-            // End snippet
         }
     }
 }

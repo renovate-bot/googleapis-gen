@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Logging.V2.Snippets
 {
+    using Google.Cloud.Logging.V2;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConfigServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateExclusionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateExclusionAsync()
         {
-            // Snippet: UpdateExclusionAsync(string, LogExclusion, FieldMask, CallSettings)
-            // Additional: UpdateExclusionAsync(string, LogExclusion, FieldMask, CancellationToken)
             // Create client
             ConfigServiceV2Client configServiceV2Client = await ConfigServiceV2Client.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             LogExclusion response = await configServiceV2Client.UpdateExclusionAsync(name, exclusion, updateMask);
-            // End snippet
         }
     }
 }

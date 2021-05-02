@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.enums.types import customer_match_upload_key_type
 from google.ads.googleads.v6.enums.types import user_list_combined_rule_operator
@@ -62,15 +65,12 @@ class SimilarUserListInfo(proto.Message):
             derived.
     """
 
-    seed_user_list = proto.Field(
-        proto.STRING,
-        number=2,
-        optional=True,
-    )
+    seed_user_list = proto.Field(proto.STRING, number=2, optional=True)
 
 
 class CrmBasedUserListInfo(proto.Message):
     r"""UserList of CRM users provided by the advertiser.
+
     Attributes:
         app_id (str):
             A string that uniquely identifies a mobile
@@ -98,19 +98,11 @@ class CrmBasedUserListInfo(proto.Message):
             CRM lists.
     """
 
-    app_id = proto.Field(
-        proto.STRING,
-        number=4,
-        optional=True,
-    )
-    upload_key_type = proto.Field(
-        proto.ENUM,
-        number=2,
+    app_id = proto.Field(proto.STRING, number=4, optional=True)
+    upload_key_type = proto.Field(proto.ENUM, number=2,
         enum=customer_match_upload_key_type.CustomerMatchUploadKeyTypeEnum.CustomerMatchUploadKeyType,
     )
-    data_source_type = proto.Field(
-        proto.ENUM,
-        number=3,
+    data_source_type = proto.Field(proto.ENUM, number=3,
         enum=user_list_crm_data_source_type.UserListCrmDataSourceTypeEnum.UserListCrmDataSourceType,
     )
 
@@ -135,34 +127,30 @@ class UserListRuleInfo(proto.Message):
             groups are grouped together based on rule_type.
     """
 
-    rule_type = proto.Field(
-        proto.ENUM,
-        number=1,
+    rule_type = proto.Field(proto.ENUM, number=1,
         enum=user_list_rule_type.UserListRuleTypeEnum.UserListRuleType,
     )
-    rule_item_groups = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    rule_item_groups = proto.RepeatedField(proto.MESSAGE, number=2,
         message='UserListRuleItemGroupInfo',
     )
 
 
 class UserListRuleItemGroupInfo(proto.Message):
     r"""A group of rule items.
+
     Attributes:
         rule_items (Sequence[google.ads.googleads.v6.common.types.UserListRuleItemInfo]):
             Rule items that will be grouped together based on rule_type.
     """
 
-    rule_items = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    rule_items = proto.RepeatedField(proto.MESSAGE, number=1,
         message='UserListRuleItemInfo',
     )
 
 
 class UserListRuleItemInfo(proto.Message):
     r"""An atomic rule item.
+
     Attributes:
         name (str):
             Rule variable name. It should match the corresponding key
@@ -184,33 +172,21 @@ class UserListRuleItemInfo(proto.Message):
             operation.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=5,
-        optional=True,
-    )
-    number_rule_item = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='rule_item',
+    name = proto.Field(proto.STRING, number=5, optional=True)
+    number_rule_item = proto.Field(proto.MESSAGE, number=2, oneof='rule_item',
         message='UserListNumberRuleItemInfo',
     )
-    string_rule_item = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='rule_item',
+    string_rule_item = proto.Field(proto.MESSAGE, number=3, oneof='rule_item',
         message='UserListStringRuleItemInfo',
     )
-    date_rule_item = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='rule_item',
+    date_rule_item = proto.Field(proto.MESSAGE, number=4, oneof='rule_item',
         message='UserListDateRuleItemInfo',
     )
 
 
 class UserListDateRuleItemInfo(proto.Message):
     r"""A rule item composed of a date operation.
+
     Attributes:
         operator (google.ads.googleads.v6.enums.types.UserListDateRuleItemOperatorEnum.UserListDateRuleItemOperator):
             Date comparison operator.
@@ -228,25 +204,16 @@ class UserListDateRuleItemInfo(proto.Message):
             both are present.
     """
 
-    operator = proto.Field(
-        proto.ENUM,
-        number=1,
+    operator = proto.Field(proto.ENUM, number=1,
         enum=user_list_date_rule_item_operator.UserListDateRuleItemOperatorEnum.UserListDateRuleItemOperator,
     )
-    value = proto.Field(
-        proto.STRING,
-        number=4,
-        optional=True,
-    )
-    offset_in_days = proto.Field(
-        proto.INT64,
-        number=5,
-        optional=True,
-    )
+    value = proto.Field(proto.STRING, number=4, optional=True)
+    offset_in_days = proto.Field(proto.INT64, number=5, optional=True)
 
 
 class UserListNumberRuleItemInfo(proto.Message):
     r"""A rule item composed of a number operation.
+
     Attributes:
         operator (google.ads.googleads.v6.enums.types.UserListNumberRuleItemOperatorEnum.UserListNumberRuleItemOperator):
             Number comparison operator.
@@ -258,20 +225,15 @@ class UserListNumberRuleItemInfo(proto.Message):
             populated when creating a new number rule item.
     """
 
-    operator = proto.Field(
-        proto.ENUM,
-        number=1,
+    operator = proto.Field(proto.ENUM, number=1,
         enum=user_list_number_rule_item_operator.UserListNumberRuleItemOperatorEnum.UserListNumberRuleItemOperator,
     )
-    value = proto.Field(
-        proto.DOUBLE,
-        number=3,
-        optional=True,
-    )
+    value = proto.Field(proto.DOUBLE, number=3, optional=True)
 
 
 class UserListStringRuleItemInfo(proto.Message):
     r"""A rule item composed of a string operation.
+
     Attributes:
         operator (google.ads.googleads.v6.enums.types.UserListStringRuleItemOperatorEnum.UserListStringRuleItemOperator):
             String comparison operator.
@@ -286,16 +248,10 @@ class UserListStringRuleItemInfo(proto.Message):
             new string rule item.
     """
 
-    operator = proto.Field(
-        proto.ENUM,
-        number=1,
+    operator = proto.Field(proto.ENUM, number=1,
         enum=user_list_string_rule_item_operator.UserListStringRuleItemOperatorEnum.UserListStringRuleItemOperator,
     )
-    value = proto.Field(
-        proto.STRING,
-        number=3,
-        optional=True,
-    )
+    value = proto.Field(proto.STRING, number=3, optional=True)
 
 
 class CombinedRuleUserListInfo(proto.Message):
@@ -318,25 +274,20 @@ class CombinedRuleUserListInfo(proto.Message):
             Required for creating a combined rule user list.
     """
 
-    left_operand = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    left_operand = proto.Field(proto.MESSAGE, number=1,
         message='UserListRuleInfo',
     )
-    right_operand = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    right_operand = proto.Field(proto.MESSAGE, number=2,
         message='UserListRuleInfo',
     )
-    rule_operator = proto.Field(
-        proto.ENUM,
-        number=3,
+    rule_operator = proto.Field(proto.ENUM, number=3,
         enum=user_list_combined_rule_operator.UserListCombinedRuleOperatorEnum.UserListCombinedRuleOperator,
     )
 
 
 class DateSpecificRuleUserListInfo(proto.Message):
     r"""Visitors of a page during specific dates.
+
     Attributes:
         rule (google.ads.googleads.v6.common.types.UserListRuleInfo):
             Boolean rule that defines visitor of a page.
@@ -356,21 +307,11 @@ class DateSpecificRuleUserListInfo(proto.Message):
             Required for creating a data specific rule user list.
     """
 
-    rule = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    rule = proto.Field(proto.MESSAGE, number=1,
         message='UserListRuleInfo',
     )
-    start_date = proto.Field(
-        proto.STRING,
-        number=4,
-        optional=True,
-    )
-    end_date = proto.Field(
-        proto.STRING,
-        number=5,
-        optional=True,
-    )
+    start_date = proto.Field(proto.STRING, number=4, optional=True)
+    end_date = proto.Field(proto.STRING, number=5, optional=True)
 
 
 class ExpressionRuleUserListInfo(proto.Message):
@@ -388,15 +329,14 @@ class ExpressionRuleUserListInfo(proto.Message):
             Required for creating an expression rule user list.
     """
 
-    rule = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    rule = proto.Field(proto.MESSAGE, number=1,
         message='UserListRuleInfo',
     )
 
 
 class RuleBasedUserListInfo(proto.Message):
     r"""Representation of a userlist that is generated by a rule.
+
     Attributes:
         prepopulation_status (google.ads.googleads.v6.enums.types.UserListPrepopulationStatusEnum.UserListPrepopulationStatus):
             The status of pre-population. The field is
@@ -427,27 +367,16 @@ class RuleBasedUserListInfo(proto.Message):
             by one boolean rule expression.
     """
 
-    prepopulation_status = proto.Field(
-        proto.ENUM,
-        number=1,
+    prepopulation_status = proto.Field(proto.ENUM, number=1,
         enum=user_list_prepopulation_status.UserListPrepopulationStatusEnum.UserListPrepopulationStatus,
     )
-    combined_rule_user_list = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='rule_based_user_list',
+    combined_rule_user_list = proto.Field(proto.MESSAGE, number=2, oneof='rule_based_user_list',
         message='CombinedRuleUserListInfo',
     )
-    date_specific_rule_user_list = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='rule_based_user_list',
+    date_specific_rule_user_list = proto.Field(proto.MESSAGE, number=3, oneof='rule_based_user_list',
         message='DateSpecificRuleUserListInfo',
     )
-    expression_rule_user_list = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='rule_based_user_list',
+    expression_rule_user_list = proto.Field(proto.MESSAGE, number=4, oneof='rule_based_user_list',
         message='ExpressionRuleUserListInfo',
     )
 
@@ -467,9 +396,7 @@ class LogicalUserListInfo(proto.Message):
             Required for creating a logical user list.
     """
 
-    rules = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    rules = proto.RepeatedField(proto.MESSAGE, number=1,
         message='UserListLogicalRuleInfo',
     )
 
@@ -485,30 +412,23 @@ class UserListLogicalRuleInfo(proto.Message):
             The list of operands of the rule.
     """
 
-    operator = proto.Field(
-        proto.ENUM,
-        number=1,
+    operator = proto.Field(proto.ENUM, number=1,
         enum=user_list_logical_rule_operator.UserListLogicalRuleOperatorEnum.UserListLogicalRuleOperator,
     )
-    rule_operands = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    rule_operands = proto.RepeatedField(proto.MESSAGE, number=2,
         message='LogicalUserListOperandInfo',
     )
 
 
 class LogicalUserListOperandInfo(proto.Message):
     r"""Operand of logical user list that consists of a user list.
+
     Attributes:
         user_list (str):
             Resource name of a user list as an operand.
     """
 
-    user_list = proto.Field(
-        proto.STRING,
-        number=2,
-        optional=True,
-    )
+    user_list = proto.Field(proto.STRING, number=2, optional=True)
 
 
 class BasicUserListInfo(proto.Message):
@@ -520,9 +440,7 @@ class BasicUserListInfo(proto.Message):
             Actions associated with this user list.
     """
 
-    actions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    actions = proto.RepeatedField(proto.MESSAGE, number=1,
         message='UserListActionInfo',
     )
 
@@ -539,16 +457,8 @@ class UserListActionInfo(proto.Message):
             A remarketing action.
     """
 
-    conversion_action = proto.Field(
-        proto.STRING,
-        number=3,
-        oneof='user_list_action',
-    )
-    remarketing_action = proto.Field(
-        proto.STRING,
-        number=4,
-        oneof='user_list_action',
-    )
+    conversion_action = proto.Field(proto.STRING, number=3, oneof='user_list_action')
+    remarketing_action = proto.Field(proto.STRING, number=4, oneof='user_list_action')
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

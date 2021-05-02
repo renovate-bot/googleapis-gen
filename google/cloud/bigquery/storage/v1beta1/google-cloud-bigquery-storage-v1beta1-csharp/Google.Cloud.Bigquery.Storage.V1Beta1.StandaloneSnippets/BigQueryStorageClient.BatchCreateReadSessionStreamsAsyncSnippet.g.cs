@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Bigquery.Storage.V1Beta1.Snippets
 {
+    using Google.Cloud.Bigquery.Storage.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigQueryStorageClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchCreateReadSessionStreamsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchCreateReadSessionStreamsAsync()
         {
-            // Snippet: BatchCreateReadSessionStreamsAsync(ReadSession, int, CallSettings)
-            // Additional: BatchCreateReadSessionStreamsAsync(ReadSession, int, CancellationToken)
             // Create client
             BigQueryStorageClient bigQueryStorageClient = await BigQueryStorageClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Bigquery.Storage.V1Beta1.Snippets
             int requestedStreams = 0;
             // Make the request
             BatchCreateReadSessionStreamsResponse response = await bigQueryStorageClient.BatchCreateReadSessionStreamsAsync(session, requestedStreams);
-            // End snippet
         }
     }
 }

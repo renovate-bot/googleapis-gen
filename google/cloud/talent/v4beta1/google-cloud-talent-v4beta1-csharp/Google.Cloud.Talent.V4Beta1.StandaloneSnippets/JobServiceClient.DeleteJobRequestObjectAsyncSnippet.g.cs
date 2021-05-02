@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
+    using Google.Cloud.Talent.V4Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteJobRequestObjectAsync()
         {
-            // Snippet: DeleteJobAsync(DeleteJobRequest, CallSettings)
-            // Additional: DeleteJobAsync(DeleteJobRequest, CancellationToken)
             // Create client
             JobServiceClient jobServiceClient = await JobServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
             };
             // Make the request
             await jobServiceClient.DeleteJobAsync(request);
-            // End snippet
         }
     }
 }

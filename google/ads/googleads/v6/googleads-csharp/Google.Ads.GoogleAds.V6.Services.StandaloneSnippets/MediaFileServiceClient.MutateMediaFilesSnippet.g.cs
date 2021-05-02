@@ -16,14 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedMediaFileServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateMediaFiles</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateMediaFiles()
         {
-            // Snippet: MutateMediaFiles(string, IEnumerable<MediaFileOperation>, CallSettings)
             // Create client
             MediaFileServiceClient mediaFileServiceClient = MediaFileServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             MutateMediaFilesResponse response = mediaFileServiceClient.MutateMediaFiles(customerId, operations);
-            // End snippet
         }
     }
 }

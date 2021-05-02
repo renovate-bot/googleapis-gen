@@ -17,15 +17,18 @@
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Bigtable.Admin.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigtableInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for ListInstancesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListInstancesRequestObjectAsync()
         {
-            // Snippet: ListInstancesAsync(ListInstancesRequest, CallSettings)
-            // Additional: ListInstancesAsync(ListInstancesRequest, CancellationToken)
             // Create client
             BigtableInstanceAdminClient bigtableInstanceAdminClient = await BigtableInstanceAdminClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
             };
             // Make the request
             ListInstancesResponse response = await bigtableInstanceAdminClient.ListInstancesAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for ListClustersAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListClustersRequestObjectAsync()
         {
-            // Snippet: ListClustersAsync(ListClustersRequest, CallSettings)
-            // Additional: ListClustersAsync(ListClustersRequest, CancellationToken)
             // Create client
             ClusterManagerClient clusterManagerClient = await ClusterManagerClient.CreateAsync();
             // Initialize request argument(s)
             ListClustersRequest request = new ListClustersRequest { Parent = "", };
             // Make the request
             ListClustersResponse response = await clusterManagerClient.ListClustersAsync(request);
-            // End snippet
         }
     }
 }

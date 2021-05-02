@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Bigquery.Storage.V1Beta1.Snippets
 {
+    using Google.Cloud.Bigquery.Storage.V1Beta1;
+
     public sealed partial class GeneratedBigQueryStorageClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateReadSession</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateReadSession()
         {
-            // Snippet: CreateReadSession(TableReference, string, int, CallSettings)
             // Create client
             BigQueryStorageClient bigQueryStorageClient = BigQueryStorageClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.Bigquery.Storage.V1Beta1.Snippets
             int requestedStreams = 0;
             // Make the request
             ReadSession response = bigQueryStorageClient.CreateReadSession(tableReference, parent, requestedStreams);
-            // End snippet
         }
     }
 }

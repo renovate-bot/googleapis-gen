@@ -17,13 +17,17 @@
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Talent.V4Beta1;
 
     public sealed partial class GeneratedEventServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateClientEvent</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateClientEventResourceNames2()
         {
-            // Snippet: CreateClientEvent(ProjectName, ClientEvent, CallSettings)
             // Create client
             EventServiceClient eventServiceClient = EventServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
             ClientEvent clientEvent = new ClientEvent();
             // Make the request
             ClientEvent response = eventServiceClient.CreateClientEvent(parent, clientEvent);
-            // End snippet
         }
     }
 }

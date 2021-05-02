@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Vision.V1P3Beta1.Snippets
 {
+    using Google.Cloud.Vision.V1P3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedProductSearchClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteProductSetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteProductSetAsync()
         {
-            // Snippet: DeleteProductSetAsync(string, CallSettings)
-            // Additional: DeleteProductSetAsync(string, CancellationToken)
             // Create client
             ProductSearchClient productSearchClient = await ProductSearchClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/productSets/[PRODUCT_SET]";
             // Make the request
             await productSearchClient.DeleteProductSetAsync(name);
-            // End snippet
         }
     }
 }

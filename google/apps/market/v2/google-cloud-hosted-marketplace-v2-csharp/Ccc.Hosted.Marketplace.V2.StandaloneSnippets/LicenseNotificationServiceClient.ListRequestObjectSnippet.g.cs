@@ -16,12 +16,17 @@
 
 namespace Ccc.Hosted.Marketplace.V2.Snippets
 {
+    using Ccc.Hosted.Marketplace.V2;
+
     public sealed partial class GeneratedLicenseNotificationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for List</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListRequestObject()
         {
-            // Snippet: List(LicenseNotificationListRequest, CallSettings)
             // Create client
             LicenseNotificationServiceClient licenseNotificationServiceClient = LicenseNotificationServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +39,6 @@ namespace Ccc.Hosted.Marketplace.V2.Snippets
             };
             // Make the request
             LicenseNotificationList response = licenseNotificationServiceClient.List(request);
-            // End snippet
         }
     }
 }

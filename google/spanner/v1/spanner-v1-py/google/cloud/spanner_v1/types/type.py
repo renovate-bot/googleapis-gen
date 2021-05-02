@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -67,19 +69,15 @@ class Type(proto.Message):
             fields.
     """
 
-    code = proto.Field(
-        proto.ENUM,
-        number=1,
+    code = proto.Field(proto.ENUM, number=1,
         enum='TypeCode',
     )
-    array_element_type = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    array_element_type = proto.Field(proto.MESSAGE, number=2,
         message='Type',
     )
-    struct_type = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    struct_type = proto.Field(proto.MESSAGE, number=3,
         message='StructType',
     )
 
@@ -99,9 +97,9 @@ class StructType(proto.Message):
             request, or the order of fields in the ``SELECT`` clause of
             a query.
     """
-
     class Field(proto.Message):
         r"""Message representing a single field of a struct.
+
         Attributes:
             name (str):
                 The name of the field. For reads, this is the column name.
@@ -115,19 +113,13 @@ class StructType(proto.Message):
                 The type of the field.
         """
 
-        name = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        type_ = proto.Field(
-            proto.MESSAGE,
-            number=2,
+        name = proto.Field(proto.STRING, number=1)
+
+        type_ = proto.Field(proto.MESSAGE, number=2,
             message='Type',
         )
 
-    fields = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    fields = proto.RepeatedField(proto.MESSAGE, number=1,
         message=Field,
     )
 

@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedCampaignAudienceViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignAudienceView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCampaignAudienceViewResourceNames()
         {
-            // Snippet: GetCampaignAudienceView(CampaignAudienceViewName, CallSettings)
             // Create client
             CampaignAudienceViewServiceClient campaignAudienceViewServiceClient = CampaignAudienceViewServiceClient.Create();
             // Initialize request argument(s)
             CampaignAudienceViewName resourceName = CampaignAudienceViewName.FromCustomerCampaignAudienceView("[CUSTOMER]", "[CAMPAIGN_AUDIENCE_VIEW]");
             // Make the request
             CampaignAudienceView response = campaignAudienceViewServiceClient.GetCampaignAudienceView(resourceName);
-            // End snippet
         }
     }
 }

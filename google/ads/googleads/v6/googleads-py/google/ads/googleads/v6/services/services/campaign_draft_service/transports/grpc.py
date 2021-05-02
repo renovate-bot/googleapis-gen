@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,6 +30,7 @@ import grpc  # type: ignore
 from google.ads.googleads.v6.resources.types import campaign_draft
 from google.ads.googleads.v6.services.types import campaign_draft_service
 from google.longrunning import operations_pb2 as operations  # type: ignore
+
 from .base import CampaignDraftServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -58,8 +61,7 @@ class CampaignDraftServiceGrpcTransport(CampaignDraftServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -219,9 +221,7 @@ class CampaignDraftServiceGrpcTransport(CampaignDraftServiceTransport):
     def get_campaign_draft(self) -> Callable[
             [campaign_draft_service.GetCampaignDraftRequest],
             campaign_draft.CampaignDraft]:
-        r"""Return a callable for the
-        get campaign draft
-          method over gRPC.
+        r"""Return a callable for the get campaign draft method over gRPC.
 
         Returns the requested campaign draft in full detail.
 
@@ -247,9 +247,7 @@ class CampaignDraftServiceGrpcTransport(CampaignDraftServiceTransport):
     def mutate_campaign_drafts(self) -> Callable[
             [campaign_draft_service.MutateCampaignDraftsRequest],
             campaign_draft_service.MutateCampaignDraftsResponse]:
-        r"""Return a callable for the
-        mutate campaign drafts
-          method over gRPC.
+        r"""Return a callable for the mutate campaign drafts method over gRPC.
 
         Creates, updates, or removes campaign drafts.
         Operation statuses are returned.
@@ -276,9 +274,7 @@ class CampaignDraftServiceGrpcTransport(CampaignDraftServiceTransport):
     def promote_campaign_draft(self) -> Callable[
             [campaign_draft_service.PromoteCampaignDraftRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        promote campaign draft
-          method over gRPC.
+        r"""Return a callable for the promote campaign draft method over gRPC.
 
         Promotes the changes in a draft back to the base campaign.
 
@@ -313,10 +309,8 @@ class CampaignDraftServiceGrpcTransport(CampaignDraftServiceTransport):
     def list_campaign_draft_async_errors(self) -> Callable[
             [campaign_draft_service.ListCampaignDraftAsyncErrorsRequest],
             campaign_draft_service.ListCampaignDraftAsyncErrorsResponse]:
-        r"""Return a callable for the
-        list campaign draft async
-        errors
-          method over gRPC.
+        r"""Return a callable for the list campaign draft async
+        errors method over gRPC.
 
         Returns all errors that occurred during CampaignDraft
         promote. Throws an error if called before campaign draft

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -28,6 +30,7 @@ import grpc  # type: ignore
 from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import version
 from google.longrunning import operations_pb2 as operations  # type: ignore
+
 from .base import VersionsTransport, DEFAULT_CLIENT_INFO
 
 
@@ -61,8 +64,7 @@ class VersionsGrpcTransport(VersionsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,15 +204,13 @@ class VersionsGrpcTransport(VersionsTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -240,9 +240,7 @@ class VersionsGrpcTransport(VersionsTransport):
     def list_versions(self) -> Callable[
             [appengine.ListVersionsRequest],
             appengine.ListVersionsResponse]:
-        r"""Return a callable for the
-        list versions
-          method over gRPC.
+        r"""Return a callable for the list versions method over gRPC.
 
         Lists the versions of a service.
 
@@ -268,9 +266,7 @@ class VersionsGrpcTransport(VersionsTransport):
     def get_version(self) -> Callable[
             [appengine.GetVersionRequest],
             version.Version]:
-        r"""Return a callable for the
-        get version
-          method over gRPC.
+        r"""Return a callable for the get version method over gRPC.
 
         Gets the specified Version resource. By default, only a
         ``BASIC_VIEW`` will be returned. Specify the ``FULL_VIEW``
@@ -298,9 +294,7 @@ class VersionsGrpcTransport(VersionsTransport):
     def create_version(self) -> Callable[
             [appengine.CreateVersionRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create version
-          method over gRPC.
+        r"""Return a callable for the create version method over gRPC.
 
         Deploys code and resource files to a new version.
 
@@ -326,9 +320,7 @@ class VersionsGrpcTransport(VersionsTransport):
     def update_version(self) -> Callable[
             [appengine.UpdateVersionRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update version
-          method over gRPC.
+        r"""Return a callable for the update version method over gRPC.
 
         Updates the specified Version resource. You can specify the
         following fields depending on the App Engine environment and
@@ -389,9 +381,7 @@ class VersionsGrpcTransport(VersionsTransport):
     def delete_version(self) -> Callable[
             [appengine.DeleteVersionRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete version
-          method over gRPC.
+        r"""Return a callable for the delete version method over gRPC.
 
         Deletes an existing Version resource.
 

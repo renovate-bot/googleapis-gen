@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
 {
+    using Google.Cloud.Bigquery.Reservation.V1Beta1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedReservationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MergeCapacityCommitmentsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MergeCapacityCommitmentsAsync()
         {
-            // Snippet: MergeCapacityCommitmentsAsync(string, IEnumerable<string>, CallSettings)
-            // Additional: MergeCapacityCommitmentsAsync(string, IEnumerable<string>, CancellationToken)
             // Create client
             ReservationServiceClient reservationServiceClient = await ReservationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             IEnumerable<string> capacityCommitmentIds = new string[] { "", };
             // Make the request
             CapacityCommitment response = await reservationServiceClient.MergeCapacityCommitmentsAsync(parent, capacityCommitmentIds);
-            // End snippet
         }
     }
 }

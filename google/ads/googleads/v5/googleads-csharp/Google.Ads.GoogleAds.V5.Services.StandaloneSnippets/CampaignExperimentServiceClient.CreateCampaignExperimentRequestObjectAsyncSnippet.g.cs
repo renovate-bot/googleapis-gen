@@ -17,6 +17,7 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -24,10 +25,12 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
     public sealed partial class GeneratedCampaignExperimentServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateCampaignExperimentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateCampaignExperimentRequestObjectAsync()
         {
-            // Snippet: CreateCampaignExperimentAsync(CreateCampaignExperimentRequest, CallSettings)
-            // Additional: CreateCampaignExperimentAsync(CreateCampaignExperimentRequest, CancellationToken)
             // Create client
             CampaignExperimentServiceClient campaignExperimentServiceClient = await CampaignExperimentServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -55,7 +58,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

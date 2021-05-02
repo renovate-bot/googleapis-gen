@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
+    using Google.Cloud.Talent.V4Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedEventServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateClientEventAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateClientEventResourceNames1Async()
         {
-            // Snippet: CreateClientEventAsync(TenantName, ClientEvent, CallSettings)
-            // Additional: CreateClientEventAsync(TenantName, ClientEvent, CancellationToken)
             // Create client
             EventServiceClient eventServiceClient = await EventServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
             ClientEvent clientEvent = new ClientEvent();
             // Make the request
             ClientEvent response = await eventServiceClient.CreateClientEventAsync(parent, clientEvent);
-            // End snippet
         }
     }
 }

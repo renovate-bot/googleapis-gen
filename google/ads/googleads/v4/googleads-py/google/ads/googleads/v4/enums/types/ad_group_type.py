@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -29,7 +31,7 @@ class AdGroupTypeEnum(proto.Message):
     r"""Defines types of an ad group, specific to a particular
     campaign channel type. This type drives validations that
     restrict which entities can be added to the ad group.
-        """
+    """
     class AdGroupType(proto.Enum):
         r"""Enum listing the possible types of an ad group."""
         UNSPECIFIED = 0

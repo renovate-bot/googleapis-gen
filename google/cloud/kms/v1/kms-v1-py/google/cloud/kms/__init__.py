@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -59,7 +60,8 @@ from google.cloud.kms_v1.types.service import UpdateCryptoKeyPrimaryVersionReque
 from google.cloud.kms_v1.types.service import UpdateCryptoKeyRequest
 from google.cloud.kms_v1.types.service import UpdateCryptoKeyVersionRequest
 
-__all__ = ('AsymmetricDecryptRequest',
+__all__ = (
+    'AsymmetricDecryptRequest',
     'AsymmetricDecryptResponse',
     'AsymmetricSignRequest',
     'AsymmetricSignResponse',

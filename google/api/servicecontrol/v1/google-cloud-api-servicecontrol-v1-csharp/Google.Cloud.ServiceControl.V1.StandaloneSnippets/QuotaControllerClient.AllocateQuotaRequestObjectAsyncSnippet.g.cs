@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.ServiceControl.V1.Snippets
 {
+    using Google.Cloud.ServiceControl.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedQuotaControllerClientStandaloneSnippets
     {
         /// <summary>Snippet for AllocateQuotaAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task AllocateQuotaRequestObjectAsync()
         {
-            // Snippet: AllocateQuotaAsync(AllocateQuotaRequest, CallSettings)
-            // Additional: AllocateQuotaAsync(AllocateQuotaRequest, CancellationToken)
             // Create client
             QuotaControllerClient quotaControllerClient = await QuotaControllerClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.ServiceControl.V1.Snippets
             };
             // Make the request
             AllocateQuotaResponse response = await quotaControllerClient.AllocateQuotaAsync(request);
-            // End snippet
         }
     }
 }

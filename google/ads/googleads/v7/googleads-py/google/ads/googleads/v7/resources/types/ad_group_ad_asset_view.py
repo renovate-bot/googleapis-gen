@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.common.types import policy as gagc_policy
 from google.ads.googleads.v7.enums.types import asset_field_type
@@ -71,44 +74,24 @@ class AdGroupAdAssetView(proto.Message):
             Output only. Performance of an asset linkage.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    ad_group_ad = proto.Field(
-        proto.STRING,
-        number=9,
-        optional=True,
-    )
-    asset = proto.Field(
-        proto.STRING,
-        number=10,
-        optional=True,
-    )
-    field_type = proto.Field(
-        proto.ENUM,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    ad_group_ad = proto.Field(proto.STRING, number=9, optional=True)
+    asset = proto.Field(proto.STRING, number=10, optional=True)
+    field_type = proto.Field(proto.ENUM, number=2,
         enum=asset_field_type.AssetFieldTypeEnum.AssetFieldType,
     )
-    enabled = proto.Field(
-        proto.BOOL,
-        number=8,
-        optional=True,
-    )
-    policy_summary = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    enabled = proto.Field(proto.BOOL, number=8, optional=True)
+    policy_summary = proto.Field(proto.MESSAGE, number=3,
         message='AdGroupAdAssetPolicySummary',
     )
-    performance_label = proto.Field(
-        proto.ENUM,
-        number=4,
+    performance_label = proto.Field(proto.ENUM, number=4,
         enum=asset_performance_label.AssetPerformanceLabelEnum.AssetPerformanceLabel,
     )
 
 
 class AdGroupAdAssetPolicySummary(proto.Message):
     r"""Contains policy information for an ad group ad asset.
+
     Attributes:
         policy_topic_entries (Sequence[google.ads.googleads.v7.common.types.PolicyTopicEntry]):
             Output only. The list of policy findings for
@@ -122,19 +105,13 @@ class AdGroupAdAssetPolicySummary(proto.Message):
             status of its individual policy topic entries.
     """
 
-    policy_topic_entries = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    policy_topic_entries = proto.RepeatedField(proto.MESSAGE, number=1,
         message=gagc_policy.PolicyTopicEntry,
     )
-    review_status = proto.Field(
-        proto.ENUM,
-        number=2,
+    review_status = proto.Field(proto.ENUM, number=2,
         enum=policy_review_status.PolicyReviewStatusEnum.PolicyReviewStatus,
     )
-    approval_status = proto.Field(
-        proto.ENUM,
-        number=3,
+    approval_status = proto.Field(proto.ENUM, number=3,
         enum=policy_approval_status.PolicyApprovalStatusEnum.PolicyApprovalStatus,
     )
 

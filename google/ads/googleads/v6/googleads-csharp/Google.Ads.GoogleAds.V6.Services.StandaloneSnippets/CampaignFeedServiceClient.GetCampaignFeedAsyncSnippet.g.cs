@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignFeedServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignFeedAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCampaignFeedAsync()
         {
-            // Snippet: GetCampaignFeedAsync(string, CallSettings)
-            // Additional: GetCampaignFeedAsync(string, CancellationToken)
             // Create client
             CampaignFeedServiceClient campaignFeedServiceClient = await CampaignFeedServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/campaignFeeds/[CAMPAIGN_ID]~[FEED_ID]";
             // Make the request
             CampaignFeed response = await campaignFeedServiceClient.GetCampaignFeedAsync(resourceName);
-            // End snippet
         }
     }
 }

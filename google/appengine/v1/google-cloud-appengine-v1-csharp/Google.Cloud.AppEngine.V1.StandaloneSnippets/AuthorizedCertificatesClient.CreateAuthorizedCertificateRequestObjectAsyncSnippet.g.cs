@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAuthorizedCertificatesClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateAuthorizedCertificateAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateAuthorizedCertificateRequestObjectAsync()
         {
-            // Snippet: CreateAuthorizedCertificateAsync(CreateAuthorizedCertificateRequest, CallSettings)
-            // Additional: CreateAuthorizedCertificateAsync(CreateAuthorizedCertificateRequest, CancellationToken)
             // Create client
             AuthorizedCertificatesClient authorizedCertificatesClient = await AuthorizedCertificatesClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.AppEngine.V1.Snippets
             };
             // Make the request
             AuthorizedCertificate response = await authorizedCertificatesClient.CreateAuthorizedCertificateAsync(request);
-            // End snippet
         }
     }
 }

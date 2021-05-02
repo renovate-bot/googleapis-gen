@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.GkeHub.V1Beta1.Snippets
 {
+    using Google.Cloud.GkeHub.V1Beta1;
+
     public sealed partial class GeneratedGkeHubMembershipServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateExclusivityManifest</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GenerateExclusivityManifestRequestObject()
         {
-            // Snippet: GenerateExclusivityManifest(GenerateExclusivityManifestRequest, CallSettings)
             // Create client
             GkeHubMembershipServiceClient gkeHubMembershipServiceClient = GkeHubMembershipServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +38,6 @@ namespace Google.Cloud.GkeHub.V1Beta1.Snippets
             };
             // Make the request
             GenerateExclusivityManifestResponse response = gkeHubMembershipServiceClient.GenerateExclusivityManifest(request);
-            // End snippet
         }
     }
 }

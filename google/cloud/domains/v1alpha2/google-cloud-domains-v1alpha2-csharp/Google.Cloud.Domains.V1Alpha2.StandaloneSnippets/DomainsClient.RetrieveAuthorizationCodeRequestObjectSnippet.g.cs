@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Domains.V1Alpha2.Snippets
 {
+    using Google.Cloud.Domains.V1Alpha2;
+
     public sealed partial class GeneratedDomainsClientStandaloneSnippets
     {
         /// <summary>Snippet for RetrieveAuthorizationCode</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void RetrieveAuthorizationCodeRequestObject()
         {
-            // Snippet: RetrieveAuthorizationCode(RetrieveAuthorizationCodeRequest, CallSettings)
             // Create client
             DomainsClient domainsClient = DomainsClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Domains.V1Alpha2.Snippets
             };
             // Make the request
             AuthorizationCode response = domainsClient.RetrieveAuthorizationCode(request);
-            // End snippet
         }
     }
 }

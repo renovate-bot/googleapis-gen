@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -262,22 +264,33 @@ def test_get_carrier_constant(transport: str = 'grpc', request_type=carrier_cons
         # Designate an appropriate return value for the call.
         call.return_value = carrier_constant.CarrierConstant(
             resource_name='resource_name_value',
+
             id=205,
+
             name='name_value',
+
             country_code='country_code_value',
+
         )
+
         response = client.get_carrier_constant(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == carrier_constant_service.GetCarrierConstantRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, carrier_constant.CarrierConstant)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.id == 205
+
     assert response.name == 'name_value'
+
     assert response.country_code == 'country_code_value'
 
 
@@ -293,7 +306,6 @@ def test_get_carrier_constant_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = carrier_constant_service.GetCarrierConstantRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -301,6 +313,7 @@ def test_get_carrier_constant_field_headers():
             type(client.transport.get_carrier_constant),
             '__call__') as call:
         call.return_value = carrier_constant.CarrierConstant()
+
         client.get_carrier_constant(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -327,6 +340,7 @@ def test_get_carrier_constant_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = carrier_constant.CarrierConstant()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_carrier_constant(
@@ -337,6 +351,7 @@ def test_get_carrier_constant_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -417,7 +432,7 @@ def test_carrier_constant_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_carrier_constant',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -568,6 +583,7 @@ def test_carrier_constant_service_transport_channel_mtls_with_adc(
 
 def test_carrier_constant_path():
     criterion_id = "squid"
+
     expected = "carrierConstants/{criterion_id}".format(criterion_id=criterion_id, )
     actual = CarrierConstantServiceClient.carrier_constant_path(criterion_id)
     assert expected == actual
@@ -575,7 +591,8 @@ def test_carrier_constant_path():
 
 def test_parse_carrier_constant_path():
     expected = {
-        "criterion_id": "clam",
+    "criterion_id": "clam",
+
     }
     path = CarrierConstantServiceClient.carrier_constant_path(**expected)
 
@@ -585,6 +602,7 @@ def test_parse_carrier_constant_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CarrierConstantServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -592,7 +610,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = CarrierConstantServiceClient.common_billing_account_path(**expected)
 
@@ -602,6 +621,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = CarrierConstantServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -609,7 +629,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = CarrierConstantServiceClient.common_folder_path(**expected)
 
@@ -619,6 +640,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CarrierConstantServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -626,7 +648,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = CarrierConstantServiceClient.common_organization_path(**expected)
 
@@ -636,6 +659,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = CarrierConstantServiceClient.common_project_path(project)
     assert expected == actual
@@ -643,7 +667,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = CarrierConstantServiceClient.common_project_path(**expected)
 
@@ -654,6 +679,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CarrierConstantServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -661,8 +687,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = CarrierConstantServiceClient.common_location_path(**expected)
 

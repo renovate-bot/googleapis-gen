@@ -16,22 +16,24 @@
 
 namespace Google.Area120.Tables.V1Alpha1.Snippets
 {
+    using Google.Area120.Tables.V1Alpha1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTablesServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetRowAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetRowAsync()
         {
-            // Snippet: GetRowAsync(string, CallSettings)
-            // Additional: GetRowAsync(string, CancellationToken)
             // Create client
             TablesServiceClient tablesServiceClient = await TablesServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "tables/[TABLE]/rows/[ROW]";
             // Make the request
             Row response = await tablesServiceClient.GetRowAsync(name);
-            // End snippet
         }
     }
 }

@@ -16,6 +16,7 @@
 
 namespace Google.Api.ServiceUsage.V1Beta1.Snippets
 {
+    using Google.Api.ServiceUsage.V1Beta1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
     public sealed partial class GeneratedServiceUsageClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteConsumerOverrideAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteConsumerOverrideRequestObjectAsync()
         {
-            // Snippet: DeleteConsumerOverrideAsync(DeleteConsumerOverrideRequest, CallSettings)
-            // Additional: DeleteConsumerOverrideAsync(DeleteConsumerOverrideRequest, CancellationToken)
             // Create client
             ServiceUsageClient serviceUsageClient = await ServiceUsageClient.CreateAsync();
             // Initialize request argument(s)
@@ -57,7 +60,6 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for SuggestFaqAnswers</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SuggestFaqAnswersRequestObject()
         {
-            // Snippet: SuggestFaqAnswers(SuggestFaqAnswersRequest, CallSettings)
             // Create client
             ParticipantsClient participantsClient = ParticipantsClient.Create();
             // Initialize request argument(s)
@@ -33,7 +38,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             };
             // Make the request
             SuggestFaqAnswersResponse response = participantsClient.SuggestFaqAnswers(request);
-            // End snippet
         }
     }
 }

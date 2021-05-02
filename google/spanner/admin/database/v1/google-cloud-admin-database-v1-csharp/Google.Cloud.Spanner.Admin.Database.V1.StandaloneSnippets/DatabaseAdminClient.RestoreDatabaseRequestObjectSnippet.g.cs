@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
 {
+    using Google.Cloud.Spanner.Admin.Database.V1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedDatabaseAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for RestoreDatabase</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void RestoreDatabaseRequestObject()
         {
-            // Snippet: RestoreDatabase(RestoreDatabaseRequest, CallSettings)
             // Create client
             DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.Create();
             // Initialize request argument(s)
@@ -52,7 +56,6 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
                 // If it has completed, then access the result
                 Database retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

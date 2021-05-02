@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.enums.types import campaign_shared_set_status
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
@@ -56,23 +59,14 @@ class CampaignSharedSet(proto.Message):
             shared set. Read only.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    campaign = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    resource_name = proto.Field(proto.STRING, number=1)
+    campaign = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.StringValue,
     )
-    shared_set = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    shared_set = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.StringValue,
     )
-    status = proto.Field(
-        proto.ENUM,
-        number=2,
+    status = proto.Field(proto.ENUM, number=2,
         enum=campaign_shared_set_status.CampaignSharedSetStatusEnum.CampaignSharedSetStatus,
     )
 

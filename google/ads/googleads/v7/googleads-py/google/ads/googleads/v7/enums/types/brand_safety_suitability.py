@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -28,7 +30,7 @@ __protobuf__ = proto.module(
 class BrandSafetySuitabilityEnum(proto.Message):
     r"""Container for enum with 3-Tier brand safety suitability
     control.
-        """
+    """
     class BrandSafetySuitability(proto.Enum):
         r"""3-Tier brand safety suitability control."""
         UNSPECIFIED = 0

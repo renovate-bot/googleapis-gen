@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -35,8 +35,6 @@ from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.dialogflow_v2.services.sessions import SessionsAsyncClient
 from google.cloud.dialogflow_v2.services.sessions import SessionsClient
 from google.cloud.dialogflow_v2.services.sessions import transports
-from google.cloud.dialogflow_v2.services.sessions.transports.base import _API_CORE_VERSION
-from google.cloud.dialogflow_v2.services.sessions.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.dialogflow_v2.types import audio_config
 from google.cloud.dialogflow_v2.types import context
 from google.cloud.dialogflow_v2.types import entity_type
@@ -49,28 +47,6 @@ from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
 from google.type import latlng_pb2 as latlng  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -238,10 +214,12 @@ def test_sessions_client_client_options(client_class, transport_class, transport
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (SessionsClient, transports.SessionsGrpcTransport, "grpc", "true"),
     (SessionsAsyncClient, transports.SessionsGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (SessionsClient, transports.SessionsGrpcTransport, "grpc", "false"),
     (SessionsAsyncClient, transports.SessionsGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(SessionsClient, "DEFAULT_ENDPOINT", modify_default_endpoint(SessionsClient))
 @mock.patch.object(SessionsAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(SessionsAsyncClient))
@@ -396,18 +374,25 @@ def test_detect_intent(transport: str = 'grpc', request_type=gcd_session.DetectI
         # Designate an appropriate return value for the call.
         call.return_value = gcd_session.DetectIntentResponse(
             response_id='response_id_value',
+
             output_audio=b'output_audio_blob',
+
         )
+
         response = client.detect_intent(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcd_session.DetectIntentRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gcd_session.DetectIntentResponse)
+
     assert response.response_id == 'response_id_value'
+
     assert response.output_audio == b'output_audio_blob'
 
 
@@ -430,8 +415,8 @@ def test_detect_intent_empty_call():
         client.detect_intent()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gcd_session.DetectIntentRequest()
 
+        assert args[0] == gcd_session.DetectIntentRequest()
 
 @pytest.mark.asyncio
 async def test_detect_intent_async(transport: str = 'grpc_asyncio', request_type=gcd_session.DetectIntentRequest):
@@ -449,20 +434,24 @@ async def test_detect_intent_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.detect_intent),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gcd_session.DetectIntentResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcd_session.DetectIntentResponse(
             response_id='response_id_value',
             output_audio=b'output_audio_blob',
         ))
+
         response = await client.detect_intent(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcd_session.DetectIntentRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcd_session.DetectIntentResponse)
+
     assert response.response_id == 'response_id_value'
+
     assert response.output_audio == b'output_audio_blob'
 
 
@@ -479,7 +468,6 @@ def test_detect_intent_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcd_session.DetectIntentRequest()
-
     request.session = 'session/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -487,6 +475,7 @@ def test_detect_intent_field_headers():
             type(client.transport.detect_intent),
             '__call__') as call:
         call.return_value = gcd_session.DetectIntentResponse()
+
         client.detect_intent(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -511,7 +500,6 @@ async def test_detect_intent_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcd_session.DetectIntentRequest()
-
     request.session = 'session/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -519,6 +507,7 @@ async def test_detect_intent_field_headers_async():
             type(client.transport.detect_intent),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcd_session.DetectIntentResponse())
+
         await client.detect_intent(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -545,6 +534,7 @@ def test_detect_intent_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gcd_session.DetectIntentResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.detect_intent(
@@ -556,7 +546,9 @@ def test_detect_intent_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].session == 'session_value'
+
         assert args[0].query_input == gcd_session.QueryInput(audio_config=audio_config.InputAudioConfig(audio_encoding=audio_config.AudioEncoding.AUDIO_ENCODING_LINEAR_16))
 
 
@@ -600,7 +592,9 @@ async def test_detect_intent_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].session == 'session_value'
+
         assert args[0].query_input == gcd_session.QueryInput(audio_config=audio_config.InputAudioConfig(audio_encoding=audio_config.AudioEncoding.AUDIO_ENCODING_LINEAR_16))
 
 
@@ -629,6 +623,7 @@ def test_streaming_detect_intent(transport: str = 'grpc', request_type=session.S
     # Everything is optional in proto3 as far as the runtime is concerned,
     # and we are mocking out the actual API, so just send an empty request.
     request = request_type()
+
     requests = [request]
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -637,11 +632,13 @@ def test_streaming_detect_intent(transport: str = 'grpc', request_type=session.S
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([session.StreamingDetectIntentResponse()])
+
         response = client.streaming_detect_intent(iter(requests))
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert next(args[0]) == request
 
     # Establish that the response is the type that we expect.
@@ -663,6 +660,7 @@ async def test_streaming_detect_intent_async(transport: str = 'grpc_asyncio', re
     # Everything is optional in proto3 as far as the runtime is concerned,
     # and we are mocking out the actual API, so just send an empty request.
     request = request_type()
+
     requests = [request]
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -672,11 +670,13 @@ async def test_streaming_detect_intent_async(transport: str = 'grpc_asyncio', re
         # Designate an appropriate return value for the call.
         call.return_value = mock.Mock(aio.StreamStreamCall, autospec=True)
         call.return_value.read = mock.AsyncMock(side_effect=[session.StreamingDetectIntentResponse()])
+
         response = await client.streaming_detect_intent(iter(requests))
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert next(args[0]) == request
 
     # Establish that the response is the type that we expect.
@@ -729,6 +729,7 @@ def test_transport_instance():
     client = SessionsClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.SessionsGrpcTransport(
@@ -743,6 +744,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.SessionsGrpcTransport,
     transports.SessionsGrpcAsyncIOTransport,
@@ -754,6 +756,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = SessionsClient(
@@ -763,6 +766,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.SessionsGrpcTransport,
     )
+
 
 def test_sessions_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -786,33 +790,15 @@ def test_sessions_base_transport():
     methods = (
         'detect_intent',
         'streaming_detect_intent',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_sessions_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.dialogflow_v2.services.sessions.transports.SessionsTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.SessionsTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/dialogflow',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_sessions_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.dialogflow_v2.services.sessions.transports.SessionsTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.dialogflow_v2.services.sessions.transports.SessionsTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.SessionsTransport(
@@ -829,184 +815,35 @@ def test_sessions_base_transport_with_credentials_file_old_google_auth():
 
 def test_sessions_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.dialogflow_v2.services.sessions.transports.SessionsTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.dialogflow_v2.services.sessions.transports.SessionsTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.SessionsTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_sessions_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         SessionsClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/dialogflow',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_sessions_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        SessionsClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.SessionsGrpcTransport,
-        transports.SessionsGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_sessions_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.SessionsGrpcTransport,
-        transports.SessionsGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_sessions_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/dialogflow',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/dialogflow',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.SessionsGrpcTransport, grpc_helpers),
-        (transports.SessionsGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_sessions_transport_create_channel(transport_class, grpc_helpers):
+def test_sessions_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.SessionsGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/dialogflow',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "dialogflow.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            scopes=["1", "2"],
-            default_host="dialogflow.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.SessionsGrpcTransport, grpc_helpers),
-        (transports.SessionsGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_sessions_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "dialogflow.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.SessionsGrpcTransport, grpc_helpers),
-        (transports.SessionsGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_sessions_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "dialogflow.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -1069,6 +906,7 @@ def test_sessions_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='dialogflow.googleapis.com:8000'),
     )
     assert client.transport._host == 'dialogflow.googleapis.com:8000'
+
 
 def test_sessions_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1190,6 +1028,7 @@ def test_context_path():
     project = "squid"
     session = "clam"
     context = "whelk"
+
     expected = "projects/{project}/agent/sessions/{session}/contexts/{context}".format(project=project, session=session, context=context, )
     actual = SessionsClient.context_path(project, session, context)
     assert expected == actual
@@ -1197,9 +1036,10 @@ def test_context_path():
 
 def test_parse_context_path():
     expected = {
-        "project": "octopus",
-        "session": "oyster",
-        "context": "nudibranch",
+    "project": "octopus",
+    "session": "oyster",
+    "context": "nudibranch",
+
     }
     path = SessionsClient.context_path(**expected)
 
@@ -1210,6 +1050,7 @@ def test_parse_context_path():
 def test_intent_path():
     project = "cuttlefish"
     intent = "mussel"
+
     expected = "projects/{project}/agent/intents/{intent}".format(project=project, intent=intent, )
     actual = SessionsClient.intent_path(project, intent)
     assert expected == actual
@@ -1217,8 +1058,9 @@ def test_intent_path():
 
 def test_parse_intent_path():
     expected = {
-        "project": "winkle",
-        "intent": "nautilus",
+    "project": "winkle",
+    "intent": "nautilus",
+
     }
     path = SessionsClient.intent_path(**expected)
 
@@ -1229,6 +1071,7 @@ def test_parse_intent_path():
 def test_session_path():
     project = "scallop"
     session = "abalone"
+
     expected = "projects/{project}/agent/sessions/{session}".format(project=project, session=session, )
     actual = SessionsClient.session_path(project, session)
     assert expected == actual
@@ -1236,8 +1079,9 @@ def test_session_path():
 
 def test_parse_session_path():
     expected = {
-        "project": "squid",
-        "session": "clam",
+    "project": "squid",
+    "session": "clam",
+
     }
     path = SessionsClient.session_path(**expected)
 
@@ -1249,6 +1093,7 @@ def test_session_entity_type_path():
     project = "whelk"
     session = "octopus"
     entity_type = "oyster"
+
     expected = "projects/{project}/agent/sessions/{session}/entityTypes/{entity_type}".format(project=project, session=session, entity_type=entity_type, )
     actual = SessionsClient.session_entity_type_path(project, session, entity_type)
     assert expected == actual
@@ -1256,9 +1101,10 @@ def test_session_entity_type_path():
 
 def test_parse_session_entity_type_path():
     expected = {
-        "project": "nudibranch",
-        "session": "cuttlefish",
-        "entity_type": "mussel",
+    "project": "nudibranch",
+    "session": "cuttlefish",
+    "entity_type": "mussel",
+
     }
     path = SessionsClient.session_entity_type_path(**expected)
 
@@ -1268,6 +1114,7 @@ def test_parse_session_entity_type_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = SessionsClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1275,7 +1122,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nautilus",
+    "billing_account": "nautilus",
+
     }
     path = SessionsClient.common_billing_account_path(**expected)
 
@@ -1285,6 +1133,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = SessionsClient.common_folder_path(folder)
     assert expected == actual
@@ -1292,7 +1141,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "abalone",
+    "folder": "abalone",
+
     }
     path = SessionsClient.common_folder_path(**expected)
 
@@ -1302,6 +1152,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = SessionsClient.common_organization_path(organization)
     assert expected == actual
@@ -1309,7 +1160,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "clam",
+    "organization": "clam",
+
     }
     path = SessionsClient.common_organization_path(**expected)
 
@@ -1319,6 +1171,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
+
     expected = "projects/{project}".format(project=project, )
     actual = SessionsClient.common_project_path(project)
     assert expected == actual
@@ -1326,7 +1179,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "octopus",
+    "project": "octopus",
+
     }
     path = SessionsClient.common_project_path(**expected)
 
@@ -1337,6 +1191,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = SessionsClient.common_location_path(project, location)
     assert expected == actual
@@ -1344,8 +1199,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "cuttlefish",
-        "location": "mussel",
+    "project": "cuttlefish",
+    "location": "mussel",
+
     }
     path = SessionsClient.common_location_path(**expected)
 

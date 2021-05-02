@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Kms.V1.Snippets
 {
+    using Google.Cloud.Kms.V1;
+
     public sealed partial class GeneratedKeyManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetKeyRing</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetKeyRingResourceNames()
         {
-            // Snippet: GetKeyRing(KeyRingName, CallSettings)
             // Create client
             KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.Create();
             // Initialize request argument(s)
             KeyRingName name = KeyRingName.FromProjectLocationKeyRing("[PROJECT]", "[LOCATION]", "[KEY_RING]");
             // Make the request
             KeyRing response = keyManagementServiceClient.GetKeyRing(name);
-            // End snippet
         }
     }
 }

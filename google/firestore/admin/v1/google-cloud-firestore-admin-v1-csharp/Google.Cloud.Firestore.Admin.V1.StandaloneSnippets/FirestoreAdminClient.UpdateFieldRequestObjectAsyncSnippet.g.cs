@@ -24,10 +24,12 @@ namespace Google.Cloud.Firestore.Admin.V1.Snippets
     public sealed partial class GeneratedFirestoreAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateFieldAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateFieldRequestObjectAsync()
         {
-            // Snippet: UpdateFieldAsync(UpdateFieldRequest, CallSettings)
-            // Additional: UpdateFieldAsync(UpdateFieldRequest, CancellationToken)
             // Create client
             FirestoreAdminClient firestoreAdminClient = await FirestoreAdminClient.CreateAsync();
             // Initialize request argument(s)
@@ -54,7 +56,6 @@ namespace Google.Cloud.Firestore.Admin.V1.Snippets
                 // If it has completed, then access the result
                 gcfav::Field retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.BigQuery.Storage.V1.Snippets
 {
+    using Google.Cloud.BigQuery.Storage.V1;
+
     public sealed partial class GeneratedBigQueryReadClientStandaloneSnippets
     {
         /// <summary>Snippet for SplitReadStream</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SplitReadStreamRequestObject()
         {
-            // Snippet: SplitReadStream(SplitReadStreamRequest, CallSettings)
             // Create client
             BigQueryReadClient bigQueryReadClient = BigQueryReadClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.BigQuery.Storage.V1.Snippets
             };
             // Make the request
             SplitReadStreamResponse response = bigQueryReadClient.SplitReadStream(request);
-            // End snippet
         }
     }
 }

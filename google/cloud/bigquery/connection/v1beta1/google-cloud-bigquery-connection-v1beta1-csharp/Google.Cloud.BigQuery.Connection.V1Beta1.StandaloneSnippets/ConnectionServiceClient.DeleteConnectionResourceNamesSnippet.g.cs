@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.BigQuery.Connection.V1Beta1.Snippets
 {
+    using Google.Cloud.BigQuery.Connection.V1Beta1;
+
     public sealed partial class GeneratedConnectionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteConnection</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteConnectionResourceNames()
         {
-            // Snippet: DeleteConnection(ConnectionName, CallSettings)
             // Create client
             ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.Create();
             // Initialize request argument(s)
             ConnectionName name = ConnectionName.FromProjectLocationConnection("[PROJECT]", "[LOCATION]", "[CONNECTION]");
             // Make the request
             connectionServiceClient.DeleteConnection(name);
-            // End snippet
         }
     }
 }

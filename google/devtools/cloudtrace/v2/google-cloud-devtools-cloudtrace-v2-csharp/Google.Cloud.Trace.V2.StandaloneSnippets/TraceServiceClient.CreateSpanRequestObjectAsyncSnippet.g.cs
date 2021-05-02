@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Trace.V2.Snippets
 {
+    using Google.Cloud.Trace.V2;
     using Google.Protobuf.WellKnownTypes;
     using Google.Rpc;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Trace.V2.Snippets
     public sealed partial class GeneratedTraceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateSpanAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateSpanRequestObjectAsync()
         {
-            // Snippet: CreateSpanAsync(Span, CallSettings)
-            // Additional: CreateSpanAsync(Span, CancellationToken)
             // Create client
             TraceServiceClient traceServiceClient = await TraceServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -49,7 +52,6 @@ namespace Google.Cloud.Trace.V2.Snippets
             };
             // Make the request
             Span response = await traceServiceClient.CreateSpanAsync(request);
-            // End snippet
         }
     }
 }

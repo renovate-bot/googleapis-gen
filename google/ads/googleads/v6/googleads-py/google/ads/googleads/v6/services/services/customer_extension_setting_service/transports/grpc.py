@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import customer_extension_setting
 from google.ads.googleads.v6.services.types import customer_extension_setting_service
+
 from .base import CustomerExtensionSettingServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class CustomerExtensionSettingServiceGrpcTransport(CustomerExtensionSettingServi
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class CustomerExtensionSettingServiceGrpcTransport(CustomerExtensionSettingServi
     def get_customer_extension_setting(self) -> Callable[
             [customer_extension_setting_service.GetCustomerExtensionSettingRequest],
             customer_extension_setting.CustomerExtensionSetting]:
-        r"""Return a callable for the
-        get customer extension setting
-          method over gRPC.
+        r"""Return a callable for the get customer extension setting method over gRPC.
 
         Returns the requested customer extension setting in
         full detail.
@@ -230,10 +230,8 @@ class CustomerExtensionSettingServiceGrpcTransport(CustomerExtensionSettingServi
     def mutate_customer_extension_settings(self) -> Callable[
             [customer_extension_setting_service.MutateCustomerExtensionSettingsRequest],
             customer_extension_setting_service.MutateCustomerExtensionSettingsResponse]:
-        r"""Return a callable for the
-        mutate customer extension
-        settings
-          method over gRPC.
+        r"""Return a callable for the mutate customer extension
+        settings method over gRPC.
 
         Creates, updates, or removes customer extension
         settings. Operation statuses are returned.

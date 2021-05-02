@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedWebhooksClientStandaloneSnippets
     {
         /// <summary>Snippet for GetWebhook</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetWebhook()
         {
-            // Snippet: GetWebhook(string, CallSettings)
             // Create client
             WebhooksClient webhooksClient = WebhooksClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/agents/[AGENT]/webhooks/[WEBHOOK]";
             // Make the request
             Webhook response = webhooksClient.GetWebhook(name);
-            // End snippet
         }
     }
 }

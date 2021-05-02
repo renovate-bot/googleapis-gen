@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.ErrorReporting.V1Beta1.Snippets
 {
+    using Google.Cloud.ErrorReporting.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedErrorGroupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateGroupAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateGroupAsync()
         {
-            // Snippet: UpdateGroupAsync(ErrorGroup, CallSettings)
-            // Additional: UpdateGroupAsync(ErrorGroup, CancellationToken)
             // Create client
             ErrorGroupServiceClient errorGroupServiceClient = await ErrorGroupServiceClient.CreateAsync();
             // Initialize request argument(s)
             ErrorGroup group = new ErrorGroup();
             // Make the request
             ErrorGroup response = await errorGroupServiceClient.UpdateGroupAsync(group);
-            // End snippet
         }
     }
 }

@@ -17,6 +17,7 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Enums;
+    using Google.Ads.GoogleAds.V7.Services;
     using Google.Api.Gax;
     using System;
     using System.Linq;
@@ -24,10 +25,13 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
 
     public sealed partial class GeneratedGoogleAdsServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for Search</summary>
+        /// <summary>Snippet for SearchAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SearchRequestObjectAsync()
         {
-            // Snippet: SearchAsync(SearchGoogleAdsRequest, CallSettings)
             // Create client
             GoogleAdsServiceClient googleAdsServiceClient = await GoogleAdsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -73,7 +77,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

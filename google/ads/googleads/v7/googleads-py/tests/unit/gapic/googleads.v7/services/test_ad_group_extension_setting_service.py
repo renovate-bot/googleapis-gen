@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -267,24 +269,37 @@ def test_get_ad_group_extension_setting(transport: str = 'grpc', request_type=ad
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_extension_setting.AdGroupExtensionSetting(
             resource_name='resource_name_value',
+
             extension_type=extension_type.ExtensionTypeEnum.ExtensionType.UNKNOWN,
+
             ad_group='ad_group_value',
+
             extension_feed_items=['extension_feed_items_value'],
+
             device=extension_setting_device.ExtensionSettingDeviceEnum.ExtensionSettingDevice.UNKNOWN,
+
         )
+
         response = client.get_ad_group_extension_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == ad_group_extension_setting_service.GetAdGroupExtensionSettingRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, ad_group_extension_setting.AdGroupExtensionSetting)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.extension_type == extension_type.ExtensionTypeEnum.ExtensionType.UNKNOWN
+
     assert response.ad_group == 'ad_group_value'
+
     assert response.extension_feed_items == ['extension_feed_items_value']
+
     assert response.device == extension_setting_device.ExtensionSettingDeviceEnum.ExtensionSettingDevice.UNKNOWN
 
 
@@ -300,7 +315,6 @@ def test_get_ad_group_extension_setting_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_group_extension_setting_service.GetAdGroupExtensionSettingRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -308,6 +322,7 @@ def test_get_ad_group_extension_setting_field_headers():
             type(client.transport.get_ad_group_extension_setting),
             '__call__') as call:
         call.return_value = ad_group_extension_setting.AdGroupExtensionSetting()
+
         client.get_ad_group_extension_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -334,6 +349,7 @@ def test_get_ad_group_extension_setting_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_extension_setting.AdGroupExtensionSetting()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_ad_group_extension_setting(
@@ -344,6 +360,7 @@ def test_get_ad_group_extension_setting_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -378,14 +395,17 @@ def test_mutate_ad_group_extension_settings(transport: str = 'grpc', request_typ
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_extension_setting_service.MutateAdGroupExtensionSettingsResponse(
         )
+
         response = client.mutate_ad_group_extension_settings(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == ad_group_extension_setting_service.MutateAdGroupExtensionSettingsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, ad_group_extension_setting_service.MutateAdGroupExtensionSettingsResponse)
 
 
@@ -401,7 +421,6 @@ def test_mutate_ad_group_extension_settings_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_group_extension_setting_service.MutateAdGroupExtensionSettingsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -409,6 +428,7 @@ def test_mutate_ad_group_extension_settings_field_headers():
             type(client.transport.mutate_ad_group_extension_settings),
             '__call__') as call:
         call.return_value = ad_group_extension_setting_service.MutateAdGroupExtensionSettingsResponse()
+
         client.mutate_ad_group_extension_settings(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -435,6 +455,7 @@ def test_mutate_ad_group_extension_settings_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_extension_setting_service.MutateAdGroupExtensionSettingsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_ad_group_extension_settings(
@@ -446,7 +467,9 @@ def test_mutate_ad_group_extension_settings_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [ad_group_extension_setting_service.AdGroupExtensionSettingOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -529,7 +552,7 @@ def test_ad_group_extension_setting_service_base_transport():
     methods = (
         'get_ad_group_extension_setting',
         'mutate_ad_group_extension_settings',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -681,6 +704,7 @@ def test_ad_group_extension_setting_service_transport_channel_mtls_with_adc(
 def test_ad_group_path():
     customer_id = "squid"
     ad_group_id = "clam"
+
     expected = "customers/{customer_id}/adGroups/{ad_group_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, )
     actual = AdGroupExtensionSettingServiceClient.ad_group_path(customer_id, ad_group_id)
     assert expected == actual
@@ -688,8 +712,9 @@ def test_ad_group_path():
 
 def test_parse_ad_group_path():
     expected = {
-        "customer_id": "whelk",
-        "ad_group_id": "octopus",
+    "customer_id": "whelk",
+    "ad_group_id": "octopus",
+
     }
     path = AdGroupExtensionSettingServiceClient.ad_group_path(**expected)
 
@@ -701,6 +726,7 @@ def test_ad_group_extension_setting_path():
     customer_id = "oyster"
     ad_group_id = "nudibranch"
     extension_type = "cuttlefish"
+
     expected = "customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}".format(customer_id=customer_id, ad_group_id=ad_group_id, extension_type=extension_type, )
     actual = AdGroupExtensionSettingServiceClient.ad_group_extension_setting_path(customer_id, ad_group_id, extension_type)
     assert expected == actual
@@ -708,9 +734,10 @@ def test_ad_group_extension_setting_path():
 
 def test_parse_ad_group_extension_setting_path():
     expected = {
-        "customer_id": "mussel",
-        "ad_group_id": "winkle",
-        "extension_type": "nautilus",
+    "customer_id": "mussel",
+    "ad_group_id": "winkle",
+    "extension_type": "nautilus",
+
     }
     path = AdGroupExtensionSettingServiceClient.ad_group_extension_setting_path(**expected)
 
@@ -721,6 +748,7 @@ def test_parse_ad_group_extension_setting_path():
 def test_extension_feed_item_path():
     customer_id = "scallop"
     feed_item_id = "abalone"
+
     expected = "customers/{customer_id}/extensionFeedItems/{feed_item_id}".format(customer_id=customer_id, feed_item_id=feed_item_id, )
     actual = AdGroupExtensionSettingServiceClient.extension_feed_item_path(customer_id, feed_item_id)
     assert expected == actual
@@ -728,8 +756,9 @@ def test_extension_feed_item_path():
 
 def test_parse_extension_feed_item_path():
     expected = {
-        "customer_id": "squid",
-        "feed_item_id": "clam",
+    "customer_id": "squid",
+    "feed_item_id": "clam",
+
     }
     path = AdGroupExtensionSettingServiceClient.extension_feed_item_path(**expected)
 
@@ -739,6 +768,7 @@ def test_parse_extension_feed_item_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AdGroupExtensionSettingServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -746,7 +776,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = AdGroupExtensionSettingServiceClient.common_billing_account_path(**expected)
 
@@ -756,6 +787,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = AdGroupExtensionSettingServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -763,7 +795,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = AdGroupExtensionSettingServiceClient.common_folder_path(**expected)
 
@@ -773,6 +806,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AdGroupExtensionSettingServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -780,7 +814,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = AdGroupExtensionSettingServiceClient.common_organization_path(**expected)
 
@@ -790,6 +825,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = AdGroupExtensionSettingServiceClient.common_project_path(project)
     assert expected == actual
@@ -797,7 +833,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = AdGroupExtensionSettingServiceClient.common_project_path(**expected)
 
@@ -808,6 +845,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AdGroupExtensionSettingServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -815,8 +853,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = AdGroupExtensionSettingServiceClient.common_location_path(**expected)
 

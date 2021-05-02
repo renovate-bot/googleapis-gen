@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.PubSubLite.V1.Snippets
 {
+    using Google.Cloud.PubSubLite.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateTopicAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateTopicRequestObjectAsync()
         {
-            // Snippet: UpdateTopicAsync(UpdateTopicRequest, CallSettings)
-            // Additional: UpdateTopicAsync(UpdateTopicRequest, CancellationToken)
             // Create client
             AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             };
             // Make the request
             Topic response = await adminServiceClient.UpdateTopicAsync(request);
-            // End snippet
         }
     }
 }

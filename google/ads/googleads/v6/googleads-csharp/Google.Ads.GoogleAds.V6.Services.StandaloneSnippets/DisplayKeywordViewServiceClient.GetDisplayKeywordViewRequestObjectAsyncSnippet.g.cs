@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDisplayKeywordViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDisplayKeywordViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetDisplayKeywordViewRequestObjectAsync()
         {
-            // Snippet: GetDisplayKeywordViewAsync(GetDisplayKeywordViewRequest, CallSettings)
-            // Additional: GetDisplayKeywordViewAsync(GetDisplayKeywordViewRequest, CancellationToken)
             // Create client
             DisplayKeywordViewServiceClient displayKeywordViewServiceClient = await DisplayKeywordViewServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             DisplayKeywordView response = await displayKeywordViewServiceClient.GetDisplayKeywordViewAsync(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -268,14 +270,17 @@ def test_list_plannable_locations(transport: str = 'grpc', request_type=reach_pl
         # Designate an appropriate return value for the call.
         call.return_value = reach_plan_service.ListPlannableLocationsResponse(
         )
+
         response = client.list_plannable_locations(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == reach_plan_service.ListPlannableLocationsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, reach_plan_service.ListPlannableLocationsResponse)
 
 
@@ -300,14 +305,17 @@ def test_list_plannable_products(transport: str = 'grpc', request_type=reach_pla
         # Designate an appropriate return value for the call.
         call.return_value = reach_plan_service.ListPlannableProductsResponse(
         )
+
         response = client.list_plannable_products(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == reach_plan_service.ListPlannableProductsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, reach_plan_service.ListPlannableProductsResponse)
 
 
@@ -326,6 +334,7 @@ def test_list_plannable_products_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = reach_plan_service.ListPlannableProductsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_plannable_products(
@@ -336,6 +345,7 @@ def test_list_plannable_products_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].plannable_location_id == 'plannable_location_id_value'
 
 
@@ -370,14 +380,17 @@ def test_generate_product_mix_ideas(transport: str = 'grpc', request_type=reach_
         # Designate an appropriate return value for the call.
         call.return_value = reach_plan_service.GenerateProductMixIdeasResponse(
         )
+
         response = client.generate_product_mix_ideas(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == reach_plan_service.GenerateProductMixIdeasRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, reach_plan_service.GenerateProductMixIdeasResponse)
 
 
@@ -393,7 +406,6 @@ def test_generate_product_mix_ideas_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = reach_plan_service.GenerateProductMixIdeasRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -401,6 +413,7 @@ def test_generate_product_mix_ideas_field_headers():
             type(client.transport.generate_product_mix_ideas),
             '__call__') as call:
         call.return_value = reach_plan_service.GenerateProductMixIdeasResponse()
+
         client.generate_product_mix_ideas(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -427,6 +440,7 @@ def test_generate_product_mix_ideas_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = reach_plan_service.GenerateProductMixIdeasResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.generate_product_mix_ideas(
@@ -440,9 +454,13 @@ def test_generate_product_mix_ideas_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].plannable_location_id == 'plannable_location_id_value'
+
         assert args[0].currency_code == 'currency_code_value'
+
         assert args[0].budget_micros == 1383
 
 
@@ -480,14 +498,17 @@ def test_generate_reach_forecast(transport: str = 'grpc', request_type=reach_pla
         # Designate an appropriate return value for the call.
         call.return_value = reach_plan_service.GenerateReachForecastResponse(
         )
+
         response = client.generate_reach_forecast(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == reach_plan_service.GenerateReachForecastRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, reach_plan_service.GenerateReachForecastResponse)
 
 
@@ -503,7 +524,6 @@ def test_generate_reach_forecast_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = reach_plan_service.GenerateReachForecastRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -511,6 +531,7 @@ def test_generate_reach_forecast_field_headers():
             type(client.transport.generate_reach_forecast),
             '__call__') as call:
         call.return_value = reach_plan_service.GenerateReachForecastResponse()
+
         client.generate_reach_forecast(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -537,6 +558,7 @@ def test_generate_reach_forecast_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = reach_plan_service.GenerateReachForecastResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.generate_reach_forecast(
@@ -549,8 +571,11 @@ def test_generate_reach_forecast_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].campaign_duration == reach_plan_service.CampaignDuration(duration_in_days=1708)
+
         assert args[0].planned_products == [reach_plan_service.PlannedProduct(plannable_product_code='plannable_product_code_value')]
 
 
@@ -636,7 +661,7 @@ def test_reach_plan_service_base_transport():
         'list_plannable_products',
         'generate_product_mix_ideas',
         'generate_reach_forecast',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -787,6 +812,7 @@ def test_reach_plan_service_transport_channel_mtls_with_adc(
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ReachPlanServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -794,7 +820,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = ReachPlanServiceClient.common_billing_account_path(**expected)
 
@@ -804,6 +831,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ReachPlanServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -811,7 +839,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = ReachPlanServiceClient.common_folder_path(**expected)
 
@@ -821,6 +850,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ReachPlanServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -828,7 +858,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = ReachPlanServiceClient.common_organization_path(**expected)
 
@@ -838,6 +869,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = ReachPlanServiceClient.common_project_path(project)
     assert expected == actual
@@ -845,7 +877,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = ReachPlanServiceClient.common_project_path(**expected)
 
@@ -856,6 +889,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ReachPlanServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -863,8 +897,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = ReachPlanServiceClient.common_location_path(**expected)
 

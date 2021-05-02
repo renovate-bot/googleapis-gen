@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Notebooks.V1Beta1.Snippets
 {
+    using Google.Cloud.Notebooks.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedNotebookServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetEnvironmentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetEnvironmentRequestObjectAsync()
         {
-            // Snippet: GetEnvironmentAsync(GetEnvironmentRequest, CallSettings)
-            // Additional: GetEnvironmentAsync(GetEnvironmentRequest, CancellationToken)
             // Create client
             NotebookServiceClient notebookServiceClient = await NotebookServiceClient.CreateAsync();
             // Initialize request argument(s)
             GetEnvironmentRequest request = new GetEnvironmentRequest { Name = "", };
             // Make the request
             Environment response = await notebookServiceClient.GetEnvironmentAsync(request);
-            // End snippet
         }
     }
 }

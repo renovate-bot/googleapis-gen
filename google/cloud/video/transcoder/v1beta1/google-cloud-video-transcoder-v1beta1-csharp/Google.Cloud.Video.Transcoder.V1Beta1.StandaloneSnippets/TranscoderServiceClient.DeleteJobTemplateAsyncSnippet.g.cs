@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Video.Transcoder.V1Beta1.Snippets
 {
+    using Google.Cloud.Video.Transcoder.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTranscoderServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteJobTemplateAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteJobTemplateAsync()
         {
-            // Snippet: DeleteJobTemplateAsync(string, CallSettings)
-            // Additional: DeleteJobTemplateAsync(string, CancellationToken)
             // Create client
             TranscoderServiceClient transcoderServiceClient = await TranscoderServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/jobTemplates/[JOB_TEMPLATE]";
             // Make the request
             await transcoderServiceClient.DeleteJobTemplateAsync(name);
-            // End snippet
         }
     }
 }

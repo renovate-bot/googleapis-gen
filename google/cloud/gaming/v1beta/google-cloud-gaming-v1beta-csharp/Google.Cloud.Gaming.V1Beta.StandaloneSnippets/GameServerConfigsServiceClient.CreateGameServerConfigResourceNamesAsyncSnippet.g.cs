@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Gaming.V1Beta.Snippets
 {
+    using Google.Cloud.Gaming.V1Beta;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGameServerConfigsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateGameServerConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateGameServerConfigResourceNamesAsync()
         {
-            // Snippet: CreateGameServerConfigAsync(GameServerDeploymentName, GameServerConfig, CallSettings)
-            // Additional: CreateGameServerConfigAsync(GameServerDeploymentName, GameServerConfig, CancellationToken)
             // Create client
             GameServerConfigsServiceClient gameServerConfigsServiceClient = await GameServerConfigsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -49,7 +52,6 @@ namespace Google.Cloud.Gaming.V1Beta.Snippets
                 // If it has completed, then access the result
                 GameServerConfig retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

@@ -17,14 +17,18 @@
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.AppEngine.V1;
     using System;
 
     public sealed partial class GeneratedAuthorizedDomainsClientStandaloneSnippets
     {
         /// <summary>Snippet for ListAuthorizedDomains</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListAuthorizedDomainsRequestObject()
         {
-            // Snippet: ListAuthorizedDomains(ListAuthorizedDomainsRequest, CallSettings)
             // Create client
             AuthorizedDomainsClient authorizedDomainsClient = AuthorizedDomainsClient.Create();
             // Initialize request argument(s)
@@ -63,7 +67,6 @@ namespace Google.Cloud.AppEngine.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

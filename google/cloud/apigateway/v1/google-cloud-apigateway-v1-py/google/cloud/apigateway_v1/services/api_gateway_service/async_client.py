@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -33,6 +35,7 @@ from google.cloud.apigateway_v1.types import apigateway
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import ApiGatewayServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ApiGatewayServiceGrpcAsyncIOTransport
 from .client import ApiGatewayServiceClient
@@ -60,14 +63,19 @@ class ApiGatewayServiceAsyncClient:
     parse_service_path = staticmethod(ApiGatewayServiceClient.parse_service_path)
     service_account_path = staticmethod(ApiGatewayServiceClient.service_account_path)
     parse_service_account_path = staticmethod(ApiGatewayServiceClient.parse_service_account_path)
+
     common_billing_account_path = staticmethod(ApiGatewayServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ApiGatewayServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(ApiGatewayServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(ApiGatewayServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(ApiGatewayServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(ApiGatewayServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(ApiGatewayServiceClient.common_project_path)
     parse_common_project_path = staticmethod(ApiGatewayServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(ApiGatewayServiceClient.common_location_path)
     parse_common_location_path = staticmethod(ApiGatewayServiceClient.parse_common_location_path)
 
@@ -152,6 +160,7 @@ class ApiGatewayServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = ApiGatewayServiceClient(
             credentials=credentials,
             transport=transport,
@@ -172,8 +181,7 @@ class ApiGatewayServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.ListGatewaysRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.ListGateways
             parent (:class:`str`):
                 Required. Parent resource of the Gateway, of the form:
@@ -182,6 +190,7 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -209,6 +218,7 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -260,8 +270,7 @@ class ApiGatewayServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.GetGatewayRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.GetGateway
             name (:class:`str`):
                 Required. Resource name of the form:
@@ -270,6 +279,7 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -298,6 +308,7 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -343,8 +354,7 @@ class ApiGatewayServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.CreateGatewayRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.CreateGateway
             parent (:class:`str`):
                 Required. Parent resource of the Gateway, of the form:
@@ -366,6 +376,7 @@ class ApiGatewayServiceAsyncClient:
                 This corresponds to the ``gateway_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -394,6 +405,7 @@ class ApiGatewayServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if gateway is not None:
@@ -406,7 +418,10 @@ class ApiGatewayServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_gateway,
             default_retry=retries.Retry(
-initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=60.0,
+                multiplier=2,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -456,8 +471,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.UpdateGatewayRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.UpdateGateway
             gateway (:class:`google.cloud.apigateway_v1.types.Gateway`):
                 Required. Gateway resource.
@@ -475,6 +489,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -503,6 +518,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if gateway is not None:
             request.gateway = gateway
         if update_mask is not None:
@@ -513,7 +529,10 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_gateway,
             default_retry=retries.Retry(
-initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=60.0,
+                multiplier=2,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -562,8 +581,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.DeleteGatewayRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.DeleteGateway
             name (:class:`str`):
                 Required. Resource name of the form:
@@ -572,6 +590,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -609,6 +628,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -617,7 +637,10 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_gateway,
             default_retry=retries.Retry(
-initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=60.0,
+                multiplier=2,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -666,8 +689,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.ListApisRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.ListApis
             parent (:class:`str`):
                 Required. Parent resource of the API, of the form:
@@ -676,6 +698,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -703,6 +726,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -754,8 +778,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.GetApiRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.GetApi
             name (:class:`str`):
                 Required. Resource name of the form:
@@ -764,6 +787,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -788,6 +812,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -832,8 +857,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.CreateApiRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.CreateApi
             parent (:class:`str`):
                 Required. Parent resource of the API, of the form:
@@ -855,6 +879,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
                 This corresponds to the ``api_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -882,6 +907,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if api is not None:
@@ -894,7 +920,10 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_api,
             default_retry=retries.Retry(
-initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=60.0,
+                multiplier=2,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -944,8 +973,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.UpdateApiRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.UpdateApi
             api (:class:`google.cloud.apigateway_v1.types.Api`):
                 Required. API resource.
@@ -963,6 +991,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -990,6 +1019,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if api is not None:
             request.api = api
         if update_mask is not None:
@@ -1000,7 +1030,10 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_api,
             default_retry=retries.Retry(
-initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=60.0,
+                multiplier=2,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -1049,8 +1082,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.DeleteApiRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.DeleteApi
             name (:class:`str`):
                 Required. Resource name of the form:
@@ -1059,6 +1091,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1096,6 +1129,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1104,7 +1138,10 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_api,
             default_retry=retries.Retry(
-initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=60.0,
+                multiplier=2,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -1153,8 +1190,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.ListApiConfigsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.ListApiConfigs
             parent (:class:`str`):
                 Required. Parent resource of the API Config, of the
@@ -1163,6 +1199,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1190,6 +1227,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -1241,8 +1279,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.GetApiConfigRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.GetApiConfig
             name (:class:`str`):
                 Required. Resource name of the form:
@@ -1251,6 +1288,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1276,6 +1314,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1321,8 +1360,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.CreateApiConfigRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.CreateApiConfig
             parent (:class:`str`):
                 Required. Parent resource of the API Config, of the
@@ -1344,6 +1382,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
                 This corresponds to the ``api_config_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1370,6 +1409,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if api_config is not None:
@@ -1382,7 +1422,10 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_api_config,
             default_retry=retries.Retry(
-initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=60.0,
+                multiplier=2,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -1432,8 +1475,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.UpdateApiConfigRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.UpdateApiConfig
             api_config (:class:`google.cloud.apigateway_v1.types.ApiConfig`):
                 Required. API Config resource.
@@ -1451,6 +1493,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1477,6 +1520,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if api_config is not None:
             request.api_config = api_config
         if update_mask is not None:
@@ -1487,7 +1531,10 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_api_config,
             default_retry=retries.Retry(
-initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=60.0,
+                multiplier=2,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -1536,8 +1583,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         Args:
             request (:class:`google.cloud.apigateway_v1.types.DeleteApiConfigRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ApiGatewayService.DeleteApiConfig
             name (:class:`str`):
                 Required. Resource name of the form:
@@ -1546,6 +1592,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1583,6 +1630,7 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1591,7 +1639,10 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_api_config,
             default_retry=retries.Retry(
-initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=60.0,
+                multiplier=2,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -1627,6 +1678,8 @@ initial=1.0,maximum=60.0,multiplier=2,                predicate=retries.if_excep
 
         # Done; return the response.
         return response
+
+
 
 
 

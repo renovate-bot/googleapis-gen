@@ -16,6 +16,7 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
     public sealed partial class GeneratedCampaignDraftServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for PromoteCampaignDraftAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task PromoteCampaignDraftAsync()
         {
-            // Snippet: PromoteCampaignDraftAsync(string, CallSettings)
-            // Additional: PromoteCampaignDraftAsync(string, CancellationToken)
             // Create client
             CampaignDraftServiceClient campaignDraftServiceClient = await CampaignDraftServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -49,7 +52,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

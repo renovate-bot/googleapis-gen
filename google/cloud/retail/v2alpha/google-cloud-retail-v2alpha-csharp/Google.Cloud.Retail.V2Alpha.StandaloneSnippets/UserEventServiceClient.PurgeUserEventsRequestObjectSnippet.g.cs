@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Retail.V2Alpha.Snippets
 {
+    using Google.Cloud.Retail.V2Alpha;
     using Google.LongRunning;
 
     public sealed partial class GeneratedUserEventServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for PurgeUserEvents</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void PurgeUserEventsRequestObject()
         {
-            // Snippet: PurgeUserEvents(PurgeUserEventsRequest, CallSettings)
             // Create client
             UserEventServiceClient userEventServiceClient = UserEventServiceClient.Create();
             // Initialize request argument(s)
@@ -51,7 +55,6 @@ namespace Google.Cloud.Retail.V2Alpha.Snippets
                 // If it has completed, then access the result
                 PurgeUserEventsResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

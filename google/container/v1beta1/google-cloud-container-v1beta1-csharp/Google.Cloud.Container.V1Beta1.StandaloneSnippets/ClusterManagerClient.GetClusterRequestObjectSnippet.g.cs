@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Container.V1Beta1.Snippets
 {
+    using Google.Cloud.Container.V1Beta1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCluster</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetClusterRequestObject()
         {
-            // Snippet: GetCluster(GetClusterRequest, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
             GetClusterRequest request = new GetClusterRequest { Name = "", };
             // Make the request
             Cluster response = clusterManagerClient.GetCluster(request);
-            // End snippet
         }
     }
 }

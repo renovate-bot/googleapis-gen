@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -39,8 +39,6 @@ from google.cloud.assuredworkloads_v1beta1.services.assured_workloads_service im
 from google.cloud.assuredworkloads_v1beta1.services.assured_workloads_service import AssuredWorkloadsServiceClient
 from google.cloud.assuredworkloads_v1beta1.services.assured_workloads_service import pagers
 from google.cloud.assuredworkloads_v1beta1.services.assured_workloads_service import transports
-from google.cloud.assuredworkloads_v1beta1.services.assured_workloads_service.transports.base import _API_CORE_VERSION
-from google.cloud.assuredworkloads_v1beta1.services.assured_workloads_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.assuredworkloads_v1beta1.types import assuredworkloads_v1beta1
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
@@ -48,28 +46,6 @@ from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -237,10 +213,12 @@ def test_assured_workloads_service_client_client_options(client_class, transport
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (AssuredWorkloadsServiceClient, transports.AssuredWorkloadsServiceGrpcTransport, "grpc", "true"),
     (AssuredWorkloadsServiceAsyncClient, transports.AssuredWorkloadsServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (AssuredWorkloadsServiceClient, transports.AssuredWorkloadsServiceGrpcTransport, "grpc", "false"),
     (AssuredWorkloadsServiceAsyncClient, transports.AssuredWorkloadsServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(AssuredWorkloadsServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(AssuredWorkloadsServiceClient))
 @mock.patch.object(AssuredWorkloadsServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(AssuredWorkloadsServiceAsyncClient))
@@ -394,11 +372,13 @@ def test_create_workload(transport: str = 'grpc', request_type=assuredworkloads_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.create_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == assuredworkloads_v1beta1.CreateWorkloadRequest()
 
     # Establish that the response is the type that we expect.
@@ -424,8 +404,8 @@ def test_create_workload_empty_call():
         client.create_workload()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == assuredworkloads_v1beta1.CreateWorkloadRequest()
 
+        assert args[0] == assuredworkloads_v1beta1.CreateWorkloadRequest()
 
 @pytest.mark.asyncio
 async def test_create_workload_async(transport: str = 'grpc_asyncio', request_type=assuredworkloads_v1beta1.CreateWorkloadRequest):
@@ -446,11 +426,13 @@ async def test_create_workload_async(transport: str = 'grpc_asyncio', request_ty
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.create_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == assuredworkloads_v1beta1.CreateWorkloadRequest()
 
     # Establish that the response is the type that we expect.
@@ -470,7 +452,6 @@ def test_create_workload_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = assuredworkloads_v1beta1.CreateWorkloadRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -478,6 +459,7 @@ def test_create_workload_field_headers():
             type(client.transport.create_workload),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.create_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -502,7 +484,6 @@ async def test_create_workload_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = assuredworkloads_v1beta1.CreateWorkloadRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -510,6 +491,7 @@ async def test_create_workload_field_headers_async():
             type(client.transport.create_workload),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.create_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -536,6 +518,7 @@ def test_create_workload_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_workload(
@@ -547,7 +530,9 @@ def test_create_workload_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].workload == assuredworkloads_v1beta1.Workload(name='name_value')
 
 
@@ -593,7 +578,9 @@ async def test_create_workload_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].workload == assuredworkloads_v1beta1.Workload(name='name_value')
 
 
@@ -630,27 +617,42 @@ def test_update_workload(transport: str = 'grpc', request_type=assuredworkloads_
         # Designate an appropriate return value for the call.
         call.return_value = assuredworkloads_v1beta1.Workload(
             name='name_value',
+
             display_name='display_name_value',
+
             compliance_regime=assuredworkloads_v1beta1.Workload.ComplianceRegime.IL4,
+
             billing_account='billing_account_value',
+
             etag='etag_value',
+
             provisioned_resources_parent='provisioned_resources_parent_value',
+
             il4_settings=assuredworkloads_v1beta1.Workload.IL4Settings(kms_settings=assuredworkloads_v1beta1.Workload.KMSSettings(next_rotation_time=timestamp.Timestamp(seconds=751))),
         )
+
         response = client.update_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == assuredworkloads_v1beta1.UpdateWorkloadRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, assuredworkloads_v1beta1.Workload)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.compliance_regime == assuredworkloads_v1beta1.Workload.ComplianceRegime.IL4
+
     assert response.billing_account == 'billing_account_value'
+
     assert response.etag == 'etag_value'
+
     assert response.provisioned_resources_parent == 'provisioned_resources_parent_value'
 
 
@@ -673,8 +675,8 @@ def test_update_workload_empty_call():
         client.update_workload()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == assuredworkloads_v1beta1.UpdateWorkloadRequest()
 
+        assert args[0] == assuredworkloads_v1beta1.UpdateWorkloadRequest()
 
 @pytest.mark.asyncio
 async def test_update_workload_async(transport: str = 'grpc_asyncio', request_type=assuredworkloads_v1beta1.UpdateWorkloadRequest):
@@ -692,7 +694,7 @@ async def test_update_workload_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.update_workload),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(assuredworkloads_v1beta1.Workload(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(assuredworkloads_v1beta1.Workload(
             name='name_value',
             display_name='display_name_value',
             compliance_regime=assuredworkloads_v1beta1.Workload.ComplianceRegime.IL4,
@@ -700,20 +702,28 @@ async def test_update_workload_async(transport: str = 'grpc_asyncio', request_ty
             etag='etag_value',
             provisioned_resources_parent='provisioned_resources_parent_value',
         ))
+
         response = await client.update_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == assuredworkloads_v1beta1.UpdateWorkloadRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, assuredworkloads_v1beta1.Workload)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.compliance_regime == assuredworkloads_v1beta1.Workload.ComplianceRegime.IL4
+
     assert response.billing_account == 'billing_account_value'
+
     assert response.etag == 'etag_value'
+
     assert response.provisioned_resources_parent == 'provisioned_resources_parent_value'
 
 
@@ -730,7 +740,6 @@ def test_update_workload_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = assuredworkloads_v1beta1.UpdateWorkloadRequest()
-
     request.workload.name = 'workload.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -738,6 +747,7 @@ def test_update_workload_field_headers():
             type(client.transport.update_workload),
             '__call__') as call:
         call.return_value = assuredworkloads_v1beta1.Workload()
+
         client.update_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -762,7 +772,6 @@ async def test_update_workload_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = assuredworkloads_v1beta1.UpdateWorkloadRequest()
-
     request.workload.name = 'workload.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -770,6 +779,7 @@ async def test_update_workload_field_headers_async():
             type(client.transport.update_workload),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(assuredworkloads_v1beta1.Workload())
+
         await client.update_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -796,6 +806,7 @@ def test_update_workload_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = assuredworkloads_v1beta1.Workload()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_workload(
@@ -807,7 +818,9 @@ def test_update_workload_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].workload == assuredworkloads_v1beta1.Workload(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -851,7 +864,9 @@ async def test_update_workload_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].workload == assuredworkloads_v1beta1.Workload(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -887,11 +902,13 @@ def test_delete_workload(transport: str = 'grpc', request_type=assuredworkloads_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == assuredworkloads_v1beta1.DeleteWorkloadRequest()
 
     # Establish that the response is the type that we expect.
@@ -917,8 +934,8 @@ def test_delete_workload_empty_call():
         client.delete_workload()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == assuredworkloads_v1beta1.DeleteWorkloadRequest()
 
+        assert args[0] == assuredworkloads_v1beta1.DeleteWorkloadRequest()
 
 @pytest.mark.asyncio
 async def test_delete_workload_async(transport: str = 'grpc_asyncio', request_type=assuredworkloads_v1beta1.DeleteWorkloadRequest):
@@ -937,11 +954,13 @@ async def test_delete_workload_async(transport: str = 'grpc_asyncio', request_ty
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == assuredworkloads_v1beta1.DeleteWorkloadRequest()
 
     # Establish that the response is the type that we expect.
@@ -961,7 +980,6 @@ def test_delete_workload_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = assuredworkloads_v1beta1.DeleteWorkloadRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -969,6 +987,7 @@ def test_delete_workload_field_headers():
             type(client.transport.delete_workload),
             '__call__') as call:
         call.return_value = None
+
         client.delete_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -993,7 +1012,6 @@ async def test_delete_workload_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = assuredworkloads_v1beta1.DeleteWorkloadRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1001,6 +1019,7 @@ async def test_delete_workload_field_headers_async():
             type(client.transport.delete_workload),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1027,6 +1046,7 @@ def test_delete_workload_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_workload(
@@ -1037,6 +1057,7 @@ def test_delete_workload_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1078,6 +1099,7 @@ async def test_delete_workload_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1113,27 +1135,42 @@ def test_get_workload(transport: str = 'grpc', request_type=assuredworkloads_v1b
         # Designate an appropriate return value for the call.
         call.return_value = assuredworkloads_v1beta1.Workload(
             name='name_value',
+
             display_name='display_name_value',
+
             compliance_regime=assuredworkloads_v1beta1.Workload.ComplianceRegime.IL4,
+
             billing_account='billing_account_value',
+
             etag='etag_value',
+
             provisioned_resources_parent='provisioned_resources_parent_value',
+
             il4_settings=assuredworkloads_v1beta1.Workload.IL4Settings(kms_settings=assuredworkloads_v1beta1.Workload.KMSSettings(next_rotation_time=timestamp.Timestamp(seconds=751))),
         )
+
         response = client.get_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == assuredworkloads_v1beta1.GetWorkloadRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, assuredworkloads_v1beta1.Workload)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.compliance_regime == assuredworkloads_v1beta1.Workload.ComplianceRegime.IL4
+
     assert response.billing_account == 'billing_account_value'
+
     assert response.etag == 'etag_value'
+
     assert response.provisioned_resources_parent == 'provisioned_resources_parent_value'
 
 
@@ -1156,8 +1193,8 @@ def test_get_workload_empty_call():
         client.get_workload()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == assuredworkloads_v1beta1.GetWorkloadRequest()
 
+        assert args[0] == assuredworkloads_v1beta1.GetWorkloadRequest()
 
 @pytest.mark.asyncio
 async def test_get_workload_async(transport: str = 'grpc_asyncio', request_type=assuredworkloads_v1beta1.GetWorkloadRequest):
@@ -1175,7 +1212,7 @@ async def test_get_workload_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.get_workload),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(assuredworkloads_v1beta1.Workload(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(assuredworkloads_v1beta1.Workload(
             name='name_value',
             display_name='display_name_value',
             compliance_regime=assuredworkloads_v1beta1.Workload.ComplianceRegime.IL4,
@@ -1183,20 +1220,28 @@ async def test_get_workload_async(transport: str = 'grpc_asyncio', request_type=
             etag='etag_value',
             provisioned_resources_parent='provisioned_resources_parent_value',
         ))
+
         response = await client.get_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == assuredworkloads_v1beta1.GetWorkloadRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, assuredworkloads_v1beta1.Workload)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.compliance_regime == assuredworkloads_v1beta1.Workload.ComplianceRegime.IL4
+
     assert response.billing_account == 'billing_account_value'
+
     assert response.etag == 'etag_value'
+
     assert response.provisioned_resources_parent == 'provisioned_resources_parent_value'
 
 
@@ -1213,7 +1258,6 @@ def test_get_workload_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = assuredworkloads_v1beta1.GetWorkloadRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1221,6 +1265,7 @@ def test_get_workload_field_headers():
             type(client.transport.get_workload),
             '__call__') as call:
         call.return_value = assuredworkloads_v1beta1.Workload()
+
         client.get_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1245,7 +1290,6 @@ async def test_get_workload_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = assuredworkloads_v1beta1.GetWorkloadRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1253,6 +1297,7 @@ async def test_get_workload_field_headers_async():
             type(client.transport.get_workload),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(assuredworkloads_v1beta1.Workload())
+
         await client.get_workload(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1279,6 +1324,7 @@ def test_get_workload_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = assuredworkloads_v1beta1.Workload()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_workload(
@@ -1289,6 +1335,7 @@ def test_get_workload_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1330,6 +1377,7 @@ async def test_get_workload_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1365,16 +1413,21 @@ def test_list_workloads(transport: str = 'grpc', request_type=assuredworkloads_v
         # Designate an appropriate return value for the call.
         call.return_value = assuredworkloads_v1beta1.ListWorkloadsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_workloads(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == assuredworkloads_v1beta1.ListWorkloadsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListWorkloadsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1397,8 +1450,8 @@ def test_list_workloads_empty_call():
         client.list_workloads()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == assuredworkloads_v1beta1.ListWorkloadsRequest()
 
+        assert args[0] == assuredworkloads_v1beta1.ListWorkloadsRequest()
 
 @pytest.mark.asyncio
 async def test_list_workloads_async(transport: str = 'grpc_asyncio', request_type=assuredworkloads_v1beta1.ListWorkloadsRequest):
@@ -1416,18 +1469,21 @@ async def test_list_workloads_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.list_workloads),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(assuredworkloads_v1beta1.ListWorkloadsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(assuredworkloads_v1beta1.ListWorkloadsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_workloads(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == assuredworkloads_v1beta1.ListWorkloadsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListWorkloadsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1444,7 +1500,6 @@ def test_list_workloads_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = assuredworkloads_v1beta1.ListWorkloadsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1452,6 +1507,7 @@ def test_list_workloads_field_headers():
             type(client.transport.list_workloads),
             '__call__') as call:
         call.return_value = assuredworkloads_v1beta1.ListWorkloadsResponse()
+
         client.list_workloads(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1476,7 +1532,6 @@ async def test_list_workloads_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = assuredworkloads_v1beta1.ListWorkloadsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1484,6 +1539,7 @@ async def test_list_workloads_field_headers_async():
             type(client.transport.list_workloads),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(assuredworkloads_v1beta1.ListWorkloadsResponse())
+
         await client.list_workloads(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1510,6 +1566,7 @@ def test_list_workloads_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = assuredworkloads_v1beta1.ListWorkloadsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_workloads(
@@ -1520,6 +1577,7 @@ def test_list_workloads_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1561,6 +1619,7 @@ async def test_list_workloads_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1806,6 +1865,7 @@ def test_transport_instance():
     client = AssuredWorkloadsServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.AssuredWorkloadsServiceGrpcTransport(
@@ -1820,6 +1880,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.AssuredWorkloadsServiceGrpcTransport,
     transports.AssuredWorkloadsServiceGrpcAsyncIOTransport,
@@ -1831,6 +1892,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = AssuredWorkloadsServiceClient(
@@ -1840,6 +1902,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.AssuredWorkloadsServiceGrpcTransport,
     )
+
 
 def test_assured_workloads_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1866,7 +1929,7 @@ def test_assured_workloads_service_base_transport():
         'delete_workload',
         'get_workload',
         'list_workloads',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -1877,27 +1940,9 @@ def test_assured_workloads_service_base_transport():
         transport.operations_client
 
 
-@requires_google_auth_gte_1_25_0
 def test_assured_workloads_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.assuredworkloads_v1beta1.services.assured_workloads_service.transports.AssuredWorkloadsServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.AssuredWorkloadsServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_assured_workloads_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.assuredworkloads_v1beta1.services.assured_workloads_service.transports.AssuredWorkloadsServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.assuredworkloads_v1beta1.services.assured_workloads_service.transports.AssuredWorkloadsServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.AssuredWorkloadsServiceTransport(
@@ -1913,182 +1958,33 @@ def test_assured_workloads_service_base_transport_with_credentials_file_old_goog
 
 def test_assured_workloads_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.assuredworkloads_v1beta1.services.assured_workloads_service.transports.AssuredWorkloadsServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.assuredworkloads_v1beta1.services.assured_workloads_service.transports.AssuredWorkloadsServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.AssuredWorkloadsServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_assured_workloads_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         AssuredWorkloadsServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_assured_workloads_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        AssuredWorkloadsServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.AssuredWorkloadsServiceGrpcTransport,
-        transports.AssuredWorkloadsServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_assured_workloads_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.AssuredWorkloadsServiceGrpcTransport,
-        transports.AssuredWorkloadsServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_assured_workloads_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.AssuredWorkloadsServiceGrpcTransport, grpc_helpers),
-        (transports.AssuredWorkloadsServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_assured_workloads_service_transport_create_channel(transport_class, grpc_helpers):
+def test_assured_workloads_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.AssuredWorkloadsServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "assuredworkloads.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="assuredworkloads.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.AssuredWorkloadsServiceGrpcTransport, grpc_helpers),
-        (transports.AssuredWorkloadsServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_assured_workloads_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "assuredworkloads.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.AssuredWorkloadsServiceGrpcTransport, grpc_helpers),
-        (transports.AssuredWorkloadsServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_assured_workloads_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "assuredworkloads.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -2150,6 +2046,7 @@ def test_assured_workloads_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='assuredworkloads.googleapis.com:8000'),
     )
     assert client.transport._host == 'assuredworkloads.googleapis.com:8000'
+
 
 def test_assured_workloads_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -2303,6 +2200,7 @@ def test_workload_path():
     organization = "squid"
     location = "clam"
     workload = "whelk"
+
     expected = "organizations/{organization}/locations/{location}/workloads/{workload}".format(organization=organization, location=location, workload=workload, )
     actual = AssuredWorkloadsServiceClient.workload_path(organization, location, workload)
     assert expected == actual
@@ -2310,9 +2208,10 @@ def test_workload_path():
 
 def test_parse_workload_path():
     expected = {
-        "organization": "octopus",
-        "location": "oyster",
-        "workload": "nudibranch",
+    "organization": "octopus",
+    "location": "oyster",
+    "workload": "nudibranch",
+
     }
     path = AssuredWorkloadsServiceClient.workload_path(**expected)
 
@@ -2322,6 +2221,7 @@ def test_parse_workload_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AssuredWorkloadsServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2329,7 +2229,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "mussel",
+    "billing_account": "mussel",
+
     }
     path = AssuredWorkloadsServiceClient.common_billing_account_path(**expected)
 
@@ -2339,6 +2240,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = AssuredWorkloadsServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -2346,7 +2248,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nautilus",
+    "folder": "nautilus",
+
     }
     path = AssuredWorkloadsServiceClient.common_folder_path(**expected)
 
@@ -2356,6 +2259,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AssuredWorkloadsServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -2363,7 +2267,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "abalone",
+    "organization": "abalone",
+
     }
     path = AssuredWorkloadsServiceClient.common_organization_path(**expected)
 
@@ -2373,6 +2278,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
+
     expected = "projects/{project}".format(project=project, )
     actual = AssuredWorkloadsServiceClient.common_project_path(project)
     assert expected == actual
@@ -2380,7 +2286,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "clam",
+    "project": "clam",
+
     }
     path = AssuredWorkloadsServiceClient.common_project_path(**expected)
 
@@ -2391,6 +2298,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AssuredWorkloadsServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -2398,8 +2306,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "oyster",
-        "location": "nudibranch",
+    "project": "oyster",
+    "location": "nudibranch",
+
     }
     path = AssuredWorkloadsServiceClient.common_location_path(**expected)
 

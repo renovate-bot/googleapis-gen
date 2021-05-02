@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateEntryGroupAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateEntryGroup1Async()
         {
-            // Snippet: UpdateEntryGroupAsync(EntryGroup, CallSettings)
-            // Additional: UpdateEntryGroupAsync(EntryGroup, CancellationToken)
             // Create client
             DataCatalogClient dataCatalogClient = await DataCatalogClient.CreateAsync();
             // Initialize request argument(s)
             EntryGroup entryGroup = new EntryGroup();
             // Make the request
             EntryGroup response = await dataCatalogClient.UpdateEntryGroupAsync(entryGroup);
-            // End snippet
         }
     }
 }

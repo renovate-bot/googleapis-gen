@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPaidOrganicSearchTermViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPaidOrganicSearchTermViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetPaidOrganicSearchTermViewResourceNamesAsync()
         {
-            // Snippet: GetPaidOrganicSearchTermViewAsync(PaidOrganicSearchTermViewName, CallSettings)
-            // Additional: GetPaidOrganicSearchTermViewAsync(PaidOrganicSearchTermViewName, CancellationToken)
             // Create client
             PaidOrganicSearchTermViewServiceClient paidOrganicSearchTermViewServiceClient = await PaidOrganicSearchTermViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             PaidOrganicSearchTermViewName resourceName = PaidOrganicSearchTermViewName.FromCustomerCampaignAdGroupBase64SearchTerm("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[AD_GROUP_ID]", "[BASE64_SEARCH_TERM]");
             // Make the request
             PaidOrganicSearchTermView response = await paidOrganicSearchTermViewServiceClient.GetPaidOrganicSearchTermViewAsync(resourceName);
-            // End snippet
         }
     }
 }

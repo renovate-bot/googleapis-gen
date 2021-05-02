@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Tpu.V1.Snippets
 {
+    using Google.Cloud.Tpu.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTpuClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAcceleratorTypeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAcceleratorTypeRequestObjectAsync()
         {
-            // Snippet: GetAcceleratorTypeAsync(GetAcceleratorTypeRequest, CallSettings)
-            // Additional: GetAcceleratorTypeAsync(GetAcceleratorTypeRequest, CancellationToken)
             // Create client
             TpuClient tpuClient = await TpuClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Tpu.V1.Snippets
             };
             // Make the request
             AcceleratorType response = await tpuClient.GetAcceleratorTypeAsync(request);
-            // End snippet
         }
     }
 }

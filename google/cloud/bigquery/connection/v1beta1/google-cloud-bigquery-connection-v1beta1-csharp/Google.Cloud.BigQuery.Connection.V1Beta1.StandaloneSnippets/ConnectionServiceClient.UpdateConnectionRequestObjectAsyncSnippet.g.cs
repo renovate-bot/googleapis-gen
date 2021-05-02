@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.BigQuery.Connection.V1Beta1.Snippets
 {
+    using Google.Cloud.BigQuery.Connection.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConnectionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateConnectionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateConnectionRequestObjectAsync()
         {
-            // Snippet: UpdateConnectionAsync(UpdateConnectionRequest, CallSettings)
-            // Additional: UpdateConnectionAsync(UpdateConnectionRequest, CancellationToken)
             // Create client
             ConnectionServiceClient connectionServiceClient = await ConnectionServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.BigQuery.Connection.V1Beta1.Snippets
             };
             // Make the request
             Connection response = await connectionServiceClient.UpdateConnectionAsync(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.enums.types import response_content_type as gage_response_content_type
 from google.ads.googleads.v7.resources.types import asset as gagr_asset
@@ -44,10 +47,7 @@ class GetAssetRequest(proto.Message):
             fetch.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateAssetsRequest(proto.Message):
@@ -76,28 +76,15 @@ class MutateAssetsRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operations = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operations = proto.RepeatedField(proto.MESSAGE, number=2,
         message='AssetOperation',
     )
-    partial_failure = proto.Field(
-        proto.BOOL,
-        number=5,
-    )
-    response_content_type = proto.Field(
-        proto.ENUM,
-        number=3,
+    partial_failure = proto.Field(proto.BOOL, number=5)
+    response_content_type = proto.Field(proto.ENUM, number=3,
         enum=gage_response_content_type.ResponseContentTypeEnum.ResponseContentType,
     )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=4,
-    )
+    validate_only = proto.Field(proto.BOOL, number=4)
 
 
 class AssetOperation(proto.Message):
@@ -119,27 +106,20 @@ class AssetOperation(proto.Message):
             ``customers/{customer_id}/assets/{asset_id}``
     """
 
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    update_mask = proto.Field(proto.MESSAGE, number=3,
         message=field_mask.FieldMask,
     )
-    create = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='operation',
+    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=gagr_asset.Asset,
     )
-    update = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='operation',
+    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
         message=gagr_asset.Asset,
     )
 
 
 class MutateAssetsResponse(proto.Message):
     r"""Response message for an asset mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -151,20 +131,17 @@ class MutateAssetsResponse(proto.Message):
             All results for the mutate.
     """
 
-    partial_failure_error = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    partial_failure_error = proto.Field(proto.MESSAGE, number=3,
         message=status.Status,
     )
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    results = proto.RepeatedField(proto.MESSAGE, number=2,
         message='MutateAssetResult',
     )
 
 
 class MutateAssetResult(proto.Message):
     r"""The result for the asset mutate.
+
     Attributes:
         resource_name (str):
             The resource name returned for successful
@@ -175,13 +152,8 @@ class MutateAssetResult(proto.Message):
             set to "MUTABLE_RESOURCE".
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    asset = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    asset = proto.Field(proto.MESSAGE, number=2,
         message=gagr_asset.Asset,
     )
 

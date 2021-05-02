@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.SecurityCenter.V1.Snippets
 {
+    using Google.Cloud.SecurityCenter.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateSource</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateSourceRequestObject()
         {
-            // Snippet: UpdateSource(UpdateSourceRequest, CallSettings)
             // Create client
             SecurityCenterClient securityCenterClient = SecurityCenterClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.SecurityCenter.V1.Snippets
             };
             // Make the request
             Source response = securityCenterClient.UpdateSource(request);
-            // End snippet
         }
     }
 }

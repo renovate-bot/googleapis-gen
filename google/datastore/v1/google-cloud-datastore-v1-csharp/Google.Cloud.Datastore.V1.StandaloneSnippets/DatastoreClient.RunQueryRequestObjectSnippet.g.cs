@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Datastore.V1.Snippets
 {
+    using Google.Cloud.Datastore.V1;
+
     public sealed partial class GeneratedDatastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for RunQuery</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void RunQueryRequestObject()
         {
-            // Snippet: RunQuery(RunQueryRequest, CallSettings)
             // Create client
             DatastoreClient datastoreClient = DatastoreClient.Create();
             // Initialize request argument(s)
@@ -30,12 +35,10 @@ namespace Google.Cloud.Datastore.V1.Snippets
                 ReadOptions = new ReadOptions(),
                 PartitionId = new PartitionId(),
                 Query = new Query(),
-                GqlQuery = new GqlQuery(),
                 ProjectId = "",
             };
             // Make the request
             RunQueryResponse response = datastoreClient.RunQuery(request);
-            // End snippet
         }
     }
 }

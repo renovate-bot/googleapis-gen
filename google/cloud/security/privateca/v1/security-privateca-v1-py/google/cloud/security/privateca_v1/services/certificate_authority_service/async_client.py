@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -35,6 +37,7 @@ from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import CertificateAuthorityServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import CertificateAuthorityServiceGrpcAsyncIOTransport
 from .client import CertificateAuthorityServiceClient
@@ -61,14 +64,19 @@ class CertificateAuthorityServiceAsyncClient:
     parse_certificate_revocation_list_path = staticmethod(CertificateAuthorityServiceClient.parse_certificate_revocation_list_path)
     certificate_template_path = staticmethod(CertificateAuthorityServiceClient.certificate_template_path)
     parse_certificate_template_path = staticmethod(CertificateAuthorityServiceClient.parse_certificate_template_path)
+
     common_billing_account_path = staticmethod(CertificateAuthorityServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(CertificateAuthorityServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(CertificateAuthorityServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(CertificateAuthorityServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(CertificateAuthorityServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(CertificateAuthorityServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(CertificateAuthorityServiceClient.common_project_path)
     parse_common_project_path = staticmethod(CertificateAuthorityServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(CertificateAuthorityServiceClient.common_location_path)
     parse_common_location_path = staticmethod(CertificateAuthorityServiceClient.parse_common_location_path)
 
@@ -153,6 +161,7 @@ class CertificateAuthorityServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = CertificateAuthorityServiceClient(
             credentials=credentials,
             transport=transport,
@@ -178,8 +187,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.CreateCertificateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.CreateCertificate][google.cloud.security.privateca.v1.CertificateAuthorityService.CreateCertificate].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -210,6 +218,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``certificate_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -234,6 +243,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if certificate is not None:
@@ -281,8 +291,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.GetCertificateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.GetCertificate][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificate].
             name (:class:`str`):
                 Required. The
@@ -294,6 +303,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -318,6 +328,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -361,8 +372,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.ListCertificatesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.ListCertificates][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificates].
             parent (:class:`str`):
                 Required. The resource name of the location associated
@@ -373,6 +383,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -400,6 +411,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -452,8 +464,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.RevokeCertificateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.RevokeCertificate][google.cloud.security.privateca.v1.CertificateAuthorityService.RevokeCertificate].
             name (:class:`str`):
                 Required. The resource name for this
@@ -464,6 +475,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -488,6 +500,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -535,8 +548,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.UpdateCertificateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.UpdateCertificate][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCertificate].
             certificate (:class:`google.cloud.security.privateca_v1.types.Certificate`):
                 Required.
@@ -553,6 +565,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -577,6 +590,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if certificate is not None:
             request.certificate = certificate
         if update_mask is not None:
@@ -630,8 +644,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.ActivateCertificateAuthorityRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.ActivateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.ActivateCertificateAuthority].
             name (:class:`str`):
                 Required. The resource name for this
@@ -642,6 +655,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -671,6 +685,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -725,8 +740,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.CreateCertificateAuthorityRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.CreateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.CreateCertificateAuthority].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -753,6 +767,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``certificate_authority_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -782,6 +797,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if certificate_authority is not None:
@@ -837,8 +853,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.DisableCertificateAuthorityRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.DisableCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.DisableCertificateAuthority].
             name (:class:`str`):
                 Required. The resource name for this
@@ -849,6 +864,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -878,6 +894,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -929,8 +946,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.EnableCertificateAuthorityRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.EnableCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.EnableCertificateAuthority].
             name (:class:`str`):
                 Required. The resource name for this
@@ -941,6 +957,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -970,6 +987,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1030,8 +1048,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.FetchCertificateAuthorityCsrRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.FetchCertificateAuthorityCsr][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCertificateAuthorityCsr].
             name (:class:`str`):
                 Required. The resource name for this
@@ -1042,6 +1059,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1066,6 +1084,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1109,8 +1128,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.GetCertificateAuthorityRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.GetCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateAuthority].
             name (:class:`str`):
                 Required. The
@@ -1122,6 +1140,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1149,6 +1168,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1192,8 +1212,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.ListCertificateAuthoritiesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.ListCertificateAuthorities][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificateAuthorities].
             parent (:class:`str`):
                 Required. The resource name of the
@@ -1205,6 +1224,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1232,6 +1252,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -1285,8 +1306,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.UndeleteCertificateAuthorityRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.UndeleteCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.UndeleteCertificateAuthority].
             name (:class:`str`):
                 Required. The resource name for this
@@ -1297,6 +1317,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1326,6 +1347,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1377,8 +1399,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.DeleteCertificateAuthorityRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.DeleteCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.DeleteCertificateAuthority].
             name (:class:`str`):
                 Required. The resource name for this
@@ -1389,6 +1410,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1418,6 +1440,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1470,8 +1493,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.UpdateCertificateAuthorityRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.UpdateCertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCertificateAuthority].
             certificate_authority (:class:`google.cloud.security.privateca_v1.types.CertificateAuthority`):
                 Required.
@@ -1488,6 +1510,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1517,6 +1540,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if certificate_authority is not None:
             request.certificate_authority = certificate_authority
         if update_mask is not None:
@@ -1571,8 +1595,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.CreateCaPoolRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.CreateCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.CreateCaPool].
             parent (:class:`str`):
                 Required. The resource name of the location associated
@@ -1598,6 +1621,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``ca_pool_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1631,6 +1655,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if ca_pool is not None:
@@ -1686,8 +1711,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.UpdateCaPoolRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.UpdateCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCaPool].
             ca_pool (:class:`google.cloud.security.privateca_v1.types.CaPool`):
                 Required.
@@ -1704,6 +1728,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1737,6 +1762,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if ca_pool is not None:
             request.ca_pool = ca_pool
         if update_mask is not None:
@@ -1789,8 +1815,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.GetCaPoolRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.GetCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCaPool].
             name (:class:`str`):
                 Required. The
@@ -1802,6 +1827,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1833,6 +1859,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1875,8 +1902,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.ListCaPoolsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.ListCaPools][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCaPools].
             parent (:class:`str`):
                 Required. The resource name of the location associated
@@ -1887,6 +1913,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1914,6 +1941,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -1965,8 +1993,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.DeleteCaPoolRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.DeleteCaPool][google.cloud.security.privateca.v1.CertificateAuthorityService.DeleteCaPool].
             name (:class:`str`):
                 Required. The resource name for this
@@ -1976,6 +2003,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2009,6 +2037,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2064,8 +2093,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.FetchCaCertsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.FetchCaCerts][google.cloud.security.privateca.v1.CertificateAuthorityService.FetchCaCerts].
             ca_pool (:class:`str`):
                 Required. The resource name for the
@@ -2075,6 +2103,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``ca_pool`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2099,6 +2128,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if ca_pool is not None:
             request.ca_pool = ca_pool
 
@@ -2142,8 +2172,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.GetCertificateRevocationListRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.GetCertificateRevocationList][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateRevocationList].
             name (:class:`str`):
                 Required. The
@@ -2155,6 +2184,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2181,6 +2211,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2224,8 +2255,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.ListCertificateRevocationListsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.ListCertificateRevocationLists][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificateRevocationLists].
             parent (:class:`str`):
                 Required. The resource name of the location associated
@@ -2237,6 +2267,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2264,6 +2295,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -2317,8 +2349,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.UpdateCertificateRevocationListRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.UpdateCertificateRevocationList][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCertificateRevocationList].
             certificate_revocation_list (:class:`google.cloud.security.privateca_v1.types.CertificateRevocationList`):
                 Required.
@@ -2335,6 +2366,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2363,6 +2395,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if certificate_revocation_list is not None:
             request.certificate_revocation_list = certificate_revocation_list
         if update_mask is not None:
@@ -2419,8 +2452,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.CreateCertificateTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.CreateCertificateTemplate][google.cloud.security.privateca.v1.CertificateAuthorityService.CreateCertificateTemplate].
             parent (:class:`str`):
                 Required. The resource name of the location associated
@@ -2446,6 +2478,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``certificate_template_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2472,6 +2505,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if certificate_template is not None:
@@ -2527,8 +2561,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.DeleteCertificateTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.DeleteCertificateTemplate][google.cloud.security.privateca.v1.CertificateAuthorityService.DeleteCertificateTemplate].
             name (:class:`str`):
                 Required. The resource name for this
@@ -2539,6 +2572,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2576,6 +2610,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2627,8 +2662,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.GetCertificateTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.GetCertificateTemplate][google.cloud.security.privateca.v1.CertificateAuthorityService.GetCertificateTemplate].
             name (:class:`str`):
                 Required. The
@@ -2640,6 +2674,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2664,6 +2699,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2707,8 +2743,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.ListCertificateTemplatesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.ListCertificateTemplates][google.cloud.security.privateca.v1.CertificateAuthorityService.ListCertificateTemplates].
             parent (:class:`str`):
                 Required. The resource name of the location associated
@@ -2719,6 +2754,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2746,6 +2782,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -2799,8 +2836,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.security.privateca_v1.types.UpdateCertificateTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CertificateAuthorityService.UpdateCertificateTemplate][google.cloud.security.privateca.v1.CertificateAuthorityService.UpdateCertificateTemplate].
             certificate_template (:class:`google.cloud.security.privateca_v1.types.CertificateTemplate`):
                 Required.
@@ -2817,6 +2853,7 @@ class CertificateAuthorityServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2843,6 +2880,7 @@ class CertificateAuthorityServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if certificate_template is not None:
             request.certificate_template = certificate_template
         if update_mask is not None:
@@ -2882,6 +2920,8 @@ class CertificateAuthorityServiceAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

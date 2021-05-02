@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.SecretManager.V1Beta1.Snippets
 {
+    using Google.Cloud.SecretManager.V1Beta1;
+
     public sealed partial class GeneratedSecretManagerServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DestroySecretVersion</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DestroySecretVersionResourceNames()
         {
-            // Snippet: DestroySecretVersion(SecretVersionName, CallSettings)
             // Create client
             SecretManagerServiceClient secretManagerServiceClient = SecretManagerServiceClient.Create();
             // Initialize request argument(s)
             SecretVersionName name = SecretVersionName.FromProjectSecretSecretVersion("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
             // Make the request
             SecretVersion response = secretManagerServiceClient.DestroySecretVersion(name);
-            // End snippet
         }
     }
 }

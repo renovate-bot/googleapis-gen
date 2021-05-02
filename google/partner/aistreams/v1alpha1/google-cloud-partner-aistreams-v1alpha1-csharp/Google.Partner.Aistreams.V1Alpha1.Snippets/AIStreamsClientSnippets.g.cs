@@ -77,7 +77,7 @@ namespace Google.Partner.Aistreams.V1Alpha1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListClusters</summary>
+        /// <summary>Snippet for ListClustersAsync</summary>
         public async Task ListClustersRequestObjectAsync()
         {
             // Snippet: ListClustersAsync(ListClustersRequest, CallSettings)
@@ -172,7 +172,7 @@ namespace Google.Partner.Aistreams.V1Alpha1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListClusters</summary>
+        /// <summary>Snippet for ListClustersAsync</summary>
         public async Task ListClustersAsync()
         {
             // Snippet: ListClustersAsync(string, string, int?, CallSettings)
@@ -262,7 +262,7 @@ namespace Google.Partner.Aistreams.V1Alpha1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListClusters</summary>
+        /// <summary>Snippet for ListClustersAsync</summary>
         public async Task ListClustersResourceNamesAsync()
         {
             // Snippet: ListClustersAsync(LocationName, string, int?, CallSettings)
@@ -956,7 +956,7 @@ namespace Google.Partner.Aistreams.V1Alpha1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListStreams</summary>
+        /// <summary>Snippet for ListStreamsAsync</summary>
         public async Task ListStreamsRequestObjectAsync()
         {
             // Snippet: ListStreamsAsync(ListStreamsRequest, CallSettings)
@@ -1051,7 +1051,7 @@ namespace Google.Partner.Aistreams.V1Alpha1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListStreams</summary>
+        /// <summary>Snippet for ListStreamsAsync</summary>
         public async Task ListStreamsAsync()
         {
             // Snippet: ListStreamsAsync(string, string, int?, CallSettings)
@@ -1141,7 +1141,7 @@ namespace Google.Partner.Aistreams.V1Alpha1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListStreams</summary>
+        /// <summary>Snippet for ListStreamsAsync</summary>
         public async Task ListStreamsResourceNamesAsync()
         {
             // Snippet: ListStreamsAsync(ClusterName, string, int?, CallSettings)

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,13 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
- import pytest
+
+
+import pytest
 
 
 def test_module_level_imports():
     expected_names = []
 
     # Message types
+
     from google.ads.googleads import PolicyTopicEntryTypeEnum
     expected_names.append(PolicyTopicEntryTypeEnum.__name__)
     from google.ads.googleads import PolicyTopicEvidenceDestinationMismatchUrlTypeEnum
@@ -3261,6 +3265,7 @@ def test_versionsed_module_level_imports():
     expected_names = []
 
     # Message types
+
     from google.ads.googleads.v7 import PolicyTopicEntryTypeEnum
     expected_names.append(PolicyTopicEntryTypeEnum.__name__)
     from google.ads.googleads.v7 import PolicyTopicEvidenceDestinationMismatchUrlTypeEnum

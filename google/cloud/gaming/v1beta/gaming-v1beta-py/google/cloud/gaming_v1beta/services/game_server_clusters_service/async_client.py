@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -34,6 +36,7 @@ from google.cloud.gaming_v1beta.types import game_server_clusters
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import GameServerClustersServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import GameServerClustersServiceGrpcAsyncIOTransport
 from .client import GameServerClustersServiceClient
@@ -51,14 +54,19 @@ class GameServerClustersServiceAsyncClient:
 
     game_server_cluster_path = staticmethod(GameServerClustersServiceClient.game_server_cluster_path)
     parse_game_server_cluster_path = staticmethod(GameServerClustersServiceClient.parse_game_server_cluster_path)
+
     common_billing_account_path = staticmethod(GameServerClustersServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(GameServerClustersServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(GameServerClustersServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(GameServerClustersServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(GameServerClustersServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(GameServerClustersServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(GameServerClustersServiceClient.common_project_path)
     parse_common_project_path = staticmethod(GameServerClustersServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(GameServerClustersServiceClient.common_location_path)
     parse_common_location_path = staticmethod(GameServerClustersServiceClient.parse_common_location_path)
 
@@ -143,6 +151,7 @@ class GameServerClustersServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = GameServerClustersServiceClient(
             credentials=credentials,
             transport=transport,
@@ -164,8 +173,7 @@ class GameServerClustersServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.ListGameServerClustersRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.ListGameServerClusters.
             parent (:class:`str`):
                 Required. The parent resource name.
@@ -175,6 +183,7 @@ class GameServerClustersServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -202,6 +211,7 @@ class GameServerClustersServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -210,7 +220,10 @@ class GameServerClustersServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_game_server_clusters,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -259,8 +272,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.GetGameServerClusterRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.GetGameServerCluster.
             name (:class:`str`):
                 Required. The name of the game server cluster to
@@ -271,6 +283,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -293,6 +306,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -301,7 +315,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_game_server_cluster,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -344,8 +361,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.CreateGameServerClusterRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.CreateGameServerCluster.
             parent (:class:`str`):
                 Required. The parent resource name. Uses the form:
@@ -368,6 +384,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``game_server_cluster_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -395,6 +412,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if game_server_cluster is not None:
@@ -449,9 +467,9 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.PreviewCreateGameServerClusterRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.PreviewCreateGameServerCluster.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -465,6 +483,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         # Create or coerce a protobuf request object.
+
         request = game_server_clusters.PreviewCreateGameServerClusterRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -472,7 +491,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.preview_create_game_server_cluster,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -512,8 +534,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.DeleteGameServerClusterRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.DeleteGameServerCluster.
             name (:class:`str`):
                 Required. The name of the game server cluster to delete.
@@ -523,6 +544,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -560,6 +582,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -609,9 +632,9 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.PreviewDeleteGameServerClusterRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.PreviewDeleteGameServerCluster.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -625,6 +648,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         # Create or coerce a protobuf request object.
+
         request = game_server_clusters.PreviewDeleteGameServerClusterRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -632,7 +656,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.preview_delete_game_server_cluster,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -673,8 +700,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.UpdateGameServerClusterRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.UpdateGameServerCluster.
             game_server_cluster (:class:`google.cloud.gaming_v1beta.types.GameServerCluster`):
                 Required. The game server cluster to be updated. Only
@@ -694,6 +720,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -721,6 +748,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if game_server_cluster is not None:
             request.game_server_cluster = game_server_cluster
         if update_mask is not None:
@@ -772,9 +800,9 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.PreviewUpdateGameServerClusterRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerClustersService.UpdateGameServerCluster.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -788,6 +816,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         # Create or coerce a protobuf request object.
+
         request = game_server_clusters.PreviewUpdateGameServerClusterRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -795,7 +824,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.preview_update_game_server_cluster,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -822,6 +854,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

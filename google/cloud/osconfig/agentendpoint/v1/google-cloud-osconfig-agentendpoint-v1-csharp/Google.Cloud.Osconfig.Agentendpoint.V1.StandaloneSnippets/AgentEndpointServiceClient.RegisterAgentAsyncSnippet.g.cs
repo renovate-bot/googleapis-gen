@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Osconfig.Agentendpoint.V1.Snippets
 {
+    using Google.Cloud.Osconfig.Agentendpoint.V1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAgentEndpointServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for RegisterAgentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task RegisterAgentAsync()
         {
-            // Snippet: RegisterAgentAsync(string, string, IEnumerable<string>, CallSettings)
-            // Additional: RegisterAgentAsync(string, string, IEnumerable<string>, CancellationToken)
             // Create client
             AgentEndpointServiceClient agentEndpointServiceClient = await AgentEndpointServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1.Snippets
             IEnumerable<string> supportedCapabilities = new string[] { "", };
             // Make the request
             RegisterAgentResponse response = await agentEndpointServiceClient.RegisterAgentAsync(instanceIdToken, agentVersion, supportedCapabilities);
-            // End snippet
         }
     }
 }

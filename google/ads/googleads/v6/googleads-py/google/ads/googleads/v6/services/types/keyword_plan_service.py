@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.common.types import keyword_plan_common
 from google.ads.googleads.v6.resources.types import keyword_plan as gagr_keyword_plan
@@ -62,10 +65,7 @@ class GetKeywordPlanRequest(proto.Message):
             fetch.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateKeywordPlansRequest(proto.Message):
@@ -90,23 +90,12 @@ class MutateKeywordPlansRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operations = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operations = proto.RepeatedField(proto.MESSAGE, number=2,
         message='KeywordPlanOperation',
     )
-    partial_failure = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=4,
-    )
+    partial_failure = proto.Field(proto.BOOL, number=3)
+    validate_only = proto.Field(proto.BOOL, number=4)
 
 
 class KeywordPlanOperation(proto.Message):
@@ -130,32 +119,21 @@ class KeywordPlanOperation(proto.Message):
             ``customers/{customer_id}/keywordPlans/{keyword_plan_id}``
     """
 
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    update_mask = proto.Field(proto.MESSAGE, number=4,
         message=field_mask.FieldMask,
     )
-    create = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='operation',
+    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=gagr_keyword_plan.KeywordPlan,
     )
-    update = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='operation',
+    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
         message=gagr_keyword_plan.KeywordPlan,
     )
-    remove = proto.Field(
-        proto.STRING,
-        number=3,
-        oneof='operation',
-    )
+    remove = proto.Field(proto.STRING, number=3, oneof='operation')
 
 
 class MutateKeywordPlansResponse(proto.Message):
     r"""Response message for a keyword plan mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -167,29 +145,23 @@ class MutateKeywordPlansResponse(proto.Message):
             All results for the mutate.
     """
 
-    partial_failure_error = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    partial_failure_error = proto.Field(proto.MESSAGE, number=3,
         message=status.Status,
     )
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    results = proto.RepeatedField(proto.MESSAGE, number=2,
         message='MutateKeywordPlansResult',
     )
 
 
 class MutateKeywordPlansResult(proto.Message):
     r"""The result for the keyword plan mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class GenerateForecastCurveRequest(proto.Message):
@@ -202,10 +174,7 @@ class GenerateForecastCurveRequest(proto.Message):
             plan to be forecasted.
     """
 
-    keyword_plan = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    keyword_plan = proto.Field(proto.STRING, number=1)
 
 
 class GenerateForecastCurveResponse(proto.Message):
@@ -218,9 +187,7 @@ class GenerateForecastCurveResponse(proto.Message):
             campaign. One maximum.
     """
 
-    campaign_forecast_curves = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    campaign_forecast_curves = proto.RepeatedField(proto.MESSAGE, number=1,
         message='KeywordPlanCampaignForecastCurve',
     )
 
@@ -235,10 +202,7 @@ class GenerateForecastTimeSeriesRequest(proto.Message):
             plan to be forecasted.
     """
 
-    keyword_plan = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    keyword_plan = proto.Field(proto.STRING, number=1)
 
 
 class GenerateForecastTimeSeriesResponse(proto.Message):
@@ -251,9 +215,7 @@ class GenerateForecastTimeSeriesResponse(proto.Message):
             keyword plan campaign. One maximum.
     """
 
-    weekly_time_series_forecasts = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    weekly_time_series_forecasts = proto.RepeatedField(proto.MESSAGE, number=1,
         message='KeywordPlanWeeklyTimeSeriesForecast',
     )
 
@@ -268,10 +230,7 @@ class GenerateForecastMetricsRequest(proto.Message):
             plan to be forecasted.
     """
 
-    keyword_plan = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    keyword_plan = proto.Field(proto.STRING, number=1)
 
 
 class GenerateForecastMetricsResponse(proto.Message):
@@ -288,25 +247,20 @@ class GenerateForecastMetricsResponse(proto.Message):
             List of keyword forecasts.
     """
 
-    campaign_forecasts = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    campaign_forecasts = proto.RepeatedField(proto.MESSAGE, number=1,
         message='KeywordPlanCampaignForecast',
     )
-    ad_group_forecasts = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    ad_group_forecasts = proto.RepeatedField(proto.MESSAGE, number=2,
         message='KeywordPlanAdGroupForecast',
     )
-    keyword_forecasts = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    keyword_forecasts = proto.RepeatedField(proto.MESSAGE, number=3,
         message='KeywordPlanKeywordForecast',
     )
 
 
 class KeywordPlanCampaignForecast(proto.Message):
     r"""A campaign forecast.
+
     Attributes:
         keyword_plan_campaign (str):
             The resource name of the Keyword Plan campaign related to
@@ -317,20 +271,15 @@ class KeywordPlanCampaignForecast(proto.Message):
             The forecast for the Keyword Plan campaign.
     """
 
-    keyword_plan_campaign = proto.Field(
-        proto.STRING,
-        number=3,
-        optional=True,
-    )
-    campaign_forecast = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    keyword_plan_campaign = proto.Field(proto.STRING, number=3, optional=True)
+    campaign_forecast = proto.Field(proto.MESSAGE, number=2,
         message='ForecastMetrics',
     )
 
 
 class KeywordPlanAdGroupForecast(proto.Message):
     r"""An ad group forecast.
+
     Attributes:
         keyword_plan_ad_group (str):
             The resource name of the Keyword Plan ad group related to
@@ -341,20 +290,15 @@ class KeywordPlanAdGroupForecast(proto.Message):
             The forecast for the Keyword Plan ad group.
     """
 
-    keyword_plan_ad_group = proto.Field(
-        proto.STRING,
-        number=3,
-        optional=True,
-    )
-    ad_group_forecast = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    keyword_plan_ad_group = proto.Field(proto.STRING, number=3, optional=True)
+    ad_group_forecast = proto.Field(proto.MESSAGE, number=2,
         message='ForecastMetrics',
     )
 
 
 class KeywordPlanKeywordForecast(proto.Message):
     r"""A keyword forecast.
+
     Attributes:
         keyword_plan_ad_group_keyword (str):
             The resource name of the Keyword Plan keyword related to the
@@ -365,20 +309,15 @@ class KeywordPlanKeywordForecast(proto.Message):
             The forecast for the Keyword Plan keyword.
     """
 
-    keyword_plan_ad_group_keyword = proto.Field(
-        proto.STRING,
-        number=3,
-        optional=True,
-    )
-    keyword_forecast = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    keyword_plan_ad_group_keyword = proto.Field(proto.STRING, number=3, optional=True)
+    keyword_forecast = proto.Field(proto.MESSAGE, number=2,
         message='ForecastMetrics',
     )
 
 
 class KeywordPlanCampaignForecastCurve(proto.Message):
     r"""The forecast curve for the campaign.
+
     Attributes:
         keyword_plan_campaign (str):
             The resource name of the Keyword Plan campaign related to
@@ -390,35 +329,29 @@ class KeywordPlanCampaignForecastCurve(proto.Message):
             campaign.
     """
 
-    keyword_plan_campaign = proto.Field(
-        proto.STRING,
-        number=3,
-        optional=True,
-    )
-    max_cpc_bid_forecast_curve = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    keyword_plan_campaign = proto.Field(proto.STRING, number=3, optional=True)
+    max_cpc_bid_forecast_curve = proto.Field(proto.MESSAGE, number=2,
         message='KeywordPlanMaxCpcBidForecastCurve',
     )
 
 
 class KeywordPlanMaxCpcBidForecastCurve(proto.Message):
     r"""The max cpc bid forecast curve.
+
     Attributes:
         max_cpc_bid_forecasts (Sequence[google.ads.googleads.v6.services.types.KeywordPlanMaxCpcBidForecast]):
             The forecasts for the Keyword Plan campaign
             at different max CPC bids.
     """
 
-    max_cpc_bid_forecasts = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    max_cpc_bid_forecasts = proto.RepeatedField(proto.MESSAGE, number=1,
         message='KeywordPlanMaxCpcBidForecast',
     )
 
 
 class KeywordPlanMaxCpcBidForecast(proto.Message):
     r"""The forecast of the campaign at a specific bid.
+
     Attributes:
         max_cpc_bid_micros (int):
             The max cpc bid in micros.
@@ -427,14 +360,8 @@ class KeywordPlanMaxCpcBidForecast(proto.Message):
             the specific bid.
     """
 
-    max_cpc_bid_micros = proto.Field(
-        proto.INT64,
-        number=3,
-        optional=True,
-    )
-    max_cpc_bid_forecast = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    max_cpc_bid_micros = proto.Field(proto.INT64, number=3, optional=True)
+    max_cpc_bid_forecast = proto.Field(proto.MESSAGE, number=2,
         message='ForecastMetrics',
     )
 
@@ -454,20 +381,15 @@ class KeywordPlanWeeklyTimeSeriesForecast(proto.Message):
             at different max CPC bids.
     """
 
-    keyword_plan_campaign = proto.Field(
-        proto.STRING,
-        number=1,
-        optional=True,
-    )
-    weekly_forecasts = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    keyword_plan_campaign = proto.Field(proto.STRING, number=1, optional=True)
+    weekly_forecasts = proto.RepeatedField(proto.MESSAGE, number=2,
         message='KeywordPlanWeeklyForecast',
     )
 
 
 class KeywordPlanWeeklyForecast(proto.Message):
     r"""The forecast of the campaign for the week starting start_date.
+
     Attributes:
         start_date (str):
             The start date, in yyyy-mm-dd format. This
@@ -477,20 +399,15 @@ class KeywordPlanWeeklyForecast(proto.Message):
             for the week.
     """
 
-    start_date = proto.Field(
-        proto.STRING,
-        number=1,
-        optional=True,
-    )
-    forecast = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    start_date = proto.Field(proto.STRING, number=1, optional=True)
+    forecast = proto.Field(proto.MESSAGE, number=2,
         message='ForecastMetrics',
     )
 
 
 class ForecastMetrics(proto.Message):
     r"""Forecast metrics.
+
     Attributes:
         impressions (float):
             Impressions
@@ -504,31 +421,11 @@ class ForecastMetrics(proto.Message):
             Cost
     """
 
-    impressions = proto.Field(
-        proto.DOUBLE,
-        number=7,
-        optional=True,
-    )
-    ctr = proto.Field(
-        proto.DOUBLE,
-        number=8,
-        optional=True,
-    )
-    average_cpc = proto.Field(
-        proto.INT64,
-        number=9,
-        optional=True,
-    )
-    clicks = proto.Field(
-        proto.DOUBLE,
-        number=10,
-        optional=True,
-    )
-    cost_micros = proto.Field(
-        proto.INT64,
-        number=11,
-        optional=True,
-    )
+    impressions = proto.Field(proto.DOUBLE, number=7, optional=True)
+    ctr = proto.Field(proto.DOUBLE, number=8, optional=True)
+    average_cpc = proto.Field(proto.INT64, number=9, optional=True)
+    clicks = proto.Field(proto.DOUBLE, number=10, optional=True)
+    cost_micros = proto.Field(proto.INT64, number=11, optional=True)
 
 
 class GenerateHistoricalMetricsRequest(proto.Message):
@@ -541,10 +438,7 @@ class GenerateHistoricalMetricsRequest(proto.Message):
             plan of which historical metrics are requested.
     """
 
-    keyword_plan = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    keyword_plan = proto.Field(proto.STRING, number=1)
 
 
 class GenerateHistoricalMetricsResponse(proto.Message):
@@ -556,15 +450,14 @@ class GenerateHistoricalMetricsResponse(proto.Message):
             List of keyword historical metrics.
     """
 
-    metrics = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    metrics = proto.RepeatedField(proto.MESSAGE, number=1,
         message='KeywordPlanKeywordHistoricalMetrics',
     )
 
 
 class KeywordPlanKeywordHistoricalMetrics(proto.Message):
     r"""A keyword historical metrics.
+
     Attributes:
         search_query (str):
             The text of the query associated with one or more
@@ -584,18 +477,9 @@ class KeywordPlanKeywordHistoricalMetrics(proto.Message):
             more ad_group_keywords in the plan.
     """
 
-    search_query = proto.Field(
-        proto.STRING,
-        number=4,
-        optional=True,
-    )
-    close_variants = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
-    keyword_metrics = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    search_query = proto.Field(proto.STRING, number=4, optional=True)
+    close_variants = proto.RepeatedField(proto.STRING, number=3)
+    keyword_metrics = proto.Field(proto.MESSAGE, number=2,
         message=keyword_plan_common.KeywordPlanHistoricalMetrics,
     )
 

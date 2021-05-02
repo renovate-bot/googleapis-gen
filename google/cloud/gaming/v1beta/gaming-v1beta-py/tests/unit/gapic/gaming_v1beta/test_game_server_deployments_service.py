@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -39,8 +39,6 @@ from google.cloud.gaming_v1beta.services.game_server_deployments_service import 
 from google.cloud.gaming_v1beta.services.game_server_deployments_service import GameServerDeploymentsServiceClient
 from google.cloud.gaming_v1beta.services.game_server_deployments_service import pagers
 from google.cloud.gaming_v1beta.services.game_server_deployments_service import transports
-from google.cloud.gaming_v1beta.services.game_server_deployments_service.transports.base import _API_CORE_VERSION
-from google.cloud.gaming_v1beta.services.game_server_deployments_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.gaming_v1beta.types import common
 from google.cloud.gaming_v1beta.types import game_server_deployments
 from google.longrunning import operations_pb2
@@ -48,28 +46,6 @@ from google.oauth2 import service_account
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -237,10 +213,12 @@ def test_game_server_deployments_service_client_client_options(client_class, tra
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (GameServerDeploymentsServiceClient, transports.GameServerDeploymentsServiceGrpcTransport, "grpc", "true"),
     (GameServerDeploymentsServiceAsyncClient, transports.GameServerDeploymentsServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (GameServerDeploymentsServiceClient, transports.GameServerDeploymentsServiceGrpcTransport, "grpc", "false"),
     (GameServerDeploymentsServiceAsyncClient, transports.GameServerDeploymentsServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(GameServerDeploymentsServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(GameServerDeploymentsServiceClient))
 @mock.patch.object(GameServerDeploymentsServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(GameServerDeploymentsServiceAsyncClient))
@@ -395,18 +373,25 @@ def test_list_game_server_deployments(transport: str = 'grpc', request_type=game
         # Designate an appropriate return value for the call.
         call.return_value = game_server_deployments.ListGameServerDeploymentsResponse(
             next_page_token='next_page_token_value',
+
             unreachable=['unreachable_value'],
+
         )
+
         response = client.list_game_server_deployments(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.ListGameServerDeploymentsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListGameServerDeploymentsPager)
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.unreachable == ['unreachable_value']
 
 
@@ -429,8 +414,8 @@ def test_list_game_server_deployments_empty_call():
         client.list_game_server_deployments()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == game_server_deployments.ListGameServerDeploymentsRequest()
 
+        assert args[0] == game_server_deployments.ListGameServerDeploymentsRequest()
 
 @pytest.mark.asyncio
 async def test_list_game_server_deployments_async(transport: str = 'grpc_asyncio', request_type=game_server_deployments.ListGameServerDeploymentsRequest):
@@ -448,20 +433,24 @@ async def test_list_game_server_deployments_async(transport: str = 'grpc_asyncio
             type(client.transport.list_game_server_deployments),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.ListGameServerDeploymentsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.ListGameServerDeploymentsResponse(
             next_page_token='next_page_token_value',
             unreachable=['unreachable_value'],
         ))
+
         response = await client.list_game_server_deployments(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.ListGameServerDeploymentsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListGameServerDeploymentsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.unreachable == ['unreachable_value']
 
 
@@ -478,7 +467,6 @@ def test_list_game_server_deployments_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.ListGameServerDeploymentsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -486,6 +474,7 @@ def test_list_game_server_deployments_field_headers():
             type(client.transport.list_game_server_deployments),
             '__call__') as call:
         call.return_value = game_server_deployments.ListGameServerDeploymentsResponse()
+
         client.list_game_server_deployments(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -510,7 +499,6 @@ async def test_list_game_server_deployments_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.ListGameServerDeploymentsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -518,6 +506,7 @@ async def test_list_game_server_deployments_field_headers_async():
             type(client.transport.list_game_server_deployments),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.ListGameServerDeploymentsResponse())
+
         await client.list_game_server_deployments(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -544,6 +533,7 @@ def test_list_game_server_deployments_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = game_server_deployments.ListGameServerDeploymentsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_game_server_deployments(
@@ -554,6 +544,7 @@ def test_list_game_server_deployments_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -595,6 +586,7 @@ async def test_list_game_server_deployments_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -799,6 +791,7 @@ async def test_list_game_server_deployments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_game_server_deployment(transport: str = 'grpc', request_type=game_server_deployments.GetGameServerDeploymentRequest):
     client = GameServerDeploymentsServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -816,20 +809,29 @@ def test_get_game_server_deployment(transport: str = 'grpc', request_type=game_s
         # Designate an appropriate return value for the call.
         call.return_value = game_server_deployments.GameServerDeployment(
             name='name_value',
+
             etag='etag_value',
+
             description='description_value',
+
         )
+
         response = client.get_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.GetGameServerDeploymentRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, game_server_deployments.GameServerDeployment)
+
     assert response.name == 'name_value'
+
     assert response.etag == 'etag_value'
+
     assert response.description == 'description_value'
 
 
@@ -852,8 +854,8 @@ def test_get_game_server_deployment_empty_call():
         client.get_game_server_deployment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == game_server_deployments.GetGameServerDeploymentRequest()
 
+        assert args[0] == game_server_deployments.GetGameServerDeploymentRequest()
 
 @pytest.mark.asyncio
 async def test_get_game_server_deployment_async(transport: str = 'grpc_asyncio', request_type=game_server_deployments.GetGameServerDeploymentRequest):
@@ -871,22 +873,27 @@ async def test_get_game_server_deployment_async(transport: str = 'grpc_asyncio',
             type(client.transport.get_game_server_deployment),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.GameServerDeployment(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.GameServerDeployment(
             name='name_value',
             etag='etag_value',
             description='description_value',
         ))
+
         response = await client.get_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.GetGameServerDeploymentRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, game_server_deployments.GameServerDeployment)
+
     assert response.name == 'name_value'
+
     assert response.etag == 'etag_value'
+
     assert response.description == 'description_value'
 
 
@@ -903,7 +910,6 @@ def test_get_game_server_deployment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.GetGameServerDeploymentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -911,6 +917,7 @@ def test_get_game_server_deployment_field_headers():
             type(client.transport.get_game_server_deployment),
             '__call__') as call:
         call.return_value = game_server_deployments.GameServerDeployment()
+
         client.get_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -935,7 +942,6 @@ async def test_get_game_server_deployment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.GetGameServerDeploymentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -943,6 +949,7 @@ async def test_get_game_server_deployment_field_headers_async():
             type(client.transport.get_game_server_deployment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.GameServerDeployment())
+
         await client.get_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -969,6 +976,7 @@ def test_get_game_server_deployment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = game_server_deployments.GameServerDeployment()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_game_server_deployment(
@@ -979,6 +987,7 @@ def test_get_game_server_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1020,6 +1029,7 @@ async def test_get_game_server_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1054,11 +1064,13 @@ def test_create_game_server_deployment(transport: str = 'grpc', request_type=gam
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.create_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.CreateGameServerDeploymentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1084,8 +1096,8 @@ def test_create_game_server_deployment_empty_call():
         client.create_game_server_deployment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == game_server_deployments.CreateGameServerDeploymentRequest()
 
+        assert args[0] == game_server_deployments.CreateGameServerDeploymentRequest()
 
 @pytest.mark.asyncio
 async def test_create_game_server_deployment_async(transport: str = 'grpc_asyncio', request_type=game_server_deployments.CreateGameServerDeploymentRequest):
@@ -1106,11 +1118,13 @@ async def test_create_game_server_deployment_async(transport: str = 'grpc_asynci
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.create_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.CreateGameServerDeploymentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1130,7 +1144,6 @@ def test_create_game_server_deployment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.CreateGameServerDeploymentRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1138,6 +1151,7 @@ def test_create_game_server_deployment_field_headers():
             type(client.transport.create_game_server_deployment),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.create_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1162,7 +1176,6 @@ async def test_create_game_server_deployment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.CreateGameServerDeploymentRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1170,6 +1183,7 @@ async def test_create_game_server_deployment_field_headers_async():
             type(client.transport.create_game_server_deployment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.create_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1196,6 +1210,7 @@ def test_create_game_server_deployment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_game_server_deployment(
@@ -1207,7 +1222,9 @@ def test_create_game_server_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].game_server_deployment == game_server_deployments.GameServerDeployment(name='name_value')
 
 
@@ -1253,7 +1270,9 @@ async def test_create_game_server_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].game_server_deployment == game_server_deployments.GameServerDeployment(name='name_value')
 
 
@@ -1289,11 +1308,13 @@ def test_delete_game_server_deployment(transport: str = 'grpc', request_type=gam
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.delete_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.DeleteGameServerDeploymentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1319,8 +1340,8 @@ def test_delete_game_server_deployment_empty_call():
         client.delete_game_server_deployment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == game_server_deployments.DeleteGameServerDeploymentRequest()
 
+        assert args[0] == game_server_deployments.DeleteGameServerDeploymentRequest()
 
 @pytest.mark.asyncio
 async def test_delete_game_server_deployment_async(transport: str = 'grpc_asyncio', request_type=game_server_deployments.DeleteGameServerDeploymentRequest):
@@ -1341,11 +1362,13 @@ async def test_delete_game_server_deployment_async(transport: str = 'grpc_asynci
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.delete_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.DeleteGameServerDeploymentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1365,7 +1388,6 @@ def test_delete_game_server_deployment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.DeleteGameServerDeploymentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1373,6 +1395,7 @@ def test_delete_game_server_deployment_field_headers():
             type(client.transport.delete_game_server_deployment),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.delete_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1397,7 +1420,6 @@ async def test_delete_game_server_deployment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.DeleteGameServerDeploymentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1405,6 +1427,7 @@ async def test_delete_game_server_deployment_field_headers_async():
             type(client.transport.delete_game_server_deployment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.delete_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1431,6 +1454,7 @@ def test_delete_game_server_deployment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_game_server_deployment(
@@ -1441,6 +1465,7 @@ def test_delete_game_server_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1484,6 +1509,7 @@ async def test_delete_game_server_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1518,11 +1544,13 @@ def test_update_game_server_deployment(transport: str = 'grpc', request_type=gam
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.update_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.UpdateGameServerDeploymentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1548,8 +1576,8 @@ def test_update_game_server_deployment_empty_call():
         client.update_game_server_deployment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == game_server_deployments.UpdateGameServerDeploymentRequest()
 
+        assert args[0] == game_server_deployments.UpdateGameServerDeploymentRequest()
 
 @pytest.mark.asyncio
 async def test_update_game_server_deployment_async(transport: str = 'grpc_asyncio', request_type=game_server_deployments.UpdateGameServerDeploymentRequest):
@@ -1570,11 +1598,13 @@ async def test_update_game_server_deployment_async(transport: str = 'grpc_asynci
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.update_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.UpdateGameServerDeploymentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1594,7 +1624,6 @@ def test_update_game_server_deployment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.UpdateGameServerDeploymentRequest()
-
     request.game_server_deployment.name = 'game_server_deployment.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1602,6 +1631,7 @@ def test_update_game_server_deployment_field_headers():
             type(client.transport.update_game_server_deployment),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.update_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1626,7 +1656,6 @@ async def test_update_game_server_deployment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.UpdateGameServerDeploymentRequest()
-
     request.game_server_deployment.name = 'game_server_deployment.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1634,6 +1663,7 @@ async def test_update_game_server_deployment_field_headers_async():
             type(client.transport.update_game_server_deployment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.update_game_server_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1660,6 +1690,7 @@ def test_update_game_server_deployment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_game_server_deployment(
@@ -1671,7 +1702,9 @@ def test_update_game_server_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].game_server_deployment == game_server_deployments.GameServerDeployment(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1717,7 +1750,9 @@ async def test_update_game_server_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].game_server_deployment == game_server_deployments.GameServerDeployment(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1754,20 +1789,29 @@ def test_get_game_server_deployment_rollout(transport: str = 'grpc', request_typ
         # Designate an appropriate return value for the call.
         call.return_value = game_server_deployments.GameServerDeploymentRollout(
             name='name_value',
+
             default_game_server_config='default_game_server_config_value',
+
             etag='etag_value',
+
         )
+
         response = client.get_game_server_deployment_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.GetGameServerDeploymentRolloutRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, game_server_deployments.GameServerDeploymentRollout)
+
     assert response.name == 'name_value'
+
     assert response.default_game_server_config == 'default_game_server_config_value'
+
     assert response.etag == 'etag_value'
 
 
@@ -1790,8 +1834,8 @@ def test_get_game_server_deployment_rollout_empty_call():
         client.get_game_server_deployment_rollout()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == game_server_deployments.GetGameServerDeploymentRolloutRequest()
 
+        assert args[0] == game_server_deployments.GetGameServerDeploymentRolloutRequest()
 
 @pytest.mark.asyncio
 async def test_get_game_server_deployment_rollout_async(transport: str = 'grpc_asyncio', request_type=game_server_deployments.GetGameServerDeploymentRolloutRequest):
@@ -1809,22 +1853,27 @@ async def test_get_game_server_deployment_rollout_async(transport: str = 'grpc_a
             type(client.transport.get_game_server_deployment_rollout),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.GameServerDeploymentRollout(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.GameServerDeploymentRollout(
             name='name_value',
             default_game_server_config='default_game_server_config_value',
             etag='etag_value',
         ))
+
         response = await client.get_game_server_deployment_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.GetGameServerDeploymentRolloutRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, game_server_deployments.GameServerDeploymentRollout)
+
     assert response.name == 'name_value'
+
     assert response.default_game_server_config == 'default_game_server_config_value'
+
     assert response.etag == 'etag_value'
 
 
@@ -1841,7 +1890,6 @@ def test_get_game_server_deployment_rollout_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.GetGameServerDeploymentRolloutRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1849,6 +1897,7 @@ def test_get_game_server_deployment_rollout_field_headers():
             type(client.transport.get_game_server_deployment_rollout),
             '__call__') as call:
         call.return_value = game_server_deployments.GameServerDeploymentRollout()
+
         client.get_game_server_deployment_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1873,7 +1922,6 @@ async def test_get_game_server_deployment_rollout_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.GetGameServerDeploymentRolloutRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1881,6 +1929,7 @@ async def test_get_game_server_deployment_rollout_field_headers_async():
             type(client.transport.get_game_server_deployment_rollout),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.GameServerDeploymentRollout())
+
         await client.get_game_server_deployment_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1907,6 +1956,7 @@ def test_get_game_server_deployment_rollout_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = game_server_deployments.GameServerDeploymentRollout()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_game_server_deployment_rollout(
@@ -1917,6 +1967,7 @@ def test_get_game_server_deployment_rollout_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1958,6 +2009,7 @@ async def test_get_game_server_deployment_rollout_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1992,11 +2044,13 @@ def test_update_game_server_deployment_rollout(transport: str = 'grpc', request_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.update_game_server_deployment_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.UpdateGameServerDeploymentRolloutRequest()
 
     # Establish that the response is the type that we expect.
@@ -2022,8 +2076,8 @@ def test_update_game_server_deployment_rollout_empty_call():
         client.update_game_server_deployment_rollout()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == game_server_deployments.UpdateGameServerDeploymentRolloutRequest()
 
+        assert args[0] == game_server_deployments.UpdateGameServerDeploymentRolloutRequest()
 
 @pytest.mark.asyncio
 async def test_update_game_server_deployment_rollout_async(transport: str = 'grpc_asyncio', request_type=game_server_deployments.UpdateGameServerDeploymentRolloutRequest):
@@ -2044,11 +2098,13 @@ async def test_update_game_server_deployment_rollout_async(transport: str = 'grp
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.update_game_server_deployment_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.UpdateGameServerDeploymentRolloutRequest()
 
     # Establish that the response is the type that we expect.
@@ -2068,7 +2124,6 @@ def test_update_game_server_deployment_rollout_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.UpdateGameServerDeploymentRolloutRequest()
-
     request.rollout.name = 'rollout.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2076,6 +2131,7 @@ def test_update_game_server_deployment_rollout_field_headers():
             type(client.transport.update_game_server_deployment_rollout),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.update_game_server_deployment_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2100,7 +2156,6 @@ async def test_update_game_server_deployment_rollout_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.UpdateGameServerDeploymentRolloutRequest()
-
     request.rollout.name = 'rollout.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2108,6 +2163,7 @@ async def test_update_game_server_deployment_rollout_field_headers_async():
             type(client.transport.update_game_server_deployment_rollout),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.update_game_server_deployment_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2134,6 +2190,7 @@ def test_update_game_server_deployment_rollout_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_game_server_deployment_rollout(
@@ -2145,7 +2202,9 @@ def test_update_game_server_deployment_rollout_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].rollout == game_server_deployments.GameServerDeploymentRollout(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -2191,7 +2250,9 @@ async def test_update_game_server_deployment_rollout_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].rollout == game_server_deployments.GameServerDeploymentRollout(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -2228,18 +2289,25 @@ def test_preview_game_server_deployment_rollout(transport: str = 'grpc', request
         # Designate an appropriate return value for the call.
         call.return_value = game_server_deployments.PreviewGameServerDeploymentRolloutResponse(
             unavailable=['unavailable_value'],
+
             etag='etag_value',
+
         )
+
         response = client.preview_game_server_deployment_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.PreviewGameServerDeploymentRolloutRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, game_server_deployments.PreviewGameServerDeploymentRolloutResponse)
+
     assert response.unavailable == ['unavailable_value']
+
     assert response.etag == 'etag_value'
 
 
@@ -2262,8 +2330,8 @@ def test_preview_game_server_deployment_rollout_empty_call():
         client.preview_game_server_deployment_rollout()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == game_server_deployments.PreviewGameServerDeploymentRolloutRequest()
 
+        assert args[0] == game_server_deployments.PreviewGameServerDeploymentRolloutRequest()
 
 @pytest.mark.asyncio
 async def test_preview_game_server_deployment_rollout_async(transport: str = 'grpc_asyncio', request_type=game_server_deployments.PreviewGameServerDeploymentRolloutRequest):
@@ -2281,20 +2349,24 @@ async def test_preview_game_server_deployment_rollout_async(transport: str = 'gr
             type(client.transport.preview_game_server_deployment_rollout),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.PreviewGameServerDeploymentRolloutResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.PreviewGameServerDeploymentRolloutResponse(
             unavailable=['unavailable_value'],
             etag='etag_value',
         ))
+
         response = await client.preview_game_server_deployment_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.PreviewGameServerDeploymentRolloutRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, game_server_deployments.PreviewGameServerDeploymentRolloutResponse)
+
     assert response.unavailable == ['unavailable_value']
+
     assert response.etag == 'etag_value'
 
 
@@ -2311,7 +2383,6 @@ def test_preview_game_server_deployment_rollout_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.PreviewGameServerDeploymentRolloutRequest()
-
     request.rollout.name = 'rollout.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2319,6 +2390,7 @@ def test_preview_game_server_deployment_rollout_field_headers():
             type(client.transport.preview_game_server_deployment_rollout),
             '__call__') as call:
         call.return_value = game_server_deployments.PreviewGameServerDeploymentRolloutResponse()
+
         client.preview_game_server_deployment_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2343,7 +2415,6 @@ async def test_preview_game_server_deployment_rollout_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.PreviewGameServerDeploymentRolloutRequest()
-
     request.rollout.name = 'rollout.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2351,6 +2422,7 @@ async def test_preview_game_server_deployment_rollout_field_headers_async():
             type(client.transport.preview_game_server_deployment_rollout),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.PreviewGameServerDeploymentRolloutResponse())
+
         await client.preview_game_server_deployment_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2383,16 +2455,21 @@ def test_fetch_deployment_state(transport: str = 'grpc', request_type=game_serve
         # Designate an appropriate return value for the call.
         call.return_value = game_server_deployments.FetchDeploymentStateResponse(
             unavailable=['unavailable_value'],
+
         )
+
         response = client.fetch_deployment_state(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.FetchDeploymentStateRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, game_server_deployments.FetchDeploymentStateResponse)
+
     assert response.unavailable == ['unavailable_value']
 
 
@@ -2415,8 +2492,8 @@ def test_fetch_deployment_state_empty_call():
         client.fetch_deployment_state()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == game_server_deployments.FetchDeploymentStateRequest()
 
+        assert args[0] == game_server_deployments.FetchDeploymentStateRequest()
 
 @pytest.mark.asyncio
 async def test_fetch_deployment_state_async(transport: str = 'grpc_asyncio', request_type=game_server_deployments.FetchDeploymentStateRequest):
@@ -2434,18 +2511,21 @@ async def test_fetch_deployment_state_async(transport: str = 'grpc_asyncio', req
             type(client.transport.fetch_deployment_state),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.FetchDeploymentStateResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.FetchDeploymentStateResponse(
             unavailable=['unavailable_value'],
         ))
+
         response = await client.fetch_deployment_state(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == game_server_deployments.FetchDeploymentStateRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, game_server_deployments.FetchDeploymentStateResponse)
+
     assert response.unavailable == ['unavailable_value']
 
 
@@ -2462,7 +2542,6 @@ def test_fetch_deployment_state_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.FetchDeploymentStateRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2470,6 +2549,7 @@ def test_fetch_deployment_state_field_headers():
             type(client.transport.fetch_deployment_state),
             '__call__') as call:
         call.return_value = game_server_deployments.FetchDeploymentStateResponse()
+
         client.fetch_deployment_state(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2494,7 +2574,6 @@ async def test_fetch_deployment_state_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = game_server_deployments.FetchDeploymentStateRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2502,6 +2581,7 @@ async def test_fetch_deployment_state_field_headers_async():
             type(client.transport.fetch_deployment_state),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(game_server_deployments.FetchDeploymentStateResponse())
+
         await client.fetch_deployment_state(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2557,6 +2637,7 @@ def test_transport_instance():
     client = GameServerDeploymentsServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.GameServerDeploymentsServiceGrpcTransport(
@@ -2571,6 +2652,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.GameServerDeploymentsServiceGrpcTransport,
     transports.GameServerDeploymentsServiceGrpcAsyncIOTransport,
@@ -2582,6 +2664,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = GameServerDeploymentsServiceClient(
@@ -2591,6 +2674,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.GameServerDeploymentsServiceGrpcTransport,
     )
+
 
 def test_game_server_deployments_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -2621,7 +2705,7 @@ def test_game_server_deployments_service_base_transport():
         'update_game_server_deployment_rollout',
         'preview_game_server_deployment_rollout',
         'fetch_deployment_state',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -2632,27 +2716,9 @@ def test_game_server_deployments_service_base_transport():
         transport.operations_client
 
 
-@requires_google_auth_gte_1_25_0
 def test_game_server_deployments_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.gaming_v1beta.services.game_server_deployments_service.transports.GameServerDeploymentsServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.GameServerDeploymentsServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_game_server_deployments_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.gaming_v1beta.services.game_server_deployments_service.transports.GameServerDeploymentsServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.gaming_v1beta.services.game_server_deployments_service.transports.GameServerDeploymentsServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.GameServerDeploymentsServiceTransport(
@@ -2668,182 +2734,33 @@ def test_game_server_deployments_service_base_transport_with_credentials_file_ol
 
 def test_game_server_deployments_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.gaming_v1beta.services.game_server_deployments_service.transports.GameServerDeploymentsServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.gaming_v1beta.services.game_server_deployments_service.transports.GameServerDeploymentsServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.GameServerDeploymentsServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_game_server_deployments_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         GameServerDeploymentsServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_game_server_deployments_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        GameServerDeploymentsServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.GameServerDeploymentsServiceGrpcTransport,
-        transports.GameServerDeploymentsServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_game_server_deployments_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.GameServerDeploymentsServiceGrpcTransport,
-        transports.GameServerDeploymentsServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_game_server_deployments_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.GameServerDeploymentsServiceGrpcTransport, grpc_helpers),
-        (transports.GameServerDeploymentsServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_game_server_deployments_service_transport_create_channel(transport_class, grpc_helpers):
+def test_game_server_deployments_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.GameServerDeploymentsServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "gameservices.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="gameservices.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.GameServerDeploymentsServiceGrpcTransport, grpc_helpers),
-        (transports.GameServerDeploymentsServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_game_server_deployments_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "gameservices.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.GameServerDeploymentsServiceGrpcTransport, grpc_helpers),
-        (transports.GameServerDeploymentsServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_game_server_deployments_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "gameservices.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -2905,6 +2822,7 @@ def test_game_server_deployments_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='gameservices.googleapis.com:8000'),
     )
     assert client.transport._host == 'gameservices.googleapis.com:8000'
+
 
 def test_game_server_deployments_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -3058,6 +2976,7 @@ def test_game_server_deployment_path():
     project = "squid"
     location = "clam"
     deployment = "whelk"
+
     expected = "projects/{project}/locations/{location}/gameServerDeployments/{deployment}".format(project=project, location=location, deployment=deployment, )
     actual = GameServerDeploymentsServiceClient.game_server_deployment_path(project, location, deployment)
     assert expected == actual
@@ -3065,9 +2984,10 @@ def test_game_server_deployment_path():
 
 def test_parse_game_server_deployment_path():
     expected = {
-        "project": "octopus",
-        "location": "oyster",
-        "deployment": "nudibranch",
+    "project": "octopus",
+    "location": "oyster",
+    "deployment": "nudibranch",
+
     }
     path = GameServerDeploymentsServiceClient.game_server_deployment_path(**expected)
 
@@ -3079,6 +2999,7 @@ def test_game_server_deployment_rollout_path():
     project = "cuttlefish"
     location = "mussel"
     deployment = "winkle"
+
     expected = "projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout".format(project=project, location=location, deployment=deployment, )
     actual = GameServerDeploymentsServiceClient.game_server_deployment_rollout_path(project, location, deployment)
     assert expected == actual
@@ -3086,9 +3007,10 @@ def test_game_server_deployment_rollout_path():
 
 def test_parse_game_server_deployment_rollout_path():
     expected = {
-        "project": "nautilus",
-        "location": "scallop",
-        "deployment": "abalone",
+    "project": "nautilus",
+    "location": "scallop",
+    "deployment": "abalone",
+
     }
     path = GameServerDeploymentsServiceClient.game_server_deployment_rollout_path(**expected)
 
@@ -3098,6 +3020,7 @@ def test_parse_game_server_deployment_rollout_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = GameServerDeploymentsServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -3105,7 +3028,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = GameServerDeploymentsServiceClient.common_billing_account_path(**expected)
 
@@ -3115,6 +3039,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = GameServerDeploymentsServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -3122,7 +3047,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = GameServerDeploymentsServiceClient.common_folder_path(**expected)
 
@@ -3132,6 +3058,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = GameServerDeploymentsServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -3139,7 +3066,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = GameServerDeploymentsServiceClient.common_organization_path(**expected)
 
@@ -3149,6 +3077,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = GameServerDeploymentsServiceClient.common_project_path(project)
     assert expected == actual
@@ -3156,7 +3085,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = GameServerDeploymentsServiceClient.common_project_path(**expected)
 
@@ -3167,6 +3097,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = GameServerDeploymentsServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -3174,8 +3105,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = GameServerDeploymentsServiceClient.common_location_path(**expected)
 

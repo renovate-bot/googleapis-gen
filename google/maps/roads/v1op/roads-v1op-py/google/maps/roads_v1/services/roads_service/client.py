@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -31,6 +33,7 @@ from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
 from google.maps.roads_v1.types import roads
+
 from .transports.base import RoadsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import RoadsServiceGrpcTransport
 from .transports.grpc_asyncio import RoadsServiceGrpcAsyncIOTransport
@@ -325,8 +328,7 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
 
         Args:
             request (google.maps.roads_v1.types.SnapToRoadsRequest):
-                The request object.
-                A request to the SnapToRoads method,
+                The request object. A request to the SnapToRoads method,
                 requesting that a sequence of points be snapped to road
                 segments.
             path (str):
@@ -336,6 +338,7 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
                 This corresponds to the ``path`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -363,8 +366,10 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, roads.SnapToRoadsRequest):
             request = roads.SnapToRoadsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if path is not None:
                 request.path = path
 
@@ -397,8 +402,7 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
 
         Args:
             request (google.maps.roads_v1.types.ListNearestRoadsRequest):
-                The request object.
-                A request to the ListNearestRoads
+                The request object. A request to the ListNearestRoads
                 method, requesting that a sequence of points be snapped
                 individually to the road segment that each is closest
                 to.
@@ -409,6 +413,7 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
                 This corresponds to the ``points`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -436,8 +441,10 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, roads.ListNearestRoadsRequest):
             request = roads.ListNearestRoadsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if points is not None:
                 request.points = points
 
@@ -455,6 +462,8 @@ class RoadsServiceClient(metaclass=RoadsServiceClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

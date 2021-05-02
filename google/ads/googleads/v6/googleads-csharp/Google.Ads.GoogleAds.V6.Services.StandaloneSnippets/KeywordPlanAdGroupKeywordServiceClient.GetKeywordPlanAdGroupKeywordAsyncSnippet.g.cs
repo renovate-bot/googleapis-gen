@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedKeywordPlanAdGroupKeywordServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetKeywordPlanAdGroupKeywordAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetKeywordPlanAdGroupKeywordAsync()
         {
-            // Snippet: GetKeywordPlanAdGroupKeywordAsync(string, CallSettings)
-            // Additional: GetKeywordPlanAdGroupKeywordAsync(string, CancellationToken)
             // Create client
             KeywordPlanAdGroupKeywordServiceClient keywordPlanAdGroupKeywordServiceClient = await KeywordPlanAdGroupKeywordServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/keywordPlanAdGroupKeywords/[KEYWORD_PLAN_AD_GROUP_KEYWORD_ID]";
             // Make the request
             KeywordPlanAdGroupKeyword response = await keywordPlanAdGroupKeywordServiceClient.GetKeywordPlanAdGroupKeywordAsync(resourceName);
-            // End snippet
         }
     }
 }

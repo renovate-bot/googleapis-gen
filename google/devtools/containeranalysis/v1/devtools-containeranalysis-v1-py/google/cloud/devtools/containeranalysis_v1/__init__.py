@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +16,9 @@
 #
 
 from .services.container_analysis import ContainerAnalysisClient
-
 from .types.containeranalysis import GetVulnerabilityOccurrencesSummaryRequest
 from .types.containeranalysis import VulnerabilityOccurrencesSummary
+
 
 __all__ = (
     'GetVulnerabilityOccurrencesSummaryRequest',

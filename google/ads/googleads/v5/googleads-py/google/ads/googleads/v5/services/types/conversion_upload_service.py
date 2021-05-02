@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.rpc import status_pb2 as status  # type: ignore
 
@@ -62,23 +65,12 @@ class UploadClickConversionsRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    conversions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    conversions = proto.RepeatedField(proto.MESSAGE, number=2,
         message='ClickConversion',
     )
-    partial_failure = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=4,
-    )
+    partial_failure = proto.Field(proto.BOOL, number=3)
+    validate_only = proto.Field(proto.BOOL, number=4)
 
 
 class UploadClickConversionsResponse(proto.Message):
@@ -101,14 +93,10 @@ class UploadClickConversionsResponse(proto.Message):
             returned when validate_only is true.
     """
 
-    partial_failure_error = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    partial_failure_error = proto.Field(proto.MESSAGE, number=1,
         message=status.Status,
     )
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    results = proto.RepeatedField(proto.MESSAGE, number=2,
         message='ClickConversionResult',
     )
 
@@ -140,23 +128,12 @@ class UploadCallConversionsRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    conversions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    conversions = proto.RepeatedField(proto.MESSAGE, number=2,
         message='CallConversion',
     )
-    partial_failure = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=4,
-    )
+    partial_failure = proto.Field(proto.BOOL, number=3)
+    validate_only = proto.Field(proto.BOOL, number=4)
 
 
 class UploadCallConversionsResponse(proto.Message):
@@ -179,20 +156,17 @@ class UploadCallConversionsResponse(proto.Message):
             returned when validate_only is true.
     """
 
-    partial_failure_error = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    partial_failure_error = proto.Field(proto.MESSAGE, number=1,
         message=status.Status,
     )
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    results = proto.RepeatedField(proto.MESSAGE, number=2,
         message='CallConversionResult',
     )
 
 
 class ClickConversion(proto.Message):
     r"""A click conversion.
+
     Attributes:
         gclid (str):
             The Google click ID (gclid) associated with
@@ -228,45 +202,20 @@ class ClickConversion(proto.Message):
             otherwise.
     """
 
-    gclid = proto.Field(
-        proto.STRING,
-        number=9,
-        optional=True,
-    )
-    conversion_action = proto.Field(
-        proto.STRING,
-        number=10,
-        optional=True,
-    )
-    conversion_date_time = proto.Field(
-        proto.STRING,
-        number=11,
-        optional=True,
-    )
-    conversion_value = proto.Field(
-        proto.DOUBLE,
-        number=12,
-        optional=True,
-    )
-    currency_code = proto.Field(
-        proto.STRING,
-        number=13,
-        optional=True,
-    )
-    order_id = proto.Field(
-        proto.STRING,
-        number=14,
-        optional=True,
-    )
-    external_attribution_data = proto.Field(
-        proto.MESSAGE,
-        number=7,
+    gclid = proto.Field(proto.STRING, number=9, optional=True)
+    conversion_action = proto.Field(proto.STRING, number=10, optional=True)
+    conversion_date_time = proto.Field(proto.STRING, number=11, optional=True)
+    conversion_value = proto.Field(proto.DOUBLE, number=12, optional=True)
+    currency_code = proto.Field(proto.STRING, number=13, optional=True)
+    order_id = proto.Field(proto.STRING, number=14, optional=True)
+    external_attribution_data = proto.Field(proto.MESSAGE, number=7,
         message='ExternalAttributionData',
     )
 
 
 class CallConversion(proto.Message):
     r"""A call conversion.
+
     Attributes:
         caller_id (str):
             The caller id from which this call was
@@ -298,36 +247,12 @@ class CallConversion(proto.Message):
             code. For example: USD, EUR.
     """
 
-    caller_id = proto.Field(
-        proto.STRING,
-        number=7,
-        optional=True,
-    )
-    call_start_date_time = proto.Field(
-        proto.STRING,
-        number=8,
-        optional=True,
-    )
-    conversion_action = proto.Field(
-        proto.STRING,
-        number=9,
-        optional=True,
-    )
-    conversion_date_time = proto.Field(
-        proto.STRING,
-        number=10,
-        optional=True,
-    )
-    conversion_value = proto.Field(
-        proto.DOUBLE,
-        number=11,
-        optional=True,
-    )
-    currency_code = proto.Field(
-        proto.STRING,
-        number=12,
-        optional=True,
-    )
+    caller_id = proto.Field(proto.STRING, number=7, optional=True)
+    call_start_date_time = proto.Field(proto.STRING, number=8, optional=True)
+    conversion_action = proto.Field(proto.STRING, number=9, optional=True)
+    conversion_date_time = proto.Field(proto.STRING, number=10, optional=True)
+    conversion_value = proto.Field(proto.DOUBLE, number=11, optional=True)
+    currency_code = proto.Field(proto.STRING, number=12, optional=True)
 
 
 class ExternalAttributionData(proto.Message):
@@ -342,16 +267,8 @@ class ExternalAttributionData(proto.Message):
             Specifies the attribution model name.
     """
 
-    external_attribution_credit = proto.Field(
-        proto.DOUBLE,
-        number=3,
-        optional=True,
-    )
-    external_attribution_model = proto.Field(
-        proto.STRING,
-        number=4,
-        optional=True,
-    )
+    external_attribution_credit = proto.Field(proto.DOUBLE, number=3, optional=True)
+    external_attribution_model = proto.Field(proto.STRING, number=4, optional=True)
 
 
 class ClickConversionResult(proto.Message):
@@ -371,21 +288,9 @@ class ClickConversionResult(proto.Message):
             12:32:45-08:00”.
     """
 
-    gclid = proto.Field(
-        proto.STRING,
-        number=4,
-        optional=True,
-    )
-    conversion_action = proto.Field(
-        proto.STRING,
-        number=5,
-        optional=True,
-    )
-    conversion_date_time = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
+    gclid = proto.Field(proto.STRING, number=4, optional=True)
+    conversion_action = proto.Field(proto.STRING, number=5, optional=True)
+    conversion_date_time = proto.Field(proto.STRING, number=6, optional=True)
 
 
 class CallConversionResult(proto.Message):
@@ -410,26 +315,10 @@ class CallConversionResult(proto.Message):
             12:32:45-08:00".
     """
 
-    caller_id = proto.Field(
-        proto.STRING,
-        number=5,
-        optional=True,
-    )
-    call_start_date_time = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
-    conversion_action = proto.Field(
-        proto.STRING,
-        number=7,
-        optional=True,
-    )
-    conversion_date_time = proto.Field(
-        proto.STRING,
-        number=8,
-        optional=True,
-    )
+    caller_id = proto.Field(proto.STRING, number=5, optional=True)
+    call_start_date_time = proto.Field(proto.STRING, number=6, optional=True)
+    conversion_action = proto.Field(proto.STRING, number=7, optional=True)
+    conversion_date_time = proto.Field(proto.STRING, number=8, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

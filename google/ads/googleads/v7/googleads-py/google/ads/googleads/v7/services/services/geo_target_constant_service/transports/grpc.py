@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v7.resources.types import geo_target_constant
 from google.ads.googleads.v7.services.types import geo_target_constant_service
+
 from .base import GeoTargetConstantServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class GeoTargetConstantServiceGrpcTransport(GeoTargetConstantServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class GeoTargetConstantServiceGrpcTransport(GeoTargetConstantServiceTransport):
     def get_geo_target_constant(self) -> Callable[
             [geo_target_constant_service.GetGeoTargetConstantRequest],
             geo_target_constant.GeoTargetConstant]:
-        r"""Return a callable for the
-        get geo target constant
-          method over gRPC.
+        r"""Return a callable for the get geo target constant method over gRPC.
 
         Returns the requested geo target constant in full detail.
 
@@ -233,9 +233,7 @@ class GeoTargetConstantServiceGrpcTransport(GeoTargetConstantServiceTransport):
     def suggest_geo_target_constants(self) -> Callable[
             [geo_target_constant_service.SuggestGeoTargetConstantsRequest],
             geo_target_constant_service.SuggestGeoTargetConstantsResponse]:
-        r"""Return a callable for the
-        suggest geo target constants
-          method over gRPC.
+        r"""Return a callable for the suggest geo target constants method over gRPC.
 
         Returns GeoTargetConstant suggestions by location name or by
         resource name.

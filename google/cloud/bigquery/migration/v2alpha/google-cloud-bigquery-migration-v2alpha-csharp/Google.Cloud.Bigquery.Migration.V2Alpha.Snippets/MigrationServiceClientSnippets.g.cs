@@ -257,7 +257,7 @@ namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListMigrationWorkflows</summary>
+        /// <summary>Snippet for ListMigrationWorkflowsAsync</summary>
         public async Task ListMigrationWorkflowsRequestObjectAsync()
         {
             // Snippet: ListMigrationWorkflowsAsync(ListMigrationWorkflowsRequest, CallSettings)
@@ -351,7 +351,7 @@ namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListMigrationWorkflows</summary>
+        /// <summary>Snippet for ListMigrationWorkflowsAsync</summary>
         public async Task ListMigrationWorkflowsAsync()
         {
             // Snippet: ListMigrationWorkflowsAsync(string, string, int?, CallSettings)
@@ -441,7 +441,7 @@ namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListMigrationWorkflows</summary>
+        /// <summary>Snippet for ListMigrationWorkflowsAsync</summary>
         public async Task ListMigrationWorkflowsResourceNamesAsync()
         {
             // Snippet: ListMigrationWorkflowsAsync(LocationName, string, int?, CallSettings)
@@ -799,7 +799,7 @@ namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListMigrationSubtasks</summary>
+        /// <summary>Snippet for ListMigrationSubtasksAsync</summary>
         public async Task ListMigrationSubtasksRequestObjectAsync()
         {
             // Snippet: ListMigrationSubtasksAsync(ListMigrationSubtasksRequest, CallSettings)
@@ -894,7 +894,7 @@ namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListMigrationSubtasks</summary>
+        /// <summary>Snippet for ListMigrationSubtasksAsync</summary>
         public async Task ListMigrationSubtasksAsync()
         {
             // Snippet: ListMigrationSubtasksAsync(string, string, int?, CallSettings)
@@ -984,7 +984,7 @@ namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListMigrationSubtasks</summary>
+        /// <summary>Snippet for ListMigrationSubtasksAsync</summary>
         public async Task ListMigrationSubtasksResourceNamesAsync()
         {
             // Snippet: ListMigrationSubtasksAsync(MigrationWorkflowName, string, int?, CallSettings)

@@ -165,7 +165,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListProjects</summary>
+        /// <summary>Snippet for ListProjectsAsync</summary>
         public async Task ListProjectsRequestObjectAsync()
         {
             // Snippet: ListProjectsAsync(ListProjectsRequest, CallSettings)
@@ -259,7 +259,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListProjects</summary>
+        /// <summary>Snippet for ListProjectsAsync</summary>
         public async Task ListProjectsAsync()
         {
             // Snippet: ListProjectsAsync(string, string, int?, CallSettings)
@@ -349,7 +349,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListProjects</summary>
+        /// <summary>Snippet for ListProjectsAsync</summary>
         public async Task ListProjectsResourceNamesAsync()
         {
             // Snippet: ListProjectsAsync(IResourceName, string, int?, CallSettings)
@@ -439,7 +439,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchProjects</summary>
+        /// <summary>Snippet for SearchProjectsAsync</summary>
         public async Task SearchProjectsRequestObjectAsync()
         {
             // Snippet: SearchProjectsAsync(SearchProjectsRequest, CallSettings)
@@ -529,7 +529,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchProjects</summary>
+        /// <summary>Snippet for SearchProjectsAsync</summary>
         public async Task SearchProjectsAsync()
         {
             // Snippet: SearchProjectsAsync(string, string, int?, CallSettings)

@@ -18,14 +18,18 @@ namespace Google.Cloud.Dlp.V2.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dlp.V2;
     using System;
 
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListDeidentifyTemplates</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListDeidentifyTemplatesRequestObject()
         {
-            // Snippet: ListDeidentifyTemplates(ListDeidentifyTemplatesRequest, CallSettings)
             // Create client
             DlpServiceClient dlpServiceClient = DlpServiceClient.Create();
             // Initialize request argument(s)
@@ -69,7 +73,6 @@ namespace Google.Cloud.Dlp.V2.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

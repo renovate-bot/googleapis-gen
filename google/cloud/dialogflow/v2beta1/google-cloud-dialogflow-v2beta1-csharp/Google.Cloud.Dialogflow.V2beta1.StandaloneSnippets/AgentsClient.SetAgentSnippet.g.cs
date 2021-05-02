@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedAgentsClientStandaloneSnippets
     {
         /// <summary>Snippet for SetAgent</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SetAgent()
         {
-            // Snippet: SetAgent(Agent, CallSettings)
             // Create client
             AgentsClient agentsClient = AgentsClient.Create();
             // Initialize request argument(s)
             Agent agent = new Agent();
             // Make the request
             Agent response = agentsClient.SetAgent(agent);
-            // End snippet
         }
     }
 }

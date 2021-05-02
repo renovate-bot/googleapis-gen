@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,7 +36,8 @@ from google.devtools.remoteworkers_v1.types.command import FileMetadata
 from google.devtools.remoteworkers_v1.types.worker import Device
 from google.devtools.remoteworkers_v1.types.worker import Worker
 
-__all__ = ('AdminTemp',
+__all__ = (
+    'AdminTemp',
     'Blob',
     'BotSession',
     'BotStatus',

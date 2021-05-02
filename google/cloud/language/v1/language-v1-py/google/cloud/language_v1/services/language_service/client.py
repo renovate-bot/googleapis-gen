@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -31,6 +33,7 @@ from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.language_v1.types import language_service
+
 from .transports.base import LanguageServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import LanguageServiceGrpcTransport
 from .transports.grpc_asyncio import LanguageServiceGrpcAsyncIOTransport
@@ -324,8 +327,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
 
         Args:
             request (google.cloud.language_v1.types.AnalyzeSentimentRequest):
-                The request object.
-                The sentiment analysis request
+                The request object. The sentiment analysis request
                 message.
             document (google.cloud.language_v1.types.Document):
                 Input document.
@@ -339,6 +341,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
                 This corresponds to the ``encoding_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -365,8 +368,10 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, language_service.AnalyzeSentimentRequest):
             request = language_service.AnalyzeSentimentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if document is not None:
                 request.document = document
             if encoding_type is not None:
@@ -403,8 +408,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
 
         Args:
             request (google.cloud.language_v1.types.AnalyzeEntitiesRequest):
-                The request object.
-                The entity analysis request message.
+                The request object. The entity analysis request message.
             document (google.cloud.language_v1.types.Document):
                 Input document.
                 This corresponds to the ``document`` field
@@ -417,6 +421,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
                 This corresponds to the ``encoding_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -441,8 +446,10 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, language_service.AnalyzeEntitiesRequest):
             request = language_service.AnalyzeEntitiesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if document is not None:
                 request.document = document
             if encoding_type is not None:
@@ -479,8 +486,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
 
         Args:
             request (google.cloud.language_v1.types.AnalyzeEntitySentimentRequest):
-                The request object.
-                The entity-level sentiment analysis
+                The request object. The entity-level sentiment analysis
                 request message.
             document (google.cloud.language_v1.types.Document):
                 Input document.
@@ -494,6 +500,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
                 This corresponds to the ``encoding_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -520,8 +527,10 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, language_service.AnalyzeEntitySentimentRequest):
             request = language_service.AnalyzeEntitySentimentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if document is not None:
                 request.document = document
             if encoding_type is not None:
@@ -557,8 +566,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
 
         Args:
             request (google.cloud.language_v1.types.AnalyzeSyntaxRequest):
-                The request object.
-                The syntax analysis request message.
+                The request object. The syntax analysis request message.
             document (google.cloud.language_v1.types.Document):
                 Input document.
                 This corresponds to the ``document`` field
@@ -571,6 +579,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
                 This corresponds to the ``encoding_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -595,8 +604,10 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, language_service.AnalyzeSyntaxRequest):
             request = language_service.AnalyzeSyntaxRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if document is not None:
                 request.document = document
             if encoding_type is not None:
@@ -629,14 +640,14 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
 
         Args:
             request (google.cloud.language_v1.types.ClassifyTextRequest):
-                The request object.
-                The document classification request
+                The request object. The document classification request
                 message.
             document (google.cloud.language_v1.types.Document):
                 Input document.
                 This corresponds to the ``document`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -663,8 +674,10 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, language_service.ClassifyTextRequest):
             request = language_service.ClassifyTextRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if document is not None:
                 request.document = document
 
@@ -699,8 +712,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
 
         Args:
             request (google.cloud.language_v1.types.AnnotateTextRequest):
-                The request object.
-                The request message for the text
+                The request object. The request message for the text
                 annotation API, which can perform multiple analysis
                 types (sentiment, entities, and syntax) in one call.
             document (google.cloud.language_v1.types.Document):
@@ -720,6 +732,7 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
                 This corresponds to the ``encoding_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -746,8 +759,10 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, language_service.AnnotateTextRequest):
             request = language_service.AnnotateTextRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if document is not None:
                 request.document = document
             if features is not None:
@@ -769,6 +784,8 @@ class LanguageServiceClient(metaclass=LanguageServiceClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedEnvironmentsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteEnvironment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteEnvironment()
         {
-            // Snippet: DeleteEnvironment(string, CallSettings)
             // Create client
             EnvironmentsClient environmentsClient = EnvironmentsClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/agents/[AGENT]/environments/[ENVIRONMENT]";
             // Make the request
             environmentsClient.DeleteEnvironment(name);
-            // End snippet
         }
     }
 }

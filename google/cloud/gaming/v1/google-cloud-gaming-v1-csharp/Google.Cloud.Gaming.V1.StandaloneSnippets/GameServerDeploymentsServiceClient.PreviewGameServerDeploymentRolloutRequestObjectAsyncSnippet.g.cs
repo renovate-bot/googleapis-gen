@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Gaming.V1.Snippets
 {
+    using Google.Cloud.Gaming.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGameServerDeploymentsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for PreviewGameServerDeploymentRolloutAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task PreviewGameServerDeploymentRolloutRequestObjectAsync()
         {
-            // Snippet: PreviewGameServerDeploymentRolloutAsync(PreviewGameServerDeploymentRolloutRequest, CallSettings)
-            // Additional: PreviewGameServerDeploymentRolloutAsync(PreviewGameServerDeploymentRolloutRequest, CancellationToken)
             // Create client
             GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = await GameServerDeploymentsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Gaming.V1.Snippets
             };
             // Make the request
             PreviewGameServerDeploymentRolloutResponse response = await gameServerDeploymentsServiceClient.PreviewGameServerDeploymentRolloutAsync(request);
-            // End snippet
         }
     }
 }

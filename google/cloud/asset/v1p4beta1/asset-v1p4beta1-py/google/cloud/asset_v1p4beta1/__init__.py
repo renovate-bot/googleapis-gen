@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.asset_service import AssetServiceClient
-
 from .types.asset_service import AnalyzeIamPolicyRequest
 from .types.asset_service import AnalyzeIamPolicyResponse
 from .types.asset_service import ExportIamPolicyAnalysisRequest
@@ -23,6 +23,7 @@ from .types.asset_service import ExportIamPolicyAnalysisResponse
 from .types.asset_service import IamPolicyAnalysisOutputConfig
 from .types.asset_service import IamPolicyAnalysisQuery
 from .types.assets import IamPolicyAnalysisResult
+
 
 __all__ = (
     'AnalyzeIamPolicyRequest',

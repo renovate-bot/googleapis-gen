@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
 {
+    using Google.Cloud.Bigquery.Migration.V2Alpha;
+
     public sealed partial class GeneratedMigrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateMigrationWorkflow</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateMigrationWorkflow()
         {
-            // Snippet: CreateMigrationWorkflow(string, MigrationWorkflow, CallSettings)
             // Create client
             MigrationServiceClient migrationServiceClient = MigrationServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
             MigrationWorkflow migrationWorkflow = new MigrationWorkflow();
             // Make the request
             MigrationWorkflow response = migrationServiceClient.CreateMigrationWorkflow(parent, migrationWorkflow);
-            // End snippet
         }
     }
 }

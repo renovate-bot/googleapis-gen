@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.DataQnA.V1Alpha.Snippets
 {
+    using Google.Cloud.DataQnA.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedQuestionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetQuestionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetQuestionAsync()
         {
-            // Snippet: GetQuestionAsync(string, CallSettings)
-            // Additional: GetQuestionAsync(string, CancellationToken)
             // Create client
             QuestionServiceClient questionServiceClient = await QuestionServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/questions/[QUESTION]";
             // Make the request
             Question response = await questionServiceClient.GetQuestionAsync(name);
-            // End snippet
         }
     }
 }

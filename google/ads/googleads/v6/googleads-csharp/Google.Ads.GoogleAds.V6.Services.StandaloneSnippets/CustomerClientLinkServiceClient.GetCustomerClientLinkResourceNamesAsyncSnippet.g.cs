@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomerClientLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomerClientLinkAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCustomerClientLinkResourceNamesAsync()
         {
-            // Snippet: GetCustomerClientLinkAsync(CustomerClientLinkName, CallSettings)
-            // Additional: GetCustomerClientLinkAsync(CustomerClientLinkName, CancellationToken)
             // Create client
             CustomerClientLinkServiceClient customerClientLinkServiceClient = await CustomerClientLinkServiceClient.CreateAsync();
             // Initialize request argument(s)
             CustomerClientLinkName resourceName = CustomerClientLinkName.FromCustomerClientCustomerManagerLink("[CUSTOMER_ID]", "[CLIENT_CUSTOMER_ID]", "[MANAGER_LINK_ID]");
             // Make the request
             CustomerClientLink response = await customerClientLinkServiceClient.GetCustomerClientLinkAsync(resourceName);
-            // End snippet
         }
     }
 }

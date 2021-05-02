@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -28,6 +30,7 @@ __protobuf__ = proto.module(
 
 class CustomerLicenseGetRequest(proto.Message):
     r"""
+
     Attributes:
         application_id (str):
             Application Id
@@ -35,18 +38,14 @@ class CustomerLicenseGetRequest(proto.Message):
             Customer Id
     """
 
-    application_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    customer_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    application_id = proto.Field(proto.STRING, number=1)
+
+    customer_id = proto.Field(proto.STRING, number=2)
 
 
 class LicenseNotificationListRequest(proto.Message):
     r"""
+
     Attributes:
         application_id (str):
             Application Id
@@ -58,26 +57,18 @@ class LicenseNotificationListRequest(proto.Message):
             Timestamp in milliseconds since epoch
     """
 
-    application_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    max_results = proto.Field(
-        proto.UINT32,
-        number=2,
-    )
-    start_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    timestamp = proto.Field(
-        proto.UINT64,
-        number=4,
-    )
+    application_id = proto.Field(proto.STRING, number=1)
+
+    max_results = proto.Field(proto.UINT32, number=2)
+
+    start_token = proto.Field(proto.STRING, number=3)
+
+    timestamp = proto.Field(proto.UINT64, number=4)
 
 
 class UserLicenseGetRequest(proto.Message):
     r"""
+
     Attributes:
         application_id (str):
             Application Id
@@ -85,14 +76,9 @@ class UserLicenseGetRequest(proto.Message):
             User Id
     """
 
-    application_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    user_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    application_id = proto.Field(proto.STRING, number=1)
+
+    user_id = proto.Field(proto.STRING, number=2)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

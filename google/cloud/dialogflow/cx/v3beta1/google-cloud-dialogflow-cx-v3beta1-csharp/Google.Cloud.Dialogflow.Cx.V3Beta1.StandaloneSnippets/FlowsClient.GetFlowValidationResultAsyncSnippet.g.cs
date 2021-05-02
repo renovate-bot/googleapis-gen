@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFlowsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetFlowValidationResultAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetFlowValidationResultAsync()
         {
-            // Snippet: GetFlowValidationResultAsync(string, CallSettings)
-            // Additional: GetFlowValidationResultAsync(string, CancellationToken)
             // Create client
             FlowsClient flowsClient = await FlowsClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/agents/[AGENT]/flows/[FLOW]/validationResult";
             // Make the request
             FlowValidationResult response = await flowsClient.GetFlowValidationResultAsync(name);
-            // End snippet
         }
     }
 }

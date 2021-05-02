@@ -16,22 +16,24 @@
 
 namespace Google.Area120.Tables.V1Alpha1.Snippets
 {
+    using Google.Area120.Tables.V1Alpha1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTablesServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTableAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTableResourceNamesAsync()
         {
-            // Snippet: GetTableAsync(TableName, CallSettings)
-            // Additional: GetTableAsync(TableName, CancellationToken)
             // Create client
             TablesServiceClient tablesServiceClient = await TablesServiceClient.CreateAsync();
             // Initialize request argument(s)
             TableName name = TableName.FromTable("[TABLE]");
             // Make the request
             Table response = await tablesServiceClient.GetTableAsync(name);
-            // End snippet
         }
     }
 }

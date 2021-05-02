@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.GSuiteAddOns.V1.Snippets
 {
+    using Google.Cloud.GSuiteAddOns.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGSuiteAddOnsClientStandaloneSnippets
     {
         /// <summary>Snippet for UninstallDeploymentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UninstallDeploymentRequestObjectAsync()
         {
-            // Snippet: UninstallDeploymentAsync(UninstallDeploymentRequest, CallSettings)
-            // Additional: UninstallDeploymentAsync(UninstallDeploymentRequest, CancellationToken)
             // Create client
             GSuiteAddOnsClient gSuiteAddOnsClient = await GSuiteAddOnsClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.GSuiteAddOns.V1.Snippets
             };
             // Make the request
             await gSuiteAddOnsClient.UninstallDeploymentAsync(request);
-            // End snippet
         }
     }
 }

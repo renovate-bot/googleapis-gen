@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedContextsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateContextAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateContextResourceNamesAsync()
         {
-            // Snippet: CreateContextAsync(SessionName, Context, CallSettings)
-            // Additional: CreateContextAsync(SessionName, Context, CancellationToken)
             // Create client
             ContextsClient contextsClient = await ContextsClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             Context context = new Context();
             // Make the request
             Context response = await contextsClient.CreateContextAsync(parent, context);
-            // End snippet
         }
     }
 }

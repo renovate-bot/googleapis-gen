@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -35,35 +35,11 @@ from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.errorreporting_v1beta1.services.report_errors_service import ReportErrorsServiceAsyncClient
 from google.cloud.errorreporting_v1beta1.services.report_errors_service import ReportErrorsServiceClient
 from google.cloud.errorreporting_v1beta1.services.report_errors_service import transports
-from google.cloud.errorreporting_v1beta1.services.report_errors_service.transports.base import _API_CORE_VERSION
-from google.cloud.errorreporting_v1beta1.services.report_errors_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.errorreporting_v1beta1.types import common
 from google.cloud.errorreporting_v1beta1.types import report_errors_service
 from google.oauth2 import service_account
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -231,10 +207,12 @@ def test_report_errors_service_client_client_options(client_class, transport_cla
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (ReportErrorsServiceClient, transports.ReportErrorsServiceGrpcTransport, "grpc", "true"),
     (ReportErrorsServiceAsyncClient, transports.ReportErrorsServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (ReportErrorsServiceClient, transports.ReportErrorsServiceGrpcTransport, "grpc", "false"),
     (ReportErrorsServiceAsyncClient, transports.ReportErrorsServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(ReportErrorsServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ReportErrorsServiceClient))
 @mock.patch.object(ReportErrorsServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ReportErrorsServiceAsyncClient))
@@ -389,14 +367,17 @@ def test_report_error_event(transport: str = 'grpc', request_type=report_errors_
         # Designate an appropriate return value for the call.
         call.return_value = report_errors_service.ReportErrorEventResponse(
         )
+
         response = client.report_error_event(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == report_errors_service.ReportErrorEventRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, report_errors_service.ReportErrorEventResponse)
 
 
@@ -419,8 +400,8 @@ def test_report_error_event_empty_call():
         client.report_error_event()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == report_errors_service.ReportErrorEventRequest()
 
+        assert args[0] == report_errors_service.ReportErrorEventRequest()
 
 @pytest.mark.asyncio
 async def test_report_error_event_async(transport: str = 'grpc_asyncio', request_type=report_errors_service.ReportErrorEventRequest):
@@ -438,13 +419,15 @@ async def test_report_error_event_async(transport: str = 'grpc_asyncio', request
             type(client.transport.report_error_event),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(report_errors_service.ReportErrorEventResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(report_errors_service.ReportErrorEventResponse(
         ))
+
         response = await client.report_error_event(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == report_errors_service.ReportErrorEventRequest()
 
     # Establish that the response is the type that we expect.
@@ -464,7 +447,6 @@ def test_report_error_event_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = report_errors_service.ReportErrorEventRequest()
-
     request.project_name = 'project_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -472,6 +454,7 @@ def test_report_error_event_field_headers():
             type(client.transport.report_error_event),
             '__call__') as call:
         call.return_value = report_errors_service.ReportErrorEventResponse()
+
         client.report_error_event(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -496,7 +479,6 @@ async def test_report_error_event_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = report_errors_service.ReportErrorEventRequest()
-
     request.project_name = 'project_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -504,6 +486,7 @@ async def test_report_error_event_field_headers_async():
             type(client.transport.report_error_event),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(report_errors_service.ReportErrorEventResponse())
+
         await client.report_error_event(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -530,6 +513,7 @@ def test_report_error_event_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = report_errors_service.ReportErrorEventResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.report_error_event(
@@ -541,7 +525,9 @@ def test_report_error_event_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_name == 'project_name_value'
+
         assert args[0].event == report_errors_service.ReportedErrorEvent(event_time=timestamp.Timestamp(seconds=751))
 
 
@@ -585,7 +571,9 @@ async def test_report_error_event_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_name == 'project_name_value'
+
         assert args[0].event == report_errors_service.ReportedErrorEvent(event_time=timestamp.Timestamp(seconds=751))
 
 
@@ -645,6 +633,7 @@ def test_transport_instance():
     client = ReportErrorsServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ReportErrorsServiceGrpcTransport(
@@ -659,6 +648,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.ReportErrorsServiceGrpcTransport,
     transports.ReportErrorsServiceGrpcAsyncIOTransport,
@@ -670,6 +660,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = ReportErrorsServiceClient(
@@ -679,6 +670,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.ReportErrorsServiceGrpcTransport,
     )
+
 
 def test_report_errors_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -701,33 +693,15 @@ def test_report_errors_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'report_error_event',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_report_errors_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.errorreporting_v1beta1.services.report_errors_service.transports.ReportErrorsServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.ReportErrorsServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_report_errors_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.errorreporting_v1beta1.services.report_errors_service.transports.ReportErrorsServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.errorreporting_v1beta1.services.report_errors_service.transports.ReportErrorsServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ReportErrorsServiceTransport(
@@ -743,182 +717,33 @@ def test_report_errors_service_base_transport_with_credentials_file_old_google_a
 
 def test_report_errors_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.errorreporting_v1beta1.services.report_errors_service.transports.ReportErrorsServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.errorreporting_v1beta1.services.report_errors_service.transports.ReportErrorsServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ReportErrorsServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_report_errors_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         ReportErrorsServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_report_errors_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        ReportErrorsServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ReportErrorsServiceGrpcTransport,
-        transports.ReportErrorsServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_report_errors_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ReportErrorsServiceGrpcTransport,
-        transports.ReportErrorsServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_report_errors_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ReportErrorsServiceGrpcTransport, grpc_helpers),
-        (transports.ReportErrorsServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_report_errors_service_transport_create_channel(transport_class, grpc_helpers):
+def test_report_errors_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.ReportErrorsServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "clouderrorreporting.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="clouderrorreporting.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ReportErrorsServiceGrpcTransport, grpc_helpers),
-        (transports.ReportErrorsServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_report_errors_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "clouderrorreporting.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ReportErrorsServiceGrpcTransport, grpc_helpers),
-        (transports.ReportErrorsServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_report_errors_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "clouderrorreporting.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -980,6 +805,7 @@ def test_report_errors_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='clouderrorreporting.googleapis.com:8000'),
     )
     assert client.transport._host == 'clouderrorreporting.googleapis.com:8000'
+
 
 def test_report_errors_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1097,6 +923,7 @@ def test_report_errors_service_transport_channel_mtls_with_adc(
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ReportErrorsServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1104,7 +931,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = ReportErrorsServiceClient.common_billing_account_path(**expected)
 
@@ -1114,6 +942,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ReportErrorsServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1121,7 +950,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = ReportErrorsServiceClient.common_folder_path(**expected)
 
@@ -1131,6 +961,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ReportErrorsServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1138,7 +969,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = ReportErrorsServiceClient.common_organization_path(**expected)
 
@@ -1148,6 +980,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = ReportErrorsServiceClient.common_project_path(project)
     assert expected == actual
@@ -1155,7 +988,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = ReportErrorsServiceClient.common_project_path(**expected)
 
@@ -1166,6 +1000,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ReportErrorsServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1173,8 +1008,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = ReportErrorsServiceClient.common_location_path(**expected)
 

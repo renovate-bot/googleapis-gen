@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -281,31 +283,50 @@ def test_get_user_list(transport: str = 'grpc', request_type=user_list_service.G
         # Designate an appropriate return value for the call.
         call.return_value = user_list.UserList(
             resource_name='resource_name_value',
+
             membership_status=user_list_membership_status.UserListMembershipStatusEnum.UserListMembershipStatus.UNKNOWN,
+
             size_range_for_display=user_list_size_range.UserListSizeRangeEnum.UserListSizeRange.UNKNOWN,
+
             size_range_for_search=user_list_size_range.UserListSizeRangeEnum.UserListSizeRange.UNKNOWN,
+
             type_=user_list_type.UserListTypeEnum.UserListType.UNKNOWN,
+
             closing_reason=user_list_closing_reason.UserListClosingReasonEnum.UserListClosingReason.UNKNOWN,
+
             access_reason=access_reason.AccessReasonEnum.AccessReason.UNKNOWN,
+
             account_user_list_status=user_list_access_status.UserListAccessStatusEnum.UserListAccessStatus.UNKNOWN,
+
             crm_based_user_list=user_lists.CrmBasedUserListInfo(app_id=wrappers.StringValue(value='value_value')),
         )
+
         response = client.get_user_list(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == user_list_service.GetUserListRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, user_list.UserList)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.membership_status == user_list_membership_status.UserListMembershipStatusEnum.UserListMembershipStatus.UNKNOWN
+
     assert response.size_range_for_display == user_list_size_range.UserListSizeRangeEnum.UserListSizeRange.UNKNOWN
+
     assert response.size_range_for_search == user_list_size_range.UserListSizeRangeEnum.UserListSizeRange.UNKNOWN
+
     assert response.type_ == user_list_type.UserListTypeEnum.UserListType.UNKNOWN
+
     assert response.closing_reason == user_list_closing_reason.UserListClosingReasonEnum.UserListClosingReason.UNKNOWN
+
     assert response.access_reason == access_reason.AccessReasonEnum.AccessReason.UNKNOWN
+
     assert response.account_user_list_status == user_list_access_status.UserListAccessStatusEnum.UserListAccessStatus.UNKNOWN
 
 
@@ -321,7 +342,6 @@ def test_get_user_list_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = user_list_service.GetUserListRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -329,6 +349,7 @@ def test_get_user_list_field_headers():
             type(client.transport.get_user_list),
             '__call__') as call:
         call.return_value = user_list.UserList()
+
         client.get_user_list(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -355,6 +376,7 @@ def test_get_user_list_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = user_list.UserList()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_user_list(
@@ -365,6 +387,7 @@ def test_get_user_list_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -399,14 +422,17 @@ def test_mutate_user_lists(transport: str = 'grpc', request_type=user_list_servi
         # Designate an appropriate return value for the call.
         call.return_value = user_list_service.MutateUserListsResponse(
         )
+
         response = client.mutate_user_lists(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == user_list_service.MutateUserListsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, user_list_service.MutateUserListsResponse)
 
 
@@ -422,7 +448,6 @@ def test_mutate_user_lists_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = user_list_service.MutateUserListsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -430,6 +455,7 @@ def test_mutate_user_lists_field_headers():
             type(client.transport.mutate_user_lists),
             '__call__') as call:
         call.return_value = user_list_service.MutateUserListsResponse()
+
         client.mutate_user_lists(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -456,6 +482,7 @@ def test_mutate_user_lists_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = user_list_service.MutateUserListsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_user_lists(
@@ -467,7 +494,9 @@ def test_mutate_user_lists_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [user_list_service.UserListOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -550,7 +579,7 @@ def test_user_list_service_base_transport():
     methods = (
         'get_user_list',
         'mutate_user_lists',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -702,6 +731,7 @@ def test_user_list_service_transport_channel_mtls_with_adc(
 def test_user_list_path():
     customer = "squid"
     user_list = "clam"
+
     expected = "customers/{customer}/userLists/{user_list}".format(customer=customer, user_list=user_list, )
     actual = UserListServiceClient.user_list_path(customer, user_list)
     assert expected == actual
@@ -709,8 +739,9 @@ def test_user_list_path():
 
 def test_parse_user_list_path():
     expected = {
-        "customer": "whelk",
-        "user_list": "octopus",
+    "customer": "whelk",
+    "user_list": "octopus",
+
     }
     path = UserListServiceClient.user_list_path(**expected)
 
@@ -720,6 +751,7 @@ def test_parse_user_list_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = UserListServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -727,7 +759,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = UserListServiceClient.common_billing_account_path(**expected)
 
@@ -737,6 +770,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = UserListServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -744,7 +778,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = UserListServiceClient.common_folder_path(**expected)
 
@@ -754,6 +789,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = UserListServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -761,7 +797,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = UserListServiceClient.common_organization_path(**expected)
 
@@ -771,6 +808,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = UserListServiceClient.common_project_path(project)
     assert expected == actual
@@ -778,7 +816,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = UserListServiceClient.common_project_path(**expected)
 
@@ -789,6 +828,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = UserListServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -796,8 +836,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = UserListServiceClient.common_location_path(**expected)
 

@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTopicViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTopicViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTopicViewRequestObjectAsync()
         {
-            // Snippet: GetTopicViewAsync(GetTopicViewRequest, CallSettings)
-            // Additional: GetTopicViewAsync(GetTopicViewRequest, CancellationToken)
             // Create client
             TopicViewServiceClient topicViewServiceClient = await TopicViewServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             TopicView response = await topicViewServiceClient.GetTopicViewAsync(request);
-            // End snippet
         }
     }
 }

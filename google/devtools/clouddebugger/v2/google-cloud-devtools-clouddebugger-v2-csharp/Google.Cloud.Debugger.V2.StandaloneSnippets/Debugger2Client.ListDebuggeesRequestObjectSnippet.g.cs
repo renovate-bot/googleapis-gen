@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Debugger.V2.Snippets
 {
+    using Google.Cloud.Debugger.V2;
+
     public sealed partial class GeneratedDebugger2ClientStandaloneSnippets
     {
         /// <summary>Snippet for ListDebuggees</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListDebuggeesRequestObject()
         {
-            // Snippet: ListDebuggees(ListDebuggeesRequest, CallSettings)
             // Create client
             Debugger2Client debugger2Client = Debugger2Client.Create();
             // Initialize request argument(s)
@@ -33,7 +38,6 @@ namespace Google.Cloud.Debugger.V2.Snippets
             };
             // Make the request
             ListDebuggeesResponse response = debugger2Client.ListDebuggees(request);
-            // End snippet
         }
     }
 }

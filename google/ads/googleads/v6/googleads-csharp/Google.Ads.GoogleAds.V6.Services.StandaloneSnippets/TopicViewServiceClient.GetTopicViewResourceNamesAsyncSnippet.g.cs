@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTopicViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTopicViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTopicViewResourceNamesAsync()
         {
-            // Snippet: GetTopicViewAsync(TopicViewName, CallSettings)
-            // Additional: GetTopicViewAsync(TopicViewName, CancellationToken)
             // Create client
             TopicViewServiceClient topicViewServiceClient = await TopicViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             TopicViewName resourceName = TopicViewName.FromCustomerAdGroupCriterion("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
             // Make the request
             TopicView response = await topicViewServiceClient.GetTopicViewAsync(resourceName);
-            // End snippet
         }
     }
 }

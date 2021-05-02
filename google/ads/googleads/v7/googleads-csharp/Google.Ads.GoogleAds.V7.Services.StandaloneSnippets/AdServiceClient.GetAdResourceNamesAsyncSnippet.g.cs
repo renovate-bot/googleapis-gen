@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdResourceNamesAsync()
         {
-            // Snippet: GetAdAsync(AdName, CallSettings)
-            // Additional: GetAdAsync(AdName, CancellationToken)
             // Create client
             AdServiceClient adServiceClient = await AdServiceClient.CreateAsync();
             // Initialize request argument(s)
             AdName resourceName = AdName.FromCustomerAd("[CUSTOMER_ID]", "[AD_ID]");
             // Make the request
             Ad response = await adServiceClient.GetAdAsync(resourceName);
-            // End snippet
         }
     }
 }

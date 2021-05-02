@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
+
     public sealed partial class GeneratedConversationsClientStandaloneSnippets
     {
         /// <summary>Snippet for CompleteConversation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CompleteConversation()
         {
-            // Snippet: CompleteConversation(string, CallSettings)
             // Create client
             ConversationsClient conversationsClient = ConversationsClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/conversations/[CONVERSATION]";
             // Make the request
             Conversation response = conversationsClient.CompleteConversation(name);
-            // End snippet
         }
     }
 }

@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.AutoML.V1.Snippets
 {
+    using Google.Cloud.AutoML.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateModel</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateModel()
         {
-            // Snippet: UpdateModel(Model, FieldMask, CallSettings)
             // Create client
             AutoMlClient autoMlClient = AutoMlClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.AutoML.V1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Model response = autoMlClient.UpdateModel(model, updateMask);
-            // End snippet
         }
     }
 }

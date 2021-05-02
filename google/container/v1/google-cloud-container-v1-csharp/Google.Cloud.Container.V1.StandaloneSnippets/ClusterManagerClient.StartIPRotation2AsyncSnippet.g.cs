@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for StartIPRotationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task StartIPRotation2Async()
         {
-            // Snippet: StartIPRotationAsync(string, CallSettings)
-            // Additional: StartIPRotationAsync(string, CancellationToken)
             // Create client
             ClusterManagerClient clusterManagerClient = await ClusterManagerClient.CreateAsync();
             // Initialize request argument(s)
             string name = "";
             // Make the request
             Operation response = await clusterManagerClient.StartIPRotationAsync(name);
-            // End snippet
         }
     }
 }

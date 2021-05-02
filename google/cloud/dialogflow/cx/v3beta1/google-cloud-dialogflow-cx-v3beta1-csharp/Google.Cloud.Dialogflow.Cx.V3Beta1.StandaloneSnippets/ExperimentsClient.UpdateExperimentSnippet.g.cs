@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedExperimentsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateExperiment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateExperiment()
         {
-            // Snippet: UpdateExperiment(Experiment, FieldMask, CallSettings)
             // Create client
             ExperimentsClient experimentsClient = ExperimentsClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Experiment response = experimentsClient.UpdateExperiment(experiment, updateMask);
-            // End snippet
         }
     }
 }

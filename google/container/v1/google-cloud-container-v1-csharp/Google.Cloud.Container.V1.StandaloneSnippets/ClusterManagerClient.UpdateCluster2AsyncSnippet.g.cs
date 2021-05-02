@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateClusterAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateCluster2Async()
         {
-            // Snippet: UpdateClusterAsync(string, ClusterUpdate, CallSettings)
-            // Additional: UpdateClusterAsync(string, ClusterUpdate, CancellationToken)
             // Create client
             ClusterManagerClient clusterManagerClient = await ClusterManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Container.V1.Snippets
             ClusterUpdate update = new ClusterUpdate();
             // Make the request
             Operation response = await clusterManagerClient.UpdateClusterAsync(name, update);
-            // End snippet
         }
     }
 }

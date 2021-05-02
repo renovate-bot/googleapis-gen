@@ -17,14 +17,18 @@
 namespace Google.Home.Enterprise.Sdm.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Home.Enterprise.Sdm.V1;
     using System;
 
     public sealed partial class GeneratedSmartDeviceManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListStructures</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListStructuresRequestObject()
         {
-            // Snippet: ListStructures(ListStructuresRequest, CallSettings)
             // Create client
             SmartDeviceManagementServiceClient smartDeviceManagementServiceClient = SmartDeviceManagementServiceClient.Create();
             // Initialize request argument(s)
@@ -67,7 +71,6 @@ namespace Google.Home.Enterprise.Sdm.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

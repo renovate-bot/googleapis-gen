@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Notebooks.V1Beta1.Snippets
 {
+    using Google.Cloud.Notebooks.V1Beta1;
+
     public sealed partial class GeneratedNotebookServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetEnvironment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetEnvironmentRequestObject()
         {
-            // Snippet: GetEnvironment(GetEnvironmentRequest, CallSettings)
             // Create client
             NotebookServiceClient notebookServiceClient = NotebookServiceClient.Create();
             // Initialize request argument(s)
             GetEnvironmentRequest request = new GetEnvironmentRequest { Name = "", };
             // Make the request
             Environment response = notebookServiceClient.GetEnvironment(request);
-            // End snippet
         }
     }
 }

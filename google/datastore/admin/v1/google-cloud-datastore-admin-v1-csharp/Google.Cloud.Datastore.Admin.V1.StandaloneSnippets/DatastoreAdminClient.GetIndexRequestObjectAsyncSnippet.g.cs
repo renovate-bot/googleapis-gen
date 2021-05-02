@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Datastore.Admin.V1.Snippets
 {
+    using Google.Cloud.Datastore.Admin.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDatastoreAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIndexAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetIndexRequestObjectAsync()
         {
-            // Snippet: GetIndexAsync(GetIndexRequest, CallSettings)
-            // Additional: GetIndexAsync(GetIndexRequest, CancellationToken)
             // Create client
             DatastoreAdminClient datastoreAdminClient = await DatastoreAdminClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Datastore.Admin.V1.Snippets
             };
             // Make the request
             Index response = await datastoreAdminClient.GetIndexAsync(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -40,6 +42,7 @@ from google.cloud.monitoring_v3.types import notification_service
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+
 from .transports.base import NotificationChannelServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import NotificationChannelServiceGrpcTransport
 from .transports.grpc_asyncio import NotificationChannelServiceGrpcAsyncIOTransport
@@ -356,8 +359,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
 
         Args:
             request (google.cloud.monitoring_v3.types.ListNotificationChannelDescriptorsRequest):
-                The request object.
-                The
+                The request object. The
                 `ListNotificationChannelDescriptors` request.
             name (str):
                 Required. The REST resource name of the parent from
@@ -377,6 +379,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -405,8 +408,10 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         # there are no flattened fields.
         if not isinstance(request, notification_service.ListNotificationChannelDescriptorsRequest):
             request = notification_service.ListNotificationChannelDescriptorsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -456,8 +461,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
 
         Args:
             request (google.cloud.monitoring_v3.types.GetNotificationChannelDescriptorRequest):
-                The request object.
-                The
+                The request object. The
                 `GetNotificationChannelDescriptor` response.
             name (str):
                 Required. The channel type for which to execute the
@@ -470,6 +474,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -499,8 +504,10 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         # there are no flattened fields.
         if not isinstance(request, notification_service.GetNotificationChannelDescriptorRequest):
             request = notification_service.GetNotificationChannelDescriptorRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -540,8 +547,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
 
         Args:
             request (google.cloud.monitoring_v3.types.ListNotificationChannelsRequest):
-                The request object.
-                The `ListNotificationChannels`
+                The request object. The `ListNotificationChannels`
                 request.
             name (str):
                 Required. The project on which to execute the request.
@@ -561,6 +567,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -589,8 +596,10 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         # there are no flattened fields.
         if not isinstance(request, notification_service.ListNotificationChannelsRequest):
             request = notification_service.ListNotificationChannelsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -644,8 +653,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
 
         Args:
             request (google.cloud.monitoring_v3.types.GetNotificationChannelRequest):
-                The request object.
-                The `GetNotificationChannel`
+                The request object. The `GetNotificationChannel`
                 request.
             name (str):
                 Required. The channel for which to execute the request.
@@ -658,6 +666,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -689,8 +698,10 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         # there are no flattened fields.
         if not isinstance(request, notification_service.GetNotificationChannelRequest):
             request = notification_service.GetNotificationChannelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -732,8 +743,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
 
         Args:
             request (google.cloud.monitoring_v3.types.CreateNotificationChannelRequest):
-                The request object.
-                The `CreateNotificationChannel`
+                The request object. The `CreateNotificationChannel`
                 request.
             name (str):
                 Required. The project on which to execute the request.
@@ -760,6 +770,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
                 This corresponds to the ``notification_channel`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -791,8 +802,10 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         # there are no flattened fields.
         if not isinstance(request, notification_service.CreateNotificationChannelRequest):
             request = notification_service.CreateNotificationChannelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
             if notification_channel is not None:
@@ -835,8 +848,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
 
         Args:
             request (google.cloud.monitoring_v3.types.UpdateNotificationChannelRequest):
-                The request object.
-                The `UpdateNotificationChannel`
+                The request object. The `UpdateNotificationChannel`
                 request.
             update_mask (google.protobuf.field_mask_pb2.FieldMask):
                 The fields to update.
@@ -853,6 +865,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
                 This corresponds to the ``notification_channel`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -884,8 +897,10 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         # there are no flattened fields.
         if not isinstance(request, notification_service.UpdateNotificationChannelRequest):
             request = notification_service.UpdateNotificationChannelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if update_mask is not None:
                 request.update_mask = update_mask
             if notification_channel is not None:
@@ -927,8 +942,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
 
         Args:
             request (google.cloud.monitoring_v3.types.DeleteNotificationChannelRequest):
-                The request object.
-                The `DeleteNotificationChannel`
+                The request object. The `DeleteNotificationChannel`
                 request.
             name (str):
                 Required. The channel for which to execute the request.
@@ -954,6 +968,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
                 This corresponds to the ``force`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -974,8 +989,10 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         # there are no flattened fields.
         if not isinstance(request, notification_service.DeleteNotificationChannelRequest):
             request = notification_service.DeleteNotificationChannelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
             if force is not None:
@@ -1015,8 +1032,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
 
         Args:
             request (google.cloud.monitoring_v3.types.SendNotificationChannelVerificationCodeRequest):
-                The request object.
-                The
+                The request object. The
                 `SendNotificationChannelVerificationCode` request.
             name (str):
                 Required. The notification channel to
@@ -1025,6 +1041,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1045,8 +1062,10 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         # there are no flattened fields.
         if not isinstance(request, notification_service.SendNotificationChannelVerificationCodeRequest):
             request = notification_service.SendNotificationChannelVerificationCodeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1109,8 +1128,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
 
         Args:
             request (google.cloud.monitoring_v3.types.GetNotificationChannelVerificationCodeRequest):
-                The request object.
-                The
+                The request object. The
                 `GetNotificationChannelVerificationCode` request.
             name (str):
                 Required. The notification channel
@@ -1123,6 +1141,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1147,8 +1166,10 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         # there are no flattened fields.
         if not isinstance(request, notification_service.GetNotificationChannelVerificationCodeRequest):
             request = notification_service.GetNotificationChannelVerificationCodeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1190,8 +1211,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
 
         Args:
             request (google.cloud.monitoring_v3.types.VerifyNotificationChannelRequest):
-                The request object.
-                The `VerifyNotificationChannel`
+                The request object. The `VerifyNotificationChannel`
                 request.
             name (str):
                 Required. The notification channel to
@@ -1214,6 +1234,7 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
                 This corresponds to the ``code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1245,8 +1266,10 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
         # there are no flattened fields.
         if not isinstance(request, notification_service.VerifyNotificationChannelRequest):
             request = notification_service.VerifyNotificationChannelRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
             if code is not None:
@@ -1274,6 +1297,8 @@ class NotificationChannelServiceClient(metaclass=NotificationChannelServiceClien
 
         # Done; return the response.
         return response
+
+
 
 
 

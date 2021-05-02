@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for SuggestSmartRepliesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SuggestSmartRepliesResourceNamesAsync()
         {
-            // Snippet: SuggestSmartRepliesAsync(ParticipantName, CallSettings)
-            // Additional: SuggestSmartRepliesAsync(ParticipantName, CancellationToken)
             // Create client
             ParticipantsClient participantsClient = await ParticipantsClient.CreateAsync();
             // Initialize request argument(s)
             ParticipantName parent = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
             // Make the request
             SuggestSmartRepliesResponse response = await participantsClient.SuggestSmartRepliesAsync(parent);
-            // End snippet
         }
     }
 }

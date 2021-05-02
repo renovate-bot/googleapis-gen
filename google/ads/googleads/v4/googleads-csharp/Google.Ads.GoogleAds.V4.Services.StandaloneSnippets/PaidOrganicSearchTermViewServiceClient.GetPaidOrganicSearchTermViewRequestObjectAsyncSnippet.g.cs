@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPaidOrganicSearchTermViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPaidOrganicSearchTermViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetPaidOrganicSearchTermViewRequestObjectAsync()
         {
-            // Snippet: GetPaidOrganicSearchTermViewAsync(GetPaidOrganicSearchTermViewRequest, CallSettings)
-            // Additional: GetPaidOrganicSearchTermViewAsync(GetPaidOrganicSearchTermViewRequest, CancellationToken)
             // Create client
             PaidOrganicSearchTermViewServiceClient paidOrganicSearchTermViewServiceClient = await PaidOrganicSearchTermViewServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             PaidOrganicSearchTermView response = await paidOrganicSearchTermViewServiceClient.GetPaidOrganicSearchTermViewAsync(request);
-            // End snippet
         }
     }
 }

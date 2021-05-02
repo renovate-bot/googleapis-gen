@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWebhooksClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteWebhookAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteWebhookRequestObjectAsync()
         {
-            // Snippet: DeleteWebhookAsync(DeleteWebhookRequest, CallSettings)
-            // Additional: DeleteWebhookAsync(DeleteWebhookRequest, CancellationToken)
             // Create client
             WebhooksClient webhooksClient = await WebhooksClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             };
             // Make the request
             await webhooksClient.DeleteWebhookAsync(request);
-            // End snippet
         }
     }
 }

@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedUserListServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetUserListAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetUserListAsync()
         {
-            // Snippet: GetUserListAsync(string, CallSettings)
-            // Additional: GetUserListAsync(string, CancellationToken)
             // Create client
             UserListServiceClient userListServiceClient = await UserListServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/userLists/[USER_LIST_ID]";
             // Make the request
             UserList response = await userListServiceClient.GetUserListAsync(resourceName);
-            // End snippet
         }
     }
 }

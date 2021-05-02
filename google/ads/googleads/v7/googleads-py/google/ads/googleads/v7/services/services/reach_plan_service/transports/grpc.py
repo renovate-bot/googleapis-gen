@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -25,6 +27,7 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 import grpc  # type: ignore
 
 from google.ads.googleads.v7.services.types import reach_plan_service
+
 from .base import ReachPlanServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -60,8 +63,7 @@ class ReachPlanServiceGrpcTransport(ReachPlanServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -205,9 +207,7 @@ class ReachPlanServiceGrpcTransport(ReachPlanServiceTransport):
     def list_plannable_locations(self) -> Callable[
             [reach_plan_service.ListPlannableLocationsRequest],
             reach_plan_service.ListPlannableLocationsResponse]:
-        r"""Return a callable for the
-        list plannable locations
-          method over gRPC.
+        r"""Return a callable for the list plannable locations method over gRPC.
 
         Returns the list of plannable locations (for example, countries
         & DMAs).
@@ -238,9 +238,7 @@ class ReachPlanServiceGrpcTransport(ReachPlanServiceTransport):
     def list_plannable_products(self) -> Callable[
             [reach_plan_service.ListPlannableProductsRequest],
             reach_plan_service.ListPlannableProductsResponse]:
-        r"""Return a callable for the
-        list plannable products
-          method over gRPC.
+        r"""Return a callable for the list plannable products method over gRPC.
 
         Returns the list of per-location plannable YouTube ad formats
         with allowed targeting.
@@ -271,9 +269,7 @@ class ReachPlanServiceGrpcTransport(ReachPlanServiceTransport):
     def generate_product_mix_ideas(self) -> Callable[
             [reach_plan_service.GenerateProductMixIdeasRequest],
             reach_plan_service.GenerateProductMixIdeasResponse]:
-        r"""Return a callable for the
-        generate product mix ideas
-          method over gRPC.
+        r"""Return a callable for the generate product mix ideas method over gRPC.
 
         Generates a product mix ideas given a set of preferences. This
         method helps the advertiser to obtain a good mix of ad formats
@@ -306,9 +302,7 @@ class ReachPlanServiceGrpcTransport(ReachPlanServiceTransport):
     def generate_reach_forecast(self) -> Callable[
             [reach_plan_service.GenerateReachForecastRequest],
             reach_plan_service.GenerateReachForecastResponse]:
-        r"""Return a callable for the
-        generate reach forecast
-          method over gRPC.
+        r"""Return a callable for the generate reach forecast method over gRPC.
 
         Generates a reach forecast for a given targeting / product mix.
 

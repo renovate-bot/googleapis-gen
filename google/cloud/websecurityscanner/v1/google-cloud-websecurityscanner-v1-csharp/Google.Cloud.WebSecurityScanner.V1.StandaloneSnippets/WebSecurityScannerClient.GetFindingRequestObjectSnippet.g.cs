@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.WebSecurityScanner.V1.Snippets
 {
+    using Google.Cloud.WebSecurityScanner.V1;
+
     public sealed partial class GeneratedWebSecurityScannerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetFinding</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetFindingRequestObject()
         {
-            // Snippet: GetFinding(GetFindingRequest, CallSettings)
             // Create client
             WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.Create();
             // Initialize request argument(s)
             GetFindingRequest request = new GetFindingRequest { Name = "", };
             // Make the request
             Finding response = webSecurityScannerClient.GetFinding(request);
-            // End snippet
         }
     }
 }

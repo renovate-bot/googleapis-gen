@@ -17,6 +17,7 @@
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Bigtable.Admin.V2;
     using Google.Cloud.Iam.V1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
@@ -24,10 +25,12 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
     public sealed partial class GeneratedBigtableInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for TestIamPermissionsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task TestIamPermissionsResourceNamesAsync()
         {
-            // Snippet: TestIamPermissionsAsync(IResourceName, IEnumerable<string>, CallSettings)
-            // Additional: TestIamPermissionsAsync(IResourceName, IEnumerable<string>, CancellationToken)
             // Create client
             BigtableInstanceAdminClient bigtableInstanceAdminClient = await BigtableInstanceAdminClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
             IEnumerable<string> permissions = new string[] { "", };
             // Make the request
             TestIamPermissionsResponse response = await bigtableInstanceAdminClient.TestIamPermissionsAsync(resource, permissions);
-            // End snippet
         }
     }
 }

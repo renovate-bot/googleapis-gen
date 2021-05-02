@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.cloud_functions_service import CloudFunctionsServiceClient
-
 from .types.functions import CallFunctionRequest
 from .types.functions import CallFunctionResponse
 from .types.functions import CloudFunction
@@ -36,6 +36,7 @@ from .types.functions import SourceRepository
 from .types.functions import UpdateFunctionRequest
 from .types.operations import OperationMetadataV1
 from .types.operations import OperationType
+
 
 __all__ = (
     'CallFunctionRequest',

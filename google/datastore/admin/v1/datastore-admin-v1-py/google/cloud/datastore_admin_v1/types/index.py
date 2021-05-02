@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -26,6 +28,7 @@ __protobuf__ = proto.module(
 
 class Index(proto.Message):
     r"""Datastore composite index definition.
+
     Attributes:
         project_id (str):
             Output only. Project ID.
@@ -67,6 +70,7 @@ class Index(proto.Message):
 
     class IndexedProperty(proto.Message):
         r"""A property of an index.
+
         Attributes:
             name (str):
                 Required. The property name to index.
@@ -75,41 +79,27 @@ class Index(proto.Message):
                 DIRECTION_UNSPECIFIED.
         """
 
-        name = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        direction = proto.Field(
-            proto.ENUM,
-            number=2,
+        name = proto.Field(proto.STRING, number=1)
+
+        direction = proto.Field(proto.ENUM, number=2,
             enum='Index.Direction',
         )
 
-    project_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    index_id = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    kind = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    ancestor = proto.Field(
-        proto.ENUM,
-        number=5,
+    project_id = proto.Field(proto.STRING, number=1)
+
+    index_id = proto.Field(proto.STRING, number=3)
+
+    kind = proto.Field(proto.STRING, number=4)
+
+    ancestor = proto.Field(proto.ENUM, number=5,
         enum=AncestorMode,
     )
-    properties = proto.RepeatedField(
-        proto.MESSAGE,
-        number=6,
+
+    properties = proto.RepeatedField(proto.MESSAGE, number=6,
         message=IndexedProperty,
     )
-    state = proto.Field(
-        proto.ENUM,
-        number=7,
+
+    state = proto.Field(proto.ENUM, number=7,
         enum=State,
     )
 

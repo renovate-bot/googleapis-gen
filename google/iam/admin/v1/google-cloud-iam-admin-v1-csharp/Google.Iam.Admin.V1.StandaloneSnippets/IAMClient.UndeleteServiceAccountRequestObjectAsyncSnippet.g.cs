@@ -16,22 +16,24 @@
 
 namespace Google.Iam.Admin.V1.Snippets
 {
+    using Google.Iam.Admin.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIAMClientStandaloneSnippets
     {
         /// <summary>Snippet for UndeleteServiceAccountAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UndeleteServiceAccountRequestObjectAsync()
         {
-            // Snippet: UndeleteServiceAccountAsync(UndeleteServiceAccountRequest, CallSettings)
-            // Additional: UndeleteServiceAccountAsync(UndeleteServiceAccountRequest, CancellationToken)
             // Create client
             IAMClient iAMClient = await IAMClient.CreateAsync();
             // Initialize request argument(s)
             UndeleteServiceAccountRequest request = new UndeleteServiceAccountRequest { Name = "", };
             // Make the request
             UndeleteServiceAccountResponse response = await iAMClient.UndeleteServiceAccountAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.GSuiteAddOns.V1.Snippets
 {
+    using Google.Cloud.GSuiteAddOns.V1;
+
     public sealed partial class GeneratedGSuiteAddOnsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAuthorization</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAuthorization()
         {
-            // Snippet: GetAuthorization(string, CallSettings)
             // Create client
             GSuiteAddOnsClient gSuiteAddOnsClient = GSuiteAddOnsClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/authorization";
             // Make the request
             Authorization response = gSuiteAddOnsClient.GetAuthorization(name);
-            // End snippet
         }
     }
 }

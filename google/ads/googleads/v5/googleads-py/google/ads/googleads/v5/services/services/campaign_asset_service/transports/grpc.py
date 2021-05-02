@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v5.resources.types import campaign_asset
 from google.ads.googleads.v5.services.types import campaign_asset_service
+
 from .base import CampaignAssetServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class CampaignAssetServiceGrpcTransport(CampaignAssetServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class CampaignAssetServiceGrpcTransport(CampaignAssetServiceTransport):
     def get_campaign_asset(self) -> Callable[
             [campaign_asset_service.GetCampaignAssetRequest],
             campaign_asset.CampaignAsset]:
-        r"""Return a callable for the
-        get campaign asset
-          method over gRPC.
+        r"""Return a callable for the get campaign asset method over gRPC.
 
         Returns the requested campaign asset in full detail.
 
@@ -229,9 +229,7 @@ class CampaignAssetServiceGrpcTransport(CampaignAssetServiceTransport):
     def mutate_campaign_assets(self) -> Callable[
             [campaign_asset_service.MutateCampaignAssetsRequest],
             campaign_asset_service.MutateCampaignAssetsResponse]:
-        r"""Return a callable for the
-        mutate campaign assets
-          method over gRPC.
+        r"""Return a callable for the mutate campaign assets method over gRPC.
 
         Creates or removes campaign assets. Operation
         statuses are returned.

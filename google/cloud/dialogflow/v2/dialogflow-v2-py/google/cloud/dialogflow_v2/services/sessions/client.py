@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,6 +36,7 @@ from google.cloud.dialogflow_v2.types import audio_config
 from google.cloud.dialogflow_v2.types import session
 from google.cloud.dialogflow_v2.types import session as gcd_session
 from google.rpc import status_pb2 as status  # type: ignore
+
 from .transports.base import SessionsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import SessionsGrpcTransport
 from .transports.grpc_asyncio import SessionsGrpcAsyncIOTransport
@@ -380,8 +383,7 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.DetectIntentRequest):
-                The request object.
-                The request to detect user's intent.
+                The request object. The request to detect user's intent.
             session (str):
                 Required. The name of the session this query is sent to.
                 Format:
@@ -423,6 +425,7 @@ class SessionsClient(metaclass=SessionsClientMeta):
                 This corresponds to the ``query_input`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -449,8 +452,10 @@ class SessionsClient(metaclass=SessionsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_session.DetectIntentRequest):
             request = gcd_session.DetectIntentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if session is not None:
                 request.session = session
             if query_input is not None:
@@ -497,8 +502,7 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         Args:
             requests (Iterator[google.cloud.dialogflow_v2.types.StreamingDetectIntentRequest]):
-                The request object iterator.
-                The top-level message sent by the
+                The request object iterator. The top-level message sent by the
                 client to the
                 [Sessions.StreamingDetectIntent][google.cloud.dialogflow.v2.Sessions.StreamingDetectIntent]
                 method.
@@ -572,6 +576,8 @@ class SessionsClient(metaclass=SessionsClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

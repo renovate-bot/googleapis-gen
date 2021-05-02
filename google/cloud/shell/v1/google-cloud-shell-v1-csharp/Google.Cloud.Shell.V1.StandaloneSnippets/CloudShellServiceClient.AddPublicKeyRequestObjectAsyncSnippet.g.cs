@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Shell.V1.Snippets
 {
+    using Google.Cloud.Shell.V1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudShellServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for AddPublicKeyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task AddPublicKeyRequestObjectAsync()
         {
-            // Snippet: AddPublicKeyAsync(AddPublicKeyRequest, CallSettings)
-            // Additional: AddPublicKeyAsync(AddPublicKeyRequest, CancellationToken)
             // Create client
             CloudShellServiceClient cloudShellServiceClient = await CloudShellServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -52,7 +55,6 @@ namespace Google.Cloud.Shell.V1.Snippets
                 // If it has completed, then access the result
                 AddPublicKeyResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

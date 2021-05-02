@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Automl.V1Beta1.Snippets
 {
+    using Google.Cloud.Automl.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateColumnSpec</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateColumnSpecRequestObject()
         {
-            // Snippet: UpdateColumnSpec(UpdateColumnSpecRequest, CallSettings)
             // Create client
             AutoMlClient autoMlClient = AutoMlClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Automl.V1Beta1.Snippets
             };
             // Make the request
             ColumnSpec response = autoMlClient.UpdateColumnSpec(request);
-            // End snippet
         }
     }
 }

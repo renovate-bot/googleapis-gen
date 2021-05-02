@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Vision.V1.Snippets
 {
+    using Google.Cloud.Vision.V1;
+
     public sealed partial class GeneratedProductSearchClientStandaloneSnippets
     {
         /// <summary>Snippet for GetProduct</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetProductResourceNames()
         {
-            // Snippet: GetProduct(ProductName, CallSettings)
             // Create client
             ProductSearchClient productSearchClient = ProductSearchClient.Create();
             // Initialize request argument(s)
             ProductName name = ProductName.FromProjectLocationProduct("[PROJECT]", "[LOCATION]", "[PRODUCT]");
             // Make the request
             Product response = productSearchClient.GetProduct(name);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,6 +36,7 @@ from google.devtools.remoteworkers_v1.types import bots
 from google.devtools.remoteworkers_v1.types import worker
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import BotsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import BotsGrpcTransport
 from .transports.grpc_asyncio import BotsGrpcAsyncIOTransport
@@ -369,8 +372,7 @@ class BotsClient(metaclass=BotsClientMeta):
 
         Args:
             request (google.devtools.remoteworkers_v1.types.CreateBotSessionRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateBotSession.
             parent (str):
                 Required. The farm resource.
@@ -385,6 +387,7 @@ class BotsClient(metaclass=BotsClientMeta):
                 This corresponds to the ``bot_session`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -418,8 +421,10 @@ class BotsClient(metaclass=BotsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, bots.CreateBotSessionRequest):
             request = bots.CreateBotSessionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if bot_session is not None:
@@ -465,8 +470,7 @@ class BotsClient(metaclass=BotsClientMeta):
 
         Args:
             request (google.devtools.remoteworkers_v1.types.UpdateBotSessionRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateBotSession.
             name (str):
                 Required. The bot session name. Must match
@@ -491,6 +495,7 @@ class BotsClient(metaclass=BotsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -524,8 +529,10 @@ class BotsClient(metaclass=BotsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, bots.UpdateBotSessionRequest):
             request = bots.UpdateBotSessionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
             if bot_session is not None:
@@ -555,6 +562,8 @@ class BotsClient(metaclass=BotsClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

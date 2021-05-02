@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupFeedServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupFeedAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdGroupFeedResourceNamesAsync()
         {
-            // Snippet: GetAdGroupFeedAsync(AdGroupFeedName, CallSettings)
-            // Additional: GetAdGroupFeedAsync(AdGroupFeedName, CancellationToken)
             // Create client
             AdGroupFeedServiceClient adGroupFeedServiceClient = await AdGroupFeedServiceClient.CreateAsync();
             // Initialize request argument(s)
             AdGroupFeedName resourceName = AdGroupFeedName.FromCustomerAdGroupFeed("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[FEED_ID]");
             // Make the request
             AdGroupFeed response = await adGroupFeedServiceClient.GetAdGroupFeedAsync(resourceName);
-            // End snippet
         }
     }
 }

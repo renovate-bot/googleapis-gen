@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,6 +37,7 @@ from google.cloud.essentialcontacts_v1.types import enums
 from google.cloud.essentialcontacts_v1.types import service
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import EssentialContactsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import EssentialContactsServiceGrpcTransport
 from .transports.grpc_asyncio import EssentialContactsServiceGrpcAsyncIOTransport
@@ -337,8 +340,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         Args:
             request (google.cloud.essentialcontacts_v1.types.CreateContactRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 CreateContact method.
             parent (str):
                 Required. The resource to save this contact for. Format:
@@ -356,6 +358,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
                 This corresponds to the ``contact`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -382,8 +385,10 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service.CreateContactRequest):
             request = service.CreateContactRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if contact is not None:
@@ -426,8 +431,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         Args:
             request (google.cloud.essentialcontacts_v1.types.UpdateContactRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 UpdateContact method.
             contact (google.cloud.essentialcontacts_v1.types.Contact):
                 Required. The contact resource to
@@ -446,6 +450,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -472,8 +477,10 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service.UpdateContactRequest):
             request = service.UpdateContactRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if contact is not None:
                 request.contact = contact
             if update_mask is not None:
@@ -514,8 +521,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         Args:
             request (google.cloud.essentialcontacts_v1.types.ListContactsRequest):
-                The request object.
-                Request message for the ListContacts
+                The request object. Request message for the ListContacts
                 method.
             parent (str):
                 Required. The parent resource name. Format:
@@ -525,6 +531,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -554,8 +561,10 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service.ListContactsRequest):
             request = service.ListContactsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -603,8 +612,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         Args:
             request (google.cloud.essentialcontacts_v1.types.GetContactRequest):
-                The request object.
-                Request message for the GetContact
+                The request object. Request message for the GetContact
                 method.
             name (str):
                 Required. The name of the contact to retrieve. Format:
@@ -615,6 +623,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -641,8 +650,10 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service.GetContactRequest):
             request = service.GetContactRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -681,8 +692,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         Args:
             request (google.cloud.essentialcontacts_v1.types.DeleteContactRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 DeleteContact method.
             name (str):
                 Required. The name of the contact to delete. Format:
@@ -693,6 +703,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -713,8 +724,10 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
         # there are no flattened fields.
         if not isinstance(request, service.DeleteContactRequest):
             request = service.DeleteContactRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -751,9 +764,9 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         Args:
             request (google.cloud.essentialcontacts_v1.types.ComputeContactsRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 ComputeContacts method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -770,6 +783,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a service.ComputeContactsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -821,9 +835,9 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
 
         Args:
             request (google.cloud.essentialcontacts_v1.types.SendTestMessageRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 SendTestMessage method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -831,6 +845,7 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a service.SendTestMessageRequest.
         # There's no risk of modifying the input as we've already verified
@@ -857,6 +872,8 @@ class EssentialContactsServiceClient(metaclass=EssentialContactsServiceClientMet
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

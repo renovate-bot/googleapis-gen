@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,7 +35,8 @@ from google.cloud.networkconnectivity_v1alpha1.types.hub import State
 from google.cloud.networkconnectivity_v1alpha1.types.hub import UpdateHubRequest
 from google.cloud.networkconnectivity_v1alpha1.types.hub import UpdateSpokeRequest
 
-__all__ = ('CreateHubRequest',
+__all__ = (
+    'CreateHubRequest',
     'CreateSpokeRequest',
     'DeleteHubRequest',
     'DeleteSpokeRequest',

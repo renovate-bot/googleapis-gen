@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Retail.V2.Snippets
 {
+    using Google.Cloud.Retail.V2;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedCatalogServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateCatalog</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateCatalog()
         {
-            // Snippet: UpdateCatalog(Catalog, FieldMask, CallSettings)
             // Create client
             CatalogServiceClient catalogServiceClient = CatalogServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Retail.V2.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Catalog response = catalogServiceClient.UpdateCatalog(catalog, updateMask);
-            // End snippet
         }
     }
 }

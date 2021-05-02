@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Scheduler.V1Beta1.Snippets
 {
+    using Google.Cloud.Scheduler.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudSchedulerClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateJobAsync()
         {
-            // Snippet: UpdateJobAsync(Job, FieldMask, CallSettings)
-            // Additional: UpdateJobAsync(Job, FieldMask, CancellationToken)
             // Create client
             CloudSchedulerClient cloudSchedulerClient = await CloudSchedulerClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Scheduler.V1Beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Job response = await cloudSchedulerClient.UpdateJobAsync(job, updateMask);
-            // End snippet
         }
     }
 }

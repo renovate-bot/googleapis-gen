@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedReachPlanServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateProductMixIdeasAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GenerateProductMixIdeasAsync()
         {
-            // Snippet: GenerateProductMixIdeasAsync(string, string, string, long, CallSettings)
-            // Additional: GenerateProductMixIdeasAsync(string, string, string, long, CancellationToken)
             // Create client
             ReachPlanServiceClient reachPlanServiceClient = await ReachPlanServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             long budgetMicros = 0L;
             // Make the request
             GenerateProductMixIdeasResponse response = await reachPlanServiceClient.GenerateProductMixIdeasAsync(customerId, plannableLocationId, currencyCode, budgetMicros);
-            // End snippet
         }
     }
 }

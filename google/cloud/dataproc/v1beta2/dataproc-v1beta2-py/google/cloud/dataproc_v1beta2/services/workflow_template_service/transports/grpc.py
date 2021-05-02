@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -28,6 +30,7 @@ import grpc  # type: ignore
 from google.cloud.dataproc_v1beta2.types import workflow_templates
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import WorkflowTemplateServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -62,8 +65,7 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -203,15 +205,13 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -241,9 +241,7 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
     def create_workflow_template(self) -> Callable[
             [workflow_templates.CreateWorkflowTemplateRequest],
             workflow_templates.WorkflowTemplate]:
-        r"""Return a callable for the
-        create workflow template
-          method over gRPC.
+        r"""Return a callable for the create workflow template method over gRPC.
 
         Creates new workflow template.
 
@@ -269,9 +267,7 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
     def get_workflow_template(self) -> Callable[
             [workflow_templates.GetWorkflowTemplateRequest],
             workflow_templates.WorkflowTemplate]:
-        r"""Return a callable for the
-        get workflow template
-          method over gRPC.
+        r"""Return a callable for the get workflow template method over gRPC.
 
         Retrieves the latest workflow template.
         Can retrieve previously instantiated template by
@@ -299,9 +295,7 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
     def instantiate_workflow_template(self) -> Callable[
             [workflow_templates.InstantiateWorkflowTemplateRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        instantiate workflow template
-          method over gRPC.
+        r"""Return a callable for the instantiate workflow template method over gRPC.
 
         Instantiates a template and begins execution.
 
@@ -347,10 +341,8 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
     def instantiate_inline_workflow_template(self) -> Callable[
             [workflow_templates.InstantiateInlineWorkflowTemplateRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        instantiate inline workflow
-        template
-          method over gRPC.
+        r"""Return a callable for the instantiate inline workflow
+        template method over gRPC.
 
         Instantiates a template and begins execution.
 
@@ -401,9 +393,7 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
     def update_workflow_template(self) -> Callable[
             [workflow_templates.UpdateWorkflowTemplateRequest],
             workflow_templates.WorkflowTemplate]:
-        r"""Return a callable for the
-        update workflow template
-          method over gRPC.
+        r"""Return a callable for the update workflow template method over gRPC.
 
         Updates (replaces) workflow template. The updated
         template must contain version that matches the current
@@ -431,9 +421,7 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
     def list_workflow_templates(self) -> Callable[
             [workflow_templates.ListWorkflowTemplatesRequest],
             workflow_templates.ListWorkflowTemplatesResponse]:
-        r"""Return a callable for the
-        list workflow templates
-          method over gRPC.
+        r"""Return a callable for the list workflow templates method over gRPC.
 
         Lists workflows that match the specified filter in
         the request.
@@ -460,9 +448,7 @@ class WorkflowTemplateServiceGrpcTransport(WorkflowTemplateServiceTransport):
     def delete_workflow_template(self) -> Callable[
             [workflow_templates.DeleteWorkflowTemplateRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete workflow template
-          method over gRPC.
+        r"""Return a callable for the delete workflow template method over gRPC.
 
         Deletes a workflow template. It does not cancel in-
         rogress workflows.

@@ -18,14 +18,18 @@ namespace Google.Cloud.Tasks.V2.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Tasks.V2;
     using System;
 
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for ListQueues</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListQueuesRequestObject()
         {
-            // Snippet: ListQueues(ListQueuesRequest, CallSettings)
             // Create client
             CloudTasksClient cloudTasksClient = CloudTasksClient.Create();
             // Initialize request argument(s)
@@ -68,7 +72,6 @@ namespace Google.Cloud.Tasks.V2.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

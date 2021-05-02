@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateNodePoolAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateNodePool1Async()
         {
-            // Snippet: CreateNodePoolAsync(string, string, string, NodePool, CallSettings)
-            // Additional: CreateNodePoolAsync(string, string, string, NodePool, CancellationToken)
             // Create client
             ClusterManagerClient clusterManagerClient = await ClusterManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Container.V1.Snippets
             NodePool nodePool = new NodePool();
             // Make the request
             Operation response = await clusterManagerClient.CreateNodePoolAsync(projectId, zone, clusterId, nodePool);
-            // End snippet
         }
     }
 }

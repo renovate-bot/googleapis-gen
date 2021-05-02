@@ -24,10 +24,12 @@ namespace Google.Cloud.ApiGateway.V1.Snippets
     public sealed partial class GeneratedApiGatewayServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateApiAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateApiRequestObjectAsync()
         {
-            // Snippet: UpdateApiAsync(UpdateApiRequest, CallSettings)
-            // Additional: UpdateApiAsync(UpdateApiRequest, CancellationToken)
             // Create client
             ApiGatewayServiceClient apiGatewayServiceClient = await ApiGatewayServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -54,7 +56,6 @@ namespace Google.Cloud.ApiGateway.V1.Snippets
                 // If it has completed, then access the result
                 gcav::Api retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

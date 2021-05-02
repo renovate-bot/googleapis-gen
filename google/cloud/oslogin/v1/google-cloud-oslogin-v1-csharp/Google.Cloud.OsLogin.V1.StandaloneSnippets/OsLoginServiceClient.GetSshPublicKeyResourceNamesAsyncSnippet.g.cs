@@ -17,22 +17,24 @@
 namespace Google.Cloud.OsLogin.V1.Snippets
 {
     using Google.Cloud.OsLogin.Common;
+    using Google.Cloud.OsLogin.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOsLoginServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSshPublicKeyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetSshPublicKeyResourceNamesAsync()
         {
-            // Snippet: GetSshPublicKeyAsync(SshPublicKeyName, CallSettings)
-            // Additional: GetSshPublicKeyAsync(SshPublicKeyName, CancellationToken)
             // Create client
             OsLoginServiceClient osLoginServiceClient = await OsLoginServiceClient.CreateAsync();
             // Initialize request argument(s)
             SshPublicKeyName name = SshPublicKeyName.FromUserFingerprint("[USER]", "[FINGERPRINT]");
             // Make the request
             SshPublicKey response = await osLoginServiceClient.GetSshPublicKeyAsync(name);
-            // End snippet
         }
     }
 }

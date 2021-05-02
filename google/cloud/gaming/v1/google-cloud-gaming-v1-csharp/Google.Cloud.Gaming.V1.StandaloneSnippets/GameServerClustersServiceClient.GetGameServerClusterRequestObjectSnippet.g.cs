@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Gaming.V1.Snippets
 {
+    using Google.Cloud.Gaming.V1;
+
     public sealed partial class GeneratedGameServerClustersServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGameServerCluster</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetGameServerClusterRequestObject()
         {
-            // Snippet: GetGameServerCluster(GetGameServerClusterRequest, CallSettings)
             // Create client
             GameServerClustersServiceClient gameServerClustersServiceClient = GameServerClustersServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Gaming.V1.Snippets
             };
             // Make the request
             GameServerCluster response = gameServerClustersServiceClient.GetGameServerCluster(request);
-            // End snippet
         }
     }
 }

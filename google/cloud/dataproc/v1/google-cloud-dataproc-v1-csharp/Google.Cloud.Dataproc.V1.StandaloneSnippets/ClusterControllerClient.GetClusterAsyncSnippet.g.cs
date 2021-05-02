@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
+    using Google.Cloud.Dataproc.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClusterControllerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetClusterAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetClusterAsync()
         {
-            // Snippet: GetClusterAsync(string, string, string, CallSettings)
-            // Additional: GetClusterAsync(string, string, string, CancellationToken)
             // Create client
             ClusterControllerClient clusterControllerClient = await ClusterControllerClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dataproc.V1.Snippets
             string clusterName = "";
             // Make the request
             Cluster response = await clusterControllerClient.GetClusterAsync(projectId, region, clusterName);
-            // End snippet
         }
     }
 }

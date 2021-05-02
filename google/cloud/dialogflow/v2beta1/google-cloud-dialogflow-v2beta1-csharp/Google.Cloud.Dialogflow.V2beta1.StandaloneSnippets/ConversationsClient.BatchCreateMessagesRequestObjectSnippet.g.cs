@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedConversationsClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchCreateMessages</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BatchCreateMessagesRequestObject()
         {
-            // Snippet: BatchCreateMessages(BatchCreateMessagesRequest, CallSettings)
             // Create client
             ConversationsClient conversationsClient = ConversationsClient.Create();
             // Initialize request argument(s)
@@ -35,7 +40,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             };
             // Make the request
             BatchCreateMessagesResponse response = conversationsClient.BatchCreateMessages(request);
-            // End snippet
         }
     }
 }

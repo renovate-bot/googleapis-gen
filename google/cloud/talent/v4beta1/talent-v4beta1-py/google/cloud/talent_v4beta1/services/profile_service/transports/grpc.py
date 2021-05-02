@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -28,6 +30,7 @@ from google.cloud.talent_v4beta1.types import profile
 from google.cloud.talent_v4beta1.types import profile as gct_profile
 from google.cloud.talent_v4beta1.types import profile_service
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import ProfileServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -62,8 +65,7 @@ class ProfileServiceGrpcTransport(ProfileServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,15 +204,13 @@ class ProfileServiceGrpcTransport(ProfileServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -224,9 +224,7 @@ class ProfileServiceGrpcTransport(ProfileServiceTransport):
     def list_profiles(self) -> Callable[
             [profile_service.ListProfilesRequest],
             profile_service.ListProfilesResponse]:
-        r"""Return a callable for the
-        list profiles
-          method over gRPC.
+        r"""Return a callable for the list profiles method over gRPC.
 
         Lists profiles by filter. The order is unspecified.
 
@@ -252,9 +250,7 @@ class ProfileServiceGrpcTransport(ProfileServiceTransport):
     def create_profile(self) -> Callable[
             [profile_service.CreateProfileRequest],
             gct_profile.Profile]:
-        r"""Return a callable for the
-        create profile
-          method over gRPC.
+        r"""Return a callable for the create profile method over gRPC.
 
         Creates and returns a new profile.
 
@@ -280,9 +276,7 @@ class ProfileServiceGrpcTransport(ProfileServiceTransport):
     def get_profile(self) -> Callable[
             [profile_service.GetProfileRequest],
             profile.Profile]:
-        r"""Return a callable for the
-        get profile
-          method over gRPC.
+        r"""Return a callable for the get profile method over gRPC.
 
         Gets the specified profile.
 
@@ -308,9 +302,7 @@ class ProfileServiceGrpcTransport(ProfileServiceTransport):
     def update_profile(self) -> Callable[
             [profile_service.UpdateProfileRequest],
             gct_profile.Profile]:
-        r"""Return a callable for the
-        update profile
-          method over gRPC.
+        r"""Return a callable for the update profile method over gRPC.
 
         Updates the specified profile and returns the updated
         result.
@@ -337,9 +329,7 @@ class ProfileServiceGrpcTransport(ProfileServiceTransport):
     def delete_profile(self) -> Callable[
             [profile_service.DeleteProfileRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete profile
-          method over gRPC.
+        r"""Return a callable for the delete profile method over gRPC.
 
         Deletes the specified profile.
         Prerequisite: The profile has no associated applications
@@ -367,9 +357,7 @@ class ProfileServiceGrpcTransport(ProfileServiceTransport):
     def search_profiles(self) -> Callable[
             [profile_service.SearchProfilesRequest],
             profile_service.SearchProfilesResponse]:
-        r"""Return a callable for the
-        search profiles
-          method over gRPC.
+        r"""Return a callable for the search profiles method over gRPC.
 
         Searches for profiles within a tenant.
 

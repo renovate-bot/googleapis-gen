@@ -17,13 +17,17 @@
 namespace Google.Cloud.Scheduler.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Scheduler.V1;
 
     public sealed partial class GeneratedCloudSchedulerClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateJob</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateJobResourceNames()
         {
-            // Snippet: CreateJob(LocationName, Job, CallSettings)
             // Create client
             CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Scheduler.V1.Snippets
             Job job = new Job();
             // Make the request
             Job response = cloudSchedulerClient.CreateJob(parent, job);
-            // End snippet
         }
     }
 }

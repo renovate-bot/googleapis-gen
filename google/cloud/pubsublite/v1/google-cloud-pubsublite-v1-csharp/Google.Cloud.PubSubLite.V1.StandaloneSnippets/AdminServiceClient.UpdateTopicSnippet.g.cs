@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.PubSubLite.V1.Snippets
 {
+    using Google.Cloud.PubSubLite.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateTopic</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateTopic()
         {
-            // Snippet: UpdateTopic(Topic, FieldMask, CallSettings)
             // Create client
             AdminServiceClient adminServiceClient = AdminServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Topic response = adminServiceClient.UpdateTopic(topic, updateMask);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Spanner.Admin.Instance.V1.Snippets
 {
+    using Google.Cloud.Spanner.Admin.Instance.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInstanceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetInstanceResourceNamesAsync()
         {
-            // Snippet: GetInstanceAsync(InstanceName, CallSettings)
-            // Additional: GetInstanceAsync(InstanceName, CancellationToken)
             // Create client
             InstanceAdminClient instanceAdminClient = await InstanceAdminClient.CreateAsync();
             // Initialize request argument(s)
             InstanceName name = InstanceName.FromProjectInstance("[PROJECT]", "[INSTANCE]");
             // Make the request
             Instance response = await instanceAdminClient.GetInstanceAsync(name);
-            // End snippet
         }
     }
 }

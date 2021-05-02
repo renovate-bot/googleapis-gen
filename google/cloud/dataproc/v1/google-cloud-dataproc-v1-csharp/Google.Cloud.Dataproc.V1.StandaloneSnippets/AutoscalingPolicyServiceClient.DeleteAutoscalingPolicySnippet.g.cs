@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
+    using Google.Cloud.Dataproc.V1;
+
     public sealed partial class GeneratedAutoscalingPolicyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteAutoscalingPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteAutoscalingPolicy()
         {
-            // Snippet: DeleteAutoscalingPolicy(string, CallSettings)
             // Create client
             AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/autoscalingPolicies/[AUTOSCALING_POLICY]";
             // Make the request
             autoscalingPolicyServiceClient.DeleteAutoscalingPolicy(name);
-            // End snippet
         }
     }
 }

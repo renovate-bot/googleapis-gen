@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedAdGroupExtensionSettingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupExtensionSetting</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAdGroupExtensionSettingResourceNames()
         {
-            // Snippet: GetAdGroupExtensionSetting(AdGroupExtensionSettingName, CallSettings)
             // Create client
             AdGroupExtensionSettingServiceClient adGroupExtensionSettingServiceClient = AdGroupExtensionSettingServiceClient.Create();
             // Initialize request argument(s)
             AdGroupExtensionSettingName resourceName = AdGroupExtensionSettingName.FromCustomerAdGroupExtensionSetting("[CUSTOMER]", "[AD_GROUP_EXTENSION_SETTING]");
             // Make the request
             AdGroupExtensionSetting response = adGroupExtensionSettingServiceClient.GetAdGroupExtensionSetting(resourceName);
-            // End snippet
         }
     }
 }

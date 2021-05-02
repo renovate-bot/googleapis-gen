@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Debugger.V2.Snippets
 {
+    using Google.Cloud.Debugger.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDebugger2ClientStandaloneSnippets
     {
         /// <summary>Snippet for SetBreakpointAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SetBreakpointAsync()
         {
-            // Snippet: SetBreakpointAsync(string, Breakpoint, string, CallSettings)
-            // Additional: SetBreakpointAsync(string, Breakpoint, string, CancellationToken)
             // Create client
             Debugger2Client debugger2Client = await Debugger2Client.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Debugger.V2.Snippets
             string clientVersion = "";
             // Make the request
             SetBreakpointResponse response = await debugger2Client.SetBreakpointAsync(debuggeeId, breakpoint, clientVersion);
-            // End snippet
         }
     }
 }

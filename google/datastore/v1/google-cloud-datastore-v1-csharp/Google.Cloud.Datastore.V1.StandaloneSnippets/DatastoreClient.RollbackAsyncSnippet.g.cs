@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Datastore.V1.Snippets
 {
+    using Google.Cloud.Datastore.V1;
     using Google.Protobuf;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDatastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for RollbackAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task RollbackAsync()
         {
-            // Snippet: RollbackAsync(string, ByteString, CallSettings)
-            // Additional: RollbackAsync(string, ByteString, CancellationToken)
             // Create client
             DatastoreClient datastoreClient = await DatastoreClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Datastore.V1.Snippets
             ByteString transaction = ByteString.Empty;
             // Make the request
             RollbackResponse response = await datastoreClient.RollbackAsync(projectId, transaction);
-            // End snippet
         }
     }
 }

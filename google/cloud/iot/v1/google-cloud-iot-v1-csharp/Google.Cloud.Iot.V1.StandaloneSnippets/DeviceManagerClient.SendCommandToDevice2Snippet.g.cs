@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Iot.V1.Snippets
 {
+    using Google.Cloud.Iot.V1;
     using Google.Protobuf;
 
     public sealed partial class GeneratedDeviceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for SendCommandToDevice</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SendCommandToDevice2()
         {
-            // Snippet: SendCommandToDevice(string, ByteString, string, CallSettings)
             // Create client
             DeviceManagerClient deviceManagerClient = DeviceManagerClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.Iot.V1.Snippets
             string subfolder = "";
             // Make the request
             SendCommandToDeviceResponse response = deviceManagerClient.SendCommandToDevice(name, binaryData, subfolder);
-            // End snippet
         }
     }
 }

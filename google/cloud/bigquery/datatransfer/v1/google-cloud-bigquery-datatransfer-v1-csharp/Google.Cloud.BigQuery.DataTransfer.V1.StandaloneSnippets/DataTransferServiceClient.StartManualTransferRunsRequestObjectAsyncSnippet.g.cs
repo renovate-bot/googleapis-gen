@@ -16,16 +16,18 @@
 
 namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
 {
-    using Google.Protobuf.WellKnownTypes;
+    using Google.Cloud.BigQuery.DataTransfer.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataTransferServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for StartManualTransferRunsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task StartManualTransferRunsRequestObjectAsync()
         {
-            // Snippet: StartManualTransferRunsAsync(StartManualTransferRunsRequest, CallSettings)
-            // Additional: StartManualTransferRunsAsync(StartManualTransferRunsRequest, CancellationToken)
             // Create client
             DataTransferServiceClient dataTransferServiceClient = await DataTransferServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,11 +35,9 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
             {
                 ParentAsTransferConfigName = TransferConfigName.FromProjectTransferConfig("[PROJECT]", "[TRANSFER_CONFIG]"),
                 RequestedTimeRange = new StartManualTransferRunsRequest.Types.TimeRange(),
-                RequestedRunTime = new Timestamp(),
             };
             // Make the request
             StartManualTransferRunsResponse response = await dataTransferServiceClient.StartManualTransferRunsAsync(request);
-            // End snippet
         }
     }
 }

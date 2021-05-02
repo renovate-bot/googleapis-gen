@@ -16,16 +16,19 @@
 
 namespace Grafeas.V1.Snippets
 {
+    using Grafeas.V1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGrafeasClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchCreateNotesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchCreateNotesResourceNamesAsync()
         {
-            // Snippet: BatchCreateNotesAsync(ProjectName, IDictionary<string,Note>, CallSettings)
-            // Additional: BatchCreateNotesAsync(ProjectName, IDictionary<string,Note>, CancellationToken)
             // Create client
             GrafeasClient grafeasClient = await GrafeasClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Grafeas.V1.Snippets
             IDictionary<string, Note> notes = new Dictionary<string, Note> { { "", new Note() }, };
             // Make the request
             BatchCreateNotesResponse response = await grafeasClient.BatchCreateNotesAsync(parent, notes);
-            // End snippet
         }
     }
 }

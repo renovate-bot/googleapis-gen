@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedGoogleAdsFieldServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGoogleAdsField</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetGoogleAdsFieldResourceNames()
         {
-            // Snippet: GetGoogleAdsField(GoogleAdsFieldName, CallSettings)
             // Create client
             GoogleAdsFieldServiceClient googleAdsFieldServiceClient = GoogleAdsFieldServiceClient.Create();
             // Initialize request argument(s)
             GoogleAdsFieldName resourceName = GoogleAdsFieldName.FromGoogleAdsField("[GOOGLE_ADS_FIELD]");
             // Make the request
             GoogleAdsField response = googleAdsFieldServiceClient.GetGoogleAdsField(resourceName);
-            // End snippet
         }
     }
 }

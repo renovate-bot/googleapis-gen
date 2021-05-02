@@ -16,14 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedCampaignDraftServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCampaignDrafts</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateCampaignDrafts()
         {
-            // Snippet: MutateCampaignDrafts(string, IEnumerable<CampaignDraftOperation>, CallSettings)
             // Create client
             CampaignDraftServiceClient campaignDraftServiceClient = CampaignDraftServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             MutateCampaignDraftsResponse response = campaignDraftServiceClient.MutateCampaignDrafts(customerId, operations);
-            // End snippet
         }
     }
 }

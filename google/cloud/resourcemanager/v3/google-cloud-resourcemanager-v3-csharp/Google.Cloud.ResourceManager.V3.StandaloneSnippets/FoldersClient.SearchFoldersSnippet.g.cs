@@ -17,14 +17,18 @@
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.ResourceManager.V3;
     using System;
 
     public sealed partial class GeneratedFoldersClientStandaloneSnippets
     {
         /// <summary>Snippet for SearchFolders</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SearchFolders()
         {
-            // Snippet: SearchFolders(string, string, int?, CallSettings)
             // Create client
             FoldersClient foldersClient = FoldersClient.Create();
             // Initialize request argument(s)
@@ -63,7 +67,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

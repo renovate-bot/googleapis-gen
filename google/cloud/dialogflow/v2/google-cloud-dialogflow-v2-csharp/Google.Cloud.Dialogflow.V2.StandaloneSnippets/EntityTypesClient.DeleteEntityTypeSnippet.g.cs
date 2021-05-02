@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
+
     public sealed partial class GeneratedEntityTypesClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteEntityType</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteEntityType()
         {
-            // Snippet: DeleteEntityType(string, CallSettings)
             // Create client
             EntityTypesClient entityTypesClient = EntityTypesClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/agent/entityTypes/[ENTITY_TYPE]";
             // Make the request
             entityTypesClient.DeleteEntityType(name);
-            // End snippet
         }
     }
 }

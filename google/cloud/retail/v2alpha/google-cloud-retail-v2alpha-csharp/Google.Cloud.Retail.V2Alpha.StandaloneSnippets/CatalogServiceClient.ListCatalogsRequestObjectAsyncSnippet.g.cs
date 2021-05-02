@@ -18,16 +18,20 @@ namespace Google.Cloud.Retail.V2Alpha.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Retail.V2Alpha;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCatalogServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListCatalogs</summary>
+        /// <summary>Snippet for ListCatalogsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListCatalogsRequestObjectAsync()
         {
-            // Snippet: ListCatalogsAsync(ListCatalogsRequest, CallSettings)
             // Create client
             CatalogServiceClient catalogServiceClient = await CatalogServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -69,7 +73,6 @@ namespace Google.Cloud.Retail.V2Alpha.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

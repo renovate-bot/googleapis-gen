@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
+
     public sealed partial class GeneratedSchemaServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSchema</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetSchema()
         {
-            // Snippet: GetSchema(string, CallSettings)
             // Create client
             SchemaServiceClient schemaServiceClient = SchemaServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/schemas/[SCHEMA]";
             // Make the request
             Schema response = schemaServiceClient.GetSchema(name);
-            // End snippet
         }
     }
 }

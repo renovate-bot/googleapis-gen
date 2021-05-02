@@ -16,14 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedBatchJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for AddBatchJobOperations</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void AddBatchJobOperations1()
         {
-            // Snippet: AddBatchJobOperations(string, string, IEnumerable<MutateOperation>, CallSettings)
             // Create client
             BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             AddBatchJobOperationsResponse response = batchJobServiceClient.AddBatchJobOperations(resourceName, sequenceToken, mutateOperations);
-            // End snippet
         }
     }
 }

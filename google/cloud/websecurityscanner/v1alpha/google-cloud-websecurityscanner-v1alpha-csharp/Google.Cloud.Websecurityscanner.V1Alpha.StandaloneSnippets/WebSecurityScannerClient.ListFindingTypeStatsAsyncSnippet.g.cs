@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Websecurityscanner.V1Alpha.Snippets
 {
+    using Google.Cloud.Websecurityscanner.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWebSecurityScannerClientStandaloneSnippets
     {
         /// <summary>Snippet for ListFindingTypeStatsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListFindingTypeStatsAsync()
         {
-            // Snippet: ListFindingTypeStatsAsync(string, CallSettings)
-            // Additional: ListFindingTypeStatsAsync(string, CancellationToken)
             // Create client
             WebSecurityScannerClient webSecurityScannerClient = await WebSecurityScannerClient.CreateAsync();
             // Initialize request argument(s)
             string parent = "projects/[PROJECT]/scanConfigs/[SCAN_CONFIG]/scanRuns/[SCAN_RUN]";
             // Make the request
             ListFindingTypeStatsResponse response = await webSecurityScannerClient.ListFindingTypeStatsAsync(parent);
-            // End snippet
         }
     }
 }

@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedCampaignCriterionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignCriterion</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCampaignCriterionResourceNames()
         {
-            // Snippet: GetCampaignCriterion(CampaignCriterionName, CallSettings)
             // Create client
             CampaignCriterionServiceClient campaignCriterionServiceClient = CampaignCriterionServiceClient.Create();
             // Initialize request argument(s)
             CampaignCriterionName resourceName = CampaignCriterionName.FromCustomerCampaignCriterion("[CUSTOMER]", "[CAMPAIGN_CRITERION]");
             // Make the request
             CampaignCriterion response = campaignCriterionServiceClient.GetCampaignCriterion(resourceName);
-            // End snippet
         }
     }
 }

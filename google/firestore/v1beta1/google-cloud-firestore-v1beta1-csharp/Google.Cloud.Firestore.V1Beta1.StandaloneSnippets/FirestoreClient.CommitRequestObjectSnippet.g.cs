@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Firestore.V1Beta1.Snippets
 {
+    using Google.Cloud.Firestore.V1Beta1;
     using Google.Protobuf;
 
     public sealed partial class GeneratedFirestoreClientStandaloneSnippets
     {
         /// <summary>Snippet for Commit</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CommitRequestObject()
         {
-            // Snippet: Commit(CommitRequest, CallSettings)
             // Create client
             FirestoreClient firestoreClient = FirestoreClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.Firestore.V1Beta1.Snippets
             };
             // Make the request
             CommitResponse response = firestoreClient.Commit(request);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigtableInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteAppProfileAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteAppProfileAsync()
         {
-            // Snippet: DeleteAppProfileAsync(string, CallSettings)
-            // Additional: DeleteAppProfileAsync(string, CancellationToken)
             // Create client
             BigtableInstanceAdminClient bigtableInstanceAdminClient = await BigtableInstanceAdminClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/instances/[INSTANCE]/appProfiles/[APP_PROFILE]";
             // Make the request
             await bigtableInstanceAdminClient.DeleteAppProfileAsync(name);
-            // End snippet
         }
     }
 }

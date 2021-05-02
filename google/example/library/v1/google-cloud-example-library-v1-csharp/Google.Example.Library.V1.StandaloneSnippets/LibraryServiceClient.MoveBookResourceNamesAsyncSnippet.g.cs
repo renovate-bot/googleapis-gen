@@ -16,15 +16,18 @@
 
 namespace Google.Example.Library.V1.Snippets
 {
+    using Google.Example.Library.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLibraryServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MoveBookAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MoveBookResourceNamesAsync()
         {
-            // Snippet: MoveBookAsync(BookName, ShelfName, CallSettings)
-            // Additional: MoveBookAsync(BookName, ShelfName, CancellationToken)
             // Create client
             LibraryServiceClient libraryServiceClient = await LibraryServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Example.Library.V1.Snippets
             ShelfName otherShelfName = ShelfName.FromShelf("[SHELF_ID]");
             // Make the request
             Book response = await libraryServiceClient.MoveBookAsync(name, otherShelfName);
-            // End snippet
         }
     }
 }

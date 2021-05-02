@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedGeographicViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGeographicView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetGeographicViewResourceNames()
         {
-            // Snippet: GetGeographicView(GeographicViewName, CallSettings)
             // Create client
             GeographicViewServiceClient geographicViewServiceClient = GeographicViewServiceClient.Create();
             // Initialize request argument(s)
             GeographicViewName resourceName = GeographicViewName.FromCustomerGeographicView("[CUSTOMER]", "[GEOGRAPHIC_VIEW]");
             // Make the request
             GeographicView response = geographicViewServiceClient.GetGeographicView(resourceName);
-            // End snippet
         }
     }
 }

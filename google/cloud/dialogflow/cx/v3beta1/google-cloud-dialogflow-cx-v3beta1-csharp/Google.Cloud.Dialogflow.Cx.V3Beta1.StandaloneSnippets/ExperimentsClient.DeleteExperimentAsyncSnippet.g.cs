@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedExperimentsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteExperimentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteExperimentAsync()
         {
-            // Snippet: DeleteExperimentAsync(string, CallSettings)
-            // Additional: DeleteExperimentAsync(string, CancellationToken)
             // Create client
             ExperimentsClient experimentsClient = await ExperimentsClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/agents/[AGENT]/environments/[ENVIRONMENT]/experiments/[EXPERIMENT]";
             // Make the request
             await experimentsClient.DeleteExperimentAsync(name);
-            // End snippet
         }
     }
 }

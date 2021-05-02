@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,7 +49,8 @@ from google.cloud.video.transcoder_v1beta1.types.services import ListJobTemplate
 from google.cloud.video.transcoder_v1beta1.types.services import ListJobsRequest
 from google.cloud.video.transcoder_v1beta1.types.services import ListJobsResponse
 
-__all__ = ('AdBreak',
+__all__ = (
+    'AdBreak',
     'AudioStream',
     'CreateJobRequest',
     'CreateJobTemplateRequest',

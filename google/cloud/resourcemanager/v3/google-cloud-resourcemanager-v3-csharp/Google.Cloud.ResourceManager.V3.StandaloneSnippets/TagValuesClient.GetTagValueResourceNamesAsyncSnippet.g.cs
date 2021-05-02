@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
+    using Google.Cloud.ResourceManager.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTagValuesClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTagValueAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTagValueResourceNamesAsync()
         {
-            // Snippet: GetTagValueAsync(TagValueName, CallSettings)
-            // Additional: GetTagValueAsync(TagValueName, CancellationToken)
             // Create client
             TagValuesClient tagValuesClient = await TagValuesClient.CreateAsync();
             // Initialize request argument(s)
             TagValueName name = TagValueName.FromTagValue("[TAG_VALUE]");
             // Make the request
             TagValue response = await tagValuesClient.GetTagValueAsync(name);
-            // End snippet
         }
     }
 }

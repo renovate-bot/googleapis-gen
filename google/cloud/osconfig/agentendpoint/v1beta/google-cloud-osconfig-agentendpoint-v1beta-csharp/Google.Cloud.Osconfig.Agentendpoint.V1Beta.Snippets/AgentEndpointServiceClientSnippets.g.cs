@@ -147,7 +147,6 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta.Snippets
                 TaskId = "",
                 TaskType = TaskType.Unspecified,
                 ApplyPatchesTaskProgress = new ApplyPatchesTaskProgress(),
-                ExecStepTaskProgress = new ExecStepTaskProgress(),
             };
             // Make the request
             ReportTaskProgressResponse response = agentEndpointServiceClient.ReportTaskProgress(request);
@@ -168,7 +167,6 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta.Snippets
                 TaskId = "",
                 TaskType = TaskType.Unspecified,
                 ApplyPatchesTaskProgress = new ApplyPatchesTaskProgress(),
-                ExecStepTaskProgress = new ExecStepTaskProgress(),
             };
             // Make the request
             ReportTaskProgressResponse response = await agentEndpointServiceClient.ReportTaskProgressAsync(request);
@@ -220,7 +218,6 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta.Snippets
                 TaskType = TaskType.Unspecified,
                 ErrorMessage = "",
                 ApplyPatchesTaskOutput = new ApplyPatchesTaskOutput(),
-                ExecStepTaskOutput = new ExecStepTaskOutput(),
             };
             // Make the request
             ReportTaskCompleteResponse response = agentEndpointServiceClient.ReportTaskComplete(request);
@@ -242,7 +239,6 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta.Snippets
                 TaskType = TaskType.Unspecified,
                 ErrorMessage = "",
                 ApplyPatchesTaskOutput = new ApplyPatchesTaskOutput(),
-                ExecStepTaskOutput = new ExecStepTaskOutput(),
             };
             // Make the request
             ReportTaskCompleteResponse response = await agentEndpointServiceClient.ReportTaskCompleteAsync(request);

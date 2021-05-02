@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.GkeHub.V1Beta1.Snippets
 {
+    using Google.Cloud.GkeHub.V1Beta1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedGkeHubMembershipServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteMembership</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteMembershipRequestObject()
         {
-            // Snippet: DeleteMembership(DeleteMembershipRequest, CallSettings)
             // Create client
             GkeHubMembershipServiceClient gkeHubMembershipServiceClient = GkeHubMembershipServiceClient.Create();
             // Initialize request argument(s)
@@ -47,7 +51,6 @@ namespace Google.Cloud.GkeHub.V1Beta1.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

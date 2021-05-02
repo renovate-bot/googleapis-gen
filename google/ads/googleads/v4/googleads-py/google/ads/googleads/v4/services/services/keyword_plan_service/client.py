@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,6 +36,7 @@ from google.ads.googleads.v4.resources.types import keyword_plan
 from google.ads.googleads.v4.services.types import keyword_plan_service
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
+
 from .transports.base import KeywordPlanServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import KeywordPlanServiceGrpcTransport
 
@@ -162,6 +165,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         """Parse a keyword_plan path into its component segments."""
         m = re.match(r"^customers/(?P<customer>.+?)/keywordPlans/(?P<keyword_plan>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -334,8 +338,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v4.services.types.GetKeywordPlanRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeywordPlanService.GetKeywordPlan][google.ads.googleads.v4.services.KeywordPlanService.GetKeywordPlan].
             resource_name (:class:`str`):
                 Required. The resource name of the
@@ -344,6 +347,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
                 This corresponds to the ``resource_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -366,14 +370,16 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a keyword_plan_service.GetKeywordPlanRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, keyword_plan_service.GetKeywordPlanRequest):
             request = keyword_plan_service.GetKeywordPlanRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if resource_name is not None:
                 request.resource_name = resource_name
 
@@ -392,7 +398,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -414,8 +420,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v4.services.types.MutateKeywordPlansRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeywordPlanService.MutateKeywordPlans][google.ads.googleads.v4.services.KeywordPlanService.MutateKeywordPlans].
             customer_id (:class:`str`):
                 Required. The ID of the customer
@@ -431,6 +436,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
                 This corresponds to the ``operations`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -450,14 +456,16 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a keyword_plan_service.MutateKeywordPlansRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, keyword_plan_service.MutateKeywordPlansRequest):
             request = keyword_plan_service.MutateKeywordPlansRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if customer_id is not None:
                 request.customer_id = customer_id
             if operations is not None:
@@ -478,7 +486,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -503,8 +511,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v4.services.types.GenerateForecastCurveRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeywordPlanService.GenerateForecastCurve][google.ads.googleads.v4.services.KeywordPlanService.GenerateForecastCurve].
             keyword_plan (:class:`str`):
                 Required. The resource name of the
@@ -513,6 +520,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
                 This corresponds to the ``keyword_plan`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -532,14 +540,16 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a keyword_plan_service.GenerateForecastCurveRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, keyword_plan_service.GenerateForecastCurveRequest):
             request = keyword_plan_service.GenerateForecastCurveRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if keyword_plan is not None:
                 request.keyword_plan = keyword_plan
 
@@ -558,7 +568,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -578,8 +588,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v4.services.types.GenerateForecastMetricsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeywordPlanService.GenerateForecastMetrics][google.ads.googleads.v4.services.KeywordPlanService.GenerateForecastMetrics].
             keyword_plan (:class:`str`):
                 Required. The resource name of the
@@ -588,6 +597,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
                 This corresponds to the ``keyword_plan`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -607,14 +617,16 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a keyword_plan_service.GenerateForecastMetricsRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, keyword_plan_service.GenerateForecastMetricsRequest):
             request = keyword_plan_service.GenerateForecastMetricsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if keyword_plan is not None:
                 request.keyword_plan = keyword_plan
 
@@ -633,7 +645,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -654,8 +666,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v4.services.types.GenerateHistoricalMetricsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KeywordPlanService.GenerateHistoricalMetrics][google.ads.googleads.v4.services.KeywordPlanService.GenerateHistoricalMetrics].
             keyword_plan (:class:`str`):
                 Required. The resource name of the
@@ -665,6 +676,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
                 This corresponds to the ``keyword_plan`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -684,14 +696,16 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a keyword_plan_service.GenerateHistoricalMetricsRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, keyword_plan_service.GenerateHistoricalMetricsRequest):
             request = keyword_plan_service.GenerateHistoricalMetricsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if keyword_plan is not None:
                 request.keyword_plan = keyword_plan
 
@@ -710,7 +724,7 @@ class KeywordPlanServiceClient(metaclass=KeywordPlanServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

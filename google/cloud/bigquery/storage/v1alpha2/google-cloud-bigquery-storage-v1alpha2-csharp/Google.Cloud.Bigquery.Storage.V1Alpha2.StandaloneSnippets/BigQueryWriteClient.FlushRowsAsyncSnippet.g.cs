@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Bigquery.Storage.V1Alpha2.Snippets
 {
+    using Google.Cloud.Bigquery.Storage.V1Alpha2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigQueryWriteClientStandaloneSnippets
     {
         /// <summary>Snippet for FlushRowsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task FlushRowsAsync()
         {
-            // Snippet: FlushRowsAsync(string, CallSettings)
-            // Additional: FlushRowsAsync(string, CancellationToken)
             // Create client
             BigQueryWriteClient bigQueryWriteClient = await BigQueryWriteClient.CreateAsync();
             // Initialize request argument(s)
             string writeStream = "projects/[PROJECT]/datasets/[DATASET]/tables/[TABLE]/streams/[STREAM]";
             // Make the request
             FlushRowsResponse response = await bigQueryWriteClient.FlushRowsAsync(writeStream);
-            // End snippet
         }
     }
 }

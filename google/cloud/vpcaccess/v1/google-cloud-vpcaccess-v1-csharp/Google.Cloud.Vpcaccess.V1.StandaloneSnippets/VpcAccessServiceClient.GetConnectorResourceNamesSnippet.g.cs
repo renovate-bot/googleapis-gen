@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Vpcaccess.V1.Snippets
 {
+    using Google.Cloud.Vpcaccess.V1;
+
     public sealed partial class GeneratedVpcAccessServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetConnector</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetConnectorResourceNames()
         {
-            // Snippet: GetConnector(ConnectorName, CallSettings)
             // Create client
             VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.Create();
             // Initialize request argument(s)
             ConnectorName name = ConnectorName.FromProjectLocationConnector("[PROJECT]", "[LOCATION]", "[CONNECTOR]");
             // Make the request
             Connector response = vpcAccessServiceClient.GetConnector(name);
-            // End snippet
         }
     }
 }

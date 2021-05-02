@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v5.common.types import dates
 from google.ads.googleads.v5.enums.types import invoice_type
@@ -127,9 +130,9 @@ class Invoice(proto.Message):
             Output only. The list of summarized account
             budget information associated with this invoice.
     """
-
     class AccountBudgetSummary(proto.Message):
         r"""Represents a summarized account budget billable cost.
+
         Attributes:
             customer (google.protobuf.wrappers_pb2.StringValue):
                 Output only. The resource name of the customer associated
@@ -178,139 +181,84 @@ class Invoice(proto.Message):
                 account budget's start and end time.
         """
 
-        customer = proto.Field(
-            proto.MESSAGE,
-            number=1,
+        customer = proto.Field(proto.MESSAGE, number=1,
             message=wrappers.StringValue,
         )
-        customer_descriptive_name = proto.Field(
-            proto.MESSAGE,
-            number=2,
+        customer_descriptive_name = proto.Field(proto.MESSAGE, number=2,
             message=wrappers.StringValue,
         )
-        account_budget = proto.Field(
-            proto.MESSAGE,
-            number=3,
+        account_budget = proto.Field(proto.MESSAGE, number=3,
             message=wrappers.StringValue,
         )
-        account_budget_name = proto.Field(
-            proto.MESSAGE,
-            number=4,
+        account_budget_name = proto.Field(proto.MESSAGE, number=4,
             message=wrappers.StringValue,
         )
-        purchase_order_number = proto.Field(
-            proto.MESSAGE,
-            number=5,
+        purchase_order_number = proto.Field(proto.MESSAGE, number=5,
             message=wrappers.StringValue,
         )
-        subtotal_amount_micros = proto.Field(
-            proto.MESSAGE,
-            number=6,
+        subtotal_amount_micros = proto.Field(proto.MESSAGE, number=6,
             message=wrappers.Int64Value,
         )
-        tax_amount_micros = proto.Field(
-            proto.MESSAGE,
-            number=7,
+        tax_amount_micros = proto.Field(proto.MESSAGE, number=7,
             message=wrappers.Int64Value,
         )
-        total_amount_micros = proto.Field(
-            proto.MESSAGE,
-            number=8,
+        total_amount_micros = proto.Field(proto.MESSAGE, number=8,
             message=wrappers.Int64Value,
         )
-        billable_activity_date_range = proto.Field(
-            proto.MESSAGE,
-            number=9,
+        billable_activity_date_range = proto.Field(proto.MESSAGE, number=9,
             message=dates.DateRange,
         )
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.StringValue,
     )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=3,
+    type_ = proto.Field(proto.ENUM, number=3,
         enum=invoice_type.InvoiceTypeEnum.InvoiceType,
     )
-    billing_setup = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    billing_setup = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.StringValue,
     )
-    payments_account_id = proto.Field(
-        proto.MESSAGE,
-        number=5,
+    payments_account_id = proto.Field(proto.MESSAGE, number=5,
         message=wrappers.StringValue,
     )
-    payments_profile_id = proto.Field(
-        proto.MESSAGE,
-        number=6,
+    payments_profile_id = proto.Field(proto.MESSAGE, number=6,
         message=wrappers.StringValue,
     )
-    issue_date = proto.Field(
-        proto.MESSAGE,
-        number=7,
+    issue_date = proto.Field(proto.MESSAGE, number=7,
         message=wrappers.StringValue,
     )
-    due_date = proto.Field(
-        proto.MESSAGE,
-        number=8,
+    due_date = proto.Field(proto.MESSAGE, number=8,
         message=wrappers.StringValue,
     )
-    service_date_range = proto.Field(
-        proto.MESSAGE,
-        number=9,
+    service_date_range = proto.Field(proto.MESSAGE, number=9,
         message=dates.DateRange,
     )
-    currency_code = proto.Field(
-        proto.MESSAGE,
-        number=10,
+    currency_code = proto.Field(proto.MESSAGE, number=10,
         message=wrappers.StringValue,
     )
-    invoice_level_adjustments_micros = proto.Field(
-        proto.MESSAGE,
-        number=11,
+    invoice_level_adjustments_micros = proto.Field(proto.MESSAGE, number=11,
         message=wrappers.Int64Value,
     )
-    subtotal_amount_micros = proto.Field(
-        proto.MESSAGE,
-        number=12,
+    subtotal_amount_micros = proto.Field(proto.MESSAGE, number=12,
         message=wrappers.Int64Value,
     )
-    tax_amount_micros = proto.Field(
-        proto.MESSAGE,
-        number=13,
+    tax_amount_micros = proto.Field(proto.MESSAGE, number=13,
         message=wrappers.Int64Value,
     )
-    total_amount_micros = proto.Field(
-        proto.MESSAGE,
-        number=14,
+    total_amount_micros = proto.Field(proto.MESSAGE, number=14,
         message=wrappers.Int64Value,
     )
-    corrected_invoice = proto.Field(
-        proto.MESSAGE,
-        number=15,
+    corrected_invoice = proto.Field(proto.MESSAGE, number=15,
         message=wrappers.StringValue,
     )
-    replaced_invoices = proto.RepeatedField(
-        proto.MESSAGE,
-        number=16,
+    replaced_invoices = proto.RepeatedField(proto.MESSAGE, number=16,
         message=wrappers.StringValue,
     )
-    pdf_url = proto.Field(
-        proto.MESSAGE,
-        number=17,
+    pdf_url = proto.Field(proto.MESSAGE, number=17,
         message=wrappers.StringValue,
     )
-    account_budget_summaries = proto.RepeatedField(
-        proto.MESSAGE,
-        number=18,
+    account_budget_summaries = proto.RepeatedField(proto.MESSAGE, number=18,
         message=AccountBudgetSummary,
     )
 

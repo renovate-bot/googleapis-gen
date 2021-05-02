@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Metastore.V1Beta.Snippets
 {
+    using Google.Cloud.Metastore.V1Beta;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Metastore.V1Beta.Snippets
     public sealed partial class GeneratedDataprocMetastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteServiceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteServiceResourceNamesAsync()
         {
-            // Snippet: DeleteServiceAsync(ServiceName, CallSettings)
-            // Additional: DeleteServiceAsync(ServiceName, CancellationToken)
             // Create client
             DataprocMetastoreClient dataprocMetastoreClient = await DataprocMetastoreClient.CreateAsync();
             // Initialize request argument(s)
@@ -49,7 +52,6 @@ namespace Google.Cloud.Metastore.V1Beta.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

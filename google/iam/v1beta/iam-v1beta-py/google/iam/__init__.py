@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -35,7 +36,8 @@ from google.iam_v1beta.types.workload_identity_pool import WorkloadIdentityPoolO
 from google.iam_v1beta.types.workload_identity_pool import WorkloadIdentityPoolProvider
 from google.iam_v1beta.types.workload_identity_pool import WorkloadIdentityPoolProviderOperationMetadata
 
-__all__ = ('CreateWorkloadIdentityPoolProviderRequest',
+__all__ = (
+    'CreateWorkloadIdentityPoolProviderRequest',
     'CreateWorkloadIdentityPoolRequest',
     'DeleteWorkloadIdentityPoolProviderRequest',
     'DeleteWorkloadIdentityPoolRequest',

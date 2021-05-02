@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.DocumentAI.V1Beta2.Snippets
 {
+    using Google.Cloud.DocumentAI.V1Beta2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDocumentUnderstandingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ProcessDocumentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ProcessDocumentRequestObjectAsync()
         {
-            // Snippet: ProcessDocumentAsync(ProcessDocumentRequest, CallSettings)
-            // Additional: ProcessDocumentAsync(ProcessDocumentRequest, CancellationToken)
             // Create client
             DocumentUnderstandingServiceClient documentUnderstandingServiceClient = await DocumentUnderstandingServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -42,7 +45,6 @@ namespace Google.Cloud.DocumentAI.V1Beta2.Snippets
             };
             // Make the request
             Document response = await documentUnderstandingServiceClient.ProcessDocumentAsync(request);
-            // End snippet
         }
     }
 }

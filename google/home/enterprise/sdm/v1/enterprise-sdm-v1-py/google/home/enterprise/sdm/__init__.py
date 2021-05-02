@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,7 +33,8 @@ from google.home.enterprise.sdm_v1.types.smart_device_management_service import 
 from google.home.enterprise.sdm_v1.types.smart_device_management_service import ListStructuresRequest
 from google.home.enterprise.sdm_v1.types.smart_device_management_service import ListStructuresResponse
 
-__all__ = ('Device',
+__all__ = (
+    'Device',
     'ExecuteDeviceCommandRequest',
     'ExecuteDeviceCommandResponse',
     'GetDeviceRequest',

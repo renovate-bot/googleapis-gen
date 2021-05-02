@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.AutoML.V1.Snippets
 {
+    using Google.Cloud.AutoML.V1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPredictionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for PredictAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task PredictAsync()
         {
-            // Snippet: PredictAsync(string, ExamplePayload, IDictionary<string,string>, CallSettings)
-            // Additional: PredictAsync(string, ExamplePayload, IDictionary<string,string>, CancellationToken)
             // Create client
             PredictionServiceClient predictionServiceClient = await PredictionServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.AutoML.V1.Snippets
             IDictionary<string, string> @params = new Dictionary<string, string> { { "", "" }, };
             // Make the request
             PredictResponse response = await predictionServiceClient.PredictAsync(name, payload, @params);
-            // End snippet
         }
     }
 }

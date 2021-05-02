@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Kms.V1.Snippets
 {
+    using Google.Cloud.Kms.V1;
+
     public sealed partial class GeneratedKeyManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateCryptoKey</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateCryptoKeyRequestObject()
         {
-            // Snippet: CreateCryptoKey(CreateCryptoKeyRequest, CallSettings)
             // Create client
             KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +39,6 @@ namespace Google.Cloud.Kms.V1.Snippets
             };
             // Make the request
             CryptoKey response = keyManagementServiceClient.CreateCryptoKey(request);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Vision.V1.Snippets
 {
+    using Google.Cloud.Vision.V1;
+
     public sealed partial class GeneratedProductSearchClientStandaloneSnippets
     {
         /// <summary>Snippet for AddProductToProductSet</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void AddProductToProductSetResourceNames()
         {
-            // Snippet: AddProductToProductSet(ProductSetName, ProductName, CallSettings)
             // Create client
             ProductSearchClient productSearchClient = ProductSearchClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Vision.V1.Snippets
             ProductName product = ProductName.FromProjectLocationProduct("[PROJECT]", "[LOCATION]", "[PRODUCT]");
             // Make the request
             productSearchClient.AddProductToProductSet(name, product);
-            // End snippet
         }
     }
 }

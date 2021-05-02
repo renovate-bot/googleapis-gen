@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Debugger.V2.Snippets
 {
+    using Google.Cloud.Debugger.V2;
+
     public sealed partial class GeneratedController2ClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateActiveBreakpoint</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateActiveBreakpoint()
         {
-            // Snippet: UpdateActiveBreakpoint(string, Breakpoint, CallSettings)
             // Create client
             Controller2Client controller2Client = Controller2Client.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Debugger.V2.Snippets
             Breakpoint breakpoint = new Breakpoint();
             // Make the request
             UpdateActiveBreakpointResponse response = controller2Client.UpdateActiveBreakpoint(debuggeeId, breakpoint);
-            // End snippet
         }
     }
 }

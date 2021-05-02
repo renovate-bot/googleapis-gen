@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for AnalyzeContentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task AnalyzeContentRequestObjectAsync()
         {
-            // Snippet: AnalyzeContentAsync(AnalyzeContentRequest, CallSettings)
-            // Additional: AnalyzeContentAsync(AnalyzeContentRequest, CancellationToken)
             // Create client
             ParticipantsClient participantsClient = await ParticipantsClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,14 +37,12 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
                 ParticipantAsParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 ReplyAudioConfig = new OutputAudioConfig(),
                 TextInput = new TextInput(),
-                EventInput = new EventInput(),
                 QueryParams = new QueryParameters(),
                 MessageSendTime = new Timestamp(),
                 RequestId = "",
             };
             // Make the request
             AnalyzeContentResponse response = await participantsClient.AnalyzeContentAsync(request);
-            // End snippet
         }
     }
 }

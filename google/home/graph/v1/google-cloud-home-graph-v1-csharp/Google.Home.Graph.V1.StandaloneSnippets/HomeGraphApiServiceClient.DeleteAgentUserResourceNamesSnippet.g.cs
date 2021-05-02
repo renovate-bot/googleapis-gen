@@ -16,12 +16,17 @@
 
 namespace Google.Home.Graph.V1.Snippets
 {
+    using Google.Home.Graph.V1;
+
     public sealed partial class GeneratedHomeGraphApiServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteAgentUser</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteAgentUserResourceNames()
         {
-            // Snippet: DeleteAgentUser(string, AgentUserPathName, CallSettings)
             // Create client
             HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Home.Graph.V1.Snippets
             AgentUserPathName agentUserId = AgentUserPathName.FromAgentUserPath("[AGENT_USER_PATH]");
             // Make the request
             homeGraphApiServiceClient.DeleteAgentUser(requestId, agentUserId);
-            // End snippet
         }
     }
 }

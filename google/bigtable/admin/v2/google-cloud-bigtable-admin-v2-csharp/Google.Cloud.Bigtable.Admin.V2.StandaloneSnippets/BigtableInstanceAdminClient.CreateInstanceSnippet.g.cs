@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
     using Google.LongRunning;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedBigtableInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateInstance</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateInstance()
         {
-            // Snippet: CreateInstance(string, string, Instance, IDictionary<string,Cluster>, CallSettings)
             // Create client
             BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.Create();
             // Initialize request argument(s)
@@ -50,7 +54,6 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
                 // If it has completed, then access the result
                 Instance retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

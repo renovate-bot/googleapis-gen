@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Vpcaccess.V1.Snippets
 {
+    using Google.Cloud.Vpcaccess.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedVpcAccessServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetConnectorAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetConnectorResourceNamesAsync()
         {
-            // Snippet: GetConnectorAsync(ConnectorName, CallSettings)
-            // Additional: GetConnectorAsync(ConnectorName, CancellationToken)
             // Create client
             VpcAccessServiceClient vpcAccessServiceClient = await VpcAccessServiceClient.CreateAsync();
             // Initialize request argument(s)
             ConnectorName name = ConnectorName.FromProjectLocationConnector("[PROJECT]", "[LOCATION]", "[CONNECTOR]");
             // Make the request
             Connector response = await vpcAccessServiceClient.GetConnectorAsync(name);
-            // End snippet
         }
     }
 }

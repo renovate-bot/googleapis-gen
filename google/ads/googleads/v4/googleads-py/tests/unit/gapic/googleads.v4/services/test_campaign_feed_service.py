@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -270,20 +272,29 @@ def test_get_campaign_feed(transport: str = 'grpc', request_type=campaign_feed_s
         # Designate an appropriate return value for the call.
         call.return_value = campaign_feed.CampaignFeed(
             resource_name='resource_name_value',
+
             placeholder_types=[placeholder_type.PlaceholderTypeEnum.PlaceholderType.UNKNOWN],
+
             status=feed_link_status.FeedLinkStatusEnum.FeedLinkStatus.UNKNOWN,
+
         )
+
         response = client.get_campaign_feed(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_feed_service.GetCampaignFeedRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign_feed.CampaignFeed)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.placeholder_types == [placeholder_type.PlaceholderTypeEnum.PlaceholderType.UNKNOWN]
+
     assert response.status == feed_link_status.FeedLinkStatusEnum.FeedLinkStatus.UNKNOWN
 
 
@@ -299,7 +310,6 @@ def test_get_campaign_feed_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_feed_service.GetCampaignFeedRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -307,6 +317,7 @@ def test_get_campaign_feed_field_headers():
             type(client.transport.get_campaign_feed),
             '__call__') as call:
         call.return_value = campaign_feed.CampaignFeed()
+
         client.get_campaign_feed(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -333,6 +344,7 @@ def test_get_campaign_feed_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_feed.CampaignFeed()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_campaign_feed(
@@ -343,6 +355,7 @@ def test_get_campaign_feed_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -377,14 +390,17 @@ def test_mutate_campaign_feeds(transport: str = 'grpc', request_type=campaign_fe
         # Designate an appropriate return value for the call.
         call.return_value = campaign_feed_service.MutateCampaignFeedsResponse(
         )
+
         response = client.mutate_campaign_feeds(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_feed_service.MutateCampaignFeedsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign_feed_service.MutateCampaignFeedsResponse)
 
 
@@ -400,7 +416,6 @@ def test_mutate_campaign_feeds_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_feed_service.MutateCampaignFeedsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -408,6 +423,7 @@ def test_mutate_campaign_feeds_field_headers():
             type(client.transport.mutate_campaign_feeds),
             '__call__') as call:
         call.return_value = campaign_feed_service.MutateCampaignFeedsResponse()
+
         client.mutate_campaign_feeds(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -434,6 +450,7 @@ def test_mutate_campaign_feeds_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_feed_service.MutateCampaignFeedsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_campaign_feeds(
@@ -445,7 +462,9 @@ def test_mutate_campaign_feeds_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [campaign_feed_service.CampaignFeedOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -528,7 +547,7 @@ def test_campaign_feed_service_base_transport():
     methods = (
         'get_campaign_feed',
         'mutate_campaign_feeds',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -680,6 +699,7 @@ def test_campaign_feed_service_transport_channel_mtls_with_adc(
 def test_campaign_path():
     customer = "squid"
     campaign = "clam"
+
     expected = "customers/{customer}/campaigns/{campaign}".format(customer=customer, campaign=campaign, )
     actual = CampaignFeedServiceClient.campaign_path(customer, campaign)
     assert expected == actual
@@ -687,8 +707,9 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-        "customer": "whelk",
-        "campaign": "octopus",
+    "customer": "whelk",
+    "campaign": "octopus",
+
     }
     path = CampaignFeedServiceClient.campaign_path(**expected)
 
@@ -699,6 +720,7 @@ def test_parse_campaign_path():
 def test_campaign_feed_path():
     customer = "oyster"
     campaign_feed = "nudibranch"
+
     expected = "customers/{customer}/campaignFeeds/{campaign_feed}".format(customer=customer, campaign_feed=campaign_feed, )
     actual = CampaignFeedServiceClient.campaign_feed_path(customer, campaign_feed)
     assert expected == actual
@@ -706,8 +728,9 @@ def test_campaign_feed_path():
 
 def test_parse_campaign_feed_path():
     expected = {
-        "customer": "cuttlefish",
-        "campaign_feed": "mussel",
+    "customer": "cuttlefish",
+    "campaign_feed": "mussel",
+
     }
     path = CampaignFeedServiceClient.campaign_feed_path(**expected)
 
@@ -718,6 +741,7 @@ def test_parse_campaign_feed_path():
 def test_feed_path():
     customer = "winkle"
     feed = "nautilus"
+
     expected = "customers/{customer}/feeds/{feed}".format(customer=customer, feed=feed, )
     actual = CampaignFeedServiceClient.feed_path(customer, feed)
     assert expected == actual
@@ -725,8 +749,9 @@ def test_feed_path():
 
 def test_parse_feed_path():
     expected = {
-        "customer": "scallop",
-        "feed": "abalone",
+    "customer": "scallop",
+    "feed": "abalone",
+
     }
     path = CampaignFeedServiceClient.feed_path(**expected)
 
@@ -736,6 +761,7 @@ def test_parse_feed_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CampaignFeedServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -743,7 +769,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = CampaignFeedServiceClient.common_billing_account_path(**expected)
 
@@ -753,6 +780,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = CampaignFeedServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -760,7 +788,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = CampaignFeedServiceClient.common_folder_path(**expected)
 
@@ -770,6 +799,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CampaignFeedServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -777,7 +807,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = CampaignFeedServiceClient.common_organization_path(**expected)
 
@@ -787,6 +818,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = CampaignFeedServiceClient.common_project_path(project)
     assert expected == actual
@@ -794,7 +826,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = CampaignFeedServiceClient.common_project_path(**expected)
 
@@ -805,6 +838,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CampaignFeedServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -812,8 +846,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = CampaignFeedServiceClient.common_location_path(**expected)
 

@@ -1911,7 +1911,7 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListUsableSubnetworks</summary>
+        /// <summary>Snippet for ListUsableSubnetworksAsync</summary>
         public async Task ListUsableSubnetworksRequestObjectAsync()
         {
             // Snippet: ListUsableSubnetworksAsync(ListUsableSubnetworksRequest, CallSettings)
@@ -2005,7 +2005,7 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListUsableSubnetworks</summary>
+        /// <summary>Snippet for ListUsableSubnetworksAsync</summary>
         public async Task ListUsableSubnetworksAsync()
         {
             // Snippet: ListUsableSubnetworksAsync(string, string, int?, CallSettings)

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.common.types import feed_item_set_filter_type_infos
 from google.ads.googleads.v7.enums.types import feed_item_set_status
@@ -61,37 +64,17 @@ class FeedItemSet(proto.Message):
             locations.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    feed = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    feed_item_set_id = proto.Field(
-        proto.INT64,
-        number=3,
-    )
-    display_name = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    status = proto.Field(
-        proto.ENUM,
-        number=8,
+    resource_name = proto.Field(proto.STRING, number=1)
+    feed = proto.Field(proto.STRING, number=2)
+    feed_item_set_id = proto.Field(proto.INT64, number=3)
+    display_name = proto.Field(proto.STRING, number=4)
+    status = proto.Field(proto.ENUM, number=8,
         enum=feed_item_set_status.FeedItemSetStatusEnum.FeedItemSetStatus,
     )
-    dynamic_location_set_filter = proto.Field(
-        proto.MESSAGE,
-        number=5,
-        oneof='dynamic_set_filter',
+    dynamic_location_set_filter = proto.Field(proto.MESSAGE, number=5, oneof='dynamic_set_filter',
         message=feed_item_set_filter_type_infos.DynamicLocationSetFilter,
     )
-    dynamic_affiliate_location_set_filter = proto.Field(
-        proto.MESSAGE,
-        number=6,
-        oneof='dynamic_set_filter',
+    dynamic_affiliate_location_set_filter = proto.Field(proto.MESSAGE, number=6, oneof='dynamic_set_filter',
         message=feed_item_set_filter_type_infos.DynamicAffiliateLocationSetFilter,
     )
 

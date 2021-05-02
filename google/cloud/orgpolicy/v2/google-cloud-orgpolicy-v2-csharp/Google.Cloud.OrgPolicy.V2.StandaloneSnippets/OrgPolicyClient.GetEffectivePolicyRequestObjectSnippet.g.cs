@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.OrgPolicy.V2.Snippets
 {
+    using Google.Cloud.OrgPolicy.V2;
+
     public sealed partial class GeneratedOrgPolicyClientStandaloneSnippets
     {
         /// <summary>Snippet for GetEffectivePolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetEffectivePolicyRequestObject()
         {
-            // Snippet: GetEffectivePolicy(GetEffectivePolicyRequest, CallSettings)
             // Create client
             OrgPolicyClient orgPolicyClient = OrgPolicyClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.OrgPolicy.V2.Snippets
             };
             // Make the request
             Policy response = orgPolicyClient.GetEffectivePolicy(request);
-            // End snippet
         }
     }
 }

@@ -17,20 +17,23 @@
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.ResourceManager.V3;
 
     public sealed partial class GeneratedProjectsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetProject</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetProjectResourceNames()
         {
-            // Snippet: GetProject(ProjectName, CallSettings)
             // Create client
             ProjectsClient projectsClient = ProjectsClient.Create();
             // Initialize request argument(s)
             ProjectName name = ProjectName.FromProject("[PROJECT]");
             // Make the request
             Project response = projectsClient.GetProject(name);
-            // End snippet
         }
     }
 }

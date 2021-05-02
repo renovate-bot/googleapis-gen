@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Language.V1.Snippets
 {
+    using Google.Cloud.Language.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLanguageServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for AnalyzeEntitiesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task AnalyzeEntities1Async()
         {
-            // Snippet: AnalyzeEntitiesAsync(Document, EncodingType, CallSettings)
-            // Additional: AnalyzeEntitiesAsync(Document, EncodingType, CancellationToken)
             // Create client
             LanguageServiceClient languageServiceClient = await LanguageServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Language.V1.Snippets
             EncodingType encodingType = EncodingType.None;
             // Make the request
             AnalyzeEntitiesResponse response = await languageServiceClient.AnalyzeEntitiesAsync(document, encodingType);
-            // End snippet
         }
     }
 }

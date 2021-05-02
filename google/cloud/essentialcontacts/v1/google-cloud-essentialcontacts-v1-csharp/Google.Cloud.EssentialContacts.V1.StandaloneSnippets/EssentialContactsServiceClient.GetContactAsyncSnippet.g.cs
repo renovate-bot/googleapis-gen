@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.EssentialContacts.V1.Snippets
 {
+    using Google.Cloud.EssentialContacts.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedEssentialContactsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetContactAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetContactAsync()
         {
-            // Snippet: GetContactAsync(string, CallSettings)
-            // Additional: GetContactAsync(string, CancellationToken)
             // Create client
             EssentialContactsServiceClient essentialContactsServiceClient = await EssentialContactsServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/contacts/[CONTACT]";
             // Make the request
             Contact response = await essentialContactsServiceClient.GetContactAsync(name);
-            // End snippet
         }
     }
 }

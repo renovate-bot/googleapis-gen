@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -264,26 +266,41 @@ def test_get_customer_user_access(transport: str = 'grpc', request_type=customer
         # Designate an appropriate return value for the call.
         call.return_value = customer_user_access.CustomerUserAccess(
             resource_name='resource_name_value',
+
             user_id=747,
+
             email_address='email_address_value',
+
             access_role=access_role.AccessRoleEnum.AccessRole.UNKNOWN,
+
             access_creation_date_time='access_creation_date_time_value',
+
             inviter_user_email_address='inviter_user_email_address_value',
+
         )
+
         response = client.get_customer_user_access(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == customer_user_access_service.GetCustomerUserAccessRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, customer_user_access.CustomerUserAccess)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.user_id == 747
+
     assert response.email_address == 'email_address_value'
+
     assert response.access_role == access_role.AccessRoleEnum.AccessRole.UNKNOWN
+
     assert response.access_creation_date_time == 'access_creation_date_time_value'
+
     assert response.inviter_user_email_address == 'inviter_user_email_address_value'
 
 
@@ -299,7 +316,6 @@ def test_get_customer_user_access_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_user_access_service.GetCustomerUserAccessRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -307,6 +323,7 @@ def test_get_customer_user_access_field_headers():
             type(client.transport.get_customer_user_access),
             '__call__') as call:
         call.return_value = customer_user_access.CustomerUserAccess()
+
         client.get_customer_user_access(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -333,6 +350,7 @@ def test_get_customer_user_access_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_user_access.CustomerUserAccess()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_customer_user_access(
@@ -343,6 +361,7 @@ def test_get_customer_user_access_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -377,14 +396,17 @@ def test_mutate_customer_user_access(transport: str = 'grpc', request_type=custo
         # Designate an appropriate return value for the call.
         call.return_value = customer_user_access_service.MutateCustomerUserAccessResponse(
         )
+
         response = client.mutate_customer_user_access(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == customer_user_access_service.MutateCustomerUserAccessRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, customer_user_access_service.MutateCustomerUserAccessResponse)
 
 
@@ -400,7 +422,6 @@ def test_mutate_customer_user_access_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_user_access_service.MutateCustomerUserAccessRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -408,6 +429,7 @@ def test_mutate_customer_user_access_field_headers():
             type(client.transport.mutate_customer_user_access),
             '__call__') as call:
         call.return_value = customer_user_access_service.MutateCustomerUserAccessResponse()
+
         client.mutate_customer_user_access(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -434,6 +456,7 @@ def test_mutate_customer_user_access_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_user_access_service.MutateCustomerUserAccessResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_customer_user_access(
@@ -445,7 +468,9 @@ def test_mutate_customer_user_access_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operation == customer_user_access_service.CustomerUserAccessOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))
 
 
@@ -528,7 +553,7 @@ def test_customer_user_access_service_base_transport():
     methods = (
         'get_customer_user_access',
         'mutate_customer_user_access',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -680,6 +705,7 @@ def test_customer_user_access_service_transport_channel_mtls_with_adc(
 def test_customer_user_access_path():
     customer_id = "squid"
     user_id = "clam"
+
     expected = "customers/{customer_id}/customerUserAccesses/{user_id}".format(customer_id=customer_id, user_id=user_id, )
     actual = CustomerUserAccessServiceClient.customer_user_access_path(customer_id, user_id)
     assert expected == actual
@@ -687,8 +713,9 @@ def test_customer_user_access_path():
 
 def test_parse_customer_user_access_path():
     expected = {
-        "customer_id": "whelk",
-        "user_id": "octopus",
+    "customer_id": "whelk",
+    "user_id": "octopus",
+
     }
     path = CustomerUserAccessServiceClient.customer_user_access_path(**expected)
 
@@ -698,6 +725,7 @@ def test_parse_customer_user_access_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CustomerUserAccessServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -705,7 +733,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = CustomerUserAccessServiceClient.common_billing_account_path(**expected)
 
@@ -715,6 +744,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = CustomerUserAccessServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -722,7 +752,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = CustomerUserAccessServiceClient.common_folder_path(**expected)
 
@@ -732,6 +763,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CustomerUserAccessServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -739,7 +771,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = CustomerUserAccessServiceClient.common_organization_path(**expected)
 
@@ -749,6 +782,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = CustomerUserAccessServiceClient.common_project_path(project)
     assert expected == actual
@@ -756,7 +790,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = CustomerUserAccessServiceClient.common_project_path(**expected)
 
@@ -767,6 +802,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CustomerUserAccessServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -774,8 +810,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = CustomerUserAccessServiceClient.common_location_path(**expected)
 

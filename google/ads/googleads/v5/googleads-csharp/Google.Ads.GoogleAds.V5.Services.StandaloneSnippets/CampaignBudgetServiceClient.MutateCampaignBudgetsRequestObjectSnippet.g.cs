@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Enums;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedCampaignBudgetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCampaignBudgets</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateCampaignBudgetsRequestObject()
         {
-            // Snippet: MutateCampaignBudgets(MutateCampaignBudgetsRequest, CallSettings)
             // Create client
             CampaignBudgetServiceClient campaignBudgetServiceClient = CampaignBudgetServiceClient.Create();
             // Initialize request argument(s)
@@ -40,7 +44,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateCampaignBudgetsResponse response = campaignBudgetServiceClient.MutateCampaignBudgets(request);
-            // End snippet
         }
     }
 }

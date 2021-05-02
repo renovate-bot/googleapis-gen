@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecuritySettingsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteSecuritySettingsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteSecuritySettingsResourceNamesAsync()
         {
-            // Snippet: DeleteSecuritySettingsAsync(SecuritySettingsName, CallSettings)
-            // Additional: DeleteSecuritySettingsAsync(SecuritySettingsName, CancellationToken)
             // Create client
             SecuritySettingsServiceClient securitySettingsServiceClient = await SecuritySettingsServiceClient.CreateAsync();
             // Initialize request argument(s)
             SecuritySettingsName name = SecuritySettingsName.FromProjectLocationSecuritySettings("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]");
             // Make the request
             await securitySettingsServiceClient.DeleteSecuritySettingsAsync(name);
-            // End snippet
         }
     }
 }

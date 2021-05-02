@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Translate.V3Beta1.Snippets
 {
+    using Google.Cloud.Translate.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTranslationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DetectLanguageAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DetectLanguageAsync()
         {
-            // Snippet: DetectLanguageAsync(string, string, string, CallSettings)
-            // Additional: DetectLanguageAsync(string, string, string, CancellationToken)
             // Create client
             TranslationServiceClient translationServiceClient = await TranslationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Translate.V3Beta1.Snippets
             string mimeType = "";
             // Make the request
             DetectLanguageResponse response = await translationServiceClient.DetectLanguageAsync(parent, model, mimeType);
-            // End snippet
         }
     }
 }

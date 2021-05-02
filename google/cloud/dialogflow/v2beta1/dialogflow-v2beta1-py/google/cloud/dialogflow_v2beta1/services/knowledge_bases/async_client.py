@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -30,6 +32,7 @@ from google.cloud.dialogflow_v2beta1.services.knowledge_bases import pagers
 from google.cloud.dialogflow_v2beta1.types import knowledge_base
 from google.cloud.dialogflow_v2beta1.types import knowledge_base as gcd_knowledge_base
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import KnowledgeBasesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import KnowledgeBasesGrpcAsyncIOTransport
 from .client import KnowledgeBasesClient
@@ -47,14 +50,19 @@ class KnowledgeBasesAsyncClient:
 
     knowledge_base_path = staticmethod(KnowledgeBasesClient.knowledge_base_path)
     parse_knowledge_base_path = staticmethod(KnowledgeBasesClient.parse_knowledge_base_path)
+
     common_billing_account_path = staticmethod(KnowledgeBasesClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(KnowledgeBasesClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(KnowledgeBasesClient.common_folder_path)
     parse_common_folder_path = staticmethod(KnowledgeBasesClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(KnowledgeBasesClient.common_organization_path)
     parse_common_organization_path = staticmethod(KnowledgeBasesClient.parse_common_organization_path)
+
     common_project_path = staticmethod(KnowledgeBasesClient.common_project_path)
     parse_common_project_path = staticmethod(KnowledgeBasesClient.parse_common_project_path)
+
     common_location_path = staticmethod(KnowledgeBasesClient.common_location_path)
     parse_common_location_path = staticmethod(KnowledgeBasesClient.parse_common_location_path)
 
@@ -139,6 +147,7 @@ class KnowledgeBasesAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = KnowledgeBasesClient(
             credentials=credentials,
             transport=transport,
@@ -162,8 +171,7 @@ class KnowledgeBasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.ListKnowledgeBasesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.ListKnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBases.ListKnowledgeBases].
             parent (:class:`str`):
                 Required. The project to list of knowledge bases for.
@@ -173,6 +181,7 @@ class KnowledgeBasesAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -200,6 +209,7 @@ class KnowledgeBasesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -254,8 +264,7 @@ class KnowledgeBasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.GetKnowledgeBaseRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.GetKnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBases.GetKnowledgeBase].
             name (:class:`str`):
                 Required. The name of the knowledge base to retrieve.
@@ -265,6 +274,7 @@ class KnowledgeBasesAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -299,6 +309,7 @@ class KnowledgeBasesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -345,8 +356,7 @@ class KnowledgeBasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.CreateKnowledgeBaseRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.CreateKnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBases.CreateKnowledgeBase].
             parent (:class:`str`):
                 Required. The project to create a knowledge base for.
@@ -363,6 +373,7 @@ class KnowledgeBasesAsyncClient:
                 This corresponds to the ``knowledge_base`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -397,6 +408,7 @@ class KnowledgeBasesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if knowledge_base is not None:
@@ -444,8 +456,7 @@ class KnowledgeBasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.DeleteKnowledgeBaseRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.DeleteKnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBases.DeleteKnowledgeBase].
             name (:class:`str`):
                 Required. The name of the knowledge base to delete.
@@ -455,6 +466,7 @@ class KnowledgeBasesAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -473,6 +485,7 @@ class KnowledgeBasesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -516,8 +529,7 @@ class KnowledgeBasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.UpdateKnowledgeBaseRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.UpdateKnowledgeBase][google.cloud.dialogflow.v2beta1.KnowledgeBases.UpdateKnowledgeBase].
             knowledge_base (:class:`google.cloud.dialogflow_v2beta1.types.KnowledgeBase`):
                 Required. The knowledge base to
@@ -534,6 +546,7 @@ class KnowledgeBasesAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -568,6 +581,7 @@ class KnowledgeBasesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if knowledge_base is not None:
             request.knowledge_base = knowledge_base
         if update_mask is not None:
@@ -599,6 +613,8 @@ class KnowledgeBasesAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

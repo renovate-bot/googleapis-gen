@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedAdGroupAdServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupAd</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAdGroupAdResourceNames()
         {
-            // Snippet: GetAdGroupAd(AdGroupAdName, CallSettings)
             // Create client
             AdGroupAdServiceClient adGroupAdServiceClient = AdGroupAdServiceClient.Create();
             // Initialize request argument(s)
             AdGroupAdName resourceName = AdGroupAdName.FromCustomerAdGroupAd("[CUSTOMER]", "[AD_GROUP_AD]");
             // Make the request
             AdGroupAd response = adGroupAdServiceClient.GetAdGroupAd(resourceName);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
+
     public sealed partial class GeneratedBigtableInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteCluster</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteClusterRequestObject()
         {
-            // Snippet: DeleteCluster(DeleteClusterRequest, CallSettings)
             // Create client
             BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
             };
             // Make the request
             bigtableInstanceAdminClient.DeleteCluster(request);
-            // End snippet
         }
     }
 }

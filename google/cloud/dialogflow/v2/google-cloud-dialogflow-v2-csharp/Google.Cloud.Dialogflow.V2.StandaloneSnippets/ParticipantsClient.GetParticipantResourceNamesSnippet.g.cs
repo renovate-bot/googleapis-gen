@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
+
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetParticipant</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetParticipantResourceNames()
         {
-            // Snippet: GetParticipant(ParticipantName, CallSettings)
             // Create client
             ParticipantsClient participantsClient = ParticipantsClient.Create();
             // Initialize request argument(s)
             ParticipantName name = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
             // Make the request
             Participant response = participantsClient.GetParticipant(name);
-            // End snippet
         }
     }
 }

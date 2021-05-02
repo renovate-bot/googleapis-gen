@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.security_center_settings_service import SecurityCenterSettingsServiceClient
-
 from .types.billing_settings import BillingSettings
 from .types.billing_settings import BillingTier
 from .types.billing_settings import BillingType
@@ -46,6 +46,7 @@ from .types.securitycenter_settings_service import UpdateComponentSettingsReques
 from .types.securitycenter_settings_service import UpdateSettingsRequest
 from .types.settings import Settings
 from .types.sink_settings import SinkSettings
+
 
 __all__ = (
     'BatchCalculateEffectiveSettingsRequest',

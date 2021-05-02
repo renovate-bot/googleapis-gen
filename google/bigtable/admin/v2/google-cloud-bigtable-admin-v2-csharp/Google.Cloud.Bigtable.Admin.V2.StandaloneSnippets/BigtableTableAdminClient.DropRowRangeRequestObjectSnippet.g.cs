@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
     using Google.Protobuf;
 
     public sealed partial class GeneratedBigtableTableAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for DropRowRange</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DropRowRangeRequestObject()
         {
-            // Snippet: DropRowRange(DropRowRangeRequest, CallSettings)
             // Create client
             BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.Create();
             // Initialize request argument(s)
@@ -31,11 +35,9 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
             {
                 TableName = TableName.FromProjectInstanceTable("[PROJECT]", "[INSTANCE]", "[TABLE]"),
                 RowKeyPrefix = ByteString.Empty,
-                DeleteAllDataFromTable = false,
             };
             // Make the request
             bigtableTableAdminClient.DropRowRange(request);
-            // End snippet
         }
     }
 }

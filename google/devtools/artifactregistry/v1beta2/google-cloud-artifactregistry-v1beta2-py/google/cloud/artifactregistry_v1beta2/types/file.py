@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -32,6 +35,7 @@ __protobuf__ = proto.module(
 
 class Hash(proto.Message):
     r"""A hash of file content.
+
     Attributes:
         type_ (google.cloud.artifactregistry_v1beta2.types.Hash.HashType):
             The algorithm used to compute the hash value.
@@ -43,15 +47,11 @@ class Hash(proto.Message):
         HASH_TYPE_UNSPECIFIED = 0
         SHA256 = 1
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=HashType,
     )
-    value = proto.Field(
-        proto.BYTES,
-        number=2,
-    )
+
+    value = proto.Field(proto.BYTES, number=2)
 
 
 class File(proto.Message):
@@ -76,37 +76,28 @@ class File(proto.Message):
             this file, if any.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    size_bytes = proto.Field(
-        proto.INT64,
-        number=3,
-    )
-    hashes = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+    name = proto.Field(proto.STRING, number=1)
+
+    size_bytes = proto.Field(proto.INT64, number=3)
+
+    hashes = proto.RepeatedField(proto.MESSAGE, number=4,
         message='Hash',
     )
-    create_time = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    create_time = proto.Field(proto.MESSAGE, number=5,
         message=timestamp.Timestamp,
     )
-    update_time = proto.Field(
-        proto.MESSAGE,
-        number=6,
+
+    update_time = proto.Field(proto.MESSAGE, number=6,
         message=timestamp.Timestamp,
     )
-    owner = proto.Field(
-        proto.STRING,
-        number=7,
-    )
+
+    owner = proto.Field(proto.STRING, number=7)
 
 
 class ListFilesRequest(proto.Message):
     r"""The request to list files.
+
     Attributes:
         parent (str):
             The name of the parent resource whose files
@@ -133,26 +124,18 @@ class ListFilesRequest(proto.Message):
             request, if any.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    filter = proto.Field(proto.STRING, number=4)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
 
 
 class ListFilesResponse(proto.Message):
     r"""The response from listing files.
+
     Attributes:
         files (Sequence[google.cloud.artifactregistry_v1beta2.types.File]):
             The files returned.
@@ -165,28 +148,22 @@ class ListFilesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    files = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    files = proto.RepeatedField(proto.MESSAGE, number=1,
         message='File',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class GetFileRequest(proto.Message):
     r"""The request to retrieve a file.
+
     Attributes:
         name (str):
             The name of the file to retrieve.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

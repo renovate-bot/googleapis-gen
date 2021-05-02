@@ -17,13 +17,17 @@
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Monitoring.V3;
 
     public sealed partial class GeneratedNotificationChannelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteNotificationChannel</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteNotificationChannelResourceNames2()
         {
-            // Snippet: DeleteNotificationChannel(IResourceName, bool, CallSettings)
             // Create client
             NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             bool force = false;
             // Make the request
             notificationChannelServiceClient.DeleteNotificationChannel(name, force);
-            // End snippet
         }
     }
 }

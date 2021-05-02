@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -33,6 +35,7 @@ from google.oauth2 import service_account                         # type: ignore
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.vision_v1p2beta1.types import image_annotator
+
 from .transports.base import ImageAnnotatorTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ImageAnnotatorGrpcTransport
 from .transports.grpc_asyncio import ImageAnnotatorGrpcAsyncIOTransport
@@ -328,8 +331,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
 
         Args:
             request (google.cloud.vision_v1p2beta1.types.BatchAnnotateImagesRequest):
-                The request object.
-                Multiple image annotation requests
+                The request object. Multiple image annotation requests
                 are batched into a single service call.
             requests (Sequence[google.cloud.vision_v1p2beta1.types.AnnotateImageRequest]):
                 Required. Individual image annotation
@@ -338,6 +340,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
                 This corresponds to the ``requests`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -364,8 +367,10 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         # there are no flattened fields.
         if not isinstance(request, image_annotator.BatchAnnotateImagesRequest):
             request = image_annotator.BatchAnnotateImagesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if requests is not None:
                 request.requests = requests
 
@@ -402,8 +407,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
 
         Args:
             request (google.cloud.vision_v1p2beta1.types.AsyncBatchAnnotateFilesRequest):
-                The request object.
-                Multiple async file annotation
+                The request object. Multiple async file annotation
                 requests are batched into a single service call.
             requests (Sequence[google.cloud.vision_v1p2beta1.types.AsyncAnnotateFileRequest]):
                 Required. Individual async file
@@ -412,6 +416,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
                 This corresponds to the ``requests`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -441,8 +446,10 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         # there are no flattened fields.
         if not isinstance(request, image_annotator.AsyncBatchAnnotateFilesRequest):
             request = image_annotator.AsyncBatchAnnotateFilesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if requests is not None:
                 request.requests = requests
 
@@ -468,6 +475,8 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

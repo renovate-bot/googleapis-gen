@@ -101,7 +101,7 @@ namespace Google.Home.Enterprise.Sdm.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListDevices</summary>
+        /// <summary>Snippet for ListDevicesAsync</summary>
         public async Task ListDevicesRequestObjectAsync()
         {
             // Snippet: ListDevicesAsync(ListDevicesRequest, CallSettings)
@@ -263,7 +263,7 @@ namespace Google.Home.Enterprise.Sdm.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListStructures</summary>
+        /// <summary>Snippet for ListStructuresAsync</summary>
         public async Task ListStructuresRequestObjectAsync()
         {
             // Snippet: ListStructuresAsync(ListStructuresRequest, CallSettings)
@@ -384,7 +384,7 @@ namespace Google.Home.Enterprise.Sdm.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListRooms</summary>
+        /// <summary>Snippet for ListRoomsAsync</summary>
         public async Task ListRoomsRequestObjectAsync()
         {
             // Snippet: ListRoomsAsync(ListRoomsRequest, CallSettings)

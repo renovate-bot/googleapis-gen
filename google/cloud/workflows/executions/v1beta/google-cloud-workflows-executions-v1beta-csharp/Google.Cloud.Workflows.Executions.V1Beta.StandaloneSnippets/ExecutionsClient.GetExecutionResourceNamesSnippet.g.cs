@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Workflows.Executions.V1Beta.Snippets
 {
+    using Google.Cloud.Workflows.Executions.V1Beta;
+
     public sealed partial class GeneratedExecutionsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetExecution</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetExecutionResourceNames()
         {
-            // Snippet: GetExecution(ExecutionName, CallSettings)
             // Create client
             ExecutionsClient executionsClient = ExecutionsClient.Create();
             // Initialize request argument(s)
             ExecutionName name = ExecutionName.FromProjectLocationWorkflowExecution("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
             // Make the request
             Execution response = executionsClient.GetExecution(name);
-            // End snippet
         }
     }
 }

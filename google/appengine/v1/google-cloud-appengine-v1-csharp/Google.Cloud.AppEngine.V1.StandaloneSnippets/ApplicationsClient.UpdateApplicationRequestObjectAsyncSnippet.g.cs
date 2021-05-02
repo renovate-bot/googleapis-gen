@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.AppEngine.V1.Snippets
     public sealed partial class GeneratedApplicationsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateApplicationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateApplicationRequestObjectAsync()
         {
-            // Snippet: UpdateApplicationAsync(UpdateApplicationRequest, CallSettings)
-            // Additional: UpdateApplicationAsync(UpdateApplicationRequest, CancellationToken)
             // Create client
             ApplicationsClient applicationsClient = await ApplicationsClient.CreateAsync();
             // Initialize request argument(s)
@@ -54,7 +57,6 @@ namespace Google.Cloud.AppEngine.V1.Snippets
                 // If it has completed, then access the result
                 Application retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

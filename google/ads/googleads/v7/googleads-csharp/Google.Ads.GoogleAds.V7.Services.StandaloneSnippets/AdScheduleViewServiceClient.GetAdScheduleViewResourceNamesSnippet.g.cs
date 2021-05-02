@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedAdScheduleViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdScheduleView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAdScheduleViewResourceNames()
         {
-            // Snippet: GetAdScheduleView(AdScheduleViewName, CallSettings)
             // Create client
             AdScheduleViewServiceClient adScheduleViewServiceClient = AdScheduleViewServiceClient.Create();
             // Initialize request argument(s)
             AdScheduleViewName resourceName = AdScheduleViewName.FromCustomerCampaignCriterion("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[CRITERION_ID]");
             // Make the request
             AdScheduleView response = adScheduleViewServiceClient.GetAdScheduleView(resourceName);
-            // End snippet
         }
     }
 }

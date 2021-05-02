@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedAdGroupBidModifierServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupBidModifier</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAdGroupBidModifier()
         {
-            // Snippet: GetAdGroupBidModifier(string, CallSettings)
             // Create client
             AdGroupBidModifierServiceClient adGroupBidModifierServiceClient = AdGroupBidModifierServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/adGroupBidModifiers/[AD_GROUP_BID_MODIFIER]";
             // Make the request
             AdGroupBidModifier response = adGroupBidModifierServiceClient.GetAdGroupBidModifier(resourceName);
-            // End snippet
         }
     }
 }

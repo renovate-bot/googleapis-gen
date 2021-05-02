@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -36,6 +38,7 @@ from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import application
 from google.cloud.appengine_admin_v1.types import operation as ga_operation
 from google.protobuf import duration_pb2 as duration  # type: ignore
+
 from .transports.base import ApplicationsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ApplicationsGrpcTransport
 from .transports.grpc_asyncio import ApplicationsGrpcAsyncIOTransport
@@ -325,9 +328,9 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.GetApplicationRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Applications.GetApplication`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -342,6 +345,7 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.GetApplicationRequest.
         # There's no risk of modifying the input as we've already verified
@@ -393,9 +397,9 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.CreateApplicationRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Applications.CreateApplication`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -411,6 +415,7 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.CreateApplicationRequest.
         # There's no risk of modifying the input as we've already verified
@@ -458,9 +463,9 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.UpdateApplicationRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `Applications.UpdateApplication`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -476,6 +481,7 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.UpdateApplicationRequest.
         # There's no risk of modifying the input as we've already verified
@@ -535,9 +541,9 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.RepairApplicationRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'Applications.RepairApplication'.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -553,6 +559,7 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.RepairApplicationRequest.
         # There's no risk of modifying the input as we've already verified
@@ -590,6 +597,8 @@ class ApplicationsClient(metaclass=ApplicationsClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

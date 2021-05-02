@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedMerchantCenterLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMerchantCenterLink</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetMerchantCenterLinkRequestObject()
         {
-            // Snippet: GetMerchantCenterLink(GetMerchantCenterLinkRequest, CallSettings)
             // Create client
             MerchantCenterLinkServiceClient merchantCenterLinkServiceClient = MerchantCenterLinkServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             MerchantCenterLink response = merchantCenterLinkServiceClient.GetMerchantCenterLink(request);
-            // End snippet
         }
     }
 }

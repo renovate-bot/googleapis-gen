@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.AccessApproval.V1.Snippets
 {
+    using Google.Cloud.AccessApproval.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedAccessApprovalClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateAccessApprovalSettings</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateAccessApprovalSettingsRequestObject()
         {
-            // Snippet: UpdateAccessApprovalSettings(UpdateAccessApprovalSettingsMessage, CallSettings)
             // Create client
             AccessApprovalClient accessApprovalClient = AccessApprovalClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.AccessApproval.V1.Snippets
             };
             // Make the request
             AccessApprovalSettings response = accessApprovalClient.UpdateAccessApprovalSettings(request);
-            // End snippet
         }
     }
 }

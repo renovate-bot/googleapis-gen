@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSessionEntityTypesClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteSessionEntityTypeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteSessionEntityTypeAsync()
         {
-            // Snippet: DeleteSessionEntityTypeAsync(string, CallSettings)
-            // Additional: DeleteSessionEntityTypeAsync(string, CancellationToken)
             // Create client
             SessionEntityTypesClient sessionEntityTypesClient = await SessionEntityTypesClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/agent/sessions/[SESSION]/entityTypes/[ENTITY_TYPE]";
             // Make the request
             await sessionEntityTypesClient.DeleteSessionEntityTypeAsync(name);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCampaignLabelsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateCampaignLabelsRequestObjectAsync()
         {
-            // Snippet: MutateCampaignLabelsAsync(MutateCampaignLabelsRequest, CallSettings)
-            // Additional: MutateCampaignLabelsAsync(MutateCampaignLabelsRequest, CancellationToken)
             // Create client
             CampaignLabelServiceClient campaignLabelServiceClient = await CampaignLabelServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             MutateCampaignLabelsResponse response = await campaignLabelServiceClient.MutateCampaignLabelsAsync(request);
-            // End snippet
         }
     }
 }

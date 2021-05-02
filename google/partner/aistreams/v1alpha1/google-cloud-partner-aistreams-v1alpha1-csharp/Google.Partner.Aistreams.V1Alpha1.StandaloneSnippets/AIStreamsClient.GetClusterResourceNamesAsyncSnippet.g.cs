@@ -16,22 +16,24 @@
 
 namespace Google.Partner.Aistreams.V1Alpha1.Snippets
 {
+    using Google.Partner.Aistreams.V1Alpha1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAIStreamsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetClusterAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetClusterResourceNamesAsync()
         {
-            // Snippet: GetClusterAsync(ClusterName, CallSettings)
-            // Additional: GetClusterAsync(ClusterName, CancellationToken)
             // Create client
             AIStreamsClient aIStreamsClient = await AIStreamsClient.CreateAsync();
             // Initialize request argument(s)
             ClusterName name = ClusterName.FromProjectLocationCluster("[PROJECT]", "[LOCATION]", "[CLUSTER]");
             // Make the request
             Cluster response = await aIStreamsClient.GetClusterAsync(name);
-            // End snippet
         }
     }
 }

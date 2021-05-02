@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMetricServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteMetricDescriptorAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteMetricDescriptorAsync()
         {
-            // Snippet: DeleteMetricDescriptorAsync(string, CallSettings)
-            // Additional: DeleteMetricDescriptorAsync(string, CancellationToken)
             // Create client
             MetricServiceClient metricServiceClient = await MetricServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/metricDescriptors/[METRIC_DESCRIPTOR]";
             // Make the request
             await metricServiceClient.DeleteMetricDescriptorAsync(name);
-            // End snippet
         }
     }
 }

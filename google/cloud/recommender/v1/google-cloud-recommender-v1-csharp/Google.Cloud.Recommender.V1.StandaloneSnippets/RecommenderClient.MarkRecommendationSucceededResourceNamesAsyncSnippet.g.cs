@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Recommender.V1.Snippets
 {
+    using Google.Cloud.Recommender.V1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRecommenderClientStandaloneSnippets
     {
         /// <summary>Snippet for MarkRecommendationSucceededAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MarkRecommendationSucceededResourceNamesAsync()
         {
-            // Snippet: MarkRecommendationSucceededAsync(RecommendationName, IDictionary<string,string>, string, CallSettings)
-            // Additional: MarkRecommendationSucceededAsync(RecommendationName, IDictionary<string,string>, string, CancellationToken)
             // Create client
             RecommenderClient recommenderClient = await RecommenderClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Recommender.V1.Snippets
             string etag = "";
             // Make the request
             Recommendation response = await recommenderClient.MarkRecommendationSucceededAsync(name, stateMetadata, etag);
-            // End snippet
         }
     }
 }

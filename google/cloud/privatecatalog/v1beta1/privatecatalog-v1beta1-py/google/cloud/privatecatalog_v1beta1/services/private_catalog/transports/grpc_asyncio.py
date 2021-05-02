@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,20 +14,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.privatecatalog_v1beta1.types import private_catalog
+
 from .base import PrivateCatalogTransport, DEFAULT_CLIENT_INFO
 from .grpc import PrivateCatalogGrpcTransport
 
@@ -97,15 +99,13 @@ class PrivateCatalogGrpcAsyncIOTransport(PrivateCatalogTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -125,8 +125,7 @@ class PrivateCatalogGrpcAsyncIOTransport(PrivateCatalogTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -184,6 +183,7 @@ class PrivateCatalogGrpcAsyncIOTransport(PrivateCatalogTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -246,9 +246,7 @@ class PrivateCatalogGrpcAsyncIOTransport(PrivateCatalogTransport):
     def search_catalogs(self) -> Callable[
             [private_catalog.SearchCatalogsRequest],
             Awaitable[private_catalog.SearchCatalogsResponse]]:
-        r"""Return a callable for the
-        search catalogs
-          method over gRPC.
+        r"""Return a callable for the search catalogs method over gRPC.
 
         Search [Catalog][google.cloud.privatecatalog.v1beta1.Catalog]
         resources that consumers have access to, within the scope of the
@@ -276,9 +274,7 @@ class PrivateCatalogGrpcAsyncIOTransport(PrivateCatalogTransport):
     def search_products(self) -> Callable[
             [private_catalog.SearchProductsRequest],
             Awaitable[private_catalog.SearchProductsResponse]]:
-        r"""Return a callable for the
-        search products
-          method over gRPC.
+        r"""Return a callable for the search products method over gRPC.
 
         Search [Product][google.cloud.privatecatalog.v1beta1.Product]
         resources that consumers have access to, within the scope of the
@@ -306,9 +302,7 @@ class PrivateCatalogGrpcAsyncIOTransport(PrivateCatalogTransport):
     def search_versions(self) -> Callable[
             [private_catalog.SearchVersionsRequest],
             Awaitable[private_catalog.SearchVersionsResponse]]:
-        r"""Return a callable for the
-        search versions
-          method over gRPC.
+        r"""Return a callable for the search versions method over gRPC.
 
         Search [Version][google.cloud.privatecatalog.v1beta1.Version]
         resources that consumers have access to, within the scope of the

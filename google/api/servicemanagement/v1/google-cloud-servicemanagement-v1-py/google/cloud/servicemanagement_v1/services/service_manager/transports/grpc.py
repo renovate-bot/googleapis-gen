@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -29,6 +31,7 @@ from google.api import service_pb2 as service  # type: ignore
 from google.cloud.servicemanagement_v1.types import resources
 from google.cloud.servicemanagement_v1.types import servicemanager
 from google.longrunning import operations_pb2 as operations  # type: ignore
+
 from .base import ServiceManagerTransport, DEFAULT_CLIENT_INFO
 
 
@@ -63,8 +66,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -204,15 +206,13 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -242,9 +242,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def list_services(self) -> Callable[
             [servicemanager.ListServicesRequest],
             servicemanager.ListServicesResponse]:
-        r"""Return a callable for the
-        list services
-          method over gRPC.
+        r"""Return a callable for the list services method over gRPC.
 
         Lists managed services.
 
@@ -278,9 +276,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def get_service(self) -> Callable[
             [servicemanager.GetServiceRequest],
             resources.ManagedService]:
-        r"""Return a callable for the
-        get service
-          method over gRPC.
+        r"""Return a callable for the get service method over gRPC.
 
         Gets a managed service. Authentication is required
         unless the service is public.
@@ -307,9 +303,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def create_service(self) -> Callable[
             [servicemanager.CreateServiceRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create service
-          method over gRPC.
+        r"""Return a callable for the create service method over gRPC.
 
         Creates a new managed service.
         Please note one producer project can own no more than 20
@@ -338,9 +332,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def delete_service(self) -> Callable[
             [servicemanager.DeleteServiceRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete service
-          method over gRPC.
+        r"""Return a callable for the delete service method over gRPC.
 
         Deletes a managed service. This method will change the service
         to the ``Soft-Delete`` state for 30 days. Within this period,
@@ -373,9 +365,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def undelete_service(self) -> Callable[
             [servicemanager.UndeleteServiceRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        undelete service
-          method over gRPC.
+        r"""Return a callable for the undelete service method over gRPC.
 
         Revives a previously deleted managed service. The
         method restores the service using the configuration at
@@ -407,9 +397,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def list_service_configs(self) -> Callable[
             [servicemanager.ListServiceConfigsRequest],
             servicemanager.ListServiceConfigsResponse]:
-        r"""Return a callable for the
-        list service configs
-          method over gRPC.
+        r"""Return a callable for the list service configs method over gRPC.
 
         Lists the history of the service configuration for a
         managed service, from the newest to the oldest.
@@ -436,9 +424,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def get_service_config(self) -> Callable[
             [servicemanager.GetServiceConfigRequest],
             service.Service]:
-        r"""Return a callable for the
-        get service config
-          method over gRPC.
+        r"""Return a callable for the get service config method over gRPC.
 
         Gets a service configuration (version) for a managed
         service.
@@ -465,9 +451,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def create_service_config(self) -> Callable[
             [servicemanager.CreateServiceConfigRequest],
             service.Service]:
-        r"""Return a callable for the
-        create service config
-          method over gRPC.
+        r"""Return a callable for the create service config method over gRPC.
 
         Creates a new service configuration (version) for a managed
         service. This method only stores the service configuration. To
@@ -501,9 +485,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def submit_config_source(self) -> Callable[
             [servicemanager.SubmitConfigSourceRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        submit config source
-          method over gRPC.
+        r"""Return a callable for the submit config source method over gRPC.
 
         Creates a new service configuration (version) for a managed
         service based on user-supplied configuration source files (for
@@ -541,9 +523,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def list_service_rollouts(self) -> Callable[
             [servicemanager.ListServiceRolloutsRequest],
             servicemanager.ListServiceRolloutsResponse]:
-        r"""Return a callable for the
-        list service rollouts
-          method over gRPC.
+        r"""Return a callable for the list service rollouts method over gRPC.
 
         Lists the history of the service configuration
         rollouts for a managed service, from the newest to the
@@ -571,9 +551,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def get_service_rollout(self) -> Callable[
             [servicemanager.GetServiceRolloutRequest],
             resources.Rollout]:
-        r"""Return a callable for the
-        get service rollout
-          method over gRPC.
+        r"""Return a callable for the get service rollout method over gRPC.
 
         Gets a service configuration
         [rollout][google.api.servicemanagement.v1.Rollout].
@@ -600,9 +578,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def create_service_rollout(self) -> Callable[
             [servicemanager.CreateServiceRolloutRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create service rollout
-          method over gRPC.
+        r"""Return a callable for the create service rollout method over gRPC.
 
         Creates a new service configuration rollout. Based on
         rollout, the Google Service Management will roll out the
@@ -644,9 +620,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def generate_config_report(self) -> Callable[
             [servicemanager.GenerateConfigReportRequest],
             servicemanager.GenerateConfigReportResponse]:
-        r"""Return a callable for the
-        generate config report
-          method over gRPC.
+        r"""Return a callable for the generate config report method over gRPC.
 
         Generates and returns a report (errors, warnings and changes
         from existing configurations) associated with
@@ -683,9 +657,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def enable_service(self) -> Callable[
             [servicemanager.EnableServiceRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        enable service
-          method over gRPC.
+        r"""Return a callable for the enable service method over gRPC.
 
         Enables a
         [service][google.api.servicemanagement.v1.ManagedService] for a
@@ -717,9 +689,7 @@ class ServiceManagerGrpcTransport(ServiceManagerTransport):
     def disable_service(self) -> Callable[
             [servicemanager.DisableServiceRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        disable service
-          method over gRPC.
+        r"""Return a callable for the disable service method over gRPC.
 
         Disables a
         [service][google.api.servicemanagement.v1.ManagedService] for a

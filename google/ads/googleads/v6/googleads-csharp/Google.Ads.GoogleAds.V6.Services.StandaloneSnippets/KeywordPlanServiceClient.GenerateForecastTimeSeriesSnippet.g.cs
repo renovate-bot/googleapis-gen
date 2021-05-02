@@ -16,19 +16,23 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
+
     public sealed partial class GeneratedKeywordPlanServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateForecastTimeSeries</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GenerateForecastTimeSeries()
         {
-            // Snippet: GenerateForecastTimeSeries(string, CallSettings)
             // Create client
             KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.Create();
             // Initialize request argument(s)
             string keywordPlan = "customers/[CUSTOMER_ID]/keywordPlans/[KEYWORD_PLAN_ID]";
             // Make the request
             GenerateForecastTimeSeriesResponse response = keywordPlanServiceClient.GenerateForecastTimeSeries(keywordPlan);
-            // End snippet
         }
     }
 }

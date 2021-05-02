@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRecommendationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetRecommendationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetRecommendationResourceNamesAsync()
         {
-            // Snippet: GetRecommendationAsync(RecommendationName, CallSettings)
-            // Additional: GetRecommendationAsync(RecommendationName, CancellationToken)
             // Create client
             RecommendationServiceClient recommendationServiceClient = await RecommendationServiceClient.CreateAsync();
             // Initialize request argument(s)
             RecommendationName resourceName = RecommendationName.FromCustomerRecommendation("[CUSTOMER_ID]", "[RECOMMENDATION_ID]");
             // Make the request
             Recommendation response = await recommendationServiceClient.GetRecommendationAsync(resourceName);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.ManagedIdentities.V1.Snippets
 {
+    using Google.Cloud.ManagedIdentities.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedManagedIdentitiesServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDomainAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetDomainResourceNamesAsync()
         {
-            // Snippet: GetDomainAsync(DomainName, CallSettings)
-            // Additional: GetDomainAsync(DomainName, CancellationToken)
             // Create client
             ManagedIdentitiesServiceClient managedIdentitiesServiceClient = await ManagedIdentitiesServiceClient.CreateAsync();
             // Initialize request argument(s)
             DomainName name = DomainName.FromProjectLocationDomain("[PROJECT]", "[LOCATION]", "[DOMAIN]");
             // Make the request
             Domain response = await managedIdentitiesServiceClient.GetDomainAsync(name);
-            // End snippet
         }
     }
 }

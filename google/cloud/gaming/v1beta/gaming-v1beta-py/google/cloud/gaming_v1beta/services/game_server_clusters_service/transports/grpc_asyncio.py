@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
@@ -22,13 +24,13 @@ from google.api_core import operations_v1              # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.gaming_v1beta.types import game_server_clusters
 from google.longrunning import operations_pb2 as operations  # type: ignore
+
 from .base import GameServerClustersServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import GameServerClustersServiceGrpcTransport
 
@@ -79,15 +81,13 @@ class GameServerClustersServiceGrpcAsyncIOTransport(GameServerClustersServiceTra
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -107,8 +107,7 @@ class GameServerClustersServiceGrpcAsyncIOTransport(GameServerClustersServiceTra
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -167,6 +166,7 @@ class GameServerClustersServiceGrpcAsyncIOTransport(GameServerClustersServiceTra
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -245,9 +245,7 @@ class GameServerClustersServiceGrpcAsyncIOTransport(GameServerClustersServiceTra
     def list_game_server_clusters(self) -> Callable[
             [game_server_clusters.ListGameServerClustersRequest],
             Awaitable[game_server_clusters.ListGameServerClustersResponse]]:
-        r"""Return a callable for the
-        list game server clusters
-          method over gRPC.
+        r"""Return a callable for the list game server clusters method over gRPC.
 
         Lists game server clusters in a given project and
         location.
@@ -274,9 +272,7 @@ class GameServerClustersServiceGrpcAsyncIOTransport(GameServerClustersServiceTra
     def get_game_server_cluster(self) -> Callable[
             [game_server_clusters.GetGameServerClusterRequest],
             Awaitable[game_server_clusters.GameServerCluster]]:
-        r"""Return a callable for the
-        get game server cluster
-          method over gRPC.
+        r"""Return a callable for the get game server cluster method over gRPC.
 
         Gets details of a single game server cluster.
 
@@ -302,9 +298,7 @@ class GameServerClustersServiceGrpcAsyncIOTransport(GameServerClustersServiceTra
     def create_game_server_cluster(self) -> Callable[
             [game_server_clusters.CreateGameServerClusterRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create game server cluster
-          method over gRPC.
+        r"""Return a callable for the create game server cluster method over gRPC.
 
         Creates a new game server cluster in a given project
         and location.
@@ -331,10 +325,8 @@ class GameServerClustersServiceGrpcAsyncIOTransport(GameServerClustersServiceTra
     def preview_create_game_server_cluster(self) -> Callable[
             [game_server_clusters.PreviewCreateGameServerClusterRequest],
             Awaitable[game_server_clusters.PreviewCreateGameServerClusterResponse]]:
-        r"""Return a callable for the
-        preview create game server
-        cluster
-          method over gRPC.
+        r"""Return a callable for the preview create game server
+        cluster method over gRPC.
 
         Previews creation of a new game server cluster in a
         given project and location.
@@ -361,9 +353,7 @@ class GameServerClustersServiceGrpcAsyncIOTransport(GameServerClustersServiceTra
     def delete_game_server_cluster(self) -> Callable[
             [game_server_clusters.DeleteGameServerClusterRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete game server cluster
-          method over gRPC.
+        r"""Return a callable for the delete game server cluster method over gRPC.
 
         Deletes a single game server cluster.
 
@@ -389,10 +379,8 @@ class GameServerClustersServiceGrpcAsyncIOTransport(GameServerClustersServiceTra
     def preview_delete_game_server_cluster(self) -> Callable[
             [game_server_clusters.PreviewDeleteGameServerClusterRequest],
             Awaitable[game_server_clusters.PreviewDeleteGameServerClusterResponse]]:
-        r"""Return a callable for the
-        preview delete game server
-        cluster
-          method over gRPC.
+        r"""Return a callable for the preview delete game server
+        cluster method over gRPC.
 
         Previews deletion of a single game server cluster.
 
@@ -418,9 +406,7 @@ class GameServerClustersServiceGrpcAsyncIOTransport(GameServerClustersServiceTra
     def update_game_server_cluster(self) -> Callable[
             [game_server_clusters.UpdateGameServerClusterRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update game server cluster
-          method over gRPC.
+        r"""Return a callable for the update game server cluster method over gRPC.
 
         Patches a single game server cluster.
 
@@ -446,10 +432,8 @@ class GameServerClustersServiceGrpcAsyncIOTransport(GameServerClustersServiceTra
     def preview_update_game_server_cluster(self) -> Callable[
             [game_server_clusters.PreviewUpdateGameServerClusterRequest],
             Awaitable[game_server_clusters.PreviewUpdateGameServerClusterResponse]]:
-        r"""Return a callable for the
-        preview update game server
-        cluster
-          method over gRPC.
+        r"""Return a callable for the preview update game server
+        cluster method over gRPC.
 
         Previews updating a GameServerCluster.
 

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.enums.types import advertising_channel_sub_type as gage_advertising_channel_sub_type
 from google.ads.googleads.v7.enums.types import advertising_channel_type as gage_advertising_channel_type
@@ -45,14 +48,10 @@ class CriterionCategoryAvailability(proto.Message):
             for the channel.
     """
 
-    channel = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    channel = proto.Field(proto.MESSAGE, number=1,
         message='CriterionCategoryChannelAvailability',
     )
-    locale = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    locale = proto.RepeatedField(proto.MESSAGE, number=2,
         message='CriterionCategoryLocaleAvailability',
     )
 
@@ -83,30 +82,21 @@ class CriterionCategoryChannelAvailability(proto.Message):
             is not included in this availability configuration.
     """
 
-    availability_mode = proto.Field(
-        proto.ENUM,
-        number=1,
+    availability_mode = proto.Field(proto.ENUM, number=1,
         enum=criterion_category_channel_availability_mode.CriterionCategoryChannelAvailabilityModeEnum.CriterionCategoryChannelAvailabilityMode,
     )
-    advertising_channel_type = proto.Field(
-        proto.ENUM,
-        number=2,
+    advertising_channel_type = proto.Field(proto.ENUM, number=2,
         enum=gage_advertising_channel_type.AdvertisingChannelTypeEnum.AdvertisingChannelType,
     )
-    advertising_channel_sub_type = proto.RepeatedField(
-        proto.ENUM,
-        number=3,
+    advertising_channel_sub_type = proto.RepeatedField(proto.ENUM, number=3,
         enum=gage_advertising_channel_sub_type.AdvertisingChannelSubTypeEnum.AdvertisingChannelSubType,
     )
-    include_default_channel_sub_type = proto.Field(
-        proto.BOOL,
-        number=5,
-        optional=True,
-    )
+    include_default_channel_sub_type = proto.Field(proto.BOOL, number=5, optional=True)
 
 
 class CriterionCategoryLocaleAvailability(proto.Message):
     r"""Information about which locales a category is available in.
+
     Attributes:
         availability_mode (google.ads.googleads.v7.enums.types.CriterionCategoryLocaleAvailabilityModeEnum.CriterionCategoryLocaleAvailabilityMode):
             Format of the locale availability. Can be LAUNCHED_TO_ALL
@@ -120,21 +110,11 @@ class CriterionCategoryLocaleAvailability(proto.Message):
             Code of the language.
     """
 
-    availability_mode = proto.Field(
-        proto.ENUM,
-        number=1,
+    availability_mode = proto.Field(proto.ENUM, number=1,
         enum=criterion_category_locale_availability_mode.CriterionCategoryLocaleAvailabilityModeEnum.CriterionCategoryLocaleAvailabilityMode,
     )
-    country_code = proto.Field(
-        proto.STRING,
-        number=4,
-        optional=True,
-    )
-    language_code = proto.Field(
-        proto.STRING,
-        number=5,
-        optional=True,
-    )
+    country_code = proto.Field(proto.STRING, number=4, optional=True)
+    language_code = proto.Field(proto.STRING, number=5, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

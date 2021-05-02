@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -33,6 +35,7 @@ from google.cloud.dataproc_v1.types import workflow_templates
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import WorkflowTemplateServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import WorkflowTemplateServiceGrpcAsyncIOTransport
 from .client import WorkflowTemplateServiceClient
@@ -54,14 +57,19 @@ class WorkflowTemplateServiceAsyncClient:
     parse_service_path = staticmethod(WorkflowTemplateServiceClient.parse_service_path)
     workflow_template_path = staticmethod(WorkflowTemplateServiceClient.workflow_template_path)
     parse_workflow_template_path = staticmethod(WorkflowTemplateServiceClient.parse_workflow_template_path)
+
     common_billing_account_path = staticmethod(WorkflowTemplateServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(WorkflowTemplateServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(WorkflowTemplateServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(WorkflowTemplateServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(WorkflowTemplateServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(WorkflowTemplateServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(WorkflowTemplateServiceClient.common_project_path)
     parse_common_project_path = staticmethod(WorkflowTemplateServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(WorkflowTemplateServiceClient.common_location_path)
     parse_common_location_path = staticmethod(WorkflowTemplateServiceClient.parse_common_location_path)
 
@@ -146,6 +154,7 @@ class WorkflowTemplateServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = WorkflowTemplateServiceClient(
             credentials=credentials,
             transport=transport,
@@ -167,8 +176,7 @@ class WorkflowTemplateServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.CreateWorkflowTemplateRequest`):
-                The request object.
-                A request to create a workflow
+                The request object. A request to create a workflow
                 template.
             parent (:class:`str`):
                 Required. The resource name of the region or location,
@@ -194,6 +202,7 @@ class WorkflowTemplateServiceAsyncClient:
                 This corresponds to the ``template`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -218,6 +227,7 @@ class WorkflowTemplateServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if template is not None:
@@ -228,7 +238,10 @@ class WorkflowTemplateServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_workflow_template,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
@@ -270,8 +283,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.GetWorkflowTemplateRequest`):
-                The request object.
-                A request to fetch a workflow
+                The request object. A request to fetch a workflow
                 template.
             name (:class:`str`):
                 Required. The resource name of the workflow template, as
@@ -291,6 +303,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -315,6 +328,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -323,7 +337,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_workflow_template,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
@@ -386,8 +403,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.InstantiateWorkflowTemplateRequest`):
-                The request object.
-                A request to instantiate a workflow
+                The request object. A request to instantiate a workflow
                 template.
             name (:class:`str`):
                 Required. The resource name of the workflow template, as
@@ -418,6 +434,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parameters`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -455,6 +472,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -466,7 +484,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.instantiate_workflow_template,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
@@ -540,8 +561,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.InstantiateInlineWorkflowTemplateRequest`):
-                The request object.
-                A request to instantiate an inline
+                The request object. A request to instantiate an inline
                 workflow template.
             parent (:class:`str`):
                 Required. The resource name of the region or location,
@@ -569,6 +589,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``template`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -606,6 +627,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if template is not None:
@@ -616,7 +638,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.instantiate_inline_workflow_template,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
@@ -666,8 +691,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.UpdateWorkflowTemplateRequest`):
-                The request object.
-                A request to update a workflow
+                The request object. A request to update a workflow
                 template.
             template (:class:`google.cloud.dataproc_v1.types.WorkflowTemplate`):
                 Required. The updated workflow template.
@@ -678,6 +702,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``template`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -702,6 +727,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if template is not None:
             request.template = template
 
@@ -710,7 +736,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_workflow_template,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
@@ -751,8 +780,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.ListWorkflowTemplatesRequest`):
-                The request object.
-                A request to list workflow templates
+                The request object. A request to list workflow templates
                 in a project.
             parent (:class:`str`):
                 Required. The resource name of the region or location,
@@ -771,6 +799,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -798,6 +827,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -806,7 +836,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_workflow_templates,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
@@ -858,8 +891,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1.types.DeleteWorkflowTemplateRequest`):
-                The request object.
-                A request to delete a workflow
+                The request object. A request to delete a workflow
                 template.
                 Currently started workflows will remain running.
             name (:class:`str`):
@@ -881,6 +913,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -899,6 +932,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -907,7 +941,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_workflow_template,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=600.0,
@@ -931,6 +968,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

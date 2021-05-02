@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api import monitored_resource_pb2 as monitored_resource  # type: ignore
@@ -37,8 +37,6 @@ from google.cloud.monitoring_v3.services.group_service import GroupServiceAsyncC
 from google.cloud.monitoring_v3.services.group_service import GroupServiceClient
 from google.cloud.monitoring_v3.services.group_service import pagers
 from google.cloud.monitoring_v3.services.group_service import transports
-from google.cloud.monitoring_v3.services.group_service.transports.base import _API_CORE_VERSION
-from google.cloud.monitoring_v3.services.group_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.monitoring_v3.types import common
 from google.cloud.monitoring_v3.types import group
 from google.cloud.monitoring_v3.types import group as gm_group
@@ -46,28 +44,6 @@ from google.cloud.monitoring_v3.types import group_service
 from google.oauth2 import service_account
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -235,10 +211,12 @@ def test_group_service_client_client_options(client_class, transport_class, tran
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (GroupServiceClient, transports.GroupServiceGrpcTransport, "grpc", "true"),
     (GroupServiceAsyncClient, transports.GroupServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (GroupServiceClient, transports.GroupServiceGrpcTransport, "grpc", "false"),
     (GroupServiceAsyncClient, transports.GroupServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(GroupServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(GroupServiceClient))
 @mock.patch.object(GroupServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(GroupServiceAsyncClient))
@@ -393,16 +371,21 @@ def test_list_groups(transport: str = 'grpc', request_type=group_service.ListGro
         # Designate an appropriate return value for the call.
         call.return_value = group_service.ListGroupsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_groups(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == group_service.ListGroupsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListGroupsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -425,8 +408,8 @@ def test_list_groups_empty_call():
         client.list_groups()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == group_service.ListGroupsRequest()
 
+        assert args[0] == group_service.ListGroupsRequest()
 
 @pytest.mark.asyncio
 async def test_list_groups_async(transport: str = 'grpc_asyncio', request_type=group_service.ListGroupsRequest):
@@ -444,18 +427,21 @@ async def test_list_groups_async(transport: str = 'grpc_asyncio', request_type=g
             type(client.transport.list_groups),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(group_service.ListGroupsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(group_service.ListGroupsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_groups(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == group_service.ListGroupsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListGroupsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -472,7 +458,6 @@ def test_list_groups_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = group_service.ListGroupsRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -480,6 +465,7 @@ def test_list_groups_field_headers():
             type(client.transport.list_groups),
             '__call__') as call:
         call.return_value = group_service.ListGroupsResponse()
+
         client.list_groups(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -504,7 +490,6 @@ async def test_list_groups_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = group_service.ListGroupsRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -512,6 +497,7 @@ async def test_list_groups_field_headers_async():
             type(client.transport.list_groups),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(group_service.ListGroupsResponse())
+
         await client.list_groups(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -538,6 +524,7 @@ def test_list_groups_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = group_service.ListGroupsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_groups(
@@ -548,6 +535,7 @@ def test_list_groups_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -589,6 +577,7 @@ async def test_list_groups_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -793,6 +782,7 @@ async def test_list_groups_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_group(transport: str = 'grpc', request_type=group_service.GetGroupRequest):
     client = GroupServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -810,24 +800,37 @@ def test_get_group(transport: str = 'grpc', request_type=group_service.GetGroupR
         # Designate an appropriate return value for the call.
         call.return_value = group.Group(
             name='name_value',
+
             display_name='display_name_value',
+
             parent_name='parent_name_value',
+
             filter='filter_value',
+
             is_cluster=True,
+
         )
+
         response = client.get_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == group_service.GetGroupRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, group.Group)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.parent_name == 'parent_name_value'
+
     assert response.filter == 'filter_value'
+
     assert response.is_cluster is True
 
 
@@ -850,8 +853,8 @@ def test_get_group_empty_call():
         client.get_group()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == group_service.GetGroupRequest()
 
+        assert args[0] == group_service.GetGroupRequest()
 
 @pytest.mark.asyncio
 async def test_get_group_async(transport: str = 'grpc_asyncio', request_type=group_service.GetGroupRequest):
@@ -869,26 +872,33 @@ async def test_get_group_async(transport: str = 'grpc_asyncio', request_type=gro
             type(client.transport.get_group),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(group.Group(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(group.Group(
             name='name_value',
             display_name='display_name_value',
             parent_name='parent_name_value',
             filter='filter_value',
             is_cluster=True,
         ))
+
         response = await client.get_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == group_service.GetGroupRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, group.Group)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.parent_name == 'parent_name_value'
+
     assert response.filter == 'filter_value'
+
     assert response.is_cluster is True
 
 
@@ -905,7 +915,6 @@ def test_get_group_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = group_service.GetGroupRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -913,6 +922,7 @@ def test_get_group_field_headers():
             type(client.transport.get_group),
             '__call__') as call:
         call.return_value = group.Group()
+
         client.get_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -937,7 +947,6 @@ async def test_get_group_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = group_service.GetGroupRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -945,6 +954,7 @@ async def test_get_group_field_headers_async():
             type(client.transport.get_group),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(group.Group())
+
         await client.get_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -971,6 +981,7 @@ def test_get_group_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = group.Group()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_group(
@@ -981,6 +992,7 @@ def test_get_group_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1022,6 +1034,7 @@ async def test_get_group_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1057,24 +1070,37 @@ def test_create_group(transport: str = 'grpc', request_type=group_service.Create
         # Designate an appropriate return value for the call.
         call.return_value = gm_group.Group(
             name='name_value',
+
             display_name='display_name_value',
+
             parent_name='parent_name_value',
+
             filter='filter_value',
+
             is_cluster=True,
+
         )
+
         response = client.create_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == group_service.CreateGroupRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gm_group.Group)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.parent_name == 'parent_name_value'
+
     assert response.filter == 'filter_value'
+
     assert response.is_cluster is True
 
 
@@ -1097,8 +1123,8 @@ def test_create_group_empty_call():
         client.create_group()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == group_service.CreateGroupRequest()
 
+        assert args[0] == group_service.CreateGroupRequest()
 
 @pytest.mark.asyncio
 async def test_create_group_async(transport: str = 'grpc_asyncio', request_type=group_service.CreateGroupRequest):
@@ -1116,26 +1142,33 @@ async def test_create_group_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.create_group),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gm_group.Group(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gm_group.Group(
             name='name_value',
             display_name='display_name_value',
             parent_name='parent_name_value',
             filter='filter_value',
             is_cluster=True,
         ))
+
         response = await client.create_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == group_service.CreateGroupRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gm_group.Group)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.parent_name == 'parent_name_value'
+
     assert response.filter == 'filter_value'
+
     assert response.is_cluster is True
 
 
@@ -1152,7 +1185,6 @@ def test_create_group_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = group_service.CreateGroupRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1160,6 +1192,7 @@ def test_create_group_field_headers():
             type(client.transport.create_group),
             '__call__') as call:
         call.return_value = gm_group.Group()
+
         client.create_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1184,7 +1217,6 @@ async def test_create_group_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = group_service.CreateGroupRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1192,6 +1224,7 @@ async def test_create_group_field_headers_async():
             type(client.transport.create_group),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gm_group.Group())
+
         await client.create_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1218,6 +1251,7 @@ def test_create_group_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gm_group.Group()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_group(
@@ -1229,7 +1263,9 @@ def test_create_group_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
+
         assert args[0].group == gm_group.Group(name='name_value')
 
 
@@ -1273,7 +1309,9 @@ async def test_create_group_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
+
         assert args[0].group == gm_group.Group(name='name_value')
 
 
@@ -1310,24 +1348,37 @@ def test_update_group(transport: str = 'grpc', request_type=group_service.Update
         # Designate an appropriate return value for the call.
         call.return_value = gm_group.Group(
             name='name_value',
+
             display_name='display_name_value',
+
             parent_name='parent_name_value',
+
             filter='filter_value',
+
             is_cluster=True,
+
         )
+
         response = client.update_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == group_service.UpdateGroupRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gm_group.Group)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.parent_name == 'parent_name_value'
+
     assert response.filter == 'filter_value'
+
     assert response.is_cluster is True
 
 
@@ -1350,8 +1401,8 @@ def test_update_group_empty_call():
         client.update_group()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == group_service.UpdateGroupRequest()
 
+        assert args[0] == group_service.UpdateGroupRequest()
 
 @pytest.mark.asyncio
 async def test_update_group_async(transport: str = 'grpc_asyncio', request_type=group_service.UpdateGroupRequest):
@@ -1369,26 +1420,33 @@ async def test_update_group_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.update_group),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gm_group.Group(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gm_group.Group(
             name='name_value',
             display_name='display_name_value',
             parent_name='parent_name_value',
             filter='filter_value',
             is_cluster=True,
         ))
+
         response = await client.update_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == group_service.UpdateGroupRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gm_group.Group)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.parent_name == 'parent_name_value'
+
     assert response.filter == 'filter_value'
+
     assert response.is_cluster is True
 
 
@@ -1405,7 +1463,6 @@ def test_update_group_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = group_service.UpdateGroupRequest()
-
     request.group.name = 'group.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1413,6 +1470,7 @@ def test_update_group_field_headers():
             type(client.transport.update_group),
             '__call__') as call:
         call.return_value = gm_group.Group()
+
         client.update_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1437,7 +1495,6 @@ async def test_update_group_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = group_service.UpdateGroupRequest()
-
     request.group.name = 'group.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1445,6 +1502,7 @@ async def test_update_group_field_headers_async():
             type(client.transport.update_group),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gm_group.Group())
+
         await client.update_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1471,6 +1529,7 @@ def test_update_group_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gm_group.Group()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_group(
@@ -1481,6 +1540,7 @@ def test_update_group_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].group == gm_group.Group(name='name_value')
 
 
@@ -1522,6 +1582,7 @@ async def test_update_group_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].group == gm_group.Group(name='name_value')
 
 
@@ -1556,11 +1617,13 @@ def test_delete_group(transport: str = 'grpc', request_type=group_service.Delete
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == group_service.DeleteGroupRequest()
 
     # Establish that the response is the type that we expect.
@@ -1586,8 +1649,8 @@ def test_delete_group_empty_call():
         client.delete_group()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == group_service.DeleteGroupRequest()
 
+        assert args[0] == group_service.DeleteGroupRequest()
 
 @pytest.mark.asyncio
 async def test_delete_group_async(transport: str = 'grpc_asyncio', request_type=group_service.DeleteGroupRequest):
@@ -1606,11 +1669,13 @@ async def test_delete_group_async(transport: str = 'grpc_asyncio', request_type=
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_group(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == group_service.DeleteGroupRequest()
 
     # Establish that the response is the type that we expect.
@@ -1630,7 +1695,6 @@ def test_delete_group_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = group_service.DeleteGroupRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1638,6 +1702,7 @@ def test_delete_group_field_headers():
             type(client.transport.delete_group),
             '__call__') as call:
         call.return_value = None
+
         client.delete_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1662,7 +1727,6 @@ async def test_delete_group_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = group_service.DeleteGroupRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1670,6 +1734,7 @@ async def test_delete_group_field_headers_async():
             type(client.transport.delete_group),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_group(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1696,6 +1761,7 @@ def test_delete_group_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_group(
@@ -1706,6 +1772,7 @@ def test_delete_group_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1747,6 +1814,7 @@ async def test_delete_group_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1782,18 +1850,25 @@ def test_list_group_members(transport: str = 'grpc', request_type=group_service.
         # Designate an appropriate return value for the call.
         call.return_value = group_service.ListGroupMembersResponse(
             next_page_token='next_page_token_value',
+
             total_size=1086,
+
         )
+
         response = client.list_group_members(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == group_service.ListGroupMembersRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListGroupMembersPager)
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.total_size == 1086
 
 
@@ -1816,8 +1891,8 @@ def test_list_group_members_empty_call():
         client.list_group_members()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == group_service.ListGroupMembersRequest()
 
+        assert args[0] == group_service.ListGroupMembersRequest()
 
 @pytest.mark.asyncio
 async def test_list_group_members_async(transport: str = 'grpc_asyncio', request_type=group_service.ListGroupMembersRequest):
@@ -1835,20 +1910,24 @@ async def test_list_group_members_async(transport: str = 'grpc_asyncio', request
             type(client.transport.list_group_members),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(group_service.ListGroupMembersResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(group_service.ListGroupMembersResponse(
             next_page_token='next_page_token_value',
             total_size=1086,
         ))
+
         response = await client.list_group_members(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == group_service.ListGroupMembersRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListGroupMembersAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.total_size == 1086
 
 
@@ -1865,7 +1944,6 @@ def test_list_group_members_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = group_service.ListGroupMembersRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1873,6 +1951,7 @@ def test_list_group_members_field_headers():
             type(client.transport.list_group_members),
             '__call__') as call:
         call.return_value = group_service.ListGroupMembersResponse()
+
         client.list_group_members(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1897,7 +1976,6 @@ async def test_list_group_members_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = group_service.ListGroupMembersRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1905,6 +1983,7 @@ async def test_list_group_members_field_headers_async():
             type(client.transport.list_group_members),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(group_service.ListGroupMembersResponse())
+
         await client.list_group_members(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1931,6 +2010,7 @@ def test_list_group_members_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = group_service.ListGroupMembersResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_group_members(
@@ -1941,6 +2021,7 @@ def test_list_group_members_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1982,6 +2063,7 @@ async def test_list_group_members_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2227,6 +2309,7 @@ def test_transport_instance():
     client = GroupServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.GroupServiceGrpcTransport(
@@ -2241,6 +2324,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.GroupServiceGrpcTransport,
     transports.GroupServiceGrpcAsyncIOTransport,
@@ -2252,6 +2336,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = GroupServiceClient(
@@ -2261,6 +2346,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.GroupServiceGrpcTransport,
     )
+
 
 def test_group_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -2288,33 +2374,15 @@ def test_group_service_base_transport():
         'update_group',
         'delete_group',
         'list_group_members',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_group_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.monitoring_v3.services.group_service.transports.GroupServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.GroupServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/monitoring',            'https://www.googleapis.com/auth/monitoring.read',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_group_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.monitoring_v3.services.group_service.transports.GroupServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.monitoring_v3.services.group_service.transports.GroupServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.GroupServiceTransport(
@@ -2332,186 +2400,37 @@ def test_group_service_base_transport_with_credentials_file_old_google_auth():
 
 def test_group_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.monitoring_v3.services.group_service.transports.GroupServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.monitoring_v3.services.group_service.transports.GroupServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.GroupServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_group_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         GroupServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/monitoring',
-            'https://www.googleapis.com/auth/monitoring.read',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_group_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        GroupServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/monitoring',                'https://www.googleapis.com/auth/monitoring.read',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.GroupServiceGrpcTransport,
-        transports.GroupServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_group_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/monitoring',                'https://www.googleapis.com/auth/monitoring.read',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.GroupServiceGrpcTransport,
-        transports.GroupServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_group_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
             'https://www.googleapis.com/auth/monitoring',
-            'https://www.googleapis.com/auth/monitoring.read',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/monitoring.read',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.GroupServiceGrpcTransport, grpc_helpers),
-        (transports.GroupServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_group_service_transport_create_channel(transport_class, grpc_helpers):
+def test_group_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.GroupServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/monitoring',
+            'https://www.googleapis.com/auth/monitoring.read',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "monitoring.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/monitoring',                'https://www.googleapis.com/auth/monitoring.read',),
-            scopes=["1", "2"],
-            default_host="monitoring.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.GroupServiceGrpcTransport, grpc_helpers),
-        (transports.GroupServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_group_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "monitoring.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/monitoring',                'https://www.googleapis.com/auth/monitoring.read',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.GroupServiceGrpcTransport, grpc_helpers),
-        (transports.GroupServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_group_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "monitoring.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -2575,6 +2494,7 @@ def test_group_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='monitoring.googleapis.com:8000'),
     )
     assert client.transport._host == 'monitoring.googleapis.com:8000'
+
 
 def test_group_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -2697,6 +2617,7 @@ def test_group_service_transport_channel_mtls_with_adc(
 def test_group_path():
     project = "squid"
     group = "clam"
+
     expected = "projects/{project}/groups/{group}".format(project=project, group=group, )
     actual = GroupServiceClient.group_path(project, group)
     assert expected == actual
@@ -2704,8 +2625,9 @@ def test_group_path():
 
 def test_parse_group_path():
     expected = {
-        "project": "whelk",
-        "group": "octopus",
+    "project": "whelk",
+    "group": "octopus",
+
     }
     path = GroupServiceClient.group_path(**expected)
 
@@ -2715,6 +2637,7 @@ def test_parse_group_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = GroupServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2722,7 +2645,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = GroupServiceClient.common_billing_account_path(**expected)
 
@@ -2732,6 +2656,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = GroupServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -2739,7 +2664,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = GroupServiceClient.common_folder_path(**expected)
 
@@ -2749,6 +2675,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = GroupServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -2756,7 +2683,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = GroupServiceClient.common_organization_path(**expected)
 
@@ -2766,6 +2694,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = GroupServiceClient.common_project_path(project)
     assert expected == actual
@@ -2773,7 +2702,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = GroupServiceClient.common_project_path(**expected)
 
@@ -2784,6 +2714,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = GroupServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -2791,8 +2722,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = GroupServiceClient.common_location_path(**expected)
 

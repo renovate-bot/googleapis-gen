@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,7 +38,8 @@ from google.cloud.functions_v1.types.functions import UpdateFunctionRequest
 from google.cloud.functions_v1.types.operations import OperationMetadataV1
 from google.cloud.functions_v1.types.operations import OperationType
 
-__all__ = ('CallFunctionRequest',
+__all__ = (
+    'CallFunctionRequest',
     'CallFunctionResponse',
     'CloudFunction',
     'CloudFunctionStatus',

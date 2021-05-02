@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Logging.V2.Snippets
 {
+    using Google.Cloud.Logging.V2;
+
     public sealed partial class GeneratedMetricsServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteLogMetric</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteLogMetricRequestObject()
         {
-            // Snippet: DeleteLogMetric(DeleteLogMetricRequest, CallSettings)
             // Create client
             MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             };
             // Make the request
             metricsServiceV2Client.DeleteLogMetric(request);
-            // End snippet
         }
     }
 }

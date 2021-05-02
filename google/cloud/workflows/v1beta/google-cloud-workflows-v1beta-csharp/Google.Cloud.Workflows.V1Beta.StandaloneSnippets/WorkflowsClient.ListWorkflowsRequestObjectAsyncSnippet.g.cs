@@ -18,16 +18,20 @@ namespace Google.Cloud.Workflows.V1Beta.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Workflows.V1Beta;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWorkflowsClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListWorkflows</summary>
+        /// <summary>Snippet for ListWorkflowsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListWorkflowsRequestObjectAsync()
         {
-            // Snippet: ListWorkflowsAsync(ListWorkflowsRequest, CallSettings)
             // Create client
             WorkflowsClient workflowsClient = await WorkflowsClient.CreateAsync();
             // Initialize request argument(s)
@@ -71,7 +75,6 @@ namespace Google.Cloud.Workflows.V1Beta.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

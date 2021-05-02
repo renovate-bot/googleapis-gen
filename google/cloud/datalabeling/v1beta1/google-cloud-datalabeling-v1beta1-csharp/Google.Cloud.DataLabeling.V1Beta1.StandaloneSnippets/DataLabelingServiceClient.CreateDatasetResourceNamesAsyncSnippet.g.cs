@@ -17,15 +17,18 @@
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.DataLabeling.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateDatasetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateDatasetResourceNamesAsync()
         {
-            // Snippet: CreateDatasetAsync(ProjectName, Dataset, CallSettings)
-            // Additional: CreateDatasetAsync(ProjectName, Dataset, CancellationToken)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = await DataLabelingServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
             Dataset dataset = new Dataset();
             // Make the request
             Dataset response = await dataLabelingServiceClient.CreateDatasetAsync(parent, dataset);
-            // End snippet
         }
     }
 }

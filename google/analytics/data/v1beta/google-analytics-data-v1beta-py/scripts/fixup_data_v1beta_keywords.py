@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,12 +41,13 @@ def partition(
 class dataCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'batch_run_pivot_reports': ('property', 'requests', ),
-          'batch_run_reports': ('property', 'requests', ),
-          'get_metadata': ('name', ),
-          'run_pivot_report': ('property', 'dimensions', 'metrics', 'date_ranges', 'pivots', 'dimension_filter', 'metric_filter', 'currency_code', 'cohort_spec', 'keep_empty_rows', 'return_property_quota', ),
-          'run_realtime_report': ('property', 'dimensions', 'metrics', 'dimension_filter', 'metric_filter', 'limit', 'metric_aggregations', 'order_bys', 'return_property_quota', ),
-          'run_report': ('property', 'dimensions', 'metrics', 'date_ranges', 'dimension_filter', 'metric_filter', 'offset', 'limit', 'metric_aggregations', 'order_bys', 'currency_code', 'cohort_spec', 'keep_empty_rows', 'return_property_quota', ),
+    'batch_run_pivot_reports': ('property', 'requests', ),
+    'batch_run_reports': ('property', 'requests', ),
+    'get_metadata': ('name', ),
+    'run_pivot_report': ('property', 'dimensions', 'metrics', 'date_ranges', 'pivots', 'dimension_filter', 'metric_filter', 'currency_code', 'cohort_spec', 'keep_empty_rows', 'return_property_quota', ),
+    'run_realtime_report': ('property', 'dimensions', 'metrics', 'dimension_filter', 'metric_filter', 'limit', 'metric_aggregations', 'order_bys', 'return_property_quota', ),
+    'run_report': ('property', 'dimensions', 'metrics', 'date_ranges', 'dimension_filter', 'metric_filter', 'offset', 'limit', 'metric_aggregations', 'order_bys', 'currency_code', 'cohort_spec', 'keep_empty_rows', 'return_property_quota', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -75,7 +78,7 @@ class dataCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

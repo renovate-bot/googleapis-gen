@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -44,7 +45,8 @@ from google.cloud.domains_v1beta1.types.domains import SearchDomainsResponse
 from google.cloud.domains_v1beta1.types.domains import TransferLockState
 from google.cloud.domains_v1beta1.types.domains import UpdateRegistrationRequest
 
-__all__ = ('AuthorizationCode',
+__all__ = (
+    'AuthorizationCode',
     'ConfigureContactSettingsRequest',
     'ConfigureDnsSettingsRequest',
     'ConfigureManagementSettingsRequest',

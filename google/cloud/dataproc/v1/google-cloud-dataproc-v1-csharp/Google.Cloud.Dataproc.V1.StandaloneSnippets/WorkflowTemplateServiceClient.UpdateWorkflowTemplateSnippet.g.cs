@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
+    using Google.Cloud.Dataproc.V1;
+
     public sealed partial class GeneratedWorkflowTemplateServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateWorkflowTemplate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateWorkflowTemplate()
         {
-            // Snippet: UpdateWorkflowTemplate(WorkflowTemplate, CallSettings)
             // Create client
             WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.Create();
             // Initialize request argument(s)
             WorkflowTemplate template = new WorkflowTemplate();
             // Make the request
             WorkflowTemplate response = workflowTemplateServiceClient.UpdateWorkflowTemplate(template);
-            // End snippet
         }
     }
 }

@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Vision.V1P3Beta1.Snippets
 {
+    using Google.Cloud.Vision.V1P3Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedProductSearchClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateProductSetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateProductSetRequestObjectAsync()
         {
-            // Snippet: UpdateProductSetAsync(UpdateProductSetRequest, CallSettings)
-            // Additional: UpdateProductSetAsync(UpdateProductSetRequest, CancellationToken)
             // Create client
             ProductSearchClient productSearchClient = await ProductSearchClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Vision.V1P3Beta1.Snippets
             };
             // Make the request
             ProductSet response = await productSearchClient.UpdateProductSetAsync(request);
-            // End snippet
         }
     }
 }

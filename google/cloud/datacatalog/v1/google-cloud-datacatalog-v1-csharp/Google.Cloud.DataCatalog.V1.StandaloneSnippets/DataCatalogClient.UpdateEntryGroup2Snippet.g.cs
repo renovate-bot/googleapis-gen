@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.DataCatalog.V1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateEntryGroup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateEntryGroup2()
         {
-            // Snippet: UpdateEntryGroup(EntryGroup, FieldMask, CallSettings)
             // Create client
             DataCatalogClient dataCatalogClient = DataCatalogClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             EntryGroup response = dataCatalogClient.UpdateEntryGroup(entryGroup, updateMask);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for SuggestArticles</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SuggestArticles()
         {
-            // Snippet: SuggestArticles(string, CallSettings)
             // Create client
             ParticipantsClient participantsClient = ParticipantsClient.Create();
             // Initialize request argument(s)
             string parent = "projects/[PROJECT]/conversations/[CONVERSATION]/participants/[PARTICIPANT]";
             // Make the request
             SuggestArticlesResponse response = participantsClient.SuggestArticles(parent);
-            // End snippet
         }
     }
 }

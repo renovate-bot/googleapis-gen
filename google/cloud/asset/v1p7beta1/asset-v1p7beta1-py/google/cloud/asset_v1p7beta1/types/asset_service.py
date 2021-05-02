@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -46,6 +49,7 @@ class ContentType(proto.Enum):
 
 class ExportAssetsRequest(proto.Message):
     r"""Export asset request.
+
     Attributes:
         parent (str):
             Required. The relative name of the root
@@ -106,33 +110,23 @@ class ExportAssetsRequest(proto.Message):
             for all supported asset types and relationship types.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    read_time = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    read_time = proto.Field(proto.MESSAGE, number=2,
         message=timestamp.Timestamp,
     )
-    asset_types = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
-    content_type = proto.Field(
-        proto.ENUM,
-        number=4,
+
+    asset_types = proto.RepeatedField(proto.STRING, number=3)
+
+    content_type = proto.Field(proto.ENUM, number=4,
         enum='ContentType',
     )
-    output_config = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    output_config = proto.Field(proto.MESSAGE, number=5,
         message='OutputConfig',
     )
-    relationship_types = proto.RepeatedField(
-        proto.STRING,
-        number=6,
-    )
+
+    relationship_types = proto.RepeatedField(proto.STRING, number=6)
 
 
 class ExportAssetsResponse(proto.Message):
@@ -157,25 +151,22 @@ class ExportAssetsResponse(proto.Message):
             it exceeds a single Google Cloud Storage object limit.
     """
 
-    read_time = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    read_time = proto.Field(proto.MESSAGE, number=1,
         message=timestamp.Timestamp,
     )
-    output_config = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    output_config = proto.Field(proto.MESSAGE, number=2,
         message='OutputConfig',
     )
-    output_result = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    output_result = proto.Field(proto.MESSAGE, number=3,
         message='OutputResult',
     )
 
 
 class OutputConfig(proto.Message):
     r"""Output configuration for export assets destination.
+
     Attributes:
         gcs_destination (google.cloud.asset_v1p7beta1.types.GcsDestination):
             Destination on Cloud Storage.
@@ -185,51 +176,43 @@ class OutputConfig(proto.Message):
             BigQuery.
     """
 
-    gcs_destination = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='destination',
+    gcs_destination = proto.Field(proto.MESSAGE, number=1, oneof='destination',
         message='GcsDestination',
     )
-    bigquery_destination = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='destination',
+
+    bigquery_destination = proto.Field(proto.MESSAGE, number=2, oneof='destination',
         message='BigQueryDestination',
     )
 
 
 class OutputResult(proto.Message):
     r"""Output result of export assets.
+
     Attributes:
         gcs_result (google.cloud.asset_v1p7beta1.types.GcsOutputResult):
             Export result on Cloud Storage.
     """
 
-    gcs_result = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='result',
+    gcs_result = proto.Field(proto.MESSAGE, number=1, oneof='result',
         message='GcsOutputResult',
     )
 
 
 class GcsOutputResult(proto.Message):
     r"""A Cloud Storage output result.
+
     Attributes:
         uris (Sequence[str]):
             List of uris of the Cloud Storage objects. Example:
             "gs://bucket_name/object_name".
     """
 
-    uris = proto.RepeatedField(
-        proto.STRING,
-        number=1,
-    )
+    uris = proto.RepeatedField(proto.STRING, number=1)
 
 
 class GcsDestination(proto.Message):
     r"""A Cloud Storage location.
+
     Attributes:
         uri (str):
             The uri of the Cloud Storage object. It's the same uri that
@@ -251,20 +234,14 @@ class GcsDestination(proto.Message):
             "gs://bucket_name/object_name_prefix" already exists.
     """
 
-    uri = proto.Field(
-        proto.STRING,
-        number=1,
-        oneof='object_uri',
-    )
-    uri_prefix = proto.Field(
-        proto.STRING,
-        number=2,
-        oneof='object_uri',
-    )
+    uri = proto.Field(proto.STRING, number=1, oneof='object_uri')
+
+    uri_prefix = proto.Field(proto.STRING, number=2, oneof='object_uri')
 
 
 class BigQueryDestination(proto.Message):
     r"""A BigQuery destination for exporting assets to.
+
     Attributes:
         dataset (str):
             Required. The BigQuery dataset in format
@@ -340,27 +317,17 @@ class BigQueryDestination(proto.Message):
             a table.
     """
 
-    dataset = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    table = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    force = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    partition_spec = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    dataset = proto.Field(proto.STRING, number=1)
+
+    table = proto.Field(proto.STRING, number=2)
+
+    force = proto.Field(proto.BOOL, number=3)
+
+    partition_spec = proto.Field(proto.MESSAGE, number=4,
         message='PartitionSpec',
     )
-    separate_tables_per_asset_type = proto.Field(
-        proto.BOOL,
-        number=5,
-    )
+
+    separate_tables_per_asset_type = proto.Field(proto.BOOL, number=5)
 
 
 class PartitionSpec(proto.Message):
@@ -383,9 +350,7 @@ class PartitionSpec(proto.Message):
         READ_TIME = 1
         REQUEST_TIME = 2
 
-    partition_key = proto.Field(
-        proto.ENUM,
-        number=1,
+    partition_key = proto.Field(proto.ENUM, number=1,
         enum=PartitionKey,
     )
 

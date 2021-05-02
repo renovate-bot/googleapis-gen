@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -28,6 +30,7 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.dataproc_v1beta2.services.autoscaling_policy_service import pagers
 from google.cloud.dataproc_v1beta2.types import autoscaling_policies
+
 from .transports.base import AutoscalingPolicyServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AutoscalingPolicyServiceGrpcAsyncIOTransport
 from .client import AutoscalingPolicyServiceClient
@@ -45,14 +48,19 @@ class AutoscalingPolicyServiceAsyncClient:
 
     autoscaling_policy_path = staticmethod(AutoscalingPolicyServiceClient.autoscaling_policy_path)
     parse_autoscaling_policy_path = staticmethod(AutoscalingPolicyServiceClient.parse_autoscaling_policy_path)
+
     common_billing_account_path = staticmethod(AutoscalingPolicyServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AutoscalingPolicyServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(AutoscalingPolicyServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(AutoscalingPolicyServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(AutoscalingPolicyServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(AutoscalingPolicyServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(AutoscalingPolicyServiceClient.common_project_path)
     parse_common_project_path = staticmethod(AutoscalingPolicyServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(AutoscalingPolicyServiceClient.common_location_path)
     parse_common_location_path = staticmethod(AutoscalingPolicyServiceClient.parse_common_location_path)
 
@@ -137,6 +145,7 @@ class AutoscalingPolicyServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = AutoscalingPolicyServiceClient(
             credentials=credentials,
             transport=transport,
@@ -158,8 +167,7 @@ class AutoscalingPolicyServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.CreateAutoscalingPolicyRequest`):
-                The request object.
-                A request to create an autoscaling
+                The request object. A request to create an autoscaling
                 policy.
             parent (:class:`str`):
                 Required. The "resource name" of the region or location,
@@ -185,6 +193,7 @@ class AutoscalingPolicyServiceAsyncClient:
                 This corresponds to the ``policy_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -209,6 +218,7 @@ class AutoscalingPolicyServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if policy_ is not None:
@@ -256,8 +266,7 @@ class AutoscalingPolicyServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.UpdateAutoscalingPolicyRequest`):
-                The request object.
-                A request to update an autoscaling
+                The request object. A request to update an autoscaling
                 policy.
             policy_ (:class:`google.cloud.dataproc_v1beta2.types.AutoscalingPolicy`):
                 Required. The updated autoscaling
@@ -266,6 +275,7 @@ class AutoscalingPolicyServiceAsyncClient:
                 This corresponds to the ``policy_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -290,6 +300,7 @@ class AutoscalingPolicyServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if policy_ is not None:
             request.policy_ = policy_
 
@@ -298,7 +309,10 @@ class AutoscalingPolicyServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_autoscaling_policy,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -339,8 +353,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.GetAutoscalingPolicyRequest`):
-                The request object.
-                A request to fetch an autoscaling
+                The request object. A request to fetch an autoscaling
                 policy.
             name (:class:`str`):
                 Required. The "resource name" of the autoscaling policy,
@@ -359,6 +372,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -383,6 +397,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -391,7 +406,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_autoscaling_policy,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -432,8 +450,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.ListAutoscalingPoliciesRequest`):
-                The request object.
-                A request to list autoscaling
+                The request object. A request to list autoscaling
                 policies in a project.
             parent (:class:`str`):
                 Required. The "resource name" of the region or location,
@@ -452,6 +469,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -479,6 +497,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -487,7 +506,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_autoscaling_policies,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -539,8 +561,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.DeleteAutoscalingPolicyRequest`):
-                The request object.
-                A request to delete an autoscaling
+                The request object. A request to delete an autoscaling
                 policy.
                 Autoscaling policies in use by one or more clusters will
                 not be deleted.
@@ -563,6 +584,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -581,6 +603,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -607,6 +630,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

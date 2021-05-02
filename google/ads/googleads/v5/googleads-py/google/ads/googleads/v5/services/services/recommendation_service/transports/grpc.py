@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v5.resources.types import recommendation
 from google.ads.googleads.v5.services.types import recommendation_service
+
 from .base import RecommendationServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class RecommendationServiceGrpcTransport(RecommendationServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class RecommendationServiceGrpcTransport(RecommendationServiceTransport):
     def get_recommendation(self) -> Callable[
             [recommendation_service.GetRecommendationRequest],
             recommendation.Recommendation]:
-        r"""Return a callable for the
-        get recommendation
-          method over gRPC.
+        r"""Return a callable for the get recommendation method over gRPC.
 
         Returns the requested recommendation in full detail.
 
@@ -229,9 +229,7 @@ class RecommendationServiceGrpcTransport(RecommendationServiceTransport):
     def apply_recommendation(self) -> Callable[
             [recommendation_service.ApplyRecommendationRequest],
             recommendation_service.ApplyRecommendationResponse]:
-        r"""Return a callable for the
-        apply recommendation
-          method over gRPC.
+        r"""Return a callable for the apply recommendation method over gRPC.
 
         Applies given recommendations with corresponding
         apply parameters.
@@ -258,9 +256,7 @@ class RecommendationServiceGrpcTransport(RecommendationServiceTransport):
     def dismiss_recommendation(self) -> Callable[
             [recommendation_service.DismissRecommendationRequest],
             recommendation_service.DismissRecommendationResponse]:
-        r"""Return a callable for the
-        dismiss recommendation
-          method over gRPC.
+        r"""Return a callable for the dismiss recommendation method over gRPC.
 
         Dismisses given recommendations.
 

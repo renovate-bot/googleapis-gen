@@ -17,22 +17,24 @@
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dialogflow.V2beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAgentsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAgentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAgentResourceNames1Async()
         {
-            // Snippet: GetAgentAsync(ProjectName, CallSettings)
-            // Additional: GetAgentAsync(ProjectName, CancellationToken)
             // Create client
             AgentsClient agentsClient = await AgentsClient.CreateAsync();
             // Initialize request argument(s)
             ProjectName parent = ProjectName.FromProject("[PROJECT]");
             // Make the request
             Agent response = await agentsClient.GetAgentAsync(parent);
-            // End snippet
         }
     }
 }

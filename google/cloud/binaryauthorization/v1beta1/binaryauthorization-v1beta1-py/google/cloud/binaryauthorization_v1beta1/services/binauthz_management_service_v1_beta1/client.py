@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,6 +36,7 @@ from google.cloud.binaryauthorization_v1beta1.services.binauthz_management_servi
 from google.cloud.binaryauthorization_v1beta1.types import resources
 from google.cloud.binaryauthorization_v1beta1.types import service
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import BinauthzManagementServiceV1Beta1Transport, DEFAULT_CLIENT_INFO
 from .transports.grpc import BinauthzManagementServiceV1Beta1GrpcTransport
 from .transports.grpc_asyncio import BinauthzManagementServiceV1Beta1GrpcAsyncIOTransport
@@ -365,8 +368,7 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
 
         Args:
             request (google.cloud.binaryauthorization_v1beta1.types.GetPolicyRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [BinauthzManagementService.GetPolicy][].
             name (str):
                 Required. The resource name of the
@@ -376,6 +378,7 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -402,8 +405,10 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
         # there are no flattened fields.
         if not isinstance(request, service.GetPolicyRequest):
             request = service.GetPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -449,8 +454,7 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
 
         Args:
             request (google.cloud.binaryauthorization_v1beta1.types.UpdatePolicyRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [BinauthzManagementService.UpdatePolicy][].
             policy_ (google.cloud.binaryauthorization_v1beta1.types.Policy):
                 Required. A new or updated
@@ -463,6 +467,7 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
                 This corresponds to the ``policy_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -489,8 +494,10 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
         # there are no flattened fields.
         if not isinstance(request, service.UpdatePolicyRequest):
             request = service.UpdatePolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if policy_ is not None:
                 request.policy_ = policy_
 
@@ -539,8 +546,7 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
 
         Args:
             request (google.cloud.binaryauthorization_v1beta1.types.CreateAttestorRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [BinauthzManagementService.CreateAttestor][].
             parent (str):
                 Required. The parent of this
@@ -568,6 +574,7 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
                 This corresponds to the ``attestor`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -595,8 +602,10 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
         # there are no flattened fields.
         if not isinstance(request, service.CreateAttestorRequest):
             request = service.CreateAttestorRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if attestor_id is not None:
@@ -643,8 +652,7 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
 
         Args:
             request (google.cloud.binaryauthorization_v1beta1.types.GetAttestorRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [BinauthzManagementService.GetAttestor][].
             name (str):
                 Required. The name of the
@@ -654,6 +662,7 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -681,8 +690,10 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
         # there are no flattened fields.
         if not isinstance(request, service.GetAttestorRequest):
             request = service.GetAttestorRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -725,8 +736,7 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
 
         Args:
             request (google.cloud.binaryauthorization_v1beta1.types.UpdateAttestorRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [BinauthzManagementService.UpdateAttestor][].
             attestor (google.cloud.binaryauthorization_v1beta1.types.Attestor):
                 Required. The updated
@@ -739,6 +749,7 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
                 This corresponds to the ``attestor`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -766,8 +777,10 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
         # there are no flattened fields.
         if not isinstance(request, service.UpdateAttestorRequest):
             request = service.UpdateAttestorRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if attestor is not None:
                 request.attestor = attestor
 
@@ -808,8 +821,7 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
 
         Args:
             request (google.cloud.binaryauthorization_v1beta1.types.ListAttestorsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [BinauthzManagementService.ListAttestors][].
             parent (str):
                 Required. The resource name of the project associated
@@ -820,6 +832,7 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -849,8 +862,10 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
         # there are no flattened fields.
         if not isinstance(request, service.ListAttestorsRequest):
             request = service.ListAttestorsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -902,8 +917,7 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
 
         Args:
             request (google.cloud.binaryauthorization_v1beta1.types.DeleteAttestorRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [BinauthzManagementService.DeleteAttestor][].
             name (str):
                 Required. The name of the
@@ -913,6 +927,7 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -933,8 +948,10 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
         # there are no flattened fields.
         if not isinstance(request, service.DeleteAttestorRequest):
             request = service.DeleteAttestorRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -957,6 +974,8 @@ class BinauthzManagementServiceV1Beta1Client(metaclass=BinauthzManagementService
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

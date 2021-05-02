@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Spanner.Admin.Instance.V1.Snippets
 {
+    using Google.Cloud.Spanner.Admin.Instance.V1;
+
     public sealed partial class GeneratedInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInstanceConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetInstanceConfigResourceNames()
         {
-            // Snippet: GetInstanceConfig(InstanceConfigName, CallSettings)
             // Create client
             InstanceAdminClient instanceAdminClient = InstanceAdminClient.Create();
             // Initialize request argument(s)
             InstanceConfigName name = InstanceConfigName.FromProjectInstanceConfig("[PROJECT]", "[INSTANCE_CONFIG]");
             // Make the request
             InstanceConfig response = instanceAdminClient.GetInstanceConfig(name);
-            // End snippet
         }
     }
 }

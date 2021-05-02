@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -27,6 +29,7 @@ import grpc  # type: ignore
 from google.home.enterprise.sdm_v1.types import device
 from google.home.enterprise.sdm_v1.types import site
 from google.home.enterprise.sdm_v1.types import smart_device_management_service
+
 from .base import SmartDeviceManagementServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -61,8 +64,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,15 +203,13 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -223,9 +223,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
     def get_device(self) -> Callable[
             [smart_device_management_service.GetDeviceRequest],
             device.Device]:
-        r"""Return a callable for the
-        get device
-          method over gRPC.
+        r"""Return a callable for the get device method over gRPC.
 
         Gets a device managed by the enterprise.
 
@@ -251,9 +249,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
     def list_devices(self) -> Callable[
             [smart_device_management_service.ListDevicesRequest],
             smart_device_management_service.ListDevicesResponse]:
-        r"""Return a callable for the
-        list devices
-          method over gRPC.
+        r"""Return a callable for the list devices method over gRPC.
 
         Lists devices managed by the enterprise.
 
@@ -279,9 +275,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
     def execute_device_command(self) -> Callable[
             [smart_device_management_service.ExecuteDeviceCommandRequest],
             smart_device_management_service.ExecuteDeviceCommandResponse]:
-        r"""Return a callable for the
-        execute device command
-          method over gRPC.
+        r"""Return a callable for the execute device command method over gRPC.
 
         Executes a command to device managed by the
         enterprise.
@@ -308,9 +302,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
     def get_structure(self) -> Callable[
             [smart_device_management_service.GetStructureRequest],
             site.Structure]:
-        r"""Return a callable for the
-        get structure
-          method over gRPC.
+        r"""Return a callable for the get structure method over gRPC.
 
         Gets a structure managed by the enterprise.
 
@@ -336,9 +328,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
     def list_structures(self) -> Callable[
             [smart_device_management_service.ListStructuresRequest],
             smart_device_management_service.ListStructuresResponse]:
-        r"""Return a callable for the
-        list structures
-          method over gRPC.
+        r"""Return a callable for the list structures method over gRPC.
 
         Lists structures managed by the enterprise.
 
@@ -364,9 +354,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
     def get_room(self) -> Callable[
             [smart_device_management_service.GetRoomRequest],
             site.Room]:
-        r"""Return a callable for the
-        get room
-          method over gRPC.
+        r"""Return a callable for the get room method over gRPC.
 
         Gets a room managed by the enterprise.
 
@@ -392,9 +380,7 @@ class SmartDeviceManagementServiceGrpcTransport(SmartDeviceManagementServiceTran
     def list_rooms(self) -> Callable[
             [smart_device_management_service.ListRoomsRequest],
             smart_device_management_service.ListRoomsResponse]:
-        r"""Return a callable for the
-        list rooms
-          method over gRPC.
+        r"""Return a callable for the list rooms method over gRPC.
 
         Lists rooms managed by the enterprise.
 

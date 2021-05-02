@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +25,8 @@ from google.cloud.policytroubleshooter_v1.types.explanations import BindingExpla
 from google.cloud.policytroubleshooter_v1.types.explanations import ExplainedPolicy
 from google.cloud.policytroubleshooter_v1.types.explanations import HeuristicRelevance
 
-__all__ = ('AccessState',
+__all__ = (
+    'AccessState',
     'AccessTuple',
     'BindingExplanation',
     'ExplainedPolicy',

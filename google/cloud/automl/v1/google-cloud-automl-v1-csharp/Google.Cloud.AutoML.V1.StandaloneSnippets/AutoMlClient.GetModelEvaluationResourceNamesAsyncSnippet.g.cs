@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.AutoML.V1.Snippets
 {
+    using Google.Cloud.AutoML.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for GetModelEvaluationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetModelEvaluationResourceNamesAsync()
         {
-            // Snippet: GetModelEvaluationAsync(ModelEvaluationName, CallSettings)
-            // Additional: GetModelEvaluationAsync(ModelEvaluationName, CancellationToken)
             // Create client
             AutoMlClient autoMlClient = await AutoMlClient.CreateAsync();
             // Initialize request argument(s)
             ModelEvaluationName name = ModelEvaluationName.FromProjectLocationModelModelEvaluation("[PROJECT]", "[LOCATION]", "[MODEL]", "[MODEL_EVALUATION]");
             // Make the request
             ModelEvaluation response = await autoMlClient.GetModelEvaluationAsync(name);
-            // End snippet
         }
     }
 }

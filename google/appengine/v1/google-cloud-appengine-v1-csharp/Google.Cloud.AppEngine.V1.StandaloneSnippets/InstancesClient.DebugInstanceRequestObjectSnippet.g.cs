@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedInstancesClientStandaloneSnippets
     {
         /// <summary>Snippet for DebugInstance</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DebugInstanceRequestObject()
         {
-            // Snippet: DebugInstance(DebugInstanceRequest, CallSettings)
             // Create client
             InstancesClient instancesClient = InstancesClient.Create();
             // Initialize request argument(s)
@@ -46,7 +50,6 @@ namespace Google.Cloud.AppEngine.V1.Snippets
                 // If it has completed, then access the result
                 Instance retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

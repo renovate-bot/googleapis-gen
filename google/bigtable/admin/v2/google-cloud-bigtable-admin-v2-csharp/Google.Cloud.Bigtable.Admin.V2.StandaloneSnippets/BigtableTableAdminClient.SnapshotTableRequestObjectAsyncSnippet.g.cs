@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
     public sealed partial class GeneratedBigtableTableAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for SnapshotTableAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SnapshotTableRequestObjectAsync()
         {
-            // Snippet: SnapshotTableAsync(SnapshotTableRequest, CallSettings)
-            // Additional: SnapshotTableAsync(SnapshotTableRequest, CancellationToken)
             // Create client
             BigtableTableAdminClient bigtableTableAdminClient = await BigtableTableAdminClient.CreateAsync();
             // Initialize request argument(s)
@@ -56,7 +59,6 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
                 // If it has completed, then access the result
                 Snapshot retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

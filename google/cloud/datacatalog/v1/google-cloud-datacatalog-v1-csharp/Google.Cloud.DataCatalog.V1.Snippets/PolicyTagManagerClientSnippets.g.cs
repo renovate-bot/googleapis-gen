@@ -317,7 +317,7 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTaxonomies</summary>
+        /// <summary>Snippet for ListTaxonomiesAsync</summary>
         public async Task ListTaxonomiesRequestObjectAsync()
         {
             // Snippet: ListTaxonomiesAsync(ListTaxonomiesRequest, CallSettings)
@@ -410,7 +410,7 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTaxonomies</summary>
+        /// <summary>Snippet for ListTaxonomiesAsync</summary>
         public async Task ListTaxonomiesAsync()
         {
             // Snippet: ListTaxonomiesAsync(string, string, int?, CallSettings)
@@ -500,7 +500,7 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTaxonomies</summary>
+        /// <summary>Snippet for ListTaxonomiesAsync</summary>
         public async Task ListTaxonomiesResourceNamesAsync()
         {
             // Snippet: ListTaxonomiesAsync(LocationName, string, int?, CallSettings)
@@ -922,7 +922,7 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListPolicyTags</summary>
+        /// <summary>Snippet for ListPolicyTagsAsync</summary>
         public async Task ListPolicyTagsRequestObjectAsync()
         {
             // Snippet: ListPolicyTagsAsync(ListPolicyTagsRequest, CallSettings)
@@ -1015,7 +1015,7 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListPolicyTags</summary>
+        /// <summary>Snippet for ListPolicyTagsAsync</summary>
         public async Task ListPolicyTagsAsync()
         {
             // Snippet: ListPolicyTagsAsync(string, string, int?, CallSettings)
@@ -1105,7 +1105,7 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListPolicyTags</summary>
+        /// <summary>Snippet for ListPolicyTagsAsync</summary>
         public async Task ListPolicyTagsResourceNamesAsync()
         {
             // Snippet: ListPolicyTagsAsync(TaxonomyName, string, int?, CallSettings)

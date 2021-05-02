@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRemarketingActionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetRemarketingActionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetRemarketingActionResourceNamesAsync()
         {
-            // Snippet: GetRemarketingActionAsync(RemarketingActionName, CallSettings)
-            // Additional: GetRemarketingActionAsync(RemarketingActionName, CancellationToken)
             // Create client
             RemarketingActionServiceClient remarketingActionServiceClient = await RemarketingActionServiceClient.CreateAsync();
             // Initialize request argument(s)
             RemarketingActionName resourceName = RemarketingActionName.FromCustomerRemarketingAction("[CUSTOMER_ID]", "[REMARKETING_ACTION_ID]");
             // Make the request
             RemarketingAction response = await remarketingActionServiceClient.GetRemarketingActionAsync(resourceName);
-            // End snippet
         }
     }
 }

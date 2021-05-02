@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Vision.V1P3Beta1.Snippets
 {
+    using Google.Cloud.Vision.V1P3Beta1;
+
     public sealed partial class GeneratedProductSearchClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateReferenceImage</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateReferenceImageResourceNames()
         {
-            // Snippet: CreateReferenceImage(ProductName, ReferenceImage, string, CallSettings)
             // Create client
             ProductSearchClient productSearchClient = ProductSearchClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.Vision.V1P3Beta1.Snippets
             string referenceImageId = "";
             // Make the request
             ReferenceImage response = productSearchClient.CreateReferenceImage(parent, referenceImage, referenceImageId);
-            // End snippet
         }
     }
 }

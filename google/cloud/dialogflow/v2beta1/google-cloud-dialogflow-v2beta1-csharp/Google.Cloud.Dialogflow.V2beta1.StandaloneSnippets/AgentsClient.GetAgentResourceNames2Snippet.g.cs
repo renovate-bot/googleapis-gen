@@ -17,20 +17,23 @@
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dialogflow.V2beta1;
 
     public sealed partial class GeneratedAgentsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAgent</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAgentResourceNames2()
         {
-            // Snippet: GetAgent(LocationName, CallSettings)
             // Create client
             AgentsClient agentsClient = AgentsClient.Create();
             // Initialize request argument(s)
             LocationName parent = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]");
             // Make the request
             Agent response = agentsClient.GetAgent(parent);
-            // End snippet
         }
     }
 }

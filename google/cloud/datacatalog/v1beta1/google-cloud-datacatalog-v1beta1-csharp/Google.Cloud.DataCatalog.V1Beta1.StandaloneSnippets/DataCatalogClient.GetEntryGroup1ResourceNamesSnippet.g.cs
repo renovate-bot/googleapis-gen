@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1Beta1;
+
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for GetEntryGroup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetEntryGroup1ResourceNames()
         {
-            // Snippet: GetEntryGroup(EntryGroupName, CallSettings)
             // Create client
             DataCatalogClient dataCatalogClient = DataCatalogClient.Create();
             // Initialize request argument(s)
             EntryGroupName name = EntryGroupName.FromProjectLocationEntryGroup("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
             // Make the request
             EntryGroup response = dataCatalogClient.GetEntryGroup(name);
-            // End snippet
         }
     }
 }

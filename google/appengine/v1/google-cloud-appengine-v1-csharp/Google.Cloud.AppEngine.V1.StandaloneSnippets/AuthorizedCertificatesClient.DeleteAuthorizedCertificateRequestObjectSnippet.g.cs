@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
+
     public sealed partial class GeneratedAuthorizedCertificatesClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteAuthorizedCertificate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteAuthorizedCertificateRequestObject()
         {
-            // Snippet: DeleteAuthorizedCertificate(DeleteAuthorizedCertificateRequest, CallSettings)
             // Create client
             AuthorizedCertificatesClient authorizedCertificatesClient = AuthorizedCertificatesClient.Create();
             // Initialize request argument(s)
             DeleteAuthorizedCertificateRequest request = new DeleteAuthorizedCertificateRequest { Name = "", };
             // Make the request
             authorizedCertificatesClient.DeleteAuthorizedCertificate(request);
-            // End snippet
         }
     }
 }

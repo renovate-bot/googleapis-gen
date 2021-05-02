@@ -77,7 +77,7 @@ namespace Google.Cloud.Clouddms.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListMigrationJobs</summary>
+        /// <summary>Snippet for ListMigrationJobsAsync</summary>
         public async Task ListMigrationJobsRequestObjectAsync()
         {
             // Snippet: ListMigrationJobsAsync(ListMigrationJobsRequest, CallSettings)
@@ -172,7 +172,7 @@ namespace Google.Cloud.Clouddms.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListMigrationJobs</summary>
+        /// <summary>Snippet for ListMigrationJobsAsync</summary>
         public async Task ListMigrationJobsAsync()
         {
             // Snippet: ListMigrationJobsAsync(string, string, int?, CallSettings)
@@ -262,7 +262,7 @@ namespace Google.Cloud.Clouddms.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListMigrationJobs</summary>
+        /// <summary>Snippet for ListMigrationJobsAsync</summary>
         public async Task ListMigrationJobsResourceNamesAsync()
         {
             // Snippet: ListMigrationJobsAsync(LocationName, string, int?, CallSettings)
@@ -1311,7 +1311,6 @@ namespace Google.Cloud.Clouddms.V1.Snippets
                 Vm = "",
                 VmPort = 0,
                 VmCreationConfig = new VmCreationConfig(),
-                VmSelectionConfig = new VmSelectionConfig(),
             };
             // Make the request
             SshScript response = dataMigrationServiceClient.GenerateSshScript(request);
@@ -1332,7 +1331,6 @@ namespace Google.Cloud.Clouddms.V1.Snippets
                 Vm = "",
                 VmPort = 0,
                 VmCreationConfig = new VmCreationConfig(),
-                VmSelectionConfig = new VmSelectionConfig(),
             };
             // Make the request
             SshScript response = await dataMigrationServiceClient.GenerateSshScriptAsync(request);
@@ -1389,7 +1387,7 @@ namespace Google.Cloud.Clouddms.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConnectionProfiles</summary>
+        /// <summary>Snippet for ListConnectionProfilesAsync</summary>
         public async Task ListConnectionProfilesRequestObjectAsync()
         {
             // Snippet: ListConnectionProfilesAsync(ListConnectionProfilesRequest, CallSettings)
@@ -1484,7 +1482,7 @@ namespace Google.Cloud.Clouddms.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConnectionProfiles</summary>
+        /// <summary>Snippet for ListConnectionProfilesAsync</summary>
         public async Task ListConnectionProfilesAsync()
         {
             // Snippet: ListConnectionProfilesAsync(string, string, int?, CallSettings)
@@ -1574,7 +1572,7 @@ namespace Google.Cloud.Clouddms.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConnectionProfiles</summary>
+        /// <summary>Snippet for ListConnectionProfilesAsync</summary>
         public async Task ListConnectionProfilesResourceNamesAsync()
         {
             // Snippet: ListConnectionProfilesAsync(LocationName, string, int?, CallSettings)

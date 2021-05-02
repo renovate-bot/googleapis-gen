@@ -17,13 +17,17 @@
 namespace Google.Cloud.BigQuery.Storage.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.BigQuery.Storage.V1;
 
     public sealed partial class GeneratedBigQueryReadClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateReadSession</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateReadSessionResourceNames()
         {
-            // Snippet: CreateReadSession(ProjectName, ReadSession, int, CallSettings)
             // Create client
             BigQueryReadClient bigQueryReadClient = BigQueryReadClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.BigQuery.Storage.V1.Snippets
             int maxStreamCount = 0;
             // Make the request
             ReadSession response = bigQueryReadClient.CreateReadSession(parent, readSession, maxStreamCount);
-            // End snippet
         }
     }
 }

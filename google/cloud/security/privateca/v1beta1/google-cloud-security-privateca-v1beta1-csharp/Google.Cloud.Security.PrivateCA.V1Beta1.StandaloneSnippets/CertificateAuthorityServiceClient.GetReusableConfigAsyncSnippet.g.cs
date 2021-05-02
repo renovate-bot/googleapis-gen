@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Security.PrivateCA.V1Beta1.Snippets
 {
+    using Google.Cloud.Security.PrivateCA.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCertificateAuthorityServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetReusableConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetReusableConfigAsync()
         {
-            // Snippet: GetReusableConfigAsync(string, CallSettings)
-            // Additional: GetReusableConfigAsync(string, CancellationToken)
             // Create client
             CertificateAuthorityServiceClient certificateAuthorityServiceClient = await CertificateAuthorityServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/reusableConfigs/[REUSABLE_CONFIG]";
             // Make the request
             ReusableConfig response = await certificateAuthorityServiceClient.GetReusableConfigAsync(name);
-            // End snippet
         }
     }
 }

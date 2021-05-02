@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedCustomerUserAccessInvitationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomerUserAccessInvitation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCustomerUserAccessInvitation()
         {
-            // Snippet: GetCustomerUserAccessInvitation(string, CallSettings)
             // Create client
             CustomerUserAccessInvitationServiceClient customerUserAccessInvitationServiceClient = CustomerUserAccessInvitationServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/customerUserAccessInvitations/[INVITATION_ID]";
             // Make the request
             CustomerUserAccessInvitation response = customerUserAccessInvitationServiceClient.GetCustomerUserAccessInvitation(resourceName);
-            // End snippet
         }
     }
 }

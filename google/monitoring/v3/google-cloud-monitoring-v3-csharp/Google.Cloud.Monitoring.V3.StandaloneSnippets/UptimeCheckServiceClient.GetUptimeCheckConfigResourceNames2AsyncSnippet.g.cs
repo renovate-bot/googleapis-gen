@@ -17,22 +17,24 @@
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedUptimeCheckServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetUptimeCheckConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetUptimeCheckConfigResourceNames2Async()
         {
-            // Snippet: GetUptimeCheckConfigAsync(IResourceName, CallSettings)
-            // Additional: GetUptimeCheckConfigAsync(IResourceName, CancellationToken)
             // Create client
             UptimeCheckServiceClient uptimeCheckServiceClient = await UptimeCheckServiceClient.CreateAsync();
             // Initialize request argument(s)
             IResourceName name = new UnparsedResourceName("a/wildcard/resource");
             // Make the request
             UptimeCheckConfig response = await uptimeCheckServiceClient.GetUptimeCheckConfigAsync(name);
-            // End snippet
         }
     }
 }

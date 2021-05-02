@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -52,7 +53,8 @@ from google.cloud.speech_v1p1beta1.types.resource import CustomClass
 from google.cloud.speech_v1p1beta1.types.resource import PhraseSet
 from google.cloud.speech_v1p1beta1.types.resource import SpeechAdaptation
 
-__all__ = ('AdaptationAsyncClient',
+__all__ = (
+    'AdaptationAsyncClient',
     'AdaptationClient',
     'CreateCustomClassRequest',
     'CreatePhraseSetRequest',

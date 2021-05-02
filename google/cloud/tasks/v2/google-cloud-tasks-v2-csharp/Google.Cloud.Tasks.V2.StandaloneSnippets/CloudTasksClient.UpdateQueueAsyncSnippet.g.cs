@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Tasks.V2.Snippets
 {
+    using Google.Cloud.Tasks.V2;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateQueueAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateQueueAsync()
         {
-            // Snippet: UpdateQueueAsync(Queue, FieldMask, CallSettings)
-            // Additional: UpdateQueueAsync(Queue, FieldMask, CancellationToken)
             // Create client
             CloudTasksClient cloudTasksClient = await CloudTasksClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Tasks.V2.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Queue response = await cloudTasksClient.UpdateQueueAsync(queue, updateMask);
-            // End snippet
         }
     }
 }

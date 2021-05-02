@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v4.resources.types import bidding_strategy
 from google.ads.googleads.v4.services.types import bidding_strategy_service
+
 from .base import BiddingStrategyServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class BiddingStrategyServiceGrpcTransport(BiddingStrategyServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class BiddingStrategyServiceGrpcTransport(BiddingStrategyServiceTransport):
     def get_bidding_strategy(self) -> Callable[
             [bidding_strategy_service.GetBiddingStrategyRequest],
             bidding_strategy.BiddingStrategy]:
-        r"""Return a callable for the
-        get bidding strategy
-          method over gRPC.
+        r"""Return a callable for the get bidding strategy method over gRPC.
 
         Returns the requested bidding strategy in full
         detail.
@@ -230,9 +230,7 @@ class BiddingStrategyServiceGrpcTransport(BiddingStrategyServiceTransport):
     def mutate_bidding_strategies(self) -> Callable[
             [bidding_strategy_service.MutateBiddingStrategiesRequest],
             bidding_strategy_service.MutateBiddingStrategiesResponse]:
-        r"""Return a callable for the
-        mutate bidding strategies
-          method over gRPC.
+        r"""Return a callable for the mutate bidding strategies method over gRPC.
 
         Creates, updates, or removes bidding strategies.
         Operation statuses are returned.

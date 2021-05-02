@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.enums.types import account_budget_proposal_status
 from google.ads.googleads.v6.enums.types import account_budget_proposal_type
@@ -115,118 +118,40 @@ class AccountBudgetProposal(proto.Message):
             well-defined type, e.g. INFINITE.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.INT64,
-        number=25,
-        optional=True,
-    )
-    billing_setup = proto.Field(
-        proto.STRING,
-        number=26,
-        optional=True,
-    )
-    account_budget = proto.Field(
-        proto.STRING,
-        number=27,
-        optional=True,
-    )
-    proposal_type = proto.Field(
-        proto.ENUM,
-        number=4,
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.INT64, number=25, optional=True)
+    billing_setup = proto.Field(proto.STRING, number=26, optional=True)
+    account_budget = proto.Field(proto.STRING, number=27, optional=True)
+    proposal_type = proto.Field(proto.ENUM, number=4,
         enum=account_budget_proposal_type.AccountBudgetProposalTypeEnum.AccountBudgetProposalType,
     )
-    status = proto.Field(
-        proto.ENUM,
-        number=15,
+    status = proto.Field(proto.ENUM, number=15,
         enum=account_budget_proposal_status.AccountBudgetProposalStatusEnum.AccountBudgetProposalStatus,
     )
-    proposed_name = proto.Field(
-        proto.STRING,
-        number=28,
-        optional=True,
-    )
-    approved_start_date_time = proto.Field(
-        proto.STRING,
-        number=30,
-        optional=True,
-    )
-    proposed_purchase_order_number = proto.Field(
-        proto.STRING,
-        number=35,
-        optional=True,
-    )
-    proposed_notes = proto.Field(
-        proto.STRING,
-        number=36,
-        optional=True,
-    )
-    creation_date_time = proto.Field(
-        proto.STRING,
-        number=37,
-        optional=True,
-    )
-    approval_date_time = proto.Field(
-        proto.STRING,
-        number=38,
-        optional=True,
-    )
-    proposed_start_date_time = proto.Field(
-        proto.STRING,
-        number=29,
-        oneof='proposed_start_time',
-    )
-    proposed_start_time_type = proto.Field(
-        proto.ENUM,
-        number=7,
-        oneof='proposed_start_time',
+    proposed_name = proto.Field(proto.STRING, number=28, optional=True)
+    approved_start_date_time = proto.Field(proto.STRING, number=30, optional=True)
+    proposed_purchase_order_number = proto.Field(proto.STRING, number=35, optional=True)
+    proposed_notes = proto.Field(proto.STRING, number=36, optional=True)
+    creation_date_time = proto.Field(proto.STRING, number=37, optional=True)
+    approval_date_time = proto.Field(proto.STRING, number=38, optional=True)
+    proposed_start_date_time = proto.Field(proto.STRING, number=29, oneof='proposed_start_time')
+    proposed_start_time_type = proto.Field(proto.ENUM, number=7, oneof='proposed_start_time',
         enum=time_type.TimeTypeEnum.TimeType,
     )
-    proposed_end_date_time = proto.Field(
-        proto.STRING,
-        number=31,
-        oneof='proposed_end_time',
-    )
-    proposed_end_time_type = proto.Field(
-        proto.ENUM,
-        number=9,
-        oneof='proposed_end_time',
+    proposed_end_date_time = proto.Field(proto.STRING, number=31, oneof='proposed_end_time')
+    proposed_end_time_type = proto.Field(proto.ENUM, number=9, oneof='proposed_end_time',
         enum=time_type.TimeTypeEnum.TimeType,
     )
-    approved_end_date_time = proto.Field(
-        proto.STRING,
-        number=32,
-        oneof='approved_end_time',
-    )
-    approved_end_time_type = proto.Field(
-        proto.ENUM,
-        number=22,
-        oneof='approved_end_time',
+    approved_end_date_time = proto.Field(proto.STRING, number=32, oneof='approved_end_time')
+    approved_end_time_type = proto.Field(proto.ENUM, number=22, oneof='approved_end_time',
         enum=time_type.TimeTypeEnum.TimeType,
     )
-    proposed_spending_limit_micros = proto.Field(
-        proto.INT64,
-        number=33,
-        oneof='proposed_spending_limit',
-    )
-    proposed_spending_limit_type = proto.Field(
-        proto.ENUM,
-        number=11,
-        oneof='proposed_spending_limit',
+    proposed_spending_limit_micros = proto.Field(proto.INT64, number=33, oneof='proposed_spending_limit')
+    proposed_spending_limit_type = proto.Field(proto.ENUM, number=11, oneof='proposed_spending_limit',
         enum=spending_limit_type.SpendingLimitTypeEnum.SpendingLimitType,
     )
-    approved_spending_limit_micros = proto.Field(
-        proto.INT64,
-        number=34,
-        oneof='approved_spending_limit',
-    )
-    approved_spending_limit_type = proto.Field(
-        proto.ENUM,
-        number=24,
-        oneof='approved_spending_limit',
+    approved_spending_limit_micros = proto.Field(proto.INT64, number=34, oneof='approved_spending_limit')
+    approved_spending_limit_type = proto.Field(proto.ENUM, number=24, oneof='approved_spending_limit',
         enum=spending_limit_type.SpendingLimitTypeEnum.SpendingLimitType,
     )
 

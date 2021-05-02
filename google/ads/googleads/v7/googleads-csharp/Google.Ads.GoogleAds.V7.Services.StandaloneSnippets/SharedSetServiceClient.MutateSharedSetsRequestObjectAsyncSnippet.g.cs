@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Enums;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSharedSetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateSharedSetsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateSharedSetsRequestObjectAsync()
         {
-            // Snippet: MutateSharedSetsAsync(MutateSharedSetsRequest, CallSettings)
-            // Additional: MutateSharedSetsAsync(MutateSharedSetsRequest, CancellationToken)
             // Create client
             SharedSetServiceClient sharedSetServiceClient = await SharedSetServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -42,7 +45,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateSharedSetsResponse response = await sharedSetServiceClient.MutateSharedSetsAsync(request);
-            // End snippet
         }
     }
 }

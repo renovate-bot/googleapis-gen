@@ -17,15 +17,18 @@
 namespace Google.Cloud.Translate.V3.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Translate.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTranslationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSupportedLanguagesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetSupportedLanguagesRequestObjectAsync()
         {
-            // Snippet: GetSupportedLanguagesAsync(GetSupportedLanguagesRequest, CallSettings)
-            // Additional: GetSupportedLanguagesAsync(GetSupportedLanguagesRequest, CancellationToken)
             // Create client
             TranslationServiceClient translationServiceClient = await TranslationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Translate.V3.Snippets
             };
             // Make the request
             SupportedLanguages response = await translationServiceClient.GetSupportedLanguagesAsync(request);
-            // End snippet
         }
     }
 }

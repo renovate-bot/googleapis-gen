@@ -18,16 +18,19 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Api.Gax;
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.ResourceManager.V3;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOrganizationsClientStandaloneSnippets
     {
         /// <summary>Snippet for TestIamPermissionsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task TestIamPermissionsResourceNamesAsync()
         {
-            // Snippet: TestIamPermissionsAsync(IResourceName, IEnumerable<string>, CallSettings)
-            // Additional: TestIamPermissionsAsync(IResourceName, IEnumerable<string>, CancellationToken)
             // Create client
             OrganizationsClient organizationsClient = await OrganizationsClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             IEnumerable<string> permissions = new string[] { "", };
             // Make the request
             TestIamPermissionsResponse response = await organizationsClient.TestIamPermissionsAsync(resource, permissions);
-            // End snippet
         }
     }
 }

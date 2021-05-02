@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigtableInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateAppProfileAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateAppProfileAsync()
         {
-            // Snippet: CreateAppProfileAsync(string, string, AppProfile, CallSettings)
-            // Additional: CreateAppProfileAsync(string, string, AppProfile, CancellationToken)
             // Create client
             BigtableInstanceAdminClient bigtableInstanceAdminClient = await BigtableInstanceAdminClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
             AppProfile appProfile = new AppProfile();
             // Make the request
             AppProfile response = await bigtableInstanceAdminClient.CreateAppProfileAsync(parent, appProfileId, appProfile);
-            // End snippet
         }
     }
 }

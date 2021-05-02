@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +31,8 @@ from google.cloud.webrisk_v1beta1.types.webrisk import ThreatEntryAdditions
 from google.cloud.webrisk_v1beta1.types.webrisk import ThreatEntryRemovals
 from google.cloud.webrisk_v1beta1.types.webrisk import ThreatType
 
-__all__ = ('CompressionType',
+__all__ = (
+    'CompressionType',
     'ComputeThreatListDiffRequest',
     'ComputeThreatListDiffResponse',
     'RawHashes',

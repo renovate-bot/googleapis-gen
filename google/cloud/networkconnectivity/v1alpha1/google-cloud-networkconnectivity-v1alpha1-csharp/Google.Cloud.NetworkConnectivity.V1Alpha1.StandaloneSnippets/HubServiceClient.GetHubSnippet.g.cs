@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.NetworkConnectivity.V1Alpha1.Snippets
 {
+    using Google.Cloud.NetworkConnectivity.V1Alpha1;
+
     public sealed partial class GeneratedHubServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetHub</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetHub()
         {
-            // Snippet: GetHub(string, CallSettings)
             // Create client
             HubServiceClient hubServiceClient = HubServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/global/hubs/[HUB]";
             // Make the request
             Hub response = hubServiceClient.GetHub(name);
-            // End snippet
         }
     }
 }

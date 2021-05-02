@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.documentai_v1beta2.types import geometry
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -59,19 +62,16 @@ class BatchProcessDocumentsRequest(proto.Message):
             automatically.
     """
 
-    requests = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    requests = proto.RepeatedField(proto.MESSAGE, number=1,
         message='ProcessDocumentRequest',
     )
-    parent = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    parent = proto.Field(proto.STRING, number=2)
 
 
 class ProcessDocumentRequest(proto.Message):
     r"""Request to process one document.
+
     Attributes:
         parent (str):
             Target project and location to make a call.
@@ -114,47 +114,35 @@ class ProcessDocumentRequest(proto.Message):
             Params.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=9,
-    )
-    input_config = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    parent = proto.Field(proto.STRING, number=9)
+
+    input_config = proto.Field(proto.MESSAGE, number=1,
         message='InputConfig',
     )
-    output_config = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    output_config = proto.Field(proto.MESSAGE, number=2,
         message='OutputConfig',
     )
-    document_type = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    table_extraction_params = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    document_type = proto.Field(proto.STRING, number=3)
+
+    table_extraction_params = proto.Field(proto.MESSAGE, number=4,
         message='TableExtractionParams',
     )
-    form_extraction_params = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    form_extraction_params = proto.Field(proto.MESSAGE, number=5,
         message='FormExtractionParams',
     )
-    entity_extraction_params = proto.Field(
-        proto.MESSAGE,
-        number=6,
+
+    entity_extraction_params = proto.Field(proto.MESSAGE, number=6,
         message='EntityExtractionParams',
     )
-    ocr_params = proto.Field(
-        proto.MESSAGE,
-        number=7,
+
+    ocr_params = proto.Field(proto.MESSAGE, number=7,
         message='OcrParams',
     )
-    automl_params = proto.Field(
-        proto.MESSAGE,
-        number=8,
+
+    automl_params = proto.Field(proto.MESSAGE, number=8,
         message='AutoMlParams',
     )
 
@@ -168,15 +156,14 @@ class BatchProcessDocumentsResponse(proto.Message):
             Responses for each individual document.
     """
 
-    responses = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    responses = proto.RepeatedField(proto.MESSAGE, number=1,
         message='ProcessDocumentResponse',
     )
 
 
 class ProcessDocumentResponse(proto.Message):
     r"""Response to a single document processing request.
+
     Attributes:
         input_config (google.cloud.documentai_v1beta2.types.InputConfig):
             Information about the input file. This is the
@@ -188,14 +175,11 @@ class ProcessDocumentResponse(proto.Message):
             objects.
     """
 
-    input_config = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    input_config = proto.Field(proto.MESSAGE, number=1,
         message='InputConfig',
     )
-    output_config = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    output_config = proto.Field(proto.MESSAGE, number=2,
         message='OutputConfig',
     )
 
@@ -217,14 +201,12 @@ class OcrParams(proto.Message):
             specified languages is not one of the supported languages.
     """
 
-    language_hints = proto.RepeatedField(
-        proto.STRING,
-        number=1,
-    )
+    language_hints = proto.RepeatedField(proto.STRING, number=1)
 
 
 class TableExtractionParams(proto.Message):
     r"""Parameters to control table extraction behavior.
+
     Attributes:
         enabled (bool):
             Whether to enable table extraction.
@@ -242,23 +224,15 @@ class TableExtractionParams(proto.Message):
             "builtin/latest" for the latest model.
     """
 
-    enabled = proto.Field(
-        proto.BOOL,
-        number=1,
-    )
-    table_bound_hints = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    enabled = proto.Field(proto.BOOL, number=1)
+
+    table_bound_hints = proto.RepeatedField(proto.MESSAGE, number=2,
         message='TableBoundHint',
     )
-    header_hints = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
-    model_version = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+
+    header_hints = proto.RepeatedField(proto.STRING, number=3)
+
+    model_version = proto.Field(proto.STRING, number=4)
 
 
 class TableBoundHint(proto.Message):
@@ -277,19 +251,16 @@ class TableBoundHint(proto.Message):
             axis-aligned rectangle.
     """
 
-    page_number = proto.Field(
-        proto.INT32,
-        number=1,
-    )
-    bounding_box = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    page_number = proto.Field(proto.INT32, number=1)
+
+    bounding_box = proto.Field(proto.MESSAGE, number=2,
         message=geometry.BoundingPoly,
     )
 
 
 class FormExtractionParams(proto.Message):
     r"""Parameters to control form extraction behavior.
+
     Attributes:
         enabled (bool):
             Whether to enable form extraction.
@@ -317,23 +288,18 @@ class FormExtractionParams(proto.Message):
             are stored.
     """
 
-    enabled = proto.Field(
-        proto.BOOL,
-        number=1,
-    )
-    key_value_pair_hints = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    enabled = proto.Field(proto.BOOL, number=1)
+
+    key_value_pair_hints = proto.RepeatedField(proto.MESSAGE, number=2,
         message='KeyValuePairHint',
     )
-    model_version = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+
+    model_version = proto.Field(proto.STRING, number=3)
 
 
 class KeyValuePairHint(proto.Message):
     r"""User-provided hint for key value pair.
+
     Attributes:
         key (str):
             The key text for the hint.
@@ -344,18 +310,14 @@ class KeyValuePairHint(proto.Message):
             Types not in this list will be ignored.
     """
 
-    key = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    value_types = proto.RepeatedField(
-        proto.STRING,
-        number=2,
-    )
+    key = proto.Field(proto.STRING, number=1)
+
+    value_types = proto.RepeatedField(proto.STRING, number=2)
 
 
 class EntityExtractionParams(proto.Message):
     r"""Parameters to control entity extraction behavior.
+
     Attributes:
         enabled (bool):
             Whether to enable entity extraction.
@@ -365,18 +327,14 @@ class EntityExtractionParams(proto.Message):
             "builtin/latest" for the latest model.
     """
 
-    enabled = proto.Field(
-        proto.BOOL,
-        number=1,
-    )
-    model_version = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    enabled = proto.Field(proto.BOOL, number=1)
+
+    model_version = proto.Field(proto.STRING, number=2)
 
 
 class AutoMlParams(proto.Message):
     r"""Parameters to control AutoML model prediction behavior.
+
     Attributes:
         model (str):
             Resource name of the AutoML model.
@@ -385,14 +343,12 @@ class AutoMlParams(proto.Message):
             ``projects/{project-id}/locations/{location-id}/models/{model-id}``.
     """
 
-    model = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    model = proto.Field(proto.STRING, number=1)
 
 
 class InputConfig(proto.Message):
     r"""The desired input location and metadata.
+
     Attributes:
         gcs_source (google.cloud.documentai_v1beta2.types.GcsSource):
             The Google Cloud Storage location to read the
@@ -414,25 +370,18 @@ class InputConfig(proto.Message):
             [Document][google.cloud.documentai.v1beta2.Document] format.
     """
 
-    gcs_source = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='source',
+    gcs_source = proto.Field(proto.MESSAGE, number=1, oneof='source',
         message='GcsSource',
     )
-    contents = proto.Field(
-        proto.BYTES,
-        number=3,
-        oneof='source',
-    )
-    mime_type = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    contents = proto.Field(proto.BYTES, number=3, oneof='source')
+
+    mime_type = proto.Field(proto.STRING, number=2)
 
 
 class OutputConfig(proto.Message):
     r"""The desired output location and metadata.
+
     Attributes:
         gcs_destination (google.cloud.documentai_v1beta2.types.GcsDestination):
             The Google Cloud Storage location to write
@@ -457,16 +406,11 @@ class OutputConfig(proto.Message):
             pages-101-to-150.json pages-151-to-157.json
     """
 
-    gcs_destination = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='destination',
+    gcs_destination = proto.Field(proto.MESSAGE, number=1, oneof='destination',
         message='GcsDestination',
     )
-    pages_per_shard = proto.Field(
-        proto.INT32,
-        number=2,
-    )
+
+    pages_per_shard = proto.Field(proto.INT32, number=2)
 
 
 class GcsSource(proto.Message):
@@ -478,10 +422,7 @@ class GcsSource(proto.Message):
 
     """
 
-    uri = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    uri = proto.Field(proto.STRING, number=1)
 
 
 class GcsDestination(proto.Message):
@@ -493,14 +434,12 @@ class GcsDestination(proto.Message):
 
     """
 
-    uri = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    uri = proto.Field(proto.STRING, number=1)
 
 
 class OperationMetadata(proto.Message):
     r"""Contains metadata for the BatchProcessDocuments operation.
+
     Attributes:
         state (google.cloud.documentai_v1beta2.types.OperationMetadata.State):
             The state of the current batch processing.
@@ -522,23 +461,17 @@ class OperationMetadata(proto.Message):
         CANCELLED = 5
         FAILED = 6
 
-    state = proto.Field(
-        proto.ENUM,
-        number=1,
+    state = proto.Field(proto.ENUM, number=1,
         enum=State,
     )
-    state_message = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    create_time = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    state_message = proto.Field(proto.STRING, number=2)
+
+    create_time = proto.Field(proto.MESSAGE, number=3,
         message=timestamp.Timestamp,
     )
-    update_time = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    update_time = proto.Field(proto.MESSAGE, number=4,
         message=timestamp.Timestamp,
     )
 

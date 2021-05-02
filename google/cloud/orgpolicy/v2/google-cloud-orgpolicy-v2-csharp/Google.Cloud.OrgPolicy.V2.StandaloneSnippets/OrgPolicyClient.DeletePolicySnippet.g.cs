@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.OrgPolicy.V2.Snippets
 {
+    using Google.Cloud.OrgPolicy.V2;
+
     public sealed partial class GeneratedOrgPolicyClientStandaloneSnippets
     {
         /// <summary>Snippet for DeletePolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeletePolicy()
         {
-            // Snippet: DeletePolicy(string, CallSettings)
             // Create client
             OrgPolicyClient orgPolicyClient = OrgPolicyClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/policies/[POLICY]";
             // Make the request
             orgPolicyClient.DeletePolicy(name);
-            // End snippet
         }
     }
 }

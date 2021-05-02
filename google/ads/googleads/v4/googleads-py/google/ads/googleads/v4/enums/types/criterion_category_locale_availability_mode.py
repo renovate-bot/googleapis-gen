@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -30,7 +32,7 @@ class CriterionCategoryLocaleAvailabilityModeEnum(proto.Message):
     availability - whether it's available globally, or a particular
     country with all languages, or a particular language with all
     countries, or a country-language pair.
-        """
+    """
     class CriterionCategoryLocaleAvailabilityMode(proto.Enum):
         r"""Enum containing the possible
         CriterionCategoryLocaleAvailabilityMode.

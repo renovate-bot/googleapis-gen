@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -40,6 +42,7 @@ from google.cloud.channel_v1.types import service
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.type import postal_address_pb2 as postal_address  # type: ignore
+
 from .transports.base import CloudChannelServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import CloudChannelServiceGrpcAsyncIOTransport
 from .client import CloudChannelServiceClient
@@ -86,14 +89,19 @@ class CloudChannelServiceAsyncClient:
     parse_product_path = staticmethod(CloudChannelServiceClient.parse_product_path)
     sku_path = staticmethod(CloudChannelServiceClient.sku_path)
     parse_sku_path = staticmethod(CloudChannelServiceClient.parse_sku_path)
+
     common_billing_account_path = staticmethod(CloudChannelServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(CloudChannelServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(CloudChannelServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(CloudChannelServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(CloudChannelServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(CloudChannelServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(CloudChannelServiceClient.common_project_path)
     parse_common_project_path = staticmethod(CloudChannelServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(CloudChannelServiceClient.common_location_path)
     parse_common_location_path = staticmethod(CloudChannelServiceClient.parse_common_location_path)
 
@@ -178,6 +186,7 @@ class CloudChannelServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = CloudChannelServiceClient(
             credentials=credentials,
             transport=transport,
@@ -208,9 +217,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListCustomersRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ListCustomers][google.cloud.channel.v1.CloudChannelService.ListCustomers]
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -227,6 +236,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ListCustomersRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -290,8 +300,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.GetCustomerRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.GetCustomer][google.cloud.channel.v1.CloudChannelService.GetCustomer].
             name (:class:`str`):
                 Required. The resource name of the customer to retrieve.
@@ -301,6 +310,7 @@ class CloudChannelServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -325,6 +335,7 @@ class CloudChannelServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -385,9 +396,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.CheckCloudIdentityAccountsExistRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.CheckCloudIdentityAccountsExist][google.cloud.channel.v1.CloudChannelService.CheckCloudIdentityAccountsExist].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -401,6 +412,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.CheckCloudIdentityAccountsExistRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -454,9 +466,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.CreateCustomerRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.CreateCustomer][google.cloud.channel.v1.CloudChannelService.CreateCustomer]
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -470,6 +482,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.CreateCustomerRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -523,9 +536,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.UpdateCustomerRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.UpdateCustomer][google.cloud.channel.v1.CloudChannelService.UpdateCustomer].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -539,6 +552,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.UpdateCustomerRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -591,8 +605,7 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.DeleteCustomerRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.DeleteCustomer][google.cloud.channel.v1.CloudChannelService.DeleteCustomer].
             name (:class:`str`):
                 Required. The resource name of the
@@ -601,6 +614,7 @@ class CloudChannelServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -619,6 +633,7 @@ class CloudChannelServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -679,9 +694,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ProvisionCloudIdentityRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ProvisionCloudIdentity][google.cloud.channel.v1.CloudChannelService.ProvisionCloudIdentity]
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -698,6 +713,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ProvisionCloudIdentityRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -757,9 +773,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListEntitlementsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ListEntitlements][google.cloud.channel.v1.CloudChannelService.ListEntitlements]
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -776,6 +792,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ListEntitlementsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -847,9 +864,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListTransferableSkusRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ListTransferableSkus][google.cloud.channel.v1.CloudChannelService.ListTransferableSkus]
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -866,6 +883,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ListTransferableSkusRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -939,9 +957,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListTransferableOffersRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ListTransferableOffers][google.cloud.channel.v1.CloudChannelService.ListTransferableOffers]
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -958,6 +976,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ListTransferableOffersRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1019,9 +1038,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.GetEntitlementRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.GetEntitlement][google.cloud.channel.v1.CloudChannelService.GetEntitlement].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1035,6 +1054,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.GetEntitlementRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1119,9 +1139,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.CreateEntitlementRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.CreateEntitlement][google.cloud.channel.v1.CloudChannelService.CreateEntitlement]
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1139,6 +1159,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.CreateEntitlementRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1211,9 +1232,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ChangeParametersRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ChangeParametersRequest][].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1231,6 +1252,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ChangeParametersRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1305,9 +1327,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ChangeRenewalSettingsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ChangeRenewalSettings][google.cloud.channel.v1.CloudChannelService.ChangeRenewalSettings].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1325,6 +1347,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ChangeRenewalSettingsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1395,9 +1418,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ChangeOfferRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ChangeOffer][google.cloud.channel.v1.CloudChannelService.ChangeOffer].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1415,6 +1438,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ChangeOfferRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1488,9 +1512,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.StartPaidServiceRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.StartPaidService][google.cloud.channel.v1.CloudChannelService.StartPaidService].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1508,6 +1532,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.StartPaidServiceRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1578,9 +1603,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.SuspendEntitlementRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.SuspendEntitlement][google.cloud.channel.v1.CloudChannelService.SuspendEntitlement].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1598,6 +1623,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.SuspendEntitlementRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1673,9 +1699,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.CancelEntitlementRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.CancelEntitlement][google.cloud.channel.v1.CloudChannelService.CancelEntitlement].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1702,6 +1728,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.CancelEntitlementRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1779,9 +1806,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ActivateEntitlementRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ActivateEntitlement][google.cloud.channel.v1.CloudChannelService.ActivateEntitlement].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1799,6 +1826,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ActivateEntitlementRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1882,9 +1910,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.TransferEntitlementsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.TransferEntitlements][google.cloud.channel.v1.CloudChannelService.TransferEntitlements].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1901,6 +1929,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.TransferEntitlementsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1984,9 +2013,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.TransferEntitlementsToGoogleRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.TransferEntitlementsToGoogle][google.cloud.channel.v1.CloudChannelService.TransferEntitlementsToGoogle].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2013,6 +2042,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.TransferEntitlementsToGoogleRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2075,9 +2105,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListChannelPartnerLinksRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.ListChannelPartnerLinks][google.cloud.channel.v1.CloudChannelService.ListChannelPartnerLinks]
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2094,6 +2124,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ListChannelPartnerLinksRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2158,9 +2189,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.GetChannelPartnerLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.GetChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.GetChannelPartnerLink].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2175,6 +2206,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.GetChannelPartnerLinkRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2239,9 +2271,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.CreateChannelPartnerLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.CreateChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.CreateChannelPartnerLink]
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2256,6 +2288,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.CreateChannelPartnerLinkRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2320,9 +2353,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.UpdateChannelPartnerLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CloudChannelService.UpdateChannelPartnerLink][google.cloud.channel.v1.CloudChannelService.UpdateChannelPartnerLink]
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2337,6 +2370,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.UpdateChannelPartnerLinkRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2382,8 +2416,8 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListProductsRequest`):
-                The request object.
-                Request message for ListProducts.
+                The request object. Request message for ListProducts.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2399,6 +2433,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ListProductsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2445,8 +2480,8 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListSkusRequest`):
-                The request object.
-                Request message for ListSkus.
+                The request object. Request message for ListSkus.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2462,6 +2497,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ListSkusRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2516,8 +2552,8 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListOffersRequest`):
-                The request object.
-                Request message for ListOffers.
+                The request object. Request message for ListOffers.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2533,6 +2569,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ListOffersRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2592,9 +2629,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListPurchasableSkusRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListPurchasableSkus.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2611,6 +2648,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ListPurchasableSkusRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2670,9 +2708,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListPurchasableOffersRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListPurchasableOffers.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2689,6 +2727,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ListPurchasableOffersRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2756,9 +2795,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.RegisterSubscriberRequest`):
-                The request object.
-                Request Message for
+                The request object. Request Message for
                 RegisterSubscriber.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2772,6 +2811,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.RegisterSubscriberRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2833,9 +2873,9 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.UnregisterSubscriberRequest`):
-                The request object.
-                Request Message for
+                The request object. Request Message for
                 UnregisterSubscriber.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2849,6 +2889,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.UnregisterSubscriberRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2905,8 +2946,8 @@ class CloudChannelServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.channel_v1.types.ListSubscribersRequest`):
-                The request object.
-                Request Message for ListSubscribers.
+                The request object. Request Message for ListSubscribers.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2922,6 +2963,7 @@ class CloudChannelServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = service.ListSubscribersRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -2959,6 +3001,8 @@ class CloudChannelServiceAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

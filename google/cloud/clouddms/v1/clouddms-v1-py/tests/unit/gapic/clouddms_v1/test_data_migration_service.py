@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -39,8 +39,6 @@ from google.cloud.clouddms_v1.services.data_migration_service import DataMigrati
 from google.cloud.clouddms_v1.services.data_migration_service import DataMigrationServiceClient
 from google.cloud.clouddms_v1.services.data_migration_service import pagers
 from google.cloud.clouddms_v1.services.data_migration_service import transports
-from google.cloud.clouddms_v1.services.data_migration_service.transports.base import _API_CORE_VERSION
-from google.cloud.clouddms_v1.services.data_migration_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.clouddms_v1.types import clouddms
 from google.cloud.clouddms_v1.types import clouddms_resources
 from google.longrunning import operations_pb2
@@ -52,28 +50,6 @@ from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -241,10 +217,12 @@ def test_data_migration_service_client_client_options(client_class, transport_cl
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (DataMigrationServiceClient, transports.DataMigrationServiceGrpcTransport, "grpc", "true"),
     (DataMigrationServiceAsyncClient, transports.DataMigrationServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (DataMigrationServiceClient, transports.DataMigrationServiceGrpcTransport, "grpc", "false"),
     (DataMigrationServiceAsyncClient, transports.DataMigrationServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(DataMigrationServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(DataMigrationServiceClient))
 @mock.patch.object(DataMigrationServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(DataMigrationServiceAsyncClient))
@@ -399,18 +377,25 @@ def test_list_migration_jobs(transport: str = 'grpc', request_type=clouddms.List
         # Designate an appropriate return value for the call.
         call.return_value = clouddms.ListMigrationJobsResponse(
             next_page_token='next_page_token_value',
+
             unreachable=['unreachable_value'],
+
         )
+
         response = client.list_migration_jobs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.ListMigrationJobsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListMigrationJobsPager)
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.unreachable == ['unreachable_value']
 
 
@@ -433,8 +418,8 @@ def test_list_migration_jobs_empty_call():
         client.list_migration_jobs()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.ListMigrationJobsRequest()
 
+        assert args[0] == clouddms.ListMigrationJobsRequest()
 
 @pytest.mark.asyncio
 async def test_list_migration_jobs_async(transport: str = 'grpc_asyncio', request_type=clouddms.ListMigrationJobsRequest):
@@ -452,20 +437,24 @@ async def test_list_migration_jobs_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.list_migration_jobs),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(clouddms.ListMigrationJobsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(clouddms.ListMigrationJobsResponse(
             next_page_token='next_page_token_value',
             unreachable=['unreachable_value'],
         ))
+
         response = await client.list_migration_jobs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.ListMigrationJobsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListMigrationJobsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.unreachable == ['unreachable_value']
 
 
@@ -482,7 +471,6 @@ def test_list_migration_jobs_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.ListMigrationJobsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -490,6 +478,7 @@ def test_list_migration_jobs_field_headers():
             type(client.transport.list_migration_jobs),
             '__call__') as call:
         call.return_value = clouddms.ListMigrationJobsResponse()
+
         client.list_migration_jobs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -514,7 +503,6 @@ async def test_list_migration_jobs_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.ListMigrationJobsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -522,6 +510,7 @@ async def test_list_migration_jobs_field_headers_async():
             type(client.transport.list_migration_jobs),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(clouddms.ListMigrationJobsResponse())
+
         await client.list_migration_jobs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -548,6 +537,7 @@ def test_list_migration_jobs_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = clouddms.ListMigrationJobsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_migration_jobs(
@@ -558,6 +548,7 @@ def test_list_migration_jobs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -599,6 +590,7 @@ async def test_list_migration_jobs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -803,6 +795,7 @@ async def test_list_migration_jobs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_migration_job(transport: str = 'grpc', request_type=clouddms.GetMigrationJobRequest):
     client = DataMigrationServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -820,31 +813,50 @@ def test_get_migration_job(transport: str = 'grpc', request_type=clouddms.GetMig
         # Designate an appropriate return value for the call.
         call.return_value = clouddms_resources.MigrationJob(
             name='name_value',
+
             display_name='display_name_value',
+
             state=clouddms_resources.MigrationJob.State.MAINTENANCE,
+
             phase=clouddms_resources.MigrationJob.Phase.FULL_DUMP,
+
             type_=clouddms_resources.MigrationJob.Type.ONE_TIME,
+
             dump_path='dump_path_value',
+
             source='source_value',
+
             destination='destination_value',
+
             reverse_ssh_connectivity=clouddms_resources.ReverseSshConnectivity(vm_ip='vm_ip_value'),
         )
+
         response = client.get_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.GetMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, clouddms_resources.MigrationJob)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.state == clouddms_resources.MigrationJob.State.MAINTENANCE
+
     assert response.phase == clouddms_resources.MigrationJob.Phase.FULL_DUMP
+
     assert response.type_ == clouddms_resources.MigrationJob.Type.ONE_TIME
+
     assert response.dump_path == 'dump_path_value'
+
     assert response.source == 'source_value'
+
     assert response.destination == 'destination_value'
 
 
@@ -867,8 +879,8 @@ def test_get_migration_job_empty_call():
         client.get_migration_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.GetMigrationJobRequest()
 
+        assert args[0] == clouddms.GetMigrationJobRequest()
 
 @pytest.mark.asyncio
 async def test_get_migration_job_async(transport: str = 'grpc_asyncio', request_type=clouddms.GetMigrationJobRequest):
@@ -886,7 +898,7 @@ async def test_get_migration_job_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.get_migration_job),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(clouddms_resources.MigrationJob(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(clouddms_resources.MigrationJob(
             name='name_value',
             display_name='display_name_value',
             state=clouddms_resources.MigrationJob.State.MAINTENANCE,
@@ -896,22 +908,32 @@ async def test_get_migration_job_async(transport: str = 'grpc_asyncio', request_
             source='source_value',
             destination='destination_value',
         ))
+
         response = await client.get_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.GetMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, clouddms_resources.MigrationJob)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.state == clouddms_resources.MigrationJob.State.MAINTENANCE
+
     assert response.phase == clouddms_resources.MigrationJob.Phase.FULL_DUMP
+
     assert response.type_ == clouddms_resources.MigrationJob.Type.ONE_TIME
+
     assert response.dump_path == 'dump_path_value'
+
     assert response.source == 'source_value'
+
     assert response.destination == 'destination_value'
 
 
@@ -928,7 +950,6 @@ def test_get_migration_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.GetMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -936,6 +957,7 @@ def test_get_migration_job_field_headers():
             type(client.transport.get_migration_job),
             '__call__') as call:
         call.return_value = clouddms_resources.MigrationJob()
+
         client.get_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -960,7 +982,6 @@ async def test_get_migration_job_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.GetMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -968,6 +989,7 @@ async def test_get_migration_job_field_headers_async():
             type(client.transport.get_migration_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(clouddms_resources.MigrationJob())
+
         await client.get_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -994,6 +1016,7 @@ def test_get_migration_job_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = clouddms_resources.MigrationJob()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_migration_job(
@@ -1004,6 +1027,7 @@ def test_get_migration_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1045,6 +1069,7 @@ async def test_get_migration_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1079,11 +1104,13 @@ def test_create_migration_job(transport: str = 'grpc', request_type=clouddms.Cre
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.create_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.CreateMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -1109,8 +1136,8 @@ def test_create_migration_job_empty_call():
         client.create_migration_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.CreateMigrationJobRequest()
 
+        assert args[0] == clouddms.CreateMigrationJobRequest()
 
 @pytest.mark.asyncio
 async def test_create_migration_job_async(transport: str = 'grpc_asyncio', request_type=clouddms.CreateMigrationJobRequest):
@@ -1131,11 +1158,13 @@ async def test_create_migration_job_async(transport: str = 'grpc_asyncio', reque
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.create_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.CreateMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -1155,7 +1184,6 @@ def test_create_migration_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.CreateMigrationJobRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1163,6 +1191,7 @@ def test_create_migration_job_field_headers():
             type(client.transport.create_migration_job),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.create_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1187,7 +1216,6 @@ async def test_create_migration_job_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.CreateMigrationJobRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1195,6 +1223,7 @@ async def test_create_migration_job_field_headers_async():
             type(client.transport.create_migration_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.create_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1221,6 +1250,7 @@ def test_create_migration_job_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_migration_job(
@@ -1233,8 +1263,11 @@ def test_create_migration_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].migration_job == clouddms_resources.MigrationJob(name='name_value')
+
         assert args[0].migration_job_id == 'migration_job_id_value'
 
 
@@ -1282,8 +1315,11 @@ async def test_create_migration_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].migration_job == clouddms_resources.MigrationJob(name='name_value')
+
         assert args[0].migration_job_id == 'migration_job_id_value'
 
 
@@ -1320,11 +1356,13 @@ def test_update_migration_job(transport: str = 'grpc', request_type=clouddms.Upd
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.update_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.UpdateMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -1350,8 +1388,8 @@ def test_update_migration_job_empty_call():
         client.update_migration_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.UpdateMigrationJobRequest()
 
+        assert args[0] == clouddms.UpdateMigrationJobRequest()
 
 @pytest.mark.asyncio
 async def test_update_migration_job_async(transport: str = 'grpc_asyncio', request_type=clouddms.UpdateMigrationJobRequest):
@@ -1372,11 +1410,13 @@ async def test_update_migration_job_async(transport: str = 'grpc_asyncio', reque
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.update_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.UpdateMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -1396,7 +1436,6 @@ def test_update_migration_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.UpdateMigrationJobRequest()
-
     request.migration_job.name = 'migration_job.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1404,6 +1443,7 @@ def test_update_migration_job_field_headers():
             type(client.transport.update_migration_job),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.update_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1428,7 +1468,6 @@ async def test_update_migration_job_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.UpdateMigrationJobRequest()
-
     request.migration_job.name = 'migration_job.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1436,6 +1475,7 @@ async def test_update_migration_job_field_headers_async():
             type(client.transport.update_migration_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.update_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1462,6 +1502,7 @@ def test_update_migration_job_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_migration_job(
@@ -1473,7 +1514,9 @@ def test_update_migration_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].migration_job == clouddms_resources.MigrationJob(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1519,7 +1562,9 @@ async def test_update_migration_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].migration_job == clouddms_resources.MigrationJob(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1555,11 +1600,13 @@ def test_delete_migration_job(transport: str = 'grpc', request_type=clouddms.Del
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.delete_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.DeleteMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -1585,8 +1632,8 @@ def test_delete_migration_job_empty_call():
         client.delete_migration_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.DeleteMigrationJobRequest()
 
+        assert args[0] == clouddms.DeleteMigrationJobRequest()
 
 @pytest.mark.asyncio
 async def test_delete_migration_job_async(transport: str = 'grpc_asyncio', request_type=clouddms.DeleteMigrationJobRequest):
@@ -1607,11 +1654,13 @@ async def test_delete_migration_job_async(transport: str = 'grpc_asyncio', reque
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.delete_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.DeleteMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -1631,7 +1680,6 @@ def test_delete_migration_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.DeleteMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1639,6 +1687,7 @@ def test_delete_migration_job_field_headers():
             type(client.transport.delete_migration_job),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.delete_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1663,7 +1712,6 @@ async def test_delete_migration_job_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.DeleteMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1671,6 +1719,7 @@ async def test_delete_migration_job_field_headers_async():
             type(client.transport.delete_migration_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.delete_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1697,6 +1746,7 @@ def test_delete_migration_job_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_migration_job(
@@ -1707,6 +1757,7 @@ def test_delete_migration_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1750,6 +1801,7 @@ async def test_delete_migration_job_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1784,11 +1836,13 @@ def test_start_migration_job(transport: str = 'grpc', request_type=clouddms.Star
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.start_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.StartMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -1814,8 +1868,8 @@ def test_start_migration_job_empty_call():
         client.start_migration_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.StartMigrationJobRequest()
 
+        assert args[0] == clouddms.StartMigrationJobRequest()
 
 @pytest.mark.asyncio
 async def test_start_migration_job_async(transport: str = 'grpc_asyncio', request_type=clouddms.StartMigrationJobRequest):
@@ -1836,11 +1890,13 @@ async def test_start_migration_job_async(transport: str = 'grpc_asyncio', reques
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.start_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.StartMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -1860,7 +1916,6 @@ def test_start_migration_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.StartMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1868,6 +1923,7 @@ def test_start_migration_job_field_headers():
             type(client.transport.start_migration_job),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.start_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1892,7 +1948,6 @@ async def test_start_migration_job_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.StartMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1900,6 +1955,7 @@ async def test_start_migration_job_field_headers_async():
             type(client.transport.start_migration_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.start_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1931,11 +1987,13 @@ def test_stop_migration_job(transport: str = 'grpc', request_type=clouddms.StopM
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.stop_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.StopMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -1961,8 +2019,8 @@ def test_stop_migration_job_empty_call():
         client.stop_migration_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.StopMigrationJobRequest()
 
+        assert args[0] == clouddms.StopMigrationJobRequest()
 
 @pytest.mark.asyncio
 async def test_stop_migration_job_async(transport: str = 'grpc_asyncio', request_type=clouddms.StopMigrationJobRequest):
@@ -1983,11 +2041,13 @@ async def test_stop_migration_job_async(transport: str = 'grpc_asyncio', request
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.stop_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.StopMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -2007,7 +2067,6 @@ def test_stop_migration_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.StopMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2015,6 +2074,7 @@ def test_stop_migration_job_field_headers():
             type(client.transport.stop_migration_job),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.stop_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2039,7 +2099,6 @@ async def test_stop_migration_job_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.StopMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2047,6 +2106,7 @@ async def test_stop_migration_job_field_headers_async():
             type(client.transport.stop_migration_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.stop_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2078,11 +2138,13 @@ def test_resume_migration_job(transport: str = 'grpc', request_type=clouddms.Res
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.resume_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.ResumeMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -2108,8 +2170,8 @@ def test_resume_migration_job_empty_call():
         client.resume_migration_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.ResumeMigrationJobRequest()
 
+        assert args[0] == clouddms.ResumeMigrationJobRequest()
 
 @pytest.mark.asyncio
 async def test_resume_migration_job_async(transport: str = 'grpc_asyncio', request_type=clouddms.ResumeMigrationJobRequest):
@@ -2130,11 +2192,13 @@ async def test_resume_migration_job_async(transport: str = 'grpc_asyncio', reque
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.resume_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.ResumeMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -2154,7 +2218,6 @@ def test_resume_migration_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.ResumeMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2162,6 +2225,7 @@ def test_resume_migration_job_field_headers():
             type(client.transport.resume_migration_job),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.resume_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2186,7 +2250,6 @@ async def test_resume_migration_job_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.ResumeMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2194,6 +2257,7 @@ async def test_resume_migration_job_field_headers_async():
             type(client.transport.resume_migration_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.resume_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2225,11 +2289,13 @@ def test_promote_migration_job(transport: str = 'grpc', request_type=clouddms.Pr
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.promote_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.PromoteMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -2255,8 +2321,8 @@ def test_promote_migration_job_empty_call():
         client.promote_migration_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.PromoteMigrationJobRequest()
 
+        assert args[0] == clouddms.PromoteMigrationJobRequest()
 
 @pytest.mark.asyncio
 async def test_promote_migration_job_async(transport: str = 'grpc_asyncio', request_type=clouddms.PromoteMigrationJobRequest):
@@ -2277,11 +2343,13 @@ async def test_promote_migration_job_async(transport: str = 'grpc_asyncio', requ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.promote_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.PromoteMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -2301,7 +2369,6 @@ def test_promote_migration_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.PromoteMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2309,6 +2376,7 @@ def test_promote_migration_job_field_headers():
             type(client.transport.promote_migration_job),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.promote_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2333,7 +2401,6 @@ async def test_promote_migration_job_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.PromoteMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2341,6 +2408,7 @@ async def test_promote_migration_job_field_headers_async():
             type(client.transport.promote_migration_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.promote_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2372,11 +2440,13 @@ def test_verify_migration_job(transport: str = 'grpc', request_type=clouddms.Ver
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.verify_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.VerifyMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -2402,8 +2472,8 @@ def test_verify_migration_job_empty_call():
         client.verify_migration_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.VerifyMigrationJobRequest()
 
+        assert args[0] == clouddms.VerifyMigrationJobRequest()
 
 @pytest.mark.asyncio
 async def test_verify_migration_job_async(transport: str = 'grpc_asyncio', request_type=clouddms.VerifyMigrationJobRequest):
@@ -2424,11 +2494,13 @@ async def test_verify_migration_job_async(transport: str = 'grpc_asyncio', reque
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.verify_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.VerifyMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -2448,7 +2520,6 @@ def test_verify_migration_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.VerifyMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2456,6 +2527,7 @@ def test_verify_migration_job_field_headers():
             type(client.transport.verify_migration_job),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.verify_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2480,7 +2552,6 @@ async def test_verify_migration_job_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.VerifyMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2488,6 +2559,7 @@ async def test_verify_migration_job_field_headers_async():
             type(client.transport.verify_migration_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.verify_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2519,11 +2591,13 @@ def test_restart_migration_job(transport: str = 'grpc', request_type=clouddms.Re
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.restart_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.RestartMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -2549,8 +2623,8 @@ def test_restart_migration_job_empty_call():
         client.restart_migration_job()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.RestartMigrationJobRequest()
 
+        assert args[0] == clouddms.RestartMigrationJobRequest()
 
 @pytest.mark.asyncio
 async def test_restart_migration_job_async(transport: str = 'grpc_asyncio', request_type=clouddms.RestartMigrationJobRequest):
@@ -2571,11 +2645,13 @@ async def test_restart_migration_job_async(transport: str = 'grpc_asyncio', requ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.restart_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.RestartMigrationJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -2595,7 +2671,6 @@ def test_restart_migration_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.RestartMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2603,6 +2678,7 @@ def test_restart_migration_job_field_headers():
             type(client.transport.restart_migration_job),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.restart_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2627,7 +2703,6 @@ async def test_restart_migration_job_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.RestartMigrationJobRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2635,6 +2710,7 @@ async def test_restart_migration_job_field_headers_async():
             type(client.transport.restart_migration_job),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.restart_migration_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2667,16 +2743,21 @@ def test_generate_ssh_script(transport: str = 'grpc', request_type=clouddms.Gene
         # Designate an appropriate return value for the call.
         call.return_value = clouddms.SshScript(
             script='script_value',
+
         )
+
         response = client.generate_ssh_script(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.GenerateSshScriptRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, clouddms.SshScript)
+
     assert response.script == 'script_value'
 
 
@@ -2699,8 +2780,8 @@ def test_generate_ssh_script_empty_call():
         client.generate_ssh_script()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.GenerateSshScriptRequest()
 
+        assert args[0] == clouddms.GenerateSshScriptRequest()
 
 @pytest.mark.asyncio
 async def test_generate_ssh_script_async(transport: str = 'grpc_asyncio', request_type=clouddms.GenerateSshScriptRequest):
@@ -2718,18 +2799,21 @@ async def test_generate_ssh_script_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.generate_ssh_script),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(clouddms.SshScript(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(clouddms.SshScript(
             script='script_value',
         ))
+
         response = await client.generate_ssh_script(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.GenerateSshScriptRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, clouddms.SshScript)
+
     assert response.script == 'script_value'
 
 
@@ -2746,7 +2830,6 @@ def test_generate_ssh_script_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.GenerateSshScriptRequest()
-
     request.migration_job = 'migration_job/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2754,6 +2837,7 @@ def test_generate_ssh_script_field_headers():
             type(client.transport.generate_ssh_script),
             '__call__') as call:
         call.return_value = clouddms.SshScript()
+
         client.generate_ssh_script(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2778,7 +2862,6 @@ async def test_generate_ssh_script_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.GenerateSshScriptRequest()
-
     request.migration_job = 'migration_job/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2786,6 +2869,7 @@ async def test_generate_ssh_script_field_headers_async():
             type(client.transport.generate_ssh_script),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(clouddms.SshScript())
+
         await client.generate_ssh_script(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2818,18 +2902,25 @@ def test_list_connection_profiles(transport: str = 'grpc', request_type=clouddms
         # Designate an appropriate return value for the call.
         call.return_value = clouddms.ListConnectionProfilesResponse(
             next_page_token='next_page_token_value',
+
             unreachable=['unreachable_value'],
+
         )
+
         response = client.list_connection_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.ListConnectionProfilesRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListConnectionProfilesPager)
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.unreachable == ['unreachable_value']
 
 
@@ -2852,8 +2943,8 @@ def test_list_connection_profiles_empty_call():
         client.list_connection_profiles()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.ListConnectionProfilesRequest()
 
+        assert args[0] == clouddms.ListConnectionProfilesRequest()
 
 @pytest.mark.asyncio
 async def test_list_connection_profiles_async(transport: str = 'grpc_asyncio', request_type=clouddms.ListConnectionProfilesRequest):
@@ -2871,20 +2962,24 @@ async def test_list_connection_profiles_async(transport: str = 'grpc_asyncio', r
             type(client.transport.list_connection_profiles),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(clouddms.ListConnectionProfilesResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(clouddms.ListConnectionProfilesResponse(
             next_page_token='next_page_token_value',
             unreachable=['unreachable_value'],
         ))
+
         response = await client.list_connection_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.ListConnectionProfilesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListConnectionProfilesAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.unreachable == ['unreachable_value']
 
 
@@ -2901,7 +2996,6 @@ def test_list_connection_profiles_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.ListConnectionProfilesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2909,6 +3003,7 @@ def test_list_connection_profiles_field_headers():
             type(client.transport.list_connection_profiles),
             '__call__') as call:
         call.return_value = clouddms.ListConnectionProfilesResponse()
+
         client.list_connection_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2933,7 +3028,6 @@ async def test_list_connection_profiles_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.ListConnectionProfilesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2941,6 +3035,7 @@ async def test_list_connection_profiles_field_headers_async():
             type(client.transport.list_connection_profiles),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(clouddms.ListConnectionProfilesResponse())
+
         await client.list_connection_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2967,6 +3062,7 @@ def test_list_connection_profiles_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = clouddms.ListConnectionProfilesResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_connection_profiles(
@@ -2977,6 +3073,7 @@ def test_list_connection_profiles_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -3018,6 +3115,7 @@ async def test_list_connection_profiles_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -3222,6 +3320,7 @@ async def test_list_connection_profiles_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_connection_profile(transport: str = 'grpc', request_type=clouddms.GetConnectionProfileRequest):
     client = DataMigrationServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -3239,23 +3338,34 @@ def test_get_connection_profile(transport: str = 'grpc', request_type=clouddms.G
         # Designate an appropriate return value for the call.
         call.return_value = clouddms_resources.ConnectionProfile(
             name='name_value',
+
             state=clouddms_resources.ConnectionProfile.State.DRAFT,
+
             display_name='display_name_value',
+
             provider=clouddms_resources.DatabaseProvider.CLOUDSQL,
+
             mysql=clouddms_resources.MySqlConnectionProfile(host='host_value'),
         )
+
         response = client.get_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.GetConnectionProfileRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, clouddms_resources.ConnectionProfile)
+
     assert response.name == 'name_value'
+
     assert response.state == clouddms_resources.ConnectionProfile.State.DRAFT
+
     assert response.display_name == 'display_name_value'
+
     assert response.provider == clouddms_resources.DatabaseProvider.CLOUDSQL
 
 
@@ -3278,8 +3388,8 @@ def test_get_connection_profile_empty_call():
         client.get_connection_profile()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.GetConnectionProfileRequest()
 
+        assert args[0] == clouddms.GetConnectionProfileRequest()
 
 @pytest.mark.asyncio
 async def test_get_connection_profile_async(transport: str = 'grpc_asyncio', request_type=clouddms.GetConnectionProfileRequest):
@@ -3297,24 +3407,30 @@ async def test_get_connection_profile_async(transport: str = 'grpc_asyncio', req
             type(client.transport.get_connection_profile),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(clouddms_resources.ConnectionProfile(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(clouddms_resources.ConnectionProfile(
             name='name_value',
             state=clouddms_resources.ConnectionProfile.State.DRAFT,
             display_name='display_name_value',
             provider=clouddms_resources.DatabaseProvider.CLOUDSQL,
         ))
+
         response = await client.get_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.GetConnectionProfileRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, clouddms_resources.ConnectionProfile)
+
     assert response.name == 'name_value'
+
     assert response.state == clouddms_resources.ConnectionProfile.State.DRAFT
+
     assert response.display_name == 'display_name_value'
+
     assert response.provider == clouddms_resources.DatabaseProvider.CLOUDSQL
 
 
@@ -3331,7 +3447,6 @@ def test_get_connection_profile_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.GetConnectionProfileRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3339,6 +3454,7 @@ def test_get_connection_profile_field_headers():
             type(client.transport.get_connection_profile),
             '__call__') as call:
         call.return_value = clouddms_resources.ConnectionProfile()
+
         client.get_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3363,7 +3479,6 @@ async def test_get_connection_profile_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.GetConnectionProfileRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3371,6 +3486,7 @@ async def test_get_connection_profile_field_headers_async():
             type(client.transport.get_connection_profile),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(clouddms_resources.ConnectionProfile())
+
         await client.get_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3397,6 +3513,7 @@ def test_get_connection_profile_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = clouddms_resources.ConnectionProfile()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_connection_profile(
@@ -3407,6 +3524,7 @@ def test_get_connection_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3448,6 +3566,7 @@ async def test_get_connection_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3482,11 +3601,13 @@ def test_create_connection_profile(transport: str = 'grpc', request_type=clouddm
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.create_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.CreateConnectionProfileRequest()
 
     # Establish that the response is the type that we expect.
@@ -3512,8 +3633,8 @@ def test_create_connection_profile_empty_call():
         client.create_connection_profile()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.CreateConnectionProfileRequest()
 
+        assert args[0] == clouddms.CreateConnectionProfileRequest()
 
 @pytest.mark.asyncio
 async def test_create_connection_profile_async(transport: str = 'grpc_asyncio', request_type=clouddms.CreateConnectionProfileRequest):
@@ -3534,11 +3655,13 @@ async def test_create_connection_profile_async(transport: str = 'grpc_asyncio', 
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.create_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.CreateConnectionProfileRequest()
 
     # Establish that the response is the type that we expect.
@@ -3558,7 +3681,6 @@ def test_create_connection_profile_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.CreateConnectionProfileRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3566,6 +3688,7 @@ def test_create_connection_profile_field_headers():
             type(client.transport.create_connection_profile),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.create_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3590,7 +3713,6 @@ async def test_create_connection_profile_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.CreateConnectionProfileRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3598,6 +3720,7 @@ async def test_create_connection_profile_field_headers_async():
             type(client.transport.create_connection_profile),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.create_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3624,6 +3747,7 @@ def test_create_connection_profile_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_connection_profile(
@@ -3636,8 +3760,11 @@ def test_create_connection_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].connection_profile == clouddms_resources.ConnectionProfile(name='name_value')
+
         assert args[0].connection_profile_id == 'connection_profile_id_value'
 
 
@@ -3685,8 +3812,11 @@ async def test_create_connection_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].connection_profile == clouddms_resources.ConnectionProfile(name='name_value')
+
         assert args[0].connection_profile_id == 'connection_profile_id_value'
 
 
@@ -3723,11 +3853,13 @@ def test_update_connection_profile(transport: str = 'grpc', request_type=clouddm
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.update_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.UpdateConnectionProfileRequest()
 
     # Establish that the response is the type that we expect.
@@ -3753,8 +3885,8 @@ def test_update_connection_profile_empty_call():
         client.update_connection_profile()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.UpdateConnectionProfileRequest()
 
+        assert args[0] == clouddms.UpdateConnectionProfileRequest()
 
 @pytest.mark.asyncio
 async def test_update_connection_profile_async(transport: str = 'grpc_asyncio', request_type=clouddms.UpdateConnectionProfileRequest):
@@ -3775,11 +3907,13 @@ async def test_update_connection_profile_async(transport: str = 'grpc_asyncio', 
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.update_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.UpdateConnectionProfileRequest()
 
     # Establish that the response is the type that we expect.
@@ -3799,7 +3933,6 @@ def test_update_connection_profile_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.UpdateConnectionProfileRequest()
-
     request.connection_profile.name = 'connection_profile.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3807,6 +3940,7 @@ def test_update_connection_profile_field_headers():
             type(client.transport.update_connection_profile),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.update_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3831,7 +3965,6 @@ async def test_update_connection_profile_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.UpdateConnectionProfileRequest()
-
     request.connection_profile.name = 'connection_profile.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3839,6 +3972,7 @@ async def test_update_connection_profile_field_headers_async():
             type(client.transport.update_connection_profile),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.update_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3865,6 +3999,7 @@ def test_update_connection_profile_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_connection_profile(
@@ -3876,7 +4011,9 @@ def test_update_connection_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].connection_profile == clouddms_resources.ConnectionProfile(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -3922,7 +4059,9 @@ async def test_update_connection_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].connection_profile == clouddms_resources.ConnectionProfile(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -3958,11 +4097,13 @@ def test_delete_connection_profile(transport: str = 'grpc', request_type=clouddm
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.delete_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.DeleteConnectionProfileRequest()
 
     # Establish that the response is the type that we expect.
@@ -3988,8 +4129,8 @@ def test_delete_connection_profile_empty_call():
         client.delete_connection_profile()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == clouddms.DeleteConnectionProfileRequest()
 
+        assert args[0] == clouddms.DeleteConnectionProfileRequest()
 
 @pytest.mark.asyncio
 async def test_delete_connection_profile_async(transport: str = 'grpc_asyncio', request_type=clouddms.DeleteConnectionProfileRequest):
@@ -4010,11 +4151,13 @@ async def test_delete_connection_profile_async(transport: str = 'grpc_asyncio', 
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.delete_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == clouddms.DeleteConnectionProfileRequest()
 
     # Establish that the response is the type that we expect.
@@ -4034,7 +4177,6 @@ def test_delete_connection_profile_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.DeleteConnectionProfileRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4042,6 +4184,7 @@ def test_delete_connection_profile_field_headers():
             type(client.transport.delete_connection_profile),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.delete_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4066,7 +4209,6 @@ async def test_delete_connection_profile_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = clouddms.DeleteConnectionProfileRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4074,6 +4216,7 @@ async def test_delete_connection_profile_field_headers_async():
             type(client.transport.delete_connection_profile),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.delete_connection_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4100,6 +4243,7 @@ def test_delete_connection_profile_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_connection_profile(
@@ -4110,6 +4254,7 @@ def test_delete_connection_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -4153,6 +4298,7 @@ async def test_delete_connection_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -4211,6 +4357,7 @@ def test_transport_instance():
     client = DataMigrationServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.DataMigrationServiceGrpcTransport(
@@ -4225,6 +4372,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.DataMigrationServiceGrpcTransport,
     transports.DataMigrationServiceGrpcAsyncIOTransport,
@@ -4236,6 +4384,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = DataMigrationServiceClient(
@@ -4245,6 +4394,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.DataMigrationServiceGrpcTransport,
     )
+
 
 def test_data_migration_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -4283,7 +4433,7 @@ def test_data_migration_service_base_transport():
         'create_connection_profile',
         'update_connection_profile',
         'delete_connection_profile',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -4294,27 +4444,9 @@ def test_data_migration_service_base_transport():
         transport.operations_client
 
 
-@requires_google_auth_gte_1_25_0
 def test_data_migration_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.clouddms_v1.services.data_migration_service.transports.DataMigrationServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.DataMigrationServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_data_migration_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.clouddms_v1.services.data_migration_service.transports.DataMigrationServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.clouddms_v1.services.data_migration_service.transports.DataMigrationServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.DataMigrationServiceTransport(
@@ -4330,182 +4462,33 @@ def test_data_migration_service_base_transport_with_credentials_file_old_google_
 
 def test_data_migration_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.clouddms_v1.services.data_migration_service.transports.DataMigrationServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.clouddms_v1.services.data_migration_service.transports.DataMigrationServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.DataMigrationServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_data_migration_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         DataMigrationServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_data_migration_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        DataMigrationServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.DataMigrationServiceGrpcTransport,
-        transports.DataMigrationServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_data_migration_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.DataMigrationServiceGrpcTransport,
-        transports.DataMigrationServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_data_migration_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.DataMigrationServiceGrpcTransport, grpc_helpers),
-        (transports.DataMigrationServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_data_migration_service_transport_create_channel(transport_class, grpc_helpers):
+def test_data_migration_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.DataMigrationServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "datamigration.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="datamigration.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.DataMigrationServiceGrpcTransport, grpc_helpers),
-        (transports.DataMigrationServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_data_migration_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "datamigration.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.DataMigrationServiceGrpcTransport, grpc_helpers),
-        (transports.DataMigrationServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_data_migration_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "datamigration.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -4567,6 +4550,7 @@ def test_data_migration_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='datamigration.googleapis.com:8000'),
     )
     assert client.transport._host == 'datamigration.googleapis.com:8000'
+
 
 def test_data_migration_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -4720,6 +4704,7 @@ def test_connection_profile_path():
     project = "squid"
     location = "clam"
     connection_profile = "whelk"
+
     expected = "projects/{project}/locations/{location}/connectionProfiles/{connection_profile}".format(project=project, location=location, connection_profile=connection_profile, )
     actual = DataMigrationServiceClient.connection_profile_path(project, location, connection_profile)
     assert expected == actual
@@ -4727,9 +4712,10 @@ def test_connection_profile_path():
 
 def test_parse_connection_profile_path():
     expected = {
-        "project": "octopus",
-        "location": "oyster",
-        "connection_profile": "nudibranch",
+    "project": "octopus",
+    "location": "oyster",
+    "connection_profile": "nudibranch",
+
     }
     path = DataMigrationServiceClient.connection_profile_path(**expected)
 
@@ -4741,6 +4727,7 @@ def test_migration_job_path():
     project = "cuttlefish"
     location = "mussel"
     migration_job = "winkle"
+
     expected = "projects/{project}/locations/{location}/migrationJobs/{migration_job}".format(project=project, location=location, migration_job=migration_job, )
     actual = DataMigrationServiceClient.migration_job_path(project, location, migration_job)
     assert expected == actual
@@ -4748,9 +4735,10 @@ def test_migration_job_path():
 
 def test_parse_migration_job_path():
     expected = {
-        "project": "nautilus",
-        "location": "scallop",
-        "migration_job": "abalone",
+    "project": "nautilus",
+    "location": "scallop",
+    "migration_job": "abalone",
+
     }
     path = DataMigrationServiceClient.migration_job_path(**expected)
 
@@ -4760,6 +4748,7 @@ def test_parse_migration_job_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = DataMigrationServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -4767,7 +4756,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = DataMigrationServiceClient.common_billing_account_path(**expected)
 
@@ -4777,6 +4767,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = DataMigrationServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -4784,7 +4775,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = DataMigrationServiceClient.common_folder_path(**expected)
 
@@ -4794,6 +4786,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = DataMigrationServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -4801,7 +4794,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = DataMigrationServiceClient.common_organization_path(**expected)
 
@@ -4811,6 +4805,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = DataMigrationServiceClient.common_project_path(project)
     assert expected == actual
@@ -4818,7 +4813,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = DataMigrationServiceClient.common_project_path(**expected)
 
@@ -4829,6 +4825,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = DataMigrationServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -4836,8 +4833,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = DataMigrationServiceClient.common_location_path(**expected)
 

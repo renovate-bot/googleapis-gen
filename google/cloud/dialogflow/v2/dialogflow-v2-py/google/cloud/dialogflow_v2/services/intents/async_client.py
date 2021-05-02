@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -35,6 +37,7 @@ from google.cloud.dialogflow_v2.types import intent as gcd_intent
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
+
 from .transports.base import IntentsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import IntentsGrpcAsyncIOTransport
 from .client import IntentsClient
@@ -52,14 +55,19 @@ class IntentsAsyncClient:
     parse_context_path = staticmethod(IntentsClient.parse_context_path)
     intent_path = staticmethod(IntentsClient.intent_path)
     parse_intent_path = staticmethod(IntentsClient.parse_intent_path)
+
     common_billing_account_path = staticmethod(IntentsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(IntentsClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(IntentsClient.common_folder_path)
     parse_common_folder_path = staticmethod(IntentsClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(IntentsClient.common_organization_path)
     parse_common_organization_path = staticmethod(IntentsClient.parse_common_organization_path)
+
     common_project_path = staticmethod(IntentsClient.common_project_path)
     parse_common_project_path = staticmethod(IntentsClient.parse_common_project_path)
+
     common_location_path = staticmethod(IntentsClient.common_location_path)
     parse_common_location_path = staticmethod(IntentsClient.parse_common_location_path)
 
@@ -144,6 +152,7 @@ class IntentsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = IntentsClient(
             credentials=credentials,
             transport=transport,
@@ -166,8 +175,7 @@ class IntentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ListIntentsRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Intents.ListIntents][google.cloud.dialogflow.v2.Intents.ListIntents].
             parent (:class:`str`):
                 Required. The agent to list all intents from. Format:
@@ -186,6 +194,7 @@ class IntentsAsyncClient:
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -213,6 +222,7 @@ class IntentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if language_code is not None:
@@ -267,8 +277,7 @@ class IntentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.GetIntentRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Intents.GetIntent][google.cloud.dialogflow.v2.Intents.GetIntent].
             name (:class:`str`):
                 Required. The name of the intent. Format:
@@ -287,6 +296,7 @@ class IntentsAsyncClient:
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -320,6 +330,7 @@ class IntentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if language_code is not None:
@@ -366,8 +377,7 @@ class IntentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.CreateIntentRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Intents.CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent].
             parent (:class:`str`):
                 Required. The agent to create a intent for. Format:
@@ -391,6 +401,7 @@ class IntentsAsyncClient:
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -424,6 +435,7 @@ class IntentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if intent is not None:
@@ -472,8 +484,7 @@ class IntentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.UpdateIntentRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Intents.UpdateIntent][google.cloud.dialogflow.v2.Intents.UpdateIntent].
             intent (:class:`google.cloud.dialogflow_v2.types.Intent`):
                 Required. The intent to update.
@@ -497,6 +508,7 @@ class IntentsAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -530,6 +542,7 @@ class IntentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if intent is not None:
             request.intent = intent
         if language_code is not None:
@@ -577,8 +590,7 @@ class IntentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.DeleteIntentRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Intents.DeleteIntent][google.cloud.dialogflow.v2.Intents.DeleteIntent].
             name (:class:`str`):
                 Required. The name of the intent to delete. If this
@@ -589,6 +601,7 @@ class IntentsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -607,6 +620,7 @@ class IntentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -652,7 +666,6 @@ class IntentsAsyncClient:
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.BatchUpdateIntentsRequest`):
                 The request object.
-
             parent (:class:`str`):
                 Required. The name of the agent to update or create
                 intents in. Format: ``projects/<Project ID>/agent``.
@@ -678,6 +691,7 @@ class IntentsAsyncClient:
                 This corresponds to the ``intent_batch_inline`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -706,6 +720,7 @@ class IntentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if intent_batch_uri is not None:
@@ -764,8 +779,7 @@ class IntentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.BatchDeleteIntentsRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Intents.BatchDeleteIntents][google.cloud.dialogflow.v2.Intents.BatchDeleteIntents].
             parent (:class:`str`):
                 Required. The name of the agent to delete all entities
@@ -781,6 +795,7 @@ class IntentsAsyncClient:
                 This corresponds to the ``intents`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -818,8 +833,10 @@ class IntentsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
+
         if intents:
             request.intents.extend(intents)
 
@@ -857,6 +874,8 @@ class IntentsAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

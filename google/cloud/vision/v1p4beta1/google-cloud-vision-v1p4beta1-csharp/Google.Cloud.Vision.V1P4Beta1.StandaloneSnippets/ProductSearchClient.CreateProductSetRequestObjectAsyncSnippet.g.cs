@@ -17,15 +17,18 @@
 namespace Google.Cloud.Vision.V1P4Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Vision.V1P4Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedProductSearchClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateProductSetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateProductSetRequestObjectAsync()
         {
-            // Snippet: CreateProductSetAsync(CreateProductSetRequest, CallSettings)
-            // Additional: CreateProductSetAsync(CreateProductSetRequest, CancellationToken)
             // Create client
             ProductSearchClient productSearchClient = await ProductSearchClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Vision.V1P4Beta1.Snippets
             };
             // Make the request
             ProductSet response = await productSearchClient.CreateProductSetAsync(request);
-            // End snippet
         }
     }
 }

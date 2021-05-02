@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Clouddms.V1.Snippets
 {
+    using Google.Cloud.Clouddms.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataMigrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateSshScriptAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GenerateSshScriptRequestObjectAsync()
         {
-            // Snippet: GenerateSshScriptAsync(GenerateSshScriptRequest, CallSettings)
-            // Additional: GenerateSshScriptAsync(GenerateSshScriptRequest, CancellationToken)
             // Create client
             DataMigrationServiceClient dataMigrationServiceClient = await DataMigrationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,11 +37,9 @@ namespace Google.Cloud.Clouddms.V1.Snippets
                 Vm = "",
                 VmPort = 0,
                 VmCreationConfig = new VmCreationConfig(),
-                VmSelectionConfig = new VmSelectionConfig(),
             };
             // Make the request
             SshScript response = await dataMigrationServiceClient.GenerateSshScriptAsync(request);
-            // End snippet
         }
     }
 }

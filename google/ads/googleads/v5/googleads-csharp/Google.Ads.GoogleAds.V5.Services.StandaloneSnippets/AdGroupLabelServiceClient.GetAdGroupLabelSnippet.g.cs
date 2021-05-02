@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedAdGroupLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupLabel</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAdGroupLabel()
         {
-            // Snippet: GetAdGroupLabel(string, CallSettings)
             // Create client
             AdGroupLabelServiceClient adGroupLabelServiceClient = AdGroupLabelServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/adGroupLabels/[AD_GROUP_LABEL]";
             // Make the request
             AdGroupLabel response = adGroupLabelServiceClient.GetAdGroupLabel(resourceName);
-            // End snippet
         }
     }
 }

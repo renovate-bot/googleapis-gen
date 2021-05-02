@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteEvaluationJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteEvaluationJobResourceNamesAsync()
         {
-            // Snippet: DeleteEvaluationJobAsync(EvaluationJobName, CallSettings)
-            // Additional: DeleteEvaluationJobAsync(EvaluationJobName, CancellationToken)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = await DataLabelingServiceClient.CreateAsync();
             // Initialize request argument(s)
             EvaluationJobName name = EvaluationJobName.FromProjectEvaluationJob("[PROJECT]", "[EVALUATION_JOB]");
             // Make the request
             await dataLabelingServiceClient.DeleteEvaluationJobAsync(name);
-            // End snippet
         }
     }
 }

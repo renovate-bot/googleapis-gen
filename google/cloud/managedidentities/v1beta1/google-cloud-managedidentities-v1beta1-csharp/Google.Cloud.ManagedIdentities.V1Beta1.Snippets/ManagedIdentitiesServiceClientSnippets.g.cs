@@ -172,7 +172,7 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListDomains</summary>
+        /// <summary>Snippet for ListDomainsAsync</summary>
         public async Task ListDomainsRequestObjectAsync()
         {
             // Snippet: ListDomainsAsync(ListDomainsRequest, CallSettings)

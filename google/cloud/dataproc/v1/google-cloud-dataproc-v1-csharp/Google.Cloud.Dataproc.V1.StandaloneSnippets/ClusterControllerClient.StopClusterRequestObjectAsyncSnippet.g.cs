@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
+    using Google.Cloud.Dataproc.V1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClusterControllerClientStandaloneSnippets
     {
         /// <summary>Snippet for StopClusterAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task StopClusterRequestObjectAsync()
         {
-            // Snippet: StopClusterAsync(StopClusterRequest, CallSettings)
-            // Additional: StopClusterAsync(StopClusterRequest, CancellationToken)
             // Create client
             ClusterControllerClient clusterControllerClient = await ClusterControllerClient.CreateAsync();
             // Initialize request argument(s)
@@ -55,7 +58,6 @@ namespace Google.Cloud.Dataproc.V1.Snippets
                 // If it has completed, then access the result
                 Cluster retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

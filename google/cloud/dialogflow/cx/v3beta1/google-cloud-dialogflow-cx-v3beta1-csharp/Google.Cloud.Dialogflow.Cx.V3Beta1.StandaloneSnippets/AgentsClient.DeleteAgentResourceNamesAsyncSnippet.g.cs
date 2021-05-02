@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAgentsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteAgentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteAgentResourceNamesAsync()
         {
-            // Snippet: DeleteAgentAsync(AgentName, CallSettings)
-            // Additional: DeleteAgentAsync(AgentName, CancellationToken)
             // Create client
             AgentsClient agentsClient = await AgentsClient.CreateAsync();
             // Initialize request argument(s)
             AgentName name = AgentName.FromProjectLocationAgent("[PROJECT]", "[LOCATION]", "[AGENT]");
             // Make the request
             await agentsClient.DeleteAgentAsync(name);
-            // End snippet
         }
     }
 }

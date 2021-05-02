@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Talent.V4.Snippets
 {
+    using Google.Cloud.Talent.V4;
+
     public sealed partial class GeneratedTenantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteTenant</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteTenantResourceNames()
         {
-            // Snippet: DeleteTenant(TenantName, CallSettings)
             // Create client
             TenantServiceClient tenantServiceClient = TenantServiceClient.Create();
             // Initialize request argument(s)
             TenantName name = TenantName.FromProjectTenant("[PROJECT]", "[TENANT]");
             // Make the request
             tenantServiceClient.DeleteTenant(name);
-            // End snippet
         }
     }
 }

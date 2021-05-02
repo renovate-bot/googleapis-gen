@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedMerchantCenterLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMerchantCenterLink</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetMerchantCenterLinkResourceNames()
         {
-            // Snippet: GetMerchantCenterLink(MerchantCenterLinkName, CallSettings)
             // Create client
             MerchantCenterLinkServiceClient merchantCenterLinkServiceClient = MerchantCenterLinkServiceClient.Create();
             // Initialize request argument(s)
             MerchantCenterLinkName resourceName = MerchantCenterLinkName.FromCustomerMerchantCenter("[CUSTOMER_ID]", "[MERCHANT_CENTER_ID]");
             // Make the request
             MerchantCenterLink response = merchantCenterLinkServiceClient.GetMerchantCenterLink(resourceName);
-            // End snippet
         }
     }
 }

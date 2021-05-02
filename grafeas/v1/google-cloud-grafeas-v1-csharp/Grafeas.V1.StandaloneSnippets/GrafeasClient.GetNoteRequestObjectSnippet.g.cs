@@ -16,12 +16,17 @@
 
 namespace Grafeas.V1.Snippets
 {
+    using Grafeas.V1;
+
     public sealed partial class GeneratedGrafeasClientStandaloneSnippets
     {
         /// <summary>Snippet for GetNote</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetNoteRequestObject()
         {
-            // Snippet: GetNote(GetNoteRequest, CallSettings)
             // Create client
             GrafeasClient grafeasClient = GrafeasClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Grafeas.V1.Snippets
             };
             // Make the request
             Note response = grafeasClient.GetNote(request);
-            // End snippet
         }
     }
 }

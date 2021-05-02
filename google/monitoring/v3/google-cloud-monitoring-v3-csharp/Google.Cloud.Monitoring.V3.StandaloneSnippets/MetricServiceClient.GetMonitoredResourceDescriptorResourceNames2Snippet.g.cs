@@ -18,20 +18,23 @@ namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api;
     using Google.Api.Gax;
+    using Google.Cloud.Monitoring.V3;
 
     public sealed partial class GeneratedMetricServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMonitoredResourceDescriptor</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetMonitoredResourceDescriptorResourceNames2()
         {
-            // Snippet: GetMonitoredResourceDescriptor(IResourceName, CallSettings)
             // Create client
             MetricServiceClient metricServiceClient = MetricServiceClient.Create();
             // Initialize request argument(s)
             IResourceName name = new UnparsedResourceName("a/wildcard/resource");
             // Make the request
             MonitoredResourceDescriptor response = metricServiceClient.GetMonitoredResourceDescriptor(name);
-            // End snippet
         }
     }
 }

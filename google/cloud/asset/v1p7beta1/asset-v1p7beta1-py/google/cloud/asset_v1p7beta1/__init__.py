@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.asset_service import AssetServiceClient
-
 from .types.asset_service import BigQueryDestination
 from .types.asset_service import ContentType
 from .types.asset_service import ExportAssetsRequest
@@ -30,6 +30,7 @@ from .types.assets import RelatedAsset
 from .types.assets import RelatedAssets
 from .types.assets import RelationshipAttributes
 from .types.assets import Resource
+
 
 __all__ = (
     'Asset',

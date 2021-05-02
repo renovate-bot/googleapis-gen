@@ -17,13 +17,17 @@
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.ResourceManager.V3;
 
     public sealed partial class GeneratedTagKeysClientStandaloneSnippets
     {
         /// <summary>Snippet for SetIamPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SetIamPolicy()
         {
-            // Snippet: SetIamPolicy(string, Policy, CallSettings)
             // Create client
             TagKeysClient tagKeysClient = TagKeysClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             Policy policy = new Policy();
             // Make the request
             Policy response = tagKeysClient.SetIamPolicy(resource, policy);
-            // End snippet
         }
     }
 }

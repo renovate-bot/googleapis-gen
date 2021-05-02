@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +24,8 @@ from google.devtools.cloudprofiler_v2.types.profiler import Profile
 from google.devtools.cloudprofiler_v2.types.profiler import ProfileType
 from google.devtools.cloudprofiler_v2.types.profiler import UpdateProfileRequest
 
-__all__ = ('CreateOfflineProfileRequest',
+__all__ = (
+    'CreateOfflineProfileRequest',
     'CreateProfileRequest',
     'Deployment',
     'Profile',

@@ -16,15 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedCampaignExperimentServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for PromoteCampaignExperiment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void PromoteCampaignExperimentRequestObject()
         {
-            // Snippet: PromoteCampaignExperiment(PromoteCampaignExperimentRequest, CallSettings)
             // Create client
             CampaignExperimentServiceClient campaignExperimentServiceClient = CampaignExperimentServiceClient.Create();
             // Initialize request argument(s)
@@ -50,7 +54,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

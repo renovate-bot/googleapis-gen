@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedCustomerNegativeCriterionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomerNegativeCriterion</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCustomerNegativeCriterionResourceNames()
         {
-            // Snippet: GetCustomerNegativeCriterion(CustomerNegativeCriterionName, CallSettings)
             // Create client
             CustomerNegativeCriterionServiceClient customerNegativeCriterionServiceClient = CustomerNegativeCriterionServiceClient.Create();
             // Initialize request argument(s)
             CustomerNegativeCriterionName resourceName = CustomerNegativeCriterionName.FromCustomerCriterion("[CUSTOMER_ID]", "[CRITERION_ID]");
             // Make the request
             CustomerNegativeCriterion response = customerNegativeCriterionServiceClient.GetCustomerNegativeCriterion(resourceName);
-            // End snippet
         }
     }
 }

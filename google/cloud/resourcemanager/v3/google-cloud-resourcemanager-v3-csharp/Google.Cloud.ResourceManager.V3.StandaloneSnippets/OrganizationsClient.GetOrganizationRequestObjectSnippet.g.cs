@@ -17,13 +17,17 @@
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.ResourceManager.V3;
 
     public sealed partial class GeneratedOrganizationsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetOrganization</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetOrganizationRequestObject()
         {
-            // Snippet: GetOrganization(GetOrganizationRequest, CallSettings)
             // Create client
             OrganizationsClient organizationsClient = OrganizationsClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             };
             // Make the request
             Organization response = organizationsClient.GetOrganization(request);
-            // End snippet
         }
     }
 }

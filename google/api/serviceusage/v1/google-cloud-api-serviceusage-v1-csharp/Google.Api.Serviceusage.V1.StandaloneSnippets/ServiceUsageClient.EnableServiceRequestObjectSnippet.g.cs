@@ -16,14 +16,18 @@
 
 namespace Google.Api.Serviceusage.V1.Snippets
 {
+    using Google.Api.Serviceusage.V1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedServiceUsageClientStandaloneSnippets
     {
         /// <summary>Snippet for EnableService</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void EnableServiceRequestObject()
         {
-            // Snippet: EnableService(EnableServiceRequest, CallSettings)
             // Create client
             ServiceUsageClient serviceUsageClient = ServiceUsageClient.Create();
             // Initialize request argument(s)
@@ -46,7 +50,6 @@ namespace Google.Api.Serviceusage.V1.Snippets
                 // If it has completed, then access the result
                 EnableServiceResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

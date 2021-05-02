@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -33,6 +35,7 @@ from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import domain_mapping
 from google.cloud.appengine_admin_v1.types import operation as ga_operation
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .transports.base import DomainMappingsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import DomainMappingsGrpcAsyncIOTransport
 from .client import DomainMappingsClient
@@ -48,12 +51,16 @@ class DomainMappingsAsyncClient:
 
     common_billing_account_path = staticmethod(DomainMappingsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(DomainMappingsClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(DomainMappingsClient.common_folder_path)
     parse_common_folder_path = staticmethod(DomainMappingsClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(DomainMappingsClient.common_organization_path)
     parse_common_organization_path = staticmethod(DomainMappingsClient.parse_common_organization_path)
+
     common_project_path = staticmethod(DomainMappingsClient.common_project_path)
     parse_common_project_path = staticmethod(DomainMappingsClient.parse_common_project_path)
+
     common_location_path = staticmethod(DomainMappingsClient.common_location_path)
     parse_common_location_path = staticmethod(DomainMappingsClient.parse_common_location_path)
 
@@ -138,6 +145,7 @@ class DomainMappingsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = DomainMappingsClient(
             credentials=credentials,
             transport=transport,
@@ -157,9 +165,9 @@ class DomainMappingsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.ListDomainMappingsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `DomainMappings.ListDomainMappings`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -175,6 +183,7 @@ class DomainMappingsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = appengine.ListDomainMappingsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -224,9 +233,9 @@ class DomainMappingsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.GetDomainMappingRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `DomainMappings.GetDomainMapping`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -240,6 +249,7 @@ class DomainMappingsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = appengine.GetDomainMappingRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -283,9 +293,9 @@ class DomainMappingsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.CreateDomainMappingRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `DomainMappings.CreateDomainMapping`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -302,6 +312,7 @@ class DomainMappingsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = appengine.CreateDomainMappingRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -354,9 +365,9 @@ class DomainMappingsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.UpdateDomainMappingRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `DomainMappings.UpdateDomainMapping`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -373,6 +384,7 @@ class DomainMappingsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = appengine.UpdateDomainMappingRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -423,9 +435,9 @@ class DomainMappingsAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.DeleteDomainMappingRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `DomainMappings.DeleteDomainMapping`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -452,6 +464,7 @@ class DomainMappingsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = appengine.DeleteDomainMappingRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -488,6 +501,8 @@ class DomainMappingsAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -26,7 +28,7 @@ __protobuf__ = proto.module(
 
 
 class GeoTargetingRestrictionEnum(proto.Message):
-    r"""Message describing feed item geo targeting restriction.    """
+    r"""Message describing feed item geo targeting restriction."""
     class GeoTargetingRestriction(proto.Enum):
         r"""A restriction used to determine if the request context's
         geo should be matched.

@@ -16,19 +16,23 @@
 
 namespace Google.Api.ServiceUsage.V1Beta1.Snippets
 {
+    using Google.Api.ServiceUsage.V1Beta1;
+
     public sealed partial class GeneratedServiceUsageClientStandaloneSnippets
     {
         /// <summary>Snippet for GetService</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetServiceRequestObject()
         {
-            // Snippet: GetService(GetServiceRequest, CallSettings)
             // Create client
             ServiceUsageClient serviceUsageClient = ServiceUsageClient.Create();
             // Initialize request argument(s)
             GetServiceRequest request = new GetServiceRequest { Name = "", };
             // Make the request
             Service response = serviceUsageClient.GetService(request);
-            // End snippet
         }
     }
 }

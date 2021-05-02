@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Iot.V1.Snippets
 {
+    using Google.Cloud.Iot.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDeviceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for UnbindDeviceFromGatewayAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UnbindDeviceFromGatewayResourceNamesAsync()
         {
-            // Snippet: UnbindDeviceFromGatewayAsync(RegistryName, string, string, CallSettings)
-            // Additional: UnbindDeviceFromGatewayAsync(RegistryName, string, string, CancellationToken)
             // Create client
             DeviceManagerClient deviceManagerClient = await DeviceManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Iot.V1.Snippets
             string deviceId = "";
             // Make the request
             UnbindDeviceFromGatewayResponse response = await deviceManagerClient.UnbindDeviceFromGatewayAsync(parent, gatewayId, deviceId);
-            // End snippet
         }
     }
 }

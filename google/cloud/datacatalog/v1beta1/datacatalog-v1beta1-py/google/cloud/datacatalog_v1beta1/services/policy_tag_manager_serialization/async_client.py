@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -28,6 +30,7 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.datacatalog_v1beta1.types import policytagmanager
 from google.cloud.datacatalog_v1beta1.types import policytagmanagerserialization
+
 from .transports.base import PolicyTagManagerSerializationTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import PolicyTagManagerSerializationGrpcAsyncIOTransport
 from .client import PolicyTagManagerSerializationClient
@@ -46,14 +49,19 @@ class PolicyTagManagerSerializationAsyncClient:
 
     taxonomy_path = staticmethod(PolicyTagManagerSerializationClient.taxonomy_path)
     parse_taxonomy_path = staticmethod(PolicyTagManagerSerializationClient.parse_taxonomy_path)
+
     common_billing_account_path = staticmethod(PolicyTagManagerSerializationClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(PolicyTagManagerSerializationClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(PolicyTagManagerSerializationClient.common_folder_path)
     parse_common_folder_path = staticmethod(PolicyTagManagerSerializationClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(PolicyTagManagerSerializationClient.common_organization_path)
     parse_common_organization_path = staticmethod(PolicyTagManagerSerializationClient.parse_common_organization_path)
+
     common_project_path = staticmethod(PolicyTagManagerSerializationClient.common_project_path)
     parse_common_project_path = staticmethod(PolicyTagManagerSerializationClient.parse_common_project_path)
+
     common_location_path = staticmethod(PolicyTagManagerSerializationClient.common_location_path)
     parse_common_location_path = staticmethod(PolicyTagManagerSerializationClient.parse_common_location_path)
 
@@ -138,6 +146,7 @@ class PolicyTagManagerSerializationAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = PolicyTagManagerSerializationClient(
             credentials=credentials,
             transport=transport,
@@ -161,9 +170,9 @@ class PolicyTagManagerSerializationAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.ImportTaxonomiesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ImportTaxonomies][google.cloud.datacatalog.v1beta1.PolicyTagManagerSerialization.ImportTaxonomies].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -177,6 +186,7 @@ class PolicyTagManagerSerializationAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = policytagmanagerserialization.ImportTaxonomiesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -221,9 +231,9 @@ class PolicyTagManagerSerializationAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1beta1.types.ExportTaxonomiesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ExportTaxonomies][google.cloud.datacatalog.v1beta1.PolicyTagManagerSerialization.ExportTaxonomies].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -237,6 +247,7 @@ class PolicyTagManagerSerializationAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = policytagmanagerserialization.ExportTaxonomiesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -265,6 +276,8 @@ class PolicyTagManagerSerializationAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

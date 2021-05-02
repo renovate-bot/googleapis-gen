@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedGenderViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGenderView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetGenderViewRequestObject()
         {
-            // Snippet: GetGenderView(GetGenderViewRequest, CallSettings)
             // Create client
             GenderViewServiceClient genderViewServiceClient = GenderViewServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             GenderView response = genderViewServiceClient.GetGenderView(request);
-            // End snippet
         }
     }
 }

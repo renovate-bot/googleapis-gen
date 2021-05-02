@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdRequestObjectAsync()
         {
-            // Snippet: GetAdAsync(GetAdRequest, CallSettings)
-            // Additional: GetAdAsync(GetAdRequest, CancellationToken)
             // Create client
             AdServiceClient adServiceClient = await AdServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             Ad response = await adServiceClient.GetAdAsync(request);
-            // End snippet
         }
     }
 }

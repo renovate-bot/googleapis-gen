@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Datastore.V1.Snippets
 {
+    using Google.Cloud.Datastore.V1;
     using Google.Protobuf;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedDatastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for Commit</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void Commit1()
         {
-            // Snippet: Commit(string, CommitRequest.Types.Mode, ByteString, IEnumerable<Mutation>, CallSettings)
             // Create client
             DatastoreClient datastoreClient = DatastoreClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Datastore.V1.Snippets
             IEnumerable<Mutation> mutations = new Mutation[] { new Mutation(), };
             // Make the request
             CommitResponse response = datastoreClient.Commit(projectId, mode, transaction, mutations);
-            // End snippet
         }
     }
 }

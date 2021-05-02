@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
 {
+    using Google.Cloud.ArtifactRegistry.V1Beta2;
+
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTag</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetTag()
         {
-            // Snippet: GetTag(string, CallSettings)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.Create();
             // Initialize request argument(s)
             string name = "";
             // Make the request
             Tag response = artifactRegistryClient.GetTag(name);
-            // End snippet
         }
     }
 }

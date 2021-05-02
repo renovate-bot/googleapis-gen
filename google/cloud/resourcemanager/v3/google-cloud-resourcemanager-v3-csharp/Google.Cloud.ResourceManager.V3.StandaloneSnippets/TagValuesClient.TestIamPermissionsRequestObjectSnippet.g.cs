@@ -18,13 +18,17 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Api.Gax;
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.ResourceManager.V3;
 
     public sealed partial class GeneratedTagValuesClientStandaloneSnippets
     {
         /// <summary>Snippet for TestIamPermissions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void TestIamPermissionsRequestObject()
         {
-            // Snippet: TestIamPermissions(TestIamPermissionsRequest, CallSettings)
             // Create client
             TagValuesClient tagValuesClient = TagValuesClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             };
             // Make the request
             TestIamPermissionsResponse response = tagValuesClient.TestIamPermissions(request);
-            // End snippet
         }
     }
 }

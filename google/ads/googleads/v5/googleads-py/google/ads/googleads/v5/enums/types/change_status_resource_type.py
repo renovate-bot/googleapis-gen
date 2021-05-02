@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -28,7 +30,7 @@ __protobuf__ = proto.module(
 class ChangeStatusResourceTypeEnum(proto.Message):
     r"""Container for enum describing supported resource types for
     the ChangeStatus resource.
-        """
+    """
     class ChangeStatusResourceType(proto.Enum):
         r"""Enum listing the resource types support by the ChangeStatus
         resource.

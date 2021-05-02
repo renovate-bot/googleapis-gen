@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPublisherClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTopicAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTopicRequestObjectAsync()
         {
-            // Snippet: GetTopicAsync(GetTopicRequest, CallSettings)
-            // Additional: GetTopicAsync(GetTopicRequest, CancellationToken)
             // Create client
             PublisherClient publisherClient = await PublisherClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
             };
             // Make the request
             Topic response = await publisherClient.GetTopicAsync(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -30,6 +32,7 @@ from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.dataproc_v1beta2.services.job_controller import pagers
 from google.cloud.dataproc_v1beta2.types import jobs
+
 from .transports.base import JobControllerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import JobControllerGrpcAsyncIOTransport
 from .client import JobControllerClient
@@ -45,12 +48,16 @@ class JobControllerAsyncClient:
 
     common_billing_account_path = staticmethod(JobControllerClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(JobControllerClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(JobControllerClient.common_folder_path)
     parse_common_folder_path = staticmethod(JobControllerClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(JobControllerClient.common_organization_path)
     parse_common_organization_path = staticmethod(JobControllerClient.parse_common_organization_path)
+
     common_project_path = staticmethod(JobControllerClient.common_project_path)
     parse_common_project_path = staticmethod(JobControllerClient.parse_common_project_path)
+
     common_location_path = staticmethod(JobControllerClient.common_location_path)
     parse_common_location_path = staticmethod(JobControllerClient.parse_common_location_path)
 
@@ -135,6 +142,7 @@ class JobControllerAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = JobControllerClient(
             credentials=credentials,
             transport=transport,
@@ -157,8 +165,7 @@ class JobControllerAsyncClient:
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.SubmitJobRequest`):
-                The request object.
-                A request to submit a job.
+                The request object. A request to submit a job.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs
@@ -179,6 +186,7 @@ class JobControllerAsyncClient:
                 This corresponds to the ``job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -201,6 +209,7 @@ class JobControllerAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_id is not None:
             request.project_id = project_id
         if region is not None:
@@ -213,7 +222,10 @@ class JobControllerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.submit_job,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=900.0,
@@ -247,8 +259,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.SubmitJobRequest`):
-                The request object.
-                A request to submit a job.
+                The request object. A request to submit a job.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs
@@ -269,6 +280,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -296,6 +308,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_id is not None:
             request.project_id = project_id
         if region is not None:
@@ -308,7 +321,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.submit_job_as_operation,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=900.0,
@@ -351,8 +367,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.GetJobRequest`):
-                The request object.
-                A request to get the resource
+                The request object. A request to get the resource
                 representation for a job in a project.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
@@ -374,6 +389,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``job_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -396,6 +412,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_id is not None:
             request.project_id = project_id
         if region is not None:
@@ -408,7 +425,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_job,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
@@ -444,8 +464,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.ListJobsRequest`):
-                The request object.
-                A request to list jobs in a project.
+                The request object. A request to list jobs in a project.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs
@@ -483,6 +502,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -509,6 +529,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_id is not None:
             request.project_id = project_id
         if region is not None:
@@ -521,7 +542,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_jobs,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
@@ -563,8 +587,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.UpdateJobRequest`):
-                The request object.
-                A request to update a job.
+                The request object. A request to update a job.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -576,6 +600,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 A Dataproc job resource.
         """
         # Create or coerce a protobuf request object.
+
         request = jobs.UpdateJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -583,7 +608,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_job,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=900.0,
@@ -621,8 +649,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.CancelJobRequest`):
-                The request object.
-                A request to cancel a job.
+                The request object. A request to cancel a job.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs
@@ -643,6 +670,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``job_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -665,6 +693,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_id is not None:
             request.project_id = project_id
         if region is not None:
@@ -677,7 +706,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.cancel_job,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.InternalServerError,
                     exceptions.ServiceUnavailable,
@@ -714,8 +746,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.dataproc_v1beta2.types.DeleteJobRequest`):
-                The request object.
-                A request to delete a job.
+                The request object. A request to delete a job.
             project_id (:class:`str`):
                 Required. The ID of the Google Cloud
                 Platform project that the job belongs
@@ -736,6 +767,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``job_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -754,6 +786,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_id is not None:
             request.project_id = project_id
         if region is not None:
@@ -766,7 +799,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_job,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=900.0,
@@ -782,6 +818,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

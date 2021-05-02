@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -108,48 +111,35 @@ class GuestPolicy(proto.Message):
             server's etag.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    create_time = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    description = proto.Field(proto.STRING, number=2)
+
+    create_time = proto.Field(proto.MESSAGE, number=3,
         message=timestamp.Timestamp,
     )
-    update_time = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    update_time = proto.Field(proto.MESSAGE, number=4,
         message=timestamp.Timestamp,
     )
-    assignment = proto.Field(
-        proto.MESSAGE,
-        number=6,
+
+    assignment = proto.Field(proto.MESSAGE, number=6,
         message='Assignment',
     )
-    packages = proto.RepeatedField(
-        proto.MESSAGE,
-        number=7,
+
+    packages = proto.RepeatedField(proto.MESSAGE, number=7,
         message='Package',
     )
-    package_repositories = proto.RepeatedField(
-        proto.MESSAGE,
-        number=8,
+
+    package_repositories = proto.RepeatedField(proto.MESSAGE, number=8,
         message='PackageRepository',
     )
-    recipes = proto.RepeatedField(
-        proto.MESSAGE,
-        number=9,
+
+    recipes = proto.RepeatedField(proto.MESSAGE, number=9,
         message='SoftwareRecipe',
     )
-    etag = proto.Field(
-        proto.STRING,
-        number=10,
-    )
+
+    etag = proto.Field(proto.STRING, number=10)
 
 
 class Assignment(proto.Message):
@@ -198,7 +188,6 @@ class Assignment(proto.Message):
             VM instances must match all supplied criteria
             for a given OsType to be included.
     """
-
     class GroupLabel(proto.Message):
         r"""Represents a group of VM intances that can be identified as
         having all these labels, for example "env=prod and app=web".
@@ -210,14 +199,11 @@ class Assignment(proto.Message):
                 in this assignment group.
         """
 
-        labels = proto.MapField(
-            proto.STRING,
-            proto.STRING,
-            number=1
-        )
+        labels = proto.MapField(proto.STRING, proto.STRING, number=1)
 
     class OsType(proto.Message):
         r"""Defines the criteria for selecting VM Instances by OS type.
+
         Attributes:
             os_short_name (str):
                 Targets VM instances with OS Inventory
@@ -233,39 +219,23 @@ class Assignment(proto.Message):
                 architecture.
         """
 
-        os_short_name = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        os_version = proto.Field(
-            proto.STRING,
-            number=2,
-        )
-        os_architecture = proto.Field(
-            proto.STRING,
-            number=3,
-        )
+        os_short_name = proto.Field(proto.STRING, number=1)
 
-    group_labels = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+        os_version = proto.Field(proto.STRING, number=2)
+
+        os_architecture = proto.Field(proto.STRING, number=3)
+
+    group_labels = proto.RepeatedField(proto.MESSAGE, number=1,
         message=GroupLabel,
     )
-    zones = proto.RepeatedField(
-        proto.STRING,
-        number=2,
-    )
-    instances = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
-    instance_name_prefixes = proto.RepeatedField(
-        proto.STRING,
-        number=4,
-    )
-    os_types = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+
+    zones = proto.RepeatedField(proto.STRING, number=2)
+
+    instances = proto.RepeatedField(proto.STRING, number=3)
+
+    instance_name_prefixes = proto.RepeatedField(proto.STRING, number=4)
+
+    os_types = proto.RepeatedField(proto.MESSAGE, number=5,
         message=OsType,
     )
 
@@ -323,18 +293,13 @@ class Package(proto.Message):
         ZYPPER = 4
         GOO = 5
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    desired_state = proto.Field(
-        proto.ENUM,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    desired_state = proto.Field(proto.ENUM, number=2,
         enum='DesiredState',
     )
-    manager = proto.Field(
-        proto.ENUM,
-        number=3,
+
+    manager = proto.Field(proto.ENUM, number=3,
         enum=Manager,
     )
 
@@ -367,27 +332,17 @@ class AptRepository(proto.Message):
         DEB = 1
         DEB_SRC = 2
 
-    archive_type = proto.Field(
-        proto.ENUM,
-        number=1,
+    archive_type = proto.Field(proto.ENUM, number=1,
         enum=ArchiveType,
     )
-    uri = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    distribution = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    components = proto.RepeatedField(
-        proto.STRING,
-        number=4,
-    )
-    gpg_key = proto.Field(
-        proto.STRING,
-        number=5,
-    )
+
+    uri = proto.Field(proto.STRING, number=2)
+
+    distribution = proto.Field(proto.STRING, number=3)
+
+    components = proto.RepeatedField(proto.STRING, number=4)
+
+    gpg_key = proto.Field(proto.STRING, number=5)
 
 
 class YumRepository(proto.Message):
@@ -411,22 +366,13 @@ class YumRepository(proto.Message):
             URIs of GPG keys.
     """
 
-    id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    display_name = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    base_url = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    gpg_keys = proto.RepeatedField(
-        proto.STRING,
-        number=4,
-    )
+    id = proto.Field(proto.STRING, number=1)
+
+    display_name = proto.Field(proto.STRING, number=2)
+
+    base_url = proto.Field(proto.STRING, number=3)
+
+    gpg_keys = proto.RepeatedField(proto.STRING, number=4)
 
 
 class ZypperRepository(proto.Message):
@@ -450,22 +396,13 @@ class ZypperRepository(proto.Message):
             URIs of GPG keys.
     """
 
-    id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    display_name = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    base_url = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    gpg_keys = proto.RepeatedField(
-        proto.STRING,
-        number=4,
-    )
+    id = proto.Field(proto.STRING, number=1)
+
+    display_name = proto.Field(proto.STRING, number=2)
+
+    base_url = proto.Field(proto.STRING, number=3)
+
+    gpg_keys = proto.RepeatedField(proto.STRING, number=4)
 
 
 class GooRepository(proto.Message):
@@ -479,18 +416,14 @@ class GooRepository(proto.Message):
             Required. The url of the repository.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    url = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    name = proto.Field(proto.STRING, number=1)
+
+    url = proto.Field(proto.STRING, number=2)
 
 
 class PackageRepository(proto.Message):
     r"""A package repository.
+
     Attributes:
         apt (google.cloud.osconfig_v1beta.types.AptRepository):
             An Apt Repository.
@@ -502,28 +435,19 @@ class PackageRepository(proto.Message):
             A Goo Repository.
     """
 
-    apt = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='repository',
+    apt = proto.Field(proto.MESSAGE, number=1, oneof='repository',
         message='AptRepository',
     )
-    yum = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='repository',
+
+    yum = proto.Field(proto.MESSAGE, number=2, oneof='repository',
         message='YumRepository',
     )
-    zypper = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='repository',
+
+    zypper = proto.Field(proto.MESSAGE, number=3, oneof='repository',
         message='ZypperRepository',
     )
-    goo = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='repository',
+
+    goo = proto.Field(proto.MESSAGE, number=4, oneof='repository',
         message='GooRepository',
     )
 
@@ -596,9 +520,9 @@ class SoftwareRecipe(proto.Message):
             attempts to create or update a recipe to the REMOVE state is
             rejected.
     """
-
     class Artifact(proto.Message):
         r"""Specifies a resource to be used in the recipe.
+
         Attributes:
             id (str):
                 Required. Id of the artifact, which the
@@ -619,9 +543,9 @@ class SoftwareRecipe(proto.Message):
                 GCS:    An object generation number must be
                 specified.
         """
-
         class Remote(proto.Message):
             r"""Specifies an artifact available via some URI.
+
             Attributes:
                 uri (str):
                     URI from which to fetch the object. It should
@@ -635,14 +559,9 @@ class SoftwareRecipe(proto.Message):
                     running any of the steps.
             """
 
-            uri = proto.Field(
-                proto.STRING,
-                number=1,
-            )
-            checksum = proto.Field(
-                proto.STRING,
-                number=2,
-            )
+            uri = proto.Field(proto.STRING, number=1)
+
+            checksum = proto.Field(proto.STRING, number=2)
 
         class Gcs(proto.Message):
             r"""Specifies an artifact available as a Google Cloud Storage
@@ -667,39 +586,23 @@ class SoftwareRecipe(proto.Message):
                     this value would be ``1234567``.
             """
 
-            bucket = proto.Field(
-                proto.STRING,
-                number=1,
-            )
-            object_ = proto.Field(
-                proto.STRING,
-                number=2,
-            )
-            generation = proto.Field(
-                proto.INT64,
-                number=3,
-            )
+            bucket = proto.Field(proto.STRING, number=1)
 
-        id = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        remote = proto.Field(
-            proto.MESSAGE,
-            number=2,
-            oneof='artifact',
+            object_ = proto.Field(proto.STRING, number=2)
+
+            generation = proto.Field(proto.INT64, number=3)
+
+        id = proto.Field(proto.STRING, number=1)
+
+        remote = proto.Field(proto.MESSAGE, number=2, oneof='artifact',
             message='SoftwareRecipe.Artifact.Remote',
         )
-        gcs = proto.Field(
-            proto.MESSAGE,
-            number=3,
-            oneof='artifact',
+
+        gcs = proto.Field(proto.MESSAGE, number=3, oneof='artifact',
             message='SoftwareRecipe.Artifact.Gcs',
         )
-        allow_insecure = proto.Field(
-            proto.BOOL,
-            number=4,
-        )
+
+        allow_insecure = proto.Field(proto.BOOL, number=4)
 
     class Step(proto.Message):
         r"""An action that can be taken as part of installing or updating
@@ -722,9 +625,9 @@ class SoftwareRecipe(proto.Message):
             script_run (google.cloud.osconfig_v1beta.types.SoftwareRecipe.Step.RunScript):
                 Runs commands in a shell.
         """
-
         class CopyFile(proto.Message):
             r"""Copies the artifact to the specified path on the instance.
+
             Attributes:
                 artifact_id (str):
                     Required. The id of the relevant artifact in
@@ -756,22 +659,13 @@ class SoftwareRecipe(proto.Message):
                     read only: 4
             """
 
-            artifact_id = proto.Field(
-                proto.STRING,
-                number=1,
-            )
-            destination = proto.Field(
-                proto.STRING,
-                number=2,
-            )
-            overwrite = proto.Field(
-                proto.BOOL,
-                number=3,
-            )
-            permissions = proto.Field(
-                proto.STRING,
-                number=4,
-            )
+            artifact_id = proto.Field(proto.STRING, number=1)
+
+            destination = proto.Field(proto.STRING, number=2)
+
+            overwrite = proto.Field(proto.BOOL, number=3)
+
+            permissions = proto.Field(proto.STRING, number=4)
 
         class ExtractArchive(proto.Message):
             r"""Extracts an archive of the type specified in the specified
@@ -797,22 +691,17 @@ class SoftwareRecipe(proto.Message):
                 TAR_XZ = 5
                 ZIP = 11
 
-            artifact_id = proto.Field(
-                proto.STRING,
-                number=1,
-            )
-            destination = proto.Field(
-                proto.STRING,
-                number=2,
-            )
-            type_ = proto.Field(
-                proto.ENUM,
-                number=3,
+            artifact_id = proto.Field(proto.STRING, number=1)
+
+            destination = proto.Field(proto.STRING, number=2)
+
+            type_ = proto.Field(proto.ENUM, number=3,
                 enum='SoftwareRecipe.Step.ExtractArchive.ArchiveType',
             )
 
         class InstallMsi(proto.Message):
             r"""Installs an MSI file.
+
             Attributes:
                 artifact_id (str):
                     Required. The id of the relevant artifact in
@@ -825,47 +714,37 @@ class SoftwareRecipe(proto.Message):
                     updated successfully. Behaviour defaults to [0]
             """
 
-            artifact_id = proto.Field(
-                proto.STRING,
-                number=1,
-            )
-            flags = proto.RepeatedField(
-                proto.STRING,
-                number=2,
-            )
-            allowed_exit_codes = proto.RepeatedField(
-                proto.INT32,
-                number=3,
-            )
+            artifact_id = proto.Field(proto.STRING, number=1)
+
+            flags = proto.RepeatedField(proto.STRING, number=2)
+
+            allowed_exit_codes = proto.RepeatedField(proto.INT32, number=3)
 
         class InstallDpkg(proto.Message):
             r"""Installs a deb via dpkg.
+
             Attributes:
                 artifact_id (str):
                     Required. The id of the relevant artifact in
                     the recipe.
             """
 
-            artifact_id = proto.Field(
-                proto.STRING,
-                number=1,
-            )
+            artifact_id = proto.Field(proto.STRING, number=1)
 
         class InstallRpm(proto.Message):
             r"""Installs an rpm file via the rpm utility.
+
             Attributes:
                 artifact_id (str):
                     Required. The id of the relevant artifact in
                     the recipe.
             """
 
-            artifact_id = proto.Field(
-                proto.STRING,
-                number=1,
-            )
+            artifact_id = proto.Field(proto.STRING, number=1)
 
         class ExecFile(proto.Message):
             r"""Executes an artifact or local file.
+
             Attributes:
                 artifact_id (str):
                     The id of the relevant artifact in the
@@ -881,27 +760,17 @@ class SoftwareRecipe(proto.Message):
                     program can return to indicate a success.
             """
 
-            artifact_id = proto.Field(
-                proto.STRING,
-                number=1,
-                oneof='location_type',
-            )
-            local_path = proto.Field(
-                proto.STRING,
-                number=2,
-                oneof='location_type',
-            )
-            args = proto.RepeatedField(
-                proto.STRING,
-                number=3,
-            )
-            allowed_exit_codes = proto.RepeatedField(
-                proto.INT32,
-                number=4,
-            )
+            artifact_id = proto.Field(proto.STRING, number=1, oneof='location_type')
+
+            local_path = proto.Field(proto.STRING, number=2, oneof='location_type')
+
+            args = proto.RepeatedField(proto.STRING, number=3)
+
+            allowed_exit_codes = proto.RepeatedField(proto.INT32, number=4)
 
         class RunScript(proto.Message):
             r"""Runs a script through an interpreter.
+
             Attributes:
                 script (str):
                     Required. The shell script to be executed.
@@ -920,95 +789,66 @@ class SoftwareRecipe(proto.Message):
                 SHELL = 1
                 POWERSHELL = 3
 
-            script = proto.Field(
-                proto.STRING,
-                number=1,
-            )
-            allowed_exit_codes = proto.RepeatedField(
-                proto.INT32,
-                number=2,
-            )
-            interpreter = proto.Field(
-                proto.ENUM,
-                number=3,
+            script = proto.Field(proto.STRING, number=1)
+
+            allowed_exit_codes = proto.RepeatedField(proto.INT32, number=2)
+
+            interpreter = proto.Field(proto.ENUM, number=3,
                 enum='SoftwareRecipe.Step.RunScript.Interpreter',
             )
 
-        file_copy = proto.Field(
-            proto.MESSAGE,
-            number=1,
-            oneof='step',
+        file_copy = proto.Field(proto.MESSAGE, number=1, oneof='step',
             message='SoftwareRecipe.Step.CopyFile',
         )
-        archive_extraction = proto.Field(
-            proto.MESSAGE,
-            number=2,
-            oneof='step',
+
+        archive_extraction = proto.Field(proto.MESSAGE, number=2, oneof='step',
             message='SoftwareRecipe.Step.ExtractArchive',
         )
-        msi_installation = proto.Field(
-            proto.MESSAGE,
-            number=3,
-            oneof='step',
+
+        msi_installation = proto.Field(proto.MESSAGE, number=3, oneof='step',
             message='SoftwareRecipe.Step.InstallMsi',
         )
-        dpkg_installation = proto.Field(
-            proto.MESSAGE,
-            number=4,
-            oneof='step',
+
+        dpkg_installation = proto.Field(proto.MESSAGE, number=4, oneof='step',
             message='SoftwareRecipe.Step.InstallDpkg',
         )
-        rpm_installation = proto.Field(
-            proto.MESSAGE,
-            number=5,
-            oneof='step',
+
+        rpm_installation = proto.Field(proto.MESSAGE, number=5, oneof='step',
             message='SoftwareRecipe.Step.InstallRpm',
         )
-        file_exec = proto.Field(
-            proto.MESSAGE,
-            number=6,
-            oneof='step',
+
+        file_exec = proto.Field(proto.MESSAGE, number=6, oneof='step',
             message='SoftwareRecipe.Step.ExecFile',
         )
-        script_run = proto.Field(
-            proto.MESSAGE,
-            number=7,
-            oneof='step',
+
+        script_run = proto.Field(proto.MESSAGE, number=7, oneof='step',
             message='SoftwareRecipe.Step.RunScript',
         )
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    version = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    artifacts = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    version = proto.Field(proto.STRING, number=2)
+
+    artifacts = proto.RepeatedField(proto.MESSAGE, number=3,
         message=Artifact,
     )
-    install_steps = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+
+    install_steps = proto.RepeatedField(proto.MESSAGE, number=4,
         message=Step,
     )
-    update_steps = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+
+    update_steps = proto.RepeatedField(proto.MESSAGE, number=5,
         message=Step,
     )
-    desired_state = proto.Field(
-        proto.ENUM,
-        number=6,
+
+    desired_state = proto.Field(proto.ENUM, number=6,
         enum='DesiredState',
     )
 
 
 class CreateGuestPolicyRequest(proto.Message):
     r"""A request message for creating a guest policy.
+
     Attributes:
         parent (str):
             Required. The resource name of the parent using one of the
@@ -1027,23 +867,18 @@ class CreateGuestPolicyRequest(proto.Message):
             Required. The GuestPolicy to create.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    guest_policy_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    guest_policy = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    parent = proto.Field(proto.STRING, number=1)
+
+    guest_policy_id = proto.Field(proto.STRING, number=2)
+
+    guest_policy = proto.Field(proto.MESSAGE, number=3,
         message='GuestPolicy',
     )
 
 
 class GetGuestPolicyRequest(proto.Message):
     r"""A request message for retrieving a guest policy.
+
     Attributes:
         name (str):
             Required. The resource name of the guest policy using one of
@@ -1051,14 +886,12 @@ class GetGuestPolicyRequest(proto.Message):
             ``projects/{project_number}/guestPolicies/{guest_policy_id}``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ListGuestPoliciesRequest(proto.Message):
     r"""A request message for listing guest policies.
+
     Attributes:
         parent (str):
             Required. The resource name of the parent using one of the
@@ -1072,22 +905,16 @@ class ListGuestPoliciesRequest(proto.Message):
             should continue from.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
 
 
 class ListGuestPoliciesResponse(proto.Message):
     r"""A response message for listing guest policies.
+
     Attributes:
         guest_policies (Sequence[google.cloud.osconfig_v1beta.types.GuestPolicy]):
             The list of GuestPolicies.
@@ -1100,19 +927,16 @@ class ListGuestPoliciesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    guest_policies = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    guest_policies = proto.RepeatedField(proto.MESSAGE, number=1,
         message='GuestPolicy',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class UpdateGuestPolicyRequest(proto.Message):
     r"""A request message for updating a guest policy.
+
     Attributes:
         guest_policy (google.cloud.osconfig_v1beta.types.GuestPolicy):
             Required. The updated GuestPolicy.
@@ -1121,20 +945,18 @@ class UpdateGuestPolicyRequest(proto.Message):
             guest policy should be updated.
     """
 
-    guest_policy = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    guest_policy = proto.Field(proto.MESSAGE, number=1,
         message='GuestPolicy',
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
 
 
 class DeleteGuestPolicyRequest(proto.Message):
     r"""A request message for deleting a guest policy.
+
     Attributes:
         name (str):
             Required. The resource name of the guest policy using one of
@@ -1142,10 +964,7 @@ class DeleteGuestPolicyRequest(proto.Message):
             ``projects/{project_number}/guestPolicies/{guest_policy_id}``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class LookupEffectiveGuestPolicyRequest(proto.Message):
@@ -1173,26 +992,18 @@ class LookupEffectiveGuestPolicyRequest(proto.Message):
             instance.
     """
 
-    instance = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    os_short_name = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    os_version = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    os_architecture = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+    instance = proto.Field(proto.STRING, number=1)
+
+    os_short_name = proto.Field(proto.STRING, number=2)
+
+    os_version = proto.Field(proto.STRING, number=3)
+
+    os_architecture = proto.Field(proto.STRING, number=4)
 
 
 class EffectiveGuestPolicy(proto.Message):
     r"""The effective guest policy that applies to a VM instance.
+
     Attributes:
         packages (Sequence[google.cloud.osconfig_v1beta.types.EffectiveGuestPolicy.SourcedPackage]):
             List of package configurations assigned to
@@ -1203,9 +1014,9 @@ class EffectiveGuestPolicy(proto.Message):
         software_recipes (Sequence[google.cloud.osconfig_v1beta.types.EffectiveGuestPolicy.SourcedSoftwareRecipe]):
             List of recipes assigned to the VM instance.
     """
-
     class SourcedPackage(proto.Message):
         r"""A guest policy package including its source.
+
         Attributes:
             source (str):
                 Name of the guest policy providing this
@@ -1215,18 +1026,15 @@ class EffectiveGuestPolicy(proto.Message):
                 instance.
         """
 
-        source = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        package = proto.Field(
-            proto.MESSAGE,
-            number=2,
+        source = proto.Field(proto.STRING, number=1)
+
+        package = proto.Field(proto.MESSAGE, number=2,
             message='Package',
         )
 
     class SourcedPackageRepository(proto.Message):
         r"""A guest policy package repository including its source.
+
         Attributes:
             source (str):
                 Name of the guest policy providing this
@@ -1236,18 +1044,15 @@ class EffectiveGuestPolicy(proto.Message):
                 the VM instance.
         """
 
-        source = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        package_repository = proto.Field(
-            proto.MESSAGE,
-            number=2,
+        source = proto.Field(proto.STRING, number=1)
+
+        package_repository = proto.Field(proto.MESSAGE, number=2,
             message='PackageRepository',
         )
 
     class SourcedSoftwareRecipe(proto.Message):
         r"""A guest policy recipe including its source.
+
         Attributes:
             source (str):
                 Name of the guest policy providing this
@@ -1257,29 +1062,21 @@ class EffectiveGuestPolicy(proto.Message):
                 instance.
         """
 
-        source = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        software_recipe = proto.Field(
-            proto.MESSAGE,
-            number=2,
+        source = proto.Field(proto.STRING, number=1)
+
+        software_recipe = proto.Field(proto.MESSAGE, number=2,
             message='SoftwareRecipe',
         )
 
-    packages = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    packages = proto.RepeatedField(proto.MESSAGE, number=1,
         message=SourcedPackage,
     )
-    package_repositories = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+
+    package_repositories = proto.RepeatedField(proto.MESSAGE, number=2,
         message=SourcedPackageRepository,
     )
-    software_recipes = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+
+    software_recipes = proto.RepeatedField(proto.MESSAGE, number=3,
         message=SourcedSoftwareRecipe,
     )
 

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Debugger.V2.Snippets
 {
+    using Google.Cloud.Debugger.V2;
+
     public sealed partial class GeneratedController2ClientStandaloneSnippets
     {
         /// <summary>Snippet for ListActiveBreakpoints</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListActiveBreakpoints()
         {
-            // Snippet: ListActiveBreakpoints(string, CallSettings)
             // Create client
             Controller2Client controller2Client = Controller2Client.Create();
             // Initialize request argument(s)
             string debuggeeId = "";
             // Make the request
             ListActiveBreakpointsResponse response = controller2Client.ListActiveBreakpoints(debuggeeId);
-            // End snippet
         }
     }
 }

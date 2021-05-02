@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedKeywordPlanServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateForecastMetricsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GenerateForecastMetricsRequestObjectAsync()
         {
-            // Snippet: GenerateForecastMetricsAsync(GenerateForecastMetricsRequest, CallSettings)
-            // Additional: GenerateForecastMetricsAsync(GenerateForecastMetricsRequest, CancellationToken)
             // Create client
             KeywordPlanServiceClient keywordPlanServiceClient = await KeywordPlanServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             GenerateForecastMetricsResponse response = await keywordPlanServiceClient.GenerateForecastMetricsAsync(request);
-            // End snippet
         }
     }
 }

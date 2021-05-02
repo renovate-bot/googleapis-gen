@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Security.PrivateCA.V1Beta1.Snippets
 {
+    using Google.Cloud.Security.PrivateCA.V1Beta1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedCertificateAuthorityServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ActivateCertificateAuthority</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ActivateCertificateAuthorityRequestObject()
         {
-            // Snippet: ActivateCertificateAuthority(ActivateCertificateAuthorityRequest, CallSettings)
             // Create client
             CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.Create();
             // Initialize request argument(s)
@@ -52,7 +56,6 @@ namespace Google.Cloud.Security.PrivateCA.V1Beta1.Snippets
                 // If it has completed, then access the result
                 CertificateAuthority retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

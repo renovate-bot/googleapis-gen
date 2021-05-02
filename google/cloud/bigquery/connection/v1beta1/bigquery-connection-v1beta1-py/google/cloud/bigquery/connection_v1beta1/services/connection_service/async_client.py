@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -32,6 +34,7 @@ from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+
 from .transports.base import ConnectionServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ConnectionServiceGrpcAsyncIOTransport
 from .client import ConnectionServiceClient
@@ -47,14 +50,19 @@ class ConnectionServiceAsyncClient:
 
     connection_path = staticmethod(ConnectionServiceClient.connection_path)
     parse_connection_path = staticmethod(ConnectionServiceClient.parse_connection_path)
+
     common_billing_account_path = staticmethod(ConnectionServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ConnectionServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(ConnectionServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(ConnectionServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(ConnectionServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(ConnectionServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(ConnectionServiceClient.common_project_path)
     parse_common_project_path = staticmethod(ConnectionServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(ConnectionServiceClient.common_location_path)
     parse_common_location_path = staticmethod(ConnectionServiceClient.parse_common_location_path)
 
@@ -139,6 +147,7 @@ class ConnectionServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = ConnectionServiceClient(
             credentials=credentials,
             transport=transport,
@@ -161,8 +170,7 @@ class ConnectionServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.connection_v1beta1.types.CreateConnectionRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ConnectionService.CreateConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.CreateConnection].
             parent (:class:`str`):
                 Required. Parent resource name. Must be in the format
@@ -183,6 +191,7 @@ class ConnectionServiceAsyncClient:
                 This corresponds to the ``connection_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -208,6 +217,7 @@ class ConnectionServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if connection is not None:
@@ -254,8 +264,7 @@ class ConnectionServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.connection_v1beta1.types.GetConnectionRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ConnectionService.GetConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.GetConnection].
             name (:class:`str`):
                 Required. Name of the requested connection, for example:
@@ -264,6 +273,7 @@ class ConnectionServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -289,6 +299,7 @@ class ConnectionServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -297,7 +308,10 @@ class ConnectionServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_connection,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -339,8 +353,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.connection_v1beta1.types.ListConnectionsRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ConnectionService.ListConnections][google.cloud.bigquery.connection.v1beta1.ConnectionService.ListConnections].
             parent (:class:`str`):
                 Required. Parent resource name. Must be in the form:
@@ -356,6 +369,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``max_results`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -380,6 +394,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if max_results is not None:
@@ -390,7 +405,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_connections,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -435,8 +453,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.connection_v1beta1.types.UpdateConnectionRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ConnectionService.UpdateConnection][google.cloud.bigquery.connection.v1beta1.ConnectionService.UpdateConnection].
             name (:class:`str`):
                 Required. Name of the connection to update, for example:
@@ -459,6 +476,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -484,6 +502,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if connection is not None:
@@ -531,8 +550,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.connection_v1beta1.types.UpdateConnectionCredentialRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ConnectionService.UpdateConnectionCredential][google.cloud.bigquery.connection.v1beta1.ConnectionService.UpdateConnectionCredential].
             name (:class:`str`):
                 Required. Name of the connection, for example:
@@ -548,6 +566,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``credential`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -566,6 +585,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if credential is not None:
@@ -607,8 +627,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.connection_v1beta1.types.DeleteConnectionRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ConnectionService.DeleteConnectionRequest][].
             name (:class:`str`):
                 Required. Name of the deleted connection, for example:
@@ -617,6 +636,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -635,6 +655,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -643,7 +664,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_connection,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -683,8 +707,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -695,6 +718,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -768,10 +792,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.GetIamPolicyRequest(**request)
+
         elif not request:
             request = iam_policy.GetIamPolicyRequest(resource=resource, )
 
@@ -818,8 +843,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -830,6 +854,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -903,10 +928,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.SetIamPolicyRequest(**request)
+
         elif not request:
             request = iam_policy.SetIamPolicyRequest(resource=resource, )
 
@@ -957,8 +983,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -978,6 +1003,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -996,10 +1022,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.TestIamPermissionsRequest(**request)
+
         elif not request:
             request = iam_policy.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
 
@@ -1029,6 +1056,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v7.resources.types import customer_asset
 from google.ads.googleads.v7.services.types import customer_asset_service
+
 from .base import CustomerAssetServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class CustomerAssetServiceGrpcTransport(CustomerAssetServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class CustomerAssetServiceGrpcTransport(CustomerAssetServiceTransport):
     def get_customer_asset(self) -> Callable[
             [customer_asset_service.GetCustomerAssetRequest],
             customer_asset.CustomerAsset]:
-        r"""Return a callable for the
-        get customer asset
-          method over gRPC.
+        r"""Return a callable for the get customer asset method over gRPC.
 
         Returns the requested customer asset in full detail.
 
@@ -233,9 +233,7 @@ class CustomerAssetServiceGrpcTransport(CustomerAssetServiceTransport):
     def mutate_customer_assets(self) -> Callable[
             [customer_asset_service.MutateCustomerAssetsRequest],
             customer_asset_service.MutateCustomerAssetsResponse]:
-        r"""Return a callable for the
-        mutate customer assets
-          method over gRPC.
+        r"""Return a callable for the mutate customer assets method over gRPC.
 
         Creates, updates, or removes customer assets. Operation statuses
         are returned.

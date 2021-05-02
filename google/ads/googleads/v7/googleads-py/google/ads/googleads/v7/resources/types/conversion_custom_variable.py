@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.enums.types import conversion_custom_variable_status
 
@@ -68,31 +71,14 @@ class ConversionCustomVariable(proto.Message):
             variable.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.INT64,
-        number=2,
-    )
-    name = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    tag = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    status = proto.Field(
-        proto.ENUM,
-        number=5,
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.INT64, number=2)
+    name = proto.Field(proto.STRING, number=3)
+    tag = proto.Field(proto.STRING, number=4)
+    status = proto.Field(proto.ENUM, number=5,
         enum=conversion_custom_variable_status.ConversionCustomVariableStatusEnum.ConversionCustomVariableStatus,
     )
-    owner_customer = proto.Field(
-        proto.STRING,
-        number=6,
-    )
+    owner_customer = proto.Field(proto.STRING, number=6)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

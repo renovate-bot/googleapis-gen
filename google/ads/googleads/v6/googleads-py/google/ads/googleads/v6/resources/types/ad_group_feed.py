@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.common.types import matching_function as gagc_matching_function
 from google.ads.googleads.v6.enums.types import feed_link_status
@@ -31,6 +34,7 @@ __protobuf__ = proto.module(
 
 class AdGroupFeed(proto.Message):
     r"""An ad group feed.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad group feed. Ad group
@@ -56,33 +60,16 @@ class AdGroupFeed(proto.Message):
             This field is read-only.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    feed = proto.Field(
-        proto.STRING,
-        number=7,
-        optional=True,
-    )
-    ad_group = proto.Field(
-        proto.STRING,
-        number=8,
-        optional=True,
-    )
-    placeholder_types = proto.RepeatedField(
-        proto.ENUM,
-        number=4,
+    resource_name = proto.Field(proto.STRING, number=1)
+    feed = proto.Field(proto.STRING, number=7, optional=True)
+    ad_group = proto.Field(proto.STRING, number=8, optional=True)
+    placeholder_types = proto.RepeatedField(proto.ENUM, number=4,
         enum=placeholder_type.PlaceholderTypeEnum.PlaceholderType,
     )
-    matching_function = proto.Field(
-        proto.MESSAGE,
-        number=5,
+    matching_function = proto.Field(proto.MESSAGE, number=5,
         message=gagc_matching_function.MatchingFunction,
     )
-    status = proto.Field(
-        proto.ENUM,
-        number=6,
+    status = proto.Field(proto.ENUM, number=6,
         enum=feed_link_status.FeedLinkStatusEnum.FeedLinkStatus,
     )
 

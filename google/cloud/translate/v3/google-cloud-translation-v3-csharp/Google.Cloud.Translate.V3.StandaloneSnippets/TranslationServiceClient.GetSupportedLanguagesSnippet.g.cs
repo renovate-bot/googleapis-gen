@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Translate.V3.Snippets
 {
+    using Google.Cloud.Translate.V3;
+
     public sealed partial class GeneratedTranslationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSupportedLanguages</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetSupportedLanguages()
         {
-            // Snippet: GetSupportedLanguages(string, string, string, CallSettings)
             // Create client
             TranslationServiceClient translationServiceClient = TranslationServiceClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.Translate.V3.Snippets
             string displayLanguageCode = "";
             // Make the request
             SupportedLanguages response = translationServiceClient.GetSupportedLanguages(parent, model, displayLanguageCode);
-            // End snippet
         }
     }
 }

@@ -18,14 +18,18 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.ResourceManager.V3;
     using Google.LongRunning;
 
     public sealed partial class GeneratedFoldersClientStandaloneSnippets
     {
         /// <summary>Snippet for MoveFolder</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MoveFolderRequestObject()
         {
-            // Snippet: MoveFolder(MoveFolderRequest, CallSettings)
             // Create client
             FoldersClient foldersClient = FoldersClient.Create();
             // Initialize request argument(s)
@@ -52,7 +56,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
                 // If it has completed, then access the result
                 Folder retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

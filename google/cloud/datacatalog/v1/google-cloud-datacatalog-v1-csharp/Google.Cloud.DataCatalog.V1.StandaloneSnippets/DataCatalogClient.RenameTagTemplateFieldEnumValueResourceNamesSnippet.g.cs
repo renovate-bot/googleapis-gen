@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.DataCatalog.V1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1;
+
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for RenameTagTemplateFieldEnumValue</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void RenameTagTemplateFieldEnumValueResourceNames()
         {
-            // Snippet: RenameTagTemplateFieldEnumValue(TagTemplateFieldEnumValueName, string, CallSettings)
             // Create client
             DataCatalogClient dataCatalogClient = DataCatalogClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             string newEnumValueDisplayName = "";
             // Make the request
             TagTemplateField response = dataCatalogClient.RenameTagTemplateFieldEnumValue(name, newEnumValueDisplayName);
-            // End snippet
         }
     }
 }

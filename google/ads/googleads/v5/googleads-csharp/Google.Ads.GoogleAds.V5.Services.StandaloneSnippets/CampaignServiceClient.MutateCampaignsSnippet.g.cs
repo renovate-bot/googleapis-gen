@@ -16,14 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedCampaignServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCampaigns</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateCampaigns()
         {
-            // Snippet: MutateCampaigns(string, IEnumerable<CampaignOperation>, CallSettings)
             // Create client
             CampaignServiceClient campaignServiceClient = CampaignServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateCampaignsResponse response = campaignServiceClient.MutateCampaigns(customerId, operations);
-            // End snippet
         }
     }
 }

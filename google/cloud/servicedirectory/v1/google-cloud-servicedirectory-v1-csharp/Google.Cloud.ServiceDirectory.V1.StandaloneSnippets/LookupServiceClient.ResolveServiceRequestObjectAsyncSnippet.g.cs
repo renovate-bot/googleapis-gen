@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.ServiceDirectory.V1.Snippets
 {
+    using Google.Cloud.ServiceDirectory.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLookupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ResolveServiceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ResolveServiceRequestObjectAsync()
         {
-            // Snippet: ResolveServiceAsync(ResolveServiceRequest, CallSettings)
-            // Additional: ResolveServiceAsync(ResolveServiceRequest, CancellationToken)
             // Create client
             LookupServiceClient lookupServiceClient = await LookupServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.ServiceDirectory.V1.Snippets
             };
             // Make the request
             ResolveServiceResponse response = await lookupServiceClient.ResolveServiceAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
+    using Google.Cloud.Dataproc.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedJobControllerClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateJob</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateJobRequestObject()
         {
-            // Snippet: UpdateJob(UpdateJobRequest, CallSettings)
             // Create client
             JobControllerClient jobControllerClient = JobControllerClient.Create();
             // Initialize request argument(s)
@@ -37,7 +41,6 @@ namespace Google.Cloud.Dataproc.V1.Snippets
             };
             // Make the request
             Job response = jobControllerClient.UpdateJob(request);
-            // End snippet
         }
     }
 }

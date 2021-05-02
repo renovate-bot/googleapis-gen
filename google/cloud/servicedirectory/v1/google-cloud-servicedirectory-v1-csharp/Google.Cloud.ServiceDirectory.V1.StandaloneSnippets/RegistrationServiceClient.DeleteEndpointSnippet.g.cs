@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.ServiceDirectory.V1.Snippets
 {
+    using Google.Cloud.ServiceDirectory.V1;
+
     public sealed partial class GeneratedRegistrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteEndpoint</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteEndpoint()
         {
-            // Snippet: DeleteEndpoint(string, CallSettings)
             // Create client
             RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/namespaces/[NAMESPACE]/services/[SERVICE]/endpoints/[ENDPOINT]";
             // Make the request
             registrationServiceClient.DeleteEndpoint(name);
-            // End snippet
         }
     }
 }

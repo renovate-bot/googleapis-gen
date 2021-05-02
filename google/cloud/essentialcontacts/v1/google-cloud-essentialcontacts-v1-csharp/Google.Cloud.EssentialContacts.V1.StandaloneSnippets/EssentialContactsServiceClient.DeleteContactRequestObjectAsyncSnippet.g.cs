@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.EssentialContacts.V1.Snippets
 {
+    using Google.Cloud.EssentialContacts.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedEssentialContactsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteContactAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteContactRequestObjectAsync()
         {
-            // Snippet: DeleteContactAsync(DeleteContactRequest, CallSettings)
-            // Additional: DeleteContactAsync(DeleteContactRequest, CancellationToken)
             // Create client
             EssentialContactsServiceClient essentialContactsServiceClient = await EssentialContactsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.EssentialContacts.V1.Snippets
             };
             // Make the request
             await essentialContactsServiceClient.DeleteContactAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.WebSecurityScanner.V1.Snippets
 {
+    using Google.Cloud.WebSecurityScanner.V1;
+
     public sealed partial class GeneratedWebSecurityScannerClientStandaloneSnippets
     {
         /// <summary>Snippet for StopScanRun</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void StopScanRunRequestObject()
         {
-            // Snippet: StopScanRun(StopScanRunRequest, CallSettings)
             // Create client
             WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.Create();
             // Initialize request argument(s)
             StopScanRunRequest request = new StopScanRunRequest { Name = "", };
             // Make the request
             ScanRun response = webSecurityScannerClient.StopScanRun(request);
-            // End snippet
         }
     }
 }

@@ -77,7 +77,7 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBuilds</summary>
+        /// <summary>Snippet for ListBuildsAsync</summary>
         public async Task ListBuildsRequestObjectAsync()
         {
             // Snippet: ListBuildsAsync(ListBuildsRequest, CallSettings)
@@ -173,7 +173,7 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBuilds</summary>
+        /// <summary>Snippet for ListBuildsAsync</summary>
         public async Task ListBuildsAsync()
         {
             // Snippet: ListBuildsAsync(string, string, int?, CallSettings)
@@ -263,7 +263,7 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBuilds</summary>
+        /// <summary>Snippet for ListBuildsAsync</summary>
         public async Task ListBuildsResourceNamesAsync()
         {
             // Snippet: ListBuildsAsync(ModelName, string, int?, CallSettings)

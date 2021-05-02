@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -25,6 +27,7 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 import grpc  # type: ignore
 
 from google.ads.googleads.v5.services.types import payments_account_service
+
 from .base import PaymentsAccountServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class PaymentsAccountServiceGrpcTransport(PaymentsAccountServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class PaymentsAccountServiceGrpcTransport(PaymentsAccountServiceTransport):
     def list_payments_accounts(self) -> Callable[
             [payments_account_service.ListPaymentsAccountsRequest],
             payments_account_service.ListPaymentsAccountsResponse]:
-        r"""Return a callable for the
-        list payments accounts
-          method over gRPC.
+        r"""Return a callable for the list payments accounts method over gRPC.
 
         Returns all payments accounts associated with all
         managers between the login customer ID and specified

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Automl.V1Beta1.Snippets
 {
+    using Google.Cloud.Automl.V1Beta1;
+
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDataset</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDatasetResourceNames()
         {
-            // Snippet: GetDataset(DatasetName, CallSettings)
             // Create client
             AutoMlClient autoMlClient = AutoMlClient.Create();
             // Initialize request argument(s)
             DatasetName name = DatasetName.FromProjectLocationDataset("[PROJECT]", "[LOCATION]", "[DATASET]");
             // Make the request
             Dataset response = autoMlClient.GetDataset(name);
-            // End snippet
         }
     }
 }

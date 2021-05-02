@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateParticipant</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateParticipant()
         {
-            // Snippet: CreateParticipant(string, Participant, CallSettings)
             // Create client
             ParticipantsClient participantsClient = ParticipantsClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             Participant participant = new Participant();
             // Make the request
             Participant response = participantsClient.CreateParticipant(parent, participant);
-            // End snippet
         }
     }
 }

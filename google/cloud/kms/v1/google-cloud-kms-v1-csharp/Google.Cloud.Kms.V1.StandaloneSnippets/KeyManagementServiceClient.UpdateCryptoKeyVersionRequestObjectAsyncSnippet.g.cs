@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Kms.V1.Snippets
 {
+    using Google.Cloud.Kms.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedKeyManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateCryptoKeyVersionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateCryptoKeyVersionRequestObjectAsync()
         {
-            // Snippet: UpdateCryptoKeyVersionAsync(UpdateCryptoKeyVersionRequest, CallSettings)
-            // Additional: UpdateCryptoKeyVersionAsync(UpdateCryptoKeyVersionRequest, CancellationToken)
             // Create client
             KeyManagementServiceClient keyManagementServiceClient = await KeyManagementServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Kms.V1.Snippets
             };
             // Make the request
             CryptoKeyVersion response = await keyManagementServiceClient.UpdateCryptoKeyVersionAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Example.Library.V1.Snippets
 {
+    using Google.Example.Library.V1;
+
     public sealed partial class GeneratedLibraryServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateBook</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateBookResourceNames()
         {
-            // Snippet: CreateBook(ShelfName, Book, CallSettings)
             // Create client
             LibraryServiceClient libraryServiceClient = LibraryServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Example.Library.V1.Snippets
             Book book = new Book();
             // Make the request
             Book response = libraryServiceClient.CreateBook(parent, book);
-            // End snippet
         }
     }
 }

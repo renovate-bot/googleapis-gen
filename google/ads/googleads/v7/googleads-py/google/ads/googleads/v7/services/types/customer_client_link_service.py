@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.resources.types import customer_client_link
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -42,10 +45,7 @@ class GetCustomerClientLinkRequest(proto.Message):
             client link to fetch.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateCustomerClientLinkRequest(proto.Message):
@@ -64,23 +64,16 @@ class MutateCustomerClientLinkRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operation = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operation = proto.Field(proto.MESSAGE, number=2,
         message='CustomerClientLinkOperation',
     )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
+    validate_only = proto.Field(proto.BOOL, number=3)
 
 
 class CustomerClientLinkOperation(proto.Message):
     r"""A single operation (create, update) on a CustomerClientLink.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -93,51 +86,40 @@ class CustomerClientLinkOperation(proto.Message):
             have a valid resource name.
     """
 
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    update_mask = proto.Field(proto.MESSAGE, number=4,
         message=field_mask.FieldMask,
     )
-    create = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='operation',
+    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=customer_client_link.CustomerClientLink,
     )
-    update = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='operation',
+    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
         message=customer_client_link.CustomerClientLink,
     )
 
 
 class MutateCustomerClientLinkResponse(proto.Message):
     r"""Response message for a CustomerClientLink mutate.
+
     Attributes:
         result (google.ads.googleads.v7.services.types.MutateCustomerClientLinkResult):
             A result that identifies the resource
             affected by the mutate request.
     """
 
-    result = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    result = proto.Field(proto.MESSAGE, number=1,
         message='MutateCustomerClientLinkResult',
     )
 
 
 class MutateCustomerClientLinkResult(proto.Message):
     r"""The result for a single customer client link mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

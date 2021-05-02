@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta.Snippets
 {
+    using Google.Cloud.Osconfig.Agentendpoint.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAgentEndpointServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ReportTaskProgressAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ReportTaskProgressRequestObjectAsync()
         {
-            // Snippet: ReportTaskProgressAsync(ReportTaskProgressRequest, CallSettings)
-            // Additional: ReportTaskProgressAsync(ReportTaskProgressRequest, CancellationToken)
             // Create client
             AgentEndpointServiceClient agentEndpointServiceClient = await AgentEndpointServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,11 +37,9 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta.Snippets
                 TaskId = "",
                 TaskType = TaskType.Unspecified,
                 ApplyPatchesTaskProgress = new ApplyPatchesTaskProgress(),
-                ExecStepTaskProgress = new ExecStepTaskProgress(),
             };
             // Make the request
             ReportTaskProgressResponse response = await agentEndpointServiceClient.ReportTaskProgressAsync(request);
-            // End snippet
         }
     }
 }

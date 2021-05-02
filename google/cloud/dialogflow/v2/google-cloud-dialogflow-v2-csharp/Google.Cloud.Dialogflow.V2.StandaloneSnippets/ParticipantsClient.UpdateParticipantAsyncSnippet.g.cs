@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateParticipantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateParticipantAsync()
         {
-            // Snippet: UpdateParticipantAsync(Participant, FieldMask, CallSettings)
-            // Additional: UpdateParticipantAsync(Participant, FieldMask, CancellationToken)
             // Create client
             ParticipantsClient participantsClient = await ParticipantsClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Participant response = await participantsClient.UpdateParticipantAsync(participant, updateMask);
-            // End snippet
         }
     }
 }

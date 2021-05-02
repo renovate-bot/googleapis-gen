@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,7 +33,8 @@ from google.cloud.bigquery_storage_v1.types.stream import DataFormat
 from google.cloud.bigquery_storage_v1.types.stream import ReadSession
 from google.cloud.bigquery_storage_v1.types.stream import ReadStream
 
-__all__ = ('ArrowRecordBatch',
+__all__ = (
+    'ArrowRecordBatch',
     'ArrowSchema',
     'ArrowSerializationOptions',
     'AvroRows',

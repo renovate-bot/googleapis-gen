@@ -16,16 +16,19 @@
 
 namespace Google.Iam.V1Beta.Snippets
 {
+    using Google.Iam.V1Beta;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWorkloadIdentityPoolsClientStandaloneSnippets
     {
         /// <summary>Snippet for UndeleteWorkloadIdentityPoolAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UndeleteWorkloadIdentityPoolRequestObjectAsync()
         {
-            // Snippet: UndeleteWorkloadIdentityPoolAsync(UndeleteWorkloadIdentityPoolRequest, CallSettings)
-            // Additional: UndeleteWorkloadIdentityPoolAsync(UndeleteWorkloadIdentityPoolRequest, CancellationToken)
             // Create client
             WorkloadIdentityPoolsClient workloadIdentityPoolsClient = await WorkloadIdentityPoolsClient.CreateAsync();
             // Initialize request argument(s)
@@ -51,7 +54,6 @@ namespace Google.Iam.V1Beta.Snippets
                 // If it has completed, then access the result
                 WorkloadIdentityPool retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

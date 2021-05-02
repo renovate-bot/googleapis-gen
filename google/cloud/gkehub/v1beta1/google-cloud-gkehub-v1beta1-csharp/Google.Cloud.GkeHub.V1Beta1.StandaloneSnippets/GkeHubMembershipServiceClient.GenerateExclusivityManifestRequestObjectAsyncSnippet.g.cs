@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.GkeHub.V1Beta1.Snippets
 {
+    using Google.Cloud.GkeHub.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGkeHubMembershipServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateExclusivityManifestAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GenerateExclusivityManifestRequestObjectAsync()
         {
-            // Snippet: GenerateExclusivityManifestAsync(GenerateExclusivityManifestRequest, CallSettings)
-            // Additional: GenerateExclusivityManifestAsync(GenerateExclusivityManifestRequest, CancellationToken)
             // Create client
             GkeHubMembershipServiceClient gkeHubMembershipServiceClient = await GkeHubMembershipServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.GkeHub.V1Beta1.Snippets
             };
             // Make the request
             GenerateExclusivityManifestResponse response = await gkeHubMembershipServiceClient.GenerateExclusivityManifestAsync(request);
-            // End snippet
         }
     }
 }

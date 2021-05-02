@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedThirdPartyAppAnalyticsLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for RegenerateShareableLinkIdAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task RegenerateShareableLinkIdRequestObjectAsync()
         {
-            // Snippet: RegenerateShareableLinkIdAsync(RegenerateShareableLinkIdRequest, CallSettings)
-            // Additional: RegenerateShareableLinkIdAsync(RegenerateShareableLinkIdRequest, CancellationToken)
             // Create client
             ThirdPartyAppAnalyticsLinkServiceClient thirdPartyAppAnalyticsLinkServiceClient = await ThirdPartyAppAnalyticsLinkServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             RegenerateShareableLinkIdResponse response = await thirdPartyAppAnalyticsLinkServiceClient.RegenerateShareableLinkIdAsync(request);
-            // End snippet
         }
     }
 }

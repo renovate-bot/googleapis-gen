@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.cloud_redis import CloudRedisClient
-
 from .types.cloud_redis import CreateInstanceRequest
 from .types.cloud_redis import DeleteInstanceRequest
 from .types.cloud_redis import ExportInstanceRequest
@@ -34,6 +34,7 @@ from .types.cloud_redis import OutputConfig
 from .types.cloud_redis import UpdateInstanceRequest
 from .types.cloud_redis import UpgradeInstanceRequest
 from .types.cloud_redis import ZoneMetadata
+
 
 __all__ = (
     'CreateInstanceRequest',

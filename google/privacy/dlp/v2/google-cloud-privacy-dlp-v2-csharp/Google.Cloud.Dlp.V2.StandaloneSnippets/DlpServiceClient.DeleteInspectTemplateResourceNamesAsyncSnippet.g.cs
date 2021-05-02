@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteInspectTemplateAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteInspectTemplateResourceNamesAsync()
         {
-            // Snippet: DeleteInspectTemplateAsync(InspectTemplateName, CallSettings)
-            // Additional: DeleteInspectTemplateAsync(InspectTemplateName, CancellationToken)
             // Create client
             DlpServiceClient dlpServiceClient = await DlpServiceClient.CreateAsync();
             // Initialize request argument(s)
             InspectTemplateName name = InspectTemplateName.FromOrganizationInspectTemplate("[ORGANIZATION]", "[INSPECT_TEMPLATE]");
             // Make the request
             await dlpServiceClient.DeleteInspectTemplateAsync(name);
-            // End snippet
         }
     }
 }

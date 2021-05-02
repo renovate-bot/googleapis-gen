@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,15 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -29,6 +30,7 @@ from grpc.experimental import aio  # type: ignore
 from google.cloud.billing_v1.types import cloud_billing
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
+
 from .base import CloudBillingTransport, DEFAULT_CLIENT_INFO
 from .grpc import CloudBillingGrpcTransport
 
@@ -79,15 +81,13 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -107,8 +107,7 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -166,6 +165,7 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -228,9 +228,7 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def get_billing_account(self) -> Callable[
             [cloud_billing.GetBillingAccountRequest],
             Awaitable[cloud_billing.BillingAccount]]:
-        r"""Return a callable for the
-        get billing account
-          method over gRPC.
+        r"""Return a callable for the get billing account method over gRPC.
 
         Gets information about a billing account. The current
         authenticated user must be a `viewer of the billing
@@ -258,9 +256,7 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def list_billing_accounts(self) -> Callable[
             [cloud_billing.ListBillingAccountsRequest],
             Awaitable[cloud_billing.ListBillingAccountsResponse]]:
-        r"""Return a callable for the
-        list billing accounts
-          method over gRPC.
+        r"""Return a callable for the list billing accounts method over gRPC.
 
         Lists the billing accounts that the current authenticated user
         has permission to
@@ -288,9 +284,7 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def update_billing_account(self) -> Callable[
             [cloud_billing.UpdateBillingAccountRequest],
             Awaitable[cloud_billing.BillingAccount]]:
-        r"""Return a callable for the
-        update billing account
-          method over gRPC.
+        r"""Return a callable for the update billing account method over gRPC.
 
         Updates a billing account's fields. Currently the only field
         that can be edited is ``display_name``. The current
@@ -321,9 +315,7 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def create_billing_account(self) -> Callable[
             [cloud_billing.CreateBillingAccountRequest],
             Awaitable[cloud_billing.BillingAccount]]:
-        r"""Return a callable for the
-        create billing account
-          method over gRPC.
+        r"""Return a callable for the create billing account method over gRPC.
 
         Creates a billing account. This method can only be used to
         create `billing
@@ -358,9 +350,7 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def list_project_billing_info(self) -> Callable[
             [cloud_billing.ListProjectBillingInfoRequest],
             Awaitable[cloud_billing.ListProjectBillingInfoResponse]]:
-        r"""Return a callable for the
-        list project billing info
-          method over gRPC.
+        r"""Return a callable for the list project billing info method over gRPC.
 
         Lists the projects associated with a billing account. The
         current authenticated user must have the
@@ -390,9 +380,7 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def get_project_billing_info(self) -> Callable[
             [cloud_billing.GetProjectBillingInfoRequest],
             Awaitable[cloud_billing.ProjectBillingInfo]]:
-        r"""Return a callable for the
-        get project billing info
-          method over gRPC.
+        r"""Return a callable for the get project billing info method over gRPC.
 
         Gets the billing information for a project. The current
         authenticated user must have `permission to view the
@@ -420,9 +408,7 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def update_project_billing_info(self) -> Callable[
             [cloud_billing.UpdateProjectBillingInfoRequest],
             Awaitable[cloud_billing.ProjectBillingInfo]]:
-        r"""Return a callable for the
-        update project billing info
-          method over gRPC.
+        r"""Return a callable for the update project billing info method over gRPC.
 
         Sets or updates the billing account associated with a project.
         You specify the new billing account by setting the
@@ -483,9 +469,7 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for a billing account. The caller
         must have the ``billing.accounts.getIamPolicy`` permission on
@@ -514,9 +498,7 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy for a billing account. Replaces
         any existing policy. The caller must have the
@@ -546,9 +528,7 @@ class CloudBillingGrpcAsyncIOTransport(CloudBillingTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Tests the access control policy for a billing
         account. This method takes the resource and a set of

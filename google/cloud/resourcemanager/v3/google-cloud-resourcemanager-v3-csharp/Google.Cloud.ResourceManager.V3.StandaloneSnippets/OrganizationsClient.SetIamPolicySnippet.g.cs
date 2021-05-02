@@ -17,20 +17,23 @@
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.ResourceManager.V3;
 
     public sealed partial class GeneratedOrganizationsClientStandaloneSnippets
     {
         /// <summary>Snippet for SetIamPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SetIamPolicy()
         {
-            // Snippet: SetIamPolicy(string, CallSettings)
             // Create client
             OrganizationsClient organizationsClient = OrganizationsClient.Create();
             // Initialize request argument(s)
             string resource = "a/wildcard/resource";
             // Make the request
             Policy response = organizationsClient.SetIamPolicy(resource);
-            // End snippet
         }
     }
 }

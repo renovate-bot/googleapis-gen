@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Tasks.V2Beta2.Snippets
 {
+    using Google.Cloud.Tasks.V2Beta2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for PauseQueueAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task PauseQueueAsync()
         {
-            // Snippet: PauseQueueAsync(string, CallSettings)
-            // Additional: PauseQueueAsync(string, CancellationToken)
             // Create client
             CloudTasksClient cloudTasksClient = await CloudTasksClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/queues/[QUEUE]";
             // Make the request
             Queue response = await cloudTasksClient.PauseQueueAsync(name);
-            // End snippet
         }
     }
 }

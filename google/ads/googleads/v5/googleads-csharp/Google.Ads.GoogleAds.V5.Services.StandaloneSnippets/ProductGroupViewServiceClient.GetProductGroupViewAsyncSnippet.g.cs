@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedProductGroupViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetProductGroupViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetProductGroupViewAsync()
         {
-            // Snippet: GetProductGroupViewAsync(string, CallSettings)
-            // Additional: GetProductGroupViewAsync(string, CancellationToken)
             // Create client
             ProductGroupViewServiceClient productGroupViewServiceClient = await ProductGroupViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/productGroupViews/[PRODUCT_GROUP_VIEW]";
             // Make the request
             ProductGroupView response = await productGroupViewServiceClient.GetProductGroupViewAsync(resourceName);
-            // End snippet
         }
     }
 }

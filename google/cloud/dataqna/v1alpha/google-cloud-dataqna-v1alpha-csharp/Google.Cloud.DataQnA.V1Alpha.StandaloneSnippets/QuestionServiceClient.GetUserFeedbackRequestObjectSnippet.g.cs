@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.DataQnA.V1Alpha.Snippets
 {
+    using Google.Cloud.DataQnA.V1Alpha;
+
     public sealed partial class GeneratedQuestionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetUserFeedback</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetUserFeedbackRequestObject()
         {
-            // Snippet: GetUserFeedback(GetUserFeedbackRequest, CallSettings)
             // Create client
             QuestionServiceClient questionServiceClient = QuestionServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.DataQnA.V1Alpha.Snippets
             };
             // Make the request
             UserFeedback response = questionServiceClient.GetUserFeedback(request);
-            // End snippet
         }
     }
 }

@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedKeywordPlanServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateForecastCurve</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GenerateForecastCurveResourceNames()
         {
-            // Snippet: GenerateForecastCurve(KeywordPlanName, CallSettings)
             // Create client
             KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.Create();
             // Initialize request argument(s)
             KeywordPlanName keywordPlan = KeywordPlanName.FromCustomerKeywordPlan("[CUSTOMER_ID]", "[KEYWORD_PLAN_ID]");
             // Make the request
             GenerateForecastCurveResponse response = keywordPlanServiceClient.GenerateForecastCurve(keywordPlan);
-            // End snippet
         }
     }
 }

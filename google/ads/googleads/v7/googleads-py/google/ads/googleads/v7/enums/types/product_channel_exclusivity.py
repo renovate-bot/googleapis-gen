@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -26,7 +28,7 @@ __protobuf__ = proto.module(
 
 
 class ProductChannelExclusivityEnum(proto.Message):
-    r"""Availability of a product offer.    """
+    r"""Availability of a product offer."""
     class ProductChannelExclusivity(proto.Enum):
         r"""Enum describing the availability of a product offer."""
         UNSPECIFIED = 0

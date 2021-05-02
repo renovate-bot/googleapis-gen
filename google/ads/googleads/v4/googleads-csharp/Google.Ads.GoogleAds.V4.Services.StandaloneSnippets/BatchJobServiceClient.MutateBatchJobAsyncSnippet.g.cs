@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBatchJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateBatchJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateBatchJobAsync()
         {
-            // Snippet: MutateBatchJobAsync(string, BatchJobOperation, CallSettings)
-            // Additional: MutateBatchJobAsync(string, BatchJobOperation, CancellationToken)
             // Create client
             BatchJobServiceClient batchJobServiceClient = await BatchJobServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             BatchJobOperation operation = new BatchJobOperation();
             // Make the request
             MutateBatchJobResponse response = await batchJobServiceClient.MutateBatchJobAsync(customerId, operation);
-            // End snippet
         }
     }
 }

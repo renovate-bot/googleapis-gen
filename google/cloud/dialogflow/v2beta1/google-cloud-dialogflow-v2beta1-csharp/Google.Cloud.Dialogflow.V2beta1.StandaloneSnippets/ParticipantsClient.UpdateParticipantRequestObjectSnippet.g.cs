@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateParticipant</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateParticipantRequestObject()
         {
-            // Snippet: UpdateParticipant(UpdateParticipantRequest, CallSettings)
             // Create client
             ParticipantsClient participantsClient = ParticipantsClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             };
             // Make the request
             Participant response = participantsClient.UpdateParticipant(request);
-            // End snippet
         }
     }
 }

@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Memcache.V1.Snippets
 {
+    using Google.Cloud.Memcache.V1;
     using Google.LongRunning;
     using System.Collections.Generic;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Memcache.V1.Snippets
     public sealed partial class GeneratedCloudMemcacheClientStandaloneSnippets
     {
         /// <summary>Snippet for ApplyParametersAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ApplyParametersResourceNamesAsync()
         {
-            // Snippet: ApplyParametersAsync(InstanceName, IEnumerable<string>, bool, CallSettings)
-            // Additional: ApplyParametersAsync(InstanceName, IEnumerable<string>, bool, CancellationToken)
             // Create client
             CloudMemcacheClient cloudMemcacheClient = await CloudMemcacheClient.CreateAsync();
             // Initialize request argument(s)
@@ -51,7 +54,6 @@ namespace Google.Cloud.Memcache.V1.Snippets
                 // If it has completed, then access the result
                 Instance retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

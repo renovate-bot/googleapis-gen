@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +26,8 @@ from google.cloud.resourcesettings_v1.types.resource_settings import SettingView
 from google.cloud.resourcesettings_v1.types.resource_settings import UpdateSettingRequest
 from google.cloud.resourcesettings_v1.types.resource_settings import Value
 
-__all__ = ('GetSettingRequest',
+__all__ = (
+    'GetSettingRequest',
     'ListSettingsRequest',
     'ListSettingsResponse',
     'ResourceSettingsServiceAsyncClient',

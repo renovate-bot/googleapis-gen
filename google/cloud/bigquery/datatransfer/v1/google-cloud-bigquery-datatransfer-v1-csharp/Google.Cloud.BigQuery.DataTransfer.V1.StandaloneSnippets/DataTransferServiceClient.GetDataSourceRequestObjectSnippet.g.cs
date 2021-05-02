@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
 {
+    using Google.Cloud.BigQuery.DataTransfer.V1;
+
     public sealed partial class GeneratedDataTransferServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDataSource</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDataSourceRequestObject()
         {
-            // Snippet: GetDataSource(GetDataSourceRequest, CallSettings)
             // Create client
             DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
             };
             // Make the request
             DataSource response = dataTransferServiceClient.GetDataSource(request);
-            // End snippet
         }
     }
 }

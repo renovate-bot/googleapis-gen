@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Datastore.V1.Snippets
 {
+    using Google.Cloud.Datastore.V1;
+
     public sealed partial class GeneratedDatastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for BeginTransaction</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BeginTransaction()
         {
-            // Snippet: BeginTransaction(string, CallSettings)
             // Create client
             DatastoreClient datastoreClient = DatastoreClient.Create();
             // Initialize request argument(s)
             string projectId = "";
             // Make the request
             BeginTransactionResponse response = datastoreClient.BeginTransaction(projectId);
-            // End snippet
         }
     }
 }

@@ -17,14 +17,18 @@
 namespace Google.Cloud.PubSubLite.V1.Snippets
 {
     using Google.Api.Gax.Grpc;
+    using Google.Cloud.PubSubLite.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSubscriberServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for Subscribe</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task Subscribe()
         {
-            // Snippet: Subscribe(CallSettings, BidirectionalStreamingSettings)
             // Create client
             SubscriberServiceClient subscriberServiceClient = SubscriberServiceClient.Create();
             // Initialize streaming call, retrieving the stream object
@@ -54,8 +58,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
                 SubscribeRequest request = new SubscribeRequest
                 {
                     Initial = new InitialSubscribeRequest(),
-                    Seek = new SeekRequest(),
-                    FlowControl = new FlowControlRequest(),
                 };
                 // Stream a request to the server
                 await response.WriteAsync(request);
@@ -67,7 +69,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             // Await the response handler
             // This will complete once all server responses have been processed
             await responseHandlerTask;
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.asset_service import AssetServiceClient
-
 from .types.asset_service import AnalyzeIamPolicyLongrunningRequest
 from .types.asset_service import AnalyzeIamPolicyLongrunningResponse
 from .types.asset_service import AnalyzeIamPolicyRequest
@@ -54,6 +54,7 @@ from .types.assets import Resource
 from .types.assets import ResourceSearchResult
 from .types.assets import TemporalAsset
 from .types.assets import TimeWindow
+
 
 __all__ = (
     'AnalyzeIamPolicyLongrunningRequest',

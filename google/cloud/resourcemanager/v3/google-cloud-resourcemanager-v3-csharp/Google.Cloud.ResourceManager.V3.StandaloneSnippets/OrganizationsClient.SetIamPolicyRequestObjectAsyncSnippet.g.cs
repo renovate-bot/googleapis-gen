@@ -18,15 +18,18 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Api.Gax;
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.ResourceManager.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOrganizationsClientStandaloneSnippets
     {
         /// <summary>Snippet for SetIamPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SetIamPolicyRequestObjectAsync()
         {
-            // Snippet: SetIamPolicyAsync(SetIamPolicyRequest, CallSettings)
-            // Additional: SetIamPolicyAsync(SetIamPolicyRequest, CancellationToken)
             // Create client
             OrganizationsClient organizationsClient = await OrganizationsClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             };
             // Make the request
             Policy response = await organizationsClient.SetIamPolicyAsync(request);
-            // End snippet
         }
     }
 }

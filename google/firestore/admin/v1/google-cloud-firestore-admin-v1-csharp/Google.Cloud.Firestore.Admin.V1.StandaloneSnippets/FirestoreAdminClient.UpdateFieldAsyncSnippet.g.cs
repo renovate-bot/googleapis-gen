@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Firestore.Admin.V1.Snippets
 {
+    using Google.Cloud.Firestore.Admin.V1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFirestoreAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateFieldAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateFieldAsync()
         {
-            // Snippet: UpdateFieldAsync(Field, CallSettings)
-            // Additional: UpdateFieldAsync(Field, CancellationToken)
             // Create client
             FirestoreAdminClient firestoreAdminClient = await FirestoreAdminClient.CreateAsync();
             // Initialize request argument(s)
@@ -48,7 +51,6 @@ namespace Google.Cloud.Firestore.Admin.V1.Snippets
                 // If it has completed, then access the result
                 Field retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

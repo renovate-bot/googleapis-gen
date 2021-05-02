@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Asset.V1.Snippets
 {
+    using Google.Cloud.Asset.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAssetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for AnalyzeIamPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task AnalyzeIamPolicyRequestObjectAsync()
         {
-            // Snippet: AnalyzeIamPolicyAsync(AnalyzeIamPolicyRequest, CallSettings)
-            // Additional: AnalyzeIamPolicyAsync(AnalyzeIamPolicyRequest, CancellationToken)
             // Create client
             AssetServiceClient assetServiceClient = await AssetServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Asset.V1.Snippets
             };
             // Make the request
             AnalyzeIamPolicyResponse response = await assetServiceClient.AnalyzeIamPolicyAsync(request);
-            // End snippet
         }
     }
 }

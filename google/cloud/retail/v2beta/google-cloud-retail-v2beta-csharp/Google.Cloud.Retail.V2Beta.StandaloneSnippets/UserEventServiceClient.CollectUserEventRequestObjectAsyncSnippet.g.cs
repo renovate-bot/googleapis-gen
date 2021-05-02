@@ -17,15 +17,18 @@
 namespace Google.Cloud.Retail.V2Beta.Snippets
 {
     using Google.Api;
+    using Google.Cloud.Retail.V2Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedUserEventServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CollectUserEventAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CollectUserEventRequestObjectAsync()
         {
-            // Snippet: CollectUserEventAsync(CollectUserEventRequest, CallSettings)
-            // Additional: CollectUserEventAsync(CollectUserEventRequest, CancellationToken)
             // Create client
             UserEventServiceClient userEventServiceClient = await UserEventServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -38,7 +41,6 @@ namespace Google.Cloud.Retail.V2Beta.Snippets
             };
             // Make the request
             HttpBody response = await userEventServiceClient.CollectUserEventAsync(request);
-            // End snippet
         }
     }
 }

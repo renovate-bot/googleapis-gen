@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
 {
+    using Google.Cloud.ArtifactRegistry.V1Beta2;
+
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
     {
         /// <summary>Snippet for GetVersion</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetVersion()
         {
-            // Snippet: GetVersion(string, CallSettings)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.Create();
             // Initialize request argument(s)
             string name = "";
             // Make the request
             Version response = artifactRegistryClient.GetVersion(name);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,15 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -36,6 +37,7 @@ from google.cloud.servicedirectory_v1.types import service as gcs_service
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import RegistrationServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import RegistrationServiceGrpcTransport
 
@@ -99,15 +101,13 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -127,8 +127,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -186,6 +185,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -248,9 +248,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def create_namespace(self) -> Callable[
             [registration_service.CreateNamespaceRequest],
             Awaitable[gcs_namespace.Namespace]]:
-        r"""Return a callable for the
-        create namespace
-          method over gRPC.
+        r"""Return a callable for the create namespace method over gRPC.
 
         Creates a namespace, and returns the new Namespace.
 
@@ -276,9 +274,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def list_namespaces(self) -> Callable[
             [registration_service.ListNamespacesRequest],
             Awaitable[registration_service.ListNamespacesResponse]]:
-        r"""Return a callable for the
-        list namespaces
-          method over gRPC.
+        r"""Return a callable for the list namespaces method over gRPC.
 
         Lists all namespaces.
 
@@ -304,9 +300,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def get_namespace(self) -> Callable[
             [registration_service.GetNamespaceRequest],
             Awaitable[namespace.Namespace]]:
-        r"""Return a callable for the
-        get namespace
-          method over gRPC.
+        r"""Return a callable for the get namespace method over gRPC.
 
         Gets a namespace.
 
@@ -332,9 +326,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def update_namespace(self) -> Callable[
             [registration_service.UpdateNamespaceRequest],
             Awaitable[gcs_namespace.Namespace]]:
-        r"""Return a callable for the
-        update namespace
-          method over gRPC.
+        r"""Return a callable for the update namespace method over gRPC.
 
         Updates a namespace.
 
@@ -360,9 +352,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def delete_namespace(self) -> Callable[
             [registration_service.DeleteNamespaceRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete namespace
-          method over gRPC.
+        r"""Return a callable for the delete namespace method over gRPC.
 
         Deletes a namespace. This also deletes all services
         and endpoints in the namespace.
@@ -389,9 +379,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def create_service(self) -> Callable[
             [registration_service.CreateServiceRequest],
             Awaitable[gcs_service.Service]]:
-        r"""Return a callable for the
-        create service
-          method over gRPC.
+        r"""Return a callable for the create service method over gRPC.
 
         Creates a service, and returns the new Service.
 
@@ -417,9 +405,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def list_services(self) -> Callable[
             [registration_service.ListServicesRequest],
             Awaitable[registration_service.ListServicesResponse]]:
-        r"""Return a callable for the
-        list services
-          method over gRPC.
+        r"""Return a callable for the list services method over gRPC.
 
         Lists all services belonging to a namespace.
 
@@ -445,9 +431,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def get_service(self) -> Callable[
             [registration_service.GetServiceRequest],
             Awaitable[service.Service]]:
-        r"""Return a callable for the
-        get service
-          method over gRPC.
+        r"""Return a callable for the get service method over gRPC.
 
         Gets a service.
 
@@ -473,9 +457,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def update_service(self) -> Callable[
             [registration_service.UpdateServiceRequest],
             Awaitable[gcs_service.Service]]:
-        r"""Return a callable for the
-        update service
-          method over gRPC.
+        r"""Return a callable for the update service method over gRPC.
 
         Updates a service.
 
@@ -501,9 +483,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def delete_service(self) -> Callable[
             [registration_service.DeleteServiceRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete service
-          method over gRPC.
+        r"""Return a callable for the delete service method over gRPC.
 
         Deletes a service. This also deletes all endpoints
         associated with the service.
@@ -530,9 +510,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def create_endpoint(self) -> Callable[
             [registration_service.CreateEndpointRequest],
             Awaitable[gcs_endpoint.Endpoint]]:
-        r"""Return a callable for the
-        create endpoint
-          method over gRPC.
+        r"""Return a callable for the create endpoint method over gRPC.
 
         Creates a endpoint, and returns the new Endpoint.
 
@@ -558,9 +536,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def list_endpoints(self) -> Callable[
             [registration_service.ListEndpointsRequest],
             Awaitable[registration_service.ListEndpointsResponse]]:
-        r"""Return a callable for the
-        list endpoints
-          method over gRPC.
+        r"""Return a callable for the list endpoints method over gRPC.
 
         Lists all endpoints.
 
@@ -586,9 +562,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def get_endpoint(self) -> Callable[
             [registration_service.GetEndpointRequest],
             Awaitable[endpoint.Endpoint]]:
-        r"""Return a callable for the
-        get endpoint
-          method over gRPC.
+        r"""Return a callable for the get endpoint method over gRPC.
 
         Gets a endpoint.
 
@@ -614,9 +588,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def update_endpoint(self) -> Callable[
             [registration_service.UpdateEndpointRequest],
             Awaitable[gcs_endpoint.Endpoint]]:
-        r"""Return a callable for the
-        update endpoint
-          method over gRPC.
+        r"""Return a callable for the update endpoint method over gRPC.
 
         Updates a endpoint.
 
@@ -642,9 +614,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def delete_endpoint(self) -> Callable[
             [registration_service.DeleteEndpointRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete endpoint
-          method over gRPC.
+        r"""Return a callable for the delete endpoint method over gRPC.
 
         Deletes a endpoint.
 
@@ -670,9 +640,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the IAM Policy for a resource (namespace or
         service only).
@@ -699,9 +667,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the IAM Policy for a resource (namespace or
         service only).
@@ -728,9 +694,7 @@ class RegistrationServiceGrpcAsyncIOTransport(RegistrationServiceTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Tests IAM permissions for a resource (namespace or
         service only).

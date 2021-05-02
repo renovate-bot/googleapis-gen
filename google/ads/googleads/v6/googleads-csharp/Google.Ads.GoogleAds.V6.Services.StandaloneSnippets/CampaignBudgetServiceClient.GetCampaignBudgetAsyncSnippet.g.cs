@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignBudgetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignBudgetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCampaignBudgetAsync()
         {
-            // Snippet: GetCampaignBudgetAsync(string, CallSettings)
-            // Additional: GetCampaignBudgetAsync(string, CancellationToken)
             // Create client
             CampaignBudgetServiceClient campaignBudgetServiceClient = await CampaignBudgetServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/campaignBudgets/[CAMPAIGN_BUDGET_ID]";
             // Make the request
             CampaignBudget response = await campaignBudgetServiceClient.GetCampaignBudgetAsync(resourceName);
-            // End snippet
         }
     }
 }

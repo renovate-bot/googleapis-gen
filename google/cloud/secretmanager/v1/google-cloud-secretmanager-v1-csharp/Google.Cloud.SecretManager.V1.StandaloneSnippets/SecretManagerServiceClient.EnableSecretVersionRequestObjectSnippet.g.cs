@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.SecretManager.V1.Snippets
 {
+    using Google.Cloud.SecretManager.V1;
+
     public sealed partial class GeneratedSecretManagerServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for EnableSecretVersion</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void EnableSecretVersionRequestObject()
         {
-            // Snippet: EnableSecretVersion(EnableSecretVersionRequest, CallSettings)
             // Create client
             SecretManagerServiceClient secretManagerServiceClient = SecretManagerServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.SecretManager.V1.Snippets
             };
             // Make the request
             SecretVersion response = secretManagerServiceClient.EnableSecretVersion(request);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Container.V1Beta1.Snippets
 {
+    using Google.Cloud.Container.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for SetLoggingServiceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SetLoggingServiceRequestObjectAsync()
         {
-            // Snippet: SetLoggingServiceAsync(SetLoggingServiceRequest, CallSettings)
-            // Additional: SetLoggingServiceAsync(SetLoggingServiceRequest, CancellationToken)
             // Create client
             ClusterManagerClient clusterManagerClient = await ClusterManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
             };
             // Make the request
             Operation response = await clusterManagerClient.SetLoggingServiceAsync(request);
-            // End snippet
         }
     }
 }

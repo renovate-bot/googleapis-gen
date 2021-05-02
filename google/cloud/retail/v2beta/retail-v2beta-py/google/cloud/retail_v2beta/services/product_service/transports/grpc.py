@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -31,6 +33,7 @@ from google.cloud.retail_v2beta.types import product as gcr_product
 from google.cloud.retail_v2beta.types import product_service
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import ProductServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -65,8 +68,7 @@ class ProductServiceGrpcTransport(ProductServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -206,15 +208,13 @@ class ProductServiceGrpcTransport(ProductServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -244,9 +244,7 @@ class ProductServiceGrpcTransport(ProductServiceTransport):
     def create_product(self) -> Callable[
             [product_service.CreateProductRequest],
             gcr_product.Product]:
-        r"""Return a callable for the
-        create product
-          method over gRPC.
+        r"""Return a callable for the create product method over gRPC.
 
         Creates a [Product][google.cloud.retail.v2beta.Product].
 
@@ -272,9 +270,7 @@ class ProductServiceGrpcTransport(ProductServiceTransport):
     def get_product(self) -> Callable[
             [product_service.GetProductRequest],
             product.Product]:
-        r"""Return a callable for the
-        get product
-          method over gRPC.
+        r"""Return a callable for the get product method over gRPC.
 
         Gets a [Product][google.cloud.retail.v2beta.Product].
 
@@ -300,9 +296,7 @@ class ProductServiceGrpcTransport(ProductServiceTransport):
     def update_product(self) -> Callable[
             [product_service.UpdateProductRequest],
             gcr_product.Product]:
-        r"""Return a callable for the
-        update product
-          method over gRPC.
+        r"""Return a callable for the update product method over gRPC.
 
         Updates a [Product][google.cloud.retail.v2beta.Product].
 
@@ -328,9 +322,7 @@ class ProductServiceGrpcTransport(ProductServiceTransport):
     def delete_product(self) -> Callable[
             [product_service.DeleteProductRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete product
-          method over gRPC.
+        r"""Return a callable for the delete product method over gRPC.
 
         Deletes a [Product][google.cloud.retail.v2beta.Product].
 
@@ -356,9 +348,7 @@ class ProductServiceGrpcTransport(ProductServiceTransport):
     def import_products(self) -> Callable[
             [import_config.ImportProductsRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        import products
-          method over gRPC.
+        r"""Return a callable for the import products method over gRPC.
 
         Bulk import of multiple
         [Product][google.cloud.retail.v2beta.Product]s.

@@ -16,14 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedRecommendationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DismissRecommendation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DismissRecommendation()
         {
-            // Snippet: DismissRecommendation(string, IEnumerable<DismissRecommendationRequest.Types.DismissRecommendationOperation>, CallSettings)
             // Create client
             RecommendationServiceClient recommendationServiceClient = RecommendationServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             DismissRecommendationResponse response = recommendationServiceClient.DismissRecommendation(customerId, operations);
-            // End snippet
         }
     }
 }

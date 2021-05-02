@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
 {
+    using Google.Cloud.ManagedIdentities.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedManagedIdentitiesServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ResetAdminPasswordAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ResetAdminPasswordRequestObjectAsync()
         {
-            // Snippet: ResetAdminPasswordAsync(ResetAdminPasswordRequest, CallSettings)
-            // Additional: ResetAdminPasswordAsync(ResetAdminPasswordRequest, CancellationToken)
             // Create client
             ManagedIdentitiesServiceClient managedIdentitiesServiceClient = await ManagedIdentitiesServiceClient.CreateAsync();
             // Initialize request argument(s)
             ResetAdminPasswordRequest request = new ResetAdminPasswordRequest { Name = "", };
             // Make the request
             ResetAdminPasswordResponse response = await managedIdentitiesServiceClient.ResetAdminPasswordAsync(request);
-            // End snippet
         }
     }
 }

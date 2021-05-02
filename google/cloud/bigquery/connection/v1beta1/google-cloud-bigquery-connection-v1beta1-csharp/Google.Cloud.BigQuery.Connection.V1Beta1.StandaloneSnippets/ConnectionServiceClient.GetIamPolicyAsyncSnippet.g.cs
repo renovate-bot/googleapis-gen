@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.BigQuery.Connection.V1Beta1.Snippets
 {
+    using Google.Cloud.BigQuery.Connection.V1Beta1;
     using Google.Cloud.Iam.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConnectionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIamPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetIamPolicyAsync()
         {
-            // Snippet: GetIamPolicyAsync(string, GetPolicyOptions, CallSettings)
-            // Additional: GetIamPolicyAsync(string, GetPolicyOptions, CancellationToken)
             // Create client
             ConnectionServiceClient connectionServiceClient = await ConnectionServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.BigQuery.Connection.V1Beta1.Snippets
             GetPolicyOptions options = new GetPolicyOptions();
             // Make the request
             Policy response = await connectionServiceClient.GetIamPolicyAsync(resource, options);
-            // End snippet
         }
     }
 }

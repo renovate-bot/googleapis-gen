@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v5.enums.types import geo_target_constant_status
 
@@ -29,6 +32,7 @@ __protobuf__ = proto.module(
 
 class GeoTargetConstant(proto.Message):
     r"""A geo target constant.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the geo target constant.
@@ -59,45 +63,16 @@ class GeoTargetConstant(proto.Message):
             ``geoTargetConstants/{parent_geo_target_constant_id}``
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.INT64,
-        number=10,
-        optional=True,
-    )
-    name = proto.Field(
-        proto.STRING,
-        number=11,
-        optional=True,
-    )
-    country_code = proto.Field(
-        proto.STRING,
-        number=12,
-        optional=True,
-    )
-    target_type = proto.Field(
-        proto.STRING,
-        number=13,
-        optional=True,
-    )
-    status = proto.Field(
-        proto.ENUM,
-        number=7,
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.INT64, number=10, optional=True)
+    name = proto.Field(proto.STRING, number=11, optional=True)
+    country_code = proto.Field(proto.STRING, number=12, optional=True)
+    target_type = proto.Field(proto.STRING, number=13, optional=True)
+    status = proto.Field(proto.ENUM, number=7,
         enum=geo_target_constant_status.GeoTargetConstantStatusEnum.GeoTargetConstantStatus,
     )
-    canonical_name = proto.Field(
-        proto.STRING,
-        number=14,
-        optional=True,
-    )
-    parent_geo_target = proto.Field(
-        proto.STRING,
-        number=9,
-        optional=True,
-    )
+    canonical_name = proto.Field(proto.STRING, number=14, optional=True)
+    parent_geo_target = proto.Field(proto.STRING, number=9, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.DataQnA.V1Alpha.Snippets
 {
+    using Google.Cloud.DataQnA.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedQuestionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetUserFeedbackAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetUserFeedbackRequestObjectAsync()
         {
-            // Snippet: GetUserFeedbackAsync(GetUserFeedbackRequest, CallSettings)
-            // Additional: GetUserFeedbackAsync(GetUserFeedbackRequest, CancellationToken)
             // Create client
             QuestionServiceClient questionServiceClient = await QuestionServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.DataQnA.V1Alpha.Snippets
             };
             // Make the request
             UserFeedback response = await questionServiceClient.GetUserFeedbackAsync(request);
-            // End snippet
         }
     }
 }

@@ -17,15 +17,18 @@
 namespace Google.Cloud.PhishingProtection.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.PhishingProtection.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPhishingProtectionServiceV1Beta1ClientStandaloneSnippets
     {
         /// <summary>Snippet for ReportPhishingAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ReportPhishingRequestObjectAsync()
         {
-            // Snippet: ReportPhishingAsync(ReportPhishingRequest, CallSettings)
-            // Additional: ReportPhishingAsync(ReportPhishingRequest, CancellationToken)
             // Create client
             PhishingProtectionServiceV1Beta1Client phishingProtectionServiceV1Beta1Client = await PhishingProtectionServiceV1Beta1Client.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.PhishingProtection.V1Beta1.Snippets
             };
             // Make the request
             ReportPhishingResponse response = await phishingProtectionServiceV1Beta1Client.ReportPhishingAsync(request);
-            // End snippet
         }
     }
 }

@@ -17,15 +17,18 @@
 namespace Google.Cloud.GSuiteAddOns.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.GSuiteAddOns.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGSuiteAddOnsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateDeploymentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateDeploymentRequestObjectAsync()
         {
-            // Snippet: CreateDeploymentAsync(CreateDeploymentRequest, CallSettings)
-            // Additional: CreateDeploymentAsync(CreateDeploymentRequest, CancellationToken)
             // Create client
             GSuiteAddOnsClient gSuiteAddOnsClient = await GSuiteAddOnsClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.GSuiteAddOns.V1.Snippets
             };
             // Make the request
             Deployment response = await gSuiteAddOnsClient.CreateDeploymentAsync(request);
-            // End snippet
         }
     }
 }

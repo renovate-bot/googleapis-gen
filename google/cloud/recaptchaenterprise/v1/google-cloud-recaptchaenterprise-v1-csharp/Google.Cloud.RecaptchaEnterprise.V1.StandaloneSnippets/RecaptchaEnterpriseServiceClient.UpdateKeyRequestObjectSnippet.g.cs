@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.RecaptchaEnterprise.V1.Snippets
 {
+    using Google.Cloud.RecaptchaEnterprise.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedRecaptchaEnterpriseServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateKey</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateKeyRequestObject()
         {
-            // Snippet: UpdateKey(UpdateKeyRequest, CallSettings)
             // Create client
             RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.RecaptchaEnterprise.V1.Snippets
             };
             // Make the request
             Key response = recaptchaEnterpriseServiceClient.UpdateKey(request);
-            // End snippet
         }
     }
 }

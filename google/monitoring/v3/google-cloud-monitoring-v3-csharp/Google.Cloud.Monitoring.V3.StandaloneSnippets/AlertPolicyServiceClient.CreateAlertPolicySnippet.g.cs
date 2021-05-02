@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
+
     public sealed partial class GeneratedAlertPolicyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateAlertPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateAlertPolicy()
         {
-            // Snippet: CreateAlertPolicy(string, AlertPolicy, CallSettings)
             // Create client
             AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             AlertPolicy alertPolicy = new AlertPolicy();
             // Make the request
             AlertPolicy response = alertPolicyServiceClient.CreateAlertPolicy(name, alertPolicy);
-            // End snippet
         }
     }
 }

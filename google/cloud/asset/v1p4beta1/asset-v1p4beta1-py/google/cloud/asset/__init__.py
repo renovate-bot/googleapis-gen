@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +25,8 @@ from google.cloud.asset_v1p4beta1.types.asset_service import IamPolicyAnalysisOu
 from google.cloud.asset_v1p4beta1.types.asset_service import IamPolicyAnalysisQuery
 from google.cloud.asset_v1p4beta1.types.assets import IamPolicyAnalysisResult
 
-__all__ = ('AnalyzeIamPolicyRequest',
+__all__ = (
+    'AnalyzeIamPolicyRequest',
     'AnalyzeIamPolicyResponse',
     'AssetServiceAsyncClient',
     'AssetServiceClient',

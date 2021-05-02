@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.OsConfig.V1.Snippets
 {
+    using Google.Cloud.OsConfig.V1;
+
     public sealed partial class GeneratedOsConfigServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPatchDeployment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetPatchDeploymentRequestObject()
         {
-            // Snippet: GetPatchDeployment(GetPatchDeploymentRequest, CallSettings)
             // Create client
             OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.OsConfig.V1.Snippets
             };
             // Make the request
             PatchDeployment response = osConfigServiceClient.GetPatchDeployment(request);
-            // End snippet
         }
     }
 }

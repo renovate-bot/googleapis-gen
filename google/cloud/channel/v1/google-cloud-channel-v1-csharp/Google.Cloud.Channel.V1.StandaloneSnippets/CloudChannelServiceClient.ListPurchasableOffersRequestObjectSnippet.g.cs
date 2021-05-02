@@ -17,14 +17,18 @@
 namespace Google.Cloud.Channel.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Channel.V1;
     using System;
 
     public sealed partial class GeneratedCloudChannelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListPurchasableOffers</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListPurchasableOffersRequestObject()
         {
-            // Snippet: ListPurchasableOffers(ListPurchasableOffersRequest, CallSettings)
             // Create client
             CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.Channel.V1.Snippets
             {
                 CustomerAsCustomerName = CustomerName.FromAccountCustomer("[ACCOUNT]", "[CUSTOMER]"),
                 CreateEntitlementPurchase = new ListPurchasableOffersRequest.Types.CreateEntitlementPurchase(),
-                ChangeOfferPurchase = new ListPurchasableOffersRequest.Types.ChangeOfferPurchase(),
                 LanguageCode = "",
             };
             // Make the request
@@ -69,7 +72,6 @@ namespace Google.Cloud.Channel.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

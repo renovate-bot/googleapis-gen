@@ -17,16 +17,19 @@
 namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.DataCatalog.V1Beta1;
     using Google.Cloud.Iam.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIamPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetIamPolicyRequestObjectAsync()
         {
-            // Snippet: GetIamPolicyAsync(GetIamPolicyRequest, CallSettings)
-            // Additional: GetIamPolicyAsync(GetIamPolicyRequest, CancellationToken)
             // Create client
             DataCatalogClient dataCatalogClient = await DataCatalogClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             };
             // Make the request
             Policy response = await dataCatalogClient.GetIamPolicyAsync(request);
-            // End snippet
         }
     }
 }

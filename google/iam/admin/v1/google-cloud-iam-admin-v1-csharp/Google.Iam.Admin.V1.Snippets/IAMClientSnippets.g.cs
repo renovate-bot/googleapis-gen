@@ -78,7 +78,7 @@ namespace Google.Iam.Admin.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListServiceAccounts</summary>
+        /// <summary>Snippet for ListServiceAccountsAsync</summary>
         public async Task ListServiceAccountsRequestObjectAsync()
         {
             // Snippet: ListServiceAccountsAsync(ListServiceAccountsRequest, CallSettings)
@@ -171,7 +171,7 @@ namespace Google.Iam.Admin.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListServiceAccounts</summary>
+        /// <summary>Snippet for ListServiceAccountsAsync</summary>
         public async Task ListServiceAccountsAsync()
         {
             // Snippet: ListServiceAccountsAsync(string, string, int?, CallSettings)
@@ -261,7 +261,7 @@ namespace Google.Iam.Admin.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListServiceAccounts</summary>
+        /// <summary>Snippet for ListServiceAccountsAsync</summary>
         public async Task ListServiceAccountsResourceNamesAsync()
         {
             // Snippet: ListServiceAccountsAsync(ProjectName, string, int?, CallSettings)
@@ -1661,7 +1661,7 @@ namespace Google.Iam.Admin.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for QueryGrantableRoles</summary>
+        /// <summary>Snippet for QueryGrantableRolesAsync</summary>
         public async Task QueryGrantableRolesRequestObjectAsync()
         {
             // Snippet: QueryGrantableRolesAsync(QueryGrantableRolesRequest, CallSettings)
@@ -1755,7 +1755,7 @@ namespace Google.Iam.Admin.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for QueryGrantableRoles</summary>
+        /// <summary>Snippet for QueryGrantableRolesAsync</summary>
         public async Task QueryGrantableRolesAsync()
         {
             // Snippet: QueryGrantableRolesAsync(string, string, int?, CallSettings)
@@ -1850,7 +1850,7 @@ namespace Google.Iam.Admin.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListRoles</summary>
+        /// <summary>Snippet for ListRolesAsync</summary>
         public async Task ListRolesRequestObjectAsync()
         {
             // Snippet: ListRolesAsync(ListRolesRequest, CallSettings)
@@ -2125,7 +2125,7 @@ namespace Google.Iam.Admin.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for QueryTestablePermissions</summary>
+        /// <summary>Snippet for QueryTestablePermissionsAsync</summary>
         public async Task QueryTestablePermissionsRequestObjectAsync()
         {
             // Snippet: QueryTestablePermissionsAsync(QueryTestablePermissionsRequest, CallSettings)

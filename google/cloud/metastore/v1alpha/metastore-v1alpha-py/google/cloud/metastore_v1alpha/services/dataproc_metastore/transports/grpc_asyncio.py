@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
@@ -22,13 +24,13 @@ from google.api_core import operations_v1              # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.metastore_v1alpha.types import metastore
 from google.longrunning import operations_pb2 as operations  # type: ignore
+
 from .base import DataprocMetastoreTransport, DEFAULT_CLIENT_INFO
 from .grpc import DataprocMetastoreGrpcTransport
 
@@ -100,15 +102,13 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -128,8 +128,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -188,6 +187,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -266,9 +266,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def list_services(self) -> Callable[
             [metastore.ListServicesRequest],
             Awaitable[metastore.ListServicesResponse]]:
-        r"""Return a callable for the
-        list services
-          method over gRPC.
+        r"""Return a callable for the list services method over gRPC.
 
         Lists services in a project and location.
 
@@ -294,9 +292,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def get_service(self) -> Callable[
             [metastore.GetServiceRequest],
             Awaitable[metastore.Service]]:
-        r"""Return a callable for the
-        get service
-          method over gRPC.
+        r"""Return a callable for the get service method over gRPC.
 
         Gets the details of a single service.
 
@@ -322,9 +318,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def create_service(self) -> Callable[
             [metastore.CreateServiceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create service
-          method over gRPC.
+        r"""Return a callable for the create service method over gRPC.
 
         Creates a metastore service in a project and
         location.
@@ -351,9 +345,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def update_service(self) -> Callable[
             [metastore.UpdateServiceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update service
-          method over gRPC.
+        r"""Return a callable for the update service method over gRPC.
 
         Updates the parameters of a single service.
 
@@ -379,9 +371,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def delete_service(self) -> Callable[
             [metastore.DeleteServiceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete service
-          method over gRPC.
+        r"""Return a callable for the delete service method over gRPC.
 
         Deletes a single service.
 
@@ -407,9 +397,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def list_metadata_imports(self) -> Callable[
             [metastore.ListMetadataImportsRequest],
             Awaitable[metastore.ListMetadataImportsResponse]]:
-        r"""Return a callable for the
-        list metadata imports
-          method over gRPC.
+        r"""Return a callable for the list metadata imports method over gRPC.
 
         Lists imports in a service.
 
@@ -435,9 +423,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def get_metadata_import(self) -> Callable[
             [metastore.GetMetadataImportRequest],
             Awaitable[metastore.MetadataImport]]:
-        r"""Return a callable for the
-        get metadata import
-          method over gRPC.
+        r"""Return a callable for the get metadata import method over gRPC.
 
         Gets details of a single import.
 
@@ -463,9 +449,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def create_metadata_import(self) -> Callable[
             [metastore.CreateMetadataImportRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create metadata import
-          method over gRPC.
+        r"""Return a callable for the create metadata import method over gRPC.
 
         Creates a new MetadataImport in a given project and
         location.
@@ -492,9 +476,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def update_metadata_import(self) -> Callable[
             [metastore.UpdateMetadataImportRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update metadata import
-          method over gRPC.
+        r"""Return a callable for the update metadata import method over gRPC.
 
         Updates a single import.
         Only the description field of MetadataImport is
@@ -522,9 +504,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def export_metadata(self) -> Callable[
             [metastore.ExportMetadataRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        export metadata
-          method over gRPC.
+        r"""Return a callable for the export metadata method over gRPC.
 
         Exports metadata from a service.
 
@@ -550,9 +530,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def restore_service(self) -> Callable[
             [metastore.RestoreServiceRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        restore service
-          method over gRPC.
+        r"""Return a callable for the restore service method over gRPC.
 
         Restores a service from a backup.
 
@@ -578,9 +556,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def list_backups(self) -> Callable[
             [metastore.ListBackupsRequest],
             Awaitable[metastore.ListBackupsResponse]]:
-        r"""Return a callable for the
-        list backups
-          method over gRPC.
+        r"""Return a callable for the list backups method over gRPC.
 
         Lists backups in a service.
 
@@ -606,9 +582,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def get_backup(self) -> Callable[
             [metastore.GetBackupRequest],
             Awaitable[metastore.Backup]]:
-        r"""Return a callable for the
-        get backup
-          method over gRPC.
+        r"""Return a callable for the get backup method over gRPC.
 
         Gets details of a single backup.
 
@@ -634,9 +608,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def create_backup(self) -> Callable[
             [metastore.CreateBackupRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create backup
-          method over gRPC.
+        r"""Return a callable for the create backup method over gRPC.
 
         Creates a new Backup in a given project and location.
 
@@ -662,9 +634,7 @@ class DataprocMetastoreGrpcAsyncIOTransport(DataprocMetastoreTransport):
     def delete_backup(self) -> Callable[
             [metastore.DeleteBackupRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete backup
-          method over gRPC.
+        r"""Return a callable for the delete backup method over gRPC.
 
         Deletes a single backup.
 

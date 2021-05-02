@@ -16,15 +16,18 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateUserLinkAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateUserLinkResourceNames2Async()
         {
-            // Snippet: CreateUserLinkAsync(PropertyName, UserLink, CallSettings)
-            // Additional: CreateUserLinkAsync(PropertyName, UserLink, CancellationToken)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = await AnalyticsAdminServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Analytics.Admin.V1Alpha.Snippets
             UserLink userLink = new UserLink();
             // Make the request
             UserLink response = await analyticsAdminServiceClient.CreateUserLinkAsync(parent, userLink);
-            // End snippet
         }
     }
 }

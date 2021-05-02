@@ -17,15 +17,18 @@
 namespace Grafeas.V1.Snippets
 {
     using Google.Protobuf.WellKnownTypes;
+    using Grafeas.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGrafeasClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateOccurrenceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateOccurrenceAsync()
         {
-            // Snippet: UpdateOccurrenceAsync(string, Occurrence, FieldMask, CallSettings)
-            // Additional: UpdateOccurrenceAsync(string, Occurrence, FieldMask, CancellationToken)
             // Create client
             GrafeasClient grafeasClient = await GrafeasClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Grafeas.V1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Occurrence response = await grafeasClient.UpdateOccurrenceAsync(name, occurrence, updateMask);
-            // End snippet
         }
     }
 }

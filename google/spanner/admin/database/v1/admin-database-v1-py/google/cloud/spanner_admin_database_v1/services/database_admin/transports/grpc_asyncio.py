@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
@@ -22,7 +24,6 @@ from google.api_core import operations_v1              # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -34,6 +35,7 @@ from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import DatabaseAdminTransport, DEFAULT_CLIENT_INFO
 from .grpc import DatabaseAdminGrpcTransport
 
@@ -88,15 +90,13 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -116,8 +116,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -176,6 +175,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -254,9 +254,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def list_databases(self) -> Callable[
             [spanner_database_admin.ListDatabasesRequest],
             Awaitable[spanner_database_admin.ListDatabasesResponse]]:
-        r"""Return a callable for the
-        list databases
-          method over gRPC.
+        r"""Return a callable for the list databases method over gRPC.
 
         Lists Cloud Spanner databases.
 
@@ -282,9 +280,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def create_database(self) -> Callable[
             [spanner_database_admin.CreateDatabaseRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create database
-          method over gRPC.
+        r"""Return a callable for the create database method over gRPC.
 
         Creates a new Cloud Spanner database and starts to prepare it
         for serving. The returned [long-running
@@ -319,9 +315,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def get_database(self) -> Callable[
             [spanner_database_admin.GetDatabaseRequest],
             Awaitable[spanner_database_admin.Database]]:
-        r"""Return a callable for the
-        get database
-          method over gRPC.
+        r"""Return a callable for the get database method over gRPC.
 
         Gets the state of a Cloud Spanner database.
 
@@ -347,9 +341,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def update_database_ddl(self) -> Callable[
             [spanner_database_admin.UpdateDatabaseDdlRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update database ddl
-          method over gRPC.
+        r"""Return a callable for the update database ddl method over gRPC.
 
         Updates the schema of a Cloud Spanner database by
         creating/altering/dropping tables, columns, indexes, etc. The
@@ -383,9 +375,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def drop_database(self) -> Callable[
             [spanner_database_admin.DropDatabaseRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        drop database
-          method over gRPC.
+        r"""Return a callable for the drop database method over gRPC.
 
         Drops (aka deletes) a Cloud Spanner database. Completed backups
         for the database will be retained according to their
@@ -413,9 +403,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def get_database_ddl(self) -> Callable[
             [spanner_database_admin.GetDatabaseDdlRequest],
             Awaitable[spanner_database_admin.GetDatabaseDdlResponse]]:
-        r"""Return a callable for the
-        get database ddl
-          method over gRPC.
+        r"""Return a callable for the get database ddl method over gRPC.
 
         Returns the schema of a Cloud Spanner database as a list of
         formatted DDL statements. This method does not show pending
@@ -444,9 +432,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on a database or backup resource.
         Replaces any existing policy.
@@ -480,9 +466,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for a database or backup
         resource. Returns an empty policy if a database or backup exists
@@ -517,9 +501,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns permissions that the caller has on the specified
         database or backup resource.
@@ -554,9 +536,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def create_backup(self) -> Callable[
             [gsad_backup.CreateBackupRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create backup
-          method over gRPC.
+        r"""Return a callable for the create backup method over gRPC.
 
         Starts creating a new Cloud Spanner Backup. The returned backup
         [long-running operation][google.longrunning.Operation] will have
@@ -594,9 +574,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def get_backup(self) -> Callable[
             [backup.GetBackupRequest],
             Awaitable[backup.Backup]]:
-        r"""Return a callable for the
-        get backup
-          method over gRPC.
+        r"""Return a callable for the get backup method over gRPC.
 
         Gets metadata on a pending or completed
         [Backup][google.spanner.admin.database.v1.Backup].
@@ -623,9 +601,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def update_backup(self) -> Callable[
             [gsad_backup.UpdateBackupRequest],
             Awaitable[gsad_backup.Backup]]:
-        r"""Return a callable for the
-        update backup
-          method over gRPC.
+        r"""Return a callable for the update backup method over gRPC.
 
         Updates a pending or completed
         [Backup][google.spanner.admin.database.v1.Backup].
@@ -652,9 +628,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def delete_backup(self) -> Callable[
             [backup.DeleteBackupRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete backup
-          method over gRPC.
+        r"""Return a callable for the delete backup method over gRPC.
 
         Deletes a pending or completed
         [Backup][google.spanner.admin.database.v1.Backup].
@@ -681,9 +655,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def list_backups(self) -> Callable[
             [backup.ListBackupsRequest],
             Awaitable[backup.ListBackupsResponse]]:
-        r"""Return a callable for the
-        list backups
-          method over gRPC.
+        r"""Return a callable for the list backups method over gRPC.
 
         Lists completed and pending backups. Backups returned are
         ordered by ``create_time`` in descending order, starting from
@@ -711,9 +683,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def restore_database(self) -> Callable[
             [spanner_database_admin.RestoreDatabaseRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        restore database
-          method over gRPC.
+        r"""Return a callable for the restore database method over gRPC.
 
         Create a new database by restoring from a completed backup. The
         new database must be in the same project and in an instance with
@@ -757,9 +727,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def list_database_operations(self) -> Callable[
             [spanner_database_admin.ListDatabaseOperationsRequest],
             Awaitable[spanner_database_admin.ListDatabaseOperationsResponse]]:
-        r"""Return a callable for the
-        list database operations
-          method over gRPC.
+        r"""Return a callable for the list database operations method over gRPC.
 
         Lists database
         [longrunning-operations][google.longrunning.Operation]. A
@@ -794,9 +762,7 @@ class DatabaseAdminGrpcAsyncIOTransport(DatabaseAdminTransport):
     def list_backup_operations(self) -> Callable[
             [backup.ListBackupOperationsRequest],
             Awaitable[backup.ListBackupOperationsResponse]]:
-        r"""Return a callable for the
-        list backup operations
-          method over gRPC.
+        r"""Return a callable for the list backup operations method over gRPC.
 
         Lists the backup [long-running
         operations][google.longrunning.Operation] in the given instance.

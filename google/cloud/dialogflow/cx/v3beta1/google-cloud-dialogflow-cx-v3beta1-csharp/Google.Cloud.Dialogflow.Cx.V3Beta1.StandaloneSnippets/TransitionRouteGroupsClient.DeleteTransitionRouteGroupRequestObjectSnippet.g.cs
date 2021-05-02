@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedTransitionRouteGroupsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteTransitionRouteGroup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteTransitionRouteGroupRequestObject()
         {
-            // Snippet: DeleteTransitionRouteGroup(DeleteTransitionRouteGroupRequest, CallSettings)
             // Create client
             TransitionRouteGroupsClient transitionRouteGroupsClient = TransitionRouteGroupsClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             };
             // Make the request
             transitionRouteGroupsClient.DeleteTransitionRouteGroup(request);
-            // End snippet
         }
     }
 }

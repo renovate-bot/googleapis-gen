@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v4.resources.types import campaign_shared_set
 from google.ads.googleads.v4.services.types import campaign_shared_set_service
+
 from .base import CampaignSharedSetServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class CampaignSharedSetServiceGrpcTransport(CampaignSharedSetServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class CampaignSharedSetServiceGrpcTransport(CampaignSharedSetServiceTransport):
     def get_campaign_shared_set(self) -> Callable[
             [campaign_shared_set_service.GetCampaignSharedSetRequest],
             campaign_shared_set.CampaignSharedSet]:
-        r"""Return a callable for the
-        get campaign shared set
-          method over gRPC.
+        r"""Return a callable for the get campaign shared set method over gRPC.
 
         Returns the requested campaign shared set in full
         detail.
@@ -230,9 +230,7 @@ class CampaignSharedSetServiceGrpcTransport(CampaignSharedSetServiceTransport):
     def mutate_campaign_shared_sets(self) -> Callable[
             [campaign_shared_set_service.MutateCampaignSharedSetsRequest],
             campaign_shared_set_service.MutateCampaignSharedSetsResponse]:
-        r"""Return a callable for the
-        mutate campaign shared sets
-          method over gRPC.
+        r"""Return a callable for the mutate campaign shared sets method over gRPC.
 
         Creates or removes campaign shared sets. Operation
         statuses are returned.

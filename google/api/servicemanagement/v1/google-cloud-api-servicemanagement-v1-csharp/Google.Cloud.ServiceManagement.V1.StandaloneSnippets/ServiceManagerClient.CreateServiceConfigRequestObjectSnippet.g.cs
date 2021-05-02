@@ -17,13 +17,17 @@
 namespace Google.Cloud.ServiceManagement.V1.Snippets
 {
     using Google.Api;
+    using Google.Cloud.ServiceManagement.V1;
 
     public sealed partial class GeneratedServiceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateServiceConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateServiceConfigRequestObject()
         {
-            // Snippet: CreateServiceConfig(CreateServiceConfigRequest, CallSettings)
             // Create client
             ServiceManagerClient serviceManagerClient = ServiceManagerClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.ServiceManagement.V1.Snippets
             };
             // Make the request
             Service response = serviceManagerClient.CreateServiceConfig(request);
-            // End snippet
         }
     }
 }

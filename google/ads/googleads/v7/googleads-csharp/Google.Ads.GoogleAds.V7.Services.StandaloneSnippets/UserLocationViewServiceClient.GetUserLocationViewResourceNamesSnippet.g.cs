@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedUserLocationViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetUserLocationView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetUserLocationViewResourceNames()
         {
-            // Snippet: GetUserLocationView(UserLocationViewName, CallSettings)
             // Create client
             UserLocationViewServiceClient userLocationViewServiceClient = UserLocationViewServiceClient.Create();
             // Initialize request argument(s)
             UserLocationViewName resourceName = UserLocationViewName.FromCustomerCountryCriterionIsTargetingLocation("[CUSTOMER_ID]", "[COUNTRY_CRITERION_ID]", "[IS_TARGETING_LOCATION]");
             // Make the request
             UserLocationView response = userLocationViewServiceClient.GetUserLocationView(resourceName);
-            // End snippet
         }
     }
 }

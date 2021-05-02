@@ -16,15 +16,18 @@
 
 namespace Ccc.Hosted.Marketplace.V2.Snippets
 {
+    using Ccc.Hosted.Marketplace.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLicenseNotificationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListRequestObjectAsync()
         {
-            // Snippet: ListAsync(LicenseNotificationListRequest, CallSettings)
-            // Additional: ListAsync(LicenseNotificationListRequest, CancellationToken)
             // Create client
             LicenseNotificationServiceClient licenseNotificationServiceClient = await LicenseNotificationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Ccc.Hosted.Marketplace.V2.Snippets
             };
             // Make the request
             LicenseNotificationList response = await licenseNotificationServiceClient.ListAsync(request);
-            // End snippet
         }
     }
 }

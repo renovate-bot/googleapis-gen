@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,20 +14,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.webrisk_v1.types import webrisk
+
 from .base import WebRiskServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import WebRiskServiceGrpcTransport
 
@@ -77,15 +79,13 @@ class WebRiskServiceGrpcAsyncIOTransport(WebRiskServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -105,8 +105,7 @@ class WebRiskServiceGrpcAsyncIOTransport(WebRiskServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -164,6 +163,7 @@ class WebRiskServiceGrpcAsyncIOTransport(WebRiskServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -226,9 +226,7 @@ class WebRiskServiceGrpcAsyncIOTransport(WebRiskServiceTransport):
     def compute_threat_list_diff(self) -> Callable[
             [webrisk.ComputeThreatListDiffRequest],
             Awaitable[webrisk.ComputeThreatListDiffResponse]]:
-        r"""Return a callable for the
-        compute threat list diff
-          method over gRPC.
+        r"""Return a callable for the compute threat list diff method over gRPC.
 
         Gets the most recent threat list diffs. These diffs
         should be applied to a local database of hashes to keep
@@ -261,9 +259,7 @@ class WebRiskServiceGrpcAsyncIOTransport(WebRiskServiceTransport):
     def search_uris(self) -> Callable[
             [webrisk.SearchUrisRequest],
             Awaitable[webrisk.SearchUrisResponse]]:
-        r"""Return a callable for the
-        search uris
-          method over gRPC.
+        r"""Return a callable for the search uris method over gRPC.
 
         This method is used to check whether a URI is on a
         given threatList. Multiple threatLists may be searched
@@ -294,9 +290,7 @@ class WebRiskServiceGrpcAsyncIOTransport(WebRiskServiceTransport):
     def search_hashes(self) -> Callable[
             [webrisk.SearchHashesRequest],
             Awaitable[webrisk.SearchHashesResponse]]:
-        r"""Return a callable for the
-        search hashes
-          method over gRPC.
+        r"""Return a callable for the search hashes method over gRPC.
 
         Gets the full hashes that match the requested hash
         prefix. This is used after a hash prefix is looked up in
@@ -327,9 +321,7 @@ class WebRiskServiceGrpcAsyncIOTransport(WebRiskServiceTransport):
     def create_submission(self) -> Callable[
             [webrisk.CreateSubmissionRequest],
             Awaitable[webrisk.Submission]]:
-        r"""Return a callable for the
-        create submission
-          method over gRPC.
+        r"""Return a callable for the create submission method over gRPC.
 
         Creates a Submission of a URI suspected of containing phishing
         content to be reviewed. If the result verifies the existence of

@@ -18,13 +18,17 @@ namespace Google.Cloud.Securitycenter.V1Beta1.Snippets
 {
     using Google.Api.Gax;
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.Securitycenter.V1Beta1;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for TestIamPermissions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void TestIamPermissionsRequestObject()
         {
-            // Snippet: TestIamPermissions(TestIamPermissionsRequest, CallSettings)
             // Create client
             SecurityCenterClient securityCenterClient = SecurityCenterClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.Securitycenter.V1Beta1.Snippets
             };
             // Make the request
             TestIamPermissionsResponse response = securityCenterClient.TestIamPermissions(request);
-            // End snippet
         }
     }
 }

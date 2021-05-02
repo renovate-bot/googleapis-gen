@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedVideoServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetVideoAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetVideoResourceNamesAsync()
         {
-            // Snippet: GetVideoAsync(VideoName, CallSettings)
-            // Additional: GetVideoAsync(VideoName, CancellationToken)
             // Create client
             VideoServiceClient videoServiceClient = await VideoServiceClient.CreateAsync();
             // Initialize request argument(s)
             VideoName resourceName = VideoName.FromCustomerVideo("[CUSTOMER_ID]", "[VIDEO_ID]");
             // Make the request
             Video response = await videoServiceClient.GetVideoAsync(resourceName);
-            // End snippet
         }
     }
 }

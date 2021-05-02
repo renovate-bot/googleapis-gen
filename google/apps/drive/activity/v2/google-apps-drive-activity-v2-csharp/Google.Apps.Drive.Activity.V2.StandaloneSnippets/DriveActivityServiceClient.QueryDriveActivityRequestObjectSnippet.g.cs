@@ -17,21 +17,24 @@
 namespace Google.Apps.Drive.Activity.V2.Snippets
 {
     using Google.Api.Gax;
+    using Google.Apps.Drive.Activity.V2;
     using System;
 
     public sealed partial class GeneratedDriveActivityServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for QueryDriveActivity</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void QueryDriveActivityRequestObject()
         {
-            // Snippet: QueryDriveActivity(QueryDriveActivityRequest, CallSettings)
             // Create client
             DriveActivityServiceClient driveActivityServiceClient = DriveActivityServiceClient.Create();
             // Initialize request argument(s)
             QueryDriveActivityRequest request = new QueryDriveActivityRequest
             {
                 ItemName = "",
-                AncestorName = "",
                 ConsolidationStrategy = new ConsolidationStrategy(),
                 Filter = "",
             };
@@ -69,7 +72,6 @@ namespace Google.Apps.Drive.Activity.V2.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

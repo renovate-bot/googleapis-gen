@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
 {
+    using Google.Cloud.Bigquery.Reservation.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedReservationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MoveAssignmentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MoveAssignmentAsync()
         {
-            // Snippet: MoveAssignmentAsync(string, string, CallSettings)
-            // Additional: MoveAssignmentAsync(string, string, CancellationToken)
             // Create client
             ReservationServiceClient reservationServiceClient = await ReservationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             string destinationId = "projects/[PROJECT]/locations/[LOCATION]/reservations/[RESERVATION]";
             // Make the request
             Assignment response = await reservationServiceClient.MoveAssignmentAsync(name, destinationId);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.resources.types import merchant_center_link
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -45,10 +48,7 @@ class ListMerchantCenterLinksRequest(proto.Message):
             operation.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    customer_id = proto.Field(proto.STRING, number=1)
 
 
 class ListMerchantCenterLinksResponse(proto.Message):
@@ -61,9 +61,7 @@ class ListMerchantCenterLinksResponse(proto.Message):
             requested customer
     """
 
-    merchant_center_links = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    merchant_center_links = proto.RepeatedField(proto.MESSAGE, number=1,
         message=merchant_center_link.MerchantCenterLink,
     )
 
@@ -78,10 +76,7 @@ class GetMerchantCenterLinkRequest(proto.Message):
             Center link.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateMerchantCenterLinkRequest(proto.Message):
@@ -97,19 +92,15 @@ class MutateMerchantCenterLinkRequest(proto.Message):
             link
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operation = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operation = proto.Field(proto.MESSAGE, number=2,
         message='MerchantCenterLinkOperation',
     )
 
 
 class MerchantCenterLinkOperation(proto.Message):
     r"""A single update on a Merchant Center link.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -124,49 +115,37 @@ class MerchantCenterLinkOperation(proto.Message):
             ``customers/{customer_id}/merchantCenterLinks/{merchant_center_id}``
     """
 
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    update_mask = proto.Field(proto.MESSAGE, number=3,
         message=field_mask.FieldMask,
     )
-    update = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='operation',
+    update = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=merchant_center_link.MerchantCenterLink,
     )
-    remove = proto.Field(
-        proto.STRING,
-        number=2,
-        oneof='operation',
-    )
+    remove = proto.Field(proto.STRING, number=2, oneof='operation')
 
 
 class MutateMerchantCenterLinkResponse(proto.Message):
     r"""Response message for Merchant Center link mutate.
+
     Attributes:
         result (google.ads.googleads.v4.services.types.MutateMerchantCenterLinkResult):
             Result for the mutate.
     """
 
-    result = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    result = proto.Field(proto.MESSAGE, number=2,
         message='MutateMerchantCenterLinkResult',
     )
 
 
 class MutateMerchantCenterLinkResult(proto.Message):
     r"""The result for the Merchant Center link mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

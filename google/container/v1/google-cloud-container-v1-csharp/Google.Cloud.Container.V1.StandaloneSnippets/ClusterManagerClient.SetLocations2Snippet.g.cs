@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for SetLocations</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SetLocations2()
         {
-            // Snippet: SetLocations(string, IEnumerable<string>, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Container.V1.Snippets
             IEnumerable<string> locations = new string[] { "", };
             // Make the request
             Operation response = clusterManagerClient.SetLocations(name, locations);
-            // End snippet
         }
     }
 }

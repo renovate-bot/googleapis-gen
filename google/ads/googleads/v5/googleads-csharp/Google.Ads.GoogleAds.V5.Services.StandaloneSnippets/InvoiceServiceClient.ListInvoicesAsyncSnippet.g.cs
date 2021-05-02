@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Enums;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedInvoiceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListInvoicesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListInvoicesAsync()
         {
-            // Snippet: ListInvoicesAsync(string, string, string, MonthOfYearEnum.Types.MonthOfYear, CallSettings)
-            // Additional: ListInvoicesAsync(string, string, string, MonthOfYearEnum.Types.MonthOfYear, CancellationToken)
             // Create client
             InvoiceServiceClient invoiceServiceClient = await InvoiceServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             MonthOfYearEnum.Types.MonthOfYear issueMonth = MonthOfYearEnum.Types.MonthOfYear.Unspecified;
             // Make the request
             ListInvoicesResponse response = await invoiceServiceClient.ListInvoicesAsync(customerId, billingSetup, issueYear, issueMonth);
-            // End snippet
         }
     }
 }

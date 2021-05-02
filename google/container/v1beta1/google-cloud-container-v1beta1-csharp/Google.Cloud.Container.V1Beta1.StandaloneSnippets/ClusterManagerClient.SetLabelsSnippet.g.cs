@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Container.V1Beta1.Snippets
 {
+    using Google.Cloud.Container.V1Beta1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for SetLabels</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SetLabels()
         {
-            // Snippet: SetLabels(string, string, string, IDictionary<string,string>, string, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
             string labelFingerprint = "";
             // Make the request
             Operation response = clusterManagerClient.SetLabels(projectId, zone, clusterId, resourceLabels, labelFingerprint);
-            // End snippet
         }
     }
 }

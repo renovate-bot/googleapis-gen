@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -282,32 +284,52 @@ def test_get_extension_feed_item(transport: str = 'grpc', request_type=extension
         # Designate an appropriate return value for the call.
         call.return_value = extension_feed_item.ExtensionFeedItem(
             resource_name='resource_name_value',
+
             id=205,
+
             extension_type=extension_type.ExtensionTypeEnum.ExtensionType.UNKNOWN,
+
             start_date_time='start_date_time_value',
+
             end_date_time='end_date_time_value',
+
             device=feed_item_target_device.FeedItemTargetDeviceEnum.FeedItemTargetDevice.UNKNOWN,
+
             targeted_geo_target_constant='targeted_geo_target_constant_value',
+
             status=feed_item_status.FeedItemStatusEnum.FeedItemStatus.UNKNOWN,
+
             sitelink_feed_item=extensions.SitelinkFeedItem(link_text='link_text_value'),
+
             targeted_campaign='targeted_campaign_value',
         )
+
         response = client.get_extension_feed_item(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == extension_feed_item_service.GetExtensionFeedItemRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, extension_feed_item.ExtensionFeedItem)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.id == 205
+
     assert response.extension_type == extension_type.ExtensionTypeEnum.ExtensionType.UNKNOWN
+
     assert response.start_date_time == 'start_date_time_value'
+
     assert response.end_date_time == 'end_date_time_value'
+
     assert response.device == feed_item_target_device.FeedItemTargetDeviceEnum.FeedItemTargetDevice.UNKNOWN
+
     assert response.targeted_geo_target_constant == 'targeted_geo_target_constant_value'
+
     assert response.status == feed_item_status.FeedItemStatusEnum.FeedItemStatus.UNKNOWN
 
 
@@ -323,7 +345,6 @@ def test_get_extension_feed_item_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = extension_feed_item_service.GetExtensionFeedItemRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -331,6 +352,7 @@ def test_get_extension_feed_item_field_headers():
             type(client.transport.get_extension_feed_item),
             '__call__') as call:
         call.return_value = extension_feed_item.ExtensionFeedItem()
+
         client.get_extension_feed_item(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -357,6 +379,7 @@ def test_get_extension_feed_item_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = extension_feed_item.ExtensionFeedItem()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_extension_feed_item(
@@ -367,6 +390,7 @@ def test_get_extension_feed_item_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -401,14 +425,17 @@ def test_mutate_extension_feed_items(transport: str = 'grpc', request_type=exten
         # Designate an appropriate return value for the call.
         call.return_value = extension_feed_item_service.MutateExtensionFeedItemsResponse(
         )
+
         response = client.mutate_extension_feed_items(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == extension_feed_item_service.MutateExtensionFeedItemsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, extension_feed_item_service.MutateExtensionFeedItemsResponse)
 
 
@@ -424,7 +451,6 @@ def test_mutate_extension_feed_items_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = extension_feed_item_service.MutateExtensionFeedItemsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -432,6 +458,7 @@ def test_mutate_extension_feed_items_field_headers():
             type(client.transport.mutate_extension_feed_items),
             '__call__') as call:
         call.return_value = extension_feed_item_service.MutateExtensionFeedItemsResponse()
+
         client.mutate_extension_feed_items(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -458,6 +485,7 @@ def test_mutate_extension_feed_items_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = extension_feed_item_service.MutateExtensionFeedItemsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_extension_feed_items(
@@ -469,7 +497,9 @@ def test_mutate_extension_feed_items_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [extension_feed_item_service.ExtensionFeedItemOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -552,7 +582,7 @@ def test_extension_feed_item_service_base_transport():
     methods = (
         'get_extension_feed_item',
         'mutate_extension_feed_items',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -704,6 +734,7 @@ def test_extension_feed_item_service_transport_channel_mtls_with_adc(
 def test_ad_group_path():
     customer_id = "squid"
     ad_group_id = "clam"
+
     expected = "customers/{customer_id}/adGroups/{ad_group_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, )
     actual = ExtensionFeedItemServiceClient.ad_group_path(customer_id, ad_group_id)
     assert expected == actual
@@ -711,8 +742,9 @@ def test_ad_group_path():
 
 def test_parse_ad_group_path():
     expected = {
-        "customer_id": "whelk",
-        "ad_group_id": "octopus",
+    "customer_id": "whelk",
+    "ad_group_id": "octopus",
+
     }
     path = ExtensionFeedItemServiceClient.ad_group_path(**expected)
 
@@ -723,6 +755,7 @@ def test_parse_ad_group_path():
 def test_asset_path():
     customer_id = "oyster"
     asset_id = "nudibranch"
+
     expected = "customers/{customer_id}/assets/{asset_id}".format(customer_id=customer_id, asset_id=asset_id, )
     actual = ExtensionFeedItemServiceClient.asset_path(customer_id, asset_id)
     assert expected == actual
@@ -730,8 +763,9 @@ def test_asset_path():
 
 def test_parse_asset_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "asset_id": "mussel",
+    "customer_id": "cuttlefish",
+    "asset_id": "mussel",
+
     }
     path = ExtensionFeedItemServiceClient.asset_path(**expected)
 
@@ -742,6 +776,7 @@ def test_parse_asset_path():
 def test_campaign_path():
     customer_id = "winkle"
     campaign_id = "nautilus"
+
     expected = "customers/{customer_id}/campaigns/{campaign_id}".format(customer_id=customer_id, campaign_id=campaign_id, )
     actual = ExtensionFeedItemServiceClient.campaign_path(customer_id, campaign_id)
     assert expected == actual
@@ -749,8 +784,9 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-        "customer_id": "scallop",
-        "campaign_id": "abalone",
+    "customer_id": "scallop",
+    "campaign_id": "abalone",
+
     }
     path = ExtensionFeedItemServiceClient.campaign_path(**expected)
 
@@ -761,6 +797,7 @@ def test_parse_campaign_path():
 def test_extension_feed_item_path():
     customer_id = "squid"
     feed_item_id = "clam"
+
     expected = "customers/{customer_id}/extensionFeedItems/{feed_item_id}".format(customer_id=customer_id, feed_item_id=feed_item_id, )
     actual = ExtensionFeedItemServiceClient.extension_feed_item_path(customer_id, feed_item_id)
     assert expected == actual
@@ -768,8 +805,9 @@ def test_extension_feed_item_path():
 
 def test_parse_extension_feed_item_path():
     expected = {
-        "customer_id": "whelk",
-        "feed_item_id": "octopus",
+    "customer_id": "whelk",
+    "feed_item_id": "octopus",
+
     }
     path = ExtensionFeedItemServiceClient.extension_feed_item_path(**expected)
 
@@ -779,6 +817,7 @@ def test_parse_extension_feed_item_path():
 
 def test_geo_target_constant_path():
     criterion_id = "oyster"
+
     expected = "geoTargetConstants/{criterion_id}".format(criterion_id=criterion_id, )
     actual = ExtensionFeedItemServiceClient.geo_target_constant_path(criterion_id)
     assert expected == actual
@@ -786,7 +825,8 @@ def test_geo_target_constant_path():
 
 def test_parse_geo_target_constant_path():
     expected = {
-        "criterion_id": "nudibranch",
+    "criterion_id": "nudibranch",
+
     }
     path = ExtensionFeedItemServiceClient.geo_target_constant_path(**expected)
 
@@ -796,6 +836,7 @@ def test_parse_geo_target_constant_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ExtensionFeedItemServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -803,7 +844,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "mussel",
+    "billing_account": "mussel",
+
     }
     path = ExtensionFeedItemServiceClient.common_billing_account_path(**expected)
 
@@ -813,6 +855,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ExtensionFeedItemServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -820,7 +863,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nautilus",
+    "folder": "nautilus",
+
     }
     path = ExtensionFeedItemServiceClient.common_folder_path(**expected)
 
@@ -830,6 +874,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ExtensionFeedItemServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -837,7 +882,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "abalone",
+    "organization": "abalone",
+
     }
     path = ExtensionFeedItemServiceClient.common_organization_path(**expected)
 
@@ -847,6 +893,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
+
     expected = "projects/{project}".format(project=project, )
     actual = ExtensionFeedItemServiceClient.common_project_path(project)
     assert expected == actual
@@ -854,7 +901,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "clam",
+    "project": "clam",
+
     }
     path = ExtensionFeedItemServiceClient.common_project_path(**expected)
 
@@ -865,6 +913,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ExtensionFeedItemServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -872,8 +921,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "oyster",
-        "location": "nudibranch",
+    "project": "oyster",
+    "location": "nudibranch",
+
     }
     path = ExtensionFeedItemServiceClient.common_location_path(**expected)
 

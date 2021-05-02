@@ -17,14 +17,18 @@
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Dialogflow.V2;
     using System;
 
     public sealed partial class GeneratedAnswerRecordsClientStandaloneSnippets
     {
         /// <summary>Snippet for ListAnswerRecords</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListAnswerRecords()
         {
-            // Snippet: ListAnswerRecords(string, string, int?, CallSettings)
             // Create client
             AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.Create();
             // Initialize request argument(s)
@@ -63,7 +67,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

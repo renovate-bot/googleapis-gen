@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Iot.V1.Snippets
 {
+    using Google.Cloud.Iot.V1;
+
     public sealed partial class GeneratedDeviceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteDevice</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteDevice()
         {
-            // Snippet: DeleteDevice(string, CallSettings)
             // Create client
             DeviceManagerClient deviceManagerClient = DeviceManagerClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/registries/[REGISTRY]/devices/[DEVICE]";
             // Make the request
             deviceManagerClient.DeleteDevice(name);
-            // End snippet
         }
     }
 }

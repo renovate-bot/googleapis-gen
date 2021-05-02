@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v5.resources.types import geo_target_constant as gagr_geo_target_constant
 
@@ -40,10 +43,7 @@ class GetGeoTargetConstantRequest(proto.Message):
             constant to fetch.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class SuggestGeoTargetConstantsRequest(proto.Message):
@@ -66,51 +66,32 @@ class SuggestGeoTargetConstantsRequest(proto.Message):
             The geo target constant resource names to
             filter by.
     """
-
     class LocationNames(proto.Message):
         r"""A list of location names.
+
         Attributes:
             names (Sequence[str]):
                 A list of location names.
         """
 
-        names = proto.RepeatedField(
-            proto.STRING,
-            number=2,
-        )
+        names = proto.RepeatedField(proto.STRING, number=2)
 
     class GeoTargets(proto.Message):
         r"""A list of geo target constant resource names.
+
         Attributes:
             geo_target_constants (Sequence[str]):
                 A list of geo target constant resource names.
         """
 
-        geo_target_constants = proto.RepeatedField(
-            proto.STRING,
-            number=2,
-        )
+        geo_target_constants = proto.RepeatedField(proto.STRING, number=2)
 
-    locale = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
-    country_code = proto.Field(
-        proto.STRING,
-        number=7,
-        optional=True,
-    )
-    location_names = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='query',
+    locale = proto.Field(proto.STRING, number=6, optional=True)
+    country_code = proto.Field(proto.STRING, number=7, optional=True)
+    location_names = proto.Field(proto.MESSAGE, number=1, oneof='query',
         message=LocationNames,
     )
-    geo_targets = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='query',
+    geo_targets = proto.Field(proto.MESSAGE, number=2, oneof='query',
         message=GeoTargets,
     )
 
@@ -124,15 +105,14 @@ class SuggestGeoTargetConstantsResponse(proto.Message):
             Geo target constant suggestions.
     """
 
-    geo_target_constant_suggestions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    geo_target_constant_suggestions = proto.RepeatedField(proto.MESSAGE, number=1,
         message='GeoTargetConstantSuggestion',
     )
 
 
 class GeoTargetConstantSuggestion(proto.Message):
     r"""A geo target constant suggestion.
+
     Attributes:
         locale (str):
             The language this GeoTargetConstantSuggestion
@@ -156,29 +136,13 @@ class GeoTargetConstantSuggestion(proto.Message):
             constant.
     """
 
-    locale = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
-    reach = proto.Field(
-        proto.INT64,
-        number=7,
-        optional=True,
-    )
-    search_term = proto.Field(
-        proto.STRING,
-        number=8,
-        optional=True,
-    )
-    geo_target_constant = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    locale = proto.Field(proto.STRING, number=6, optional=True)
+    reach = proto.Field(proto.INT64, number=7, optional=True)
+    search_term = proto.Field(proto.STRING, number=8, optional=True)
+    geo_target_constant = proto.Field(proto.MESSAGE, number=4,
         message=gagr_geo_target_constant.GeoTargetConstant,
     )
-    geo_target_constant_parents = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+    geo_target_constant_parents = proto.RepeatedField(proto.MESSAGE, number=5,
         message=gagr_geo_target_constant.GeoTargetConstant,
     )
 

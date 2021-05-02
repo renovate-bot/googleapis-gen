@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Gaming.V1Beta.Snippets
 {
+    using Google.Cloud.Gaming.V1Beta;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedRealmsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteRealm</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteRealmRequestObject()
         {
-            // Snippet: DeleteRealm(DeleteRealmRequest, CallSettings)
             // Create client
             RealmsServiceClient realmsServiceClient = RealmsServiceClient.Create();
             // Initialize request argument(s)
@@ -50,7 +54,6 @@ namespace Google.Cloud.Gaming.V1Beta.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

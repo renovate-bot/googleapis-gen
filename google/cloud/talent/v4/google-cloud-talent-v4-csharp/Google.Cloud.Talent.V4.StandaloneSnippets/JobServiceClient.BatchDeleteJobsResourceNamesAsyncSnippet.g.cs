@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Talent.V4.Snippets
 {
+    using Google.Cloud.Talent.V4;
     using Google.LongRunning;
     using System.Collections.Generic;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Talent.V4.Snippets
     public sealed partial class GeneratedJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchDeleteJobsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchDeleteJobsResourceNamesAsync()
         {
-            // Snippet: BatchDeleteJobsAsync(TenantName, IEnumerable<JobName>, CallSettings)
-            // Additional: BatchDeleteJobsAsync(TenantName, IEnumerable<JobName>, CancellationToken)
             // Create client
             JobServiceClient jobServiceClient = await JobServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -53,7 +56,6 @@ namespace Google.Cloud.Talent.V4.Snippets
                 // If it has completed, then access the result
                 BatchDeleteJobsResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

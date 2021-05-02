@@ -16,6 +16,7 @@
 
 namespace Google.Ads.Admob.V1.Snippets
 {
+    using Google.Ads.Admob.V1;
     using Google.Api.Gax;
     using System;
     using System.Linq;
@@ -23,10 +24,13 @@ namespace Google.Ads.Admob.V1.Snippets
 
     public sealed partial class GeneratedAdMobApiClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListPublisherAccounts</summary>
+        /// <summary>Snippet for ListPublisherAccountsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListPublisherAccountsRequestObjectAsync()
         {
-            // Snippet: ListPublisherAccountsAsync(ListPublisherAccountsRequest, CallSettings)
             // Create client
             AdMobApiClient adMobApiClient = await AdMobApiClient.CreateAsync();
             // Initialize request argument(s)
@@ -65,7 +69,6 @@ namespace Google.Ads.Admob.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

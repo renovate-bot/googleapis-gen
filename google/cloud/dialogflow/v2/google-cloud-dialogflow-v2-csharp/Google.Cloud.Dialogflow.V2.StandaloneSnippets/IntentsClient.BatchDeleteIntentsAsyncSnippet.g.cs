@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Collections.Generic;
@@ -24,10 +25,12 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
     public sealed partial class GeneratedIntentsClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchDeleteIntentsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchDeleteIntentsAsync()
         {
-            // Snippet: BatchDeleteIntentsAsync(string, IEnumerable<Intent>, CallSettings)
-            // Additional: BatchDeleteIntentsAsync(string, IEnumerable<Intent>, CancellationToken)
             // Create client
             IntentsClient intentsClient = await IntentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -51,7 +54,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

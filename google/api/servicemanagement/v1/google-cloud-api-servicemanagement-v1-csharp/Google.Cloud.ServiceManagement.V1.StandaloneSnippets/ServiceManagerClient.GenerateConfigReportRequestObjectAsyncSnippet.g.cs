@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.ServiceManagement.V1.Snippets
 {
+    using Google.Cloud.ServiceManagement.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServiceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateConfigReportAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GenerateConfigReportRequestObjectAsync()
         {
-            // Snippet: GenerateConfigReportAsync(GenerateConfigReportRequest, CallSettings)
-            // Additional: GenerateConfigReportAsync(GenerateConfigReportRequest, CancellationToken)
             // Create client
             ServiceManagerClient serviceManagerClient = await ServiceManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.ServiceManagement.V1.Snippets
             };
             // Make the request
             GenerateConfigReportResponse response = await serviceManagerClient.GenerateConfigReportAsync(request);
-            // End snippet
         }
     }
 }

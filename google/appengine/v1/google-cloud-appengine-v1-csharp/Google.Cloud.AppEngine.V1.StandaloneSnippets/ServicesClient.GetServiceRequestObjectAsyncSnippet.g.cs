@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServicesClientStandaloneSnippets
     {
         /// <summary>Snippet for GetServiceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetServiceRequestObjectAsync()
         {
-            // Snippet: GetServiceAsync(GetServiceRequest, CallSettings)
-            // Additional: GetServiceAsync(GetServiceRequest, CancellationToken)
             // Create client
             ServicesClient servicesClient = await ServicesClient.CreateAsync();
             // Initialize request argument(s)
             GetServiceRequest request = new GetServiceRequest { Name = "", };
             // Make the request
             Service response = await servicesClient.GetServiceAsync(request);
-            // End snippet
         }
     }
 }

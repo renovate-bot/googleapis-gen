@@ -17,15 +17,18 @@
 namespace Google.Cloud.Bigquery.Storage.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Bigquery.Storage.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigQueryStorageClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateReadSessionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateReadSessionResourceNamesAsync()
         {
-            // Snippet: CreateReadSessionAsync(TableReference, ProjectName, int, CallSettings)
-            // Additional: CreateReadSessionAsync(TableReference, ProjectName, int, CancellationToken)
             // Create client
             BigQueryStorageClient bigQueryStorageClient = await BigQueryStorageClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Bigquery.Storage.V1Beta1.Snippets
             int requestedStreams = 0;
             // Make the request
             ReadSession response = await bigQueryStorageClient.CreateReadSessionAsync(tableReference, parent, requestedStreams);
-            // End snippet
         }
     }
 }

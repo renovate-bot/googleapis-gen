@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIntentsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateIntentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateIntent1Async()
         {
-            // Snippet: UpdateIntentAsync(Intent, FieldMask, CallSettings)
-            // Additional: UpdateIntentAsync(Intent, FieldMask, CancellationToken)
             // Create client
             IntentsClient intentsClient = await IntentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Intent response = await intentsClient.UpdateIntentAsync(intent, updateMask);
-            // End snippet
         }
     }
 }

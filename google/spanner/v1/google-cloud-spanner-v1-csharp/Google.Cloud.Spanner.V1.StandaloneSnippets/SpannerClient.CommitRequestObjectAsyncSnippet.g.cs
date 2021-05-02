@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Spanner.V1.Snippets
 {
+    using Google.Cloud.Spanner.V1;
     using Google.Protobuf;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for CommitAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CommitRequestObjectAsync()
         {
-            // Snippet: CommitAsync(CommitRequest, CallSettings)
-            // Additional: CommitAsync(CommitRequest, CancellationToken)
             // Create client
             SpannerClient spannerClient = await SpannerClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,14 +36,12 @@ namespace Google.Cloud.Spanner.V1.Snippets
             {
                 SessionAsSessionName = SessionName.FromProjectInstanceDatabaseSession("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]"),
                 TransactionId = ByteString.Empty,
-                SingleUseTransaction = new TransactionOptions(),
                 Mutations = { new Mutation(), },
                 ReturnCommitStats = false,
                 RequestOptions = new RequestOptions(),
             };
             // Make the request
             CommitResponse response = await spannerClient.CommitAsync(request);
-            // End snippet
         }
     }
 }

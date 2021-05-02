@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -32,6 +34,7 @@ from google.cloud.talent_v4.types import company
 from google.cloud.talent_v4.types import company as gct_company
 from google.cloud.talent_v4.types import company_service
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import CompanyServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import CompanyServiceGrpcAsyncIOTransport
 from .client import CompanyServiceClient
@@ -51,14 +54,19 @@ class CompanyServiceAsyncClient:
     parse_company_path = staticmethod(CompanyServiceClient.parse_company_path)
     tenant_path = staticmethod(CompanyServiceClient.tenant_path)
     parse_tenant_path = staticmethod(CompanyServiceClient.parse_tenant_path)
+
     common_billing_account_path = staticmethod(CompanyServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(CompanyServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(CompanyServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(CompanyServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(CompanyServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(CompanyServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(CompanyServiceClient.common_project_path)
     parse_common_project_path = staticmethod(CompanyServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(CompanyServiceClient.common_location_path)
     parse_common_location_path = staticmethod(CompanyServiceClient.parse_common_location_path)
 
@@ -143,6 +151,7 @@ class CompanyServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = CompanyServiceClient(
             credentials=credentials,
             transport=transport,
@@ -164,8 +173,7 @@ class CompanyServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.talent_v4.types.CreateCompanyRequest`):
-                The request object.
-                The Request of the CreateCompany
+                The request object. The Request of the CreateCompany
                 method.
             parent (:class:`str`):
                 Required. Resource name of the tenant under which the
@@ -183,6 +191,7 @@ class CompanyServiceAsyncClient:
                 This corresponds to the ``company`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -211,6 +220,7 @@ class CompanyServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if company is not None:
@@ -255,8 +265,7 @@ class CompanyServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.talent_v4.types.GetCompanyRequest`):
-                The request object.
-                Request for getting a company by
+                The request object. Request for getting a company by
                 name.
             name (:class:`str`):
                 Required. The resource name of the company to be
@@ -270,6 +279,7 @@ class CompanyServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -298,6 +308,7 @@ class CompanyServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -306,7 +317,10 @@ class CompanyServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_company,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -348,8 +362,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.talent_v4.types.UpdateCompanyRequest`):
-                The request object.
-                Request for updating a specified
+                The request object. Request for updating a specified
                 company.
             company (:class:`google.cloud.talent_v4.types.Company`):
                 Required. The company resource to
@@ -375,6 +388,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -403,6 +417,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if company is not None:
             request.company = company
         if update_mask is not None:
@@ -449,8 +464,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.talent_v4.types.DeleteCompanyRequest`):
-                The request object.
-                Request to delete a company.
+                The request object. Request to delete a company.
             name (:class:`str`):
                 Required. The resource name of the company to be
                 deleted.
@@ -462,6 +476,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -480,6 +495,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -488,7 +504,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_company,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -526,8 +545,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.talent_v4.types.ListCompaniesRequest`):
-                The request object.
-                List companies for which the client
+                The request object. List companies for which the client
                 has ACL visibility.
             parent (:class:`str`):
                 Required. Resource name of the tenant under which the
@@ -540,6 +558,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -566,6 +585,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -574,7 +594,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_companies,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -611,6 +634,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

@@ -16,14 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedCustomerExtensionSettingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCustomerExtensionSettings</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateCustomerExtensionSettings()
         {
-            // Snippet: MutateCustomerExtensionSettings(string, IEnumerable<CustomerExtensionSettingOperation>, CallSettings)
             // Create client
             CustomerExtensionSettingServiceClient customerExtensionSettingServiceClient = CustomerExtensionSettingServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             MutateCustomerExtensionSettingsResponse response = customerExtensionSettingServiceClient.MutateCustomerExtensionSettings(customerId, operations);
-            // End snippet
         }
     }
 }

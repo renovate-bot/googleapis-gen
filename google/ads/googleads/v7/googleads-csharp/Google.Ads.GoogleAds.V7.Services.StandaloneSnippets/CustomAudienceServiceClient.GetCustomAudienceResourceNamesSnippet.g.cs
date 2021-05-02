@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedCustomAudienceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomAudience</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCustomAudienceResourceNames()
         {
-            // Snippet: GetCustomAudience(CustomAudienceName, CallSettings)
             // Create client
             CustomAudienceServiceClient customAudienceServiceClient = CustomAudienceServiceClient.Create();
             // Initialize request argument(s)
             CustomAudienceName resourceName = CustomAudienceName.FromCustomerCustomAudience("[CUSTOMER_ID]", "[CUSTOM_AUDIENCE_ID]");
             // Make the request
             CustomAudience response = customAudienceServiceClient.GetCustomAudience(resourceName);
-            // End snippet
         }
     }
 }

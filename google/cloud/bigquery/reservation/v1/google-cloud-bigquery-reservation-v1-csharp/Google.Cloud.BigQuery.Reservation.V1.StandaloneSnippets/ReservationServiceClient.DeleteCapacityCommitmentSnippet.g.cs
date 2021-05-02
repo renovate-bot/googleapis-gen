@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
 {
+    using Google.Cloud.BigQuery.Reservation.V1;
+
     public sealed partial class GeneratedReservationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteCapacityCommitment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteCapacityCommitment()
         {
-            // Snippet: DeleteCapacityCommitment(string, CallSettings)
             // Create client
             ReservationServiceClient reservationServiceClient = ReservationServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/capacityCommitments/[CAPACITY_COMMITMENT]";
             // Make the request
             reservationServiceClient.DeleteCapacityCommitment(name);
-            // End snippet
         }
     }
 }

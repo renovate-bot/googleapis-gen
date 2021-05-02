@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.ServiceManagement.V1.Snippets
 {
+    using Google.Cloud.ServiceManagement.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServiceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetServiceRolloutAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetServiceRolloutAsync()
         {
-            // Snippet: GetServiceRolloutAsync(string, string, CallSettings)
-            // Additional: GetServiceRolloutAsync(string, string, CancellationToken)
             // Create client
             ServiceManagerClient serviceManagerClient = await ServiceManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.ServiceManagement.V1.Snippets
             string rolloutId = "";
             // Make the request
             Rollout response = await serviceManagerClient.GetServiceRolloutAsync(serviceName, rolloutId);
-            // End snippet
         }
     }
 }

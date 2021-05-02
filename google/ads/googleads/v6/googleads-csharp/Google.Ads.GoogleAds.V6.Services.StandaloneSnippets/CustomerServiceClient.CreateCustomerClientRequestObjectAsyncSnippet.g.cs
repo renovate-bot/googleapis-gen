@@ -18,15 +18,18 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Enums;
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomerServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateCustomerClientAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateCustomerClientRequestObjectAsync()
         {
-            // Snippet: CreateCustomerClientAsync(CreateCustomerClientRequest, CallSettings)
-            // Additional: CreateCustomerClientAsync(CreateCustomerClientRequest, CancellationToken)
             // Create client
             CustomerServiceClient customerServiceClient = await CustomerServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -39,7 +42,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             CreateCustomerClientResponse response = await customerServiceClient.CreateCustomerClientAsync(request);
-            // End snippet
         }
     }
 }

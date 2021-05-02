@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,21 +14,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.trace_v1.types import trace
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import TraceServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import TraceServiceGrpcTransport
 
@@ -82,15 +84,13 @@ class TraceServiceGrpcAsyncIOTransport(TraceServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -110,8 +110,7 @@ class TraceServiceGrpcAsyncIOTransport(TraceServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -169,6 +168,7 @@ class TraceServiceGrpcAsyncIOTransport(TraceServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -231,9 +231,7 @@ class TraceServiceGrpcAsyncIOTransport(TraceServiceTransport):
     def list_traces(self) -> Callable[
             [trace.ListTracesRequest],
             Awaitable[trace.ListTracesResponse]]:
-        r"""Return a callable for the
-        list traces
-          method over gRPC.
+        r"""Return a callable for the list traces method over gRPC.
 
         Returns of a list of traces that match the specified
         filter conditions.
@@ -260,9 +258,7 @@ class TraceServiceGrpcAsyncIOTransport(TraceServiceTransport):
     def get_trace(self) -> Callable[
             [trace.GetTraceRequest],
             Awaitable[trace.Trace]]:
-        r"""Return a callable for the
-        get trace
-          method over gRPC.
+        r"""Return a callable for the get trace method over gRPC.
 
         Gets a single trace by its ID.
 
@@ -288,9 +284,7 @@ class TraceServiceGrpcAsyncIOTransport(TraceServiceTransport):
     def patch_traces(self) -> Callable[
             [trace.PatchTracesRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        patch traces
-          method over gRPC.
+        r"""Return a callable for the patch traces method over gRPC.
 
         Sends new traces to Stackdriver Trace or updates
         existing traces. If the ID of a trace that you send

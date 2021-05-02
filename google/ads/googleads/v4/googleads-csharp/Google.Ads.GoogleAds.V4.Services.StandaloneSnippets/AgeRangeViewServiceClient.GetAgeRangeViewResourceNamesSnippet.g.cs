@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedAgeRangeViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAgeRangeView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAgeRangeViewResourceNames()
         {
-            // Snippet: GetAgeRangeView(AgeRangeViewName, CallSettings)
             // Create client
             AgeRangeViewServiceClient ageRangeViewServiceClient = AgeRangeViewServiceClient.Create();
             // Initialize request argument(s)
             AgeRangeViewName resourceName = AgeRangeViewName.FromCustomerAgeRangeView("[CUSTOMER]", "[AGE_RANGE_VIEW]");
             // Make the request
             AgeRangeView response = ageRangeViewServiceClient.GetAgeRangeView(resourceName);
-            // End snippet
         }
     }
 }

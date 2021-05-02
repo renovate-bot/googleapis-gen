@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Gaming.V1.Snippets
 {
+    using Google.Cloud.Gaming.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedGameServerClustersServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for PreviewCreateGameServerCluster</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void PreviewCreateGameServerClusterRequestObject()
         {
-            // Snippet: PreviewCreateGameServerCluster(PreviewCreateGameServerClusterRequest, CallSettings)
             // Create client
             GameServerClustersServiceClient gameServerClustersServiceClient = GameServerClustersServiceClient.Create();
             // Initialize request argument(s)
@@ -36,7 +40,6 @@ namespace Google.Cloud.Gaming.V1.Snippets
             };
             // Make the request
             PreviewCreateGameServerClusterResponse response = gameServerClustersServiceClient.PreviewCreateGameServerCluster(request);
-            // End snippet
         }
     }
 }

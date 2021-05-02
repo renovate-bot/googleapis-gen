@@ -17,16 +17,20 @@
 namespace Google.Cloud.Gaming.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Gaming.V1;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRealmsServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListRealms</summary>
+        /// <summary>Snippet for ListRealmsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListRealmsAsync()
         {
-            // Snippet: ListRealmsAsync(string, string, int?, CallSettings)
             // Create client
             RealmsServiceClient realmsServiceClient = await RealmsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -65,7 +69,6 @@ namespace Google.Cloud.Gaming.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

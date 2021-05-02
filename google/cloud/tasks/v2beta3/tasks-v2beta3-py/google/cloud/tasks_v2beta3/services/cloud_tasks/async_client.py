@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -38,6 +40,7 @@ from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import CloudTasksTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import CloudTasksGrpcAsyncIOTransport
 from .client import CloudTasksClient
@@ -57,14 +60,19 @@ class CloudTasksAsyncClient:
     parse_queue_path = staticmethod(CloudTasksClient.parse_queue_path)
     task_path = staticmethod(CloudTasksClient.task_path)
     parse_task_path = staticmethod(CloudTasksClient.parse_task_path)
+
     common_billing_account_path = staticmethod(CloudTasksClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(CloudTasksClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(CloudTasksClient.common_folder_path)
     parse_common_folder_path = staticmethod(CloudTasksClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(CloudTasksClient.common_organization_path)
     parse_common_organization_path = staticmethod(CloudTasksClient.parse_common_organization_path)
+
     common_project_path = staticmethod(CloudTasksClient.common_project_path)
     parse_common_project_path = staticmethod(CloudTasksClient.parse_common_project_path)
+
     common_location_path = staticmethod(CloudTasksClient.common_location_path)
     parse_common_location_path = staticmethod(CloudTasksClient.parse_common_location_path)
 
@@ -149,6 +157,7 @@ class CloudTasksAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = CloudTasksClient(
             credentials=credentials,
             transport=transport,
@@ -170,8 +179,7 @@ class CloudTasksAsyncClient:
 
         Args:
             request (:class:`google.cloud.tasks_v2beta3.types.ListQueuesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ListQueues][google.cloud.tasks.v2beta3.CloudTasks.ListQueues].
             parent (:class:`str`):
                 Required. The location name. For example:
@@ -180,6 +188,7 @@ class CloudTasksAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -207,6 +216,7 @@ class CloudTasksAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -215,7 +225,10 @@ class CloudTasksAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_queues,
             default_retry=retries.Retry(
-initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -265,8 +278,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta3.types.GetQueueRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [GetQueue][google.cloud.tasks.v2beta3.CloudTasks.GetQueue].
             name (:class:`str`):
                 Required. The resource name of the queue. For example:
@@ -275,6 +287,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -303,6 +316,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -311,7 +325,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_queue,
             default_retry=retries.Retry(
-initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -363,8 +380,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta3.types.CreateQueueRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue].
             parent (:class:`str`):
                 Required. The location name in which the queue will be
@@ -387,6 +403,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``queue`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -415,6 +432,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if queue is not None:
@@ -473,8 +491,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta3.types.UpdateQueueRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue].
             queue (:class:`google.cloud.tasks_v2beta3.types.Queue`):
                 Required. The queue to create or update.
@@ -501,6 +518,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -529,6 +547,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if queue is not None:
             request.queue = queue
         if update_mask is not None:
@@ -584,8 +603,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta3.types.DeleteQueueRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DeleteQueue][google.cloud.tasks.v2beta3.CloudTasks.DeleteQueue].
             name (:class:`str`):
                 Required. The queue name. For example:
@@ -594,6 +612,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -612,6 +631,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -620,7 +640,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_queue,
             default_retry=retries.Retry(
-initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -663,8 +686,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta3.types.PurgeQueueRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue].
             name (:class:`str`):
                 Required. The queue name. For example:
@@ -673,6 +695,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -701,6 +724,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -750,8 +774,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta3.types.PauseQueueRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue].
             name (:class:`str`):
                 Required. The queue name. For example:
@@ -760,6 +783,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -788,6 +812,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -844,8 +869,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta3.types.ResumeQueueRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue].
             name (:class:`str`):
                 Required. The queue name. For example:
@@ -854,6 +878,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -882,6 +907,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -932,8 +958,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -944,6 +969,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1017,10 +1043,11 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.GetIamPolicyRequest(**request)
+
         elif not request:
             request = iam_policy.GetIamPolicyRequest(resource=resource, )
 
@@ -1029,7 +1056,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_iam_policy,
             default_retry=retries.Retry(
-initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1082,8 +1112,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1094,6 +1123,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1167,10 +1197,11 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.SetIamPolicyRequest(**request)
+
         elif not request:
             request = iam_policy.SetIamPolicyRequest(resource=resource, )
 
@@ -1222,8 +1253,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -1243,6 +1273,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1261,10 +1292,11 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.TestIamPermissionsRequest(**request)
+
         elif not request:
             request = iam_policy.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
 
@@ -1273,7 +1305,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.test_iam_permissions,
             default_retry=retries.Retry(
-initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1323,8 +1358,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta3.types.ListTasksRequest`):
-                The request object.
-                Request message for listing tasks
+                The request object. Request message for listing tasks
                 using
                 [ListTasks][google.cloud.tasks.v2beta3.CloudTasks.ListTasks].
             parent (:class:`str`):
@@ -1334,6 +1368,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1361,6 +1396,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -1369,7 +1405,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_tasks,
             default_retry=retries.Retry(
-initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1419,8 +1458,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta3.types.GetTaskRequest`):
-                The request object.
-                Request message for getting a task
+                The request object. Request message for getting a task
                 using
                 [GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
             name (:class:`str`):
@@ -1430,6 +1468,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1452,6 +1491,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1460,7 +1500,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_task,
             default_retry=retries.Retry(
-initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1507,8 +1550,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta3.types.CreateTaskRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
             parent (:class:`str`):
                 Required. The queue name. For example:
@@ -1565,6 +1607,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``task`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1587,6 +1630,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if task is not None:
@@ -1634,8 +1678,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta3.types.DeleteTaskRequest`):
-                The request object.
-                Request message for deleting a task
+                The request object. Request message for deleting a task
                 using
                 [DeleteTask][google.cloud.tasks.v2beta3.CloudTasks.DeleteTask].
             name (:class:`str`):
@@ -1645,6 +1688,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1663,6 +1707,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1671,7 +1716,10 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_task,
             default_retry=retries.Retry(
-initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1736,8 +1784,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.tasks_v2beta3.types.RunTaskRequest`):
-                The request object.
-                Request message for forcing a task
+                The request object. Request message for forcing a task
                 to run now using
                 [RunTask][google.cloud.tasks.v2beta3.CloudTasks.RunTask].
             name (:class:`str`):
@@ -1747,6 +1794,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1769,6 +1817,7 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1798,6 +1847,8 @@ initial=0.1,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

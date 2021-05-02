@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Iot.V1.Snippets
 {
+    using Google.Cloud.Iot.V1;
     using Google.Protobuf;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDeviceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for ModifyCloudToDeviceConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ModifyCloudToDeviceConfigAsync()
         {
-            // Snippet: ModifyCloudToDeviceConfigAsync(string, ByteString, CallSettings)
-            // Additional: ModifyCloudToDeviceConfigAsync(string, ByteString, CancellationToken)
             // Create client
             DeviceManagerClient deviceManagerClient = await DeviceManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Iot.V1.Snippets
             ByteString binaryData = ByteString.Empty;
             // Make the request
             DeviceConfig response = await deviceManagerClient.ModifyCloudToDeviceConfigAsync(name, binaryData);
-            // End snippet
         }
     }
 }

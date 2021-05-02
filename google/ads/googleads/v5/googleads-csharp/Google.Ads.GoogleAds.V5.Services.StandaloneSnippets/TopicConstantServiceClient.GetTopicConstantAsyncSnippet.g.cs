@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTopicConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTopicConstantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTopicConstantAsync()
         {
-            // Snippet: GetTopicConstantAsync(string, CallSettings)
-            // Additional: GetTopicConstantAsync(string, CancellationToken)
             // Create client
             TopicConstantServiceClient topicConstantServiceClient = await TopicConstantServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "topicConstants/[TOPIC_CONSTANT]";
             // Make the request
             TopicConstant response = await topicConstantServiceClient.GetTopicConstantAsync(resourceName);
-            // End snippet
         }
     }
 }

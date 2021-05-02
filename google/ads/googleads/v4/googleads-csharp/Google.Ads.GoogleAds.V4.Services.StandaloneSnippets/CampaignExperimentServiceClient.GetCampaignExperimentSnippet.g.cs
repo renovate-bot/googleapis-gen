@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedCampaignExperimentServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignExperiment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCampaignExperiment()
         {
-            // Snippet: GetCampaignExperiment(string, CallSettings)
             // Create client
             CampaignExperimentServiceClient campaignExperimentServiceClient = CampaignExperimentServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/campaignExperiments/[CAMPAIGN_EXPERIMENT]";
             // Make the request
             CampaignExperiment response = campaignExperimentServiceClient.GetCampaignExperiment(resourceName);
-            // End snippet
         }
     }
 }

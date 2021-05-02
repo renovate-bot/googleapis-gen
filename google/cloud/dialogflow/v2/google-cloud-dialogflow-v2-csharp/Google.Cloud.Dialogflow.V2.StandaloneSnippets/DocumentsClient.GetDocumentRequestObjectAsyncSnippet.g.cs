@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDocumentsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDocumentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetDocumentRequestObjectAsync()
         {
-            // Snippet: GetDocumentAsync(GetDocumentRequest, CallSettings)
-            // Additional: GetDocumentAsync(GetDocumentRequest, CancellationToken)
             // Create client
             DocumentsClient documentsClient = await DocumentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             };
             // Make the request
             Document response = await documentsClient.GetDocumentAsync(request);
-            // End snippet
         }
     }
 }

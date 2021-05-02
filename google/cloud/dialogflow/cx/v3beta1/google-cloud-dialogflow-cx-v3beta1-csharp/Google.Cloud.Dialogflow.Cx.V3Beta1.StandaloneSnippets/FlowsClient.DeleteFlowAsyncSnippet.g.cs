@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFlowsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteFlowAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteFlowAsync()
         {
-            // Snippet: DeleteFlowAsync(string, CallSettings)
-            // Additional: DeleteFlowAsync(string, CancellationToken)
             // Create client
             FlowsClient flowsClient = await FlowsClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/agents/[AGENT]/flows/[FLOW]";
             // Make the request
             await flowsClient.DeleteFlowAsync(name);
-            // End snippet
         }
     }
 }

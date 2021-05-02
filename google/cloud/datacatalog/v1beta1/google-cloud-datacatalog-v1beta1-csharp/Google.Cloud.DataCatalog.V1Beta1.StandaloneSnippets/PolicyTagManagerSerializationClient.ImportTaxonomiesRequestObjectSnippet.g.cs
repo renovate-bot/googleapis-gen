@@ -17,13 +17,17 @@
 namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.DataCatalog.V1Beta1;
 
     public sealed partial class GeneratedPolicyTagManagerSerializationClientStandaloneSnippets
     {
         /// <summary>Snippet for ImportTaxonomies</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ImportTaxonomiesRequestObject()
         {
-            // Snippet: ImportTaxonomies(ImportTaxonomiesRequest, CallSettings)
             // Create client
             PolicyTagManagerSerializationClient policyTagManagerSerializationClient = PolicyTagManagerSerializationClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             };
             // Make the request
             ImportTaxonomiesResponse response = policyTagManagerSerializationClient.ImportTaxonomies(request);
-            // End snippet
         }
     }
 }

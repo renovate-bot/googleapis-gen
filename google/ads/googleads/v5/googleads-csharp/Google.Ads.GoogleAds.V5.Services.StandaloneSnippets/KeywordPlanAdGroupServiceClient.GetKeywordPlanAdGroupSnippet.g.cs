@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedKeywordPlanAdGroupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetKeywordPlanAdGroup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetKeywordPlanAdGroup()
         {
-            // Snippet: GetKeywordPlanAdGroup(string, CallSettings)
             // Create client
             KeywordPlanAdGroupServiceClient keywordPlanAdGroupServiceClient = KeywordPlanAdGroupServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/keywordPlanAdGroups/[KEYWORD_PLAN_AD_GROUP]";
             // Make the request
             KeywordPlanAdGroup response = keywordPlanAdGroupServiceClient.GetKeywordPlanAdGroup(resourceName);
-            // End snippet
         }
     }
 }

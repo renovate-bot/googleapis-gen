@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignCriterionSimulationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignCriterionSimulationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCampaignCriterionSimulationRequestObjectAsync()
         {
-            // Snippet: GetCampaignCriterionSimulationAsync(GetCampaignCriterionSimulationRequest, CallSettings)
-            // Additional: GetCampaignCriterionSimulationAsync(GetCampaignCriterionSimulationRequest, CancellationToken)
             // Create client
             CampaignCriterionSimulationServiceClient campaignCriterionSimulationServiceClient = await CampaignCriterionSimulationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             CampaignCriterionSimulation response = await campaignCriterionSimulationServiceClient.GetCampaignCriterionSimulationAsync(request);
-            // End snippet
         }
     }
 }

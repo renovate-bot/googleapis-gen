@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -42,18 +44,11 @@ class TextSegment(proto.Message):
             is NOT included in the text segment.
     """
 
-    content = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    start_offset = proto.Field(
-        proto.INT64,
-        number=1,
-    )
-    end_offset = proto.Field(
-        proto.INT64,
-        number=2,
-    )
+    content = proto.Field(proto.STRING, number=3)
+
+    start_offset = proto.Field(proto.INT64, number=1)
+
+    end_offset = proto.Field(proto.INT64, number=2)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

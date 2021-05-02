@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,7 +35,8 @@ from google.cloud.accessapproval_v1.types.accessapproval import ListApprovalRequ
 from google.cloud.accessapproval_v1.types.accessapproval import ResourceProperties
 from google.cloud.accessapproval_v1.types.accessapproval import UpdateAccessApprovalSettingsMessage
 
-__all__ = ('AccessApprovalAsyncClient',
+__all__ = (
+    'AccessApprovalAsyncClient',
     'AccessApprovalClient',
     'AccessApprovalSettings',
     'AccessLocations',

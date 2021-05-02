@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
 {
+    using Google.Cloud.Spanner.Admin.Database.V1;
+
     public sealed partial class GeneratedDatabaseAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for DropDatabase</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DropDatabaseResourceNames()
         {
-            // Snippet: DropDatabase(DatabaseName, CallSettings)
             // Create client
             DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.Create();
             // Initialize request argument(s)
             DatabaseName database = DatabaseName.FromProjectInstanceDatabase("[PROJECT]", "[INSTANCE]", "[DATABASE]");
             // Make the request
             databaseAdminClient.DropDatabase(database);
-            // End snippet
         }
     }
 }

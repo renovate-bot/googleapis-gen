@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -36,36 +36,12 @@ from google.cloud.orgpolicy_v2.services.org_policy import OrgPolicyAsyncClient
 from google.cloud.orgpolicy_v2.services.org_policy import OrgPolicyClient
 from google.cloud.orgpolicy_v2.services.org_policy import pagers
 from google.cloud.orgpolicy_v2.services.org_policy import transports
-from google.cloud.orgpolicy_v2.services.org_policy.transports.base import _API_CORE_VERSION
-from google.cloud.orgpolicy_v2.services.org_policy.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.orgpolicy_v2.types import constraint
 from google.cloud.orgpolicy_v2.types import orgpolicy
 from google.oauth2 import service_account
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.type import expr_pb2 as expr  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -233,10 +209,12 @@ def test_org_policy_client_client_options(client_class, transport_class, transpo
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (OrgPolicyClient, transports.OrgPolicyGrpcTransport, "grpc", "true"),
     (OrgPolicyAsyncClient, transports.OrgPolicyGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (OrgPolicyClient, transports.OrgPolicyGrpcTransport, "grpc", "false"),
     (OrgPolicyAsyncClient, transports.OrgPolicyGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(OrgPolicyClient, "DEFAULT_ENDPOINT", modify_default_endpoint(OrgPolicyClient))
 @mock.patch.object(OrgPolicyAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(OrgPolicyAsyncClient))
@@ -391,16 +369,21 @@ def test_list_constraints(transport: str = 'grpc', request_type=orgpolicy.ListCo
         # Designate an appropriate return value for the call.
         call.return_value = orgpolicy.ListConstraintsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_constraints(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == orgpolicy.ListConstraintsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListConstraintsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -423,8 +406,8 @@ def test_list_constraints_empty_call():
         client.list_constraints()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == orgpolicy.ListConstraintsRequest()
 
+        assert args[0] == orgpolicy.ListConstraintsRequest()
 
 @pytest.mark.asyncio
 async def test_list_constraints_async(transport: str = 'grpc_asyncio', request_type=orgpolicy.ListConstraintsRequest):
@@ -442,18 +425,21 @@ async def test_list_constraints_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.list_constraints),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.ListConstraintsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.ListConstraintsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_constraints(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == orgpolicy.ListConstraintsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListConstraintsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -470,7 +456,6 @@ def test_list_constraints_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = orgpolicy.ListConstraintsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -478,6 +463,7 @@ def test_list_constraints_field_headers():
             type(client.transport.list_constraints),
             '__call__') as call:
         call.return_value = orgpolicy.ListConstraintsResponse()
+
         client.list_constraints(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -502,7 +488,6 @@ async def test_list_constraints_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = orgpolicy.ListConstraintsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -510,6 +495,7 @@ async def test_list_constraints_field_headers_async():
             type(client.transport.list_constraints),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.ListConstraintsResponse())
+
         await client.list_constraints(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -536,6 +522,7 @@ def test_list_constraints_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = orgpolicy.ListConstraintsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_constraints(
@@ -546,6 +533,7 @@ def test_list_constraints_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -587,6 +575,7 @@ async def test_list_constraints_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -791,6 +780,7 @@ async def test_list_constraints_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_list_policies(transport: str = 'grpc', request_type=orgpolicy.ListPoliciesRequest):
     client = OrgPolicyClient(
         credentials=credentials.AnonymousCredentials(),
@@ -808,16 +798,21 @@ def test_list_policies(transport: str = 'grpc', request_type=orgpolicy.ListPolic
         # Designate an appropriate return value for the call.
         call.return_value = orgpolicy.ListPoliciesResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_policies(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == orgpolicy.ListPoliciesRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListPoliciesPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -840,8 +835,8 @@ def test_list_policies_empty_call():
         client.list_policies()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == orgpolicy.ListPoliciesRequest()
 
+        assert args[0] == orgpolicy.ListPoliciesRequest()
 
 @pytest.mark.asyncio
 async def test_list_policies_async(transport: str = 'grpc_asyncio', request_type=orgpolicy.ListPoliciesRequest):
@@ -859,18 +854,21 @@ async def test_list_policies_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.list_policies),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.ListPoliciesResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.ListPoliciesResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_policies(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == orgpolicy.ListPoliciesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPoliciesAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -887,7 +885,6 @@ def test_list_policies_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = orgpolicy.ListPoliciesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -895,6 +892,7 @@ def test_list_policies_field_headers():
             type(client.transport.list_policies),
             '__call__') as call:
         call.return_value = orgpolicy.ListPoliciesResponse()
+
         client.list_policies(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -919,7 +917,6 @@ async def test_list_policies_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = orgpolicy.ListPoliciesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -927,6 +924,7 @@ async def test_list_policies_field_headers_async():
             type(client.transport.list_policies),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.ListPoliciesResponse())
+
         await client.list_policies(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -953,6 +951,7 @@ def test_list_policies_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = orgpolicy.ListPoliciesResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_policies(
@@ -963,6 +962,7 @@ def test_list_policies_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1004,6 +1004,7 @@ async def test_list_policies_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1208,6 +1209,7 @@ async def test_list_policies_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_policy(transport: str = 'grpc', request_type=orgpolicy.GetPolicyRequest):
     client = OrgPolicyClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1225,16 +1227,21 @@ def test_get_policy(transport: str = 'grpc', request_type=orgpolicy.GetPolicyReq
         # Designate an appropriate return value for the call.
         call.return_value = orgpolicy.Policy(
             name='name_value',
+
         )
+
         response = client.get_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == orgpolicy.GetPolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, orgpolicy.Policy)
+
     assert response.name == 'name_value'
 
 
@@ -1257,8 +1264,8 @@ def test_get_policy_empty_call():
         client.get_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == orgpolicy.GetPolicyRequest()
 
+        assert args[0] == orgpolicy.GetPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_get_policy_async(transport: str = 'grpc_asyncio', request_type=orgpolicy.GetPolicyRequest):
@@ -1276,18 +1283,21 @@ async def test_get_policy_async(transport: str = 'grpc_asyncio', request_type=or
             type(client.transport.get_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.Policy(
             name='name_value',
         ))
+
         response = await client.get_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == orgpolicy.GetPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, orgpolicy.Policy)
+
     assert response.name == 'name_value'
 
 
@@ -1304,7 +1314,6 @@ def test_get_policy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = orgpolicy.GetPolicyRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1312,6 +1321,7 @@ def test_get_policy_field_headers():
             type(client.transport.get_policy),
             '__call__') as call:
         call.return_value = orgpolicy.Policy()
+
         client.get_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1336,7 +1346,6 @@ async def test_get_policy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = orgpolicy.GetPolicyRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1344,6 +1353,7 @@ async def test_get_policy_field_headers_async():
             type(client.transport.get_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.Policy())
+
         await client.get_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1370,6 +1380,7 @@ def test_get_policy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = orgpolicy.Policy()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_policy(
@@ -1380,6 +1391,7 @@ def test_get_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1421,6 +1433,7 @@ async def test_get_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1456,16 +1469,21 @@ def test_get_effective_policy(transport: str = 'grpc', request_type=orgpolicy.Ge
         # Designate an appropriate return value for the call.
         call.return_value = orgpolicy.Policy(
             name='name_value',
+
         )
+
         response = client.get_effective_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == orgpolicy.GetEffectivePolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, orgpolicy.Policy)
+
     assert response.name == 'name_value'
 
 
@@ -1488,8 +1506,8 @@ def test_get_effective_policy_empty_call():
         client.get_effective_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == orgpolicy.GetEffectivePolicyRequest()
 
+        assert args[0] == orgpolicy.GetEffectivePolicyRequest()
 
 @pytest.mark.asyncio
 async def test_get_effective_policy_async(transport: str = 'grpc_asyncio', request_type=orgpolicy.GetEffectivePolicyRequest):
@@ -1507,18 +1525,21 @@ async def test_get_effective_policy_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.get_effective_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.Policy(
             name='name_value',
         ))
+
         response = await client.get_effective_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == orgpolicy.GetEffectivePolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, orgpolicy.Policy)
+
     assert response.name == 'name_value'
 
 
@@ -1535,7 +1556,6 @@ def test_get_effective_policy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = orgpolicy.GetEffectivePolicyRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1543,6 +1563,7 @@ def test_get_effective_policy_field_headers():
             type(client.transport.get_effective_policy),
             '__call__') as call:
         call.return_value = orgpolicy.Policy()
+
         client.get_effective_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1567,7 +1588,6 @@ async def test_get_effective_policy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = orgpolicy.GetEffectivePolicyRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1575,6 +1595,7 @@ async def test_get_effective_policy_field_headers_async():
             type(client.transport.get_effective_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.Policy())
+
         await client.get_effective_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1601,6 +1622,7 @@ def test_get_effective_policy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = orgpolicy.Policy()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_effective_policy(
@@ -1611,6 +1633,7 @@ def test_get_effective_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1652,6 +1675,7 @@ async def test_get_effective_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1687,16 +1711,21 @@ def test_create_policy(transport: str = 'grpc', request_type=orgpolicy.CreatePol
         # Designate an appropriate return value for the call.
         call.return_value = orgpolicy.Policy(
             name='name_value',
+
         )
+
         response = client.create_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == orgpolicy.CreatePolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, orgpolicy.Policy)
+
     assert response.name == 'name_value'
 
 
@@ -1719,8 +1748,8 @@ def test_create_policy_empty_call():
         client.create_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == orgpolicy.CreatePolicyRequest()
 
+        assert args[0] == orgpolicy.CreatePolicyRequest()
 
 @pytest.mark.asyncio
 async def test_create_policy_async(transport: str = 'grpc_asyncio', request_type=orgpolicy.CreatePolicyRequest):
@@ -1738,18 +1767,21 @@ async def test_create_policy_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.create_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.Policy(
             name='name_value',
         ))
+
         response = await client.create_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == orgpolicy.CreatePolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, orgpolicy.Policy)
+
     assert response.name == 'name_value'
 
 
@@ -1766,7 +1798,6 @@ def test_create_policy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = orgpolicy.CreatePolicyRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1774,6 +1805,7 @@ def test_create_policy_field_headers():
             type(client.transport.create_policy),
             '__call__') as call:
         call.return_value = orgpolicy.Policy()
+
         client.create_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1798,7 +1830,6 @@ async def test_create_policy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = orgpolicy.CreatePolicyRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1806,6 +1837,7 @@ async def test_create_policy_field_headers_async():
             type(client.transport.create_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.Policy())
+
         await client.create_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1832,6 +1864,7 @@ def test_create_policy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = orgpolicy.Policy()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_policy(
@@ -1843,7 +1876,9 @@ def test_create_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].policy_ == orgpolicy.Policy(name='name_value')
 
 
@@ -1887,7 +1922,9 @@ async def test_create_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].policy_ == orgpolicy.Policy(name='name_value')
 
 
@@ -1924,16 +1961,21 @@ def test_update_policy(transport: str = 'grpc', request_type=orgpolicy.UpdatePol
         # Designate an appropriate return value for the call.
         call.return_value = orgpolicy.Policy(
             name='name_value',
+
         )
+
         response = client.update_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == orgpolicy.UpdatePolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, orgpolicy.Policy)
+
     assert response.name == 'name_value'
 
 
@@ -1956,8 +1998,8 @@ def test_update_policy_empty_call():
         client.update_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == orgpolicy.UpdatePolicyRequest()
 
+        assert args[0] == orgpolicy.UpdatePolicyRequest()
 
 @pytest.mark.asyncio
 async def test_update_policy_async(transport: str = 'grpc_asyncio', request_type=orgpolicy.UpdatePolicyRequest):
@@ -1975,18 +2017,21 @@ async def test_update_policy_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.update_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.Policy(
             name='name_value',
         ))
+
         response = await client.update_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == orgpolicy.UpdatePolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, orgpolicy.Policy)
+
     assert response.name == 'name_value'
 
 
@@ -2003,7 +2048,6 @@ def test_update_policy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = orgpolicy.UpdatePolicyRequest()
-
     request.policy.name = 'policy.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2011,6 +2055,7 @@ def test_update_policy_field_headers():
             type(client.transport.update_policy),
             '__call__') as call:
         call.return_value = orgpolicy.Policy()
+
         client.update_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2035,7 +2080,6 @@ async def test_update_policy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = orgpolicy.UpdatePolicyRequest()
-
     request.policy.name = 'policy.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2043,6 +2087,7 @@ async def test_update_policy_field_headers_async():
             type(client.transport.update_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(orgpolicy.Policy())
+
         await client.update_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2069,6 +2114,7 @@ def test_update_policy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = orgpolicy.Policy()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_policy(
@@ -2079,6 +2125,7 @@ def test_update_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].policy_ == orgpolicy.Policy(name='name_value')
 
 
@@ -2120,6 +2167,7 @@ async def test_update_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].policy_ == orgpolicy.Policy(name='name_value')
 
 
@@ -2154,11 +2202,13 @@ def test_delete_policy(transport: str = 'grpc', request_type=orgpolicy.DeletePol
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == orgpolicy.DeletePolicyRequest()
 
     # Establish that the response is the type that we expect.
@@ -2184,8 +2234,8 @@ def test_delete_policy_empty_call():
         client.delete_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == orgpolicy.DeletePolicyRequest()
 
+        assert args[0] == orgpolicy.DeletePolicyRequest()
 
 @pytest.mark.asyncio
 async def test_delete_policy_async(transport: str = 'grpc_asyncio', request_type=orgpolicy.DeletePolicyRequest):
@@ -2204,11 +2254,13 @@ async def test_delete_policy_async(transport: str = 'grpc_asyncio', request_type
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == orgpolicy.DeletePolicyRequest()
 
     # Establish that the response is the type that we expect.
@@ -2228,7 +2280,6 @@ def test_delete_policy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = orgpolicy.DeletePolicyRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2236,6 +2287,7 @@ def test_delete_policy_field_headers():
             type(client.transport.delete_policy),
             '__call__') as call:
         call.return_value = None
+
         client.delete_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2260,7 +2312,6 @@ async def test_delete_policy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = orgpolicy.DeletePolicyRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2268,6 +2319,7 @@ async def test_delete_policy_field_headers_async():
             type(client.transport.delete_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2294,6 +2346,7 @@ def test_delete_policy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_policy(
@@ -2304,6 +2357,7 @@ def test_delete_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2345,6 +2399,7 @@ async def test_delete_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2403,6 +2458,7 @@ def test_transport_instance():
     client = OrgPolicyClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.OrgPolicyGrpcTransport(
@@ -2417,6 +2473,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.OrgPolicyGrpcTransport,
     transports.OrgPolicyGrpcAsyncIOTransport,
@@ -2428,6 +2485,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = OrgPolicyClient(
@@ -2437,6 +2495,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.OrgPolicyGrpcTransport,
     )
+
 
 def test_org_policy_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -2465,33 +2524,15 @@ def test_org_policy_base_transport():
         'create_policy',
         'update_policy',
         'delete_policy',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_org_policy_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.orgpolicy_v2.services.org_policy.transports.OrgPolicyTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.OrgPolicyTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_org_policy_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.orgpolicy_v2.services.org_policy.transports.OrgPolicyTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.orgpolicy_v2.services.org_policy.transports.OrgPolicyTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.OrgPolicyTransport(
@@ -2507,182 +2548,33 @@ def test_org_policy_base_transport_with_credentials_file_old_google_auth():
 
 def test_org_policy_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.orgpolicy_v2.services.org_policy.transports.OrgPolicyTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.orgpolicy_v2.services.org_policy.transports.OrgPolicyTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.OrgPolicyTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_org_policy_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         OrgPolicyClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_org_policy_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        OrgPolicyClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.OrgPolicyGrpcTransport,
-        transports.OrgPolicyGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_org_policy_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.OrgPolicyGrpcTransport,
-        transports.OrgPolicyGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_org_policy_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.OrgPolicyGrpcTransport, grpc_helpers),
-        (transports.OrgPolicyGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_org_policy_transport_create_channel(transport_class, grpc_helpers):
+def test_org_policy_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.OrgPolicyGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "orgpolicy.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="orgpolicy.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.OrgPolicyGrpcTransport, grpc_helpers),
-        (transports.OrgPolicyGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_org_policy_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "orgpolicy.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.OrgPolicyGrpcTransport, grpc_helpers),
-        (transports.OrgPolicyGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_org_policy_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "orgpolicy.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -2744,6 +2636,7 @@ def test_org_policy_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='orgpolicy.googleapis.com:8000'),
     )
     assert client.transport._host == 'orgpolicy.googleapis.com:8000'
+
 
 def test_org_policy_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -2862,6 +2755,7 @@ def test_org_policy_transport_channel_mtls_with_adc(
 def test_constraint_path():
     project = "squid"
     constraint = "clam"
+
     expected = "projects/{project}/constraints/{constraint}".format(project=project, constraint=constraint, )
     actual = OrgPolicyClient.constraint_path(project, constraint)
     assert expected == actual
@@ -2869,8 +2763,9 @@ def test_constraint_path():
 
 def test_parse_constraint_path():
     expected = {
-        "project": "whelk",
-        "constraint": "octopus",
+    "project": "whelk",
+    "constraint": "octopus",
+
     }
     path = OrgPolicyClient.constraint_path(**expected)
 
@@ -2881,6 +2776,7 @@ def test_parse_constraint_path():
 def test_policy_path():
     project = "oyster"
     policy = "nudibranch"
+
     expected = "projects/{project}/policies/{policy}".format(project=project, policy=policy, )
     actual = OrgPolicyClient.policy_path(project, policy)
     assert expected == actual
@@ -2888,8 +2784,9 @@ def test_policy_path():
 
 def test_parse_policy_path():
     expected = {
-        "project": "cuttlefish",
-        "policy": "mussel",
+    "project": "cuttlefish",
+    "policy": "mussel",
+
     }
     path = OrgPolicyClient.policy_path(**expected)
 
@@ -2899,6 +2796,7 @@ def test_parse_policy_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = OrgPolicyClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2906,7 +2804,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nautilus",
+    "billing_account": "nautilus",
+
     }
     path = OrgPolicyClient.common_billing_account_path(**expected)
 
@@ -2916,6 +2815,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = OrgPolicyClient.common_folder_path(folder)
     assert expected == actual
@@ -2923,7 +2823,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "abalone",
+    "folder": "abalone",
+
     }
     path = OrgPolicyClient.common_folder_path(**expected)
 
@@ -2933,6 +2834,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = OrgPolicyClient.common_organization_path(organization)
     assert expected == actual
@@ -2940,7 +2842,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "clam",
+    "organization": "clam",
+
     }
     path = OrgPolicyClient.common_organization_path(**expected)
 
@@ -2950,6 +2853,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
+
     expected = "projects/{project}".format(project=project, )
     actual = OrgPolicyClient.common_project_path(project)
     assert expected == actual
@@ -2957,7 +2861,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "octopus",
+    "project": "octopus",
+
     }
     path = OrgPolicyClient.common_project_path(**expected)
 
@@ -2968,6 +2873,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = OrgPolicyClient.common_location_path(project, location)
     assert expected == actual
@@ -2975,8 +2881,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "cuttlefish",
-        "location": "mussel",
+    "project": "cuttlefish",
+    "location": "mussel",
+
     }
     path = OrgPolicyClient.common_location_path(**expected)
 

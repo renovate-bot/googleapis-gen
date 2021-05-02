@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.VideoIntelligence.V1P2Beta1.Snippets
 {
+    using Google.Cloud.VideoIntelligence.V1P2Beta1;
     using Google.LongRunning;
     using System.Collections.Generic;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.VideoIntelligence.V1P2Beta1.Snippets
     public sealed partial class GeneratedVideoIntelligenceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for AnnotateVideoAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task AnnotateVideoAsync()
         {
-            // Snippet: AnnotateVideoAsync(string, IEnumerable<Feature>, CallSettings)
-            // Additional: AnnotateVideoAsync(string, IEnumerable<Feature>, CancellationToken)
             // Create client
             VideoIntelligenceServiceClient videoIntelligenceServiceClient = await VideoIntelligenceServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -53,7 +56,6 @@ namespace Google.Cloud.VideoIntelligence.V1P2Beta1.Snippets
                 // If it has completed, then access the result
                 AnnotateVideoResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

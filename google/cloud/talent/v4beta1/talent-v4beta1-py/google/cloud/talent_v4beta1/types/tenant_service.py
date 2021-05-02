@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.talent_v4beta1.types import common
 from google.cloud.talent_v4beta1.types import tenant as gct_tenant
@@ -35,6 +38,7 @@ __protobuf__ = proto.module(
 
 class CreateTenantRequest(proto.Message):
     r"""The Request of the CreateTenant method.
+
     Attributes:
         parent (str):
             Required. Resource name of the project under which the
@@ -46,19 +50,16 @@ class CreateTenantRequest(proto.Message):
             Required. The tenant to be created.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    tenant = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    tenant = proto.Field(proto.MESSAGE, number=2,
         message=gct_tenant.Tenant,
     )
 
 
 class GetTenantRequest(proto.Message):
     r"""Request for getting a tenant by name.
+
     Attributes:
         name (str):
             Required. The resource name of the tenant to be retrieved.
@@ -67,14 +68,12 @@ class GetTenantRequest(proto.Message):
             for example, "projects/foo/tenants/bar".
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class UpdateTenantRequest(proto.Message):
     r"""Request for updating a specified tenant.
+
     Attributes:
         tenant (google.cloud.talent_v4beta1.types.Tenant):
             Required. The tenant resource to replace the
@@ -93,20 +92,18 @@ class UpdateTenantRequest(proto.Message):
             [Tenant][google.cloud.talent.v4beta1.Tenant] are supported.
     """
 
-    tenant = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    tenant = proto.Field(proto.MESSAGE, number=1,
         message=gct_tenant.Tenant,
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
 
 
 class DeleteTenantRequest(proto.Message):
     r"""Request to delete a tenant.
+
     Attributes:
         name (str):
             Required. The resource name of the tenant to be deleted.
@@ -115,14 +112,12 @@ class DeleteTenantRequest(proto.Message):
             for example, "projects/foo/tenants/bar".
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ListTenantsRequest(proto.Message):
     r"""List tenants for which the client has ACL visibility.
+
     Attributes:
         parent (str):
             Required. Resource name of the project under which the
@@ -139,22 +134,16 @@ class ListTenantsRequest(proto.Message):
             number is provided.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_token = proto.Field(proto.STRING, number=2)
+
+    page_size = proto.Field(proto.INT32, number=3)
 
 
 class ListTenantsResponse(proto.Message):
     r"""The List tenants response object.
+
     Attributes:
         tenants (Sequence[google.cloud.talent_v4beta1.types.Tenant]):
             Tenants for the current client.
@@ -169,18 +158,13 @@ class ListTenantsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    tenants = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    tenants = proto.RepeatedField(proto.MESSAGE, number=1,
         message=gct_tenant.Tenant,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    metadata = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    next_page_token = proto.Field(proto.STRING, number=2)
+
+    metadata = proto.Field(proto.MESSAGE, number=3,
         message=common.ResponseMetadata,
     )
 

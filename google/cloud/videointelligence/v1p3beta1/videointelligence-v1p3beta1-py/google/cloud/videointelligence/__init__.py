@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -78,7 +79,8 @@ from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import Vi
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import VideoSegment
 from google.cloud.videointelligence_v1p3beta1.types.video_intelligence import WordInfo
 
-__all__ = ('AnnotateVideoProgress',
+__all__ = (
+    'AnnotateVideoProgress',
     'AnnotateVideoRequest',
     'AnnotateVideoResponse',
     'Celebrity',

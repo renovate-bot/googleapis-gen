@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.enums.types import response_content_type as gage_response_content_type
 from google.ads.googleads.v7.resources.types import campaign_budget as gagr_campaign_budget
@@ -44,10 +47,7 @@ class GetCampaignBudgetRequest(proto.Message):
             budget to fetch.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateCampaignBudgetsRequest(proto.Message):
@@ -76,26 +76,13 @@ class MutateCampaignBudgetsRequest(proto.Message):
             resource name should be returned post mutation.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operations = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operations = proto.RepeatedField(proto.MESSAGE, number=2,
         message='CampaignBudgetOperation',
     )
-    partial_failure = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=4,
-    )
-    response_content_type = proto.Field(
-        proto.ENUM,
-        number=5,
+    partial_failure = proto.Field(proto.BOOL, number=3)
+    validate_only = proto.Field(proto.BOOL, number=4)
+    response_content_type = proto.Field(proto.ENUM, number=5,
         enum=gage_response_content_type.ResponseContentTypeEnum.ResponseContentType,
     )
 
@@ -121,32 +108,21 @@ class CampaignBudgetOperation(proto.Message):
             ``customers/{customer_id}/campaignBudgets/{budget_id}``
     """
 
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    update_mask = proto.Field(proto.MESSAGE, number=4,
         message=field_mask.FieldMask,
     )
-    create = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='operation',
+    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=gagr_campaign_budget.CampaignBudget,
     )
-    update = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='operation',
+    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
         message=gagr_campaign_budget.CampaignBudget,
     )
-    remove = proto.Field(
-        proto.STRING,
-        number=3,
-        oneof='operation',
-    )
+    remove = proto.Field(proto.STRING, number=3, oneof='operation')
 
 
 class MutateCampaignBudgetsResponse(proto.Message):
     r"""Response message for campaign budget mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -158,20 +134,17 @@ class MutateCampaignBudgetsResponse(proto.Message):
             All results for the mutate.
     """
 
-    partial_failure_error = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    partial_failure_error = proto.Field(proto.MESSAGE, number=3,
         message=status.Status,
     )
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    results = proto.RepeatedField(proto.MESSAGE, number=2,
         message='MutateCampaignBudgetResult',
     )
 
 
 class MutateCampaignBudgetResult(proto.Message):
     r"""The result for the campaign budget mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
@@ -181,13 +154,8 @@ class MutateCampaignBudgetResult(proto.Message):
             response_content_type is set to "MUTABLE_RESOURCE".
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    campaign_budget = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    campaign_budget = proto.Field(proto.MESSAGE, number=2,
         message=gagr_campaign_budget.CampaignBudget,
     )
 

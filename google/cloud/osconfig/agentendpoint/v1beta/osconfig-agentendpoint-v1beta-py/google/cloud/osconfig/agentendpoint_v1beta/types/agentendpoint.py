@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.osconfig.agentendpoint_v1beta.types import tasks
 
@@ -37,6 +40,7 @@ __protobuf__ = proto.module(
 
 class ReceiveTaskNotificationRequest(proto.Message):
     r"""A request message to receive task notifications.
+
     Attributes:
         instance_id_token (str):
             Required. This is the Compute Engine instance
@@ -50,20 +54,15 @@ class ReceiveTaskNotificationRequest(proto.Message):
             request.
     """
 
-    instance_id_token = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    agent_version = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    instance_id_token = proto.Field(proto.STRING, number=1)
+
+    agent_version = proto.Field(proto.STRING, number=2)
 
 
 class ReceiveTaskNotificationResponse(proto.Message):
     r"""The streaming rpc message that notifies the agent when it has
     a task that it needs to perform on the VM instance.
-        """
+    """
 
 
 class StartNextTaskRequest(proto.Message):
@@ -80,10 +79,7 @@ class StartNextTaskRequest(proto.Message):
             'full'.
     """
 
-    instance_id_token = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    instance_id_token = proto.Field(proto.STRING, number=1)
 
 
 class StartNextTaskResponse(proto.Message):
@@ -97,15 +93,14 @@ class StartNextTaskResponse(proto.Message):
             work on.
     """
 
-    task = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    task = proto.Field(proto.MESSAGE, number=1,
         message=tasks.Task,
     )
 
 
 class ReportTaskProgressRequest(proto.Message):
     r"""A request message for reporting the progress of current task.
+
     Attributes:
         instance_id_token (str):
             Required. This is the Compute Engine instance
@@ -132,29 +127,19 @@ class ReportTaskProgressRequest(proto.Message):
             task.
     """
 
-    instance_id_token = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    task_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    task_type = proto.Field(
-        proto.ENUM,
-        number=3,
+    instance_id_token = proto.Field(proto.STRING, number=1)
+
+    task_id = proto.Field(proto.STRING, number=2)
+
+    task_type = proto.Field(proto.ENUM, number=3,
         enum=tasks.TaskType,
     )
-    apply_patches_task_progress = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='progress',
+
+    apply_patches_task_progress = proto.Field(proto.MESSAGE, number=4, oneof='progress',
         message=tasks.ApplyPatchesTaskProgress,
     )
-    exec_step_task_progress = proto.Field(
-        proto.MESSAGE,
-        number=5,
-        oneof='progress',
+
+    exec_step_task_progress = proto.Field(proto.MESSAGE, number=5, oneof='progress',
         message=tasks.ExecStepTaskProgress,
     )
 
@@ -168,9 +153,7 @@ class ReportTaskProgressResponse(proto.Message):
             Instructs agent to continue or not.
     """
 
-    task_directive = proto.Field(
-        proto.ENUM,
-        number=1,
+    task_directive = proto.Field(proto.ENUM, number=1,
         enum=tasks.TaskDirective,
     )
 
@@ -206,33 +189,21 @@ class ReportTaskCompleteRequest(proto.Message):
             Final output details of the exec step task;
     """
 
-    instance_id_token = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    task_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    task_type = proto.Field(
-        proto.ENUM,
-        number=3,
+    instance_id_token = proto.Field(proto.STRING, number=1)
+
+    task_id = proto.Field(proto.STRING, number=2)
+
+    task_type = proto.Field(proto.ENUM, number=3,
         enum=tasks.TaskType,
     )
-    error_message = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    apply_patches_task_output = proto.Field(
-        proto.MESSAGE,
-        number=5,
-        oneof='output',
+
+    error_message = proto.Field(proto.STRING, number=4)
+
+    apply_patches_task_output = proto.Field(proto.MESSAGE, number=5, oneof='output',
         message=tasks.ApplyPatchesTaskOutput,
     )
-    exec_step_task_output = proto.Field(
-        proto.MESSAGE,
-        number=6,
-        oneof='output',
+
+    exec_step_task_output = proto.Field(proto.MESSAGE, number=6, oneof='output',
         message=tasks.ExecStepTaskOutput,
     )
 
@@ -240,11 +211,12 @@ class ReportTaskCompleteRequest(proto.Message):
 class ReportTaskCompleteResponse(proto.Message):
     r"""The response message after the agent signaled the current
     task complete.
-        """
+    """
 
 
 class RegisterAgentRequest(proto.Message):
     r"""The request message for registering the agent.
+
     Attributes:
         instance_id_token (str):
             Required. This is the Compute Engine instance
@@ -260,22 +232,15 @@ class RegisterAgentRequest(proto.Message):
             values are: PATCH_GA GUEST_POLICY_BETA
     """
 
-    instance_id_token = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    agent_version = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    supported_capabilities = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
+    instance_id_token = proto.Field(proto.STRING, number=1)
+
+    agent_version = proto.Field(proto.STRING, number=2)
+
+    supported_capabilities = proto.RepeatedField(proto.STRING, number=3)
 
 
 class RegisterAgentResponse(proto.Message):
-    r"""The response message after the agent registered.    """
+    r"""The response message after the agent registered."""
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

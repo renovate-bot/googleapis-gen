@@ -17,15 +17,18 @@
 namespace Google.Partner.Aistreams.V1Alpha1.Snippets
 {
     using Google.LongRunning;
+    using Google.Partner.Aistreams.V1Alpha1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAIStreamsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateStreamAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateStreamResourceNamesAsync()
         {
-            // Snippet: CreateStreamAsync(ClusterName, Stream, string, CallSettings)
-            // Additional: CreateStreamAsync(ClusterName, Stream, string, CancellationToken)
             // Create client
             AIStreamsClient aIStreamsClient = await AIStreamsClient.CreateAsync();
             // Initialize request argument(s)
@@ -50,7 +53,6 @@ namespace Google.Partner.Aistreams.V1Alpha1.Snippets
                 // If it has completed, then access the result
                 Stream retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

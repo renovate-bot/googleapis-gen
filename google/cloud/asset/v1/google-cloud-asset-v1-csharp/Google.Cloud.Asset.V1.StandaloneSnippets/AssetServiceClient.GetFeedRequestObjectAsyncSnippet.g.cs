@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Asset.V1.Snippets
 {
+    using Google.Cloud.Asset.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAssetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetFeedAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetFeedRequestObjectAsync()
         {
-            // Snippet: GetFeedAsync(GetFeedRequest, CallSettings)
-            // Additional: GetFeedAsync(GetFeedRequest, CancellationToken)
             // Create client
             AssetServiceClient assetServiceClient = await AssetServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Asset.V1.Snippets
             };
             // Make the request
             Feed response = await assetServiceClient.GetFeedAsync(request);
-            // End snippet
         }
     }
 }

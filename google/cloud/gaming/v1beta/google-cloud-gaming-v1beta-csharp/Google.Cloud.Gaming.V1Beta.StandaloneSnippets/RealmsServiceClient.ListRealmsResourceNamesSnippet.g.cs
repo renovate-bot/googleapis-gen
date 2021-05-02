@@ -18,14 +18,18 @@ namespace Google.Cloud.Gaming.V1Beta.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Gaming.V1Beta;
     using System;
 
     public sealed partial class GeneratedRealmsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListRealms</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListRealmsResourceNames()
         {
-            // Snippet: ListRealms(LocationName, string, int?, CallSettings)
             // Create client
             RealmsServiceClient realmsServiceClient = RealmsServiceClient.Create();
             // Initialize request argument(s)
@@ -64,7 +68,6 @@ namespace Google.Cloud.Gaming.V1Beta.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

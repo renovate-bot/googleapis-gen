@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -31,6 +33,7 @@ from google.api_core import operation_async  # type: ignore
 from google.cloud.resourcemanager_v3.services.tag_bindings import pagers
 from google.cloud.resourcemanager_v3.types import tag_bindings
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .transports.base import TagBindingsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import TagBindingsGrpcAsyncIOTransport
 from .client import TagBindingsClient
@@ -49,14 +52,19 @@ class TagBindingsAsyncClient:
 
     tag_binding_path = staticmethod(TagBindingsClient.tag_binding_path)
     parse_tag_binding_path = staticmethod(TagBindingsClient.parse_tag_binding_path)
+
     common_billing_account_path = staticmethod(TagBindingsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(TagBindingsClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(TagBindingsClient.common_folder_path)
     parse_common_folder_path = staticmethod(TagBindingsClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(TagBindingsClient.common_organization_path)
     parse_common_organization_path = staticmethod(TagBindingsClient.parse_common_organization_path)
+
     common_project_path = staticmethod(TagBindingsClient.common_project_path)
     parse_common_project_path = staticmethod(TagBindingsClient.parse_common_project_path)
+
     common_location_path = staticmethod(TagBindingsClient.common_location_path)
     parse_common_location_path = staticmethod(TagBindingsClient.parse_common_location_path)
 
@@ -141,6 +149,7 @@ class TagBindingsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = TagBindingsClient(
             credentials=credentials,
             transport=transport,
@@ -166,8 +175,7 @@ class TagBindingsAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.ListTagBindingsRequest`):
-                The request object.
-                The request message to list all
+                The request object. The request message to list all
                 TagBindings for a parent.
             parent (:class:`str`):
                 Required. The full resource name of a
@@ -178,6 +186,7 @@ class TagBindingsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -204,6 +213,7 @@ class TagBindingsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -212,7 +222,10 @@ class TagBindingsAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_tag_bindings,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -254,8 +267,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.CreateTagBindingRequest`):
-                The request object.
-                The request message to create a
+                The request object. The request message to create a
                 TagBinding.
             tag_binding (:class:`google.cloud.resourcemanager_v3.types.TagBinding`):
                 Required. The TagBinding to be
@@ -264,6 +276,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``tag_binding`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -293,6 +306,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if tag_binding is not None:
             request.tag_binding = tag_binding
 
@@ -335,8 +349,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.DeleteTagBindingRequest`):
-                The request object.
-                The request message to delete a
+                The request object. The request message to delete a
                 TagBinding.
             name (:class:`str`):
                 Required. The name of the TagBinding. This is a String
@@ -346,6 +359,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -383,6 +397,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -420,6 +435,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

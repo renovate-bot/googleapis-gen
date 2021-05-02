@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.WebRisk.V1Beta1.Snippets
 {
+    using Google.Cloud.WebRisk.V1Beta1;
     using Google.Protobuf;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWebRiskServiceV1Beta1ClientStandaloneSnippets
     {
         /// <summary>Snippet for ComputeThreatListDiffAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ComputeThreatListDiffRequestObjectAsync()
         {
-            // Snippet: ComputeThreatListDiffAsync(ComputeThreatListDiffRequest, CallSettings)
-            // Additional: ComputeThreatListDiffAsync(ComputeThreatListDiffRequest, CancellationToken)
             // Create client
             WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client = await WebRiskServiceV1Beta1Client.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.WebRisk.V1Beta1.Snippets
             };
             // Make the request
             ComputeThreatListDiffResponse response = await webRiskServiceV1Beta1Client.ComputeThreatListDiffAsync(request);
-            // End snippet
         }
     }
 }

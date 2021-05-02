@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Speech.V1P1Beta1.Snippets
 {
+    using Google.Cloud.Speech.V1P1Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdaptationClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateCustomClassAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateCustomClassAsync()
         {
-            // Snippet: UpdateCustomClassAsync(CustomClass, FieldMask, CallSettings)
-            // Additional: UpdateCustomClassAsync(CustomClass, FieldMask, CancellationToken)
             // Create client
             AdaptationClient adaptationClient = await AdaptationClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Speech.V1P1Beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             CustomClass response = await adaptationClient.UpdateCustomClassAsync(customClass, updateMask);
-            // End snippet
         }
     }
 }

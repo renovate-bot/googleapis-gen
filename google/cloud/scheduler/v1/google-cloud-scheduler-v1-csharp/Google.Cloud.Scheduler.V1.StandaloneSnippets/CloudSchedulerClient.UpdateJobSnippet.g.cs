@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Scheduler.V1.Snippets
 {
+    using Google.Cloud.Scheduler.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedCloudSchedulerClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateJob</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateJob()
         {
-            // Snippet: UpdateJob(Job, FieldMask, CallSettings)
             // Create client
             CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Scheduler.V1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Job response = cloudSchedulerClient.UpdateJob(job, updateMask);
-            // End snippet
         }
     }
 }

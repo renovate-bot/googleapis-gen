@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.EssentialContacts.V1.Snippets
 {
+    using Google.Cloud.EssentialContacts.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedEssentialContactsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateContact</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateContactRequestObject()
         {
-            // Snippet: UpdateContact(UpdateContactRequest, CallSettings)
             // Create client
             EssentialContactsServiceClient essentialContactsServiceClient = EssentialContactsServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.EssentialContacts.V1.Snippets
             };
             // Make the request
             Contact response = essentialContactsServiceClient.UpdateContact(request);
-            // End snippet
         }
     }
 }

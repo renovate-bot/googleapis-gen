@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGroupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateGroupAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateGroupAsync()
         {
-            // Snippet: CreateGroupAsync(string, Group, CallSettings)
-            // Additional: CreateGroupAsync(string, Group, CancellationToken)
             // Create client
             GroupServiceClient groupServiceClient = await GroupServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             Group group = new Group();
             // Make the request
             Group response = await groupServiceClient.CreateGroupAsync(name, group);
-            // End snippet
         }
     }
 }

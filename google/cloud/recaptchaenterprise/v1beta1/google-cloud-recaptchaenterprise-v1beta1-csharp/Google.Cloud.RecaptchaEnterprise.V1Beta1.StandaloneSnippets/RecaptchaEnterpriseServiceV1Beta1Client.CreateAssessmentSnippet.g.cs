@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.RecaptchaEnterprise.V1Beta1.Snippets
 {
+    using Google.Cloud.RecaptchaEnterprise.V1Beta1;
+
     public sealed partial class GeneratedRecaptchaEnterpriseServiceV1Beta1ClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateAssessment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateAssessment()
         {
-            // Snippet: CreateAssessment(string, Assessment, CallSettings)
             // Create client
             RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.RecaptchaEnterprise.V1Beta1.Snippets
             Assessment assessment = new Assessment();
             // Make the request
             Assessment response = recaptchaEnterpriseServiceV1Beta1Client.CreateAssessment(parent, assessment);
-            // End snippet
         }
     }
 }

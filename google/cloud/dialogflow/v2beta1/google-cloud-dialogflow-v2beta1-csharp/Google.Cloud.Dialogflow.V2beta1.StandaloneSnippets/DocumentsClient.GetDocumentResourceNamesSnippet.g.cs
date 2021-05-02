@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedDocumentsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDocument</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDocumentResourceNames()
         {
-            // Snippet: GetDocument(DocumentName, CallSettings)
             // Create client
             DocumentsClient documentsClient = DocumentsClient.Create();
             // Initialize request argument(s)
             DocumentName name = DocumentName.FromProjectKnowledgeBaseDocument("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
             // Make the request
             Document response = documentsClient.GetDocument(name);
-            // End snippet
         }
     }
 }

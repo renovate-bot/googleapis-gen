@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAlertPolicyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAlertPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAlertPolicyRequestObjectAsync()
         {
-            // Snippet: GetAlertPolicyAsync(GetAlertPolicyRequest, CallSettings)
-            // Additional: GetAlertPolicyAsync(GetAlertPolicyRequest, CancellationToken)
             // Create client
             AlertPolicyServiceClient alertPolicyServiceClient = await AlertPolicyServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             };
             // Make the request
             AlertPolicy response = await alertPolicyServiceClient.GetAlertPolicyAsync(request);
-            // End snippet
         }
     }
 }

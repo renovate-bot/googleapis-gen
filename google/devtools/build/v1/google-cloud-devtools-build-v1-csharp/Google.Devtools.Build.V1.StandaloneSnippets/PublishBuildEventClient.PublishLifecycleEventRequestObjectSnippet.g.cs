@@ -16,14 +16,18 @@
 
 namespace Google.Devtools.Build.V1.Snippets
 {
+    using Google.Devtools.Build.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedPublishBuildEventClientStandaloneSnippets
     {
         /// <summary>Snippet for PublishLifecycleEvent</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void PublishLifecycleEventRequestObject()
         {
-            // Snippet: PublishLifecycleEvent(PublishLifecycleEventRequest, CallSettings)
             // Create client
             PublishBuildEventClient publishBuildEventClient = PublishBuildEventClient.Create();
             // Initialize request argument(s)
@@ -37,7 +41,6 @@ namespace Google.Devtools.Build.V1.Snippets
             };
             // Make the request
             publishBuildEventClient.PublishLifecycleEvent(request);
-            // End snippet
         }
     }
 }

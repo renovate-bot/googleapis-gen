@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
+
     public sealed partial class GeneratedExtensionFeedItemServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateExtensionFeedItems</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateExtensionFeedItemsRequestObject()
         {
-            // Snippet: MutateExtensionFeedItems(MutateExtensionFeedItemsRequest, CallSettings)
             // Create client
             ExtensionFeedItemServiceClient extensionFeedItemServiceClient = ExtensionFeedItemServiceClient.Create();
             // Initialize request argument(s)
@@ -37,7 +42,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             MutateExtensionFeedItemsResponse response = extensionFeedItemServiceClient.MutateExtensionFeedItems(request);
-            // End snippet
         }
     }
 }

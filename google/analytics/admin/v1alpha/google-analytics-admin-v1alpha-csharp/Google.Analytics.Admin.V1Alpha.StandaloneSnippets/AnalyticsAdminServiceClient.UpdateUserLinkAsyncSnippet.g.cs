@@ -16,22 +16,24 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateUserLinkAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateUserLinkAsync()
         {
-            // Snippet: UpdateUserLinkAsync(UserLink, CallSettings)
-            // Additional: UpdateUserLinkAsync(UserLink, CancellationToken)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = await AnalyticsAdminServiceClient.CreateAsync();
             // Initialize request argument(s)
             UserLink userLink = new UserLink();
             // Make the request
             UserLink response = await analyticsAdminServiceClient.UpdateUserLinkAsync(userLink);
-            // End snippet
         }
     }
 }

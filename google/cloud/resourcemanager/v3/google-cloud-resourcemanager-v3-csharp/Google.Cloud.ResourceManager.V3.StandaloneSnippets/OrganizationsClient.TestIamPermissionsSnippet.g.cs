@@ -17,14 +17,18 @@
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.ResourceManager.V3;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedOrganizationsClientStandaloneSnippets
     {
         /// <summary>Snippet for TestIamPermissions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void TestIamPermissions()
         {
-            // Snippet: TestIamPermissions(string, IEnumerable<string>, CallSettings)
             // Create client
             OrganizationsClient organizationsClient = OrganizationsClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             IEnumerable<string> permissions = new string[] { "", };
             // Make the request
             TestIamPermissionsResponse response = organizationsClient.TestIamPermissions(resource, permissions);
-            // End snippet
         }
     }
 }

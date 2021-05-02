@@ -16,12 +16,17 @@
 
 namespace Google.Home.Graph.V1.Snippets
 {
+    using Google.Home.Graph.V1;
+
     public sealed partial class GeneratedHomeGraphApiServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for Sync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void Sync()
         {
-            // Snippet: Sync(string, string, CallSettings)
             // Create client
             HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Home.Graph.V1.Snippets
             string agentUserId = "";
             // Make the request
             SyncResponse response = homeGraphApiServiceClient.Sync(requestId, agentUserId);
-            // End snippet
         }
     }
 }

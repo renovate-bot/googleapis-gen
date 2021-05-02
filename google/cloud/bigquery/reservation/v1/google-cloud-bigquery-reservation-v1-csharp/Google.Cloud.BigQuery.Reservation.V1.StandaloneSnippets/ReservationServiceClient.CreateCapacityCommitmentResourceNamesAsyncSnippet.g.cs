@@ -17,15 +17,18 @@
 namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.BigQuery.Reservation.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedReservationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateCapacityCommitmentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateCapacityCommitmentResourceNamesAsync()
         {
-            // Snippet: CreateCapacityCommitmentAsync(LocationName, CapacityCommitment, CallSettings)
-            // Additional: CreateCapacityCommitmentAsync(LocationName, CapacityCommitment, CancellationToken)
             // Create client
             ReservationServiceClient reservationServiceClient = await ReservationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
             CapacityCommitment capacityCommitment = new CapacityCommitment();
             // Make the request
             CapacityCommitment response = await reservationServiceClient.CreateCapacityCommitmentAsync(parent, capacityCommitment);
-            // End snippet
         }
     }
 }

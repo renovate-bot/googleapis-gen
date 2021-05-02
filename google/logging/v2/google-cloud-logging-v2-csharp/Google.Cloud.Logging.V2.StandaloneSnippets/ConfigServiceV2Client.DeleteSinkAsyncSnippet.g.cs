@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Logging.V2.Snippets
 {
+    using Google.Cloud.Logging.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConfigServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteSinkAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteSinkAsync()
         {
-            // Snippet: DeleteSinkAsync(string, CallSettings)
-            // Additional: DeleteSinkAsync(string, CancellationToken)
             // Create client
             ConfigServiceV2Client configServiceV2Client = await ConfigServiceV2Client.CreateAsync();
             // Initialize request argument(s)
             string sinkName = "projects/[PROJECT]/sinks/[SINK]";
             // Make the request
             await configServiceV2Client.DeleteSinkAsync(sinkName);
-            // End snippet
         }
     }
 }

@@ -320,7 +320,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListSubscriptions</summary>
+        /// <summary>Snippet for ListSubscriptionsAsync</summary>
         public async Task ListSubscriptionsRequestObjectAsync()
         {
             // Snippet: ListSubscriptionsAsync(ListSubscriptionsRequest, CallSettings)
@@ -413,7 +413,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListSubscriptions</summary>
+        /// <summary>Snippet for ListSubscriptionsAsync</summary>
         public async Task ListSubscriptionsAsync()
         {
             // Snippet: ListSubscriptionsAsync(string, string, int?, CallSettings)
@@ -503,7 +503,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListSubscriptions</summary>
+        /// <summary>Snippet for ListSubscriptionsAsync</summary>
         public async Task ListSubscriptionsResourceNamesAsync()
         {
             // Snippet: ListSubscriptionsAsync(ProjectName, string, int?, CallSettings)
@@ -1206,7 +1206,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListSnapshots</summary>
+        /// <summary>Snippet for ListSnapshotsAsync</summary>
         public async Task ListSnapshotsRequestObjectAsync()
         {
             // Snippet: ListSnapshotsAsync(ListSnapshotsRequest, CallSettings)
@@ -1299,7 +1299,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListSnapshots</summary>
+        /// <summary>Snippet for ListSnapshotsAsync</summary>
         public async Task ListSnapshotsAsync()
         {
             // Snippet: ListSnapshotsAsync(string, string, int?, CallSettings)
@@ -1389,7 +1389,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListSnapshots</summary>
+        /// <summary>Snippet for ListSnapshotsAsync</summary>
         public async Task ListSnapshotsResourceNamesAsync()
         {
             // Snippet: ListSnapshotsAsync(ProjectName, string, int?, CallSettings)
@@ -1662,7 +1662,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
             {
                 SubscriptionAsSubscriptionName = SubscriptionName.FromProjectSubscription("[PROJECT]", "[SUBSCRIPTION]"),
                 Time = new Timestamp(),
-                SnapshotAsSnapshotName = SnapshotName.FromProjectSnapshot("[PROJECT]", "[SNAPSHOT]"),
             };
             // Make the request
             SeekResponse response = subscriberClient.Seek(request);
@@ -1681,7 +1680,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
             {
                 SubscriptionAsSubscriptionName = SubscriptionName.FromProjectSubscription("[PROJECT]", "[SUBSCRIPTION]"),
                 Time = new Timestamp(),
-                SnapshotAsSnapshotName = SnapshotName.FromProjectSnapshot("[PROJECT]", "[SNAPSHOT]"),
             };
             // Make the request
             SeekResponse response = await subscriberClient.SeekAsync(request);

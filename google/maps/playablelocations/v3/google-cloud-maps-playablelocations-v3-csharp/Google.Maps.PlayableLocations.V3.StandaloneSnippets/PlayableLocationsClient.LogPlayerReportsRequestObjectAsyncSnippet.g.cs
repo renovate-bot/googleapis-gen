@@ -16,16 +16,19 @@
 
 namespace Google.Maps.PlayableLocations.V3.Snippets
 {
+    using Google.Maps.PlayableLocations.V3;
     using Google.Maps.Unity;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPlayableLocationsClientStandaloneSnippets
     {
         /// <summary>Snippet for LogPlayerReportsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task LogPlayerReportsRequestObjectAsync()
         {
-            // Snippet: LogPlayerReportsAsync(LogPlayerReportsRequest, CallSettings)
-            // Additional: LogPlayerReportsAsync(LogPlayerReportsRequest, CancellationToken)
             // Create client
             PlayableLocationsClient playableLocationsClient = await PlayableLocationsClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Maps.PlayableLocations.V3.Snippets
             };
             // Make the request
             LogPlayerReportsResponse response = await playableLocationsClient.LogPlayerReportsAsync(request);
-            // End snippet
         }
     }
 }

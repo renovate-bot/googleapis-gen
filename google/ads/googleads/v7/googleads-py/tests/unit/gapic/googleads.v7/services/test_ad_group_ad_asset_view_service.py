@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -264,26 +266,41 @@ def test_get_ad_group_ad_asset_view(transport: str = 'grpc', request_type=ad_gro
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_ad_asset_view.AdGroupAdAssetView(
             resource_name='resource_name_value',
+
             ad_group_ad='ad_group_ad_value',
+
             asset='asset_value',
+
             field_type=asset_field_type.AssetFieldTypeEnum.AssetFieldType.UNKNOWN,
+
             enabled=True,
+
             performance_label=asset_performance_label.AssetPerformanceLabelEnum.AssetPerformanceLabel.UNKNOWN,
+
         )
+
         response = client.get_ad_group_ad_asset_view(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == ad_group_ad_asset_view_service.GetAdGroupAdAssetViewRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, ad_group_ad_asset_view.AdGroupAdAssetView)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.ad_group_ad == 'ad_group_ad_value'
+
     assert response.asset == 'asset_value'
+
     assert response.field_type == asset_field_type.AssetFieldTypeEnum.AssetFieldType.UNKNOWN
+
     assert response.enabled is True
+
     assert response.performance_label == asset_performance_label.AssetPerformanceLabelEnum.AssetPerformanceLabel.UNKNOWN
 
 
@@ -299,7 +316,6 @@ def test_get_ad_group_ad_asset_view_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_group_ad_asset_view_service.GetAdGroupAdAssetViewRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -307,6 +323,7 @@ def test_get_ad_group_ad_asset_view_field_headers():
             type(client.transport.get_ad_group_ad_asset_view),
             '__call__') as call:
         call.return_value = ad_group_ad_asset_view.AdGroupAdAssetView()
+
         client.get_ad_group_ad_asset_view(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -333,6 +350,7 @@ def test_get_ad_group_ad_asset_view_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_ad_asset_view.AdGroupAdAssetView()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_ad_group_ad_asset_view(
@@ -343,6 +361,7 @@ def test_get_ad_group_ad_asset_view_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -423,7 +442,7 @@ def test_ad_group_ad_asset_view_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_ad_group_ad_asset_view',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -576,6 +595,7 @@ def test_ad_group_ad_path():
     customer_id = "squid"
     ad_group_id = "clam"
     ad_id = "whelk"
+
     expected = "customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, ad_id=ad_id, )
     actual = AdGroupAdAssetViewServiceClient.ad_group_ad_path(customer_id, ad_group_id, ad_id)
     assert expected == actual
@@ -583,9 +603,10 @@ def test_ad_group_ad_path():
 
 def test_parse_ad_group_ad_path():
     expected = {
-        "customer_id": "octopus",
-        "ad_group_id": "oyster",
-        "ad_id": "nudibranch",
+    "customer_id": "octopus",
+    "ad_group_id": "oyster",
+    "ad_id": "nudibranch",
+
     }
     path = AdGroupAdAssetViewServiceClient.ad_group_ad_path(**expected)
 
@@ -599,6 +620,7 @@ def test_ad_group_ad_asset_view_path():
     ad_id = "winkle"
     asset_id = "nautilus"
     field_type = "scallop"
+
     expected = "customers/{customer_id}/adGroupAdAssetViews/{ad_group_id}~{ad_id}~{asset_id}~{field_type}".format(customer_id=customer_id, ad_group_id=ad_group_id, ad_id=ad_id, asset_id=asset_id, field_type=field_type, )
     actual = AdGroupAdAssetViewServiceClient.ad_group_ad_asset_view_path(customer_id, ad_group_id, ad_id, asset_id, field_type)
     assert expected == actual
@@ -606,11 +628,12 @@ def test_ad_group_ad_asset_view_path():
 
 def test_parse_ad_group_ad_asset_view_path():
     expected = {
-        "customer_id": "abalone",
-        "ad_group_id": "squid",
-        "ad_id": "clam",
-        "asset_id": "whelk",
-        "field_type": "octopus",
+    "customer_id": "abalone",
+    "ad_group_id": "squid",
+    "ad_id": "clam",
+    "asset_id": "whelk",
+    "field_type": "octopus",
+
     }
     path = AdGroupAdAssetViewServiceClient.ad_group_ad_asset_view_path(**expected)
 
@@ -621,6 +644,7 @@ def test_parse_ad_group_ad_asset_view_path():
 def test_asset_path():
     customer_id = "oyster"
     asset_id = "nudibranch"
+
     expected = "customers/{customer_id}/assets/{asset_id}".format(customer_id=customer_id, asset_id=asset_id, )
     actual = AdGroupAdAssetViewServiceClient.asset_path(customer_id, asset_id)
     assert expected == actual
@@ -628,8 +652,9 @@ def test_asset_path():
 
 def test_parse_asset_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "asset_id": "mussel",
+    "customer_id": "cuttlefish",
+    "asset_id": "mussel",
+
     }
     path = AdGroupAdAssetViewServiceClient.asset_path(**expected)
 
@@ -639,6 +664,7 @@ def test_parse_asset_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AdGroupAdAssetViewServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -646,7 +672,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nautilus",
+    "billing_account": "nautilus",
+
     }
     path = AdGroupAdAssetViewServiceClient.common_billing_account_path(**expected)
 
@@ -656,6 +683,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = AdGroupAdAssetViewServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -663,7 +691,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "abalone",
+    "folder": "abalone",
+
     }
     path = AdGroupAdAssetViewServiceClient.common_folder_path(**expected)
 
@@ -673,6 +702,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AdGroupAdAssetViewServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -680,7 +710,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "clam",
+    "organization": "clam",
+
     }
     path = AdGroupAdAssetViewServiceClient.common_organization_path(**expected)
 
@@ -690,6 +721,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
+
     expected = "projects/{project}".format(project=project, )
     actual = AdGroupAdAssetViewServiceClient.common_project_path(project)
     assert expected == actual
@@ -697,7 +729,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "octopus",
+    "project": "octopus",
+
     }
     path = AdGroupAdAssetViewServiceClient.common_project_path(**expected)
 
@@ -708,6 +741,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AdGroupAdAssetViewServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -715,8 +749,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "cuttlefish",
-        "location": "mussel",
+    "project": "cuttlefish",
+    "location": "mussel",
+
     }
     path = AdGroupAdAssetViewServiceClient.common_location_path(**expected)
 

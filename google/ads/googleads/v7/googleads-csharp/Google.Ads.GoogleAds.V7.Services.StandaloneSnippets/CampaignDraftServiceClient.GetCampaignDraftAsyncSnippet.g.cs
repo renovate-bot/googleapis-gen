@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignDraftServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignDraftAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCampaignDraftAsync()
         {
-            // Snippet: GetCampaignDraftAsync(string, CallSettings)
-            // Additional: GetCampaignDraftAsync(string, CancellationToken)
             // Create client
             CampaignDraftServiceClient campaignDraftServiceClient = await CampaignDraftServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/campaignDrafts/[BASE_CAMPAIGN_ID]~[DRAFT_ID]";
             // Make the request
             CampaignDraft response = await campaignDraftServiceClient.GetCampaignDraftAsync(resourceName);
-            // End snippet
         }
     }
 }

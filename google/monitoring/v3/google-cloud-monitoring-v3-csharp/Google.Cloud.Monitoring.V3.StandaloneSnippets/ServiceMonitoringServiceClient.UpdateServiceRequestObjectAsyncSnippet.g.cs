@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServiceMonitoringServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateServiceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateServiceRequestObjectAsync()
         {
-            // Snippet: UpdateServiceAsync(UpdateServiceRequest, CallSettings)
-            // Additional: UpdateServiceAsync(UpdateServiceRequest, CancellationToken)
             // Create client
             ServiceMonitoringServiceClient serviceMonitoringServiceClient = await ServiceMonitoringServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             };
             // Make the request
             Service response = await serviceMonitoringServiceClient.UpdateServiceAsync(request);
-            // End snippet
         }
     }
 }

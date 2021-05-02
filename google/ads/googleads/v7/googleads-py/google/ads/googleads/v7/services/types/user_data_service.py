@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.common.types import offline_user_data
 
@@ -44,25 +47,18 @@ class UploadUserDataRequest(proto.Message):
             user list.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operations = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operations = proto.RepeatedField(proto.MESSAGE, number=3,
         message='UserDataOperation',
     )
-    customer_match_user_list_metadata = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='metadata',
+    customer_match_user_list_metadata = proto.Field(proto.MESSAGE, number=2, oneof='metadata',
         message=offline_user_data.CustomerMatchUserListMetadata,
     )
 
 
 class UserDataOperation(proto.Message):
     r"""Operation to be made for the UploadUserDataRequest.
+
     Attributes:
         create (google.ads.googleads.v7.common.types.UserData):
             The list of user data to be appended to the
@@ -72,16 +68,10 @@ class UserDataOperation(proto.Message):
             user list.
     """
 
-    create = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='operation',
+    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=offline_user_data.UserData,
     )
-    remove = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='operation',
+    remove = proto.Field(proto.MESSAGE, number=2, oneof='operation',
         message=offline_user_data.UserData,
     )
 
@@ -100,16 +90,8 @@ class UploadUserDataResponse(proto.Message):
             API.
     """
 
-    upload_date_time = proto.Field(
-        proto.STRING,
-        number=3,
-        optional=True,
-    )
-    received_operations_count = proto.Field(
-        proto.INT32,
-        number=4,
-        optional=True,
-    )
+    upload_date_time = proto.Field(proto.STRING, number=3, optional=True)
+    received_operations_count = proto.Field(proto.INT32, number=4, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

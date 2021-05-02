@@ -23,10 +23,12 @@ namespace Google.Cloud.Tasks.V2Beta2.Snippets
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for RenewLeaseAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task RenewLeaseRequestObjectAsync()
         {
-            // Snippet: RenewLeaseAsync(RenewLeaseRequest, CallSettings)
-            // Additional: RenewLeaseAsync(RenewLeaseRequest, CancellationToken)
             // Create client
             CloudTasksClient cloudTasksClient = await CloudTasksClient.CreateAsync();
             // Initialize request argument(s)
@@ -39,7 +41,6 @@ namespace Google.Cloud.Tasks.V2Beta2.Snippets
             };
             // Make the request
             gctv::Task response = await cloudTasksClient.RenewLeaseAsync(request);
-            // End snippet
         }
     }
 }

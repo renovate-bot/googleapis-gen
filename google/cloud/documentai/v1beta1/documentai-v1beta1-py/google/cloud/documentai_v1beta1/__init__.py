@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.document_understanding_service import DocumentUnderstandingServiceClient
-
 from .types.document import Document
 from .types.document_understanding import BatchProcessDocumentsRequest
 from .types.document_understanding import BatchProcessDocumentsResponse
@@ -35,6 +35,7 @@ from .types.document_understanding import TableExtractionParams
 from .types.geometry import BoundingPoly
 from .types.geometry import NormalizedVertex
 from .types.geometry import Vertex
+
 
 __all__ = (
     'BatchProcessDocumentsRequest',

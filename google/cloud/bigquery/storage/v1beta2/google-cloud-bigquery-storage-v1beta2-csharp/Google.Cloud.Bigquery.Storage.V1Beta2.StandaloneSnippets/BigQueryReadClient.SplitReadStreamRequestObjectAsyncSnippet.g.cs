@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Bigquery.Storage.V1Beta2.Snippets
 {
+    using Google.Cloud.Bigquery.Storage.V1Beta2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigQueryReadClientStandaloneSnippets
     {
         /// <summary>Snippet for SplitReadStreamAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SplitReadStreamRequestObjectAsync()
         {
-            // Snippet: SplitReadStreamAsync(SplitReadStreamRequest, CallSettings)
-            // Additional: SplitReadStreamAsync(SplitReadStreamRequest, CancellationToken)
             // Create client
             BigQueryReadClient bigQueryReadClient = await BigQueryReadClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Bigquery.Storage.V1Beta2.Snippets
             };
             // Make the request
             SplitReadStreamResponse response = await bigQueryReadClient.SplitReadStreamAsync(request);
-            // End snippet
         }
     }
 }

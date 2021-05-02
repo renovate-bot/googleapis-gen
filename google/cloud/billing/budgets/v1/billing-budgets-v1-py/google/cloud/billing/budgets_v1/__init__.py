@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.budget_service import BudgetServiceClient
-
 from .types.budget_model import Budget
 from .types.budget_model import BudgetAmount
 from .types.budget_model import CalendarPeriod
@@ -30,6 +30,7 @@ from .types.budget_service import GetBudgetRequest
 from .types.budget_service import ListBudgetsRequest
 from .types.budget_service import ListBudgetsResponse
 from .types.budget_service import UpdateBudgetRequest
+
 
 __all__ = (
     'Budget',

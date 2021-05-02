@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
 {
+    using Google.Cloud.BigQuery.Reservation.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedReservationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBiReservationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetBiReservationRequestObjectAsync()
         {
-            // Snippet: GetBiReservationAsync(GetBiReservationRequest, CallSettings)
-            // Additional: GetBiReservationAsync(GetBiReservationRequest, CancellationToken)
             // Create client
             ReservationServiceClient reservationServiceClient = await ReservationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
             };
             // Make the request
             BiReservation response = await reservationServiceClient.GetBiReservationAsync(request);
-            // End snippet
         }
     }
 }

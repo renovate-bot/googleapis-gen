@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Enums;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomerNegativeCriterionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCustomerNegativeCriteriaAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateCustomerNegativeCriteriaRequestObjectAsync()
         {
-            // Snippet: MutateCustomerNegativeCriteriaAsync(MutateCustomerNegativeCriteriaRequest, CallSettings)
-            // Additional: MutateCustomerNegativeCriteriaAsync(MutateCustomerNegativeCriteriaRequest, CancellationToken)
             // Create client
             CustomerNegativeCriterionServiceClient customerNegativeCriterionServiceClient = await CustomerNegativeCriterionServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -42,7 +45,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             MutateCustomerNegativeCriteriaResponse response = await customerNegativeCriterionServiceClient.MutateCustomerNegativeCriteriaAsync(request);
-            // End snippet
         }
     }
 }

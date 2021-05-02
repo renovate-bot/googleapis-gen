@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 
@@ -29,6 +32,7 @@ __protobuf__ = proto.module(
 
 class TextLabel(proto.Message):
     r"""A type of label displaying text on a colored background.
+
     Attributes:
         background_color (google.protobuf.wrappers_pb2.StringValue):
             Background color of the label in RGB format. This string
@@ -40,14 +44,10 @@ class TextLabel(proto.Message):
             must be no more than 200 characters.
     """
 
-    background_color = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    background_color = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
-    description = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    description = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.StringValue,
     )
 

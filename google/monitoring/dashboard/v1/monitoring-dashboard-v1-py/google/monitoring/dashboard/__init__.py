@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,7 +42,8 @@ from google.monitoring.dashboard_v1.types.widget import Widget
 from google.monitoring.dashboard_v1.types.xychart import ChartOptions
 from google.monitoring.dashboard_v1.types.xychart import XyChart
 
-__all__ = ('Aggregation',
+__all__ = (
+    'Aggregation',
     'ChartOptions',
     'ColumnLayout',
     'CreateDashboardRequest',

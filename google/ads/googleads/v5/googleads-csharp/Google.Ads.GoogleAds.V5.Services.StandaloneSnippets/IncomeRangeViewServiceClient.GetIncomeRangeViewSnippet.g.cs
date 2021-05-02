@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedIncomeRangeViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIncomeRangeView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetIncomeRangeView()
         {
-            // Snippet: GetIncomeRangeView(string, CallSettings)
             // Create client
             IncomeRangeViewServiceClient incomeRangeViewServiceClient = IncomeRangeViewServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/incomeRangeViews/[INCOME_RANGE_VIEW]";
             // Make the request
             IncomeRangeView response = incomeRangeViewServiceClient.GetIncomeRangeView(resourceName);
-            // End snippet
         }
     }
 }

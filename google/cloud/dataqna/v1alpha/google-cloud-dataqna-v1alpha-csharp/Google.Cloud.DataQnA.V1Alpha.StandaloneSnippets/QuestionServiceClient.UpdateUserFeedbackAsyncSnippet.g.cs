@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.DataQnA.V1Alpha.Snippets
 {
+    using Google.Cloud.DataQnA.V1Alpha;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedQuestionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateUserFeedbackAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateUserFeedbackAsync()
         {
-            // Snippet: UpdateUserFeedbackAsync(UserFeedback, FieldMask, CallSettings)
-            // Additional: UpdateUserFeedbackAsync(UserFeedback, FieldMask, CancellationToken)
             // Create client
             QuestionServiceClient questionServiceClient = await QuestionServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.DataQnA.V1Alpha.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             UserFeedback response = await questionServiceClient.UpdateUserFeedbackAsync(userFeedback, updateMask);
-            // End snippet
         }
     }
 }

@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Iam.Credentials.V1.Snippets
 {
+    using Google.Cloud.Iam.Credentials.V1;
     using Google.Protobuf;
     using System.Collections.Generic;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Iam.Credentials.V1.Snippets
     public sealed partial class GeneratedIAMCredentialsClientStandaloneSnippets
     {
         /// <summary>Snippet for SignBlobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SignBlobResourceNamesAsync()
         {
-            // Snippet: SignBlobAsync(ServiceAccountName, IEnumerable<string>, ByteString, CallSettings)
-            // Additional: SignBlobAsync(ServiceAccountName, IEnumerable<string>, ByteString, CancellationToken)
             // Create client
             IAMCredentialsClient iAMCredentialsClient = await IAMCredentialsClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Iam.Credentials.V1.Snippets
             ByteString payload = ByteString.Empty;
             // Make the request
             SignBlobResponse response = await iAMCredentialsClient.SignBlobAsync(name, delegates, payload);
-            // End snippet
         }
     }
 }

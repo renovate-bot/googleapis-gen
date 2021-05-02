@@ -17,15 +17,19 @@
 namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Bigquery.Migration.V2Alpha;
     using Google.Protobuf.WellKnownTypes;
     using System;
 
     public sealed partial class GeneratedMigrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListMigrationSubtasks</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListMigrationSubtasksRequestObject()
         {
-            // Snippet: ListMigrationSubtasks(ListMigrationSubtasksRequest, CallSettings)
             // Create client
             MigrationServiceClient migrationServiceClient = MigrationServiceClient.Create();
             // Initialize request argument(s)
@@ -69,7 +73,6 @@ namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

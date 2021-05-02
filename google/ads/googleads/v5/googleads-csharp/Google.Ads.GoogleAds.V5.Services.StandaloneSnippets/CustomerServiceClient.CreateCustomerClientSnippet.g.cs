@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedCustomerServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateCustomerClient</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateCustomerClient()
         {
-            // Snippet: CreateCustomerClient(string, Customer, CallSettings)
             // Create client
             CustomerServiceClient customerServiceClient = CustomerServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             Customer customerClient = new Customer();
             // Make the request
             CreateCustomerClientResponse response = customerServiceClient.CreateCustomerClient(customerId, customerClient);
-            // End snippet
         }
     }
 }

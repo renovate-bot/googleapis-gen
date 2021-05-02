@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Kms.V1.Snippets
 {
+    using Google.Cloud.Kms.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedKeyManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPublicKeyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetPublicKeyResourceNamesAsync()
         {
-            // Snippet: GetPublicKeyAsync(CryptoKeyVersionName, CallSettings)
-            // Additional: GetPublicKeyAsync(CryptoKeyVersionName, CancellationToken)
             // Create client
             KeyManagementServiceClient keyManagementServiceClient = await KeyManagementServiceClient.CreateAsync();
             // Initialize request argument(s)
             CryptoKeyVersionName name = CryptoKeyVersionName.FromProjectLocationKeyRingCryptoKeyCryptoKeyVersion("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[CRYPTO_KEY]", "[CRYPTO_KEY_VERSION]");
             // Make the request
             PublicKey response = await keyManagementServiceClient.GetPublicKeyAsync(name);
-            // End snippet
         }
     }
 }

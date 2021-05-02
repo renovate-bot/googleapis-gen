@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -32,6 +34,7 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.mediatranslation_v1beta1.types import media_translation
 from google.rpc import status_pb2 as status  # type: ignore
+
 from .transports.base import SpeechTranslationServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import SpeechTranslationServiceGrpcTransport
 from .transports.grpc_asyncio import SpeechTranslationServiceGrpcAsyncIOTransport
@@ -323,8 +326,7 @@ class SpeechTranslationServiceClient(metaclass=SpeechTranslationServiceClientMet
 
         Args:
             requests (Iterator[google.cloud.mediatranslation_v1beta1.types.StreamingTranslateSpeechRequest]):
-                The request object iterator.
-                The top-level message sent by the
+                The request object iterator. The top-level message sent by the
                 client for the `StreamingTranslateSpeech` method.
                 Multiple `StreamingTranslateSpeechRequest` messages are
                 sent. The first message must contain a
@@ -360,6 +362,8 @@ class SpeechTranslationServiceClient(metaclass=SpeechTranslationServiceClientMet
 
         # Done; return the response.
         return response
+
+
 
 
 

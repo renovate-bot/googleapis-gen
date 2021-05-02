@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import merchant_center_link
 from google.ads.googleads.v6.services.types import merchant_center_link_service
+
 from .base import MerchantCenterLinkServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -57,8 +60,7 @@ class MerchantCenterLinkServiceGrpcTransport(MerchantCenterLinkServiceTransport)
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,9 +204,7 @@ class MerchantCenterLinkServiceGrpcTransport(MerchantCenterLinkServiceTransport)
     def list_merchant_center_links(self) -> Callable[
             [merchant_center_link_service.ListMerchantCenterLinksRequest],
             merchant_center_link_service.ListMerchantCenterLinksResponse]:
-        r"""Return a callable for the
-        list merchant center links
-          method over gRPC.
+        r"""Return a callable for the list merchant center links method over gRPC.
 
         Returns Merchant Center links available for this
         customer.
@@ -231,9 +231,7 @@ class MerchantCenterLinkServiceGrpcTransport(MerchantCenterLinkServiceTransport)
     def get_merchant_center_link(self) -> Callable[
             [merchant_center_link_service.GetMerchantCenterLinkRequest],
             merchant_center_link.MerchantCenterLink]:
-        r"""Return a callable for the
-        get merchant center link
-          method over gRPC.
+        r"""Return a callable for the get merchant center link method over gRPC.
 
         Returns the Merchant Center link in full detail.
 
@@ -259,9 +257,7 @@ class MerchantCenterLinkServiceGrpcTransport(MerchantCenterLinkServiceTransport)
     def mutate_merchant_center_link(self) -> Callable[
             [merchant_center_link_service.MutateMerchantCenterLinkRequest],
             merchant_center_link_service.MutateMerchantCenterLinkResponse]:
-        r"""Return a callable for the
-        mutate merchant center link
-          method over gRPC.
+        r"""Return a callable for the mutate merchant center link method over gRPC.
 
         Updates status or removes a Merchant Center link.
 

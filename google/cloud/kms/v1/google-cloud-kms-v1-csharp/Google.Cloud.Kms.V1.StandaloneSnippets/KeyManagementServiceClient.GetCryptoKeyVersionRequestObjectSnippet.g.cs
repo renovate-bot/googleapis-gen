@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Kms.V1.Snippets
 {
+    using Google.Cloud.Kms.V1;
+
     public sealed partial class GeneratedKeyManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCryptoKeyVersion</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCryptoKeyVersionRequestObject()
         {
-            // Snippet: GetCryptoKeyVersion(GetCryptoKeyVersionRequest, CallSettings)
             // Create client
             KeyManagementServiceClient keyManagementServiceClient = KeyManagementServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Kms.V1.Snippets
             };
             // Make the request
             CryptoKeyVersion response = keyManagementServiceClient.GetCryptoKeyVersion(request);
-            // End snippet
         }
     }
 }

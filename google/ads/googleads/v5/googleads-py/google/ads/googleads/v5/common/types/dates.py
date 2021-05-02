@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 
@@ -29,6 +32,7 @@ __protobuf__ = proto.module(
 
 class DateRange(proto.Message):
     r"""A date range.
+
     Attributes:
         start_date (google.protobuf.wrappers_pb2.StringValue):
             The start date, in yyyy-mm-dd format. This
@@ -38,14 +42,10 @@ class DateRange(proto.Message):
             is inclusive.
     """
 
-    start_date = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    start_date = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
-    end_date = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    end_date = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.StringValue,
     )
 

@@ -124,7 +124,7 @@ namespace Google.Ads.Admob.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListPublisherAccounts</summary>
+        /// <summary>Snippet for ListPublisherAccountsAsync</summary>
         public async Task ListPublisherAccountsRequestObjectAsync()
         {
             // Snippet: ListPublisherAccountsAsync(ListPublisherAccountsRequest, CallSettings)

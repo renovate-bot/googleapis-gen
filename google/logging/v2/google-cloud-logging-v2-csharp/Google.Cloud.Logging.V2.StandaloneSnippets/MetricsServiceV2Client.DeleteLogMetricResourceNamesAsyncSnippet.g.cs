@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Logging.V2.Snippets
 {
+    using Google.Cloud.Logging.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMetricsServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteLogMetricAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteLogMetricResourceNamesAsync()
         {
-            // Snippet: DeleteLogMetricAsync(LogMetricName, CallSettings)
-            // Additional: DeleteLogMetricAsync(LogMetricName, CancellationToken)
             // Create client
             MetricsServiceV2Client metricsServiceV2Client = await MetricsServiceV2Client.CreateAsync();
             // Initialize request argument(s)
             LogMetricName metricName = LogMetricName.FromProjectMetric("[PROJECT]", "[METRIC]");
             // Make the request
             await metricsServiceV2Client.DeleteLogMetricAsync(metricName);
-            // End snippet
         }
     }
 }

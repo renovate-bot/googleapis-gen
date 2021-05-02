@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
+    using Google.Cloud.Talent.V4Beta1;
+
     public sealed partial class GeneratedTenantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateTenant</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateTenant()
         {
-            // Snippet: UpdateTenant(Tenant, CallSettings)
             // Create client
             TenantServiceClient tenantServiceClient = TenantServiceClient.Create();
             // Initialize request argument(s)
             Tenant tenant = new Tenant();
             // Make the request
             Tenant response = tenantServiceClient.UpdateTenant(tenant);
-            // End snippet
         }
     }
 }

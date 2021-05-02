@@ -16,19 +16,23 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
+
     public sealed partial class GeneratedPaymentsAccountServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListPaymentsAccounts</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListPaymentsAccounts()
         {
-            // Snippet: ListPaymentsAccounts(string, CallSettings)
             // Create client
             PaymentsAccountServiceClient paymentsAccountServiceClient = PaymentsAccountServiceClient.Create();
             // Initialize request argument(s)
             string customerId = "";
             // Make the request
             ListPaymentsAccountsResponse response = paymentsAccountServiceClient.ListPaymentsAccounts(customerId);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -28,6 +30,7 @@ __protobuf__ = proto.module(
 
 class DomainMapping(proto.Message):
     r"""A domain serving an App Engine application.
+
     Attributes:
         name (str):
             Full path to the ``DomainMapping`` resource in the API.
@@ -49,28 +52,22 @@ class DomainMapping(proto.Message):
             @OutputOnly
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    ssl_settings = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    id = proto.Field(proto.STRING, number=2)
+
+    ssl_settings = proto.Field(proto.MESSAGE, number=3,
         message='SslSettings',
     )
-    resource_records = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+
+    resource_records = proto.RepeatedField(proto.MESSAGE, number=4,
         message='ResourceRecord',
     )
 
 
 class SslSettings(proto.Message):
     r"""SSL configuration for a ``DomainMapping`` resource.
+
     Attributes:
         certificate_id (str):
             ID of the ``AuthorizedCertificate`` resource configuring SSL
@@ -108,23 +105,18 @@ class SslSettings(proto.Message):
         AUTOMATIC = 1
         MANUAL = 2
 
-    certificate_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    ssl_management_type = proto.Field(
-        proto.ENUM,
-        number=3,
+    certificate_id = proto.Field(proto.STRING, number=1)
+
+    ssl_management_type = proto.Field(proto.ENUM, number=3,
         enum=SslManagementType,
     )
-    pending_managed_certificate_id = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+
+    pending_managed_certificate_id = proto.Field(proto.STRING, number=4)
 
 
 class ResourceRecord(proto.Message):
     r"""A DNS resource record.
+
     Attributes:
         name (str):
             Relative name of the object affected by this record. Only
@@ -143,17 +135,11 @@ class ResourceRecord(proto.Message):
         AAAA = 2
         CNAME = 3
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    rrdata = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    rrdata = proto.Field(proto.STRING, number=2)
+
+    type_ = proto.Field(proto.ENUM, number=3,
         enum=RecordType,
     )
 

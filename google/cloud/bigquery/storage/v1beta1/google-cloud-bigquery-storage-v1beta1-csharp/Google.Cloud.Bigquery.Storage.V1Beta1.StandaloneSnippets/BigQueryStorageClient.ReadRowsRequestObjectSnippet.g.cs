@@ -17,14 +17,18 @@
 namespace Google.Cloud.Bigquery.Storage.V1Beta1.Snippets
 {
     using Google.Api.Gax.Grpc;
+    using Google.Cloud.Bigquery.Storage.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigQueryStorageClientStandaloneSnippets
     {
         /// <summary>Snippet for ReadRows</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ReadRowsRequestObject()
         {
-            // Snippet: ReadRows(ReadRowsRequest, CallSettings)
             // Create client
             BigQueryStorageClient bigQueryStorageClient = BigQueryStorageClient.Create();
             // Initialize request argument(s)
@@ -44,7 +48,6 @@ namespace Google.Cloud.Bigquery.Storage.V1Beta1.Snippets
                 // Do something with streamed response
             }
             // The response stream has completed
-            // End snippet
         }
     }
 }

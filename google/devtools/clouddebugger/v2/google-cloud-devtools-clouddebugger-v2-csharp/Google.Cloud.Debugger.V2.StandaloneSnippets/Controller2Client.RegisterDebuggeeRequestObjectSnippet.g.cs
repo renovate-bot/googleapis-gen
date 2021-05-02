@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Debugger.V2.Snippets
 {
+    using Google.Cloud.Debugger.V2;
+
     public sealed partial class GeneratedController2ClientStandaloneSnippets
     {
         /// <summary>Snippet for RegisterDebuggee</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void RegisterDebuggeeRequestObject()
         {
-            // Snippet: RegisterDebuggee(RegisterDebuggeeRequest, CallSettings)
             // Create client
             Controller2Client controller2Client = Controller2Client.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Debugger.V2.Snippets
             };
             // Make the request
             RegisterDebuggeeResponse response = controller2Client.RegisterDebuggee(request);
-            // End snippet
         }
     }
 }

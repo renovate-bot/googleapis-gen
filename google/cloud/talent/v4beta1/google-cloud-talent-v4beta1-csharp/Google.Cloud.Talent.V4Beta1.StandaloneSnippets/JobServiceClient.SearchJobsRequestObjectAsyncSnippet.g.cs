@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
+    using Google.Cloud.Talent.V4Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for SearchJobsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SearchJobsRequestObjectAsync()
         {
-            // Snippet: SearchJobsAsync(SearchJobsRequest, CallSettings)
-            // Additional: SearchJobsAsync(SearchJobsRequest, CancellationToken)
             // Create client
             JobServiceClient jobServiceClient = await JobServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -51,7 +54,6 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
             };
             // Make the request
             SearchJobsResponse response = await jobServiceClient.SearchJobsAsync(request);
-            // End snippet
         }
     }
 }

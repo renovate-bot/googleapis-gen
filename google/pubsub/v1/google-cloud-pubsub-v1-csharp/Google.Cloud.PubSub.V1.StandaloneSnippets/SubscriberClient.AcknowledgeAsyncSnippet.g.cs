@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSubscriberClientStandaloneSnippets
     {
         /// <summary>Snippet for AcknowledgeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task AcknowledgeAsync()
         {
-            // Snippet: AcknowledgeAsync(string, IEnumerable<string>, CallSettings)
-            // Additional: AcknowledgeAsync(string, IEnumerable<string>, CancellationToken)
             // Create client
             SubscriberClient subscriberClient = await SubscriberClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
             IEnumerable<string> ackIds = new string[] { "", };
             // Make the request
             await subscriberClient.AcknowledgeAsync(subscription, ackIds);
-            // End snippet
         }
     }
 }

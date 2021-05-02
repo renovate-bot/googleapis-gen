@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Language.V1Beta2.Snippets
 {
+    using Google.Cloud.Language.V1Beta2;
+
     public sealed partial class GeneratedLanguageServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ClassifyText</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ClassifyTextRequestObject()
         {
-            // Snippet: ClassifyText(ClassifyTextRequest, CallSettings)
             // Create client
             LanguageServiceClient languageServiceClient = LanguageServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Language.V1Beta2.Snippets
             };
             // Make the request
             ClassifyTextResponse response = languageServiceClient.ClassifyText(request);
-            // End snippet
         }
     }
 }

@@ -76,7 +76,7 @@ namespace Google.Cloud.Asset.V1P1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchAllResources</summary>
+        /// <summary>Snippet for SearchAllResourcesAsync</summary>
         public async Task SearchAllResourcesRequestObjectAsync()
         {
             // Snippet: SearchAllResourcesAsync(SearchAllResourcesRequest, CallSettings)
@@ -174,7 +174,7 @@ namespace Google.Cloud.Asset.V1P1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchAllResources</summary>
+        /// <summary>Snippet for SearchAllResourcesAsync</summary>
         public async Task SearchAllResourcesAsync()
         {
             // Snippet: SearchAllResourcesAsync(string, string, IEnumerable<string>, string, int?, CallSettings)
@@ -266,7 +266,7 @@ namespace Google.Cloud.Asset.V1P1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchAllIamPolicies</summary>
+        /// <summary>Snippet for SearchAllIamPoliciesAsync</summary>
         public async Task SearchAllIamPoliciesRequestObjectAsync()
         {
             // Snippet: SearchAllIamPoliciesAsync(SearchAllIamPoliciesRequest, CallSettings)
@@ -357,7 +357,7 @@ namespace Google.Cloud.Asset.V1P1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchAllIamPolicies</summary>
+        /// <summary>Snippet for SearchAllIamPoliciesAsync</summary>
         public async Task SearchAllIamPoliciesAsync()
         {
             // Snippet: SearchAllIamPoliciesAsync(string, string, string, int?, CallSettings)

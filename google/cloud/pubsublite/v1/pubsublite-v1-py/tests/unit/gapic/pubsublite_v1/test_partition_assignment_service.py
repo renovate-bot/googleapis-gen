@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -35,33 +35,9 @@ from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.pubsublite_v1.services.partition_assignment_service import PartitionAssignmentServiceAsyncClient
 from google.cloud.pubsublite_v1.services.partition_assignment_service import PartitionAssignmentServiceClient
 from google.cloud.pubsublite_v1.services.partition_assignment_service import transports
-from google.cloud.pubsublite_v1.services.partition_assignment_service.transports.base import _API_CORE_VERSION
-from google.cloud.pubsublite_v1.services.partition_assignment_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.pubsublite_v1.types import subscriber
 from google.oauth2 import service_account
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -229,10 +205,12 @@ def test_partition_assignment_service_client_client_options(client_class, transp
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (PartitionAssignmentServiceClient, transports.PartitionAssignmentServiceGrpcTransport, "grpc", "true"),
     (PartitionAssignmentServiceAsyncClient, transports.PartitionAssignmentServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (PartitionAssignmentServiceClient, transports.PartitionAssignmentServiceGrpcTransport, "grpc", "false"),
     (PartitionAssignmentServiceAsyncClient, transports.PartitionAssignmentServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(PartitionAssignmentServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(PartitionAssignmentServiceClient))
 @mock.patch.object(PartitionAssignmentServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(PartitionAssignmentServiceAsyncClient))
@@ -379,6 +357,7 @@ def test_assign_partitions(transport: str = 'grpc', request_type=subscriber.Part
     # Everything is optional in proto3 as far as the runtime is concerned,
     # and we are mocking out the actual API, so just send an empty request.
     request = request_type()
+
     requests = [request]
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -387,11 +366,13 @@ def test_assign_partitions(transport: str = 'grpc', request_type=subscriber.Part
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([subscriber.PartitionAssignment()])
+
         response = client.assign_partitions(iter(requests))
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert next(args[0]) == request
 
     # Establish that the response is the type that we expect.
@@ -413,6 +394,7 @@ async def test_assign_partitions_async(transport: str = 'grpc_asyncio', request_
     # Everything is optional in proto3 as far as the runtime is concerned,
     # and we are mocking out the actual API, so just send an empty request.
     request = request_type()
+
     requests = [request]
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -422,11 +404,13 @@ async def test_assign_partitions_async(transport: str = 'grpc_asyncio', request_
         # Designate an appropriate return value for the call.
         call.return_value = mock.Mock(aio.StreamStreamCall, autospec=True)
         call.return_value.read = mock.AsyncMock(side_effect=[subscriber.PartitionAssignment()])
+
         response = await client.assign_partitions(iter(requests))
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert next(args[0]) == request
 
     # Establish that the response is the type that we expect.
@@ -479,6 +463,7 @@ def test_transport_instance():
     client = PartitionAssignmentServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.PartitionAssignmentServiceGrpcTransport(
@@ -493,6 +478,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.PartitionAssignmentServiceGrpcTransport,
     transports.PartitionAssignmentServiceGrpcAsyncIOTransport,
@@ -504,6 +490,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = PartitionAssignmentServiceClient(
@@ -513,6 +500,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.PartitionAssignmentServiceGrpcTransport,
     )
+
 
 def test_partition_assignment_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -535,33 +523,15 @@ def test_partition_assignment_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'assign_partitions',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_partition_assignment_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.pubsublite_v1.services.partition_assignment_service.transports.PartitionAssignmentServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.PartitionAssignmentServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_partition_assignment_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.pubsublite_v1.services.partition_assignment_service.transports.PartitionAssignmentServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.pubsublite_v1.services.partition_assignment_service.transports.PartitionAssignmentServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.PartitionAssignmentServiceTransport(
@@ -577,182 +547,33 @@ def test_partition_assignment_service_base_transport_with_credentials_file_old_g
 
 def test_partition_assignment_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.pubsublite_v1.services.partition_assignment_service.transports.PartitionAssignmentServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.pubsublite_v1.services.partition_assignment_service.transports.PartitionAssignmentServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.PartitionAssignmentServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_partition_assignment_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         PartitionAssignmentServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_partition_assignment_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        PartitionAssignmentServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.PartitionAssignmentServiceGrpcTransport,
-        transports.PartitionAssignmentServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_partition_assignment_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.PartitionAssignmentServiceGrpcTransport,
-        transports.PartitionAssignmentServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_partition_assignment_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.PartitionAssignmentServiceGrpcTransport, grpc_helpers),
-        (transports.PartitionAssignmentServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_partition_assignment_service_transport_create_channel(transport_class, grpc_helpers):
+def test_partition_assignment_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.PartitionAssignmentServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "pubsublite.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="pubsublite.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.PartitionAssignmentServiceGrpcTransport, grpc_helpers),
-        (transports.PartitionAssignmentServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_partition_assignment_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "pubsublite.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.PartitionAssignmentServiceGrpcTransport, grpc_helpers),
-        (transports.PartitionAssignmentServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_partition_assignment_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "pubsublite.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -814,6 +635,7 @@ def test_partition_assignment_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='pubsublite.googleapis.com:8000'),
     )
     assert client.transport._host == 'pubsublite.googleapis.com:8000'
+
 
 def test_partition_assignment_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -931,6 +753,7 @@ def test_partition_assignment_service_transport_channel_mtls_with_adc(
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = PartitionAssignmentServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -938,7 +761,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = PartitionAssignmentServiceClient.common_billing_account_path(**expected)
 
@@ -948,6 +772,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = PartitionAssignmentServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -955,7 +780,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = PartitionAssignmentServiceClient.common_folder_path(**expected)
 
@@ -965,6 +791,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = PartitionAssignmentServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -972,7 +799,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = PartitionAssignmentServiceClient.common_organization_path(**expected)
 
@@ -982,6 +810,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = PartitionAssignmentServiceClient.common_project_path(project)
     assert expected == actual
@@ -989,7 +818,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = PartitionAssignmentServiceClient.common_project_path(**expected)
 
@@ -1000,6 +830,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = PartitionAssignmentServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1007,8 +838,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = PartitionAssignmentServiceClient.common_location_path(**expected)
 

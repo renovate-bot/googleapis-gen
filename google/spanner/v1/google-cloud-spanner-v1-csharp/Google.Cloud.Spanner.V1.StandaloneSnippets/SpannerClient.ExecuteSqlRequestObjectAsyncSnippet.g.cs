@@ -24,10 +24,12 @@ namespace Google.Cloud.Spanner.V1.Snippets
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for ExecuteSqlAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ExecuteSqlRequestObjectAsync()
         {
-            // Snippet: ExecuteSqlAsync(ExecuteSqlRequest, CallSettings)
-            // Additional: ExecuteSqlAsync(ExecuteSqlRequest, CancellationToken)
             // Create client
             SpannerClient spannerClient = await SpannerClient.CreateAsync();
             // Initialize request argument(s)
@@ -53,7 +55,6 @@ namespace Google.Cloud.Spanner.V1.Snippets
             };
             // Make the request
             ResultSet response = await spannerClient.ExecuteSqlAsync(request);
-            // End snippet
         }
     }
 }

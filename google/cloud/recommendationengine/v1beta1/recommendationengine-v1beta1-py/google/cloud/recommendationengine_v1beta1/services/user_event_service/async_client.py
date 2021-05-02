@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -36,6 +38,7 @@ from google.cloud.recommendationengine_v1beta1.types import user_event as gcr_us
 from google.cloud.recommendationengine_v1beta1.types import user_event_service
 from google.protobuf import any_pb2 as gp_any  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import UserEventServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import UserEventServiceGrpcAsyncIOTransport
 from .client import UserEventServiceClient
@@ -53,14 +56,19 @@ class UserEventServiceAsyncClient:
 
     event_store_path = staticmethod(UserEventServiceClient.event_store_path)
     parse_event_store_path = staticmethod(UserEventServiceClient.parse_event_store_path)
+
     common_billing_account_path = staticmethod(UserEventServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(UserEventServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(UserEventServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(UserEventServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(UserEventServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(UserEventServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(UserEventServiceClient.common_project_path)
     parse_common_project_path = staticmethod(UserEventServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(UserEventServiceClient.common_location_path)
     parse_common_location_path = staticmethod(UserEventServiceClient.parse_common_location_path)
 
@@ -145,6 +153,7 @@ class UserEventServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = UserEventServiceClient(
             credentials=credentials,
             transport=transport,
@@ -166,8 +175,7 @@ class UserEventServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.WriteUserEventRequest`):
-                The request object.
-                Request message for WriteUserEvent
+                The request object. Request message for WriteUserEvent
                 method.
             parent (:class:`str`):
                 Required. The parent eventStore resource name, such as
@@ -181,6 +189,7 @@ class UserEventServiceAsyncClient:
                 This corresponds to the ``user_event`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -207,6 +216,7 @@ class UserEventServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if user_event is not None:
@@ -217,7 +227,10 @@ class UserEventServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.write_user_event,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -266,8 +279,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.CollectUserEventRequest`):
-                The request object.
-                Request message for CollectUserEvent
+                The request object. Request message for CollectUserEvent
                 method.
             parent (:class:`str`):
                 Required. The parent eventStore name, such as
@@ -306,6 +318,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``ets`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -373,6 +386,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if user_event is not None:
@@ -387,7 +401,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.collect_user_event,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -430,8 +447,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.ListUserEventsRequest`):
-                The request object.
-                Request message for ListUserEvents
+                The request object. Request message for ListUserEvents
                 method.
             parent (:class:`str`):
                 Required. The parent eventStore resource name, such as
@@ -481,6 +497,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -508,6 +525,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -518,7 +536,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_user_events,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -574,8 +595,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.PurgeUserEventsRequest`):
-                The request object.
-                Request message for PurgeUserEvents
+                The request object. Request message for PurgeUserEvents
                 method.
             parent (:class:`str`):
                 Required. The resource name of the event_store under
@@ -619,6 +639,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``force`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -646,6 +667,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -658,7 +680,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.purge_user_events,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -716,8 +741,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.recommendationengine_v1beta1.types.ImportUserEventsRequest`):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 ImportUserEvents request.
             parent (:class:`str`):
                 Required.
@@ -752,6 +776,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``errors_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -781,6 +806,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if request_id is not None:
@@ -795,7 +821,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.import_user_events,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -831,6 +860,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

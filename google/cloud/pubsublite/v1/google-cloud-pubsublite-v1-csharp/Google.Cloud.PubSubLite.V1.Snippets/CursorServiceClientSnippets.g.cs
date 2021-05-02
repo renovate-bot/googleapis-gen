@@ -58,7 +58,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
                 StreamingCommitCursorRequest request = new StreamingCommitCursorRequest
                 {
                     Initial = new InitialCommitCursorRequest(),
-                    Commit = new SequencedCommitCursorRequest(),
                 };
                 // Stream a request to the server
                 await response.WriteAsync(request);
@@ -158,7 +157,7 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListPartitionCursors</summary>
+        /// <summary>Snippet for ListPartitionCursorsAsync</summary>
         public async Task ListPartitionCursorsRequestObjectAsync()
         {
             // Snippet: ListPartitionCursorsAsync(ListPartitionCursorsRequest, CallSettings)
@@ -251,7 +250,7 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListPartitionCursors</summary>
+        /// <summary>Snippet for ListPartitionCursorsAsync</summary>
         public async Task ListPartitionCursorsAsync()
         {
             // Snippet: ListPartitionCursorsAsync(string, string, int?, CallSettings)
@@ -341,7 +340,7 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListPartitionCursors</summary>
+        /// <summary>Snippet for ListPartitionCursorsAsync</summary>
         public async Task ListPartitionCursorsResourceNamesAsync()
         {
             // Snippet: ListPartitionCursorsAsync(SubscriptionName, string, int?, CallSettings)

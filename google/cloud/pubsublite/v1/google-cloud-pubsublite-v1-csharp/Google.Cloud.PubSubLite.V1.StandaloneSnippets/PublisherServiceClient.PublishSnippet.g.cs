@@ -17,14 +17,18 @@
 namespace Google.Cloud.PubSubLite.V1.Snippets
 {
     using Google.Api.Gax.Grpc;
+    using Google.Cloud.PubSubLite.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPublisherServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for Publish</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task Publish()
         {
-            // Snippet: Publish(CallSettings, BidirectionalStreamingSettings)
             // Create client
             PublisherServiceClient publisherServiceClient = PublisherServiceClient.Create();
             // Initialize streaming call, retrieving the stream object
@@ -54,7 +58,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
                 PublishRequest request = new PublishRequest
                 {
                     InitialRequest = new InitialPublishRequest(),
-                    MessagePublishRequest = new MessagePublishRequest(),
                 };
                 // Stream a request to the server
                 await response.WriteAsync(request);
@@ -66,7 +69,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             // Await the response handler
             // This will complete once all server responses have been processed
             await responseHandlerTask;
-            // End snippet
         }
     }
 }

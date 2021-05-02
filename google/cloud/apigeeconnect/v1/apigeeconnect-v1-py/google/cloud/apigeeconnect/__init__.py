@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,7 +35,8 @@ from google.cloud.apigeeconnect_v1.types.tether import StreamInfo
 from google.cloud.apigeeconnect_v1.types.tether import TetherEndpoint
 from google.cloud.apigeeconnect_v1.types.tether import Url
 
-__all__ = ('Action',
+__all__ = (
+    'Action',
     'Cluster',
     'Connection',
     'ConnectionServiceAsyncClient',

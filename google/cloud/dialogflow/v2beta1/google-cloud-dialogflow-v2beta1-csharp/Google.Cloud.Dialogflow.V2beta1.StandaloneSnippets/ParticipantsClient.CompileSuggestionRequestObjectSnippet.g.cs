@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for CompileSuggestion</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CompileSuggestionRequestObject()
         {
-            // Snippet: CompileSuggestion(CompileSuggestionRequest, CallSettings)
             // Create client
             ParticipantsClient participantsClient = ParticipantsClient.Create();
             // Initialize request argument(s)
@@ -37,7 +42,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 #pragma warning disable CS0612
             CompileSuggestionResponse response = participantsClient.CompileSuggestion(request);
 #pragma warning restore CS0612
-            // End snippet
         }
     }
 }

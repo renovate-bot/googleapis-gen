@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -43,9 +45,9 @@ class OrganizationSettings(proto.Message):
             The configuration used for Asset Discovery
             runs.
     """
-
     class AssetDiscoveryConfig(proto.Message):
         r"""The configuration used for Asset Discovery runs.
+
         Attributes:
             project_ids (Sequence[str]):
                 The project ids to use for filtering asset
@@ -68,27 +70,17 @@ class OrganizationSettings(proto.Message):
             INCLUDE_ONLY = 1
             EXCLUDE = 2
 
-        project_ids = proto.RepeatedField(
-            proto.STRING,
-            number=1,
-        )
-        inclusion_mode = proto.Field(
-            proto.ENUM,
-            number=2,
+        project_ids = proto.RepeatedField(proto.STRING, number=1)
+
+        inclusion_mode = proto.Field(proto.ENUM, number=2,
             enum='OrganizationSettings.AssetDiscoveryConfig.InclusionMode',
         )
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    enable_asset_discovery = proto.Field(
-        proto.BOOL,
-        number=2,
-    )
-    asset_discovery_config = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    enable_asset_discovery = proto.Field(proto.BOOL, number=2)
+
+    asset_discovery_config = proto.Field(proto.MESSAGE, number=3,
         message=AssetDiscoveryConfig,
     )
 

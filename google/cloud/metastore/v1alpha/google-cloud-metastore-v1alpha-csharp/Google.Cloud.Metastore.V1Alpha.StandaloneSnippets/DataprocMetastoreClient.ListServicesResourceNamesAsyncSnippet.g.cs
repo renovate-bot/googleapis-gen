@@ -18,16 +18,20 @@ namespace Google.Cloud.Metastore.V1Alpha.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Metastore.V1Alpha;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataprocMetastoreClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListServices</summary>
+        /// <summary>Snippet for ListServicesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListServicesResourceNamesAsync()
         {
-            // Snippet: ListServicesAsync(LocationName, string, int?, CallSettings)
             // Create client
             DataprocMetastoreClient dataprocMetastoreClient = await DataprocMetastoreClient.CreateAsync();
             // Initialize request argument(s)
@@ -66,7 +70,6 @@ namespace Google.Cloud.Metastore.V1Alpha.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Spanner.V1.Snippets
 {
+    using Google.Cloud.Spanner.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateSessionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateSessionAsync()
         {
-            // Snippet: CreateSessionAsync(string, CallSettings)
-            // Additional: CreateSessionAsync(string, CancellationToken)
             // Create client
             SpannerClient spannerClient = await SpannerClient.CreateAsync();
             // Initialize request argument(s)
             string database = "projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE]";
             // Make the request
             Session response = await spannerClient.CreateSessionAsync(database);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,9 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from typing import Any, Callable, Iterable, Sequence, Tuple
 
 from google.ads.googleads.v5.services.types import batch_job_service
+
 
 class ListBatchJobResultsPager:
     """A pager for iterating through ``list_batch_job_results`` requests.

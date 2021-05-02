@@ -16,22 +16,24 @@
 
 namespace Google.Iam.V1Beta.Snippets
 {
+    using Google.Iam.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWorkloadIdentityPoolsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetWorkloadIdentityPoolProviderAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetWorkloadIdentityPoolProviderAsync()
         {
-            // Snippet: GetWorkloadIdentityPoolProviderAsync(string, CallSettings)
-            // Additional: GetWorkloadIdentityPoolProviderAsync(string, CancellationToken)
             // Create client
             WorkloadIdentityPoolsClient workloadIdentityPoolsClient = await WorkloadIdentityPoolsClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/workloadIdentityPools/[WORKLOAD_IDENTITY_POOL]/providers/[WORKLOAD_IDENTITY_POOL_PROVIDER]";
             // Make the request
             WorkloadIdentityPoolProvider response = await workloadIdentityPoolsClient.GetWorkloadIdentityPoolProviderAsync(name);
-            // End snippet
         }
     }
 }

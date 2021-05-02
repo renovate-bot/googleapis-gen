@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.trace_v2.types import trace
 
@@ -28,6 +31,7 @@ __protobuf__ = proto.module(
 
 class BatchWriteSpansRequest(proto.Message):
     r"""The request message for the ``BatchWriteSpans`` method.
+
     Attributes:
         name (str):
             Required. The name of the project where the spans belong.
@@ -38,13 +42,9 @@ class BatchWriteSpansRequest(proto.Message):
             are undefined.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    spans = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    spans = proto.RepeatedField(proto.MESSAGE, number=2,
         message=trace.Span,
     )
 

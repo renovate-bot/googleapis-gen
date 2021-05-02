@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v4.resources.types import third_party_app_analytics_link
 from google.ads.googleads.v4.services.types import third_party_app_analytics_link_service
+
 from .base import ThirdPartyAppAnalyticsLinkServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -57,8 +60,7 @@ class ThirdPartyAppAnalyticsLinkServiceGrpcTransport(ThirdPartyAppAnalyticsLinkS
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,10 +204,8 @@ class ThirdPartyAppAnalyticsLinkServiceGrpcTransport(ThirdPartyAppAnalyticsLinkS
     def get_third_party_app_analytics_link(self) -> Callable[
             [third_party_app_analytics_link_service.GetThirdPartyAppAnalyticsLinkRequest],
             third_party_app_analytics_link.ThirdPartyAppAnalyticsLink]:
-        r"""Return a callable for the
-        get third party app analytics
-        link
-          method over gRPC.
+        r"""Return a callable for the get third party app analytics
+        link method over gRPC.
 
         Returns the third party app analytics link in full
         detail.

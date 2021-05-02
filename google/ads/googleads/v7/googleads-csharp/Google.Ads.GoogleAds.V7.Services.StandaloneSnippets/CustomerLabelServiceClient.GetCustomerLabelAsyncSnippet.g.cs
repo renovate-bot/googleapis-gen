@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomerLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomerLabelAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCustomerLabelAsync()
         {
-            // Snippet: GetCustomerLabelAsync(string, CallSettings)
-            // Additional: GetCustomerLabelAsync(string, CancellationToken)
             // Create client
             CustomerLabelServiceClient customerLabelServiceClient = await CustomerLabelServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/customerLabels/[LABEL_ID]";
             // Make the request
             CustomerLabel response = await customerLabelServiceClient.GetCustomerLabelAsync(resourceName);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetStoredInfoTypeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetStoredInfoTypeAsync()
         {
-            // Snippet: GetStoredInfoTypeAsync(string, CallSettings)
-            // Additional: GetStoredInfoTypeAsync(string, CancellationToken)
             // Create client
             DlpServiceClient dlpServiceClient = await DlpServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "organizations/[ORGANIZATION]/storedInfoTypes/[STORED_INFO_TYPE]";
             // Make the request
             StoredInfoType response = await dlpServiceClient.GetStoredInfoTypeAsync(name);
-            // End snippet
         }
     }
 }

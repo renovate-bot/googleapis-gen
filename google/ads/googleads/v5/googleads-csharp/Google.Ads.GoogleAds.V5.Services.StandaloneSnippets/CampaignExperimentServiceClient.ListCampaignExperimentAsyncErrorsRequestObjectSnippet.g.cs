@@ -17,6 +17,7 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using Google.Api.Gax;
     using Google.Rpc;
     using System;
@@ -24,9 +25,12 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
     public sealed partial class GeneratedCampaignExperimentServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListCampaignExperimentAsyncErrors</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListCampaignExperimentAsyncErrorsRequestObject()
         {
-            // Snippet: ListCampaignExperimentAsyncErrors(ListCampaignExperimentAsyncErrorsRequest, CallSettings)
             // Create client
             CampaignExperimentServiceClient campaignExperimentServiceClient = CampaignExperimentServiceClient.Create();
             // Initialize request argument(s)
@@ -68,7 +72,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

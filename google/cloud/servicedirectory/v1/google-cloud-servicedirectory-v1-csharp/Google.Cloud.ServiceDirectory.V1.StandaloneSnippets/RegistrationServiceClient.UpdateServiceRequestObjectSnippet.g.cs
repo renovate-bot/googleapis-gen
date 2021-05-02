@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.ServiceDirectory.V1.Snippets
 {
+    using Google.Cloud.ServiceDirectory.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedRegistrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateService</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateServiceRequestObject()
         {
-            // Snippet: UpdateService(UpdateServiceRequest, CallSettings)
             // Create client
             RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.ServiceDirectory.V1.Snippets
             };
             // Make the request
             Service response = registrationServiceClient.UpdateService(request);
-            // End snippet
         }
     }
 }

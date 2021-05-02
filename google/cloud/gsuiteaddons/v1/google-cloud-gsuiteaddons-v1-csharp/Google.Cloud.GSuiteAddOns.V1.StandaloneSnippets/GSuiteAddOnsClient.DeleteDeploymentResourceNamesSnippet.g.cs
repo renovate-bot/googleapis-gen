@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.GSuiteAddOns.V1.Snippets
 {
+    using Google.Cloud.GSuiteAddOns.V1;
+
     public sealed partial class GeneratedGSuiteAddOnsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteDeployment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteDeploymentResourceNames()
         {
-            // Snippet: DeleteDeployment(DeploymentName, CallSettings)
             // Create client
             GSuiteAddOnsClient gSuiteAddOnsClient = GSuiteAddOnsClient.Create();
             // Initialize request argument(s)
             DeploymentName name = DeploymentName.FromProjectDeployment("[PROJECT]", "[DEPLOYMENT]");
             // Make the request
             gSuiteAddOnsClient.DeleteDeployment(name);
-            // End snippet
         }
     }
 }

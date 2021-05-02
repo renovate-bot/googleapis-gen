@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSubscriberClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateSubscriptionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateSubscriptionAsync()
         {
-            // Snippet: CreateSubscriptionAsync(string, string, PushConfig, int, CallSettings)
-            // Additional: CreateSubscriptionAsync(string, string, PushConfig, int, CancellationToken)
             // Create client
             SubscriberClient subscriberClient = await SubscriberClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
             int ackDeadlineSeconds = 0;
             // Make the request
             Subscription response = await subscriberClient.CreateSubscriptionAsync(name, topic, pushConfig, ackDeadlineSeconds);
-            // End snippet
         }
     }
 }

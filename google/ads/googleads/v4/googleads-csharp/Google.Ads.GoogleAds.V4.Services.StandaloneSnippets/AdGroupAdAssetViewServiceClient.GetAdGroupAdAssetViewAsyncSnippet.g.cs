@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupAdAssetViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupAdAssetViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdGroupAdAssetViewAsync()
         {
-            // Snippet: GetAdGroupAdAssetViewAsync(string, CallSettings)
-            // Additional: GetAdGroupAdAssetViewAsync(string, CancellationToken)
             // Create client
             AdGroupAdAssetViewServiceClient adGroupAdAssetViewServiceClient = await AdGroupAdAssetViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/adGroupAdAssetViews/[AD_GROUP_AD_ASSET_VIEW]";
             // Make the request
             AdGroupAdAssetView response = await adGroupAdAssetViewServiceClient.GetAdGroupAdAssetViewAsync(resourceName);
-            // End snippet
         }
     }
 }

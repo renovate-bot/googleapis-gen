@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.PubSubLite.V1.Snippets
 {
+    using Google.Cloud.PubSubLite.V1;
+
     public sealed partial class GeneratedTopicStatsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ComputeHeadCursor</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ComputeHeadCursorRequestObject()
         {
-            // Snippet: ComputeHeadCursor(ComputeHeadCursorRequest, CallSettings)
             // Create client
             TopicStatsServiceClient topicStatsServiceClient = TopicStatsServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             };
             // Make the request
             ComputeHeadCursorResponse response = topicStatsServiceClient.ComputeHeadCursor(request);
-            // End snippet
         }
     }
 }

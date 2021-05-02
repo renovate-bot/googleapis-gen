@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Gaming.V1.Snippets
 {
+    using Google.Cloud.Gaming.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGameServerClustersServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for PreviewUpdateGameServerClusterAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task PreviewUpdateGameServerClusterRequestObjectAsync()
         {
-            // Snippet: PreviewUpdateGameServerClusterAsync(PreviewUpdateGameServerClusterRequest, CallSettings)
-            // Additional: PreviewUpdateGameServerClusterAsync(PreviewUpdateGameServerClusterRequest, CancellationToken)
             // Create client
             GameServerClustersServiceClient gameServerClustersServiceClient = await GameServerClustersServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Gaming.V1.Snippets
             };
             // Make the request
             PreviewUpdateGameServerClusterResponse response = await gameServerClustersServiceClient.PreviewUpdateGameServerClusterAsync(request);
-            // End snippet
         }
     }
 }

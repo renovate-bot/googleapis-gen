@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Functions.V1.Snippets
 {
+    using Google.Cloud.Functions.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Functions.V1.Snippets
     public sealed partial class GeneratedCloudFunctionsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateFunctionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateFunctionRequestObjectAsync()
         {
-            // Snippet: UpdateFunctionAsync(UpdateFunctionRequest, CallSettings)
-            // Additional: UpdateFunctionAsync(UpdateFunctionRequest, CancellationToken)
             // Create client
             CloudFunctionsServiceClient cloudFunctionsServiceClient = await CloudFunctionsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -53,7 +56,6 @@ namespace Google.Cloud.Functions.V1.Snippets
                 // If it has completed, then access the result
                 CloudFunction retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

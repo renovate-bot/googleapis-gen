@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -63,7 +64,8 @@ from google.cloud.retail_v2beta.types.user_event_service import RejoinUserEvents
 from google.cloud.retail_v2beta.types.user_event_service import RejoinUserEventsResponse
 from google.cloud.retail_v2beta.types.user_event_service import WriteUserEventRequest
 
-__all__ = ('BigQuerySource',
+__all__ = (
+    'BigQuerySource',
     'Catalog',
     'CatalogServiceAsyncClient',
     'CatalogServiceClient',

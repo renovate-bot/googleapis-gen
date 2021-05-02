@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v4.resources.types import feed_mapping
 from google.ads.googleads.v4.services.types import feed_mapping_service
+
 from .base import FeedMappingServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class FeedMappingServiceGrpcTransport(FeedMappingServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class FeedMappingServiceGrpcTransport(FeedMappingServiceTransport):
     def get_feed_mapping(self) -> Callable[
             [feed_mapping_service.GetFeedMappingRequest],
             feed_mapping.FeedMapping]:
-        r"""Return a callable for the
-        get feed mapping
-          method over gRPC.
+        r"""Return a callable for the get feed mapping method over gRPC.
 
         Returns the requested feed mapping in full detail.
 
@@ -229,9 +229,7 @@ class FeedMappingServiceGrpcTransport(FeedMappingServiceTransport):
     def mutate_feed_mappings(self) -> Callable[
             [feed_mapping_service.MutateFeedMappingsRequest],
             feed_mapping_service.MutateFeedMappingsResponse]:
-        r"""Return a callable for the
-        mutate feed mappings
-          method over gRPC.
+        r"""Return a callable for the mutate feed mappings method over gRPC.
 
         Creates or removes feed mappings. Operation statuses
         are returned.

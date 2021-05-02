@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,6 +36,7 @@ from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as policy  # type: ignore
 from google.pubsub_v1.services.publisher import pagers
 from google.pubsub_v1.types import pubsub
+
 from .transports.base import PublisherTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import PublisherGrpcTransport
 from .transports.grpc_asyncio import PublisherGrpcAsyncIOTransport
@@ -361,8 +364,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
 
         Args:
             request (google.pubsub_v1.types.Topic):
-                The request object.
-                A topic resource.
+                The request object. A topic resource.
             name (str):
                 Required. The name of the topic. It must have the format
                 ``"projects/{project}/topics/{topic}"``. ``{topic}``
@@ -376,6 +378,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -400,8 +403,10 @@ class PublisherClient(metaclass=PublisherClientMeta):
         # there are no flattened fields.
         if not isinstance(request, pubsub.Topic):
             request = pubsub.Topic(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -440,8 +445,8 @@ class PublisherClient(metaclass=PublisherClientMeta):
 
         Args:
             request (google.pubsub_v1.types.UpdateTopicRequest):
-                The request object.
-                Request for the UpdateTopic method.
+                The request object. Request for the UpdateTopic method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -453,6 +458,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
                 A topic resource.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a pubsub.UpdateTopicRequest.
         # There's no risk of modifying the input as we've already verified
@@ -497,8 +503,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
 
         Args:
             request (google.pubsub_v1.types.PublishRequest):
-                The request object.
-                Request for the Publish method.
+                The request object. Request for the Publish method.
             topic (str):
                 Required. The messages in the request will be published
                 on this topic. Format is
@@ -512,6 +517,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
                 This corresponds to the ``messages`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -536,8 +542,10 @@ class PublisherClient(metaclass=PublisherClientMeta):
         # there are no flattened fields.
         if not isinstance(request, pubsub.PublishRequest):
             request = pubsub.PublishRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if topic is not None:
                 request.topic = topic
             if messages is not None:
@@ -578,8 +586,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
 
         Args:
             request (google.pubsub_v1.types.GetTopicRequest):
-                The request object.
-                Request for the GetTopic method.
+                The request object. Request for the GetTopic method.
             topic (str):
                 Required. The name of the topic to get. Format is
                 ``projects/{project}/topics/{topic}``.
@@ -587,6 +594,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
                 This corresponds to the ``topic`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -611,8 +619,10 @@ class PublisherClient(metaclass=PublisherClientMeta):
         # there are no flattened fields.
         if not isinstance(request, pubsub.GetTopicRequest):
             request = pubsub.GetTopicRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if topic is not None:
                 request.topic = topic
 
@@ -651,8 +661,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
 
         Args:
             request (google.pubsub_v1.types.ListTopicsRequest):
-                The request object.
-                Request for the `ListTopics` method.
+                The request object. Request for the `ListTopics` method.
             project (str):
                 Required. The name of the project in which to list
                 topics. Format is ``projects/{project-id}``.
@@ -660,6 +669,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
                 This corresponds to the ``project`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -688,8 +698,10 @@ class PublisherClient(metaclass=PublisherClientMeta):
         # there are no flattened fields.
         if not isinstance(request, pubsub.ListTopicsRequest):
             request = pubsub.ListTopicsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project is not None:
                 request.project = project
 
@@ -738,8 +750,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
 
         Args:
             request (google.pubsub_v1.types.ListTopicSubscriptionsRequest):
-                The request object.
-                Request for the
+                The request object. Request for the
                 `ListTopicSubscriptions` method.
             topic (str):
                 Required. The name of the topic that subscriptions are
@@ -749,6 +760,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
                 This corresponds to the ``topic`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -777,8 +789,10 @@ class PublisherClient(metaclass=PublisherClientMeta):
         # there are no flattened fields.
         if not isinstance(request, pubsub.ListTopicSubscriptionsRequest):
             request = pubsub.ListTopicSubscriptionsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if topic is not None:
                 request.topic = topic
 
@@ -831,8 +845,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
 
         Args:
             request (google.pubsub_v1.types.ListTopicSnapshotsRequest):
-                The request object.
-                Request for the `ListTopicSnapshots`
+                The request object. Request for the `ListTopicSnapshots`
                 method.
             topic (str):
                 Required. The name of the topic that snapshots are
@@ -842,6 +855,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
                 This corresponds to the ``topic`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -870,8 +884,10 @@ class PublisherClient(metaclass=PublisherClientMeta):
         # there are no flattened fields.
         if not isinstance(request, pubsub.ListTopicSnapshotsRequest):
             request = pubsub.ListTopicSnapshotsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if topic is not None:
                 request.topic = topic
 
@@ -924,8 +940,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
 
         Args:
             request (google.pubsub_v1.types.DeleteTopicRequest):
-                The request object.
-                Request for the `DeleteTopic`
+                The request object. Request for the `DeleteTopic`
                 method.
             topic (str):
                 Required. Name of the topic to delete. Format is
@@ -934,6 +949,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
                 This corresponds to the ``topic`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -954,8 +970,10 @@ class PublisherClient(metaclass=PublisherClientMeta):
         # there are no flattened fields.
         if not isinstance(request, pubsub.DeleteTopicRequest):
             request = pubsub.DeleteTopicRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if topic is not None:
                 request.topic = topic
 
@@ -994,9 +1012,9 @@ class PublisherClient(metaclass=PublisherClientMeta):
 
         Args:
             request (google.pubsub_v1.types.DetachSubscriptionRequest):
-                The request object.
-                Request for the DetachSubscription
+                The request object. Request for the DetachSubscription
                 method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1010,6 +1028,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a pubsub.DetachSubscriptionRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1303,6 +1322,7 @@ class PublisherClient(metaclass=PublisherClientMeta):
 
         # Done; return the response.
         return response
+
 
 
 try:

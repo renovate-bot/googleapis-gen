@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Bigtable.V2.Snippets
 {
+    using Google.Cloud.Bigtable.V2;
     using Google.Protobuf;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedBigtableClientStandaloneSnippets
     {
         /// <summary>Snippet for ReadModifyWriteRow</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ReadModifyWriteRow2ResourceNames()
         {
-            // Snippet: ReadModifyWriteRow(TableName, ByteString, IEnumerable<ReadModifyWriteRule>, string, CallSettings)
             // Create client
             BigtableClient bigtableClient = BigtableClient.Create();
             // Initialize request argument(s)
@@ -37,7 +41,6 @@ namespace Google.Cloud.Bigtable.V2.Snippets
             string appProfileId = "";
             // Make the request
             ReadModifyWriteRowResponse response = bigtableClient.ReadModifyWriteRow(tableName, rowKey, rules, appProfileId);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Spanner.V1.Snippets
 {
+    using Google.Cloud.Spanner.V1;
+
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteSession</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteSessionResourceNames()
         {
-            // Snippet: DeleteSession(SessionName, CallSettings)
             // Create client
             SpannerClient spannerClient = SpannerClient.Create();
             // Initialize request argument(s)
             SessionName name = SessionName.FromProjectInstanceDatabaseSession("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
             // Make the request
             spannerClient.DeleteSession(name);
-            // End snippet
         }
     }
 }

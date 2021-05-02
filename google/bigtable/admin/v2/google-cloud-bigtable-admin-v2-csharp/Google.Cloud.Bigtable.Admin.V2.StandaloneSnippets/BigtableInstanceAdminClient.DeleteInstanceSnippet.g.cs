@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
+
     public sealed partial class GeneratedBigtableInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteInstance</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteInstance()
         {
-            // Snippet: DeleteInstance(string, CallSettings)
             // Create client
             BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/instances/[INSTANCE]";
             // Make the request
             bigtableInstanceAdminClient.DeleteInstance(name);
-            // End snippet
         }
     }
 }

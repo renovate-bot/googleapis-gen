@@ -17,14 +17,18 @@
 namespace Google.Cloud.Billing.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Billing.V1;
     using Google.Cloud.Iam.V1;
 
     public sealed partial class GeneratedCloudBillingClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIamPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetIamPolicyRequestObject()
         {
-            // Snippet: GetIamPolicy(GetIamPolicyRequest, CallSettings)
             // Create client
             CloudBillingClient cloudBillingClient = CloudBillingClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.Billing.V1.Snippets
             };
             // Make the request
             Policy response = cloudBillingClient.GetIamPolicy(request);
-            // End snippet
         }
     }
 }

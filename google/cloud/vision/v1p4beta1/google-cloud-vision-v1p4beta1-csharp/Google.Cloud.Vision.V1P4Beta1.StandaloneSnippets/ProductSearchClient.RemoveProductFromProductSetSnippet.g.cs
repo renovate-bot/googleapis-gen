@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Vision.V1P4Beta1.Snippets
 {
+    using Google.Cloud.Vision.V1P4Beta1;
+
     public sealed partial class GeneratedProductSearchClientStandaloneSnippets
     {
         /// <summary>Snippet for RemoveProductFromProductSet</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void RemoveProductFromProductSet()
         {
-            // Snippet: RemoveProductFromProductSet(string, string, CallSettings)
             // Create client
             ProductSearchClient productSearchClient = ProductSearchClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Vision.V1P4Beta1.Snippets
             string product = "projects/[PROJECT]/locations/[LOCATION]/products/[PRODUCT]";
             // Make the request
             productSearchClient.RemoveProductFromProductSet(name, product);
-            // End snippet
         }
     }
 }

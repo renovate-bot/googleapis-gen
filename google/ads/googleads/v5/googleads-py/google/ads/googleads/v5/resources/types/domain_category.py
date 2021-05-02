@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -75,50 +77,15 @@ class DomainCategory(proto.Message):
             for the category.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    campaign = proto.Field(
-        proto.STRING,
-        number=10,
-        optional=True,
-    )
-    category = proto.Field(
-        proto.STRING,
-        number=11,
-        optional=True,
-    )
-    language_code = proto.Field(
-        proto.STRING,
-        number=12,
-        optional=True,
-    )
-    domain = proto.Field(
-        proto.STRING,
-        number=13,
-        optional=True,
-    )
-    coverage_fraction = proto.Field(
-        proto.DOUBLE,
-        number=14,
-        optional=True,
-    )
-    category_rank = proto.Field(
-        proto.INT64,
-        number=15,
-        optional=True,
-    )
-    has_children = proto.Field(
-        proto.BOOL,
-        number=16,
-        optional=True,
-    )
-    recommended_cpc_bid_micros = proto.Field(
-        proto.INT64,
-        number=17,
-        optional=True,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
+    campaign = proto.Field(proto.STRING, number=10, optional=True)
+    category = proto.Field(proto.STRING, number=11, optional=True)
+    language_code = proto.Field(proto.STRING, number=12, optional=True)
+    domain = proto.Field(proto.STRING, number=13, optional=True)
+    coverage_fraction = proto.Field(proto.DOUBLE, number=14, optional=True)
+    category_rank = proto.Field(proto.INT64, number=15, optional=True)
+    has_children = proto.Field(proto.BOOL, number=16, optional=True)
+    recommended_cpc_bid_micros = proto.Field(proto.INT64, number=17, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

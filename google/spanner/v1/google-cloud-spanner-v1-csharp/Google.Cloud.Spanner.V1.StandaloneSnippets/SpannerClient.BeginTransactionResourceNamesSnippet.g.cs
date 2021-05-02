@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Spanner.V1.Snippets
 {
+    using Google.Cloud.Spanner.V1;
+
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for BeginTransaction</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BeginTransactionResourceNames()
         {
-            // Snippet: BeginTransaction(SessionName, TransactionOptions, CallSettings)
             // Create client
             SpannerClient spannerClient = SpannerClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Spanner.V1.Snippets
             TransactionOptions options = new TransactionOptions();
             // Make the request
             Transaction response = spannerClient.BeginTransaction(session, options);
-            // End snippet
         }
     }
 }

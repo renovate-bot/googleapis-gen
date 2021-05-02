@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.SecurityCenter.V1P1Beta1.Snippets
 {
+    using Google.Cloud.SecurityCenter.V1P1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for GetNotificationConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetNotificationConfigResourceNamesAsync()
         {
-            // Snippet: GetNotificationConfigAsync(NotificationConfigName, CallSettings)
-            // Additional: GetNotificationConfigAsync(NotificationConfigName, CancellationToken)
             // Create client
             SecurityCenterClient securityCenterClient = await SecurityCenterClient.CreateAsync();
             // Initialize request argument(s)
             NotificationConfigName name = NotificationConfigName.FromOrganizationNotificationConfig("[ORGANIZATION]", "[NOTIFICATION_CONFIG]");
             // Make the request
             NotificationConfig response = await securityCenterClient.GetNotificationConfigAsync(name);
-            // End snippet
         }
     }
 }

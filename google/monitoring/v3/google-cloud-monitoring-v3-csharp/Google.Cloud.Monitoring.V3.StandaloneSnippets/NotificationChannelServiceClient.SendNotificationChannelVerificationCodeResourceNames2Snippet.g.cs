@@ -17,20 +17,23 @@
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Monitoring.V3;
 
     public sealed partial class GeneratedNotificationChannelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for SendNotificationChannelVerificationCode</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SendNotificationChannelVerificationCodeResourceNames2()
         {
-            // Snippet: SendNotificationChannelVerificationCode(IResourceName, CallSettings)
             // Create client
             NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.Create();
             // Initialize request argument(s)
             IResourceName name = new UnparsedResourceName("a/wildcard/resource");
             // Make the request
             notificationChannelServiceClient.SendNotificationChannelVerificationCode(name);
-            // End snippet
         }
     }
 }

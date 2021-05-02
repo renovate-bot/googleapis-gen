@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Channel.V1.Snippets
 {
+    using Google.Cloud.Channel.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudChannelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetChannelPartnerLinkAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetChannelPartnerLinkRequestObjectAsync()
         {
-            // Snippet: GetChannelPartnerLinkAsync(GetChannelPartnerLinkRequest, CallSettings)
-            // Additional: GetChannelPartnerLinkAsync(GetChannelPartnerLinkRequest, CancellationToken)
             // Create client
             CloudChannelServiceClient cloudChannelServiceClient = await CloudChannelServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Channel.V1.Snippets
             };
             // Make the request
             ChannelPartnerLink response = await cloudChannelServiceClient.GetChannelPartnerLinkAsync(request);
-            // End snippet
         }
     }
 }

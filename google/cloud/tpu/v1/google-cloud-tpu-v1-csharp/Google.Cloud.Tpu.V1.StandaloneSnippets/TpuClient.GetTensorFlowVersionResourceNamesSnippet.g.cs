@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Tpu.V1.Snippets
 {
+    using Google.Cloud.Tpu.V1;
+
     public sealed partial class GeneratedTpuClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTensorFlowVersion</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetTensorFlowVersionResourceNames()
         {
-            // Snippet: GetTensorFlowVersion(TensorFlowVersionName, CallSettings)
             // Create client
             TpuClient tpuClient = TpuClient.Create();
             // Initialize request argument(s)
             TensorFlowVersionName name = TensorFlowVersionName.FromProjectLocationTensorFlowVersion("[PROJECT]", "[LOCATION]", "[TENSOR_FLOW_VERSION]");
             // Make the request
             TensorFlowVersion response = tpuClient.GetTensorFlowVersion(name);
-            // End snippet
         }
     }
 }

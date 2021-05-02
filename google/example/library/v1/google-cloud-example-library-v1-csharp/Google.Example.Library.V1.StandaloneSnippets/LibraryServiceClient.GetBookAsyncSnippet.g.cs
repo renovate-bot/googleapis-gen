@@ -16,22 +16,24 @@
 
 namespace Google.Example.Library.V1.Snippets
 {
+    using Google.Example.Library.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLibraryServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBookAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetBookAsync()
         {
-            // Snippet: GetBookAsync(string, CallSettings)
-            // Additional: GetBookAsync(string, CancellationToken)
             // Create client
             LibraryServiceClient libraryServiceClient = await LibraryServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "shelves/[SHELF]/books/[BOOK]";
             // Make the request
             Book response = await libraryServiceClient.GetBookAsync(name);
-            // End snippet
         }
     }
 }

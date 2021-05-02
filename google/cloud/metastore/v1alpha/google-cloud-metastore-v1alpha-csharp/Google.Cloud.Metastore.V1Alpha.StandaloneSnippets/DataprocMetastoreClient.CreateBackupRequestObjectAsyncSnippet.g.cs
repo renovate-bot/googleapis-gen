@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Metastore.V1Alpha.Snippets
 {
+    using Google.Cloud.Metastore.V1Alpha;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataprocMetastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateBackupAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateBackupRequestObjectAsync()
         {
-            // Snippet: CreateBackupAsync(CreateBackupRequest, CallSettings)
-            // Additional: CreateBackupAsync(CreateBackupRequest, CancellationToken)
             // Create client
             DataprocMetastoreClient dataprocMetastoreClient = await DataprocMetastoreClient.CreateAsync();
             // Initialize request argument(s)
@@ -54,7 +57,6 @@ namespace Google.Cloud.Metastore.V1Alpha.Snippets
                 // If it has completed, then access the result
                 Backup retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

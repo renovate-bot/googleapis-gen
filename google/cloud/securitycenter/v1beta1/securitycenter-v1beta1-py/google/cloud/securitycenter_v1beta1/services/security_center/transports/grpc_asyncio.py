@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
@@ -22,7 +24,6 @@ from google.api_core import operations_v1              # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -38,6 +39,7 @@ from google.cloud.securitycenter_v1beta1.types import source as gcs_source
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.longrunning import operations_pb2 as operations  # type: ignore
+
 from .base import SecurityCenterTransport, DEFAULT_CLIENT_INFO
 from .grpc import SecurityCenterGrpcTransport
 
@@ -87,15 +89,13 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -115,8 +115,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -175,6 +174,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -253,9 +253,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def create_source(self) -> Callable[
             [securitycenter_service.CreateSourceRequest],
             Awaitable[gcs_source.Source]]:
-        r"""Return a callable for the
-        create source
-          method over gRPC.
+        r"""Return a callable for the create source method over gRPC.
 
         Creates a source.
 
@@ -281,9 +279,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def create_finding(self) -> Callable[
             [securitycenter_service.CreateFindingRequest],
             Awaitable[gcs_finding.Finding]]:
-        r"""Return a callable for the
-        create finding
-          method over gRPC.
+        r"""Return a callable for the create finding method over gRPC.
 
         Creates a finding. The corresponding source must
         exist for finding creation to succeed.
@@ -310,9 +306,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy on the specified
         Source.
@@ -339,9 +333,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def get_organization_settings(self) -> Callable[
             [securitycenter_service.GetOrganizationSettingsRequest],
             Awaitable[organization_settings.OrganizationSettings]]:
-        r"""Return a callable for the
-        get organization settings
-          method over gRPC.
+        r"""Return a callable for the get organization settings method over gRPC.
 
         Gets the settings for an organization.
 
@@ -367,9 +359,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def get_source(self) -> Callable[
             [securitycenter_service.GetSourceRequest],
             Awaitable[source.Source]]:
-        r"""Return a callable for the
-        get source
-          method over gRPC.
+        r"""Return a callable for the get source method over gRPC.
 
         Gets a source.
 
@@ -395,9 +385,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def group_assets(self) -> Callable[
             [securitycenter_service.GroupAssetsRequest],
             Awaitable[securitycenter_service.GroupAssetsResponse]]:
-        r"""Return a callable for the
-        group assets
-          method over gRPC.
+        r"""Return a callable for the group assets method over gRPC.
 
         Filters an organization's assets and  groups them by
         their specified properties.
@@ -424,9 +412,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def group_findings(self) -> Callable[
             [securitycenter_service.GroupFindingsRequest],
             Awaitable[securitycenter_service.GroupFindingsResponse]]:
-        r"""Return a callable for the
-        group findings
-          method over gRPC.
+        r"""Return a callable for the group findings method over gRPC.
 
         Filters an organization or source's findings and groups them by
         their specified properties.
@@ -457,9 +443,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def list_assets(self) -> Callable[
             [securitycenter_service.ListAssetsRequest],
             Awaitable[securitycenter_service.ListAssetsResponse]]:
-        r"""Return a callable for the
-        list assets
-          method over gRPC.
+        r"""Return a callable for the list assets method over gRPC.
 
         Lists an organization's assets.
 
@@ -485,9 +469,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def list_findings(self) -> Callable[
             [securitycenter_service.ListFindingsRequest],
             Awaitable[securitycenter_service.ListFindingsResponse]]:
-        r"""Return a callable for the
-        list findings
-          method over gRPC.
+        r"""Return a callable for the list findings method over gRPC.
 
         Lists an organization or source's findings.
 
@@ -517,9 +499,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def list_sources(self) -> Callable[
             [securitycenter_service.ListSourcesRequest],
             Awaitable[securitycenter_service.ListSourcesResponse]]:
-        r"""Return a callable for the
-        list sources
-          method over gRPC.
+        r"""Return a callable for the list sources method over gRPC.
 
         Lists all sources belonging to an organization.
 
@@ -545,9 +525,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def run_asset_discovery(self) -> Callable[
             [securitycenter_service.RunAssetDiscoveryRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        run asset discovery
-          method over gRPC.
+        r"""Return a callable for the run asset discovery method over gRPC.
 
         Runs asset discovery. The discovery is tracked with a
         long-running operation.
@@ -578,9 +556,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def set_finding_state(self) -> Callable[
             [securitycenter_service.SetFindingStateRequest],
             Awaitable[finding.Finding]]:
-        r"""Return a callable for the
-        set finding state
-          method over gRPC.
+        r"""Return a callable for the set finding state method over gRPC.
 
         Updates the state of a finding.
 
@@ -606,9 +582,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on the specified
         Source.
@@ -635,9 +609,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns the permissions that a caller has on the
         specified source.
@@ -664,9 +636,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def update_finding(self) -> Callable[
             [securitycenter_service.UpdateFindingRequest],
             Awaitable[gcs_finding.Finding]]:
-        r"""Return a callable for the
-        update finding
-          method over gRPC.
+        r"""Return a callable for the update finding method over gRPC.
 
         Creates or updates a finding. The corresponding
         source must exist for a finding creation to succeed.
@@ -693,9 +663,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def update_organization_settings(self) -> Callable[
             [securitycenter_service.UpdateOrganizationSettingsRequest],
             Awaitable[gcs_organization_settings.OrganizationSettings]]:
-        r"""Return a callable for the
-        update organization settings
-          method over gRPC.
+        r"""Return a callable for the update organization settings method over gRPC.
 
         Updates an organization's settings.
 
@@ -721,9 +689,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def update_source(self) -> Callable[
             [securitycenter_service.UpdateSourceRequest],
             Awaitable[gcs_source.Source]]:
-        r"""Return a callable for the
-        update source
-          method over gRPC.
+        r"""Return a callable for the update source method over gRPC.
 
         Updates a source.
 
@@ -749,9 +715,7 @@ class SecurityCenterGrpcAsyncIOTransport(SecurityCenterTransport):
     def update_security_marks(self) -> Callable[
             [securitycenter_service.UpdateSecurityMarksRequest],
             Awaitable[gcs_security_marks.SecurityMarks]]:
-        r"""Return a callable for the
-        update security marks
-          method over gRPC.
+        r"""Return a callable for the update security marks method over gRPC.
 
         Updates security marks.
 

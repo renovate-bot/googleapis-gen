@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -262,24 +264,37 @@ def test_get_language_constant(transport: str = 'grpc', request_type=language_co
         # Designate an appropriate return value for the call.
         call.return_value = language_constant.LanguageConstant(
             resource_name='resource_name_value',
+
             id=205,
+
             code='code_value',
+
             name='name_value',
+
             targetable=True,
+
         )
+
         response = client.get_language_constant(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == language_constant_service.GetLanguageConstantRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, language_constant.LanguageConstant)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.id == 205
+
     assert response.code == 'code_value'
+
     assert response.name == 'name_value'
+
     assert response.targetable is True
 
 
@@ -295,7 +310,6 @@ def test_get_language_constant_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = language_constant_service.GetLanguageConstantRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -303,6 +317,7 @@ def test_get_language_constant_field_headers():
             type(client.transport.get_language_constant),
             '__call__') as call:
         call.return_value = language_constant.LanguageConstant()
+
         client.get_language_constant(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -329,6 +344,7 @@ def test_get_language_constant_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = language_constant.LanguageConstant()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_language_constant(
@@ -339,6 +355,7 @@ def test_get_language_constant_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -419,7 +436,7 @@ def test_language_constant_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_language_constant',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -570,6 +587,7 @@ def test_language_constant_service_transport_channel_mtls_with_adc(
 
 def test_language_constant_path():
     criterion_id = "squid"
+
     expected = "languageConstants/{criterion_id}".format(criterion_id=criterion_id, )
     actual = LanguageConstantServiceClient.language_constant_path(criterion_id)
     assert expected == actual
@@ -577,7 +595,8 @@ def test_language_constant_path():
 
 def test_parse_language_constant_path():
     expected = {
-        "criterion_id": "clam",
+    "criterion_id": "clam",
+
     }
     path = LanguageConstantServiceClient.language_constant_path(**expected)
 
@@ -587,6 +606,7 @@ def test_parse_language_constant_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = LanguageConstantServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -594,7 +614,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = LanguageConstantServiceClient.common_billing_account_path(**expected)
 
@@ -604,6 +625,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = LanguageConstantServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -611,7 +633,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = LanguageConstantServiceClient.common_folder_path(**expected)
 
@@ -621,6 +644,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = LanguageConstantServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -628,7 +652,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = LanguageConstantServiceClient.common_organization_path(**expected)
 
@@ -638,6 +663,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = LanguageConstantServiceClient.common_project_path(project)
     assert expected == actual
@@ -645,7 +671,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = LanguageConstantServiceClient.common_project_path(**expected)
 
@@ -656,6 +683,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = LanguageConstantServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -663,8 +691,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = LanguageConstantServiceClient.common_location_path(**expected)
 

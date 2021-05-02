@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Automl.V1Beta1.Snippets
 {
+    using Google.Cloud.Automl.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateTableSpecAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateTableSpecAsync()
         {
-            // Snippet: UpdateTableSpecAsync(TableSpec, CallSettings)
-            // Additional: UpdateTableSpecAsync(TableSpec, CancellationToken)
             // Create client
             AutoMlClient autoMlClient = await AutoMlClient.CreateAsync();
             // Initialize request argument(s)
             TableSpec tableSpec = new TableSpec();
             // Make the request
             TableSpec response = await autoMlClient.UpdateTableSpecAsync(tableSpec);
-            // End snippet
         }
     }
 }

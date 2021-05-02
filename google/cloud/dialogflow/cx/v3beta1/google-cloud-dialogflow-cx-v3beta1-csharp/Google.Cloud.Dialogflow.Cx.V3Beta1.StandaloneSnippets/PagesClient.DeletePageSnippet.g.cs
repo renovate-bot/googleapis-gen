@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedPagesClientStandaloneSnippets
     {
         /// <summary>Snippet for DeletePage</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeletePage()
         {
-            // Snippet: DeletePage(string, CallSettings)
             // Create client
             PagesClient pagesClient = PagesClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/agents/[AGENT]/flows/[FLOW]/pages/[PAGE]";
             // Make the request
             pagesClient.DeletePage(name);
-            // End snippet
         }
     }
 }

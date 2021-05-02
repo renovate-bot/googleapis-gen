@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.TextToSpeech.V1beta1.Snippets
 {
+    using Google.Cloud.TextToSpeech.V1beta1;
+
     public sealed partial class GeneratedTextToSpeechClientStandaloneSnippets
     {
         /// <summary>Snippet for ListVoices</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListVoicesRequestObject()
         {
-            // Snippet: ListVoices(ListVoicesRequest, CallSettings)
             // Create client
             TextToSpeechClient textToSpeechClient = TextToSpeechClient.Create();
             // Initialize request argument(s)
             ListVoicesRequest request = new ListVoicesRequest { LanguageCode = "", };
             // Make the request
             ListVoicesResponse response = textToSpeechClient.ListVoices(request);
-            // End snippet
         }
     }
 }

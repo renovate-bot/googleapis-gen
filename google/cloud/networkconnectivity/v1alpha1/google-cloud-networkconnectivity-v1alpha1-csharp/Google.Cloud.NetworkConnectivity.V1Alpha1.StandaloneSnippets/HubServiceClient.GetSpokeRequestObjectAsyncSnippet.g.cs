@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.NetworkConnectivity.V1Alpha1.Snippets
 {
+    using Google.Cloud.NetworkConnectivity.V1Alpha1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedHubServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSpokeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetSpokeRequestObjectAsync()
         {
-            // Snippet: GetSpokeAsync(GetSpokeRequest, CallSettings)
-            // Additional: GetSpokeAsync(GetSpokeRequest, CancellationToken)
             // Create client
             HubServiceClient hubServiceClient = await HubServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.NetworkConnectivity.V1Alpha1.Snippets
             };
             // Make the request
             Spoke response = await hubServiceClient.GetSpokeAsync(request);
-            // End snippet
         }
     }
 }

@@ -17,6 +17,7 @@
 namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Spanner.Admin.Database.V1;
     using Google.LongRunning;
     using System;
     using System.Linq;
@@ -24,10 +25,13 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
 
     public sealed partial class GeneratedDatabaseAdminClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListDatabaseOperations</summary>
+        /// <summary>Snippet for ListDatabaseOperationsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListDatabaseOperationsResourceNamesAsync()
         {
-            // Snippet: ListDatabaseOperationsAsync(InstanceName, string, int?, CallSettings)
             // Create client
             DatabaseAdminClient databaseAdminClient = await DatabaseAdminClient.CreateAsync();
             // Initialize request argument(s)
@@ -66,7 +70,6 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Firestore.Admin.V1.Snippets
 {
+    using Google.Cloud.Firestore.Admin.V1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedFirestoreAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for ExportDocuments</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ExportDocumentsRequestObject()
         {
-            // Snippet: ExportDocuments(ExportDocumentsRequest, CallSettings)
             // Create client
             FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.Create();
             // Initialize request argument(s)
@@ -51,7 +55,6 @@ namespace Google.Cloud.Firestore.Admin.V1.Snippets
                 // If it has completed, then access the result
                 ExportDocumentsResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

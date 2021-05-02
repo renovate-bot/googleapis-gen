@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
 {
+    using Google.Cloud.BigQuery.DataTransfer.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedDataTransferServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ScheduleTransferRuns</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ScheduleTransferRunsRequestObject()
         {
-            // Snippet: ScheduleTransferRuns(ScheduleTransferRunsRequest, CallSettings)
             // Create client
             DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
             };
             // Make the request
             ScheduleTransferRunsResponse response = dataTransferServiceClient.ScheduleTransferRuns(request);
-            // End snippet
         }
     }
 }

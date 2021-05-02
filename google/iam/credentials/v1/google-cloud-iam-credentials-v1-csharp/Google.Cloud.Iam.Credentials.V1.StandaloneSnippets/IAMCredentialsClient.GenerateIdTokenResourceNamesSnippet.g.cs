@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Iam.Credentials.V1.Snippets
 {
+    using Google.Cloud.Iam.Credentials.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedIAMCredentialsClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateIdToken</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GenerateIdTokenResourceNames()
         {
-            // Snippet: GenerateIdToken(ServiceAccountName, IEnumerable<string>, string, bool, CallSettings)
             // Create client
             IAMCredentialsClient iAMCredentialsClient = IAMCredentialsClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Cloud.Iam.Credentials.V1.Snippets
             bool includeEmail = false;
             // Make the request
             GenerateIdTokenResponse response = iAMCredentialsClient.GenerateIdToken(name, delegates, audience, includeEmail);
-            // End snippet
         }
     }
 }

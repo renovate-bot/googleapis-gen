@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -31,6 +33,7 @@ from google.api_core import operation_async  # type: ignore
 from google.cloud.translate_v3beta1.services.translation_service import pagers
 from google.cloud.translate_v3beta1.types import translation_service
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import TranslationServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import TranslationServiceGrpcAsyncIOTransport
 from .client import TranslationServiceClient
@@ -46,14 +49,19 @@ class TranslationServiceAsyncClient:
 
     glossary_path = staticmethod(TranslationServiceClient.glossary_path)
     parse_glossary_path = staticmethod(TranslationServiceClient.parse_glossary_path)
+
     common_billing_account_path = staticmethod(TranslationServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(TranslationServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(TranslationServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(TranslationServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(TranslationServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(TranslationServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(TranslationServiceClient.common_project_path)
     parse_common_project_path = staticmethod(TranslationServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(TranslationServiceClient.common_location_path)
     parse_common_location_path = staticmethod(TranslationServiceClient.parse_common_location_path)
 
@@ -138,6 +146,7 @@ class TranslationServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = TranslationServiceClient(
             credentials=credentials,
             transport=transport,
@@ -157,9 +166,9 @@ class TranslationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.translate_v3beta1.types.TranslateTextRequest`):
-                The request object.
-                The request message for synchronous
+                The request object. The request message for synchronous
                 translation.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -171,6 +180,7 @@ class TranslationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = translation_service.TranslateTextRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -214,8 +224,7 @@ class TranslationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.translate_v3beta1.types.DetectLanguageRequest`):
-                The request object.
-                The request message for language
+                The request object. The request message for language
                 detection.
             parent (:class:`str`):
                 Required. Project or location to make a call. Must refer
@@ -260,6 +269,7 @@ class TranslationServiceAsyncClient:
                 This corresponds to the ``mime_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -284,6 +294,7 @@ class TranslationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if model is not None:
@@ -333,8 +344,7 @@ class TranslationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.translate_v3beta1.types.GetSupportedLanguagesRequest`):
-                The request object.
-                The request message for discovering
+                The request object. The request message for discovering
                 supported languages.
             parent (:class:`str`):
                 Required. Project or location to make a call. Must refer
@@ -385,6 +395,7 @@ class TranslationServiceAsyncClient:
                 This corresponds to the ``model`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -409,6 +420,7 @@ class TranslationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if display_language_code is not None:
@@ -421,7 +433,10 @@ class TranslationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_supported_languages,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -461,8 +476,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.translate_v3beta1.types.TranslateDocumentRequest`):
-                The request object.
-                A document translation request.
+                The request object. A document translation request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -476,6 +491,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         # Create or coerce a protobuf request object.
+
         request = translation_service.TranslateDocumentRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -524,8 +540,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.translate_v3beta1.types.BatchTranslateTextRequest`):
-                The request object.
-                The batch translation request.
+                The request object. The batch translation request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -543,6 +559,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         # Create or coerce a protobuf request object.
+
         request = translation_service.BatchTranslateTextRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -599,8 +616,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.translate_v3beta1.types.BatchTranslateDocumentRequest`):
-                The request object.
-                The BatchTranslateDocument request.
+                The request object. The BatchTranslateDocument request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -618,6 +635,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         # Create or coerce a protobuf request object.
+
         request = translation_service.BatchTranslateDocumentRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -669,8 +687,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.translate_v3beta1.types.CreateGlossaryRequest`):
-                The request object.
-                Request message for CreateGlossary.
+                The request object. Request message for CreateGlossary.
             parent (:class:`str`):
                 Required. The project name.
                 This corresponds to the ``parent`` field
@@ -681,6 +698,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``glossary`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -708,6 +726,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if glossary is not None:
@@ -762,8 +781,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.translate_v3beta1.types.ListGlossariesRequest`):
-                The request object.
-                Request message for ListGlossaries.
+                The request object. Request message for ListGlossaries.
             parent (:class:`str`):
                 Required. The name of the project
                 from which to list all of the
@@ -806,6 +824,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -832,6 +851,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -842,7 +862,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_glossaries,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -893,8 +916,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.translate_v3beta1.types.GetGlossaryRequest`):
-                The request object.
-                Request message for GetGlossary.
+                The request object. Request message for GetGlossary.
             name (:class:`str`):
                 Required. The name of the glossary to
                 retrieve.
@@ -902,6 +924,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -926,6 +949,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -934,7 +958,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_glossary,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -977,8 +1004,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.translate_v3beta1.types.DeleteGlossaryRequest`):
-                The request object.
-                Request message for DeleteGlossary.
+                The request object. Request message for DeleteGlossary.
             name (:class:`str`):
                 Required. The name of the glossary to
                 delete.
@@ -986,6 +1012,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1013,6 +1040,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1021,7 +1049,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_glossary,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1057,6 +1088,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

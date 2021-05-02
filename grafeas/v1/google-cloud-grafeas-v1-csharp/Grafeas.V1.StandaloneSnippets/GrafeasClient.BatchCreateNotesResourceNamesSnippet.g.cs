@@ -16,14 +16,18 @@
 
 namespace Grafeas.V1.Snippets
 {
+    using Grafeas.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedGrafeasClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchCreateNotes</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BatchCreateNotesResourceNames()
         {
-            // Snippet: BatchCreateNotes(ProjectName, IDictionary<string,Note>, CallSettings)
             // Create client
             GrafeasClient grafeasClient = GrafeasClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Grafeas.V1.Snippets
             IDictionary<string, Note> notes = new Dictionary<string, Note> { { "", new Note() }, };
             // Make the request
             BatchCreateNotesResponse response = grafeasClient.BatchCreateNotes(parent, notes);
-            // End snippet
         }
     }
 }

@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedLandingPageViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetLandingPageView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetLandingPageViewResourceNames()
         {
-            // Snippet: GetLandingPageView(LandingPageViewName, CallSettings)
             // Create client
             LandingPageViewServiceClient landingPageViewServiceClient = LandingPageViewServiceClient.Create();
             // Initialize request argument(s)
             LandingPageViewName resourceName = LandingPageViewName.FromCustomerLandingPageView("[CUSTOMER]", "[LANDING_PAGE_VIEW]");
             // Make the request
             LandingPageView response = landingPageViewServiceClient.GetLandingPageView(resourceName);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Clouddms.V1.Snippets
 {
+    using Google.Cloud.Clouddms.V1;
+
     public sealed partial class GeneratedDataMigrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetConnectionProfile</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetConnectionProfileRequestObject()
         {
-            // Snippet: GetConnectionProfile(GetConnectionProfileRequest, CallSettings)
             // Create client
             DataMigrationServiceClient dataMigrationServiceClient = DataMigrationServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Clouddms.V1.Snippets
             };
             // Make the request
             ConnectionProfile response = dataMigrationServiceClient.GetConnectionProfile(request);
-            // End snippet
         }
     }
 }

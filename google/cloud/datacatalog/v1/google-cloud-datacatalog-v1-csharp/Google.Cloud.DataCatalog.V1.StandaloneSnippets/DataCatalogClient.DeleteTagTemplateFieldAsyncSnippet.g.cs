@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.DataCatalog.V1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteTagTemplateFieldAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteTagTemplateFieldAsync()
         {
-            // Snippet: DeleteTagTemplateFieldAsync(string, bool, CallSettings)
-            // Additional: DeleteTagTemplateFieldAsync(string, bool, CancellationToken)
             // Create client
             DataCatalogClient dataCatalogClient = await DataCatalogClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             bool force = false;
             // Make the request
             await dataCatalogClient.DeleteTagTemplateFieldAsync(name, force);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.SecurityCenter.Settings.V1Beta1.Snippets
 {
+    using Google.Cloud.SecurityCenter.Settings.V1Beta1;
+
     public sealed partial class GeneratedSecurityCenterSettingsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetComponentSettings</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetComponentSettings()
         {
-            // Snippet: GetComponentSettings(string, CallSettings)
             // Create client
             SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.Create();
             // Initialize request argument(s)
             string name = "organizations/[ORGANIZATION]/components/[COMPONENT]/settings";
             // Make the request
             ComponentSettings response = securityCenterSettingsServiceClient.GetComponentSettings(name);
-            // End snippet
         }
     }
 }

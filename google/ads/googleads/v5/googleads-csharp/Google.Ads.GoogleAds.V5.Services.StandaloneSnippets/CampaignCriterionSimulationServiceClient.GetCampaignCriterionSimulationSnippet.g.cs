@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedCampaignCriterionSimulationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignCriterionSimulation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCampaignCriterionSimulation()
         {
-            // Snippet: GetCampaignCriterionSimulation(string, CallSettings)
             // Create client
             CampaignCriterionSimulationServiceClient campaignCriterionSimulationServiceClient = CampaignCriterionSimulationServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/campaignCriterionSimulations/[CAMPAIGN_CRITERION_SIMULATION]";
             // Make the request
             CampaignCriterionSimulation response = campaignCriterionSimulationServiceClient.GetCampaignCriterionSimulation(resourceName);
-            // End snippet
         }
     }
 }

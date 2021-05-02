@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedCampaignServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaign</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCampaignResourceNames()
         {
-            // Snippet: GetCampaign(CampaignName, CallSettings)
             // Create client
             CampaignServiceClient campaignServiceClient = CampaignServiceClient.Create();
             // Initialize request argument(s)
             CampaignName resourceName = CampaignName.FromCustomerCampaign("[CUSTOMER]", "[CAMPAIGN]");
             // Make the request
             Campaign response = campaignServiceClient.GetCampaign(resourceName);
-            // End snippet
         }
     }
 }

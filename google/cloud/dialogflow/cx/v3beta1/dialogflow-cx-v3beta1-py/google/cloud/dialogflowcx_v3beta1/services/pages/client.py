@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,6 +37,7 @@ from google.cloud.dialogflowcx_v3beta1.types import fulfillment
 from google.cloud.dialogflowcx_v3beta1.types import page
 from google.cloud.dialogflowcx_v3beta1.types import page as gcdc_page
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import PagesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import PagesGrpcTransport
 from .transports.grpc_asyncio import PagesGrpcAsyncIOTransport
@@ -393,8 +396,7 @@ class PagesClient(metaclass=PagesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.ListPagesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Pages.ListPages][google.cloud.dialogflow.cx.v3beta1.Pages.ListPages].
             parent (str):
                 Required. The flow to list all pages for. Format:
@@ -403,6 +405,7 @@ class PagesClient(metaclass=PagesClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -432,8 +435,10 @@ class PagesClient(metaclass=PagesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, page.ListPagesRequest):
             request = page.ListPagesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -481,8 +486,7 @@ class PagesClient(metaclass=PagesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.GetPageRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Pages.GetPage][google.cloud.dialogflow.cx.v3beta1.Pages.GetPage].
             name (str):
                 Required. The name of the page. Format:
@@ -491,6 +495,7 @@ class PagesClient(metaclass=PagesClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -537,8 +542,10 @@ class PagesClient(metaclass=PagesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, page.GetPageRequest):
             request = page.GetPageRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -578,8 +585,7 @@ class PagesClient(metaclass=PagesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.CreatePageRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Pages.CreatePage][google.cloud.dialogflow.cx.v3beta1.Pages.CreatePage].
             parent (str):
                 Required. The flow to create a page for. Format:
@@ -593,6 +599,7 @@ class PagesClient(metaclass=PagesClientMeta):
                 This corresponds to the ``page`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -639,8 +646,10 @@ class PagesClient(metaclass=PagesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_page.CreatePageRequest):
             request = gcdc_page.CreatePageRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if page is not None:
@@ -682,8 +691,7 @@ class PagesClient(metaclass=PagesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.UpdatePageRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Pages.UpdatePage][google.cloud.dialogflow.cx.v3beta1.Pages.UpdatePage].
             page (google.cloud.dialogflowcx_v3beta1.types.Page):
                 Required. The page to update.
@@ -698,6 +706,7 @@ class PagesClient(metaclass=PagesClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -744,8 +753,10 @@ class PagesClient(metaclass=PagesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_page.UpdatePageRequest):
             request = gcdc_page.UpdatePageRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if page is not None:
                 request.page = page
             if update_mask is not None:
@@ -786,8 +797,7 @@ class PagesClient(metaclass=PagesClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.DeletePageRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Pages.DeletePage][google.cloud.dialogflow.cx.v3beta1.Pages.DeletePage].
             name (str):
                 Required. The name of the page to delete. Format:
@@ -796,6 +806,7 @@ class PagesClient(metaclass=PagesClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -816,8 +827,10 @@ class PagesClient(metaclass=PagesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, page.DeletePageRequest):
             request = page.DeletePageRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -840,6 +853,8 @@ class PagesClient(metaclass=PagesClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

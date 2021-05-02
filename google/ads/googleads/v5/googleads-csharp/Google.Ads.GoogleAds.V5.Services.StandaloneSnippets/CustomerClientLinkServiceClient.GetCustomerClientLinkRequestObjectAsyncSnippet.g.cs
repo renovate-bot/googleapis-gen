@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomerClientLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomerClientLinkAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCustomerClientLinkRequestObjectAsync()
         {
-            // Snippet: GetCustomerClientLinkAsync(GetCustomerClientLinkRequest, CallSettings)
-            // Additional: GetCustomerClientLinkAsync(GetCustomerClientLinkRequest, CancellationToken)
             // Create client
             CustomerClientLinkServiceClient customerClientLinkServiceClient = await CustomerClientLinkServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             CustomerClientLink response = await customerClientLinkServiceClient.GetCustomerClientLinkAsync(request);
-            // End snippet
         }
     }
 }

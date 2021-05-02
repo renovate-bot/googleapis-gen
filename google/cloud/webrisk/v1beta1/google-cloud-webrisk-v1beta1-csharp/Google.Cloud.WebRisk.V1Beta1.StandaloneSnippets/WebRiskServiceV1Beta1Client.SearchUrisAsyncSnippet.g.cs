@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.WebRisk.V1Beta1.Snippets
 {
+    using Google.Cloud.WebRisk.V1Beta1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWebRiskServiceV1Beta1ClientStandaloneSnippets
     {
         /// <summary>Snippet for SearchUrisAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SearchUrisAsync()
         {
-            // Snippet: SearchUrisAsync(string, IEnumerable<ThreatType>, CallSettings)
-            // Additional: SearchUrisAsync(string, IEnumerable<ThreatType>, CancellationToken)
             // Create client
             WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client = await WebRiskServiceV1Beta1Client.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.WebRisk.V1Beta1.Snippets
             };
             // Make the request
             SearchUrisResponse response = await webRiskServiceV1Beta1Client.SearchUrisAsync(uri, threatTypes);
-            // End snippet
         }
     }
 }

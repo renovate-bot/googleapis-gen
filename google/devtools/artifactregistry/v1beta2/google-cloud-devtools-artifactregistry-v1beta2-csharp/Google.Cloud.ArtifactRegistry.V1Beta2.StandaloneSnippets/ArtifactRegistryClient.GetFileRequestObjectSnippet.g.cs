@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
 {
+    using Google.Cloud.ArtifactRegistry.V1Beta2;
+
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
     {
         /// <summary>Snippet for GetFile</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetFileRequestObject()
         {
-            // Snippet: GetFile(GetFileRequest, CallSettings)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.Create();
             // Initialize request argument(s)
             GetFileRequest request = new GetFileRequest { Name = "", };
             // Make the request
             File response = artifactRegistryClient.GetFile(request);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Recommender.V1.Snippets
 {
+    using Google.Cloud.Recommender.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRecommenderClientStandaloneSnippets
     {
         /// <summary>Snippet for GetRecommendationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetRecommendationResourceNamesAsync()
         {
-            // Snippet: GetRecommendationAsync(RecommendationName, CallSettings)
-            // Additional: GetRecommendationAsync(RecommendationName, CancellationToken)
             // Create client
             RecommenderClient recommenderClient = await RecommenderClient.CreateAsync();
             // Initialize request argument(s)
             RecommendationName name = RecommendationName.FromProjectLocationRecommenderRecommendation("[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]");
             // Make the request
             Recommendation response = await recommenderClient.GetRecommendationAsync(name);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedReachPlanServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListPlannableProductsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListPlannableProductsAsync()
         {
-            // Snippet: ListPlannableProductsAsync(string, CallSettings)
-            // Additional: ListPlannableProductsAsync(string, CancellationToken)
             // Create client
             ReachPlanServiceClient reachPlanServiceClient = await ReachPlanServiceClient.CreateAsync();
             // Initialize request argument(s)
             string plannableLocationId = "";
             // Make the request
             ListPlannableProductsResponse response = await reachPlanServiceClient.ListPlannableProductsAsync(plannableLocationId);
-            // End snippet
         }
     }
 }

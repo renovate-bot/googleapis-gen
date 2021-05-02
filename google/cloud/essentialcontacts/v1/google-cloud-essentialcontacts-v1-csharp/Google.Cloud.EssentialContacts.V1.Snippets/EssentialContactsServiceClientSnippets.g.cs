@@ -289,7 +289,7 @@ namespace Google.Cloud.EssentialContacts.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListContacts</summary>
+        /// <summary>Snippet for ListContactsAsync</summary>
         public async Task ListContactsRequestObjectAsync()
         {
             // Snippet: ListContactsAsync(ListContactsRequest, CallSettings)
@@ -382,7 +382,7 @@ namespace Google.Cloud.EssentialContacts.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListContacts</summary>
+        /// <summary>Snippet for ListContactsAsync</summary>
         public async Task ListContactsAsync()
         {
             // Snippet: ListContactsAsync(string, string, int?, CallSettings)
@@ -472,7 +472,7 @@ namespace Google.Cloud.EssentialContacts.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListContacts</summary>
+        /// <summary>Snippet for ListContactsAsync</summary>
         public async Task ListContactsResourceNames1Async()
         {
             // Snippet: ListContactsAsync(ProjectName, string, int?, CallSettings)
@@ -562,7 +562,7 @@ namespace Google.Cloud.EssentialContacts.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListContacts</summary>
+        /// <summary>Snippet for ListContactsAsync</summary>
         public async Task ListContactsResourceNames2Async()
         {
             // Snippet: ListContactsAsync(FolderName, string, int?, CallSettings)
@@ -652,7 +652,7 @@ namespace Google.Cloud.EssentialContacts.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListContacts</summary>
+        /// <summary>Snippet for ListContactsAsync</summary>
         public async Task ListContactsResourceNames3Async()
         {
             // Snippet: ListContactsAsync(OrganizationName, string, int?, CallSettings)
@@ -923,7 +923,7 @@ namespace Google.Cloud.EssentialContacts.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ComputeContacts</summary>
+        /// <summary>Snippet for ComputeContactsAsync</summary>
         public async Task ComputeContactsRequestObjectAsync()
         {
             // Snippet: ComputeContactsAsync(ComputeContactsRequest, CallSettings)

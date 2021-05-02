@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomerManagerLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MoveManagerLinkAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MoveManagerLinkAsync()
         {
-            // Snippet: MoveManagerLinkAsync(string, string, string, CallSettings)
-            // Additional: MoveManagerLinkAsync(string, string, string, CancellationToken)
             // Create client
             CustomerManagerLinkServiceClient customerManagerLinkServiceClient = await CustomerManagerLinkServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             string newManager = "";
             // Make the request
             MoveManagerLinkResponse response = await customerManagerLinkServiceClient.MoveManagerLinkAsync(customerId, previousCustomerManagerLink, newManager);
-            // End snippet
         }
     }
 }

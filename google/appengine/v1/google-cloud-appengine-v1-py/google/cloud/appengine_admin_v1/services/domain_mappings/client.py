@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -37,6 +39,7 @@ from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import domain_mapping
 from google.cloud.appengine_admin_v1.types import operation as ga_operation
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .transports.base import DomainMappingsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import DomainMappingsGrpcTransport
 from .transports.grpc_asyncio import DomainMappingsGrpcAsyncIOTransport
@@ -326,9 +329,9 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.ListDomainMappingsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `DomainMappings.ListDomainMappings`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -344,6 +347,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.ListDomainMappingsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -394,9 +398,9 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.GetDomainMappingRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `DomainMappings.GetDomainMapping`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -410,6 +414,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.GetDomainMappingRequest.
         # There's no risk of modifying the input as we've already verified
@@ -454,9 +459,9 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.CreateDomainMappingRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `DomainMappings.CreateDomainMapping`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -473,6 +478,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.CreateDomainMappingRequest.
         # There's no risk of modifying the input as we've already verified
@@ -526,9 +532,9 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.UpdateDomainMappingRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `DomainMappings.UpdateDomainMapping`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -545,6 +551,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.UpdateDomainMappingRequest.
         # There's no risk of modifying the input as we've already verified
@@ -596,9 +603,9 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         Args:
             request (google.cloud.appengine_admin_v1.types.DeleteDomainMappingRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `DomainMappings.DeleteDomainMapping`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -625,6 +632,7 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a appengine.DeleteDomainMappingRequest.
         # There's no risk of modifying the input as we've already verified
@@ -662,6 +670,8 @@ class DomainMappingsClient(metaclass=DomainMappingsClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

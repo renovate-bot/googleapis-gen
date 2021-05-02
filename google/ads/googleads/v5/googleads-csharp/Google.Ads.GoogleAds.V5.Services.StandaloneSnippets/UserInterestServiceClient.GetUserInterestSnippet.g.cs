@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedUserInterestServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetUserInterest</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetUserInterest()
         {
-            // Snippet: GetUserInterest(string, CallSettings)
             // Create client
             UserInterestServiceClient userInterestServiceClient = UserInterestServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/userInterests/[USER_INTEREST]";
             // Make the request
             UserInterest response = userInterestServiceClient.GetUserInterest(resourceName);
-            // End snippet
         }
     }
 }

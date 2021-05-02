@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.CloudBuild.V1.Snippets
 {
+    using Google.Cloud.CloudBuild.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudBuildClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteBuildTriggerAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteBuildTriggerRequestObjectAsync()
         {
-            // Snippet: DeleteBuildTriggerAsync(DeleteBuildTriggerRequest, CallSettings)
-            // Additional: DeleteBuildTriggerAsync(DeleteBuildTriggerRequest, CancellationToken)
             // Create client
             CloudBuildClient cloudBuildClient = await CloudBuildClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.CloudBuild.V1.Snippets
             };
             // Make the request
             await cloudBuildClient.DeleteBuildTriggerAsync(request);
-            // End snippet
         }
     }
 }

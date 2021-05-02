@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,15 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -30,6 +31,7 @@ from google.cloud.talent_v4.types import tenant
 from google.cloud.talent_v4.types import tenant as gct_tenant
 from google.cloud.talent_v4.types import tenant_service
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import TenantServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import TenantServiceGrpcTransport
 
@@ -80,15 +82,13 @@ class TenantServiceGrpcAsyncIOTransport(TenantServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -108,8 +108,7 @@ class TenantServiceGrpcAsyncIOTransport(TenantServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -167,6 +166,7 @@ class TenantServiceGrpcAsyncIOTransport(TenantServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -229,9 +229,7 @@ class TenantServiceGrpcAsyncIOTransport(TenantServiceTransport):
     def create_tenant(self) -> Callable[
             [tenant_service.CreateTenantRequest],
             Awaitable[gct_tenant.Tenant]]:
-        r"""Return a callable for the
-        create tenant
-          method over gRPC.
+        r"""Return a callable for the create tenant method over gRPC.
 
         Creates a new tenant entity.
 
@@ -257,9 +255,7 @@ class TenantServiceGrpcAsyncIOTransport(TenantServiceTransport):
     def get_tenant(self) -> Callable[
             [tenant_service.GetTenantRequest],
             Awaitable[tenant.Tenant]]:
-        r"""Return a callable for the
-        get tenant
-          method over gRPC.
+        r"""Return a callable for the get tenant method over gRPC.
 
         Retrieves specified tenant.
 
@@ -285,9 +281,7 @@ class TenantServiceGrpcAsyncIOTransport(TenantServiceTransport):
     def update_tenant(self) -> Callable[
             [tenant_service.UpdateTenantRequest],
             Awaitable[gct_tenant.Tenant]]:
-        r"""Return a callable for the
-        update tenant
-          method over gRPC.
+        r"""Return a callable for the update tenant method over gRPC.
 
         Updates specified tenant.
 
@@ -313,9 +307,7 @@ class TenantServiceGrpcAsyncIOTransport(TenantServiceTransport):
     def delete_tenant(self) -> Callable[
             [tenant_service.DeleteTenantRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete tenant
-          method over gRPC.
+        r"""Return a callable for the delete tenant method over gRPC.
 
         Deletes specified tenant.
 
@@ -341,9 +333,7 @@ class TenantServiceGrpcAsyncIOTransport(TenantServiceTransport):
     def list_tenants(self) -> Callable[
             [tenant_service.ListTenantsRequest],
             Awaitable[tenant_service.ListTenantsResponse]]:
-        r"""Return a callable for the
-        list tenants
-          method over gRPC.
+        r"""Return a callable for the list tenants method over gRPC.
 
         Lists all tenants associated with the project.
 

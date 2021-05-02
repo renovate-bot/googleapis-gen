@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Automl.V1Beta1.Snippets
 {
+    using Google.Cloud.Automl.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateDatasetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateDatasetAsync()
         {
-            // Snippet: CreateDatasetAsync(string, Dataset, CallSettings)
-            // Additional: CreateDatasetAsync(string, Dataset, CancellationToken)
             // Create client
             AutoMlClient autoMlClient = await AutoMlClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Automl.V1Beta1.Snippets
             Dataset dataset = new Dataset();
             // Make the request
             Dataset response = await autoMlClient.CreateDatasetAsync(parent, dataset);
-            // End snippet
         }
     }
 }

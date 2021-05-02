@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.common.types import tag_snippet
 
@@ -50,23 +53,10 @@ class RemarketingAction(proto.Message):
             remarketing actions.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.INT64,
-        number=5,
-        optional=True,
-    )
-    name = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
-    tag_snippets = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.INT64, number=5, optional=True)
+    name = proto.Field(proto.STRING, number=6, optional=True)
+    tag_snippets = proto.RepeatedField(proto.MESSAGE, number=4,
         message=tag_snippet.TagSnippet,
     )
 

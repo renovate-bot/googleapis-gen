@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedManagedPlacementViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetManagedPlacementViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetManagedPlacementViewResourceNamesAsync()
         {
-            // Snippet: GetManagedPlacementViewAsync(ManagedPlacementViewName, CallSettings)
-            // Additional: GetManagedPlacementViewAsync(ManagedPlacementViewName, CancellationToken)
             // Create client
             ManagedPlacementViewServiceClient managedPlacementViewServiceClient = await ManagedPlacementViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             ManagedPlacementViewName resourceName = ManagedPlacementViewName.FromCustomerAdGroupCriterion("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
             // Make the request
             ManagedPlacementView response = await managedPlacementViewServiceClient.GetManagedPlacementViewAsync(resourceName);
-            // End snippet
         }
     }
 }

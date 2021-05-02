@@ -16,15 +16,18 @@
 
 namespace Google.Area120.Tables.V1Alpha1.Snippets
 {
+    using Google.Area120.Tables.V1Alpha1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTablesServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchDeleteRowsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchDeleteRowsRequestObjectAsync()
         {
-            // Snippet: BatchDeleteRowsAsync(BatchDeleteRowsRequest, CallSettings)
-            // Additional: BatchDeleteRowsAsync(BatchDeleteRowsRequest, CancellationToken)
             // Create client
             TablesServiceClient tablesServiceClient = await TablesServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -38,7 +41,6 @@ namespace Google.Area120.Tables.V1Alpha1.Snippets
             };
             // Make the request
             await tablesServiceClient.BatchDeleteRowsAsync(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -26,6 +28,7 @@ __protobuf__ = proto.module(
 
 class TableReadOptions(proto.Message):
     r"""Options dictating how we read a table.
+
     Attributes:
         selected_fields (Sequence[str]):
             Optional. Names of the fields in the table that should be
@@ -43,14 +46,9 @@ class TableReadOptions(proto.Message):
             AND 5.0".
     """
 
-    selected_fields = proto.RepeatedField(
-        proto.STRING,
-        number=1,
-    )
-    row_restriction = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    selected_fields = proto.RepeatedField(proto.STRING, number=1)
+
+    row_restriction = proto.Field(proto.STRING, number=2)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

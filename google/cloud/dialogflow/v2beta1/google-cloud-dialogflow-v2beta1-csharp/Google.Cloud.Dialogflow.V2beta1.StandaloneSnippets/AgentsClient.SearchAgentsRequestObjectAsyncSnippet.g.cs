@@ -18,16 +18,20 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dialogflow.V2beta1;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAgentsClientStandaloneSnippets
     {
-        /// <summary>Snippet for SearchAgents</summary>
+        /// <summary>Snippet for SearchAgentsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SearchAgentsRequestObjectAsync()
         {
-            // Snippet: SearchAgentsAsync(SearchAgentsRequest, CallSettings)
             // Create client
             AgentsClient agentsClient = await AgentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -69,7 +73,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

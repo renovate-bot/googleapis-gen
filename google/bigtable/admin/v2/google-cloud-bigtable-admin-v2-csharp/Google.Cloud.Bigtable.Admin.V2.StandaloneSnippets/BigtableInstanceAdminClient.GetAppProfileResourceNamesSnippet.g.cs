@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
+
     public sealed partial class GeneratedBigtableInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAppProfile</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAppProfileResourceNames()
         {
-            // Snippet: GetAppProfile(AppProfileName, CallSettings)
             // Create client
             BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.Create();
             // Initialize request argument(s)
             AppProfileName name = AppProfileName.FromProjectInstanceAppProfile("[PROJECT]", "[INSTANCE]", "[APP_PROFILE]");
             // Make the request
             AppProfile response = bigtableInstanceAdminClient.GetAppProfile(name);
-            // End snippet
         }
     }
 }

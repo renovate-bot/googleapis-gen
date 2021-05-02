@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -37,6 +39,7 @@ from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 from google.storage_v1.services.storage import pagers
 from google.storage_v1.types import storage
 from google.storage_v1.types import storage_resources
+
 from .transports.base import StorageTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import StorageGrpcTransport
 from .transports.grpc_asyncio import StorageGrpcAsyncIOTransport
@@ -327,9 +330,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.DeleteBucketAccessControlRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteBucketAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -337,6 +340,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.DeleteBucketAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -368,9 +372,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.GetBucketAccessControlRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetBucketAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -382,6 +386,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An access-control entry.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.GetBucketAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -415,9 +420,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.InsertBucketAccessControlRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 InsertBucketAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -429,6 +434,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An access-control entry.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.InsertBucketAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -462,9 +468,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.ListBucketAccessControlsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListBucketAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -478,6 +484,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.ListBucketAccessControlsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -514,9 +521,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.UpdateBucketAccessControlRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 UpdateBucketAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -528,6 +535,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An access-control entry.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.UpdateBucketAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -561,9 +569,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.PatchBucketAccessControlRequest):
-                The request object.
-                Request for
+                The request object. Request for
                 PatchBucketAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -575,6 +583,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An access-control entry.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.PatchBucketAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -608,8 +617,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.DeleteBucketRequest):
-                The request object.
-                Request message for DeleteBucket.
+                The request object. Request message for DeleteBucket.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -617,6 +626,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.DeleteBucketRequest.
         # There's no risk of modifying the input as we've already verified
@@ -647,8 +657,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.GetBucketRequest):
-                The request object.
-                Request message for GetBucket.
+                The request object. Request message for GetBucket.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -660,6 +670,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 A bucket.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.GetBucketRequest.
         # There's no risk of modifying the input as we've already verified
@@ -693,8 +704,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.InsertBucketRequest):
-                The request object.
-                Request message for InsertBucket.
+                The request object. Request message for InsertBucket.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -706,6 +717,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 A bucket.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.InsertBucketRequest.
         # There's no risk of modifying the input as we've already verified
@@ -740,8 +752,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.ListChannelsRequest):
-                The request object.
-                Request message for ListChannels.
+                The request object. Request message for ListChannels.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -755,6 +767,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.ListChannelsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -788,8 +801,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.ListBucketsRequest):
-                The request object.
-                Request message for ListBuckets.
+                The request object. Request message for ListBuckets.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -806,6 +819,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.ListBucketsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -848,9 +862,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.LockRetentionPolicyRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 LockRetentionPolicy.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -862,6 +876,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 A bucket.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.LockRetentionPolicyRequest.
         # There's no risk of modifying the input as we've already verified
@@ -895,9 +910,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.GetIamPolicyRequest):
-                The request object.
-                A wrapper around the IAM get policy
+                The request object. A wrapper around the IAM get policy
                 request to support our common_request_params.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -964,6 +979,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.GetIamPolicyRequest.
         # There's no risk of modifying the input as we've already verified
@@ -997,9 +1013,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.SetIamPolicyRequest):
-                The request object.
-                A wrapper around the IAM set policy
+                The request object. A wrapper around the IAM set policy
                 request to support our common_request_params.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1066,6 +1082,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.SetIamPolicyRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1100,10 +1117,10 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.TestIamPermissionsRequest):
-                The request object.
-                A wrapper around the IAM test iam
+                The request object. A wrapper around the IAM test iam
                 permissions request to support our
                 common_request_params.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1115,6 +1132,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 Response message for TestIamPermissions method.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.TestIamPermissionsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1150,8 +1168,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.PatchBucketRequest):
-                The request object.
-                Request for PatchBucket method.
+                The request object. Request for PatchBucket method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1163,6 +1181,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 A bucket.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.PatchBucketRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1202,8 +1221,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.UpdateBucketRequest):
-                The request object.
-                Request for UpdateBucket method.
+                The request object. Request for UpdateBucket method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1215,6 +1234,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 A bucket.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.UpdateBucketRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1252,8 +1272,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.StopChannelRequest):
-                The request object.
-                Request message for StopChannel.
+                The request object. Request message for StopChannel.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1261,6 +1281,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.StopChannelRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1292,9 +1313,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.DeleteDefaultObjectAccessControlRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteDefaultObjectAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1302,6 +1323,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.DeleteDefaultObjectAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1333,9 +1355,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.GetDefaultObjectAccessControlRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetDefaultObjectAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1347,6 +1369,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An access-control entry.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.GetDefaultObjectAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1381,9 +1404,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.InsertDefaultObjectAccessControlRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 InsertDefaultObjectAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1395,6 +1418,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An access-control entry.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.InsertDefaultObjectAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1429,9 +1453,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.ListDefaultObjectAccessControlsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListDefaultObjectAccessControls.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1445,6 +1469,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.ListDefaultObjectAccessControlsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1479,9 +1504,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.PatchDefaultObjectAccessControlRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 PatchDefaultObjectAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1493,6 +1518,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An access-control entry.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.PatchDefaultObjectAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1529,9 +1555,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.UpdateDefaultObjectAccessControlRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateDefaultObjectAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1543,6 +1569,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An access-control entry.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.UpdateDefaultObjectAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1579,9 +1606,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.DeleteNotificationRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteNotification.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1589,6 +1616,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.DeleteNotificationRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1619,8 +1647,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.GetNotificationRequest):
-                The request object.
-                Request message for GetNotification.
+                The request object. Request message for GetNotification.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1634,6 +1662,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.GetNotificationRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1671,9 +1700,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.InsertNotificationRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 InsertNotification.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1687,6 +1716,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.InsertNotificationRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1721,9 +1751,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.ListNotificationsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListNotifications.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1737,6 +1767,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.ListNotificationsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1771,9 +1802,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.DeleteObjectAccessControlRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteObjectAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1781,6 +1812,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.DeleteObjectAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1812,9 +1844,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.GetObjectAccessControlRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetObjectAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1826,6 +1858,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An access-control entry.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.GetObjectAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1859,9 +1892,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.InsertObjectAccessControlRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 InsertObjectAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1873,6 +1906,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An access-control entry.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.InsertObjectAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1906,9 +1940,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.ListObjectAccessControlsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListObjectAccessControls.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1922,6 +1956,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.ListObjectAccessControlsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1957,9 +1992,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.PatchObjectAccessControlRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 PatchObjectAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1971,6 +2006,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An access-control entry.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.PatchObjectAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2004,9 +2040,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.UpdateObjectAccessControlRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateObjectAccessControl.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2018,6 +2054,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An access-control entry.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.UpdateObjectAccessControlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2052,8 +2089,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.ComposeObjectRequest):
-                The request object.
-                Request message for ComposeObject.
+                The request object. Request message for ComposeObject.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2065,6 +2102,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An object.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.ComposeObjectRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2099,8 +2137,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.CopyObjectRequest):
-                The request object.
-                Request message for CopyObject.
+                The request object. Request message for CopyObject.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2112,6 +2150,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An object.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.CopyObjectRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2147,10 +2186,10 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.DeleteObjectRequest):
-                The request object.
-                Message for deleting an object.
+                The request object. Message for deleting an object.
                 Either `bucket` and `object` *or* `upload_id` **must**
                 be set (but not both).
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2158,6 +2197,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.DeleteObjectRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2188,8 +2228,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.GetObjectRequest):
-                The request object.
-                Request message for GetObject.
+                The request object. Request message for GetObject.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2201,6 +2241,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An object.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.GetObjectRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2234,8 +2275,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.GetObjectMediaRequest):
-                The request object.
-                Request message for GetObjectMedia.
+                The request object. Request message for GetObjectMedia.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2247,6 +2288,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 Response message for GetObject.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.GetObjectMediaRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2305,8 +2347,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             requests (Iterator[google.storage_v1.types.InsertObjectRequest]):
-                The request object iterator.
-                Message for writing an object.
+                The request object iterator. Message for writing an object.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2344,8 +2385,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.ListObjectsRequest):
-                The request object.
-                Request message for ListObjects.
+                The request object. Request message for ListObjects.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2362,6 +2403,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.ListObjectsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2405,8 +2447,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.RewriteObjectRequest):
-                The request object.
-                Request message for RewriteObject.
+                The request object. Request message for RewriteObject.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2418,6 +2460,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 A rewrite response.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.RewriteObjectRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2453,8 +2496,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.StartResumableWriteRequest):
-                The request object.
-                Request message StartResumableWrite.
+                The request object. Request message StartResumableWrite.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2468,6 +2511,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.StartResumableWriteRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2515,9 +2559,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.QueryWriteStatusRequest):
-                The request object.
-                Request object for
+                The request object. Request object for
                 `ByteStream.QueryWriteStatus`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2529,6 +2573,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 Response object for ByteStream.QueryWriteStatus.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.QueryWriteStatusRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2562,8 +2607,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.PatchObjectRequest):
-                The request object.
-                Request message for PatchObject.
+                The request object. Request message for PatchObject.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2575,6 +2620,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An object.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.PatchObjectRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2611,8 +2657,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.UpdateObjectRequest):
-                The request object.
-                Request message for UpdateObject.
+                The request object. Request message for UpdateObject.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2624,6 +2670,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 An object.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.UpdateObjectRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2657,9 +2704,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.GetIamPolicyRequest):
-                The request object.
-                A wrapper around the IAM get policy
+                The request object. A wrapper around the IAM get policy
                 request to support our common_request_params.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2726,6 +2773,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.GetIamPolicyRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2759,9 +2807,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.SetIamPolicyRequest):
-                The request object.
-                A wrapper around the IAM set policy
+                The request object. A wrapper around the IAM set policy
                 request to support our common_request_params.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2828,6 +2876,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.SetIamPolicyRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2862,10 +2911,10 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.TestIamPermissionsRequest):
-                The request object.
-                A wrapper around the IAM test iam
+                The request object. A wrapper around the IAM test iam
                 permissions request to support our
                 common_request_params.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2877,6 +2926,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 Response message for TestIamPermissions method.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.TestIamPermissionsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2910,8 +2960,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.WatchAllObjectsRequest):
-                The request object.
-                Request message for WatchAllObjects.
+                The request object. Request message for WatchAllObjects.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2925,6 +2975,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.WatchAllObjectsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -2959,9 +3010,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.GetProjectServiceAccountRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetProjectServiceAccount.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2975,6 +3026,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.GetProjectServiceAccountRequest.
         # There's no risk of modifying the input as we've already verified
@@ -3023,6 +3075,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.CreateHmacKeyRequest.
         # There's no risk of modifying the input as we've already verified
@@ -3057,9 +3110,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.DeleteHmacKeyRequest):
-                The request object.
-                Request object to delete a given
+                The request object. Request object to delete a given
                 HMAC key.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3067,6 +3120,7 @@ class StorageClient(metaclass=StorageClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.DeleteHmacKeyRequest.
         # There's no risk of modifying the input as we've already verified
@@ -3097,9 +3151,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.GetHmacKeyRequest):
-                The request object.
-                Request object to get metadata on a
+                The request object. Request object to get metadata on a
                 given HMAC key.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3113,6 +3167,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.GetHmacKeyRequest.
         # There's no risk of modifying the input as we've already verified
@@ -3147,9 +3202,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.ListHmacKeysRequest):
-                The request object.
-                Request to fetch a list of HMAC keys
+                The request object. Request to fetch a list of HMAC keys
                 under a given project.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3166,6 +3221,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.ListHmacKeysRequest.
         # There's no risk of modifying the input as we've already verified
@@ -3209,9 +3265,9 @@ class StorageClient(metaclass=StorageClientMeta):
 
         Args:
             request (google.storage_v1.types.UpdateHmacKeyRequest):
-                The request object.
-                Request object to update an HMAC key
+                The request object. Request object to update an HMAC key
                 state.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3225,6 +3281,7 @@ class StorageClient(metaclass=StorageClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.UpdateHmacKeyRequest.
         # There's no risk of modifying the input as we've already verified
@@ -3246,6 +3303,8 @@ class StorageClient(metaclass=StorageClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

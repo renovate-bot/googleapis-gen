@@ -16,15 +16,18 @@
 
 namespace Google.Home.Graph.V1.Snippets
 {
+    using Google.Home.Graph.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedHomeGraphApiServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteAgentUserAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteAgentUserResourceNamesAsync()
         {
-            // Snippet: DeleteAgentUserAsync(string, AgentUserPathName, CallSettings)
-            // Additional: DeleteAgentUserAsync(string, AgentUserPathName, CancellationToken)
             // Create client
             HomeGraphApiServiceClient homeGraphApiServiceClient = await HomeGraphApiServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Home.Graph.V1.Snippets
             AgentUserPathName agentUserId = AgentUserPathName.FromAgentUserPath("[AGENT_USER_PATH]");
             // Make the request
             await homeGraphApiServiceClient.DeleteAgentUserAsync(requestId, agentUserId);
-            // End snippet
         }
     }
 }

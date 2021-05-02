@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,7 +38,8 @@ from google.cloud.recommender_v1beta1.types.recommender_service import MarkRecom
 from google.cloud.recommender_v1beta1.types.recommender_service import MarkRecommendationFailedRequest
 from google.cloud.recommender_v1beta1.types.recommender_service import MarkRecommendationSucceededRequest
 
-__all__ = ('CostProjection',
+__all__ = (
+    'CostProjection',
     'GetInsightRequest',
     'GetRecommendationRequest',
     'Impact',

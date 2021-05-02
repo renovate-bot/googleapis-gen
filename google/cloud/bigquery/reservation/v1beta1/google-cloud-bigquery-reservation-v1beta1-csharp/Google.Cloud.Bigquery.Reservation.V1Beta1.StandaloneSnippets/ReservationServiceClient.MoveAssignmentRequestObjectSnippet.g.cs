@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
 {
+    using Google.Cloud.Bigquery.Reservation.V1Beta1;
+
     public sealed partial class GeneratedReservationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MoveAssignment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MoveAssignmentRequestObject()
         {
-            // Snippet: MoveAssignment(MoveAssignmentRequest, CallSettings)
             // Create client
             ReservationServiceClient reservationServiceClient = ReservationServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             };
             // Make the request
             Assignment response = reservationServiceClient.MoveAssignment(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -32,6 +34,7 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.apigeeconnect_v1.services.connection_service import pagers
 from google.cloud.apigeeconnect_v1.types import connection
+
 from .transports.base import ConnectionServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ConnectionServiceGrpcTransport
 from .transports.grpc_asyncio import ConnectionServiceGrpcAsyncIOTransport
@@ -336,8 +339,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
 
         Args:
             request (google.cloud.apigeeconnect_v1.types.ListConnectionsRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ListConnections][Management.ListConnections].
             parent (str):
                 Required. Parent name of the form:
@@ -346,6 +348,7 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -375,8 +378,10 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, connection.ListConnectionsRequest):
             request = connection.ListConnectionsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -411,6 +416,8 @@ class ConnectionServiceClient(metaclass=ConnectionServiceClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Enums;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedInvoiceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListInvoices</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListInvoices()
         {
-            // Snippet: ListInvoices(string, string, string, MonthOfYearEnum.Types.MonthOfYear, CallSettings)
             // Create client
             InvoiceServiceClient invoiceServiceClient = InvoiceServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             MonthOfYearEnum.Types.MonthOfYear issueMonth = MonthOfYearEnum.Types.MonthOfYear.Unspecified;
             // Make the request
             ListInvoicesResponse response = invoiceServiceClient.ListInvoices(customerId, billingSetup, issueYear, issueMonth);
-            // End snippet
         }
     }
 }

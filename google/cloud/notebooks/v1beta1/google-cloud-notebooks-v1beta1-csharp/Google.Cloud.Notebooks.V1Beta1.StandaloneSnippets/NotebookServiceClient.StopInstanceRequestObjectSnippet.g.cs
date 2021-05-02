@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Notebooks.V1Beta1.Snippets
 {
+    using Google.Cloud.Notebooks.V1Beta1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedNotebookServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for StopInstance</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void StopInstanceRequestObject()
         {
-            // Snippet: StopInstance(StopInstanceRequest, CallSettings)
             // Create client
             NotebookServiceClient notebookServiceClient = NotebookServiceClient.Create();
             // Initialize request argument(s)
@@ -46,7 +50,6 @@ namespace Google.Cloud.Notebooks.V1Beta1.Snippets
                 // If it has completed, then access the result
                 Instance retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

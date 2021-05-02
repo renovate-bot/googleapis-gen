@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
+
     public sealed partial class GeneratedGroupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteGroup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteGroupResourceNames1()
         {
-            // Snippet: DeleteGroup(GroupName, CallSettings)
             // Create client
             GroupServiceClient groupServiceClient = GroupServiceClient.Create();
             // Initialize request argument(s)
             GroupName name = GroupName.FromProjectGroup("[PROJECT]", "[GROUP]");
             // Make the request
             groupServiceClient.DeleteGroup(name);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Firestore.Admin.V1.Snippets
 {
+    using Google.Cloud.Firestore.Admin.V1;
+
     public sealed partial class GeneratedFirestoreAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIndex</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetIndex()
         {
-            // Snippet: GetIndex(string, CallSettings)
             // Create client
             FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/databases/[DATABASE]/collectionGroups/[COLLECTION]/indexes/[INDEX]";
             // Make the request
             Index response = firestoreAdminClient.GetIndex(name);
-            // End snippet
         }
     }
 }

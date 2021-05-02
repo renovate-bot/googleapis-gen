@@ -16,14 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedCampaignCriterionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCampaignCriteria</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateCampaignCriteria()
         {
-            // Snippet: MutateCampaignCriteria(string, IEnumerable<CampaignCriterionOperation>, CallSettings)
             // Create client
             CampaignCriterionServiceClient campaignCriterionServiceClient = CampaignCriterionServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             MutateCampaignCriteriaResponse response = campaignCriterionServiceClient.MutateCampaignCriteria(customerId, operations);
-            // End snippet
         }
     }
 }

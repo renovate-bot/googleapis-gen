@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Recommender.V1Beta1.Snippets
 {
+    using Google.Cloud.Recommender.V1Beta1;
+
     public sealed partial class GeneratedRecommenderClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInsight</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetInsightResourceNames()
         {
-            // Snippet: GetInsight(InsightName, CallSettings)
             // Create client
             RecommenderClient recommenderClient = RecommenderClient.Create();
             // Initialize request argument(s)
             InsightName name = InsightName.FromProjectLocationInsightTypeInsight("[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
             // Make the request
             Insight response = recommenderClient.GetInsight(name);
-            // End snippet
         }
     }
 }

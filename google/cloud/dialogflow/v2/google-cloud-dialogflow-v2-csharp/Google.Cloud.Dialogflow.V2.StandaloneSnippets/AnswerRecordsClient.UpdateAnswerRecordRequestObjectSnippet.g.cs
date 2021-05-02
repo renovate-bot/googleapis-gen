@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedAnswerRecordsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateAnswerRecord</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateAnswerRecordRequestObject()
         {
-            // Snippet: UpdateAnswerRecord(UpdateAnswerRecordRequest, CallSettings)
             // Create client
             AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             };
             // Make the request
             AnswerRecord response = answerRecordsClient.UpdateAnswerRecord(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -60,7 +61,8 @@ from google.cloud.firestore_v1.types.write import ExistenceFilter
 from google.cloud.firestore_v1.types.write import Write
 from google.cloud.firestore_v1.types.write import WriteResult
 
-__all__ = ('ArrayValue',
+__all__ = (
+    'ArrayValue',
     'BatchGetDocumentsRequest',
     'BatchGetDocumentsResponse',
     'BatchWriteRequest',

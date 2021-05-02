@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
 {
+    using Google.Cloud.WebSecurityScanner.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWebSecurityScannerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetFindingAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetFindingResourceNamesAsync()
         {
-            // Snippet: GetFindingAsync(FindingName, CallSettings)
-            // Additional: GetFindingAsync(FindingName, CancellationToken)
             // Create client
             WebSecurityScannerClient webSecurityScannerClient = await WebSecurityScannerClient.CreateAsync();
             // Initialize request argument(s)
             FindingName name = FindingName.FromProjectScanConfigScanRunFinding("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
             // Make the request
             Finding response = await webSecurityScannerClient.GetFindingAsync(name);
-            // End snippet
         }
     }
 }

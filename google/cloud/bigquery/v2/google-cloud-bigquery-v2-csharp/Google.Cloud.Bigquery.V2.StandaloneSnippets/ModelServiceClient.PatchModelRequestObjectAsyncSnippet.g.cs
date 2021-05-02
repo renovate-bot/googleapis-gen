@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Bigquery.V2.Snippets
 {
+    using Google.Cloud.Bigquery.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedModelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for PatchModelAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task PatchModelRequestObjectAsync()
         {
-            // Snippet: PatchModelAsync(PatchModelRequest, CallSettings)
-            // Additional: PatchModelAsync(PatchModelRequest, CancellationToken)
             // Create client
             ModelServiceClient modelServiceClient = await ModelServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Bigquery.V2.Snippets
             };
             // Make the request
             Model response = await modelServiceClient.PatchModelAsync(request);
-            // End snippet
         }
     }
 }

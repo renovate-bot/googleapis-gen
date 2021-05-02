@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
 {
+    using Google.Cloud.BigQuery.DataTransfer.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataTransferServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteTransferConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteTransferConfigResourceNamesAsync()
         {
-            // Snippet: DeleteTransferConfigAsync(TransferConfigName, CallSettings)
-            // Additional: DeleteTransferConfigAsync(TransferConfigName, CancellationToken)
             // Create client
             DataTransferServiceClient dataTransferServiceClient = await DataTransferServiceClient.CreateAsync();
             // Initialize request argument(s)
             TransferConfigName name = TransferConfigName.FromProjectTransferConfig("[PROJECT]", "[TRANSFER_CONFIG]");
             // Make the request
             await dataTransferServiceClient.DeleteTransferConfigAsync(name);
-            // End snippet
         }
     }
 }

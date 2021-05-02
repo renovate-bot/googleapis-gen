@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -45,7 +46,8 @@ from google.cloud.bigquery.reservation_v1beta1.types.reservation import UpdateBi
 from google.cloud.bigquery.reservation_v1beta1.types.reservation import UpdateCapacityCommitmentRequest
 from google.cloud.bigquery.reservation_v1beta1.types.reservation import UpdateReservationRequest
 
-__all__ = ('Assignment',
+__all__ = (
+    'Assignment',
     'BiReservation',
     'CapacityCommitment',
     'CreateAssignmentRequest',

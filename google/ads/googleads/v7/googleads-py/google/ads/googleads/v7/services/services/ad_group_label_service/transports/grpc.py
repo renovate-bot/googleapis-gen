@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v7.resources.types import ad_group_label
 from google.ads.googleads.v7.services.types import ad_group_label_service
+
 from .base import AdGroupLabelServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class AdGroupLabelServiceGrpcTransport(AdGroupLabelServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class AdGroupLabelServiceGrpcTransport(AdGroupLabelServiceTransport):
     def get_ad_group_label(self) -> Callable[
             [ad_group_label_service.GetAdGroupLabelRequest],
             ad_group_label.AdGroupLabel]:
-        r"""Return a callable for the
-        get ad group label
-          method over gRPC.
+        r"""Return a callable for the get ad group label method over gRPC.
 
         Returns the requested ad group label in full detail.
 
@@ -233,9 +233,7 @@ class AdGroupLabelServiceGrpcTransport(AdGroupLabelServiceTransport):
     def mutate_ad_group_labels(self) -> Callable[
             [ad_group_label_service.MutateAdGroupLabelsRequest],
             ad_group_label_service.MutateAdGroupLabelsResponse]:
-        r"""Return a callable for the
-        mutate ad group labels
-          method over gRPC.
+        r"""Return a callable for the mutate ad group labels method over gRPC.
 
         Creates and removes ad group labels. Operation statuses are
         returned.

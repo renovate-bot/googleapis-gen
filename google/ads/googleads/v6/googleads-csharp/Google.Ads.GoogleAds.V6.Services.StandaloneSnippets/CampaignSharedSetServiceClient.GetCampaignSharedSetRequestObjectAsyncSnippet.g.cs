@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignSharedSetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignSharedSetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCampaignSharedSetRequestObjectAsync()
         {
-            // Snippet: GetCampaignSharedSetAsync(GetCampaignSharedSetRequest, CallSettings)
-            // Additional: GetCampaignSharedSetAsync(GetCampaignSharedSetRequest, CancellationToken)
             // Create client
             CampaignSharedSetServiceClient campaignSharedSetServiceClient = await CampaignSharedSetServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             CampaignSharedSet response = await campaignSharedSetServiceClient.GetCampaignSharedSetAsync(request);
-            // End snippet
         }
     }
 }

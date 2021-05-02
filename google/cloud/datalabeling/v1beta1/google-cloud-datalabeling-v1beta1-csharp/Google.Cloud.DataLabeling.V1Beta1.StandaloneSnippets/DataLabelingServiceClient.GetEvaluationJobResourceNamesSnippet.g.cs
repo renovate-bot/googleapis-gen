@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
+
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetEvaluationJob</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetEvaluationJobResourceNames()
         {
-            // Snippet: GetEvaluationJob(EvaluationJobName, CallSettings)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.Create();
             // Initialize request argument(s)
             EvaluationJobName name = EvaluationJobName.FromProjectEvaluationJob("[PROJECT]", "[EVALUATION_JOB]");
             // Make the request
             EvaluationJob response = dataLabelingServiceClient.GetEvaluationJob(name);
-            // End snippet
         }
     }
 }

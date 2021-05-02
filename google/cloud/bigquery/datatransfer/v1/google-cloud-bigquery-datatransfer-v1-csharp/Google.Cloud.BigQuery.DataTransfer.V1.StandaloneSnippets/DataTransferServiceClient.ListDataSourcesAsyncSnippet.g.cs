@@ -17,16 +17,20 @@
 namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.BigQuery.DataTransfer.V1;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataTransferServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListDataSources</summary>
+        /// <summary>Snippet for ListDataSourcesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListDataSourcesAsync()
         {
-            // Snippet: ListDataSourcesAsync(string, string, int?, CallSettings)
             // Create client
             DataTransferServiceClient dataTransferServiceClient = await DataTransferServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -65,7 +69,6 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

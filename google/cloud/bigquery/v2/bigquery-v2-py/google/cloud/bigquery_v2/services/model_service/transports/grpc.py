@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -27,6 +29,7 @@ import grpc  # type: ignore
 from google.cloud.bigquery_v2.types import model
 from google.cloud.bigquery_v2.types import model as gcb_model
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import ModelServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -58,8 +61,7 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -198,15 +200,13 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -220,9 +220,7 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
     def get_model(self) -> Callable[
             [model.GetModelRequest],
             model.Model]:
-        r"""Return a callable for the
-        get model
-          method over gRPC.
+        r"""Return a callable for the get model method over gRPC.
 
         Gets the specified model resource by model ID.
 
@@ -248,9 +246,7 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
     def list_models(self) -> Callable[
             [model.ListModelsRequest],
             model.ListModelsResponse]:
-        r"""Return a callable for the
-        list models
-          method over gRPC.
+        r"""Return a callable for the list models method over gRPC.
 
         Lists all models in the specified dataset. Requires
         the READER dataset role.
@@ -277,9 +273,7 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
     def patch_model(self) -> Callable[
             [gcb_model.PatchModelRequest],
             gcb_model.Model]:
-        r"""Return a callable for the
-        patch model
-          method over gRPC.
+        r"""Return a callable for the patch model method over gRPC.
 
         Patch specific fields in the specified model.
 
@@ -305,9 +299,7 @@ class ModelServiceGrpcTransport(ModelServiceTransport):
     def delete_model(self) -> Callable[
             [model.DeleteModelRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete model
-          method over gRPC.
+        r"""Return a callable for the delete model method over gRPC.
 
         Deletes the model specified by modelId from the
         dataset.

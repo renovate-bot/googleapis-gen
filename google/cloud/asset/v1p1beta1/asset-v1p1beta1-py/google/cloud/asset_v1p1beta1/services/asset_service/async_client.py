@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -29,6 +31,7 @@ from google.oauth2 import service_account              # type: ignore
 from google.cloud.asset_v1p1beta1.services.asset_service import pagers
 from google.cloud.asset_v1p1beta1.types import asset_service
 from google.cloud.asset_v1p1beta1.types import assets
+
 from .transports.base import AssetServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AssetServiceGrpcAsyncIOTransport
 from .client import AssetServiceClient
@@ -44,12 +47,16 @@ class AssetServiceAsyncClient:
 
     common_billing_account_path = staticmethod(AssetServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AssetServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(AssetServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(AssetServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(AssetServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(AssetServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(AssetServiceClient.common_project_path)
     parse_common_project_path = staticmethod(AssetServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(AssetServiceClient.common_location_path)
     parse_common_location_path = staticmethod(AssetServiceClient.parse_common_location_path)
 
@@ -134,6 +141,7 @@ class AssetServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = AssetServiceClient(
             credentials=credentials,
             transport=transport,
@@ -162,8 +170,7 @@ class AssetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.asset_v1p1beta1.types.SearchAllResourcesRequest`):
-                The request object.
-                Search all resources request.
+                The request object. Search all resources request.
             scope (:class:`str`):
                 Required. The relative name of an asset. The search is
                 limited to the resources within the ``scope``. The
@@ -191,6 +198,7 @@ class AssetServiceAsyncClient:
                 This corresponds to the ``asset_types`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -217,10 +225,12 @@ class AssetServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if scope is not None:
             request.scope = scope
         if query is not None:
             request.query = query
+
         if asset_types:
             request.asset_types.extend(asset_types)
 
@@ -229,7 +239,10 @@ class AssetServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.search_all_resources,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -287,8 +300,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.asset_v1p1beta1.types.SearchAllIamPoliciesRequest`):
-                The request object.
-                Search all IAM policies request.
+                The request object. Search all IAM policies request.
             scope (:class:`str`):
                 Required. The relative name of an asset. The search is
                 limited to the resources within the ``scope``. The
@@ -311,6 +323,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``query`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -337,6 +350,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if scope is not None:
             request.scope = scope
         if query is not None:
@@ -347,7 +361,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.search_all_iam_policies,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -384,6 +401,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

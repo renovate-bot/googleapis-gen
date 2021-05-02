@@ -17,13 +17,17 @@
 namespace Google.Cloud.Osconfig.V1Beta.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Osconfig.V1Beta;
 
     public sealed partial class GeneratedOsConfigServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateGuestPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateGuestPolicyRequestObject()
         {
-            // Snippet: CreateGuestPolicy(CreateGuestPolicyRequest, CallSettings)
             // Create client
             OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.Osconfig.V1Beta.Snippets
             };
             // Make the request
             GuestPolicy response = osConfigServiceClient.CreateGuestPolicy(request);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.SecurityCenter.Settings.V1Beta1.Snippets
 {
+    using Google.Cloud.SecurityCenter.Settings.V1Beta1;
+
     public sealed partial class GeneratedSecurityCenterSettingsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CalculateEffectiveSettings</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CalculateEffectiveSettingsRequestObject()
         {
-            // Snippet: CalculateEffectiveSettings(CalculateEffectiveSettingsRequest, CallSettings)
             // Create client
             SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.SecurityCenter.Settings.V1Beta1.Snippets
             };
             // Make the request
             Settings response = securityCenterSettingsServiceClient.CalculateEffectiveSettings(request);
-            // End snippet
         }
     }
 }

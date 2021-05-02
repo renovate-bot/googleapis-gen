@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Tpu.V1.Snippets
 {
+    using Google.Cloud.Tpu.V1;
+
     public sealed partial class GeneratedTpuClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAcceleratorType</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAcceleratorType()
         {
-            // Snippet: GetAcceleratorType(string, CallSettings)
             // Create client
             TpuClient tpuClient = TpuClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/acceleratorTypes/[ACCELERATOR_TYPE]";
             // Make the request
             AcceleratorType response = tpuClient.GetAcceleratorType(name);
-            // End snippet
         }
     }
 }

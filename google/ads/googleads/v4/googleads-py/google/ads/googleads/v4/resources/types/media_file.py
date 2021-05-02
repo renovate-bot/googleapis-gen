@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.enums.types import media_type
 from google.ads.googleads.v4.enums.types import mime_type as gage_mime_type
@@ -35,6 +38,7 @@ __protobuf__ = proto.module(
 
 class MediaFile(proto.Message):
     r"""A media file.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the media file. Media file
@@ -69,76 +73,48 @@ class MediaFile(proto.Message):
             Immutable. Encapsulates a Video.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.Int64Value,
     )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=5,
+    type_ = proto.Field(proto.ENUM, number=5,
         enum=media_type.MediaTypeEnum.MediaType,
     )
-    mime_type = proto.Field(
-        proto.ENUM,
-        number=6,
+    mime_type = proto.Field(proto.ENUM, number=6,
         enum=gage_mime_type.MimeTypeEnum.MimeType,
     )
-    source_url = proto.Field(
-        proto.MESSAGE,
-        number=7,
+    source_url = proto.Field(proto.MESSAGE, number=7,
         message=wrappers.StringValue,
     )
-    name = proto.Field(
-        proto.MESSAGE,
-        number=8,
+    name = proto.Field(proto.MESSAGE, number=8,
         message=wrappers.StringValue,
     )
-    file_size = proto.Field(
-        proto.MESSAGE,
-        number=9,
+    file_size = proto.Field(proto.MESSAGE, number=9,
         message=wrappers.Int64Value,
     )
-    image = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='mediatype',
+    image = proto.Field(proto.MESSAGE, number=3, oneof='mediatype',
         message='MediaImage',
     )
-    media_bundle = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='mediatype',
+    media_bundle = proto.Field(proto.MESSAGE, number=4, oneof='mediatype',
         message='MediaBundle',
     )
-    audio = proto.Field(
-        proto.MESSAGE,
-        number=10,
-        oneof='mediatype',
+    audio = proto.Field(proto.MESSAGE, number=10, oneof='mediatype',
         message='MediaAudio',
     )
-    video = proto.Field(
-        proto.MESSAGE,
-        number=11,
-        oneof='mediatype',
+    video = proto.Field(proto.MESSAGE, number=11, oneof='mediatype',
         message='MediaVideo',
     )
 
 
 class MediaImage(proto.Message):
     r"""Encapsulates an Image.
+
     Attributes:
         data (google.protobuf.wrappers_pb2.BytesValue):
             Immutable. Raw image data.
     """
 
-    data = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    data = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.BytesValue,
     )
 
@@ -152,30 +128,28 @@ class MediaBundle(proto.Message):
             Immutable. Raw zipped data.
     """
 
-    data = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    data = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.BytesValue,
     )
 
 
 class MediaAudio(proto.Message):
     r"""Encapsulates an Audio.
+
     Attributes:
         ad_duration_millis (google.protobuf.wrappers_pb2.Int64Value):
             Output only. The duration of the Audio in
             milliseconds.
     """
 
-    ad_duration_millis = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    ad_duration_millis = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.Int64Value,
     )
 
 
 class MediaVideo(proto.Message):
     r"""Encapsulates a Video.
+
     Attributes:
         ad_duration_millis (google.protobuf.wrappers_pb2.Int64Value):
             Output only. The duration of the Video in
@@ -195,24 +169,16 @@ class MediaVideo(proto.Message):
             television commercials.
     """
 
-    ad_duration_millis = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    ad_duration_millis = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.Int64Value,
     )
-    youtube_video_id = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    youtube_video_id = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.StringValue,
     )
-    advertising_id_code = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    advertising_id_code = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.StringValue,
     )
-    isci_code = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    isci_code = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.StringValue,
     )
 

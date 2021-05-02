@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -267,21 +269,30 @@ def test_get_customer_negative_criterion(transport: str = 'grpc', request_type=c
         # Designate an appropriate return value for the call.
         call.return_value = customer_negative_criterion.CustomerNegativeCriterion(
             resource_name='resource_name_value',
+
             id=205,
+
             type_=criterion_type.CriterionTypeEnum.CriterionType.UNKNOWN,
+
             content_label=criteria.ContentLabelInfo(type_=content_label_type.ContentLabelTypeEnum.ContentLabelType.UNKNOWN),
         )
+
         response = client.get_customer_negative_criterion(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == customer_negative_criterion_service.GetCustomerNegativeCriterionRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, customer_negative_criterion.CustomerNegativeCriterion)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.id == 205
+
     assert response.type_ == criterion_type.CriterionTypeEnum.CriterionType.UNKNOWN
 
 
@@ -297,7 +308,6 @@ def test_get_customer_negative_criterion_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_negative_criterion_service.GetCustomerNegativeCriterionRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -305,6 +315,7 @@ def test_get_customer_negative_criterion_field_headers():
             type(client.transport.get_customer_negative_criterion),
             '__call__') as call:
         call.return_value = customer_negative_criterion.CustomerNegativeCriterion()
+
         client.get_customer_negative_criterion(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -331,6 +342,7 @@ def test_get_customer_negative_criterion_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_negative_criterion.CustomerNegativeCriterion()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_customer_negative_criterion(
@@ -341,6 +353,7 @@ def test_get_customer_negative_criterion_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -375,14 +388,17 @@ def test_mutate_customer_negative_criteria(transport: str = 'grpc', request_type
         # Designate an appropriate return value for the call.
         call.return_value = customer_negative_criterion_service.MutateCustomerNegativeCriteriaResponse(
         )
+
         response = client.mutate_customer_negative_criteria(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == customer_negative_criterion_service.MutateCustomerNegativeCriteriaRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, customer_negative_criterion_service.MutateCustomerNegativeCriteriaResponse)
 
 
@@ -398,7 +414,6 @@ def test_mutate_customer_negative_criteria_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_negative_criterion_service.MutateCustomerNegativeCriteriaRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -406,6 +421,7 @@ def test_mutate_customer_negative_criteria_field_headers():
             type(client.transport.mutate_customer_negative_criteria),
             '__call__') as call:
         call.return_value = customer_negative_criterion_service.MutateCustomerNegativeCriteriaResponse()
+
         client.mutate_customer_negative_criteria(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -432,6 +448,7 @@ def test_mutate_customer_negative_criteria_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_negative_criterion_service.MutateCustomerNegativeCriteriaResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_customer_negative_criteria(
@@ -443,7 +460,9 @@ def test_mutate_customer_negative_criteria_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [customer_negative_criterion_service.CustomerNegativeCriterionOperation(create=customer_negative_criterion.CustomerNegativeCriterion(resource_name='resource_name_value'))]
 
 
@@ -526,7 +545,7 @@ def test_customer_negative_criterion_service_base_transport():
     methods = (
         'get_customer_negative_criterion',
         'mutate_customer_negative_criteria',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -678,6 +697,7 @@ def test_customer_negative_criterion_service_transport_channel_mtls_with_adc(
 def test_customer_negative_criterion_path():
     customer_id = "squid"
     criterion_id = "clam"
+
     expected = "customers/{customer_id}/customerNegativeCriteria/{criterion_id}".format(customer_id=customer_id, criterion_id=criterion_id, )
     actual = CustomerNegativeCriterionServiceClient.customer_negative_criterion_path(customer_id, criterion_id)
     assert expected == actual
@@ -685,8 +705,9 @@ def test_customer_negative_criterion_path():
 
 def test_parse_customer_negative_criterion_path():
     expected = {
-        "customer_id": "whelk",
-        "criterion_id": "octopus",
+    "customer_id": "whelk",
+    "criterion_id": "octopus",
+
     }
     path = CustomerNegativeCriterionServiceClient.customer_negative_criterion_path(**expected)
 
@@ -696,6 +717,7 @@ def test_parse_customer_negative_criterion_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CustomerNegativeCriterionServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -703,7 +725,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = CustomerNegativeCriterionServiceClient.common_billing_account_path(**expected)
 
@@ -713,6 +736,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = CustomerNegativeCriterionServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -720,7 +744,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = CustomerNegativeCriterionServiceClient.common_folder_path(**expected)
 
@@ -730,6 +755,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CustomerNegativeCriterionServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -737,7 +763,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = CustomerNegativeCriterionServiceClient.common_organization_path(**expected)
 
@@ -747,6 +774,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = CustomerNegativeCriterionServiceClient.common_project_path(project)
     assert expected == actual
@@ -754,7 +782,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = CustomerNegativeCriterionServiceClient.common_project_path(**expected)
 
@@ -765,6 +794,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CustomerNegativeCriterionServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -772,8 +802,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = CustomerNegativeCriterionServiceClient.common_location_path(**expected)
 

@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupAssetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupAssetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdGroupAssetResourceNamesAsync()
         {
-            // Snippet: GetAdGroupAssetAsync(AdGroupAssetName, CallSettings)
-            // Additional: GetAdGroupAssetAsync(AdGroupAssetName, CancellationToken)
             // Create client
             AdGroupAssetServiceClient adGroupAssetServiceClient = await AdGroupAssetServiceClient.CreateAsync();
             // Initialize request argument(s)
             AdGroupAssetName resourceName = AdGroupAssetName.FromCustomerAdGroupAssetFieldType("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[ASSET_ID]", "[FIELD_TYPE]");
             // Make the request
             AdGroupAsset response = await adGroupAssetServiceClient.GetAdGroupAssetAsync(resourceName);
-            // End snippet
         }
     }
 }

@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConversionActionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetConversionActionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetConversionActionResourceNamesAsync()
         {
-            // Snippet: GetConversionActionAsync(ConversionActionName, CallSettings)
-            // Additional: GetConversionActionAsync(ConversionActionName, CancellationToken)
             // Create client
             ConversionActionServiceClient conversionActionServiceClient = await ConversionActionServiceClient.CreateAsync();
             // Initialize request argument(s)
             ConversionActionName resourceName = ConversionActionName.FromCustomerConversionAction("[CUSTOMER_ID]", "[CONVERSION_ACTION_ID]");
             // Make the request
             ConversionAction response = await conversionActionServiceClient.GetConversionActionAsync(resourceName);
-            // End snippet
         }
     }
 }

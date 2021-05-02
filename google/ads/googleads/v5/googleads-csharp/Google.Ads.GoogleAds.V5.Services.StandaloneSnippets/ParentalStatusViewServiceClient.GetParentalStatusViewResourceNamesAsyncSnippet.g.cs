@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedParentalStatusViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetParentalStatusViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetParentalStatusViewResourceNamesAsync()
         {
-            // Snippet: GetParentalStatusViewAsync(ParentalStatusViewName, CallSettings)
-            // Additional: GetParentalStatusViewAsync(ParentalStatusViewName, CancellationToken)
             // Create client
             ParentalStatusViewServiceClient parentalStatusViewServiceClient = await ParentalStatusViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             ParentalStatusViewName resourceName = ParentalStatusViewName.FromCustomerParentalStatusView("[CUSTOMER]", "[PARENTAL_STATUS_VIEW]");
             // Make the request
             ParentalStatusView response = await parentalStatusViewServiceClient.GetParentalStatusViewAsync(resourceName);
-            // End snippet
         }
     }
 }

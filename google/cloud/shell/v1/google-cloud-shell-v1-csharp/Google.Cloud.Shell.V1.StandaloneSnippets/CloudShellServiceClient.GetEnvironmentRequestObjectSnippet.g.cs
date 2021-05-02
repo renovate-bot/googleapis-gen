@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Shell.V1.Snippets
 {
+    using Google.Cloud.Shell.V1;
+
     public sealed partial class GeneratedCloudShellServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetEnvironment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetEnvironmentRequestObject()
         {
-            // Snippet: GetEnvironment(GetEnvironmentRequest, CallSettings)
             // Create client
             CloudShellServiceClient cloudShellServiceClient = CloudShellServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Shell.V1.Snippets
             };
             // Make the request
             Environment response = cloudShellServiceClient.GetEnvironment(request);
-            // End snippet
         }
     }
 }

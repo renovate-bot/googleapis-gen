@@ -17,13 +17,17 @@
 namespace Google.Cloud.PhishingProtection.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.PhishingProtection.V1Beta1;
 
     public sealed partial class GeneratedPhishingProtectionServiceV1Beta1ClientStandaloneSnippets
     {
         /// <summary>Snippet for ReportPhishing</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ReportPhishingRequestObject()
         {
-            // Snippet: ReportPhishing(ReportPhishingRequest, CallSettings)
             // Create client
             PhishingProtectionServiceV1Beta1Client phishingProtectionServiceV1Beta1Client = PhishingProtectionServiceV1Beta1Client.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.PhishingProtection.V1Beta1.Snippets
             };
             // Make the request
             ReportPhishingResponse response = phishingProtectionServiceV1Beta1Client.ReportPhishing(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -38,6 +40,7 @@ from google.cloud.dialogflow_v2beta1.types import entity_type as gcd_entity_type
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
+
 from .transports.base import EntityTypesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import EntityTypesGrpcTransport
 from .transports.grpc_asyncio import EntityTypesGrpcAsyncIOTransport
@@ -343,8 +346,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.ListEntityTypesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.ListEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.ListEntityTypes].
             parent (str):
                 Required. The agent to list all entity types from.
@@ -366,6 +368,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -395,8 +398,10 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.ListEntityTypesRequest):
             request = entity_type.ListEntityTypesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if language_code is not None:
@@ -447,8 +452,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.GetEntityTypeRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.GetEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.GetEntityType].
             name (str):
                 Required. The name of the entity type. Supported
@@ -470,6 +474,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -509,8 +514,10 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.GetEntityTypeRequest):
             request = entity_type.GetEntityTypeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
             if language_code is not None:
@@ -553,8 +560,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.CreateEntityTypeRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.CreateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.CreateEntityType].
             parent (str):
                 Required. The agent to create a entity type for.
@@ -581,6 +587,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -620,8 +627,10 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_entity_type.CreateEntityTypeRequest):
             request = gcd_entity_type.CreateEntityTypeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if entity_type is not None:
@@ -666,8 +675,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.UpdateEntityTypeRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.UpdateEntityType].
             entity_type (google.cloud.dialogflow_v2beta1.types.EntityType):
                 Required. The entity type to update.
@@ -691,6 +699,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -730,8 +739,10 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_entity_type.UpdateEntityTypeRequest):
             request = gcd_entity_type.UpdateEntityTypeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if entity_type is not None:
                 request.entity_type = entity_type
             if language_code is not None:
@@ -774,8 +785,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.DeleteEntityTypeRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.DeleteEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.DeleteEntityType].
             name (str):
                 Required. The name of the entity type to delete.
@@ -787,6 +797,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -807,8 +818,10 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.DeleteEntityTypeRequest):
             request = entity_type.DeleteEntityTypeRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -845,9 +858,9 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.BatchUpdateEntityTypesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -865,6 +878,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a entity_type.BatchUpdateEntityTypesRequest.
         # There's no risk of modifying the input as we've already verified
@@ -917,8 +931,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.BatchDeleteEntityTypesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchDeleteEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchDeleteEntityTypes].
             parent (str):
                 Required. The name of the agent to delete all entities
@@ -937,6 +950,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``entity_type_names`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -976,8 +990,10 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.BatchDeleteEntityTypesRequest):
             request = entity_type.BatchDeleteEntityTypesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if entity_type_names is not None:
@@ -1031,8 +1047,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.BatchCreateEntitiesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchCreateEntities][google.cloud.dialogflow.v2beta1.EntityTypes.BatchCreateEntities].
             parent (str):
                 Required. The name of the entity type to create entities
@@ -1059,6 +1074,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1098,8 +1114,10 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.BatchCreateEntitiesRequest):
             request = entity_type.BatchCreateEntitiesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if entities is not None:
@@ -1157,8 +1175,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.BatchUpdateEntitiesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchUpdateEntities][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntities].
             parent (str):
                 Required. The name of the entity type to update or
@@ -1187,6 +1204,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1226,8 +1244,10 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.BatchUpdateEntitiesRequest):
             request = entity_type.BatchUpdateEntitiesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if entities is not None:
@@ -1283,8 +1303,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2beta1.types.BatchDeleteEntitiesRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchDeleteEntities][google.cloud.dialogflow.v2beta1.EntityTypes.BatchDeleteEntities].
             parent (str):
                 Required. The name of the entity type to delete entries
@@ -1314,6 +1333,7 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1353,8 +1373,10 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, entity_type.BatchDeleteEntitiesRequest):
             request = entity_type.BatchDeleteEntitiesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if entity_values is not None:
@@ -1392,6 +1414,8 @@ class EntityTypesClient(metaclass=EntityTypesClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

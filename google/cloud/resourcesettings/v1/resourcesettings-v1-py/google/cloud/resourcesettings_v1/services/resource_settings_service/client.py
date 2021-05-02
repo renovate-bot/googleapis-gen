@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -32,6 +34,7 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.resourcesettings_v1.services.resource_settings_service import pagers
 from google.cloud.resourcesettings_v1.types import resource_settings
+
 from .transports.base import ResourceSettingsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ResourceSettingsServiceGrpcTransport
 from .transports.grpc_asyncio import ResourceSettingsServiceGrpcAsyncIOTransport
@@ -347,8 +350,7 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
 
         Args:
             request (google.cloud.resourcesettings_v1.types.ListSettingsRequest):
-                The request object.
-                The request for ListSettings.
+                The request object. The request for ListSettings.
             parent (str):
                 Required. The Cloud resource that parents the setting.
                 Must be in one of the following forms:
@@ -361,6 +363,7 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -389,8 +392,10 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, resource_settings.ListSettingsRequest):
             request = resource_settings.ListSettingsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -441,8 +446,7 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
 
         Args:
             request (google.cloud.resourcesettings_v1.types.GetSettingRequest):
-                The request object.
-                The request for GetSetting.
+                The request object. The request for GetSetting.
             name (str):
                 Required. The name of the setting to get. See
                 [Setting][google.cloud.resourcesettings.v1.Setting] for
@@ -451,6 +455,7 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -475,8 +480,10 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
         # there are no flattened fields.
         if not isinstance(request, resource_settings.GetSettingRequest):
             request = resource_settings.GetSettingRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -529,8 +536,8 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
 
         Args:
             request (google.cloud.resourcesettings_v1.types.UpdateSettingRequest):
-                The request object.
-                The request for UpdateSetting.
+                The request object. The request for UpdateSetting.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -542,6 +549,7 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
                 The schema for settings.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a resource_settings.UpdateSettingRequest.
         # There's no risk of modifying the input as we've already verified
@@ -571,6 +579,8 @@ class ResourceSettingsServiceClient(metaclass=ResourceSettingsServiceClientMeta)
 
         # Done; return the response.
         return response
+
+
 
 
 

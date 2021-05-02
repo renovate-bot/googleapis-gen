@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedDomainCategoryServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDomainCategory</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDomainCategoryResourceNames()
         {
-            // Snippet: GetDomainCategory(DomainCategoryName, CallSettings)
             // Create client
             DomainCategoryServiceClient domainCategoryServiceClient = DomainCategoryServiceClient.Create();
             // Initialize request argument(s)
             DomainCategoryName resourceName = DomainCategoryName.FromCustomerCampaignBase64CategoryLanguageCode("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[BASE64_CATEGORY]", "[LANGUAGE_CODE]");
             // Make the request
             DomainCategory response = domainCategoryServiceClient.GetDomainCategory(resourceName);
-            // End snippet
         }
     }
 }

@@ -74,7 +74,7 @@ namespace Google.Cloud.Privatecatalog.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchCatalogs</summary>
+        /// <summary>Snippet for SearchCatalogsAsync</summary>
         public async Task SearchCatalogsRequestObjectAsync()
         {
             // Snippet: SearchCatalogsAsync(SearchCatalogsRequest, CallSettings)
@@ -172,7 +172,7 @@ namespace Google.Cloud.Privatecatalog.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchProducts</summary>
+        /// <summary>Snippet for SearchProductsAsync</summary>
         public async Task SearchProductsRequestObjectAsync()
         {
             // Snippet: SearchProductsAsync(SearchProductsRequest, CallSettings)
@@ -270,7 +270,7 @@ namespace Google.Cloud.Privatecatalog.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchVersions</summary>
+        /// <summary>Snippet for SearchVersionsAsync</summary>
         public async Task SearchVersionsRequestObjectAsync()
         {
             // Snippet: SearchVersionsAsync(SearchVersionsRequest, CallSettings)

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
 {
+    using Google.Cloud.Bigquery.Migration.V2Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMigrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteMigrationWorkflowAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteMigrationWorkflowAsync()
         {
-            // Snippet: DeleteMigrationWorkflowAsync(string, CallSettings)
-            // Additional: DeleteMigrationWorkflowAsync(string, CancellationToken)
             // Create client
             MigrationServiceClient migrationServiceClient = await MigrationServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/workflows/[WORKFLOW]";
             // Make the request
             await migrationServiceClient.DeleteMigrationWorkflowAsync(name);
-            // End snippet
         }
     }
 }

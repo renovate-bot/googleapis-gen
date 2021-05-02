@@ -157,7 +157,7 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchGoogleAdsFields</summary>
+        /// <summary>Snippet for SearchGoogleAdsFieldsAsync</summary>
         public async Task SearchGoogleAdsFieldsRequestObjectAsync()
         {
             // Snippet: SearchGoogleAdsFieldsAsync(SearchGoogleAdsFieldsRequest, CallSettings)
@@ -247,7 +247,7 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchGoogleAdsFields</summary>
+        /// <summary>Snippet for SearchGoogleAdsFieldsAsync</summary>
         public async Task SearchGoogleAdsFieldsAsync()
         {
             // Snippet: SearchGoogleAdsFieldsAsync(string, string, int?, CallSettings)

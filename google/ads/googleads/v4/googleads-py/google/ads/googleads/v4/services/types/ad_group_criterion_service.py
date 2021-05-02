@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.common.types import policy as gagc_policy
 from google.ads.googleads.v4.resources.types import ad_group_criterion
@@ -44,10 +47,7 @@ class GetAdGroupCriterionRequest(proto.Message):
             to fetch.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateAdGroupCriteriaRequest(proto.Message):
@@ -72,23 +72,12 @@ class MutateAdGroupCriteriaRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operations = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operations = proto.RepeatedField(proto.MESSAGE, number=2,
         message='AdGroupCriterionOperation',
     )
-    partial_failure = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=4,
-    )
+    partial_failure = proto.Field(proto.BOOL, number=3)
+    validate_only = proto.Field(proto.BOOL, number=4)
 
 
 class AdGroupCriterionOperation(proto.Message):
@@ -122,37 +111,24 @@ class AdGroupCriterionOperation(proto.Message):
             ``customers/{customer_id}/adGroupCriteria/{ad_group_id}~{criterion_id}``
     """
 
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    update_mask = proto.Field(proto.MESSAGE, number=4,
         message=field_mask.FieldMask,
     )
-    exempt_policy_violation_keys = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+    exempt_policy_violation_keys = proto.RepeatedField(proto.MESSAGE, number=5,
         message=gagc_policy.PolicyViolationKey,
     )
-    create = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='operation',
+    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=ad_group_criterion.AdGroupCriterion,
     )
-    update = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='operation',
+    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
         message=ad_group_criterion.AdGroupCriterion,
     )
-    remove = proto.Field(
-        proto.STRING,
-        number=3,
-        oneof='operation',
-    )
+    remove = proto.Field(proto.STRING, number=3, oneof='operation')
 
 
 class MutateAdGroupCriteriaResponse(proto.Message):
     r"""Response message for an ad group criterion mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -164,29 +140,23 @@ class MutateAdGroupCriteriaResponse(proto.Message):
             All results for the mutate.
     """
 
-    partial_failure_error = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    partial_failure_error = proto.Field(proto.MESSAGE, number=3,
         message=status.Status,
     )
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    results = proto.RepeatedField(proto.MESSAGE, number=2,
         message='MutateAdGroupCriterionResult',
     )
 
 
 class MutateAdGroupCriterionResult(proto.Message):
     r"""The result for the criterion mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

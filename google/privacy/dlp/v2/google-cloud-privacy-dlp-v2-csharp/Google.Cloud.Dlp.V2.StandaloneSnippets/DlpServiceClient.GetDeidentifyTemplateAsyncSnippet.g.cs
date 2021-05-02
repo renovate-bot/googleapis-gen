@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDeidentifyTemplateAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetDeidentifyTemplateAsync()
         {
-            // Snippet: GetDeidentifyTemplateAsync(string, CallSettings)
-            // Additional: GetDeidentifyTemplateAsync(string, CancellationToken)
             // Create client
             DlpServiceClient dlpServiceClient = await DlpServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "organizations/[ORGANIZATION]/deidentifyTemplates/[DEIDENTIFY_TEMPLATE]";
             // Make the request
             DeidentifyTemplate response = await dlpServiceClient.GetDeidentifyTemplateAsync(name);
-            // End snippet
         }
     }
 }

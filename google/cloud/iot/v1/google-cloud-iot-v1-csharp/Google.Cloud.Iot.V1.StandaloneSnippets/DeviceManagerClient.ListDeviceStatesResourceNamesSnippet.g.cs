@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Iot.V1.Snippets
 {
+    using Google.Cloud.Iot.V1;
+
     public sealed partial class GeneratedDeviceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for ListDeviceStates</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListDeviceStatesResourceNames()
         {
-            // Snippet: ListDeviceStates(DeviceName, CallSettings)
             // Create client
             DeviceManagerClient deviceManagerClient = DeviceManagerClient.Create();
             // Initialize request argument(s)
             DeviceName name = DeviceName.FromProjectLocationRegistryDevice("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
             // Make the request
             ListDeviceStatesResponse response = deviceManagerClient.ListDeviceStates(name);
-            // End snippet
         }
     }
 }

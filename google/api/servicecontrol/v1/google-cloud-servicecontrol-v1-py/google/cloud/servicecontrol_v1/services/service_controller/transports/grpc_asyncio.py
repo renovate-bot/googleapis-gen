@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,20 +14,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.servicecontrol_v1.types import service_controller
+
 from .base import ServiceControllerTransport, DEFAULT_CLIENT_INFO
 from .grpc import ServiceControllerGrpcTransport
 
@@ -80,15 +82,13 @@ class ServiceControllerGrpcAsyncIOTransport(ServiceControllerTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -108,8 +108,7 @@ class ServiceControllerGrpcAsyncIOTransport(ServiceControllerTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -167,6 +166,7 @@ class ServiceControllerGrpcAsyncIOTransport(ServiceControllerTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -229,9 +229,7 @@ class ServiceControllerGrpcAsyncIOTransport(ServiceControllerTransport):
     def check(self) -> Callable[
             [service_controller.CheckRequest],
             Awaitable[service_controller.CheckResponse]]:
-        r"""Return a callable for the
-        check
-          method over gRPC.
+        r"""Return a callable for the check method over gRPC.
 
         Checks whether an operation on a service should be allowed to
         proceed based on the configuration of the service and related
@@ -275,9 +273,7 @@ class ServiceControllerGrpcAsyncIOTransport(ServiceControllerTransport):
     def report(self) -> Callable[
             [service_controller.ReportRequest],
             Awaitable[service_controller.ReportResponse]]:
-        r"""Return a callable for the
-        report
-          method over gRPC.
+        r"""Return a callable for the report method over gRPC.
 
         Reports operation results to Google Service Control, such as
         logs and metrics. It should be called after an operation is

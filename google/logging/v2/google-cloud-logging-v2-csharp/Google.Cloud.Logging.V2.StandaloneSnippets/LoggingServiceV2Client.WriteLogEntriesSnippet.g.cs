@@ -17,14 +17,18 @@
 namespace Google.Cloud.Logging.V2.Snippets
 {
     using Google.Api;
+    using Google.Cloud.Logging.V2;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedLoggingServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for WriteLogEntries</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void WriteLogEntries()
         {
-            // Snippet: WriteLogEntries(string, MonitoredResource, IDictionary<string,string>, IEnumerable<LogEntry>, CallSettings)
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             IEnumerable<LogEntry> entries = new LogEntry[] { new LogEntry(), };
             // Make the request
             WriteLogEntriesResponse response = loggingServiceV2Client.WriteLogEntries(logName, resource, labels, entries);
-            // End snippet
         }
     }
 }

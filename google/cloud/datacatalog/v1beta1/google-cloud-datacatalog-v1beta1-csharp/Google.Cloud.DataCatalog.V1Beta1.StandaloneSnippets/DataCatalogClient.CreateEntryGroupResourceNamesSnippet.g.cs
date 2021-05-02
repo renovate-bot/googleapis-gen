@@ -17,13 +17,17 @@
 namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.DataCatalog.V1Beta1;
 
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateEntryGroup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateEntryGroupResourceNames()
         {
-            // Snippet: CreateEntryGroup(LocationName, string, EntryGroup, CallSettings)
             // Create client
             DataCatalogClient dataCatalogClient = DataCatalogClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             EntryGroup entryGroup = new EntryGroup();
             // Make the request
             EntryGroup response = dataCatalogClient.CreateEntryGroup(parent, entryGroupId, entryGroup);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetJSONWebKeys</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetJSONWebKeysRequestObject()
         {
-            // Snippet: GetJSONWebKeys(GetJSONWebKeysRequest, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
             GetJSONWebKeysRequest request = new GetJSONWebKeysRequest { Parent = "", };
             // Make the request
             GetJSONWebKeysResponse response = clusterManagerClient.GetJSONWebKeys(request);
-            // End snippet
         }
     }
 }

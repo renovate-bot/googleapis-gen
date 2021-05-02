@@ -220,7 +220,7 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListServices</summary>
+        /// <summary>Snippet for ListServicesAsync</summary>
         public async Task ListServicesRequestObjectAsync()
         {
             // Snippet: ListServicesAsync(ListServicesRequest, CallSettings)
@@ -385,7 +385,7 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConsumerQuotaMetrics</summary>
+        /// <summary>Snippet for ListConsumerQuotaMetricsAsync</summary>
         public async Task ListConsumerQuotaMetricsRequestObjectAsync()
         {
             // Snippet: ListConsumerQuotaMetricsAsync(ListConsumerQuotaMetricsRequest, CallSettings)
@@ -780,7 +780,7 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListAdminOverrides</summary>
+        /// <summary>Snippet for ListAdminOverridesAsync</summary>
         public async Task ListAdminOverridesRequestObjectAsync()
         {
             // Snippet: ListAdminOverridesAsync(ListAdminOverridesRequest, CallSettings)
@@ -1178,7 +1178,7 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConsumerOverrides</summary>
+        /// <summary>Snippet for ListConsumerOverridesAsync</summary>
         public async Task ListConsumerOverridesRequestObjectAsync()
         {
             // Snippet: ListConsumerOverridesAsync(ListConsumerOverridesRequest, CallSettings)

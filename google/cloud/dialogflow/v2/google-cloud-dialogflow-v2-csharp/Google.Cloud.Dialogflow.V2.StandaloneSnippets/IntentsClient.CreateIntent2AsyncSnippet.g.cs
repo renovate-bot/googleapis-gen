@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIntentsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateIntentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateIntent2Async()
         {
-            // Snippet: CreateIntentAsync(string, Intent, string, CallSettings)
-            // Additional: CreateIntentAsync(string, Intent, string, CancellationToken)
             // Create client
             IntentsClient intentsClient = await IntentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             string languageCode = "";
             // Make the request
             Intent response = await intentsClient.CreateIntentAsync(parent, intent, languageCode);
-            // End snippet
         }
     }
 }

@@ -17,13 +17,17 @@
 namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.BigQuery.DataTransfer.V1;
 
     public sealed partial class GeneratedDataTransferServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateTransferConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateTransferConfigRequestObject()
         {
-            // Snippet: CreateTransferConfig(CreateTransferConfigRequest, CallSettings)
             // Create client
             DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.Create();
             // Initialize request argument(s)
@@ -37,7 +41,6 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
             };
             // Make the request
             TransferConfig response = dataTransferServiceClient.CreateTransferConfig(request);
-            // End snippet
         }
     }
 }

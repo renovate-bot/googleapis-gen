@@ -17,18 +17,20 @@
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dialogflow.V2;
     using Google.LongRunning;
-    using Google.Protobuf;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAgentsClientStandaloneSnippets
     {
         /// <summary>Snippet for RestoreAgentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task RestoreAgentRequestObjectAsync()
         {
-            // Snippet: RestoreAgentAsync(RestoreAgentRequest, CallSettings)
-            // Additional: RestoreAgentAsync(RestoreAgentRequest, CancellationToken)
             // Create client
             AgentsClient agentsClient = await AgentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +38,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             {
                 ParentAsProjectName = ProjectName.FromProject("[PROJECT]"),
                 AgentUri = "",
-                AgentContent = ByteString.Empty,
             };
             // Make the request
             Operation<Empty, Struct> response = await agentsClient.RestoreAgentAsync(request);
@@ -56,7 +57,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

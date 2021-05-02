@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetServerConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetServerConfig1()
         {
-            // Snippet: GetServerConfig(string, string, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Container.V1.Snippets
             string zone = "";
             // Make the request
             ServerConfig response = clusterManagerClient.GetServerConfig(projectId, zone);
-            // End snippet
         }
     }
 }

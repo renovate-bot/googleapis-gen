@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
+    using Google.Cloud.Dataproc.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWorkflowTemplateServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetWorkflowTemplateAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetWorkflowTemplateRequestObjectAsync()
         {
-            // Snippet: GetWorkflowTemplateAsync(GetWorkflowTemplateRequest, CallSettings)
-            // Additional: GetWorkflowTemplateAsync(GetWorkflowTemplateRequest, CancellationToken)
             // Create client
             WorkflowTemplateServiceClient workflowTemplateServiceClient = await WorkflowTemplateServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Dataproc.V1.Snippets
             };
             // Make the request
             WorkflowTemplate response = await workflowTemplateServiceClient.GetWorkflowTemplateAsync(request);
-            // End snippet
         }
     }
 }

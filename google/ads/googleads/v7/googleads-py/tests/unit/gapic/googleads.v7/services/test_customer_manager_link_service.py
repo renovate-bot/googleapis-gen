@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -264,22 +266,33 @@ def test_get_customer_manager_link(transport: str = 'grpc', request_type=custome
         # Designate an appropriate return value for the call.
         call.return_value = customer_manager_link.CustomerManagerLink(
             resource_name='resource_name_value',
+
             manager_customer='manager_customer_value',
+
             manager_link_id=1556,
+
             status=manager_link_status.ManagerLinkStatusEnum.ManagerLinkStatus.UNKNOWN,
+
         )
+
         response = client.get_customer_manager_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == customer_manager_link_service.GetCustomerManagerLinkRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, customer_manager_link.CustomerManagerLink)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.manager_customer == 'manager_customer_value'
+
     assert response.manager_link_id == 1556
+
     assert response.status == manager_link_status.ManagerLinkStatusEnum.ManagerLinkStatus.UNKNOWN
 
 
@@ -295,7 +308,6 @@ def test_get_customer_manager_link_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_manager_link_service.GetCustomerManagerLinkRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -303,6 +315,7 @@ def test_get_customer_manager_link_field_headers():
             type(client.transport.get_customer_manager_link),
             '__call__') as call:
         call.return_value = customer_manager_link.CustomerManagerLink()
+
         client.get_customer_manager_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -329,6 +342,7 @@ def test_get_customer_manager_link_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_manager_link.CustomerManagerLink()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_customer_manager_link(
@@ -339,6 +353,7 @@ def test_get_customer_manager_link_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -373,14 +388,17 @@ def test_mutate_customer_manager_link(transport: str = 'grpc', request_type=cust
         # Designate an appropriate return value for the call.
         call.return_value = customer_manager_link_service.MutateCustomerManagerLinkResponse(
         )
+
         response = client.mutate_customer_manager_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == customer_manager_link_service.MutateCustomerManagerLinkRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, customer_manager_link_service.MutateCustomerManagerLinkResponse)
 
 
@@ -396,7 +414,6 @@ def test_mutate_customer_manager_link_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_manager_link_service.MutateCustomerManagerLinkRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -404,6 +421,7 @@ def test_mutate_customer_manager_link_field_headers():
             type(client.transport.mutate_customer_manager_link),
             '__call__') as call:
         call.return_value = customer_manager_link_service.MutateCustomerManagerLinkResponse()
+
         client.mutate_customer_manager_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -430,6 +448,7 @@ def test_mutate_customer_manager_link_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_manager_link_service.MutateCustomerManagerLinkResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_customer_manager_link(
@@ -441,7 +460,9 @@ def test_mutate_customer_manager_link_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [customer_manager_link_service.CustomerManagerLinkOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -477,16 +498,21 @@ def test_move_manager_link(transport: str = 'grpc', request_type=customer_manage
         # Designate an appropriate return value for the call.
         call.return_value = customer_manager_link_service.MoveManagerLinkResponse(
             resource_name='resource_name_value',
+
         )
+
         response = client.move_manager_link(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == customer_manager_link_service.MoveManagerLinkRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, customer_manager_link_service.MoveManagerLinkResponse)
+
     assert response.resource_name == 'resource_name_value'
 
 
@@ -502,7 +528,6 @@ def test_move_manager_link_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = customer_manager_link_service.MoveManagerLinkRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -510,6 +535,7 @@ def test_move_manager_link_field_headers():
             type(client.transport.move_manager_link),
             '__call__') as call:
         call.return_value = customer_manager_link_service.MoveManagerLinkResponse()
+
         client.move_manager_link(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -536,6 +562,7 @@ def test_move_manager_link_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = customer_manager_link_service.MoveManagerLinkResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.move_manager_link(
@@ -548,8 +575,11 @@ def test_move_manager_link_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].previous_customer_manager_link == 'previous_customer_manager_link_value'
+
         assert args[0].new_manager == 'new_manager_value'
 
 
@@ -634,7 +664,7 @@ def test_customer_manager_link_service_base_transport():
         'get_customer_manager_link',
         'mutate_customer_manager_link',
         'move_manager_link',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -785,6 +815,7 @@ def test_customer_manager_link_service_transport_channel_mtls_with_adc(
 
 def test_customer_path():
     customer_id = "squid"
+
     expected = "customers/{customer_id}".format(customer_id=customer_id, )
     actual = CustomerManagerLinkServiceClient.customer_path(customer_id)
     assert expected == actual
@@ -792,7 +823,8 @@ def test_customer_path():
 
 def test_parse_customer_path():
     expected = {
-        "customer_id": "clam",
+    "customer_id": "clam",
+
     }
     path = CustomerManagerLinkServiceClient.customer_path(**expected)
 
@@ -804,6 +836,7 @@ def test_customer_manager_link_path():
     customer_id = "whelk"
     manager_customer_id = "octopus"
     manager_link_id = "oyster"
+
     expected = "customers/{customer_id}/customerManagerLinks/{manager_customer_id}~{manager_link_id}".format(customer_id=customer_id, manager_customer_id=manager_customer_id, manager_link_id=manager_link_id, )
     actual = CustomerManagerLinkServiceClient.customer_manager_link_path(customer_id, manager_customer_id, manager_link_id)
     assert expected == actual
@@ -811,9 +844,10 @@ def test_customer_manager_link_path():
 
 def test_parse_customer_manager_link_path():
     expected = {
-        "customer_id": "nudibranch",
-        "manager_customer_id": "cuttlefish",
-        "manager_link_id": "mussel",
+    "customer_id": "nudibranch",
+    "manager_customer_id": "cuttlefish",
+    "manager_link_id": "mussel",
+
     }
     path = CustomerManagerLinkServiceClient.customer_manager_link_path(**expected)
 
@@ -823,6 +857,7 @@ def test_parse_customer_manager_link_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CustomerManagerLinkServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -830,7 +865,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nautilus",
+    "billing_account": "nautilus",
+
     }
     path = CustomerManagerLinkServiceClient.common_billing_account_path(**expected)
 
@@ -840,6 +876,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = CustomerManagerLinkServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -847,7 +884,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "abalone",
+    "folder": "abalone",
+
     }
     path = CustomerManagerLinkServiceClient.common_folder_path(**expected)
 
@@ -857,6 +895,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CustomerManagerLinkServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -864,7 +903,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "clam",
+    "organization": "clam",
+
     }
     path = CustomerManagerLinkServiceClient.common_organization_path(**expected)
 
@@ -874,6 +914,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
+
     expected = "projects/{project}".format(project=project, )
     actual = CustomerManagerLinkServiceClient.common_project_path(project)
     assert expected == actual
@@ -881,7 +922,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "octopus",
+    "project": "octopus",
+
     }
     path = CustomerManagerLinkServiceClient.common_project_path(**expected)
 
@@ -892,6 +934,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CustomerManagerLinkServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -899,8 +942,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "cuttlefish",
-        "location": "mussel",
+    "project": "cuttlefish",
+    "location": "mussel",
+
     }
     path = CustomerManagerLinkServiceClient.common_location_path(**expected)
 

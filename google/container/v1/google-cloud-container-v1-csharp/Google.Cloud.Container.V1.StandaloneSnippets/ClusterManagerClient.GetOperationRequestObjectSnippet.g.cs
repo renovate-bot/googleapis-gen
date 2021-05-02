@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetOperation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetOperationRequestObject()
         {
-            // Snippet: GetOperation(GetOperationRequest, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
             GetOperationRequest request = new GetOperationRequest { Name = "", };
             // Make the request
             Operation response = clusterManagerClient.GetOperation(request);
-            // End snippet
         }
     }
 }

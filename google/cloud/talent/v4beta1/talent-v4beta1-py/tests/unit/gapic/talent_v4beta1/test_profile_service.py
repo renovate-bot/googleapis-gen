@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -36,8 +36,6 @@ from google.cloud.talent_v4beta1.services.profile_service import ProfileServiceA
 from google.cloud.talent_v4beta1.services.profile_service import ProfileServiceClient
 from google.cloud.talent_v4beta1.services.profile_service import pagers
 from google.cloud.talent_v4beta1.services.profile_service import transports
-from google.cloud.talent_v4beta1.services.profile_service.transports.base import _API_CORE_VERSION
-from google.cloud.talent_v4beta1.services.profile_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.talent_v4beta1.types import common
 from google.cloud.talent_v4beta1.types import filters
 from google.cloud.talent_v4beta1.types import histogram
@@ -53,28 +51,6 @@ from google.type import date_pb2 as date  # type: ignore
 from google.type import latlng_pb2 as latlng  # type: ignore
 from google.type import postal_address_pb2 as postal_address  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -242,10 +218,12 @@ def test_profile_service_client_client_options(client_class, transport_class, tr
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (ProfileServiceClient, transports.ProfileServiceGrpcTransport, "grpc", "true"),
     (ProfileServiceAsyncClient, transports.ProfileServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (ProfileServiceClient, transports.ProfileServiceGrpcTransport, "grpc", "false"),
     (ProfileServiceAsyncClient, transports.ProfileServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(ProfileServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ProfileServiceClient))
 @mock.patch.object(ProfileServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ProfileServiceAsyncClient))
@@ -400,16 +378,21 @@ def test_list_profiles(transport: str = 'grpc', request_type=profile_service.Lis
         # Designate an appropriate return value for the call.
         call.return_value = profile_service.ListProfilesResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == profile_service.ListProfilesRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListProfilesPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -432,8 +415,8 @@ def test_list_profiles_empty_call():
         client.list_profiles()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == profile_service.ListProfilesRequest()
 
+        assert args[0] == profile_service.ListProfilesRequest()
 
 @pytest.mark.asyncio
 async def test_list_profiles_async(transport: str = 'grpc_asyncio', request_type=profile_service.ListProfilesRequest):
@@ -451,18 +434,21 @@ async def test_list_profiles_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.list_profiles),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(profile_service.ListProfilesResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(profile_service.ListProfilesResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == profile_service.ListProfilesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListProfilesAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -479,7 +465,6 @@ def test_list_profiles_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = profile_service.ListProfilesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -487,6 +472,7 @@ def test_list_profiles_field_headers():
             type(client.transport.list_profiles),
             '__call__') as call:
         call.return_value = profile_service.ListProfilesResponse()
+
         client.list_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -511,7 +497,6 @@ async def test_list_profiles_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = profile_service.ListProfilesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -519,6 +504,7 @@ async def test_list_profiles_field_headers_async():
             type(client.transport.list_profiles),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(profile_service.ListProfilesResponse())
+
         await client.list_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -545,6 +531,7 @@ def test_list_profiles_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = profile_service.ListProfilesResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_profiles(
@@ -555,6 +542,7 @@ def test_list_profiles_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -596,6 +584,7 @@ async def test_list_profiles_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -800,6 +789,7 @@ async def test_list_profiles_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_create_profile(transport: str = 'grpc', request_type=profile_service.CreateProfileRequest):
     client = ProfileServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -817,32 +807,53 @@ def test_create_profile(transport: str = 'grpc', request_type=profile_service.Cr
         # Designate an appropriate return value for the call.
         call.return_value = gct_profile.Profile(
             name='name_value',
+
             external_id='external_id_value',
+
             source='source_value',
+
             uri='uri_value',
+
             group_id='group_id_value',
+
             applications=['applications_value'],
+
             assignments=['assignments_value'],
+
             processed=True,
+
             keyword_snippet='keyword_snippet_value',
+
         )
+
         response = client.create_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == profile_service.CreateProfileRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gct_profile.Profile)
+
     assert response.name == 'name_value'
+
     assert response.external_id == 'external_id_value'
+
     assert response.source == 'source_value'
+
     assert response.uri == 'uri_value'
+
     assert response.group_id == 'group_id_value'
+
     assert response.applications == ['applications_value']
+
     assert response.assignments == ['assignments_value']
+
     assert response.processed is True
+
     assert response.keyword_snippet == 'keyword_snippet_value'
 
 
@@ -865,8 +876,8 @@ def test_create_profile_empty_call():
         client.create_profile()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == profile_service.CreateProfileRequest()
 
+        assert args[0] == profile_service.CreateProfileRequest()
 
 @pytest.mark.asyncio
 async def test_create_profile_async(transport: str = 'grpc_asyncio', request_type=profile_service.CreateProfileRequest):
@@ -884,7 +895,7 @@ async def test_create_profile_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.create_profile),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gct_profile.Profile(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gct_profile.Profile(
             name='name_value',
             external_id='external_id_value',
             source='source_value',
@@ -895,23 +906,34 @@ async def test_create_profile_async(transport: str = 'grpc_asyncio', request_typ
             processed=True,
             keyword_snippet='keyword_snippet_value',
         ))
+
         response = await client.create_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == profile_service.CreateProfileRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gct_profile.Profile)
+
     assert response.name == 'name_value'
+
     assert response.external_id == 'external_id_value'
+
     assert response.source == 'source_value'
+
     assert response.uri == 'uri_value'
+
     assert response.group_id == 'group_id_value'
+
     assert response.applications == ['applications_value']
+
     assert response.assignments == ['assignments_value']
+
     assert response.processed is True
+
     assert response.keyword_snippet == 'keyword_snippet_value'
 
 
@@ -928,7 +950,6 @@ def test_create_profile_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = profile_service.CreateProfileRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -936,6 +957,7 @@ def test_create_profile_field_headers():
             type(client.transport.create_profile),
             '__call__') as call:
         call.return_value = gct_profile.Profile()
+
         client.create_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -960,7 +982,6 @@ async def test_create_profile_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = profile_service.CreateProfileRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -968,6 +989,7 @@ async def test_create_profile_field_headers_async():
             type(client.transport.create_profile),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gct_profile.Profile())
+
         await client.create_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -994,6 +1016,7 @@ def test_create_profile_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gct_profile.Profile()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_profile(
@@ -1005,7 +1028,9 @@ def test_create_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].profile == gct_profile.Profile(name='name_value')
 
 
@@ -1049,7 +1074,9 @@ async def test_create_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].profile == gct_profile.Profile(name='name_value')
 
 
@@ -1086,32 +1113,53 @@ def test_get_profile(transport: str = 'grpc', request_type=profile_service.GetPr
         # Designate an appropriate return value for the call.
         call.return_value = profile.Profile(
             name='name_value',
+
             external_id='external_id_value',
+
             source='source_value',
+
             uri='uri_value',
+
             group_id='group_id_value',
+
             applications=['applications_value'],
+
             assignments=['assignments_value'],
+
             processed=True,
+
             keyword_snippet='keyword_snippet_value',
+
         )
+
         response = client.get_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == profile_service.GetProfileRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, profile.Profile)
+
     assert response.name == 'name_value'
+
     assert response.external_id == 'external_id_value'
+
     assert response.source == 'source_value'
+
     assert response.uri == 'uri_value'
+
     assert response.group_id == 'group_id_value'
+
     assert response.applications == ['applications_value']
+
     assert response.assignments == ['assignments_value']
+
     assert response.processed is True
+
     assert response.keyword_snippet == 'keyword_snippet_value'
 
 
@@ -1134,8 +1182,8 @@ def test_get_profile_empty_call():
         client.get_profile()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == profile_service.GetProfileRequest()
 
+        assert args[0] == profile_service.GetProfileRequest()
 
 @pytest.mark.asyncio
 async def test_get_profile_async(transport: str = 'grpc_asyncio', request_type=profile_service.GetProfileRequest):
@@ -1153,7 +1201,7 @@ async def test_get_profile_async(transport: str = 'grpc_asyncio', request_type=p
             type(client.transport.get_profile),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(profile.Profile(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(profile.Profile(
             name='name_value',
             external_id='external_id_value',
             source='source_value',
@@ -1164,23 +1212,34 @@ async def test_get_profile_async(transport: str = 'grpc_asyncio', request_type=p
             processed=True,
             keyword_snippet='keyword_snippet_value',
         ))
+
         response = await client.get_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == profile_service.GetProfileRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, profile.Profile)
+
     assert response.name == 'name_value'
+
     assert response.external_id == 'external_id_value'
+
     assert response.source == 'source_value'
+
     assert response.uri == 'uri_value'
+
     assert response.group_id == 'group_id_value'
+
     assert response.applications == ['applications_value']
+
     assert response.assignments == ['assignments_value']
+
     assert response.processed is True
+
     assert response.keyword_snippet == 'keyword_snippet_value'
 
 
@@ -1197,7 +1256,6 @@ def test_get_profile_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = profile_service.GetProfileRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1205,6 +1263,7 @@ def test_get_profile_field_headers():
             type(client.transport.get_profile),
             '__call__') as call:
         call.return_value = profile.Profile()
+
         client.get_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1229,7 +1288,6 @@ async def test_get_profile_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = profile_service.GetProfileRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1237,6 +1295,7 @@ async def test_get_profile_field_headers_async():
             type(client.transport.get_profile),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(profile.Profile())
+
         await client.get_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1263,6 +1322,7 @@ def test_get_profile_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = profile.Profile()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_profile(
@@ -1273,6 +1333,7 @@ def test_get_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1314,6 +1375,7 @@ async def test_get_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1349,32 +1411,53 @@ def test_update_profile(transport: str = 'grpc', request_type=profile_service.Up
         # Designate an appropriate return value for the call.
         call.return_value = gct_profile.Profile(
             name='name_value',
+
             external_id='external_id_value',
+
             source='source_value',
+
             uri='uri_value',
+
             group_id='group_id_value',
+
             applications=['applications_value'],
+
             assignments=['assignments_value'],
+
             processed=True,
+
             keyword_snippet='keyword_snippet_value',
+
         )
+
         response = client.update_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == profile_service.UpdateProfileRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gct_profile.Profile)
+
     assert response.name == 'name_value'
+
     assert response.external_id == 'external_id_value'
+
     assert response.source == 'source_value'
+
     assert response.uri == 'uri_value'
+
     assert response.group_id == 'group_id_value'
+
     assert response.applications == ['applications_value']
+
     assert response.assignments == ['assignments_value']
+
     assert response.processed is True
+
     assert response.keyword_snippet == 'keyword_snippet_value'
 
 
@@ -1397,8 +1480,8 @@ def test_update_profile_empty_call():
         client.update_profile()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == profile_service.UpdateProfileRequest()
 
+        assert args[0] == profile_service.UpdateProfileRequest()
 
 @pytest.mark.asyncio
 async def test_update_profile_async(transport: str = 'grpc_asyncio', request_type=profile_service.UpdateProfileRequest):
@@ -1416,7 +1499,7 @@ async def test_update_profile_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.update_profile),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gct_profile.Profile(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gct_profile.Profile(
             name='name_value',
             external_id='external_id_value',
             source='source_value',
@@ -1427,23 +1510,34 @@ async def test_update_profile_async(transport: str = 'grpc_asyncio', request_typ
             processed=True,
             keyword_snippet='keyword_snippet_value',
         ))
+
         response = await client.update_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == profile_service.UpdateProfileRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gct_profile.Profile)
+
     assert response.name == 'name_value'
+
     assert response.external_id == 'external_id_value'
+
     assert response.source == 'source_value'
+
     assert response.uri == 'uri_value'
+
     assert response.group_id == 'group_id_value'
+
     assert response.applications == ['applications_value']
+
     assert response.assignments == ['assignments_value']
+
     assert response.processed is True
+
     assert response.keyword_snippet == 'keyword_snippet_value'
 
 
@@ -1460,7 +1554,6 @@ def test_update_profile_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = profile_service.UpdateProfileRequest()
-
     request.profile.name = 'profile.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1468,6 +1561,7 @@ def test_update_profile_field_headers():
             type(client.transport.update_profile),
             '__call__') as call:
         call.return_value = gct_profile.Profile()
+
         client.update_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1492,7 +1586,6 @@ async def test_update_profile_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = profile_service.UpdateProfileRequest()
-
     request.profile.name = 'profile.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1500,6 +1593,7 @@ async def test_update_profile_field_headers_async():
             type(client.transport.update_profile),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gct_profile.Profile())
+
         await client.update_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1526,6 +1620,7 @@ def test_update_profile_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gct_profile.Profile()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_profile(
@@ -1536,6 +1631,7 @@ def test_update_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].profile == gct_profile.Profile(name='name_value')
 
 
@@ -1577,6 +1673,7 @@ async def test_update_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].profile == gct_profile.Profile(name='name_value')
 
 
@@ -1611,11 +1708,13 @@ def test_delete_profile(transport: str = 'grpc', request_type=profile_service.De
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == profile_service.DeleteProfileRequest()
 
     # Establish that the response is the type that we expect.
@@ -1641,8 +1740,8 @@ def test_delete_profile_empty_call():
         client.delete_profile()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == profile_service.DeleteProfileRequest()
 
+        assert args[0] == profile_service.DeleteProfileRequest()
 
 @pytest.mark.asyncio
 async def test_delete_profile_async(transport: str = 'grpc_asyncio', request_type=profile_service.DeleteProfileRequest):
@@ -1661,11 +1760,13 @@ async def test_delete_profile_async(transport: str = 'grpc_asyncio', request_typ
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == profile_service.DeleteProfileRequest()
 
     # Establish that the response is the type that we expect.
@@ -1685,7 +1786,6 @@ def test_delete_profile_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = profile_service.DeleteProfileRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1693,6 +1793,7 @@ def test_delete_profile_field_headers():
             type(client.transport.delete_profile),
             '__call__') as call:
         call.return_value = None
+
         client.delete_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1717,7 +1818,6 @@ async def test_delete_profile_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = profile_service.DeleteProfileRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1725,6 +1825,7 @@ async def test_delete_profile_field_headers_async():
             type(client.transport.delete_profile),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1751,6 +1852,7 @@ def test_delete_profile_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_profile(
@@ -1761,6 +1863,7 @@ def test_delete_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1802,6 +1905,7 @@ async def test_delete_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1837,20 +1941,29 @@ def test_search_profiles(transport: str = 'grpc', request_type=profile_service.S
         # Designate an appropriate return value for the call.
         call.return_value = profile_service.SearchProfilesResponse(
             estimated_total_size=2141,
+
             next_page_token='next_page_token_value',
+
             result_set_id='result_set_id_value',
+
         )
+
         response = client.search_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == profile_service.SearchProfilesRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.SearchProfilesPager)
+
     assert response.estimated_total_size == 2141
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.result_set_id == 'result_set_id_value'
 
 
@@ -1873,8 +1986,8 @@ def test_search_profiles_empty_call():
         client.search_profiles()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == profile_service.SearchProfilesRequest()
 
+        assert args[0] == profile_service.SearchProfilesRequest()
 
 @pytest.mark.asyncio
 async def test_search_profiles_async(transport: str = 'grpc_asyncio', request_type=profile_service.SearchProfilesRequest):
@@ -1892,22 +2005,27 @@ async def test_search_profiles_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.search_profiles),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(profile_service.SearchProfilesResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(profile_service.SearchProfilesResponse(
             estimated_total_size=2141,
             next_page_token='next_page_token_value',
             result_set_id='result_set_id_value',
         ))
+
         response = await client.search_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == profile_service.SearchProfilesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.SearchProfilesAsyncPager)
+
     assert response.estimated_total_size == 2141
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.result_set_id == 'result_set_id_value'
 
 
@@ -1924,7 +2042,6 @@ def test_search_profiles_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = profile_service.SearchProfilesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1932,6 +2049,7 @@ def test_search_profiles_field_headers():
             type(client.transport.search_profiles),
             '__call__') as call:
         call.return_value = profile_service.SearchProfilesResponse()
+
         client.search_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1956,7 +2074,6 @@ async def test_search_profiles_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = profile_service.SearchProfilesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1964,6 +2081,7 @@ async def test_search_profiles_field_headers_async():
             type(client.transport.search_profiles),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(profile_service.SearchProfilesResponse())
+
         await client.search_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2206,6 +2324,7 @@ def test_transport_instance():
     client = ProfileServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ProfileServiceGrpcTransport(
@@ -2220,6 +2339,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.ProfileServiceGrpcTransport,
     transports.ProfileServiceGrpcAsyncIOTransport,
@@ -2231,6 +2351,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = ProfileServiceClient(
@@ -2240,6 +2361,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.ProfileServiceGrpcTransport,
     )
+
 
 def test_profile_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -2267,33 +2389,15 @@ def test_profile_service_base_transport():
         'update_profile',
         'delete_profile',
         'search_profiles',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_profile_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.talent_v4beta1.services.profile_service.transports.ProfileServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.ProfileServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/jobs',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_profile_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.talent_v4beta1.services.profile_service.transports.ProfileServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.talent_v4beta1.services.profile_service.transports.ProfileServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ProfileServiceTransport(
@@ -2310,184 +2414,35 @@ def test_profile_service_base_transport_with_credentials_file_old_google_auth():
 
 def test_profile_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.talent_v4beta1.services.profile_service.transports.ProfileServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.talent_v4beta1.services.profile_service.transports.ProfileServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ProfileServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_profile_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         ProfileServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/jobs',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_profile_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        ProfileServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/jobs',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ProfileServiceGrpcTransport,
-        transports.ProfileServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_profile_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/jobs',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ProfileServiceGrpcTransport,
-        transports.ProfileServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_profile_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/jobs',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/jobs',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ProfileServiceGrpcTransport, grpc_helpers),
-        (transports.ProfileServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_profile_service_transport_create_channel(transport_class, grpc_helpers):
+def test_profile_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.ProfileServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/jobs',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "jobs.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/jobs',),
-            scopes=["1", "2"],
-            default_host="jobs.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ProfileServiceGrpcTransport, grpc_helpers),
-        (transports.ProfileServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_profile_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "jobs.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/jobs',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ProfileServiceGrpcTransport, grpc_helpers),
-        (transports.ProfileServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_profile_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "jobs.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -2550,6 +2505,7 @@ def test_profile_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='jobs.googleapis.com:8000'),
     )
     assert client.transport._host == 'jobs.googleapis.com:8000'
+
 
 def test_profile_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -2671,6 +2627,7 @@ def test_profile_path():
     project = "squid"
     tenant = "clam"
     profile = "whelk"
+
     expected = "projects/{project}/tenants/{tenant}/profiles/{profile}".format(project=project, tenant=tenant, profile=profile, )
     actual = ProfileServiceClient.profile_path(project, tenant, profile)
     assert expected == actual
@@ -2678,9 +2635,10 @@ def test_profile_path():
 
 def test_parse_profile_path():
     expected = {
-        "project": "octopus",
-        "tenant": "oyster",
-        "profile": "nudibranch",
+    "project": "octopus",
+    "tenant": "oyster",
+    "profile": "nudibranch",
+
     }
     path = ProfileServiceClient.profile_path(**expected)
 
@@ -2691,6 +2649,7 @@ def test_parse_profile_path():
 def test_tenant_path():
     project = "cuttlefish"
     tenant = "mussel"
+
     expected = "projects/{project}/tenants/{tenant}".format(project=project, tenant=tenant, )
     actual = ProfileServiceClient.tenant_path(project, tenant)
     assert expected == actual
@@ -2698,8 +2657,9 @@ def test_tenant_path():
 
 def test_parse_tenant_path():
     expected = {
-        "project": "winkle",
-        "tenant": "nautilus",
+    "project": "winkle",
+    "tenant": "nautilus",
+
     }
     path = ProfileServiceClient.tenant_path(**expected)
 
@@ -2709,6 +2669,7 @@ def test_parse_tenant_path():
 
 def test_common_billing_account_path():
     billing_account = "scallop"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ProfileServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2716,7 +2677,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "abalone",
+    "billing_account": "abalone",
+
     }
     path = ProfileServiceClient.common_billing_account_path(**expected)
 
@@ -2726,6 +2688,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "squid"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ProfileServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -2733,7 +2696,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "clam",
+    "folder": "clam",
+
     }
     path = ProfileServiceClient.common_folder_path(**expected)
 
@@ -2743,6 +2707,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "whelk"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ProfileServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -2750,7 +2715,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "octopus",
+    "organization": "octopus",
+
     }
     path = ProfileServiceClient.common_organization_path(**expected)
 
@@ -2760,6 +2726,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "oyster"
+
     expected = "projects/{project}".format(project=project, )
     actual = ProfileServiceClient.common_project_path(project)
     assert expected == actual
@@ -2767,7 +2734,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nudibranch",
+    "project": "nudibranch",
+
     }
     path = ProfileServiceClient.common_project_path(**expected)
 
@@ -2778,6 +2746,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "cuttlefish"
     location = "mussel"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ProfileServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -2785,8 +2754,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "winkle",
-        "location": "nautilus",
+    "project": "winkle",
+    "location": "nautilus",
+
     }
     path = ProfileServiceClient.common_location_path(**expected)
 

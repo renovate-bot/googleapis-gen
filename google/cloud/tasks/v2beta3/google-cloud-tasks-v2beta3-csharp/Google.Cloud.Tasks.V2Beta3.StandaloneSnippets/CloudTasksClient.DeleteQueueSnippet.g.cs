@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Tasks.V2Beta3.Snippets
 {
+    using Google.Cloud.Tasks.V2Beta3;
+
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteQueue</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteQueue()
         {
-            // Snippet: DeleteQueue(string, CallSettings)
             // Create client
             CloudTasksClient cloudTasksClient = CloudTasksClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/queues/[QUEUE]";
             // Make the request
             cloudTasksClient.DeleteQueue(name);
-            // End snippet
         }
     }
 }

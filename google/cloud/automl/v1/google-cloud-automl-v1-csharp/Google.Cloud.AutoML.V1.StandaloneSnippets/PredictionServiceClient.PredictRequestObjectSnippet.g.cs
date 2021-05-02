@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.AutoML.V1.Snippets
 {
+    using Google.Cloud.AutoML.V1;
+
     public sealed partial class GeneratedPredictionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for Predict</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void PredictRequestObject()
         {
-            // Snippet: Predict(PredictRequest, CallSettings)
             // Create client
             PredictionServiceClient predictionServiceClient = PredictionServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +38,6 @@ namespace Google.Cloud.AutoML.V1.Snippets
             };
             // Make the request
             PredictResponse response = predictionServiceClient.Predict(request);
-            // End snippet
         }
     }
 }

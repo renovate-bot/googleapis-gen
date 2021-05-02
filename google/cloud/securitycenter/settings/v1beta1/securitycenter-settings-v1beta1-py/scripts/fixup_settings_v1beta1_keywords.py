@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,19 +41,20 @@ def partition(
 class settingsCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'batch_calculate_effective_settings': ('parent', 'requests', ),
-          'batch_get_settings': ('parent', 'names', ),
-          'calculate_effective_component_settings': ('name', ),
-          'calculate_effective_settings': ('name', ),
-          'get_component_settings': ('name', ),
-          'get_service_account': ('name', ),
-          'get_settings': ('name', ),
-          'list_components': ('parent', 'page_size', 'page_token', ),
-          'list_detectors': ('parent', 'filter', 'page_size', 'page_token', ),
-          'reset_component_settings': ('name', 'etag', ),
-          'reset_settings': ('name', 'etag', ),
-          'update_component_settings': ('component_settings', 'update_mask', ),
-          'update_settings': ('settings', 'update_mask', ),
+    'batch_calculate_effective_settings': ('parent', 'requests', ),
+    'batch_get_settings': ('parent', 'names', ),
+    'calculate_effective_component_settings': ('name', ),
+    'calculate_effective_settings': ('name', ),
+    'get_component_settings': ('name', ),
+    'get_service_account': ('name', ),
+    'get_settings': ('name', ),
+    'list_components': ('parent', 'page_size', 'page_token', ),
+    'list_detectors': ('parent', 'filter', 'page_size', 'page_token', ),
+    'reset_component_settings': ('name', 'etag', ),
+    'reset_settings': ('name', 'etag', ),
+    'update_component_settings': ('component_settings', 'update_mask', ),
+    'update_settings': ('settings', 'update_mask', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -82,7 +85,7 @@ class settingsCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

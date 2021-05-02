@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Gaming.V1.Snippets
 {
+    using Google.Cloud.Gaming.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGameServerDeploymentsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGameServerDeploymentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetGameServerDeploymentResourceNamesAsync()
         {
-            // Snippet: GetGameServerDeploymentAsync(GameServerDeploymentName, CallSettings)
-            // Additional: GetGameServerDeploymentAsync(GameServerDeploymentName, CancellationToken)
             // Create client
             GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = await GameServerDeploymentsServiceClient.CreateAsync();
             // Initialize request argument(s)
             GameServerDeploymentName name = GameServerDeploymentName.FromProjectLocationDeployment("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
             // Make the request
             GameServerDeployment response = await gameServerDeploymentsServiceClient.GetGameServerDeploymentAsync(name);
-            // End snippet
         }
     }
 }

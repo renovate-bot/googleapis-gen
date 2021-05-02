@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Automl.V1Beta1.Snippets
 {
+    using Google.Cloud.Automl.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for GetModelEvaluationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetModelEvaluationRequestObjectAsync()
         {
-            // Snippet: GetModelEvaluationAsync(GetModelEvaluationRequest, CallSettings)
-            // Additional: GetModelEvaluationAsync(GetModelEvaluationRequest, CancellationToken)
             // Create client
             AutoMlClient autoMlClient = await AutoMlClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Automl.V1Beta1.Snippets
             };
             // Make the request
             ModelEvaluation response = await autoMlClient.GetModelEvaluationAsync(request);
-            // End snippet
         }
     }
 }

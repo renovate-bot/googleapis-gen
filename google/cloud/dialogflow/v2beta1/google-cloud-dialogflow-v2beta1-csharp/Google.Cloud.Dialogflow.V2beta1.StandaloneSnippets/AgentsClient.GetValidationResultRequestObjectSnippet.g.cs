@@ -17,13 +17,17 @@
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dialogflow.V2beta1;
 
     public sealed partial class GeneratedAgentsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetValidationResult</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetValidationResultRequestObject()
         {
-            // Snippet: GetValidationResult(GetValidationResultRequest, CallSettings)
             // Create client
             AgentsClient agentsClient = AgentsClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             };
             // Make the request
             ValidationResult response = agentsClient.GetValidationResult(request);
-            // End snippet
         }
     }
 }

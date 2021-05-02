@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +26,8 @@ from google.devtools.build_v1.types.publish_build_event import PublishBuildToolE
 from google.devtools.build_v1.types.publish_build_event import PublishBuildToolEventStreamResponse
 from google.devtools.build_v1.types.publish_build_event import PublishLifecycleEventRequest
 
-__all__ = ('BuildEvent',
+__all__ = (
+    'BuildEvent',
     'BuildStatus',
     'ConsoleOutputStream',
     'OrderedBuildEvent',

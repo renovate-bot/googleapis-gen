@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.common.types import ad_asset
 from google.ads.googleads.v6.enums.types import call_conversion_reporting_state
@@ -63,6 +66,7 @@ __protobuf__ = proto.module(
 
 class TextAdInfo(proto.Message):
     r"""A text ad.
+
     Attributes:
         headline (str):
             The headline of the ad.
@@ -72,25 +76,14 @@ class TextAdInfo(proto.Message):
             The second line of the ad's description.
     """
 
-    headline = proto.Field(
-        proto.STRING,
-        number=4,
-        optional=True,
-    )
-    description1 = proto.Field(
-        proto.STRING,
-        number=5,
-        optional=True,
-    )
-    description2 = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
+    headline = proto.Field(proto.STRING, number=4, optional=True)
+    description1 = proto.Field(proto.STRING, number=5, optional=True)
+    description2 = proto.Field(proto.STRING, number=6, optional=True)
 
 
 class ExpandedTextAdInfo(proto.Message):
     r"""An expanded text ad.
+
     Attributes:
         headline_part1 (str):
             The first part of the ad's headline.
@@ -110,45 +103,18 @@ class ExpandedTextAdInfo(proto.Message):
             ad's displayed URL.
     """
 
-    headline_part1 = proto.Field(
-        proto.STRING,
-        number=8,
-        optional=True,
-    )
-    headline_part2 = proto.Field(
-        proto.STRING,
-        number=9,
-        optional=True,
-    )
-    headline_part3 = proto.Field(
-        proto.STRING,
-        number=10,
-        optional=True,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=11,
-        optional=True,
-    )
-    description2 = proto.Field(
-        proto.STRING,
-        number=12,
-        optional=True,
-    )
-    path1 = proto.Field(
-        proto.STRING,
-        number=13,
-        optional=True,
-    )
-    path2 = proto.Field(
-        proto.STRING,
-        number=14,
-        optional=True,
-    )
+    headline_part1 = proto.Field(proto.STRING, number=8, optional=True)
+    headline_part2 = proto.Field(proto.STRING, number=9, optional=True)
+    headline_part3 = proto.Field(proto.STRING, number=10, optional=True)
+    description = proto.Field(proto.STRING, number=11, optional=True)
+    description2 = proto.Field(proto.STRING, number=12, optional=True)
+    path1 = proto.Field(proto.STRING, number=13, optional=True)
+    path2 = proto.Field(proto.STRING, number=14, optional=True)
 
 
 class CallOnlyAdInfo(proto.Message):
     r"""A call-only ad.
+
     Attributes:
         country_code (str):
             The country code in the ad.
@@ -188,70 +154,25 @@ class CallOnlyAdInfo(proto.Message):
             be disabled.
     """
 
-    country_code = proto.Field(
-        proto.STRING,
-        number=13,
-        optional=True,
-    )
-    phone_number = proto.Field(
-        proto.STRING,
-        number=14,
-        optional=True,
-    )
-    business_name = proto.Field(
-        proto.STRING,
-        number=15,
-        optional=True,
-    )
-    headline1 = proto.Field(
-        proto.STRING,
-        number=16,
-        optional=True,
-    )
-    headline2 = proto.Field(
-        proto.STRING,
-        number=17,
-        optional=True,
-    )
-    description1 = proto.Field(
-        proto.STRING,
-        number=18,
-        optional=True,
-    )
-    description2 = proto.Field(
-        proto.STRING,
-        number=19,
-        optional=True,
-    )
-    call_tracked = proto.Field(
-        proto.BOOL,
-        number=20,
-        optional=True,
-    )
-    disable_call_conversion = proto.Field(
-        proto.BOOL,
-        number=21,
-        optional=True,
-    )
-    phone_number_verification_url = proto.Field(
-        proto.STRING,
-        number=22,
-        optional=True,
-    )
-    conversion_action = proto.Field(
-        proto.STRING,
-        number=23,
-        optional=True,
-    )
-    conversion_reporting_state = proto.Field(
-        proto.ENUM,
-        number=10,
+    country_code = proto.Field(proto.STRING, number=13, optional=True)
+    phone_number = proto.Field(proto.STRING, number=14, optional=True)
+    business_name = proto.Field(proto.STRING, number=15, optional=True)
+    headline1 = proto.Field(proto.STRING, number=16, optional=True)
+    headline2 = proto.Field(proto.STRING, number=17, optional=True)
+    description1 = proto.Field(proto.STRING, number=18, optional=True)
+    description2 = proto.Field(proto.STRING, number=19, optional=True)
+    call_tracked = proto.Field(proto.BOOL, number=20, optional=True)
+    disable_call_conversion = proto.Field(proto.BOOL, number=21, optional=True)
+    phone_number_verification_url = proto.Field(proto.STRING, number=22, optional=True)
+    conversion_action = proto.Field(proto.STRING, number=23, optional=True)
+    conversion_reporting_state = proto.Field(proto.ENUM, number=10,
         enum=call_conversion_reporting_state.CallConversionReportingStateEnum.CallConversionReportingState,
     )
 
 
 class ExpandedDynamicSearchAdInfo(proto.Message):
     r"""An expanded dynamic search ad.
+
     Attributes:
         description (str):
             The description of the ad.
@@ -259,47 +180,37 @@ class ExpandedDynamicSearchAdInfo(proto.Message):
             The second description of the ad.
     """
 
-    description = proto.Field(
-        proto.STRING,
-        number=3,
-        optional=True,
-    )
-    description2 = proto.Field(
-        proto.STRING,
-        number=4,
-        optional=True,
-    )
+    description = proto.Field(proto.STRING, number=3, optional=True)
+    description2 = proto.Field(proto.STRING, number=4, optional=True)
 
 
 class HotelAdInfo(proto.Message):
-    r"""A hotel ad.    """
+    r"""A hotel ad."""
 
 
 class ShoppingSmartAdInfo(proto.Message):
-    r"""A Smart Shopping ad.    """
+    r"""A Smart Shopping ad."""
 
 
 class ShoppingProductAdInfo(proto.Message):
-    r"""A standard Shopping ad.    """
+    r"""A standard Shopping ad."""
 
 
 class ShoppingComparisonListingAdInfo(proto.Message):
     r"""A Shopping Comparison Listing ad.
+
     Attributes:
         headline (str):
             Headline of the ad. This field is required.
             Allowed length is between 25 and 45 characters.
     """
 
-    headline = proto.Field(
-        proto.STRING,
-        number=2,
-        optional=True,
-    )
+    headline = proto.Field(proto.STRING, number=2, optional=True)
 
 
 class GmailAdInfo(proto.Message):
     r"""A Gmail ad.
+
     Attributes:
         teaser (google.ads.googleads.v6.common.types.GmailTeaser):
             The Gmail teaser.
@@ -331,44 +242,20 @@ class GmailAdInfo(proto.Message):
             must be specified.
     """
 
-    teaser = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    teaser = proto.Field(proto.MESSAGE, number=1,
         message='GmailTeaser',
     )
-    header_image = proto.Field(
-        proto.STRING,
-        number=10,
-        optional=True,
-    )
-    marketing_image = proto.Field(
-        proto.STRING,
-        number=11,
-        optional=True,
-    )
-    marketing_image_headline = proto.Field(
-        proto.STRING,
-        number=12,
-        optional=True,
-    )
-    marketing_image_description = proto.Field(
-        proto.STRING,
-        number=13,
-        optional=True,
-    )
-    marketing_image_display_call_to_action = proto.Field(
-        proto.MESSAGE,
-        number=6,
+    header_image = proto.Field(proto.STRING, number=10, optional=True)
+    marketing_image = proto.Field(proto.STRING, number=11, optional=True)
+    marketing_image_headline = proto.Field(proto.STRING, number=12, optional=True)
+    marketing_image_description = proto.Field(proto.STRING, number=13, optional=True)
+    marketing_image_display_call_to_action = proto.Field(proto.MESSAGE, number=6,
         message='DisplayCallToAction',
     )
-    product_images = proto.RepeatedField(
-        proto.MESSAGE,
-        number=7,
+    product_images = proto.RepeatedField(proto.MESSAGE, number=7,
         message='ProductImage',
     )
-    product_videos = proto.RepeatedField(
-        proto.MESSAGE,
-        number=8,
+    product_videos = proto.RepeatedField(proto.MESSAGE, number=8,
         message='ProductVideo',
     )
 
@@ -391,26 +278,10 @@ class GmailTeaser(proto.Message):
             aspect ratio must be 1:1 (+-1%).
     """
 
-    headline = proto.Field(
-        proto.STRING,
-        number=5,
-        optional=True,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
-    business_name = proto.Field(
-        proto.STRING,
-        number=7,
-        optional=True,
-    )
-    logo_image = proto.Field(
-        proto.STRING,
-        number=8,
-        optional=True,
-    )
+    headline = proto.Field(proto.STRING, number=5, optional=True)
+    description = proto.Field(proto.STRING, number=6, optional=True)
+    business_name = proto.Field(proto.STRING, number=7, optional=True)
+    logo_image = proto.Field(proto.STRING, number=8, optional=True)
 
 
 class DisplayCallToAction(proto.Message):
@@ -429,25 +300,14 @@ class DisplayCallToAction(proto.Message):
             field. If not set the url defaults to final_url.
     """
 
-    text = proto.Field(
-        proto.STRING,
-        number=5,
-        optional=True,
-    )
-    text_color = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
-    url_collection_id = proto.Field(
-        proto.STRING,
-        number=7,
-        optional=True,
-    )
+    text = proto.Field(proto.STRING, number=5, optional=True)
+    text_color = proto.Field(proto.STRING, number=6, optional=True)
+    url_collection_id = proto.Field(proto.STRING, number=7, optional=True)
 
 
 class ProductImage(proto.Message):
     r"""Product image specific data.
+
     Attributes:
         product_image (str):
             The MediaFile resource name of the product
@@ -460,40 +320,28 @@ class ProductImage(proto.Message):
             Display-call-to-action of the product image.
     """
 
-    product_image = proto.Field(
-        proto.STRING,
-        number=4,
-        optional=True,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=5,
-        optional=True,
-    )
-    display_call_to_action = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    product_image = proto.Field(proto.STRING, number=4, optional=True)
+    description = proto.Field(proto.STRING, number=5, optional=True)
+    display_call_to_action = proto.Field(proto.MESSAGE, number=3,
         message='DisplayCallToAction',
     )
 
 
 class ProductVideo(proto.Message):
     r"""Product video specific data.
+
     Attributes:
         product_video (str):
             The MediaFile resource name of a video which
             must be hosted on YouTube.
     """
 
-    product_video = proto.Field(
-        proto.STRING,
-        number=2,
-        optional=True,
-    )
+    product_video = proto.Field(proto.STRING, number=2, optional=True)
 
 
 class ImageAdInfo(proto.Message):
     r"""An image ad.
+
     Attributes:
         pixel_width (int):
             Width in pixels of the full size image.
@@ -522,61 +370,19 @@ class ImageAdInfo(proto.Message):
             An ad ID to copy the image from.
     """
 
-    pixel_width = proto.Field(
-        proto.INT64,
-        number=15,
-        optional=True,
-    )
-    pixel_height = proto.Field(
-        proto.INT64,
-        number=16,
-        optional=True,
-    )
-    image_url = proto.Field(
-        proto.STRING,
-        number=17,
-        optional=True,
-    )
-    preview_pixel_width = proto.Field(
-        proto.INT64,
-        number=18,
-        optional=True,
-    )
-    preview_pixel_height = proto.Field(
-        proto.INT64,
-        number=19,
-        optional=True,
-    )
-    preview_image_url = proto.Field(
-        proto.STRING,
-        number=20,
-        optional=True,
-    )
-    mime_type = proto.Field(
-        proto.ENUM,
-        number=10,
+    pixel_width = proto.Field(proto.INT64, number=15, optional=True)
+    pixel_height = proto.Field(proto.INT64, number=16, optional=True)
+    image_url = proto.Field(proto.STRING, number=17, optional=True)
+    preview_pixel_width = proto.Field(proto.INT64, number=18, optional=True)
+    preview_pixel_height = proto.Field(proto.INT64, number=19, optional=True)
+    preview_image_url = proto.Field(proto.STRING, number=20, optional=True)
+    mime_type = proto.Field(proto.ENUM, number=10,
         enum=gage_mime_type.MimeTypeEnum.MimeType,
     )
-    name = proto.Field(
-        proto.STRING,
-        number=21,
-        optional=True,
-    )
-    media_file = proto.Field(
-        proto.STRING,
-        number=12,
-        oneof='image',
-    )
-    data = proto.Field(
-        proto.BYTES,
-        number=13,
-        oneof='image',
-    )
-    ad_id_to_copy_image_from = proto.Field(
-        proto.INT64,
-        number=14,
-        oneof='image',
-    )
+    name = proto.Field(proto.STRING, number=21, optional=True)
+    media_file = proto.Field(proto.STRING, number=12, oneof='image')
+    data = proto.Field(proto.BYTES, number=13, oneof='image')
+    ad_id_to_copy_image_from = proto.Field(proto.INT64, number=14, oneof='image')
 
 
 class VideoBumperInStreamAdInfo(proto.Message):
@@ -589,11 +395,7 @@ class VideoBumperInStreamAdInfo(proto.Message):
             banner used with the ad.
     """
 
-    companion_banner = proto.Field(
-        proto.STRING,
-        number=2,
-        optional=True,
-    )
+    companion_banner = proto.Field(proto.STRING, number=2, optional=True)
 
 
 class VideoNonSkippableInStreamAdInfo(proto.Message):
@@ -606,11 +408,7 @@ class VideoNonSkippableInStreamAdInfo(proto.Message):
             banner used with the ad.
     """
 
-    companion_banner = proto.Field(
-        proto.STRING,
-        number=2,
-        optional=True,
-    )
+    companion_banner = proto.Field(proto.STRING, number=2, optional=True)
 
 
 class VideoTrueViewInStreamAdInfo(proto.Message):
@@ -633,21 +431,9 @@ class VideoTrueViewInStreamAdInfo(proto.Message):
             banner used with the ad.
     """
 
-    action_button_label = proto.Field(
-        proto.STRING,
-        number=4,
-        optional=True,
-    )
-    action_headline = proto.Field(
-        proto.STRING,
-        number=5,
-        optional=True,
-    )
-    companion_banner = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
+    action_button_label = proto.Field(proto.STRING, number=4, optional=True)
+    action_headline = proto.Field(proto.STRING, number=5, optional=True)
+    companion_banner = proto.Field(proto.STRING, number=6, optional=True)
 
 
 class VideoOutstreamAdInfo(proto.Message):
@@ -661,20 +447,13 @@ class VideoOutstreamAdInfo(proto.Message):
             The description line.
     """
 
-    headline = proto.Field(
-        proto.STRING,
-        number=3,
-        optional=True,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=4,
-        optional=True,
-    )
+    headline = proto.Field(proto.STRING, number=3, optional=True)
+    description = proto.Field(proto.STRING, number=4, optional=True)
 
 
 class VideoTrueViewDiscoveryAdInfo(proto.Message):
     r"""Representation of video TrueView discovery ad format.
+
     Attributes:
         headline (str):
             The headline of the ad.
@@ -686,25 +465,14 @@ class VideoTrueViewDiscoveryAdInfo(proto.Message):
             discovery ad.
     """
 
-    headline = proto.Field(
-        proto.STRING,
-        number=4,
-        optional=True,
-    )
-    description1 = proto.Field(
-        proto.STRING,
-        number=5,
-        optional=True,
-    )
-    description2 = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
+    headline = proto.Field(proto.STRING, number=4, optional=True)
+    description1 = proto.Field(proto.STRING, number=5, optional=True)
+    description2 = proto.Field(proto.STRING, number=6, optional=True)
 
 
 class VideoAdInfo(proto.Message):
     r"""A video ad.
+
     Attributes:
         media_file (str):
             The MediaFile resource to use for the video.
@@ -720,45 +488,27 @@ class VideoAdInfo(proto.Message):
             Video TrueView discovery ad format.
     """
 
-    media_file = proto.Field(
-        proto.STRING,
-        number=7,
-        optional=True,
-    )
-    in_stream = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='format',
+    media_file = proto.Field(proto.STRING, number=7, optional=True)
+    in_stream = proto.Field(proto.MESSAGE, number=2, oneof='format',
         message='VideoTrueViewInStreamAdInfo',
     )
-    bumper = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='format',
+    bumper = proto.Field(proto.MESSAGE, number=3, oneof='format',
         message='VideoBumperInStreamAdInfo',
     )
-    out_stream = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='format',
+    out_stream = proto.Field(proto.MESSAGE, number=4, oneof='format',
         message='VideoOutstreamAdInfo',
     )
-    non_skippable = proto.Field(
-        proto.MESSAGE,
-        number=5,
-        oneof='format',
+    non_skippable = proto.Field(proto.MESSAGE, number=5, oneof='format',
         message='VideoNonSkippableInStreamAdInfo',
     )
-    discovery = proto.Field(
-        proto.MESSAGE,
-        number=6,
-        oneof='format',
+    discovery = proto.Field(proto.MESSAGE, number=6, oneof='format',
         message='VideoTrueViewDiscoveryAdInfo',
     )
 
 
 class VideoResponsiveAdInfo(proto.Message):
     r"""A video responsive ad.
+
     Attributes:
         headlines (Sequence[google.ads.googleads.v6.common.types.AdTextAsset]):
             List of text assets used for the short
@@ -787,34 +537,22 @@ class VideoResponsiveAdInfo(proto.Message):
             companion banner asset is supported.
     """
 
-    headlines = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    headlines = proto.RepeatedField(proto.MESSAGE, number=1,
         message=ad_asset.AdTextAsset,
     )
-    long_headlines = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    long_headlines = proto.RepeatedField(proto.MESSAGE, number=2,
         message=ad_asset.AdTextAsset,
     )
-    descriptions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    descriptions = proto.RepeatedField(proto.MESSAGE, number=3,
         message=ad_asset.AdTextAsset,
     )
-    call_to_actions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+    call_to_actions = proto.RepeatedField(proto.MESSAGE, number=4,
         message=ad_asset.AdTextAsset,
     )
-    videos = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+    videos = proto.RepeatedField(proto.MESSAGE, number=5,
         message=ad_asset.AdVideoAsset,
     )
-    companion_banners = proto.RepeatedField(
-        proto.MESSAGE,
-        number=6,
+    companion_banners = proto.RepeatedField(proto.MESSAGE, number=6,
         message=ad_asset.AdImageAsset,
     )
 
@@ -851,26 +589,14 @@ class ResponsiveSearchAdInfo(proto.Message):
             only be set when path1 is also set.
     """
 
-    headlines = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    headlines = proto.RepeatedField(proto.MESSAGE, number=1,
         message=ad_asset.AdTextAsset,
     )
-    descriptions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    descriptions = proto.RepeatedField(proto.MESSAGE, number=2,
         message=ad_asset.AdTextAsset,
     )
-    path1 = proto.Field(
-        proto.STRING,
-        number=5,
-        optional=True,
-    )
-    path2 = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
+    path1 = proto.Field(proto.STRING, number=5, optional=True)
+    path2 = proto.Field(proto.STRING, number=6, optional=True)
 
 
 class LegacyResponsiveDisplayAdInfo(proto.Message):
@@ -925,85 +651,28 @@ class LegacyResponsiveDisplayAdInfo(proto.Message):
             shipping'.
     """
 
-    short_headline = proto.Field(
-        proto.STRING,
-        number=16,
-        optional=True,
-    )
-    long_headline = proto.Field(
-        proto.STRING,
-        number=17,
-        optional=True,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=18,
-        optional=True,
-    )
-    business_name = proto.Field(
-        proto.STRING,
-        number=19,
-        optional=True,
-    )
-    allow_flexible_color = proto.Field(
-        proto.BOOL,
-        number=20,
-        optional=True,
-    )
-    accent_color = proto.Field(
-        proto.STRING,
-        number=21,
-        optional=True,
-    )
-    main_color = proto.Field(
-        proto.STRING,
-        number=22,
-        optional=True,
-    )
-    call_to_action_text = proto.Field(
-        proto.STRING,
-        number=23,
-        optional=True,
-    )
-    logo_image = proto.Field(
-        proto.STRING,
-        number=24,
-        optional=True,
-    )
-    square_logo_image = proto.Field(
-        proto.STRING,
-        number=25,
-        optional=True,
-    )
-    marketing_image = proto.Field(
-        proto.STRING,
-        number=26,
-        optional=True,
-    )
-    square_marketing_image = proto.Field(
-        proto.STRING,
-        number=27,
-        optional=True,
-    )
-    format_setting = proto.Field(
-        proto.ENUM,
-        number=13,
+    short_headline = proto.Field(proto.STRING, number=16, optional=True)
+    long_headline = proto.Field(proto.STRING, number=17, optional=True)
+    description = proto.Field(proto.STRING, number=18, optional=True)
+    business_name = proto.Field(proto.STRING, number=19, optional=True)
+    allow_flexible_color = proto.Field(proto.BOOL, number=20, optional=True)
+    accent_color = proto.Field(proto.STRING, number=21, optional=True)
+    main_color = proto.Field(proto.STRING, number=22, optional=True)
+    call_to_action_text = proto.Field(proto.STRING, number=23, optional=True)
+    logo_image = proto.Field(proto.STRING, number=24, optional=True)
+    square_logo_image = proto.Field(proto.STRING, number=25, optional=True)
+    marketing_image = proto.Field(proto.STRING, number=26, optional=True)
+    square_marketing_image = proto.Field(proto.STRING, number=27, optional=True)
+    format_setting = proto.Field(proto.ENUM, number=13,
         enum=display_ad_format_setting.DisplayAdFormatSettingEnum.DisplayAdFormatSetting,
     )
-    price_prefix = proto.Field(
-        proto.STRING,
-        number=28,
-        optional=True,
-    )
-    promo_text = proto.Field(
-        proto.STRING,
-        number=29,
-        optional=True,
-    )
+    price_prefix = proto.Field(proto.STRING, number=28, optional=True)
+    promo_text = proto.Field(proto.STRING, number=29, optional=True)
 
 
 class AppAdInfo(proto.Message):
     r"""An app ad.
+
     Attributes:
         mandatory_ad_text (google.ads.googleads.v6.common.types.AdTextAsset):
             Mandatory ad text.
@@ -1026,34 +695,22 @@ class AppAdInfo(proto.Message):
             with the ad.
     """
 
-    mandatory_ad_text = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    mandatory_ad_text = proto.Field(proto.MESSAGE, number=1,
         message=ad_asset.AdTextAsset,
     )
-    headlines = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    headlines = proto.RepeatedField(proto.MESSAGE, number=2,
         message=ad_asset.AdTextAsset,
     )
-    descriptions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    descriptions = proto.RepeatedField(proto.MESSAGE, number=3,
         message=ad_asset.AdTextAsset,
     )
-    images = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+    images = proto.RepeatedField(proto.MESSAGE, number=4,
         message=ad_asset.AdImageAsset,
     )
-    youtube_videos = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+    youtube_videos = proto.RepeatedField(proto.MESSAGE, number=5,
         message=ad_asset.AdVideoAsset,
     )
-    html5_media_bundles = proto.RepeatedField(
-        proto.MESSAGE,
-        number=6,
+    html5_media_bundles = proto.RepeatedField(proto.MESSAGE, number=6,
         message=ad_asset.AdMediaBundleAsset,
     )
 
@@ -1082,24 +739,16 @@ class AppEngagementAdInfo(proto.Message):
             with the ad.
     """
 
-    headlines = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    headlines = proto.RepeatedField(proto.MESSAGE, number=1,
         message=ad_asset.AdTextAsset,
     )
-    descriptions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    descriptions = proto.RepeatedField(proto.MESSAGE, number=2,
         message=ad_asset.AdTextAsset,
     )
-    images = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    images = proto.RepeatedField(proto.MESSAGE, number=3,
         message=ad_asset.AdImageAsset,
     )
-    videos = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+    videos = proto.RepeatedField(proto.MESSAGE, number=4,
         message=ad_asset.AdVideoAsset,
     )
 
@@ -1121,35 +770,18 @@ class LegacyAppInstallAdInfo(proto.Message):
             The second description line of the ad.
     """
 
-    app_id = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
-    app_store = proto.Field(
-        proto.ENUM,
-        number=2,
+    app_id = proto.Field(proto.STRING, number=6, optional=True)
+    app_store = proto.Field(proto.ENUM, number=2,
         enum=legacy_app_install_ad_app_store.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore,
     )
-    headline = proto.Field(
-        proto.STRING,
-        number=7,
-        optional=True,
-    )
-    description1 = proto.Field(
-        proto.STRING,
-        number=8,
-        optional=True,
-    )
-    description2 = proto.Field(
-        proto.STRING,
-        number=9,
-        optional=True,
-    )
+    headline = proto.Field(proto.STRING, number=7, optional=True)
+    description1 = proto.Field(proto.STRING, number=8, optional=True)
+    description2 = proto.Field(proto.STRING, number=9, optional=True)
 
 
 class ResponsiveDisplayAdInfo(proto.Message):
     r"""A responsive display ad.
+
     Attributes:
         marketing_images (Sequence[google.ads.googleads.v6.common.types.AdImageAsset]):
             Marketing images to be used in the ad. Valid image types are
@@ -1220,95 +852,48 @@ class ResponsiveDisplayAdInfo(proto.Message):
             Specification for various creative controls.
     """
 
-    marketing_images = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    marketing_images = proto.RepeatedField(proto.MESSAGE, number=1,
         message=ad_asset.AdImageAsset,
     )
-    square_marketing_images = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    square_marketing_images = proto.RepeatedField(proto.MESSAGE, number=2,
         message=ad_asset.AdImageAsset,
     )
-    logo_images = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    logo_images = proto.RepeatedField(proto.MESSAGE, number=3,
         message=ad_asset.AdImageAsset,
     )
-    square_logo_images = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+    square_logo_images = proto.RepeatedField(proto.MESSAGE, number=4,
         message=ad_asset.AdImageAsset,
     )
-    headlines = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+    headlines = proto.RepeatedField(proto.MESSAGE, number=5,
         message=ad_asset.AdTextAsset,
     )
-    long_headline = proto.Field(
-        proto.MESSAGE,
-        number=6,
+    long_headline = proto.Field(proto.MESSAGE, number=6,
         message=ad_asset.AdTextAsset,
     )
-    descriptions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=7,
+    descriptions = proto.RepeatedField(proto.MESSAGE, number=7,
         message=ad_asset.AdTextAsset,
     )
-    youtube_videos = proto.RepeatedField(
-        proto.MESSAGE,
-        number=8,
+    youtube_videos = proto.RepeatedField(proto.MESSAGE, number=8,
         message=ad_asset.AdVideoAsset,
     )
-    business_name = proto.Field(
-        proto.STRING,
-        number=17,
-        optional=True,
-    )
-    main_color = proto.Field(
-        proto.STRING,
-        number=18,
-        optional=True,
-    )
-    accent_color = proto.Field(
-        proto.STRING,
-        number=19,
-        optional=True,
-    )
-    allow_flexible_color = proto.Field(
-        proto.BOOL,
-        number=20,
-        optional=True,
-    )
-    call_to_action_text = proto.Field(
-        proto.STRING,
-        number=21,
-        optional=True,
-    )
-    price_prefix = proto.Field(
-        proto.STRING,
-        number=22,
-        optional=True,
-    )
-    promo_text = proto.Field(
-        proto.STRING,
-        number=23,
-        optional=True,
-    )
-    format_setting = proto.Field(
-        proto.ENUM,
-        number=16,
+    business_name = proto.Field(proto.STRING, number=17, optional=True)
+    main_color = proto.Field(proto.STRING, number=18, optional=True)
+    accent_color = proto.Field(proto.STRING, number=19, optional=True)
+    allow_flexible_color = proto.Field(proto.BOOL, number=20, optional=True)
+    call_to_action_text = proto.Field(proto.STRING, number=21, optional=True)
+    price_prefix = proto.Field(proto.STRING, number=22, optional=True)
+    promo_text = proto.Field(proto.STRING, number=23, optional=True)
+    format_setting = proto.Field(proto.ENUM, number=16,
         enum=display_ad_format_setting.DisplayAdFormatSettingEnum.DisplayAdFormatSetting,
     )
-    control_spec = proto.Field(
-        proto.MESSAGE,
-        number=24,
+    control_spec = proto.Field(proto.MESSAGE, number=24,
         message='ResponsiveDisplayAdControlSpec',
     )
 
 
 class LocalAdInfo(proto.Message):
     r"""A local ad.
+
     Attributes:
         headlines (Sequence[google.ads.googleads.v6.common.types.AdTextAsset]):
             List of text assets for headlines. When the
@@ -1349,46 +934,26 @@ class LocalAdInfo(proto.Message):
             field can only be set when path1 is also set.
     """
 
-    headlines = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    headlines = proto.RepeatedField(proto.MESSAGE, number=1,
         message=ad_asset.AdTextAsset,
     )
-    descriptions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    descriptions = proto.RepeatedField(proto.MESSAGE, number=2,
         message=ad_asset.AdTextAsset,
     )
-    call_to_actions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    call_to_actions = proto.RepeatedField(proto.MESSAGE, number=3,
         message=ad_asset.AdTextAsset,
     )
-    marketing_images = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+    marketing_images = proto.RepeatedField(proto.MESSAGE, number=4,
         message=ad_asset.AdImageAsset,
     )
-    logo_images = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+    logo_images = proto.RepeatedField(proto.MESSAGE, number=5,
         message=ad_asset.AdImageAsset,
     )
-    videos = proto.RepeatedField(
-        proto.MESSAGE,
-        number=6,
+    videos = proto.RepeatedField(proto.MESSAGE, number=6,
         message=ad_asset.AdVideoAsset,
     )
-    path1 = proto.Field(
-        proto.STRING,
-        number=9,
-        optional=True,
-    )
-    path2 = proto.Field(
-        proto.STRING,
-        number=10,
-        optional=True,
-    )
+    path1 = proto.Field(proto.STRING, number=9, optional=True)
+    path2 = proto.Field(proto.STRING, number=10, optional=True)
 
 
 class DisplayUploadAdInfo(proto.Message):
@@ -1411,15 +976,10 @@ class DisplayUploadAdInfo(proto.Message):
             more information.
     """
 
-    display_upload_product_type = proto.Field(
-        proto.ENUM,
-        number=1,
+    display_upload_product_type = proto.Field(proto.ENUM, number=1,
         enum=gage_display_upload_product_type.DisplayUploadProductTypeEnum.DisplayUploadProductType,
     )
-    media_bundle = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='media_asset',
+    media_bundle = proto.Field(proto.MESSAGE, number=2, oneof='media_asset',
         message=ad_asset.AdMediaBundleAsset,
     )
 
@@ -1437,14 +997,8 @@ class ResponsiveDisplayAdControlSpec(proto.Message):
             en video feature.
     """
 
-    enable_asset_enhancements = proto.Field(
-        proto.BOOL,
-        number=1,
-    )
-    enable_autogen_video = proto.Field(
-        proto.BOOL,
-        number=2,
-    )
+    enable_asset_enhancements = proto.Field(proto.BOOL, number=1)
+    enable_autogen_video = proto.Field(proto.BOOL, number=2)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

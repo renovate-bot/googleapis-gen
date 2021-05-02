@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigtableTableAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateBackupAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateBackupAsync()
         {
-            // Snippet: UpdateBackupAsync(Backup, FieldMask, CallSettings)
-            // Additional: UpdateBackupAsync(Backup, FieldMask, CancellationToken)
             // Create client
             BigtableTableAdminClient bigtableTableAdminClient = await BigtableTableAdminClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Backup response = await bigtableTableAdminClient.UpdateBackupAsync(backup, updateMask);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedVersionsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetVersionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetVersionRequestObjectAsync()
         {
-            // Snippet: GetVersionAsync(GetVersionRequest, CallSettings)
-            // Additional: GetVersionAsync(GetVersionRequest, CancellationToken)
             // Create client
             VersionsClient versionsClient = await VersionsClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             };
             // Make the request
             Version response = await versionsClient.GetVersionAsync(request);
-            // End snippet
         }
     }
 }

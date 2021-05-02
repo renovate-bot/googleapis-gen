@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.resources.types import account_budget_proposal
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -42,10 +45,7 @@ class GetAccountBudgetProposalRequest(proto.Message):
             evel budget proposal to fetch.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateAccountBudgetProposalRequest(proto.Message):
@@ -63,19 +63,11 @@ class MutateAccountBudgetProposalRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operation = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operation = proto.Field(proto.MESSAGE, number=2,
         message='AccountBudgetProposalOperation',
     )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
+    validate_only = proto.Field(proto.BOOL, number=3)
 
 
 class AccountBudgetProposalOperation(proto.Message):
@@ -107,49 +99,37 @@ class AccountBudgetProposalOperation(proto.Message):
             A request may be cancelled iff it is pending.
     """
 
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    update_mask = proto.Field(proto.MESSAGE, number=3,
         message=field_mask.FieldMask,
     )
-    create = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='operation',
+    create = proto.Field(proto.MESSAGE, number=2, oneof='operation',
         message=account_budget_proposal.AccountBudgetProposal,
     )
-    remove = proto.Field(
-        proto.STRING,
-        number=1,
-        oneof='operation',
-    )
+    remove = proto.Field(proto.STRING, number=1, oneof='operation')
 
 
 class MutateAccountBudgetProposalResponse(proto.Message):
     r"""Response message for account-level budget mutate operations.
+
     Attributes:
         result (google.ads.googleads.v6.services.types.MutateAccountBudgetProposalResult):
             The result of the mutate.
     """
 
-    result = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    result = proto.Field(proto.MESSAGE, number=2,
         message='MutateAccountBudgetProposalResult',
     )
 
 
 class MutateAccountBudgetProposalResult(proto.Message):
     r"""The result for the account budget proposal mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

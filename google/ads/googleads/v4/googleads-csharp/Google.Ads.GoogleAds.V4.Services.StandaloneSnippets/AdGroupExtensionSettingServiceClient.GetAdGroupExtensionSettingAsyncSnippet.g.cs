@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupExtensionSettingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupExtensionSettingAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdGroupExtensionSettingAsync()
         {
-            // Snippet: GetAdGroupExtensionSettingAsync(string, CallSettings)
-            // Additional: GetAdGroupExtensionSettingAsync(string, CancellationToken)
             // Create client
             AdGroupExtensionSettingServiceClient adGroupExtensionSettingServiceClient = await AdGroupExtensionSettingServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/adGroupExtensionSettings/[AD_GROUP_EXTENSION_SETTING]";
             // Make the request
             AdGroupExtensionSetting response = await adGroupExtensionSettingServiceClient.GetAdGroupExtensionSettingAsync(resourceName);
-            // End snippet
         }
     }
 }

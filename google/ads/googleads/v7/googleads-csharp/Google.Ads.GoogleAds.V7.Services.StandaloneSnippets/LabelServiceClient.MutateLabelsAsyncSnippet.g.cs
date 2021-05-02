@@ -16,16 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateLabelsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateLabelsAsync()
         {
-            // Snippet: MutateLabelsAsync(string, IEnumerable<LabelOperation>, CallSettings)
-            // Additional: MutateLabelsAsync(string, IEnumerable<LabelOperation>, CancellationToken)
             // Create client
             LabelServiceClient labelServiceClient = await LabelServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateLabelsResponse response = await labelServiceClient.MutateLabelsAsync(customerId, operations);
-            // End snippet
         }
     }
 }

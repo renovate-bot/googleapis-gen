@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.common.types import criterion_category_availability
 from google.ads.googleads.v4.enums.types import user_interest_taxonomy_type
@@ -56,38 +59,23 @@ class UserInterest(proto.Message):
             user interest.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    taxonomy_type = proto.Field(
-        proto.ENUM,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    taxonomy_type = proto.Field(proto.ENUM, number=2,
         enum=user_interest_taxonomy_type.UserInterestTaxonomyTypeEnum.UserInterestTaxonomyType,
     )
-    user_interest_id = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    user_interest_id = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.Int64Value,
     )
-    name = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    name = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.StringValue,
     )
-    user_interest_parent = proto.Field(
-        proto.MESSAGE,
-        number=5,
+    user_interest_parent = proto.Field(proto.MESSAGE, number=5,
         message=wrappers.StringValue,
     )
-    launched_to_all = proto.Field(
-        proto.MESSAGE,
-        number=6,
+    launched_to_all = proto.Field(proto.MESSAGE, number=6,
         message=wrappers.BoolValue,
     )
-    availabilities = proto.RepeatedField(
-        proto.MESSAGE,
-        number=7,
+    availabilities = proto.RepeatedField(proto.MESSAGE, number=7,
         message=criterion_category_availability.CriterionCategoryAvailability,
     )
 

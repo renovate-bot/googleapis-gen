@@ -17,16 +17,19 @@
 namespace Google.Cloud.Firestore.V1.Snippets
 {
     using Google.Api.Gax.Grpc;
+    using Google.Cloud.Firestore.V1;
     using Google.Protobuf;
-    using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFirestoreClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchGetDocuments</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchGetDocumentsRequestObject()
         {
-            // Snippet: BatchGetDocuments(BatchGetDocumentsRequest, CallSettings)
             // Create client
             FirestoreClient firestoreClient = FirestoreClient.Create();
             // Initialize request argument(s)
@@ -36,8 +39,6 @@ namespace Google.Cloud.Firestore.V1.Snippets
                 Documents = { "", },
                 Mask = new DocumentMask(),
                 Transaction = ByteString.Empty,
-                NewTransaction = new TransactionOptions(),
-                ReadTime = new Timestamp(),
             };
             // Make the request, returning a streaming response
             FirestoreClient.BatchGetDocumentsStream response = firestoreClient.BatchGetDocuments(request);
@@ -51,7 +52,6 @@ namespace Google.Cloud.Firestore.V1.Snippets
                 // Do something with streamed response
             }
             // The response stream has completed
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateNodePool</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateNodePoolRequestObject()
         {
-            // Snippet: UpdateNodePool(UpdateNodePoolRequest, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
@@ -36,7 +41,6 @@ namespace Google.Cloud.Container.V1.Snippets
             };
             // Make the request
             Operation response = clusterManagerClient.UpdateNodePool(request);
-            // End snippet
         }
     }
 }

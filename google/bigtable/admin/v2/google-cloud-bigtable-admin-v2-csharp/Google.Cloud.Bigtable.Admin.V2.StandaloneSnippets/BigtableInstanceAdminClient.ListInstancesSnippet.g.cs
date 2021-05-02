@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
+
     public sealed partial class GeneratedBigtableInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for ListInstances</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListInstances()
         {
-            // Snippet: ListInstances(string, CallSettings)
             // Create client
             BigtableInstanceAdminClient bigtableInstanceAdminClient = BigtableInstanceAdminClient.Create();
             // Initialize request argument(s)
             string parent = "projects/[PROJECT]";
             // Make the request
             ListInstancesResponse response = bigtableInstanceAdminClient.ListInstances(parent);
-            // End snippet
         }
     }
 }

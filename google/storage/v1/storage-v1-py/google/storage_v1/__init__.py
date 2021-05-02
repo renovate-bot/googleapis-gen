@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.storage import StorageClient
-
 from .types.storage import CommonObjectRequestParams
 from .types.storage import CommonRequestParams
 from .types.storage import ComposeObjectRequest
@@ -99,6 +99,7 @@ from .types.storage_resources import ObjectChecksums
 from .types.storage_resources import Owner
 from .types.storage_resources import ProjectTeam
 from .types.storage_resources import ServiceAccount
+
 
 __all__ = (
     'Bucket',

@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomerServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomerAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCustomerResourceNamesAsync()
         {
-            // Snippet: GetCustomerAsync(CustomerName, CallSettings)
-            // Additional: GetCustomerAsync(CustomerName, CancellationToken)
             // Create client
             CustomerServiceClient customerServiceClient = await CustomerServiceClient.CreateAsync();
             // Initialize request argument(s)
             CustomerName resourceName = CustomerName.FromCustomer("[CUSTOMER_ID]");
             // Make the request
             Customer response = await customerServiceClient.GetCustomerAsync(resourceName);
-            // End snippet
         }
     }
 }

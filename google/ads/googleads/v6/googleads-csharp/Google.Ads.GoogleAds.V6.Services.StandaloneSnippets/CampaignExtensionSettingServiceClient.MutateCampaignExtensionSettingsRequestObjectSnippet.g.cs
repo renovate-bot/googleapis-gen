@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
+
     public sealed partial class GeneratedCampaignExtensionSettingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCampaignExtensionSettings</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateCampaignExtensionSettingsRequestObject()
         {
-            // Snippet: MutateCampaignExtensionSettings(MutateCampaignExtensionSettingsRequest, CallSettings)
             // Create client
             CampaignExtensionSettingServiceClient campaignExtensionSettingServiceClient = CampaignExtensionSettingServiceClient.Create();
             // Initialize request argument(s)
@@ -37,7 +42,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             MutateCampaignExtensionSettingsResponse response = campaignExtensionSettingServiceClient.MutateCampaignExtensionSettings(request);
-            // End snippet
         }
     }
 }

@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupCriterionLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupCriterionLabelAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdGroupCriterionLabelResourceNamesAsync()
         {
-            // Snippet: GetAdGroupCriterionLabelAsync(AdGroupCriterionLabelName, CallSettings)
-            // Additional: GetAdGroupCriterionLabelAsync(AdGroupCriterionLabelName, CancellationToken)
             // Create client
             AdGroupCriterionLabelServiceClient adGroupCriterionLabelServiceClient = await AdGroupCriterionLabelServiceClient.CreateAsync();
             // Initialize request argument(s)
             AdGroupCriterionLabelName resourceName = AdGroupCriterionLabelName.FromCustomerAdGroupCriterionLabel("[CUSTOMER]", "[AD_GROUP_CRITERION_LABEL]");
             // Make the request
             AdGroupCriterionLabel response = await adGroupCriterionLabelServiceClient.GetAdGroupCriterionLabelAsync(resourceName);
-            // End snippet
         }
     }
 }

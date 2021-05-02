@@ -16,16 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBiddingStrategyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateBiddingStrategiesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateBiddingStrategiesAsync()
         {
-            // Snippet: MutateBiddingStrategiesAsync(string, IEnumerable<BiddingStrategyOperation>, CallSettings)
-            // Additional: MutateBiddingStrategiesAsync(string, IEnumerable<BiddingStrategyOperation>, CancellationToken)
             // Create client
             BiddingStrategyServiceClient biddingStrategyServiceClient = await BiddingStrategyServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateBiddingStrategiesResponse response = await biddingStrategyServiceClient.MutateBiddingStrategiesAsync(customerId, operations);
-            // End snippet
         }
     }
 }

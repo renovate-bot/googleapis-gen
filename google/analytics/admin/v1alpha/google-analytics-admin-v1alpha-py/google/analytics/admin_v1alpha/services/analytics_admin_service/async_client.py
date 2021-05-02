@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -32,6 +34,7 @@ from google.analytics.admin_v1alpha.types import resources
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+
 from .transports.base import AnalyticsAdminServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AnalyticsAdminServiceGrpcAsyncIOTransport
 from .client import AnalyticsAdminServiceClient
@@ -69,14 +72,19 @@ class AnalyticsAdminServiceAsyncClient:
     parse_user_link_path = staticmethod(AnalyticsAdminServiceClient.parse_user_link_path)
     web_data_stream_path = staticmethod(AnalyticsAdminServiceClient.web_data_stream_path)
     parse_web_data_stream_path = staticmethod(AnalyticsAdminServiceClient.parse_web_data_stream_path)
+
     common_billing_account_path = staticmethod(AnalyticsAdminServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AnalyticsAdminServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(AnalyticsAdminServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(AnalyticsAdminServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(AnalyticsAdminServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(AnalyticsAdminServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(AnalyticsAdminServiceClient.common_project_path)
     parse_common_project_path = staticmethod(AnalyticsAdminServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(AnalyticsAdminServiceClient.common_location_path)
     parse_common_location_path = staticmethod(AnalyticsAdminServiceClient.parse_common_location_path)
 
@@ -161,6 +169,7 @@ class AnalyticsAdminServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = AnalyticsAdminServiceClient(
             credentials=credentials,
             transport=transport,
@@ -181,8 +190,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.GetAccountRequest`):
-                The request object.
-                Request message for GetAccount RPC.
+                The request object. Request message for GetAccount RPC.
             name (:class:`str`):
                 Required. The name of the account to
                 lookup. Format: accounts/{account}
@@ -191,6 +199,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -215,6 +224,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -260,9 +270,9 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.ListAccountsRequest`):
-                The request object.
-                Request message for ListAccounts
+                The request object. Request message for ListAccounts
                 RPC.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -278,6 +288,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = analytics_admin.ListAccountsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -330,8 +341,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.DeleteAccountRequest`):
-                The request object.
-                Request message for DeleteAccount
+                The request object. Request message for DeleteAccount
                 RPC.
             name (:class:`str`):
                 Required. The name of the Account to
@@ -341,6 +351,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -359,6 +370,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -399,8 +411,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.UpdateAccountRequest`):
-                The request object.
-                Request message for UpdateAccount
+                The request object. Request message for UpdateAccount
                 RPC.
             account (:class:`google.analytics.admin_v1alpha.types.Account`):
                 Required. The account to update. The account's ``name``
@@ -419,6 +430,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -443,6 +455,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if account is not None:
             request.account = account
         if update_mask is not None:
@@ -486,9 +499,9 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.ProvisionAccountTicketRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ProvisionAccountTicket RPC.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -502,6 +515,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = analytics_admin.ProvisionAccountTicketRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -535,9 +549,9 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.ListAccountSummariesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListAccountSummaries RPC.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -554,6 +568,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = analytics_admin.ListAccountSummariesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -596,8 +611,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.GetPropertyRequest`):
-                The request object.
-                Request message for GetProperty RPC.
+                The request object. Request message for GetProperty RPC.
             name (:class:`str`):
                 Required. The name of the property to lookup. Format:
                 properties/{property_id} Example: "properties/1000"
@@ -605,6 +619,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -629,6 +644,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -676,9 +692,9 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.ListPropertiesRequest`):
-                The request object.
-                Request message for ListProperties
+                The request object. Request message for ListProperties
                 RPC.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -695,6 +711,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = analytics_admin.ListPropertiesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -738,8 +755,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.CreatePropertyRequest`):
-                The request object.
-                Request message for CreateProperty
+                The request object. Request message for CreateProperty
                 RPC.
             property (:class:`google.analytics.admin_v1alpha.types.Property`):
                 Required. The property to create.
@@ -749,6 +765,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``property`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -773,6 +790,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if property is not None:
             request.property = property
 
@@ -818,8 +836,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.DeletePropertyRequest`):
-                The request object.
-                Request message for DeleteProperty
+                The request object. Request message for DeleteProperty
                 RPC.
             name (:class:`str`):
                 Required. The name of the Property to soft-delete.
@@ -829,6 +846,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -853,6 +871,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -896,8 +915,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.UpdatePropertyRequest`):
-                The request object.
-                Request message for UpdateProperty
+                The request object. Request message for UpdateProperty
                 RPC.
             property (:class:`google.analytics.admin_v1alpha.types.Property`):
                 Required. The property to update. The property's
@@ -917,6 +935,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -941,6 +960,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if property is not None:
             request.property = property
         if update_mask is not None:
@@ -986,8 +1006,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.GetUserLinkRequest`):
-                The request object.
-                Request message for GetUserLink RPC.
+                The request object. Request message for GetUserLink RPC.
             name (:class:`str`):
                 Required. Example format:
                 accounts/1234/userLinks/5678
@@ -995,6 +1014,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1020,6 +1040,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1062,9 +1083,9 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.BatchGetUserLinksRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 BatchGetUserLinks RPC.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1078,6 +1099,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = analytics_admin.BatchGetUserLinksRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1119,8 +1141,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.ListUserLinksRequest`):
-                The request object.
-                Request message for ListUserLinks
+                The request object. Request message for ListUserLinks
                 RPC.
             parent (:class:`str`):
                 Required. Example format:
@@ -1129,6 +1150,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1156,6 +1178,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -1216,9 +1239,9 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.AuditUserLinksRequest`):
-                The request object.
-                Request message for AuditUserLinks
+                The request object. Request message for AuditUserLinks
                 RPC.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1235,6 +1258,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = analytics_admin.AuditUserLinksRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1290,8 +1314,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.CreateUserLinkRequest`):
-                The request object.
-                Request message for CreateUserLink
+                The request object. Request message for CreateUserLink
                 RPC.
                 Users can have multiple email addresses associated with
                 their Google account, and one of these email addresses
@@ -1313,6 +1336,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``user_link`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1338,6 +1362,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if user_link is not None:
@@ -1384,9 +1409,9 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.BatchCreateUserLinksRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 BatchCreateUserLinks RPC.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1400,6 +1425,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = analytics_admin.BatchCreateUserLinksRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1441,14 +1467,14 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.UpdateUserLinkRequest`):
-                The request object.
-                Request message for UpdateUserLink
+                The request object. Request message for UpdateUserLink
                 RPC.
             user_link (:class:`google.analytics.admin_v1alpha.types.UserLink`):
                 Required. The user link to update.
                 This corresponds to the ``user_link`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1474,6 +1500,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if user_link is not None:
             request.user_link = user_link
 
@@ -1516,9 +1543,9 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.BatchUpdateUserLinksRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 BatchUpdateUserLinks RPC.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1532,6 +1559,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = analytics_admin.BatchUpdateUserLinksRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1573,8 +1601,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.DeleteUserLinkRequest`):
-                The request object.
-                Request message for DeleteUserLink
+                The request object. Request message for DeleteUserLink
                 RPC.
             name (:class:`str`):
                 Required. Example format:
@@ -1583,6 +1610,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1601,6 +1629,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1640,9 +1669,9 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.BatchDeleteUserLinksRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 BatchDeleteUserLinks RPC.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1650,6 +1679,7 @@ class AnalyticsAdminServiceAsyncClient:
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         request = analytics_admin.BatchDeleteUserLinksRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1688,8 +1718,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.GetWebDataStreamRequest`):
-                The request object.
-                Request message for GetWebDataStream
+                The request object. Request message for GetWebDataStream
                 RPC.
             name (:class:`str`):
                 Required. The name of the web data stream to lookup.
@@ -1700,6 +1729,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1724,6 +1754,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1766,8 +1797,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.DeleteWebDataStreamRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteWebDataStream RPC.
             name (:class:`str`):
                 Required. The name of the web data stream to delete.
@@ -1778,6 +1808,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1796,6 +1827,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1836,8 +1868,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.UpdateWebDataStreamRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateWebDataStream RPC.
             web_data_stream (:class:`google.analytics.admin_v1alpha.types.WebDataStream`):
                 Required. The web stream to update. The ``name`` field
@@ -1856,6 +1887,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1880,6 +1912,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if web_data_stream is not None:
             request.web_data_stream = web_data_stream
         if update_mask is not None:
@@ -1926,8 +1959,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.CreateWebDataStreamRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateWebDataStream RPC.
             parent (:class:`str`):
                 Required. The parent resource where
@@ -1942,6 +1974,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``web_data_stream`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1966,6 +1999,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if web_data_stream is not None:
@@ -2014,8 +2048,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.ListWebDataStreamsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListWebDataStreams RPC.
             parent (:class:`str`):
                 Required. The name of the parent
@@ -2026,6 +2059,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2053,6 +2087,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -2104,8 +2139,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.GetIosAppDataStreamRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetIosAppDataStream RPC.
             name (:class:`str`):
                 Required. The name of the iOS app data stream to lookup.
@@ -2116,6 +2150,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2140,6 +2175,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2182,8 +2218,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.DeleteIosAppDataStreamRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteIosAppDataStream RPC.
             name (:class:`str`):
                 Required. The name of the iOS app data stream to delete.
@@ -2194,6 +2229,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2212,6 +2248,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2252,8 +2289,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.UpdateIosAppDataStreamRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateIosAppDataStream RPC.
             ios_app_data_stream (:class:`google.analytics.admin_v1alpha.types.IosAppDataStream`):
                 Required. The iOS app stream to update. The ``name``
@@ -2273,6 +2309,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2297,6 +2334,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if ios_app_data_stream is not None:
             request.ios_app_data_stream = ios_app_data_stream
         if update_mask is not None:
@@ -2345,8 +2383,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.ListIosAppDataStreamsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListIosAppDataStreams RPC.
             parent (:class:`str`):
                 Required. The name of the parent
@@ -2357,6 +2394,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2384,6 +2422,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -2435,8 +2474,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.GetAndroidAppDataStreamRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetAndroidAppDataStream RPC.
             name (:class:`str`):
                 Required. The name of the android app data stream to
@@ -2447,6 +2485,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2471,6 +2510,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2513,8 +2553,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.DeleteAndroidAppDataStreamRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteAndroidAppDataStream RPC.
             name (:class:`str`):
                 Required. The name of the android app data stream to
@@ -2525,6 +2564,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2543,6 +2583,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2583,8 +2624,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.UpdateAndroidAppDataStreamRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateAndroidAppDataStream RPC.
             android_app_data_stream (:class:`google.analytics.admin_v1alpha.types.AndroidAppDataStream`):
                 Required. The android app stream to update. The ``name``
@@ -2604,6 +2644,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2628,6 +2669,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if android_app_data_stream is not None:
             request.android_app_data_stream = android_app_data_stream
         if update_mask is not None:
@@ -2676,8 +2718,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.ListAndroidAppDataStreamsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListAndroidAppDataStreams RPC.
             parent (:class:`str`):
                 Required. The name of the parent
@@ -2688,6 +2729,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2715,6 +2757,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -2768,8 +2811,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.GetEnhancedMeasurementSettingsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetEnhancedMeasurementSettings RPC.
             name (:class:`str`):
                 Required. The name of the settings to lookup. Format:
@@ -2780,6 +2822,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2806,6 +2849,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2851,8 +2895,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.UpdateEnhancedMeasurementSettingsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateEnhancedMeasurementSettings RPC.
             enhanced_measurement_settings (:class:`google.analytics.admin_v1alpha.types.EnhancedMeasurementSettings`):
                 Required. The settings to update. The ``name`` field is
@@ -2871,6 +2914,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2897,6 +2941,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if enhanced_measurement_settings is not None:
             request.enhanced_measurement_settings = enhanced_measurement_settings
         if update_mask is not None:
@@ -2943,8 +2988,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.CreateFirebaseLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateFirebaseLink RPC
             parent (:class:`str`):
                 Required. Format: properties/{property_id} Example:
@@ -2960,6 +3004,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``firebase_link`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2984,6 +3029,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if firebase_link is not None:
@@ -3029,8 +3075,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.UpdateFirebaseLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateFirebaseLink RPC
             firebase_link (:class:`google.analytics.admin_v1alpha.types.FirebaseLink`):
                 Required. The Firebase link to
@@ -3049,6 +3094,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3073,6 +3119,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if firebase_link is not None:
             request.firebase_link = firebase_link
         if update_mask is not None:
@@ -3117,8 +3164,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.DeleteFirebaseLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteFirebaseLink RPC
             name (:class:`str`):
                 Required. Format:
@@ -3128,6 +3174,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3146,6 +3193,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -3186,8 +3234,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.ListFirebaseLinksRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListFirebaseLinks RPC
             parent (:class:`str`):
                 Required. Format: properties/{property_id} Example:
@@ -3196,6 +3243,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3223,6 +3271,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -3275,8 +3324,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.GetGlobalSiteTagRequest`):
-                The request object.
-                Request message for GetGlobalSiteTag
+                The request object. Request message for GetGlobalSiteTag
                 RPC.
             name (:class:`str`):
                 Required. The name of the site tag to lookup. Note that
@@ -3289,6 +3337,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3314,6 +3363,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -3357,8 +3407,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.CreateGoogleAdsLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateGoogleAdsLink RPC
             parent (:class:`str`):
                 Required. Example format:
@@ -3374,6 +3423,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``google_ads_link`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3398,6 +3448,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if google_ads_link is not None:
@@ -3443,8 +3494,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.UpdateGoogleAdsLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateGoogleAdsLink RPC
             google_ads_link (:class:`google.analytics.admin_v1alpha.types.GoogleAdsLink`):
                 The GoogleAdsLink to update
@@ -3461,6 +3511,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3485,6 +3536,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if google_ads_link is not None:
             request.google_ads_link = google_ads_link
         if update_mask is not None:
@@ -3529,8 +3581,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.DeleteGoogleAdsLinkRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteGoogleAdsLink RPC.
             name (:class:`str`):
                 Required. Example format:
@@ -3539,6 +3590,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3557,6 +3609,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -3596,8 +3649,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.ListGoogleAdsLinksRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListGoogleAdsLinks RPC.
             parent (:class:`str`):
                 Required. Example format:
@@ -3606,6 +3658,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3633,6 +3686,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -3685,8 +3739,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.GetDataSharingSettingsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetDataSharingSettings RPC.
             name (:class:`str`):
                 Required. The name of the settings to
@@ -3698,6 +3751,7 @@ class AnalyticsAdminServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3723,6 +3777,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -3765,9 +3820,9 @@ class AnalyticsAdminServiceAsyncClient:
 
         Args:
             request (:class:`google.analytics.admin_v1alpha.types.SearchChangeHistoryEventsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 SearchChangeHistoryEvents RPC.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3784,6 +3839,7 @@ class AnalyticsAdminServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = analytics_admin.SearchChangeHistoryEventsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -3821,6 +3877,8 @@ class AnalyticsAdminServiceAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

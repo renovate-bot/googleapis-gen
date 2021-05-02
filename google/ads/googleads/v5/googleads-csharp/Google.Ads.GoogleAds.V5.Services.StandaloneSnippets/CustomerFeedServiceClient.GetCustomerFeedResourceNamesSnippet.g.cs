@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedCustomerFeedServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomerFeed</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCustomerFeedResourceNames()
         {
-            // Snippet: GetCustomerFeed(CustomerFeedName, CallSettings)
             // Create client
             CustomerFeedServiceClient customerFeedServiceClient = CustomerFeedServiceClient.Create();
             // Initialize request argument(s)
             CustomerFeedName resourceName = CustomerFeedName.FromCustomerCustomerFeed("[CUSTOMER]", "[CUSTOMER_FEED]");
             // Make the request
             CustomerFeed response = customerFeedServiceClient.GetCustomerFeed(resourceName);
-            // End snippet
         }
     }
 }

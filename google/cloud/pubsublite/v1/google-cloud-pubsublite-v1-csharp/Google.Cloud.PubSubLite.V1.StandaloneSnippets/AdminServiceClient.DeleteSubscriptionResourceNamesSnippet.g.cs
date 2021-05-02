@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.PubSubLite.V1.Snippets
 {
+    using Google.Cloud.PubSubLite.V1;
+
     public sealed partial class GeneratedAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteSubscription</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteSubscriptionResourceNames()
         {
-            // Snippet: DeleteSubscription(SubscriptionName, CallSettings)
             // Create client
             AdminServiceClient adminServiceClient = AdminServiceClient.Create();
             // Initialize request argument(s)
             SubscriptionName name = SubscriptionName.FromProjectLocationSubscription("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
             // Make the request
             adminServiceClient.DeleteSubscription(name);
-            // End snippet
         }
     }
 }

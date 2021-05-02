@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,7 +39,8 @@ from google.cloud.firestore_admin_v1.types.operation import IndexOperationMetada
 from google.cloud.firestore_admin_v1.types.operation import OperationState
 from google.cloud.firestore_admin_v1.types.operation import Progress
 
-__all__ = ('CreateIndexRequest',
+__all__ = (
+    'CreateIndexRequest',
     'DeleteIndexRequest',
     'ExportDocumentsMetadata',
     'ExportDocumentsRequest',

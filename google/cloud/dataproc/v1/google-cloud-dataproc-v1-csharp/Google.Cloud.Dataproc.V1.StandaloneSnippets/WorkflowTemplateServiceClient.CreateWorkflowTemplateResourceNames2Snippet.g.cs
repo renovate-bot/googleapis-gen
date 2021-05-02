@@ -17,13 +17,17 @@
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dataproc.V1;
 
     public sealed partial class GeneratedWorkflowTemplateServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateWorkflowTemplate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateWorkflowTemplateResourceNames2()
         {
-            // Snippet: CreateWorkflowTemplate(LocationName, WorkflowTemplate, CallSettings)
             // Create client
             WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Dataproc.V1.Snippets
             WorkflowTemplate template = new WorkflowTemplate();
             // Make the request
             WorkflowTemplate response = workflowTemplateServiceClient.CreateWorkflowTemplate(parent, template);
-            // End snippet
         }
     }
 }

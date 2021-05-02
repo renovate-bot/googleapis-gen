@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Enums;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedAdGroupCriterionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateAdGroupCriteria</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateAdGroupCriteriaRequestObject()
         {
-            // Snippet: MutateAdGroupCriteria(MutateAdGroupCriteriaRequest, CallSettings)
             // Create client
             AdGroupCriterionServiceClient adGroupCriterionServiceClient = AdGroupCriterionServiceClient.Create();
             // Initialize request argument(s)
@@ -40,7 +44,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateAdGroupCriteriaResponse response = adGroupCriterionServiceClient.MutateAdGroupCriteria(request);
-            // End snippet
         }
     }
 }

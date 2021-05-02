@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
+
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAnnotationSpecSet</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAnnotationSpecSetResourceNames()
         {
-            // Snippet: GetAnnotationSpecSet(AnnotationSpecSetName, CallSettings)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.Create();
             // Initialize request argument(s)
             AnnotationSpecSetName name = AnnotationSpecSetName.FromProjectAnnotationSpecSet("[PROJECT]", "[ANNOTATION_SPEC_SET]");
             // Make the request
             AnnotationSpecSet response = dataLabelingServiceClient.GetAnnotationSpecSet(name);
-            // End snippet
         }
     }
 }

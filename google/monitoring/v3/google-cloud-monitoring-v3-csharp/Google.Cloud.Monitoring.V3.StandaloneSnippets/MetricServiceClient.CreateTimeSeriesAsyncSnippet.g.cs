@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMetricServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateTimeSeriesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateTimeSeriesAsync()
         {
-            // Snippet: CreateTimeSeriesAsync(string, IEnumerable<TimeSeries>, CallSettings)
-            // Additional: CreateTimeSeriesAsync(string, IEnumerable<TimeSeries>, CancellationToken)
             // Create client
             MetricServiceClient metricServiceClient = await MetricServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             IEnumerable<TimeSeries> timeSeries = new TimeSeries[] { new TimeSeries(), };
             // Make the request
             await metricServiceClient.CreateTimeSeriesAsync(name, timeSeries);
-            // End snippet
         }
     }
 }

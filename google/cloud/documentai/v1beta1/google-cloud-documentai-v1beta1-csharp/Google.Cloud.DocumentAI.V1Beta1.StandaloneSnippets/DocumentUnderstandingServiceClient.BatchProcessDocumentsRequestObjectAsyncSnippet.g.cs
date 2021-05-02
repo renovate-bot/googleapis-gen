@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.DocumentAI.V1Beta1.Snippets
 {
+    using Google.Cloud.DocumentAI.V1Beta1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDocumentUnderstandingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchProcessDocumentsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchProcessDocumentsRequestObjectAsync()
         {
-            // Snippet: BatchProcessDocumentsAsync(BatchProcessDocumentsRequest, CallSettings)
-            // Additional: BatchProcessDocumentsAsync(BatchProcessDocumentsRequest, CancellationToken)
             // Create client
             DocumentUnderstandingServiceClient documentUnderstandingServiceClient = await DocumentUnderstandingServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -55,7 +58,6 @@ namespace Google.Cloud.DocumentAI.V1Beta1.Snippets
                 // If it has completed, then access the result
                 BatchProcessDocumentsResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

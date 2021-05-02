@@ -17,14 +17,18 @@
 namespace Google.Cloud.Dlp.V2.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Dlp.V2;
     using System;
 
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListInspectTemplates</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListInspectTemplates()
         {
-            // Snippet: ListInspectTemplates(string, string, int?, CallSettings)
             // Create client
             DlpServiceClient dlpServiceClient = DlpServiceClient.Create();
             // Initialize request argument(s)
@@ -63,7 +67,6 @@ namespace Google.Cloud.Dlp.V2.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

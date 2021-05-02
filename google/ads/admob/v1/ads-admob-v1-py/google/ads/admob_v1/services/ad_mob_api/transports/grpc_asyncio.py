@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,21 +14,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.ads.admob_v1.types import admob_api
 from google.ads.admob_v1.types import admob_resources
+
 from .base import AdMobApiTransport, DEFAULT_CLIENT_INFO
 from .grpc import AdMobApiGrpcTransport
 
@@ -78,15 +80,13 @@ class AdMobApiGrpcAsyncIOTransport(AdMobApiTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -106,8 +106,7 @@ class AdMobApiGrpcAsyncIOTransport(AdMobApiTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -165,6 +164,7 @@ class AdMobApiGrpcAsyncIOTransport(AdMobApiTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -227,9 +227,7 @@ class AdMobApiGrpcAsyncIOTransport(AdMobApiTransport):
     def get_publisher_account(self) -> Callable[
             [admob_api.GetPublisherAccountRequest],
             Awaitable[admob_resources.PublisherAccount]]:
-        r"""Return a callable for the
-        get publisher account
-          method over gRPC.
+        r"""Return a callable for the get publisher account method over gRPC.
 
         Gets information about the specified AdMob publisher
         account.
@@ -256,9 +254,7 @@ class AdMobApiGrpcAsyncIOTransport(AdMobApiTransport):
     def list_publisher_accounts(self) -> Callable[
             [admob_api.ListPublisherAccountsRequest],
             Awaitable[admob_api.ListPublisherAccountsResponse]]:
-        r"""Return a callable for the
-        list publisher accounts
-          method over gRPC.
+        r"""Return a callable for the list publisher accounts method over gRPC.
 
         Lists the AdMob publisher account accessible with the
         client credential. Currently, all credentials have
@@ -286,9 +282,7 @@ class AdMobApiGrpcAsyncIOTransport(AdMobApiTransport):
     def generate_network_report(self) -> Callable[
             [admob_api.GenerateNetworkReportRequest],
             Awaitable[admob_api.GenerateNetworkReportResponse]]:
-        r"""Return a callable for the
-        generate network report
-          method over gRPC.
+        r"""Return a callable for the generate network report method over gRPC.
 
         Generates an AdMob Network report based on the
         provided report specification.
@@ -315,9 +309,7 @@ class AdMobApiGrpcAsyncIOTransport(AdMobApiTransport):
     def generate_mediation_report(self) -> Callable[
             [admob_api.GenerateMediationReportRequest],
             Awaitable[admob_api.GenerateMediationReportResponse]]:
-        r"""Return a callable for the
-        generate mediation report
-          method over gRPC.
+        r"""Return a callable for the generate mediation report method over gRPC.
 
         Generates an AdMob Mediation report based on the
         provided report specification.

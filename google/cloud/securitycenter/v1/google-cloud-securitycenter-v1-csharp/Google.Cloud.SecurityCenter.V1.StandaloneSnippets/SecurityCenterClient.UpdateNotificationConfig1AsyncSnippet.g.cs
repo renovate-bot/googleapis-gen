@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.SecurityCenter.V1.Snippets
 {
+    using Google.Cloud.SecurityCenter.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateNotificationConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateNotificationConfig1Async()
         {
-            // Snippet: UpdateNotificationConfigAsync(NotificationConfig, CallSettings)
-            // Additional: UpdateNotificationConfigAsync(NotificationConfig, CancellationToken)
             // Create client
             SecurityCenterClient securityCenterClient = await SecurityCenterClient.CreateAsync();
             // Initialize request argument(s)
             NotificationConfig notificationConfig = new NotificationConfig();
             // Make the request
             NotificationConfig response = await securityCenterClient.UpdateNotificationConfigAsync(notificationConfig);
-            // End snippet
         }
     }
 }

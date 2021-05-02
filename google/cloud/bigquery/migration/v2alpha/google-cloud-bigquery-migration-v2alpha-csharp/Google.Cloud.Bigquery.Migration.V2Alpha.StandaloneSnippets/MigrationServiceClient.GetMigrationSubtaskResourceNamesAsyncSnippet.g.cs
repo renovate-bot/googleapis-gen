@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
 {
+    using Google.Cloud.Bigquery.Migration.V2Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMigrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMigrationSubtaskAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetMigrationSubtaskResourceNamesAsync()
         {
-            // Snippet: GetMigrationSubtaskAsync(MigrationSubtaskName, CallSettings)
-            // Additional: GetMigrationSubtaskAsync(MigrationSubtaskName, CancellationToken)
             // Create client
             MigrationServiceClient migrationServiceClient = await MigrationServiceClient.CreateAsync();
             // Initialize request argument(s)
             MigrationSubtaskName name = MigrationSubtaskName.FromProjectLocationWorkflowSubtask("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[SUBTASK]");
             // Make the request
             MigrationSubtask response = await migrationServiceClient.GetMigrationSubtaskAsync(name);
-            // End snippet
         }
     }
 }

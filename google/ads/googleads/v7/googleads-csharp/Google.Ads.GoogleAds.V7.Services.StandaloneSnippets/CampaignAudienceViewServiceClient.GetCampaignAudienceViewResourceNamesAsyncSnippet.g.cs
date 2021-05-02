@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignAudienceViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignAudienceViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCampaignAudienceViewResourceNamesAsync()
         {
-            // Snippet: GetCampaignAudienceViewAsync(CampaignAudienceViewName, CallSettings)
-            // Additional: GetCampaignAudienceViewAsync(CampaignAudienceViewName, CancellationToken)
             // Create client
             CampaignAudienceViewServiceClient campaignAudienceViewServiceClient = await CampaignAudienceViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             CampaignAudienceViewName resourceName = CampaignAudienceViewName.FromCustomerCampaignCriterion("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[CRITERION_ID]");
             // Make the request
             CampaignAudienceView response = await campaignAudienceViewServiceClient.GetCampaignAudienceViewAsync(resourceName);
-            // End snippet
         }
     }
 }

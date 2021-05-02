@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -34,6 +36,7 @@ from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import TagKeysTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import TagKeysGrpcAsyncIOTransport
 from .client import TagKeysClient
@@ -49,14 +52,19 @@ class TagKeysAsyncClient:
 
     tag_key_path = staticmethod(TagKeysClient.tag_key_path)
     parse_tag_key_path = staticmethod(TagKeysClient.parse_tag_key_path)
+
     common_billing_account_path = staticmethod(TagKeysClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(TagKeysClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(TagKeysClient.common_folder_path)
     parse_common_folder_path = staticmethod(TagKeysClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(TagKeysClient.common_organization_path)
     parse_common_organization_path = staticmethod(TagKeysClient.parse_common_organization_path)
+
     common_project_path = staticmethod(TagKeysClient.common_project_path)
     parse_common_project_path = staticmethod(TagKeysClient.parse_common_project_path)
+
     common_location_path = staticmethod(TagKeysClient.common_location_path)
     parse_common_location_path = staticmethod(TagKeysClient.parse_common_location_path)
 
@@ -141,6 +149,7 @@ class TagKeysAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = TagKeysClient(
             credentials=credentials,
             transport=transport,
@@ -161,8 +170,7 @@ class TagKeysAsyncClient:
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.ListTagKeysRequest`):
-                The request object.
-                The request message for listing all
+                The request object. The request message for listing all
                 TagKeys under a parent resource.
             parent (:class:`str`):
                 Required. The resource name of the new TagKey's parent.
@@ -172,6 +180,7 @@ class TagKeysAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -198,6 +207,7 @@ class TagKeysAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -206,7 +216,10 @@ class TagKeysAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_tag_keys,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -249,8 +262,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.GetTagKeyRequest`):
-                The request object.
-                The request message for getting a
+                The request object. The request message for getting a
                 TagKey.
             name (:class:`str`):
                 Required. A resource name in the format
@@ -259,6 +271,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -283,6 +296,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -291,7 +305,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_tag_key,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -335,8 +352,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.CreateTagKeyRequest`):
-                The request object.
-                The request message for creating a
+                The request object. The request message for creating a
                 TagKey.
             tag_key (:class:`google.cloud.resourcemanager_v3.types.TagKey`):
                 Required. The TagKey to be created. Only fields
@@ -346,6 +362,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``tag_key`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -373,6 +390,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if tag_key is not None:
             request.tag_key = tag_key
 
@@ -416,8 +434,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.UpdateTagKeyRequest`):
-                The request object.
-                The request message for updating a
+                The request object. The request message for updating a
                 TagKey.
             tag_key (:class:`google.cloud.resourcemanager_v3.types.TagKey`):
                 Required. The new definition of the TagKey. Only the
@@ -438,6 +455,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -465,6 +483,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if tag_key is not None:
             request.tag_key = tag_key
         if update_mask is not None:
@@ -518,8 +537,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.resourcemanager_v3.types.DeleteTagKeyRequest`):
-                The request object.
-                The request message for deleting a
+                The request object. The request message for deleting a
                 TagKey.
             name (:class:`str`):
                 Required. The resource name of a TagKey to be deleted in
@@ -530,6 +548,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -557,6 +576,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -612,8 +632,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -624,6 +643,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -697,10 +717,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.GetIamPolicyRequest(**request)
+
         elif not request:
             request = iam_policy.GetIamPolicyRequest(resource=resource, )
 
@@ -709,7 +730,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_iam_policy,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -753,8 +777,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -765,6 +788,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -838,10 +862,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.SetIamPolicyRequest(**request)
+
         elif not request:
             request = iam_policy.SetIamPolicyRequest(resource=resource, )
 
@@ -889,8 +914,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -910,6 +934,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -928,10 +953,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.TestIamPermissionsRequest(**request)
+
         elif not request:
             request = iam_policy.TestIamPermissionsRequest(resource=resource, permissions=permissions, )
 
@@ -961,6 +987,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

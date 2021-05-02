@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,6 +36,7 @@ from google.cloud.billing.budgets_v1.services.budget_service import pagers
 from google.cloud.billing.budgets_v1.types import budget_model
 from google.cloud.billing.budgets_v1.types import budget_service
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import BudgetServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import BudgetServiceGrpcTransport
 from .transports.grpc_asyncio import BudgetServiceGrpcAsyncIOTransport
@@ -342,8 +345,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1.types.CreateBudgetRequest):
-                The request object.
-                Request for CreateBudget
+                The request object. Request for CreateBudget
             parent (str):
                 Required. The name of the billing account to create the
                 budget in. Values are of the form
@@ -357,6 +359,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
                 This corresponds to the ``budget`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -390,8 +393,10 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, budget_service.CreateBudgetRequest):
             request = budget_service.CreateBudgetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if budget is not None:
@@ -437,8 +442,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1.types.UpdateBudgetRequest):
-                The request object.
-                Request for UpdateBudget
+                The request object. Request for UpdateBudget
             budget (google.cloud.billing.budgets_v1.types.Budget):
                 Required. The updated budget object.
                 The budget to update is specified by the
@@ -458,6 +462,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -491,8 +496,10 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, budget_service.UpdateBudgetRequest):
             request = budget_service.UpdateBudgetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if budget is not None:
                 request.budget = budget
             if update_mask is not None:
@@ -538,8 +545,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1.types.GetBudgetRequest):
-                The request object.
-                Request for GetBudget
+                The request object. Request for GetBudget
             name (str):
                 Required. Name of budget to get. Values are of the form
                 ``billingAccounts/{billingAccountId}/budgets/{budgetId}``.
@@ -547,6 +553,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -580,8 +587,10 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, budget_service.GetBudgetRequest):
             request = budget_service.GetBudgetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -625,8 +634,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1.types.ListBudgetsRequest):
-                The request object.
-                Request for ListBudgets
+                The request object. Request for ListBudgets
             parent (str):
                 Required. Name of billing account to list budgets under.
                 Values are of the form
@@ -635,6 +643,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -663,8 +672,10 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, budget_service.ListBudgetsRequest):
             request = budget_service.ListBudgetsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -713,8 +724,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1.types.DeleteBudgetRequest):
-                The request object.
-                Request for DeleteBudget
+                The request object. Request for DeleteBudget
             name (str):
                 Required. Name of the budget to delete. Values are of
                 the form
@@ -723,6 +733,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -743,8 +754,10 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, budget_service.DeleteBudgetRequest):
             request = budget_service.DeleteBudgetRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -767,6 +780,8 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

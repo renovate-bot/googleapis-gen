@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
+
     public sealed partial class GeneratedDocumentsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDocument</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDocumentRequestObject()
         {
-            // Snippet: GetDocument(GetDocumentRequest, CallSettings)
             // Create client
             DocumentsClient documentsClient = DocumentsClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             };
             // Make the request
             Document response = documentsClient.GetDocument(request);
-            // End snippet
         }
     }
 }

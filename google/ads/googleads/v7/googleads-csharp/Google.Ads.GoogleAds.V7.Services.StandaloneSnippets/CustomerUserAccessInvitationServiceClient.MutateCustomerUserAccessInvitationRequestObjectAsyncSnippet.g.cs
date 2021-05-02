@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomerUserAccessInvitationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCustomerUserAccessInvitationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateCustomerUserAccessInvitationRequestObjectAsync()
         {
-            // Snippet: MutateCustomerUserAccessInvitationAsync(MutateCustomerUserAccessInvitationRequest, CallSettings)
-            // Additional: MutateCustomerUserAccessInvitationAsync(MutateCustomerUserAccessInvitationRequest, CancellationToken)
             // Create client
             CustomerUserAccessInvitationServiceClient customerUserAccessInvitationServiceClient = await CustomerUserAccessInvitationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateCustomerUserAccessInvitationResponse response = await customerUserAccessInvitationServiceClient.MutateCustomerUserAccessInvitationAsync(request);
-            // End snippet
         }
     }
 }

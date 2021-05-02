@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
+    using Google.Cloud.Dataproc.V1;
+
     public sealed partial class GeneratedAutoscalingPolicyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateAutoscalingPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateAutoscalingPolicyRequestObject()
         {
-            // Snippet: UpdateAutoscalingPolicy(UpdateAutoscalingPolicyRequest, CallSettings)
             // Create client
             AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = AutoscalingPolicyServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Dataproc.V1.Snippets
             };
             // Make the request
             AutoscalingPolicy response = autoscalingPolicyServiceClient.UpdateAutoscalingPolicy(request);
-            // End snippet
         }
     }
 }

@@ -23,10 +23,12 @@ namespace Google.Cloud.Tasks.V2Beta2.Snippets
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for LeaseTasksAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task LeaseTasksRequestObjectAsync()
         {
-            // Snippet: LeaseTasksAsync(LeaseTasksRequest, CallSettings)
-            // Additional: LeaseTasksAsync(LeaseTasksRequest, CancellationToken)
             // Create client
             CloudTasksClient cloudTasksClient = await CloudTasksClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +42,6 @@ namespace Google.Cloud.Tasks.V2Beta2.Snippets
             };
             // Make the request
             LeaseTasksResponse response = await cloudTasksClient.LeaseTasksAsync(request);
-            // End snippet
         }
     }
 }

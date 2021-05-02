@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.ServiceManagement.V1.Snippets
 {
+    using Google.Cloud.ServiceManagement.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedServiceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateConfigReport</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GenerateConfigReport()
         {
-            // Snippet: GenerateConfigReport(Any, Any, CallSettings)
             // Create client
             ServiceManagerClient serviceManagerClient = ServiceManagerClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.ServiceManagement.V1.Snippets
             Any oldConfig = new Any();
             // Make the request
             GenerateConfigReportResponse response = serviceManagerClient.GenerateConfigReport(newConfig, oldConfig);
-            // End snippet
         }
     }
 }

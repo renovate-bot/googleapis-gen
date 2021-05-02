@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Security.PrivateCA.V1.Snippets
 {
+    using Google.Cloud.Security.PrivateCA.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
     public sealed partial class GeneratedCertificateAuthorityServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteCertificateTemplateAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteCertificateTemplateRequestObjectAsync()
         {
-            // Snippet: DeleteCertificateTemplateAsync(DeleteCertificateTemplateRequest, CallSettings)
-            // Additional: DeleteCertificateTemplateAsync(DeleteCertificateTemplateRequest, CancellationToken)
             // Create client
             CertificateAuthorityServiceClient certificateAuthorityServiceClient = await CertificateAuthorityServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -53,7 +56,6 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

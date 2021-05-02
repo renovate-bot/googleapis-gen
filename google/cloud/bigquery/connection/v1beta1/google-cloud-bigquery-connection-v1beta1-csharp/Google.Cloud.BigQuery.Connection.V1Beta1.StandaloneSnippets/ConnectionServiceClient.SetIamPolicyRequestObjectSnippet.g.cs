@@ -17,14 +17,18 @@
 namespace Google.Cloud.BigQuery.Connection.V1Beta1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.BigQuery.Connection.V1Beta1;
     using Google.Cloud.Iam.V1;
 
     public sealed partial class GeneratedConnectionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for SetIamPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SetIamPolicyRequestObject()
         {
-            // Snippet: SetIamPolicy(SetIamPolicyRequest, CallSettings)
             // Create client
             ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.BigQuery.Connection.V1Beta1.Snippets
             };
             // Make the request
             Policy response = connectionServiceClient.SetIamPolicy(request);
-            // End snippet
         }
     }
 }

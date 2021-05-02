@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 
@@ -29,6 +32,7 @@ __protobuf__ = proto.module(
 
 class ClickLocation(proto.Message):
     r"""Location criteria associated with a click.
+
     Attributes:
         city (google.protobuf.wrappers_pb2.StringValue):
             The city location criterion associated with
@@ -47,29 +51,19 @@ class ClickLocation(proto.Message):
             the impression.
     """
 
-    city = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    city = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
-    country = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    country = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.StringValue,
     )
-    metro = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    metro = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.StringValue,
     )
-    most_specific = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    most_specific = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.StringValue,
     )
-    region = proto.Field(
-        proto.MESSAGE,
-        number=5,
+    region = proto.Field(proto.MESSAGE, number=5,
         message=wrappers.StringValue,
     )
 

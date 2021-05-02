@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,15 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -29,6 +30,7 @@ from grpc.experimental import aio  # type: ignore
 from google.cloud.resourcemanager_v3.types import organizations
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
+
 from .base import OrganizationsTransport, DEFAULT_CLIENT_INFO
 from .grpc import OrganizationsGrpcTransport
 
@@ -78,15 +80,13 @@ class OrganizationsGrpcAsyncIOTransport(OrganizationsTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -106,8 +106,7 @@ class OrganizationsGrpcAsyncIOTransport(OrganizationsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -165,6 +164,7 @@ class OrganizationsGrpcAsyncIOTransport(OrganizationsTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -227,9 +227,7 @@ class OrganizationsGrpcAsyncIOTransport(OrganizationsTransport):
     def get_organization(self) -> Callable[
             [organizations.GetOrganizationRequest],
             Awaitable[organizations.Organization]]:
-        r"""Return a callable for the
-        get organization
-          method over gRPC.
+        r"""Return a callable for the get organization method over gRPC.
 
         Fetches an organization resource identified by the
         specified resource name.
@@ -256,9 +254,7 @@ class OrganizationsGrpcAsyncIOTransport(OrganizationsTransport):
     def search_organizations(self) -> Callable[
             [organizations.SearchOrganizationsRequest],
             Awaitable[organizations.SearchOrganizationsResponse]]:
-        r"""Return a callable for the
-        search organizations
-          method over gRPC.
+        r"""Return a callable for the search organizations method over gRPC.
 
         Searches organization resources that are visible to the user and
         satisfy the specified filter. This method returns organizations
@@ -291,9 +287,7 @@ class OrganizationsGrpcAsyncIOTransport(OrganizationsTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for an organization resource. The
         policy may be empty if no such policy or resource exists. The
@@ -326,9 +320,7 @@ class OrganizationsGrpcAsyncIOTransport(OrganizationsTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[giv_policy.Policy]]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on an organization resource.
         Replaces any existing policy. The ``resource`` field should be
@@ -361,9 +353,7 @@ class OrganizationsGrpcAsyncIOTransport(OrganizationsTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns the permissions that a caller has on the specified
         organization. The ``resource`` field should be the

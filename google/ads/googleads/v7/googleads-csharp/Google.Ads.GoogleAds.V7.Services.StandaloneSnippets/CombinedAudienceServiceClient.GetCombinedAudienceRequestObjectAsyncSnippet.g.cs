@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCombinedAudienceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCombinedAudienceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCombinedAudienceRequestObjectAsync()
         {
-            // Snippet: GetCombinedAudienceAsync(GetCombinedAudienceRequest, CallSettings)
-            // Additional: GetCombinedAudienceAsync(GetCombinedAudienceRequest, CancellationToken)
             // Create client
             CombinedAudienceServiceClient combinedAudienceServiceClient = await CombinedAudienceServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             CombinedAudience response = await combinedAudienceServiceClient.GetCombinedAudienceAsync(request);
-            // End snippet
         }
     }
 }

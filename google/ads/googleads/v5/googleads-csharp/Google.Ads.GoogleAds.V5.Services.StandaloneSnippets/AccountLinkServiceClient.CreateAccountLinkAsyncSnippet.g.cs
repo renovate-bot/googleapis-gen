@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAccountLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateAccountLinkAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateAccountLinkAsync()
         {
-            // Snippet: CreateAccountLinkAsync(string, AccountLink, CallSettings)
-            // Additional: CreateAccountLinkAsync(string, AccountLink, CancellationToken)
             // Create client
             AccountLinkServiceClient accountLinkServiceClient = await AccountLinkServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             AccountLink accountLink = new AccountLink();
             // Make the request
             CreateAccountLinkResponse response = await accountLinkServiceClient.CreateAccountLinkAsync(customerId, accountLink);
-            // End snippet
         }
     }
 }

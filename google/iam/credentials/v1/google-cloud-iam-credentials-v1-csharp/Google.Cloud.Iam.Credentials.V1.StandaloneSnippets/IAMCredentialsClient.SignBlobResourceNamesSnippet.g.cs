@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Iam.Credentials.V1.Snippets
 {
+    using Google.Cloud.Iam.Credentials.V1;
     using Google.Protobuf;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedIAMCredentialsClientStandaloneSnippets
     {
         /// <summary>Snippet for SignBlob</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SignBlobResourceNames()
         {
-            // Snippet: SignBlob(ServiceAccountName, IEnumerable<string>, ByteString, CallSettings)
             // Create client
             IAMCredentialsClient iAMCredentialsClient = IAMCredentialsClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Cloud.Iam.Credentials.V1.Snippets
             ByteString payload = ByteString.Empty;
             // Make the request
             SignBlobResponse response = iAMCredentialsClient.SignBlob(name, delegates, payload);
-            // End snippet
         }
     }
 }

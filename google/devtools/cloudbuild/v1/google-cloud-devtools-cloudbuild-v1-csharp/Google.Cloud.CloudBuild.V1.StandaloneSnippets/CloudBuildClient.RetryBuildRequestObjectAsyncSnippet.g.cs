@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.CloudBuild.V1.Snippets
 {
+    using Google.Cloud.CloudBuild.V1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudBuildClientStandaloneSnippets
     {
         /// <summary>Snippet for RetryBuildAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task RetryBuildRequestObjectAsync()
         {
-            // Snippet: RetryBuildAsync(RetryBuildRequest, CallSettings)
-            // Additional: RetryBuildAsync(RetryBuildRequest, CancellationToken)
             // Create client
             CloudBuildClient cloudBuildClient = await CloudBuildClient.CreateAsync();
             // Initialize request argument(s)
@@ -53,7 +56,6 @@ namespace Google.Cloud.CloudBuild.V1.Snippets
                 // If it has completed, then access the result
                 Build retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

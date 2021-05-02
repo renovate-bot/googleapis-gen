@@ -17,15 +17,18 @@
 namespace Google.Cloud.Logging.V2.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Logging.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConfigServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateBucketAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateBucketRequestObjectAsync()
         {
-            // Snippet: CreateBucketAsync(CreateBucketRequest, CallSettings)
-            // Additional: CreateBucketAsync(CreateBucketRequest, CancellationToken)
             // Create client
             ConfigServiceV2Client configServiceV2Client = await ConfigServiceV2Client.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             };
             // Make the request
             LogBucket response = await configServiceV2Client.CreateBucketAsync(request);
-            // End snippet
         }
     }
 }

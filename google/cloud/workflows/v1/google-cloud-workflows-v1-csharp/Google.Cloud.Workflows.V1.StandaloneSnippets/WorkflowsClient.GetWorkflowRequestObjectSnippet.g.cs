@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Workflows.V1.Snippets
 {
+    using Google.Cloud.Workflows.V1;
+
     public sealed partial class GeneratedWorkflowsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetWorkflow</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetWorkflowRequestObject()
         {
-            // Snippet: GetWorkflow(GetWorkflowRequest, CallSettings)
             // Create client
             WorkflowsClient workflowsClient = WorkflowsClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Workflows.V1.Snippets
             };
             // Make the request
             Workflow response = workflowsClient.GetWorkflow(request);
-            // End snippet
         }
     }
 }

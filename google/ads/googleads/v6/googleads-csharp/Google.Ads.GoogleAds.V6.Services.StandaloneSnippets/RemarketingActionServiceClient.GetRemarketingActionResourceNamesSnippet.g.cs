@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedRemarketingActionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetRemarketingAction</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetRemarketingActionResourceNames()
         {
-            // Snippet: GetRemarketingAction(RemarketingActionName, CallSettings)
             // Create client
             RemarketingActionServiceClient remarketingActionServiceClient = RemarketingActionServiceClient.Create();
             // Initialize request argument(s)
             RemarketingActionName resourceName = RemarketingActionName.FromCustomerRemarketingAction("[CUSTOMER_ID]", "[REMARKETING_ACTION_ID]");
             // Make the request
             RemarketingAction response = remarketingActionServiceClient.GetRemarketingAction(resourceName);
-            // End snippet
         }
     }
 }

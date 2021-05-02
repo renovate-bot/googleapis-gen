@@ -17,22 +17,24 @@
 namespace Google.Cloud.OsLogin.V1Beta.Snippets
 {
     using Google.Cloud.OsLogin.Common;
+    using Google.Cloud.OsLogin.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOsLoginServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetLoginProfileAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetLoginProfileResourceNamesAsync()
         {
-            // Snippet: GetLoginProfileAsync(UserName, CallSettings)
-            // Additional: GetLoginProfileAsync(UserName, CancellationToken)
             // Create client
             OsLoginServiceClient osLoginServiceClient = await OsLoginServiceClient.CreateAsync();
             // Initialize request argument(s)
             UserName name = UserName.FromUser("[USER]");
             // Make the request
             LoginProfile response = await osLoginServiceClient.GetLoginProfileAsync(name);
-            // End snippet
         }
     }
 }

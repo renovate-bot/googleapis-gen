@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedAdGroupAdAssetViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupAdAssetView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAdGroupAdAssetViewRequestObject()
         {
-            // Snippet: GetAdGroupAdAssetView(GetAdGroupAdAssetViewRequest, CallSettings)
             // Create client
             AdGroupAdAssetViewServiceClient adGroupAdAssetViewServiceClient = AdGroupAdAssetViewServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             AdGroupAdAssetView response = adGroupAdAssetViewServiceClient.GetAdGroupAdAssetView(request);
-            // End snippet
         }
     }
 }

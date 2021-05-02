@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -29,6 +31,7 @@ __protobuf__ = proto.module(
 
 class CustomerLicense(proto.Message):
     r"""
+
     Attributes:
         kind (str):
             The type of API resource. This is always
@@ -50,9 +53,9 @@ class CustomerLicense(proto.Message):
         customer_id (str):
             The domain name of the customer.
     """
-
     class Editions(proto.Message):
         r"""
+
         Attributes:
             edition_id (str):
                 (Deprecated)
@@ -62,48 +65,30 @@ class CustomerLicense(proto.Message):
                 (Deprecated)
         """
 
-        edition_id = proto.Field(
-            proto.STRING,
-            number=405,
-        )
-        seat_count = proto.Field(
-            proto.INT32,
-            number=406,
-        )
-        assigned_seats = proto.Field(
-            proto.INT32,
-            number=409,
-        )
+        edition_id = proto.Field(proto.STRING, number=405)
 
-    kind = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    state = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    application_id = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    editions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+        seat_count = proto.Field(proto.INT32, number=406)
+
+        assigned_seats = proto.Field(proto.INT32, number=409)
+
+    kind = proto.Field(proto.STRING, number=1)
+
+    state = proto.Field(proto.STRING, number=2)
+
+    application_id = proto.Field(proto.STRING, number=3)
+
+    editions = proto.RepeatedField(proto.MESSAGE, number=4,
         message=Editions,
     )
-    id = proto.Field(
-        proto.STRING,
-        number=101,
-    )
-    customer_id = proto.Field(
-        proto.STRING,
-        number=102,
-    )
+
+    id = proto.Field(proto.STRING, number=101)
+
+    customer_id = proto.Field(proto.STRING, number=102)
 
 
 class LicenseNotification(proto.Message):
     r"""
+
     Attributes:
         id (str):
             The ID of the license notification.
@@ -128,9 +113,9 @@ class LicenseNotification(proto.Message):
         deletes (Sequence[ccc.hosted.marketplace_v2.types.LicenseNotification.Deletes]):
             The list of deletion notifications.
     """
-
     class Deletes(proto.Message):
         r"""
+
         Attributes:
             kind (str):
 
@@ -138,17 +123,13 @@ class LicenseNotification(proto.Message):
                 (Deprecated)
         """
 
-        kind = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        edition_id = proto.Field(
-            proto.STRING,
-            number=901,
-        )
+        kind = proto.Field(proto.STRING, number=1)
+
+        edition_id = proto.Field(proto.STRING, number=901)
 
     class Expiries(proto.Message):
         r"""
+
         Attributes:
             kind (str):
 
@@ -156,17 +137,13 @@ class LicenseNotification(proto.Message):
                 (Deprecated)
         """
 
-        kind = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        edition_id = proto.Field(
-            proto.STRING,
-            number=701,
-        )
+        kind = proto.Field(proto.STRING, number=1)
+
+        edition_id = proto.Field(proto.STRING, number=701)
 
     class Provisions(proto.Message):
         r"""
+
         Attributes:
             kind (str):
 
@@ -176,21 +153,15 @@ class LicenseNotification(proto.Message):
                 The number of seats that were provisioned.
         """
 
-        kind = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        edition_id = proto.Field(
-            proto.STRING,
-            number=601,
-        )
-        seat_count = proto.Field(
-            proto.INT64,
-            number=602,
-        )
+        kind = proto.Field(proto.STRING, number=1)
+
+        edition_id = proto.Field(proto.STRING, number=601)
+
+        seat_count = proto.Field(proto.INT64, number=602)
 
     class Reassignments(proto.Message):
         r"""
+
         Attributes:
             kind (str):
 
@@ -202,67 +173,44 @@ class LicenseNotification(proto.Message):
                 (Deprecated)
         """
 
-        kind = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        user_id = proto.Field(
-            proto.STRING,
-            number=801,
-        )
-        type_ = proto.Field(
-            proto.STRING,
-            number=802,
-        )
-        edition_id = proto.Field(
-            proto.STRING,
-            number=803,
-        )
+        kind = proto.Field(proto.STRING, number=1)
 
-    id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    application_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    timestamp = proto.Field(
-        proto.INT64,
-        number=3,
-    )
-    customer_id = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    kind = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    provisions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=6,
+        user_id = proto.Field(proto.STRING, number=801)
+
+        type_ = proto.Field(proto.STRING, number=802)
+
+        edition_id = proto.Field(proto.STRING, number=803)
+
+    id = proto.Field(proto.STRING, number=1)
+
+    application_id = proto.Field(proto.STRING, number=2)
+
+    timestamp = proto.Field(proto.INT64, number=3)
+
+    customer_id = proto.Field(proto.STRING, number=4)
+
+    kind = proto.Field(proto.STRING, number=5)
+
+    provisions = proto.RepeatedField(proto.MESSAGE, number=6,
         message=Provisions,
     )
-    expiries = proto.RepeatedField(
-        proto.MESSAGE,
-        number=7,
+
+    expiries = proto.RepeatedField(proto.MESSAGE, number=7,
         message=Expiries,
     )
-    reassignments = proto.RepeatedField(
-        proto.MESSAGE,
-        number=8,
+
+    reassignments = proto.RepeatedField(proto.MESSAGE, number=8,
         message=Reassignments,
     )
-    deletes = proto.RepeatedField(
-        proto.MESSAGE,
-        number=9,
+
+    deletes = proto.RepeatedField(proto.MESSAGE, number=9,
         message=Deletes,
     )
 
 
 class LicenseNotificationList(proto.Message):
     r"""
+
     Attributes:
         kind (str):
 
@@ -287,23 +235,18 @@ class LicenseNotificationList(proto.Message):
     def raw_page(self):
         return self
 
-    kind = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    notifications = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1007,
+    kind = proto.Field(proto.STRING, number=1)
+
+    notifications = proto.RepeatedField(proto.MESSAGE, number=1007,
         message='LicenseNotification',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=100602,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=100602)
 
 
 class UserLicense(proto.Message):
     r"""
+
     Attributes:
         kind (str):
             The type of API resource. This is always
@@ -333,38 +276,21 @@ class UserLicense(proto.Message):
             The email address of the user.
     """
 
-    kind = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    enabled = proto.Field(
-        proto.BOOL,
-        number=2,
-    )
-    state = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    edition_id = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    customer_id = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    application_id = proto.Field(
-        proto.STRING,
-        number=6,
-    )
-    id = proto.Field(
-        proto.STRING,
-        number=101,
-    )
-    user_id = proto.Field(
-        proto.STRING,
-        number=102,
-    )
+    kind = proto.Field(proto.STRING, number=1)
+
+    enabled = proto.Field(proto.BOOL, number=2)
+
+    state = proto.Field(proto.STRING, number=3)
+
+    edition_id = proto.Field(proto.STRING, number=4)
+
+    customer_id = proto.Field(proto.STRING, number=5)
+
+    application_id = proto.Field(proto.STRING, number=6)
+
+    id = proto.Field(proto.STRING, number=101)
+
+    user_id = proto.Field(proto.STRING, number=102)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

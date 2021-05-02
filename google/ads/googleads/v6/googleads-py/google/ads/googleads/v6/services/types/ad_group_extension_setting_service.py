@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.enums.types import response_content_type as gage_response_content_type
 from google.ads.googleads.v6.resources.types import ad_group_extension_setting as gagr_ad_group_extension_setting
@@ -44,10 +47,7 @@ class GetAdGroupExtensionSettingRequest(proto.Message):
             extension setting to fetch.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateAdGroupExtensionSettingsRequest(proto.Message):
@@ -72,23 +72,12 @@ class MutateAdGroupExtensionSettingsRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operations = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operations = proto.RepeatedField(proto.MESSAGE, number=2,
         message='AdGroupExtensionSettingOperation',
     )
-    partial_failure = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=4,
-    )
+    partial_failure = proto.Field(proto.BOOL, number=3)
+    validate_only = proto.Field(proto.BOOL, number=4)
 
 
 class AdGroupExtensionSettingOperation(proto.Message):
@@ -117,37 +106,24 @@ class AdGroupExtensionSettingOperation(proto.Message):
             ``customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}``
     """
 
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    update_mask = proto.Field(proto.MESSAGE, number=4,
         message=field_mask.FieldMask,
     )
-    response_content_type = proto.Field(
-        proto.ENUM,
-        number=5,
+    response_content_type = proto.Field(proto.ENUM, number=5,
         enum=gage_response_content_type.ResponseContentTypeEnum.ResponseContentType,
     )
-    create = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='operation',
+    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=gagr_ad_group_extension_setting.AdGroupExtensionSetting,
     )
-    update = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='operation',
+    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
         message=gagr_ad_group_extension_setting.AdGroupExtensionSetting,
     )
-    remove = proto.Field(
-        proto.STRING,
-        number=3,
-        oneof='operation',
-    )
+    remove = proto.Field(proto.STRING, number=3, oneof='operation')
 
 
 class MutateAdGroupExtensionSettingsResponse(proto.Message):
     r"""Response message for an ad group extension setting mutate.
+
     Attributes:
         partial_failure_error (google.rpc.status_pb2.Status):
             Errors that pertain to operation failures in the partial
@@ -159,20 +135,17 @@ class MutateAdGroupExtensionSettingsResponse(proto.Message):
             All results for the mutate.
     """
 
-    partial_failure_error = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    partial_failure_error = proto.Field(proto.MESSAGE, number=3,
         message=status.Status,
     )
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    results = proto.RepeatedField(proto.MESSAGE, number=2,
         message='MutateAdGroupExtensionSettingResult',
     )
 
 
 class MutateAdGroupExtensionSettingResult(proto.Message):
     r"""The result for the ad group extension setting mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
@@ -182,13 +155,8 @@ class MutateAdGroupExtensionSettingResult(proto.Message):
             response_content_type is set to "MUTABLE_RESOURCE".
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    ad_group_extension_setting = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    ad_group_extension_setting = proto.Field(proto.MESSAGE, number=2,
         message=gagr_ad_group_extension_setting.AdGroupExtensionSetting,
     )
 

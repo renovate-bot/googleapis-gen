@@ -76,7 +76,7 @@ namespace Google.Iam.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListWorkloadIdentityPools</summary>
+        /// <summary>Snippet for ListWorkloadIdentityPoolsAsync</summary>
         public async Task ListWorkloadIdentityPoolsRequestObjectAsync()
         {
             // Snippet: ListWorkloadIdentityPoolsAsync(ListWorkloadIdentityPoolsRequest, CallSettings)
@@ -170,7 +170,7 @@ namespace Google.Iam.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListWorkloadIdentityPools</summary>
+        /// <summary>Snippet for ListWorkloadIdentityPoolsAsync</summary>
         public async Task ListWorkloadIdentityPoolsAsync()
         {
             // Snippet: ListWorkloadIdentityPoolsAsync(string, string, int?, CallSettings)
@@ -260,7 +260,7 @@ namespace Google.Iam.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListWorkloadIdentityPools</summary>
+        /// <summary>Snippet for ListWorkloadIdentityPoolsAsync</summary>
         public async Task ListWorkloadIdentityPoolsResourceNamesAsync()
         {
             // Snippet: ListWorkloadIdentityPoolsAsync(ProjectName, string, int?, CallSettings)
@@ -1130,7 +1130,7 @@ namespace Google.Iam.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListWorkloadIdentityPoolProviders</summary>
+        /// <summary>Snippet for ListWorkloadIdentityPoolProvidersAsync</summary>
         public async Task ListWorkloadIdentityPoolProvidersRequestObjectAsync()
         {
             // Snippet: ListWorkloadIdentityPoolProvidersAsync(ListWorkloadIdentityPoolProvidersRequest, CallSettings)
@@ -1224,7 +1224,7 @@ namespace Google.Iam.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListWorkloadIdentityPoolProviders</summary>
+        /// <summary>Snippet for ListWorkloadIdentityPoolProvidersAsync</summary>
         public async Task ListWorkloadIdentityPoolProvidersAsync()
         {
             // Snippet: ListWorkloadIdentityPoolProvidersAsync(string, string, int?, CallSettings)
@@ -1314,7 +1314,7 @@ namespace Google.Iam.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListWorkloadIdentityPoolProviders</summary>
+        /// <summary>Snippet for ListWorkloadIdentityPoolProvidersAsync</summary>
         public async Task ListWorkloadIdentityPoolProvidersResourceNamesAsync()
         {
             // Snippet: ListWorkloadIdentityPoolProvidersAsync(WorkloadIdentityPoolName, string, int?, CallSettings)

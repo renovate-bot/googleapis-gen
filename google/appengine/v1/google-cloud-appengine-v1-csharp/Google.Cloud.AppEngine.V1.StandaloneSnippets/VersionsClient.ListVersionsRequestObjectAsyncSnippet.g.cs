@@ -24,10 +24,13 @@ namespace Google.Cloud.AppEngine.V1.Snippets
 
     public sealed partial class GeneratedVersionsClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListVersions</summary>
+        /// <summary>Snippet for ListVersionsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListVersionsRequestObjectAsync()
         {
-            // Snippet: ListVersionsAsync(ListVersionsRequest, CallSettings)
             // Create client
             VersionsClient versionsClient = await VersionsClient.CreateAsync();
             // Initialize request argument(s)
@@ -70,7 +73,6 @@ namespace Google.Cloud.AppEngine.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

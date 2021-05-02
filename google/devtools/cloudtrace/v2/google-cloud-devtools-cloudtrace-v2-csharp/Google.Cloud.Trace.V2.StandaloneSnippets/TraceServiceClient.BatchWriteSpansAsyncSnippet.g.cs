@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Trace.V2.Snippets
 {
+    using Google.Cloud.Trace.V2;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTraceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchWriteSpansAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchWriteSpansAsync()
         {
-            // Snippet: BatchWriteSpansAsync(string, IEnumerable<Span>, CallSettings)
-            // Additional: BatchWriteSpansAsync(string, IEnumerable<Span>, CancellationToken)
             // Create client
             TraceServiceClient traceServiceClient = await TraceServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Trace.V2.Snippets
             IEnumerable<Span> spans = new Span[] { new Span(), };
             // Make the request
             await traceServiceClient.BatchWriteSpansAsync(name, spans);
-            // End snippet
         }
     }
 }

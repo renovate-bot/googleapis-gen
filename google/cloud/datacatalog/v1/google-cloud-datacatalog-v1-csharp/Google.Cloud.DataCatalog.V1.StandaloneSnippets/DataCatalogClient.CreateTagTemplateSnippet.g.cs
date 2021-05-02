@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.DataCatalog.V1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1;
+
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateTagTemplate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateTagTemplate()
         {
-            // Snippet: CreateTagTemplate(string, string, TagTemplate, CallSettings)
             // Create client
             DataCatalogClient dataCatalogClient = DataCatalogClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             TagTemplate tagTemplate = new TagTemplate();
             // Make the request
             TagTemplate response = dataCatalogClient.CreateTagTemplate(parent, tagTemplateId, tagTemplate);
-            // End snippet
         }
     }
 }

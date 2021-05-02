@@ -17,6 +17,7 @@
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Talent.V4Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System;
     using System.Linq;
@@ -24,10 +25,13 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
 
     public sealed partial class GeneratedProfileServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListProfiles</summary>
+        /// <summary>Snippet for ListProfilesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListProfilesRequestObjectAsync()
         {
-            // Snippet: ListProfilesAsync(ListProfilesRequest, CallSettings)
             // Create client
             ProfileServiceClient profileServiceClient = await ProfileServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -71,7 +75,6 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

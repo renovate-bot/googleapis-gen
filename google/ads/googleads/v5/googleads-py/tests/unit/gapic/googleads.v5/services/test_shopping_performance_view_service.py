@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -262,16 +264,21 @@ def test_get_shopping_performance_view(transport: str = 'grpc', request_type=sho
         # Designate an appropriate return value for the call.
         call.return_value = shopping_performance_view.ShoppingPerformanceView(
             resource_name='resource_name_value',
+
         )
+
         response = client.get_shopping_performance_view(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == shopping_performance_view_service.GetShoppingPerformanceViewRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, shopping_performance_view.ShoppingPerformanceView)
+
     assert response.resource_name == 'resource_name_value'
 
 
@@ -287,7 +294,6 @@ def test_get_shopping_performance_view_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = shopping_performance_view_service.GetShoppingPerformanceViewRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -295,6 +301,7 @@ def test_get_shopping_performance_view_field_headers():
             type(client.transport.get_shopping_performance_view),
             '__call__') as call:
         call.return_value = shopping_performance_view.ShoppingPerformanceView()
+
         client.get_shopping_performance_view(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -321,6 +328,7 @@ def test_get_shopping_performance_view_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = shopping_performance_view.ShoppingPerformanceView()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_shopping_performance_view(
@@ -331,6 +339,7 @@ def test_get_shopping_performance_view_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -411,7 +420,7 @@ def test_shopping_performance_view_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_shopping_performance_view',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -562,6 +571,7 @@ def test_shopping_performance_view_service_transport_channel_mtls_with_adc(
 
 def test_shopping_performance_view_path():
     customer = "squid"
+
     expected = "customers/{customer}/shoppingPerformanceView".format(customer=customer, )
     actual = ShoppingPerformanceViewServiceClient.shopping_performance_view_path(customer)
     assert expected == actual
@@ -569,7 +579,8 @@ def test_shopping_performance_view_path():
 
 def test_parse_shopping_performance_view_path():
     expected = {
-        "customer": "clam",
+    "customer": "clam",
+
     }
     path = ShoppingPerformanceViewServiceClient.shopping_performance_view_path(**expected)
 
@@ -579,6 +590,7 @@ def test_parse_shopping_performance_view_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ShoppingPerformanceViewServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -586,7 +598,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = ShoppingPerformanceViewServiceClient.common_billing_account_path(**expected)
 
@@ -596,6 +609,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ShoppingPerformanceViewServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -603,7 +617,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = ShoppingPerformanceViewServiceClient.common_folder_path(**expected)
 
@@ -613,6 +628,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ShoppingPerformanceViewServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -620,7 +636,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = ShoppingPerformanceViewServiceClient.common_organization_path(**expected)
 
@@ -630,6 +647,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = ShoppingPerformanceViewServiceClient.common_project_path(project)
     assert expected == actual
@@ -637,7 +655,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = ShoppingPerformanceViewServiceClient.common_project_path(**expected)
 
@@ -648,6 +667,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ShoppingPerformanceViewServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -655,8 +675,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = ShoppingPerformanceViewServiceClient.common_location_path(**expected)
 

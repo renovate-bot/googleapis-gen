@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBillingSetupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateBillingSetupAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateBillingSetupRequestObjectAsync()
         {
-            // Snippet: MutateBillingSetupAsync(MutateBillingSetupRequest, CallSettings)
-            // Additional: MutateBillingSetupAsync(MutateBillingSetupRequest, CancellationToken)
             // Create client
             BillingSetupServiceClient billingSetupServiceClient = await BillingSetupServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateBillingSetupResponse response = await billingSetupServiceClient.MutateBillingSetupAsync(request);
-            // End snippet
         }
     }
 }

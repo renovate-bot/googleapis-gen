@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedAdGroupSimulationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupSimulation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAdGroupSimulationResourceNames()
         {
-            // Snippet: GetAdGroupSimulation(AdGroupSimulationName, CallSettings)
             // Create client
             AdGroupSimulationServiceClient adGroupSimulationServiceClient = AdGroupSimulationServiceClient.Create();
             // Initialize request argument(s)
             AdGroupSimulationName resourceName = AdGroupSimulationName.FromCustomerAdGroupSimulation("[CUSTOMER]", "[AD_GROUP_SIMULATION]");
             // Make the request
             AdGroupSimulation response = adGroupSimulationServiceClient.GetAdGroupSimulation(resourceName);
-            // End snippet
         }
     }
 }

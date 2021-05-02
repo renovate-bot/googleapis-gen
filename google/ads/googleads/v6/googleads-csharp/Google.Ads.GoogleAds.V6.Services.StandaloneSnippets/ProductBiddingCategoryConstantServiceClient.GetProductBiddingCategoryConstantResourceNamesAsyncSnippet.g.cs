@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedProductBiddingCategoryConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetProductBiddingCategoryConstantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetProductBiddingCategoryConstantResourceNamesAsync()
         {
-            // Snippet: GetProductBiddingCategoryConstantAsync(ProductBiddingCategoryConstantName, CallSettings)
-            // Additional: GetProductBiddingCategoryConstantAsync(ProductBiddingCategoryConstantName, CancellationToken)
             // Create client
             ProductBiddingCategoryConstantServiceClient productBiddingCategoryConstantServiceClient = await ProductBiddingCategoryConstantServiceClient.CreateAsync();
             // Initialize request argument(s)
             ProductBiddingCategoryConstantName resourceName = ProductBiddingCategoryConstantName.FromCountryCodeLevelId("[COUNTRY_CODE]", "[LEVEL]", "[ID]");
             // Make the request
             ProductBiddingCategoryConstant response = await productBiddingCategoryConstantServiceClient.GetProductBiddingCategoryConstantAsync(resourceName);
-            // End snippet
         }
     }
 }

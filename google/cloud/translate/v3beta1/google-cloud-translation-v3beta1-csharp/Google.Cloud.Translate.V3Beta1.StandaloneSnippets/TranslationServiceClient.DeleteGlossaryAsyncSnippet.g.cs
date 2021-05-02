@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Translate.V3Beta1.Snippets
 {
+    using Google.Cloud.Translate.V3Beta1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTranslationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteGlossaryAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteGlossaryAsync()
         {
-            // Snippet: DeleteGlossaryAsync(string, CallSettings)
-            // Additional: DeleteGlossaryAsync(string, CancellationToken)
             // Create client
             TranslationServiceClient translationServiceClient = await TranslationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -48,7 +51,6 @@ namespace Google.Cloud.Translate.V3Beta1.Snippets
                 // If it has completed, then access the result
                 DeleteGlossaryResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

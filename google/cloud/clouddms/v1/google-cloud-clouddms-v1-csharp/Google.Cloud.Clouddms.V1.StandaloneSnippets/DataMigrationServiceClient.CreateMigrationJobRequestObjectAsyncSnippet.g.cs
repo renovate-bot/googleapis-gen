@@ -17,16 +17,19 @@
 namespace Google.Cloud.Clouddms.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Clouddms.V1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataMigrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateMigrationJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateMigrationJobRequestObjectAsync()
         {
-            // Snippet: CreateMigrationJobAsync(CreateMigrationJobRequest, CallSettings)
-            // Additional: CreateMigrationJobAsync(CreateMigrationJobRequest, CancellationToken)
             // Create client
             DataMigrationServiceClient dataMigrationServiceClient = await DataMigrationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -55,7 +58,6 @@ namespace Google.Cloud.Clouddms.V1.Snippets
                 // If it has completed, then access the result
                 MigrationJob retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

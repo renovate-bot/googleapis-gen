@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -45,35 +45,11 @@ from google.cloud.workspace_add_ons_v1.services.g_suite_add_ons import GSuiteAdd
 from google.cloud.workspace_add_ons_v1.services.g_suite_add_ons import GSuiteAddOnsClient
 from google.cloud.workspace_add_ons_v1.services.g_suite_add_ons import pagers
 from google.cloud.workspace_add_ons_v1.services.g_suite_add_ons import transports
-from google.cloud.workspace_add_ons_v1.services.g_suite_add_ons.transports.base import _API_CORE_VERSION
-from google.cloud.workspace_add_ons_v1.services.g_suite_add_ons.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.workspace_add_ons_v1.types import gsuiteaddons
 from google.oauth2 import service_account
 from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -241,10 +217,12 @@ def test_g_suite_add_ons_client_client_options(client_class, transport_class, tr
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (GSuiteAddOnsClient, transports.GSuiteAddOnsGrpcTransport, "grpc", "true"),
     (GSuiteAddOnsAsyncClient, transports.GSuiteAddOnsGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (GSuiteAddOnsClient, transports.GSuiteAddOnsGrpcTransport, "grpc", "false"),
     (GSuiteAddOnsAsyncClient, transports.GSuiteAddOnsGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(GSuiteAddOnsClient, "DEFAULT_ENDPOINT", modify_default_endpoint(GSuiteAddOnsClient))
 @mock.patch.object(GSuiteAddOnsAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(GSuiteAddOnsAsyncClient))
@@ -399,20 +377,29 @@ def test_get_authorization(transport: str = 'grpc', request_type=gsuiteaddons.Ge
         # Designate an appropriate return value for the call.
         call.return_value = gsuiteaddons.Authorization(
             name='name_value',
+
             service_account_email='service_account_email_value',
+
             oauth_client_id='oauth_client_id_value',
+
         )
+
         response = client.get_authorization(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.GetAuthorizationRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gsuiteaddons.Authorization)
+
     assert response.name == 'name_value'
+
     assert response.service_account_email == 'service_account_email_value'
+
     assert response.oauth_client_id == 'oauth_client_id_value'
 
 
@@ -435,8 +422,8 @@ def test_get_authorization_empty_call():
         client.get_authorization()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gsuiteaddons.GetAuthorizationRequest()
 
+        assert args[0] == gsuiteaddons.GetAuthorizationRequest()
 
 @pytest.mark.asyncio
 async def test_get_authorization_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.GetAuthorizationRequest):
@@ -454,22 +441,27 @@ async def test_get_authorization_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.get_authorization),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.Authorization(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.Authorization(
             name='name_value',
             service_account_email='service_account_email_value',
             oauth_client_id='oauth_client_id_value',
         ))
+
         response = await client.get_authorization(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.GetAuthorizationRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gsuiteaddons.Authorization)
+
     assert response.name == 'name_value'
+
     assert response.service_account_email == 'service_account_email_value'
+
     assert response.oauth_client_id == 'oauth_client_id_value'
 
 
@@ -486,7 +478,6 @@ def test_get_authorization_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.GetAuthorizationRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -494,6 +485,7 @@ def test_get_authorization_field_headers():
             type(client.transport.get_authorization),
             '__call__') as call:
         call.return_value = gsuiteaddons.Authorization()
+
         client.get_authorization(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -518,7 +510,6 @@ async def test_get_authorization_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.GetAuthorizationRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -526,6 +517,7 @@ async def test_get_authorization_field_headers_async():
             type(client.transport.get_authorization),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.Authorization())
+
         await client.get_authorization(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -552,6 +544,7 @@ def test_get_authorization_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gsuiteaddons.Authorization()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_authorization(
@@ -562,6 +555,7 @@ def test_get_authorization_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -603,6 +597,7 @@ async def test_get_authorization_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -638,20 +633,29 @@ def test_create_deployment(transport: str = 'grpc', request_type=gsuiteaddons.Cr
         # Designate an appropriate return value for the call.
         call.return_value = gsuiteaddons.Deployment(
             name='name_value',
+
             oauth_scopes=['oauth_scopes_value'],
+
             etag='etag_value',
+
         )
+
         response = client.create_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.CreateDeploymentRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gsuiteaddons.Deployment)
+
     assert response.name == 'name_value'
+
     assert response.oauth_scopes == ['oauth_scopes_value']
+
     assert response.etag == 'etag_value'
 
 
@@ -674,8 +678,8 @@ def test_create_deployment_empty_call():
         client.create_deployment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gsuiteaddons.CreateDeploymentRequest()
 
+        assert args[0] == gsuiteaddons.CreateDeploymentRequest()
 
 @pytest.mark.asyncio
 async def test_create_deployment_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.CreateDeploymentRequest):
@@ -693,22 +697,27 @@ async def test_create_deployment_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.create_deployment),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.Deployment(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.Deployment(
             name='name_value',
             oauth_scopes=['oauth_scopes_value'],
             etag='etag_value',
         ))
+
         response = await client.create_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.CreateDeploymentRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gsuiteaddons.Deployment)
+
     assert response.name == 'name_value'
+
     assert response.oauth_scopes == ['oauth_scopes_value']
+
     assert response.etag == 'etag_value'
 
 
@@ -725,7 +734,6 @@ def test_create_deployment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.CreateDeploymentRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -733,6 +741,7 @@ def test_create_deployment_field_headers():
             type(client.transport.create_deployment),
             '__call__') as call:
         call.return_value = gsuiteaddons.Deployment()
+
         client.create_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -757,7 +766,6 @@ async def test_create_deployment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.CreateDeploymentRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -765,6 +773,7 @@ async def test_create_deployment_field_headers_async():
             type(client.transport.create_deployment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.Deployment())
+
         await client.create_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -791,6 +800,7 @@ def test_create_deployment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gsuiteaddons.Deployment()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_deployment(
@@ -803,8 +813,11 @@ def test_create_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].deployment == gsuiteaddons.Deployment(name='name_value')
+
         assert args[0].deployment_id == 'deployment_id_value'
 
 
@@ -850,8 +863,11 @@ async def test_create_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].deployment == gsuiteaddons.Deployment(name='name_value')
+
         assert args[0].deployment_id == 'deployment_id_value'
 
 
@@ -889,20 +905,29 @@ def test_replace_deployment(transport: str = 'grpc', request_type=gsuiteaddons.R
         # Designate an appropriate return value for the call.
         call.return_value = gsuiteaddons.Deployment(
             name='name_value',
+
             oauth_scopes=['oauth_scopes_value'],
+
             etag='etag_value',
+
         )
+
         response = client.replace_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.ReplaceDeploymentRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gsuiteaddons.Deployment)
+
     assert response.name == 'name_value'
+
     assert response.oauth_scopes == ['oauth_scopes_value']
+
     assert response.etag == 'etag_value'
 
 
@@ -925,8 +950,8 @@ def test_replace_deployment_empty_call():
         client.replace_deployment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gsuiteaddons.ReplaceDeploymentRequest()
 
+        assert args[0] == gsuiteaddons.ReplaceDeploymentRequest()
 
 @pytest.mark.asyncio
 async def test_replace_deployment_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.ReplaceDeploymentRequest):
@@ -944,22 +969,27 @@ async def test_replace_deployment_async(transport: str = 'grpc_asyncio', request
             type(client.transport.replace_deployment),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.Deployment(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.Deployment(
             name='name_value',
             oauth_scopes=['oauth_scopes_value'],
             etag='etag_value',
         ))
+
         response = await client.replace_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.ReplaceDeploymentRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gsuiteaddons.Deployment)
+
     assert response.name == 'name_value'
+
     assert response.oauth_scopes == ['oauth_scopes_value']
+
     assert response.etag == 'etag_value'
 
 
@@ -976,7 +1006,6 @@ def test_replace_deployment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.ReplaceDeploymentRequest()
-
     request.deployment.name = 'deployment.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -984,6 +1013,7 @@ def test_replace_deployment_field_headers():
             type(client.transport.replace_deployment),
             '__call__') as call:
         call.return_value = gsuiteaddons.Deployment()
+
         client.replace_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1008,7 +1038,6 @@ async def test_replace_deployment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.ReplaceDeploymentRequest()
-
     request.deployment.name = 'deployment.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1016,6 +1045,7 @@ async def test_replace_deployment_field_headers_async():
             type(client.transport.replace_deployment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.Deployment())
+
         await client.replace_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1042,6 +1072,7 @@ def test_replace_deployment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gsuiteaddons.Deployment()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.replace_deployment(
@@ -1052,6 +1083,7 @@ def test_replace_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].deployment == gsuiteaddons.Deployment(name='name_value')
 
 
@@ -1093,6 +1125,7 @@ async def test_replace_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].deployment == gsuiteaddons.Deployment(name='name_value')
 
 
@@ -1128,20 +1161,29 @@ def test_get_deployment(transport: str = 'grpc', request_type=gsuiteaddons.GetDe
         # Designate an appropriate return value for the call.
         call.return_value = gsuiteaddons.Deployment(
             name='name_value',
+
             oauth_scopes=['oauth_scopes_value'],
+
             etag='etag_value',
+
         )
+
         response = client.get_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.GetDeploymentRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gsuiteaddons.Deployment)
+
     assert response.name == 'name_value'
+
     assert response.oauth_scopes == ['oauth_scopes_value']
+
     assert response.etag == 'etag_value'
 
 
@@ -1164,8 +1206,8 @@ def test_get_deployment_empty_call():
         client.get_deployment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gsuiteaddons.GetDeploymentRequest()
 
+        assert args[0] == gsuiteaddons.GetDeploymentRequest()
 
 @pytest.mark.asyncio
 async def test_get_deployment_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.GetDeploymentRequest):
@@ -1183,22 +1225,27 @@ async def test_get_deployment_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.get_deployment),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.Deployment(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.Deployment(
             name='name_value',
             oauth_scopes=['oauth_scopes_value'],
             etag='etag_value',
         ))
+
         response = await client.get_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.GetDeploymentRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gsuiteaddons.Deployment)
+
     assert response.name == 'name_value'
+
     assert response.oauth_scopes == ['oauth_scopes_value']
+
     assert response.etag == 'etag_value'
 
 
@@ -1215,7 +1262,6 @@ def test_get_deployment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.GetDeploymentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1223,6 +1269,7 @@ def test_get_deployment_field_headers():
             type(client.transport.get_deployment),
             '__call__') as call:
         call.return_value = gsuiteaddons.Deployment()
+
         client.get_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1247,7 +1294,6 @@ async def test_get_deployment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.GetDeploymentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1255,6 +1301,7 @@ async def test_get_deployment_field_headers_async():
             type(client.transport.get_deployment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.Deployment())
+
         await client.get_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1281,6 +1328,7 @@ def test_get_deployment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gsuiteaddons.Deployment()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_deployment(
@@ -1291,6 +1339,7 @@ def test_get_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1332,6 +1381,7 @@ async def test_get_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1367,16 +1417,21 @@ def test_list_deployments(transport: str = 'grpc', request_type=gsuiteaddons.Lis
         # Designate an appropriate return value for the call.
         call.return_value = gsuiteaddons.ListDeploymentsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_deployments(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.ListDeploymentsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListDeploymentsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1399,8 +1454,8 @@ def test_list_deployments_empty_call():
         client.list_deployments()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gsuiteaddons.ListDeploymentsRequest()
 
+        assert args[0] == gsuiteaddons.ListDeploymentsRequest()
 
 @pytest.mark.asyncio
 async def test_list_deployments_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.ListDeploymentsRequest):
@@ -1418,18 +1473,21 @@ async def test_list_deployments_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.list_deployments),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.ListDeploymentsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.ListDeploymentsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_deployments(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.ListDeploymentsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDeploymentsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1446,7 +1504,6 @@ def test_list_deployments_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.ListDeploymentsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1454,6 +1511,7 @@ def test_list_deployments_field_headers():
             type(client.transport.list_deployments),
             '__call__') as call:
         call.return_value = gsuiteaddons.ListDeploymentsResponse()
+
         client.list_deployments(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1478,7 +1536,6 @@ async def test_list_deployments_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.ListDeploymentsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1486,6 +1543,7 @@ async def test_list_deployments_field_headers_async():
             type(client.transport.list_deployments),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.ListDeploymentsResponse())
+
         await client.list_deployments(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1512,6 +1570,7 @@ def test_list_deployments_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gsuiteaddons.ListDeploymentsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_deployments(
@@ -1522,6 +1581,7 @@ def test_list_deployments_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1563,6 +1623,7 @@ async def test_list_deployments_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1767,6 +1828,7 @@ async def test_list_deployments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_delete_deployment(transport: str = 'grpc', request_type=gsuiteaddons.DeleteDeploymentRequest):
     client = GSuiteAddOnsClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1783,11 +1845,13 @@ def test_delete_deployment(transport: str = 'grpc', request_type=gsuiteaddons.De
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.DeleteDeploymentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1813,8 +1877,8 @@ def test_delete_deployment_empty_call():
         client.delete_deployment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gsuiteaddons.DeleteDeploymentRequest()
 
+        assert args[0] == gsuiteaddons.DeleteDeploymentRequest()
 
 @pytest.mark.asyncio
 async def test_delete_deployment_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.DeleteDeploymentRequest):
@@ -1833,11 +1897,13 @@ async def test_delete_deployment_async(transport: str = 'grpc_asyncio', request_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.DeleteDeploymentRequest()
 
     # Establish that the response is the type that we expect.
@@ -1857,7 +1923,6 @@ def test_delete_deployment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.DeleteDeploymentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1865,6 +1930,7 @@ def test_delete_deployment_field_headers():
             type(client.transport.delete_deployment),
             '__call__') as call:
         call.return_value = None
+
         client.delete_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1889,7 +1955,6 @@ async def test_delete_deployment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.DeleteDeploymentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1897,6 +1962,7 @@ async def test_delete_deployment_field_headers_async():
             type(client.transport.delete_deployment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1923,6 +1989,7 @@ def test_delete_deployment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_deployment(
@@ -1933,6 +2000,7 @@ def test_delete_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1974,6 +2042,7 @@ async def test_delete_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2008,11 +2077,13 @@ def test_install_deployment(transport: str = 'grpc', request_type=gsuiteaddons.I
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.install_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.InstallDeploymentRequest()
 
     # Establish that the response is the type that we expect.
@@ -2038,8 +2109,8 @@ def test_install_deployment_empty_call():
         client.install_deployment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gsuiteaddons.InstallDeploymentRequest()
 
+        assert args[0] == gsuiteaddons.InstallDeploymentRequest()
 
 @pytest.mark.asyncio
 async def test_install_deployment_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.InstallDeploymentRequest):
@@ -2058,11 +2129,13 @@ async def test_install_deployment_async(transport: str = 'grpc_asyncio', request
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.install_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.InstallDeploymentRequest()
 
     # Establish that the response is the type that we expect.
@@ -2082,7 +2155,6 @@ def test_install_deployment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.InstallDeploymentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2090,6 +2162,7 @@ def test_install_deployment_field_headers():
             type(client.transport.install_deployment),
             '__call__') as call:
         call.return_value = None
+
         client.install_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2114,7 +2187,6 @@ async def test_install_deployment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.InstallDeploymentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2122,6 +2194,7 @@ async def test_install_deployment_field_headers_async():
             type(client.transport.install_deployment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.install_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2148,6 +2221,7 @@ def test_install_deployment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.install_deployment(
@@ -2158,6 +2232,7 @@ def test_install_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2199,6 +2274,7 @@ async def test_install_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2233,11 +2309,13 @@ def test_uninstall_deployment(transport: str = 'grpc', request_type=gsuiteaddons
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.uninstall_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.UninstallDeploymentRequest()
 
     # Establish that the response is the type that we expect.
@@ -2263,8 +2341,8 @@ def test_uninstall_deployment_empty_call():
         client.uninstall_deployment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gsuiteaddons.UninstallDeploymentRequest()
 
+        assert args[0] == gsuiteaddons.UninstallDeploymentRequest()
 
 @pytest.mark.asyncio
 async def test_uninstall_deployment_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.UninstallDeploymentRequest):
@@ -2283,11 +2361,13 @@ async def test_uninstall_deployment_async(transport: str = 'grpc_asyncio', reque
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.uninstall_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.UninstallDeploymentRequest()
 
     # Establish that the response is the type that we expect.
@@ -2307,7 +2387,6 @@ def test_uninstall_deployment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.UninstallDeploymentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2315,6 +2394,7 @@ def test_uninstall_deployment_field_headers():
             type(client.transport.uninstall_deployment),
             '__call__') as call:
         call.return_value = None
+
         client.uninstall_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2339,7 +2419,6 @@ async def test_uninstall_deployment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.UninstallDeploymentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2347,6 +2426,7 @@ async def test_uninstall_deployment_field_headers_async():
             type(client.transport.uninstall_deployment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.uninstall_deployment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2373,6 +2453,7 @@ def test_uninstall_deployment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.uninstall_deployment(
@@ -2383,6 +2464,7 @@ def test_uninstall_deployment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2424,6 +2506,7 @@ async def test_uninstall_deployment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2459,16 +2542,21 @@ def test_get_install_status(transport: str = 'grpc', request_type=gsuiteaddons.G
         # Designate an appropriate return value for the call.
         call.return_value = gsuiteaddons.InstallStatus(
             name='name_value',
+
         )
+
         response = client.get_install_status(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.GetInstallStatusRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gsuiteaddons.InstallStatus)
+
     assert response.name == 'name_value'
 
 
@@ -2491,8 +2579,8 @@ def test_get_install_status_empty_call():
         client.get_install_status()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gsuiteaddons.GetInstallStatusRequest()
 
+        assert args[0] == gsuiteaddons.GetInstallStatusRequest()
 
 @pytest.mark.asyncio
 async def test_get_install_status_async(transport: str = 'grpc_asyncio', request_type=gsuiteaddons.GetInstallStatusRequest):
@@ -2510,18 +2598,21 @@ async def test_get_install_status_async(transport: str = 'grpc_asyncio', request
             type(client.transport.get_install_status),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.InstallStatus(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.InstallStatus(
             name='name_value',
         ))
+
         response = await client.get_install_status(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gsuiteaddons.GetInstallStatusRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gsuiteaddons.InstallStatus)
+
     assert response.name == 'name_value'
 
 
@@ -2538,7 +2629,6 @@ def test_get_install_status_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.GetInstallStatusRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2546,6 +2636,7 @@ def test_get_install_status_field_headers():
             type(client.transport.get_install_status),
             '__call__') as call:
         call.return_value = gsuiteaddons.InstallStatus()
+
         client.get_install_status(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2570,7 +2661,6 @@ async def test_get_install_status_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gsuiteaddons.GetInstallStatusRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2578,6 +2668,7 @@ async def test_get_install_status_field_headers_async():
             type(client.transport.get_install_status),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gsuiteaddons.InstallStatus())
+
         await client.get_install_status(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2604,6 +2695,7 @@ def test_get_install_status_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gsuiteaddons.InstallStatus()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_install_status(
@@ -2614,6 +2706,7 @@ def test_get_install_status_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2655,6 +2748,7 @@ async def test_get_install_status_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2713,6 +2807,7 @@ def test_transport_instance():
     client = GSuiteAddOnsClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.GSuiteAddOnsGrpcTransport(
@@ -2727,6 +2822,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.GSuiteAddOnsGrpcTransport,
     transports.GSuiteAddOnsGrpcAsyncIOTransport,
@@ -2738,6 +2834,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = GSuiteAddOnsClient(
@@ -2747,6 +2844,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.GSuiteAddOnsGrpcTransport,
     )
+
 
 def test_g_suite_add_ons_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -2777,33 +2875,15 @@ def test_g_suite_add_ons_base_transport():
         'install_deployment',
         'uninstall_deployment',
         'get_install_status',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_g_suite_add_ons_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.workspace_add_ons_v1.services.g_suite_add_ons.transports.GSuiteAddOnsTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.GSuiteAddOnsTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_g_suite_add_ons_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.workspace_add_ons_v1.services.g_suite_add_ons.transports.GSuiteAddOnsTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.workspace_add_ons_v1.services.g_suite_add_ons.transports.GSuiteAddOnsTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.GSuiteAddOnsTransport(
@@ -2819,182 +2899,33 @@ def test_g_suite_add_ons_base_transport_with_credentials_file_old_google_auth():
 
 def test_g_suite_add_ons_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.workspace_add_ons_v1.services.g_suite_add_ons.transports.GSuiteAddOnsTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.workspace_add_ons_v1.services.g_suite_add_ons.transports.GSuiteAddOnsTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.GSuiteAddOnsTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_g_suite_add_ons_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         GSuiteAddOnsClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_g_suite_add_ons_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        GSuiteAddOnsClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.GSuiteAddOnsGrpcTransport,
-        transports.GSuiteAddOnsGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_g_suite_add_ons_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.GSuiteAddOnsGrpcTransport,
-        transports.GSuiteAddOnsGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_g_suite_add_ons_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.GSuiteAddOnsGrpcTransport, grpc_helpers),
-        (transports.GSuiteAddOnsGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_g_suite_add_ons_transport_create_channel(transport_class, grpc_helpers):
+def test_g_suite_add_ons_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.GSuiteAddOnsGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "gsuiteaddons.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="gsuiteaddons.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.GSuiteAddOnsGrpcTransport, grpc_helpers),
-        (transports.GSuiteAddOnsGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_g_suite_add_ons_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "gsuiteaddons.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.GSuiteAddOnsGrpcTransport, grpc_helpers),
-        (transports.GSuiteAddOnsGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_g_suite_add_ons_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "gsuiteaddons.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -3056,6 +2987,7 @@ def test_g_suite_add_ons_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='gsuiteaddons.googleapis.com:8000'),
     )
     assert client.transport._host == 'gsuiteaddons.googleapis.com:8000'
+
 
 def test_g_suite_add_ons_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -3173,6 +3105,7 @@ def test_g_suite_add_ons_transport_channel_mtls_with_adc(
 
 def test_authorization_path():
     project = "squid"
+
     expected = "projects/{project}/authorization".format(project=project, )
     actual = GSuiteAddOnsClient.authorization_path(project)
     assert expected == actual
@@ -3180,7 +3113,8 @@ def test_authorization_path():
 
 def test_parse_authorization_path():
     expected = {
-        "project": "clam",
+    "project": "clam",
+
     }
     path = GSuiteAddOnsClient.authorization_path(**expected)
 
@@ -3191,6 +3125,7 @@ def test_parse_authorization_path():
 def test_deployment_path():
     project = "whelk"
     deployment = "octopus"
+
     expected = "projects/{project}/deployments/{deployment}".format(project=project, deployment=deployment, )
     actual = GSuiteAddOnsClient.deployment_path(project, deployment)
     assert expected == actual
@@ -3198,8 +3133,9 @@ def test_deployment_path():
 
 def test_parse_deployment_path():
     expected = {
-        "project": "oyster",
-        "deployment": "nudibranch",
+    "project": "oyster",
+    "deployment": "nudibranch",
+
     }
     path = GSuiteAddOnsClient.deployment_path(**expected)
 
@@ -3210,6 +3146,7 @@ def test_parse_deployment_path():
 def test_install_status_path():
     project = "cuttlefish"
     deployment = "mussel"
+
     expected = "projects/{project}/deployments/{deployment}/installStatus".format(project=project, deployment=deployment, )
     actual = GSuiteAddOnsClient.install_status_path(project, deployment)
     assert expected == actual
@@ -3217,8 +3154,9 @@ def test_install_status_path():
 
 def test_parse_install_status_path():
     expected = {
-        "project": "winkle",
-        "deployment": "nautilus",
+    "project": "winkle",
+    "deployment": "nautilus",
+
     }
     path = GSuiteAddOnsClient.install_status_path(**expected)
 
@@ -3228,6 +3166,7 @@ def test_parse_install_status_path():
 
 def test_common_billing_account_path():
     billing_account = "scallop"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = GSuiteAddOnsClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -3235,7 +3174,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "abalone",
+    "billing_account": "abalone",
+
     }
     path = GSuiteAddOnsClient.common_billing_account_path(**expected)
 
@@ -3245,6 +3185,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "squid"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = GSuiteAddOnsClient.common_folder_path(folder)
     assert expected == actual
@@ -3252,7 +3193,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "clam",
+    "folder": "clam",
+
     }
     path = GSuiteAddOnsClient.common_folder_path(**expected)
 
@@ -3262,6 +3204,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "whelk"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = GSuiteAddOnsClient.common_organization_path(organization)
     assert expected == actual
@@ -3269,7 +3212,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "octopus",
+    "organization": "octopus",
+
     }
     path = GSuiteAddOnsClient.common_organization_path(**expected)
 
@@ -3279,6 +3223,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "oyster"
+
     expected = "projects/{project}".format(project=project, )
     actual = GSuiteAddOnsClient.common_project_path(project)
     assert expected == actual
@@ -3286,7 +3231,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nudibranch",
+    "project": "nudibranch",
+
     }
     path = GSuiteAddOnsClient.common_project_path(**expected)
 
@@ -3297,6 +3243,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "cuttlefish"
     location = "mussel"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = GSuiteAddOnsClient.common_location_path(project, location)
     assert expected == actual
@@ -3304,8 +3251,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "winkle",
-        "location": "nautilus",
+    "project": "winkle",
+    "location": "nautilus",
+
     }
     path = GSuiteAddOnsClient.common_location_path(**expected)
 

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Workflows.Executions.V1Beta.Snippets
 {
+    using Google.Cloud.Workflows.Executions.V1Beta;
+
     public sealed partial class GeneratedExecutionsClientStandaloneSnippets
     {
         /// <summary>Snippet for CancelExecution</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CancelExecution()
         {
-            // Snippet: CancelExecution(string, CallSettings)
             // Create client
             ExecutionsClient executionsClient = ExecutionsClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/workflows/[WORKFLOW]/executions/[EXECUTION]";
             // Make the request
             Execution response = executionsClient.CancelExecution(name);
-            // End snippet
         }
     }
 }

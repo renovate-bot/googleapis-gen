@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Shell.V1.Snippets
 {
+    using Google.Cloud.Shell.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudShellServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetEnvironmentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetEnvironmentRequestObjectAsync()
         {
-            // Snippet: GetEnvironmentAsync(GetEnvironmentRequest, CallSettings)
-            // Additional: GetEnvironmentAsync(GetEnvironmentRequest, CancellationToken)
             // Create client
             CloudShellServiceClient cloudShellServiceClient = await CloudShellServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Shell.V1.Snippets
             };
             // Make the request
             Environment response = await cloudShellServiceClient.GetEnvironmentAsync(request);
-            // End snippet
         }
     }
 }

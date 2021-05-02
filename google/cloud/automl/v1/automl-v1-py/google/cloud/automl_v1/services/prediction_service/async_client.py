@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -33,6 +35,7 @@ from google.cloud.automl_v1.types import data_items
 from google.cloud.automl_v1.types import io
 from google.cloud.automl_v1.types import operations
 from google.cloud.automl_v1.types import prediction_service
+
 from .transports.base import PredictionServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import PredictionServiceGrpcAsyncIOTransport
 from .client import PredictionServiceClient
@@ -52,14 +55,19 @@ class PredictionServiceAsyncClient:
 
     model_path = staticmethod(PredictionServiceClient.model_path)
     parse_model_path = staticmethod(PredictionServiceClient.parse_model_path)
+
     common_billing_account_path = staticmethod(PredictionServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(PredictionServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(PredictionServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(PredictionServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(PredictionServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(PredictionServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(PredictionServiceClient.common_project_path)
     parse_common_project_path = staticmethod(PredictionServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(PredictionServiceClient.common_location_path)
     parse_common_location_path = staticmethod(PredictionServiceClient.parse_common_location_path)
 
@@ -144,6 +152,7 @@ class PredictionServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = PredictionServiceClient(
             credentials=credentials,
             transport=transport,
@@ -202,8 +211,7 @@ class PredictionServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.PredictRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [PredictionService.Predict][google.cloud.automl.v1.PredictionService.Predict].
             name (:class:`str`):
                 Required. Name of the model requested
@@ -256,6 +264,7 @@ class PredictionServiceAsyncClient:
                 This corresponds to the ``params`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -280,6 +289,7 @@ class PredictionServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if payload is not None:
@@ -349,8 +359,7 @@ class PredictionServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.automl_v1.types.BatchPredictRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [PredictionService.BatchPredict][google.cloud.automl.v1.PredictionService.BatchPredict].
             name (:class:`str`):
                 Required. Name of the model requested
@@ -463,6 +472,7 @@ class PredictionServiceAsyncClient:
                 This corresponds to the ``params`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -491,6 +501,7 @@ class PredictionServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if input_config is not None:
@@ -535,6 +546,8 @@ class PredictionServiceAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

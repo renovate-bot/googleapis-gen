@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.AutoML.V1.Snippets
 {
+    using Google.Cloud.AutoML.V1;
+
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for GetModelEvaluation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetModelEvaluationResourceNames()
         {
-            // Snippet: GetModelEvaluation(ModelEvaluationName, CallSettings)
             // Create client
             AutoMlClient autoMlClient = AutoMlClient.Create();
             // Initialize request argument(s)
             ModelEvaluationName name = ModelEvaluationName.FromProjectLocationModelModelEvaluation("[PROJECT]", "[LOCATION]", "[MODEL]", "[MODEL_EVALUATION]");
             // Make the request
             ModelEvaluation response = autoMlClient.GetModelEvaluation(name);
-            // End snippet
         }
     }
 }

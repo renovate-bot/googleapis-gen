@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,20 +14,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.maps.roads_v1.types import roads
+
 from .base import RoadsServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import RoadsServiceGrpcTransport
 
@@ -74,15 +76,13 @@ class RoadsServiceGrpcAsyncIOTransport(RoadsServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -102,8 +102,7 @@ class RoadsServiceGrpcAsyncIOTransport(RoadsServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -161,6 +160,7 @@ class RoadsServiceGrpcAsyncIOTransport(RoadsServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -223,9 +223,7 @@ class RoadsServiceGrpcAsyncIOTransport(RoadsServiceTransport):
     def snap_to_roads(self) -> Callable[
             [roads.SnapToRoadsRequest],
             Awaitable[roads.SnapToRoadsResponse]]:
-        r"""Return a callable for the
-        snap to roads
-          method over gRPC.
+        r"""Return a callable for the snap to roads method over gRPC.
 
         This method takes a sequence of latitude,longitude
         points and snaps them to the most likely road segments.
@@ -255,9 +253,7 @@ class RoadsServiceGrpcAsyncIOTransport(RoadsServiceTransport):
     def list_nearest_roads(self) -> Callable[
             [roads.ListNearestRoadsRequest],
             Awaitable[roads.ListNearestRoadsResponse]]:
-        r"""Return a callable for the
-        list nearest roads
-          method over gRPC.
+        r"""Return a callable for the list nearest roads method over gRPC.
 
         This method takes a list of latitude,longitude points
         and snaps them each to their nearest road. Also returns

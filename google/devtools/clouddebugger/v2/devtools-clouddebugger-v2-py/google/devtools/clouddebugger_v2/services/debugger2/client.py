@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -32,6 +34,7 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.devtools.clouddebugger_v2.types import data
 from google.devtools.clouddebugger_v2.types import debugger
+
 from .transports.base import Debugger2Transport, DEFAULT_CLIENT_INFO
 from .transports.grpc import Debugger2GrpcTransport
 from .transports.grpc_asyncio import Debugger2GrpcAsyncIOTransport
@@ -337,8 +340,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.SetBreakpointRequest):
-                The request object.
-                Request to set a breakpoint
+                The request object. Request to set a breakpoint
             debuggee_id (str):
                 Required. ID of the debuggee where
                 the breakpoint is to be set.
@@ -361,6 +363,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
                 This corresponds to the ``client_version`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -385,8 +388,10 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, debugger.SetBreakpointRequest):
             request = debugger.SetBreakpointRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if debuggee_id is not None:
                 request.debuggee_id = debuggee_id
             if breakpoint_ is not None:
@@ -423,8 +428,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.GetBreakpointRequest):
-                The request object.
-                Request to get breakpoint
+                The request object. Request to get breakpoint
                 information.
             debuggee_id (str):
                 Required. ID of the debuggee whose
@@ -448,6 +452,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
                 This corresponds to the ``client_version`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -474,8 +479,10 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, debugger.GetBreakpointRequest):
             request = debugger.GetBreakpointRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if debuggee_id is not None:
                 request.debuggee_id = debuggee_id
             if breakpoint_id is not None:
@@ -512,8 +519,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.DeleteBreakpointRequest):
-                The request object.
-                Request to delete a breakpoint.
+                The request object. Request to delete a breakpoint.
             debuggee_id (str):
                 Required. ID of the debuggee whose
                 breakpoint to delete.
@@ -536,6 +542,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
                 This corresponds to the ``client_version`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -556,8 +563,10 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, debugger.DeleteBreakpointRequest):
             request = debugger.DeleteBreakpointRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if debuggee_id is not None:
                 request.debuggee_id = debuggee_id
             if breakpoint_id is not None:
@@ -590,8 +599,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.ListBreakpointsRequest):
-                The request object.
-                Request to list breakpoints.
+                The request object. Request to list breakpoints.
             debuggee_id (str):
                 Required. ID of the debuggee whose
                 breakpoints to list.
@@ -607,6 +615,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
                 This corresponds to the ``client_version`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -631,8 +640,10 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, debugger.ListBreakpointsRequest):
             request = debugger.ListBreakpointsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if debuggee_id is not None:
                 request.debuggee_id = debuggee_id
             if client_version is not None:
@@ -666,8 +677,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
 
         Args:
             request (google.devtools.clouddebugger_v2.types.ListDebuggeesRequest):
-                The request object.
-                Request to list debuggees.
+                The request object. Request to list debuggees.
             project (str):
                 Required. Project number of a Google
                 Cloud project whose debuggees to list.
@@ -683,6 +693,7 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
                 This corresponds to the ``client_version`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -707,8 +718,10 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
         # there are no flattened fields.
         if not isinstance(request, debugger.ListDebuggeesRequest):
             request = debugger.ListDebuggeesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project is not None:
                 request.project = project
             if client_version is not None:
@@ -728,6 +741,8 @@ class Debugger2Client(metaclass=Debugger2ClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

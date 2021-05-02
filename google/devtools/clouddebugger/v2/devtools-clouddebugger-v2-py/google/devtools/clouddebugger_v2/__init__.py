@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,6 @@
 
 from .services.controller2 import Controller2Client
 from .services.debugger2 import Debugger2Client
-
 from .types.controller import ListActiveBreakpointsRequest
 from .types.controller import ListActiveBreakpointsResponse
 from .types.controller import RegisterDebuggeeRequest
@@ -39,6 +39,7 @@ from .types.debugger import ListDebuggeesRequest
 from .types.debugger import ListDebuggeesResponse
 from .types.debugger import SetBreakpointRequest
 from .types.debugger import SetBreakpointResponse
+
 
 __all__ = (
     'Breakpoint',

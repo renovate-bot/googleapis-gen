@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v5.resources.types import billing_setup
 
@@ -41,14 +44,12 @@ class GetBillingSetupRequest(proto.Message):
             setup to fetch.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateBillingSetupRequest(proto.Message):
     r"""Request message for billing setup mutate operations.
+
     Attributes:
         customer_id (str):
             Required. Id of the customer to apply the
@@ -57,13 +58,8 @@ class MutateBillingSetupRequest(proto.Message):
             Required. The operation to perform.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operation = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operation = proto.Field(proto.MESSAGE, number=2,
         message='BillingSetupOperation',
     )
 
@@ -83,45 +79,35 @@ class BillingSetupOperation(proto.Message):
             ``customers/{customer_id}/billingSetups/{billing_id}``.
     """
 
-    create = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='operation',
+    create = proto.Field(proto.MESSAGE, number=2, oneof='operation',
         message=billing_setup.BillingSetup,
     )
-    remove = proto.Field(
-        proto.STRING,
-        number=1,
-        oneof='operation',
-    )
+    remove = proto.Field(proto.STRING, number=1, oneof='operation')
 
 
 class MutateBillingSetupResponse(proto.Message):
     r"""Response message for a billing setup operation.
+
     Attributes:
         result (google.ads.googleads.v5.services.types.MutateBillingSetupResult):
             A result that identifies the resource
             affected by the mutate request.
     """
 
-    result = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    result = proto.Field(proto.MESSAGE, number=1,
         message='MutateBillingSetupResult',
     )
 
 
 class MutateBillingSetupResult(proto.Message):
     r"""Result for a single billing setup mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

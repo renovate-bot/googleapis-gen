@@ -77,7 +77,7 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchCatalog</summary>
+        /// <summary>Snippet for SearchCatalogAsync</summary>
         public async Task SearchCatalogRequestObjectAsync()
         {
             // Snippet: SearchCatalogAsync(SearchCatalogRequest, CallSettings)
@@ -173,7 +173,7 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchCatalog</summary>
+        /// <summary>Snippet for SearchCatalogAsync</summary>
         public async Task SearchCatalogAsync()
         {
             // Snippet: SearchCatalogAsync(SearchCatalogRequest.Types.Scope, string, string, int?, CallSettings)
@@ -693,7 +693,7 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListEntryGroups</summary>
+        /// <summary>Snippet for ListEntryGroupsAsync</summary>
         public async Task ListEntryGroupsRequestObjectAsync()
         {
             // Snippet: ListEntryGroupsAsync(ListEntryGroupsRequest, CallSettings)
@@ -786,7 +786,7 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListEntryGroups</summary>
+        /// <summary>Snippet for ListEntryGroupsAsync</summary>
         public async Task ListEntryGroupsAsync()
         {
             // Snippet: ListEntryGroupsAsync(string, string, int?, CallSettings)
@@ -876,7 +876,7 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListEntryGroups</summary>
+        /// <summary>Snippet for ListEntryGroupsAsync</summary>
         public async Task ListEntryGroupsResourceNamesAsync()
         {
             // Snippet: ListEntryGroupsAsync(EntryGroupName, string, int?, CallSettings)
@@ -1292,11 +1292,7 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             // Create client
             DataCatalogClient dataCatalogClient = DataCatalogClient.Create();
             // Initialize request argument(s)
-            LookupEntryRequest request = new LookupEntryRequest
-            {
-                LinkedResource = "",
-                SqlResource = "",
-            };
+            LookupEntryRequest request = new LookupEntryRequest { LinkedResource = "", };
             // Make the request
             Entry response = dataCatalogClient.LookupEntry(request);
             // End snippet
@@ -1310,11 +1306,7 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             // Create client
             DataCatalogClient dataCatalogClient = await DataCatalogClient.CreateAsync();
             // Initialize request argument(s)
-            LookupEntryRequest request = new LookupEntryRequest
-            {
-                LinkedResource = "",
-                SqlResource = "",
-            };
+            LookupEntryRequest request = new LookupEntryRequest { LinkedResource = "", };
             // Make the request
             Entry response = await dataCatalogClient.LookupEntryAsync(request);
             // End snippet
@@ -1369,7 +1361,7 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListEntries</summary>
+        /// <summary>Snippet for ListEntriesAsync</summary>
         public async Task ListEntriesRequestObjectAsync()
         {
             // Snippet: ListEntriesAsync(ListEntriesRequest, CallSettings)
@@ -1463,7 +1455,7 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListEntries</summary>
+        /// <summary>Snippet for ListEntriesAsync</summary>
         public async Task ListEntriesAsync()
         {
             // Snippet: ListEntriesAsync(string, string, int?, CallSettings)
@@ -1553,7 +1545,7 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListEntries</summary>
+        /// <summary>Snippet for ListEntriesAsync</summary>
         public async Task ListEntriesResourceNamesAsync()
         {
             // Snippet: ListEntriesAsync(EntryGroupName, string, int?, CallSettings)
@@ -2729,7 +2721,7 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTags</summary>
+        /// <summary>Snippet for ListTagsAsync</summary>
         public async Task ListTagsRequestObjectAsync()
         {
             // Snippet: ListTagsAsync(ListTagsRequest, CallSettings)
@@ -2822,7 +2814,7 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTags</summary>
+        /// <summary>Snippet for ListTagsAsync</summary>
         public async Task ListTagsAsync()
         {
             // Snippet: ListTagsAsync(string, string, int?, CallSettings)
@@ -2912,7 +2904,7 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTags</summary>
+        /// <summary>Snippet for ListTagsAsync</summary>
         public async Task ListTagsResourceNamesAsync()
         {
             // Snippet: ListTagsAsync(EntryName, string, int?, CallSettings)

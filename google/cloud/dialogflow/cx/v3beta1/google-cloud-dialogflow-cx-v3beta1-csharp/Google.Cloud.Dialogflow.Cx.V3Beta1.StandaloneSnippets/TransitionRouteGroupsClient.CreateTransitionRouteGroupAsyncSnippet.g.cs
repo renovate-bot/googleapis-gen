@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTransitionRouteGroupsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateTransitionRouteGroupAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateTransitionRouteGroupAsync()
         {
-            // Snippet: CreateTransitionRouteGroupAsync(string, TransitionRouteGroup, CallSettings)
-            // Additional: CreateTransitionRouteGroupAsync(string, TransitionRouteGroup, CancellationToken)
             // Create client
             TransitionRouteGroupsClient transitionRouteGroupsClient = await TransitionRouteGroupsClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             TransitionRouteGroup transitionRouteGroup = new TransitionRouteGroup();
             // Make the request
             TransitionRouteGroup response = await transitionRouteGroupsClient.CreateTransitionRouteGroupAsync(parent, transitionRouteGroup);
-            // End snippet
         }
     }
 }

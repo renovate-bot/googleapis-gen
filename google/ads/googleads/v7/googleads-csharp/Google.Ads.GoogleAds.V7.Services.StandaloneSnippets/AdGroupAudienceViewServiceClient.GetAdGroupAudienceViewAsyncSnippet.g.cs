@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupAudienceViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupAudienceViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdGroupAudienceViewAsync()
         {
-            // Snippet: GetAdGroupAudienceViewAsync(string, CallSettings)
-            // Additional: GetAdGroupAudienceViewAsync(string, CancellationToken)
             // Create client
             AdGroupAudienceViewServiceClient adGroupAudienceViewServiceClient = await AdGroupAudienceViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/adGroupAudienceViews/[AD_GROUP_ID]~[CRITERION_ID]";
             // Make the request
             AdGroupAudienceView response = await adGroupAudienceViewServiceClient.GetAdGroupAudienceViewAsync(resourceName);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedContextsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteContextAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteContextAsync()
         {
-            // Snippet: DeleteContextAsync(string, CallSettings)
-            // Additional: DeleteContextAsync(string, CancellationToken)
             // Create client
             ContextsClient contextsClient = await ContextsClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/agent/sessions/[SESSION]/contexts/[CONTEXT]";
             // Make the request
             await contextsClient.DeleteContextAsync(name);
-            // End snippet
         }
     }
 }

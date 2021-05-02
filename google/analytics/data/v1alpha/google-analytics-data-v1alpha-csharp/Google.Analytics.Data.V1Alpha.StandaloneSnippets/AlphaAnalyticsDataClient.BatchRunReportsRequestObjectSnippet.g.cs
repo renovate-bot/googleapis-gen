@@ -16,12 +16,17 @@
 
 namespace Google.Analytics.Data.V1Alpha.Snippets
 {
+    using Google.Analytics.Data.V1Alpha;
+
     public sealed partial class GeneratedAlphaAnalyticsDataClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchRunReports</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BatchRunReportsRequestObject()
         {
-            // Snippet: BatchRunReports(BatchRunReportsRequest, CallSettings)
             // Create client
             AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.Create();
             // Initialize request argument(s)
@@ -35,7 +40,6 @@ namespace Google.Analytics.Data.V1Alpha.Snippets
             };
             // Make the request
             BatchRunReportsResponse response = alphaAnalyticsDataClient.BatchRunReports(request);
-            // End snippet
         }
     }
 }

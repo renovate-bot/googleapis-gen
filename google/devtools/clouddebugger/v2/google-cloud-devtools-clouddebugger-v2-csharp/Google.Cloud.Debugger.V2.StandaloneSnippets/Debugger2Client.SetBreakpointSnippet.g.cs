@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Debugger.V2.Snippets
 {
+    using Google.Cloud.Debugger.V2;
+
     public sealed partial class GeneratedDebugger2ClientStandaloneSnippets
     {
         /// <summary>Snippet for SetBreakpoint</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SetBreakpoint()
         {
-            // Snippet: SetBreakpoint(string, Breakpoint, string, CallSettings)
             // Create client
             Debugger2Client debugger2Client = Debugger2Client.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.Debugger.V2.Snippets
             string clientVersion = "";
             // Make the request
             SetBreakpointResponse response = debugger2Client.SetBreakpoint(debuggeeId, breakpoint, clientVersion);
-            // End snippet
         }
     }
 }

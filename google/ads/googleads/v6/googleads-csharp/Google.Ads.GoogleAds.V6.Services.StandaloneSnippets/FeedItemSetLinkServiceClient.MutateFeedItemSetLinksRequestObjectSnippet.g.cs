@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
+
     public sealed partial class GeneratedFeedItemSetLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateFeedItemSetLinks</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateFeedItemSetLinksRequestObject()
         {
-            // Snippet: MutateFeedItemSetLinks(MutateFeedItemSetLinksRequest, CallSettings)
             // Create client
             FeedItemSetLinkServiceClient feedItemSetLinkServiceClient = FeedItemSetLinkServiceClient.Create();
             // Initialize request argument(s)
@@ -37,7 +42,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             MutateFeedItemSetLinksResponse response = feedItemSetLinkServiceClient.MutateFeedItemSetLinks(request);
-            // End snippet
         }
     }
 }

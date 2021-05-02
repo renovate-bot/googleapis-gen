@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Retail.V2.Snippets
 {
+    using Google.Cloud.Retail.V2;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedProductServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateProductAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateProductAsync()
         {
-            // Snippet: UpdateProductAsync(Product, FieldMask, CallSettings)
-            // Additional: UpdateProductAsync(Product, FieldMask, CancellationToken)
             // Create client
             ProductServiceClient productServiceClient = await ProductServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Retail.V2.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Product response = await productServiceClient.UpdateProductAsync(product, updateMask);
-            // End snippet
         }
     }
 }

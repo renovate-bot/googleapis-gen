@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -262,14 +264,17 @@ def test_list_payments_accounts(transport: str = 'grpc', request_type=payments_a
         # Designate an appropriate return value for the call.
         call.return_value = payments_account_service.ListPaymentsAccountsResponse(
         )
+
         response = client.list_payments_accounts(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == payments_account_service.ListPaymentsAccountsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, payments_account_service.ListPaymentsAccountsResponse)
 
 
@@ -285,7 +290,6 @@ def test_list_payments_accounts_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = payments_account_service.ListPaymentsAccountsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -293,6 +297,7 @@ def test_list_payments_accounts_field_headers():
             type(client.transport.list_payments_accounts),
             '__call__') as call:
         call.return_value = payments_account_service.ListPaymentsAccountsResponse()
+
         client.list_payments_accounts(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -319,6 +324,7 @@ def test_list_payments_accounts_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = payments_account_service.ListPaymentsAccountsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_payments_accounts(
@@ -329,6 +335,7 @@ def test_list_payments_accounts_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
 
 
@@ -409,7 +416,7 @@ def test_payments_account_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'list_payments_accounts',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -560,6 +567,7 @@ def test_payments_account_service_transport_channel_mtls_with_adc(
 
 def test_customer_path():
     customer = "squid"
+
     expected = "customers/{customer}".format(customer=customer, )
     actual = PaymentsAccountServiceClient.customer_path(customer)
     assert expected == actual
@@ -567,7 +575,8 @@ def test_customer_path():
 
 def test_parse_customer_path():
     expected = {
-        "customer": "clam",
+    "customer": "clam",
+
     }
     path = PaymentsAccountServiceClient.customer_path(**expected)
 
@@ -578,6 +587,7 @@ def test_parse_customer_path():
 def test_payments_account_path():
     customer = "whelk"
     payments_account = "octopus"
+
     expected = "customers/{customer}/paymentsAccounts/{payments_account}".format(customer=customer, payments_account=payments_account, )
     actual = PaymentsAccountServiceClient.payments_account_path(customer, payments_account)
     assert expected == actual
@@ -585,8 +595,9 @@ def test_payments_account_path():
 
 def test_parse_payments_account_path():
     expected = {
-        "customer": "oyster",
-        "payments_account": "nudibranch",
+    "customer": "oyster",
+    "payments_account": "nudibranch",
+
     }
     path = PaymentsAccountServiceClient.payments_account_path(**expected)
 
@@ -596,6 +607,7 @@ def test_parse_payments_account_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = PaymentsAccountServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -603,7 +615,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "mussel",
+    "billing_account": "mussel",
+
     }
     path = PaymentsAccountServiceClient.common_billing_account_path(**expected)
 
@@ -613,6 +626,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = PaymentsAccountServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -620,7 +634,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nautilus",
+    "folder": "nautilus",
+
     }
     path = PaymentsAccountServiceClient.common_folder_path(**expected)
 
@@ -630,6 +645,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = PaymentsAccountServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -637,7 +653,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "abalone",
+    "organization": "abalone",
+
     }
     path = PaymentsAccountServiceClient.common_organization_path(**expected)
 
@@ -647,6 +664,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
+
     expected = "projects/{project}".format(project=project, )
     actual = PaymentsAccountServiceClient.common_project_path(project)
     assert expected == actual
@@ -654,7 +672,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "clam",
+    "project": "clam",
+
     }
     path = PaymentsAccountServiceClient.common_project_path(**expected)
 
@@ -665,6 +684,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = PaymentsAccountServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -672,8 +692,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "oyster",
-        "location": "nudibranch",
+    "project": "oyster",
+    "location": "nudibranch",
+
     }
     path = PaymentsAccountServiceClient.common_location_path(**expected)
 

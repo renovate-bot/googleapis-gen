@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedKeywordPlanAdGroupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateKeywordPlanAdGroupsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateKeywordPlanAdGroupsRequestObjectAsync()
         {
-            // Snippet: MutateKeywordPlanAdGroupsAsync(MutateKeywordPlanAdGroupsRequest, CallSettings)
-            // Additional: MutateKeywordPlanAdGroupsAsync(MutateKeywordPlanAdGroupsRequest, CancellationToken)
             // Create client
             KeywordPlanAdGroupServiceClient keywordPlanAdGroupServiceClient = await KeywordPlanAdGroupServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateKeywordPlanAdGroupsResponse response = await keywordPlanAdGroupServiceClient.MutateKeywordPlanAdGroupsAsync(request);
-            // End snippet
         }
     }
 }

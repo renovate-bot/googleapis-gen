@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedCombinedAudienceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCombinedAudience</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCombinedAudienceResourceNames()
         {
-            // Snippet: GetCombinedAudience(CombinedAudienceName, CallSettings)
             // Create client
             CombinedAudienceServiceClient combinedAudienceServiceClient = CombinedAudienceServiceClient.Create();
             // Initialize request argument(s)
             CombinedAudienceName resourceName = CombinedAudienceName.FromCustomerCombinedAudience("[CUSTOMER_ID]", "[COMBINED_AUDIENCE_ID]");
             // Make the request
             CombinedAudience response = combinedAudienceServiceClient.GetCombinedAudience(resourceName);
-            // End snippet
         }
     }
 }

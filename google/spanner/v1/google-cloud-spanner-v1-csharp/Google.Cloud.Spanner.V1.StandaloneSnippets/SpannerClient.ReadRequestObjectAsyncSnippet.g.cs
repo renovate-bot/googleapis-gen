@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Spanner.V1.Snippets
 {
+    using Google.Cloud.Spanner.V1;
     using Google.Protobuf;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for ReadAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ReadRequestObjectAsync()
         {
-            // Snippet: ReadAsync(ReadRequest, CallSettings)
-            // Additional: ReadAsync(ReadRequest, CancellationToken)
             // Create client
             SpannerClient spannerClient = await SpannerClient.CreateAsync();
             // Initialize request argument(s)
@@ -44,7 +47,6 @@ namespace Google.Cloud.Spanner.V1.Snippets
             };
             // Make the request
             ResultSet response = await spannerClient.ReadAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
+
     public sealed partial class GeneratedApplicationsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetApplication</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetApplicationRequestObject()
         {
-            // Snippet: GetApplication(GetApplicationRequest, CallSettings)
             // Create client
             ApplicationsClient applicationsClient = ApplicationsClient.Create();
             // Initialize request argument(s)
             GetApplicationRequest request = new GetApplicationRequest { Name = "", };
             // Make the request
             Application response = applicationsClient.GetApplication(request);
-            // End snippet
         }
     }
 }

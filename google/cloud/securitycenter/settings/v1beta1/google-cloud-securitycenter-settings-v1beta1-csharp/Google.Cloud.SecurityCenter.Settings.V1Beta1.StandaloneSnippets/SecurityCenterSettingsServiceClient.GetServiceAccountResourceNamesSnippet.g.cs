@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.SecurityCenter.Settings.V1Beta1.Snippets
 {
+    using Google.Cloud.SecurityCenter.Settings.V1Beta1;
+
     public sealed partial class GeneratedSecurityCenterSettingsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetServiceAccount</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetServiceAccountResourceNames()
         {
-            // Snippet: GetServiceAccount(ServiceAccountName, CallSettings)
             // Create client
             SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = SecurityCenterSettingsServiceClient.Create();
             // Initialize request argument(s)
             ServiceAccountName name = ServiceAccountName.FromOrganization("[ORGANIZATION]");
             // Make the request
             ServiceAccount response = securityCenterSettingsServiceClient.GetServiceAccount(name);
-            // End snippet
         }
     }
 }

@@ -18,14 +18,18 @@ namespace Google.Cloud.OrgPolicy.V2.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.OrgPolicy.V2;
     using System;
 
     public sealed partial class GeneratedOrgPolicyClientStandaloneSnippets
     {
         /// <summary>Snippet for ListPolicies</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListPoliciesResourceNames1()
         {
-            // Snippet: ListPolicies(ProjectName, string, int?, CallSettings)
             // Create client
             OrgPolicyClient orgPolicyClient = OrgPolicyClient.Create();
             // Initialize request argument(s)
@@ -64,7 +68,6 @@ namespace Google.Cloud.OrgPolicy.V2.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -33,6 +35,7 @@ from google.oauth2 import service_account                         # type: ignore
 from google.cloud.orgpolicy_v2.services.org_policy import pagers
 from google.cloud.orgpolicy_v2.types import constraint
 from google.cloud.orgpolicy_v2.types import orgpolicy
+
 from .transports.base import OrgPolicyTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import OrgPolicyGrpcTransport
 from .transports.grpc_asyncio import OrgPolicyGrpcAsyncIOTransport
@@ -368,8 +371,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
         Args:
             request (google.cloud.orgpolicy_v2.types.ListConstraintsRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [ListConstraints]
                 [google.cloud.orgpolicy.v2.OrgPolicy.ListConstraints]
                 method.
@@ -385,6 +387,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -415,8 +418,10 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # there are no flattened fields.
         if not isinstance(request, orgpolicy.ListConstraintsRequest):
             request = orgpolicy.ListConstraintsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -465,8 +470,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
         Args:
             request (google.cloud.orgpolicy_v2.types.ListPoliciesRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [ListPolicies]
                 [google.cloud.orgpolicy.v2.OrgPolicy.ListPolicies]
                 method.
@@ -483,6 +487,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -514,8 +519,10 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # there are no flattened fields.
         if not isinstance(request, orgpolicy.ListPoliciesRequest):
             request = orgpolicy.ListPoliciesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -567,8 +574,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
         Args:
             request (google.cloud.orgpolicy_v2.types.GetPolicyRequest):
-                The request object.
-                The request sent to the [GetPolicy]
+                The request object. The request sent to the [GetPolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.GetPolicy] method.
             name (str):
                 Required. Resource name of the policy. See ``Policy``
@@ -577,6 +583,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -603,8 +610,10 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # there are no flattened fields.
         if not isinstance(request, orgpolicy.GetPolicyRequest):
             request = orgpolicy.GetPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -648,8 +657,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
         Args:
             request (google.cloud.orgpolicy_v2.types.GetEffectivePolicyRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [GetEffectivePolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.GetEffectivePolicy]
                 method.
@@ -660,6 +668,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -686,8 +695,10 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # there are no flattened fields.
         if not isinstance(request, orgpolicy.GetEffectivePolicyRequest):
             request = orgpolicy.GetEffectivePolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -733,8 +744,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
         Args:
             request (google.cloud.orgpolicy_v2.types.CreatePolicyRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [CreatePolicyRequest]
                 [google.cloud.orgpolicy.v2.OrgPolicy.CreatePolicy]
                 method.
@@ -755,6 +765,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
                 This corresponds to the ``policy_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -781,8 +792,10 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # there are no flattened fields.
         if not isinstance(request, orgpolicy.CreatePolicyRequest):
             request = orgpolicy.CreatePolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if policy_ is not None:
@@ -832,8 +845,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
         Args:
             request (google.cloud.orgpolicy_v2.types.UpdatePolicyRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [UpdatePolicyRequest]
                 [google.cloud.orgpolicy.v2.OrgPolicy.UpdatePolicy]
                 method.
@@ -842,6 +854,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
                 This corresponds to the ``policy_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -868,8 +881,10 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # there are no flattened fields.
         if not isinstance(request, orgpolicy.UpdatePolicyRequest):
             request = orgpolicy.UpdatePolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if policy_ is not None:
                 request.policy_ = policy_
 
@@ -912,8 +927,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
 
         Args:
             request (google.cloud.orgpolicy_v2.types.DeletePolicyRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [DeletePolicy]
                 [google.cloud.orgpolicy.v2.OrgPolicy.DeletePolicy]
                 method.
@@ -924,6 +938,7 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -944,8 +959,10 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
         # there are no flattened fields.
         if not isinstance(request, orgpolicy.DeletePolicyRequest):
             request = orgpolicy.DeletePolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -968,6 +985,8 @@ class OrgPolicyClient(metaclass=OrgPolicyClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Container.V1Beta1.Snippets
 {
+    using Google.Cloud.Container.V1Beta1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetNodePool</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetNodePoolRequestObject()
         {
-            // Snippet: GetNodePool(GetNodePoolRequest, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
             GetNodePoolRequest request = new GetNodePoolRequest { Name = "", };
             // Make the request
             NodePool response = clusterManagerClient.GetNodePool(request);
-            // End snippet
         }
     }
 }

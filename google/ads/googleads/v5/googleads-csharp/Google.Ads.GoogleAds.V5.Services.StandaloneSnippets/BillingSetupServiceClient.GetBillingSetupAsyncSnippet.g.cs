@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBillingSetupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBillingSetupAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetBillingSetupAsync()
         {
-            // Snippet: GetBillingSetupAsync(string, CallSettings)
-            // Additional: GetBillingSetupAsync(string, CancellationToken)
             // Create client
             BillingSetupServiceClient billingSetupServiceClient = await BillingSetupServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/billingSetups/[BILLING_SETUP]";
             // Make the request
             BillingSetup response = await billingSetupServiceClient.GetBillingSetupAsync(resourceName);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,6 +37,7 @@ from google.cloud.dialogflow_v2.types import context
 from google.cloud.dialogflow_v2.types import context as gcd_context
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
+
 from .transports.base import ContextsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ContextsGrpcTransport
 from .transports.grpc_asyncio import ContextsGrpcAsyncIOTransport
@@ -337,8 +340,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ListContextsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Contexts.ListContexts][google.cloud.dialogflow.v2.Contexts.ListContexts].
             parent (str):
                 Required. The session to list all contexts from. Format:
@@ -351,6 +353,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -380,8 +383,10 @@ class ContextsClient(metaclass=ContextsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, context.ListContextsRequest):
             request = context.ListContextsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -429,8 +434,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.GetContextRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Contexts.GetContext][google.cloud.dialogflow.v2.Contexts.GetContext].
             name (str):
                 Required. The name of the context. Format:
@@ -444,6 +448,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -487,8 +492,10 @@ class ContextsClient(metaclass=ContextsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, context.GetContextRequest):
             request = context.GetContextRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -530,8 +537,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.CreateContextRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Contexts.CreateContext][google.cloud.dialogflow.v2.Contexts.CreateContext].
             parent (str):
                 Required. The session to create a context for. Format:
@@ -549,6 +555,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
                 This corresponds to the ``context`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -592,8 +599,10 @@ class ContextsClient(metaclass=ContextsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_context.CreateContextRequest):
             request = gcd_context.CreateContextRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if context is not None:
@@ -635,8 +644,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.UpdateContextRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Contexts.UpdateContext][google.cloud.dialogflow.v2.Contexts.UpdateContext].
             context (google.cloud.dialogflow_v2.types.Context):
                 Required. The context to update.
@@ -650,6 +658,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -693,8 +702,10 @@ class ContextsClient(metaclass=ContextsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_context.UpdateContextRequest):
             request = gcd_context.UpdateContextRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if context is not None:
                 request.context = context
             if update_mask is not None:
@@ -735,8 +746,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.DeleteContextRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Contexts.DeleteContext][google.cloud.dialogflow.v2.Contexts.DeleteContext].
             name (str):
                 Required. The name of the context to delete. Format:
@@ -750,6 +760,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -770,8 +781,10 @@ class ContextsClient(metaclass=ContextsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, context.DeleteContextRequest):
             request = context.DeleteContextRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -807,8 +820,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.DeleteAllContextsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Contexts.DeleteAllContexts][google.cloud.dialogflow.v2.Contexts.DeleteAllContexts].
             parent (str):
                 Required. The name of the session to delete all contexts
@@ -822,6 +834,7 @@ class ContextsClient(metaclass=ContextsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -842,8 +855,10 @@ class ContextsClient(metaclass=ContextsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, context.DeleteAllContextsRequest):
             request = context.DeleteAllContextsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -866,6 +881,8 @@ class ContextsClient(metaclass=ContextsClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

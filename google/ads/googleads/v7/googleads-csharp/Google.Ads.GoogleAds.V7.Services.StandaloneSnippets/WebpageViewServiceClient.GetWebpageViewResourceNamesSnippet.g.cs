@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedWebpageViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetWebpageView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetWebpageViewResourceNames()
         {
-            // Snippet: GetWebpageView(WebpageViewName, CallSettings)
             // Create client
             WebpageViewServiceClient webpageViewServiceClient = WebpageViewServiceClient.Create();
             // Initialize request argument(s)
             WebpageViewName resourceName = WebpageViewName.FromCustomerAdGroupCriterion("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
             // Make the request
             WebpageView response = webpageViewServiceClient.GetWebpageView(resourceName);
-            // End snippet
         }
     }
 }

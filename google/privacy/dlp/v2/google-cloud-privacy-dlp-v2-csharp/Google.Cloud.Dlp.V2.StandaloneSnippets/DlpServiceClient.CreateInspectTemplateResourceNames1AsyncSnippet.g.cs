@@ -17,15 +17,18 @@
 namespace Google.Cloud.Dlp.V2.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dlp.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateInspectTemplateAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateInspectTemplateResourceNames1Async()
         {
-            // Snippet: CreateInspectTemplateAsync(OrganizationName, InspectTemplate, CallSettings)
-            // Additional: CreateInspectTemplateAsync(OrganizationName, InspectTemplate, CancellationToken)
             // Create client
             DlpServiceClient dlpServiceClient = await DlpServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dlp.V2.Snippets
             InspectTemplate inspectTemplate = new InspectTemplate();
             // Make the request
             InspectTemplate response = await dlpServiceClient.CreateInspectTemplateAsync(parent, inspectTemplate);
-            // End snippet
         }
     }
 }

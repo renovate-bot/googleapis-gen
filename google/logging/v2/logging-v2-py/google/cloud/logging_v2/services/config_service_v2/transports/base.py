@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,13 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import abc
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Union
-import packaging.version
+import typing
 import pkg_resources
 
 from google import auth  # type: ignore
-import google.api_core  # type: ignore
 from google.api_core import exceptions  # type: ignore
 from google.api_core import gapic_v1    # type: ignore
 from google.api_core import retry as retries  # type: ignore
@@ -27,6 +27,7 @@ from google.auth import credentials  # type: ignore
 
 from google.cloud.logging_v2.types import logging_config
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
@@ -36,18 +37,6 @@ try:
     )
 except pkg_resources.DistributionNotFound:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
-
-try:
-    # google.auth.__version__ was added in 1.26.0
-    _GOOGLE_AUTH_VERSION = auth.__version__
-except AttributeError:
-    try:  # try pkg_resources if it is available
-        _GOOGLE_AUTH_VERSION = pkg_resources.get_distribution("google-auth").version
-    except pkg_resources.DistributionNotFound:  # pragma: NO COVER
-        _GOOGLE_AUTH_VERSION = None
-
-_API_CORE_VERSION = google.api_core.__version__
-
 
 class ConfigServiceV2Transport(abc.ABC):
     """Abstract transport class for ConfigServiceV2."""
@@ -59,22 +48,20 @@ class ConfigServiceV2Transport(abc.ABC):
         'https://www.googleapis.com/auth/logging.read',
     )
 
-    DEFAULT_HOST: str = 'logging.googleapis.com'
     def __init__(
             self, *,
-            host: str = DEFAULT_HOST,
+            host: str = 'logging.googleapis.com',
             credentials: credentials.Credentials = None,
-            credentials_file: Optional[str] = None,
-            scopes: Optional[Sequence[str]] = None,
-            quota_project_id: Optional[str] = None,
+            credentials_file: typing.Optional[str] = None,
+            scopes: typing.Optional[typing.Sequence[str]] = AUTH_SCOPES,
+            quota_project_id: typing.Optional[str] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             **kwargs,
             ) -> None:
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -83,7 +70,7 @@ class ConfigServiceV2Transport(abc.ABC):
             credentials_file (Optional[str]): A file with credentials that can
                 be loaded with :func:`google.auth.load_credentials_from_file`.
                 This argument is mutually exclusive with credentials.
-            scopes (Optional[Sequence[str]]): A list of scopes.
+            scope (Optional[Sequence[str]]): A list of scopes.
             quota_project_id (Optional[str]): An optional project to use for billing
                 and quota.
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
@@ -97,8 +84,6 @@ class ConfigServiceV2Transport(abc.ABC):
             host += ':443'
         self._host = host
 
-        scopes_kwargs = self._get_scopes_kwargs(self._host, scopes)
-
         # Save the scopes.
         self._scopes = scopes or self.AUTH_SCOPES
 
@@ -110,56 +95,15 @@ class ConfigServiceV2Transport(abc.ABC):
         if credentials_file is not None:
             credentials, _ = auth.load_credentials_from_file(
                                 credentials_file,
-                                **scopes_kwargs,
+                                scopes=self._scopes,
                                 quota_project_id=quota_project_id
                             )
 
         elif credentials is None:
-            credentials, _ = auth.default(**scopes_kwargs, quota_project_id=quota_project_id)
+            credentials, _ = auth.default(scopes=self._scopes, quota_project_id=quota_project_id)
 
         # Save the credentials.
         self._credentials = credentials
-
-    # TODO(busunkim): These two class methods are in the base transport
-    # to avoid duplicating code across the transport classes. These functions
-    # should be deleted once the minimum required versions of google-api-core
-    # and google-auth are increased.
-
-    # TODO: Remove this function once google-auth >= 1.25.0 is required
-    @classmethod
-    def _get_scopes_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Optional[Sequence[str]]]:
-        """Returns scopes kwargs to pass to google-auth methods depending on the google-auth version"""
-
-        scopes_kwargs = {}
-
-        if _GOOGLE_AUTH_VERSION and (
-            packaging.version.parse(_GOOGLE_AUTH_VERSION)
-            >= packaging.version.parse("1.25.0")
-        ):
-            scopes_kwargs = {"scopes": scopes, "default_scopes": cls.AUTH_SCOPES}
-        else:
-            scopes_kwargs = {"scopes": scopes or cls.AUTH_SCOPES}
-
-        return scopes_kwargs
-
-    # TODO: Remove this function once google-api-core >= 1.26.0 is required
-    @classmethod
-    def _get_self_signed_jwt_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Union[Optional[Sequence[str]], str]]:
-        """Returns kwargs to pass to grpc_helpers.create_channel depending on the google-api-core version"""
-
-        self_signed_jwt_kwargs: Dict[str, Union[Optional[Sequence[str]], str]] = {}
-
-        if _API_CORE_VERSION and (
-            packaging.version.parse(_API_CORE_VERSION)
-            >= packaging.version.parse("1.26.0")
-        ):
-            self_signed_jwt_kwargs["default_scopes"] = cls.AUTH_SCOPES
-            self_signed_jwt_kwargs["scopes"] = scopes
-            self_signed_jwt_kwargs["default_host"] = cls.DEFAULT_HOST
-        else:
-            self_signed_jwt_kwargs["scopes"] = scopes or cls.AUTH_SCOPES
-
-        return self_signed_jwt_kwargs
 
     def _prep_wrapped_messages(self, client_info):
         # Precompute the wrapped methods.
@@ -222,7 +166,10 @@ class ConfigServiceV2Transport(abc.ABC):
             self.list_sinks: gapic_v1.method.wrap_method(
                 self.list_sinks,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
@@ -235,7 +182,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.get_sink: gapic_v1.method.wrap_method(
                 self.get_sink,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
@@ -253,7 +203,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.update_sink: gapic_v1.method.wrap_method(
                 self.update_sink,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
@@ -266,7 +219,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.delete_sink: gapic_v1.method.wrap_method(
                 self.delete_sink,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
@@ -279,7 +235,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.list_exclusions: gapic_v1.method.wrap_method(
                 self.list_exclusions,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
@@ -292,7 +251,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.get_exclusion: gapic_v1.method.wrap_method(
                 self.get_exclusion,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
@@ -315,7 +277,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.delete_exclusion: gapic_v1.method.wrap_method(
                 self.delete_exclusion,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.InternalServerError,
                         exceptions.ServiceUnavailable,
@@ -335,212 +300,213 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
                 default_timeout=None,
                 client_info=client_info,
             ),
-         }
+
+        }
 
     @property
-    def list_buckets(self) -> Callable[
+    def list_buckets(self) -> typing.Callable[
             [logging_config.ListBucketsRequest],
-            Union[
+            typing.Union[
                 logging_config.ListBucketsResponse,
-                Awaitable[logging_config.ListBucketsResponse]
+                typing.Awaitable[logging_config.ListBucketsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_bucket(self) -> Callable[
+    def get_bucket(self) -> typing.Callable[
             [logging_config.GetBucketRequest],
-            Union[
+            typing.Union[
                 logging_config.LogBucket,
-                Awaitable[logging_config.LogBucket]
+                typing.Awaitable[logging_config.LogBucket]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_bucket(self) -> Callable[
+    def create_bucket(self) -> typing.Callable[
             [logging_config.CreateBucketRequest],
-            Union[
+            typing.Union[
                 logging_config.LogBucket,
-                Awaitable[logging_config.LogBucket]
+                typing.Awaitable[logging_config.LogBucket]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_bucket(self) -> Callable[
+    def update_bucket(self) -> typing.Callable[
             [logging_config.UpdateBucketRequest],
-            Union[
+            typing.Union[
                 logging_config.LogBucket,
-                Awaitable[logging_config.LogBucket]
+                typing.Awaitable[logging_config.LogBucket]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_bucket(self) -> Callable[
+    def delete_bucket(self) -> typing.Callable[
             [logging_config.DeleteBucketRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def undelete_bucket(self) -> Callable[
+    def undelete_bucket(self) -> typing.Callable[
             [logging_config.UndeleteBucketRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_views(self) -> Callable[
+    def list_views(self) -> typing.Callable[
             [logging_config.ListViewsRequest],
-            Union[
+            typing.Union[
                 logging_config.ListViewsResponse,
-                Awaitable[logging_config.ListViewsResponse]
+                typing.Awaitable[logging_config.ListViewsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_view(self) -> Callable[
+    def get_view(self) -> typing.Callable[
             [logging_config.GetViewRequest],
-            Union[
+            typing.Union[
                 logging_config.LogView,
-                Awaitable[logging_config.LogView]
+                typing.Awaitable[logging_config.LogView]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_view(self) -> Callable[
+    def create_view(self) -> typing.Callable[
             [logging_config.CreateViewRequest],
-            Union[
+            typing.Union[
                 logging_config.LogView,
-                Awaitable[logging_config.LogView]
+                typing.Awaitable[logging_config.LogView]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_view(self) -> Callable[
+    def update_view(self) -> typing.Callable[
             [logging_config.UpdateViewRequest],
-            Union[
+            typing.Union[
                 logging_config.LogView,
-                Awaitable[logging_config.LogView]
+                typing.Awaitable[logging_config.LogView]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_view(self) -> Callable[
+    def delete_view(self) -> typing.Callable[
             [logging_config.DeleteViewRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_sinks(self) -> Callable[
+    def list_sinks(self) -> typing.Callable[
             [logging_config.ListSinksRequest],
-            Union[
+            typing.Union[
                 logging_config.ListSinksResponse,
-                Awaitable[logging_config.ListSinksResponse]
+                typing.Awaitable[logging_config.ListSinksResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_sink(self) -> Callable[
+    def get_sink(self) -> typing.Callable[
             [logging_config.GetSinkRequest],
-            Union[
+            typing.Union[
                 logging_config.LogSink,
-                Awaitable[logging_config.LogSink]
+                typing.Awaitable[logging_config.LogSink]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_sink(self) -> Callable[
+    def create_sink(self) -> typing.Callable[
             [logging_config.CreateSinkRequest],
-            Union[
+            typing.Union[
                 logging_config.LogSink,
-                Awaitable[logging_config.LogSink]
+                typing.Awaitable[logging_config.LogSink]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_sink(self) -> Callable[
+    def update_sink(self) -> typing.Callable[
             [logging_config.UpdateSinkRequest],
-            Union[
+            typing.Union[
                 logging_config.LogSink,
-                Awaitable[logging_config.LogSink]
+                typing.Awaitable[logging_config.LogSink]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_sink(self) -> Callable[
+    def delete_sink(self) -> typing.Callable[
             [logging_config.DeleteSinkRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_exclusions(self) -> Callable[
+    def list_exclusions(self) -> typing.Callable[
             [logging_config.ListExclusionsRequest],
-            Union[
+            typing.Union[
                 logging_config.ListExclusionsResponse,
-                Awaitable[logging_config.ListExclusionsResponse]
+                typing.Awaitable[logging_config.ListExclusionsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_exclusion(self) -> Callable[
+    def get_exclusion(self) -> typing.Callable[
             [logging_config.GetExclusionRequest],
-            Union[
+            typing.Union[
                 logging_config.LogExclusion,
-                Awaitable[logging_config.LogExclusion]
+                typing.Awaitable[logging_config.LogExclusion]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_exclusion(self) -> Callable[
+    def create_exclusion(self) -> typing.Callable[
             [logging_config.CreateExclusionRequest],
-            Union[
+            typing.Union[
                 logging_config.LogExclusion,
-                Awaitable[logging_config.LogExclusion]
+                typing.Awaitable[logging_config.LogExclusion]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_exclusion(self) -> Callable[
+    def update_exclusion(self) -> typing.Callable[
             [logging_config.UpdateExclusionRequest],
-            Union[
+            typing.Union[
                 logging_config.LogExclusion,
-                Awaitable[logging_config.LogExclusion]
+                typing.Awaitable[logging_config.LogExclusion]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_exclusion(self) -> Callable[
+    def delete_exclusion(self) -> typing.Callable[
             [logging_config.DeleteExclusionRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_cmek_settings(self) -> Callable[
+    def get_cmek_settings(self) -> typing.Callable[
             [logging_config.GetCmekSettingsRequest],
-            Union[
+            typing.Union[
                 logging_config.CmekSettings,
-                Awaitable[logging_config.CmekSettings]
+                typing.Awaitable[logging_config.CmekSettings]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_cmek_settings(self) -> Callable[
+    def update_cmek_settings(self) -> typing.Callable[
             [logging_config.UpdateCmekSettingsRequest],
-            Union[
+            typing.Union[
                 logging_config.CmekSettings,
-                Awaitable[logging_config.CmekSettings]
+                typing.Awaitable[logging_config.CmekSettings]
             ]]:
         raise NotImplementedError()
 

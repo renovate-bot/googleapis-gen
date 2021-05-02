@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -36,36 +36,12 @@ from google.home.enterprise.sdm_v1.services.smart_device_management_service impo
 from google.home.enterprise.sdm_v1.services.smart_device_management_service import SmartDeviceManagementServiceClient
 from google.home.enterprise.sdm_v1.services.smart_device_management_service import pagers
 from google.home.enterprise.sdm_v1.services.smart_device_management_service import transports
-from google.home.enterprise.sdm_v1.services.smart_device_management_service.transports.base import _API_CORE_VERSION
-from google.home.enterprise.sdm_v1.services.smart_device_management_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.home.enterprise.sdm_v1.types import device
 from google.home.enterprise.sdm_v1.types import site
 from google.home.enterprise.sdm_v1.types import smart_device_management_service
 from google.oauth2 import service_account
 from google.protobuf import struct_pb2 as struct  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -233,10 +209,12 @@ def test_smart_device_management_service_client_client_options(client_class, tra
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (SmartDeviceManagementServiceClient, transports.SmartDeviceManagementServiceGrpcTransport, "grpc", "true"),
     (SmartDeviceManagementServiceAsyncClient, transports.SmartDeviceManagementServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (SmartDeviceManagementServiceClient, transports.SmartDeviceManagementServiceGrpcTransport, "grpc", "false"),
     (SmartDeviceManagementServiceAsyncClient, transports.SmartDeviceManagementServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(SmartDeviceManagementServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(SmartDeviceManagementServiceClient))
 @mock.patch.object(SmartDeviceManagementServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(SmartDeviceManagementServiceAsyncClient))
@@ -391,18 +369,25 @@ def test_get_device(transport: str = 'grpc', request_type=smart_device_managemen
         # Designate an appropriate return value for the call.
         call.return_value = device.Device(
             name='name_value',
+
             type_='type__value',
+
         )
+
         response = client.get_device(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == smart_device_management_service.GetDeviceRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, device.Device)
+
     assert response.name == 'name_value'
+
     assert response.type_ == 'type__value'
 
 
@@ -425,8 +410,8 @@ def test_get_device_empty_call():
         client.get_device()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == smart_device_management_service.GetDeviceRequest()
 
+        assert args[0] == smart_device_management_service.GetDeviceRequest()
 
 @pytest.mark.asyncio
 async def test_get_device_async(transport: str = 'grpc_asyncio', request_type=smart_device_management_service.GetDeviceRequest):
@@ -444,20 +429,24 @@ async def test_get_device_async(transport: str = 'grpc_asyncio', request_type=sm
             type(client.transport.get_device),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(device.Device(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(device.Device(
             name='name_value',
             type_='type__value',
         ))
+
         response = await client.get_device(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == smart_device_management_service.GetDeviceRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, device.Device)
+
     assert response.name == 'name_value'
+
     assert response.type_ == 'type__value'
 
 
@@ -474,7 +463,6 @@ def test_get_device_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = smart_device_management_service.GetDeviceRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -482,6 +470,7 @@ def test_get_device_field_headers():
             type(client.transport.get_device),
             '__call__') as call:
         call.return_value = device.Device()
+
         client.get_device(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -506,7 +495,6 @@ async def test_get_device_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = smart_device_management_service.GetDeviceRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -514,6 +502,7 @@ async def test_get_device_field_headers_async():
             type(client.transport.get_device),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(device.Device())
+
         await client.get_device(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -546,16 +535,21 @@ def test_list_devices(transport: str = 'grpc', request_type=smart_device_managem
         # Designate an appropriate return value for the call.
         call.return_value = smart_device_management_service.ListDevicesResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_devices(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == smart_device_management_service.ListDevicesRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListDevicesPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -578,8 +572,8 @@ def test_list_devices_empty_call():
         client.list_devices()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == smart_device_management_service.ListDevicesRequest()
 
+        assert args[0] == smart_device_management_service.ListDevicesRequest()
 
 @pytest.mark.asyncio
 async def test_list_devices_async(transport: str = 'grpc_asyncio', request_type=smart_device_management_service.ListDevicesRequest):
@@ -597,18 +591,21 @@ async def test_list_devices_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.list_devices),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(smart_device_management_service.ListDevicesResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(smart_device_management_service.ListDevicesResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_devices(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == smart_device_management_service.ListDevicesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDevicesAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -625,7 +622,6 @@ def test_list_devices_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = smart_device_management_service.ListDevicesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -633,6 +629,7 @@ def test_list_devices_field_headers():
             type(client.transport.list_devices),
             '__call__') as call:
         call.return_value = smart_device_management_service.ListDevicesResponse()
+
         client.list_devices(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -657,7 +654,6 @@ async def test_list_devices_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = smart_device_management_service.ListDevicesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -665,6 +661,7 @@ async def test_list_devices_field_headers_async():
             type(client.transport.list_devices),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(smart_device_management_service.ListDevicesResponse())
+
         await client.list_devices(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -866,6 +863,7 @@ async def test_list_devices_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_execute_device_command(transport: str = 'grpc', request_type=smart_device_management_service.ExecuteDeviceCommandRequest):
     client = SmartDeviceManagementServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -883,14 +881,17 @@ def test_execute_device_command(transport: str = 'grpc', request_type=smart_devi
         # Designate an appropriate return value for the call.
         call.return_value = smart_device_management_service.ExecuteDeviceCommandResponse(
         )
+
         response = client.execute_device_command(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == smart_device_management_service.ExecuteDeviceCommandRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, smart_device_management_service.ExecuteDeviceCommandResponse)
 
 
@@ -913,8 +914,8 @@ def test_execute_device_command_empty_call():
         client.execute_device_command()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == smart_device_management_service.ExecuteDeviceCommandRequest()
 
+        assert args[0] == smart_device_management_service.ExecuteDeviceCommandRequest()
 
 @pytest.mark.asyncio
 async def test_execute_device_command_async(transport: str = 'grpc_asyncio', request_type=smart_device_management_service.ExecuteDeviceCommandRequest):
@@ -932,13 +933,15 @@ async def test_execute_device_command_async(transport: str = 'grpc_asyncio', req
             type(client.transport.execute_device_command),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(smart_device_management_service.ExecuteDeviceCommandResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(smart_device_management_service.ExecuteDeviceCommandResponse(
         ))
+
         response = await client.execute_device_command(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == smart_device_management_service.ExecuteDeviceCommandRequest()
 
     # Establish that the response is the type that we expect.
@@ -958,7 +961,6 @@ def test_execute_device_command_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = smart_device_management_service.ExecuteDeviceCommandRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -966,6 +968,7 @@ def test_execute_device_command_field_headers():
             type(client.transport.execute_device_command),
             '__call__') as call:
         call.return_value = smart_device_management_service.ExecuteDeviceCommandResponse()
+
         client.execute_device_command(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -990,7 +993,6 @@ async def test_execute_device_command_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = smart_device_management_service.ExecuteDeviceCommandRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -998,6 +1000,7 @@ async def test_execute_device_command_field_headers_async():
             type(client.transport.execute_device_command),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(smart_device_management_service.ExecuteDeviceCommandResponse())
+
         await client.execute_device_command(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1030,16 +1033,21 @@ def test_get_structure(transport: str = 'grpc', request_type=smart_device_manage
         # Designate an appropriate return value for the call.
         call.return_value = site.Structure(
             name='name_value',
+
         )
+
         response = client.get_structure(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == smart_device_management_service.GetStructureRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, site.Structure)
+
     assert response.name == 'name_value'
 
 
@@ -1062,8 +1070,8 @@ def test_get_structure_empty_call():
         client.get_structure()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == smart_device_management_service.GetStructureRequest()
 
+        assert args[0] == smart_device_management_service.GetStructureRequest()
 
 @pytest.mark.asyncio
 async def test_get_structure_async(transport: str = 'grpc_asyncio', request_type=smart_device_management_service.GetStructureRequest):
@@ -1081,18 +1089,21 @@ async def test_get_structure_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.get_structure),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(site.Structure(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(site.Structure(
             name='name_value',
         ))
+
         response = await client.get_structure(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == smart_device_management_service.GetStructureRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, site.Structure)
+
     assert response.name == 'name_value'
 
 
@@ -1109,7 +1120,6 @@ def test_get_structure_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = smart_device_management_service.GetStructureRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1117,6 +1127,7 @@ def test_get_structure_field_headers():
             type(client.transport.get_structure),
             '__call__') as call:
         call.return_value = site.Structure()
+
         client.get_structure(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1141,7 +1152,6 @@ async def test_get_structure_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = smart_device_management_service.GetStructureRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1149,6 +1159,7 @@ async def test_get_structure_field_headers_async():
             type(client.transport.get_structure),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(site.Structure())
+
         await client.get_structure(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1181,16 +1192,21 @@ def test_list_structures(transport: str = 'grpc', request_type=smart_device_mana
         # Designate an appropriate return value for the call.
         call.return_value = smart_device_management_service.ListStructuresResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_structures(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == smart_device_management_service.ListStructuresRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListStructuresPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1213,8 +1229,8 @@ def test_list_structures_empty_call():
         client.list_structures()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == smart_device_management_service.ListStructuresRequest()
 
+        assert args[0] == smart_device_management_service.ListStructuresRequest()
 
 @pytest.mark.asyncio
 async def test_list_structures_async(transport: str = 'grpc_asyncio', request_type=smart_device_management_service.ListStructuresRequest):
@@ -1232,18 +1248,21 @@ async def test_list_structures_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.list_structures),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(smart_device_management_service.ListStructuresResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(smart_device_management_service.ListStructuresResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_structures(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == smart_device_management_service.ListStructuresRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListStructuresAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1260,7 +1279,6 @@ def test_list_structures_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = smart_device_management_service.ListStructuresRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1268,6 +1286,7 @@ def test_list_structures_field_headers():
             type(client.transport.list_structures),
             '__call__') as call:
         call.return_value = smart_device_management_service.ListStructuresResponse()
+
         client.list_structures(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1292,7 +1311,6 @@ async def test_list_structures_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = smart_device_management_service.ListStructuresRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1300,6 +1318,7 @@ async def test_list_structures_field_headers_async():
             type(client.transport.list_structures),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(smart_device_management_service.ListStructuresResponse())
+
         await client.list_structures(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1501,6 +1520,7 @@ async def test_list_structures_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_room(transport: str = 'grpc', request_type=smart_device_management_service.GetRoomRequest):
     client = SmartDeviceManagementServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1518,16 +1538,21 @@ def test_get_room(transport: str = 'grpc', request_type=smart_device_management_
         # Designate an appropriate return value for the call.
         call.return_value = site.Room(
             name='name_value',
+
         )
+
         response = client.get_room(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == smart_device_management_service.GetRoomRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, site.Room)
+
     assert response.name == 'name_value'
 
 
@@ -1550,8 +1575,8 @@ def test_get_room_empty_call():
         client.get_room()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == smart_device_management_service.GetRoomRequest()
 
+        assert args[0] == smart_device_management_service.GetRoomRequest()
 
 @pytest.mark.asyncio
 async def test_get_room_async(transport: str = 'grpc_asyncio', request_type=smart_device_management_service.GetRoomRequest):
@@ -1569,18 +1594,21 @@ async def test_get_room_async(transport: str = 'grpc_asyncio', request_type=smar
             type(client.transport.get_room),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(site.Room(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(site.Room(
             name='name_value',
         ))
+
         response = await client.get_room(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == smart_device_management_service.GetRoomRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, site.Room)
+
     assert response.name == 'name_value'
 
 
@@ -1597,7 +1625,6 @@ def test_get_room_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = smart_device_management_service.GetRoomRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1605,6 +1632,7 @@ def test_get_room_field_headers():
             type(client.transport.get_room),
             '__call__') as call:
         call.return_value = site.Room()
+
         client.get_room(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1629,7 +1657,6 @@ async def test_get_room_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = smart_device_management_service.GetRoomRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1637,6 +1664,7 @@ async def test_get_room_field_headers_async():
             type(client.transport.get_room),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(site.Room())
+
         await client.get_room(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1669,16 +1697,21 @@ def test_list_rooms(transport: str = 'grpc', request_type=smart_device_managemen
         # Designate an appropriate return value for the call.
         call.return_value = smart_device_management_service.ListRoomsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_rooms(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == smart_device_management_service.ListRoomsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListRoomsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1701,8 +1734,8 @@ def test_list_rooms_empty_call():
         client.list_rooms()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == smart_device_management_service.ListRoomsRequest()
 
+        assert args[0] == smart_device_management_service.ListRoomsRequest()
 
 @pytest.mark.asyncio
 async def test_list_rooms_async(transport: str = 'grpc_asyncio', request_type=smart_device_management_service.ListRoomsRequest):
@@ -1720,18 +1753,21 @@ async def test_list_rooms_async(transport: str = 'grpc_asyncio', request_type=sm
             type(client.transport.list_rooms),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(smart_device_management_service.ListRoomsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(smart_device_management_service.ListRoomsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_rooms(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == smart_device_management_service.ListRoomsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListRoomsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1748,7 +1784,6 @@ def test_list_rooms_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = smart_device_management_service.ListRoomsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1756,6 +1791,7 @@ def test_list_rooms_field_headers():
             type(client.transport.list_rooms),
             '__call__') as call:
         call.return_value = smart_device_management_service.ListRoomsResponse()
+
         client.list_rooms(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1780,7 +1816,6 @@ async def test_list_rooms_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = smart_device_management_service.ListRoomsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1788,6 +1823,7 @@ async def test_list_rooms_field_headers_async():
             type(client.transport.list_rooms),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(smart_device_management_service.ListRoomsResponse())
+
         await client.list_rooms(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2030,6 +2066,7 @@ def test_transport_instance():
     client = SmartDeviceManagementServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.SmartDeviceManagementServiceGrpcTransport(
@@ -2044,6 +2081,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.SmartDeviceManagementServiceGrpcTransport,
     transports.SmartDeviceManagementServiceGrpcAsyncIOTransport,
@@ -2055,6 +2093,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = SmartDeviceManagementServiceClient(
@@ -2064,6 +2103,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.SmartDeviceManagementServiceGrpcTransport,
     )
+
 
 def test_smart_device_management_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -2092,33 +2132,15 @@ def test_smart_device_management_service_base_transport():
         'list_structures',
         'get_room',
         'list_rooms',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_smart_device_management_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.home.enterprise.sdm_v1.services.smart_device_management_service.transports.SmartDeviceManagementServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.SmartDeviceManagementServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/sdm.service',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_smart_device_management_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.home.enterprise.sdm_v1.services.smart_device_management_service.transports.SmartDeviceManagementServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.home.enterprise.sdm_v1.services.smart_device_management_service.transports.SmartDeviceManagementServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.SmartDeviceManagementServiceTransport(
@@ -2134,182 +2156,33 @@ def test_smart_device_management_service_base_transport_with_credentials_file_ol
 
 def test_smart_device_management_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.home.enterprise.sdm_v1.services.smart_device_management_service.transports.SmartDeviceManagementServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.home.enterprise.sdm_v1.services.smart_device_management_service.transports.SmartDeviceManagementServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.SmartDeviceManagementServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_smart_device_management_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         SmartDeviceManagementServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/sdm.service',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_smart_device_management_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        SmartDeviceManagementServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/sdm.service',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.SmartDeviceManagementServiceGrpcTransport,
-        transports.SmartDeviceManagementServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_smart_device_management_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/sdm.service',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.SmartDeviceManagementServiceGrpcTransport,
-        transports.SmartDeviceManagementServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_smart_device_management_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/sdm.service',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/sdm.service',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.SmartDeviceManagementServiceGrpcTransport, grpc_helpers),
-        (transports.SmartDeviceManagementServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_smart_device_management_service_transport_create_channel(transport_class, grpc_helpers):
+def test_smart_device_management_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.SmartDeviceManagementServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/sdm.service',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "smartdevicemanagement.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/sdm.service',),
-            scopes=["1", "2"],
-            default_host="smartdevicemanagement.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.SmartDeviceManagementServiceGrpcTransport, grpc_helpers),
-        (transports.SmartDeviceManagementServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_smart_device_management_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "smartdevicemanagement.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/sdm.service',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.SmartDeviceManagementServiceGrpcTransport, grpc_helpers),
-        (transports.SmartDeviceManagementServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_smart_device_management_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "smartdevicemanagement.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -2371,6 +2244,7 @@ def test_smart_device_management_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='smartdevicemanagement.googleapis.com:8000'),
     )
     assert client.transport._host == 'smartdevicemanagement.googleapis.com:8000'
+
 
 def test_smart_device_management_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -2489,6 +2363,7 @@ def test_smart_device_management_service_transport_channel_mtls_with_adc(
 def test_device_path():
     enterprise = "squid"
     device = "clam"
+
     expected = "enterprises/{enterprise}/devices/{device}".format(enterprise=enterprise, device=device, )
     actual = SmartDeviceManagementServiceClient.device_path(enterprise, device)
     assert expected == actual
@@ -2496,8 +2371,9 @@ def test_device_path():
 
 def test_parse_device_path():
     expected = {
-        "enterprise": "whelk",
-        "device": "octopus",
+    "enterprise": "whelk",
+    "device": "octopus",
+
     }
     path = SmartDeviceManagementServiceClient.device_path(**expected)
 
@@ -2509,6 +2385,7 @@ def test_room_path():
     enterprise = "oyster"
     structure = "nudibranch"
     room = "cuttlefish"
+
     expected = "enterprises/{enterprise}/structures/{structure}/rooms/{room}".format(enterprise=enterprise, structure=structure, room=room, )
     actual = SmartDeviceManagementServiceClient.room_path(enterprise, structure, room)
     assert expected == actual
@@ -2516,9 +2393,10 @@ def test_room_path():
 
 def test_parse_room_path():
     expected = {
-        "enterprise": "mussel",
-        "structure": "winkle",
-        "room": "nautilus",
+    "enterprise": "mussel",
+    "structure": "winkle",
+    "room": "nautilus",
+
     }
     path = SmartDeviceManagementServiceClient.room_path(**expected)
 
@@ -2529,6 +2407,7 @@ def test_parse_room_path():
 def test_structure_path():
     enterprise = "scallop"
     structure = "abalone"
+
     expected = "enterprises/{enterprise}/structures/{structure}".format(enterprise=enterprise, structure=structure, )
     actual = SmartDeviceManagementServiceClient.structure_path(enterprise, structure)
     assert expected == actual
@@ -2536,8 +2415,9 @@ def test_structure_path():
 
 def test_parse_structure_path():
     expected = {
-        "enterprise": "squid",
-        "structure": "clam",
+    "enterprise": "squid",
+    "structure": "clam",
+
     }
     path = SmartDeviceManagementServiceClient.structure_path(**expected)
 
@@ -2547,6 +2427,7 @@ def test_parse_structure_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = SmartDeviceManagementServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2554,7 +2435,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = SmartDeviceManagementServiceClient.common_billing_account_path(**expected)
 
@@ -2564,6 +2446,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = SmartDeviceManagementServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -2571,7 +2454,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = SmartDeviceManagementServiceClient.common_folder_path(**expected)
 
@@ -2581,6 +2465,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = SmartDeviceManagementServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -2588,7 +2473,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = SmartDeviceManagementServiceClient.common_organization_path(**expected)
 
@@ -2598,6 +2484,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = SmartDeviceManagementServiceClient.common_project_path(project)
     assert expected == actual
@@ -2605,7 +2492,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = SmartDeviceManagementServiceClient.common_project_path(**expected)
 
@@ -2616,6 +2504,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = SmartDeviceManagementServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -2623,8 +2512,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = SmartDeviceManagementServiceClient.common_location_path(**expected)
 

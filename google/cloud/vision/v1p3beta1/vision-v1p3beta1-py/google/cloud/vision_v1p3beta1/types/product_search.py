@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.vision_v1p3beta1.types import geometry
 from google.cloud.vision_v1p3beta1.types import product_search_service
@@ -46,6 +49,7 @@ class ProductSearchResultsView(proto.Enum):
 
 class ProductSearchParams(proto.Message):
     r"""Parameters for a product search request.
+
     Attributes:
         catalog_name (str):
             The resource name of the catalog to search.
@@ -94,50 +98,36 @@ class ProductSearchParams(proto.Message):
             red OR brand = Google)" or "color: red".
     """
 
-    catalog_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    category = proto.Field(
-        proto.ENUM,
-        number=2,
+    catalog_name = proto.Field(proto.STRING, number=1)
+
+    category = proto.Field(proto.ENUM, number=2,
         enum='ProductSearchCategory',
     )
-    product_category = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    normalized_bounding_poly = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    product_category = proto.Field(proto.STRING, number=5)
+
+    normalized_bounding_poly = proto.Field(proto.MESSAGE, number=3,
         message=geometry.NormalizedBoundingPoly,
     )
-    bounding_poly = proto.Field(
-        proto.MESSAGE,
-        number=9,
+
+    bounding_poly = proto.Field(proto.MESSAGE, number=9,
         message=geometry.BoundingPoly,
     )
-    view = proto.Field(
-        proto.ENUM,
-        number=4,
+
+    view = proto.Field(proto.ENUM, number=4,
         enum='ProductSearchResultsView',
     )
-    product_set = proto.Field(
-        proto.STRING,
-        number=6,
-    )
-    product_categories = proto.RepeatedField(
-        proto.STRING,
-        number=7,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=8,
-    )
+
+    product_set = proto.Field(proto.STRING, number=6)
+
+    product_categories = proto.RepeatedField(proto.STRING, number=7)
+
+    filter = proto.Field(proto.STRING, number=8)
 
 
 class ProductSearchResults(proto.Message):
     r"""Results for a product search request.
+
     Attributes:
         category (google.cloud.vision_v1p3beta1.types.ProductSearchCategory):
             Product category. [Deprecated] Use ``product_category``.
@@ -154,9 +144,9 @@ class ProductSearchResults(proto.Message):
         results (Sequence[google.cloud.vision_v1p3beta1.types.ProductSearchResults.Result]):
             List of results, one for each product match.
     """
-
     class ProductInfo(proto.Message):
         r"""Information about a product.
+
         Attributes:
             product_id (str):
                 Product ID.
@@ -173,21 +163,15 @@ class ProductSearchResults(proto.Message):
                 in the request.
         """
 
-        product_id = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        image_uri = proto.Field(
-            proto.STRING,
-            number=2,
-        )
-        score = proto.Field(
-            proto.FLOAT,
-            number=3,
-        )
+        product_id = proto.Field(proto.STRING, number=1)
+
+        image_uri = proto.Field(proto.STRING, number=2)
+
+        score = proto.Field(proto.FLOAT, number=3)
 
     class Result(proto.Message):
         r"""Information about a product.
+
         Attributes:
             product (google.cloud.vision_v1p3beta1.types.Product):
                 The Product.
@@ -202,42 +186,29 @@ class ProductSearchResults(proto.Message):
                 product that is the closest match to the query.
         """
 
-        product = proto.Field(
-            proto.MESSAGE,
-            number=1,
+        product = proto.Field(proto.MESSAGE, number=1,
             message=product_search_service.Product,
         )
-        score = proto.Field(
-            proto.FLOAT,
-            number=2,
-        )
-        image = proto.Field(
-            proto.STRING,
-            number=3,
-        )
 
-    category = proto.Field(
-        proto.ENUM,
-        number=1,
+        score = proto.Field(proto.FLOAT, number=2)
+
+        image = proto.Field(proto.STRING, number=3)
+
+    category = proto.Field(proto.ENUM, number=1,
         enum='ProductSearchCategory',
     )
-    product_category = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    index_time = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    product_category = proto.Field(proto.STRING, number=4)
+
+    index_time = proto.Field(proto.MESSAGE, number=2,
         message=timestamp.Timestamp,
     )
-    products = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+
+    products = proto.RepeatedField(proto.MESSAGE, number=3,
         message=ProductInfo,
     )
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+
+    results = proto.RepeatedField(proto.MESSAGE, number=5,
         message=Result,
     )
 

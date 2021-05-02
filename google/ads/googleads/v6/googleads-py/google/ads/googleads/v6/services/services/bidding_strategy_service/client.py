@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -36,6 +38,7 @@ from google.ads.googleads.v6.enums.types import bidding_strategy_type
 from google.ads.googleads.v6.resources.types import bidding_strategy
 from google.ads.googleads.v6.services.types import bidding_strategy_service
 from google.rpc import status_pb2 as status  # type: ignore
+
 from .transports.base import BiddingStrategyServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import BiddingStrategyServiceGrpcTransport
 
@@ -164,6 +167,7 @@ class BiddingStrategyServiceClient(metaclass=BiddingStrategyServiceClientMeta):
         """Parse a bidding_strategy path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/biddingStrategies/(?P<bidding_strategy_id>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -337,8 +341,7 @@ class BiddingStrategyServiceClient(metaclass=BiddingStrategyServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v6.services.types.GetBiddingStrategyRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [BiddingStrategyService.GetBiddingStrategy][google.ads.googleads.v6.services.BiddingStrategyService.GetBiddingStrategy].
             resource_name (:class:`str`):
                 Required. The resource name of the
@@ -347,6 +350,7 @@ class BiddingStrategyServiceClient(metaclass=BiddingStrategyServiceClientMeta):
                 This corresponds to the ``resource_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -364,14 +368,16 @@ class BiddingStrategyServiceClient(metaclass=BiddingStrategyServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a bidding_strategy_service.GetBiddingStrategyRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, bidding_strategy_service.GetBiddingStrategyRequest):
             request = bidding_strategy_service.GetBiddingStrategyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if resource_name is not None:
                 request.resource_name = resource_name
 
@@ -390,7 +396,7 @@ class BiddingStrategyServiceClient(metaclass=BiddingStrategyServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -412,8 +418,7 @@ class BiddingStrategyServiceClient(metaclass=BiddingStrategyServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v6.services.types.MutateBiddingStrategiesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [BiddingStrategyService.MutateBiddingStrategies][google.ads.googleads.v6.services.BiddingStrategyService.MutateBiddingStrategies].
             customer_id (:class:`str`):
                 Required. The ID of the customer
@@ -431,6 +436,7 @@ class BiddingStrategyServiceClient(metaclass=BiddingStrategyServiceClientMeta):
                 This corresponds to the ``operations`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -450,14 +456,16 @@ class BiddingStrategyServiceClient(metaclass=BiddingStrategyServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a bidding_strategy_service.MutateBiddingStrategiesRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, bidding_strategy_service.MutateBiddingStrategiesRequest):
             request = bidding_strategy_service.MutateBiddingStrategiesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if customer_id is not None:
                 request.customer_id = customer_id
             if operations is not None:
@@ -478,7 +486,7 @@ class BiddingStrategyServiceClient(metaclass=BiddingStrategyServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

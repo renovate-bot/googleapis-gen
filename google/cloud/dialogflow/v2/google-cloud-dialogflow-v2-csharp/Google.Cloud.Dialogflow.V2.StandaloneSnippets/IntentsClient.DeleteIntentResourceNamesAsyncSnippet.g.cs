@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIntentsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteIntentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteIntentResourceNamesAsync()
         {
-            // Snippet: DeleteIntentAsync(IntentName, CallSettings)
-            // Additional: DeleteIntentAsync(IntentName, CancellationToken)
             // Create client
             IntentsClient intentsClient = await IntentsClient.CreateAsync();
             // Initialize request argument(s)
             IntentName name = IntentName.FromProjectIntent("[PROJECT]", "[INTENT]");
             // Make the request
             await intentsClient.DeleteIntentAsync(name);
-            // End snippet
         }
     }
 }

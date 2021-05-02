@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for SuggestArticlesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SuggestArticlesAsync()
         {
-            // Snippet: SuggestArticlesAsync(string, CallSettings)
-            // Additional: SuggestArticlesAsync(string, CancellationToken)
             // Create client
             ParticipantsClient participantsClient = await ParticipantsClient.CreateAsync();
             // Initialize request argument(s)
             string parent = "projects/[PROJECT]/conversations/[CONVERSATION]/participants/[PARTICIPANT]";
             // Make the request
             SuggestArticlesResponse response = await participantsClient.SuggestArticlesAsync(parent);
-            // End snippet
         }
     }
 }

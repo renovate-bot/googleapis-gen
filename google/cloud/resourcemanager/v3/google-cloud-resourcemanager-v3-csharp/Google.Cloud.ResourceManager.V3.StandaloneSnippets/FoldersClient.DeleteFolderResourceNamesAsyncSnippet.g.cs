@@ -17,16 +17,19 @@
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.ResourceManager.V3;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFoldersClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteFolderAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteFolderResourceNamesAsync()
         {
-            // Snippet: DeleteFolderAsync(FolderName, CallSettings)
-            // Additional: DeleteFolderAsync(FolderName, CancellationToken)
             // Create client
             FoldersClient foldersClient = await FoldersClient.CreateAsync();
             // Initialize request argument(s)
@@ -49,7 +52,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
                 // If it has completed, then access the result
                 Folder retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

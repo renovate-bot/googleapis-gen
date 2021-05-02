@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedDetailPlacementViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDetailPlacementView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDetailPlacementViewResourceNames()
         {
-            // Snippet: GetDetailPlacementView(DetailPlacementViewName, CallSettings)
             // Create client
             DetailPlacementViewServiceClient detailPlacementViewServiceClient = DetailPlacementViewServiceClient.Create();
             // Initialize request argument(s)
             DetailPlacementViewName resourceName = DetailPlacementViewName.FromCustomerDetailPlacementView("[CUSTOMER]", "[DETAIL_PLACEMENT_VIEW]");
             // Make the request
             DetailPlacementView response = detailPlacementViewServiceClient.GetDetailPlacementView(resourceName);
-            // End snippet
         }
     }
 }

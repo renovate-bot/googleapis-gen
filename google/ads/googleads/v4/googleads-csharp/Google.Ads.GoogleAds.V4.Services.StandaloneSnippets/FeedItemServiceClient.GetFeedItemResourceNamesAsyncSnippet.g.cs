@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFeedItemServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetFeedItemAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetFeedItemResourceNamesAsync()
         {
-            // Snippet: GetFeedItemAsync(FeedItemName, CallSettings)
-            // Additional: GetFeedItemAsync(FeedItemName, CancellationToken)
             // Create client
             FeedItemServiceClient feedItemServiceClient = await FeedItemServiceClient.CreateAsync();
             // Initialize request argument(s)
             FeedItemName resourceName = FeedItemName.FromCustomerFeedItem("[CUSTOMER]", "[FEED_ITEM]");
             // Make the request
             FeedItem response = await feedItemServiceClient.GetFeedItemAsync(resourceName);
-            // End snippet
         }
     }
 }

@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignCriterionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignCriterionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCampaignCriterionResourceNamesAsync()
         {
-            // Snippet: GetCampaignCriterionAsync(CampaignCriterionName, CallSettings)
-            // Additional: GetCampaignCriterionAsync(CampaignCriterionName, CancellationToken)
             // Create client
             CampaignCriterionServiceClient campaignCriterionServiceClient = await CampaignCriterionServiceClient.CreateAsync();
             // Initialize request argument(s)
             CampaignCriterionName resourceName = CampaignCriterionName.FromCustomerCampaignCriterion("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[CRITERION_ID]");
             // Make the request
             CampaignCriterion response = await campaignCriterionServiceClient.GetCampaignCriterionAsync(resourceName);
-            // End snippet
         }
     }
 }

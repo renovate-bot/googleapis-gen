@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import any_pb2 as gp_any  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
@@ -58,23 +61,17 @@ class BuildStatus(proto.Message):
         REQUEST_DEADLINE_EXCEEDED = 8
         CANCELLED = 7
 
-    result = proto.Field(
-        proto.ENUM,
-        number=1,
+    result = proto.Field(proto.ENUM, number=1,
         enum=Result,
     )
-    final_invocation_id = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    build_tool_exit_code = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    final_invocation_id = proto.Field(proto.STRING, number=3)
+
+    build_tool_exit_code = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.Int32Value,
     )
-    details = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    details = proto.Field(proto.MESSAGE, number=2,
         message=gp_any.Any,
     )
 

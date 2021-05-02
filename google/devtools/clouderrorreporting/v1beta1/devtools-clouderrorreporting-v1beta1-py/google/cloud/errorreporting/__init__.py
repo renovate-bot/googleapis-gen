@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -46,7 +47,8 @@ from google.cloud.errorreporting_v1beta1.types.report_errors_service import Repo
 from google.cloud.errorreporting_v1beta1.types.report_errors_service import ReportErrorEventResponse
 from google.cloud.errorreporting_v1beta1.types.report_errors_service import ReportedErrorEvent
 
-__all__ = ('DeleteEventsRequest',
+__all__ = (
+    'DeleteEventsRequest',
     'DeleteEventsResponse',
     'ErrorContext',
     'ErrorEvent',

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.common.types import criteria
 from google.ads.googleads.v4.enums.types import campaign_criterion_status
@@ -32,6 +35,7 @@ __protobuf__ = proto.module(
 
 class CampaignCriterion(proto.Message):
     r"""A campaign criterion.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the campaign criterion.
@@ -112,200 +116,104 @@ class CampaignCriterion(proto.Message):
             Immutable. Custom Affinity.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    campaign = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    resource_name = proto.Field(proto.STRING, number=1)
+    campaign = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.StringValue,
     )
-    criterion_id = proto.Field(
-        proto.MESSAGE,
-        number=5,
+    criterion_id = proto.Field(proto.MESSAGE, number=5,
         message=wrappers.Int64Value,
     )
-    bid_modifier = proto.Field(
-        proto.MESSAGE,
-        number=14,
+    bid_modifier = proto.Field(proto.MESSAGE, number=14,
         message=wrappers.FloatValue,
     )
-    negative = proto.Field(
-        proto.MESSAGE,
-        number=7,
+    negative = proto.Field(proto.MESSAGE, number=7,
         message=wrappers.BoolValue,
     )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=6,
+    type_ = proto.Field(proto.ENUM, number=6,
         enum=criterion_type.CriterionTypeEnum.CriterionType,
     )
-    status = proto.Field(
-        proto.ENUM,
-        number=35,
+    status = proto.Field(proto.ENUM, number=35,
         enum=campaign_criterion_status.CampaignCriterionStatusEnum.CampaignCriterionStatus,
     )
-    keyword = proto.Field(
-        proto.MESSAGE,
-        number=8,
-        oneof='criterion',
+    keyword = proto.Field(proto.MESSAGE, number=8, oneof='criterion',
         message=criteria.KeywordInfo,
     )
-    placement = proto.Field(
-        proto.MESSAGE,
-        number=9,
-        oneof='criterion',
+    placement = proto.Field(proto.MESSAGE, number=9, oneof='criterion',
         message=criteria.PlacementInfo,
     )
-    mobile_app_category = proto.Field(
-        proto.MESSAGE,
-        number=10,
-        oneof='criterion',
+    mobile_app_category = proto.Field(proto.MESSAGE, number=10, oneof='criterion',
         message=criteria.MobileAppCategoryInfo,
     )
-    mobile_application = proto.Field(
-        proto.MESSAGE,
-        number=11,
-        oneof='criterion',
+    mobile_application = proto.Field(proto.MESSAGE, number=11, oneof='criterion',
         message=criteria.MobileApplicationInfo,
     )
-    location = proto.Field(
-        proto.MESSAGE,
-        number=12,
-        oneof='criterion',
+    location = proto.Field(proto.MESSAGE, number=12, oneof='criterion',
         message=criteria.LocationInfo,
     )
-    device = proto.Field(
-        proto.MESSAGE,
-        number=13,
-        oneof='criterion',
+    device = proto.Field(proto.MESSAGE, number=13, oneof='criterion',
         message=criteria.DeviceInfo,
     )
-    ad_schedule = proto.Field(
-        proto.MESSAGE,
-        number=15,
-        oneof='criterion',
+    ad_schedule = proto.Field(proto.MESSAGE, number=15, oneof='criterion',
         message=criteria.AdScheduleInfo,
     )
-    age_range = proto.Field(
-        proto.MESSAGE,
-        number=16,
-        oneof='criterion',
+    age_range = proto.Field(proto.MESSAGE, number=16, oneof='criterion',
         message=criteria.AgeRangeInfo,
     )
-    gender = proto.Field(
-        proto.MESSAGE,
-        number=17,
-        oneof='criterion',
+    gender = proto.Field(proto.MESSAGE, number=17, oneof='criterion',
         message=criteria.GenderInfo,
     )
-    income_range = proto.Field(
-        proto.MESSAGE,
-        number=18,
-        oneof='criterion',
+    income_range = proto.Field(proto.MESSAGE, number=18, oneof='criterion',
         message=criteria.IncomeRangeInfo,
     )
-    parental_status = proto.Field(
-        proto.MESSAGE,
-        number=19,
-        oneof='criterion',
+    parental_status = proto.Field(proto.MESSAGE, number=19, oneof='criterion',
         message=criteria.ParentalStatusInfo,
     )
-    user_list = proto.Field(
-        proto.MESSAGE,
-        number=22,
-        oneof='criterion',
+    user_list = proto.Field(proto.MESSAGE, number=22, oneof='criterion',
         message=criteria.UserListInfo,
     )
-    youtube_video = proto.Field(
-        proto.MESSAGE,
-        number=20,
-        oneof='criterion',
+    youtube_video = proto.Field(proto.MESSAGE, number=20, oneof='criterion',
         message=criteria.YouTubeVideoInfo,
     )
-    youtube_channel = proto.Field(
-        proto.MESSAGE,
-        number=21,
-        oneof='criterion',
+    youtube_channel = proto.Field(proto.MESSAGE, number=21, oneof='criterion',
         message=criteria.YouTubeChannelInfo,
     )
-    proximity = proto.Field(
-        proto.MESSAGE,
-        number=23,
-        oneof='criterion',
+    proximity = proto.Field(proto.MESSAGE, number=23, oneof='criterion',
         message=criteria.ProximityInfo,
     )
-    topic = proto.Field(
-        proto.MESSAGE,
-        number=24,
-        oneof='criterion',
+    topic = proto.Field(proto.MESSAGE, number=24, oneof='criterion',
         message=criteria.TopicInfo,
     )
-    listing_scope = proto.Field(
-        proto.MESSAGE,
-        number=25,
-        oneof='criterion',
+    listing_scope = proto.Field(proto.MESSAGE, number=25, oneof='criterion',
         message=criteria.ListingScopeInfo,
     )
-    language = proto.Field(
-        proto.MESSAGE,
-        number=26,
-        oneof='criterion',
+    language = proto.Field(proto.MESSAGE, number=26, oneof='criterion',
         message=criteria.LanguageInfo,
     )
-    ip_block = proto.Field(
-        proto.MESSAGE,
-        number=27,
-        oneof='criterion',
+    ip_block = proto.Field(proto.MESSAGE, number=27, oneof='criterion',
         message=criteria.IpBlockInfo,
     )
-    content_label = proto.Field(
-        proto.MESSAGE,
-        number=28,
-        oneof='criterion',
+    content_label = proto.Field(proto.MESSAGE, number=28, oneof='criterion',
         message=criteria.ContentLabelInfo,
     )
-    carrier = proto.Field(
-        proto.MESSAGE,
-        number=29,
-        oneof='criterion',
+    carrier = proto.Field(proto.MESSAGE, number=29, oneof='criterion',
         message=criteria.CarrierInfo,
     )
-    user_interest = proto.Field(
-        proto.MESSAGE,
-        number=30,
-        oneof='criterion',
+    user_interest = proto.Field(proto.MESSAGE, number=30, oneof='criterion',
         message=criteria.UserInterestInfo,
     )
-    webpage = proto.Field(
-        proto.MESSAGE,
-        number=31,
-        oneof='criterion',
+    webpage = proto.Field(proto.MESSAGE, number=31, oneof='criterion',
         message=criteria.WebpageInfo,
     )
-    operating_system_version = proto.Field(
-        proto.MESSAGE,
-        number=32,
-        oneof='criterion',
+    operating_system_version = proto.Field(proto.MESSAGE, number=32, oneof='criterion',
         message=criteria.OperatingSystemVersionInfo,
     )
-    mobile_device = proto.Field(
-        proto.MESSAGE,
-        number=33,
-        oneof='criterion',
+    mobile_device = proto.Field(proto.MESSAGE, number=33, oneof='criterion',
         message=criteria.MobileDeviceInfo,
     )
-    location_group = proto.Field(
-        proto.MESSAGE,
-        number=34,
-        oneof='criterion',
+    location_group = proto.Field(proto.MESSAGE, number=34, oneof='criterion',
         message=criteria.LocationGroupInfo,
     )
-    custom_affinity = proto.Field(
-        proto.MESSAGE,
-        number=36,
-        oneof='criterion',
+    custom_affinity = proto.Field(proto.MESSAGE, number=36, oneof='criterion',
         message=criteria.CustomAffinityInfo,
     )
 

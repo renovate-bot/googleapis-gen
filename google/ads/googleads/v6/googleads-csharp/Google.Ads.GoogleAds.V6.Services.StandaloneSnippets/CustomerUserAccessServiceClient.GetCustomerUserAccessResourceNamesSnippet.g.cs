@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedCustomerUserAccessServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomerUserAccess</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCustomerUserAccessResourceNames()
         {
-            // Snippet: GetCustomerUserAccess(CustomerUserAccessName, CallSettings)
             // Create client
             CustomerUserAccessServiceClient customerUserAccessServiceClient = CustomerUserAccessServiceClient.Create();
             // Initialize request argument(s)
             CustomerUserAccessName resourceName = CustomerUserAccessName.FromCustomerUser("[CUSTOMER_ID]", "[USER_ID]");
             // Make the request
             CustomerUserAccess response = customerUserAccessServiceClient.GetCustomerUserAccess(resourceName);
-            // End snippet
         }
     }
 }

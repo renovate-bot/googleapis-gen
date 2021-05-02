@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.retail_v2alpha.types import common
 from google.cloud.retail_v2alpha.types import product as gcr_product
@@ -188,76 +191,50 @@ class UserEvent(proto.Message):
             automatically.
     """
 
-    event_type = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    visitor_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    event_time = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    event_type = proto.Field(proto.STRING, number=1)
+
+    visitor_id = proto.Field(proto.STRING, number=2)
+
+    event_time = proto.Field(proto.MESSAGE, number=3,
         message=timestamp.Timestamp,
     )
-    experiment_ids = proto.RepeatedField(
-        proto.STRING,
-        number=4,
-    )
-    attribution_token = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    product_details = proto.RepeatedField(
-        proto.MESSAGE,
-        number=6,
+
+    experiment_ids = proto.RepeatedField(proto.STRING, number=4)
+
+    attribution_token = proto.Field(proto.STRING, number=5)
+
+    product_details = proto.RepeatedField(proto.MESSAGE, number=6,
         message='ProductDetail',
     )
-    attributes = proto.MapField(
-        proto.STRING,
-        proto.MESSAGE,
-        number=7
+
+    attributes = proto.MapField(proto.STRING, proto.MESSAGE, number=7,
         message=common.CustomAttribute,
     )
-    cart_id = proto.Field(
-        proto.STRING,
-        number=8,
-    )
-    purchase_transaction = proto.Field(
-        proto.MESSAGE,
-        number=9,
+
+    cart_id = proto.Field(proto.STRING, number=8)
+
+    purchase_transaction = proto.Field(proto.MESSAGE, number=9,
         message='PurchaseTransaction',
     )
-    search_query = proto.Field(
-        proto.STRING,
-        number=10,
-    )
-    page_categories = proto.RepeatedField(
-        proto.STRING,
-        number=11,
-    )
-    user_info = proto.Field(
-        proto.MESSAGE,
-        number=12,
+
+    search_query = proto.Field(proto.STRING, number=10)
+
+    page_categories = proto.RepeatedField(proto.STRING, number=11)
+
+    user_info = proto.Field(proto.MESSAGE, number=12,
         message=common.UserInfo,
     )
-    uri = proto.Field(
-        proto.STRING,
-        number=13,
-    )
-    referrer_uri = proto.Field(
-        proto.STRING,
-        number=14,
-    )
-    page_view_id = proto.Field(
-        proto.STRING,
-        number=15,
-    )
+
+    uri = proto.Field(proto.STRING, number=13)
+
+    referrer_uri = proto.Field(proto.STRING, number=14)
+
+    page_view_id = proto.Field(proto.STRING, number=15)
 
 
 class ProductDetail(proto.Message):
     r"""Detailed product information associated with a user event.
+
     Attributes:
         product (google.cloud.retail_v2alpha.types.Product):
             Required. [Product][google.cloud.retail.v2alpha.Product]
@@ -275,20 +252,18 @@ class ProductDetail(proto.Message):
             types.
     """
 
-    product = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    product = proto.Field(proto.MESSAGE, number=1,
         message=gcr_product.Product,
     )
-    quantity = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    quantity = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.Int32Value,
     )
 
 
 class PurchaseTransaction(proto.Message):
     r"""A transaction represents the entire purchase transaction.
+
     Attributes:
         id (str):
             The transaction ID with a length limit of 128
@@ -318,26 +293,15 @@ class PurchaseTransaction(proto.Message):
             ISO-4217 code.
     """
 
-    id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    revenue = proto.Field(
-        proto.FLOAT,
-        number=2,
-    )
-    tax = proto.Field(
-        proto.FLOAT,
-        number=3,
-    )
-    cost = proto.Field(
-        proto.FLOAT,
-        number=4,
-    )
-    currency_code = proto.Field(
-        proto.STRING,
-        number=5,
-    )
+    id = proto.Field(proto.STRING, number=1)
+
+    revenue = proto.Field(proto.FLOAT, number=2)
+
+    tax = proto.Field(proto.FLOAT, number=3)
+
+    cost = proto.Field(proto.FLOAT, number=4)
+
+    currency_code = proto.Field(proto.STRING, number=5)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

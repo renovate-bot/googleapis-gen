@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedUptimeCheckServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetUptimeCheckConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetUptimeCheckConfigRequestObjectAsync()
         {
-            // Snippet: GetUptimeCheckConfigAsync(GetUptimeCheckConfigRequest, CallSettings)
-            // Additional: GetUptimeCheckConfigAsync(GetUptimeCheckConfigRequest, CancellationToken)
             // Create client
             UptimeCheckServiceClient uptimeCheckServiceClient = await UptimeCheckServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             };
             // Make the request
             UptimeCheckConfig response = await uptimeCheckServiceClient.GetUptimeCheckConfigAsync(request);
-            // End snippet
         }
     }
 }

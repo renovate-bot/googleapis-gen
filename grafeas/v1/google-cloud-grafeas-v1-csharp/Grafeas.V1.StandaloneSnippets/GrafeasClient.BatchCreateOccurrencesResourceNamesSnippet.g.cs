@@ -16,14 +16,18 @@
 
 namespace Grafeas.V1.Snippets
 {
+    using Grafeas.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedGrafeasClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchCreateOccurrences</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BatchCreateOccurrencesResourceNames()
         {
-            // Snippet: BatchCreateOccurrences(ProjectName, IEnumerable<Occurrence>, CallSettings)
             // Create client
             GrafeasClient grafeasClient = GrafeasClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Grafeas.V1.Snippets
             IEnumerable<Occurrence> occurrences = new Occurrence[] { new Occurrence(), };
             // Make the request
             BatchCreateOccurrencesResponse response = grafeasClient.BatchCreateOccurrences(parent, occurrences);
-            // End snippet
         }
     }
 }

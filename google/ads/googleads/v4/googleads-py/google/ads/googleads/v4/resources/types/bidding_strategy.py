@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.common.types import bidding
 from google.ads.googleads.v4.enums.types import bidding_strategy_status
@@ -32,6 +35,7 @@ __protobuf__ = proto.module(
 
 class BiddingStrategy(proto.Message):
     r"""A bidding strategy.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the bidding strategy.
@@ -86,68 +90,38 @@ class BiddingStrategy(proto.Message):
             budget.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.Int64Value,
     )
-    name = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    name = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.StringValue,
     )
-    status = proto.Field(
-        proto.ENUM,
-        number=15,
+    status = proto.Field(proto.ENUM, number=15,
         enum=bidding_strategy_status.BiddingStrategyStatusEnum.BiddingStrategyStatus,
     )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=5,
+    type_ = proto.Field(proto.ENUM, number=5,
         enum=bidding_strategy_type.BiddingStrategyTypeEnum.BiddingStrategyType,
     )
-    campaign_count = proto.Field(
-        proto.MESSAGE,
-        number=13,
+    campaign_count = proto.Field(proto.MESSAGE, number=13,
         message=wrappers.Int64Value,
     )
-    non_removed_campaign_count = proto.Field(
-        proto.MESSAGE,
-        number=14,
+    non_removed_campaign_count = proto.Field(proto.MESSAGE, number=14,
         message=wrappers.Int64Value,
     )
-    enhanced_cpc = proto.Field(
-        proto.MESSAGE,
-        number=7,
-        oneof='scheme',
+    enhanced_cpc = proto.Field(proto.MESSAGE, number=7, oneof='scheme',
         message=bidding.EnhancedCpc,
     )
-    target_cpa = proto.Field(
-        proto.MESSAGE,
-        number=9,
-        oneof='scheme',
+    target_cpa = proto.Field(proto.MESSAGE, number=9, oneof='scheme',
         message=bidding.TargetCpa,
     )
-    target_impression_share = proto.Field(
-        proto.MESSAGE,
-        number=48,
-        oneof='scheme',
+    target_impression_share = proto.Field(proto.MESSAGE, number=48, oneof='scheme',
         message=bidding.TargetImpressionShare,
     )
-    target_roas = proto.Field(
-        proto.MESSAGE,
-        number=11,
-        oneof='scheme',
+    target_roas = proto.Field(proto.MESSAGE, number=11, oneof='scheme',
         message=bidding.TargetRoas,
     )
-    target_spend = proto.Field(
-        proto.MESSAGE,
-        number=12,
-        oneof='scheme',
+    target_spend = proto.Field(proto.MESSAGE, number=12, oneof='scheme',
         message=bidding.TargetSpend,
     )
 

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,6 +37,7 @@ from google.cloud.dialogflowcx_v3beta1.types import page
 from google.cloud.dialogflowcx_v3beta1.types import transition_route_group
 from google.cloud.dialogflowcx_v3beta1.types import transition_route_group as gcdc_transition_route_group
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import TransitionRouteGroupsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import TransitionRouteGroupsGrpcTransport
 from .transports.grpc_asyncio import TransitionRouteGroupsGrpcAsyncIOTransport
@@ -383,8 +386,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.ListTransitionRouteGroupsRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.ListTransitionRouteGroups][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroups.ListTransitionRouteGroups].
             parent (str):
                 Required. The flow to list all transition route groups
@@ -394,6 +396,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -423,8 +426,10 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, transition_route_group.ListTransitionRouteGroupsRequest):
             request = transition_route_group.ListTransitionRouteGroupsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -473,8 +478,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.GetTransitionRouteGroupRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.GetTransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroups.GetTransitionRouteGroup].
             name (str):
                 Required. The name of the
@@ -485,6 +489,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -513,8 +518,10 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, transition_route_group.GetTransitionRouteGroupRequest):
             request = transition_route_group.GetTransitionRouteGroupRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -556,8 +563,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.CreateTransitionRouteGroupRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroups.CreateTransitionRouteGroup].
             parent (str):
                 Required. The flow to create an
@@ -575,6 +581,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
                 This corresponds to the ``transition_route_group`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -603,8 +610,10 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_transition_route_group.CreateTransitionRouteGroupRequest):
             request = gcdc_transition_route_group.CreateTransitionRouteGroupRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if transition_route_group is not None:
@@ -647,8 +656,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.UpdateTransitionRouteGroupRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.UpdateTransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroups.UpdateTransitionRouteGroup].
             transition_route_group (google.cloud.dialogflowcx_v3beta1.types.TransitionRouteGroup):
                 Required. The transition route group
@@ -664,6 +672,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -692,8 +701,10 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcdc_transition_route_group.UpdateTransitionRouteGroupRequest):
             request = gcdc_transition_route_group.UpdateTransitionRouteGroupRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if transition_route_group is not None:
                 request.transition_route_group = transition_route_group
             if update_mask is not None:
@@ -735,8 +746,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
 
         Args:
             request (google.cloud.dialogflowcx_v3beta1.types.DeleteTransitionRouteGroupRequest):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TransitionRouteGroups.DeleteTransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroups.DeleteTransitionRouteGroup].
             name (str):
                 Required. The name of the
@@ -747,6 +757,7 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -767,8 +778,10 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, transition_route_group.DeleteTransitionRouteGroupRequest):
             request = transition_route_group.DeleteTransitionRouteGroupRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -791,6 +804,8 @@ class TransitionRouteGroupsClient(metaclass=TransitionRouteGroupsClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedPaidOrganicSearchTermViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPaidOrganicSearchTermView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetPaidOrganicSearchTermView()
         {
-            // Snippet: GetPaidOrganicSearchTermView(string, CallSettings)
             // Create client
             PaidOrganicSearchTermViewServiceClient paidOrganicSearchTermViewServiceClient = PaidOrganicSearchTermViewServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/paidOrganicSearchTermViews/[PAID_ORGANIC_SEARCH_TERM_VIEW]";
             // Make the request
             PaidOrganicSearchTermView response = paidOrganicSearchTermViewServiceClient.GetPaidOrganicSearchTermView(resourceName);
-            // End snippet
         }
     }
 }

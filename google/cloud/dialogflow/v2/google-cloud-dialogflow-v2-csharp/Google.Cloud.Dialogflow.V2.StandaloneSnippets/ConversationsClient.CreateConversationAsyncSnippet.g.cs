@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConversationsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateConversationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateConversationAsync()
         {
-            // Snippet: CreateConversationAsync(string, Conversation, CallSettings)
-            // Additional: CreateConversationAsync(string, Conversation, CancellationToken)
             // Create client
             ConversationsClient conversationsClient = await ConversationsClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             Conversation conversation = new Conversation();
             // Make the request
             Conversation response = await conversationsClient.CreateConversationAsync(parent, conversation);
-            // End snippet
         }
     }
 }

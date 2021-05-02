@@ -76,7 +76,7 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListDatabases</summary>
+        /// <summary>Snippet for ListDatabasesAsync</summary>
         public async Task ListDatabasesRequestObjectAsync()
         {
             // Snippet: ListDatabasesAsync(ListDatabasesRequest, CallSettings)
@@ -169,7 +169,7 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListDatabases</summary>
+        /// <summary>Snippet for ListDatabasesAsync</summary>
         public async Task ListDatabasesAsync()
         {
             // Snippet: ListDatabasesAsync(string, string, int?, CallSettings)
@@ -259,7 +259,7 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListDatabases</summary>
+        /// <summary>Snippet for ListDatabasesAsync</summary>
         public async Task ListDatabasesResourceNamesAsync()
         {
             // Snippet: ListDatabasesAsync(InstanceName, string, int?, CallSettings)
@@ -1708,7 +1708,7 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBackups</summary>
+        /// <summary>Snippet for ListBackupsAsync</summary>
         public async Task ListBackupsRequestObjectAsync()
         {
             // Snippet: ListBackupsAsync(ListBackupsRequest, CallSettings)
@@ -1802,7 +1802,7 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBackups</summary>
+        /// <summary>Snippet for ListBackupsAsync</summary>
         public async Task ListBackupsAsync()
         {
             // Snippet: ListBackupsAsync(string, string, int?, CallSettings)
@@ -1892,7 +1892,7 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBackups</summary>
+        /// <summary>Snippet for ListBackupsAsync</summary>
         public async Task ListBackupsResourceNamesAsync()
         {
             // Snippet: ListBackupsAsync(InstanceName, string, int?, CallSettings)
@@ -2183,7 +2183,7 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListDatabaseOperations</summary>
+        /// <summary>Snippet for ListDatabaseOperationsAsync</summary>
         public async Task ListDatabaseOperationsRequestObjectAsync()
         {
             // Snippet: ListDatabaseOperationsAsync(ListDatabaseOperationsRequest, CallSettings)
@@ -2277,7 +2277,7 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListDatabaseOperations</summary>
+        /// <summary>Snippet for ListDatabaseOperationsAsync</summary>
         public async Task ListDatabaseOperationsAsync()
         {
             // Snippet: ListDatabaseOperationsAsync(string, string, int?, CallSettings)
@@ -2367,7 +2367,7 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListDatabaseOperations</summary>
+        /// <summary>Snippet for ListDatabaseOperationsAsync</summary>
         public async Task ListDatabaseOperationsResourceNamesAsync()
         {
             // Snippet: ListDatabaseOperationsAsync(InstanceName, string, int?, CallSettings)
@@ -2461,7 +2461,7 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBackupOperations</summary>
+        /// <summary>Snippet for ListBackupOperationsAsync</summary>
         public async Task ListBackupOperationsRequestObjectAsync()
         {
             // Snippet: ListBackupOperationsAsync(ListBackupOperationsRequest, CallSettings)
@@ -2555,7 +2555,7 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBackupOperations</summary>
+        /// <summary>Snippet for ListBackupOperationsAsync</summary>
         public async Task ListBackupOperationsAsync()
         {
             // Snippet: ListBackupOperationsAsync(string, string, int?, CallSettings)
@@ -2645,7 +2645,7 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBackupOperations</summary>
+        /// <summary>Snippet for ListBackupOperationsAsync</summary>
         public async Task ListBackupOperationsResourceNamesAsync()
         {
             // Snippet: ListBackupOperationsAsync(InstanceName, string, int?, CallSettings)

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +19,6 @@ from .services.catalog_service import CatalogServiceClient
 from .services.prediction_service import PredictionServiceClient
 from .services.product_service import ProductServiceClient
 from .services.user_event_service import UserEventServiceClient
-
 from .types.catalog import Catalog
 from .types.catalog import ProductLevelConfig
 from .types.catalog_service import ListCatalogsRequest
@@ -59,6 +59,7 @@ from .types.user_event_service import RejoinUserEventsMetadata
 from .types.user_event_service import RejoinUserEventsRequest
 from .types.user_event_service import RejoinUserEventsResponse
 from .types.user_event_service import WriteUserEventRequest
+
 
 __all__ = (
     'BigQuerySource',

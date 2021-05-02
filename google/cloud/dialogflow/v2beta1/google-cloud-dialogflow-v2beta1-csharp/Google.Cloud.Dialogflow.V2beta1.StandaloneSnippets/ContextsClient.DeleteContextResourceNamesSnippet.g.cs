@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedContextsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteContext</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteContextResourceNames()
         {
-            // Snippet: DeleteContext(ContextName, CallSettings)
             // Create client
             ContextsClient contextsClient = ContextsClient.Create();
             // Initialize request argument(s)
             ContextName name = ContextName.FromProjectSessionContext("[PROJECT]", "[SESSION]", "[CONTEXT]");
             // Make the request
             contextsClient.DeleteContext(name);
-            // End snippet
         }
     }
 }

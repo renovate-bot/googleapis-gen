@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Bigquery.Storage.V1Beta2.Snippets
 {
+    using Google.Cloud.Bigquery.Storage.V1Beta2;
+
     public sealed partial class GeneratedBigQueryWriteClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchCommitWriteStreams</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BatchCommitWriteStreams()
         {
-            // Snippet: BatchCommitWriteStreams(string, CallSettings)
             // Create client
             BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.Create();
             // Initialize request argument(s)
             string parent = "";
             // Make the request
             BatchCommitWriteStreamsResponse response = bigQueryWriteClient.BatchCommitWriteStreams(parent);
-            // End snippet
         }
     }
 }

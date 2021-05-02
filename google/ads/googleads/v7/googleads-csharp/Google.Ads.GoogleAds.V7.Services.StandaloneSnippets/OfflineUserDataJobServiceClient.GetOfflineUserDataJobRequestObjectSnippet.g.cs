@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedOfflineUserDataJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetOfflineUserDataJob</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetOfflineUserDataJobRequestObject()
         {
-            // Snippet: GetOfflineUserDataJob(GetOfflineUserDataJobRequest, CallSettings)
             // Create client
             OfflineUserDataJobServiceClient offlineUserDataJobServiceClient = OfflineUserDataJobServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             OfflineUserDataJob response = offlineUserDataJobServiceClient.GetOfflineUserDataJob(request);
-            // End snippet
         }
     }
 }

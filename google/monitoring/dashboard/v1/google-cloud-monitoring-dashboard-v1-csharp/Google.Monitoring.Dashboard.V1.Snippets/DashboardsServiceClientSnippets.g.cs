@@ -108,7 +108,7 @@ namespace Google.Monitoring.Dashboard.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListDashboards</summary>
+        /// <summary>Snippet for ListDashboardsAsync</summary>
         public async Task ListDashboardsRequestObjectAsync()
         {
             // Snippet: ListDashboardsAsync(ListDashboardsRequest, CallSettings)

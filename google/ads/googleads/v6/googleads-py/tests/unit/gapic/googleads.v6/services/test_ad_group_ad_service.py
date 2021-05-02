@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -292,22 +294,33 @@ def test_get_ad_group_ad(transport: str = 'grpc', request_type=ad_group_ad_servi
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_ad.AdGroupAd(
             resource_name='resource_name_value',
+
             status=ad_group_ad_status.AdGroupAdStatusEnum.AdGroupAdStatus.UNKNOWN,
+
             ad_group='ad_group_value',
+
             ad_strength=ad_strength.AdStrengthEnum.AdStrength.UNKNOWN,
+
         )
+
         response = client.get_ad_group_ad(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == ad_group_ad_service.GetAdGroupAdRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, ad_group_ad.AdGroupAd)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.status == ad_group_ad_status.AdGroupAdStatusEnum.AdGroupAdStatus.UNKNOWN
+
     assert response.ad_group == 'ad_group_value'
+
     assert response.ad_strength == ad_strength.AdStrengthEnum.AdStrength.UNKNOWN
 
 
@@ -323,7 +336,6 @@ def test_get_ad_group_ad_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_group_ad_service.GetAdGroupAdRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -331,6 +343,7 @@ def test_get_ad_group_ad_field_headers():
             type(client.transport.get_ad_group_ad),
             '__call__') as call:
         call.return_value = ad_group_ad.AdGroupAd()
+
         client.get_ad_group_ad(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -357,6 +370,7 @@ def test_get_ad_group_ad_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_ad.AdGroupAd()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_ad_group_ad(
@@ -367,6 +381,7 @@ def test_get_ad_group_ad_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -401,14 +416,17 @@ def test_mutate_ad_group_ads(transport: str = 'grpc', request_type=ad_group_ad_s
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_ad_service.MutateAdGroupAdsResponse(
         )
+
         response = client.mutate_ad_group_ads(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == ad_group_ad_service.MutateAdGroupAdsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, ad_group_ad_service.MutateAdGroupAdsResponse)
 
 
@@ -424,7 +442,6 @@ def test_mutate_ad_group_ads_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_group_ad_service.MutateAdGroupAdsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -432,6 +449,7 @@ def test_mutate_ad_group_ads_field_headers():
             type(client.transport.mutate_ad_group_ads),
             '__call__') as call:
         call.return_value = ad_group_ad_service.MutateAdGroupAdsResponse()
+
         client.mutate_ad_group_ads(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -458,6 +476,7 @@ def test_mutate_ad_group_ads_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_ad_service.MutateAdGroupAdsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_ad_group_ads(
@@ -469,7 +488,9 @@ def test_mutate_ad_group_ads_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [ad_group_ad_service.AdGroupAdOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -552,7 +573,7 @@ def test_ad_group_ad_service_base_transport():
     methods = (
         'get_ad_group_ad',
         'mutate_ad_group_ads',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -704,6 +725,7 @@ def test_ad_group_ad_service_transport_channel_mtls_with_adc(
 def test_ad_path():
     customer_id = "squid"
     ad_id = "clam"
+
     expected = "customers/{customer_id}/ads/{ad_id}".format(customer_id=customer_id, ad_id=ad_id, )
     actual = AdGroupAdServiceClient.ad_path(customer_id, ad_id)
     assert expected == actual
@@ -711,8 +733,9 @@ def test_ad_path():
 
 def test_parse_ad_path():
     expected = {
-        "customer_id": "whelk",
-        "ad_id": "octopus",
+    "customer_id": "whelk",
+    "ad_id": "octopus",
+
     }
     path = AdGroupAdServiceClient.ad_path(**expected)
 
@@ -723,6 +746,7 @@ def test_parse_ad_path():
 def test_ad_group_path():
     customer_id = "oyster"
     ad_group_id = "nudibranch"
+
     expected = "customers/{customer_id}/adGroups/{ad_group_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, )
     actual = AdGroupAdServiceClient.ad_group_path(customer_id, ad_group_id)
     assert expected == actual
@@ -730,8 +754,9 @@ def test_ad_group_path():
 
 def test_parse_ad_group_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "ad_group_id": "mussel",
+    "customer_id": "cuttlefish",
+    "ad_group_id": "mussel",
+
     }
     path = AdGroupAdServiceClient.ad_group_path(**expected)
 
@@ -743,6 +768,7 @@ def test_ad_group_ad_path():
     customer_id = "winkle"
     ad_group_id = "nautilus"
     ad_id = "scallop"
+
     expected = "customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, ad_id=ad_id, )
     actual = AdGroupAdServiceClient.ad_group_ad_path(customer_id, ad_group_id, ad_id)
     assert expected == actual
@@ -750,9 +776,10 @@ def test_ad_group_ad_path():
 
 def test_parse_ad_group_ad_path():
     expected = {
-        "customer_id": "abalone",
-        "ad_group_id": "squid",
-        "ad_id": "clam",
+    "customer_id": "abalone",
+    "ad_group_id": "squid",
+    "ad_id": "clam",
+
     }
     path = AdGroupAdServiceClient.ad_group_ad_path(**expected)
 
@@ -762,6 +789,7 @@ def test_parse_ad_group_ad_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AdGroupAdServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -769,7 +797,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = AdGroupAdServiceClient.common_billing_account_path(**expected)
 
@@ -779,6 +808,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = AdGroupAdServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -786,7 +816,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = AdGroupAdServiceClient.common_folder_path(**expected)
 
@@ -796,6 +827,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AdGroupAdServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -803,7 +835,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = AdGroupAdServiceClient.common_organization_path(**expected)
 
@@ -813,6 +846,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = AdGroupAdServiceClient.common_project_path(project)
     assert expected == actual
@@ -820,7 +854,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = AdGroupAdServiceClient.common_project_path(**expected)
 
@@ -831,6 +866,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AdGroupAdServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -838,8 +874,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = AdGroupAdServiceClient.common_location_path(**expected)
 

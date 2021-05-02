@@ -17,15 +17,19 @@
 namespace Google.Cloud.Logging.V2.Snippets
 {
     using Google.Api.Gax.Grpc;
+    using Google.Cloud.Logging.V2;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLoggingServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for TailLogEntries</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task TailLogEntries()
         {
-            // Snippet: TailLogEntries(CallSettings, BidirectionalStreamingSettings)
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.Create();
             // Initialize streaming call, retrieving the stream object
@@ -68,7 +72,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             // Await the response handler
             // This will complete once all server responses have been processed
             await responseHandlerTask;
-            // End snippet
         }
     }
 }

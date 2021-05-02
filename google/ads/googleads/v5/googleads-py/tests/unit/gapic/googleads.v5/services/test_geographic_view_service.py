@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -263,20 +265,29 @@ def test_get_geographic_view(transport: str = 'grpc', request_type=geographic_vi
         # Designate an appropriate return value for the call.
         call.return_value = geographic_view.GeographicView(
             resource_name='resource_name_value',
+
             location_type=geo_targeting_type.GeoTargetingTypeEnum.GeoTargetingType.UNKNOWN,
+
             country_criterion_id=2158,
+
         )
+
         response = client.get_geographic_view(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == geographic_view_service.GetGeographicViewRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, geographic_view.GeographicView)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.location_type == geo_targeting_type.GeoTargetingTypeEnum.GeoTargetingType.UNKNOWN
+
     assert response.country_criterion_id == 2158
 
 
@@ -292,7 +303,6 @@ def test_get_geographic_view_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = geographic_view_service.GetGeographicViewRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -300,6 +310,7 @@ def test_get_geographic_view_field_headers():
             type(client.transport.get_geographic_view),
             '__call__') as call:
         call.return_value = geographic_view.GeographicView()
+
         client.get_geographic_view(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -326,6 +337,7 @@ def test_get_geographic_view_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = geographic_view.GeographicView()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_geographic_view(
@@ -336,6 +348,7 @@ def test_get_geographic_view_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -416,7 +429,7 @@ def test_geographic_view_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_geographic_view',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -568,6 +581,7 @@ def test_geographic_view_service_transport_channel_mtls_with_adc(
 def test_geographic_view_path():
     customer = "squid"
     geographic_view = "clam"
+
     expected = "customers/{customer}/geographicViews/{geographic_view}".format(customer=customer, geographic_view=geographic_view, )
     actual = GeographicViewServiceClient.geographic_view_path(customer, geographic_view)
     assert expected == actual
@@ -575,8 +589,9 @@ def test_geographic_view_path():
 
 def test_parse_geographic_view_path():
     expected = {
-        "customer": "whelk",
-        "geographic_view": "octopus",
+    "customer": "whelk",
+    "geographic_view": "octopus",
+
     }
     path = GeographicViewServiceClient.geographic_view_path(**expected)
 
@@ -586,6 +601,7 @@ def test_parse_geographic_view_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = GeographicViewServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -593,7 +609,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = GeographicViewServiceClient.common_billing_account_path(**expected)
 
@@ -603,6 +620,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = GeographicViewServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -610,7 +628,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = GeographicViewServiceClient.common_folder_path(**expected)
 
@@ -620,6 +639,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = GeographicViewServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -627,7 +647,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = GeographicViewServiceClient.common_organization_path(**expected)
 
@@ -637,6 +658,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = GeographicViewServiceClient.common_project_path(project)
     assert expected == actual
@@ -644,7 +666,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = GeographicViewServiceClient.common_project_path(**expected)
 
@@ -655,6 +678,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = GeographicViewServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -662,8 +686,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = GeographicViewServiceClient.common_location_path(**expected)
 

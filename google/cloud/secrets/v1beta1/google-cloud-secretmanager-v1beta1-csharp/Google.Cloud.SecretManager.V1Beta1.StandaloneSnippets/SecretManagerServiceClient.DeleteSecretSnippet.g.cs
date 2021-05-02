@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.SecretManager.V1Beta1.Snippets
 {
+    using Google.Cloud.SecretManager.V1Beta1;
+
     public sealed partial class GeneratedSecretManagerServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteSecret</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteSecret()
         {
-            // Snippet: DeleteSecret(string, CallSettings)
             // Create client
             SecretManagerServiceClient secretManagerServiceClient = SecretManagerServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/secrets/[SECRET]";
             // Make the request
             secretManagerServiceClient.DeleteSecret(name);
-            // End snippet
         }
     }
 }

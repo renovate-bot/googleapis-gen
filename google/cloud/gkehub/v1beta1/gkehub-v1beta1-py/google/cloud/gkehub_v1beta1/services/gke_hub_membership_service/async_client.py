@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -34,6 +36,7 @@ from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
+
 from .transports.base import GkeHubMembershipServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import GkeHubMembershipServiceGrpcAsyncIOTransport
 from .client import GkeHubMembershipServiceClient
@@ -52,14 +55,19 @@ class GkeHubMembershipServiceAsyncClient:
 
     membership_path = staticmethod(GkeHubMembershipServiceClient.membership_path)
     parse_membership_path = staticmethod(GkeHubMembershipServiceClient.parse_membership_path)
+
     common_billing_account_path = staticmethod(GkeHubMembershipServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(GkeHubMembershipServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(GkeHubMembershipServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(GkeHubMembershipServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(GkeHubMembershipServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(GkeHubMembershipServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(GkeHubMembershipServiceClient.common_project_path)
     parse_common_project_path = staticmethod(GkeHubMembershipServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(GkeHubMembershipServiceClient.common_location_path)
     parse_common_location_path = staticmethod(GkeHubMembershipServiceClient.parse_common_location_path)
 
@@ -144,6 +152,7 @@ class GkeHubMembershipServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = GkeHubMembershipServiceClient(
             credentials=credentials,
             transport=transport,
@@ -164,8 +173,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.ListMembershipsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `GkeHubMembershipService.ListMemberships` method.
             parent (:class:`str`):
                 Required. The parent (project and location) where the
@@ -175,6 +183,7 @@ class GkeHubMembershipServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -202,6 +211,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -253,8 +263,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.GetMembershipRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `GkeHubMembershipService.GetMembership` method.
             name (:class:`str`):
                 Required. The Membership resource name in the format
@@ -263,6 +272,7 @@ class GkeHubMembershipServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -287,6 +297,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -331,8 +342,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.CreateMembershipRequest`):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 `GkeHubMembershipService.CreateMembership` method.
             parent (:class:`str`):
                 Required. The parent (project and location) where the
@@ -364,6 +374,7 @@ class GkeHubMembershipServiceAsyncClient:
                 This corresponds to the ``membership_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -391,6 +402,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if resource is not None:
@@ -445,8 +457,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.DeleteMembershipRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `GkeHubMembershipService.DeleteMembership` method.
             name (:class:`str`):
                 Required. The Membership resource name in the format
@@ -455,6 +466,7 @@ class GkeHubMembershipServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -492,6 +504,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -544,8 +557,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.UpdateMembershipRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `GkeHubMembershipService.UpdateMembership` method.
             name (:class:`str`):
                 Required. The membership resource name in the format:
@@ -574,6 +586,7 @@ class GkeHubMembershipServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -601,6 +614,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if resource is not None:
@@ -655,10 +669,10 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.GenerateConnectManifestRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `GkeHubMembershipService.GenerateConnectManifest`
                 method. .
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -673,6 +687,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = membership.GenerateConnectManifestRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -715,9 +730,9 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.ValidateExclusivityRequest`):
-                The request object.
-                The request to validate the existing
+                The request object. The request to validate the existing
                 state of the membership CR in the cluster.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -731,6 +746,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = membership.ValidateExclusivityRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -784,9 +800,9 @@ class GkeHubMembershipServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gkehub_v1beta1.types.GenerateExclusivityManifestRequest`):
-                The request object.
-                The request to generate the
+                The request object. The request to generate the
                 manifests for exclusivity artifacts.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -801,6 +817,7 @@ class GkeHubMembershipServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = membership.GenerateExclusivityManifestRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -829,6 +846,8 @@ class GkeHubMembershipServiceAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

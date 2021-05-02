@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -29,6 +31,7 @@ from google.oauth2 import service_account              # type: ignore
 from google.example.library_v1.services.library_service import pagers
 from google.example.library_v1.types import library
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import LibraryServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import LibraryServiceGrpcAsyncIOTransport
 from .client import LibraryServiceClient
@@ -57,14 +60,19 @@ class LibraryServiceAsyncClient:
     parse_book_path = staticmethod(LibraryServiceClient.parse_book_path)
     shelf_path = staticmethod(LibraryServiceClient.shelf_path)
     parse_shelf_path = staticmethod(LibraryServiceClient.parse_shelf_path)
+
     common_billing_account_path = staticmethod(LibraryServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(LibraryServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(LibraryServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(LibraryServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(LibraryServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(LibraryServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(LibraryServiceClient.common_project_path)
     parse_common_project_path = staticmethod(LibraryServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(LibraryServiceClient.common_location_path)
     parse_common_location_path = staticmethod(LibraryServiceClient.parse_common_location_path)
 
@@ -149,6 +157,7 @@ class LibraryServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = LibraryServiceClient(
             credentials=credentials,
             transport=transport,
@@ -169,14 +178,14 @@ class LibraryServiceAsyncClient:
 
         Args:
             request (:class:`google.example.library_v1.types.CreateShelfRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 LibraryService.CreateShelf.
             shelf (:class:`google.example.library_v1.types.Shelf`):
                 The shelf to create.
                 This corresponds to the ``shelf`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -201,6 +210,7 @@ class LibraryServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if shelf is not None:
             request.shelf = shelf
 
@@ -209,7 +219,10 @@ class LibraryServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_shelf,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                 ),
                 deadline=60.0,
             ),
@@ -240,14 +253,14 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.GetShelfRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 LibraryService.GetShelf.
             name (:class:`str`):
                 The name of the shelf to retrieve.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -272,6 +285,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -280,7 +294,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_shelf,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -322,9 +339,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.ListShelvesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 LibraryService.ListShelves.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -341,6 +358,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         # Create or coerce a protobuf request object.
+
         request = library.ListShelvesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -348,7 +366,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_shelves,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -390,14 +411,14 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.DeleteShelfRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 LibraryService.DeleteShelf.
             name (:class:`str`):
                 The name of the shelf to delete.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -416,6 +437,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -424,7 +446,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_shelf,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -469,8 +494,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.MergeShelvesRequest`):
-                The request object.
-                Describes the shelf being removed
+                The request object. Describes the shelf being removed
                 (other_shelf_name) and updated (name) in this merge.
             name (:class:`str`):
                 The name of the shelf we're adding
@@ -486,6 +510,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``other_shelf`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -510,6 +535,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if other_shelf is not None:
@@ -520,7 +546,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.merge_shelves,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                 ),
                 deadline=60.0,
             ),
@@ -560,8 +589,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.CreateBookRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 LibraryService.CreateBook.
             parent (:class:`str`):
                 The name of the shelf in which the
@@ -575,6 +603,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``book`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -597,6 +626,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if book is not None:
@@ -607,7 +637,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_book,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                 ),
                 deadline=60.0,
             ),
@@ -646,14 +679,14 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.GetBookRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 LibraryService.GetBook.
             name (:class:`str`):
                 The name of the book to retrieve.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -676,6 +709,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -684,7 +718,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_book,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -728,8 +765,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.ListBooksRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 LibraryService.ListBooks.
             parent (:class:`str`):
                 The name of the shelf whose books
@@ -738,6 +774,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -765,6 +802,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -773,7 +811,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_books,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -823,14 +864,14 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.DeleteBookRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 LibraryService.DeleteBook.
             name (:class:`str`):
                 The name of the book to delete.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -849,6 +890,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -857,7 +899,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_book,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -897,8 +942,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.UpdateBookRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 LibraryService.UpdateBook.
             book (:class:`google.example.library_v1.types.Book`):
                 The name of the book to update.
@@ -910,6 +954,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -932,6 +977,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if book is not None:
             request.book = book
         if update_mask is not None:
@@ -942,7 +988,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_book,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -986,8 +1035,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.example.library_v1.types.MoveBookRequest`):
-                The request object.
-                Describes what book to move (name)
+                The request object. Describes what book to move (name)
                 and what shelf we're moving it to (other_shelf_name).
             name (:class:`str`):
                 The name of the book to move.
@@ -999,6 +1047,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``other_shelf_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1021,6 +1070,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if other_shelf_name is not None:
@@ -1031,7 +1081,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.move_book,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                 ),
                 deadline=60.0,
             ),
@@ -1057,6 +1110,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

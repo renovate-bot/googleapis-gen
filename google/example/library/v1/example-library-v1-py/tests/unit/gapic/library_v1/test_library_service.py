@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -36,34 +36,10 @@ from google.example.library_v1.services.library_service import LibraryServiceAsy
 from google.example.library_v1.services.library_service import LibraryServiceClient
 from google.example.library_v1.services.library_service import pagers
 from google.example.library_v1.services.library_service import transports
-from google.example.library_v1.services.library_service.transports.base import _API_CORE_VERSION
-from google.example.library_v1.services.library_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.example.library_v1.types import library
 from google.oauth2 import service_account
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -231,10 +207,12 @@ def test_library_service_client_client_options(client_class, transport_class, tr
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (LibraryServiceClient, transports.LibraryServiceGrpcTransport, "grpc", "true"),
     (LibraryServiceAsyncClient, transports.LibraryServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (LibraryServiceClient, transports.LibraryServiceGrpcTransport, "grpc", "false"),
     (LibraryServiceAsyncClient, transports.LibraryServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(LibraryServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(LibraryServiceClient))
 @mock.patch.object(LibraryServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(LibraryServiceAsyncClient))
@@ -389,18 +367,25 @@ def test_create_shelf(transport: str = 'grpc', request_type=library.CreateShelfR
         # Designate an appropriate return value for the call.
         call.return_value = library.Shelf(
             name='name_value',
+
             theme='theme_value',
+
         )
+
         response = client.create_shelf(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.CreateShelfRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, library.Shelf)
+
     assert response.name == 'name_value'
+
     assert response.theme == 'theme_value'
 
 
@@ -423,8 +408,8 @@ def test_create_shelf_empty_call():
         client.create_shelf()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == library.CreateShelfRequest()
 
+        assert args[0] == library.CreateShelfRequest()
 
 @pytest.mark.asyncio
 async def test_create_shelf_async(transport: str = 'grpc_asyncio', request_type=library.CreateShelfRequest):
@@ -442,20 +427,24 @@ async def test_create_shelf_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.create_shelf),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(library.Shelf(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.Shelf(
             name='name_value',
             theme='theme_value',
         ))
+
         response = await client.create_shelf(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.CreateShelfRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, library.Shelf)
+
     assert response.name == 'name_value'
+
     assert response.theme == 'theme_value'
 
 
@@ -475,6 +464,7 @@ def test_create_shelf_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = library.Shelf()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_shelf(
@@ -485,6 +475,7 @@ def test_create_shelf_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].shelf == library.Shelf(name='name_value')
 
 
@@ -526,6 +517,7 @@ async def test_create_shelf_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].shelf == library.Shelf(name='name_value')
 
 
@@ -561,18 +553,25 @@ def test_get_shelf(transport: str = 'grpc', request_type=library.GetShelfRequest
         # Designate an appropriate return value for the call.
         call.return_value = library.Shelf(
             name='name_value',
+
             theme='theme_value',
+
         )
+
         response = client.get_shelf(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.GetShelfRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, library.Shelf)
+
     assert response.name == 'name_value'
+
     assert response.theme == 'theme_value'
 
 
@@ -595,8 +594,8 @@ def test_get_shelf_empty_call():
         client.get_shelf()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == library.GetShelfRequest()
 
+        assert args[0] == library.GetShelfRequest()
 
 @pytest.mark.asyncio
 async def test_get_shelf_async(transport: str = 'grpc_asyncio', request_type=library.GetShelfRequest):
@@ -614,20 +613,24 @@ async def test_get_shelf_async(transport: str = 'grpc_asyncio', request_type=lib
             type(client.transport.get_shelf),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(library.Shelf(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.Shelf(
             name='name_value',
             theme='theme_value',
         ))
+
         response = await client.get_shelf(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.GetShelfRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, library.Shelf)
+
     assert response.name == 'name_value'
+
     assert response.theme == 'theme_value'
 
 
@@ -644,7 +647,6 @@ def test_get_shelf_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.GetShelfRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -652,6 +654,7 @@ def test_get_shelf_field_headers():
             type(client.transport.get_shelf),
             '__call__') as call:
         call.return_value = library.Shelf()
+
         client.get_shelf(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -676,7 +679,6 @@ async def test_get_shelf_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.GetShelfRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -684,6 +686,7 @@ async def test_get_shelf_field_headers_async():
             type(client.transport.get_shelf),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.Shelf())
+
         await client.get_shelf(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -710,6 +713,7 @@ def test_get_shelf_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = library.Shelf()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_shelf(
@@ -720,6 +724,7 @@ def test_get_shelf_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -761,6 +766,7 @@ async def test_get_shelf_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -796,16 +802,21 @@ def test_list_shelves(transport: str = 'grpc', request_type=library.ListShelvesR
         # Designate an appropriate return value for the call.
         call.return_value = library.ListShelvesResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_shelves(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.ListShelvesRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListShelvesPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -828,8 +839,8 @@ def test_list_shelves_empty_call():
         client.list_shelves()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == library.ListShelvesRequest()
 
+        assert args[0] == library.ListShelvesRequest()
 
 @pytest.mark.asyncio
 async def test_list_shelves_async(transport: str = 'grpc_asyncio', request_type=library.ListShelvesRequest):
@@ -847,18 +858,21 @@ async def test_list_shelves_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.list_shelves),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(library.ListShelvesResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.ListShelvesResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_shelves(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.ListShelvesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListShelvesAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1048,6 +1062,7 @@ async def test_list_shelves_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_delete_shelf(transport: str = 'grpc', request_type=library.DeleteShelfRequest):
     client = LibraryServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1064,11 +1079,13 @@ def test_delete_shelf(transport: str = 'grpc', request_type=library.DeleteShelfR
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_shelf(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.DeleteShelfRequest()
 
     # Establish that the response is the type that we expect.
@@ -1094,8 +1111,8 @@ def test_delete_shelf_empty_call():
         client.delete_shelf()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == library.DeleteShelfRequest()
 
+        assert args[0] == library.DeleteShelfRequest()
 
 @pytest.mark.asyncio
 async def test_delete_shelf_async(transport: str = 'grpc_asyncio', request_type=library.DeleteShelfRequest):
@@ -1114,11 +1131,13 @@ async def test_delete_shelf_async(transport: str = 'grpc_asyncio', request_type=
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_shelf(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.DeleteShelfRequest()
 
     # Establish that the response is the type that we expect.
@@ -1138,7 +1157,6 @@ def test_delete_shelf_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.DeleteShelfRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1146,6 +1164,7 @@ def test_delete_shelf_field_headers():
             type(client.transport.delete_shelf),
             '__call__') as call:
         call.return_value = None
+
         client.delete_shelf(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1170,7 +1189,6 @@ async def test_delete_shelf_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.DeleteShelfRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1178,6 +1196,7 @@ async def test_delete_shelf_field_headers_async():
             type(client.transport.delete_shelf),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_shelf(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1204,6 +1223,7 @@ def test_delete_shelf_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_shelf(
@@ -1214,6 +1234,7 @@ def test_delete_shelf_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1255,6 +1276,7 @@ async def test_delete_shelf_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1290,18 +1312,25 @@ def test_merge_shelves(transport: str = 'grpc', request_type=library.MergeShelve
         # Designate an appropriate return value for the call.
         call.return_value = library.Shelf(
             name='name_value',
+
             theme='theme_value',
+
         )
+
         response = client.merge_shelves(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.MergeShelvesRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, library.Shelf)
+
     assert response.name == 'name_value'
+
     assert response.theme == 'theme_value'
 
 
@@ -1324,8 +1353,8 @@ def test_merge_shelves_empty_call():
         client.merge_shelves()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == library.MergeShelvesRequest()
 
+        assert args[0] == library.MergeShelvesRequest()
 
 @pytest.mark.asyncio
 async def test_merge_shelves_async(transport: str = 'grpc_asyncio', request_type=library.MergeShelvesRequest):
@@ -1343,20 +1372,24 @@ async def test_merge_shelves_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.merge_shelves),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(library.Shelf(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.Shelf(
             name='name_value',
             theme='theme_value',
         ))
+
         response = await client.merge_shelves(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.MergeShelvesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, library.Shelf)
+
     assert response.name == 'name_value'
+
     assert response.theme == 'theme_value'
 
 
@@ -1373,7 +1406,6 @@ def test_merge_shelves_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.MergeShelvesRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1381,6 +1413,7 @@ def test_merge_shelves_field_headers():
             type(client.transport.merge_shelves),
             '__call__') as call:
         call.return_value = library.Shelf()
+
         client.merge_shelves(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1405,7 +1438,6 @@ async def test_merge_shelves_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.MergeShelvesRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1413,6 +1445,7 @@ async def test_merge_shelves_field_headers_async():
             type(client.transport.merge_shelves),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.Shelf())
+
         await client.merge_shelves(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1439,6 +1472,7 @@ def test_merge_shelves_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = library.Shelf()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.merge_shelves(
@@ -1450,7 +1484,9 @@ def test_merge_shelves_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
+
         assert args[0].other_shelf == 'other_shelf_value'
 
 
@@ -1494,7 +1530,9 @@ async def test_merge_shelves_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
+
         assert args[0].other_shelf == 'other_shelf_value'
 
 
@@ -1531,22 +1569,33 @@ def test_create_book(transport: str = 'grpc', request_type=library.CreateBookReq
         # Designate an appropriate return value for the call.
         call.return_value = library.Book(
             name='name_value',
+
             author='author_value',
+
             title='title_value',
+
             read=True,
+
         )
+
         response = client.create_book(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.CreateBookRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, library.Book)
+
     assert response.name == 'name_value'
+
     assert response.author == 'author_value'
+
     assert response.title == 'title_value'
+
     assert response.read is True
 
 
@@ -1569,8 +1618,8 @@ def test_create_book_empty_call():
         client.create_book()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == library.CreateBookRequest()
 
+        assert args[0] == library.CreateBookRequest()
 
 @pytest.mark.asyncio
 async def test_create_book_async(transport: str = 'grpc_asyncio', request_type=library.CreateBookRequest):
@@ -1588,24 +1637,30 @@ async def test_create_book_async(transport: str = 'grpc_asyncio', request_type=l
             type(client.transport.create_book),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(library.Book(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.Book(
             name='name_value',
             author='author_value',
             title='title_value',
             read=True,
         ))
+
         response = await client.create_book(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.CreateBookRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, library.Book)
+
     assert response.name == 'name_value'
+
     assert response.author == 'author_value'
+
     assert response.title == 'title_value'
+
     assert response.read is True
 
 
@@ -1622,7 +1677,6 @@ def test_create_book_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.CreateBookRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1630,6 +1684,7 @@ def test_create_book_field_headers():
             type(client.transport.create_book),
             '__call__') as call:
         call.return_value = library.Book()
+
         client.create_book(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1654,7 +1709,6 @@ async def test_create_book_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.CreateBookRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1662,6 +1716,7 @@ async def test_create_book_field_headers_async():
             type(client.transport.create_book),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.Book())
+
         await client.create_book(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1688,6 +1743,7 @@ def test_create_book_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = library.Book()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_book(
@@ -1699,7 +1755,9 @@ def test_create_book_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].book == library.Book(name='name_value')
 
 
@@ -1743,7 +1801,9 @@ async def test_create_book_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].book == library.Book(name='name_value')
 
 
@@ -1780,22 +1840,33 @@ def test_get_book(transport: str = 'grpc', request_type=library.GetBookRequest):
         # Designate an appropriate return value for the call.
         call.return_value = library.Book(
             name='name_value',
+
             author='author_value',
+
             title='title_value',
+
             read=True,
+
         )
+
         response = client.get_book(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.GetBookRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, library.Book)
+
     assert response.name == 'name_value'
+
     assert response.author == 'author_value'
+
     assert response.title == 'title_value'
+
     assert response.read is True
 
 
@@ -1818,8 +1889,8 @@ def test_get_book_empty_call():
         client.get_book()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == library.GetBookRequest()
 
+        assert args[0] == library.GetBookRequest()
 
 @pytest.mark.asyncio
 async def test_get_book_async(transport: str = 'grpc_asyncio', request_type=library.GetBookRequest):
@@ -1837,24 +1908,30 @@ async def test_get_book_async(transport: str = 'grpc_asyncio', request_type=libr
             type(client.transport.get_book),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(library.Book(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.Book(
             name='name_value',
             author='author_value',
             title='title_value',
             read=True,
         ))
+
         response = await client.get_book(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.GetBookRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, library.Book)
+
     assert response.name == 'name_value'
+
     assert response.author == 'author_value'
+
     assert response.title == 'title_value'
+
     assert response.read is True
 
 
@@ -1871,7 +1948,6 @@ def test_get_book_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.GetBookRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1879,6 +1955,7 @@ def test_get_book_field_headers():
             type(client.transport.get_book),
             '__call__') as call:
         call.return_value = library.Book()
+
         client.get_book(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1903,7 +1980,6 @@ async def test_get_book_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.GetBookRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1911,6 +1987,7 @@ async def test_get_book_field_headers_async():
             type(client.transport.get_book),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.Book())
+
         await client.get_book(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1937,6 +2014,7 @@ def test_get_book_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = library.Book()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_book(
@@ -1947,6 +2025,7 @@ def test_get_book_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1988,6 +2067,7 @@ async def test_get_book_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2023,16 +2103,21 @@ def test_list_books(transport: str = 'grpc', request_type=library.ListBooksReque
         # Designate an appropriate return value for the call.
         call.return_value = library.ListBooksResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_books(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.ListBooksRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListBooksPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2055,8 +2140,8 @@ def test_list_books_empty_call():
         client.list_books()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == library.ListBooksRequest()
 
+        assert args[0] == library.ListBooksRequest()
 
 @pytest.mark.asyncio
 async def test_list_books_async(transport: str = 'grpc_asyncio', request_type=library.ListBooksRequest):
@@ -2074,18 +2159,21 @@ async def test_list_books_async(transport: str = 'grpc_asyncio', request_type=li
             type(client.transport.list_books),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(library.ListBooksResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.ListBooksResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_books(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.ListBooksRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListBooksAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2102,7 +2190,6 @@ def test_list_books_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.ListBooksRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2110,6 +2197,7 @@ def test_list_books_field_headers():
             type(client.transport.list_books),
             '__call__') as call:
         call.return_value = library.ListBooksResponse()
+
         client.list_books(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2134,7 +2222,6 @@ async def test_list_books_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.ListBooksRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2142,6 +2229,7 @@ async def test_list_books_field_headers_async():
             type(client.transport.list_books),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.ListBooksResponse())
+
         await client.list_books(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2168,6 +2256,7 @@ def test_list_books_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = library.ListBooksResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_books(
@@ -2178,6 +2267,7 @@ def test_list_books_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -2219,6 +2309,7 @@ async def test_list_books_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -2423,6 +2514,7 @@ async def test_list_books_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_delete_book(transport: str = 'grpc', request_type=library.DeleteBookRequest):
     client = LibraryServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2439,11 +2531,13 @@ def test_delete_book(transport: str = 'grpc', request_type=library.DeleteBookReq
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_book(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.DeleteBookRequest()
 
     # Establish that the response is the type that we expect.
@@ -2469,8 +2563,8 @@ def test_delete_book_empty_call():
         client.delete_book()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == library.DeleteBookRequest()
 
+        assert args[0] == library.DeleteBookRequest()
 
 @pytest.mark.asyncio
 async def test_delete_book_async(transport: str = 'grpc_asyncio', request_type=library.DeleteBookRequest):
@@ -2489,11 +2583,13 @@ async def test_delete_book_async(transport: str = 'grpc_asyncio', request_type=l
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_book(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.DeleteBookRequest()
 
     # Establish that the response is the type that we expect.
@@ -2513,7 +2609,6 @@ def test_delete_book_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.DeleteBookRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2521,6 +2616,7 @@ def test_delete_book_field_headers():
             type(client.transport.delete_book),
             '__call__') as call:
         call.return_value = None
+
         client.delete_book(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2545,7 +2641,6 @@ async def test_delete_book_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.DeleteBookRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2553,6 +2648,7 @@ async def test_delete_book_field_headers_async():
             type(client.transport.delete_book),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_book(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2579,6 +2675,7 @@ def test_delete_book_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_book(
@@ -2589,6 +2686,7 @@ def test_delete_book_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2630,6 +2728,7 @@ async def test_delete_book_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2665,22 +2764,33 @@ def test_update_book(transport: str = 'grpc', request_type=library.UpdateBookReq
         # Designate an appropriate return value for the call.
         call.return_value = library.Book(
             name='name_value',
+
             author='author_value',
+
             title='title_value',
+
             read=True,
+
         )
+
         response = client.update_book(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.UpdateBookRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, library.Book)
+
     assert response.name == 'name_value'
+
     assert response.author == 'author_value'
+
     assert response.title == 'title_value'
+
     assert response.read is True
 
 
@@ -2703,8 +2813,8 @@ def test_update_book_empty_call():
         client.update_book()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == library.UpdateBookRequest()
 
+        assert args[0] == library.UpdateBookRequest()
 
 @pytest.mark.asyncio
 async def test_update_book_async(transport: str = 'grpc_asyncio', request_type=library.UpdateBookRequest):
@@ -2722,24 +2832,30 @@ async def test_update_book_async(transport: str = 'grpc_asyncio', request_type=l
             type(client.transport.update_book),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(library.Book(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.Book(
             name='name_value',
             author='author_value',
             title='title_value',
             read=True,
         ))
+
         response = await client.update_book(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.UpdateBookRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, library.Book)
+
     assert response.name == 'name_value'
+
     assert response.author == 'author_value'
+
     assert response.title == 'title_value'
+
     assert response.read is True
 
 
@@ -2756,7 +2872,6 @@ def test_update_book_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.UpdateBookRequest()
-
     request.book.name = 'book.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2764,6 +2879,7 @@ def test_update_book_field_headers():
             type(client.transport.update_book),
             '__call__') as call:
         call.return_value = library.Book()
+
         client.update_book(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2788,7 +2904,6 @@ async def test_update_book_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.UpdateBookRequest()
-
     request.book.name = 'book.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2796,6 +2911,7 @@ async def test_update_book_field_headers_async():
             type(client.transport.update_book),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.Book())
+
         await client.update_book(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2822,6 +2938,7 @@ def test_update_book_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = library.Book()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_book(
@@ -2833,7 +2950,9 @@ def test_update_book_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].book == library.Book(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -2877,7 +2996,9 @@ async def test_update_book_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].book == library.Book(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -2914,22 +3035,33 @@ def test_move_book(transport: str = 'grpc', request_type=library.MoveBookRequest
         # Designate an appropriate return value for the call.
         call.return_value = library.Book(
             name='name_value',
+
             author='author_value',
+
             title='title_value',
+
             read=True,
+
         )
+
         response = client.move_book(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.MoveBookRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, library.Book)
+
     assert response.name == 'name_value'
+
     assert response.author == 'author_value'
+
     assert response.title == 'title_value'
+
     assert response.read is True
 
 
@@ -2952,8 +3084,8 @@ def test_move_book_empty_call():
         client.move_book()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == library.MoveBookRequest()
 
+        assert args[0] == library.MoveBookRequest()
 
 @pytest.mark.asyncio
 async def test_move_book_async(transport: str = 'grpc_asyncio', request_type=library.MoveBookRequest):
@@ -2971,24 +3103,30 @@ async def test_move_book_async(transport: str = 'grpc_asyncio', request_type=lib
             type(client.transport.move_book),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(library.Book(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.Book(
             name='name_value',
             author='author_value',
             title='title_value',
             read=True,
         ))
+
         response = await client.move_book(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == library.MoveBookRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, library.Book)
+
     assert response.name == 'name_value'
+
     assert response.author == 'author_value'
+
     assert response.title == 'title_value'
+
     assert response.read is True
 
 
@@ -3005,7 +3143,6 @@ def test_move_book_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.MoveBookRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3013,6 +3150,7 @@ def test_move_book_field_headers():
             type(client.transport.move_book),
             '__call__') as call:
         call.return_value = library.Book()
+
         client.move_book(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3037,7 +3175,6 @@ async def test_move_book_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = library.MoveBookRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3045,6 +3182,7 @@ async def test_move_book_field_headers_async():
             type(client.transport.move_book),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(library.Book())
+
         await client.move_book(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3071,6 +3209,7 @@ def test_move_book_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = library.Book()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.move_book(
@@ -3082,7 +3221,9 @@ def test_move_book_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
+
         assert args[0].other_shelf_name == 'other_shelf_name_value'
 
 
@@ -3126,7 +3267,9 @@ async def test_move_book_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
+
         assert args[0].other_shelf_name == 'other_shelf_name_value'
 
 
@@ -3186,6 +3329,7 @@ def test_transport_instance():
     client = LibraryServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.LibraryServiceGrpcTransport(
@@ -3200,6 +3344,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.LibraryServiceGrpcTransport,
     transports.LibraryServiceGrpcAsyncIOTransport,
@@ -3211,6 +3356,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = LibraryServiceClient(
@@ -3220,6 +3366,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.LibraryServiceGrpcTransport,
     )
+
 
 def test_library_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -3252,33 +3399,15 @@ def test_library_service_base_transport():
         'delete_book',
         'update_book',
         'move_book',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_library_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.example.library_v1.services.library_service.transports.LibraryServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.LibraryServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_library_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.example.library_v1.services.library_service.transports.LibraryServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.example.library_v1.services.library_service.transports.LibraryServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.LibraryServiceTransport(
@@ -3293,180 +3422,31 @@ def test_library_service_base_transport_with_credentials_file_old_google_auth():
 
 def test_library_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.example.library_v1.services.library_service.transports.LibraryServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.example.library_v1.services.library_service.transports.LibraryServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.LibraryServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_library_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         LibraryServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-),
-
+        adc.assert_called_once_with(scopes=(),
             quota_project_id=None,
         )
 
 
-@requires_google_auth_lt_1_25_0
-def test_library_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+def test_library_service_transport_auth_adc():
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
-        LibraryServiceClient()
-        adc.assert_called_once_with(
-            scopes=(),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.LibraryServiceGrpcTransport,
-        transports.LibraryServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_library_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(),
+        transports.LibraryServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(),
             quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.LibraryServiceGrpcTransport,
-        transports.LibraryServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_library_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
-        adc.assert_called_once_with(scopes=(
-),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.LibraryServiceGrpcTransport, grpc_helpers),
-        (transports.LibraryServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_library_service_transport_create_channel(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
-            quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "library-example.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(),
-            scopes=["1", "2"],
-            default_host="library-example.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.LibraryServiceGrpcTransport, grpc_helpers),
-        (transports.LibraryServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_library_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "library-example.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.LibraryServiceGrpcTransport, grpc_helpers),
-        (transports.LibraryServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_library_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "library-example.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -3527,6 +3507,7 @@ def test_library_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='library-example.googleapis.com:8000'),
     )
     assert client.transport._host == 'library-example.googleapis.com:8000'
+
 
 def test_library_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -3643,6 +3624,7 @@ def test_library_service_transport_channel_mtls_with_adc(
 def test_book_path():
     shelf = "squid"
     book = "clam"
+
     expected = "shelves/{shelf}/books/{book}".format(shelf=shelf, book=book, )
     actual = LibraryServiceClient.book_path(shelf, book)
     assert expected == actual
@@ -3650,8 +3632,9 @@ def test_book_path():
 
 def test_parse_book_path():
     expected = {
-        "shelf": "whelk",
-        "book": "octopus",
+    "shelf": "whelk",
+    "book": "octopus",
+
     }
     path = LibraryServiceClient.book_path(**expected)
 
@@ -3661,6 +3644,7 @@ def test_parse_book_path():
 
 def test_shelf_path():
     shelf_id = "oyster"
+
     expected = "shelves/{shelf_id}".format(shelf_id=shelf_id, )
     actual = LibraryServiceClient.shelf_path(shelf_id)
     assert expected == actual
@@ -3668,7 +3652,8 @@ def test_shelf_path():
 
 def test_parse_shelf_path():
     expected = {
-        "shelf_id": "nudibranch",
+    "shelf_id": "nudibranch",
+
     }
     path = LibraryServiceClient.shelf_path(**expected)
 
@@ -3678,6 +3663,7 @@ def test_parse_shelf_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = LibraryServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -3685,7 +3671,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "mussel",
+    "billing_account": "mussel",
+
     }
     path = LibraryServiceClient.common_billing_account_path(**expected)
 
@@ -3695,6 +3682,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = LibraryServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -3702,7 +3690,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nautilus",
+    "folder": "nautilus",
+
     }
     path = LibraryServiceClient.common_folder_path(**expected)
 
@@ -3712,6 +3701,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = LibraryServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -3719,7 +3709,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "abalone",
+    "organization": "abalone",
+
     }
     path = LibraryServiceClient.common_organization_path(**expected)
 
@@ -3729,6 +3720,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
+
     expected = "projects/{project}".format(project=project, )
     actual = LibraryServiceClient.common_project_path(project)
     assert expected == actual
@@ -3736,7 +3728,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "clam",
+    "project": "clam",
+
     }
     path = LibraryServiceClient.common_project_path(**expected)
 
@@ -3747,6 +3740,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = LibraryServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -3754,8 +3748,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "oyster",
-        "location": "nudibranch",
+    "project": "oyster",
+    "location": "nudibranch",
+
     }
     path = LibraryServiceClient.common_location_path(**expected)
 

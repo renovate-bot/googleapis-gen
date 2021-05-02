@@ -16,19 +16,23 @@
 
 namespace Google.Streetview.Publish.V1.Snippets
 {
+    using Google.Streetview.Publish.V1;
+
     public sealed partial class GeneratedStreetViewPublishServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchDeletePhotos</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BatchDeletePhotosRequestObject()
         {
-            // Snippet: BatchDeletePhotos(BatchDeletePhotosRequest, CallSettings)
             // Create client
             StreetViewPublishServiceClient streetViewPublishServiceClient = StreetViewPublishServiceClient.Create();
             // Initialize request argument(s)
             BatchDeletePhotosRequest request = new BatchDeletePhotosRequest { PhotoIds = { "", }, };
             // Make the request
             BatchDeletePhotosResponse response = streetViewPublishServiceClient.BatchDeletePhotos(request);
-            // End snippet
         }
     }
 }

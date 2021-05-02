@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Automl.V1Beta1.Snippets
 {
+    using Google.Cloud.Automl.V1Beta1;
+
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for GetColumnSpec</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetColumnSpecResourceNames()
         {
-            // Snippet: GetColumnSpec(ColumnSpecName, CallSettings)
             // Create client
             AutoMlClient autoMlClient = AutoMlClient.Create();
             // Initialize request argument(s)
             ColumnSpecName name = ColumnSpecName.FromProjectLocationDatasetTableSpecColumnSpec("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]", "[COLUMN_SPEC]");
             // Make the request
             ColumnSpec response = autoMlClient.GetColumnSpec(name);
-            // End snippet
         }
     }
 }

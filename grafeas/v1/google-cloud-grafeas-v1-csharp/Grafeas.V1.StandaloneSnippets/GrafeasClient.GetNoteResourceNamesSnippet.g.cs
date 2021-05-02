@@ -16,19 +16,23 @@
 
 namespace Grafeas.V1.Snippets
 {
+    using Grafeas.V1;
+
     public sealed partial class GeneratedGrafeasClientStandaloneSnippets
     {
         /// <summary>Snippet for GetNote</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetNoteResourceNames()
         {
-            // Snippet: GetNote(NoteName, CallSettings)
             // Create client
             GrafeasClient grafeasClient = GrafeasClient.Create();
             // Initialize request argument(s)
             NoteName name = NoteName.FromProjectNote("[PROJECT]", "[NOTE]");
             // Make the request
             Note response = grafeasClient.GetNote(name);
-            // End snippet
         }
     }
 }

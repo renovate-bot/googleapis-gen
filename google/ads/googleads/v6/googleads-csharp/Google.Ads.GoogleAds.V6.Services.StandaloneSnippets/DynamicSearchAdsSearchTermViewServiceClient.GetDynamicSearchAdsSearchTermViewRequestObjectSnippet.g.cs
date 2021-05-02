@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedDynamicSearchAdsSearchTermViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDynamicSearchAdsSearchTermView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDynamicSearchAdsSearchTermViewRequestObject()
         {
-            // Snippet: GetDynamicSearchAdsSearchTermView(GetDynamicSearchAdsSearchTermViewRequest, CallSettings)
             // Create client
             DynamicSearchAdsSearchTermViewServiceClient dynamicSearchAdsSearchTermViewServiceClient = DynamicSearchAdsSearchTermViewServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             DynamicSearchAdsSearchTermView response = dynamicSearchAdsSearchTermViewServiceClient.GetDynamicSearchAdsSearchTermView(request);
-            // End snippet
         }
     }
 }

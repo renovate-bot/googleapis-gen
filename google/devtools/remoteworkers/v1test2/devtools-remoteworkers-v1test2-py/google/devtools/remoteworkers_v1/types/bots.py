@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.devtools.remoteworkers_v1.types import worker as gdrv_worker
 from google.protobuf import any_pb2 as gp_any  # type: ignore
@@ -125,38 +128,27 @@ class BotSession(proto.Message):
             itself.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    bot_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    status = proto.Field(
-        proto.ENUM,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    bot_id = proto.Field(proto.STRING, number=2)
+
+    status = proto.Field(proto.ENUM, number=3,
         enum='BotStatus',
     )
-    worker = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    worker = proto.Field(proto.MESSAGE, number=4,
         message=gdrv_worker.Worker,
     )
-    leases = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+
+    leases = proto.RepeatedField(proto.MESSAGE, number=5,
         message='Lease',
     )
-    expire_time = proto.Field(
-        proto.MESSAGE,
-        number=6,
+
+    expire_time = proto.Field(proto.MESSAGE, number=6,
         message=timestamp.Timestamp,
     )
-    version = proto.Field(
-        proto.STRING,
-        number=7,
-    )
+
+    version = proto.Field(proto.STRING, number=7)
 
 
 class Lease(proto.Message):
@@ -224,47 +216,35 @@ class Lease(proto.Message):
             DEPRECATED. Use ``payload`` instead.
     """
 
-    id = proto.Field(
-        proto.STRING,
-        number=7,
-    )
-    payload = proto.Field(
-        proto.MESSAGE,
-        number=8,
+    id = proto.Field(proto.STRING, number=7)
+
+    payload = proto.Field(proto.MESSAGE, number=8,
         message=gp_any.Any,
     )
-    result = proto.Field(
-        proto.MESSAGE,
-        number=9,
+
+    result = proto.Field(proto.MESSAGE, number=9,
         message=gp_any.Any,
     )
-    state = proto.Field(
-        proto.ENUM,
-        number=2,
+
+    state = proto.Field(proto.ENUM, number=2,
         enum='LeaseState',
     )
-    status = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    status = proto.Field(proto.MESSAGE, number=3,
         message=gr_status.Status,
     )
-    requirements = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    requirements = proto.Field(proto.MESSAGE, number=4,
         message=gdrv_worker.Worker,
     )
-    expire_time = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    expire_time = proto.Field(proto.MESSAGE, number=5,
         message=timestamp.Timestamp,
     )
-    assignment = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    inline_assignment = proto.Field(
-        proto.MESSAGE,
-        number=6,
+
+    assignment = proto.Field(proto.STRING, number=1)
+
+    inline_assignment = proto.Field(proto.MESSAGE, number=6,
         message=gp_any.Any,
     )
 
@@ -299,19 +279,16 @@ class AdminTemp(proto.Message):
         BOT_TERMINATE = 3
         HOST_RESTART = 4
 
-    command = proto.Field(
-        proto.ENUM,
-        number=1,
+    command = proto.Field(proto.ENUM, number=1,
         enum=Command,
     )
-    arg = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    arg = proto.Field(proto.STRING, number=2)
 
 
 class CreateBotSessionRequest(proto.Message):
     r"""Request message for CreateBotSession.
+
     Attributes:
         parent (str):
             Required. The farm resource.
@@ -320,19 +297,16 @@ class CreateBotSessionRequest(proto.Message):
             ssigned fields like name must be unset.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    bot_session = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    bot_session = proto.Field(proto.MESSAGE, number=2,
         message='BotSession',
     )
 
 
 class UpdateBotSessionRequest(proto.Message):
     r"""Request message for UpdateBotSession.
+
     Attributes:
         name (str):
             Required. The bot session name. Must match bot_session.name.
@@ -344,18 +318,13 @@ class UpdateBotSessionRequest(proto.Message):
             which fields are updatable by which caller.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    bot_session = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    bot_session = proto.Field(proto.MESSAGE, number=2,
         message='BotSession',
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    update_mask = proto.Field(proto.MESSAGE, number=3,
         message=field_mask.FieldMask,
     )
 

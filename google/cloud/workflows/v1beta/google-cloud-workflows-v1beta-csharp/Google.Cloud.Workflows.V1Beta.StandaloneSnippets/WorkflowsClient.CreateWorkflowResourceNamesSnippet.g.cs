@@ -17,14 +17,18 @@
 namespace Google.Cloud.Workflows.V1Beta.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Workflows.V1Beta;
     using Google.LongRunning;
 
     public sealed partial class GeneratedWorkflowsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateWorkflow</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateWorkflowResourceNames()
         {
-            // Snippet: CreateWorkflow(LocationName, Workflow, string, CallSettings)
             // Create client
             WorkflowsClient workflowsClient = WorkflowsClient.Create();
             // Initialize request argument(s)
@@ -49,7 +53,6 @@ namespace Google.Cloud.Workflows.V1Beta.Snippets
                 // If it has completed, then access the result
                 Workflow retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

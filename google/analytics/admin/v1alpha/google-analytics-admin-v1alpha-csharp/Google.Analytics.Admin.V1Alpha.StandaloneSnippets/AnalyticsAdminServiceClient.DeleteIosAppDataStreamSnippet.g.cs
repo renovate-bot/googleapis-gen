@@ -16,19 +16,23 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
+
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteIosAppDataStream</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteIosAppDataStream()
         {
-            // Snippet: DeleteIosAppDataStream(string, CallSettings)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.Create();
             // Initialize request argument(s)
             string name = "properties/[PROPERTY]/iosAppDataStreams/[IOS_APP_DATA_STREAM]";
             // Make the request
             analyticsAdminServiceClient.DeleteIosAppDataStream(name);
-            // End snippet
         }
     }
 }

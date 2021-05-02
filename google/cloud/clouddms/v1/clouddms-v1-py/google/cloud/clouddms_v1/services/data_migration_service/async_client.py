@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -36,6 +38,7 @@ from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
+
 from .transports.base import DataMigrationServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import DataMigrationServiceGrpcAsyncIOTransport
 from .client import DataMigrationServiceClient
@@ -53,14 +56,19 @@ class DataMigrationServiceAsyncClient:
     parse_connection_profile_path = staticmethod(DataMigrationServiceClient.parse_connection_profile_path)
     migration_job_path = staticmethod(DataMigrationServiceClient.migration_job_path)
     parse_migration_job_path = staticmethod(DataMigrationServiceClient.parse_migration_job_path)
+
     common_billing_account_path = staticmethod(DataMigrationServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(DataMigrationServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(DataMigrationServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(DataMigrationServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(DataMigrationServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(DataMigrationServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(DataMigrationServiceClient.common_project_path)
     parse_common_project_path = staticmethod(DataMigrationServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(DataMigrationServiceClient.common_location_path)
     parse_common_location_path = staticmethod(DataMigrationServiceClient.parse_common_location_path)
 
@@ -145,6 +153,7 @@ class DataMigrationServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = DataMigrationServiceClient(
             credentials=credentials,
             transport=transport,
@@ -165,8 +174,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.ListMigrationJobsRequest`):
-                The request object.
-                Retrieve a list of all migration
+                The request object. Retrieve a list of all migration
                 jobs in a given project and location.
             parent (:class:`str`):
                 Required. The parent, which owns this
@@ -175,6 +183,7 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -202,6 +211,7 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -253,8 +263,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.GetMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'GetMigrationJob' request.
             name (:class:`str`):
                 Required. Name of the migration job
@@ -263,6 +272,7 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -287,6 +297,7 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -332,8 +343,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.CreateMigrationJobRequest`):
-                The request object.
-                Request message to create a new
+                The request object. Request message to create a new
                 Database Migration Service migration job in the
                 specified project and region.
             parent (:class:`str`):
@@ -358,6 +368,7 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``migration_job_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -386,6 +397,7 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if migration_job is not None:
@@ -441,8 +453,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.UpdateMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'UpdateMigrationJob' request.
             migration_job (:class:`google.cloud.clouddms_v1.types.MigrationJob`):
                 Required. The migration job
@@ -460,6 +471,7 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -488,6 +500,7 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if migration_job is not None:
             request.migration_job = migration_job
         if update_mask is not None:
@@ -540,8 +553,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.DeleteMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'DeleteMigrationJob' request.
             name (:class:`str`):
                 Required. Name of the migration job
@@ -550,6 +562,7 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -587,6 +600,7 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -636,9 +650,9 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.StartMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'StartMigrationJob' request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -656,6 +670,7 @@ class DataMigrationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = clouddms.StartMigrationJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -704,9 +719,9 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.StopMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'StopMigrationJob' request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -724,6 +739,7 @@ class DataMigrationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = clouddms.StopMigrationJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -773,9 +789,9 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.ResumeMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'ResumeMigrationJob' request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -793,6 +809,7 @@ class DataMigrationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = clouddms.ResumeMigrationJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -843,9 +860,9 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.PromoteMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'PromoteMigrationJob' request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -863,6 +880,7 @@ class DataMigrationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = clouddms.PromoteMigrationJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -913,9 +931,9 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.VerifyMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'VerifyMigrationJob' request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -933,6 +951,7 @@ class DataMigrationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = clouddms.VerifyMigrationJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -983,9 +1002,9 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.RestartMigrationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'RestartMigrationJob' request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1003,6 +1022,7 @@ class DataMigrationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = clouddms.RestartMigrationJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1052,9 +1072,9 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.GenerateSshScriptRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'GenerateSshScript' request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1068,6 +1088,7 @@ class DataMigrationServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = clouddms.GenerateSshScriptRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1110,8 +1131,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.ListConnectionProfilesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'ListConnectionProfiles' request.
             parent (:class:`str`):
                 Required. The parent, which owns this
@@ -1120,6 +1140,7 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1147,6 +1168,7 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -1198,8 +1220,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.GetConnectionProfileRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'GetConnectionProfile' request.
             name (:class:`str`):
                 Required. Name of the connection
@@ -1208,6 +1229,7 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1230,6 +1252,7 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1275,8 +1298,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.CreateConnectionProfileRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'CreateConnectionProfile' request.
             parent (:class:`str`):
                 Required. The parent, which owns this
@@ -1299,6 +1321,7 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``connection_profile_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1326,6 +1349,7 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if connection_profile is not None:
@@ -1382,8 +1406,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.UpdateConnectionProfileRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'UpdateConnectionProfile' request.
             connection_profile (:class:`google.cloud.clouddms_v1.types.ConnectionProfile`):
                 Required. The connection profile
@@ -1401,6 +1424,7 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1428,6 +1452,7 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if connection_profile is not None:
             request.connection_profile = connection_profile
         if update_mask is not None:
@@ -1483,8 +1508,7 @@ class DataMigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.clouddms_v1.types.DeleteConnectionProfileRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 'DeleteConnectionProfile' request.
             name (:class:`str`):
                 Required. Name of the connection
@@ -1493,6 +1517,7 @@ class DataMigrationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1530,6 +1555,7 @@ class DataMigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1567,6 +1593,8 @@ class DataMigrationServiceAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

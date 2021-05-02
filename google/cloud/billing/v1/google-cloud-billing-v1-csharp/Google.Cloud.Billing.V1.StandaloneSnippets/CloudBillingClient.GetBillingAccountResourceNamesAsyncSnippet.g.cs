@@ -17,22 +17,24 @@
 namespace Google.Cloud.Billing.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Billing.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudBillingClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBillingAccountAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetBillingAccountResourceNamesAsync()
         {
-            // Snippet: GetBillingAccountAsync(BillingAccountName, CallSettings)
-            // Additional: GetBillingAccountAsync(BillingAccountName, CancellationToken)
             // Create client
             CloudBillingClient cloudBillingClient = await CloudBillingClient.CreateAsync();
             // Initialize request argument(s)
             BillingAccountName name = BillingAccountName.FromBillingAccount("[BILLING_ACCOUNT]");
             // Make the request
             BillingAccount response = await cloudBillingClient.GetBillingAccountAsync(name);
-            // End snippet
         }
     }
 }

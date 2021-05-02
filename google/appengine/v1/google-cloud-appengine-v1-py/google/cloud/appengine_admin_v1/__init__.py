@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +23,6 @@ from .services.firewall import FirewallClient
 from .services.instances import InstancesClient
 from .services.services import ServicesClient
 from .services.versions import VersionsClient
-
 from .types.app_yaml import ApiConfigHandler
 from .types.app_yaml import ApiEndpointHandler
 from .types.app_yaml import AuthFailAction
@@ -124,6 +124,7 @@ from .types.version import StandardSchedulerSettings
 from .types.version import Version
 from .types.version import Volume
 from .types.version import VpcAccessConnector
+
 
 __all__ = (
     'ApiConfigHandler',

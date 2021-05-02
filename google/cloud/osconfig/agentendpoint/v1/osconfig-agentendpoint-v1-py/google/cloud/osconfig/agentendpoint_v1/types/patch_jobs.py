@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -72,49 +74,39 @@ class PatchConfig(proto.Message):
         ALWAYS = 2
         NEVER = 3
 
-    reboot_config = proto.Field(
-        proto.ENUM,
-        number=1,
+    reboot_config = proto.Field(proto.ENUM, number=1,
         enum=RebootConfig,
     )
-    retry_strategy = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    retry_strategy = proto.Field(proto.MESSAGE, number=2,
         message='RetryStrategy',
     )
-    apt = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    apt = proto.Field(proto.MESSAGE, number=3,
         message='AptSettings',
     )
-    yum = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    yum = proto.Field(proto.MESSAGE, number=4,
         message='YumSettings',
     )
-    goo = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    goo = proto.Field(proto.MESSAGE, number=5,
         message='GooSettings',
     )
-    zypper = proto.Field(
-        proto.MESSAGE,
-        number=6,
+
+    zypper = proto.Field(proto.MESSAGE, number=6,
         message='ZypperSettings',
     )
-    windows_update = proto.Field(
-        proto.MESSAGE,
-        number=7,
+
+    windows_update = proto.Field(proto.MESSAGE, number=7,
         message='WindowsUpdateSettings',
     )
-    pre_step = proto.Field(
-        proto.MESSAGE,
-        number=8,
+
+    pre_step = proto.Field(proto.MESSAGE, number=8,
         message='ExecStep',
     )
-    post_step = proto.Field(
-        proto.MESSAGE,
-        number=9,
+
+    post_step = proto.Field(proto.MESSAGE, number=9,
         message='ExecStep',
     )
 
@@ -144,19 +136,13 @@ class AptSettings(proto.Message):
         DIST = 1
         UPGRADE = 2
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=Type,
     )
-    excludes = proto.RepeatedField(
-        proto.STRING,
-        number=2,
-    )
-    exclusive_packages = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
+
+    excludes = proto.RepeatedField(proto.STRING, number=2)
+
+    exclusive_packages = proto.RepeatedField(proto.STRING, number=3)
 
 
 class YumSettings(proto.Message):
@@ -183,26 +169,17 @@ class YumSettings(proto.Message):
             fields.
     """
 
-    security = proto.Field(
-        proto.BOOL,
-        number=1,
-    )
-    minimal = proto.Field(
-        proto.BOOL,
-        number=2,
-    )
-    excludes = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
-    exclusive_packages = proto.RepeatedField(
-        proto.STRING,
-        number=4,
-    )
+    security = proto.Field(proto.BOOL, number=1)
+
+    minimal = proto.Field(proto.BOOL, number=2)
+
+    excludes = proto.RepeatedField(proto.STRING, number=3)
+
+    exclusive_packages = proto.RepeatedField(proto.STRING, number=4)
 
 
 class GooSettings(proto.Message):
-    r"""Googet patching is performed by running ``googet update``.    """
+    r"""Googet patching is performed by running ``googet update``."""
 
 
 class ZypperSettings(proto.Message):
@@ -231,34 +208,22 @@ class ZypperSettings(proto.Message):
             with any other patch configuration fields.
     """
 
-    with_optional = proto.Field(
-        proto.BOOL,
-        number=1,
-    )
-    with_update = proto.Field(
-        proto.BOOL,
-        number=2,
-    )
-    categories = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
-    severities = proto.RepeatedField(
-        proto.STRING,
-        number=4,
-    )
-    excludes = proto.RepeatedField(
-        proto.STRING,
-        number=5,
-    )
-    exclusive_patches = proto.RepeatedField(
-        proto.STRING,
-        number=6,
-    )
+    with_optional = proto.Field(proto.BOOL, number=1)
+
+    with_update = proto.Field(proto.BOOL, number=2)
+
+    categories = proto.RepeatedField(proto.STRING, number=3)
+
+    severities = proto.RepeatedField(proto.STRING, number=4)
+
+    excludes = proto.RepeatedField(proto.STRING, number=5)
+
+    exclusive_patches = proto.RepeatedField(proto.STRING, number=6)
 
 
 class WindowsUpdateSettings(proto.Message):
     r"""Windows patching is performed using the Windows Update Agent.
+
     Attributes:
         classifications (Sequence[google.cloud.osconfig.agentendpoint_v1.types.WindowsUpdateSettings.Classification]):
             Only apply updates of these windows update
@@ -287,19 +252,13 @@ class WindowsUpdateSettings(proto.Message):
         UPDATE_ROLLUP = 8
         UPDATE = 9
 
-    classifications = proto.RepeatedField(
-        proto.ENUM,
-        number=1,
+    classifications = proto.RepeatedField(proto.ENUM, number=1,
         enum=Classification,
     )
-    excludes = proto.RepeatedField(
-        proto.STRING,
-        number=2,
-    )
-    exclusive_patches = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
+
+    excludes = proto.RepeatedField(proto.STRING, number=2)
+
+    exclusive_patches = proto.RepeatedField(proto.STRING, number=3)
 
 
 class RetryStrategy(proto.Message):
@@ -312,14 +271,12 @@ class RetryStrategy(proto.Message):
             patch until the window has ended.
     """
 
-    enabled = proto.Field(
-        proto.BOOL,
-        number=1,
-    )
+    enabled = proto.Field(proto.BOOL, number=1)
 
 
 class ExecStep(proto.Message):
     r"""A step that runs an executable for a PatchJob.
+
     Attributes:
         linux_exec_step_config (google.cloud.osconfig.agentendpoint_v1.types.ExecStepConfig):
             The ExecStepConfig for all Linux VMs targeted
@@ -329,20 +286,18 @@ class ExecStep(proto.Message):
             targeted by the PatchJob.
     """
 
-    linux_exec_step_config = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    linux_exec_step_config = proto.Field(proto.MESSAGE, number=1,
         message='ExecStepConfig',
     )
-    windows_exec_step_config = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    windows_exec_step_config = proto.Field(proto.MESSAGE, number=2,
         message='ExecStepConfig',
     )
 
 
 class ExecStepConfig(proto.Message):
     r"""Common configurations for an ExecStep.
+
     Attributes:
         local_path (str):
             An absolute path to the executable on the VM.
@@ -364,30 +319,22 @@ class ExecStepConfig(proto.Message):
         SHELL = 1
         POWERSHELL = 2
 
-    local_path = proto.Field(
-        proto.STRING,
-        number=1,
-        oneof='executable',
-    )
-    gcs_object = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='executable',
+    local_path = proto.Field(proto.STRING, number=1, oneof='executable')
+
+    gcs_object = proto.Field(proto.MESSAGE, number=2, oneof='executable',
         message='GcsObject',
     )
-    allowed_success_codes = proto.RepeatedField(
-        proto.INT32,
-        number=3,
-    )
-    interpreter = proto.Field(
-        proto.ENUM,
-        number=4,
+
+    allowed_success_codes = proto.RepeatedField(proto.INT32, number=3)
+
+    interpreter = proto.Field(proto.ENUM, number=4,
         enum=Interpreter,
     )
 
 
 class GcsObject(proto.Message):
     r"""GCS object representation.
+
     Attributes:
         bucket (str):
             Bucket of the GCS object.
@@ -399,18 +346,11 @@ class GcsObject(proto.Message):
             this PatchJob does not change.
     """
 
-    bucket = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    object_ = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    generation_number = proto.Field(
-        proto.INT64,
-        number=3,
-    )
+    bucket = proto.Field(proto.STRING, number=1)
+
+    object_ = proto.Field(proto.STRING, number=2)
+
+    generation_number = proto.Field(proto.INT64, number=3)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.common.types import criteria
 from google.ads.googleads.v6.enums.types import feed_item_target_device
@@ -32,6 +35,7 @@ __protobuf__ = proto.module(
 
 class FeedItemTarget(proto.Message):
     r"""A feed item target.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the feed item target. Feed
@@ -64,61 +68,25 @@ class FeedItemTarget(proto.Message):
             Immutable. The targeted schedule.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    feed_item = proto.Field(
-        proto.STRING,
-        number=12,
-        optional=True,
-    )
-    feed_item_target_type = proto.Field(
-        proto.ENUM,
-        number=3,
+    resource_name = proto.Field(proto.STRING, number=1)
+    feed_item = proto.Field(proto.STRING, number=12, optional=True)
+    feed_item_target_type = proto.Field(proto.ENUM, number=3,
         enum=gage_feed_item_target_type.FeedItemTargetTypeEnum.FeedItemTargetType,
     )
-    feed_item_target_id = proto.Field(
-        proto.INT64,
-        number=13,
-        optional=True,
-    )
-    status = proto.Field(
-        proto.ENUM,
-        number=11,
+    feed_item_target_id = proto.Field(proto.INT64, number=13, optional=True)
+    status = proto.Field(proto.ENUM, number=11,
         enum=feed_item_target_status.FeedItemTargetStatusEnum.FeedItemTargetStatus,
     )
-    campaign = proto.Field(
-        proto.STRING,
-        number=14,
-        oneof='target',
-    )
-    ad_group = proto.Field(
-        proto.STRING,
-        number=15,
-        oneof='target',
-    )
-    keyword = proto.Field(
-        proto.MESSAGE,
-        number=7,
-        oneof='target',
+    campaign = proto.Field(proto.STRING, number=14, oneof='target')
+    ad_group = proto.Field(proto.STRING, number=15, oneof='target')
+    keyword = proto.Field(proto.MESSAGE, number=7, oneof='target',
         message=criteria.KeywordInfo,
     )
-    geo_target_constant = proto.Field(
-        proto.STRING,
-        number=16,
-        oneof='target',
-    )
-    device = proto.Field(
-        proto.ENUM,
-        number=9,
-        oneof='target',
+    geo_target_constant = proto.Field(proto.STRING, number=16, oneof='target')
+    device = proto.Field(proto.ENUM, number=9, oneof='target',
         enum=feed_item_target_device.FeedItemTargetDeviceEnum.FeedItemTargetDevice,
     )
-    ad_schedule = proto.Field(
-        proto.MESSAGE,
-        number=10,
-        oneof='target',
+    ad_schedule = proto.Field(proto.MESSAGE, number=10, oneof='target',
         message=criteria.AdScheduleInfo,
     )
 

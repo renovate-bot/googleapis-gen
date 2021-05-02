@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -43,34 +43,10 @@ from google.storage_v1.services.storage import StorageAsyncClient
 from google.storage_v1.services.storage import StorageClient
 from google.storage_v1.services.storage import pagers
 from google.storage_v1.services.storage import transports
-from google.storage_v1.services.storage.transports.base import _API_CORE_VERSION
-from google.storage_v1.services.storage.transports.base import _GOOGLE_AUTH_VERSION
 from google.storage_v1.types import storage
 from google.storage_v1.types import storage_resources
 from google.type import expr_pb2 as expr  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -238,10 +214,12 @@ def test_storage_client_client_options(client_class, transport_class, transport_
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (StorageClient, transports.StorageGrpcTransport, "grpc", "true"),
     (StorageAsyncClient, transports.StorageGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (StorageClient, transports.StorageGrpcTransport, "grpc", "false"),
     (StorageAsyncClient, transports.StorageGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(StorageClient, "DEFAULT_ENDPOINT", modify_default_endpoint(StorageClient))
 @mock.patch.object(StorageAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(StorageAsyncClient))
@@ -395,11 +373,13 @@ def test_delete_bucket_access_control(transport: str = 'grpc', request_type=stor
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_bucket_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.DeleteBucketAccessControlRequest()
 
     # Establish that the response is the type that we expect.
@@ -425,8 +405,8 @@ def test_delete_bucket_access_control_empty_call():
         client.delete_bucket_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.DeleteBucketAccessControlRequest()
 
+        assert args[0] == storage.DeleteBucketAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_delete_bucket_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.DeleteBucketAccessControlRequest):
@@ -445,11 +425,13 @@ async def test_delete_bucket_access_control_async(transport: str = 'grpc_asyncio
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_bucket_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.DeleteBucketAccessControlRequest()
 
     # Establish that the response is the type that we expect.
@@ -478,30 +460,49 @@ def test_get_bucket_access_control(transport: str = 'grpc', request_type=storage
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.BucketAccessControl(
             role='role_value',
+
             etag='etag_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             entity='entity_value',
+
             entity_id='entity_id_value',
+
             email='email_value',
+
             domain='domain_value',
+
         )
+
         response = client.get_bucket_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetBucketAccessControlRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.BucketAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -524,8 +525,8 @@ def test_get_bucket_access_control_empty_call():
         client.get_bucket_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.GetBucketAccessControlRequest()
 
+        assert args[0] == storage.GetBucketAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_get_bucket_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.GetBucketAccessControlRequest):
@@ -543,7 +544,7 @@ async def test_get_bucket_access_control_async(transport: str = 'grpc_asyncio', 
             type(client.transport.get_bucket_access_control),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.BucketAccessControl(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.BucketAccessControl(
             role='role_value',
             etag='etag_value',
             id='id_value',
@@ -553,22 +554,32 @@ async def test_get_bucket_access_control_async(transport: str = 'grpc_asyncio', 
             email='email_value',
             domain='domain_value',
         ))
+
         response = await client.get_bucket_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetBucketAccessControlRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.BucketAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -594,30 +605,49 @@ def test_insert_bucket_access_control(transport: str = 'grpc', request_type=stor
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.BucketAccessControl(
             role='role_value',
+
             etag='etag_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             entity='entity_value',
+
             entity_id='entity_id_value',
+
             email='email_value',
+
             domain='domain_value',
+
         )
+
         response = client.insert_bucket_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.InsertBucketAccessControlRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.BucketAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -640,8 +670,8 @@ def test_insert_bucket_access_control_empty_call():
         client.insert_bucket_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.InsertBucketAccessControlRequest()
 
+        assert args[0] == storage.InsertBucketAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_insert_bucket_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.InsertBucketAccessControlRequest):
@@ -659,7 +689,7 @@ async def test_insert_bucket_access_control_async(transport: str = 'grpc_asyncio
             type(client.transport.insert_bucket_access_control),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.BucketAccessControl(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.BucketAccessControl(
             role='role_value',
             etag='etag_value',
             id='id_value',
@@ -669,22 +699,32 @@ async def test_insert_bucket_access_control_async(transport: str = 'grpc_asyncio
             email='email_value',
             domain='domain_value',
         ))
+
         response = await client.insert_bucket_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.InsertBucketAccessControlRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.BucketAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -710,14 +750,17 @@ def test_list_bucket_access_controls(transport: str = 'grpc', request_type=stora
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ListBucketAccessControlsResponse(
         )
+
         response = client.list_bucket_access_controls(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListBucketAccessControlsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.ListBucketAccessControlsResponse)
 
 
@@ -740,8 +783,8 @@ def test_list_bucket_access_controls_empty_call():
         client.list_bucket_access_controls()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.ListBucketAccessControlsRequest()
 
+        assert args[0] == storage.ListBucketAccessControlsRequest()
 
 @pytest.mark.asyncio
 async def test_list_bucket_access_controls_async(transport: str = 'grpc_asyncio', request_type=storage.ListBucketAccessControlsRequest):
@@ -759,13 +802,15 @@ async def test_list_bucket_access_controls_async(transport: str = 'grpc_asyncio'
             type(client.transport.list_bucket_access_controls),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ListBucketAccessControlsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ListBucketAccessControlsResponse(
         ))
+
         response = await client.list_bucket_access_controls(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListBucketAccessControlsRequest()
 
     # Establish that the response is the type that we expect.
@@ -794,30 +839,49 @@ def test_update_bucket_access_control(transport: str = 'grpc', request_type=stor
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.BucketAccessControl(
             role='role_value',
+
             etag='etag_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             entity='entity_value',
+
             entity_id='entity_id_value',
+
             email='email_value',
+
             domain='domain_value',
+
         )
+
         response = client.update_bucket_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.UpdateBucketAccessControlRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.BucketAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -840,8 +904,8 @@ def test_update_bucket_access_control_empty_call():
         client.update_bucket_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.UpdateBucketAccessControlRequest()
 
+        assert args[0] == storage.UpdateBucketAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_update_bucket_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.UpdateBucketAccessControlRequest):
@@ -859,7 +923,7 @@ async def test_update_bucket_access_control_async(transport: str = 'grpc_asyncio
             type(client.transport.update_bucket_access_control),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.BucketAccessControl(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.BucketAccessControl(
             role='role_value',
             etag='etag_value',
             id='id_value',
@@ -869,22 +933,32 @@ async def test_update_bucket_access_control_async(transport: str = 'grpc_asyncio
             email='email_value',
             domain='domain_value',
         ))
+
         response = await client.update_bucket_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.UpdateBucketAccessControlRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.BucketAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -910,30 +984,49 @@ def test_patch_bucket_access_control(transport: str = 'grpc', request_type=stora
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.BucketAccessControl(
             role='role_value',
+
             etag='etag_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             entity='entity_value',
+
             entity_id='entity_id_value',
+
             email='email_value',
+
             domain='domain_value',
+
         )
+
         response = client.patch_bucket_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.PatchBucketAccessControlRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.BucketAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -956,8 +1049,8 @@ def test_patch_bucket_access_control_empty_call():
         client.patch_bucket_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.PatchBucketAccessControlRequest()
 
+        assert args[0] == storage.PatchBucketAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_patch_bucket_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.PatchBucketAccessControlRequest):
@@ -975,7 +1068,7 @@ async def test_patch_bucket_access_control_async(transport: str = 'grpc_asyncio'
             type(client.transport.patch_bucket_access_control),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.BucketAccessControl(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.BucketAccessControl(
             role='role_value',
             etag='etag_value',
             id='id_value',
@@ -985,22 +1078,32 @@ async def test_patch_bucket_access_control_async(transport: str = 'grpc_asyncio'
             email='email_value',
             domain='domain_value',
         ))
+
         response = await client.patch_bucket_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.PatchBucketAccessControlRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.BucketAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -1025,11 +1128,13 @@ def test_delete_bucket(transport: str = 'grpc', request_type=storage.DeleteBucke
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_bucket(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.DeleteBucketRequest()
 
     # Establish that the response is the type that we expect.
@@ -1055,8 +1160,8 @@ def test_delete_bucket_empty_call():
         client.delete_bucket()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.DeleteBucketRequest()
 
+        assert args[0] == storage.DeleteBucketRequest()
 
 @pytest.mark.asyncio
 async def test_delete_bucket_async(transport: str = 'grpc_asyncio', request_type=storage.DeleteBucketRequest):
@@ -1075,11 +1180,13 @@ async def test_delete_bucket_async(transport: str = 'grpc_asyncio', request_type
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_bucket(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.DeleteBucketRequest()
 
     # Establish that the response is the type that we expect.
@@ -1108,34 +1215,57 @@ def test_get_bucket(transport: str = 'grpc', request_type=storage.GetBucketReque
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.Bucket(
             id='id_value',
+
             name='name_value',
+
             project_number=1503,
+
             metageneration=1491,
+
             location='location_value',
+
             storage_class='storage_class_value',
+
             etag='etag_value',
+
             default_event_based_hold=True,
+
             location_type='location_type_value',
+
             zone_affinity=['zone_affinity_value'],
+
         )
+
         response = client.get_bucket(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetBucketRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.Bucket)
+
     assert response.id == 'id_value'
+
     assert response.name == 'name_value'
+
     assert response.project_number == 1503
+
     assert response.metageneration == 1491
+
     assert response.location == 'location_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.etag == 'etag_value'
+
     assert response.default_event_based_hold is True
+
     assert response.location_type == 'location_type_value'
+
     assert response.zone_affinity == ['zone_affinity_value']
 
 
@@ -1158,8 +1288,8 @@ def test_get_bucket_empty_call():
         client.get_bucket()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.GetBucketRequest()
 
+        assert args[0] == storage.GetBucketRequest()
 
 @pytest.mark.asyncio
 async def test_get_bucket_async(transport: str = 'grpc_asyncio', request_type=storage.GetBucketRequest):
@@ -1177,7 +1307,7 @@ async def test_get_bucket_async(transport: str = 'grpc_asyncio', request_type=st
             type(client.transport.get_bucket),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Bucket(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Bucket(
             id='id_value',
             name='name_value',
             project_number=1503,
@@ -1189,24 +1319,36 @@ async def test_get_bucket_async(transport: str = 'grpc_asyncio', request_type=st
             location_type='location_type_value',
             zone_affinity=['zone_affinity_value'],
         ))
+
         response = await client.get_bucket(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetBucketRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.Bucket)
+
     assert response.id == 'id_value'
+
     assert response.name == 'name_value'
+
     assert response.project_number == 1503
+
     assert response.metageneration == 1491
+
     assert response.location == 'location_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.etag == 'etag_value'
+
     assert response.default_event_based_hold is True
+
     assert response.location_type == 'location_type_value'
+
     assert response.zone_affinity == ['zone_affinity_value']
 
 
@@ -1232,34 +1374,57 @@ def test_insert_bucket(transport: str = 'grpc', request_type=storage.InsertBucke
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.Bucket(
             id='id_value',
+
             name='name_value',
+
             project_number=1503,
+
             metageneration=1491,
+
             location='location_value',
+
             storage_class='storage_class_value',
+
             etag='etag_value',
+
             default_event_based_hold=True,
+
             location_type='location_type_value',
+
             zone_affinity=['zone_affinity_value'],
+
         )
+
         response = client.insert_bucket(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.InsertBucketRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.Bucket)
+
     assert response.id == 'id_value'
+
     assert response.name == 'name_value'
+
     assert response.project_number == 1503
+
     assert response.metageneration == 1491
+
     assert response.location == 'location_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.etag == 'etag_value'
+
     assert response.default_event_based_hold is True
+
     assert response.location_type == 'location_type_value'
+
     assert response.zone_affinity == ['zone_affinity_value']
 
 
@@ -1282,8 +1447,8 @@ def test_insert_bucket_empty_call():
         client.insert_bucket()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.InsertBucketRequest()
 
+        assert args[0] == storage.InsertBucketRequest()
 
 @pytest.mark.asyncio
 async def test_insert_bucket_async(transport: str = 'grpc_asyncio', request_type=storage.InsertBucketRequest):
@@ -1301,7 +1466,7 @@ async def test_insert_bucket_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.insert_bucket),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Bucket(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Bucket(
             id='id_value',
             name='name_value',
             project_number=1503,
@@ -1313,24 +1478,36 @@ async def test_insert_bucket_async(transport: str = 'grpc_asyncio', request_type
             location_type='location_type_value',
             zone_affinity=['zone_affinity_value'],
         ))
+
         response = await client.insert_bucket(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.InsertBucketRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.Bucket)
+
     assert response.id == 'id_value'
+
     assert response.name == 'name_value'
+
     assert response.project_number == 1503
+
     assert response.metageneration == 1491
+
     assert response.location == 'location_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.etag == 'etag_value'
+
     assert response.default_event_based_hold is True
+
     assert response.location_type == 'location_type_value'
+
     assert response.zone_affinity == ['zone_affinity_value']
 
 
@@ -1356,14 +1533,17 @@ def test_list_channels(transport: str = 'grpc', request_type=storage.ListChannel
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ListChannelsResponse(
         )
+
         response = client.list_channels(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListChannelsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.ListChannelsResponse)
 
 
@@ -1386,8 +1566,8 @@ def test_list_channels_empty_call():
         client.list_channels()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.ListChannelsRequest()
 
+        assert args[0] == storage.ListChannelsRequest()
 
 @pytest.mark.asyncio
 async def test_list_channels_async(transport: str = 'grpc_asyncio', request_type=storage.ListChannelsRequest):
@@ -1405,13 +1585,15 @@ async def test_list_channels_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.list_channels),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ListChannelsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ListChannelsResponse(
         ))
+
         response = await client.list_channels(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListChannelsRequest()
 
     # Establish that the response is the type that we expect.
@@ -1440,16 +1622,21 @@ def test_list_buckets(transport: str = 'grpc', request_type=storage.ListBucketsR
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ListBucketsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_buckets(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListBucketsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListBucketsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1472,8 +1659,8 @@ def test_list_buckets_empty_call():
         client.list_buckets()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.ListBucketsRequest()
 
+        assert args[0] == storage.ListBucketsRequest()
 
 @pytest.mark.asyncio
 async def test_list_buckets_async(transport: str = 'grpc_asyncio', request_type=storage.ListBucketsRequest):
@@ -1491,18 +1678,21 @@ async def test_list_buckets_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.list_buckets),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ListBucketsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ListBucketsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_buckets(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListBucketsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListBucketsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1692,6 +1882,7 @@ async def test_list_buckets_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_lock_bucket_retention_policy(transport: str = 'grpc', request_type=storage.LockRetentionPolicyRequest):
     client = StorageClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1709,34 +1900,57 @@ def test_lock_bucket_retention_policy(transport: str = 'grpc', request_type=stor
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.Bucket(
             id='id_value',
+
             name='name_value',
+
             project_number=1503,
+
             metageneration=1491,
+
             location='location_value',
+
             storage_class='storage_class_value',
+
             etag='etag_value',
+
             default_event_based_hold=True,
+
             location_type='location_type_value',
+
             zone_affinity=['zone_affinity_value'],
+
         )
+
         response = client.lock_bucket_retention_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.LockRetentionPolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.Bucket)
+
     assert response.id == 'id_value'
+
     assert response.name == 'name_value'
+
     assert response.project_number == 1503
+
     assert response.metageneration == 1491
+
     assert response.location == 'location_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.etag == 'etag_value'
+
     assert response.default_event_based_hold is True
+
     assert response.location_type == 'location_type_value'
+
     assert response.zone_affinity == ['zone_affinity_value']
 
 
@@ -1759,8 +1973,8 @@ def test_lock_bucket_retention_policy_empty_call():
         client.lock_bucket_retention_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.LockRetentionPolicyRequest()
 
+        assert args[0] == storage.LockRetentionPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_lock_bucket_retention_policy_async(transport: str = 'grpc_asyncio', request_type=storage.LockRetentionPolicyRequest):
@@ -1778,7 +1992,7 @@ async def test_lock_bucket_retention_policy_async(transport: str = 'grpc_asyncio
             type(client.transport.lock_bucket_retention_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Bucket(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Bucket(
             id='id_value',
             name='name_value',
             project_number=1503,
@@ -1790,24 +2004,36 @@ async def test_lock_bucket_retention_policy_async(transport: str = 'grpc_asyncio
             location_type='location_type_value',
             zone_affinity=['zone_affinity_value'],
         ))
+
         response = await client.lock_bucket_retention_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.LockRetentionPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.Bucket)
+
     assert response.id == 'id_value'
+
     assert response.name == 'name_value'
+
     assert response.project_number == 1503
+
     assert response.metageneration == 1491
+
     assert response.location == 'location_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.etag == 'etag_value'
+
     assert response.default_event_based_hold is True
+
     assert response.location_type == 'location_type_value'
+
     assert response.zone_affinity == ['zone_affinity_value']
 
 
@@ -1833,18 +2059,25 @@ def test_get_bucket_iam_policy(transport: str = 'grpc', request_type=storage.Get
         # Designate an appropriate return value for the call.
         call.return_value = gi_policy.Policy(
             version=774,
+
             etag=b'etag_blob',
+
         )
+
         response = client.get_bucket_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -1867,8 +2100,8 @@ def test_get_bucket_iam_policy_empty_call():
         client.get_bucket_iam_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.GetIamPolicyRequest()
 
+        assert args[0] == storage.GetIamPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_get_bucket_iam_policy_async(transport: str = 'grpc_asyncio', request_type=storage.GetIamPolicyRequest):
@@ -1886,20 +2119,24 @@ async def test_get_bucket_iam_policy_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.get_bucket_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
             version=774,
             etag=b'etag_blob',
         ))
+
         response = await client.get_bucket_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -1925,18 +2162,25 @@ def test_set_bucket_iam_policy(transport: str = 'grpc', request_type=storage.Set
         # Designate an appropriate return value for the call.
         call.return_value = gi_policy.Policy(
             version=774,
+
             etag=b'etag_blob',
+
         )
+
         response = client.set_bucket_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -1959,8 +2203,8 @@ def test_set_bucket_iam_policy_empty_call():
         client.set_bucket_iam_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.SetIamPolicyRequest()
 
+        assert args[0] == storage.SetIamPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_set_bucket_iam_policy_async(transport: str = 'grpc_asyncio', request_type=storage.SetIamPolicyRequest):
@@ -1978,20 +2222,24 @@ async def test_set_bucket_iam_policy_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.set_bucket_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
             version=774,
             etag=b'etag_blob',
         ))
+
         response = await client.set_bucket_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -2017,16 +2265,21 @@ def test_test_bucket_iam_permissions(transport: str = 'grpc', request_type=stora
         # Designate an appropriate return value for the call.
         call.return_value = iam_policy.TestIamPermissionsResponse(
             permissions=['permissions_value'],
+
         )
+
         response = client.test_bucket_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.TestIamPermissionsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, iam_policy.TestIamPermissionsResponse)
+
     assert response.permissions == ['permissions_value']
 
 
@@ -2049,8 +2302,8 @@ def test_test_bucket_iam_permissions_empty_call():
         client.test_bucket_iam_permissions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.TestIamPermissionsRequest()
 
+        assert args[0] == storage.TestIamPermissionsRequest()
 
 @pytest.mark.asyncio
 async def test_test_bucket_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=storage.TestIamPermissionsRequest):
@@ -2068,18 +2321,21 @@ async def test_test_bucket_iam_permissions_async(transport: str = 'grpc_asyncio'
             type(client.transport.test_bucket_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse(
             permissions=['permissions_value'],
         ))
+
         response = await client.test_bucket_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.TestIamPermissionsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy.TestIamPermissionsResponse)
+
     assert response.permissions == ['permissions_value']
 
 
@@ -2105,34 +2361,57 @@ def test_patch_bucket(transport: str = 'grpc', request_type=storage.PatchBucketR
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.Bucket(
             id='id_value',
+
             name='name_value',
+
             project_number=1503,
+
             metageneration=1491,
+
             location='location_value',
+
             storage_class='storage_class_value',
+
             etag='etag_value',
+
             default_event_based_hold=True,
+
             location_type='location_type_value',
+
             zone_affinity=['zone_affinity_value'],
+
         )
+
         response = client.patch_bucket(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.PatchBucketRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.Bucket)
+
     assert response.id == 'id_value'
+
     assert response.name == 'name_value'
+
     assert response.project_number == 1503
+
     assert response.metageneration == 1491
+
     assert response.location == 'location_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.etag == 'etag_value'
+
     assert response.default_event_based_hold is True
+
     assert response.location_type == 'location_type_value'
+
     assert response.zone_affinity == ['zone_affinity_value']
 
 
@@ -2155,8 +2434,8 @@ def test_patch_bucket_empty_call():
         client.patch_bucket()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.PatchBucketRequest()
 
+        assert args[0] == storage.PatchBucketRequest()
 
 @pytest.mark.asyncio
 async def test_patch_bucket_async(transport: str = 'grpc_asyncio', request_type=storage.PatchBucketRequest):
@@ -2174,7 +2453,7 @@ async def test_patch_bucket_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.patch_bucket),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Bucket(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Bucket(
             id='id_value',
             name='name_value',
             project_number=1503,
@@ -2186,24 +2465,36 @@ async def test_patch_bucket_async(transport: str = 'grpc_asyncio', request_type=
             location_type='location_type_value',
             zone_affinity=['zone_affinity_value'],
         ))
+
         response = await client.patch_bucket(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.PatchBucketRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.Bucket)
+
     assert response.id == 'id_value'
+
     assert response.name == 'name_value'
+
     assert response.project_number == 1503
+
     assert response.metageneration == 1491
+
     assert response.location == 'location_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.etag == 'etag_value'
+
     assert response.default_event_based_hold is True
+
     assert response.location_type == 'location_type_value'
+
     assert response.zone_affinity == ['zone_affinity_value']
 
 
@@ -2229,34 +2520,57 @@ def test_update_bucket(transport: str = 'grpc', request_type=storage.UpdateBucke
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.Bucket(
             id='id_value',
+
             name='name_value',
+
             project_number=1503,
+
             metageneration=1491,
+
             location='location_value',
+
             storage_class='storage_class_value',
+
             etag='etag_value',
+
             default_event_based_hold=True,
+
             location_type='location_type_value',
+
             zone_affinity=['zone_affinity_value'],
+
         )
+
         response = client.update_bucket(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.UpdateBucketRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.Bucket)
+
     assert response.id == 'id_value'
+
     assert response.name == 'name_value'
+
     assert response.project_number == 1503
+
     assert response.metageneration == 1491
+
     assert response.location == 'location_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.etag == 'etag_value'
+
     assert response.default_event_based_hold is True
+
     assert response.location_type == 'location_type_value'
+
     assert response.zone_affinity == ['zone_affinity_value']
 
 
@@ -2279,8 +2593,8 @@ def test_update_bucket_empty_call():
         client.update_bucket()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.UpdateBucketRequest()
 
+        assert args[0] == storage.UpdateBucketRequest()
 
 @pytest.mark.asyncio
 async def test_update_bucket_async(transport: str = 'grpc_asyncio', request_type=storage.UpdateBucketRequest):
@@ -2298,7 +2612,7 @@ async def test_update_bucket_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.update_bucket),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Bucket(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Bucket(
             id='id_value',
             name='name_value',
             project_number=1503,
@@ -2310,24 +2624,36 @@ async def test_update_bucket_async(transport: str = 'grpc_asyncio', request_type
             location_type='location_type_value',
             zone_affinity=['zone_affinity_value'],
         ))
+
         response = await client.update_bucket(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.UpdateBucketRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.Bucket)
+
     assert response.id == 'id_value'
+
     assert response.name == 'name_value'
+
     assert response.project_number == 1503
+
     assert response.metageneration == 1491
+
     assert response.location == 'location_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.etag == 'etag_value'
+
     assert response.default_event_based_hold is True
+
     assert response.location_type == 'location_type_value'
+
     assert response.zone_affinity == ['zone_affinity_value']
 
 
@@ -2352,11 +2678,13 @@ def test_stop_channel(transport: str = 'grpc', request_type=storage.StopChannelR
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.stop_channel(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.StopChannelRequest()
 
     # Establish that the response is the type that we expect.
@@ -2382,8 +2710,8 @@ def test_stop_channel_empty_call():
         client.stop_channel()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.StopChannelRequest()
 
+        assert args[0] == storage.StopChannelRequest()
 
 @pytest.mark.asyncio
 async def test_stop_channel_async(transport: str = 'grpc_asyncio', request_type=storage.StopChannelRequest):
@@ -2402,11 +2730,13 @@ async def test_stop_channel_async(transport: str = 'grpc_asyncio', request_type=
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.stop_channel(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.StopChannelRequest()
 
     # Establish that the response is the type that we expect.
@@ -2434,11 +2764,13 @@ def test_delete_default_object_access_control(transport: str = 'grpc', request_t
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_default_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.DeleteDefaultObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
@@ -2464,8 +2796,8 @@ def test_delete_default_object_access_control_empty_call():
         client.delete_default_object_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.DeleteDefaultObjectAccessControlRequest()
 
+        assert args[0] == storage.DeleteDefaultObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_delete_default_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.DeleteDefaultObjectAccessControlRequest):
@@ -2484,11 +2816,13 @@ async def test_delete_default_object_access_control_async(transport: str = 'grpc
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_default_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.DeleteDefaultObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
@@ -2517,34 +2851,57 @@ def test_get_default_object_access_control(transport: str = 'grpc', request_type
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ObjectAccessControl(
             role='role_value',
+
             etag='etag_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             object_='object__value',
+
             generation=1068,
+
             entity='entity_value',
+
             entity_id='entity_id_value',
+
             email='email_value',
+
             domain='domain_value',
+
         )
+
         response = client.get_default_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetDefaultObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -2567,8 +2924,8 @@ def test_get_default_object_access_control_empty_call():
         client.get_default_object_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.GetDefaultObjectAccessControlRequest()
 
+        assert args[0] == storage.GetDefaultObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_get_default_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.GetDefaultObjectAccessControlRequest):
@@ -2586,7 +2943,7 @@ async def test_get_default_object_access_control_async(transport: str = 'grpc_as
             type(client.transport.get_default_object_access_control),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
             role='role_value',
             etag='etag_value',
             id='id_value',
@@ -2598,24 +2955,36 @@ async def test_get_default_object_access_control_async(transport: str = 'grpc_as
             email='email_value',
             domain='domain_value',
         ))
+
         response = await client.get_default_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetDefaultObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -2641,34 +3010,57 @@ def test_insert_default_object_access_control(transport: str = 'grpc', request_t
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ObjectAccessControl(
             role='role_value',
+
             etag='etag_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             object_='object__value',
+
             generation=1068,
+
             entity='entity_value',
+
             entity_id='entity_id_value',
+
             email='email_value',
+
             domain='domain_value',
+
         )
+
         response = client.insert_default_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.InsertDefaultObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -2691,8 +3083,8 @@ def test_insert_default_object_access_control_empty_call():
         client.insert_default_object_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.InsertDefaultObjectAccessControlRequest()
 
+        assert args[0] == storage.InsertDefaultObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_insert_default_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.InsertDefaultObjectAccessControlRequest):
@@ -2710,7 +3102,7 @@ async def test_insert_default_object_access_control_async(transport: str = 'grpc
             type(client.transport.insert_default_object_access_control),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
             role='role_value',
             etag='etag_value',
             id='id_value',
@@ -2722,24 +3114,36 @@ async def test_insert_default_object_access_control_async(transport: str = 'grpc
             email='email_value',
             domain='domain_value',
         ))
+
         response = await client.insert_default_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.InsertDefaultObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -2765,14 +3169,17 @@ def test_list_default_object_access_controls(transport: str = 'grpc', request_ty
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ListObjectAccessControlsResponse(
         )
+
         response = client.list_default_object_access_controls(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListDefaultObjectAccessControlsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.ListObjectAccessControlsResponse)
 
 
@@ -2795,8 +3202,8 @@ def test_list_default_object_access_controls_empty_call():
         client.list_default_object_access_controls()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.ListDefaultObjectAccessControlsRequest()
 
+        assert args[0] == storage.ListDefaultObjectAccessControlsRequest()
 
 @pytest.mark.asyncio
 async def test_list_default_object_access_controls_async(transport: str = 'grpc_asyncio', request_type=storage.ListDefaultObjectAccessControlsRequest):
@@ -2814,13 +3221,15 @@ async def test_list_default_object_access_controls_async(transport: str = 'grpc_
             type(client.transport.list_default_object_access_controls),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ListObjectAccessControlsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ListObjectAccessControlsResponse(
         ))
+
         response = await client.list_default_object_access_controls(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListDefaultObjectAccessControlsRequest()
 
     # Establish that the response is the type that we expect.
@@ -2849,34 +3258,57 @@ def test_patch_default_object_access_control(transport: str = 'grpc', request_ty
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ObjectAccessControl(
             role='role_value',
+
             etag='etag_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             object_='object__value',
+
             generation=1068,
+
             entity='entity_value',
+
             entity_id='entity_id_value',
+
             email='email_value',
+
             domain='domain_value',
+
         )
+
         response = client.patch_default_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.PatchDefaultObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -2899,8 +3331,8 @@ def test_patch_default_object_access_control_empty_call():
         client.patch_default_object_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.PatchDefaultObjectAccessControlRequest()
 
+        assert args[0] == storage.PatchDefaultObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_patch_default_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.PatchDefaultObjectAccessControlRequest):
@@ -2918,7 +3350,7 @@ async def test_patch_default_object_access_control_async(transport: str = 'grpc_
             type(client.transport.patch_default_object_access_control),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
             role='role_value',
             etag='etag_value',
             id='id_value',
@@ -2930,24 +3362,36 @@ async def test_patch_default_object_access_control_async(transport: str = 'grpc_
             email='email_value',
             domain='domain_value',
         ))
+
         response = await client.patch_default_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.PatchDefaultObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -2973,34 +3417,57 @@ def test_update_default_object_access_control(transport: str = 'grpc', request_t
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ObjectAccessControl(
             role='role_value',
+
             etag='etag_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             object_='object__value',
+
             generation=1068,
+
             entity='entity_value',
+
             entity_id='entity_id_value',
+
             email='email_value',
+
             domain='domain_value',
+
         )
+
         response = client.update_default_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.UpdateDefaultObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -3023,8 +3490,8 @@ def test_update_default_object_access_control_empty_call():
         client.update_default_object_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.UpdateDefaultObjectAccessControlRequest()
 
+        assert args[0] == storage.UpdateDefaultObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_update_default_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.UpdateDefaultObjectAccessControlRequest):
@@ -3042,7 +3509,7 @@ async def test_update_default_object_access_control_async(transport: str = 'grpc
             type(client.transport.update_default_object_access_control),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
             role='role_value',
             etag='etag_value',
             id='id_value',
@@ -3054,24 +3521,36 @@ async def test_update_default_object_access_control_async(transport: str = 'grpc
             email='email_value',
             domain='domain_value',
         ))
+
         response = await client.update_default_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.UpdateDefaultObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -3096,11 +3575,13 @@ def test_delete_notification(transport: str = 'grpc', request_type=storage.Delet
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_notification(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.DeleteNotificationRequest()
 
     # Establish that the response is the type that we expect.
@@ -3126,8 +3607,8 @@ def test_delete_notification_empty_call():
         client.delete_notification()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.DeleteNotificationRequest()
 
+        assert args[0] == storage.DeleteNotificationRequest()
 
 @pytest.mark.asyncio
 async def test_delete_notification_async(transport: str = 'grpc_asyncio', request_type=storage.DeleteNotificationRequest):
@@ -3146,11 +3627,13 @@ async def test_delete_notification_async(transport: str = 'grpc_asyncio', reques
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_notification(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.DeleteNotificationRequest()
 
     # Establish that the response is the type that we expect.
@@ -3179,26 +3662,41 @@ def test_get_notification(transport: str = 'grpc', request_type=storage.GetNotif
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.Notification(
             topic='topic_value',
+
             event_types=['event_types_value'],
+
             etag='etag_value',
+
             object_name_prefix='object_name_prefix_value',
+
             payload_format='payload_format_value',
+
             id='id_value',
+
         )
+
         response = client.get_notification(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetNotificationRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.Notification)
+
     assert response.topic == 'topic_value'
+
     assert response.event_types == ['event_types_value']
+
     assert response.etag == 'etag_value'
+
     assert response.object_name_prefix == 'object_name_prefix_value'
+
     assert response.payload_format == 'payload_format_value'
+
     assert response.id == 'id_value'
 
 
@@ -3221,8 +3719,8 @@ def test_get_notification_empty_call():
         client.get_notification()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.GetNotificationRequest()
 
+        assert args[0] == storage.GetNotificationRequest()
 
 @pytest.mark.asyncio
 async def test_get_notification_async(transport: str = 'grpc_asyncio', request_type=storage.GetNotificationRequest):
@@ -3240,7 +3738,7 @@ async def test_get_notification_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.get_notification),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Notification(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Notification(
             topic='topic_value',
             event_types=['event_types_value'],
             etag='etag_value',
@@ -3248,20 +3746,28 @@ async def test_get_notification_async(transport: str = 'grpc_asyncio', request_t
             payload_format='payload_format_value',
             id='id_value',
         ))
+
         response = await client.get_notification(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetNotificationRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.Notification)
+
     assert response.topic == 'topic_value'
+
     assert response.event_types == ['event_types_value']
+
     assert response.etag == 'etag_value'
+
     assert response.object_name_prefix == 'object_name_prefix_value'
+
     assert response.payload_format == 'payload_format_value'
+
     assert response.id == 'id_value'
 
 
@@ -3287,26 +3793,41 @@ def test_insert_notification(transport: str = 'grpc', request_type=storage.Inser
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.Notification(
             topic='topic_value',
+
             event_types=['event_types_value'],
+
             etag='etag_value',
+
             object_name_prefix='object_name_prefix_value',
+
             payload_format='payload_format_value',
+
             id='id_value',
+
         )
+
         response = client.insert_notification(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.InsertNotificationRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.Notification)
+
     assert response.topic == 'topic_value'
+
     assert response.event_types == ['event_types_value']
+
     assert response.etag == 'etag_value'
+
     assert response.object_name_prefix == 'object_name_prefix_value'
+
     assert response.payload_format == 'payload_format_value'
+
     assert response.id == 'id_value'
 
 
@@ -3329,8 +3850,8 @@ def test_insert_notification_empty_call():
         client.insert_notification()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.InsertNotificationRequest()
 
+        assert args[0] == storage.InsertNotificationRequest()
 
 @pytest.mark.asyncio
 async def test_insert_notification_async(transport: str = 'grpc_asyncio', request_type=storage.InsertNotificationRequest):
@@ -3348,7 +3869,7 @@ async def test_insert_notification_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.insert_notification),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Notification(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Notification(
             topic='topic_value',
             event_types=['event_types_value'],
             etag='etag_value',
@@ -3356,20 +3877,28 @@ async def test_insert_notification_async(transport: str = 'grpc_asyncio', reques
             payload_format='payload_format_value',
             id='id_value',
         ))
+
         response = await client.insert_notification(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.InsertNotificationRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.Notification)
+
     assert response.topic == 'topic_value'
+
     assert response.event_types == ['event_types_value']
+
     assert response.etag == 'etag_value'
+
     assert response.object_name_prefix == 'object_name_prefix_value'
+
     assert response.payload_format == 'payload_format_value'
+
     assert response.id == 'id_value'
 
 
@@ -3395,14 +3924,17 @@ def test_list_notifications(transport: str = 'grpc', request_type=storage.ListNo
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ListNotificationsResponse(
         )
+
         response = client.list_notifications(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListNotificationsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.ListNotificationsResponse)
 
 
@@ -3425,8 +3957,8 @@ def test_list_notifications_empty_call():
         client.list_notifications()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.ListNotificationsRequest()
 
+        assert args[0] == storage.ListNotificationsRequest()
 
 @pytest.mark.asyncio
 async def test_list_notifications_async(transport: str = 'grpc_asyncio', request_type=storage.ListNotificationsRequest):
@@ -3444,13 +3976,15 @@ async def test_list_notifications_async(transport: str = 'grpc_asyncio', request
             type(client.transport.list_notifications),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ListNotificationsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ListNotificationsResponse(
         ))
+
         response = await client.list_notifications(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListNotificationsRequest()
 
     # Establish that the response is the type that we expect.
@@ -3478,11 +4012,13 @@ def test_delete_object_access_control(transport: str = 'grpc', request_type=stor
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.DeleteObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
@@ -3508,8 +4044,8 @@ def test_delete_object_access_control_empty_call():
         client.delete_object_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.DeleteObjectAccessControlRequest()
 
+        assert args[0] == storage.DeleteObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_delete_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.DeleteObjectAccessControlRequest):
@@ -3528,11 +4064,13 @@ async def test_delete_object_access_control_async(transport: str = 'grpc_asyncio
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.DeleteObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
@@ -3561,34 +4099,57 @@ def test_get_object_access_control(transport: str = 'grpc', request_type=storage
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ObjectAccessControl(
             role='role_value',
+
             etag='etag_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             object_='object__value',
+
             generation=1068,
+
             entity='entity_value',
+
             entity_id='entity_id_value',
+
             email='email_value',
+
             domain='domain_value',
+
         )
+
         response = client.get_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -3611,8 +4172,8 @@ def test_get_object_access_control_empty_call():
         client.get_object_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.GetObjectAccessControlRequest()
 
+        assert args[0] == storage.GetObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_get_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.GetObjectAccessControlRequest):
@@ -3630,7 +4191,7 @@ async def test_get_object_access_control_async(transport: str = 'grpc_asyncio', 
             type(client.transport.get_object_access_control),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
             role='role_value',
             etag='etag_value',
             id='id_value',
@@ -3642,24 +4203,36 @@ async def test_get_object_access_control_async(transport: str = 'grpc_asyncio', 
             email='email_value',
             domain='domain_value',
         ))
+
         response = await client.get_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -3685,34 +4258,57 @@ def test_insert_object_access_control(transport: str = 'grpc', request_type=stor
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ObjectAccessControl(
             role='role_value',
+
             etag='etag_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             object_='object__value',
+
             generation=1068,
+
             entity='entity_value',
+
             entity_id='entity_id_value',
+
             email='email_value',
+
             domain='domain_value',
+
         )
+
         response = client.insert_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.InsertObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -3735,8 +4331,8 @@ def test_insert_object_access_control_empty_call():
         client.insert_object_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.InsertObjectAccessControlRequest()
 
+        assert args[0] == storage.InsertObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_insert_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.InsertObjectAccessControlRequest):
@@ -3754,7 +4350,7 @@ async def test_insert_object_access_control_async(transport: str = 'grpc_asyncio
             type(client.transport.insert_object_access_control),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
             role='role_value',
             etag='etag_value',
             id='id_value',
@@ -3766,24 +4362,36 @@ async def test_insert_object_access_control_async(transport: str = 'grpc_asyncio
             email='email_value',
             domain='domain_value',
         ))
+
         response = await client.insert_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.InsertObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -3809,14 +4417,17 @@ def test_list_object_access_controls(transport: str = 'grpc', request_type=stora
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ListObjectAccessControlsResponse(
         )
+
         response = client.list_object_access_controls(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListObjectAccessControlsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.ListObjectAccessControlsResponse)
 
 
@@ -3839,8 +4450,8 @@ def test_list_object_access_controls_empty_call():
         client.list_object_access_controls()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.ListObjectAccessControlsRequest()
 
+        assert args[0] == storage.ListObjectAccessControlsRequest()
 
 @pytest.mark.asyncio
 async def test_list_object_access_controls_async(transport: str = 'grpc_asyncio', request_type=storage.ListObjectAccessControlsRequest):
@@ -3858,13 +4469,15 @@ async def test_list_object_access_controls_async(transport: str = 'grpc_asyncio'
             type(client.transport.list_object_access_controls),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ListObjectAccessControlsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ListObjectAccessControlsResponse(
         ))
+
         response = await client.list_object_access_controls(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListObjectAccessControlsRequest()
 
     # Establish that the response is the type that we expect.
@@ -3893,34 +4506,57 @@ def test_patch_object_access_control(transport: str = 'grpc', request_type=stora
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ObjectAccessControl(
             role='role_value',
+
             etag='etag_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             object_='object__value',
+
             generation=1068,
+
             entity='entity_value',
+
             entity_id='entity_id_value',
+
             email='email_value',
+
             domain='domain_value',
+
         )
+
         response = client.patch_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.PatchObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -3943,8 +4579,8 @@ def test_patch_object_access_control_empty_call():
         client.patch_object_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.PatchObjectAccessControlRequest()
 
+        assert args[0] == storage.PatchObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_patch_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.PatchObjectAccessControlRequest):
@@ -3962,7 +4598,7 @@ async def test_patch_object_access_control_async(transport: str = 'grpc_asyncio'
             type(client.transport.patch_object_access_control),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
             role='role_value',
             etag='etag_value',
             id='id_value',
@@ -3974,24 +4610,36 @@ async def test_patch_object_access_control_async(transport: str = 'grpc_asyncio'
             email='email_value',
             domain='domain_value',
         ))
+
         response = await client.patch_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.PatchObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -4017,34 +4665,57 @@ def test_update_object_access_control(transport: str = 'grpc', request_type=stor
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ObjectAccessControl(
             role='role_value',
+
             etag='etag_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             object_='object__value',
+
             generation=1068,
+
             entity='entity_value',
+
             entity_id='entity_id_value',
+
             email='email_value',
+
             domain='domain_value',
+
         )
+
         response = client.update_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.UpdateObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -4067,8 +4738,8 @@ def test_update_object_access_control_empty_call():
         client.update_object_access_control()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.UpdateObjectAccessControlRequest()
 
+        assert args[0] == storage.UpdateObjectAccessControlRequest()
 
 @pytest.mark.asyncio
 async def test_update_object_access_control_async(transport: str = 'grpc_asyncio', request_type=storage.UpdateObjectAccessControlRequest):
@@ -4086,7 +4757,7 @@ async def test_update_object_access_control_async(transport: str = 'grpc_asyncio
             type(client.transport.update_object_access_control),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ObjectAccessControl(
             role='role_value',
             etag='etag_value',
             id='id_value',
@@ -4098,24 +4769,36 @@ async def test_update_object_access_control_async(transport: str = 'grpc_asyncio
             email='email_value',
             domain='domain_value',
         ))
+
         response = await client.update_object_access_control(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.UpdateObjectAccessControlRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ObjectAccessControl)
+
     assert response.role == 'role_value'
+
     assert response.etag == 'etag_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.object_ == 'object__value'
+
     assert response.generation == 1068
+
     assert response.entity == 'entity_value'
+
     assert response.entity_id == 'entity_id_value'
+
     assert response.email == 'email_value'
+
     assert response.domain == 'domain_value'
 
 
@@ -4141,48 +4824,85 @@ def test_compose_object(transport: str = 'grpc', request_type=storage.ComposeObj
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.Object(
             content_encoding='content_encoding_value',
+
             content_disposition='content_disposition_value',
+
             cache_control='cache_control_value',
+
             content_language='content_language_value',
+
             metageneration=1491,
+
             content_type='content_type_value',
+
             size=443,
+
             component_count=1627,
+
             md5_hash='md5_hash_value',
+
             etag='etag_value',
+
             storage_class='storage_class_value',
+
             kms_key_name='kms_key_name_value',
+
             temporary_hold=True,
+
             name='name_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             generation=1068,
+
         )
+
         response = client.compose_object(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ComposeObjectRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.Object)
+
     assert response.content_encoding == 'content_encoding_value'
+
     assert response.content_disposition == 'content_disposition_value'
+
     assert response.cache_control == 'cache_control_value'
+
     assert response.content_language == 'content_language_value'
+
     assert response.metageneration == 1491
+
     assert response.content_type == 'content_type_value'
+
     assert response.size == 443
+
     assert response.component_count == 1627
+
     assert response.md5_hash == 'md5_hash_value'
+
     assert response.etag == 'etag_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.kms_key_name == 'kms_key_name_value'
+
     assert response.temporary_hold is True
+
     assert response.name == 'name_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.generation == 1068
 
 
@@ -4205,8 +4925,8 @@ def test_compose_object_empty_call():
         client.compose_object()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.ComposeObjectRequest()
 
+        assert args[0] == storage.ComposeObjectRequest()
 
 @pytest.mark.asyncio
 async def test_compose_object_async(transport: str = 'grpc_asyncio', request_type=storage.ComposeObjectRequest):
@@ -4224,7 +4944,7 @@ async def test_compose_object_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.compose_object),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Object(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Object(
             content_encoding='content_encoding_value',
             content_disposition='content_disposition_value',
             cache_control='cache_control_value',
@@ -4243,31 +4963,50 @@ async def test_compose_object_async(transport: str = 'grpc_asyncio', request_typ
             bucket='bucket_value',
             generation=1068,
         ))
+
         response = await client.compose_object(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ComposeObjectRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.Object)
+
     assert response.content_encoding == 'content_encoding_value'
+
     assert response.content_disposition == 'content_disposition_value'
+
     assert response.cache_control == 'cache_control_value'
+
     assert response.content_language == 'content_language_value'
+
     assert response.metageneration == 1491
+
     assert response.content_type == 'content_type_value'
+
     assert response.size == 443
+
     assert response.component_count == 1627
+
     assert response.md5_hash == 'md5_hash_value'
+
     assert response.etag == 'etag_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.kms_key_name == 'kms_key_name_value'
+
     assert response.temporary_hold is True
+
     assert response.name == 'name_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.generation == 1068
 
 
@@ -4293,48 +5032,85 @@ def test_copy_object(transport: str = 'grpc', request_type=storage.CopyObjectReq
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.Object(
             content_encoding='content_encoding_value',
+
             content_disposition='content_disposition_value',
+
             cache_control='cache_control_value',
+
             content_language='content_language_value',
+
             metageneration=1491,
+
             content_type='content_type_value',
+
             size=443,
+
             component_count=1627,
+
             md5_hash='md5_hash_value',
+
             etag='etag_value',
+
             storage_class='storage_class_value',
+
             kms_key_name='kms_key_name_value',
+
             temporary_hold=True,
+
             name='name_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             generation=1068,
+
         )
+
         response = client.copy_object(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.CopyObjectRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.Object)
+
     assert response.content_encoding == 'content_encoding_value'
+
     assert response.content_disposition == 'content_disposition_value'
+
     assert response.cache_control == 'cache_control_value'
+
     assert response.content_language == 'content_language_value'
+
     assert response.metageneration == 1491
+
     assert response.content_type == 'content_type_value'
+
     assert response.size == 443
+
     assert response.component_count == 1627
+
     assert response.md5_hash == 'md5_hash_value'
+
     assert response.etag == 'etag_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.kms_key_name == 'kms_key_name_value'
+
     assert response.temporary_hold is True
+
     assert response.name == 'name_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.generation == 1068
 
 
@@ -4357,8 +5133,8 @@ def test_copy_object_empty_call():
         client.copy_object()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.CopyObjectRequest()
 
+        assert args[0] == storage.CopyObjectRequest()
 
 @pytest.mark.asyncio
 async def test_copy_object_async(transport: str = 'grpc_asyncio', request_type=storage.CopyObjectRequest):
@@ -4376,7 +5152,7 @@ async def test_copy_object_async(transport: str = 'grpc_asyncio', request_type=s
             type(client.transport.copy_object),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Object(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Object(
             content_encoding='content_encoding_value',
             content_disposition='content_disposition_value',
             cache_control='cache_control_value',
@@ -4395,31 +5171,50 @@ async def test_copy_object_async(transport: str = 'grpc_asyncio', request_type=s
             bucket='bucket_value',
             generation=1068,
         ))
+
         response = await client.copy_object(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.CopyObjectRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.Object)
+
     assert response.content_encoding == 'content_encoding_value'
+
     assert response.content_disposition == 'content_disposition_value'
+
     assert response.cache_control == 'cache_control_value'
+
     assert response.content_language == 'content_language_value'
+
     assert response.metageneration == 1491
+
     assert response.content_type == 'content_type_value'
+
     assert response.size == 443
+
     assert response.component_count == 1627
+
     assert response.md5_hash == 'md5_hash_value'
+
     assert response.etag == 'etag_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.kms_key_name == 'kms_key_name_value'
+
     assert response.temporary_hold is True
+
     assert response.name == 'name_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.generation == 1068
 
 
@@ -4444,11 +5239,13 @@ def test_delete_object(transport: str = 'grpc', request_type=storage.DeleteObjec
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_object(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.DeleteObjectRequest()
 
     # Establish that the response is the type that we expect.
@@ -4474,8 +5271,8 @@ def test_delete_object_empty_call():
         client.delete_object()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.DeleteObjectRequest()
 
+        assert args[0] == storage.DeleteObjectRequest()
 
 @pytest.mark.asyncio
 async def test_delete_object_async(transport: str = 'grpc_asyncio', request_type=storage.DeleteObjectRequest):
@@ -4494,11 +5291,13 @@ async def test_delete_object_async(transport: str = 'grpc_asyncio', request_type
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_object(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.DeleteObjectRequest()
 
     # Establish that the response is the type that we expect.
@@ -4527,48 +5326,85 @@ def test_get_object(transport: str = 'grpc', request_type=storage.GetObjectReque
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.Object(
             content_encoding='content_encoding_value',
+
             content_disposition='content_disposition_value',
+
             cache_control='cache_control_value',
+
             content_language='content_language_value',
+
             metageneration=1491,
+
             content_type='content_type_value',
+
             size=443,
+
             component_count=1627,
+
             md5_hash='md5_hash_value',
+
             etag='etag_value',
+
             storage_class='storage_class_value',
+
             kms_key_name='kms_key_name_value',
+
             temporary_hold=True,
+
             name='name_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             generation=1068,
+
         )
+
         response = client.get_object(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetObjectRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.Object)
+
     assert response.content_encoding == 'content_encoding_value'
+
     assert response.content_disposition == 'content_disposition_value'
+
     assert response.cache_control == 'cache_control_value'
+
     assert response.content_language == 'content_language_value'
+
     assert response.metageneration == 1491
+
     assert response.content_type == 'content_type_value'
+
     assert response.size == 443
+
     assert response.component_count == 1627
+
     assert response.md5_hash == 'md5_hash_value'
+
     assert response.etag == 'etag_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.kms_key_name == 'kms_key_name_value'
+
     assert response.temporary_hold is True
+
     assert response.name == 'name_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.generation == 1068
 
 
@@ -4591,8 +5427,8 @@ def test_get_object_empty_call():
         client.get_object()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.GetObjectRequest()
 
+        assert args[0] == storage.GetObjectRequest()
 
 @pytest.mark.asyncio
 async def test_get_object_async(transport: str = 'grpc_asyncio', request_type=storage.GetObjectRequest):
@@ -4610,7 +5446,7 @@ async def test_get_object_async(transport: str = 'grpc_asyncio', request_type=st
             type(client.transport.get_object),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Object(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Object(
             content_encoding='content_encoding_value',
             content_disposition='content_disposition_value',
             cache_control='cache_control_value',
@@ -4629,31 +5465,50 @@ async def test_get_object_async(transport: str = 'grpc_asyncio', request_type=st
             bucket='bucket_value',
             generation=1068,
         ))
+
         response = await client.get_object(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetObjectRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.Object)
+
     assert response.content_encoding == 'content_encoding_value'
+
     assert response.content_disposition == 'content_disposition_value'
+
     assert response.cache_control == 'cache_control_value'
+
     assert response.content_language == 'content_language_value'
+
     assert response.metageneration == 1491
+
     assert response.content_type == 'content_type_value'
+
     assert response.size == 443
+
     assert response.component_count == 1627
+
     assert response.md5_hash == 'md5_hash_value'
+
     assert response.etag == 'etag_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.kms_key_name == 'kms_key_name_value'
+
     assert response.temporary_hold is True
+
     assert response.name == 'name_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.generation == 1068
 
 
@@ -4678,11 +5533,13 @@ def test_get_object_media(transport: str = 'grpc', request_type=storage.GetObjec
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([storage.GetObjectMediaResponse()])
+
         response = client.get_object_media(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetObjectMediaRequest()
 
     # Establish that the response is the type that we expect.
@@ -4709,8 +5566,8 @@ def test_get_object_media_empty_call():
         client.get_object_media()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.GetObjectMediaRequest()
 
+        assert args[0] == storage.GetObjectMediaRequest()
 
 @pytest.mark.asyncio
 async def test_get_object_media_async(transport: str = 'grpc_asyncio', request_type=storage.GetObjectMediaRequest):
@@ -4730,11 +5587,13 @@ async def test_get_object_media_async(transport: str = 'grpc_asyncio', request_t
         # Designate an appropriate return value for the call.
         call.return_value = mock.Mock(aio.UnaryStreamCall, autospec=True)
         call.return_value.read = mock.AsyncMock(side_effect=[storage.GetObjectMediaResponse()])
+
         response = await client.get_object_media(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetObjectMediaRequest()
 
     # Establish that the response is the type that we expect.
@@ -4756,6 +5615,7 @@ def test_insert_object(transport: str = 'grpc', request_type=storage.InsertObjec
     # Everything is optional in proto3 as far as the runtime is concerned,
     # and we are mocking out the actual API, so just send an empty request.
     request = request_type()
+
     requests = [request]
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4765,48 +5625,85 @@ def test_insert_object(transport: str = 'grpc', request_type=storage.InsertObjec
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.Object(
             content_encoding='content_encoding_value',
+
             content_disposition='content_disposition_value',
+
             cache_control='cache_control_value',
+
             content_language='content_language_value',
+
             metageneration=1491,
+
             content_type='content_type_value',
+
             size=443,
+
             component_count=1627,
+
             md5_hash='md5_hash_value',
+
             etag='etag_value',
+
             storage_class='storage_class_value',
+
             kms_key_name='kms_key_name_value',
+
             temporary_hold=True,
+
             name='name_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             generation=1068,
+
         )
+
         response = client.insert_object(iter(requests))
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert next(args[0]) == request
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.Object)
+
     assert response.content_encoding == 'content_encoding_value'
+
     assert response.content_disposition == 'content_disposition_value'
+
     assert response.cache_control == 'cache_control_value'
+
     assert response.content_language == 'content_language_value'
+
     assert response.metageneration == 1491
+
     assert response.content_type == 'content_type_value'
+
     assert response.size == 443
+
     assert response.component_count == 1627
+
     assert response.md5_hash == 'md5_hash_value'
+
     assert response.etag == 'etag_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.kms_key_name == 'kms_key_name_value'
+
     assert response.temporary_hold is True
+
     assert response.name == 'name_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.generation == 1068
 
 
@@ -4824,6 +5721,7 @@ async def test_insert_object_async(transport: str = 'grpc_asyncio', request_type
     # Everything is optional in proto3 as far as the runtime is concerned,
     # and we are mocking out the actual API, so just send an empty request.
     request = request_type()
+
     requests = [request]
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4831,7 +5729,7 @@ async def test_insert_object_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.insert_object),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeStreamUnaryCall(storage_resources.Object(
+        call.return_value = grpc_helpers_async.FakeStreamUnaryCall(storage_resources.Object(
             content_encoding='content_encoding_value',
             content_disposition='content_disposition_value',
             cache_control='cache_control_value',
@@ -4850,31 +5748,50 @@ async def test_insert_object_async(transport: str = 'grpc_asyncio', request_type
             bucket='bucket_value',
             generation=1068,
         ))
+
         response = await (await client.insert_object(iter(requests)))
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert next(args[0]) == request
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.Object)
+
     assert response.content_encoding == 'content_encoding_value'
+
     assert response.content_disposition == 'content_disposition_value'
+
     assert response.cache_control == 'cache_control_value'
+
     assert response.content_language == 'content_language_value'
+
     assert response.metageneration == 1491
+
     assert response.content_type == 'content_type_value'
+
     assert response.size == 443
+
     assert response.component_count == 1627
+
     assert response.md5_hash == 'md5_hash_value'
+
     assert response.etag == 'etag_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.kms_key_name == 'kms_key_name_value'
+
     assert response.temporary_hold is True
+
     assert response.name == 'name_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.generation == 1068
 
 
@@ -4900,18 +5817,25 @@ def test_list_objects(transport: str = 'grpc', request_type=storage.ListObjectsR
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ListObjectsResponse(
             prefixes=['prefixes_value'],
+
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_objects(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListObjectsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListObjectsPager)
+
     assert response.prefixes == ['prefixes_value']
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -4934,8 +5858,8 @@ def test_list_objects_empty_call():
         client.list_objects()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.ListObjectsRequest()
 
+        assert args[0] == storage.ListObjectsRequest()
 
 @pytest.mark.asyncio
 async def test_list_objects_async(transport: str = 'grpc_asyncio', request_type=storage.ListObjectsRequest):
@@ -4953,20 +5877,24 @@ async def test_list_objects_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.list_objects),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ListObjectsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ListObjectsResponse(
             prefixes=['prefixes_value'],
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_objects(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListObjectsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListObjectsAsyncPager)
+
     assert response.prefixes == ['prefixes_value']
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -5156,6 +6084,7 @@ async def test_list_objects_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_rewrite_object(transport: str = 'grpc', request_type=storage.RewriteObjectRequest):
     client = StorageClient(
         credentials=credentials.AnonymousCredentials(),
@@ -5173,22 +6102,33 @@ def test_rewrite_object(transport: str = 'grpc', request_type=storage.RewriteObj
         # Designate an appropriate return value for the call.
         call.return_value = storage.RewriteResponse(
             total_bytes_rewritten=2285,
+
             object_size=1169,
+
             done=True,
+
             rewrite_token='rewrite_token_value',
+
         )
+
         response = client.rewrite_object(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.RewriteObjectRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage.RewriteResponse)
+
     assert response.total_bytes_rewritten == 2285
+
     assert response.object_size == 1169
+
     assert response.done is True
+
     assert response.rewrite_token == 'rewrite_token_value'
 
 
@@ -5211,8 +6151,8 @@ def test_rewrite_object_empty_call():
         client.rewrite_object()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.RewriteObjectRequest()
 
+        assert args[0] == storage.RewriteObjectRequest()
 
 @pytest.mark.asyncio
 async def test_rewrite_object_async(transport: str = 'grpc_asyncio', request_type=storage.RewriteObjectRequest):
@@ -5230,24 +6170,30 @@ async def test_rewrite_object_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.rewrite_object),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage.RewriteResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.RewriteResponse(
             total_bytes_rewritten=2285,
             object_size=1169,
             done=True,
             rewrite_token='rewrite_token_value',
         ))
+
         response = await client.rewrite_object(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.RewriteObjectRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage.RewriteResponse)
+
     assert response.total_bytes_rewritten == 2285
+
     assert response.object_size == 1169
+
     assert response.done is True
+
     assert response.rewrite_token == 'rewrite_token_value'
 
 
@@ -5273,16 +6219,21 @@ def test_start_resumable_write(transport: str = 'grpc', request_type=storage.Sta
         # Designate an appropriate return value for the call.
         call.return_value = storage.StartResumableWriteResponse(
             upload_id='upload_id_value',
+
         )
+
         response = client.start_resumable_write(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.StartResumableWriteRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage.StartResumableWriteResponse)
+
     assert response.upload_id == 'upload_id_value'
 
 
@@ -5305,8 +6256,8 @@ def test_start_resumable_write_empty_call():
         client.start_resumable_write()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.StartResumableWriteRequest()
 
+        assert args[0] == storage.StartResumableWriteRequest()
 
 @pytest.mark.asyncio
 async def test_start_resumable_write_async(transport: str = 'grpc_asyncio', request_type=storage.StartResumableWriteRequest):
@@ -5324,18 +6275,21 @@ async def test_start_resumable_write_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.start_resumable_write),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage.StartResumableWriteResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.StartResumableWriteResponse(
             upload_id='upload_id_value',
         ))
+
         response = await client.start_resumable_write(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.StartResumableWriteRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage.StartResumableWriteResponse)
+
     assert response.upload_id == 'upload_id_value'
 
 
@@ -5361,18 +6315,25 @@ def test_query_write_status(transport: str = 'grpc', request_type=storage.QueryW
         # Designate an appropriate return value for the call.
         call.return_value = storage.QueryWriteStatusResponse(
             committed_size=1504,
+
             complete=True,
+
         )
+
         response = client.query_write_status(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.QueryWriteStatusRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage.QueryWriteStatusResponse)
+
     assert response.committed_size == 1504
+
     assert response.complete is True
 
 
@@ -5395,8 +6356,8 @@ def test_query_write_status_empty_call():
         client.query_write_status()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.QueryWriteStatusRequest()
 
+        assert args[0] == storage.QueryWriteStatusRequest()
 
 @pytest.mark.asyncio
 async def test_query_write_status_async(transport: str = 'grpc_asyncio', request_type=storage.QueryWriteStatusRequest):
@@ -5414,20 +6375,24 @@ async def test_query_write_status_async(transport: str = 'grpc_asyncio', request
             type(client.transport.query_write_status),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage.QueryWriteStatusResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.QueryWriteStatusResponse(
             committed_size=1504,
             complete=True,
         ))
+
         response = await client.query_write_status(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.QueryWriteStatusRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage.QueryWriteStatusResponse)
+
     assert response.committed_size == 1504
+
     assert response.complete is True
 
 
@@ -5453,48 +6418,85 @@ def test_patch_object(transport: str = 'grpc', request_type=storage.PatchObjectR
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.Object(
             content_encoding='content_encoding_value',
+
             content_disposition='content_disposition_value',
+
             cache_control='cache_control_value',
+
             content_language='content_language_value',
+
             metageneration=1491,
+
             content_type='content_type_value',
+
             size=443,
+
             component_count=1627,
+
             md5_hash='md5_hash_value',
+
             etag='etag_value',
+
             storage_class='storage_class_value',
+
             kms_key_name='kms_key_name_value',
+
             temporary_hold=True,
+
             name='name_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             generation=1068,
+
         )
+
         response = client.patch_object(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.PatchObjectRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.Object)
+
     assert response.content_encoding == 'content_encoding_value'
+
     assert response.content_disposition == 'content_disposition_value'
+
     assert response.cache_control == 'cache_control_value'
+
     assert response.content_language == 'content_language_value'
+
     assert response.metageneration == 1491
+
     assert response.content_type == 'content_type_value'
+
     assert response.size == 443
+
     assert response.component_count == 1627
+
     assert response.md5_hash == 'md5_hash_value'
+
     assert response.etag == 'etag_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.kms_key_name == 'kms_key_name_value'
+
     assert response.temporary_hold is True
+
     assert response.name == 'name_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.generation == 1068
 
 
@@ -5517,8 +6519,8 @@ def test_patch_object_empty_call():
         client.patch_object()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.PatchObjectRequest()
 
+        assert args[0] == storage.PatchObjectRequest()
 
 @pytest.mark.asyncio
 async def test_patch_object_async(transport: str = 'grpc_asyncio', request_type=storage.PatchObjectRequest):
@@ -5536,7 +6538,7 @@ async def test_patch_object_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.patch_object),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Object(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Object(
             content_encoding='content_encoding_value',
             content_disposition='content_disposition_value',
             cache_control='cache_control_value',
@@ -5555,31 +6557,50 @@ async def test_patch_object_async(transport: str = 'grpc_asyncio', request_type=
             bucket='bucket_value',
             generation=1068,
         ))
+
         response = await client.patch_object(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.PatchObjectRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.Object)
+
     assert response.content_encoding == 'content_encoding_value'
+
     assert response.content_disposition == 'content_disposition_value'
+
     assert response.cache_control == 'cache_control_value'
+
     assert response.content_language == 'content_language_value'
+
     assert response.metageneration == 1491
+
     assert response.content_type == 'content_type_value'
+
     assert response.size == 443
+
     assert response.component_count == 1627
+
     assert response.md5_hash == 'md5_hash_value'
+
     assert response.etag == 'etag_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.kms_key_name == 'kms_key_name_value'
+
     assert response.temporary_hold is True
+
     assert response.name == 'name_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.generation == 1068
 
 
@@ -5605,48 +6626,85 @@ def test_update_object(transport: str = 'grpc', request_type=storage.UpdateObjec
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.Object(
             content_encoding='content_encoding_value',
+
             content_disposition='content_disposition_value',
+
             cache_control='cache_control_value',
+
             content_language='content_language_value',
+
             metageneration=1491,
+
             content_type='content_type_value',
+
             size=443,
+
             component_count=1627,
+
             md5_hash='md5_hash_value',
+
             etag='etag_value',
+
             storage_class='storage_class_value',
+
             kms_key_name='kms_key_name_value',
+
             temporary_hold=True,
+
             name='name_value',
+
             id='id_value',
+
             bucket='bucket_value',
+
             generation=1068,
+
         )
+
         response = client.update_object(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.UpdateObjectRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.Object)
+
     assert response.content_encoding == 'content_encoding_value'
+
     assert response.content_disposition == 'content_disposition_value'
+
     assert response.cache_control == 'cache_control_value'
+
     assert response.content_language == 'content_language_value'
+
     assert response.metageneration == 1491
+
     assert response.content_type == 'content_type_value'
+
     assert response.size == 443
+
     assert response.component_count == 1627
+
     assert response.md5_hash == 'md5_hash_value'
+
     assert response.etag == 'etag_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.kms_key_name == 'kms_key_name_value'
+
     assert response.temporary_hold is True
+
     assert response.name == 'name_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.generation == 1068
 
 
@@ -5669,8 +6727,8 @@ def test_update_object_empty_call():
         client.update_object()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.UpdateObjectRequest()
 
+        assert args[0] == storage.UpdateObjectRequest()
 
 @pytest.mark.asyncio
 async def test_update_object_async(transport: str = 'grpc_asyncio', request_type=storage.UpdateObjectRequest):
@@ -5688,7 +6746,7 @@ async def test_update_object_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.update_object),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Object(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Object(
             content_encoding='content_encoding_value',
             content_disposition='content_disposition_value',
             cache_control='cache_control_value',
@@ -5707,31 +6765,50 @@ async def test_update_object_async(transport: str = 'grpc_asyncio', request_type
             bucket='bucket_value',
             generation=1068,
         ))
+
         response = await client.update_object(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.UpdateObjectRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.Object)
+
     assert response.content_encoding == 'content_encoding_value'
+
     assert response.content_disposition == 'content_disposition_value'
+
     assert response.cache_control == 'cache_control_value'
+
     assert response.content_language == 'content_language_value'
+
     assert response.metageneration == 1491
+
     assert response.content_type == 'content_type_value'
+
     assert response.size == 443
+
     assert response.component_count == 1627
+
     assert response.md5_hash == 'md5_hash_value'
+
     assert response.etag == 'etag_value'
+
     assert response.storage_class == 'storage_class_value'
+
     assert response.kms_key_name == 'kms_key_name_value'
+
     assert response.temporary_hold is True
+
     assert response.name == 'name_value'
+
     assert response.id == 'id_value'
+
     assert response.bucket == 'bucket_value'
+
     assert response.generation == 1068
 
 
@@ -5757,18 +6834,25 @@ def test_get_object_iam_policy(transport: str = 'grpc', request_type=storage.Get
         # Designate an appropriate return value for the call.
         call.return_value = gi_policy.Policy(
             version=774,
+
             etag=b'etag_blob',
+
         )
+
         response = client.get_object_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -5791,8 +6875,8 @@ def test_get_object_iam_policy_empty_call():
         client.get_object_iam_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.GetIamPolicyRequest()
 
+        assert args[0] == storage.GetIamPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_get_object_iam_policy_async(transport: str = 'grpc_asyncio', request_type=storage.GetIamPolicyRequest):
@@ -5810,20 +6894,24 @@ async def test_get_object_iam_policy_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.get_object_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
             version=774,
             etag=b'etag_blob',
         ))
+
         response = await client.get_object_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -5849,18 +6937,25 @@ def test_set_object_iam_policy(transport: str = 'grpc', request_type=storage.Set
         # Designate an appropriate return value for the call.
         call.return_value = gi_policy.Policy(
             version=774,
+
             etag=b'etag_blob',
+
         )
+
         response = client.set_object_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -5883,8 +6978,8 @@ def test_set_object_iam_policy_empty_call():
         client.set_object_iam_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.SetIamPolicyRequest()
 
+        assert args[0] == storage.SetIamPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_set_object_iam_policy_async(transport: str = 'grpc_asyncio', request_type=storage.SetIamPolicyRequest):
@@ -5902,20 +6997,24 @@ async def test_set_object_iam_policy_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.set_object_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
             version=774,
             etag=b'etag_blob',
         ))
+
         response = await client.set_object_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -5941,16 +7040,21 @@ def test_test_object_iam_permissions(transport: str = 'grpc', request_type=stora
         # Designate an appropriate return value for the call.
         call.return_value = iam_policy.TestIamPermissionsResponse(
             permissions=['permissions_value'],
+
         )
+
         response = client.test_object_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.TestIamPermissionsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, iam_policy.TestIamPermissionsResponse)
+
     assert response.permissions == ['permissions_value']
 
 
@@ -5973,8 +7077,8 @@ def test_test_object_iam_permissions_empty_call():
         client.test_object_iam_permissions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.TestIamPermissionsRequest()
 
+        assert args[0] == storage.TestIamPermissionsRequest()
 
 @pytest.mark.asyncio
 async def test_test_object_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=storage.TestIamPermissionsRequest):
@@ -5992,18 +7096,21 @@ async def test_test_object_iam_permissions_async(transport: str = 'grpc_asyncio'
             type(client.transport.test_object_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse(
             permissions=['permissions_value'],
         ))
+
         response = await client.test_object_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.TestIamPermissionsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy.TestIamPermissionsResponse)
+
     assert response.permissions == ['permissions_value']
 
 
@@ -6029,28 +7136,45 @@ def test_watch_all_objects(transport: str = 'grpc', request_type=storage.WatchAl
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.Channel(
             id='id_value',
+
             resource_id='resource_id_value',
+
             resource_uri='resource_uri_value',
+
             token='token_value',
+
             type_='type__value',
+
             address='address_value',
+
             payload=True,
+
         )
+
         response = client.watch_all_objects(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.WatchAllObjectsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.Channel)
+
     assert response.id == 'id_value'
+
     assert response.resource_id == 'resource_id_value'
+
     assert response.resource_uri == 'resource_uri_value'
+
     assert response.token == 'token_value'
+
     assert response.type_ == 'type__value'
+
     assert response.address == 'address_value'
+
     assert response.payload is True
 
 
@@ -6073,8 +7197,8 @@ def test_watch_all_objects_empty_call():
         client.watch_all_objects()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.WatchAllObjectsRequest()
 
+        assert args[0] == storage.WatchAllObjectsRequest()
 
 @pytest.mark.asyncio
 async def test_watch_all_objects_async(transport: str = 'grpc_asyncio', request_type=storage.WatchAllObjectsRequest):
@@ -6092,7 +7216,7 @@ async def test_watch_all_objects_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.watch_all_objects),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Channel(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.Channel(
             id='id_value',
             resource_id='resource_id_value',
             resource_uri='resource_uri_value',
@@ -6101,21 +7225,30 @@ async def test_watch_all_objects_async(transport: str = 'grpc_asyncio', request_
             address='address_value',
             payload=True,
         ))
+
         response = await client.watch_all_objects(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.WatchAllObjectsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.Channel)
+
     assert response.id == 'id_value'
+
     assert response.resource_id == 'resource_id_value'
+
     assert response.resource_uri == 'resource_uri_value'
+
     assert response.token == 'token_value'
+
     assert response.type_ == 'type__value'
+
     assert response.address == 'address_value'
+
     assert response.payload is True
 
 
@@ -6141,16 +7274,21 @@ def test_get_service_account(transport: str = 'grpc', request_type=storage.GetPr
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.ServiceAccount(
             email_address='email_address_value',
+
         )
+
         response = client.get_service_account(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetProjectServiceAccountRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.ServiceAccount)
+
     assert response.email_address == 'email_address_value'
 
 
@@ -6173,8 +7311,8 @@ def test_get_service_account_empty_call():
         client.get_service_account()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.GetProjectServiceAccountRequest()
 
+        assert args[0] == storage.GetProjectServiceAccountRequest()
 
 @pytest.mark.asyncio
 async def test_get_service_account_async(transport: str = 'grpc_asyncio', request_type=storage.GetProjectServiceAccountRequest):
@@ -6192,18 +7330,21 @@ async def test_get_service_account_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.get_service_account),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ServiceAccount(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.ServiceAccount(
             email_address='email_address_value',
         ))
+
         response = await client.get_service_account(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetProjectServiceAccountRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ServiceAccount)
+
     assert response.email_address == 'email_address_value'
 
 
@@ -6229,16 +7370,21 @@ def test_create_hmac_key(transport: str = 'grpc', request_type=storage.CreateHma
         # Designate an appropriate return value for the call.
         call.return_value = storage.CreateHmacKeyResponse(
             secret='secret_value',
+
         )
+
         response = client.create_hmac_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.CreateHmacKeyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage.CreateHmacKeyResponse)
+
     assert response.secret == 'secret_value'
 
 
@@ -6261,8 +7407,8 @@ def test_create_hmac_key_empty_call():
         client.create_hmac_key()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.CreateHmacKeyRequest()
 
+        assert args[0] == storage.CreateHmacKeyRequest()
 
 @pytest.mark.asyncio
 async def test_create_hmac_key_async(transport: str = 'grpc_asyncio', request_type=storage.CreateHmacKeyRequest):
@@ -6280,18 +7426,21 @@ async def test_create_hmac_key_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.create_hmac_key),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage.CreateHmacKeyResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.CreateHmacKeyResponse(
             secret='secret_value',
         ))
+
         response = await client.create_hmac_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.CreateHmacKeyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage.CreateHmacKeyResponse)
+
     assert response.secret == 'secret_value'
 
 
@@ -6316,11 +7465,13 @@ def test_delete_hmac_key(transport: str = 'grpc', request_type=storage.DeleteHma
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_hmac_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.DeleteHmacKeyRequest()
 
     # Establish that the response is the type that we expect.
@@ -6346,8 +7497,8 @@ def test_delete_hmac_key_empty_call():
         client.delete_hmac_key()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.DeleteHmacKeyRequest()
 
+        assert args[0] == storage.DeleteHmacKeyRequest()
 
 @pytest.mark.asyncio
 async def test_delete_hmac_key_async(transport: str = 'grpc_asyncio', request_type=storage.DeleteHmacKeyRequest):
@@ -6366,11 +7517,13 @@ async def test_delete_hmac_key_async(transport: str = 'grpc_asyncio', request_ty
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_hmac_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.DeleteHmacKeyRequest()
 
     # Establish that the response is the type that we expect.
@@ -6399,26 +7552,41 @@ def test_get_hmac_key(transport: str = 'grpc', request_type=storage.GetHmacKeyRe
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.HmacKeyMetadata(
             id='id_value',
+
             access_id='access_id_value',
+
             project_id='project_id_value',
+
             service_account_email='service_account_email_value',
+
             state='state_value',
+
             etag='etag_value',
+
         )
+
         response = client.get_hmac_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetHmacKeyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.HmacKeyMetadata)
+
     assert response.id == 'id_value'
+
     assert response.access_id == 'access_id_value'
+
     assert response.project_id == 'project_id_value'
+
     assert response.service_account_email == 'service_account_email_value'
+
     assert response.state == 'state_value'
+
     assert response.etag == 'etag_value'
 
 
@@ -6441,8 +7609,8 @@ def test_get_hmac_key_empty_call():
         client.get_hmac_key()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.GetHmacKeyRequest()
 
+        assert args[0] == storage.GetHmacKeyRequest()
 
 @pytest.mark.asyncio
 async def test_get_hmac_key_async(transport: str = 'grpc_asyncio', request_type=storage.GetHmacKeyRequest):
@@ -6460,7 +7628,7 @@ async def test_get_hmac_key_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.get_hmac_key),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.HmacKeyMetadata(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.HmacKeyMetadata(
             id='id_value',
             access_id='access_id_value',
             project_id='project_id_value',
@@ -6468,20 +7636,28 @@ async def test_get_hmac_key_async(transport: str = 'grpc_asyncio', request_type=
             state='state_value',
             etag='etag_value',
         ))
+
         response = await client.get_hmac_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetHmacKeyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.HmacKeyMetadata)
+
     assert response.id == 'id_value'
+
     assert response.access_id == 'access_id_value'
+
     assert response.project_id == 'project_id_value'
+
     assert response.service_account_email == 'service_account_email_value'
+
     assert response.state == 'state_value'
+
     assert response.etag == 'etag_value'
 
 
@@ -6507,16 +7683,21 @@ def test_list_hmac_keys(transport: str = 'grpc', request_type=storage.ListHmacKe
         # Designate an appropriate return value for the call.
         call.return_value = storage.ListHmacKeysResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_hmac_keys(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListHmacKeysRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListHmacKeysPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -6539,8 +7720,8 @@ def test_list_hmac_keys_empty_call():
         client.list_hmac_keys()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.ListHmacKeysRequest()
 
+        assert args[0] == storage.ListHmacKeysRequest()
 
 @pytest.mark.asyncio
 async def test_list_hmac_keys_async(transport: str = 'grpc_asyncio', request_type=storage.ListHmacKeysRequest):
@@ -6558,18 +7739,21 @@ async def test_list_hmac_keys_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.list_hmac_keys),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage.ListHmacKeysResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.ListHmacKeysResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_hmac_keys(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ListHmacKeysRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListHmacKeysAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -6759,6 +7943,7 @@ async def test_list_hmac_keys_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_update_hmac_key(transport: str = 'grpc', request_type=storage.UpdateHmacKeyRequest):
     client = StorageClient(
         credentials=credentials.AnonymousCredentials(),
@@ -6776,26 +7961,41 @@ def test_update_hmac_key(transport: str = 'grpc', request_type=storage.UpdateHma
         # Designate an appropriate return value for the call.
         call.return_value = storage_resources.HmacKeyMetadata(
             id='id_value',
+
             access_id='access_id_value',
+
             project_id='project_id_value',
+
             service_account_email='service_account_email_value',
+
             state='state_value',
+
             etag='etag_value',
+
         )
+
         response = client.update_hmac_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.UpdateHmacKeyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage_resources.HmacKeyMetadata)
+
     assert response.id == 'id_value'
+
     assert response.access_id == 'access_id_value'
+
     assert response.project_id == 'project_id_value'
+
     assert response.service_account_email == 'service_account_email_value'
+
     assert response.state == 'state_value'
+
     assert response.etag == 'etag_value'
 
 
@@ -6818,8 +8018,8 @@ def test_update_hmac_key_empty_call():
         client.update_hmac_key()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.UpdateHmacKeyRequest()
 
+        assert args[0] == storage.UpdateHmacKeyRequest()
 
 @pytest.mark.asyncio
 async def test_update_hmac_key_async(transport: str = 'grpc_asyncio', request_type=storage.UpdateHmacKeyRequest):
@@ -6837,7 +8037,7 @@ async def test_update_hmac_key_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.update_hmac_key),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.HmacKeyMetadata(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage_resources.HmacKeyMetadata(
             id='id_value',
             access_id='access_id_value',
             project_id='project_id_value',
@@ -6845,20 +8045,28 @@ async def test_update_hmac_key_async(transport: str = 'grpc_asyncio', request_ty
             state='state_value',
             etag='etag_value',
         ))
+
         response = await client.update_hmac_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.UpdateHmacKeyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.HmacKeyMetadata)
+
     assert response.id == 'id_value'
+
     assert response.access_id == 'access_id_value'
+
     assert response.project_id == 'project_id_value'
+
     assert response.service_account_email == 'service_account_email_value'
+
     assert response.state == 'state_value'
+
     assert response.etag == 'etag_value'
 
 
@@ -6907,6 +8115,7 @@ def test_transport_instance():
     client = StorageClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.StorageGrpcTransport(
@@ -6921,6 +8130,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.StorageGrpcTransport,
     transports.StorageGrpcAsyncIOTransport,
@@ -6932,6 +8142,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = StorageClient(
@@ -6941,6 +8152,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.StorageGrpcTransport,
     )
+
 
 def test_storage_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -7018,33 +8230,15 @@ def test_storage_base_transport():
         'get_hmac_key',
         'list_hmac_keys',
         'update_hmac_key',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_storage_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.storage_v1.services.storage.transports.StorageTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.StorageTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/cloud-platform.read-only',            'https://www.googleapis.com/auth/devstorage.full_control',            'https://www.googleapis.com/auth/devstorage.read_only',            'https://www.googleapis.com/auth/devstorage.read_write',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_storage_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.storage_v1.services.storage.transports.StorageTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.storage_v1.services.storage.transports.StorageTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.StorageTransport(
@@ -7064,190 +8258,41 @@ def test_storage_base_transport_with_credentials_file_old_google_auth():
 
 def test_storage_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.storage_v1.services.storage.transports.StorageTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.storage_v1.services.storage.transports.StorageTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.StorageTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_storage_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         StorageClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/cloud-platform.read-only',
-            'https://www.googleapis.com/auth/devstorage.full_control',
-            'https://www.googleapis.com/auth/devstorage.read_only',
-            'https://www.googleapis.com/auth/devstorage.read_write',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_storage_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        StorageClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',                'https://www.googleapis.com/auth/devstorage.full_control',                'https://www.googleapis.com/auth/devstorage.read_only',                'https://www.googleapis.com/auth/devstorage.read_write',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.StorageGrpcTransport,
-        transports.StorageGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_storage_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',                'https://www.googleapis.com/auth/devstorage.full_control',                'https://www.googleapis.com/auth/devstorage.read_only',                'https://www.googleapis.com/auth/devstorage.read_write',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.StorageGrpcTransport,
-        transports.StorageGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_storage_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
             'https://www.googleapis.com/auth/cloud-platform.read-only',
             'https://www.googleapis.com/auth/devstorage.full_control',
             'https://www.googleapis.com/auth/devstorage.read_only',
-            'https://www.googleapis.com/auth/devstorage.read_write',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/devstorage.read_write',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.StorageGrpcTransport, grpc_helpers),
-        (transports.StorageGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_storage_transport_create_channel(transport_class, grpc_helpers):
+def test_storage_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.StorageGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/cloud-platform.read-only',
+            'https://www.googleapis.com/auth/devstorage.full_control',
+            'https://www.googleapis.com/auth/devstorage.read_only',
+            'https://www.googleapis.com/auth/devstorage.read_write',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "storage.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',                'https://www.googleapis.com/auth/devstorage.full_control',                'https://www.googleapis.com/auth/devstorage.read_only',                'https://www.googleapis.com/auth/devstorage.read_write',),
-            scopes=["1", "2"],
-            default_host="storage.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.StorageGrpcTransport, grpc_helpers),
-        (transports.StorageGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_storage_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "storage.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',                'https://www.googleapis.com/auth/devstorage.full_control',                'https://www.googleapis.com/auth/devstorage.read_only',                'https://www.googleapis.com/auth/devstorage.read_write',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.StorageGrpcTransport, grpc_helpers),
-        (transports.StorageGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_storage_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "storage.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -7313,6 +8358,7 @@ def test_storage_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='storage.googleapis.com:8000'),
     )
     assert client.transport._host == 'storage.googleapis.com:8000'
+
 
 def test_storage_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -7438,6 +8484,7 @@ def test_storage_transport_channel_mtls_with_adc(
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = StorageClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -7445,7 +8492,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = StorageClient.common_billing_account_path(**expected)
 
@@ -7455,6 +8503,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = StorageClient.common_folder_path(folder)
     assert expected == actual
@@ -7462,7 +8511,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = StorageClient.common_folder_path(**expected)
 
@@ -7472,6 +8522,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = StorageClient.common_organization_path(organization)
     assert expected == actual
@@ -7479,7 +8530,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = StorageClient.common_organization_path(**expected)
 
@@ -7489,6 +8541,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = StorageClient.common_project_path(project)
     assert expected == actual
@@ -7496,7 +8549,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = StorageClient.common_project_path(**expected)
 
@@ -7507,6 +8561,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = StorageClient.common_location_path(project, location)
     assert expected == actual
@@ -7514,8 +8569,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = StorageClient.common_location_path(**expected)
 

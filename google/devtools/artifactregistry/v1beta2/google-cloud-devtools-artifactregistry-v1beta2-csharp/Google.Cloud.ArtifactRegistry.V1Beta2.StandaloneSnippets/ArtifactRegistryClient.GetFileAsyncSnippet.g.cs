@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
 {
+    using Google.Cloud.ArtifactRegistry.V1Beta2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
     {
         /// <summary>Snippet for GetFileAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetFileAsync()
         {
-            // Snippet: GetFileAsync(string, CallSettings)
-            // Additional: GetFileAsync(string, CancellationToken)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = await ArtifactRegistryClient.CreateAsync();
             // Initialize request argument(s)
             string name = "";
             // Make the request
             File response = await artifactRegistryClient.GetFileAsync(name);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.resources.types import google_ads_field
 
@@ -39,10 +42,7 @@ class GetGoogleAdsFieldRequest(proto.Message):
             get.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class SearchGoogleAdsFieldsRequest(proto.Message):
@@ -64,18 +64,9 @@ class SearchGoogleAdsFieldsRequest(proto.Message):
             returned resources.
     """
 
-    query = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=3,
-    )
+    query = proto.Field(proto.STRING, number=1)
+    page_token = proto.Field(proto.STRING, number=2)
+    page_size = proto.Field(proto.INT32, number=3)
 
 
 class SearchGoogleAdsFieldsResponse(proto.Message):
@@ -99,19 +90,11 @@ class SearchGoogleAdsFieldsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    results = proto.RepeatedField(proto.MESSAGE, number=1,
         message=google_ads_field.GoogleAdsField,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    total_results_count = proto.Field(
-        proto.INT64,
-        number=3,
-    )
+    next_page_token = proto.Field(proto.STRING, number=2)
+    total_results_count = proto.Field(proto.INT64, number=3)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

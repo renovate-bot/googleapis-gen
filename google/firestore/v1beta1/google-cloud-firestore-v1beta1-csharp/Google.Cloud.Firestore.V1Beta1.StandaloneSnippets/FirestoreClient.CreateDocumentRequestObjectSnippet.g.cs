@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Firestore.V1Beta1.Snippets
 {
+    using Google.Cloud.Firestore.V1Beta1;
+
     public sealed partial class GeneratedFirestoreClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateDocument</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateDocumentRequestObject()
         {
-            // Snippet: CreateDocument(CreateDocumentRequest, CallSettings)
             // Create client
             FirestoreClient firestoreClient = FirestoreClient.Create();
             // Initialize request argument(s)
@@ -35,7 +40,6 @@ namespace Google.Cloud.Firestore.V1Beta1.Snippets
             };
             // Make the request
             Document response = firestoreClient.CreateDocument(request);
-            // End snippet
         }
     }
 }

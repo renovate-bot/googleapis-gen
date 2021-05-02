@@ -16,14 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedCampaignFeedServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCampaignFeeds</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateCampaignFeeds()
         {
-            // Snippet: MutateCampaignFeeds(string, IEnumerable<CampaignFeedOperation>, CallSettings)
             // Create client
             CampaignFeedServiceClient campaignFeedServiceClient = CampaignFeedServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateCampaignFeedsResponse response = campaignFeedServiceClient.MutateCampaignFeeds(customerId, operations);
-            // End snippet
         }
     }
 }

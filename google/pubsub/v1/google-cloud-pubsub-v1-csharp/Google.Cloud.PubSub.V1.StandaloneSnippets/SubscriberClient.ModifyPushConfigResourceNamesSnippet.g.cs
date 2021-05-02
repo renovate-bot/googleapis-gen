@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
+
     public sealed partial class GeneratedSubscriberClientStandaloneSnippets
     {
         /// <summary>Snippet for ModifyPushConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ModifyPushConfigResourceNames()
         {
-            // Snippet: ModifyPushConfig(SubscriptionName, PushConfig, CallSettings)
             // Create client
             SubscriberClient subscriberClient = SubscriberClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
             PushConfig pushConfig = new PushConfig();
             // Make the request
             subscriberClient.ModifyPushConfig(subscription, pushConfig);
-            // End snippet
         }
     }
 }

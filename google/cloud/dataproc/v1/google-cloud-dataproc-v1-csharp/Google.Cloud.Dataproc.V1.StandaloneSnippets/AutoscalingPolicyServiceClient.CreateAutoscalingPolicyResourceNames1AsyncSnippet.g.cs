@@ -17,15 +17,18 @@
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dataproc.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAutoscalingPolicyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateAutoscalingPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateAutoscalingPolicyResourceNames1Async()
         {
-            // Snippet: CreateAutoscalingPolicyAsync(LocationName, AutoscalingPolicy, CallSettings)
-            // Additional: CreateAutoscalingPolicyAsync(LocationName, AutoscalingPolicy, CancellationToken)
             // Create client
             AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = await AutoscalingPolicyServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dataproc.V1.Snippets
             AutoscalingPolicy policy = new AutoscalingPolicy();
             // Make the request
             AutoscalingPolicy response = await autoscalingPolicyServiceClient.CreateAutoscalingPolicyAsync(parent, policy);
-            // End snippet
         }
     }
 }

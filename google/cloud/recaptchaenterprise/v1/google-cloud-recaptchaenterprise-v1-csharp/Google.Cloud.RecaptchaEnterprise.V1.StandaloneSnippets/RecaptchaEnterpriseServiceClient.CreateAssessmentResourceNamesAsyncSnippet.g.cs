@@ -17,15 +17,18 @@
 namespace Google.Cloud.RecaptchaEnterprise.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.RecaptchaEnterprise.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRecaptchaEnterpriseServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateAssessmentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateAssessmentResourceNamesAsync()
         {
-            // Snippet: CreateAssessmentAsync(ProjectName, Assessment, CallSettings)
-            // Additional: CreateAssessmentAsync(ProjectName, Assessment, CancellationToken)
             // Create client
             RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = await RecaptchaEnterpriseServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.RecaptchaEnterprise.V1.Snippets
             Assessment assessment = new Assessment();
             // Make the request
             Assessment response = await recaptchaEnterpriseServiceClient.CreateAssessmentAsync(parent, assessment);
-            // End snippet
         }
     }
 }

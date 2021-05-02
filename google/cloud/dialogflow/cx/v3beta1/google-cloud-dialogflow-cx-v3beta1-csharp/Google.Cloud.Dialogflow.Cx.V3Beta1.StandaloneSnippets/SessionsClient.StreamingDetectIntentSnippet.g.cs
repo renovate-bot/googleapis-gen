@@ -17,14 +17,18 @@
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
     using Google.Api.Gax.Grpc;
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSessionsClientStandaloneSnippets
     {
         /// <summary>Snippet for StreamingDetectIntent</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task StreamingDetectIntent()
         {
-            // Snippet: StreamingDetectIntent(CallSettings, BidirectionalStreamingSettings)
             // Create client
             SessionsClient sessionsClient = SessionsClient.Create();
             // Initialize streaming call, retrieving the stream object
@@ -68,7 +72,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             // Await the response handler
             // This will complete once all server responses have been processed
             await responseHandlerTask;
-            // End snippet
         }
     }
 }

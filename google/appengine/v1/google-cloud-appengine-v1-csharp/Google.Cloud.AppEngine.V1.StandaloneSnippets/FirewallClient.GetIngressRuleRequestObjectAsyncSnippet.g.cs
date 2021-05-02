@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFirewallClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIngressRuleAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetIngressRuleRequestObjectAsync()
         {
-            // Snippet: GetIngressRuleAsync(GetIngressRuleRequest, CallSettings)
-            // Additional: GetIngressRuleAsync(GetIngressRuleRequest, CancellationToken)
             // Create client
             FirewallClient firewallClient = await FirewallClient.CreateAsync();
             // Initialize request argument(s)
             GetIngressRuleRequest request = new GetIngressRuleRequest { Name = "", };
             // Make the request
             FirewallRule response = await firewallClient.GetIngressRuleAsync(request);
-            // End snippet
         }
     }
 }

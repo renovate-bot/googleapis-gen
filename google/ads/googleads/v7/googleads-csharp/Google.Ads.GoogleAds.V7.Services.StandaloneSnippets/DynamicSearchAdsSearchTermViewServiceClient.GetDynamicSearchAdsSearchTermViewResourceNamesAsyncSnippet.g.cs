@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDynamicSearchAdsSearchTermViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDynamicSearchAdsSearchTermViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetDynamicSearchAdsSearchTermViewResourceNamesAsync()
         {
-            // Snippet: GetDynamicSearchAdsSearchTermViewAsync(DynamicSearchAdsSearchTermViewName, CallSettings)
-            // Additional: GetDynamicSearchAdsSearchTermViewAsync(DynamicSearchAdsSearchTermViewName, CancellationToken)
             // Create client
             DynamicSearchAdsSearchTermViewServiceClient dynamicSearchAdsSearchTermViewServiceClient = await DynamicSearchAdsSearchTermViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             DynamicSearchAdsSearchTermViewName resourceName = DynamicSearchAdsSearchTermViewName.FromCustomerAdGroupSearchTermFingerprintHeadlineFingerprintLandingPageFingerprintPageUrlFingerprint("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[SEARCH_TERM_FINGERPRINT]", "[HEADLINE_FINGERPRINT]", "[LANDING_PAGE_FINGERPRINT]", "[PAGE_URL_FINGERPRINT]");
             // Make the request
             DynamicSearchAdsSearchTermView response = await dynamicSearchAdsSearchTermViewServiceClient.GetDynamicSearchAdsSearchTermViewAsync(resourceName);
-            // End snippet
         }
     }
 }

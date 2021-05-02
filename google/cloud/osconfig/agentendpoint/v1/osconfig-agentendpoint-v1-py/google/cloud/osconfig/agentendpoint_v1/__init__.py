@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.agent_endpoint_service import AgentEndpointServiceClient
-
 from .types.agentendpoint import ReceiveTaskNotificationRequest
 from .types.agentendpoint import ReceiveTaskNotificationResponse
 from .types.agentendpoint import RegisterAgentRequest
@@ -55,6 +55,7 @@ from .types.tasks import ExecStepTaskProgress
 from .types.tasks import Task
 from .types.tasks import TaskDirective
 from .types.tasks import TaskType
+
 
 __all__ = (
     'ApplyConfigTask',

@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedShoppingPerformanceViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetShoppingPerformanceView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetShoppingPerformanceViewResourceNames()
         {
-            // Snippet: GetShoppingPerformanceView(ShoppingPerformanceViewName, CallSettings)
             // Create client
             ShoppingPerformanceViewServiceClient shoppingPerformanceViewServiceClient = ShoppingPerformanceViewServiceClient.Create();
             // Initialize request argument(s)
             ShoppingPerformanceViewName resourceName = ShoppingPerformanceViewName.FromCustomer("[CUSTOMER]");
             // Make the request
             ShoppingPerformanceView response = shoppingPerformanceViewServiceClient.GetShoppingPerformanceView(resourceName);
-            // End snippet
         }
     }
 }

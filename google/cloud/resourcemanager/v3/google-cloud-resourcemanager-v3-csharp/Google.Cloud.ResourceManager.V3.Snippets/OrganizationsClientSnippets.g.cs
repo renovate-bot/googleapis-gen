@@ -159,7 +159,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchOrganizations</summary>
+        /// <summary>Snippet for SearchOrganizationsAsync</summary>
         public async Task SearchOrganizationsRequestObjectAsync()
         {
             // Snippet: SearchOrganizationsAsync(SearchOrganizationsRequest, CallSettings)
@@ -249,7 +249,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchOrganizations</summary>
+        /// <summary>Snippet for SearchOrganizationsAsync</summary>
         public async Task SearchOrganizationsAsync()
         {
             // Snippet: SearchOrganizationsAsync(string, string, int?, CallSettings)

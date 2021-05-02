@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Talent.V4.Snippets
 {
+    using Google.Cloud.Talent.V4;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTenantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTenantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTenantRequestObjectAsync()
         {
-            // Snippet: GetTenantAsync(GetTenantRequest, CallSettings)
-            // Additional: GetTenantAsync(GetTenantRequest, CancellationToken)
             // Create client
             TenantServiceClient tenantServiceClient = await TenantServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Talent.V4.Snippets
             };
             // Make the request
             Tenant response = await tenantServiceClient.GetTenantAsync(request);
-            // End snippet
         }
     }
 }

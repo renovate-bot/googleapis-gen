@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Bigquery.V2.Snippets
 {
+    using Google.Cloud.Bigquery.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedModelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListModelsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListModelsAsync()
         {
-            // Snippet: ListModelsAsync(string, string, uint?, CallSettings)
-            // Additional: ListModelsAsync(string, string, uint?, CancellationToken)
             // Create client
             ModelServiceClient modelServiceClient = await ModelServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Bigquery.V2.Snippets
             uint? maxResults = 0U;
             // Make the request
             ListModelsResponse response = await modelServiceClient.ListModelsAsync(projectId, datasetId, maxResults);
-            // End snippet
         }
     }
 }

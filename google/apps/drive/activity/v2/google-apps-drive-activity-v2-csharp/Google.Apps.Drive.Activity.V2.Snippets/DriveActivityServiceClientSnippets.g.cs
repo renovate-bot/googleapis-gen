@@ -34,7 +34,6 @@ namespace Google.Apps.Drive.Activity.V2.Snippets
             QueryDriveActivityRequest request = new QueryDriveActivityRequest
             {
                 ItemName = "",
-                AncestorName = "",
                 ConsolidationStrategy = new ConsolidationStrategy(),
                 Filter = "",
             };
@@ -75,7 +74,7 @@ namespace Google.Apps.Drive.Activity.V2.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for QueryDriveActivity</summary>
+        /// <summary>Snippet for QueryDriveActivityAsync</summary>
         public async Task QueryDriveActivityRequestObjectAsync()
         {
             // Snippet: QueryDriveActivityAsync(QueryDriveActivityRequest, CallSettings)
@@ -85,7 +84,6 @@ namespace Google.Apps.Drive.Activity.V2.Snippets
             QueryDriveActivityRequest request = new QueryDriveActivityRequest
             {
                 ItemName = "",
-                AncestorName = "",
                 ConsolidationStrategy = new ConsolidationStrategy(),
                 Filter = "",
             };

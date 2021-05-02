@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.SecurityCenter.Settings.V1Beta1.Snippets
 {
+    using Google.Cloud.SecurityCenter.Settings.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecurityCenterSettingsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSettingsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetSettingsResourceNamesAsync()
         {
-            // Snippet: GetSettingsAsync(SettingsName, CallSettings)
-            // Additional: GetSettingsAsync(SettingsName, CancellationToken)
             // Create client
             SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = await SecurityCenterSettingsServiceClient.CreateAsync();
             // Initialize request argument(s)
             SettingsName name = SettingsName.FromOrganization("[ORGANIZATION]");
             // Make the request
             Settings response = await securityCenterSettingsServiceClient.GetSettingsAsync(name);
-            // End snippet
         }
     }
 }

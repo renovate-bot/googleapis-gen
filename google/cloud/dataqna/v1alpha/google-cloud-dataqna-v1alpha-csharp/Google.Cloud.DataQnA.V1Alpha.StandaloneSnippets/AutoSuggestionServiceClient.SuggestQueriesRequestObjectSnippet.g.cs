@@ -17,13 +17,17 @@
 namespace Google.Cloud.DataQnA.V1Alpha.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.DataQnA.V1Alpha;
 
     public sealed partial class GeneratedAutoSuggestionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for SuggestQueries</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SuggestQueriesRequestObject()
         {
-            // Snippet: SuggestQueries(SuggestQueriesRequest, CallSettings)
             // Create client
             AutoSuggestionServiceClient autoSuggestionServiceClient = AutoSuggestionServiceClient.Create();
             // Initialize request argument(s)
@@ -39,7 +43,6 @@ namespace Google.Cloud.DataQnA.V1Alpha.Snippets
             };
             // Make the request
             SuggestQueriesResponse response = autoSuggestionServiceClient.SuggestQueries(request);
-            // End snippet
         }
     }
 }

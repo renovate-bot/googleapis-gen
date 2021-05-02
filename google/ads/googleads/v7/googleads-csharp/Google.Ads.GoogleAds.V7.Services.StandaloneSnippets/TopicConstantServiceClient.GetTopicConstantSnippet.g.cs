@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedTopicConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTopicConstant</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetTopicConstant()
         {
-            // Snippet: GetTopicConstant(string, CallSettings)
             // Create client
             TopicConstantServiceClient topicConstantServiceClient = TopicConstantServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "topicConstants/[TOPIC_ID]";
             // Make the request
             TopicConstant response = topicConstantServiceClient.GetTopicConstant(resourceName);
-            // End snippet
         }
     }
 }

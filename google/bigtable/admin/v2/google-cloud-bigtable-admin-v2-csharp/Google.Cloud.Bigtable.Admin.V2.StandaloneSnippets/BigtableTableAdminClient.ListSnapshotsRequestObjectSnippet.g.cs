@@ -17,14 +17,18 @@
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Bigtable.Admin.V2;
     using System;
 
     public sealed partial class GeneratedBigtableTableAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for ListSnapshots</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListSnapshotsRequestObject()
         {
-            // Snippet: ListSnapshots(ListSnapshotsRequest, CallSettings)
             // Create client
             BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.Create();
             // Initialize request argument(s)
@@ -66,7 +70,6 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

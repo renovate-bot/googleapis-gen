@@ -17,22 +17,24 @@
 namespace Google.Iam.Admin.V1.Snippets
 {
     using Google.Cloud.Iam.V1;
+    using Google.Iam.Admin.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIAMClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIamPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetIamPolicyAsync()
         {
-            // Snippet: GetIamPolicyAsync(string, CallSettings)
-            // Additional: GetIamPolicyAsync(string, CancellationToken)
             // Create client
             IAMClient iAMClient = await IAMClient.CreateAsync();
             // Initialize request argument(s)
             string resource = "a/wildcard/resource";
             // Make the request
             Policy response = await iAMClient.GetIamPolicyAsync(resource);
-            // End snippet
         }
     }
 }

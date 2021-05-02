@@ -19,7 +19,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
     using Google.LongRunning;
-    using Google.Protobuf;
     using Google.Protobuf.WellKnownTypes;
     using System;
     using System.Linq;
@@ -312,7 +311,7 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchAgents</summary>
+        /// <summary>Snippet for SearchAgentsAsync</summary>
         public async Task SearchAgentsRequestObjectAsync()
         {
             // Snippet: SearchAgentsAsync(SearchAgentsRequest, CallSettings)
@@ -405,7 +404,7 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchAgents</summary>
+        /// <summary>Snippet for SearchAgentsAsync</summary>
         public async Task SearchAgentsAsync()
         {
             // Snippet: SearchAgentsAsync(string, string, int?, CallSettings)
@@ -495,7 +494,7 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchAgents</summary>
+        /// <summary>Snippet for SearchAgentsAsync</summary>
         public async Task SearchAgentsResourceNamesAsync()
         {
             // Snippet: SearchAgentsAsync(ProjectName, string, int?, CallSettings)
@@ -919,7 +918,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             {
                 ParentAsProjectName = ProjectName.FromProject("[PROJECT]"),
                 AgentUri = "",
-                AgentContent = ByteString.Empty,
             };
             // Make the request
             Operation<Empty, Struct> response = agentsClient.ImportAgent(request);
@@ -954,7 +952,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             {
                 ParentAsProjectName = ProjectName.FromProject("[PROJECT]"),
                 AgentUri = "",
-                AgentContent = ByteString.Empty,
             };
             // Make the request
             Operation<Empty, Struct> response = await agentsClient.ImportAgentAsync(request);
@@ -988,7 +985,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             {
                 ParentAsProjectName = ProjectName.FromProject("[PROJECT]"),
                 AgentUri = "",
-                AgentContent = ByteString.Empty,
             };
             // Make the request
             Operation<Empty, Struct> response = agentsClient.RestoreAgent(request);
@@ -1023,7 +1019,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             {
                 ParentAsProjectName = ProjectName.FromProject("[PROJECT]"),
                 AgentUri = "",
-                AgentContent = ByteString.Empty,
             };
             // Make the request
             Operation<Empty, Struct> response = await agentsClient.RestoreAgentAsync(request);

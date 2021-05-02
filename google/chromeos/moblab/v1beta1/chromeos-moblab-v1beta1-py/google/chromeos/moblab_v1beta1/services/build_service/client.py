@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,6 +37,7 @@ from google.api_core import operation_async  # type: ignore
 from google.chromeos.moblab_v1beta1.services.build_service import pagers
 from google.chromeos.moblab_v1beta1.types import build_service
 from google.chromeos.moblab_v1beta1.types import resources
+
 from .transports.base import BuildServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import BuildServiceGrpcTransport
 from .transports.grpc_asyncio import BuildServiceGrpcAsyncIOTransport
@@ -371,8 +374,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
 
         Args:
             request (google.chromeos.moblab_v1beta1.types.ListBuildsRequest):
-                The request object.
-                Request message for listing builds.
+                The request object. Request message for listing builds.
             parent (str):
                 Required. The full resource name of
                 the model. The model id is the same as
@@ -383,6 +385,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -411,8 +414,10 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, build_service.ListBuildsRequest):
             request = build_service.ListBuildsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -461,8 +466,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
 
         Args:
             request (google.chromeos.moblab_v1beta1.types.CheckBuildStageStatusRequest):
-                The request object.
-                Request message for checking if the
+                The request object. Request message for checking if the
                 build artifact is staged.
             name (str):
                 Required. The full resource name of
@@ -473,6 +477,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -499,8 +504,10 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, build_service.CheckBuildStageStatusRequest):
             request = build_service.CheckBuildStageStatusRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -545,8 +552,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
 
         Args:
             request (google.chromeos.moblab_v1beta1.types.StageBuildRequest):
-                The request object.
-                Request message for staging a build
+                The request object. Request message for staging a build
                 artifact.
             name (str):
                 Required. The full resource name of
@@ -557,6 +563,7 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -586,8 +593,10 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, build_service.StageBuildRequest):
             request = build_service.StageBuildRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -621,6 +630,8 @@ class BuildServiceClient(metaclass=BuildServiceClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Securitycenter.V1Beta1.Snippets
 {
+    using Google.Cloud.Securitycenter.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateSourceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateSourceAsync()
         {
-            // Snippet: UpdateSourceAsync(Source, CallSettings)
-            // Additional: UpdateSourceAsync(Source, CancellationToken)
             // Create client
             SecurityCenterClient securityCenterClient = await SecurityCenterClient.CreateAsync();
             // Initialize request argument(s)
             Source source = new Source();
             // Make the request
             Source response = await securityCenterClient.UpdateSourceAsync(source);
-            // End snippet
         }
     }
 }

@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Firestore.V1.Snippets
 {
+    using Google.Cloud.Firestore.V1;
     using Google.Protobuf;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFirestoreClientStandaloneSnippets
     {
         /// <summary>Snippet for RollbackAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task RollbackAsync()
         {
-            // Snippet: RollbackAsync(string, ByteString, CallSettings)
-            // Additional: RollbackAsync(string, ByteString, CancellationToken)
             // Create client
             FirestoreClient firestoreClient = await FirestoreClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Firestore.V1.Snippets
             ByteString transaction = ByteString.Empty;
             // Make the request
             await firestoreClient.RollbackAsync(database, transaction);
-            // End snippet
         }
     }
 }

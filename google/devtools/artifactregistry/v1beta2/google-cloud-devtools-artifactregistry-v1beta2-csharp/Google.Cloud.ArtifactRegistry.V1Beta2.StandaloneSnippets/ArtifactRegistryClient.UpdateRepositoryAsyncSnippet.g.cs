@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
 {
+    using Google.Cloud.ArtifactRegistry.V1Beta2;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateRepositoryAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateRepositoryAsync()
         {
-            // Snippet: UpdateRepositoryAsync(Repository, FieldMask, CallSettings)
-            // Additional: UpdateRepositoryAsync(Repository, FieldMask, CancellationToken)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = await ArtifactRegistryClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Repository response = await artifactRegistryClient.UpdateRepositoryAsync(repository, updateMask);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Language.V1Beta2.Snippets
 {
+    using Google.Cloud.Language.V1Beta2;
+
     public sealed partial class GeneratedLanguageServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for AnalyzeSyntax</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void AnalyzeSyntax1()
         {
-            // Snippet: AnalyzeSyntax(Document, EncodingType, CallSettings)
             // Create client
             LanguageServiceClient languageServiceClient = LanguageServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Language.V1Beta2.Snippets
             EncodingType encodingType = EncodingType.None;
             // Make the request
             AnalyzeSyntaxResponse response = languageServiceClient.AnalyzeSyntax(document, encodingType);
-            // End snippet
         }
     }
 }

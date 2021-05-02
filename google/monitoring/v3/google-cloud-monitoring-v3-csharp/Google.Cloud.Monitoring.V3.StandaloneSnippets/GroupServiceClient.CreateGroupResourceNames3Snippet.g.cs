@@ -17,13 +17,17 @@
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Monitoring.V3;
 
     public sealed partial class GeneratedGroupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateGroup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateGroupResourceNames3()
         {
-            // Snippet: CreateGroup(FolderName, Group, CallSettings)
             // Create client
             GroupServiceClient groupServiceClient = GroupServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             Group group = new Group();
             // Make the request
             Group response = groupServiceClient.CreateGroup(name, group);
-            // End snippet
         }
     }
 }

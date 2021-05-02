@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -33,6 +35,7 @@ from google.partner.aistreams_v1alpha1.types import aistreams
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import AIStreamsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AIStreamsGrpcAsyncIOTransport
 from .client import AIStreamsClient
@@ -50,14 +53,19 @@ class AIStreamsAsyncClient:
     parse_cluster_path = staticmethod(AIStreamsClient.parse_cluster_path)
     stream_path = staticmethod(AIStreamsClient.stream_path)
     parse_stream_path = staticmethod(AIStreamsClient.parse_stream_path)
+
     common_billing_account_path = staticmethod(AIStreamsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AIStreamsClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(AIStreamsClient.common_folder_path)
     parse_common_folder_path = staticmethod(AIStreamsClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(AIStreamsClient.common_organization_path)
     parse_common_organization_path = staticmethod(AIStreamsClient.parse_common_organization_path)
+
     common_project_path = staticmethod(AIStreamsClient.common_project_path)
     parse_common_project_path = staticmethod(AIStreamsClient.parse_common_project_path)
+
     common_location_path = staticmethod(AIStreamsClient.common_location_path)
     parse_common_location_path = staticmethod(AIStreamsClient.parse_common_location_path)
 
@@ -142,6 +150,7 @@ class AIStreamsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = AIStreamsClient(
             credentials=credentials,
             transport=transport,
@@ -162,8 +171,7 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.ListClustersRequest`):
-                The request object.
-                Request message for 'ListClusters'.
+                The request object. Request message for 'ListClusters'.
             parent (:class:`str`):
                 Required. The parent that owns the
                 collection of Clusters.
@@ -171,6 +179,7 @@ class AIStreamsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -197,6 +206,7 @@ class AIStreamsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -248,8 +258,7 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.GetClusterRequest`):
-                The request object.
-                Request message for 'GetCluster'.
+                The request object. Request message for 'GetCluster'.
             name (:class:`str`):
                 Required. The name of the Cluster
                 resource to get.
@@ -257,6 +266,7 @@ class AIStreamsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -279,6 +289,7 @@ class AIStreamsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -324,8 +335,7 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.CreateClusterRequest`):
-                The request object.
-                Request message for 'CreateCluster'.
+                The request object. Request message for 'CreateCluster'.
             parent (:class:`str`):
                 Required. The parent that owns the
                 collection of Clusters.
@@ -345,6 +355,7 @@ class AIStreamsAsyncClient:
                 This corresponds to the ``cluster_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -372,6 +383,7 @@ class AIStreamsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if cluster is not None:
@@ -427,8 +439,7 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.UpdateClusterRequest`):
-                The request object.
-                Request message for 'UpdateCluster'.
+                The request object. Request message for 'UpdateCluster'.
             cluster (:class:`google.partner.aistreams_v1alpha1.types.Cluster`):
                 Required. The Cluster resource to
                 update.
@@ -447,6 +458,7 @@ class AIStreamsAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -474,6 +486,7 @@ class AIStreamsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if cluster is not None:
             request.cluster = cluster
         if update_mask is not None:
@@ -526,8 +539,7 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.DeleteClusterRequest`):
-                The request object.
-                Request message for 'DeleteCluster'.
+                The request object. Request message for 'DeleteCluster'.
             name (:class:`str`):
                 Required. The name of cluster to
                 delete.
@@ -535,6 +547,7 @@ class AIStreamsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -572,6 +585,7 @@ class AIStreamsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -623,8 +637,7 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.ListStreamsRequest`):
-                The request object.
-                Request message for 'ListStreams'.
+                The request object. Request message for 'ListStreams'.
             parent (:class:`str`):
                 Required. The parent that owns the
                 collection of the Streams.
@@ -632,6 +645,7 @@ class AIStreamsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -658,6 +672,7 @@ class AIStreamsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -709,13 +724,13 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.GetStreamRequest`):
-                The request object.
-                Request message for 'GetStream'.
+                The request object. Request message for 'GetStream'.
             name (:class:`str`):
                 Required. The name of the stream.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -738,6 +753,7 @@ class AIStreamsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -782,8 +798,7 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.CreateStreamRequest`):
-                The request object.
-                Request message for 'CreateStream'.
+                The request object. Request message for 'CreateStream'.
             parent (:class:`str`):
                 Required. The parent that owns the
                 collection of streams.
@@ -801,6 +816,7 @@ class AIStreamsAsyncClient:
                 This corresponds to the ``stream_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -828,6 +844,7 @@ class AIStreamsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if stream is not None:
@@ -883,8 +900,7 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.UpdateStreamRequest`):
-                The request object.
-                Request message for 'UpdateStream'.
+                The request object. Request message for 'UpdateStream'.
             stream (:class:`google.partner.aistreams_v1alpha1.types.Stream`):
                 Required. The stream resource to
                 update.
@@ -903,6 +919,7 @@ class AIStreamsAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -930,6 +947,7 @@ class AIStreamsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if stream is not None:
             request.stream = stream
         if update_mask is not None:
@@ -982,13 +1000,13 @@ class AIStreamsAsyncClient:
 
         Args:
             request (:class:`google.partner.aistreams_v1alpha1.types.DeleteStreamRequest`):
-                The request object.
-                Request message for 'DeleteStream'.
+                The request object. Request message for 'DeleteStream'.
             name (:class:`str`):
                 Required. The name of the stream.
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1026,6 +1044,7 @@ class AIStreamsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1063,6 +1082,8 @@ class AIStreamsAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

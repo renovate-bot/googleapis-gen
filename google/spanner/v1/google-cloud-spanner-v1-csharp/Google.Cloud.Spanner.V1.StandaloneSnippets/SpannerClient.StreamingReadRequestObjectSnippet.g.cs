@@ -17,15 +17,19 @@
 namespace Google.Cloud.Spanner.V1.Snippets
 {
     using Google.Api.Gax.Grpc;
+    using Google.Cloud.Spanner.V1;
     using Google.Protobuf;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for StreamingRead</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task StreamingReadRequestObject()
         {
-            // Snippet: StreamingRead(ReadRequest, CallSettings)
             // Create client
             SpannerClient spannerClient = SpannerClient.Create();
             // Initialize request argument(s)
@@ -54,7 +58,6 @@ namespace Google.Cloud.Spanner.V1.Snippets
                 // Do something with streamed response
             }
             // The response stream has completed
-            // End snippet
         }
     }
 }

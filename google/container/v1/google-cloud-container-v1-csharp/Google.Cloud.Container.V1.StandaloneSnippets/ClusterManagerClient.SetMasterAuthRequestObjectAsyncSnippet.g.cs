@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for SetMasterAuthAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SetMasterAuthRequestObjectAsync()
         {
-            // Snippet: SetMasterAuthAsync(SetMasterAuthRequest, CallSettings)
-            // Additional: SetMasterAuthAsync(SetMasterAuthRequest, CancellationToken)
             // Create client
             ClusterManagerClient clusterManagerClient = await ClusterManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Container.V1.Snippets
             };
             // Make the request
             Operation response = await clusterManagerClient.SetMasterAuthAsync(request);
-            // End snippet
         }
     }
 }

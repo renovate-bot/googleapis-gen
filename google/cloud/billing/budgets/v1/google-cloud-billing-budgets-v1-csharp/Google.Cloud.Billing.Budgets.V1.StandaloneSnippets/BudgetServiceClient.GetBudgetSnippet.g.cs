@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Billing.Budgets.V1.Snippets
 {
+    using Google.Cloud.Billing.Budgets.V1;
+
     public sealed partial class GeneratedBudgetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBudget</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetBudget()
         {
-            // Snippet: GetBudget(string, CallSettings)
             // Create client
             BudgetServiceClient budgetServiceClient = BudgetServiceClient.Create();
             // Initialize request argument(s)
             string name = "billingAccounts/[BILLING_ACCOUNT]/budgets/[BUDGET]";
             // Make the request
             Budget response = budgetServiceClient.GetBudget(name);
-            // End snippet
         }
     }
 }

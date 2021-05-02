@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Redis.V1Beta1.Snippets
 {
+    using Google.Cloud.Redis.V1Beta1;
+
     public sealed partial class GeneratedCloudRedisClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInstance</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetInstance()
         {
-            // Snippet: GetInstance(string, CallSettings)
             // Create client
             CloudRedisClient cloudRedisClient = CloudRedisClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/instances/[INSTANCE]";
             // Make the request
             Instance response = cloudRedisClient.GetInstance(name);
-            // End snippet
         }
     }
 }

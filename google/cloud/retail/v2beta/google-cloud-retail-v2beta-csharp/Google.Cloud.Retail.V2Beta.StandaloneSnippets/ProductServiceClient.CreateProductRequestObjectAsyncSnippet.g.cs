@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Retail.V2Beta.Snippets
 {
+    using Google.Cloud.Retail.V2Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedProductServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateProductAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateProductRequestObjectAsync()
         {
-            // Snippet: CreateProductAsync(CreateProductRequest, CallSettings)
-            // Additional: CreateProductAsync(CreateProductRequest, CancellationToken)
             // Create client
             ProductServiceClient productServiceClient = await ProductServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Retail.V2Beta.Snippets
             };
             // Make the request
             Product response = await productServiceClient.CreateProductAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Gaming.V1Beta.Snippets
 {
+    using Google.Cloud.Gaming.V1Beta;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Gaming.V1Beta.Snippets
     public sealed partial class GeneratedRealmsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateRealmAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateRealmRequestObjectAsync()
         {
-            // Snippet: UpdateRealmAsync(UpdateRealmRequest, CallSettings)
-            // Additional: UpdateRealmAsync(UpdateRealmRequest, CancellationToken)
             // Create client
             RealmsServiceClient realmsServiceClient = await RealmsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -53,7 +56,6 @@ namespace Google.Cloud.Gaming.V1Beta.Snippets
                 // If it has completed, then access the result
                 Realm retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

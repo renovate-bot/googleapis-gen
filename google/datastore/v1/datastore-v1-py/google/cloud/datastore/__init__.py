@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -52,7 +53,8 @@ from google.cloud.datastore_v1.types.query import PropertyReference
 from google.cloud.datastore_v1.types.query import Query
 from google.cloud.datastore_v1.types.query import QueryResultBatch
 
-__all__ = ('AllocateIdsRequest',
+__all__ = (
+    'AllocateIdsRequest',
     'AllocateIdsResponse',
     'ArrayValue',
     'BeginTransactionRequest',

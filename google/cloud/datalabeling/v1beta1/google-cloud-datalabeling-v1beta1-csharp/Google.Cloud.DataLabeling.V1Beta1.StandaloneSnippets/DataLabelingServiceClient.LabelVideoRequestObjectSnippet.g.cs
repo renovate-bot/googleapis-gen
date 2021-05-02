@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for LabelVideo</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void LabelVideoRequestObject()
         {
-            // Snippet: LabelVideo(LabelVideoRequest, CallSettings)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.Create();
             // Initialize request argument(s)
@@ -33,9 +37,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
                 BasicConfig = new HumanAnnotationConfig(),
                 Feature = LabelVideoRequest.Types.Feature.Unspecified,
                 VideoClassificationConfig = new VideoClassificationConfig(),
-                ObjectDetectionConfig = new ObjectDetectionConfig(),
-                ObjectTrackingConfig = new ObjectTrackingConfig(),
-                EventConfig = new EventConfig(),
             };
             // Make the request
             Operation<AnnotatedDataset, LabelOperationMetadata> response = dataLabelingServiceClient.LabelVideo(request);
@@ -55,7 +56,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
                 // If it has completed, then access the result
                 AnnotatedDataset retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

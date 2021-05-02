@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -266,21 +268,30 @@ def test_get_media_file(transport: str = 'grpc', request_type=media_file_service
         # Designate an appropriate return value for the call.
         call.return_value = media_file.MediaFile(
             resource_name='resource_name_value',
+
             type_=media_type.MediaTypeEnum.MediaType.UNKNOWN,
+
             mime_type=mime_type.MimeTypeEnum.MimeType.UNKNOWN,
+
             image=media_file.MediaImage(data=wrappers.BytesValue(value=b'value_blob')),
         )
+
         response = client.get_media_file(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == media_file_service.GetMediaFileRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, media_file.MediaFile)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.type_ == media_type.MediaTypeEnum.MediaType.UNKNOWN
+
     assert response.mime_type == mime_type.MimeTypeEnum.MimeType.UNKNOWN
 
 
@@ -296,7 +307,6 @@ def test_get_media_file_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = media_file_service.GetMediaFileRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -304,6 +314,7 @@ def test_get_media_file_field_headers():
             type(client.transport.get_media_file),
             '__call__') as call:
         call.return_value = media_file.MediaFile()
+
         client.get_media_file(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -330,6 +341,7 @@ def test_get_media_file_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = media_file.MediaFile()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_media_file(
@@ -340,6 +352,7 @@ def test_get_media_file_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -374,14 +387,17 @@ def test_mutate_media_files(transport: str = 'grpc', request_type=media_file_ser
         # Designate an appropriate return value for the call.
         call.return_value = media_file_service.MutateMediaFilesResponse(
         )
+
         response = client.mutate_media_files(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == media_file_service.MutateMediaFilesRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, media_file_service.MutateMediaFilesResponse)
 
 
@@ -397,7 +413,6 @@ def test_mutate_media_files_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = media_file_service.MutateMediaFilesRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -405,6 +420,7 @@ def test_mutate_media_files_field_headers():
             type(client.transport.mutate_media_files),
             '__call__') as call:
         call.return_value = media_file_service.MutateMediaFilesResponse()
+
         client.mutate_media_files(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -431,6 +447,7 @@ def test_mutate_media_files_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = media_file_service.MutateMediaFilesResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_media_files(
@@ -442,7 +459,9 @@ def test_mutate_media_files_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [media_file_service.MediaFileOperation(create=media_file.MediaFile(resource_name='resource_name_value'))]
 
 
@@ -525,7 +544,7 @@ def test_media_file_service_base_transport():
     methods = (
         'get_media_file',
         'mutate_media_files',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -677,6 +696,7 @@ def test_media_file_service_transport_channel_mtls_with_adc(
 def test_media_file_path():
     customer = "squid"
     media_file = "clam"
+
     expected = "customers/{customer}/mediaFiles/{media_file}".format(customer=customer, media_file=media_file, )
     actual = MediaFileServiceClient.media_file_path(customer, media_file)
     assert expected == actual
@@ -684,8 +704,9 @@ def test_media_file_path():
 
 def test_parse_media_file_path():
     expected = {
-        "customer": "whelk",
-        "media_file": "octopus",
+    "customer": "whelk",
+    "media_file": "octopus",
+
     }
     path = MediaFileServiceClient.media_file_path(**expected)
 
@@ -695,6 +716,7 @@ def test_parse_media_file_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = MediaFileServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -702,7 +724,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = MediaFileServiceClient.common_billing_account_path(**expected)
 
@@ -712,6 +735,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = MediaFileServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -719,7 +743,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = MediaFileServiceClient.common_folder_path(**expected)
 
@@ -729,6 +754,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = MediaFileServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -736,7 +762,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = MediaFileServiceClient.common_organization_path(**expected)
 
@@ -746,6 +773,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = MediaFileServiceClient.common_project_path(project)
     assert expected == actual
@@ -753,7 +781,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = MediaFileServiceClient.common_project_path(**expected)
 
@@ -764,6 +793,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = MediaFileServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -771,8 +801,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = MediaFileServiceClient.common_location_path(**expected)
 

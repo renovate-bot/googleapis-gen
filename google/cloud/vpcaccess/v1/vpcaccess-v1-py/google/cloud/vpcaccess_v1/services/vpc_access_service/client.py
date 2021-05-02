@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,6 +37,7 @@ from google.api_core import operation_async  # type: ignore
 from google.cloud.vpcaccess_v1.services.vpc_access_service import pagers
 from google.cloud.vpcaccess_v1.types import vpc_access
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .transports.base import VpcAccessServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import VpcAccessServiceGrpcTransport
 from .transports.grpc_asyncio import VpcAccessServiceGrpcAsyncIOTransport
@@ -342,8 +345,7 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
 
         Args:
             request (google.cloud.vpcaccess_v1.types.CreateConnectorRequest):
-                The request object.
-                Request for creating a Serverless
+                The request object. Request for creating a Serverless
                 VPC Access connector.
             parent (str):
                 Required. The project and location in which the
@@ -365,6 +367,7 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
                 This corresponds to the ``connector`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -394,8 +397,10 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vpc_access.CreateConnectorRequest):
             request = vpc_access.CreateConnectorRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if connector_id is not None:
@@ -447,8 +452,7 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
 
         Args:
             request (google.cloud.vpcaccess_v1.types.GetConnectorRequest):
-                The request object.
-                Request for getting a Serverless VPC
+                The request object. Request for getting a Serverless VPC
                 Access connector.
             name (str):
                 Required. Name of a Serverless VPC
@@ -457,6 +461,7 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -483,8 +488,10 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vpc_access.GetConnectorRequest):
             request = vpc_access.GetConnectorRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -523,8 +530,7 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
 
         Args:
             request (google.cloud.vpcaccess_v1.types.ListConnectorsRequest):
-                The request object.
-                Request for listing Serverless VPC
+                The request object. Request for listing Serverless VPC
                 Access connectors in a location.
             parent (str):
                 Required. The project and location
@@ -533,6 +539,7 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -562,8 +569,10 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vpc_access.ListConnectorsRequest):
             request = vpc_access.ListConnectorsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -612,8 +621,7 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
 
         Args:
             request (google.cloud.vpcaccess_v1.types.DeleteConnectorRequest):
-                The request object.
-                Request for deleting a Serverless
+                The request object. Request for deleting a Serverless
                 VPC Access connector.
             name (str):
                 Required. Name of a Serverless VPC
@@ -622,6 +630,7 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -661,8 +670,10 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, vpc_access.DeleteConnectorRequest):
             request = vpc_access.DeleteConnectorRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -696,6 +707,8 @@ class VpcAccessServiceClient(metaclass=VpcAccessServiceClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

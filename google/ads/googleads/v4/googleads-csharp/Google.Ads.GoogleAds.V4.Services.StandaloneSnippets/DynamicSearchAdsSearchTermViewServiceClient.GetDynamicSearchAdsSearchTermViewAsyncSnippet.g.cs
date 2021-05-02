@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDynamicSearchAdsSearchTermViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDynamicSearchAdsSearchTermViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetDynamicSearchAdsSearchTermViewAsync()
         {
-            // Snippet: GetDynamicSearchAdsSearchTermViewAsync(string, CallSettings)
-            // Additional: GetDynamicSearchAdsSearchTermViewAsync(string, CancellationToken)
             // Create client
             DynamicSearchAdsSearchTermViewServiceClient dynamicSearchAdsSearchTermViewServiceClient = await DynamicSearchAdsSearchTermViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/dynamicSearchAdsSearchTermViews/[DYNAMIC_SEARCH_ADS_SEARCH_TERM_VIEW]";
             // Make the request
             DynamicSearchAdsSearchTermView response = await dynamicSearchAdsSearchTermViewServiceClient.GetDynamicSearchAdsSearchTermViewAsync(resourceName);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Functions.V1.Snippets
 {
+    using Google.Cloud.Functions.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudFunctionsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CallFunctionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CallFunctionRequestObjectAsync()
         {
-            // Snippet: CallFunctionAsync(CallFunctionRequest, CallSettings)
-            // Additional: CallFunctionAsync(CallFunctionRequest, CancellationToken)
             // Create client
             CloudFunctionsServiceClient cloudFunctionsServiceClient = await CloudFunctionsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Functions.V1.Snippets
             };
             // Make the request
             CallFunctionResponse response = await cloudFunctionsServiceClient.CallFunctionAsync(request);
-            // End snippet
         }
     }
 }

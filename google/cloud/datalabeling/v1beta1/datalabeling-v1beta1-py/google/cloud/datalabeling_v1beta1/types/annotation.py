@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.datalabeling_v1beta1.types import annotation_spec_set
 from google.protobuf import duration_pb2 as duration  # type: ignore
@@ -108,34 +111,28 @@ class Annotation(proto.Message):
             Output only. Sentiment for this annotation.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    annotation_source = proto.Field(
-        proto.ENUM,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    annotation_source = proto.Field(proto.ENUM, number=2,
         enum='AnnotationSource',
     )
-    annotation_value = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    annotation_value = proto.Field(proto.MESSAGE, number=3,
         message='AnnotationValue',
     )
-    annotation_metadata = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    annotation_metadata = proto.Field(proto.MESSAGE, number=4,
         message='AnnotationMetadata',
     )
-    annotation_sentiment = proto.Field(
-        proto.ENUM,
-        number=6,
+
+    annotation_sentiment = proto.Field(proto.ENUM, number=6,
         enum='AnnotationSentiment',
     )
 
 
 class AnnotationValue(proto.Message):
     r"""Annotation value for an example.
+
     Attributes:
         image_classification_annotation (google.cloud.datalabeling_v1beta1.types.ImageClassificationAnnotation):
             Annotation value for image classification
@@ -167,72 +164,52 @@ class AnnotationValue(proto.Message):
             Annotation value for video event case.
     """
 
-    image_classification_annotation = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='value_type',
+    image_classification_annotation = proto.Field(proto.MESSAGE, number=1, oneof='value_type',
         message='ImageClassificationAnnotation',
     )
-    image_bounding_poly_annotation = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='value_type',
+
+    image_bounding_poly_annotation = proto.Field(proto.MESSAGE, number=2, oneof='value_type',
         message='ImageBoundingPolyAnnotation',
     )
-    image_polyline_annotation = proto.Field(
-        proto.MESSAGE,
-        number=8,
-        oneof='value_type',
+
+    image_polyline_annotation = proto.Field(proto.MESSAGE, number=8, oneof='value_type',
         message='ImagePolylineAnnotation',
     )
-    image_segmentation_annotation = proto.Field(
-        proto.MESSAGE,
-        number=9,
-        oneof='value_type',
+
+    image_segmentation_annotation = proto.Field(proto.MESSAGE, number=9, oneof='value_type',
         message='ImageSegmentationAnnotation',
     )
-    text_classification_annotation = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='value_type',
+
+    text_classification_annotation = proto.Field(proto.MESSAGE, number=3, oneof='value_type',
         message='TextClassificationAnnotation',
     )
-    text_entity_extraction_annotation = proto.Field(
-        proto.MESSAGE,
-        number=10,
-        oneof='value_type',
+
+    text_entity_extraction_annotation = proto.Field(proto.MESSAGE, number=10, oneof='value_type',
         message='TextEntityExtractionAnnotation',
     )
-    video_classification_annotation = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='value_type',
+
+    video_classification_annotation = proto.Field(proto.MESSAGE, number=4, oneof='value_type',
         message='VideoClassificationAnnotation',
     )
-    video_object_tracking_annotation = proto.Field(
-        proto.MESSAGE,
-        number=5,
-        oneof='value_type',
+
+    video_object_tracking_annotation = proto.Field(proto.MESSAGE, number=5, oneof='value_type',
         message='VideoObjectTrackingAnnotation',
     )
-    video_event_annotation = proto.Field(
-        proto.MESSAGE,
-        number=6,
-        oneof='value_type',
+
+    video_event_annotation = proto.Field(proto.MESSAGE, number=6, oneof='value_type',
         message='VideoEventAnnotation',
     )
 
 
 class ImageClassificationAnnotation(proto.Message):
     r"""Image classification annotation definition.
+
     Attributes:
         annotation_spec (google.cloud.datalabeling_v1beta1.types.AnnotationSpec):
             Label of image.
     """
 
-    annotation_spec = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    annotation_spec = proto.Field(proto.MESSAGE, number=1,
         message=annotation_spec_set.AnnotationSpec,
     )
 
@@ -249,14 +226,9 @@ class Vertex(proto.Message):
             Y coordinate.
     """
 
-    x = proto.Field(
-        proto.INT32,
-        number=1,
-    )
-    y = proto.Field(
-        proto.INT32,
-        number=2,
-    )
+    x = proto.Field(proto.INT32, number=1)
+
+    y = proto.Field(proto.INT32, number=2)
 
 
 class NormalizedVertex(proto.Message):
@@ -271,40 +243,33 @@ class NormalizedVertex(proto.Message):
             Y coordinate.
     """
 
-    x = proto.Field(
-        proto.FLOAT,
-        number=1,
-    )
-    y = proto.Field(
-        proto.FLOAT,
-        number=2,
-    )
+    x = proto.Field(proto.FLOAT, number=1)
+
+    y = proto.Field(proto.FLOAT, number=2)
 
 
 class BoundingPoly(proto.Message):
     r"""A bounding polygon in the image.
+
     Attributes:
         vertices (Sequence[google.cloud.datalabeling_v1beta1.types.Vertex]):
             The bounding polygon vertices.
     """
 
-    vertices = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    vertices = proto.RepeatedField(proto.MESSAGE, number=1,
         message='Vertex',
     )
 
 
 class NormalizedBoundingPoly(proto.Message):
     r"""Normalized bounding polygon.
+
     Attributes:
         normalized_vertices (Sequence[google.cloud.datalabeling_v1beta1.types.NormalizedVertex]):
             The bounding polygon normalized vertices.
     """
 
-    normalized_vertices = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    normalized_vertices = proto.RepeatedField(proto.MESSAGE, number=1,
         message='NormalizedVertex',
     )
 
@@ -322,55 +287,48 @@ class ImageBoundingPolyAnnotation(proto.Message):
             Label of object in this bounding polygon.
     """
 
-    bounding_poly = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='bounded_area',
+    bounding_poly = proto.Field(proto.MESSAGE, number=2, oneof='bounded_area',
         message='BoundingPoly',
     )
-    normalized_bounding_poly = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='bounded_area',
+
+    normalized_bounding_poly = proto.Field(proto.MESSAGE, number=3, oneof='bounded_area',
         message='NormalizedBoundingPoly',
     )
-    annotation_spec = proto.Field(
-        proto.MESSAGE,
-        number=1,
+
+    annotation_spec = proto.Field(proto.MESSAGE, number=1,
         message=annotation_spec_set.AnnotationSpec,
     )
 
 
 class Polyline(proto.Message):
     r"""A line with multiple line segments.
+
     Attributes:
         vertices (Sequence[google.cloud.datalabeling_v1beta1.types.Vertex]):
             The polyline vertices.
     """
 
-    vertices = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    vertices = proto.RepeatedField(proto.MESSAGE, number=1,
         message='Vertex',
     )
 
 
 class NormalizedPolyline(proto.Message):
     r"""Normalized polyline.
+
     Attributes:
         normalized_vertices (Sequence[google.cloud.datalabeling_v1beta1.types.NormalizedVertex]):
             The normalized polyline vertices.
     """
 
-    normalized_vertices = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    normalized_vertices = proto.RepeatedField(proto.MESSAGE, number=1,
         message='NormalizedVertex',
     )
 
 
 class ImagePolylineAnnotation(proto.Message):
     r"""A polyline for the image annotation.
+
     Attributes:
         polyline (google.cloud.datalabeling_v1beta1.types.Polyline):
 
@@ -380,27 +338,22 @@ class ImagePolylineAnnotation(proto.Message):
             Label of this polyline.
     """
 
-    polyline = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='poly',
+    polyline = proto.Field(proto.MESSAGE, number=2, oneof='poly',
         message='Polyline',
     )
-    normalized_polyline = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='poly',
+
+    normalized_polyline = proto.Field(proto.MESSAGE, number=3, oneof='poly',
         message='NormalizedPolyline',
     )
-    annotation_spec = proto.Field(
-        proto.MESSAGE,
-        number=1,
+
+    annotation_spec = proto.Field(proto.MESSAGE, number=1,
         message=annotation_spec_set.AnnotationSpec,
     )
 
 
 class ImageSegmentationAnnotation(proto.Message):
     r"""Image segmentation annotation.
+
     Attributes:
         annotation_colors (Sequence[google.cloud.datalabeling_v1beta1.types.ImageSegmentationAnnotation.AnnotationColorsEntry]):
             The mapping between rgb color and annotation
@@ -413,38 +366,31 @@ class ImageSegmentationAnnotation(proto.Message):
             A byte string of a full image's color map.
     """
 
-    annotation_colors = proto.MapField(
-        proto.STRING,
-        proto.MESSAGE,
-        number=1
+    annotation_colors = proto.MapField(proto.STRING, proto.MESSAGE, number=1,
         message=annotation_spec_set.AnnotationSpec,
     )
-    mime_type = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    image_bytes = proto.Field(
-        proto.BYTES,
-        number=3,
-    )
+
+    mime_type = proto.Field(proto.STRING, number=2)
+
+    image_bytes = proto.Field(proto.BYTES, number=3)
 
 
 class TextClassificationAnnotation(proto.Message):
     r"""Text classification annotation.
+
     Attributes:
         annotation_spec (google.cloud.datalabeling_v1beta1.types.AnnotationSpec):
             Label of the text.
     """
 
-    annotation_spec = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    annotation_spec = proto.Field(proto.MESSAGE, number=1,
         message=annotation_spec_set.AnnotationSpec,
     )
 
 
 class TextEntityExtractionAnnotation(proto.Message):
     r"""Text entity extraction annotation.
+
     Attributes:
         annotation_spec (google.cloud.datalabeling_v1beta1.types.AnnotationSpec):
             Label of the text entities.
@@ -452,20 +398,18 @@ class TextEntityExtractionAnnotation(proto.Message):
             Position of the entity.
     """
 
-    annotation_spec = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    annotation_spec = proto.Field(proto.MESSAGE, number=1,
         message=annotation_spec_set.AnnotationSpec,
     )
-    sequential_segment = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    sequential_segment = proto.Field(proto.MESSAGE, number=2,
         message='SequentialSegment',
     )
 
 
 class SequentialSegment(proto.Message):
     r"""Start and end position in a sequence (e.g. text segment).
+
     Attributes:
         start (int):
             Start position (inclusive).
@@ -473,14 +417,9 @@ class SequentialSegment(proto.Message):
             End position (exclusive).
     """
 
-    start = proto.Field(
-        proto.INT32,
-        number=1,
-    )
-    end = proto.Field(
-        proto.INT32,
-        number=2,
-    )
+    start = proto.Field(proto.INT32, number=1)
+
+    end = proto.Field(proto.INT32, number=2)
 
 
 class TimeSegment(proto.Message):
@@ -498,20 +437,18 @@ class TimeSegment(proto.Message):
             start.
     """
 
-    start_time_offset = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    start_time_offset = proto.Field(proto.MESSAGE, number=1,
         message=duration.Duration,
     )
-    end_time_offset = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    end_time_offset = proto.Field(proto.MESSAGE, number=2,
         message=duration.Duration,
     )
 
 
 class VideoClassificationAnnotation(proto.Message):
     r"""Video classification annotation.
+
     Attributes:
         time_segment (google.cloud.datalabeling_v1beta1.types.TimeSegment):
             The time segment of the video to which the
@@ -520,14 +457,11 @@ class VideoClassificationAnnotation(proto.Message):
             Label of the segment specified by time_segment.
     """
 
-    time_segment = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    time_segment = proto.Field(proto.MESSAGE, number=1,
         message='TimeSegment',
     )
-    annotation_spec = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    annotation_spec = proto.Field(proto.MESSAGE, number=2,
         message=annotation_spec_set.AnnotationSpec,
     )
 
@@ -546,27 +480,22 @@ class ObjectTrackingFrame(proto.Message):
             beginning of the video.
     """
 
-    bounding_poly = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='bounded_area',
+    bounding_poly = proto.Field(proto.MESSAGE, number=1, oneof='bounded_area',
         message='BoundingPoly',
     )
-    normalized_bounding_poly = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='bounded_area',
+
+    normalized_bounding_poly = proto.Field(proto.MESSAGE, number=2, oneof='bounded_area',
         message='NormalizedBoundingPoly',
     )
-    time_offset = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    time_offset = proto.Field(proto.MESSAGE, number=3,
         message=duration.Duration,
     )
 
 
 class VideoObjectTrackingAnnotation(proto.Message):
     r"""Video object tracking annotation.
+
     Attributes:
         annotation_spec (google.cloud.datalabeling_v1beta1.types.AnnotationSpec):
             Label of the object tracked in this
@@ -579,25 +508,22 @@ class VideoObjectTrackingAnnotation(proto.Message):
             appears.
     """
 
-    annotation_spec = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    annotation_spec = proto.Field(proto.MESSAGE, number=1,
         message=annotation_spec_set.AnnotationSpec,
     )
-    time_segment = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    time_segment = proto.Field(proto.MESSAGE, number=2,
         message='TimeSegment',
     )
-    object_tracking_frames = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+
+    object_tracking_frames = proto.RepeatedField(proto.MESSAGE, number=3,
         message='ObjectTrackingFrame',
     )
 
 
 class VideoEventAnnotation(proto.Message):
     r"""Video event annotation.
+
     Attributes:
         annotation_spec (google.cloud.datalabeling_v1beta1.types.AnnotationSpec):
             Label of the event in this annotation.
@@ -606,28 +532,24 @@ class VideoEventAnnotation(proto.Message):
             annotation applies.
     """
 
-    annotation_spec = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    annotation_spec = proto.Field(proto.MESSAGE, number=1,
         message=annotation_spec_set.AnnotationSpec,
     )
-    time_segment = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    time_segment = proto.Field(proto.MESSAGE, number=2,
         message='TimeSegment',
     )
 
 
 class AnnotationMetadata(proto.Message):
     r"""Additional information associated with the annotation.
+
     Attributes:
         operator_metadata (google.cloud.datalabeling_v1beta1.types.OperatorMetadata):
             Metadata related to human labeling.
     """
 
-    operator_metadata = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    operator_metadata = proto.Field(proto.MESSAGE, number=2,
         message='OperatorMetadata',
     )
 
@@ -652,22 +574,13 @@ class OperatorMetadata(proto.Message):
             Comments from contributors.
     """
 
-    score = proto.Field(
-        proto.FLOAT,
-        number=1,
-    )
-    total_votes = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    label_votes = proto.Field(
-        proto.INT32,
-        number=3,
-    )
-    comments = proto.RepeatedField(
-        proto.STRING,
-        number=4,
-    )
+    score = proto.Field(proto.FLOAT, number=1)
+
+    total_votes = proto.Field(proto.INT32, number=2)
+
+    label_votes = proto.Field(proto.INT32, number=3)
+
+    comments = proto.RepeatedField(proto.STRING, number=4)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

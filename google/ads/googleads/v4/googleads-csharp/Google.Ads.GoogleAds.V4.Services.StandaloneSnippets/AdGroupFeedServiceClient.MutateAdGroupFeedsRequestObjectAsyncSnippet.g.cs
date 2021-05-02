@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupFeedServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateAdGroupFeedsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateAdGroupFeedsRequestObjectAsync()
         {
-            // Snippet: MutateAdGroupFeedsAsync(MutateAdGroupFeedsRequest, CallSettings)
-            // Additional: MutateAdGroupFeedsAsync(MutateAdGroupFeedsRequest, CancellationToken)
             // Create client
             AdGroupFeedServiceClient adGroupFeedServiceClient = await AdGroupFeedServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             MutateAdGroupFeedsResponse response = await adGroupFeedServiceClient.MutateAdGroupFeedsAsync(request);
-            // End snippet
         }
     }
 }

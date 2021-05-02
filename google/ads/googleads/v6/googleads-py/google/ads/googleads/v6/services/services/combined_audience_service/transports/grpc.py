@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import combined_audience
 from google.ads.googleads.v6.services.types import combined_audience_service
+
 from .base import CombinedAudienceServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,8 +62,7 @@ class CombinedAudienceServiceGrpcTransport(CombinedAudienceServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -204,9 +206,7 @@ class CombinedAudienceServiceGrpcTransport(CombinedAudienceServiceTransport):
     def get_combined_audience(self) -> Callable[
             [combined_audience_service.GetCombinedAudienceRequest],
             combined_audience.CombinedAudience]:
-        r"""Return a callable for the
-        get combined audience
-          method over gRPC.
+        r"""Return a callable for the get combined audience method over gRPC.
 
         Returns the requested combined audience in full
         detail.

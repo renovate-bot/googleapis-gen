@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
 {
+    using Google.Cloud.WebSecurityScanner.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWebSecurityScannerClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateScanConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateScanConfigAsync()
         {
-            // Snippet: CreateScanConfigAsync(string, ScanConfig, CallSettings)
-            // Additional: CreateScanConfigAsync(string, ScanConfig, CancellationToken)
             // Create client
             WebSecurityScannerClient webSecurityScannerClient = await WebSecurityScannerClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             ScanConfig scanConfig = new ScanConfig();
             // Make the request
             ScanConfig response = await webSecurityScannerClient.CreateScanConfigAsync(parent, scanConfig);
-            // End snippet
         }
     }
 }

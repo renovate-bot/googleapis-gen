@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
 {
+    using Google.Cloud.BigQuery.DataTransfer.V1;
+
     public sealed partial class GeneratedDataTransferServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CheckValidCreds</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CheckValidCreds()
         {
-            // Snippet: CheckValidCreds(string, CallSettings)
             // Create client
             DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/dataSources/[DATA_SOURCE]";
             // Make the request
             CheckValidCredsResponse response = dataTransferServiceClient.CheckValidCreds(name);
-            // End snippet
         }
     }
 }

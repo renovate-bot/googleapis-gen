@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
+
     public sealed partial class GeneratedBillingSetupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateBillingSetup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateBillingSetup()
         {
-            // Snippet: MutateBillingSetup(string, BillingSetupOperation, CallSettings)
             // Create client
             BillingSetupServiceClient billingSetupServiceClient = BillingSetupServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             BillingSetupOperation operation = new BillingSetupOperation();
             // Make the request
             MutateBillingSetupResponse response = billingSetupServiceClient.MutateBillingSetup(customerId, operation);
-            // End snippet
         }
     }
 }

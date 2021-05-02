@@ -16,14 +16,19 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud;
+    using Google.Cloud.PubSub.V1;
     using Google.Protobuf;
 
     public sealed partial class GeneratedSchemaServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ValidateMessage</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ValidateMessageRequestObject()
         {
-            // Snippet: ValidateMessage(ValidateMessageRequest, CallSettings)
             // Create client
             SchemaServiceClient schemaServiceClient = SchemaServiceClient.Create();
             // Initialize request argument(s)
@@ -31,13 +36,11 @@ namespace Google.Cloud.PubSub.V1.Snippets
             {
                 ParentAsProjectName = ProjectName.FromProject("[PROJECT]"),
                 SchemaName = SchemaName.FromProjectSchema("[PROJECT]", "[SCHEMA]"),
-                Schema = new Schema(),
                 Message = ByteString.Empty,
                 Encoding = Encoding.Unspecified,
             };
             // Make the request
             ValidateMessageResponse response = schemaServiceClient.ValidateMessage(request);
-            // End snippet
         }
     }
 }

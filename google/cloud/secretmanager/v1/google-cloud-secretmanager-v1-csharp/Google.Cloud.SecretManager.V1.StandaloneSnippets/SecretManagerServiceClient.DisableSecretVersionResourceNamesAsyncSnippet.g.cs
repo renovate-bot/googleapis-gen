@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.SecretManager.V1.Snippets
 {
+    using Google.Cloud.SecretManager.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecretManagerServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DisableSecretVersionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DisableSecretVersionResourceNamesAsync()
         {
-            // Snippet: DisableSecretVersionAsync(SecretVersionName, CallSettings)
-            // Additional: DisableSecretVersionAsync(SecretVersionName, CancellationToken)
             // Create client
             SecretManagerServiceClient secretManagerServiceClient = await SecretManagerServiceClient.CreateAsync();
             // Initialize request argument(s)
             SecretVersionName name = SecretVersionName.FromProjectSecretSecretVersion("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
             // Make the request
             SecretVersion response = await secretManagerServiceClient.DisableSecretVersionAsync(name);
-            // End snippet
         }
     }
 }

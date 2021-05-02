@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
 {
+    using Google.Cloud.BigQuery.Reservation.V1;
+
     public sealed partial class GeneratedReservationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteAssignment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteAssignment()
         {
-            // Snippet: DeleteAssignment(string, CallSettings)
             // Create client
             ReservationServiceClient reservationServiceClient = ReservationServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/reservations/[RESERVATION]/assignments/[ASSIGNMENT]";
             // Make the request
             reservationServiceClient.DeleteAssignment(name);
-            // End snippet
         }
     }
 }

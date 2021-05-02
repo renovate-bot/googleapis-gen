@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLandingPageViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetLandingPageViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetLandingPageViewRequestObjectAsync()
         {
-            // Snippet: GetLandingPageViewAsync(GetLandingPageViewRequest, CallSettings)
-            // Additional: GetLandingPageViewAsync(GetLandingPageViewRequest, CancellationToken)
             // Create client
             LandingPageViewServiceClient landingPageViewServiceClient = await LandingPageViewServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             LandingPageView response = await landingPageViewServiceClient.GetLandingPageViewAsync(request);
-            // End snippet
         }
     }
 }

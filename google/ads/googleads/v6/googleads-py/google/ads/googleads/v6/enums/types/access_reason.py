@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -28,7 +30,7 @@ __protobuf__ = proto.module(
 class AccessReasonEnum(proto.Message):
     r"""Indicates the way the resource such as user list is related
     to a user.
-        """
+    """
     class AccessReason(proto.Enum):
         r"""Enum describing possible access reasons."""
         UNSPECIFIED = 0

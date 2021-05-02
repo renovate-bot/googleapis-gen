@@ -16,19 +16,23 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
+
     public sealed partial class GeneratedCustomerServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListAccessibleCustomers</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListAccessibleCustomersRequestObject()
         {
-            // Snippet: ListAccessibleCustomers(ListAccessibleCustomersRequest, CallSettings)
             // Create client
             CustomerServiceClient customerServiceClient = CustomerServiceClient.Create();
             // Initialize request argument(s)
             ListAccessibleCustomersRequest request = new ListAccessibleCustomersRequest { };
             // Make the request
             ListAccessibleCustomersResponse response = customerServiceClient.ListAccessibleCustomers(request);
-            // End snippet
         }
     }
 }

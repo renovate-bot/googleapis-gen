@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -264,30 +266,49 @@ def test_get_product_bidding_category_constant(transport: str = 'grpc', request_
         # Designate an appropriate return value for the call.
         call.return_value = product_bidding_category_constant.ProductBiddingCategoryConstant(
             resource_name='resource_name_value',
+
             id=205,
+
             country_code='country_code_value',
+
             product_bidding_category_constant_parent='product_bidding_category_constant_parent_value',
+
             level=product_bidding_category_level.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel.UNKNOWN,
+
             status=product_bidding_category_status.ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus.UNKNOWN,
+
             language_code='language_code_value',
+
             localized_name='localized_name_value',
+
         )
+
         response = client.get_product_bidding_category_constant(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == product_bidding_category_constant_service.GetProductBiddingCategoryConstantRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, product_bidding_category_constant.ProductBiddingCategoryConstant)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.id == 205
+
     assert response.country_code == 'country_code_value'
+
     assert response.product_bidding_category_constant_parent == 'product_bidding_category_constant_parent_value'
+
     assert response.level == product_bidding_category_level.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel.UNKNOWN
+
     assert response.status == product_bidding_category_status.ProductBiddingCategoryStatusEnum.ProductBiddingCategoryStatus.UNKNOWN
+
     assert response.language_code == 'language_code_value'
+
     assert response.localized_name == 'localized_name_value'
 
 
@@ -303,7 +324,6 @@ def test_get_product_bidding_category_constant_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = product_bidding_category_constant_service.GetProductBiddingCategoryConstantRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -311,6 +331,7 @@ def test_get_product_bidding_category_constant_field_headers():
             type(client.transport.get_product_bidding_category_constant),
             '__call__') as call:
         call.return_value = product_bidding_category_constant.ProductBiddingCategoryConstant()
+
         client.get_product_bidding_category_constant(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -337,6 +358,7 @@ def test_get_product_bidding_category_constant_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = product_bidding_category_constant.ProductBiddingCategoryConstant()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_product_bidding_category_constant(
@@ -347,6 +369,7 @@ def test_get_product_bidding_category_constant_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -427,7 +450,7 @@ def test_product_bidding_category_constant_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_product_bidding_category_constant',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -580,6 +603,7 @@ def test_product_bidding_category_constant_path():
     country_code = "squid"
     level = "clam"
     id = "whelk"
+
     expected = "productBiddingCategoryConstants/{country_code}~{level}~{id}".format(country_code=country_code, level=level, id=id, )
     actual = ProductBiddingCategoryConstantServiceClient.product_bidding_category_constant_path(country_code, level, id)
     assert expected == actual
@@ -587,9 +611,10 @@ def test_product_bidding_category_constant_path():
 
 def test_parse_product_bidding_category_constant_path():
     expected = {
-        "country_code": "octopus",
-        "level": "oyster",
-        "id": "nudibranch",
+    "country_code": "octopus",
+    "level": "oyster",
+    "id": "nudibranch",
+
     }
     path = ProductBiddingCategoryConstantServiceClient.product_bidding_category_constant_path(**expected)
 
@@ -599,6 +624,7 @@ def test_parse_product_bidding_category_constant_path():
 
 def test_common_billing_account_path():
     billing_account = "cuttlefish"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ProductBiddingCategoryConstantServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -606,7 +632,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "mussel",
+    "billing_account": "mussel",
+
     }
     path = ProductBiddingCategoryConstantServiceClient.common_billing_account_path(**expected)
 
@@ -616,6 +643,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "winkle"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ProductBiddingCategoryConstantServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -623,7 +651,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nautilus",
+    "folder": "nautilus",
+
     }
     path = ProductBiddingCategoryConstantServiceClient.common_folder_path(**expected)
 
@@ -633,6 +662,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "scallop"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ProductBiddingCategoryConstantServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -640,7 +670,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "abalone",
+    "organization": "abalone",
+
     }
     path = ProductBiddingCategoryConstantServiceClient.common_organization_path(**expected)
 
@@ -650,6 +681,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "squid"
+
     expected = "projects/{project}".format(project=project, )
     actual = ProductBiddingCategoryConstantServiceClient.common_project_path(project)
     assert expected == actual
@@ -657,7 +689,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "clam",
+    "project": "clam",
+
     }
     path = ProductBiddingCategoryConstantServiceClient.common_project_path(**expected)
 
@@ -668,6 +701,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "whelk"
     location = "octopus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ProductBiddingCategoryConstantServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -675,8 +709,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "oyster",
-        "location": "nudibranch",
+    "project": "oyster",
+    "location": "nudibranch",
+
     }
     path = ProductBiddingCategoryConstantServiceClient.common_location_path(**expected)
 

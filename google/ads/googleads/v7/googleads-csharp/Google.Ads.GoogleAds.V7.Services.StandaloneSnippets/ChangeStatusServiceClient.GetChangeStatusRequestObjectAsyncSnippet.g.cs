@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedChangeStatusServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetChangeStatusAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetChangeStatusRequestObjectAsync()
         {
-            // Snippet: GetChangeStatusAsync(GetChangeStatusRequest, CallSettings)
-            // Additional: GetChangeStatusAsync(GetChangeStatusRequest, CancellationToken)
             // Create client
             ChangeStatusServiceClient changeStatusServiceClient = await ChangeStatusServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             ChangeStatus response = await changeStatusServiceClient.GetChangeStatusAsync(request);
-            // End snippet
         }
     }
 }

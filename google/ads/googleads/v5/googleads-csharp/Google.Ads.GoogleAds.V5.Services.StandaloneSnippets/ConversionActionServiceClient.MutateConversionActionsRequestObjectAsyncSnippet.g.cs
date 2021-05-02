@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConversionActionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateConversionActionsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateConversionActionsRequestObjectAsync()
         {
-            // Snippet: MutateConversionActionsAsync(MutateConversionActionsRequest, CallSettings)
-            // Additional: MutateConversionActionsAsync(MutateConversionActionsRequest, CancellationToken)
             // Create client
             ConversionActionServiceClient conversionActionServiceClient = await ConversionActionServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateConversionActionsResponse response = await conversionActionServiceClient.MutateConversionActionsAsync(request);
-            // End snippet
         }
     }
 }

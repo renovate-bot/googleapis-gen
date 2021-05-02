@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
+
     public sealed partial class GeneratedCustomAudienceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCustomAudiences</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateCustomAudiencesRequestObject()
         {
-            // Snippet: MutateCustomAudiences(MutateCustomAudiencesRequest, CallSettings)
             // Create client
             CustomAudienceServiceClient customAudienceServiceClient = CustomAudienceServiceClient.Create();
             // Initialize request argument(s)
@@ -36,7 +41,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateCustomAudiencesResponse response = customAudienceServiceClient.MutateCustomAudiences(request);
-            // End snippet
         }
     }
 }

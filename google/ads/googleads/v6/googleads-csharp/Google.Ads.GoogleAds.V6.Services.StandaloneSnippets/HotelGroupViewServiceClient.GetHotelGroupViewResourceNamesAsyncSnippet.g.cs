@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedHotelGroupViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetHotelGroupViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetHotelGroupViewResourceNamesAsync()
         {
-            // Snippet: GetHotelGroupViewAsync(HotelGroupViewName, CallSettings)
-            // Additional: GetHotelGroupViewAsync(HotelGroupViewName, CancellationToken)
             // Create client
             HotelGroupViewServiceClient hotelGroupViewServiceClient = await HotelGroupViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             HotelGroupViewName resourceName = HotelGroupViewName.FromCustomerAdGroupCriterion("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
             // Make the request
             HotelGroupView response = await hotelGroupViewServiceClient.GetHotelGroupViewAsync(resourceName);
-            // End snippet
         }
     }
 }

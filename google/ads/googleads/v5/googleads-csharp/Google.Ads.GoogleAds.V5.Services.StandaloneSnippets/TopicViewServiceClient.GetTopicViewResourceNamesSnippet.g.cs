@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedTopicViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTopicView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetTopicViewResourceNames()
         {
-            // Snippet: GetTopicView(TopicViewName, CallSettings)
             // Create client
             TopicViewServiceClient topicViewServiceClient = TopicViewServiceClient.Create();
             // Initialize request argument(s)
             TopicViewName resourceName = TopicViewName.FromCustomerTopicView("[CUSTOMER]", "[TOPIC_VIEW]");
             // Make the request
             TopicView response = topicViewServiceClient.GetTopicView(resourceName);
-            // End snippet
         }
     }
 }

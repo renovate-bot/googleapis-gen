@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignLabelAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCampaignLabelResourceNamesAsync()
         {
-            // Snippet: GetCampaignLabelAsync(CampaignLabelName, CallSettings)
-            // Additional: GetCampaignLabelAsync(CampaignLabelName, CancellationToken)
             // Create client
             CampaignLabelServiceClient campaignLabelServiceClient = await CampaignLabelServiceClient.CreateAsync();
             // Initialize request argument(s)
             CampaignLabelName resourceName = CampaignLabelName.FromCustomerCampaignLabel("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[LABEL_ID]");
             // Make the request
             CampaignLabel response = await campaignLabelServiceClient.GetCampaignLabelAsync(resourceName);
-            // End snippet
         }
     }
 }

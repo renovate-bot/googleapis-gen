@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.build_service import BuildServiceClient
-
 from .types.build_service import CheckBuildStageStatusRequest
 from .types.build_service import CheckBuildStageStatusResponse
 from .types.build_service import ListBuildsRequest
@@ -28,6 +28,7 @@ from .types.resources import BuildArtifact
 from .types.resources import BuildTarget
 from .types.resources import Milestone
 from .types.resources import Model
+
 
 __all__ = (
     'Build',

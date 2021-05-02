@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedSubscriberClientStandaloneSnippets
     {
         /// <summary>Snippet for Seek</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SeekRequestObject()
         {
-            // Snippet: Seek(SeekRequest, CallSettings)
             // Create client
             SubscriberClient subscriberClient = SubscriberClient.Create();
             // Initialize request argument(s)
@@ -31,11 +35,9 @@ namespace Google.Cloud.PubSub.V1.Snippets
             {
                 SubscriptionAsSubscriptionName = SubscriptionName.FromProjectSubscription("[PROJECT]", "[SUBSCRIPTION]"),
                 Time = new Timestamp(),
-                SnapshotAsSnapshotName = SnapshotName.FromProjectSnapshot("[PROJECT]", "[SNAPSHOT]"),
             };
             // Make the request
             SeekResponse response = subscriberClient.Seek(request);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.CloudBuild.V1.Snippets
 {
+    using Google.Cloud.CloudBuild.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudBuildClientStandaloneSnippets
     {
         /// <summary>Snippet for ListWorkerPoolsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListWorkerPoolsRequestObjectAsync()
         {
-            // Snippet: ListWorkerPoolsAsync(ListWorkerPoolsRequest, CallSettings)
-            // Additional: ListWorkerPoolsAsync(ListWorkerPoolsRequest, CancellationToken)
             // Create client
             CloudBuildClient cloudBuildClient = await CloudBuildClient.CreateAsync();
             // Initialize request argument(s)
             ListWorkerPoolsRequest request = new ListWorkerPoolsRequest { Parent = "", };
             // Make the request
             ListWorkerPoolsResponse response = await cloudBuildClient.ListWorkerPoolsAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Analytics.Data.V1Beta.Snippets
 {
+    using Google.Analytics.Data.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBetaAnalyticsDataClientStandaloneSnippets
     {
         /// <summary>Snippet for RunRealtimeReportAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task RunRealtimeReportRequestObjectAsync()
         {
-            // Snippet: RunRealtimeReportAsync(RunRealtimeReportRequest, CallSettings)
-            // Additional: RunRealtimeReportAsync(RunRealtimeReportRequest, CancellationToken)
             // Create client
             BetaAnalyticsDataClient betaAnalyticsDataClient = await BetaAnalyticsDataClient.CreateAsync();
             // Initialize request argument(s)
@@ -45,7 +48,6 @@ namespace Google.Analytics.Data.V1Beta.Snippets
             };
             // Make the request
             RunRealtimeReportResponse response = await betaAnalyticsDataClient.RunRealtimeReportAsync(request);
-            // End snippet
         }
     }
 }

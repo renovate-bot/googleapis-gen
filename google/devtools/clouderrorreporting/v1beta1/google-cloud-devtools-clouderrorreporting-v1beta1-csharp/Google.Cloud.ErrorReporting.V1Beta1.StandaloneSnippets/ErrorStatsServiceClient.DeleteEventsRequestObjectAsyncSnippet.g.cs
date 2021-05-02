@@ -17,15 +17,18 @@
 namespace Google.Cloud.ErrorReporting.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.ErrorReporting.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedErrorStatsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteEventsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteEventsRequestObjectAsync()
         {
-            // Snippet: DeleteEventsAsync(DeleteEventsRequest, CallSettings)
-            // Additional: DeleteEventsAsync(DeleteEventsRequest, CancellationToken)
             // Create client
             ErrorStatsServiceClient errorStatsServiceClient = await ErrorStatsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.ErrorReporting.V1Beta1.Snippets
             };
             // Make the request
             DeleteEventsResponse response = await errorStatsServiceClient.DeleteEventsAsync(request);
-            // End snippet
         }
     }
 }

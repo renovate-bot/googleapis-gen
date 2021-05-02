@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Vision.V1P4Beta1.Snippets
 {
+    using Google.Cloud.Vision.V1P4Beta1;
     using Google.LongRunning;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedImageAnnotatorClientStandaloneSnippets
     {
         /// <summary>Snippet for AsyncBatchAnnotateFiles</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void AsyncBatchAnnotateFiles()
         {
-            // Snippet: AsyncBatchAnnotateFiles(IEnumerable<AsyncAnnotateFileRequest>, CallSettings)
             // Create client
             ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.Create();
             // Initialize request argument(s)
@@ -50,7 +54,6 @@ namespace Google.Cloud.Vision.V1P4Beta1.Snippets
                 // If it has completed, then access the result
                 AsyncBatchAnnotateFilesResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

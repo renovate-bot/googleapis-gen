@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedIntentsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateIntent</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateIntent2ResourceNames()
         {
-            // Snippet: CreateIntent(AgentName, Intent, string, CallSettings)
             // Create client
             IntentsClient intentsClient = IntentsClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             string languageCode = "";
             // Make the request
             Intent response = intentsClient.CreateIntent(parent, intent, languageCode);
-            // End snippet
         }
     }
 }

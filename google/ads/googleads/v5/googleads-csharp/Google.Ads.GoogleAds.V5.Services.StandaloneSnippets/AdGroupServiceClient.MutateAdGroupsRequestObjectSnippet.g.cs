@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Enums;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedAdGroupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateAdGroups</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateAdGroupsRequestObject()
         {
-            // Snippet: MutateAdGroups(MutateAdGroupsRequest, CallSettings)
             // Create client
             AdGroupServiceClient adGroupServiceClient = AdGroupServiceClient.Create();
             // Initialize request argument(s)
@@ -40,7 +44,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateAdGroupsResponse response = adGroupServiceClient.MutateAdGroups(request);
-            // End snippet
         }
     }
 }

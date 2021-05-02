@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Channel.V1.Snippets
 {
+    using Google.Cloud.Channel.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudChannelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateCustomerAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateCustomerRequestObjectAsync()
         {
-            // Snippet: UpdateCustomerAsync(UpdateCustomerRequest, CallSettings)
-            // Additional: UpdateCustomerAsync(UpdateCustomerRequest, CancellationToken)
             // Create client
             CloudChannelServiceClient cloudChannelServiceClient = await CloudChannelServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Channel.V1.Snippets
             };
             // Make the request
             Customer response = await cloudChannelServiceClient.UpdateCustomerAsync(request);
-            // End snippet
         }
     }
 }

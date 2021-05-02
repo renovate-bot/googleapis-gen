@@ -17,16 +17,20 @@
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Dataproc.V1;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedJobControllerClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListJobs</summary>
+        /// <summary>Snippet for ListJobsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListJobs2Async()
         {
-            // Snippet: ListJobsAsync(string, string, string, string, int?, CallSettings)
             // Create client
             JobControllerClient jobControllerClient = await JobControllerClient.CreateAsync();
             // Initialize request argument(s)
@@ -67,7 +71,6 @@ namespace Google.Cloud.Dataproc.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

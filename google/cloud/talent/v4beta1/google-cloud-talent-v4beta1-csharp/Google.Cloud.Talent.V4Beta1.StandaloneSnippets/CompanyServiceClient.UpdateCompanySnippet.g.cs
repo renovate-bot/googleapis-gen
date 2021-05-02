@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
+    using Google.Cloud.Talent.V4Beta1;
+
     public sealed partial class GeneratedCompanyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateCompany</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateCompany()
         {
-            // Snippet: UpdateCompany(Company, CallSettings)
             // Create client
             CompanyServiceClient companyServiceClient = CompanyServiceClient.Create();
             // Initialize request argument(s)
             Company company = new Company();
             // Make the request
             Company response = companyServiceClient.UpdateCompany(company);
-            // End snippet
         }
     }
 }

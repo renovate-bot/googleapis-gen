@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Bigquery.V2.Snippets
 {
+    using Google.Cloud.Bigquery.V2;
+
     public sealed partial class GeneratedModelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListModels</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListModelsRequestObject()
         {
-            // Snippet: ListModels(ListModelsRequest, CallSettings)
             // Create client
             ModelServiceClient modelServiceClient = ModelServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +39,6 @@ namespace Google.Cloud.Bigquery.V2.Snippets
             };
             // Make the request
             ListModelsResponse response = modelServiceClient.ListModels(request);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedSecuritySettingsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSecuritySettings</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetSecuritySettingsResourceNames()
         {
-            // Snippet: GetSecuritySettings(SecuritySettingsName, CallSettings)
             // Create client
             SecuritySettingsServiceClient securitySettingsServiceClient = SecuritySettingsServiceClient.Create();
             // Initialize request argument(s)
             SecuritySettingsName name = SecuritySettingsName.FromProjectLocationSecuritySettings("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]");
             // Make the request
             SecuritySettings response = securitySettingsServiceClient.GetSecuritySettings(name);
-            // End snippet
         }
     }
 }

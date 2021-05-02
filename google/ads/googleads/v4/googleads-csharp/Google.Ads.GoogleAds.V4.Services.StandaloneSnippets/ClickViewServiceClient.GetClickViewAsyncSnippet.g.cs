@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClickViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetClickViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetClickViewAsync()
         {
-            // Snippet: GetClickViewAsync(string, CallSettings)
-            // Additional: GetClickViewAsync(string, CancellationToken)
             // Create client
             ClickViewServiceClient clickViewServiceClient = await ClickViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/clickViews/[CLICK_VIEW]";
             // Make the request
             ClickView response = await clickViewServiceClient.GetClickViewAsync(resourceName);
-            // End snippet
         }
     }
 }

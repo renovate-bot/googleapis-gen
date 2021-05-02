@@ -17,13 +17,17 @@
 namespace Google.Cloud.Video.Transcoder.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Video.Transcoder.V1Beta1;
 
     public sealed partial class GeneratedTranscoderServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateJobTemplate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateJobTemplateResourceNames()
         {
-            // Snippet: CreateJobTemplate(LocationName, JobTemplate, string, CallSettings)
             // Create client
             TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.Video.Transcoder.V1Beta1.Snippets
             string jobTemplateId = "";
             // Make the request
             JobTemplate response = transcoderServiceClient.CreateJobTemplate(parent, jobTemplate, jobTemplateId);
-            // End snippet
         }
     }
 }

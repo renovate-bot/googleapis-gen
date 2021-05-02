@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.BigQuery.Connection.V1Beta1.Snippets
 {
+    using Google.Cloud.BigQuery.Connection.V1Beta1;
+
     public sealed partial class GeneratedConnectionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateConnection</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateConnection()
         {
-            // Snippet: CreateConnection(string, Connection, string, CallSettings)
             // Create client
             ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.BigQuery.Connection.V1Beta1.Snippets
             string connectionId = "";
             // Make the request
             Connection response = connectionServiceClient.CreateConnection(parent, connection, connectionId);
-            // End snippet
         }
     }
 }

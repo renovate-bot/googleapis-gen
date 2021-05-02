@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.cloud.dialogflow_v2beta1.types import answer_record
 from google.cloud.dialogflow_v2beta1.types import answer_record as gcd_answer_record
+
 from .base import AnswerRecordsTransport, DEFAULT_CLIENT_INFO
 
 
@@ -60,8 +63,7 @@ class AnswerRecordsGrpcTransport(AnswerRecordsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -200,15 +202,13 @@ class AnswerRecordsGrpcTransport(AnswerRecordsTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -222,9 +222,7 @@ class AnswerRecordsGrpcTransport(AnswerRecordsTransport):
     def get_answer_record(self) -> Callable[
             [answer_record.GetAnswerRecordRequest],
             answer_record.AnswerRecord]:
-        r"""Return a callable for the
-        get answer record
-          method over gRPC.
+        r"""Return a callable for the get answer record method over gRPC.
 
         Deprecated.
         Retrieves a specific answer record.
@@ -251,9 +249,7 @@ class AnswerRecordsGrpcTransport(AnswerRecordsTransport):
     def list_answer_records(self) -> Callable[
             [answer_record.ListAnswerRecordsRequest],
             answer_record.ListAnswerRecordsResponse]:
-        r"""Return a callable for the
-        list answer records
-          method over gRPC.
+        r"""Return a callable for the list answer records method over gRPC.
 
         Returns the list of all answer records in the
         specified project in reverse chronological order.
@@ -280,9 +276,7 @@ class AnswerRecordsGrpcTransport(AnswerRecordsTransport):
     def update_answer_record(self) -> Callable[
             [gcd_answer_record.UpdateAnswerRecordRequest],
             gcd_answer_record.AnswerRecord]:
-        r"""Return a callable for the
-        update answer record
-          method over gRPC.
+        r"""Return a callable for the update answer record method over gRPC.
 
         Updates the specified answer record.
 

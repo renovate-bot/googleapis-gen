@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Tasks.V2Beta2.Snippets
 {
+    using Google.Cloud.Tasks.V2Beta2;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for AcknowledgeTaskAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task AcknowledgeTaskAsync()
         {
-            // Snippet: AcknowledgeTaskAsync(string, Timestamp, CallSettings)
-            // Additional: AcknowledgeTaskAsync(string, Timestamp, CancellationToken)
             // Create client
             CloudTasksClient cloudTasksClient = await CloudTasksClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Tasks.V2Beta2.Snippets
             Timestamp scheduleTime = new Timestamp();
             // Make the request
             await cloudTasksClient.AcknowledgeTaskAsync(name, scheduleTime);
-            // End snippet
         }
     }
 }

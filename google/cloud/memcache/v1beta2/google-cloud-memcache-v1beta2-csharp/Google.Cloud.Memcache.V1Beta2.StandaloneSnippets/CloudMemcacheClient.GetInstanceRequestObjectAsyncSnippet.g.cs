@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Memcache.V1Beta2.Snippets
 {
+    using Google.Cloud.Memcache.V1Beta2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudMemcacheClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInstanceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetInstanceRequestObjectAsync()
         {
-            // Snippet: GetInstanceAsync(GetInstanceRequest, CallSettings)
-            // Additional: GetInstanceAsync(GetInstanceRequest, CancellationToken)
             // Create client
             CloudMemcacheClient cloudMemcacheClient = await CloudMemcacheClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Memcache.V1Beta2.Snippets
             };
             // Make the request
             Instance response = await cloudMemcacheClient.GetInstanceAsync(request);
-            // End snippet
         }
     }
 }

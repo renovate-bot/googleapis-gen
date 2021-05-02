@@ -18,16 +18,20 @@ namespace Google.Cloud.ErrorReporting.V1Beta1.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.ErrorReporting.V1Beta1;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedErrorStatsServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListEvents</summary>
+        /// <summary>Snippet for ListEventsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListEventsRequestObjectAsync()
         {
-            // Snippet: ListEventsAsync(ListEventsRequest, CallSettings)
             // Create client
             ErrorStatsServiceClient errorStatsServiceClient = await ErrorStatsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -72,7 +76,6 @@ namespace Google.Cloud.ErrorReporting.V1Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

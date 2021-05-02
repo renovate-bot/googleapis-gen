@@ -16,19 +16,23 @@
 
 namespace Grafeas.V1.Snippets
 {
+    using Grafeas.V1;
+
     public sealed partial class GeneratedGrafeasClientStandaloneSnippets
     {
         /// <summary>Snippet for GetOccurrenceNote</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetOccurrenceNote()
         {
-            // Snippet: GetOccurrenceNote(string, CallSettings)
             // Create client
             GrafeasClient grafeasClient = GrafeasClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/occurrences/[OCCURRENCE]";
             // Make the request
             Note response = grafeasClient.GetOccurrenceNote(name);
-            // End snippet
         }
     }
 }

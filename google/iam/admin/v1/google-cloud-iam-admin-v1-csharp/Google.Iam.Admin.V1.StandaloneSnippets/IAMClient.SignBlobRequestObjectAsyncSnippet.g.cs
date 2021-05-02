@@ -16,22 +16,24 @@
 
 namespace Google.Iam.Admin.V1.Snippets
 {
+    using Google.Iam.Admin.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIAMClientStandaloneSnippets
     {
         /// <summary>Snippet for SignBlobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SignBlobRequestObjectAsync()
         {
-            // Snippet: SignBlobAsync(SignBlobRequest, CallSettings)
-            // Additional: SignBlobAsync(SignBlobRequest, CancellationToken)
             // Create client
             IAMClient iAMClient = await IAMClient.CreateAsync();
             // Initialize request argument(s)
             SignBlobRequest request = new SignBlobRequest { };
             // Make the request
             SignBlobResponse response = await iAMClient.SignBlobAsync(request);
-            // End snippet
         }
     }
 }

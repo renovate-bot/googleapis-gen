@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Security.PrivateCA.V1Beta1.Snippets
 {
+    using Google.Cloud.Security.PrivateCA.V1Beta1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Security.PrivateCA.V1Beta1.Snippets
     public sealed partial class GeneratedCertificateAuthorityServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateCertificateAuthorityAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateCertificateAuthorityAsync()
         {
-            // Snippet: UpdateCertificateAuthorityAsync(CertificateAuthority, FieldMask, CallSettings)
-            // Additional: UpdateCertificateAuthorityAsync(CertificateAuthority, FieldMask, CancellationToken)
             // Create client
             CertificateAuthorityServiceClient certificateAuthorityServiceClient = await CertificateAuthorityServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -50,7 +53,6 @@ namespace Google.Cloud.Security.PrivateCA.V1Beta1.Snippets
                 // If it has completed, then access the result
                 CertificateAuthority retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedMobileDeviceConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMobileDeviceConstant</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetMobileDeviceConstant()
         {
-            // Snippet: GetMobileDeviceConstant(string, CallSettings)
             // Create client
             MobileDeviceConstantServiceClient mobileDeviceConstantServiceClient = MobileDeviceConstantServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "mobileDeviceConstants/[MOBILE_DEVICE_CONSTANT]";
             // Make the request
             MobileDeviceConstant response = mobileDeviceConstantServiceClient.GetMobileDeviceConstant(resourceName);
-            // End snippet
         }
     }
 }

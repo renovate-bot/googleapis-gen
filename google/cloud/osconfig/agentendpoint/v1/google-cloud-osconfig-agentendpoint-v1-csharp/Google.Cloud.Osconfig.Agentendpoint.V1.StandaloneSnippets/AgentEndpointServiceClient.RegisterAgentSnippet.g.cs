@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Osconfig.Agentendpoint.V1.Snippets
 {
+    using Google.Cloud.Osconfig.Agentendpoint.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedAgentEndpointServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for RegisterAgent</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void RegisterAgent()
         {
-            // Snippet: RegisterAgent(string, string, IEnumerable<string>, CallSettings)
             // Create client
             AgentEndpointServiceClient agentEndpointServiceClient = AgentEndpointServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1.Snippets
             IEnumerable<string> supportedCapabilities = new string[] { "", };
             // Make the request
             RegisterAgentResponse response = agentEndpointServiceClient.RegisterAgent(instanceIdToken, agentVersion, supportedCapabilities);
-            // End snippet
         }
     }
 }

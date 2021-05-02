@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
 {
+    using Google.Cloud.WebSecurityScanner.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWebSecurityScannerClientStandaloneSnippets
     {
         /// <summary>Snippet for StartScanRunAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task StartScanRunRequestObjectAsync()
         {
-            // Snippet: StartScanRunAsync(StartScanRunRequest, CallSettings)
-            // Additional: StartScanRunAsync(StartScanRunRequest, CancellationToken)
             // Create client
             WebSecurityScannerClient webSecurityScannerClient = await WebSecurityScannerClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             };
             // Make the request
             ScanRun response = await webSecurityScannerClient.StartScanRunAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
+
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAndroidAppDataStream</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAndroidAppDataStreamResourceNames()
         {
-            // Snippet: GetAndroidAppDataStream(AndroidAppDataStreamName, CallSettings)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.Create();
             // Initialize request argument(s)
             AndroidAppDataStreamName name = AndroidAppDataStreamName.FromPropertyAndroidAppDataStream("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]");
             // Make the request
             AndroidAppDataStream response = analyticsAdminServiceClient.GetAndroidAppDataStream(name);
-            // End snippet
         }
     }
 }

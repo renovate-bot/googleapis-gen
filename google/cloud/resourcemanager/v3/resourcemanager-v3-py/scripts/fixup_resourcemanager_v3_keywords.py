@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,40 +41,41 @@ def partition(
 class resourcemanagerCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_folder': ('folder', ),
-          'create_project': ('project', ),
-          'create_tag_binding': ('tag_binding', 'validate_only', ),
-          'create_tag_key': ('tag_key', 'validate_only', ),
-          'create_tag_value': ('tag_value', 'validate_only', ),
-          'delete_folder': ('name', ),
-          'delete_project': ('name', ),
-          'delete_tag_binding': ('name', ),
-          'delete_tag_key': ('name', 'validate_only', 'etag', ),
-          'delete_tag_value': ('name', 'validate_only', 'etag', ),
-          'get_folder': ('name', ),
-          'get_iam_policy': ('resource', 'options_', ),
-          'get_organization': ('name', ),
-          'get_project': ('name', ),
-          'get_tag_key': ('name', ),
-          'get_tag_value': ('name', ),
-          'list_folders': ('parent', 'page_size', 'page_token', 'show_deleted', ),
-          'list_projects': ('parent', 'page_token', 'page_size', 'show_deleted', ),
-          'list_tag_bindings': ('parent', 'page_size', 'page_token', ),
-          'list_tag_keys': ('parent', 'page_size', 'page_token', ),
-          'list_tag_values': ('parent', 'page_size', 'page_token', ),
-          'move_folder': ('name', 'destination_parent', ),
-          'move_project': ('name', 'destination_parent', ),
-          'search_folders': ('page_size', 'page_token', 'query', ),
-          'search_organizations': ('page_size', 'page_token', 'query', ),
-          'search_projects': ('query', 'page_token', 'page_size', ),
-          'set_iam_policy': ('resource', 'policy_', ),
-          'test_iam_permissions': ('resource', 'permissions', ),
-          'undelete_folder': ('name', ),
-          'undelete_project': ('name', ),
-          'update_folder': ('folder', 'update_mask', ),
-          'update_project': ('project', 'update_mask', ),
-          'update_tag_key': ('tag_key', 'update_mask', 'validate_only', ),
-          'update_tag_value': ('tag_value', 'update_mask', 'validate_only', ),
+    'create_folder': ('folder', ),
+    'create_project': ('project', ),
+    'create_tag_binding': ('tag_binding', 'validate_only', ),
+    'create_tag_key': ('tag_key', 'validate_only', ),
+    'create_tag_value': ('tag_value', 'validate_only', ),
+    'delete_folder': ('name', ),
+    'delete_project': ('name', ),
+    'delete_tag_binding': ('name', ),
+    'delete_tag_key': ('name', 'validate_only', 'etag', ),
+    'delete_tag_value': ('name', 'validate_only', 'etag', ),
+    'get_folder': ('name', ),
+    'get_iam_policy': ('resource', 'options_', ),
+    'get_organization': ('name', ),
+    'get_project': ('name', ),
+    'get_tag_key': ('name', ),
+    'get_tag_value': ('name', ),
+    'list_folders': ('parent', 'page_size', 'page_token', 'show_deleted', ),
+    'list_projects': ('parent', 'page_token', 'page_size', 'show_deleted', ),
+    'list_tag_bindings': ('parent', 'page_size', 'page_token', ),
+    'list_tag_keys': ('parent', 'page_size', 'page_token', ),
+    'list_tag_values': ('parent', 'page_size', 'page_token', ),
+    'move_folder': ('name', 'destination_parent', ),
+    'move_project': ('name', 'destination_parent', ),
+    'search_folders': ('page_size', 'page_token', 'query', ),
+    'search_organizations': ('page_size', 'page_token', 'query', ),
+    'search_projects': ('query', 'page_token', 'page_size', ),
+    'set_iam_policy': ('resource', 'policy_', ),
+    'test_iam_permissions': ('resource', 'permissions', ),
+    'undelete_folder': ('name', ),
+    'undelete_project': ('name', ),
+    'update_folder': ('folder', 'update_mask', ),
+    'update_project': ('project', 'update_mask', ),
+    'update_tag_key': ('tag_key', 'update_mask', 'validate_only', ),
+    'update_tag_value': ('tag_value', 'update_mask', 'validate_only', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -103,7 +106,7 @@ class resourcemanagerCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

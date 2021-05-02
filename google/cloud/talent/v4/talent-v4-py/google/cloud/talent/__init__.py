@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -86,7 +87,8 @@ from google.cloud.talent_v4.types.tenant_service import ListTenantsRequest
 from google.cloud.talent_v4.types.tenant_service import ListTenantsResponse
 from google.cloud.talent_v4.types.tenant_service import UpdateTenantRequest
 
-__all__ = ('BatchCreateJobsRequest',
+__all__ = (
+    'BatchCreateJobsRequest',
     'BatchCreateJobsResponse',
     'BatchDeleteJobsRequest',
     'BatchDeleteJobsResponse',

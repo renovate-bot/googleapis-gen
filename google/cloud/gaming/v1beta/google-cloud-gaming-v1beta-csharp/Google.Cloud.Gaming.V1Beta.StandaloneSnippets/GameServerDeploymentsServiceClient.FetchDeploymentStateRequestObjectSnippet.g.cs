@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Gaming.V1Beta.Snippets
 {
+    using Google.Cloud.Gaming.V1Beta;
+
     public sealed partial class GeneratedGameServerDeploymentsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for FetchDeploymentState</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void FetchDeploymentStateRequestObject()
         {
-            // Snippet: FetchDeploymentState(FetchDeploymentStateRequest, CallSettings)
             // Create client
             GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.Create();
             // Initialize request argument(s)
             FetchDeploymentStateRequest request = new FetchDeploymentStateRequest { Name = "", };
             // Make the request
             FetchDeploymentStateResponse response = gameServerDeploymentsServiceClient.FetchDeploymentState(request);
-            // End snippet
         }
     }
 }

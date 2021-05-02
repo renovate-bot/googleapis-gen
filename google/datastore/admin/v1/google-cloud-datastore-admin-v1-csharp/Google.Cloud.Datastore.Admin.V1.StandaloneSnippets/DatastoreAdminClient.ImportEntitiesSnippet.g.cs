@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Datastore.Admin.V1.Snippets
 {
+    using Google.Cloud.Datastore.Admin.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Collections.Generic;
@@ -23,9 +24,12 @@ namespace Google.Cloud.Datastore.Admin.V1.Snippets
     public sealed partial class GeneratedDatastoreAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for ImportEntities</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ImportEntities()
         {
-            // Snippet: ImportEntities(string, IDictionary<string,string>, string, EntityFilter, CallSettings)
             // Create client
             DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.Create();
             // Initialize request argument(s)
@@ -51,7 +55,6 @@ namespace Google.Cloud.Datastore.Admin.V1.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

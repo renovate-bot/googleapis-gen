@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,21 +14,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.logging_v2.types import logging_config
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import ConfigServiceV2Transport, DEFAULT_CLIENT_INFO
 from .grpc import ConfigServiceV2GrpcTransport
 
@@ -77,15 +79,13 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -105,8 +105,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -164,6 +163,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -226,9 +226,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def list_buckets(self) -> Callable[
             [logging_config.ListBucketsRequest],
             Awaitable[logging_config.ListBucketsResponse]]:
-        r"""Return a callable for the
-        list buckets
-          method over gRPC.
+        r"""Return a callable for the list buckets method over gRPC.
 
         Lists buckets.
 
@@ -254,9 +252,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def get_bucket(self) -> Callable[
             [logging_config.GetBucketRequest],
             Awaitable[logging_config.LogBucket]]:
-        r"""Return a callable for the
-        get bucket
-          method over gRPC.
+        r"""Return a callable for the get bucket method over gRPC.
 
         Gets a bucket.
 
@@ -282,9 +278,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def create_bucket(self) -> Callable[
             [logging_config.CreateBucketRequest],
             Awaitable[logging_config.LogBucket]]:
-        r"""Return a callable for the
-        create bucket
-          method over gRPC.
+        r"""Return a callable for the create bucket method over gRPC.
 
         Creates a bucket that can be used to store log
         entries. Once a bucket has been created, the region
@@ -312,9 +306,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def update_bucket(self) -> Callable[
             [logging_config.UpdateBucketRequest],
             Awaitable[logging_config.LogBucket]]:
-        r"""Return a callable for the
-        update bucket
-          method over gRPC.
+        r"""Return a callable for the update bucket method over gRPC.
 
         Updates a bucket. This method replaces the following fields in
         the existing bucket with values from the new bucket:
@@ -350,9 +342,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def delete_bucket(self) -> Callable[
             [logging_config.DeleteBucketRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete bucket
-          method over gRPC.
+        r"""Return a callable for the delete bucket method over gRPC.
 
         Deletes a bucket. Moves the bucket to the DELETE_REQUESTED
         state. After 7 days, the bucket will be purged and all logs in
@@ -380,9 +370,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def undelete_bucket(self) -> Callable[
             [logging_config.UndeleteBucketRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        undelete bucket
-          method over gRPC.
+        r"""Return a callable for the undelete bucket method over gRPC.
 
         Undeletes a bucket. A bucket that has been deleted
         may be undeleted within the grace period of 7 days.
@@ -409,9 +397,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def list_views(self) -> Callable[
             [logging_config.ListViewsRequest],
             Awaitable[logging_config.ListViewsResponse]]:
-        r"""Return a callable for the
-        list views
-          method over gRPC.
+        r"""Return a callable for the list views method over gRPC.
 
         Lists views on a bucket.
 
@@ -437,9 +423,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def get_view(self) -> Callable[
             [logging_config.GetViewRequest],
             Awaitable[logging_config.LogView]]:
-        r"""Return a callable for the
-        get view
-          method over gRPC.
+        r"""Return a callable for the get view method over gRPC.
 
         Gets a view.
 
@@ -465,9 +449,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def create_view(self) -> Callable[
             [logging_config.CreateViewRequest],
             Awaitable[logging_config.LogView]]:
-        r"""Return a callable for the
-        create view
-          method over gRPC.
+        r"""Return a callable for the create view method over gRPC.
 
         Creates a view over logs in a bucket. A bucket may
         contain a maximum of 50 views.
@@ -494,9 +476,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def update_view(self) -> Callable[
             [logging_config.UpdateViewRequest],
             Awaitable[logging_config.LogView]]:
-        r"""Return a callable for the
-        update view
-          method over gRPC.
+        r"""Return a callable for the update view method over gRPC.
 
         Updates a view. This method replaces the following fields in the
         existing view with values from the new view: ``filter``.
@@ -523,9 +503,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def delete_view(self) -> Callable[
             [logging_config.DeleteViewRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete view
-          method over gRPC.
+        r"""Return a callable for the delete view method over gRPC.
 
         Deletes a view from a bucket.
 
@@ -551,9 +529,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def list_sinks(self) -> Callable[
             [logging_config.ListSinksRequest],
             Awaitable[logging_config.ListSinksResponse]]:
-        r"""Return a callable for the
-        list sinks
-          method over gRPC.
+        r"""Return a callable for the list sinks method over gRPC.
 
         Lists sinks.
 
@@ -579,9 +555,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def get_sink(self) -> Callable[
             [logging_config.GetSinkRequest],
             Awaitable[logging_config.LogSink]]:
-        r"""Return a callable for the
-        get sink
-          method over gRPC.
+        r"""Return a callable for the get sink method over gRPC.
 
         Gets a sink.
 
@@ -607,9 +581,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def create_sink(self) -> Callable[
             [logging_config.CreateSinkRequest],
             Awaitable[logging_config.LogSink]]:
-        r"""Return a callable for the
-        create sink
-          method over gRPC.
+        r"""Return a callable for the create sink method over gRPC.
 
         Creates a sink that exports specified log entries to a
         destination. The export of newly-ingested log entries begins
@@ -639,9 +611,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def update_sink(self) -> Callable[
             [logging_config.UpdateSinkRequest],
             Awaitable[logging_config.LogSink]]:
-        r"""Return a callable for the
-        update sink
-          method over gRPC.
+        r"""Return a callable for the update sink method over gRPC.
 
         Updates a sink. This method replaces the following fields in the
         existing sink with values from the new sink: ``destination``,
@@ -672,9 +642,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def delete_sink(self) -> Callable[
             [logging_config.DeleteSinkRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete sink
-          method over gRPC.
+        r"""Return a callable for the delete sink method over gRPC.
 
         Deletes a sink. If the sink has a unique ``writer_identity``,
         then that service account is also deleted.
@@ -701,9 +669,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def list_exclusions(self) -> Callable[
             [logging_config.ListExclusionsRequest],
             Awaitable[logging_config.ListExclusionsResponse]]:
-        r"""Return a callable for the
-        list exclusions
-          method over gRPC.
+        r"""Return a callable for the list exclusions method over gRPC.
 
         Lists all the exclusions in a parent resource.
 
@@ -729,9 +695,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def get_exclusion(self) -> Callable[
             [logging_config.GetExclusionRequest],
             Awaitable[logging_config.LogExclusion]]:
-        r"""Return a callable for the
-        get exclusion
-          method over gRPC.
+        r"""Return a callable for the get exclusion method over gRPC.
 
         Gets the description of an exclusion.
 
@@ -757,9 +721,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def create_exclusion(self) -> Callable[
             [logging_config.CreateExclusionRequest],
             Awaitable[logging_config.LogExclusion]]:
-        r"""Return a callable for the
-        create exclusion
-          method over gRPC.
+        r"""Return a callable for the create exclusion method over gRPC.
 
         Creates a new exclusion in a specified parent
         resource. Only log entries belonging to that resource
@@ -788,9 +750,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def update_exclusion(self) -> Callable[
             [logging_config.UpdateExclusionRequest],
             Awaitable[logging_config.LogExclusion]]:
-        r"""Return a callable for the
-        update exclusion
-          method over gRPC.
+        r"""Return a callable for the update exclusion method over gRPC.
 
         Changes one or more properties of an existing
         exclusion.
@@ -817,9 +777,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def delete_exclusion(self) -> Callable[
             [logging_config.DeleteExclusionRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete exclusion
-          method over gRPC.
+        r"""Return a callable for the delete exclusion method over gRPC.
 
         Deletes an exclusion.
 
@@ -845,9 +803,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def get_cmek_settings(self) -> Callable[
             [logging_config.GetCmekSettingsRequest],
             Awaitable[logging_config.CmekSettings]]:
-        r"""Return a callable for the
-        get cmek settings
-          method over gRPC.
+        r"""Return a callable for the get cmek settings method over gRPC.
 
         Gets the Logs Router CMEK settings for the given resource.
 
@@ -881,9 +837,7 @@ class ConfigServiceV2GrpcAsyncIOTransport(ConfigServiceV2Transport):
     def update_cmek_settings(self) -> Callable[
             [logging_config.UpdateCmekSettingsRequest],
             Awaitable[logging_config.CmekSettings]]:
-        r"""Return a callable for the
-        update cmek settings
-          method over gRPC.
+        r"""Return a callable for the update cmek settings method over gRPC.
 
         Updates the Logs Router CMEK settings for the given resource.
 

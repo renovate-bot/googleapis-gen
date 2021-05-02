@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Websecurityscanner.V1Alpha.Snippets
 {
+    using Google.Cloud.Websecurityscanner.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWebSecurityScannerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetFindingAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetFindingRequestObjectAsync()
         {
-            // Snippet: GetFindingAsync(GetFindingRequest, CallSettings)
-            // Additional: GetFindingAsync(GetFindingRequest, CancellationToken)
             // Create client
             WebSecurityScannerClient webSecurityScannerClient = await WebSecurityScannerClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Websecurityscanner.V1Alpha.Snippets
             };
             // Make the request
             Finding response = await webSecurityScannerClient.GetFindingAsync(request);
-            // End snippet
         }
     }
 }

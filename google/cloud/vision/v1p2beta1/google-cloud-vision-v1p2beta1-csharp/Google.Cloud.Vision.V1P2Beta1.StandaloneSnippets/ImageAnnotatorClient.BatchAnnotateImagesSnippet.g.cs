@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Vision.V1P2Beta1.Snippets
 {
+    using Google.Cloud.Vision.V1P2Beta1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedImageAnnotatorClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchAnnotateImages</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BatchAnnotateImages()
         {
-            // Snippet: BatchAnnotateImages(IEnumerable<AnnotateImageRequest>, CallSettings)
             // Create client
             ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Cloud.Vision.V1P2Beta1.Snippets
             };
             // Make the request
             BatchAnnotateImagesResponse response = imageAnnotatorClient.BatchAnnotateImages(requests);
-            // End snippet
         }
     }
 }

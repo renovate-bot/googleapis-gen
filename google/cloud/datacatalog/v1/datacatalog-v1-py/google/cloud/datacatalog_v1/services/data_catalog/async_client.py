@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -39,6 +41,7 @@ from google.cloud.datacatalog_v1.types import timestamps
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import DataCatalogTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import DataCatalogGrpcAsyncIOTransport
 from .client import DataCatalogClient
@@ -66,14 +69,19 @@ class DataCatalogAsyncClient:
     parse_tag_template_field_path = staticmethod(DataCatalogClient.parse_tag_template_field_path)
     tag_template_field_enum_value_path = staticmethod(DataCatalogClient.tag_template_field_enum_value_path)
     parse_tag_template_field_enum_value_path = staticmethod(DataCatalogClient.parse_tag_template_field_enum_value_path)
+
     common_billing_account_path = staticmethod(DataCatalogClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(DataCatalogClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(DataCatalogClient.common_folder_path)
     parse_common_folder_path = staticmethod(DataCatalogClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(DataCatalogClient.common_organization_path)
     parse_common_organization_path = staticmethod(DataCatalogClient.parse_common_organization_path)
+
     common_project_path = staticmethod(DataCatalogClient.common_project_path)
     parse_common_project_path = staticmethod(DataCatalogClient.parse_common_project_path)
+
     common_location_path = staticmethod(DataCatalogClient.common_location_path)
     parse_common_location_path = staticmethod(DataCatalogClient.parse_common_location_path)
 
@@ -158,6 +166,7 @@ class DataCatalogAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = DataCatalogClient(
             credentials=credentials,
             transport=transport,
@@ -195,8 +204,7 @@ class DataCatalogAsyncClient:
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.SearchCatalogRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [SearchCatalog][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog].
             scope (:class:`google.cloud.datacatalog_v1.types.SearchCatalogRequest.Scope`):
                 Required. The scope of this search request. A ``scope``
@@ -228,6 +236,7 @@ class DataCatalogAsyncClient:
                 This corresponds to the ``query`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -255,6 +264,7 @@ class DataCatalogAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if scope is not None:
             request.scope = scope
         if query is not None:
@@ -265,7 +275,10 @@ class DataCatalogAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.search_catalog,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -328,8 +341,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.CreateEntryGroupRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateEntryGroup][google.cloud.datacatalog.v1.DataCatalog.CreateEntryGroup].
             parent (:class:`str`):
                 Required. The name of the project this entry group
@@ -362,6 +374,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``entry_group`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -388,6 +401,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if entry_group_id is not None:
@@ -435,8 +449,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.GetEntryGroupRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [GetEntryGroup][google.cloud.datacatalog.v1.DataCatalog.GetEntryGroup].
             name (:class:`str`):
                 Required. The name of the entry group. For example,
@@ -452,6 +465,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``read_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -478,6 +492,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if read_mask is not None:
@@ -488,7 +503,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_entry_group,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -533,8 +551,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.UpdateEntryGroupRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UpdateEntryGroup][google.cloud.datacatalog.v1.DataCatalog.UpdateEntryGroup].
             entry_group (:class:`google.cloud.datacatalog_v1.types.EntryGroup`):
                 Required. The updated entry group.
@@ -555,6 +572,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -581,6 +599,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if entry_group is not None:
             request.entry_group = entry_group
         if update_mask is not None:
@@ -630,8 +649,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.DeleteEntryGroupRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DeleteEntryGroup][google.cloud.datacatalog.v1.DataCatalog.DeleteEntryGroup].
             name (:class:`str`):
                 Required. The name of the entry group. For example,
@@ -640,6 +658,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -658,6 +677,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -697,8 +717,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.ListEntryGroupsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ListEntryGroups][google.cloud.datacatalog.v1.DataCatalog.ListEntryGroups].
             parent (:class:`str`):
                 Required. The name of the location that contains the
@@ -710,6 +729,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -737,6 +757,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -745,7 +766,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_entry_groups,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -805,8 +829,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.CreateEntryRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateEntry][google.cloud.datacatalog.v1.DataCatalog.CreateEntry].
             parent (:class:`str`):
                 Required. The name of the entry group this entry belongs
@@ -835,6 +858,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``entry`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -869,6 +893,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if entry_id is not None:
@@ -920,8 +945,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.UpdateEntryRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UpdateEntry][google.cloud.datacatalog.v1.DataCatalog.UpdateEntry].
             entry (:class:`google.cloud.datacatalog_v1.types.Entry`):
                 Required. The updated entry. The
@@ -965,6 +989,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -999,6 +1024,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if entry is not None:
             request.entry = entry
         if update_mask is not None:
@@ -1049,8 +1075,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.DeleteEntryRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DeleteEntry][google.cloud.datacatalog.v1.DataCatalog.DeleteEntry].
             name (:class:`str`):
                 Required. The name of the entry. Example:
@@ -1060,6 +1085,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1078,6 +1104,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1117,8 +1144,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.GetEntryRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [GetEntry][google.cloud.datacatalog.v1.DataCatalog.GetEntry].
             name (:class:`str`):
                 Required. The name of the entry. Example:
@@ -1128,6 +1154,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1162,6 +1189,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1170,7 +1198,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_entry,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -1212,9 +1243,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.LookupEntryRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [LookupEntry][google.cloud.datacatalog.v1.DataCatalog.LookupEntry].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1238,6 +1269,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         # Create or coerce a protobuf request object.
+
         request = datacatalog.LookupEntryRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1245,7 +1277,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.lookup_entry,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -1277,8 +1312,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.ListEntriesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ListEntries][google.cloud.datacatalog.v1.DataCatalog.ListEntries].
             parent (:class:`str`):
                 Required. The name of the entry group that contains the
@@ -1289,6 +1323,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1316,6 +1351,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -1324,7 +1360,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_entries,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -1379,8 +1418,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.CreateTagTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateTagTemplate][google.cloud.datacatalog.v1.DataCatalog.CreateTagTemplate].
             parent (:class:`str`):
                 Required. The name of the project and the template
@@ -1410,6 +1448,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``tag_template`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1441,6 +1480,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if tag_template_id is not None:
@@ -1487,8 +1527,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.GetTagTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [GetTagTemplate][google.cloud.datacatalog.v1.DataCatalog.GetTagTemplate].
             name (:class:`str`):
                 Required. The name of the tag template. Example:
@@ -1498,6 +1537,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1529,6 +1569,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1580,8 +1621,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.UpdateTagTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UpdateTagTemplate][google.cloud.datacatalog.v1.DataCatalog.UpdateTagTemplate].
             tag_template (:class:`google.cloud.datacatalog_v1.types.TagTemplate`):
                 Required. The template to update. The
@@ -1603,6 +1643,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1634,6 +1675,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if tag_template is not None:
             request.tag_template = tag_template
         if update_mask is not None:
@@ -1683,8 +1725,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.DeleteTagTemplateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DeleteTagTemplate][google.cloud.datacatalog.v1.DataCatalog.DeleteTagTemplate].
             name (:class:`str`):
                 Required. The name of the tag template to delete.
@@ -1704,6 +1745,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``force`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1722,6 +1764,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if force is not None:
@@ -1769,8 +1812,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.CreateTagTemplateFieldRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateTagTemplateField][google.cloud.datacatalog.v1.DataCatalog.CreateTagTemplateField].
             parent (:class:`str`):
                 Required. The name of the project and the template
@@ -1806,6 +1848,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``tag_template_field`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1830,6 +1873,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if tag_template_field_id is not None:
@@ -1883,8 +1927,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.UpdateTagTemplateFieldRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UpdateTagTemplateField][google.cloud.datacatalog.v1.DataCatalog.UpdateTagTemplateField].
             name (:class:`str`):
                 Required. The name of the tag template field. Example:
@@ -1922,6 +1965,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1946,6 +1990,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if tag_template_field is not None:
@@ -1997,8 +2042,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.RenameTagTemplateFieldRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [RenameTagTemplateField][google.cloud.datacatalog.v1.DataCatalog.RenameTagTemplateField].
             name (:class:`str`):
                 Required. The name of the tag template. Example:
@@ -2015,6 +2059,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``new_tag_template_field_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2039,6 +2084,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if new_tag_template_field_id is not None:
@@ -2085,8 +2131,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.RenameTagTemplateFieldEnumValueRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [RenameTagTemplateFieldEnumValue][google.cloud.datacatalog.v1.DataCatalog.RenameTagTemplateFieldEnumValue].
             name (:class:`str`):
                 Required. The name of the enum field value. Example:
@@ -2103,6 +2148,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``new_enum_value_display_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2127,6 +2173,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if new_enum_value_display_name is not None:
@@ -2177,8 +2224,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.DeleteTagTemplateFieldRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DeleteTagTemplateField][google.cloud.datacatalog.v1.DataCatalog.DeleteTagTemplateField].
             name (:class:`str`):
                 Required. The name of the tag template field to delete.
@@ -2198,6 +2244,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``force`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2216,6 +2263,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if force is not None:
@@ -2263,8 +2311,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.CreateTagRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateTag][google.cloud.datacatalog.v1.DataCatalog.CreateTag].
             parent (:class:`str`):
                 Required. The name of the resource to attach this tag
@@ -2284,6 +2331,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``tag`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2314,6 +2362,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if tag is not None:
@@ -2359,8 +2408,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.UpdateTagRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UpdateTag][google.cloud.datacatalog.v1.DataCatalog.UpdateTag].
             tag (:class:`google.cloud.datacatalog_v1.types.Tag`):
                 Required. The updated tag. The "name"
@@ -2382,6 +2430,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2412,6 +2461,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if tag is not None:
             request.tag = tag
         if update_mask is not None:
@@ -2456,8 +2506,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.DeleteTagRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DeleteTag][google.cloud.datacatalog.v1.DataCatalog.DeleteTag].
             name (:class:`str`):
                 Required. The name of the tag to delete. Example:
@@ -2467,6 +2516,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2485,6 +2535,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2524,8 +2575,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.ListTagsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ListTags][google.cloud.datacatalog.v1.DataCatalog.ListTags].
             parent (:class:`str`):
                 Required. The name of the Data Catalog resource to list
@@ -2541,6 +2591,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2568,6 +2619,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -2576,7 +2628,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_tags,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -2641,8 +2696,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.SetIamPolicyRequest`):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -2653,6 +2707,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2726,10 +2781,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.SetIamPolicyRequest(**request)
+
         elif not request:
             request = iam_policy.SetIamPolicyRequest(resource=resource, )
 
@@ -2792,8 +2848,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.GetIamPolicyRequest`):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (:class:`str`):
                 REQUIRED: The resource for which the
@@ -2804,6 +2859,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2877,10 +2933,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         # The request isn't a proto-plus wrapped type,
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.GetIamPolicyRequest(**request)
+
         elif not request:
             request = iam_policy.GetIamPolicyRequest(resource=resource, )
 
@@ -2889,7 +2946,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_iam_policy,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -2941,9 +3001,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2955,7 +3015,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 Response message for TestIamPermissions method.
         """
         # Create or coerce a protobuf request object.
-         # The request isn't a proto-plus wrapped type,
+
+        # The request isn't a proto-plus wrapped type,
         # so it must be constructed via keyword expansion.
         if isinstance(request, dict):
             request = iam_policy.TestIamPermissionsRequest(**request)
@@ -2986,6 +3047,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

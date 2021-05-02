@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedPublisherClientStandaloneSnippets
     {
         /// <summary>Snippet for Publish</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void Publish()
         {
-            // Snippet: Publish(string, IEnumerable<PubsubMessage>, CallSettings)
             // Create client
             PublisherClient publisherClient = PublisherClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
             };
             // Make the request
             PublishResponse response = publisherClient.Publish(topic, messages);
-            // End snippet
         }
     }
 }

@@ -16,6 +16,7 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using Google.Api.Gax;
     using Google.Rpc;
     using System;
@@ -23,9 +24,12 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
     public sealed partial class GeneratedCampaignDraftServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListCampaignDraftAsyncErrors</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListCampaignDraftAsyncErrors()
         {
-            // Snippet: ListCampaignDraftAsyncErrors(string, string, int?, CallSettings)
             // Create client
             CampaignDraftServiceClient campaignDraftServiceClient = CampaignDraftServiceClient.Create();
             // Initialize request argument(s)
@@ -64,7 +68,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

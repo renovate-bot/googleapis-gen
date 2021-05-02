@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
+
     public sealed partial class GeneratedContextsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteAllContexts</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteAllContexts()
         {
-            // Snippet: DeleteAllContexts(string, CallSettings)
             // Create client
             ContextsClient contextsClient = ContextsClient.Create();
             // Initialize request argument(s)
             string parent = "projects/[PROJECT]/agent/sessions/[SESSION]";
             // Make the request
             contextsClient.DeleteAllContexts(parent);
-            // End snippet
         }
     }
 }

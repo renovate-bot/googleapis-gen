@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -40,6 +42,7 @@ from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import CloudFunctionsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import CloudFunctionsServiceGrpcTransport
 from .transports.grpc_asyncio import CloudFunctionsServiceGrpcAsyncIOTransport
@@ -343,9 +346,9 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         Args:
             request (google.cloud.functions_v1.types.ListFunctionsRequest):
-                The request object.
-                Request for the `ListFunctions`
+                The request object. Request for the `ListFunctions`
                 method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -361,6 +364,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a functions.ListFunctionsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -413,8 +417,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         Args:
             request (google.cloud.functions_v1.types.GetFunctionRequest):
-                The request object.
-                Request for the `GetFunction`
+                The request object. Request for the `GetFunction`
                 method.
             name (str):
                 Required. The name of the function
@@ -423,6 +426,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -451,8 +455,10 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, functions.GetFunctionRequest):
             request = functions.GetFunctionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -494,8 +500,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         Args:
             request (google.cloud.functions_v1.types.CreateFunctionRequest):
-                The request object.
-                Request for the `CreateFunction`
+                The request object. Request for the `CreateFunction`
                 method.
             location (str):
                 Required. The project and location in which the function
@@ -510,6 +515,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
                 This corresponds to the ``function`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -539,8 +545,10 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, functions.CreateFunctionRequest):
             request = functions.CreateFunctionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if location is not None:
                 request.location = location
             if function is not None:
@@ -589,8 +597,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         Args:
             request (google.cloud.functions_v1.types.UpdateFunctionRequest):
-                The request object.
-                Request for the `UpdateFunction`
+                The request object. Request for the `UpdateFunction`
                 method.
             function (google.cloud.functions_v1.types.CloudFunction):
                 Required. New version of the
@@ -599,6 +606,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
                 This corresponds to the ``function`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -628,8 +636,10 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, functions.UpdateFunctionRequest):
             request = functions.UpdateFunctionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if function is not None:
                 request.function = function
 
@@ -679,8 +689,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         Args:
             request (google.cloud.functions_v1.types.DeleteFunctionRequest):
-                The request object.
-                Request for the `DeleteFunction`
+                The request object. Request for the `DeleteFunction`
                 method.
             name (str):
                 Required. The name of the function
@@ -689,6 +698,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -728,8 +738,10 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, functions.DeleteFunctionRequest):
             request = functions.DeleteFunctionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -780,8 +792,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         Args:
             request (google.cloud.functions_v1.types.CallFunctionRequest):
-                The request object.
-                Request for the `CallFunction`
+                The request object. Request for the `CallFunction`
                 method.
             name (str):
                 Required. The name of the function to
@@ -797,6 +808,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
                 This corresponds to the ``data`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -821,8 +833,10 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, functions.CallFunctionRequest):
             request = functions.CallFunctionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
             if data is not None:
@@ -889,9 +903,9 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         Args:
             request (google.cloud.functions_v1.types.GenerateUploadUrlRequest):
-                The request object.
-                Request of `GenerateSourceUploadUrl`
+                The request object. Request of `GenerateSourceUploadUrl`
                 method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -903,6 +917,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
                 Response of GenerateSourceUploadUrl method.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a functions.GenerateUploadUrlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -950,9 +965,9 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         Args:
             request (google.cloud.functions_v1.types.GenerateDownloadUrlRequest):
-                The request object.
-                Request of `GenerateDownloadUrl`
+                The request object. Request of `GenerateDownloadUrl`
                 method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -964,6 +979,7 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
                 Response of GenerateDownloadUrl method.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a functions.GenerateDownloadUrlRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1006,9 +1022,9 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1075,7 +1091,8 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-         if isinstance(request, dict):
+
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
@@ -1119,9 +1136,9 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1188,7 +1205,8 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-         if isinstance(request, dict):
+
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
@@ -1232,9 +1250,9 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1246,7 +1264,8 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
                 Response message for TestIamPermissions method.
         """
         # Create or coerce a protobuf request object.
-         if isinstance(request, dict):
+
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)
@@ -1276,6 +1295,8 @@ class CloudFunctionsServiceClient(metaclass=CloudFunctionsServiceClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

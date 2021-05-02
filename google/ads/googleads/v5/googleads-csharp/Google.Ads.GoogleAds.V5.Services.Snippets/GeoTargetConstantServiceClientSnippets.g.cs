@@ -119,7 +119,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             SuggestGeoTargetConstantsRequest request = new SuggestGeoTargetConstantsRequest
             {
                 LocationNames = new SuggestGeoTargetConstantsRequest.Types.LocationNames(),
-                GeoTargets = new SuggestGeoTargetConstantsRequest.Types.GeoTargets(),
                 Locale = "",
                 CountryCode = "",
             };
@@ -139,7 +138,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             SuggestGeoTargetConstantsRequest request = new SuggestGeoTargetConstantsRequest
             {
                 LocationNames = new SuggestGeoTargetConstantsRequest.Types.LocationNames(),
-                GeoTargets = new SuggestGeoTargetConstantsRequest.Types.GeoTargets(),
                 Locale = "",
                 CountryCode = "",
             };

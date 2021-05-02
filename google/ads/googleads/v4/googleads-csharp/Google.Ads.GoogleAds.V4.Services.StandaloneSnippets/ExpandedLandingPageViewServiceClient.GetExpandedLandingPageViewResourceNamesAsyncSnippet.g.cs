@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedExpandedLandingPageViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetExpandedLandingPageViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetExpandedLandingPageViewResourceNamesAsync()
         {
-            // Snippet: GetExpandedLandingPageViewAsync(ExpandedLandingPageViewName, CallSettings)
-            // Additional: GetExpandedLandingPageViewAsync(ExpandedLandingPageViewName, CancellationToken)
             // Create client
             ExpandedLandingPageViewServiceClient expandedLandingPageViewServiceClient = await ExpandedLandingPageViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             ExpandedLandingPageViewName resourceName = ExpandedLandingPageViewName.FromCustomerExpandedLandingPageView("[CUSTOMER]", "[EXPANDED_LANDING_PAGE_VIEW]");
             // Make the request
             ExpandedLandingPageView response = await expandedLandingPageViewServiceClient.GetExpandedLandingPageViewAsync(resourceName);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -30,6 +32,7 @@ from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
 from google.cloud.speech_v1.types import cloud_speech
 from google.rpc import status_pb2 as status  # type: ignore
+
 from .transports.base import SpeechTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import SpeechGrpcAsyncIOTransport
 from .client import SpeechClient
@@ -45,12 +48,16 @@ class SpeechAsyncClient:
 
     common_billing_account_path = staticmethod(SpeechClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(SpeechClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(SpeechClient.common_folder_path)
     parse_common_folder_path = staticmethod(SpeechClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(SpeechClient.common_organization_path)
     parse_common_organization_path = staticmethod(SpeechClient.parse_common_organization_path)
+
     common_project_path = staticmethod(SpeechClient.common_project_path)
     parse_common_project_path = staticmethod(SpeechClient.parse_common_project_path)
+
     common_location_path = staticmethod(SpeechClient.common_location_path)
     parse_common_location_path = staticmethod(SpeechClient.parse_common_location_path)
 
@@ -135,6 +142,7 @@ class SpeechAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = SpeechClient(
             credentials=credentials,
             transport=transport,
@@ -157,8 +165,7 @@ class SpeechAsyncClient:
 
         Args:
             request (:class:`google.cloud.speech_v1.types.RecognizeRequest`):
-                The request object.
-                The top-level message sent by the
+                The request object. The top-level message sent by the
                 client for the `Recognize` method.
             config (:class:`google.cloud.speech_v1.types.RecognitionConfig`):
                 Required. Provides information to the
@@ -175,6 +182,7 @@ class SpeechAsyncClient:
                 This corresponds to the ``audio`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -200,6 +208,7 @@ class SpeechAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if config is not None:
             request.config = config
         if audio is not None:
@@ -210,7 +219,10 @@ class SpeechAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.recognize,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -249,8 +261,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.speech_v1.types.LongRunningRecognizeRequest`):
-                The request object.
-                The top-level message sent by the
+                The request object. The top-level message sent by the
                 client for the `LongRunningRecognize` method.
             config (:class:`google.cloud.speech_v1.types.RecognitionConfig`):
                 Required. Provides information to the
@@ -267,6 +278,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``audio`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -297,6 +309,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if config is not None:
             request.config = config
         if audio is not None:
@@ -342,8 +355,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             requests (AsyncIterator[`google.cloud.speech_v1.types.StreamingRecognizeRequest`]):
-                The request object AsyncIterator.
-                The top-level message sent by the
+                The request object AsyncIterator. The top-level message sent by the
                 client for the `StreamingRecognize` method. Multiple
                 `StreamingRecognizeRequest` messages are sent. The first
                 message must contain a `streaming_config` message and
@@ -426,7 +438,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.streaming_recognize,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -446,6 +461,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

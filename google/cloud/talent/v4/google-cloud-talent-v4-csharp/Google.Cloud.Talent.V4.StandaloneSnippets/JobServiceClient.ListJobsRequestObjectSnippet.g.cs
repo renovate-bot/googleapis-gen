@@ -17,14 +17,18 @@
 namespace Google.Cloud.Talent.V4.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Talent.V4;
     using System;
 
     public sealed partial class GeneratedJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListJobs</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListJobsRequestObject()
         {
-            // Snippet: ListJobs(ListJobsRequest, CallSettings)
             // Create client
             JobServiceClient jobServiceClient = JobServiceClient.Create();
             // Initialize request argument(s)
@@ -68,7 +72,6 @@ namespace Google.Cloud.Talent.V4.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -36,34 +36,10 @@ from google.container_v1.services.cluster_manager import ClusterManagerAsyncClie
 from google.container_v1.services.cluster_manager import ClusterManagerClient
 from google.container_v1.services.cluster_manager import pagers
 from google.container_v1.services.cluster_manager import transports
-from google.container_v1.services.cluster_manager.transports.base import _API_CORE_VERSION
-from google.container_v1.services.cluster_manager.transports.base import _GOOGLE_AUTH_VERSION
 from google.container_v1.types import cluster_service
 from google.oauth2 import service_account
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -231,10 +207,12 @@ def test_cluster_manager_client_client_options(client_class, transport_class, tr
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (ClusterManagerClient, transports.ClusterManagerGrpcTransport, "grpc", "true"),
     (ClusterManagerAsyncClient, transports.ClusterManagerGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (ClusterManagerClient, transports.ClusterManagerGrpcTransport, "grpc", "false"),
     (ClusterManagerAsyncClient, transports.ClusterManagerGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(ClusterManagerClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ClusterManagerClient))
 @mock.patch.object(ClusterManagerAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ClusterManagerAsyncClient))
@@ -389,16 +367,21 @@ def test_list_clusters(transport: str = 'grpc', request_type=cluster_service.Lis
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.ListClustersResponse(
             missing_zones=['missing_zones_value'],
+
         )
+
         response = client.list_clusters(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.ListClustersRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.ListClustersResponse)
+
     assert response.missing_zones == ['missing_zones_value']
 
 
@@ -421,8 +404,8 @@ def test_list_clusters_empty_call():
         client.list_clusters()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.ListClustersRequest()
 
+        assert args[0] == cluster_service.ListClustersRequest()
 
 @pytest.mark.asyncio
 async def test_list_clusters_async(transport: str = 'grpc_asyncio', request_type=cluster_service.ListClustersRequest):
@@ -440,18 +423,21 @@ async def test_list_clusters_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.list_clusters),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ListClustersResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ListClustersResponse(
             missing_zones=['missing_zones_value'],
         ))
+
         response = await client.list_clusters(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.ListClustersRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.ListClustersResponse)
+
     assert response.missing_zones == ['missing_zones_value']
 
 
@@ -468,7 +454,6 @@ def test_list_clusters_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.ListClustersRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -476,6 +461,7 @@ def test_list_clusters_field_headers():
             type(client.transport.list_clusters),
             '__call__') as call:
         call.return_value = cluster_service.ListClustersResponse()
+
         client.list_clusters(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -500,7 +486,6 @@ async def test_list_clusters_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.ListClustersRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -508,6 +493,7 @@ async def test_list_clusters_field_headers_async():
             type(client.transport.list_clusters),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ListClustersResponse())
+
         await client.list_clusters(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -534,6 +520,7 @@ def test_list_clusters_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.ListClustersResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_clusters(
@@ -546,8 +533,11 @@ def test_list_clusters_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].parent == 'parent_value'
 
 
@@ -593,8 +583,11 @@ async def test_list_clusters_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].parent == 'parent_value'
 
 
@@ -632,70 +625,129 @@ def test_get_cluster(transport: str = 'grpc', request_type=cluster_service.GetCl
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Cluster(
             name='name_value',
+
             description='description_value',
+
             initial_node_count=1911,
+
             logging_service='logging_service_value',
+
             monitoring_service='monitoring_service_value',
+
             network='network_value',
+
             cluster_ipv4_cidr='cluster_ipv4_cidr_value',
+
             subnetwork='subnetwork_value',
+
             locations=['locations_value'],
+
             enable_kubernetes_alpha=True,
+
             label_fingerprint='label_fingerprint_value',
+
             self_link='self_link_value',
+
             zone='zone_value',
+
             endpoint='endpoint_value',
+
             initial_cluster_version='initial_cluster_version_value',
+
             current_master_version='current_master_version_value',
+
             current_node_version='current_node_version_value',
+
             create_time='create_time_value',
+
             status=cluster_service.Cluster.Status.PROVISIONING,
+
             status_message='status_message_value',
+
             node_ipv4_cidr_size=1955,
+
             services_ipv4_cidr='services_ipv4_cidr_value',
+
             instance_group_urls=['instance_group_urls_value'],
+
             current_node_count=1936,
+
             expire_time='expire_time_value',
+
             location='location_value',
+
             enable_tpu=True,
+
             tpu_ipv4_cidr_block='tpu_ipv4_cidr_block_value',
+
         )
+
         response = client.get_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.GetClusterRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Cluster)
+
     assert response.name == 'name_value'
+
     assert response.description == 'description_value'
+
     assert response.initial_node_count == 1911
+
     assert response.logging_service == 'logging_service_value'
+
     assert response.monitoring_service == 'monitoring_service_value'
+
     assert response.network == 'network_value'
+
     assert response.cluster_ipv4_cidr == 'cluster_ipv4_cidr_value'
+
     assert response.subnetwork == 'subnetwork_value'
+
     assert response.locations == ['locations_value']
+
     assert response.enable_kubernetes_alpha is True
+
     assert response.label_fingerprint == 'label_fingerprint_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.zone == 'zone_value'
+
     assert response.endpoint == 'endpoint_value'
+
     assert response.initial_cluster_version == 'initial_cluster_version_value'
+
     assert response.current_master_version == 'current_master_version_value'
+
     assert response.current_node_version == 'current_node_version_value'
+
     assert response.create_time == 'create_time_value'
+
     assert response.status == cluster_service.Cluster.Status.PROVISIONING
+
     assert response.status_message == 'status_message_value'
+
     assert response.node_ipv4_cidr_size == 1955
+
     assert response.services_ipv4_cidr == 'services_ipv4_cidr_value'
+
     assert response.instance_group_urls == ['instance_group_urls_value']
+
     assert response.current_node_count == 1936
+
     assert response.expire_time == 'expire_time_value'
+
     assert response.location == 'location_value'
+
     assert response.enable_tpu is True
+
     assert response.tpu_ipv4_cidr_block == 'tpu_ipv4_cidr_block_value'
 
 
@@ -718,8 +770,8 @@ def test_get_cluster_empty_call():
         client.get_cluster()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.GetClusterRequest()
 
+        assert args[0] == cluster_service.GetClusterRequest()
 
 @pytest.mark.asyncio
 async def test_get_cluster_async(transport: str = 'grpc_asyncio', request_type=cluster_service.GetClusterRequest):
@@ -737,7 +789,7 @@ async def test_get_cluster_async(transport: str = 'grpc_asyncio', request_type=c
             type(client.transport.get_cluster),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Cluster(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Cluster(
             name='name_value',
             description='description_value',
             initial_node_count=1911,
@@ -767,42 +819,72 @@ async def test_get_cluster_async(transport: str = 'grpc_asyncio', request_type=c
             enable_tpu=True,
             tpu_ipv4_cidr_block='tpu_ipv4_cidr_block_value',
         ))
+
         response = await client.get_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.GetClusterRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Cluster)
+
     assert response.name == 'name_value'
+
     assert response.description == 'description_value'
+
     assert response.initial_node_count == 1911
+
     assert response.logging_service == 'logging_service_value'
+
     assert response.monitoring_service == 'monitoring_service_value'
+
     assert response.network == 'network_value'
+
     assert response.cluster_ipv4_cidr == 'cluster_ipv4_cidr_value'
+
     assert response.subnetwork == 'subnetwork_value'
+
     assert response.locations == ['locations_value']
+
     assert response.enable_kubernetes_alpha is True
+
     assert response.label_fingerprint == 'label_fingerprint_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.zone == 'zone_value'
+
     assert response.endpoint == 'endpoint_value'
+
     assert response.initial_cluster_version == 'initial_cluster_version_value'
+
     assert response.current_master_version == 'current_master_version_value'
+
     assert response.current_node_version == 'current_node_version_value'
+
     assert response.create_time == 'create_time_value'
+
     assert response.status == cluster_service.Cluster.Status.PROVISIONING
+
     assert response.status_message == 'status_message_value'
+
     assert response.node_ipv4_cidr_size == 1955
+
     assert response.services_ipv4_cidr == 'services_ipv4_cidr_value'
+
     assert response.instance_group_urls == ['instance_group_urls_value']
+
     assert response.current_node_count == 1936
+
     assert response.expire_time == 'expire_time_value'
+
     assert response.location == 'location_value'
+
     assert response.enable_tpu is True
+
     assert response.tpu_ipv4_cidr_block == 'tpu_ipv4_cidr_block_value'
 
 
@@ -819,7 +901,6 @@ def test_get_cluster_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.GetClusterRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -827,6 +908,7 @@ def test_get_cluster_field_headers():
             type(client.transport.get_cluster),
             '__call__') as call:
         call.return_value = cluster_service.Cluster()
+
         client.get_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -851,7 +933,6 @@ async def test_get_cluster_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.GetClusterRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -859,6 +940,7 @@ async def test_get_cluster_field_headers_async():
             type(client.transport.get_cluster),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Cluster())
+
         await client.get_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -885,6 +967,7 @@ def test_get_cluster_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Cluster()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_cluster(
@@ -898,9 +981,13 @@ def test_get_cluster_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -948,9 +1035,13 @@ async def test_get_cluster_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -989,36 +1080,61 @@ def test_create_cluster(transport: str = 'grpc', request_type=cluster_service.Cr
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.create_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.CreateClusterRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -1041,8 +1157,8 @@ def test_create_cluster_empty_call():
         client.create_cluster()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.CreateClusterRequest()
 
+        assert args[0] == cluster_service.CreateClusterRequest()
 
 @pytest.mark.asyncio
 async def test_create_cluster_async(transport: str = 'grpc_asyncio', request_type=cluster_service.CreateClusterRequest):
@@ -1060,7 +1176,7 @@ async def test_create_cluster_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.create_cluster),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -1073,25 +1189,38 @@ async def test_create_cluster_async(transport: str = 'grpc_asyncio', request_typ
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.create_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.CreateClusterRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -1108,7 +1237,6 @@ def test_create_cluster_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.CreateClusterRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1116,6 +1244,7 @@ def test_create_cluster_field_headers():
             type(client.transport.create_cluster),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.create_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1140,7 +1269,6 @@ async def test_create_cluster_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.CreateClusterRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1148,6 +1276,7 @@ async def test_create_cluster_field_headers_async():
             type(client.transport.create_cluster),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.create_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1174,6 +1303,7 @@ def test_create_cluster_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_cluster(
@@ -1187,9 +1317,13 @@ def test_create_cluster_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster == cluster_service.Cluster(name='name_value')
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1237,9 +1371,13 @@ async def test_create_cluster_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster == cluster_service.Cluster(name='name_value')
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1278,36 +1416,61 @@ def test_update_cluster(transport: str = 'grpc', request_type=cluster_service.Up
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.update_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.UpdateClusterRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -1330,8 +1493,8 @@ def test_update_cluster_empty_call():
         client.update_cluster()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.UpdateClusterRequest()
 
+        assert args[0] == cluster_service.UpdateClusterRequest()
 
 @pytest.mark.asyncio
 async def test_update_cluster_async(transport: str = 'grpc_asyncio', request_type=cluster_service.UpdateClusterRequest):
@@ -1349,7 +1512,7 @@ async def test_update_cluster_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.update_cluster),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -1362,25 +1525,38 @@ async def test_update_cluster_async(transport: str = 'grpc_asyncio', request_typ
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.update_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.UpdateClusterRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -1397,7 +1573,6 @@ def test_update_cluster_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.UpdateClusterRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1405,6 +1580,7 @@ def test_update_cluster_field_headers():
             type(client.transport.update_cluster),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.update_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1429,7 +1605,6 @@ async def test_update_cluster_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.UpdateClusterRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1437,6 +1612,7 @@ async def test_update_cluster_field_headers_async():
             type(client.transport.update_cluster),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.update_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1463,6 +1639,7 @@ def test_update_cluster_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_cluster(
@@ -1477,10 +1654,15 @@ def test_update_cluster_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].update == cluster_service.ClusterUpdate(desired_node_version='desired_node_version_value')
+
         assert args[0].name == 'name_value'
 
 
@@ -1530,10 +1712,15 @@ async def test_update_cluster_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].update == cluster_service.ClusterUpdate(desired_node_version='desired_node_version_value')
+
         assert args[0].name == 'name_value'
 
 
@@ -1573,36 +1760,61 @@ def test_update_node_pool(transport: str = 'grpc', request_type=cluster_service.
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.update_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.UpdateNodePoolRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -1625,8 +1837,8 @@ def test_update_node_pool_empty_call():
         client.update_node_pool()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.UpdateNodePoolRequest()
 
+        assert args[0] == cluster_service.UpdateNodePoolRequest()
 
 @pytest.mark.asyncio
 async def test_update_node_pool_async(transport: str = 'grpc_asyncio', request_type=cluster_service.UpdateNodePoolRequest):
@@ -1644,7 +1856,7 @@ async def test_update_node_pool_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.update_node_pool),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -1657,25 +1869,38 @@ async def test_update_node_pool_async(transport: str = 'grpc_asyncio', request_t
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.update_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.UpdateNodePoolRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -1692,7 +1917,6 @@ def test_update_node_pool_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.UpdateNodePoolRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1700,6 +1924,7 @@ def test_update_node_pool_field_headers():
             type(client.transport.update_node_pool),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.update_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1724,7 +1949,6 @@ async def test_update_node_pool_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.UpdateNodePoolRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1732,6 +1956,7 @@ async def test_update_node_pool_field_headers_async():
             type(client.transport.update_node_pool),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.update_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1764,36 +1989,61 @@ def test_set_node_pool_autoscaling(transport: str = 'grpc', request_type=cluster
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.set_node_pool_autoscaling(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetNodePoolAutoscalingRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -1816,8 +2066,8 @@ def test_set_node_pool_autoscaling_empty_call():
         client.set_node_pool_autoscaling()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.SetNodePoolAutoscalingRequest()
 
+        assert args[0] == cluster_service.SetNodePoolAutoscalingRequest()
 
 @pytest.mark.asyncio
 async def test_set_node_pool_autoscaling_async(transport: str = 'grpc_asyncio', request_type=cluster_service.SetNodePoolAutoscalingRequest):
@@ -1835,7 +2085,7 @@ async def test_set_node_pool_autoscaling_async(transport: str = 'grpc_asyncio', 
             type(client.transport.set_node_pool_autoscaling),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -1848,25 +2098,38 @@ async def test_set_node_pool_autoscaling_async(transport: str = 'grpc_asyncio', 
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.set_node_pool_autoscaling(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetNodePoolAutoscalingRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -1883,7 +2146,6 @@ def test_set_node_pool_autoscaling_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetNodePoolAutoscalingRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1891,6 +2153,7 @@ def test_set_node_pool_autoscaling_field_headers():
             type(client.transport.set_node_pool_autoscaling),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.set_node_pool_autoscaling(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1915,7 +2178,6 @@ async def test_set_node_pool_autoscaling_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetNodePoolAutoscalingRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1923,6 +2185,7 @@ async def test_set_node_pool_autoscaling_field_headers_async():
             type(client.transport.set_node_pool_autoscaling),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.set_node_pool_autoscaling(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1955,36 +2218,61 @@ def test_set_logging_service(transport: str = 'grpc', request_type=cluster_servi
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.set_logging_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetLoggingServiceRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -2007,8 +2295,8 @@ def test_set_logging_service_empty_call():
         client.set_logging_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.SetLoggingServiceRequest()
 
+        assert args[0] == cluster_service.SetLoggingServiceRequest()
 
 @pytest.mark.asyncio
 async def test_set_logging_service_async(transport: str = 'grpc_asyncio', request_type=cluster_service.SetLoggingServiceRequest):
@@ -2026,7 +2314,7 @@ async def test_set_logging_service_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.set_logging_service),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -2039,25 +2327,38 @@ async def test_set_logging_service_async(transport: str = 'grpc_asyncio', reques
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.set_logging_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetLoggingServiceRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -2074,7 +2375,6 @@ def test_set_logging_service_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetLoggingServiceRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2082,6 +2382,7 @@ def test_set_logging_service_field_headers():
             type(client.transport.set_logging_service),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.set_logging_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2106,7 +2407,6 @@ async def test_set_logging_service_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetLoggingServiceRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2114,6 +2414,7 @@ async def test_set_logging_service_field_headers_async():
             type(client.transport.set_logging_service),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.set_logging_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2140,6 +2441,7 @@ def test_set_logging_service_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.set_logging_service(
@@ -2154,10 +2456,15 @@ def test_set_logging_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].logging_service == 'logging_service_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -2207,10 +2514,15 @@ async def test_set_logging_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].logging_service == 'logging_service_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -2250,36 +2562,61 @@ def test_set_monitoring_service(transport: str = 'grpc', request_type=cluster_se
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.set_monitoring_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetMonitoringServiceRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -2302,8 +2639,8 @@ def test_set_monitoring_service_empty_call():
         client.set_monitoring_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.SetMonitoringServiceRequest()
 
+        assert args[0] == cluster_service.SetMonitoringServiceRequest()
 
 @pytest.mark.asyncio
 async def test_set_monitoring_service_async(transport: str = 'grpc_asyncio', request_type=cluster_service.SetMonitoringServiceRequest):
@@ -2321,7 +2658,7 @@ async def test_set_monitoring_service_async(transport: str = 'grpc_asyncio', req
             type(client.transport.set_monitoring_service),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -2334,25 +2671,38 @@ async def test_set_monitoring_service_async(transport: str = 'grpc_asyncio', req
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.set_monitoring_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetMonitoringServiceRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -2369,7 +2719,6 @@ def test_set_monitoring_service_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetMonitoringServiceRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2377,6 +2726,7 @@ def test_set_monitoring_service_field_headers():
             type(client.transport.set_monitoring_service),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.set_monitoring_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2401,7 +2751,6 @@ async def test_set_monitoring_service_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetMonitoringServiceRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2409,6 +2758,7 @@ async def test_set_monitoring_service_field_headers_async():
             type(client.transport.set_monitoring_service),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.set_monitoring_service(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2435,6 +2785,7 @@ def test_set_monitoring_service_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.set_monitoring_service(
@@ -2449,10 +2800,15 @@ def test_set_monitoring_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].monitoring_service == 'monitoring_service_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -2502,10 +2858,15 @@ async def test_set_monitoring_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].monitoring_service == 'monitoring_service_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -2545,36 +2906,61 @@ def test_set_addons_config(transport: str = 'grpc', request_type=cluster_service
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.set_addons_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetAddonsConfigRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -2597,8 +2983,8 @@ def test_set_addons_config_empty_call():
         client.set_addons_config()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.SetAddonsConfigRequest()
 
+        assert args[0] == cluster_service.SetAddonsConfigRequest()
 
 @pytest.mark.asyncio
 async def test_set_addons_config_async(transport: str = 'grpc_asyncio', request_type=cluster_service.SetAddonsConfigRequest):
@@ -2616,7 +3002,7 @@ async def test_set_addons_config_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.set_addons_config),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -2629,25 +3015,38 @@ async def test_set_addons_config_async(transport: str = 'grpc_asyncio', request_
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.set_addons_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetAddonsConfigRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -2664,7 +3063,6 @@ def test_set_addons_config_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetAddonsConfigRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2672,6 +3070,7 @@ def test_set_addons_config_field_headers():
             type(client.transport.set_addons_config),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.set_addons_config(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2696,7 +3095,6 @@ async def test_set_addons_config_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetAddonsConfigRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2704,6 +3102,7 @@ async def test_set_addons_config_field_headers_async():
             type(client.transport.set_addons_config),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.set_addons_config(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2730,6 +3129,7 @@ def test_set_addons_config_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.set_addons_config(
@@ -2744,10 +3144,15 @@ def test_set_addons_config_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].addons_config == cluster_service.AddonsConfig(http_load_balancing=cluster_service.HttpLoadBalancing(disabled=True))
+
         assert args[0].name == 'name_value'
 
 
@@ -2797,10 +3202,15 @@ async def test_set_addons_config_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].addons_config == cluster_service.AddonsConfig(http_load_balancing=cluster_service.HttpLoadBalancing(disabled=True))
+
         assert args[0].name == 'name_value'
 
 
@@ -2840,36 +3250,61 @@ def test_set_locations(transport: str = 'grpc', request_type=cluster_service.Set
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.set_locations(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetLocationsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -2892,8 +3327,8 @@ def test_set_locations_empty_call():
         client.set_locations()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.SetLocationsRequest()
 
+        assert args[0] == cluster_service.SetLocationsRequest()
 
 @pytest.mark.asyncio
 async def test_set_locations_async(transport: str = 'grpc_asyncio', request_type=cluster_service.SetLocationsRequest):
@@ -2911,7 +3346,7 @@ async def test_set_locations_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.set_locations),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -2924,25 +3359,38 @@ async def test_set_locations_async(transport: str = 'grpc_asyncio', request_type
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.set_locations(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetLocationsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -2959,7 +3407,6 @@ def test_set_locations_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetLocationsRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2967,6 +3414,7 @@ def test_set_locations_field_headers():
             type(client.transport.set_locations),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.set_locations(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2991,7 +3439,6 @@ async def test_set_locations_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetLocationsRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2999,6 +3446,7 @@ async def test_set_locations_field_headers_async():
             type(client.transport.set_locations),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.set_locations(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3025,6 +3473,7 @@ def test_set_locations_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.set_locations(
@@ -3039,10 +3488,15 @@ def test_set_locations_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].locations == ['locations_value']
+
         assert args[0].name == 'name_value'
 
 
@@ -3092,10 +3546,15 @@ async def test_set_locations_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].locations == ['locations_value']
+
         assert args[0].name == 'name_value'
 
 
@@ -3135,36 +3594,61 @@ def test_update_master(transport: str = 'grpc', request_type=cluster_service.Upd
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.update_master(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.UpdateMasterRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -3187,8 +3671,8 @@ def test_update_master_empty_call():
         client.update_master()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.UpdateMasterRequest()
 
+        assert args[0] == cluster_service.UpdateMasterRequest()
 
 @pytest.mark.asyncio
 async def test_update_master_async(transport: str = 'grpc_asyncio', request_type=cluster_service.UpdateMasterRequest):
@@ -3206,7 +3690,7 @@ async def test_update_master_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.update_master),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -3219,25 +3703,38 @@ async def test_update_master_async(transport: str = 'grpc_asyncio', request_type
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.update_master(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.UpdateMasterRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -3254,7 +3751,6 @@ def test_update_master_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.UpdateMasterRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3262,6 +3758,7 @@ def test_update_master_field_headers():
             type(client.transport.update_master),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.update_master(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3286,7 +3783,6 @@ async def test_update_master_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.UpdateMasterRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3294,6 +3790,7 @@ async def test_update_master_field_headers_async():
             type(client.transport.update_master),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.update_master(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3320,6 +3817,7 @@ def test_update_master_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_master(
@@ -3334,10 +3832,15 @@ def test_update_master_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].master_version == 'master_version_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -3387,10 +3890,15 @@ async def test_update_master_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].master_version == 'master_version_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -3430,36 +3938,61 @@ def test_set_master_auth(transport: str = 'grpc', request_type=cluster_service.S
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.set_master_auth(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetMasterAuthRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -3482,8 +4015,8 @@ def test_set_master_auth_empty_call():
         client.set_master_auth()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.SetMasterAuthRequest()
 
+        assert args[0] == cluster_service.SetMasterAuthRequest()
 
 @pytest.mark.asyncio
 async def test_set_master_auth_async(transport: str = 'grpc_asyncio', request_type=cluster_service.SetMasterAuthRequest):
@@ -3501,7 +4034,7 @@ async def test_set_master_auth_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.set_master_auth),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -3514,25 +4047,38 @@ async def test_set_master_auth_async(transport: str = 'grpc_asyncio', request_ty
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.set_master_auth(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetMasterAuthRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -3549,7 +4095,6 @@ def test_set_master_auth_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetMasterAuthRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3557,6 +4102,7 @@ def test_set_master_auth_field_headers():
             type(client.transport.set_master_auth),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.set_master_auth(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3581,7 +4127,6 @@ async def test_set_master_auth_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetMasterAuthRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3589,6 +4134,7 @@ async def test_set_master_auth_field_headers_async():
             type(client.transport.set_master_auth),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.set_master_auth(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3621,36 +4167,61 @@ def test_delete_cluster(transport: str = 'grpc', request_type=cluster_service.De
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.delete_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.DeleteClusterRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -3673,8 +4244,8 @@ def test_delete_cluster_empty_call():
         client.delete_cluster()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.DeleteClusterRequest()
 
+        assert args[0] == cluster_service.DeleteClusterRequest()
 
 @pytest.mark.asyncio
 async def test_delete_cluster_async(transport: str = 'grpc_asyncio', request_type=cluster_service.DeleteClusterRequest):
@@ -3692,7 +4263,7 @@ async def test_delete_cluster_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.delete_cluster),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -3705,25 +4276,38 @@ async def test_delete_cluster_async(transport: str = 'grpc_asyncio', request_typ
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.delete_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.DeleteClusterRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -3740,7 +4324,6 @@ def test_delete_cluster_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.DeleteClusterRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3748,6 +4331,7 @@ def test_delete_cluster_field_headers():
             type(client.transport.delete_cluster),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.delete_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3772,7 +4356,6 @@ async def test_delete_cluster_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.DeleteClusterRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3780,6 +4363,7 @@ async def test_delete_cluster_field_headers_async():
             type(client.transport.delete_cluster),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.delete_cluster(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3806,6 +4390,7 @@ def test_delete_cluster_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_cluster(
@@ -3819,9 +4404,13 @@ def test_delete_cluster_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -3869,9 +4458,13 @@ async def test_delete_cluster_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -3910,16 +4503,21 @@ def test_list_operations(transport: str = 'grpc', request_type=cluster_service.L
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.ListOperationsResponse(
             missing_zones=['missing_zones_value'],
+
         )
+
         response = client.list_operations(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.ListOperationsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.ListOperationsResponse)
+
     assert response.missing_zones == ['missing_zones_value']
 
 
@@ -3942,8 +4540,8 @@ def test_list_operations_empty_call():
         client.list_operations()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.ListOperationsRequest()
 
+        assert args[0] == cluster_service.ListOperationsRequest()
 
 @pytest.mark.asyncio
 async def test_list_operations_async(transport: str = 'grpc_asyncio', request_type=cluster_service.ListOperationsRequest):
@@ -3961,18 +4559,21 @@ async def test_list_operations_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.list_operations),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ListOperationsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ListOperationsResponse(
             missing_zones=['missing_zones_value'],
         ))
+
         response = await client.list_operations(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.ListOperationsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.ListOperationsResponse)
+
     assert response.missing_zones == ['missing_zones_value']
 
 
@@ -3989,7 +4590,6 @@ def test_list_operations_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.ListOperationsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3997,6 +4597,7 @@ def test_list_operations_field_headers():
             type(client.transport.list_operations),
             '__call__') as call:
         call.return_value = cluster_service.ListOperationsResponse()
+
         client.list_operations(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4021,7 +4622,6 @@ async def test_list_operations_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.ListOperationsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4029,6 +4629,7 @@ async def test_list_operations_field_headers_async():
             type(client.transport.list_operations),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ListOperationsResponse())
+
         await client.list_operations(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4055,6 +4656,7 @@ def test_list_operations_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.ListOperationsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_operations(
@@ -4066,7 +4668,9 @@ def test_list_operations_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
 
 
@@ -4110,7 +4714,9 @@ async def test_list_operations_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
 
 
@@ -4147,36 +4753,61 @@ def test_get_operation(transport: str = 'grpc', request_type=cluster_service.Get
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.get_operation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.GetOperationRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -4199,8 +4830,8 @@ def test_get_operation_empty_call():
         client.get_operation()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.GetOperationRequest()
 
+        assert args[0] == cluster_service.GetOperationRequest()
 
 @pytest.mark.asyncio
 async def test_get_operation_async(transport: str = 'grpc_asyncio', request_type=cluster_service.GetOperationRequest):
@@ -4218,7 +4849,7 @@ async def test_get_operation_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.get_operation),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -4231,25 +4862,38 @@ async def test_get_operation_async(transport: str = 'grpc_asyncio', request_type
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.get_operation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.GetOperationRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -4266,7 +4910,6 @@ def test_get_operation_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.GetOperationRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4274,6 +4917,7 @@ def test_get_operation_field_headers():
             type(client.transport.get_operation),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.get_operation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4298,7 +4942,6 @@ async def test_get_operation_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.GetOperationRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4306,6 +4949,7 @@ async def test_get_operation_field_headers_async():
             type(client.transport.get_operation),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.get_operation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4332,6 +4976,7 @@ def test_get_operation_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_operation(
@@ -4345,9 +4990,13 @@ def test_get_operation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].operation_id == 'operation_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -4395,9 +5044,13 @@ async def test_get_operation_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].operation_id == 'operation_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -4435,11 +5088,13 @@ def test_cancel_operation(transport: str = 'grpc', request_type=cluster_service.
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.cancel_operation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.CancelOperationRequest()
 
     # Establish that the response is the type that we expect.
@@ -4465,8 +5120,8 @@ def test_cancel_operation_empty_call():
         client.cancel_operation()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.CancelOperationRequest()
 
+        assert args[0] == cluster_service.CancelOperationRequest()
 
 @pytest.mark.asyncio
 async def test_cancel_operation_async(transport: str = 'grpc_asyncio', request_type=cluster_service.CancelOperationRequest):
@@ -4485,11 +5140,13 @@ async def test_cancel_operation_async(transport: str = 'grpc_asyncio', request_t
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.cancel_operation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.CancelOperationRequest()
 
     # Establish that the response is the type that we expect.
@@ -4509,7 +5166,6 @@ def test_cancel_operation_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.CancelOperationRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4517,6 +5173,7 @@ def test_cancel_operation_field_headers():
             type(client.transport.cancel_operation),
             '__call__') as call:
         call.return_value = None
+
         client.cancel_operation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4541,7 +5198,6 @@ async def test_cancel_operation_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.CancelOperationRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4549,6 +5205,7 @@ async def test_cancel_operation_field_headers_async():
             type(client.transport.cancel_operation),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.cancel_operation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4575,6 +5232,7 @@ def test_cancel_operation_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.cancel_operation(
@@ -4588,9 +5246,13 @@ def test_cancel_operation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].operation_id == 'operation_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -4638,9 +5300,13 @@ async def test_cancel_operation_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].operation_id == 'operation_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -4679,24 +5345,37 @@ def test_get_server_config(transport: str = 'grpc', request_type=cluster_service
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.ServerConfig(
             default_cluster_version='default_cluster_version_value',
+
             valid_node_versions=['valid_node_versions_value'],
+
             default_image_type='default_image_type_value',
+
             valid_image_types=['valid_image_types_value'],
+
             valid_master_versions=['valid_master_versions_value'],
+
         )
+
         response = client.get_server_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.GetServerConfigRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.ServerConfig)
+
     assert response.default_cluster_version == 'default_cluster_version_value'
+
     assert response.valid_node_versions == ['valid_node_versions_value']
+
     assert response.default_image_type == 'default_image_type_value'
+
     assert response.valid_image_types == ['valid_image_types_value']
+
     assert response.valid_master_versions == ['valid_master_versions_value']
 
 
@@ -4719,8 +5398,8 @@ def test_get_server_config_empty_call():
         client.get_server_config()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.GetServerConfigRequest()
 
+        assert args[0] == cluster_service.GetServerConfigRequest()
 
 @pytest.mark.asyncio
 async def test_get_server_config_async(transport: str = 'grpc_asyncio', request_type=cluster_service.GetServerConfigRequest):
@@ -4738,26 +5417,33 @@ async def test_get_server_config_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.get_server_config),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ServerConfig(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ServerConfig(
             default_cluster_version='default_cluster_version_value',
             valid_node_versions=['valid_node_versions_value'],
             default_image_type='default_image_type_value',
             valid_image_types=['valid_image_types_value'],
             valid_master_versions=['valid_master_versions_value'],
         ))
+
         response = await client.get_server_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.GetServerConfigRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.ServerConfig)
+
     assert response.default_cluster_version == 'default_cluster_version_value'
+
     assert response.valid_node_versions == ['valid_node_versions_value']
+
     assert response.default_image_type == 'default_image_type_value'
+
     assert response.valid_image_types == ['valid_image_types_value']
+
     assert response.valid_master_versions == ['valid_master_versions_value']
 
 
@@ -4774,7 +5460,6 @@ def test_get_server_config_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.GetServerConfigRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4782,6 +5467,7 @@ def test_get_server_config_field_headers():
             type(client.transport.get_server_config),
             '__call__') as call:
         call.return_value = cluster_service.ServerConfig()
+
         client.get_server_config(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4806,7 +5492,6 @@ async def test_get_server_config_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.GetServerConfigRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4814,6 +5499,7 @@ async def test_get_server_config_field_headers_async():
             type(client.transport.get_server_config),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ServerConfig())
+
         await client.get_server_config(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4840,6 +5526,7 @@ def test_get_server_config_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.ServerConfig()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_server_config(
@@ -4852,8 +5539,11 @@ def test_get_server_config_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -4899,8 +5589,11 @@ async def test_get_server_config_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -4938,14 +5631,17 @@ def test_get_json_web_keys(transport: str = 'grpc', request_type=cluster_service
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.GetJSONWebKeysResponse(
         )
+
         response = client.get_json_web_keys(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.GetJSONWebKeysRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.GetJSONWebKeysResponse)
 
 
@@ -4968,8 +5664,8 @@ def test_get_json_web_keys_empty_call():
         client.get_json_web_keys()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.GetJSONWebKeysRequest()
 
+        assert args[0] == cluster_service.GetJSONWebKeysRequest()
 
 @pytest.mark.asyncio
 async def test_get_json_web_keys_async(transport: str = 'grpc_asyncio', request_type=cluster_service.GetJSONWebKeysRequest):
@@ -4987,13 +5683,15 @@ async def test_get_json_web_keys_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.get_json_web_keys),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.GetJSONWebKeysResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.GetJSONWebKeysResponse(
         ))
+
         response = await client.get_json_web_keys(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.GetJSONWebKeysRequest()
 
     # Establish that the response is the type that we expect.
@@ -5013,7 +5711,6 @@ def test_get_json_web_keys_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.GetJSONWebKeysRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5021,6 +5718,7 @@ def test_get_json_web_keys_field_headers():
             type(client.transport.get_json_web_keys),
             '__call__') as call:
         call.return_value = cluster_service.GetJSONWebKeysResponse()
+
         client.get_json_web_keys(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5045,7 +5743,6 @@ async def test_get_json_web_keys_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.GetJSONWebKeysRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5053,6 +5750,7 @@ async def test_get_json_web_keys_field_headers_async():
             type(client.transport.get_json_web_keys),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.GetJSONWebKeysResponse())
+
         await client.get_json_web_keys(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5085,14 +5783,17 @@ def test_list_node_pools(transport: str = 'grpc', request_type=cluster_service.L
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.ListNodePoolsResponse(
         )
+
         response = client.list_node_pools(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.ListNodePoolsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.ListNodePoolsResponse)
 
 
@@ -5115,8 +5816,8 @@ def test_list_node_pools_empty_call():
         client.list_node_pools()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.ListNodePoolsRequest()
 
+        assert args[0] == cluster_service.ListNodePoolsRequest()
 
 @pytest.mark.asyncio
 async def test_list_node_pools_async(transport: str = 'grpc_asyncio', request_type=cluster_service.ListNodePoolsRequest):
@@ -5134,13 +5835,15 @@ async def test_list_node_pools_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.list_node_pools),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ListNodePoolsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ListNodePoolsResponse(
         ))
+
         response = await client.list_node_pools(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.ListNodePoolsRequest()
 
     # Establish that the response is the type that we expect.
@@ -5160,7 +5863,6 @@ def test_list_node_pools_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.ListNodePoolsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5168,6 +5870,7 @@ def test_list_node_pools_field_headers():
             type(client.transport.list_node_pools),
             '__call__') as call:
         call.return_value = cluster_service.ListNodePoolsResponse()
+
         client.list_node_pools(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5192,7 +5895,6 @@ async def test_list_node_pools_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.ListNodePoolsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5200,6 +5902,7 @@ async def test_list_node_pools_field_headers_async():
             type(client.transport.list_node_pools),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ListNodePoolsResponse())
+
         await client.list_node_pools(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5226,6 +5929,7 @@ def test_list_node_pools_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.ListNodePoolsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_node_pools(
@@ -5239,9 +5943,13 @@ def test_list_node_pools_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].parent == 'parent_value'
 
 
@@ -5289,9 +5997,13 @@ async def test_list_node_pools_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].parent == 'parent_value'
 
 
@@ -5330,32 +6042,53 @@ def test_get_node_pool(transport: str = 'grpc', request_type=cluster_service.Get
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.NodePool(
             name='name_value',
+
             initial_node_count=1911,
+
             locations=['locations_value'],
+
             self_link='self_link_value',
+
             version='version_value',
+
             instance_group_urls=['instance_group_urls_value'],
+
             status=cluster_service.NodePool.Status.PROVISIONING,
+
             status_message='status_message_value',
+
             pod_ipv4_cidr_size=1856,
+
         )
+
         response = client.get_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.GetNodePoolRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.NodePool)
+
     assert response.name == 'name_value'
+
     assert response.initial_node_count == 1911
+
     assert response.locations == ['locations_value']
+
     assert response.self_link == 'self_link_value'
+
     assert response.version == 'version_value'
+
     assert response.instance_group_urls == ['instance_group_urls_value']
+
     assert response.status == cluster_service.NodePool.Status.PROVISIONING
+
     assert response.status_message == 'status_message_value'
+
     assert response.pod_ipv4_cidr_size == 1856
 
 
@@ -5378,8 +6111,8 @@ def test_get_node_pool_empty_call():
         client.get_node_pool()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.GetNodePoolRequest()
 
+        assert args[0] == cluster_service.GetNodePoolRequest()
 
 @pytest.mark.asyncio
 async def test_get_node_pool_async(transport: str = 'grpc_asyncio', request_type=cluster_service.GetNodePoolRequest):
@@ -5397,7 +6130,7 @@ async def test_get_node_pool_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.get_node_pool),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.NodePool(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.NodePool(
             name='name_value',
             initial_node_count=1911,
             locations=['locations_value'],
@@ -5408,23 +6141,34 @@ async def test_get_node_pool_async(transport: str = 'grpc_asyncio', request_type
             status_message='status_message_value',
             pod_ipv4_cidr_size=1856,
         ))
+
         response = await client.get_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.GetNodePoolRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.NodePool)
+
     assert response.name == 'name_value'
+
     assert response.initial_node_count == 1911
+
     assert response.locations == ['locations_value']
+
     assert response.self_link == 'self_link_value'
+
     assert response.version == 'version_value'
+
     assert response.instance_group_urls == ['instance_group_urls_value']
+
     assert response.status == cluster_service.NodePool.Status.PROVISIONING
+
     assert response.status_message == 'status_message_value'
+
     assert response.pod_ipv4_cidr_size == 1856
 
 
@@ -5441,7 +6185,6 @@ def test_get_node_pool_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.GetNodePoolRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5449,6 +6192,7 @@ def test_get_node_pool_field_headers():
             type(client.transport.get_node_pool),
             '__call__') as call:
         call.return_value = cluster_service.NodePool()
+
         client.get_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5473,7 +6217,6 @@ async def test_get_node_pool_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.GetNodePoolRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5481,6 +6224,7 @@ async def test_get_node_pool_field_headers_async():
             type(client.transport.get_node_pool),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.NodePool())
+
         await client.get_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5507,6 +6251,7 @@ def test_get_node_pool_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.NodePool()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_node_pool(
@@ -5521,10 +6266,15 @@ def test_get_node_pool_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].node_pool_id == 'node_pool_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -5574,10 +6324,15 @@ async def test_get_node_pool_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].node_pool_id == 'node_pool_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -5617,36 +6372,61 @@ def test_create_node_pool(transport: str = 'grpc', request_type=cluster_service.
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.create_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.CreateNodePoolRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -5669,8 +6449,8 @@ def test_create_node_pool_empty_call():
         client.create_node_pool()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.CreateNodePoolRequest()
 
+        assert args[0] == cluster_service.CreateNodePoolRequest()
 
 @pytest.mark.asyncio
 async def test_create_node_pool_async(transport: str = 'grpc_asyncio', request_type=cluster_service.CreateNodePoolRequest):
@@ -5688,7 +6468,7 @@ async def test_create_node_pool_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.create_node_pool),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -5701,25 +6481,38 @@ async def test_create_node_pool_async(transport: str = 'grpc_asyncio', request_t
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.create_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.CreateNodePoolRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -5736,7 +6529,6 @@ def test_create_node_pool_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.CreateNodePoolRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5744,6 +6536,7 @@ def test_create_node_pool_field_headers():
             type(client.transport.create_node_pool),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.create_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5768,7 +6561,6 @@ async def test_create_node_pool_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.CreateNodePoolRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5776,6 +6568,7 @@ async def test_create_node_pool_field_headers_async():
             type(client.transport.create_node_pool),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.create_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -5802,6 +6595,7 @@ def test_create_node_pool_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_node_pool(
@@ -5816,10 +6610,15 @@ def test_create_node_pool_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].node_pool == cluster_service.NodePool(name='name_value')
+
         assert args[0].parent == 'parent_value'
 
 
@@ -5869,10 +6668,15 @@ async def test_create_node_pool_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].node_pool == cluster_service.NodePool(name='name_value')
+
         assert args[0].parent == 'parent_value'
 
 
@@ -5912,36 +6716,61 @@ def test_delete_node_pool(transport: str = 'grpc', request_type=cluster_service.
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.delete_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.DeleteNodePoolRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -5964,8 +6793,8 @@ def test_delete_node_pool_empty_call():
         client.delete_node_pool()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.DeleteNodePoolRequest()
 
+        assert args[0] == cluster_service.DeleteNodePoolRequest()
 
 @pytest.mark.asyncio
 async def test_delete_node_pool_async(transport: str = 'grpc_asyncio', request_type=cluster_service.DeleteNodePoolRequest):
@@ -5983,7 +6812,7 @@ async def test_delete_node_pool_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.delete_node_pool),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -5996,25 +6825,38 @@ async def test_delete_node_pool_async(transport: str = 'grpc_asyncio', request_t
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.delete_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.DeleteNodePoolRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -6031,7 +6873,6 @@ def test_delete_node_pool_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.DeleteNodePoolRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6039,6 +6880,7 @@ def test_delete_node_pool_field_headers():
             type(client.transport.delete_node_pool),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.delete_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6063,7 +6905,6 @@ async def test_delete_node_pool_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.DeleteNodePoolRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6071,6 +6912,7 @@ async def test_delete_node_pool_field_headers_async():
             type(client.transport.delete_node_pool),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.delete_node_pool(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6097,6 +6939,7 @@ def test_delete_node_pool_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_node_pool(
@@ -6111,10 +6954,15 @@ def test_delete_node_pool_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].node_pool_id == 'node_pool_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -6164,10 +7012,15 @@ async def test_delete_node_pool_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].node_pool_id == 'node_pool_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -6207,36 +7060,61 @@ def test_rollback_node_pool_upgrade(transport: str = 'grpc', request_type=cluste
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.rollback_node_pool_upgrade(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.RollbackNodePoolUpgradeRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -6259,8 +7137,8 @@ def test_rollback_node_pool_upgrade_empty_call():
         client.rollback_node_pool_upgrade()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.RollbackNodePoolUpgradeRequest()
 
+        assert args[0] == cluster_service.RollbackNodePoolUpgradeRequest()
 
 @pytest.mark.asyncio
 async def test_rollback_node_pool_upgrade_async(transport: str = 'grpc_asyncio', request_type=cluster_service.RollbackNodePoolUpgradeRequest):
@@ -6278,7 +7156,7 @@ async def test_rollback_node_pool_upgrade_async(transport: str = 'grpc_asyncio',
             type(client.transport.rollback_node_pool_upgrade),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -6291,25 +7169,38 @@ async def test_rollback_node_pool_upgrade_async(transport: str = 'grpc_asyncio',
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.rollback_node_pool_upgrade(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.RollbackNodePoolUpgradeRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -6326,7 +7217,6 @@ def test_rollback_node_pool_upgrade_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.RollbackNodePoolUpgradeRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6334,6 +7224,7 @@ def test_rollback_node_pool_upgrade_field_headers():
             type(client.transport.rollback_node_pool_upgrade),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.rollback_node_pool_upgrade(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6358,7 +7249,6 @@ async def test_rollback_node_pool_upgrade_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.RollbackNodePoolUpgradeRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6366,6 +7256,7 @@ async def test_rollback_node_pool_upgrade_field_headers_async():
             type(client.transport.rollback_node_pool_upgrade),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.rollback_node_pool_upgrade(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6392,6 +7283,7 @@ def test_rollback_node_pool_upgrade_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.rollback_node_pool_upgrade(
@@ -6406,10 +7298,15 @@ def test_rollback_node_pool_upgrade_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].node_pool_id == 'node_pool_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -6459,10 +7356,15 @@ async def test_rollback_node_pool_upgrade_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].node_pool_id == 'node_pool_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -6502,36 +7404,61 @@ def test_set_node_pool_management(transport: str = 'grpc', request_type=cluster_
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.set_node_pool_management(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetNodePoolManagementRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -6554,8 +7481,8 @@ def test_set_node_pool_management_empty_call():
         client.set_node_pool_management()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.SetNodePoolManagementRequest()
 
+        assert args[0] == cluster_service.SetNodePoolManagementRequest()
 
 @pytest.mark.asyncio
 async def test_set_node_pool_management_async(transport: str = 'grpc_asyncio', request_type=cluster_service.SetNodePoolManagementRequest):
@@ -6573,7 +7500,7 @@ async def test_set_node_pool_management_async(transport: str = 'grpc_asyncio', r
             type(client.transport.set_node_pool_management),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -6586,25 +7513,38 @@ async def test_set_node_pool_management_async(transport: str = 'grpc_asyncio', r
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.set_node_pool_management(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetNodePoolManagementRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -6621,7 +7561,6 @@ def test_set_node_pool_management_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetNodePoolManagementRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6629,6 +7568,7 @@ def test_set_node_pool_management_field_headers():
             type(client.transport.set_node_pool_management),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.set_node_pool_management(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6653,7 +7593,6 @@ async def test_set_node_pool_management_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetNodePoolManagementRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6661,6 +7600,7 @@ async def test_set_node_pool_management_field_headers_async():
             type(client.transport.set_node_pool_management),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.set_node_pool_management(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6693,36 +7633,61 @@ def test_set_labels(transport: str = 'grpc', request_type=cluster_service.SetLab
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.set_labels(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetLabelsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -6745,8 +7710,8 @@ def test_set_labels_empty_call():
         client.set_labels()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.SetLabelsRequest()
 
+        assert args[0] == cluster_service.SetLabelsRequest()
 
 @pytest.mark.asyncio
 async def test_set_labels_async(transport: str = 'grpc_asyncio', request_type=cluster_service.SetLabelsRequest):
@@ -6764,7 +7729,7 @@ async def test_set_labels_async(transport: str = 'grpc_asyncio', request_type=cl
             type(client.transport.set_labels),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -6777,25 +7742,38 @@ async def test_set_labels_async(transport: str = 'grpc_asyncio', request_type=cl
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.set_labels(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetLabelsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -6812,7 +7790,6 @@ def test_set_labels_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetLabelsRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6820,6 +7797,7 @@ def test_set_labels_field_headers():
             type(client.transport.set_labels),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.set_labels(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6844,7 +7822,6 @@ async def test_set_labels_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetLabelsRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6852,6 +7829,7 @@ async def test_set_labels_field_headers_async():
             type(client.transport.set_labels),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.set_labels(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -6884,36 +7862,61 @@ def test_set_legacy_abac(transport: str = 'grpc', request_type=cluster_service.S
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.set_legacy_abac(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetLegacyAbacRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -6936,8 +7939,8 @@ def test_set_legacy_abac_empty_call():
         client.set_legacy_abac()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.SetLegacyAbacRequest()
 
+        assert args[0] == cluster_service.SetLegacyAbacRequest()
 
 @pytest.mark.asyncio
 async def test_set_legacy_abac_async(transport: str = 'grpc_asyncio', request_type=cluster_service.SetLegacyAbacRequest):
@@ -6955,7 +7958,7 @@ async def test_set_legacy_abac_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.set_legacy_abac),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -6968,25 +7971,38 @@ async def test_set_legacy_abac_async(transport: str = 'grpc_asyncio', request_ty
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.set_legacy_abac(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetLegacyAbacRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -7003,7 +8019,6 @@ def test_set_legacy_abac_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetLegacyAbacRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7011,6 +8026,7 @@ def test_set_legacy_abac_field_headers():
             type(client.transport.set_legacy_abac),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.set_legacy_abac(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7035,7 +8051,6 @@ async def test_set_legacy_abac_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetLegacyAbacRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7043,6 +8058,7 @@ async def test_set_legacy_abac_field_headers_async():
             type(client.transport.set_legacy_abac),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.set_legacy_abac(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7069,6 +8085,7 @@ def test_set_legacy_abac_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.set_legacy_abac(
@@ -7083,10 +8100,15 @@ def test_set_legacy_abac_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].enabled == True
+
         assert args[0].name == 'name_value'
 
 
@@ -7136,10 +8158,15 @@ async def test_set_legacy_abac_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].enabled == True
+
         assert args[0].name == 'name_value'
 
 
@@ -7179,36 +8206,61 @@ def test_start_ip_rotation(transport: str = 'grpc', request_type=cluster_service
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.start_ip_rotation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.StartIPRotationRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -7231,8 +8283,8 @@ def test_start_ip_rotation_empty_call():
         client.start_ip_rotation()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.StartIPRotationRequest()
 
+        assert args[0] == cluster_service.StartIPRotationRequest()
 
 @pytest.mark.asyncio
 async def test_start_ip_rotation_async(transport: str = 'grpc_asyncio', request_type=cluster_service.StartIPRotationRequest):
@@ -7250,7 +8302,7 @@ async def test_start_ip_rotation_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.start_ip_rotation),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -7263,25 +8315,38 @@ async def test_start_ip_rotation_async(transport: str = 'grpc_asyncio', request_
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.start_ip_rotation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.StartIPRotationRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -7298,7 +8363,6 @@ def test_start_ip_rotation_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.StartIPRotationRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7306,6 +8370,7 @@ def test_start_ip_rotation_field_headers():
             type(client.transport.start_ip_rotation),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.start_ip_rotation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7330,7 +8395,6 @@ async def test_start_ip_rotation_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.StartIPRotationRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7338,6 +8402,7 @@ async def test_start_ip_rotation_field_headers_async():
             type(client.transport.start_ip_rotation),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.start_ip_rotation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7364,6 +8429,7 @@ def test_start_ip_rotation_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.start_ip_rotation(
@@ -7377,9 +8443,13 @@ def test_start_ip_rotation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -7427,9 +8497,13 @@ async def test_start_ip_rotation_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -7468,36 +8542,61 @@ def test_complete_ip_rotation(transport: str = 'grpc', request_type=cluster_serv
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.complete_ip_rotation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.CompleteIPRotationRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -7520,8 +8619,8 @@ def test_complete_ip_rotation_empty_call():
         client.complete_ip_rotation()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.CompleteIPRotationRequest()
 
+        assert args[0] == cluster_service.CompleteIPRotationRequest()
 
 @pytest.mark.asyncio
 async def test_complete_ip_rotation_async(transport: str = 'grpc_asyncio', request_type=cluster_service.CompleteIPRotationRequest):
@@ -7539,7 +8638,7 @@ async def test_complete_ip_rotation_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.complete_ip_rotation),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -7552,25 +8651,38 @@ async def test_complete_ip_rotation_async(transport: str = 'grpc_asyncio', reque
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.complete_ip_rotation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.CompleteIPRotationRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -7587,7 +8699,6 @@ def test_complete_ip_rotation_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.CompleteIPRotationRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7595,6 +8706,7 @@ def test_complete_ip_rotation_field_headers():
             type(client.transport.complete_ip_rotation),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.complete_ip_rotation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7619,7 +8731,6 @@ async def test_complete_ip_rotation_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.CompleteIPRotationRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7627,6 +8738,7 @@ async def test_complete_ip_rotation_field_headers_async():
             type(client.transport.complete_ip_rotation),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.complete_ip_rotation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7653,6 +8765,7 @@ def test_complete_ip_rotation_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.complete_ip_rotation(
@@ -7666,9 +8779,13 @@ def test_complete_ip_rotation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -7716,9 +8833,13 @@ async def test_complete_ip_rotation_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].name == 'name_value'
 
 
@@ -7757,36 +8878,61 @@ def test_set_node_pool_size(transport: str = 'grpc', request_type=cluster_servic
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.set_node_pool_size(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetNodePoolSizeRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -7809,8 +8955,8 @@ def test_set_node_pool_size_empty_call():
         client.set_node_pool_size()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.SetNodePoolSizeRequest()
 
+        assert args[0] == cluster_service.SetNodePoolSizeRequest()
 
 @pytest.mark.asyncio
 async def test_set_node_pool_size_async(transport: str = 'grpc_asyncio', request_type=cluster_service.SetNodePoolSizeRequest):
@@ -7828,7 +8974,7 @@ async def test_set_node_pool_size_async(transport: str = 'grpc_asyncio', request
             type(client.transport.set_node_pool_size),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -7841,25 +8987,38 @@ async def test_set_node_pool_size_async(transport: str = 'grpc_asyncio', request
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.set_node_pool_size(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetNodePoolSizeRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -7876,7 +9035,6 @@ def test_set_node_pool_size_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetNodePoolSizeRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7884,6 +9042,7 @@ def test_set_node_pool_size_field_headers():
             type(client.transport.set_node_pool_size),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.set_node_pool_size(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7908,7 +9067,6 @@ async def test_set_node_pool_size_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetNodePoolSizeRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7916,6 +9074,7 @@ async def test_set_node_pool_size_field_headers_async():
             type(client.transport.set_node_pool_size),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.set_node_pool_size(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -7948,36 +9107,61 @@ def test_set_network_policy(transport: str = 'grpc', request_type=cluster_servic
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.set_network_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetNetworkPolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -8000,8 +9184,8 @@ def test_set_network_policy_empty_call():
         client.set_network_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.SetNetworkPolicyRequest()
 
+        assert args[0] == cluster_service.SetNetworkPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_set_network_policy_async(transport: str = 'grpc_asyncio', request_type=cluster_service.SetNetworkPolicyRequest):
@@ -8019,7 +9203,7 @@ async def test_set_network_policy_async(transport: str = 'grpc_asyncio', request
             type(client.transport.set_network_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -8032,25 +9216,38 @@ async def test_set_network_policy_async(transport: str = 'grpc_asyncio', request
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.set_network_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetNetworkPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -8067,7 +9264,6 @@ def test_set_network_policy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetNetworkPolicyRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -8075,6 +9271,7 @@ def test_set_network_policy_field_headers():
             type(client.transport.set_network_policy),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.set_network_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -8099,7 +9296,6 @@ async def test_set_network_policy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetNetworkPolicyRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -8107,6 +9303,7 @@ async def test_set_network_policy_field_headers_async():
             type(client.transport.set_network_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.set_network_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -8133,6 +9330,7 @@ def test_set_network_policy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.set_network_policy(
@@ -8147,10 +9345,15 @@ def test_set_network_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].network_policy == cluster_service.NetworkPolicy(provider=cluster_service.NetworkPolicy.Provider.CALICO)
+
         assert args[0].name == 'name_value'
 
 
@@ -8200,10 +9403,15 @@ async def test_set_network_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].network_policy == cluster_service.NetworkPolicy(provider=cluster_service.NetworkPolicy.Provider.CALICO)
+
         assert args[0].name == 'name_value'
 
 
@@ -8243,36 +9451,61 @@ def test_set_maintenance_policy(transport: str = 'grpc', request_type=cluster_se
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation(
             name='name_value',
+
             zone='zone_value',
+
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
+
             status=cluster_service.Operation.Status.PENDING,
+
             detail='detail_value',
+
             status_message='status_message_value',
+
             self_link='self_link_value',
+
             target_link='target_link_value',
+
             location='location_value',
+
             start_time='start_time_value',
+
             end_time='end_time_value',
+
         )
+
         response = client.set_maintenance_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetMaintenancePolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -8295,8 +9528,8 @@ def test_set_maintenance_policy_empty_call():
         client.set_maintenance_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.SetMaintenancePolicyRequest()
 
+        assert args[0] == cluster_service.SetMaintenancePolicyRequest()
 
 @pytest.mark.asyncio
 async def test_set_maintenance_policy_async(transport: str = 'grpc_asyncio', request_type=cluster_service.SetMaintenancePolicyRequest):
@@ -8314,7 +9547,7 @@ async def test_set_maintenance_policy_async(transport: str = 'grpc_asyncio', req
             type(client.transport.set_maintenance_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation(
             name='name_value',
             zone='zone_value',
             operation_type=cluster_service.Operation.Type.CREATE_CLUSTER,
@@ -8327,25 +9560,38 @@ async def test_set_maintenance_policy_async(transport: str = 'grpc_asyncio', req
             start_time='start_time_value',
             end_time='end_time_value',
         ))
+
         response = await client.set_maintenance_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.SetMaintenancePolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cluster_service.Operation)
+
     assert response.name == 'name_value'
+
     assert response.zone == 'zone_value'
+
     assert response.operation_type == cluster_service.Operation.Type.CREATE_CLUSTER
+
     assert response.status == cluster_service.Operation.Status.PENDING
+
     assert response.detail == 'detail_value'
+
     assert response.status_message == 'status_message_value'
+
     assert response.self_link == 'self_link_value'
+
     assert response.target_link == 'target_link_value'
+
     assert response.location == 'location_value'
+
     assert response.start_time == 'start_time_value'
+
     assert response.end_time == 'end_time_value'
 
 
@@ -8362,7 +9608,6 @@ def test_set_maintenance_policy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetMaintenancePolicyRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -8370,6 +9615,7 @@ def test_set_maintenance_policy_field_headers():
             type(client.transport.set_maintenance_policy),
             '__call__') as call:
         call.return_value = cluster_service.Operation()
+
         client.set_maintenance_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -8394,7 +9640,6 @@ async def test_set_maintenance_policy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.SetMaintenancePolicyRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -8402,6 +9647,7 @@ async def test_set_maintenance_policy_field_headers_async():
             type(client.transport.set_maintenance_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.Operation())
+
         await client.set_maintenance_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -8428,6 +9674,7 @@ def test_set_maintenance_policy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.Operation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.set_maintenance_policy(
@@ -8442,10 +9689,15 @@ def test_set_maintenance_policy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].maintenance_policy == cluster_service.MaintenancePolicy(window=cluster_service.MaintenanceWindow(daily_maintenance_window=cluster_service.DailyMaintenanceWindow(start_time='start_time_value')))
+
         assert args[0].name == 'name_value'
 
 
@@ -8495,10 +9747,15 @@ async def test_set_maintenance_policy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].zone == 'zone_value'
+
         assert args[0].cluster_id == 'cluster_id_value'
+
         assert args[0].maintenance_policy == cluster_service.MaintenancePolicy(window=cluster_service.MaintenanceWindow(daily_maintenance_window=cluster_service.DailyMaintenanceWindow(start_time='start_time_value')))
+
         assert args[0].name == 'name_value'
 
 
@@ -8538,16 +9795,21 @@ def test_list_usable_subnetworks(transport: str = 'grpc', request_type=cluster_s
         # Designate an appropriate return value for the call.
         call.return_value = cluster_service.ListUsableSubnetworksResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_usable_subnetworks(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.ListUsableSubnetworksRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListUsableSubnetworksPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -8570,8 +9832,8 @@ def test_list_usable_subnetworks_empty_call():
         client.list_usable_subnetworks()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cluster_service.ListUsableSubnetworksRequest()
 
+        assert args[0] == cluster_service.ListUsableSubnetworksRequest()
 
 @pytest.mark.asyncio
 async def test_list_usable_subnetworks_async(transport: str = 'grpc_asyncio', request_type=cluster_service.ListUsableSubnetworksRequest):
@@ -8589,18 +9851,21 @@ async def test_list_usable_subnetworks_async(transport: str = 'grpc_asyncio', re
             type(client.transport.list_usable_subnetworks),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ListUsableSubnetworksResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ListUsableSubnetworksResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_usable_subnetworks(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cluster_service.ListUsableSubnetworksRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListUsableSubnetworksAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -8617,7 +9882,6 @@ def test_list_usable_subnetworks_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.ListUsableSubnetworksRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -8625,6 +9889,7 @@ def test_list_usable_subnetworks_field_headers():
             type(client.transport.list_usable_subnetworks),
             '__call__') as call:
         call.return_value = cluster_service.ListUsableSubnetworksResponse()
+
         client.list_usable_subnetworks(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -8649,7 +9914,6 @@ async def test_list_usable_subnetworks_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cluster_service.ListUsableSubnetworksRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -8657,6 +9921,7 @@ async def test_list_usable_subnetworks_field_headers_async():
             type(client.transport.list_usable_subnetworks),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cluster_service.ListUsableSubnetworksResponse())
+
         await client.list_usable_subnetworks(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -8899,6 +10164,7 @@ def test_transport_instance():
     client = ClusterManagerClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ClusterManagerGrpcTransport(
@@ -8913,6 +10179,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.ClusterManagerGrpcTransport,
     transports.ClusterManagerGrpcAsyncIOTransport,
@@ -8924,6 +10191,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = ClusterManagerClient(
@@ -8933,6 +10201,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.ClusterManagerGrpcTransport,
     )
+
 
 def test_cluster_manager_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -8986,33 +10255,15 @@ def test_cluster_manager_base_transport():
         'set_network_policy',
         'set_maintenance_policy',
         'list_usable_subnetworks',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_cluster_manager_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.container_v1.services.cluster_manager.transports.ClusterManagerTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.ClusterManagerTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_cluster_manager_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.container_v1.services.cluster_manager.transports.ClusterManagerTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.container_v1.services.cluster_manager.transports.ClusterManagerTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ClusterManagerTransport(
@@ -9028,182 +10279,33 @@ def test_cluster_manager_base_transport_with_credentials_file_old_google_auth():
 
 def test_cluster_manager_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.container_v1.services.cluster_manager.transports.ClusterManagerTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.container_v1.services.cluster_manager.transports.ClusterManagerTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ClusterManagerTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_cluster_manager_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         ClusterManagerClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_cluster_manager_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        ClusterManagerClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ClusterManagerGrpcTransport,
-        transports.ClusterManagerGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_cluster_manager_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ClusterManagerGrpcTransport,
-        transports.ClusterManagerGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_cluster_manager_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ClusterManagerGrpcTransport, grpc_helpers),
-        (transports.ClusterManagerGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_cluster_manager_transport_create_channel(transport_class, grpc_helpers):
+def test_cluster_manager_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.ClusterManagerGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "container.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="container.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ClusterManagerGrpcTransport, grpc_helpers),
-        (transports.ClusterManagerGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_cluster_manager_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "container.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ClusterManagerGrpcTransport, grpc_helpers),
-        (transports.ClusterManagerGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_cluster_manager_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "container.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -9265,6 +10367,7 @@ def test_cluster_manager_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='container.googleapis.com:8000'),
     )
     assert client.transport._host == 'container.googleapis.com:8000'
+
 
 def test_cluster_manager_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -9382,6 +10485,7 @@ def test_cluster_manager_transport_channel_mtls_with_adc(
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ClusterManagerClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -9389,7 +10493,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = ClusterManagerClient.common_billing_account_path(**expected)
 
@@ -9399,6 +10504,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ClusterManagerClient.common_folder_path(folder)
     assert expected == actual
@@ -9406,7 +10512,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = ClusterManagerClient.common_folder_path(**expected)
 
@@ -9416,6 +10523,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ClusterManagerClient.common_organization_path(organization)
     assert expected == actual
@@ -9423,7 +10531,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = ClusterManagerClient.common_organization_path(**expected)
 
@@ -9433,6 +10542,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = ClusterManagerClient.common_project_path(project)
     assert expected == actual
@@ -9440,7 +10550,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = ClusterManagerClient.common_project_path(**expected)
 
@@ -9451,6 +10562,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ClusterManagerClient.common_location_path(project, location)
     assert expected == actual
@@ -9458,8 +10570,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = ClusterManagerClient.common_location_path(**expected)
 

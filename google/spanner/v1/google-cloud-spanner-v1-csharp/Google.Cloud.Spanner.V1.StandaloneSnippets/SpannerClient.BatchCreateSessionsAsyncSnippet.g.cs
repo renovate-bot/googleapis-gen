@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Spanner.V1.Snippets
 {
+    using Google.Cloud.Spanner.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchCreateSessionsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchCreateSessionsAsync()
         {
-            // Snippet: BatchCreateSessionsAsync(string, int, CallSettings)
-            // Additional: BatchCreateSessionsAsync(string, int, CancellationToken)
             // Create client
             SpannerClient spannerClient = await SpannerClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Spanner.V1.Snippets
             int sessionCount = 0;
             // Make the request
             BatchCreateSessionsResponse response = await spannerClient.BatchCreateSessionsAsync(database, sessionCount);
-            // End snippet
         }
     }
 }

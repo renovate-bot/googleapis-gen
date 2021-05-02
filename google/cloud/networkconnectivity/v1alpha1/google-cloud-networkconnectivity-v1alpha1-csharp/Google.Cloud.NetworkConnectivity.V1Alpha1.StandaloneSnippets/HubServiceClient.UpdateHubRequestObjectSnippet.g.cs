@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.NetworkConnectivity.V1Alpha1.Snippets
 {
+    using Google.Cloud.NetworkConnectivity.V1Alpha1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedHubServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateHub</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateHubRequestObject()
         {
-            // Snippet: UpdateHub(UpdateHubRequest, CallSettings)
             // Create client
             HubServiceClient hubServiceClient = HubServiceClient.Create();
             // Initialize request argument(s)
@@ -52,7 +56,6 @@ namespace Google.Cloud.NetworkConnectivity.V1Alpha1.Snippets
                 // If it has completed, then access the result
                 Hub retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

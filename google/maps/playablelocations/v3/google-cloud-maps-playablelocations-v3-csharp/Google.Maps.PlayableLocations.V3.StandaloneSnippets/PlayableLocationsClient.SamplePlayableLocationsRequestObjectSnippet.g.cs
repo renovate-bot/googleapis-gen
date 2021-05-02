@@ -16,14 +16,18 @@
 
 namespace Google.Maps.PlayableLocations.V3.Snippets
 {
+    using Google.Maps.PlayableLocations.V3;
     using Google.Maps.PlayableLocations.V3.Sample;
 
     public sealed partial class GeneratedPlayableLocationsClientStandaloneSnippets
     {
         /// <summary>Snippet for SamplePlayableLocations</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SamplePlayableLocationsRequestObject()
         {
-            // Snippet: SamplePlayableLocations(SamplePlayableLocationsRequest, CallSettings)
             // Create client
             PlayableLocationsClient playableLocationsClient = PlayableLocationsClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Maps.PlayableLocations.V3.Snippets
             };
             // Make the request
             SamplePlayableLocationsResponse response = playableLocationsClient.SamplePlayableLocations(request);
-            // End snippet
         }
     }
 }

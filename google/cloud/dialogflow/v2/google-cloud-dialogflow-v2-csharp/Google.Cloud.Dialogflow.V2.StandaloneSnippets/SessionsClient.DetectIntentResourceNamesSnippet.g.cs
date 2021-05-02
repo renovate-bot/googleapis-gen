@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
+
     public sealed partial class GeneratedSessionsClientStandaloneSnippets
     {
         /// <summary>Snippet for DetectIntent</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DetectIntentResourceNames()
         {
-            // Snippet: DetectIntent(SessionName, QueryInput, CallSettings)
             // Create client
             SessionsClient sessionsClient = SessionsClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             QueryInput queryInput = new QueryInput();
             // Make the request
             DetectIntentResponse response = sessionsClient.DetectIntent(session, queryInput);
-            // End snippet
         }
     }
 }

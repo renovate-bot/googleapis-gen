@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedApplicationsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetApplicationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetApplicationRequestObjectAsync()
         {
-            // Snippet: GetApplicationAsync(GetApplicationRequest, CallSettings)
-            // Additional: GetApplicationAsync(GetApplicationRequest, CancellationToken)
             // Create client
             ApplicationsClient applicationsClient = await ApplicationsClient.CreateAsync();
             // Initialize request argument(s)
             GetApplicationRequest request = new GetApplicationRequest { Name = "", };
             // Make the request
             Application response = await applicationsClient.GetApplicationAsync(request);
-            // End snippet
         }
     }
 }

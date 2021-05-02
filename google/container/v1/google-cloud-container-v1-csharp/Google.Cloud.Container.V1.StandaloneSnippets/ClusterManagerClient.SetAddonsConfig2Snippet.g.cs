@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for SetAddonsConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SetAddonsConfig2()
         {
-            // Snippet: SetAddonsConfig(string, AddonsConfig, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Container.V1.Snippets
             AddonsConfig addonsConfig = new AddonsConfig();
             // Make the request
             Operation response = clusterManagerClient.SetAddonsConfig(name, addonsConfig);
-            // End snippet
         }
     }
 }

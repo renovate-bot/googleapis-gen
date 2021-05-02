@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -45,9 +47,7 @@ class ScanRunWarningTrace(proto.Message):
         TOO_MANY_FUZZ_TASKS = 3
         BLOCKED_BY_IAP = 4
 
-    code = proto.Field(
-        proto.ENUM,
-        number=1,
+    code = proto.Field(proto.ENUM, number=1,
         enum=Code,
     )
 

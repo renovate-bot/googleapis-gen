@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedSubscriberClientStandaloneSnippets
     {
         /// <summary>Snippet for Acknowledge</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void Acknowledge()
         {
-            // Snippet: Acknowledge(string, IEnumerable<string>, CallSettings)
             // Create client
             SubscriberClient subscriberClient = SubscriberClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
             IEnumerable<string> ackIds = new string[] { "", };
             // Make the request
             subscriberClient.Acknowledge(subscription, ackIds);
-            // End snippet
         }
     }
 }

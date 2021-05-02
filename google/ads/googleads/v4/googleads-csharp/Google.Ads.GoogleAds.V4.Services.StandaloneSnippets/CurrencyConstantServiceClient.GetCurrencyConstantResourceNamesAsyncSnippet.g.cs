@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCurrencyConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCurrencyConstantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCurrencyConstantResourceNamesAsync()
         {
-            // Snippet: GetCurrencyConstantAsync(CurrencyConstantName, CallSettings)
-            // Additional: GetCurrencyConstantAsync(CurrencyConstantName, CancellationToken)
             // Create client
             CurrencyConstantServiceClient currencyConstantServiceClient = await CurrencyConstantServiceClient.CreateAsync();
             // Initialize request argument(s)
             CurrencyConstantName resourceName = CurrencyConstantName.FromCurrencyConstant("[CURRENCY_CONSTANT]");
             // Make the request
             CurrencyConstant response = await currencyConstantServiceClient.GetCurrencyConstantAsync(resourceName);
-            // End snippet
         }
     }
 }

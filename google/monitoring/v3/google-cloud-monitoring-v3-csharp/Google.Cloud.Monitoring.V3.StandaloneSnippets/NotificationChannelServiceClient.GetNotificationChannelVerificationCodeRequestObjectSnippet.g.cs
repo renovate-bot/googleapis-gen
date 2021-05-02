@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedNotificationChannelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetNotificationChannelVerificationCode</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetNotificationChannelVerificationCodeRequestObject()
         {
-            // Snippet: GetNotificationChannelVerificationCode(GetNotificationChannelVerificationCodeRequest, CallSettings)
             // Create client
             NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             };
             // Make the request
             GetNotificationChannelVerificationCodeResponse response = notificationChannelServiceClient.GetNotificationChannelVerificationCode(request);
-            // End snippet
         }
     }
 }

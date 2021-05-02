@@ -16,12 +16,17 @@
 
 namespace Grafeas.V1.Snippets
 {
+    using Grafeas.V1;
+
     public sealed partial class GeneratedGrafeasClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateNote</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateNoteResourceNames()
         {
-            // Snippet: CreateNote(ProjectName, string, Note, CallSettings)
             // Create client
             GrafeasClient grafeasClient = GrafeasClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Grafeas.V1.Snippets
             Note note = new Note();
             // Make the request
             Note response = grafeasClient.CreateNote(parent, noteId, note);
-            // End snippet
         }
     }
 }

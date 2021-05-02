@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
 {
+    using Google.Cloud.Bigquery.Reservation.V1Beta1;
+
     public sealed partial class GeneratedReservationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBiReservation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetBiReservationResourceNames()
         {
-            // Snippet: GetBiReservation(BiReservationName, CallSettings)
             // Create client
             ReservationServiceClient reservationServiceClient = ReservationServiceClient.Create();
             // Initialize request argument(s)
             BiReservationName name = BiReservationName.FromProjectLocationBireservation("[PROJECT]", "[LOCATION]", "[BIRESERVATION]");
             // Make the request
             BiReservation response = reservationServiceClient.GetBiReservation(name);
-            // End snippet
         }
     }
 }

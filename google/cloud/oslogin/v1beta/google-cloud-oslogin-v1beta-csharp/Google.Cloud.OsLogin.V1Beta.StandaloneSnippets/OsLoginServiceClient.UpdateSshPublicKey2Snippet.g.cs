@@ -17,14 +17,18 @@
 namespace Google.Cloud.OsLogin.V1Beta.Snippets
 {
     using Google.Cloud.OsLogin.Common;
+    using Google.Cloud.OsLogin.V1Beta;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedOsLoginServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateSshPublicKey</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateSshPublicKey2()
         {
-            // Snippet: UpdateSshPublicKey(string, SshPublicKey, FieldMask, CallSettings)
             // Create client
             OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Cloud.OsLogin.V1Beta.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             SshPublicKey response = osLoginServiceClient.UpdateSshPublicKey(name, sshPublicKey, updateMask);
-            // End snippet
         }
     }
 }

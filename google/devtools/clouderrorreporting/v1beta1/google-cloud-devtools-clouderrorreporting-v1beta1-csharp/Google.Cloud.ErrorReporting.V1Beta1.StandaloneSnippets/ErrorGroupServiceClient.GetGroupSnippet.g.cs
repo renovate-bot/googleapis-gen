@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.ErrorReporting.V1Beta1.Snippets
 {
+    using Google.Cloud.ErrorReporting.V1Beta1;
+
     public sealed partial class GeneratedErrorGroupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGroup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetGroup()
         {
-            // Snippet: GetGroup(string, CallSettings)
             // Create client
             ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.Create();
             // Initialize request argument(s)
             string groupName = "projects/[PROJECT]/groups/[GROUP]";
             // Make the request
             ErrorGroup response = errorGroupServiceClient.GetGroup(groupName);
-            // End snippet
         }
     }
 }

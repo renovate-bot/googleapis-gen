@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.migration_service import MigrationServiceClient
-
 from .types.migration_entities import MigrationSubtask
 from .types.migration_entities import MigrationTask
 from .types.migration_entities import MigrationWorkflow
@@ -35,6 +35,7 @@ from .types.migration_service import ListMigrationSubtasksResponse
 from .types.migration_service import ListMigrationWorkflowsRequest
 from .types.migration_service import ListMigrationWorkflowsResponse
 from .types.migration_service import StartMigrationWorkflowRequest
+
 
 __all__ = (
     'CreateMigrationWorkflowRequest',

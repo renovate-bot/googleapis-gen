@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAgentsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateAgentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateAgentAsync()
         {
-            // Snippet: UpdateAgentAsync(Agent, FieldMask, CallSettings)
-            // Additional: UpdateAgentAsync(Agent, FieldMask, CancellationToken)
             // Create client
             AgentsClient agentsClient = await AgentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Agent response = await agentsClient.UpdateAgentAsync(agent, updateMask);
-            // End snippet
         }
     }
 }

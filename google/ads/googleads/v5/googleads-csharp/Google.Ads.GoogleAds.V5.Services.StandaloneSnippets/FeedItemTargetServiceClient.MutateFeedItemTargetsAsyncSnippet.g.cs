@@ -16,16 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFeedItemTargetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateFeedItemTargetsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateFeedItemTargetsAsync()
         {
-            // Snippet: MutateFeedItemTargetsAsync(string, IEnumerable<FeedItemTargetOperation>, CallSettings)
-            // Additional: MutateFeedItemTargetsAsync(string, IEnumerable<FeedItemTargetOperation>, CancellationToken)
             // Create client
             FeedItemTargetServiceClient feedItemTargetServiceClient = await FeedItemTargetServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateFeedItemTargetsResponse response = await feedItemTargetServiceClient.MutateFeedItemTargetsAsync(customerId, operations);
-            // End snippet
         }
     }
 }

@@ -17,22 +17,24 @@
 namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
 {
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.Spanner.Admin.Database.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDatabaseAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIamPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetIamPolicyAsync()
         {
-            // Snippet: GetIamPolicyAsync(string, CallSettings)
-            // Additional: GetIamPolicyAsync(string, CancellationToken)
             // Create client
             DatabaseAdminClient databaseAdminClient = await DatabaseAdminClient.CreateAsync();
             // Initialize request argument(s)
             string resource = "a/wildcard/resource";
             // Make the request
             Policy response = await databaseAdminClient.GetIamPolicyAsync(resource);
-            // End snippet
         }
     }
 }

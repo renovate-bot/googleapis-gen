@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAgentsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAgentValidationResultAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAgentValidationResultResourceNamesAsync()
         {
-            // Snippet: GetAgentValidationResultAsync(AgentValidationResultName, CallSettings)
-            // Additional: GetAgentValidationResultAsync(AgentValidationResultName, CancellationToken)
             // Create client
             AgentsClient agentsClient = await AgentsClient.CreateAsync();
             // Initialize request argument(s)
             AgentValidationResultName name = AgentValidationResultName.FromProjectLocationAgent("[PROJECT]", "[LOCATION]", "[AGENT]");
             // Make the request
             AgentValidationResult response = await agentsClient.GetAgentValidationResultAsync(name);
-            // End snippet
         }
     }
 }

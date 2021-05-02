@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,7 +39,8 @@ from google.cloud.tpu_v1.types.cloud_tpu import StopNodeRequest
 from google.cloud.tpu_v1.types.cloud_tpu import Symptom
 from google.cloud.tpu_v1.types.cloud_tpu import TensorFlowVersion
 
-__all__ = ('AcceleratorType',
+__all__ = (
+    'AcceleratorType',
     'CreateNodeRequest',
     'DeleteNodeRequest',
     'GetAcceleratorTypeRequest',

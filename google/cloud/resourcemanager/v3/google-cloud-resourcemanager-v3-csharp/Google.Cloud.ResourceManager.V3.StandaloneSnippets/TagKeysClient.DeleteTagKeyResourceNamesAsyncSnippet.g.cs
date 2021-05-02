@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
+    using Google.Cloud.ResourceManager.V3;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTagKeysClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteTagKeyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteTagKeyResourceNamesAsync()
         {
-            // Snippet: DeleteTagKeyAsync(TagKeyName, CallSettings)
-            // Additional: DeleteTagKeyAsync(TagKeyName, CancellationToken)
             // Create client
             TagKeysClient tagKeysClient = await TagKeysClient.CreateAsync();
             // Initialize request argument(s)
@@ -48,7 +51,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
                 // If it has completed, then access the result
                 TagKey retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

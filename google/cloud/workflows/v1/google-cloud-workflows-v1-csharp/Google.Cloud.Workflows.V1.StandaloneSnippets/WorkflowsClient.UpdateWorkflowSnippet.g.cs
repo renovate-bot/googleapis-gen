@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Workflows.V1.Snippets
 {
+    using Google.Cloud.Workflows.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedWorkflowsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateWorkflow</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateWorkflow()
         {
-            // Snippet: UpdateWorkflow(Workflow, FieldMask, CallSettings)
             // Create client
             WorkflowsClient workflowsClient = WorkflowsClient.Create();
             // Initialize request argument(s)
@@ -48,7 +52,6 @@ namespace Google.Cloud.Workflows.V1.Snippets
                 // If it has completed, then access the result
                 Workflow retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

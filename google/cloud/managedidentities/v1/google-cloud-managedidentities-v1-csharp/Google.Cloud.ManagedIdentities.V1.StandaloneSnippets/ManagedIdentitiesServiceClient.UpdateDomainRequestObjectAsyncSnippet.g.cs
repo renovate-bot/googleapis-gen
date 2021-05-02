@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.ManagedIdentities.V1.Snippets
 {
+    using Google.Cloud.ManagedIdentities.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.ManagedIdentities.V1.Snippets
     public sealed partial class GeneratedManagedIdentitiesServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateDomainAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateDomainRequestObjectAsync()
         {
-            // Snippet: UpdateDomainAsync(UpdateDomainRequest, CallSettings)
-            // Additional: UpdateDomainAsync(UpdateDomainRequest, CancellationToken)
             // Create client
             ManagedIdentitiesServiceClient managedIdentitiesServiceClient = await ManagedIdentitiesServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -53,7 +56,6 @@ namespace Google.Cloud.ManagedIdentities.V1.Snippets
                 // If it has completed, then access the result
                 Domain retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -28,6 +30,7 @@ import grpc  # type: ignore
 from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import service
 from google.longrunning import operations_pb2 as operations  # type: ignore
+
 from .base import ServicesTransport, DEFAULT_CLIENT_INFO
 
 
@@ -61,8 +64,7 @@ class ServicesGrpcTransport(ServicesTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,15 +204,13 @@ class ServicesGrpcTransport(ServicesTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -240,9 +240,7 @@ class ServicesGrpcTransport(ServicesTransport):
     def list_services(self) -> Callable[
             [appengine.ListServicesRequest],
             appengine.ListServicesResponse]:
-        r"""Return a callable for the
-        list services
-          method over gRPC.
+        r"""Return a callable for the list services method over gRPC.
 
         Lists all the services in the application.
 
@@ -268,9 +266,7 @@ class ServicesGrpcTransport(ServicesTransport):
     def get_service(self) -> Callable[
             [appengine.GetServiceRequest],
             service.Service]:
-        r"""Return a callable for the
-        get service
-          method over gRPC.
+        r"""Return a callable for the get service method over gRPC.
 
         Gets the current configuration of the specified
         service.
@@ -297,9 +293,7 @@ class ServicesGrpcTransport(ServicesTransport):
     def update_service(self) -> Callable[
             [appengine.UpdateServiceRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update service
-          method over gRPC.
+        r"""Return a callable for the update service method over gRPC.
 
         Updates the configuration of the specified service.
 
@@ -325,9 +319,7 @@ class ServicesGrpcTransport(ServicesTransport):
     def delete_service(self) -> Callable[
             [appengine.DeleteServiceRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete service
-          method over gRPC.
+        r"""Return a callable for the delete service method over gRPC.
 
         Deletes the specified service and all enclosed
         versions.

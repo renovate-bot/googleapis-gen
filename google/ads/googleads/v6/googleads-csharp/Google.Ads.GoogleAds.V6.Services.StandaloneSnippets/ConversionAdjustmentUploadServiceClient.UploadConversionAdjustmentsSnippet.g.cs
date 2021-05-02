@@ -16,14 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedConversionAdjustmentUploadServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UploadConversionAdjustments</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UploadConversionAdjustments()
         {
-            // Snippet: UploadConversionAdjustments(string, IEnumerable<ConversionAdjustment>, bool, CallSettings)
             // Create client
             ConversionAdjustmentUploadServiceClient conversionAdjustmentUploadServiceClient = ConversionAdjustmentUploadServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             bool partialFailure = false;
             // Make the request
             UploadConversionAdjustmentsResponse response = conversionAdjustmentUploadServiceClient.UploadConversionAdjustments(customerId, conversionAdjustments, partialFailure);
-            // End snippet
         }
     }
 }

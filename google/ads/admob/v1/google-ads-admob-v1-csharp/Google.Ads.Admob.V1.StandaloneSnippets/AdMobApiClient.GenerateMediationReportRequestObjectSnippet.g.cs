@@ -16,15 +16,19 @@
 
 namespace Google.Ads.Admob.V1.Snippets
 {
+    using Google.Ads.Admob.V1;
     using Google.Api.Gax.Grpc;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdMobApiClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateMediationReport</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GenerateMediationReportRequestObject()
         {
-            // Snippet: GenerateMediationReport(GenerateMediationReportRequest, CallSettings)
             // Create client
             AdMobApiClient adMobApiClient = AdMobApiClient.Create();
             // Initialize request argument(s)
@@ -45,7 +49,6 @@ namespace Google.Ads.Admob.V1.Snippets
                 // Do something with streamed response
             }
             // The response stream has completed
-            // End snippet
         }
     }
 }

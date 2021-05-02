@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGenderViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGenderViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetGenderViewResourceNamesAsync()
         {
-            // Snippet: GetGenderViewAsync(GenderViewName, CallSettings)
-            // Additional: GetGenderViewAsync(GenderViewName, CancellationToken)
             // Create client
             GenderViewServiceClient genderViewServiceClient = await GenderViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             GenderViewName resourceName = GenderViewName.FromCustomerAdGroupCriterion("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
             // Make the request
             GenderView response = await genderViewServiceClient.GetGenderViewAsync(resourceName);
-            // End snippet
         }
     }
 }

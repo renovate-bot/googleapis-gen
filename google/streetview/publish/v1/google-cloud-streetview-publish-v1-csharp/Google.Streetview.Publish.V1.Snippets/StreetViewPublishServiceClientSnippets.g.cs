@@ -289,7 +289,7 @@ namespace Google.Streetview.Publish.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListPhotos</summary>
+        /// <summary>Snippet for ListPhotosAsync</summary>
         public async Task ListPhotosRequestObjectAsync()
         {
             // Snippet: ListPhotosAsync(ListPhotosRequest, CallSettings)
@@ -385,7 +385,7 @@ namespace Google.Streetview.Publish.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListPhotos</summary>
+        /// <summary>Snippet for ListPhotosAsync</summary>
         public async Task ListPhotosAsync()
         {
             // Snippet: ListPhotosAsync(PhotoView, string, string, int?, CallSettings)

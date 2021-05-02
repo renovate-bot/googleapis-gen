@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.DataCatalog.V1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedPolicyTagManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdatePolicyTag</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdatePolicyTagRequestObject()
         {
-            // Snippet: UpdatePolicyTag(UpdatePolicyTagRequest, CallSettings)
             // Create client
             PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             };
             // Make the request
             PolicyTag response = policyTagManagerClient.UpdatePolicyTag(request);
-            // End snippet
         }
     }
 }

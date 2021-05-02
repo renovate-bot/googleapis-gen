@@ -746,7 +746,7 @@ namespace Google.Cloud.Translate.V3Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListGlossaries</summary>
+        /// <summary>Snippet for ListGlossariesAsync</summary>
         public async Task ListGlossariesRequestObjectAsync()
         {
             // Snippet: ListGlossariesAsync(ListGlossariesRequest, CallSettings)
@@ -841,7 +841,7 @@ namespace Google.Cloud.Translate.V3Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListGlossaries</summary>
+        /// <summary>Snippet for ListGlossariesAsync</summary>
         public async Task ListGlossariesAsync()
         {
             // Snippet: ListGlossariesAsync(string, string, string, int?, CallSettings)
@@ -933,7 +933,7 @@ namespace Google.Cloud.Translate.V3Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListGlossaries</summary>
+        /// <summary>Snippet for ListGlossariesAsync</summary>
         public async Task ListGlossariesResourceNamesAsync()
         {
             // Snippet: ListGlossariesAsync(LocationName, string, string, int?, CallSettings)

@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
 {
+    using Google.Cloud.ArtifactRegistry.V1Beta2;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateRepository</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateRepositoryRequestObject()
         {
-            // Snippet: UpdateRepository(UpdateRepositoryRequest, CallSettings)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
             };
             // Make the request
             Repository response = artifactRegistryClient.UpdateRepository(request);
-            // End snippet
         }
     }
 }

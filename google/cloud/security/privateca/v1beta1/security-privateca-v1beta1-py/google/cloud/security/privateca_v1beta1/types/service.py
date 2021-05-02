@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.security.privateca_v1beta1.types import resources
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -98,23 +101,15 @@ class CreateCertificateRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    certificate_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    certificate = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    parent = proto.Field(proto.STRING, number=1)
+
+    certificate_id = proto.Field(proto.STRING, number=2)
+
+    certificate = proto.Field(proto.MESSAGE, number=3,
         message=resources.Certificate,
     )
-    request_id = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+
+    request_id = proto.Field(proto.STRING, number=4)
 
 
 class GetCertificateRequest(proto.Message):
@@ -130,10 +125,7 @@ class GetCertificateRequest(proto.Message):
             to get.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ListCertificatesRequest(proto.Message):
@@ -171,26 +163,15 @@ class ListCertificatesRequest(proto.Message):
             documentation <https://cloud.google.com/certificate-authority-service/docs/sorting-filtering-certificates#sorting_support>`__.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    order_by = proto.Field(
-        proto.STRING,
-        number=5,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
+
+    filter = proto.Field(proto.STRING, number=4)
+
+    order_by = proto.Field(proto.STRING, number=5)
 
 
 class ListCertificatesResponse(proto.Message):
@@ -214,19 +195,13 @@ class ListCertificatesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    certificates = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    certificates = proto.RepeatedField(proto.MESSAGE, number=1,
         message=resources.Certificate,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    unreachable = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
+
+    unreachable = proto.RepeatedField(proto.STRING, number=3)
 
 
 class RevokeCertificateRequest(proto.Message):
@@ -264,19 +239,13 @@ class RevokeCertificateRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    reason = proto.Field(
-        proto.ENUM,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    reason = proto.Field(proto.ENUM, number=2,
         enum=resources.RevocationReason,
     )
-    request_id = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+
+    request_id = proto.Field(proto.STRING, number=3)
 
 
 class UpdateCertificateRequest(proto.Message):
@@ -312,20 +281,15 @@ class UpdateCertificateRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    certificate = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    certificate = proto.Field(proto.MESSAGE, number=1,
         message=resources.Certificate,
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
-    request_id = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+
+    request_id = proto.Field(proto.STRING, number=3)
 
 
 class ActivateCertificateAuthorityRequest(proto.Message):
@@ -366,23 +330,15 @@ class ActivateCertificateAuthorityRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    pem_ca_certificate = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    subordinate_config = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    pem_ca_certificate = proto.Field(proto.STRING, number=2)
+
+    subordinate_config = proto.Field(proto.MESSAGE, number=3,
         message=resources.SubordinateConfig,
     )
-    request_id = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+
+    request_id = proto.Field(proto.STRING, number=4)
 
 
 class CreateCertificateAuthorityRequest(proto.Message):
@@ -423,23 +379,15 @@ class CreateCertificateAuthorityRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    certificate_authority_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    certificate_authority = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    parent = proto.Field(proto.STRING, number=1)
+
+    certificate_authority_id = proto.Field(proto.STRING, number=2)
+
+    certificate_authority = proto.Field(proto.MESSAGE, number=3,
         message=resources.CertificateAuthority,
     )
-    request_id = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+
+    request_id = proto.Field(proto.STRING, number=4)
 
 
 class DisableCertificateAuthorityRequest(proto.Message):
@@ -473,14 +421,9 @@ class DisableCertificateAuthorityRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    request_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    name = proto.Field(proto.STRING, number=1)
+
+    request_id = proto.Field(proto.STRING, number=2)
 
 
 class EnableCertificateAuthorityRequest(proto.Message):
@@ -514,14 +457,9 @@ class EnableCertificateAuthorityRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    request_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    name = proto.Field(proto.STRING, number=1)
+
+    request_id = proto.Field(proto.STRING, number=2)
 
 
 class FetchCertificateAuthorityCsrRequest(proto.Message):
@@ -536,10 +474,7 @@ class FetchCertificateAuthorityCsrRequest(proto.Message):
             ``projects/*/locations/*/certificateAuthorities/*``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class FetchCertificateAuthorityCsrResponse(proto.Message):
@@ -552,10 +487,7 @@ class FetchCertificateAuthorityCsrResponse(proto.Message):
             certificate signing request (CSR).
     """
 
-    pem_csr = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    pem_csr = proto.Field(proto.STRING, number=1)
 
 
 class GetCertificateAuthorityRequest(proto.Message):
@@ -571,10 +503,7 @@ class GetCertificateAuthorityRequest(proto.Message):
             to get.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ListCertificateAuthoritiesRequest(proto.Message):
@@ -607,26 +536,15 @@ class ListCertificateAuthoritiesRequest(proto.Message):
             sorted.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    order_by = proto.Field(
-        proto.STRING,
-        number=5,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
+
+    filter = proto.Field(proto.STRING, number=4)
+
+    order_by = proto.Field(proto.STRING, number=5)
 
 
 class ListCertificateAuthoritiesResponse(proto.Message):
@@ -650,19 +568,13 @@ class ListCertificateAuthoritiesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    certificate_authorities = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    certificate_authorities = proto.RepeatedField(proto.MESSAGE, number=1,
         message=resources.CertificateAuthority,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    unreachable = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
+
+    unreachable = proto.RepeatedField(proto.STRING, number=3)
 
 
 class RestoreCertificateAuthorityRequest(proto.Message):
@@ -696,14 +608,9 @@ class RestoreCertificateAuthorityRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    request_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    name = proto.Field(proto.STRING, number=1)
+
+    request_id = proto.Field(proto.STRING, number=2)
 
 
 class ScheduleDeleteCertificateAuthorityRequest(proto.Message):
@@ -737,14 +644,9 @@ class ScheduleDeleteCertificateAuthorityRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    request_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    name = proto.Field(proto.STRING, number=1)
+
+    request_id = proto.Field(proto.STRING, number=2)
 
 
 class UpdateCertificateAuthorityRequest(proto.Message):
@@ -780,20 +682,15 @@ class UpdateCertificateAuthorityRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    certificate_authority = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    certificate_authority = proto.Field(proto.MESSAGE, number=1,
         message=resources.CertificateAuthority,
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
-    request_id = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+
+    request_id = proto.Field(proto.STRING, number=3)
 
 
 class GetCertificateRevocationListRequest(proto.Message):
@@ -809,10 +706,7 @@ class GetCertificateRevocationListRequest(proto.Message):
             to get.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ListCertificateRevocationListsRequest(proto.Message):
@@ -846,26 +740,15 @@ class ListCertificateRevocationListsRequest(proto.Message):
             sorted.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    order_by = proto.Field(
-        proto.STRING,
-        number=5,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
+
+    filter = proto.Field(proto.STRING, number=4)
+
+    order_by = proto.Field(proto.STRING, number=5)
 
 
 class ListCertificateRevocationListsResponse(proto.Message):
@@ -889,19 +772,13 @@ class ListCertificateRevocationListsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    certificate_revocation_lists = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    certificate_revocation_lists = proto.RepeatedField(proto.MESSAGE, number=1,
         message=resources.CertificateRevocationList,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    unreachable = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
+
+    unreachable = proto.RepeatedField(proto.STRING, number=3)
 
 
 class UpdateCertificateRevocationListRequest(proto.Message):
@@ -937,20 +814,15 @@ class UpdateCertificateRevocationListRequest(proto.Message):
             (00000000-0000-0000-0000-000000000000).
     """
 
-    certificate_revocation_list = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    certificate_revocation_list = proto.Field(proto.MESSAGE, number=1,
         message=resources.CertificateRevocationList,
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
-    request_id = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+
+    request_id = proto.Field(proto.STRING, number=3)
 
 
 class GetReusableConfigRequest(proto.Message):
@@ -963,10 +835,7 @@ class GetReusableConfigRequest(proto.Message):
             [ReusableConfigs][] to get.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ListReusableConfigsRequest(proto.Message):
@@ -999,26 +868,15 @@ class ListReusableConfigsRequest(proto.Message):
             sorted.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    order_by = proto.Field(
-        proto.STRING,
-        number=5,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
+
+    filter = proto.Field(proto.STRING, number=4)
+
+    order_by = proto.Field(proto.STRING, number=5)
 
 
 class ListReusableConfigsResponse(proto.Message):
@@ -1042,23 +900,18 @@ class ListReusableConfigsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    reusable_configs = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    reusable_configs = proto.RepeatedField(proto.MESSAGE, number=1,
         message=resources.ReusableConfig,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    unreachable = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
+
+    unreachable = proto.RepeatedField(proto.STRING, number=3)
 
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -1086,36 +939,23 @@ class OperationMetadata(proto.Message):
             operation.
     """
 
-    create_time = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    create_time = proto.Field(proto.MESSAGE, number=1,
         message=timestamp.Timestamp,
     )
-    end_time = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    end_time = proto.Field(proto.MESSAGE, number=2,
         message=timestamp.Timestamp,
     )
-    target = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    verb = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    status_message = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    requested_cancellation = proto.Field(
-        proto.BOOL,
-        number=6,
-    )
-    api_version = proto.Field(
-        proto.STRING,
-        number=7,
-    )
+
+    target = proto.Field(proto.STRING, number=3)
+
+    verb = proto.Field(proto.STRING, number=4)
+
+    status_message = proto.Field(proto.STRING, number=5)
+
+    requested_cancellation = proto.Field(proto.BOOL, number=6)
+
+    api_version = proto.Field(proto.STRING, number=7)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

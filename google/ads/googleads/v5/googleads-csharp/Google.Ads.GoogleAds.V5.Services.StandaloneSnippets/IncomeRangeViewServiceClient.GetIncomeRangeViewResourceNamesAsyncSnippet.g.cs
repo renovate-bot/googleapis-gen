@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIncomeRangeViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIncomeRangeViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetIncomeRangeViewResourceNamesAsync()
         {
-            // Snippet: GetIncomeRangeViewAsync(IncomeRangeViewName, CallSettings)
-            // Additional: GetIncomeRangeViewAsync(IncomeRangeViewName, CancellationToken)
             // Create client
             IncomeRangeViewServiceClient incomeRangeViewServiceClient = await IncomeRangeViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             IncomeRangeViewName resourceName = IncomeRangeViewName.FromCustomerIncomeRangeView("[CUSTOMER]", "[INCOME_RANGE_VIEW]");
             // Make the request
             IncomeRangeView response = await incomeRangeViewServiceClient.GetIncomeRangeViewAsync(resourceName);
-            // End snippet
         }
     }
 }

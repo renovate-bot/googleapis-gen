@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
+    using Google.Cloud.ResourceManager.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOrganizationsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetOrganizationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetOrganizationAsync()
         {
-            // Snippet: GetOrganizationAsync(string, CallSettings)
-            // Additional: GetOrganizationAsync(string, CancellationToken)
             // Create client
             OrganizationsClient organizationsClient = await OrganizationsClient.CreateAsync();
             // Initialize request argument(s)
             string name = "organizations/[ORGANIZATION]";
             // Make the request
             Organization response = await organizationsClient.GetOrganizationAsync(name);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for SetNetworkPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SetNetworkPolicy2()
         {
-            // Snippet: SetNetworkPolicy(string, NetworkPolicy, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Container.V1.Snippets
             NetworkPolicy networkPolicy = new NetworkPolicy();
             // Make the request
             Operation response = clusterManagerClient.SetNetworkPolicy(name, networkPolicy);
-            // End snippet
         }
     }
 }

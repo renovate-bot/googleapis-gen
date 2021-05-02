@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.dialogflowcx_v3beta1.types import response_message
 from google.protobuf import struct_pb2 as struct  # type: ignore
@@ -65,9 +68,9 @@ class Fulfillment(proto.Message):
         conditional_cases (Sequence[google.cloud.dialogflowcx_v3beta1.types.Fulfillment.ConditionalCases]):
             Conditional cases for this fulfillment.
     """
-
     class SetParameterAction(proto.Message):
         r"""Setting a parameter value.
+
         Attributes:
             parameter (str):
                 Display name of the parameter.
@@ -76,13 +79,9 @@ class Fulfillment(proto.Message):
                 clears the parameter.
         """
 
-        parameter = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        value = proto.Field(
-            proto.MESSAGE,
-            number=2,
+        parameter = proto.Field(proto.STRING, number=1)
+
+        value = proto.Field(proto.MESSAGE, number=2,
             message=struct.Value,
         )
 
@@ -95,7 +94,6 @@ class Fulfillment(proto.Message):
             cases (Sequence[google.cloud.dialogflowcx_v3beta1.types.Fulfillment.ConditionalCases.Case]):
                 A list of cascading if-else conditions.
         """
-
         class Case(proto.Message):
             r"""Each case has a Boolean condition. When it is evaluated to be
             True, the corresponding messages will be selected and evaluated
@@ -113,7 +111,6 @@ class Fulfillment(proto.Message):
                 case_content (Sequence[google.cloud.dialogflowcx_v3beta1.types.Fulfillment.ConditionalCases.Case.CaseContent]):
                     A list of case content.
             """
-
             class CaseContent(proto.Message):
                 r"""The list of messages or conditional cases to activate for
                 this case.
@@ -125,56 +122,37 @@ class Fulfillment(proto.Message):
                         Additional cases to be evaluated.
                 """
 
-                message = proto.Field(
-                    proto.MESSAGE,
-                    number=1,
-                    oneof='cases_or_message',
+                message = proto.Field(proto.MESSAGE, number=1, oneof='cases_or_message',
                     message=response_message.ResponseMessage,
                 )
-                additional_cases = proto.Field(
-                    proto.MESSAGE,
-                    number=2,
-                    oneof='cases_or_message',
+
+                additional_cases = proto.Field(proto.MESSAGE, number=2, oneof='cases_or_message',
                     message='Fulfillment.ConditionalCases',
                 )
 
-            condition = proto.Field(
-                proto.STRING,
-                number=1,
-            )
-            case_content = proto.RepeatedField(
-                proto.MESSAGE,
-                number=2,
+            condition = proto.Field(proto.STRING, number=1)
+
+            case_content = proto.RepeatedField(proto.MESSAGE, number=2,
                 message='Fulfillment.ConditionalCases.Case.CaseContent',
             )
 
-        cases = proto.RepeatedField(
-            proto.MESSAGE,
-            number=1,
+        cases = proto.RepeatedField(proto.MESSAGE, number=1,
             message='Fulfillment.ConditionalCases.Case',
         )
 
-    messages = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    messages = proto.RepeatedField(proto.MESSAGE, number=1,
         message=response_message.ResponseMessage,
     )
-    webhook = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    tag = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    set_parameter_actions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+
+    webhook = proto.Field(proto.STRING, number=2)
+
+    tag = proto.Field(proto.STRING, number=3)
+
+    set_parameter_actions = proto.RepeatedField(proto.MESSAGE, number=4,
         message=SetParameterAction,
     )
-    conditional_cases = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+
+    conditional_cases = proto.RepeatedField(proto.MESSAGE, number=5,
         message=ConditionalCases,
     )
 

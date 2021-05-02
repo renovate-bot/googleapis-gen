@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -41,6 +43,7 @@ class SettingView(proto.Enum):
 
 class Setting(proto.Message):
     r"""The schema for settings.
+
     Attributes:
         name (str):
             The resource name of the setting. Must be in one of the
@@ -88,29 +91,21 @@ class Setting(proto.Message):
             for more details.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    metadata = proto.Field(
-        proto.MESSAGE,
-        number=7,
+    name = proto.Field(proto.STRING, number=1)
+
+    metadata = proto.Field(proto.MESSAGE, number=7,
         message='SettingMetadata',
     )
-    local_value = proto.Field(
-        proto.MESSAGE,
-        number=8,
+
+    local_value = proto.Field(proto.MESSAGE, number=8,
         message='Value',
     )
-    effective_value = proto.Field(
-        proto.MESSAGE,
-        number=9,
+
+    effective_value = proto.Field(proto.MESSAGE, number=9,
         message='Value',
     )
-    etag = proto.Field(
-        proto.STRING,
-        number=10,
-    )
+
+    etag = proto.Field(proto.STRING, number=10)
 
 
 class SettingMetadata(proto.Message):
@@ -147,32 +142,24 @@ class SettingMetadata(proto.Message):
         STRING_SET = 3
         ENUM_VALUE = 4
 
-    display_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    read_only = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    data_type = proto.Field(
-        proto.ENUM,
-        number=4,
+    display_name = proto.Field(proto.STRING, number=1)
+
+    description = proto.Field(proto.STRING, number=2)
+
+    read_only = proto.Field(proto.BOOL, number=3)
+
+    data_type = proto.Field(proto.ENUM, number=4,
         enum=DataType,
     )
-    default_value = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    default_value = proto.Field(proto.MESSAGE, number=5,
         message='Value',
     )
 
 
 class Value(proto.Message):
     r"""The data in a setting value.
+
     Attributes:
         boolean_value (bool):
             Defines this value as being a boolean value.
@@ -183,7 +170,6 @@ class Value(proto.Message):
         enum_value (google.cloud.resourcesettings_v1.types.Value.EnumValue):
             Defines this value as being a Enum.
     """
-
     class StringSet(proto.Message):
         r"""A string set value that can hold a set of strings. The
         maximum length of each string is 200 characters and there can be
@@ -194,10 +180,7 @@ class Value(proto.Message):
                 The strings in the set
         """
 
-        values = proto.RepeatedField(
-            proto.STRING,
-            number=1,
-        )
+        values = proto.RepeatedField(proto.STRING, number=1)
 
     class EnumValue(proto.Message):
         r"""A enum value that can hold any enum type setting values.
@@ -209,37 +192,24 @@ class Value(proto.Message):
                 The value of this enum
         """
 
-        value = proto.Field(
-            proto.STRING,
-            number=1,
-        )
+        value = proto.Field(proto.STRING, number=1)
 
-    boolean_value = proto.Field(
-        proto.BOOL,
-        number=1,
-        oneof='value',
-    )
-    string_value = proto.Field(
-        proto.STRING,
-        number=2,
-        oneof='value',
-    )
-    string_set_value = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='value',
+    boolean_value = proto.Field(proto.BOOL, number=1, oneof='value')
+
+    string_value = proto.Field(proto.STRING, number=2, oneof='value')
+
+    string_set_value = proto.Field(proto.MESSAGE, number=3, oneof='value',
         message=StringSet,
     )
-    enum_value = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='value',
+
+    enum_value = proto.Field(proto.MESSAGE, number=4, oneof='value',
         message=EnumValue,
     )
 
 
 class ListSettingsRequest(proto.Message):
     r"""The request for ListSettings.
+
     Attributes:
         parent (str):
             Required. The Cloud resource that parents the setting. Must
@@ -258,27 +228,20 @@ class ListSettingsRequest(proto.Message):
             The SettingView for this request.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    view = proto.Field(
-        proto.ENUM,
-        number=4,
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
+
+    view = proto.Field(proto.ENUM, number=4,
         enum='SettingView',
     )
 
 
 class ListSettingsResponse(proto.Message):
     r"""The response from ListSettings.
+
     Attributes:
         settings (Sequence[google.cloud.resourcesettings_v1.types.Setting]):
             A list of settings that are available at the
@@ -292,19 +255,16 @@ class ListSettingsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    settings = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    settings = proto.RepeatedField(proto.MESSAGE, number=1,
         message='Setting',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class GetSettingRequest(proto.Message):
     r"""The request for GetSetting.
+
     Attributes:
         name (str):
             Required. The name of the setting to get. See
@@ -314,19 +274,16 @@ class GetSettingRequest(proto.Message):
             The SettingView for this request.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    view = proto.Field(
-        proto.ENUM,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    view = proto.Field(proto.ENUM, number=2,
         enum='SettingView',
     )
 
 
 class UpdateSettingRequest(proto.Message):
     r"""The request for UpdateSetting.
+
     Attributes:
         setting (google.cloud.resourcesettings_v1.types.Setting):
             Required. The setting to update. See
@@ -334,9 +291,7 @@ class UpdateSettingRequest(proto.Message):
             field requirements.
     """
 
-    setting = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    setting = proto.Field(proto.MESSAGE, number=1,
         message='Setting',
     )
 

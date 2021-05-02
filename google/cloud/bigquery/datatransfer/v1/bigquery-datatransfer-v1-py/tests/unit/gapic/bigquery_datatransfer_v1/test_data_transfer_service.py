@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -36,8 +36,6 @@ from google.cloud.bigquery_datatransfer_v1.services.data_transfer_service import
 from google.cloud.bigquery_datatransfer_v1.services.data_transfer_service import DataTransferServiceClient
 from google.cloud.bigquery_datatransfer_v1.services.data_transfer_service import pagers
 from google.cloud.bigquery_datatransfer_v1.services.data_transfer_service import transports
-from google.cloud.bigquery_datatransfer_v1.services.data_transfer_service.transports.base import _API_CORE_VERSION
-from google.cloud.bigquery_datatransfer_v1.services.data_transfer_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.bigquery_datatransfer_v1.types import datatransfer
 from google.cloud.bigquery_datatransfer_v1.types import transfer
 from google.oauth2 import service_account
@@ -47,28 +45,6 @@ from google.protobuf import struct_pb2 as struct  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -236,10 +212,12 @@ def test_data_transfer_service_client_client_options(client_class, transport_cla
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (DataTransferServiceClient, transports.DataTransferServiceGrpcTransport, "grpc", "true"),
     (DataTransferServiceAsyncClient, transports.DataTransferServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (DataTransferServiceClient, transports.DataTransferServiceGrpcTransport, "grpc", "false"),
     (DataTransferServiceAsyncClient, transports.DataTransferServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(DataTransferServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(DataTransferServiceClient))
 @mock.patch.object(DataTransferServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(DataTransferServiceAsyncClient))
@@ -394,46 +372,81 @@ def test_get_data_source(transport: str = 'grpc', request_type=datatransfer.GetD
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.DataSource(
             name='name_value',
+
             data_source_id='data_source_id_value',
+
             display_name='display_name_value',
+
             description='description_value',
+
             client_id='client_id_value',
+
             scopes=['scopes_value'],
+
             transfer_type=transfer.TransferType.BATCH,
+
             supports_multiple_transfers=True,
+
             update_deadline_seconds=2406,
+
             default_schedule='default_schedule_value',
+
             supports_custom_schedule=True,
+
             help_url='help_url_value',
+
             authorization_type=datatransfer.DataSource.AuthorizationType.AUTHORIZATION_CODE,
+
             data_refresh_type=datatransfer.DataSource.DataRefreshType.SLIDING_WINDOW,
+
             default_data_refresh_window_days=3379,
+
             manual_runs_disabled=True,
+
         )
+
         response = client.get_data_source(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.GetDataSourceRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, datatransfer.DataSource)
+
     assert response.name == 'name_value'
+
     assert response.data_source_id == 'data_source_id_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.client_id == 'client_id_value'
+
     assert response.scopes == ['scopes_value']
+
     assert response.transfer_type == transfer.TransferType.BATCH
+
     assert response.supports_multiple_transfers is True
+
     assert response.update_deadline_seconds == 2406
+
     assert response.default_schedule == 'default_schedule_value'
+
     assert response.supports_custom_schedule is True
+
     assert response.help_url == 'help_url_value'
+
     assert response.authorization_type == datatransfer.DataSource.AuthorizationType.AUTHORIZATION_CODE
+
     assert response.data_refresh_type == datatransfer.DataSource.DataRefreshType.SLIDING_WINDOW
+
     assert response.default_data_refresh_window_days == 3379
+
     assert response.manual_runs_disabled is True
 
 
@@ -456,8 +469,8 @@ def test_get_data_source_empty_call():
         client.get_data_source()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == datatransfer.GetDataSourceRequest()
 
+        assert args[0] == datatransfer.GetDataSourceRequest()
 
 @pytest.mark.asyncio
 async def test_get_data_source_async(transport: str = 'grpc_asyncio', request_type=datatransfer.GetDataSourceRequest):
@@ -475,7 +488,7 @@ async def test_get_data_source_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.get_data_source),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.DataSource(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.DataSource(
             name='name_value',
             data_source_id='data_source_id_value',
             display_name='display_name_value',
@@ -493,30 +506,48 @@ async def test_get_data_source_async(transport: str = 'grpc_asyncio', request_ty
             default_data_refresh_window_days=3379,
             manual_runs_disabled=True,
         ))
+
         response = await client.get_data_source(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.GetDataSourceRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, datatransfer.DataSource)
+
     assert response.name == 'name_value'
+
     assert response.data_source_id == 'data_source_id_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.client_id == 'client_id_value'
+
     assert response.scopes == ['scopes_value']
+
     assert response.transfer_type == transfer.TransferType.BATCH
+
     assert response.supports_multiple_transfers is True
+
     assert response.update_deadline_seconds == 2406
+
     assert response.default_schedule == 'default_schedule_value'
+
     assert response.supports_custom_schedule is True
+
     assert response.help_url == 'help_url_value'
+
     assert response.authorization_type == datatransfer.DataSource.AuthorizationType.AUTHORIZATION_CODE
+
     assert response.data_refresh_type == datatransfer.DataSource.DataRefreshType.SLIDING_WINDOW
+
     assert response.default_data_refresh_window_days == 3379
+
     assert response.manual_runs_disabled is True
 
 
@@ -533,7 +564,6 @@ def test_get_data_source_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.GetDataSourceRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -541,6 +571,7 @@ def test_get_data_source_field_headers():
             type(client.transport.get_data_source),
             '__call__') as call:
         call.return_value = datatransfer.DataSource()
+
         client.get_data_source(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -565,7 +596,6 @@ async def test_get_data_source_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.GetDataSourceRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -573,6 +603,7 @@ async def test_get_data_source_field_headers_async():
             type(client.transport.get_data_source),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.DataSource())
+
         await client.get_data_source(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -599,6 +630,7 @@ def test_get_data_source_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.DataSource()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_data_source(
@@ -609,6 +641,7 @@ def test_get_data_source_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -650,6 +683,7 @@ async def test_get_data_source_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -685,16 +719,21 @@ def test_list_data_sources(transport: str = 'grpc', request_type=datatransfer.Li
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.ListDataSourcesResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_data_sources(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.ListDataSourcesRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListDataSourcesPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -717,8 +756,8 @@ def test_list_data_sources_empty_call():
         client.list_data_sources()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == datatransfer.ListDataSourcesRequest()
 
+        assert args[0] == datatransfer.ListDataSourcesRequest()
 
 @pytest.mark.asyncio
 async def test_list_data_sources_async(transport: str = 'grpc_asyncio', request_type=datatransfer.ListDataSourcesRequest):
@@ -736,18 +775,21 @@ async def test_list_data_sources_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.list_data_sources),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ListDataSourcesResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ListDataSourcesResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_data_sources(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.ListDataSourcesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDataSourcesAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -764,7 +806,6 @@ def test_list_data_sources_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.ListDataSourcesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -772,6 +813,7 @@ def test_list_data_sources_field_headers():
             type(client.transport.list_data_sources),
             '__call__') as call:
         call.return_value = datatransfer.ListDataSourcesResponse()
+
         client.list_data_sources(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -796,7 +838,6 @@ async def test_list_data_sources_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.ListDataSourcesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -804,6 +845,7 @@ async def test_list_data_sources_field_headers_async():
             type(client.transport.list_data_sources),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ListDataSourcesResponse())
+
         await client.list_data_sources(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -830,6 +872,7 @@ def test_list_data_sources_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.ListDataSourcesResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_data_sources(
@@ -840,6 +883,7 @@ def test_list_data_sources_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -881,6 +925,7 @@ async def test_list_data_sources_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1085,6 +1130,7 @@ async def test_list_data_sources_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_create_transfer_config(transport: str = 'grpc', request_type=datatransfer.CreateTransferConfigRequest):
     client = DataTransferServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1102,35 +1148,58 @@ def test_create_transfer_config(transport: str = 'grpc', request_type=datatransf
         # Designate an appropriate return value for the call.
         call.return_value = transfer.TransferConfig(
             name='name_value',
+
             display_name='display_name_value',
+
             data_source_id='data_source_id_value',
+
             schedule='schedule_value',
+
             data_refresh_window_days=2543,
+
             disabled=True,
+
             state=transfer.TransferState.PENDING,
+
             user_id=747,
+
             dataset_region='dataset_region_value',
+
             notification_pubsub_topic='notification_pubsub_topic_value',
+
             destination_dataset_id='destination_dataset_id_value',
         )
+
         response = client.create_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.CreateTransferConfigRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, transfer.TransferConfig)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.data_source_id == 'data_source_id_value'
+
     assert response.schedule == 'schedule_value'
+
     assert response.data_refresh_window_days == 2543
+
     assert response.disabled is True
+
     assert response.state == transfer.TransferState.PENDING
+
     assert response.user_id == 747
+
     assert response.dataset_region == 'dataset_region_value'
+
     assert response.notification_pubsub_topic == 'notification_pubsub_topic_value'
 
 
@@ -1153,8 +1222,8 @@ def test_create_transfer_config_empty_call():
         client.create_transfer_config()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == datatransfer.CreateTransferConfigRequest()
 
+        assert args[0] == datatransfer.CreateTransferConfigRequest()
 
 @pytest.mark.asyncio
 async def test_create_transfer_config_async(transport: str = 'grpc_asyncio', request_type=datatransfer.CreateTransferConfigRequest):
@@ -1172,7 +1241,7 @@ async def test_create_transfer_config_async(transport: str = 'grpc_asyncio', req
             type(client.transport.create_transfer_config),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(transfer.TransferConfig(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(transfer.TransferConfig(
             name='name_value',
             display_name='display_name_value',
             data_source_id='data_source_id_value',
@@ -1184,24 +1253,36 @@ async def test_create_transfer_config_async(transport: str = 'grpc_asyncio', req
             dataset_region='dataset_region_value',
             notification_pubsub_topic='notification_pubsub_topic_value',
         ))
+
         response = await client.create_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.CreateTransferConfigRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, transfer.TransferConfig)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.data_source_id == 'data_source_id_value'
+
     assert response.schedule == 'schedule_value'
+
     assert response.data_refresh_window_days == 2543
+
     assert response.disabled is True
+
     assert response.state == transfer.TransferState.PENDING
+
     assert response.user_id == 747
+
     assert response.dataset_region == 'dataset_region_value'
+
     assert response.notification_pubsub_topic == 'notification_pubsub_topic_value'
 
 
@@ -1218,7 +1299,6 @@ def test_create_transfer_config_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.CreateTransferConfigRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1226,6 +1306,7 @@ def test_create_transfer_config_field_headers():
             type(client.transport.create_transfer_config),
             '__call__') as call:
         call.return_value = transfer.TransferConfig()
+
         client.create_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1250,7 +1331,6 @@ async def test_create_transfer_config_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.CreateTransferConfigRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1258,6 +1338,7 @@ async def test_create_transfer_config_field_headers_async():
             type(client.transport.create_transfer_config),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(transfer.TransferConfig())
+
         await client.create_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1284,6 +1365,7 @@ def test_create_transfer_config_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = transfer.TransferConfig()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_transfer_config(
@@ -1295,7 +1377,9 @@ def test_create_transfer_config_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].transfer_config == transfer.TransferConfig(name='name_value')
 
 
@@ -1339,7 +1423,9 @@ async def test_create_transfer_config_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].transfer_config == transfer.TransferConfig(name='name_value')
 
 
@@ -1376,35 +1462,58 @@ def test_update_transfer_config(transport: str = 'grpc', request_type=datatransf
         # Designate an appropriate return value for the call.
         call.return_value = transfer.TransferConfig(
             name='name_value',
+
             display_name='display_name_value',
+
             data_source_id='data_source_id_value',
+
             schedule='schedule_value',
+
             data_refresh_window_days=2543,
+
             disabled=True,
+
             state=transfer.TransferState.PENDING,
+
             user_id=747,
+
             dataset_region='dataset_region_value',
+
             notification_pubsub_topic='notification_pubsub_topic_value',
+
             destination_dataset_id='destination_dataset_id_value',
         )
+
         response = client.update_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.UpdateTransferConfigRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, transfer.TransferConfig)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.data_source_id == 'data_source_id_value'
+
     assert response.schedule == 'schedule_value'
+
     assert response.data_refresh_window_days == 2543
+
     assert response.disabled is True
+
     assert response.state == transfer.TransferState.PENDING
+
     assert response.user_id == 747
+
     assert response.dataset_region == 'dataset_region_value'
+
     assert response.notification_pubsub_topic == 'notification_pubsub_topic_value'
 
 
@@ -1427,8 +1536,8 @@ def test_update_transfer_config_empty_call():
         client.update_transfer_config()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == datatransfer.UpdateTransferConfigRequest()
 
+        assert args[0] == datatransfer.UpdateTransferConfigRequest()
 
 @pytest.mark.asyncio
 async def test_update_transfer_config_async(transport: str = 'grpc_asyncio', request_type=datatransfer.UpdateTransferConfigRequest):
@@ -1446,7 +1555,7 @@ async def test_update_transfer_config_async(transport: str = 'grpc_asyncio', req
             type(client.transport.update_transfer_config),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(transfer.TransferConfig(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(transfer.TransferConfig(
             name='name_value',
             display_name='display_name_value',
             data_source_id='data_source_id_value',
@@ -1458,24 +1567,36 @@ async def test_update_transfer_config_async(transport: str = 'grpc_asyncio', req
             dataset_region='dataset_region_value',
             notification_pubsub_topic='notification_pubsub_topic_value',
         ))
+
         response = await client.update_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.UpdateTransferConfigRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, transfer.TransferConfig)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.data_source_id == 'data_source_id_value'
+
     assert response.schedule == 'schedule_value'
+
     assert response.data_refresh_window_days == 2543
+
     assert response.disabled is True
+
     assert response.state == transfer.TransferState.PENDING
+
     assert response.user_id == 747
+
     assert response.dataset_region == 'dataset_region_value'
+
     assert response.notification_pubsub_topic == 'notification_pubsub_topic_value'
 
 
@@ -1492,7 +1613,6 @@ def test_update_transfer_config_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.UpdateTransferConfigRequest()
-
     request.transfer_config.name = 'transfer_config.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1500,6 +1620,7 @@ def test_update_transfer_config_field_headers():
             type(client.transport.update_transfer_config),
             '__call__') as call:
         call.return_value = transfer.TransferConfig()
+
         client.update_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1524,7 +1645,6 @@ async def test_update_transfer_config_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.UpdateTransferConfigRequest()
-
     request.transfer_config.name = 'transfer_config.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1532,6 +1652,7 @@ async def test_update_transfer_config_field_headers_async():
             type(client.transport.update_transfer_config),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(transfer.TransferConfig())
+
         await client.update_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1558,6 +1679,7 @@ def test_update_transfer_config_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = transfer.TransferConfig()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_transfer_config(
@@ -1569,7 +1691,9 @@ def test_update_transfer_config_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].transfer_config == transfer.TransferConfig(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1613,7 +1737,9 @@ async def test_update_transfer_config_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].transfer_config == transfer.TransferConfig(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1649,11 +1775,13 @@ def test_delete_transfer_config(transport: str = 'grpc', request_type=datatransf
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.DeleteTransferConfigRequest()
 
     # Establish that the response is the type that we expect.
@@ -1679,8 +1807,8 @@ def test_delete_transfer_config_empty_call():
         client.delete_transfer_config()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == datatransfer.DeleteTransferConfigRequest()
 
+        assert args[0] == datatransfer.DeleteTransferConfigRequest()
 
 @pytest.mark.asyncio
 async def test_delete_transfer_config_async(transport: str = 'grpc_asyncio', request_type=datatransfer.DeleteTransferConfigRequest):
@@ -1699,11 +1827,13 @@ async def test_delete_transfer_config_async(transport: str = 'grpc_asyncio', req
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.DeleteTransferConfigRequest()
 
     # Establish that the response is the type that we expect.
@@ -1723,7 +1853,6 @@ def test_delete_transfer_config_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.DeleteTransferConfigRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1731,6 +1860,7 @@ def test_delete_transfer_config_field_headers():
             type(client.transport.delete_transfer_config),
             '__call__') as call:
         call.return_value = None
+
         client.delete_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1755,7 +1885,6 @@ async def test_delete_transfer_config_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.DeleteTransferConfigRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1763,6 +1892,7 @@ async def test_delete_transfer_config_field_headers_async():
             type(client.transport.delete_transfer_config),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1789,6 +1919,7 @@ def test_delete_transfer_config_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_transfer_config(
@@ -1799,6 +1930,7 @@ def test_delete_transfer_config_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1840,6 +1972,7 @@ async def test_delete_transfer_config_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1875,35 +2008,58 @@ def test_get_transfer_config(transport: str = 'grpc', request_type=datatransfer.
         # Designate an appropriate return value for the call.
         call.return_value = transfer.TransferConfig(
             name='name_value',
+
             display_name='display_name_value',
+
             data_source_id='data_source_id_value',
+
             schedule='schedule_value',
+
             data_refresh_window_days=2543,
+
             disabled=True,
+
             state=transfer.TransferState.PENDING,
+
             user_id=747,
+
             dataset_region='dataset_region_value',
+
             notification_pubsub_topic='notification_pubsub_topic_value',
+
             destination_dataset_id='destination_dataset_id_value',
         )
+
         response = client.get_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.GetTransferConfigRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, transfer.TransferConfig)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.data_source_id == 'data_source_id_value'
+
     assert response.schedule == 'schedule_value'
+
     assert response.data_refresh_window_days == 2543
+
     assert response.disabled is True
+
     assert response.state == transfer.TransferState.PENDING
+
     assert response.user_id == 747
+
     assert response.dataset_region == 'dataset_region_value'
+
     assert response.notification_pubsub_topic == 'notification_pubsub_topic_value'
 
 
@@ -1926,8 +2082,8 @@ def test_get_transfer_config_empty_call():
         client.get_transfer_config()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == datatransfer.GetTransferConfigRequest()
 
+        assert args[0] == datatransfer.GetTransferConfigRequest()
 
 @pytest.mark.asyncio
 async def test_get_transfer_config_async(transport: str = 'grpc_asyncio', request_type=datatransfer.GetTransferConfigRequest):
@@ -1945,7 +2101,7 @@ async def test_get_transfer_config_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.get_transfer_config),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(transfer.TransferConfig(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(transfer.TransferConfig(
             name='name_value',
             display_name='display_name_value',
             data_source_id='data_source_id_value',
@@ -1957,24 +2113,36 @@ async def test_get_transfer_config_async(transport: str = 'grpc_asyncio', reques
             dataset_region='dataset_region_value',
             notification_pubsub_topic='notification_pubsub_topic_value',
         ))
+
         response = await client.get_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.GetTransferConfigRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, transfer.TransferConfig)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.data_source_id == 'data_source_id_value'
+
     assert response.schedule == 'schedule_value'
+
     assert response.data_refresh_window_days == 2543
+
     assert response.disabled is True
+
     assert response.state == transfer.TransferState.PENDING
+
     assert response.user_id == 747
+
     assert response.dataset_region == 'dataset_region_value'
+
     assert response.notification_pubsub_topic == 'notification_pubsub_topic_value'
 
 
@@ -1991,7 +2159,6 @@ def test_get_transfer_config_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.GetTransferConfigRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1999,6 +2166,7 @@ def test_get_transfer_config_field_headers():
             type(client.transport.get_transfer_config),
             '__call__') as call:
         call.return_value = transfer.TransferConfig()
+
         client.get_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2023,7 +2191,6 @@ async def test_get_transfer_config_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.GetTransferConfigRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2031,6 +2198,7 @@ async def test_get_transfer_config_field_headers_async():
             type(client.transport.get_transfer_config),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(transfer.TransferConfig())
+
         await client.get_transfer_config(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2057,6 +2225,7 @@ def test_get_transfer_config_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = transfer.TransferConfig()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_transfer_config(
@@ -2067,6 +2236,7 @@ def test_get_transfer_config_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2108,6 +2278,7 @@ async def test_get_transfer_config_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2143,16 +2314,21 @@ def test_list_transfer_configs(transport: str = 'grpc', request_type=datatransfe
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.ListTransferConfigsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_transfer_configs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.ListTransferConfigsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListTransferConfigsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2175,8 +2351,8 @@ def test_list_transfer_configs_empty_call():
         client.list_transfer_configs()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == datatransfer.ListTransferConfigsRequest()
 
+        assert args[0] == datatransfer.ListTransferConfigsRequest()
 
 @pytest.mark.asyncio
 async def test_list_transfer_configs_async(transport: str = 'grpc_asyncio', request_type=datatransfer.ListTransferConfigsRequest):
@@ -2194,18 +2370,21 @@ async def test_list_transfer_configs_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.list_transfer_configs),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ListTransferConfigsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ListTransferConfigsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_transfer_configs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.ListTransferConfigsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTransferConfigsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2222,7 +2401,6 @@ def test_list_transfer_configs_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.ListTransferConfigsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2230,6 +2408,7 @@ def test_list_transfer_configs_field_headers():
             type(client.transport.list_transfer_configs),
             '__call__') as call:
         call.return_value = datatransfer.ListTransferConfigsResponse()
+
         client.list_transfer_configs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2254,7 +2433,6 @@ async def test_list_transfer_configs_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.ListTransferConfigsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2262,6 +2440,7 @@ async def test_list_transfer_configs_field_headers_async():
             type(client.transport.list_transfer_configs),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ListTransferConfigsResponse())
+
         await client.list_transfer_configs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2288,6 +2467,7 @@ def test_list_transfer_configs_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.ListTransferConfigsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_transfer_configs(
@@ -2298,6 +2478,7 @@ def test_list_transfer_configs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -2339,6 +2520,7 @@ async def test_list_transfer_configs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -2543,6 +2725,7 @@ async def test_list_transfer_configs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_schedule_transfer_runs(transport: str = 'grpc', request_type=datatransfer.ScheduleTransferRunsRequest):
     client = DataTransferServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2560,14 +2743,17 @@ def test_schedule_transfer_runs(transport: str = 'grpc', request_type=datatransf
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.ScheduleTransferRunsResponse(
         )
+
         response = client.schedule_transfer_runs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.ScheduleTransferRunsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, datatransfer.ScheduleTransferRunsResponse)
 
 
@@ -2590,8 +2776,8 @@ def test_schedule_transfer_runs_empty_call():
         client.schedule_transfer_runs()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == datatransfer.ScheduleTransferRunsRequest()
 
+        assert args[0] == datatransfer.ScheduleTransferRunsRequest()
 
 @pytest.mark.asyncio
 async def test_schedule_transfer_runs_async(transport: str = 'grpc_asyncio', request_type=datatransfer.ScheduleTransferRunsRequest):
@@ -2609,13 +2795,15 @@ async def test_schedule_transfer_runs_async(transport: str = 'grpc_asyncio', req
             type(client.transport.schedule_transfer_runs),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ScheduleTransferRunsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ScheduleTransferRunsResponse(
         ))
+
         response = await client.schedule_transfer_runs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.ScheduleTransferRunsRequest()
 
     # Establish that the response is the type that we expect.
@@ -2635,7 +2823,6 @@ def test_schedule_transfer_runs_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.ScheduleTransferRunsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2643,6 +2830,7 @@ def test_schedule_transfer_runs_field_headers():
             type(client.transport.schedule_transfer_runs),
             '__call__') as call:
         call.return_value = datatransfer.ScheduleTransferRunsResponse()
+
         client.schedule_transfer_runs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2667,7 +2855,6 @@ async def test_schedule_transfer_runs_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.ScheduleTransferRunsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2675,6 +2862,7 @@ async def test_schedule_transfer_runs_field_headers_async():
             type(client.transport.schedule_transfer_runs),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ScheduleTransferRunsResponse())
+
         await client.schedule_transfer_runs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2701,6 +2889,7 @@ def test_schedule_transfer_runs_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.ScheduleTransferRunsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.schedule_transfer_runs(
@@ -2713,8 +2902,11 @@ def test_schedule_transfer_runs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert TimestampRule().to_proto(args[0].start_time) == timestamp.Timestamp(seconds=751)
+
         assert TimestampRule().to_proto(args[0].end_time) == timestamp.Timestamp(seconds=751)
 
 
@@ -2760,8 +2952,11 @@ async def test_schedule_transfer_runs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert TimestampRule().to_proto(args[0].start_time) == timestamp.Timestamp(seconds=751)
+
         assert TimestampRule().to_proto(args[0].end_time) == timestamp.Timestamp(seconds=751)
 
 
@@ -2799,14 +2994,17 @@ def test_start_manual_transfer_runs(transport: str = 'grpc', request_type=datatr
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.StartManualTransferRunsResponse(
         )
+
         response = client.start_manual_transfer_runs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.StartManualTransferRunsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, datatransfer.StartManualTransferRunsResponse)
 
 
@@ -2829,8 +3027,8 @@ def test_start_manual_transfer_runs_empty_call():
         client.start_manual_transfer_runs()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == datatransfer.StartManualTransferRunsRequest()
 
+        assert args[0] == datatransfer.StartManualTransferRunsRequest()
 
 @pytest.mark.asyncio
 async def test_start_manual_transfer_runs_async(transport: str = 'grpc_asyncio', request_type=datatransfer.StartManualTransferRunsRequest):
@@ -2848,13 +3046,15 @@ async def test_start_manual_transfer_runs_async(transport: str = 'grpc_asyncio',
             type(client.transport.start_manual_transfer_runs),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.StartManualTransferRunsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.StartManualTransferRunsResponse(
         ))
+
         response = await client.start_manual_transfer_runs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.StartManualTransferRunsRequest()
 
     # Establish that the response is the type that we expect.
@@ -2874,7 +3074,6 @@ def test_start_manual_transfer_runs_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.StartManualTransferRunsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2882,6 +3081,7 @@ def test_start_manual_transfer_runs_field_headers():
             type(client.transport.start_manual_transfer_runs),
             '__call__') as call:
         call.return_value = datatransfer.StartManualTransferRunsResponse()
+
         client.start_manual_transfer_runs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2906,7 +3106,6 @@ async def test_start_manual_transfer_runs_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.StartManualTransferRunsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2914,6 +3113,7 @@ async def test_start_manual_transfer_runs_field_headers_async():
             type(client.transport.start_manual_transfer_runs),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.StartManualTransferRunsResponse())
+
         await client.start_manual_transfer_runs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2946,27 +3146,42 @@ def test_get_transfer_run(transport: str = 'grpc', request_type=datatransfer.Get
         # Designate an appropriate return value for the call.
         call.return_value = transfer.TransferRun(
             name='name_value',
+
             data_source_id='data_source_id_value',
+
             state=transfer.TransferState.PENDING,
+
             user_id=747,
+
             schedule='schedule_value',
+
             notification_pubsub_topic='notification_pubsub_topic_value',
+
             destination_dataset_id='destination_dataset_id_value',
         )
+
         response = client.get_transfer_run(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.GetTransferRunRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, transfer.TransferRun)
+
     assert response.name == 'name_value'
+
     assert response.data_source_id == 'data_source_id_value'
+
     assert response.state == transfer.TransferState.PENDING
+
     assert response.user_id == 747
+
     assert response.schedule == 'schedule_value'
+
     assert response.notification_pubsub_topic == 'notification_pubsub_topic_value'
 
 
@@ -2989,8 +3204,8 @@ def test_get_transfer_run_empty_call():
         client.get_transfer_run()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == datatransfer.GetTransferRunRequest()
 
+        assert args[0] == datatransfer.GetTransferRunRequest()
 
 @pytest.mark.asyncio
 async def test_get_transfer_run_async(transport: str = 'grpc_asyncio', request_type=datatransfer.GetTransferRunRequest):
@@ -3008,7 +3223,7 @@ async def test_get_transfer_run_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.get_transfer_run),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(transfer.TransferRun(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(transfer.TransferRun(
             name='name_value',
             data_source_id='data_source_id_value',
             state=transfer.TransferState.PENDING,
@@ -3016,20 +3231,28 @@ async def test_get_transfer_run_async(transport: str = 'grpc_asyncio', request_t
             schedule='schedule_value',
             notification_pubsub_topic='notification_pubsub_topic_value',
         ))
+
         response = await client.get_transfer_run(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.GetTransferRunRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, transfer.TransferRun)
+
     assert response.name == 'name_value'
+
     assert response.data_source_id == 'data_source_id_value'
+
     assert response.state == transfer.TransferState.PENDING
+
     assert response.user_id == 747
+
     assert response.schedule == 'schedule_value'
+
     assert response.notification_pubsub_topic == 'notification_pubsub_topic_value'
 
 
@@ -3046,7 +3269,6 @@ def test_get_transfer_run_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.GetTransferRunRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3054,6 +3276,7 @@ def test_get_transfer_run_field_headers():
             type(client.transport.get_transfer_run),
             '__call__') as call:
         call.return_value = transfer.TransferRun()
+
         client.get_transfer_run(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3078,7 +3301,6 @@ async def test_get_transfer_run_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.GetTransferRunRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3086,6 +3308,7 @@ async def test_get_transfer_run_field_headers_async():
             type(client.transport.get_transfer_run),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(transfer.TransferRun())
+
         await client.get_transfer_run(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3112,6 +3335,7 @@ def test_get_transfer_run_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = transfer.TransferRun()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_transfer_run(
@@ -3122,6 +3346,7 @@ def test_get_transfer_run_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3163,6 +3388,7 @@ async def test_get_transfer_run_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3197,11 +3423,13 @@ def test_delete_transfer_run(transport: str = 'grpc', request_type=datatransfer.
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_transfer_run(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.DeleteTransferRunRequest()
 
     # Establish that the response is the type that we expect.
@@ -3227,8 +3455,8 @@ def test_delete_transfer_run_empty_call():
         client.delete_transfer_run()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == datatransfer.DeleteTransferRunRequest()
 
+        assert args[0] == datatransfer.DeleteTransferRunRequest()
 
 @pytest.mark.asyncio
 async def test_delete_transfer_run_async(transport: str = 'grpc_asyncio', request_type=datatransfer.DeleteTransferRunRequest):
@@ -3247,11 +3475,13 @@ async def test_delete_transfer_run_async(transport: str = 'grpc_asyncio', reques
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_transfer_run(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.DeleteTransferRunRequest()
 
     # Establish that the response is the type that we expect.
@@ -3271,7 +3501,6 @@ def test_delete_transfer_run_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.DeleteTransferRunRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3279,6 +3508,7 @@ def test_delete_transfer_run_field_headers():
             type(client.transport.delete_transfer_run),
             '__call__') as call:
         call.return_value = None
+
         client.delete_transfer_run(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3303,7 +3533,6 @@ async def test_delete_transfer_run_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.DeleteTransferRunRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3311,6 +3540,7 @@ async def test_delete_transfer_run_field_headers_async():
             type(client.transport.delete_transfer_run),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_transfer_run(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3337,6 +3567,7 @@ def test_delete_transfer_run_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_transfer_run(
@@ -3347,6 +3578,7 @@ def test_delete_transfer_run_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3388,6 +3620,7 @@ async def test_delete_transfer_run_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3423,16 +3656,21 @@ def test_list_transfer_runs(transport: str = 'grpc', request_type=datatransfer.L
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.ListTransferRunsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_transfer_runs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.ListTransferRunsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListTransferRunsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -3455,8 +3693,8 @@ def test_list_transfer_runs_empty_call():
         client.list_transfer_runs()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == datatransfer.ListTransferRunsRequest()
 
+        assert args[0] == datatransfer.ListTransferRunsRequest()
 
 @pytest.mark.asyncio
 async def test_list_transfer_runs_async(transport: str = 'grpc_asyncio', request_type=datatransfer.ListTransferRunsRequest):
@@ -3474,18 +3712,21 @@ async def test_list_transfer_runs_async(transport: str = 'grpc_asyncio', request
             type(client.transport.list_transfer_runs),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ListTransferRunsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ListTransferRunsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_transfer_runs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.ListTransferRunsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTransferRunsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -3502,7 +3743,6 @@ def test_list_transfer_runs_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.ListTransferRunsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3510,6 +3750,7 @@ def test_list_transfer_runs_field_headers():
             type(client.transport.list_transfer_runs),
             '__call__') as call:
         call.return_value = datatransfer.ListTransferRunsResponse()
+
         client.list_transfer_runs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3534,7 +3775,6 @@ async def test_list_transfer_runs_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.ListTransferRunsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3542,6 +3782,7 @@ async def test_list_transfer_runs_field_headers_async():
             type(client.transport.list_transfer_runs),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ListTransferRunsResponse())
+
         await client.list_transfer_runs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3568,6 +3809,7 @@ def test_list_transfer_runs_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.ListTransferRunsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_transfer_runs(
@@ -3578,6 +3820,7 @@ def test_list_transfer_runs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -3619,6 +3862,7 @@ async def test_list_transfer_runs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -3823,6 +4067,7 @@ async def test_list_transfer_runs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_list_transfer_logs(transport: str = 'grpc', request_type=datatransfer.ListTransferLogsRequest):
     client = DataTransferServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -3840,16 +4085,21 @@ def test_list_transfer_logs(transport: str = 'grpc', request_type=datatransfer.L
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.ListTransferLogsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_transfer_logs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.ListTransferLogsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListTransferLogsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -3872,8 +4122,8 @@ def test_list_transfer_logs_empty_call():
         client.list_transfer_logs()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == datatransfer.ListTransferLogsRequest()
 
+        assert args[0] == datatransfer.ListTransferLogsRequest()
 
 @pytest.mark.asyncio
 async def test_list_transfer_logs_async(transport: str = 'grpc_asyncio', request_type=datatransfer.ListTransferLogsRequest):
@@ -3891,18 +4141,21 @@ async def test_list_transfer_logs_async(transport: str = 'grpc_asyncio', request
             type(client.transport.list_transfer_logs),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ListTransferLogsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ListTransferLogsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_transfer_logs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.ListTransferLogsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTransferLogsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -3919,7 +4172,6 @@ def test_list_transfer_logs_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.ListTransferLogsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3927,6 +4179,7 @@ def test_list_transfer_logs_field_headers():
             type(client.transport.list_transfer_logs),
             '__call__') as call:
         call.return_value = datatransfer.ListTransferLogsResponse()
+
         client.list_transfer_logs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3951,7 +4204,6 @@ async def test_list_transfer_logs_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.ListTransferLogsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3959,6 +4211,7 @@ async def test_list_transfer_logs_field_headers_async():
             type(client.transport.list_transfer_logs),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.ListTransferLogsResponse())
+
         await client.list_transfer_logs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3985,6 +4238,7 @@ def test_list_transfer_logs_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.ListTransferLogsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_transfer_logs(
@@ -3995,6 +4249,7 @@ def test_list_transfer_logs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -4036,6 +4291,7 @@ async def test_list_transfer_logs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -4240,6 +4496,7 @@ async def test_list_transfer_logs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_check_valid_creds(transport: str = 'grpc', request_type=datatransfer.CheckValidCredsRequest):
     client = DataTransferServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -4257,16 +4514,21 @@ def test_check_valid_creds(transport: str = 'grpc', request_type=datatransfer.Ch
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.CheckValidCredsResponse(
             has_valid_creds=True,
+
         )
+
         response = client.check_valid_creds(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.CheckValidCredsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, datatransfer.CheckValidCredsResponse)
+
     assert response.has_valid_creds is True
 
 
@@ -4289,8 +4551,8 @@ def test_check_valid_creds_empty_call():
         client.check_valid_creds()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == datatransfer.CheckValidCredsRequest()
 
+        assert args[0] == datatransfer.CheckValidCredsRequest()
 
 @pytest.mark.asyncio
 async def test_check_valid_creds_async(transport: str = 'grpc_asyncio', request_type=datatransfer.CheckValidCredsRequest):
@@ -4308,18 +4570,21 @@ async def test_check_valid_creds_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.check_valid_creds),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.CheckValidCredsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.CheckValidCredsResponse(
             has_valid_creds=True,
         ))
+
         response = await client.check_valid_creds(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == datatransfer.CheckValidCredsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, datatransfer.CheckValidCredsResponse)
+
     assert response.has_valid_creds is True
 
 
@@ -4336,7 +4601,6 @@ def test_check_valid_creds_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.CheckValidCredsRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4344,6 +4608,7 @@ def test_check_valid_creds_field_headers():
             type(client.transport.check_valid_creds),
             '__call__') as call:
         call.return_value = datatransfer.CheckValidCredsResponse()
+
         client.check_valid_creds(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4368,7 +4633,6 @@ async def test_check_valid_creds_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = datatransfer.CheckValidCredsRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4376,6 +4640,7 @@ async def test_check_valid_creds_field_headers_async():
             type(client.transport.check_valid_creds),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(datatransfer.CheckValidCredsResponse())
+
         await client.check_valid_creds(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4402,6 +4667,7 @@ def test_check_valid_creds_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = datatransfer.CheckValidCredsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.check_valid_creds(
@@ -4412,6 +4678,7 @@ def test_check_valid_creds_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -4453,6 +4720,7 @@ async def test_check_valid_creds_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -4511,6 +4779,7 @@ def test_transport_instance():
     client = DataTransferServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.DataTransferServiceGrpcTransport(
@@ -4525,6 +4794,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.DataTransferServiceGrpcTransport,
     transports.DataTransferServiceGrpcAsyncIOTransport,
@@ -4536,6 +4806,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = DataTransferServiceClient(
@@ -4545,6 +4816,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.DataTransferServiceGrpcTransport,
     )
+
 
 def test_data_transfer_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -4580,33 +4852,15 @@ def test_data_transfer_service_base_transport():
         'list_transfer_runs',
         'list_transfer_logs',
         'check_valid_creds',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_data_transfer_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.bigquery_datatransfer_v1.services.data_transfer_service.transports.DataTransferServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.DataTransferServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_data_transfer_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.bigquery_datatransfer_v1.services.data_transfer_service.transports.DataTransferServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.bigquery_datatransfer_v1.services.data_transfer_service.transports.DataTransferServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.DataTransferServiceTransport(
@@ -4622,182 +4876,33 @@ def test_data_transfer_service_base_transport_with_credentials_file_old_google_a
 
 def test_data_transfer_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.bigquery_datatransfer_v1.services.data_transfer_service.transports.DataTransferServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.bigquery_datatransfer_v1.services.data_transfer_service.transports.DataTransferServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.DataTransferServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_data_transfer_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         DataTransferServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_data_transfer_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        DataTransferServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.DataTransferServiceGrpcTransport,
-        transports.DataTransferServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_data_transfer_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.DataTransferServiceGrpcTransport,
-        transports.DataTransferServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_data_transfer_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.DataTransferServiceGrpcTransport, grpc_helpers),
-        (transports.DataTransferServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_data_transfer_service_transport_create_channel(transport_class, grpc_helpers):
+def test_data_transfer_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.DataTransferServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "bigquerydatatransfer.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="bigquerydatatransfer.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.DataTransferServiceGrpcTransport, grpc_helpers),
-        (transports.DataTransferServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_data_transfer_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "bigquerydatatransfer.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.DataTransferServiceGrpcTransport, grpc_helpers),
-        (transports.DataTransferServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_data_transfer_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "bigquerydatatransfer.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -4859,6 +4964,7 @@ def test_data_transfer_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='bigquerydatatransfer.googleapis.com:8000'),
     )
     assert client.transport._host == 'bigquerydatatransfer.googleapis.com:8000'
+
 
 def test_data_transfer_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -4977,6 +5083,7 @@ def test_data_transfer_service_transport_channel_mtls_with_adc(
 def test_data_source_path():
     project = "squid"
     data_source = "clam"
+
     expected = "projects/{project}/dataSources/{data_source}".format(project=project, data_source=data_source, )
     actual = DataTransferServiceClient.data_source_path(project, data_source)
     assert expected == actual
@@ -4984,8 +5091,9 @@ def test_data_source_path():
 
 def test_parse_data_source_path():
     expected = {
-        "project": "whelk",
-        "data_source": "octopus",
+    "project": "whelk",
+    "data_source": "octopus",
+
     }
     path = DataTransferServiceClient.data_source_path(**expected)
 
@@ -4997,6 +5105,7 @@ def test_run_path():
     project = "oyster"
     transfer_config = "nudibranch"
     run = "cuttlefish"
+
     expected = "projects/{project}/transferConfigs/{transfer_config}/runs/{run}".format(project=project, transfer_config=transfer_config, run=run, )
     actual = DataTransferServiceClient.run_path(project, transfer_config, run)
     assert expected == actual
@@ -5004,9 +5113,10 @@ def test_run_path():
 
 def test_parse_run_path():
     expected = {
-        "project": "mussel",
-        "transfer_config": "winkle",
-        "run": "nautilus",
+    "project": "mussel",
+    "transfer_config": "winkle",
+    "run": "nautilus",
+
     }
     path = DataTransferServiceClient.run_path(**expected)
 
@@ -5017,6 +5127,7 @@ def test_parse_run_path():
 def test_transfer_config_path():
     project = "scallop"
     transfer_config = "abalone"
+
     expected = "projects/{project}/transferConfigs/{transfer_config}".format(project=project, transfer_config=transfer_config, )
     actual = DataTransferServiceClient.transfer_config_path(project, transfer_config)
     assert expected == actual
@@ -5024,8 +5135,9 @@ def test_transfer_config_path():
 
 def test_parse_transfer_config_path():
     expected = {
-        "project": "squid",
-        "transfer_config": "clam",
+    "project": "squid",
+    "transfer_config": "clam",
+
     }
     path = DataTransferServiceClient.transfer_config_path(**expected)
 
@@ -5035,6 +5147,7 @@ def test_parse_transfer_config_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = DataTransferServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -5042,7 +5155,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = DataTransferServiceClient.common_billing_account_path(**expected)
 
@@ -5052,6 +5166,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = DataTransferServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -5059,7 +5174,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = DataTransferServiceClient.common_folder_path(**expected)
 
@@ -5069,6 +5185,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = DataTransferServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -5076,7 +5193,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = DataTransferServiceClient.common_organization_path(**expected)
 
@@ -5086,6 +5204,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = DataTransferServiceClient.common_project_path(project)
     assert expected == actual
@@ -5093,7 +5212,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = DataTransferServiceClient.common_project_path(**expected)
 
@@ -5104,6 +5224,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = DataTransferServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -5111,8 +5232,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = DataTransferServiceClient.common_location_path(**expected)
 

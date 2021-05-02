@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -26,7 +28,7 @@ __protobuf__ = proto.module(
 
 
 class BiddingSourceEnum(proto.Message):
-    r"""Container for enum describing possible bidding sources.    """
+    r"""Container for enum describing possible bidding sources."""
     class BiddingSource(proto.Enum):
         r"""Indicates where a bid or target is defined. For example, an
         ad group criterion may define a cpc bid directly, or it can

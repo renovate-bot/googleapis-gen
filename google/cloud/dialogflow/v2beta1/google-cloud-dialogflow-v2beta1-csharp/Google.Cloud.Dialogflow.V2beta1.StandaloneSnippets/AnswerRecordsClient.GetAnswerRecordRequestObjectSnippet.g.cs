@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedAnswerRecordsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAnswerRecord</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAnswerRecordRequestObject()
         {
-            // Snippet: GetAnswerRecord(GetAnswerRecordRequest, CallSettings)
             // Create client
             AnswerRecordsClient answerRecordsClient = AnswerRecordsClient.Create();
             // Initialize request argument(s)
             GetAnswerRecordRequest request = new GetAnswerRecordRequest { Name = "", };
             // Make the request
             AnswerRecord response = answerRecordsClient.GetAnswerRecord(request);
-            // End snippet
         }
     }
 }

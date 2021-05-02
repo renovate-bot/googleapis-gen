@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedKnowledgeBasesClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteKnowledgeBase</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteKnowledgeBaseResourceNames()
         {
-            // Snippet: DeleteKnowledgeBase(KnowledgeBaseName, CallSettings)
             // Create client
             KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.Create();
             // Initialize request argument(s)
             KnowledgeBaseName name = KnowledgeBaseName.FromProjectKnowledgeBase("[PROJECT]", "[KNOWLEDGE_BASE]");
             // Make the request
             knowledgeBasesClient.DeleteKnowledgeBase(name);
-            // End snippet
         }
     }
 }

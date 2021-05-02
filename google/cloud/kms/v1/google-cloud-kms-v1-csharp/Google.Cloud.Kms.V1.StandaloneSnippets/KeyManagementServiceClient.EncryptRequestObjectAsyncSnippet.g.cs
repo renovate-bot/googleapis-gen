@@ -17,16 +17,19 @@
 namespace Google.Cloud.Kms.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Kms.V1;
     using Google.Protobuf;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedKeyManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for EncryptAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task EncryptRequestObjectAsync()
         {
-            // Snippet: EncryptAsync(EncryptRequest, CallSettings)
-            // Additional: EncryptAsync(EncryptRequest, CancellationToken)
             // Create client
             KeyManagementServiceClient keyManagementServiceClient = await KeyManagementServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Cloud.Kms.V1.Snippets
             };
             // Make the request
             EncryptResponse response = await keyManagementServiceClient.EncryptAsync(request);
-            // End snippet
         }
     }
 }

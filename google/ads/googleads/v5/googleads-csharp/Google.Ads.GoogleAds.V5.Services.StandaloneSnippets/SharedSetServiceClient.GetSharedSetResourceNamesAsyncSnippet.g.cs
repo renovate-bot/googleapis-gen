@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSharedSetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSharedSetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetSharedSetResourceNamesAsync()
         {
-            // Snippet: GetSharedSetAsync(SharedSetName, CallSettings)
-            // Additional: GetSharedSetAsync(SharedSetName, CancellationToken)
             // Create client
             SharedSetServiceClient sharedSetServiceClient = await SharedSetServiceClient.CreateAsync();
             // Initialize request argument(s)
             SharedSetName resourceName = SharedSetName.FromCustomerSharedSet("[CUSTOMER]", "[SHARED_SET]");
             // Make the request
             SharedSet response = await sharedSetServiceClient.GetSharedSetAsync(resourceName);
-            // End snippet
         }
     }
 }

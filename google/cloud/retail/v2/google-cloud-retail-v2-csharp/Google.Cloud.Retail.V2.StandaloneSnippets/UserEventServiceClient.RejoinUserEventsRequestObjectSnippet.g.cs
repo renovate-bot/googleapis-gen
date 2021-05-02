@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Retail.V2.Snippets
 {
+    using Google.Cloud.Retail.V2;
     using Google.LongRunning;
 
     public sealed partial class GeneratedUserEventServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for RejoinUserEvents</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void RejoinUserEventsRequestObject()
         {
-            // Snippet: RejoinUserEvents(RejoinUserEventsRequest, CallSettings)
             // Create client
             UserEventServiceClient userEventServiceClient = UserEventServiceClient.Create();
             // Initialize request argument(s)
@@ -50,7 +54,6 @@ namespace Google.Cloud.Retail.V2.Snippets
                 // If it has completed, then access the result
                 RejoinUserEventsResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

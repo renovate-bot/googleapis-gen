@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Workflows.Executions.V1.Snippets
 {
+    using Google.Cloud.Workflows.Executions.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedExecutionsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateExecutionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateExecutionResourceNamesAsync()
         {
-            // Snippet: CreateExecutionAsync(WorkflowName, Execution, CallSettings)
-            // Additional: CreateExecutionAsync(WorkflowName, Execution, CancellationToken)
             // Create client
             ExecutionsClient executionsClient = await ExecutionsClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Workflows.Executions.V1.Snippets
             Execution execution = new Execution();
             // Make the request
             Execution response = await executionsClient.CreateExecutionAsync(parent, execution);
-            // End snippet
         }
     }
 }

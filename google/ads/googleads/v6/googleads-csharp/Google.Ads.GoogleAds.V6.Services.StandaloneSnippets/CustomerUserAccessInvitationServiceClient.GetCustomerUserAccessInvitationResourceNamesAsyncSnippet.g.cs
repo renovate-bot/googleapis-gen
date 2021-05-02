@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomerUserAccessInvitationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomerUserAccessInvitationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCustomerUserAccessInvitationResourceNamesAsync()
         {
-            // Snippet: GetCustomerUserAccessInvitationAsync(CustomerUserAccessInvitationName, CallSettings)
-            // Additional: GetCustomerUserAccessInvitationAsync(CustomerUserAccessInvitationName, CancellationToken)
             // Create client
             CustomerUserAccessInvitationServiceClient customerUserAccessInvitationServiceClient = await CustomerUserAccessInvitationServiceClient.CreateAsync();
             // Initialize request argument(s)
             CustomerUserAccessInvitationName resourceName = CustomerUserAccessInvitationName.FromCustomerInvitation("[CUSTOMER_ID]", "[INVITATION_ID]");
             // Make the request
             CustomerUserAccessInvitation response = await customerUserAccessInvitationServiceClient.GetCustomerUserAccessInvitationAsync(resourceName);
-            // End snippet
         }
     }
 }

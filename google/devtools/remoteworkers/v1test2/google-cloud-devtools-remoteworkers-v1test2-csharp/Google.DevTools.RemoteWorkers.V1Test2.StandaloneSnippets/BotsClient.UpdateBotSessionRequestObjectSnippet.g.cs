@@ -16,14 +16,18 @@
 
 namespace Google.DevTools.RemoteWorkers.V1Test2.Snippets
 {
+    using Google.DevTools.RemoteWorkers.V1Test2;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedBotsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateBotSession</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateBotSessionRequestObject()
         {
-            // Snippet: UpdateBotSession(UpdateBotSessionRequest, CallSettings)
             // Create client
             BotsClient botsClient = BotsClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.DevTools.RemoteWorkers.V1Test2.Snippets
             };
             // Make the request
             BotSession response = botsClient.UpdateBotSession(request);
-            // End snippet
         }
     }
 }

@@ -17,14 +17,18 @@
 namespace Google.Area120.Tables.V1Alpha1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Area120.Tables.V1Alpha1;
     using System;
 
     public sealed partial class GeneratedTablesServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListRows</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListRowsRequestObject()
         {
-            // Snippet: ListRows(ListRowsRequest, CallSettings)
             // Create client
             TablesServiceClient tablesServiceClient = TablesServiceClient.Create();
             // Initialize request argument(s)
@@ -68,7 +72,6 @@ namespace Google.Area120.Tables.V1Alpha1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

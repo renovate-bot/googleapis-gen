@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Bigquery.Storage.V1Alpha2.Snippets
 {
+    using Google.Cloud.Bigquery.Storage.V1Alpha2;
+
     public sealed partial class GeneratedBigQueryWriteClientStandaloneSnippets
     {
         /// <summary>Snippet for FinalizeWriteStream</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void FinalizeWriteStreamRequestObject()
         {
-            // Snippet: FinalizeWriteStream(FinalizeWriteStreamRequest, CallSettings)
             // Create client
             BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Bigquery.Storage.V1Alpha2.Snippets
             };
             // Make the request
             FinalizeWriteStreamResponse response = bigQueryWriteClient.FinalizeWriteStream(request);
-            // End snippet
         }
     }
 }

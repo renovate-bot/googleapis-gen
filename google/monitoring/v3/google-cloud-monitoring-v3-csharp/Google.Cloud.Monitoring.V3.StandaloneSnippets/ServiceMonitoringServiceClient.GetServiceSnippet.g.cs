@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
+
     public sealed partial class GeneratedServiceMonitoringServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetService</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetService()
         {
-            // Snippet: GetService(string, CallSettings)
             // Create client
             ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/services/[SERVICE]";
             // Make the request
             Service response = serviceMonitoringServiceClient.GetService(name);
-            // End snippet
         }
     }
 }

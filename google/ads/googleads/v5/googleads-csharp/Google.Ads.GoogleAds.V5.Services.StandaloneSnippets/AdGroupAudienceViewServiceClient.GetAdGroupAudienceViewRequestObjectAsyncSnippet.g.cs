@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupAudienceViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupAudienceViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdGroupAudienceViewRequestObjectAsync()
         {
-            // Snippet: GetAdGroupAudienceViewAsync(GetAdGroupAudienceViewRequest, CallSettings)
-            // Additional: GetAdGroupAudienceViewAsync(GetAdGroupAudienceViewRequest, CancellationToken)
             // Create client
             AdGroupAudienceViewServiceClient adGroupAudienceViewServiceClient = await AdGroupAudienceViewServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             AdGroupAudienceView response = await adGroupAudienceViewServiceClient.GetAdGroupAudienceViewAsync(request);
-            // End snippet
         }
     }
 }

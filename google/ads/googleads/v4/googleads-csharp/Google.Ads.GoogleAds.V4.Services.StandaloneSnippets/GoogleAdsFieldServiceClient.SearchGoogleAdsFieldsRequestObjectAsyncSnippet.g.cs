@@ -17,6 +17,7 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using Google.Api.Gax;
     using System;
     using System.Linq;
@@ -24,10 +25,13 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
 
     public sealed partial class GeneratedGoogleAdsFieldServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for SearchGoogleAdsFields</summary>
+        /// <summary>Snippet for SearchGoogleAdsFieldsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SearchGoogleAdsFieldsRequestObjectAsync()
         {
-            // Snippet: SearchGoogleAdsFieldsAsync(SearchGoogleAdsFieldsRequest, CallSettings)
             // Create client
             GoogleAdsFieldServiceClient googleAdsFieldServiceClient = await GoogleAdsFieldServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -66,7 +70,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

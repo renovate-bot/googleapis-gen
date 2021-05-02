@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -27,6 +29,7 @@ from google.auth import credentials                    # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.home.graph_v1.types import homegraph
+
 from .transports.base import HomeGraphApiServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import HomeGraphApiServiceGrpcAsyncIOTransport
 from .client import HomeGraphApiServiceClient
@@ -49,14 +52,19 @@ class HomeGraphApiServiceAsyncClient:
 
     agent_user_path_path = staticmethod(HomeGraphApiServiceClient.agent_user_path_path)
     parse_agent_user_path_path = staticmethod(HomeGraphApiServiceClient.parse_agent_user_path_path)
+
     common_billing_account_path = staticmethod(HomeGraphApiServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(HomeGraphApiServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(HomeGraphApiServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(HomeGraphApiServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(HomeGraphApiServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(HomeGraphApiServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(HomeGraphApiServiceClient.common_project_path)
     parse_common_project_path = staticmethod(HomeGraphApiServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(HomeGraphApiServiceClient.common_location_path)
     parse_common_location_path = staticmethod(HomeGraphApiServiceClient.parse_common_location_path)
 
@@ -141,6 +149,7 @@ class HomeGraphApiServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = HomeGraphApiServiceClient(
             credentials=credentials,
             transport=transport,
@@ -170,8 +179,7 @@ class HomeGraphApiServiceAsyncClient:
 
         Args:
             request (:class:`google.home.graph_v1.types.RequestSyncDevicesRequest`):
-                The request object.
-                Request type for the
+                The request object. Request type for the
                 [`RequestSyncDevices`](#google.home.graph.v1.HomeGraphApiService.RequestSyncDevices)
                 call.
             agent_user_id (:class:`str`):
@@ -179,6 +187,7 @@ class HomeGraphApiServiceAsyncClient:
                 This corresponds to the ``agent_user_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -207,6 +216,7 @@ class HomeGraphApiServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if agent_user_id is not None:
             request.agent_user_id = agent_user_id
 
@@ -260,8 +270,7 @@ class HomeGraphApiServiceAsyncClient:
 
         Args:
             request (:class:`google.home.graph_v1.types.ReportStateAndNotificationRequest`):
-                The request object.
-                Request type for the
+                The request object. Request type for the
                 [`ReportStateAndNotification`](#google.home.graph.v1.HomeGraphApiService.ReportStateAndNotification)
                 call. It may include states, notifications, or both.
                 States and notifications are defined per `device_id`
@@ -311,6 +320,7 @@ class HomeGraphApiServiceAsyncClient:
                 This corresponds to the ``payload`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -336,6 +346,7 @@ class HomeGraphApiServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if request_id is not None:
             request.request_id = request_id
         if event_id is not None:
@@ -388,8 +399,7 @@ class HomeGraphApiServiceAsyncClient:
 
         Args:
             request (:class:`google.home.graph_v1.types.DeleteAgentUserRequest`):
-                The request object.
-                Request type for the
+                The request object. Request type for the
                 [`DeleteAgentUser`](#google.home.graph.v1.HomeGraphApiService.DeleteAgentUser)
                 call.
             request_id (:class:`str`):
@@ -402,6 +412,7 @@ class HomeGraphApiServiceAsyncClient:
                 This corresponds to the ``agent_user_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -420,6 +431,7 @@ class HomeGraphApiServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if request_id is not None:
             request.request_id = request_id
         if agent_user_id is not None:
@@ -430,7 +442,10 @@ class HomeGraphApiServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_agent_user,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -477,8 +492,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.home.graph_v1.types.QueryRequest`):
-                The request object.
-                Request type for the
+                The request object. Request type for the
                 [`Query`](#google.home.graph.v1.HomeGraphApiService.Query)
                 call.
             request_id (:class:`str`):
@@ -499,6 +513,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``inputs`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -529,10 +544,12 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if request_id is not None:
             request.request_id = request_id
         if agent_user_id is not None:
             request.agent_user_id = agent_user_id
+
         if inputs:
             request.inputs.extend(inputs)
 
@@ -541,7 +558,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.query,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -581,8 +601,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.home.graph_v1.types.SyncRequest`):
-                The request object.
-                Request type for the
+                The request object. Request type for the
                 [`Sync`](#google.home.graph.v1.HomeGraphApiService.Sync)
                 call.
             request_id (:class:`str`):
@@ -595,6 +614,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``agent_user_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -625,6 +645,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if request_id is not None:
             request.request_id = request_id
         if agent_user_id is not None:
@@ -635,7 +656,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.sync,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -655,6 +679,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

@@ -33,7 +33,6 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             {
                 ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 InlineSource = new InlineSource(),
-                CrossRegionalSource = new CrossRegionalSource(),
             };
             // Make the request
             ImportTaxonomiesResponse response = policyTagManagerSerializationClient.ImportTaxonomies(request);
@@ -52,7 +51,6 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             {
                 ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 InlineSource = new InlineSource(),
-                CrossRegionalSource = new CrossRegionalSource(),
             };
             // Make the request
             ImportTaxonomiesResponse response = await policyTagManagerSerializationClient.ImportTaxonomiesAsync(request);

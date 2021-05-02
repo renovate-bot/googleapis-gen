@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.WebRisk.V1Beta1.Snippets
 {
+    using Google.Cloud.WebRisk.V1Beta1;
     using Google.Protobuf;
     using System.Collections.Generic;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.WebRisk.V1Beta1.Snippets
     public sealed partial class GeneratedWebRiskServiceV1Beta1ClientStandaloneSnippets
     {
         /// <summary>Snippet for SearchHashesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SearchHashesAsync()
         {
-            // Snippet: SearchHashesAsync(ByteString, IEnumerable<ThreatType>, CallSettings)
-            // Additional: SearchHashesAsync(ByteString, IEnumerable<ThreatType>, CancellationToken)
             // Create client
             WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client = await WebRiskServiceV1Beta1Client.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.WebRisk.V1Beta1.Snippets
             };
             // Make the request
             SearchHashesResponse response = await webRiskServiceV1Beta1Client.SearchHashesAsync(hashPrefix, threatTypes);
-            // End snippet
         }
     }
 }

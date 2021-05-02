@@ -17,6 +17,7 @@
 namespace Google.Chromeos.Moblab.V1Beta1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Chromeos.Moblab.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System;
     using System.Linq;
@@ -24,10 +25,13 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
 
     public sealed partial class GeneratedBuildServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListBuilds</summary>
+        /// <summary>Snippet for ListBuildsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListBuildsRequestObjectAsync()
         {
-            // Snippet: ListBuildsAsync(ListBuildsRequest, CallSettings)
             // Create client
             BuildServiceClient buildServiceClient = await BuildServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -72,7 +76,6 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

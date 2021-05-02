@@ -16,22 +16,24 @@
 
 namespace Google.Maps.Roads.V1Op.Snippets
 {
+    using Google.Maps.Roads.V1Op;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRoadsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for SnapToRoadsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SnapToRoadsAsync()
         {
-            // Snippet: SnapToRoadsAsync(string, CallSettings)
-            // Additional: SnapToRoadsAsync(string, CancellationToken)
             // Create client
             RoadsServiceClient roadsServiceClient = await RoadsServiceClient.CreateAsync();
             // Initialize request argument(s)
             string path = "";
             // Make the request
             SnapToRoadsResponse response = await roadsServiceClient.SnapToRoadsAsync(path);
-            // End snippet
         }
     }
 }

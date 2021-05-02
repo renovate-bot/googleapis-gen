@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -38,26 +40,20 @@ class Vertex(proto.Message):
             Y coordinate.
     """
 
-    x = proto.Field(
-        proto.INT32,
-        number=1,
-    )
-    y = proto.Field(
-        proto.INT32,
-        number=2,
-    )
+    x = proto.Field(proto.INT32, number=1)
+
+    y = proto.Field(proto.INT32, number=2)
 
 
 class BoundingPoly(proto.Message):
     r"""A bounding polygon for the detected image annotation.
+
     Attributes:
         vertices (Sequence[google.cloud.vision_v1p1beta1.types.Vertex]):
             The bounding polygon vertices.
     """
 
-    vertices = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    vertices = proto.RepeatedField(proto.MESSAGE, number=1,
         message='Vertex',
     )
 
@@ -77,18 +73,11 @@ class Position(proto.Message):
             Z coordinate (or depth).
     """
 
-    x = proto.Field(
-        proto.FLOAT,
-        number=1,
-    )
-    y = proto.Field(
-        proto.FLOAT,
-        number=2,
-    )
-    z = proto.Field(
-        proto.FLOAT,
-        number=3,
-    )
+    x = proto.Field(proto.FLOAT, number=1)
+
+    y = proto.Field(proto.FLOAT, number=2)
+
+    z = proto.Field(proto.FLOAT, number=3)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedKeywordPlanServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetKeywordPlan</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetKeywordPlanResourceNames()
         {
-            // Snippet: GetKeywordPlan(KeywordPlanName, CallSettings)
             // Create client
             KeywordPlanServiceClient keywordPlanServiceClient = KeywordPlanServiceClient.Create();
             // Initialize request argument(s)
             KeywordPlanName resourceName = KeywordPlanName.FromCustomerKeywordPlan("[CUSTOMER_ID]", "[KEYWORD_PLAN_ID]");
             // Make the request
             KeywordPlan response = keywordPlanServiceClient.GetKeywordPlan(resourceName);
-            // End snippet
         }
     }
 }

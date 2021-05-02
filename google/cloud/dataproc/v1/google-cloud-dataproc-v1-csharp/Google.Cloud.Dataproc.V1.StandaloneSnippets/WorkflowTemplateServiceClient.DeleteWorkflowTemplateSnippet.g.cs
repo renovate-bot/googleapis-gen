@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
+    using Google.Cloud.Dataproc.V1;
+
     public sealed partial class GeneratedWorkflowTemplateServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteWorkflowTemplate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteWorkflowTemplate()
         {
-            // Snippet: DeleteWorkflowTemplate(string, CallSettings)
             // Create client
             WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/regions/[REGION]/workflowTemplates/[WORKFLOW_TEMPLATE]";
             // Make the request
             workflowTemplateServiceClient.DeleteWorkflowTemplate(name);
-            // End snippet
         }
     }
 }

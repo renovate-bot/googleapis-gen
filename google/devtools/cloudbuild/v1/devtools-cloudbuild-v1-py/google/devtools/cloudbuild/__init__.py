@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -66,7 +67,8 @@ from google.devtools.cloudbuild_v1.types.cloudbuild import Volume
 from google.devtools.cloudbuild_v1.types.cloudbuild import WorkerConfig
 from google.devtools.cloudbuild_v1.types.cloudbuild import WorkerPool
 
-__all__ = ('ArtifactResult',
+__all__ = (
+    'ArtifactResult',
     'Artifacts',
     'Build',
     'BuildOperationMetadata',

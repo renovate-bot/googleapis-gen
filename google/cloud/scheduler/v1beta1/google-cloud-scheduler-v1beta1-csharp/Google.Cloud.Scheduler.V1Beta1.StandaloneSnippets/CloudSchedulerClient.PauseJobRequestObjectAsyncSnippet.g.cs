@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Scheduler.V1Beta1.Snippets
 {
+    using Google.Cloud.Scheduler.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudSchedulerClientStandaloneSnippets
     {
         /// <summary>Snippet for PauseJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task PauseJobRequestObjectAsync()
         {
-            // Snippet: PauseJobAsync(PauseJobRequest, CallSettings)
-            // Additional: PauseJobAsync(PauseJobRequest, CancellationToken)
             // Create client
             CloudSchedulerClient cloudSchedulerClient = await CloudSchedulerClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Scheduler.V1Beta1.Snippets
             };
             // Make the request
             Job response = await cloudSchedulerClient.PauseJobAsync(request);
-            // End snippet
         }
     }
 }

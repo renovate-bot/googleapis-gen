@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -30,6 +32,7 @@ from google.cloud.dialogflow_v2.services.answer_records import pagers
 from google.cloud.dialogflow_v2.types import answer_record
 from google.cloud.dialogflow_v2.types import answer_record as gcd_answer_record
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import AnswerRecordsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AnswerRecordsGrpcAsyncIOTransport
 from .client import AnswerRecordsClient
@@ -47,14 +50,19 @@ class AnswerRecordsAsyncClient:
 
     answer_record_path = staticmethod(AnswerRecordsClient.answer_record_path)
     parse_answer_record_path = staticmethod(AnswerRecordsClient.parse_answer_record_path)
+
     common_billing_account_path = staticmethod(AnswerRecordsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AnswerRecordsClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(AnswerRecordsClient.common_folder_path)
     parse_common_folder_path = staticmethod(AnswerRecordsClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(AnswerRecordsClient.common_organization_path)
     parse_common_organization_path = staticmethod(AnswerRecordsClient.parse_common_organization_path)
+
     common_project_path = staticmethod(AnswerRecordsClient.common_project_path)
     parse_common_project_path = staticmethod(AnswerRecordsClient.parse_common_project_path)
+
     common_location_path = staticmethod(AnswerRecordsClient.common_location_path)
     parse_common_location_path = staticmethod(AnswerRecordsClient.parse_common_location_path)
 
@@ -139,6 +147,7 @@ class AnswerRecordsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = AnswerRecordsClient(
             credentials=credentials,
             transport=transport,
@@ -160,8 +169,7 @@ class AnswerRecordsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ListAnswerRecordsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AnswerRecords.ListAnswerRecords][google.cloud.dialogflow.v2.AnswerRecords.ListAnswerRecords].
             parent (:class:`str`):
                 Required. The project to list all answer records for in
@@ -171,6 +179,7 @@ class AnswerRecordsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -198,6 +207,7 @@ class AnswerRecordsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -250,8 +260,7 @@ class AnswerRecordsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.UpdateAnswerRecordRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AnswerRecords.UpdateAnswerRecord][google.cloud.dialogflow.v2.AnswerRecords.UpdateAnswerRecord].
             answer_record (:class:`google.cloud.dialogflow_v2.types.AnswerRecord`):
                 Required. Answer record to update.
@@ -265,6 +274,7 @@ class AnswerRecordsAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -321,6 +331,7 @@ class AnswerRecordsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if answer_record is not None:
             request.answer_record = answer_record
         if update_mask is not None:
@@ -352,6 +363,8 @@ class AnswerRecordsAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

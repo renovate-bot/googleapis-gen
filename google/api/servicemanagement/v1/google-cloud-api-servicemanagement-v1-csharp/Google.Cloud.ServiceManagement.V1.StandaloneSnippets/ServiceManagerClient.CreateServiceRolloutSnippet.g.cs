@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.ServiceManagement.V1.Snippets
 {
+    using Google.Cloud.ServiceManagement.V1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedServiceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateServiceRollout</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateServiceRollout()
         {
-            // Snippet: CreateServiceRollout(string, Rollout, CallSettings)
             // Create client
             ServiceManagerClient serviceManagerClient = ServiceManagerClient.Create();
             // Initialize request argument(s)
@@ -47,7 +51,6 @@ namespace Google.Cloud.ServiceManagement.V1.Snippets
                 // If it has completed, then access the result
                 Rollout retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

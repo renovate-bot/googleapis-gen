@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Speech.V1P1Beta1.Snippets
 {
+    using Google.Cloud.Speech.V1P1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdaptationClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteCustomClassAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteCustomClassRequestObjectAsync()
         {
-            // Snippet: DeleteCustomClassAsync(DeleteCustomClassRequest, CallSettings)
-            // Additional: DeleteCustomClassAsync(DeleteCustomClassRequest, CancellationToken)
             // Create client
             AdaptationClient adaptationClient = await AdaptationClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Speech.V1P1Beta1.Snippets
             };
             // Make the request
             await adaptationClient.DeleteCustomClassAsync(request);
-            // End snippet
         }
     }
 }

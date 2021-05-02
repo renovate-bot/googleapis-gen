@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedMediaFileServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMediaFile</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetMediaFileResourceNames()
         {
-            // Snippet: GetMediaFile(MediaFileName, CallSettings)
             // Create client
             MediaFileServiceClient mediaFileServiceClient = MediaFileServiceClient.Create();
             // Initialize request argument(s)
             MediaFileName resourceName = MediaFileName.FromCustomerMediaFile("[CUSTOMER]", "[MEDIA_FILE]");
             // Make the request
             MediaFile response = mediaFileServiceClient.GetMediaFile(resourceName);
-            // End snippet
         }
     }
 }

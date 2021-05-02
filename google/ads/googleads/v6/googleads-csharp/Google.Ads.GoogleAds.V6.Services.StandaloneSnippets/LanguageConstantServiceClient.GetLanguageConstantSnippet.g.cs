@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedLanguageConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetLanguageConstant</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetLanguageConstant()
         {
-            // Snippet: GetLanguageConstant(string, CallSettings)
             // Create client
             LanguageConstantServiceClient languageConstantServiceClient = LanguageConstantServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "languageConstants/[CRITERION_ID]";
             // Make the request
             LanguageConstant response = languageConstantServiceClient.GetLanguageConstant(resourceName);
-            // End snippet
         }
     }
 }

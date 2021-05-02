@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Video.Transcoder.V1Beta1.Snippets
 {
+    using Google.Cloud.Video.Transcoder.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTranscoderServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateJobAsync()
         {
-            // Snippet: CreateJobAsync(string, Job, CallSettings)
-            // Additional: CreateJobAsync(string, Job, CancellationToken)
             // Create client
             TranscoderServiceClient transcoderServiceClient = await TranscoderServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Video.Transcoder.V1Beta1.Snippets
             Job job = new Job();
             // Make the request
             Job response = await transcoderServiceClient.CreateJobAsync(parent, job);
-            // End snippet
         }
     }
 }

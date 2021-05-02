@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Kms.V1.Snippets
 {
+    using Google.Cloud.Kms.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedKeyManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetImportJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetImportJobResourceNamesAsync()
         {
-            // Snippet: GetImportJobAsync(ImportJobName, CallSettings)
-            // Additional: GetImportJobAsync(ImportJobName, CancellationToken)
             // Create client
             KeyManagementServiceClient keyManagementServiceClient = await KeyManagementServiceClient.CreateAsync();
             // Initialize request argument(s)
             ImportJobName name = ImportJobName.FromProjectLocationKeyRingImportJob("[PROJECT]", "[LOCATION]", "[KEY_RING]", "[IMPORT_JOB]");
             // Make the request
             ImportJob response = await keyManagementServiceClient.GetImportJobAsync(name);
-            // End snippet
         }
     }
 }

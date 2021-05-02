@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
+
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for HybridInspectJobTrigger</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void HybridInspectJobTrigger()
         {
-            // Snippet: HybridInspectJobTrigger(string, CallSettings)
             // Create client
             DlpServiceClient dlpServiceClient = DlpServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/jobTriggers/[JOB_TRIGGER]";
             // Make the request
             HybridInspectResponse response = dlpServiceClient.HybridInspectJobTrigger(name);
-            // End snippet
         }
     }
 }

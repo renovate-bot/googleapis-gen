@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
+
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for AnalyzeContent</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void AnalyzeContentRequestObject()
         {
-            // Snippet: AnalyzeContent(AnalyzeContentRequest, CallSettings)
             // Create client
             ParticipantsClient participantsClient = ParticipantsClient.Create();
             // Initialize request argument(s)
@@ -30,13 +35,11 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
                 ParticipantAsParticipantName = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]"),
                 ReplyAudioConfig = new OutputAudioConfig(),
                 TextInput = new TextInput(),
-                EventInput = new EventInput(),
                 QueryParams = new QueryParameters(),
                 RequestId = "",
             };
             // Make the request
             AnalyzeContentResponse response = participantsClient.AnalyzeContent(request);
-            // End snippet
         }
     }
 }

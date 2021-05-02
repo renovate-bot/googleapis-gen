@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.AssuredWorkloads.V1Beta1.Snippets
 {
+    using Google.Cloud.AssuredWorkloads.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAssuredWorkloadsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateWorkloadAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateWorkloadAsync()
         {
-            // Snippet: UpdateWorkloadAsync(Workload, FieldMask, CallSettings)
-            // Additional: UpdateWorkloadAsync(Workload, FieldMask, CancellationToken)
             // Create client
             AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = await AssuredWorkloadsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.AssuredWorkloads.V1Beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Workload response = await assuredWorkloadsServiceClient.UpdateWorkloadAsync(workload, updateMask);
-            // End snippet
         }
     }
 }

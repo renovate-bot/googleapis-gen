@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -36,8 +36,6 @@ from google.cloud.secretmanager_v1.services.secret_manager_service import Secret
 from google.cloud.secretmanager_v1.services.secret_manager_service import SecretManagerServiceClient
 from google.cloud.secretmanager_v1.services.secret_manager_service import pagers
 from google.cloud.secretmanager_v1.services.secret_manager_service import transports
-from google.cloud.secretmanager_v1.services.secret_manager_service.transports.base import _API_CORE_VERSION
-from google.cloud.secretmanager_v1.services.secret_manager_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.secretmanager_v1.types import resources
 from google.cloud.secretmanager_v1.types import service
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
@@ -49,28 +47,6 @@ from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.type import expr_pb2 as expr  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -238,10 +214,12 @@ def test_secret_manager_service_client_client_options(client_class, transport_cl
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (SecretManagerServiceClient, transports.SecretManagerServiceGrpcTransport, "grpc", "true"),
     (SecretManagerServiceAsyncClient, transports.SecretManagerServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (SecretManagerServiceClient, transports.SecretManagerServiceGrpcTransport, "grpc", "false"),
     (SecretManagerServiceAsyncClient, transports.SecretManagerServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(SecretManagerServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(SecretManagerServiceClient))
 @mock.patch.object(SecretManagerServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(SecretManagerServiceAsyncClient))
@@ -396,18 +374,25 @@ def test_list_secrets(transport: str = 'grpc', request_type=service.ListSecretsR
         # Designate an appropriate return value for the call.
         call.return_value = service.ListSecretsResponse(
             next_page_token='next_page_token_value',
+
             total_size=1086,
+
         )
+
         response = client.list_secrets(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.ListSecretsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListSecretsPager)
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.total_size == 1086
 
 
@@ -430,8 +415,8 @@ def test_list_secrets_empty_call():
         client.list_secrets()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == service.ListSecretsRequest()
 
+        assert args[0] == service.ListSecretsRequest()
 
 @pytest.mark.asyncio
 async def test_list_secrets_async(transport: str = 'grpc_asyncio', request_type=service.ListSecretsRequest):
@@ -449,20 +434,24 @@ async def test_list_secrets_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.list_secrets),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListSecretsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListSecretsResponse(
             next_page_token='next_page_token_value',
             total_size=1086,
         ))
+
         response = await client.list_secrets(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.ListSecretsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListSecretsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.total_size == 1086
 
 
@@ -479,7 +468,6 @@ def test_list_secrets_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListSecretsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -487,6 +475,7 @@ def test_list_secrets_field_headers():
             type(client.transport.list_secrets),
             '__call__') as call:
         call.return_value = service.ListSecretsResponse()
+
         client.list_secrets(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -511,7 +500,6 @@ async def test_list_secrets_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListSecretsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -519,6 +507,7 @@ async def test_list_secrets_field_headers_async():
             type(client.transport.list_secrets),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListSecretsResponse())
+
         await client.list_secrets(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -545,6 +534,7 @@ def test_list_secrets_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ListSecretsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_secrets(
@@ -555,6 +545,7 @@ def test_list_secrets_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -596,6 +587,7 @@ async def test_list_secrets_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -800,6 +792,7 @@ async def test_list_secrets_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_create_secret(transport: str = 'grpc', request_type=service.CreateSecretRequest):
     client = SecretManagerServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -817,17 +810,22 @@ def test_create_secret(transport: str = 'grpc', request_type=service.CreateSecre
         # Designate an appropriate return value for the call.
         call.return_value = resources.Secret(
             name='name_value',
+
             expire_time=timestamp.Timestamp(seconds=751),
         )
+
         response = client.create_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.CreateSecretRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, resources.Secret)
+
     assert response.name == 'name_value'
 
 
@@ -850,8 +848,8 @@ def test_create_secret_empty_call():
         client.create_secret()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == service.CreateSecretRequest()
 
+        assert args[0] == service.CreateSecretRequest()
 
 @pytest.mark.asyncio
 async def test_create_secret_async(transport: str = 'grpc_asyncio', request_type=service.CreateSecretRequest):
@@ -869,18 +867,21 @@ async def test_create_secret_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.create_secret),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.Secret(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.Secret(
             name='name_value',
         ))
+
         response = await client.create_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.CreateSecretRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Secret)
+
     assert response.name == 'name_value'
 
 
@@ -897,7 +898,6 @@ def test_create_secret_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateSecretRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -905,6 +905,7 @@ def test_create_secret_field_headers():
             type(client.transport.create_secret),
             '__call__') as call:
         call.return_value = resources.Secret()
+
         client.create_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -929,7 +930,6 @@ async def test_create_secret_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.CreateSecretRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -937,6 +937,7 @@ async def test_create_secret_field_headers_async():
             type(client.transport.create_secret),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.Secret())
+
         await client.create_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -963,6 +964,7 @@ def test_create_secret_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.Secret()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_secret(
@@ -975,8 +977,11 @@ def test_create_secret_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].secret_id == 'secret_id_value'
+
         assert args[0].secret == resources.Secret(name='name_value')
 
 
@@ -1022,8 +1027,11 @@ async def test_create_secret_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].secret_id == 'secret_id_value'
+
         assert args[0].secret == resources.Secret(name='name_value')
 
 
@@ -1061,18 +1069,25 @@ def test_add_secret_version(transport: str = 'grpc', request_type=service.AddSec
         # Designate an appropriate return value for the call.
         call.return_value = resources.SecretVersion(
             name='name_value',
+
             state=resources.SecretVersion.State.ENABLED,
+
         )
+
         response = client.add_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.AddSecretVersionRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, resources.SecretVersion)
+
     assert response.name == 'name_value'
+
     assert response.state == resources.SecretVersion.State.ENABLED
 
 
@@ -1095,8 +1110,8 @@ def test_add_secret_version_empty_call():
         client.add_secret_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == service.AddSecretVersionRequest()
 
+        assert args[0] == service.AddSecretVersionRequest()
 
 @pytest.mark.asyncio
 async def test_add_secret_version_async(transport: str = 'grpc_asyncio', request_type=service.AddSecretVersionRequest):
@@ -1114,20 +1129,24 @@ async def test_add_secret_version_async(transport: str = 'grpc_asyncio', request
             type(client.transport.add_secret_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
         ))
+
         response = await client.add_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.AddSecretVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.SecretVersion)
+
     assert response.name == 'name_value'
+
     assert response.state == resources.SecretVersion.State.ENABLED
 
 
@@ -1144,7 +1163,6 @@ def test_add_secret_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.AddSecretVersionRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1152,6 +1170,7 @@ def test_add_secret_version_field_headers():
             type(client.transport.add_secret_version),
             '__call__') as call:
         call.return_value = resources.SecretVersion()
+
         client.add_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1176,7 +1195,6 @@ async def test_add_secret_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.AddSecretVersionRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1184,6 +1202,7 @@ async def test_add_secret_version_field_headers_async():
             type(client.transport.add_secret_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion())
+
         await client.add_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1210,6 +1229,7 @@ def test_add_secret_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.SecretVersion()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.add_secret_version(
@@ -1221,7 +1241,9 @@ def test_add_secret_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].payload == resources.SecretPayload(data=b'data_blob')
 
 
@@ -1265,7 +1287,9 @@ async def test_add_secret_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].payload == resources.SecretPayload(data=b'data_blob')
 
 
@@ -1302,17 +1326,22 @@ def test_get_secret(transport: str = 'grpc', request_type=service.GetSecretReque
         # Designate an appropriate return value for the call.
         call.return_value = resources.Secret(
             name='name_value',
+
             expire_time=timestamp.Timestamp(seconds=751),
         )
+
         response = client.get_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.GetSecretRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, resources.Secret)
+
     assert response.name == 'name_value'
 
 
@@ -1335,8 +1364,8 @@ def test_get_secret_empty_call():
         client.get_secret()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == service.GetSecretRequest()
 
+        assert args[0] == service.GetSecretRequest()
 
 @pytest.mark.asyncio
 async def test_get_secret_async(transport: str = 'grpc_asyncio', request_type=service.GetSecretRequest):
@@ -1354,18 +1383,21 @@ async def test_get_secret_async(transport: str = 'grpc_asyncio', request_type=se
             type(client.transport.get_secret),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.Secret(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.Secret(
             name='name_value',
         ))
+
         response = await client.get_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.GetSecretRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Secret)
+
     assert response.name == 'name_value'
 
 
@@ -1382,7 +1414,6 @@ def test_get_secret_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetSecretRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1390,6 +1421,7 @@ def test_get_secret_field_headers():
             type(client.transport.get_secret),
             '__call__') as call:
         call.return_value = resources.Secret()
+
         client.get_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1414,7 +1446,6 @@ async def test_get_secret_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetSecretRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1422,6 +1453,7 @@ async def test_get_secret_field_headers_async():
             type(client.transport.get_secret),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.Secret())
+
         await client.get_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1448,6 +1480,7 @@ def test_get_secret_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.Secret()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_secret(
@@ -1458,6 +1491,7 @@ def test_get_secret_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1499,6 +1533,7 @@ async def test_get_secret_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1534,17 +1569,22 @@ def test_update_secret(transport: str = 'grpc', request_type=service.UpdateSecre
         # Designate an appropriate return value for the call.
         call.return_value = resources.Secret(
             name='name_value',
+
             expire_time=timestamp.Timestamp(seconds=751),
         )
+
         response = client.update_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.UpdateSecretRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, resources.Secret)
+
     assert response.name == 'name_value'
 
 
@@ -1567,8 +1607,8 @@ def test_update_secret_empty_call():
         client.update_secret()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == service.UpdateSecretRequest()
 
+        assert args[0] == service.UpdateSecretRequest()
 
 @pytest.mark.asyncio
 async def test_update_secret_async(transport: str = 'grpc_asyncio', request_type=service.UpdateSecretRequest):
@@ -1586,18 +1626,21 @@ async def test_update_secret_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.update_secret),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.Secret(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.Secret(
             name='name_value',
         ))
+
         response = await client.update_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.UpdateSecretRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Secret)
+
     assert response.name == 'name_value'
 
 
@@ -1614,7 +1657,6 @@ def test_update_secret_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateSecretRequest()
-
     request.secret.name = 'secret.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1622,6 +1664,7 @@ def test_update_secret_field_headers():
             type(client.transport.update_secret),
             '__call__') as call:
         call.return_value = resources.Secret()
+
         client.update_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1646,7 +1689,6 @@ async def test_update_secret_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.UpdateSecretRequest()
-
     request.secret.name = 'secret.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1654,6 +1696,7 @@ async def test_update_secret_field_headers_async():
             type(client.transport.update_secret),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.Secret())
+
         await client.update_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1680,6 +1723,7 @@ def test_update_secret_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.Secret()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_secret(
@@ -1691,7 +1735,9 @@ def test_update_secret_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].secret == resources.Secret(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1735,7 +1781,9 @@ async def test_update_secret_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].secret == resources.Secret(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1771,11 +1819,13 @@ def test_delete_secret(transport: str = 'grpc', request_type=service.DeleteSecre
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.DeleteSecretRequest()
 
     # Establish that the response is the type that we expect.
@@ -1801,8 +1851,8 @@ def test_delete_secret_empty_call():
         client.delete_secret()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == service.DeleteSecretRequest()
 
+        assert args[0] == service.DeleteSecretRequest()
 
 @pytest.mark.asyncio
 async def test_delete_secret_async(transport: str = 'grpc_asyncio', request_type=service.DeleteSecretRequest):
@@ -1821,11 +1871,13 @@ async def test_delete_secret_async(transport: str = 'grpc_asyncio', request_type
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.DeleteSecretRequest()
 
     # Establish that the response is the type that we expect.
@@ -1845,7 +1897,6 @@ def test_delete_secret_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DeleteSecretRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1853,6 +1904,7 @@ def test_delete_secret_field_headers():
             type(client.transport.delete_secret),
             '__call__') as call:
         call.return_value = None
+
         client.delete_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1877,7 +1929,6 @@ async def test_delete_secret_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DeleteSecretRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1885,6 +1936,7 @@ async def test_delete_secret_field_headers_async():
             type(client.transport.delete_secret),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_secret(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1911,6 +1963,7 @@ def test_delete_secret_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_secret(
@@ -1921,6 +1974,7 @@ def test_delete_secret_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1962,6 +2016,7 @@ async def test_delete_secret_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1997,18 +2052,25 @@ def test_list_secret_versions(transport: str = 'grpc', request_type=service.List
         # Designate an appropriate return value for the call.
         call.return_value = service.ListSecretVersionsResponse(
             next_page_token='next_page_token_value',
+
             total_size=1086,
+
         )
+
         response = client.list_secret_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.ListSecretVersionsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListSecretVersionsPager)
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.total_size == 1086
 
 
@@ -2031,8 +2093,8 @@ def test_list_secret_versions_empty_call():
         client.list_secret_versions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == service.ListSecretVersionsRequest()
 
+        assert args[0] == service.ListSecretVersionsRequest()
 
 @pytest.mark.asyncio
 async def test_list_secret_versions_async(transport: str = 'grpc_asyncio', request_type=service.ListSecretVersionsRequest):
@@ -2050,20 +2112,24 @@ async def test_list_secret_versions_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.list_secret_versions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.ListSecretVersionsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListSecretVersionsResponse(
             next_page_token='next_page_token_value',
             total_size=1086,
         ))
+
         response = await client.list_secret_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.ListSecretVersionsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListSecretVersionsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.total_size == 1086
 
 
@@ -2080,7 +2146,6 @@ def test_list_secret_versions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListSecretVersionsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2088,6 +2153,7 @@ def test_list_secret_versions_field_headers():
             type(client.transport.list_secret_versions),
             '__call__') as call:
         call.return_value = service.ListSecretVersionsResponse()
+
         client.list_secret_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2112,7 +2178,6 @@ async def test_list_secret_versions_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.ListSecretVersionsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2120,6 +2185,7 @@ async def test_list_secret_versions_field_headers_async():
             type(client.transport.list_secret_versions),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.ListSecretVersionsResponse())
+
         await client.list_secret_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2146,6 +2212,7 @@ def test_list_secret_versions_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.ListSecretVersionsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_secret_versions(
@@ -2156,6 +2223,7 @@ def test_list_secret_versions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -2197,6 +2265,7 @@ async def test_list_secret_versions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -2401,6 +2470,7 @@ async def test_list_secret_versions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_secret_version(transport: str = 'grpc', request_type=service.GetSecretVersionRequest):
     client = SecretManagerServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2418,18 +2488,25 @@ def test_get_secret_version(transport: str = 'grpc', request_type=service.GetSec
         # Designate an appropriate return value for the call.
         call.return_value = resources.SecretVersion(
             name='name_value',
+
             state=resources.SecretVersion.State.ENABLED,
+
         )
+
         response = client.get_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.GetSecretVersionRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, resources.SecretVersion)
+
     assert response.name == 'name_value'
+
     assert response.state == resources.SecretVersion.State.ENABLED
 
 
@@ -2452,8 +2529,8 @@ def test_get_secret_version_empty_call():
         client.get_secret_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == service.GetSecretVersionRequest()
 
+        assert args[0] == service.GetSecretVersionRequest()
 
 @pytest.mark.asyncio
 async def test_get_secret_version_async(transport: str = 'grpc_asyncio', request_type=service.GetSecretVersionRequest):
@@ -2471,20 +2548,24 @@ async def test_get_secret_version_async(transport: str = 'grpc_asyncio', request
             type(client.transport.get_secret_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
         ))
+
         response = await client.get_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.GetSecretVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.SecretVersion)
+
     assert response.name == 'name_value'
+
     assert response.state == resources.SecretVersion.State.ENABLED
 
 
@@ -2501,7 +2582,6 @@ def test_get_secret_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetSecretVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2509,6 +2589,7 @@ def test_get_secret_version_field_headers():
             type(client.transport.get_secret_version),
             '__call__') as call:
         call.return_value = resources.SecretVersion()
+
         client.get_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2533,7 +2614,6 @@ async def test_get_secret_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.GetSecretVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2541,6 +2621,7 @@ async def test_get_secret_version_field_headers_async():
             type(client.transport.get_secret_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion())
+
         await client.get_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2567,6 +2648,7 @@ def test_get_secret_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.SecretVersion()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_secret_version(
@@ -2577,6 +2659,7 @@ def test_get_secret_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2618,6 +2701,7 @@ async def test_get_secret_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2653,16 +2737,21 @@ def test_access_secret_version(transport: str = 'grpc', request_type=service.Acc
         # Designate an appropriate return value for the call.
         call.return_value = service.AccessSecretVersionResponse(
             name='name_value',
+
         )
+
         response = client.access_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.AccessSecretVersionRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, service.AccessSecretVersionResponse)
+
     assert response.name == 'name_value'
 
 
@@ -2685,8 +2774,8 @@ def test_access_secret_version_empty_call():
         client.access_secret_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == service.AccessSecretVersionRequest()
 
+        assert args[0] == service.AccessSecretVersionRequest()
 
 @pytest.mark.asyncio
 async def test_access_secret_version_async(transport: str = 'grpc_asyncio', request_type=service.AccessSecretVersionRequest):
@@ -2704,18 +2793,21 @@ async def test_access_secret_version_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.access_secret_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.AccessSecretVersionResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.AccessSecretVersionResponse(
             name='name_value',
         ))
+
         response = await client.access_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.AccessSecretVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.AccessSecretVersionResponse)
+
     assert response.name == 'name_value'
 
 
@@ -2732,7 +2824,6 @@ def test_access_secret_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.AccessSecretVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2740,6 +2831,7 @@ def test_access_secret_version_field_headers():
             type(client.transport.access_secret_version),
             '__call__') as call:
         call.return_value = service.AccessSecretVersionResponse()
+
         client.access_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2764,7 +2856,6 @@ async def test_access_secret_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.AccessSecretVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2772,6 +2863,7 @@ async def test_access_secret_version_field_headers_async():
             type(client.transport.access_secret_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.AccessSecretVersionResponse())
+
         await client.access_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2798,6 +2890,7 @@ def test_access_secret_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.AccessSecretVersionResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.access_secret_version(
@@ -2808,6 +2901,7 @@ def test_access_secret_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2849,6 +2943,7 @@ async def test_access_secret_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2884,18 +2979,25 @@ def test_disable_secret_version(transport: str = 'grpc', request_type=service.Di
         # Designate an appropriate return value for the call.
         call.return_value = resources.SecretVersion(
             name='name_value',
+
             state=resources.SecretVersion.State.ENABLED,
+
         )
+
         response = client.disable_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.DisableSecretVersionRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, resources.SecretVersion)
+
     assert response.name == 'name_value'
+
     assert response.state == resources.SecretVersion.State.ENABLED
 
 
@@ -2918,8 +3020,8 @@ def test_disable_secret_version_empty_call():
         client.disable_secret_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == service.DisableSecretVersionRequest()
 
+        assert args[0] == service.DisableSecretVersionRequest()
 
 @pytest.mark.asyncio
 async def test_disable_secret_version_async(transport: str = 'grpc_asyncio', request_type=service.DisableSecretVersionRequest):
@@ -2937,20 +3039,24 @@ async def test_disable_secret_version_async(transport: str = 'grpc_asyncio', req
             type(client.transport.disable_secret_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
         ))
+
         response = await client.disable_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.DisableSecretVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.SecretVersion)
+
     assert response.name == 'name_value'
+
     assert response.state == resources.SecretVersion.State.ENABLED
 
 
@@ -2967,7 +3073,6 @@ def test_disable_secret_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DisableSecretVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2975,6 +3080,7 @@ def test_disable_secret_version_field_headers():
             type(client.transport.disable_secret_version),
             '__call__') as call:
         call.return_value = resources.SecretVersion()
+
         client.disable_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2999,7 +3105,6 @@ async def test_disable_secret_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DisableSecretVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3007,6 +3112,7 @@ async def test_disable_secret_version_field_headers_async():
             type(client.transport.disable_secret_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion())
+
         await client.disable_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3033,6 +3139,7 @@ def test_disable_secret_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.SecretVersion()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.disable_secret_version(
@@ -3043,6 +3150,7 @@ def test_disable_secret_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3084,6 +3192,7 @@ async def test_disable_secret_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3119,18 +3228,25 @@ def test_enable_secret_version(transport: str = 'grpc', request_type=service.Ena
         # Designate an appropriate return value for the call.
         call.return_value = resources.SecretVersion(
             name='name_value',
+
             state=resources.SecretVersion.State.ENABLED,
+
         )
+
         response = client.enable_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.EnableSecretVersionRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, resources.SecretVersion)
+
     assert response.name == 'name_value'
+
     assert response.state == resources.SecretVersion.State.ENABLED
 
 
@@ -3153,8 +3269,8 @@ def test_enable_secret_version_empty_call():
         client.enable_secret_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == service.EnableSecretVersionRequest()
 
+        assert args[0] == service.EnableSecretVersionRequest()
 
 @pytest.mark.asyncio
 async def test_enable_secret_version_async(transport: str = 'grpc_asyncio', request_type=service.EnableSecretVersionRequest):
@@ -3172,20 +3288,24 @@ async def test_enable_secret_version_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.enable_secret_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
         ))
+
         response = await client.enable_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.EnableSecretVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.SecretVersion)
+
     assert response.name == 'name_value'
+
     assert response.state == resources.SecretVersion.State.ENABLED
 
 
@@ -3202,7 +3322,6 @@ def test_enable_secret_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.EnableSecretVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3210,6 +3329,7 @@ def test_enable_secret_version_field_headers():
             type(client.transport.enable_secret_version),
             '__call__') as call:
         call.return_value = resources.SecretVersion()
+
         client.enable_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3234,7 +3354,6 @@ async def test_enable_secret_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.EnableSecretVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3242,6 +3361,7 @@ async def test_enable_secret_version_field_headers_async():
             type(client.transport.enable_secret_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion())
+
         await client.enable_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3268,6 +3388,7 @@ def test_enable_secret_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.SecretVersion()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.enable_secret_version(
@@ -3278,6 +3399,7 @@ def test_enable_secret_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3319,6 +3441,7 @@ async def test_enable_secret_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3354,18 +3477,25 @@ def test_destroy_secret_version(transport: str = 'grpc', request_type=service.De
         # Designate an appropriate return value for the call.
         call.return_value = resources.SecretVersion(
             name='name_value',
+
             state=resources.SecretVersion.State.ENABLED,
+
         )
+
         response = client.destroy_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.DestroySecretVersionRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, resources.SecretVersion)
+
     assert response.name == 'name_value'
+
     assert response.state == resources.SecretVersion.State.ENABLED
 
 
@@ -3388,8 +3518,8 @@ def test_destroy_secret_version_empty_call():
         client.destroy_secret_version()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == service.DestroySecretVersionRequest()
 
+        assert args[0] == service.DestroySecretVersionRequest()
 
 @pytest.mark.asyncio
 async def test_destroy_secret_version_async(transport: str = 'grpc_asyncio', request_type=service.DestroySecretVersionRequest):
@@ -3407,20 +3537,24 @@ async def test_destroy_secret_version_async(transport: str = 'grpc_asyncio', req
             type(client.transport.destroy_secret_version),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion(
             name='name_value',
             state=resources.SecretVersion.State.ENABLED,
         ))
+
         response = await client.destroy_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == service.DestroySecretVersionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.SecretVersion)
+
     assert response.name == 'name_value'
+
     assert response.state == resources.SecretVersion.State.ENABLED
 
 
@@ -3437,7 +3571,6 @@ def test_destroy_secret_version_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DestroySecretVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3445,6 +3578,7 @@ def test_destroy_secret_version_field_headers():
             type(client.transport.destroy_secret_version),
             '__call__') as call:
         call.return_value = resources.SecretVersion()
+
         client.destroy_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3469,7 +3603,6 @@ async def test_destroy_secret_version_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = service.DestroySecretVersionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3477,6 +3610,7 @@ async def test_destroy_secret_version_field_headers_async():
             type(client.transport.destroy_secret_version),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.SecretVersion())
+
         await client.destroy_secret_version(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3503,6 +3637,7 @@ def test_destroy_secret_version_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.SecretVersion()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.destroy_secret_version(
@@ -3513,6 +3648,7 @@ def test_destroy_secret_version_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3554,6 +3690,7 @@ async def test_destroy_secret_version_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3589,18 +3726,25 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy.SetIamP
         # Designate an appropriate return value for the call.
         call.return_value = gi_policy.Policy(
             version=774,
+
             etag=b'etag_blob',
+
         )
+
         response = client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == iam_policy.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -3623,8 +3767,8 @@ def test_set_iam_policy_empty_call():
         client.set_iam_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == iam_policy.SetIamPolicyRequest()
 
+        assert args[0] == iam_policy.SetIamPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.SetIamPolicyRequest):
@@ -3642,20 +3786,24 @@ async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.set_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
             version=774,
             etag=b'etag_blob',
         ))
+
         response = await client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == iam_policy.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -3672,7 +3820,6 @@ def test_set_iam_policy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.SetIamPolicyRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3680,6 +3827,7 @@ def test_set_iam_policy_field_headers():
             type(client.transport.set_iam_policy),
             '__call__') as call:
         call.return_value = gi_policy.Policy()
+
         client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3704,7 +3852,6 @@ async def test_set_iam_policy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.SetIamPolicyRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3712,6 +3859,7 @@ async def test_set_iam_policy_field_headers_async():
             type(client.transport.set_iam_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy())
+
         await client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3726,6 +3874,7 @@ async def test_set_iam_policy_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
+
 def test_set_iam_policy_from_dict_foreign():
     client = SecretManagerServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -3736,6 +3885,7 @@ def test_set_iam_policy_from_dict_foreign():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gi_policy.Policy()
+
         response = client.set_iam_policy(request={
             'resource': 'resource_value',
             'policy_': gi_policy.Policy(version=774),
@@ -3761,18 +3911,25 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy.GetIamP
         # Designate an appropriate return value for the call.
         call.return_value = gi_policy.Policy(
             version=774,
+
             etag=b'etag_blob',
+
         )
+
         response = client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == iam_policy.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -3795,8 +3952,8 @@ def test_get_iam_policy_empty_call():
         client.get_iam_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == iam_policy.GetIamPolicyRequest()
 
+        assert args[0] == iam_policy.GetIamPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.GetIamPolicyRequest):
@@ -3814,20 +3971,24 @@ async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.get_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
             version=774,
             etag=b'etag_blob',
         ))
+
         response = await client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == iam_policy.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -3844,7 +4005,6 @@ def test_get_iam_policy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.GetIamPolicyRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3852,6 +4012,7 @@ def test_get_iam_policy_field_headers():
             type(client.transport.get_iam_policy),
             '__call__') as call:
         call.return_value = gi_policy.Policy()
+
         client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3876,7 +4037,6 @@ async def test_get_iam_policy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.GetIamPolicyRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3884,6 +4044,7 @@ async def test_get_iam_policy_field_headers_async():
             type(client.transport.get_iam_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy())
+
         await client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3898,6 +4059,7 @@ async def test_get_iam_policy_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
+
 def test_get_iam_policy_from_dict_foreign():
     client = SecretManagerServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -3908,6 +4070,7 @@ def test_get_iam_policy_from_dict_foreign():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gi_policy.Policy()
+
         response = client.get_iam_policy(request={
             'resource': 'resource_value',
             'options_': gi_options.GetPolicyOptions(requested_policy_version=2598),
@@ -3933,16 +4096,21 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy.T
         # Designate an appropriate return value for the call.
         call.return_value = iam_policy.TestIamPermissionsResponse(
             permissions=['permissions_value'],
+
         )
+
         response = client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == iam_policy.TestIamPermissionsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, iam_policy.TestIamPermissionsResponse)
+
     assert response.permissions == ['permissions_value']
 
 
@@ -3965,8 +4133,8 @@ def test_test_iam_permissions_empty_call():
         client.test_iam_permissions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == iam_policy.TestIamPermissionsRequest()
 
+        assert args[0] == iam_policy.TestIamPermissionsRequest()
 
 @pytest.mark.asyncio
 async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=iam_policy.TestIamPermissionsRequest):
@@ -3984,18 +4152,21 @@ async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse(
             permissions=['permissions_value'],
         ))
+
         response = await client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == iam_policy.TestIamPermissionsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy.TestIamPermissionsResponse)
+
     assert response.permissions == ['permissions_value']
 
 
@@ -4012,7 +4183,6 @@ def test_test_iam_permissions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.TestIamPermissionsRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4020,6 +4190,7 @@ def test_test_iam_permissions_field_headers():
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         call.return_value = iam_policy.TestIamPermissionsResponse()
+
         client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4044,7 +4215,6 @@ async def test_test_iam_permissions_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.TestIamPermissionsRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4052,6 +4222,7 @@ async def test_test_iam_permissions_field_headers_async():
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse())
+
         await client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -4066,6 +4237,7 @@ async def test_test_iam_permissions_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
+
 def test_test_iam_permissions_from_dict_foreign():
     client = SecretManagerServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -4076,6 +4248,7 @@ def test_test_iam_permissions_from_dict_foreign():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iam_policy.TestIamPermissionsResponse()
+
         response = client.test_iam_permissions(request={
             'resource': 'resource_value',
             'permissions': ['permissions_value'],
@@ -4124,6 +4297,7 @@ def test_transport_instance():
     client = SecretManagerServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.SecretManagerServiceGrpcTransport(
@@ -4138,6 +4312,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.SecretManagerServiceGrpcTransport,
     transports.SecretManagerServiceGrpcAsyncIOTransport,
@@ -4149,6 +4324,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = SecretManagerServiceClient(
@@ -4158,6 +4334,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.SecretManagerServiceGrpcTransport,
     )
+
 
 def test_secret_manager_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -4194,33 +4371,15 @@ def test_secret_manager_service_base_transport():
         'set_iam_policy',
         'get_iam_policy',
         'test_iam_permissions',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_secret_manager_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.secretmanager_v1.services.secret_manager_service.transports.SecretManagerServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.SecretManagerServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_secret_manager_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.secretmanager_v1.services.secret_manager_service.transports.SecretManagerServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.secretmanager_v1.services.secret_manager_service.transports.SecretManagerServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.SecretManagerServiceTransport(
@@ -4236,182 +4395,33 @@ def test_secret_manager_service_base_transport_with_credentials_file_old_google_
 
 def test_secret_manager_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.secretmanager_v1.services.secret_manager_service.transports.SecretManagerServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.secretmanager_v1.services.secret_manager_service.transports.SecretManagerServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.SecretManagerServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_secret_manager_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         SecretManagerServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_secret_manager_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        SecretManagerServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.SecretManagerServiceGrpcTransport,
-        transports.SecretManagerServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_secret_manager_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.SecretManagerServiceGrpcTransport,
-        transports.SecretManagerServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_secret_manager_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.SecretManagerServiceGrpcTransport, grpc_helpers),
-        (transports.SecretManagerServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_secret_manager_service_transport_create_channel(transport_class, grpc_helpers):
+def test_secret_manager_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.SecretManagerServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "secretmanager.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="secretmanager.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.SecretManagerServiceGrpcTransport, grpc_helpers),
-        (transports.SecretManagerServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_secret_manager_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "secretmanager.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.SecretManagerServiceGrpcTransport, grpc_helpers),
-        (transports.SecretManagerServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_secret_manager_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "secretmanager.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -4473,6 +4483,7 @@ def test_secret_manager_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='secretmanager.googleapis.com:8000'),
     )
     assert client.transport._host == 'secretmanager.googleapis.com:8000'
+
 
 def test_secret_manager_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -4591,6 +4602,7 @@ def test_secret_manager_service_transport_channel_mtls_with_adc(
 def test_secret_path():
     project = "squid"
     secret = "clam"
+
     expected = "projects/{project}/secrets/{secret}".format(project=project, secret=secret, )
     actual = SecretManagerServiceClient.secret_path(project, secret)
     assert expected == actual
@@ -4598,8 +4610,9 @@ def test_secret_path():
 
 def test_parse_secret_path():
     expected = {
-        "project": "whelk",
-        "secret": "octopus",
+    "project": "whelk",
+    "secret": "octopus",
+
     }
     path = SecretManagerServiceClient.secret_path(**expected)
 
@@ -4611,6 +4624,7 @@ def test_secret_version_path():
     project = "oyster"
     secret = "nudibranch"
     secret_version = "cuttlefish"
+
     expected = "projects/{project}/secrets/{secret}/versions/{secret_version}".format(project=project, secret=secret, secret_version=secret_version, )
     actual = SecretManagerServiceClient.secret_version_path(project, secret, secret_version)
     assert expected == actual
@@ -4618,9 +4632,10 @@ def test_secret_version_path():
 
 def test_parse_secret_version_path():
     expected = {
-        "project": "mussel",
-        "secret": "winkle",
-        "secret_version": "nautilus",
+    "project": "mussel",
+    "secret": "winkle",
+    "secret_version": "nautilus",
+
     }
     path = SecretManagerServiceClient.secret_version_path(**expected)
 
@@ -4631,6 +4646,7 @@ def test_parse_secret_version_path():
 def test_topic_path():
     project = "scallop"
     topic = "abalone"
+
     expected = "projects/{project}/topics/{topic}".format(project=project, topic=topic, )
     actual = SecretManagerServiceClient.topic_path(project, topic)
     assert expected == actual
@@ -4638,8 +4654,9 @@ def test_topic_path():
 
 def test_parse_topic_path():
     expected = {
-        "project": "squid",
-        "topic": "clam",
+    "project": "squid",
+    "topic": "clam",
+
     }
     path = SecretManagerServiceClient.topic_path(**expected)
 
@@ -4649,6 +4666,7 @@ def test_parse_topic_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = SecretManagerServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -4656,7 +4674,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = SecretManagerServiceClient.common_billing_account_path(**expected)
 
@@ -4666,6 +4685,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = SecretManagerServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -4673,7 +4693,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = SecretManagerServiceClient.common_folder_path(**expected)
 
@@ -4683,6 +4704,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = SecretManagerServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -4690,7 +4712,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = SecretManagerServiceClient.common_organization_path(**expected)
 
@@ -4700,6 +4723,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = SecretManagerServiceClient.common_project_path(project)
     assert expected == actual
@@ -4707,7 +4731,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = SecretManagerServiceClient.common_project_path(**expected)
 
@@ -4718,6 +4743,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = SecretManagerServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -4725,8 +4751,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = SecretManagerServiceClient.common_location_path(**expected)
 

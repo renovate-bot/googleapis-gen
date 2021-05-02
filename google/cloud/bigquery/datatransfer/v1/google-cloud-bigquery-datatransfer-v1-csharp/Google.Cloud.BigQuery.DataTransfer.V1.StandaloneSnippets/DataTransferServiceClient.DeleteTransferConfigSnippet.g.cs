@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
 {
+    using Google.Cloud.BigQuery.DataTransfer.V1;
+
     public sealed partial class GeneratedDataTransferServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteTransferConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteTransferConfig()
         {
-            // Snippet: DeleteTransferConfig(string, CallSettings)
             // Create client
             DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/transferConfigs/[TRANSFER_CONFIG]";
             // Make the request
             dataTransferServiceClient.DeleteTransferConfig(name);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.AccessApproval.V1.Snippets
 {
+    using Google.Cloud.AccessApproval.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAccessApprovalClientStandaloneSnippets
     {
         /// <summary>Snippet for DismissApprovalRequestAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DismissApprovalRequestRequestObjectAsync()
         {
-            // Snippet: DismissApprovalRequestAsync(DismissApprovalRequestMessage, CallSettings)
-            // Additional: DismissApprovalRequestAsync(DismissApprovalRequestMessage, CancellationToken)
             // Create client
             AccessApprovalClient accessApprovalClient = await AccessApprovalClient.CreateAsync();
             // Initialize request argument(s)
             DismissApprovalRequestMessage request = new DismissApprovalRequestMessage { Name = "", };
             // Make the request
             ApprovalRequest response = await accessApprovalClient.DismissApprovalRequestAsync(request);
-            // End snippet
         }
     }
 }

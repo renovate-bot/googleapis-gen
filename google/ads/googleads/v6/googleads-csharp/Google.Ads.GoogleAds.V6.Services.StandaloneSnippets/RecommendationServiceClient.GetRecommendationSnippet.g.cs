@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedRecommendationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetRecommendation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetRecommendation()
         {
-            // Snippet: GetRecommendation(string, CallSettings)
             // Create client
             RecommendationServiceClient recommendationServiceClient = RecommendationServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/recommendations/[RECOMMENDATION_ID]";
             // Make the request
             Recommendation response = recommendationServiceClient.GetRecommendation(resourceName);
-            // End snippet
         }
     }
 }

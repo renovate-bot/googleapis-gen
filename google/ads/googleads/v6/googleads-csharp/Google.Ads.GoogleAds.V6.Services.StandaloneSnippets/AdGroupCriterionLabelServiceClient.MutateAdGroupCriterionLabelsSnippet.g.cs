@@ -16,14 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedAdGroupCriterionLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateAdGroupCriterionLabels</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateAdGroupCriterionLabels()
         {
-            // Snippet: MutateAdGroupCriterionLabels(string, IEnumerable<AdGroupCriterionLabelOperation>, CallSettings)
             // Create client
             AdGroupCriterionLabelServiceClient adGroupCriterionLabelServiceClient = AdGroupCriterionLabelServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             MutateAdGroupCriterionLabelsResponse response = adGroupCriterionLabelServiceClient.MutateAdGroupCriterionLabels(customerId, operations);
-            // End snippet
         }
     }
 }

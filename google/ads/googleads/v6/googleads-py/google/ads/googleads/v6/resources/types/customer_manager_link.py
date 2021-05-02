@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.enums.types import manager_link_status
 
@@ -29,6 +32,7 @@ __protobuf__ = proto.module(
 
 class CustomerManagerLink(proto.Message):
     r"""Represents customer-manager link relationship.
+
     Attributes:
         resource_name (str):
             Immutable. Name of the resource. CustomerManagerLink
@@ -45,23 +49,10 @@ class CustomerManagerLink(proto.Message):
             the manager.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    manager_customer = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
-    manager_link_id = proto.Field(
-        proto.INT64,
-        number=7,
-        optional=True,
-    )
-    status = proto.Field(
-        proto.ENUM,
-        number=5,
+    resource_name = proto.Field(proto.STRING, number=1)
+    manager_customer = proto.Field(proto.STRING, number=6, optional=True)
+    manager_link_id = proto.Field(proto.INT64, number=7, optional=True)
+    status = proto.Field(proto.ENUM, number=5,
         enum=manager_link_status.ManagerLinkStatusEnum.ManagerLinkStatus,
     )
 

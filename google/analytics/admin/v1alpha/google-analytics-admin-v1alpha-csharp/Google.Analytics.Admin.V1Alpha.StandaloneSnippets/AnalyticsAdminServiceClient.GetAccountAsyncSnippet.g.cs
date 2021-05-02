@@ -16,22 +16,24 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAccountAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAccountAsync()
         {
-            // Snippet: GetAccountAsync(string, CallSettings)
-            // Additional: GetAccountAsync(string, CancellationToken)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = await AnalyticsAdminServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "accounts/[ACCOUNT]";
             // Make the request
             Account response = await analyticsAdminServiceClient.GetAccountAsync(name);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedEntityTypesClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchUpdateEntityTypes</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BatchUpdateEntityTypesRequestObject()
         {
-            // Snippet: BatchUpdateEntityTypes(BatchUpdateEntityTypesRequest, CallSettings)
             // Create client
             EntityTypesClient entityTypesClient = EntityTypesClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             {
                 ParentAsAgentName = AgentName.FromProject("[PROJECT]"),
                 EntityTypeBatchUri = "",
-                EntityTypeBatchInline = new EntityTypeBatch(),
                 LanguageCode = "",
                 UpdateMask = new FieldMask(),
             };
@@ -54,7 +57,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
                 // If it has completed, then access the result
                 BatchUpdateEntityTypesResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

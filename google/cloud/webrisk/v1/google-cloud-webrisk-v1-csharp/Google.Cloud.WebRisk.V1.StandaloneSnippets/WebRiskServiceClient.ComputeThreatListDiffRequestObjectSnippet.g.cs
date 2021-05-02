@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.WebRisk.V1.Snippets
 {
+    using Google.Cloud.WebRisk.V1;
     using Google.Protobuf;
 
     public sealed partial class GeneratedWebRiskServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ComputeThreatListDiff</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ComputeThreatListDiffRequestObject()
         {
-            // Snippet: ComputeThreatListDiff(ComputeThreatListDiffRequest, CallSettings)
             // Create client
             WebRiskServiceClient webRiskServiceClient = WebRiskServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.WebRisk.V1.Snippets
             };
             // Make the request
             ComputeThreatListDiffResponse response = webRiskServiceClient.ComputeThreatListDiff(request);
-            // End snippet
         }
     }
 }

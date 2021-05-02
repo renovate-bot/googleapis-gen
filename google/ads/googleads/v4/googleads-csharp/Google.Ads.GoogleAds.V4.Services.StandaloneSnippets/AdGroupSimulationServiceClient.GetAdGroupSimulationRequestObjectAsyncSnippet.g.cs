@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupSimulationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupSimulationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdGroupSimulationRequestObjectAsync()
         {
-            // Snippet: GetAdGroupSimulationAsync(GetAdGroupSimulationRequest, CallSettings)
-            // Additional: GetAdGroupSimulationAsync(GetAdGroupSimulationRequest, CancellationToken)
             // Create client
             AdGroupSimulationServiceClient adGroupSimulationServiceClient = await AdGroupSimulationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             AdGroupSimulation response = await adGroupSimulationServiceClient.GetAdGroupSimulationAsync(request);
-            // End snippet
         }
     }
 }

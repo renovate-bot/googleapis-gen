@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.common.types import criteria
 from google.ads.googleads.v4.enums.types import bid_modifier_source as gage_bid_modifier_source
@@ -31,6 +34,7 @@ __protobuf__ = proto.module(
 
 class AdGroupBidModifier(proto.Message):
     r"""Represents an ad group bid modifier.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad group bid modifier.
@@ -77,69 +81,38 @@ class AdGroupBidModifier(proto.Message):
             Immutable. A preferred content criterion.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    ad_group = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    ad_group = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.StringValue,
     )
-    criterion_id = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    criterion_id = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.Int64Value,
     )
-    bid_modifier = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    bid_modifier = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.DoubleValue,
     )
-    base_ad_group = proto.Field(
-        proto.MESSAGE,
-        number=9,
+    base_ad_group = proto.Field(proto.MESSAGE, number=9,
         message=wrappers.StringValue,
     )
-    bid_modifier_source = proto.Field(
-        proto.ENUM,
-        number=10,
+    bid_modifier_source = proto.Field(proto.ENUM, number=10,
         enum=gage_bid_modifier_source.BidModifierSourceEnum.BidModifierSource,
     )
-    hotel_date_selection_type = proto.Field(
-        proto.MESSAGE,
-        number=5,
-        oneof='criterion',
+    hotel_date_selection_type = proto.Field(proto.MESSAGE, number=5, oneof='criterion',
         message=criteria.HotelDateSelectionTypeInfo,
     )
-    hotel_advance_booking_window = proto.Field(
-        proto.MESSAGE,
-        number=6,
-        oneof='criterion',
+    hotel_advance_booking_window = proto.Field(proto.MESSAGE, number=6, oneof='criterion',
         message=criteria.HotelAdvanceBookingWindowInfo,
     )
-    hotel_length_of_stay = proto.Field(
-        proto.MESSAGE,
-        number=7,
-        oneof='criterion',
+    hotel_length_of_stay = proto.Field(proto.MESSAGE, number=7, oneof='criterion',
         message=criteria.HotelLengthOfStayInfo,
     )
-    hotel_check_in_day = proto.Field(
-        proto.MESSAGE,
-        number=8,
-        oneof='criterion',
+    hotel_check_in_day = proto.Field(proto.MESSAGE, number=8, oneof='criterion',
         message=criteria.HotelCheckInDayInfo,
     )
-    device = proto.Field(
-        proto.MESSAGE,
-        number=11,
-        oneof='criterion',
+    device = proto.Field(proto.MESSAGE, number=11, oneof='criterion',
         message=criteria.DeviceInfo,
     )
-    preferred_content = proto.Field(
-        proto.MESSAGE,
-        number=12,
-        oneof='criterion',
+    preferred_content = proto.Field(proto.MESSAGE, number=12, oneof='criterion',
         message=criteria.PreferredContentInfo,
     )
 

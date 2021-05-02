@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.service_manager import ServiceManagerClient
-
 from .types.resources import ChangeReport
 from .types.resources import ConfigFile
 from .types.resources import ConfigRef
@@ -47,6 +47,7 @@ from .types.servicemanager import SubmitConfigSourceRequest
 from .types.servicemanager import SubmitConfigSourceResponse
 from .types.servicemanager import UndeleteServiceRequest
 from .types.servicemanager import UndeleteServiceResponse
+
 
 __all__ = (
     'ChangeReport',

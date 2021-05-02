@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Securitycenter.V1Beta1.Snippets
 {
+    using Google.Cloud.Securitycenter.V1Beta1;
+
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for GetOrganizationSettings</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetOrganizationSettingsResourceNames()
         {
-            // Snippet: GetOrganizationSettings(OrganizationSettingsName, CallSettings)
             // Create client
             SecurityCenterClient securityCenterClient = SecurityCenterClient.Create();
             // Initialize request argument(s)
             OrganizationSettingsName name = OrganizationSettingsName.FromOrganization("[ORGANIZATION]");
             // Make the request
             OrganizationSettings response = securityCenterClient.GetOrganizationSettings(name);
-            // End snippet
         }
     }
 }

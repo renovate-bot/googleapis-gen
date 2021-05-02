@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
 {
+    using Google.Cloud.BigQuery.Reservation.V1;
+
     public sealed partial class GeneratedReservationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCapacityCommitment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCapacityCommitmentResourceNames()
         {
-            // Snippet: GetCapacityCommitment(CapacityCommitmentName, CallSettings)
             // Create client
             ReservationServiceClient reservationServiceClient = ReservationServiceClient.Create();
             // Initialize request argument(s)
             CapacityCommitmentName name = CapacityCommitmentName.FromProjectLocationCapacityCommitment("[PROJECT]", "[LOCATION]", "[CAPACITY_COMMITMENT]");
             // Make the request
             CapacityCommitment response = reservationServiceClient.GetCapacityCommitment(name);
-            // End snippet
         }
     }
 }

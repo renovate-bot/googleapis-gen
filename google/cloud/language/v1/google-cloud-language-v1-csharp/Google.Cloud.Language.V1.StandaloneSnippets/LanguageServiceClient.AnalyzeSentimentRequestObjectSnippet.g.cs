@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Language.V1.Snippets
 {
+    using Google.Cloud.Language.V1;
+
     public sealed partial class GeneratedLanguageServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for AnalyzeSentiment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void AnalyzeSentimentRequestObject()
         {
-            // Snippet: AnalyzeSentiment(AnalyzeSentimentRequest, CallSettings)
             // Create client
             LanguageServiceClient languageServiceClient = LanguageServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.Language.V1.Snippets
             };
             // Make the request
             AnalyzeSentimentResponse response = languageServiceClient.AnalyzeSentiment(request);
-            // End snippet
         }
     }
 }

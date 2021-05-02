@@ -17,14 +17,18 @@
 namespace Google.Cloud.Gaming.V1Beta.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Gaming.V1Beta;
     using System;
 
     public sealed partial class GeneratedGameServerClustersServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListGameServerClusters</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListGameServerClustersResourceNames()
         {
-            // Snippet: ListGameServerClusters(RealmName, string, int?, CallSettings)
             // Create client
             GameServerClustersServiceClient gameServerClustersServiceClient = GameServerClustersServiceClient.Create();
             // Initialize request argument(s)
@@ -63,7 +67,6 @@ namespace Google.Cloud.Gaming.V1Beta.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

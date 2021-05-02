@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -263,16 +265,21 @@ def test_get_paid_organic_search_term_view(transport: str = 'grpc', request_type
         # Designate an appropriate return value for the call.
         call.return_value = paid_organic_search_term_view.PaidOrganicSearchTermView(
             resource_name='resource_name_value',
+
         )
+
         response = client.get_paid_organic_search_term_view(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == paid_organic_search_term_view_service.GetPaidOrganicSearchTermViewRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, paid_organic_search_term_view.PaidOrganicSearchTermView)
+
     assert response.resource_name == 'resource_name_value'
 
 
@@ -288,7 +295,6 @@ def test_get_paid_organic_search_term_view_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = paid_organic_search_term_view_service.GetPaidOrganicSearchTermViewRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -296,6 +302,7 @@ def test_get_paid_organic_search_term_view_field_headers():
             type(client.transport.get_paid_organic_search_term_view),
             '__call__') as call:
         call.return_value = paid_organic_search_term_view.PaidOrganicSearchTermView()
+
         client.get_paid_organic_search_term_view(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -322,6 +329,7 @@ def test_get_paid_organic_search_term_view_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = paid_organic_search_term_view.PaidOrganicSearchTermView()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_paid_organic_search_term_view(
@@ -332,6 +340,7 @@ def test_get_paid_organic_search_term_view_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -412,7 +421,7 @@ def test_paid_organic_search_term_view_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_paid_organic_search_term_view',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -564,6 +573,7 @@ def test_paid_organic_search_term_view_service_transport_channel_mtls_with_adc(
 def test_paid_organic_search_term_view_path():
     customer = "squid"
     paid_organic_search_term_view = "clam"
+
     expected = "customers/{customer}/paidOrganicSearchTermViews/{paid_organic_search_term_view}".format(customer=customer, paid_organic_search_term_view=paid_organic_search_term_view, )
     actual = PaidOrganicSearchTermViewServiceClient.paid_organic_search_term_view_path(customer, paid_organic_search_term_view)
     assert expected == actual
@@ -571,8 +581,9 @@ def test_paid_organic_search_term_view_path():
 
 def test_parse_paid_organic_search_term_view_path():
     expected = {
-        "customer": "whelk",
-        "paid_organic_search_term_view": "octopus",
+    "customer": "whelk",
+    "paid_organic_search_term_view": "octopus",
+
     }
     path = PaidOrganicSearchTermViewServiceClient.paid_organic_search_term_view_path(**expected)
 
@@ -582,6 +593,7 @@ def test_parse_paid_organic_search_term_view_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = PaidOrganicSearchTermViewServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -589,7 +601,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = PaidOrganicSearchTermViewServiceClient.common_billing_account_path(**expected)
 
@@ -599,6 +612,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = PaidOrganicSearchTermViewServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -606,7 +620,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = PaidOrganicSearchTermViewServiceClient.common_folder_path(**expected)
 
@@ -616,6 +631,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = PaidOrganicSearchTermViewServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -623,7 +639,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = PaidOrganicSearchTermViewServiceClient.common_organization_path(**expected)
 
@@ -633,6 +650,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = PaidOrganicSearchTermViewServiceClient.common_project_path(project)
     assert expected == actual
@@ -640,7 +658,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = PaidOrganicSearchTermViewServiceClient.common_project_path(**expected)
 
@@ -651,6 +670,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = PaidOrganicSearchTermViewServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -658,8 +678,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = PaidOrganicSearchTermViewServiceClient.common_location_path(**expected)
 

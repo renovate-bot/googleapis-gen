@@ -17,13 +17,17 @@
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Monitoring.V3;
 
     public sealed partial class GeneratedMetricServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateTimeSeries</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateTimeSeriesRequestObject()
         {
-            // Snippet: CreateTimeSeries(CreateTimeSeriesRequest, CallSettings)
             // Create client
             MetricServiceClient metricServiceClient = MetricServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             };
             // Make the request
             metricServiceClient.CreateTimeSeries(request);
-            // End snippet
         }
     }
 }

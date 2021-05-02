@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v5.enums.types import extension_setting_device
 from google.ads.googleads.v5.enums.types import extension_type as gage_extension_type
@@ -31,6 +34,7 @@ __protobuf__ = proto.module(
 
 class AdGroupExtensionSetting(proto.Message):
     r"""An ad group extension setting.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the ad group extension
@@ -58,28 +62,17 @@ class AdGroupExtensionSetting(proto.Message):
             serve. Optional.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    extension_type = proto.Field(
-        proto.ENUM,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    extension_type = proto.Field(proto.ENUM, number=2,
         enum=gage_extension_type.ExtensionTypeEnum.ExtensionType,
     )
-    ad_group = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    ad_group = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.StringValue,
     )
-    extension_feed_items = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+    extension_feed_items = proto.RepeatedField(proto.MESSAGE, number=4,
         message=wrappers.StringValue,
     )
-    device = proto.Field(
-        proto.ENUM,
-        number=5,
+    device = proto.Field(proto.ENUM, number=5,
         enum=extension_setting_device.ExtensionSettingDeviceEnum.ExtensionSettingDevice,
     )
 

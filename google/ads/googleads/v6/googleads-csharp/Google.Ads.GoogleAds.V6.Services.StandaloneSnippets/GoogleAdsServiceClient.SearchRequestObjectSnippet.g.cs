@@ -17,15 +17,19 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Enums;
+    using Google.Ads.GoogleAds.V6.Services;
     using Google.Api.Gax;
     using System;
 
     public sealed partial class GeneratedGoogleAdsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for Search</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SearchRequestObject()
         {
-            // Snippet: Search(SearchGoogleAdsRequest, CallSettings)
             // Create client
             GoogleAdsServiceClient googleAdsServiceClient = GoogleAdsServiceClient.Create();
             // Initialize request argument(s)
@@ -71,7 +75,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

@@ -17,16 +17,19 @@
 namespace Google.Cloud.Security.PrivateCA.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Security.PrivateCA.V1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCertificateAuthorityServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateCaPoolAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateCaPoolRequestObjectAsync()
         {
-            // Snippet: CreateCaPoolAsync(CreateCaPoolRequest, CallSettings)
-            // Additional: CreateCaPoolAsync(CreateCaPoolRequest, CancellationToken)
             // Create client
             CertificateAuthorityServiceClient certificateAuthorityServiceClient = await CertificateAuthorityServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -55,7 +58,6 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
                 // If it has completed, then access the result
                 CaPool retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

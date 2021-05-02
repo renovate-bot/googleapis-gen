@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,21 +14,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.bigquery.storage_v1beta1.types import storage
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import BigQueryStorageTransport, DEFAULT_CLIENT_INFO
 from .grpc import BigQueryStorageGrpcTransport
 
@@ -79,15 +81,13 @@ class BigQueryStorageGrpcAsyncIOTransport(BigQueryStorageTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -107,8 +107,7 @@ class BigQueryStorageGrpcAsyncIOTransport(BigQueryStorageTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -166,6 +165,7 @@ class BigQueryStorageGrpcAsyncIOTransport(BigQueryStorageTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -228,9 +228,7 @@ class BigQueryStorageGrpcAsyncIOTransport(BigQueryStorageTransport):
     def create_read_session(self) -> Callable[
             [storage.CreateReadSessionRequest],
             Awaitable[storage.ReadSession]]:
-        r"""Return a callable for the
-        create read session
-          method over gRPC.
+        r"""Return a callable for the create read session method over gRPC.
 
         Creates a new read session. A read session divides
         the contents of a BigQuery table into one or more
@@ -269,9 +267,7 @@ class BigQueryStorageGrpcAsyncIOTransport(BigQueryStorageTransport):
     def read_rows(self) -> Callable[
             [storage.ReadRowsRequest],
             Awaitable[storage.ReadRowsResponse]]:
-        r"""Return a callable for the
-        read rows
-          method over gRPC.
+        r"""Return a callable for the read rows method over gRPC.
 
         Reads rows from the table in the format prescribed by
         the read session. Each response contains one or more
@@ -308,10 +304,8 @@ class BigQueryStorageGrpcAsyncIOTransport(BigQueryStorageTransport):
     def batch_create_read_session_streams(self) -> Callable[
             [storage.BatchCreateReadSessionStreamsRequest],
             Awaitable[storage.BatchCreateReadSessionStreamsResponse]]:
-        r"""Return a callable for the
-        batch create read session
-        streams
-          method over gRPC.
+        r"""Return a callable for the batch create read session
+        streams method over gRPC.
 
         Creates additional streams for a ReadSession. This
         API can be used to dynamically adjust the parallelism of
@@ -340,9 +334,7 @@ class BigQueryStorageGrpcAsyncIOTransport(BigQueryStorageTransport):
     def finalize_stream(self) -> Callable[
             [storage.FinalizeStreamRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        finalize stream
-          method over gRPC.
+        r"""Return a callable for the finalize stream method over gRPC.
 
         Triggers the graceful termination of a single stream
         in a ReadSession. This API can be used to dynamically
@@ -384,9 +376,7 @@ class BigQueryStorageGrpcAsyncIOTransport(BigQueryStorageTransport):
     def split_read_stream(self) -> Callable[
             [storage.SplitReadStreamRequest],
             Awaitable[storage.SplitReadStreamResponse]]:
-        r"""Return a callable for the
-        split read stream
-          method over gRPC.
+        r"""Return a callable for the split read stream method over gRPC.
 
         Splits a given read stream into two Streams. These streams are
         referred to as the primary and the residual of the split. The

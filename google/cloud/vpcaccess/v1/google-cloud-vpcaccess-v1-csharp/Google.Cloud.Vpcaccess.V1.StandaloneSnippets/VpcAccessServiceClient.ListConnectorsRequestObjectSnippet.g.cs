@@ -18,14 +18,18 @@ namespace Google.Cloud.Vpcaccess.V1.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Vpcaccess.V1;
     using System;
 
     public sealed partial class GeneratedVpcAccessServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListConnectors</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListConnectorsRequestObject()
         {
-            // Snippet: ListConnectors(ListConnectorsRequest, CallSettings)
             // Create client
             VpcAccessServiceClient vpcAccessServiceClient = VpcAccessServiceClient.Create();
             // Initialize request argument(s)
@@ -67,7 +71,6 @@ namespace Google.Cloud.Vpcaccess.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

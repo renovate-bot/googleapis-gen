@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignExtensionSettingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignExtensionSettingAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCampaignExtensionSettingResourceNamesAsync()
         {
-            // Snippet: GetCampaignExtensionSettingAsync(CampaignExtensionSettingName, CallSettings)
-            // Additional: GetCampaignExtensionSettingAsync(CampaignExtensionSettingName, CancellationToken)
             // Create client
             CampaignExtensionSettingServiceClient campaignExtensionSettingServiceClient = await CampaignExtensionSettingServiceClient.CreateAsync();
             // Initialize request argument(s)
             CampaignExtensionSettingName resourceName = CampaignExtensionSettingName.FromCustomerCampaignExtensionSetting("[CUSTOMER]", "[CAMPAIGN_EXTENSION_SETTING]");
             // Make the request
             CampaignExtensionSetting response = await campaignExtensionSettingServiceClient.GetCampaignExtensionSettingAsync(resourceName);
-            // End snippet
         }
     }
 }

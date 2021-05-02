@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Redis.V1.Snippets
 {
+    using Google.Cloud.Redis.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudRedisClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInstanceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetInstanceRequestObjectAsync()
         {
-            // Snippet: GetInstanceAsync(GetInstanceRequest, CallSettings)
-            // Additional: GetInstanceAsync(GetInstanceRequest, CancellationToken)
             // Create client
             CloudRedisClient cloudRedisClient = await CloudRedisClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Redis.V1.Snippets
             };
             // Make the request
             Instance response = await cloudRedisClient.GetInstanceAsync(request);
-            // End snippet
         }
     }
 }

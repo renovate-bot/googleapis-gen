@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigtableTableAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteSnapshotAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteSnapshotAsync()
         {
-            // Snippet: DeleteSnapshotAsync(string, CallSettings)
-            // Additional: DeleteSnapshotAsync(string, CancellationToken)
             // Create client
             BigtableTableAdminClient bigtableTableAdminClient = await BigtableTableAdminClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/instances/[INSTANCE]/clusters/[CLUSTER]/snapshots/[SNAPSHOT]";
             // Make the request
             await bigtableTableAdminClient.DeleteSnapshotAsync(name);
-            // End snippet
         }
     }
 }

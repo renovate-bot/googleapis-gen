@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Billing.V1.Snippets
 {
+    using Google.Cloud.Billing.V1;
+
     public sealed partial class GeneratedCloudBillingClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateProjectBillingInfo</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateProjectBillingInfoRequestObject()
         {
-            // Snippet: UpdateProjectBillingInfo(UpdateProjectBillingInfoRequest, CallSettings)
             // Create client
             CloudBillingClient cloudBillingClient = CloudBillingClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.Billing.V1.Snippets
             };
             // Make the request
             ProjectBillingInfo response = cloudBillingClient.UpdateProjectBillingInfo(request);
-            // End snippet
         }
     }
 }

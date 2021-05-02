@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Firestore.V1.Snippets
 {
+    using Google.Cloud.Firestore.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFirestoreClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteDocumentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteDocumentRequestObjectAsync()
         {
-            // Snippet: DeleteDocumentAsync(DeleteDocumentRequest, CallSettings)
-            // Additional: DeleteDocumentAsync(DeleteDocumentRequest, CancellationToken)
             // Create client
             FirestoreClient firestoreClient = await FirestoreClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Firestore.V1.Snippets
             };
             // Make the request
             await firestoreClient.DeleteDocumentAsync(request);
-            // End snippet
         }
     }
 }

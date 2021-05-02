@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -30,6 +32,7 @@ from google.cloud.billing.budgets_v1.services.budget_service import pagers
 from google.cloud.billing.budgets_v1.types import budget_model
 from google.cloud.billing.budgets_v1.types import budget_service
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import BudgetServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import BudgetServiceGrpcAsyncIOTransport
 from .client import BudgetServiceClient
@@ -48,14 +51,19 @@ class BudgetServiceAsyncClient:
 
     budget_path = staticmethod(BudgetServiceClient.budget_path)
     parse_budget_path = staticmethod(BudgetServiceClient.parse_budget_path)
+
     common_billing_account_path = staticmethod(BudgetServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(BudgetServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(BudgetServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(BudgetServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(BudgetServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(BudgetServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(BudgetServiceClient.common_project_path)
     parse_common_project_path = staticmethod(BudgetServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(BudgetServiceClient.common_location_path)
     parse_common_location_path = staticmethod(BudgetServiceClient.parse_common_location_path)
 
@@ -140,6 +148,7 @@ class BudgetServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = BudgetServiceClient(
             credentials=credentials,
             transport=transport,
@@ -164,8 +173,7 @@ class BudgetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.billing.budgets_v1.types.CreateBudgetRequest`):
-                The request object.
-                Request for CreateBudget
+                The request object. Request for CreateBudget
             parent (:class:`str`):
                 Required. The name of the billing account to create the
                 budget in. Values are of the form
@@ -179,6 +187,7 @@ class BudgetServiceAsyncClient:
                 This corresponds to the ``budget`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -210,6 +219,7 @@ class BudgetServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if budget is not None:
@@ -259,8 +269,7 @@ class BudgetServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.billing.budgets_v1.types.UpdateBudgetRequest`):
-                The request object.
-                Request for UpdateBudget
+                The request object. Request for UpdateBudget
             budget (:class:`google.cloud.billing.budgets_v1.types.Budget`):
                 Required. The updated budget object.
                 The budget to update is specified by the
@@ -280,6 +289,7 @@ class BudgetServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -311,6 +321,7 @@ class BudgetServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if budget is not None:
             request.budget = budget
         if update_mask is not None:
@@ -321,7 +332,10 @@ class BudgetServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_budget,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -367,8 +381,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing.budgets_v1.types.GetBudgetRequest`):
-                The request object.
-                Request for GetBudget
+                The request object. Request for GetBudget
             name (:class:`str`):
                 Required. Name of budget to get. Values are of the form
                 ``billingAccounts/{billingAccountId}/budgets/{budgetId}``.
@@ -376,6 +389,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -407,6 +421,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -415,7 +430,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_budget,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -461,8 +479,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing.budgets_v1.types.ListBudgetsRequest`):
-                The request object.
-                Request for ListBudgets
+                The request object. Request for ListBudgets
             parent (:class:`str`):
                 Required. Name of billing account to list budgets under.
                 Values are of the form
@@ -471,6 +488,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -497,6 +515,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -505,7 +524,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_budgets,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -556,8 +578,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.billing.budgets_v1.types.DeleteBudgetRequest`):
-                The request object.
-                Request for DeleteBudget
+                The request object. Request for DeleteBudget
             name (:class:`str`):
                 Required. Name of the budget to delete. Values are of
                 the form
@@ -566,6 +587,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -584,6 +606,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -592,7 +615,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_budget,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -617,6 +643,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

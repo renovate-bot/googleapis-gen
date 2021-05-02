@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Domains.V1Alpha2.Snippets
 {
+    using Google.Cloud.Domains.V1Alpha2;
+
     public sealed partial class GeneratedDomainsClientStandaloneSnippets
     {
         /// <summary>Snippet for ResetAuthorizationCode</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ResetAuthorizationCode()
         {
-            // Snippet: ResetAuthorizationCode(string, CallSettings)
             // Create client
             DomainsClient domainsClient = DomainsClient.Create();
             // Initialize request argument(s)
             string registration = "projects/[PROJECT]/locations/[LOCATION]/registrations/[REGISTRATION]";
             // Make the request
             AuthorizationCode response = domainsClient.ResetAuthorizationCode(registration);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConversationProfilesClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteConversationProfileAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteConversationProfileResourceNamesAsync()
         {
-            // Snippet: DeleteConversationProfileAsync(ConversationProfileName, CallSettings)
-            // Additional: DeleteConversationProfileAsync(ConversationProfileName, CancellationToken)
             // Create client
             ConversationProfilesClient conversationProfilesClient = await ConversationProfilesClient.CreateAsync();
             // Initialize request argument(s)
             ConversationProfileName name = ConversationProfileName.FromProjectConversationProfile("[PROJECT]", "[CONVERSATION_PROFILE]");
             // Make the request
             await conversationProfilesClient.DeleteConversationProfileAsync(name);
-            // End snippet
         }
     }
 }

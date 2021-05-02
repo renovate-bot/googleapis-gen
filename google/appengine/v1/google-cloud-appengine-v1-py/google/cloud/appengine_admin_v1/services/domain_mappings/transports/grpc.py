@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -28,6 +30,7 @@ import grpc  # type: ignore
 from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import domain_mapping
 from google.longrunning import operations_pb2 as operations  # type: ignore
+
 from .base import DomainMappingsTransport, DEFAULT_CLIENT_INFO
 
 
@@ -61,8 +64,7 @@ class DomainMappingsGrpcTransport(DomainMappingsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,15 +204,13 @@ class DomainMappingsGrpcTransport(DomainMappingsTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -240,9 +240,7 @@ class DomainMappingsGrpcTransport(DomainMappingsTransport):
     def list_domain_mappings(self) -> Callable[
             [appengine.ListDomainMappingsRequest],
             appengine.ListDomainMappingsResponse]:
-        r"""Return a callable for the
-        list domain mappings
-          method over gRPC.
+        r"""Return a callable for the list domain mappings method over gRPC.
 
         Lists the domain mappings on an application.
 
@@ -268,9 +266,7 @@ class DomainMappingsGrpcTransport(DomainMappingsTransport):
     def get_domain_mapping(self) -> Callable[
             [appengine.GetDomainMappingRequest],
             domain_mapping.DomainMapping]:
-        r"""Return a callable for the
-        get domain mapping
-          method over gRPC.
+        r"""Return a callable for the get domain mapping method over gRPC.
 
         Gets the specified domain mapping.
 
@@ -296,9 +292,7 @@ class DomainMappingsGrpcTransport(DomainMappingsTransport):
     def create_domain_mapping(self) -> Callable[
             [appengine.CreateDomainMappingRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create domain mapping
-          method over gRPC.
+        r"""Return a callable for the create domain mapping method over gRPC.
 
         Maps a domain to an application. A user must be authorized to
         administer a domain in order to map it to an application. For a
@@ -327,9 +321,7 @@ class DomainMappingsGrpcTransport(DomainMappingsTransport):
     def update_domain_mapping(self) -> Callable[
             [appengine.UpdateDomainMappingRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update domain mapping
-          method over gRPC.
+        r"""Return a callable for the update domain mapping method over gRPC.
 
         Updates the specified domain mapping. To map an SSL certificate
         to a domain mapping, update ``certificate_id`` to point to an
@@ -359,9 +351,7 @@ class DomainMappingsGrpcTransport(DomainMappingsTransport):
     def delete_domain_mapping(self) -> Callable[
             [appengine.DeleteDomainMappingRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete domain mapping
-          method over gRPC.
+        r"""Return a callable for the delete domain mapping method over gRPC.
 
         Deletes the specified domain mapping. A user must be authorized
         to administer the associated domain in order to delete a

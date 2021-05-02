@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.AccessApproval.V1.Snippets
 {
+    using Google.Cloud.AccessApproval.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAccessApprovalClientStandaloneSnippets
     {
         /// <summary>Snippet for GetApprovalRequestAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetApprovalRequestRequestObjectAsync()
         {
-            // Snippet: GetApprovalRequestAsync(GetApprovalRequestMessage, CallSettings)
-            // Additional: GetApprovalRequestAsync(GetApprovalRequestMessage, CancellationToken)
             // Create client
             AccessApprovalClient accessApprovalClient = await AccessApprovalClient.CreateAsync();
             // Initialize request argument(s)
             GetApprovalRequestMessage request = new GetApprovalRequestMessage { Name = "", };
             // Make the request
             ApprovalRequest response = await accessApprovalClient.GetApprovalRequestAsync(request);
-            // End snippet
         }
     }
 }

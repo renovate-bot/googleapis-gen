@@ -17,14 +17,18 @@
 namespace Google.Cloud.Metastore.V1Beta.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Metastore.V1Beta;
     using Google.LongRunning;
 
     public sealed partial class GeneratedDataprocMetastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateService</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateServiceResourceNames()
         {
-            // Snippet: CreateService(LocationName, Service, string, CallSettings)
             // Create client
             DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.Create();
             // Initialize request argument(s)
@@ -49,7 +53,6 @@ namespace Google.Cloud.Metastore.V1Beta.Snippets
                 // If it has completed, then access the result
                 Service retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

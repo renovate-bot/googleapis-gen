@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -42,7 +43,8 @@ from google.area120.tables_v1alpha1.types.tables import UpdateRowRequest
 from google.area120.tables_v1alpha1.types.tables import View
 from google.area120.tables_v1alpha1.types.tables import Workspace
 
-__all__ = ('BatchCreateRowsRequest',
+__all__ = (
+    'BatchCreateRowsRequest',
     'BatchCreateRowsResponse',
     'BatchDeleteRowsRequest',
     'BatchUpdateRowsRequest',

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Trace.V1.Snippets
 {
+    using Google.Cloud.Trace.V1;
+
     public sealed partial class GeneratedTraceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTrace</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetTraceRequestObject()
         {
-            // Snippet: GetTrace(GetTraceRequest, CallSettings)
             // Create client
             TraceServiceClient traceServiceClient = TraceServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.Trace.V1.Snippets
             };
             // Make the request
             Trace response = traceServiceClient.GetTrace(request);
-            // End snippet
         }
     }
 }

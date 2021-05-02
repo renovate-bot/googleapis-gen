@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Asset.V1.Snippets
 {
+    using Google.Cloud.Asset.V1;
+
     public sealed partial class GeneratedAssetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListFeeds</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListFeeds()
         {
-            // Snippet: ListFeeds(string, CallSettings)
             // Create client
             AssetServiceClient assetServiceClient = AssetServiceClient.Create();
             // Initialize request argument(s)
             string parent = "";
             // Make the request
             ListFeedsResponse response = assetServiceClient.ListFeeds(parent);
-            // End snippet
         }
     }
 }

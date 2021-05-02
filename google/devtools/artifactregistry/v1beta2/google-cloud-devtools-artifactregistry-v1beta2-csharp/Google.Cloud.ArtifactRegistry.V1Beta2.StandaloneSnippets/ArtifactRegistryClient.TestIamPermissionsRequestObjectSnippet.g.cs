@@ -17,14 +17,18 @@
 namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.ArtifactRegistry.V1Beta2;
     using Google.Cloud.Iam.V1;
 
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
     {
         /// <summary>Snippet for TestIamPermissions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void TestIamPermissionsRequestObject()
         {
-            // Snippet: TestIamPermissions(TestIamPermissionsRequest, CallSettings)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
             };
             // Make the request
             TestIamPermissionsResponse response = artifactRegistryClient.TestIamPermissions(request);
-            // End snippet
         }
     }
 }

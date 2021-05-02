@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomAudienceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCustomAudiencesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateCustomAudiencesRequestObjectAsync()
         {
-            // Snippet: MutateCustomAudiencesAsync(MutateCustomAudiencesRequest, CallSettings)
-            // Additional: MutateCustomAudiencesAsync(MutateCustomAudiencesRequest, CancellationToken)
             // Create client
             CustomAudienceServiceClient customAudienceServiceClient = await CustomAudienceServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -39,7 +42,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             MutateCustomAudiencesResponse response = await customAudienceServiceClient.MutateCustomAudiencesAsync(request);
-            // End snippet
         }
     }
 }

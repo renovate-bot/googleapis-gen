@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedShoppingPerformanceViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetShoppingPerformanceViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetShoppingPerformanceViewResourceNamesAsync()
         {
-            // Snippet: GetShoppingPerformanceViewAsync(ShoppingPerformanceViewName, CallSettings)
-            // Additional: GetShoppingPerformanceViewAsync(ShoppingPerformanceViewName, CancellationToken)
             // Create client
             ShoppingPerformanceViewServiceClient shoppingPerformanceViewServiceClient = await ShoppingPerformanceViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             ShoppingPerformanceViewName resourceName = ShoppingPerformanceViewName.FromCustomer("[CUSTOMER]");
             // Make the request
             ShoppingPerformanceView response = await shoppingPerformanceViewServiceClient.GetShoppingPerformanceViewAsync(resourceName);
-            // End snippet
         }
     }
 }

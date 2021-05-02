@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,13 +41,14 @@ def partition(
 class migrationCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_migration_workflow': ('parent', 'migration_workflow', ),
-          'delete_migration_workflow': ('name', ),
-          'get_migration_subtask': ('name', 'read_mask', ),
-          'get_migration_workflow': ('name', 'read_mask', ),
-          'list_migration_subtasks': ('parent', 'read_mask', 'page_size', 'page_token', 'filter', ),
-          'list_migration_workflows': ('parent', 'read_mask', 'page_size', 'page_token', ),
-          'start_migration_workflow': ('name', ),
+    'create_migration_workflow': ('parent', 'migration_workflow', ),
+    'delete_migration_workflow': ('name', ),
+    'get_migration_subtask': ('name', 'read_mask', ),
+    'get_migration_workflow': ('name', 'read_mask', ),
+    'list_migration_subtasks': ('parent', 'read_mask', 'page_size', 'page_token', 'filter', ),
+    'list_migration_workflows': ('parent', 'read_mask', 'page_size', 'page_token', ),
+    'start_migration_workflow': ('name', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -76,7 +79,7 @@ class migrationCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

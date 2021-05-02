@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,17 +41,18 @@ def partition(
 class tpuCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_node': ('parent', 'node', 'node_id', ),
-          'delete_node': ('name', ),
-          'get_accelerator_type': ('name', ),
-          'get_node': ('name', ),
-          'get_tensor_flow_version': ('name', ),
-          'list_accelerator_types': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'list_nodes': ('parent', 'page_size', 'page_token', ),
-          'list_tensor_flow_versions': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'reimage_node': ('name', 'tensorflow_version', ),
-          'start_node': ('name', ),
-          'stop_node': ('name', ),
+    'create_node': ('parent', 'node', 'node_id', ),
+    'delete_node': ('name', ),
+    'get_accelerator_type': ('name', ),
+    'get_node': ('name', ),
+    'get_tensor_flow_version': ('name', ),
+    'list_accelerator_types': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+    'list_nodes': ('parent', 'page_size', 'page_token', ),
+    'list_tensor_flow_versions': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+    'reimage_node': ('name', 'tensorflow_version', ),
+    'start_node': ('name', ),
+    'stop_node': ('name', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -80,7 +83,7 @@ class tpuCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

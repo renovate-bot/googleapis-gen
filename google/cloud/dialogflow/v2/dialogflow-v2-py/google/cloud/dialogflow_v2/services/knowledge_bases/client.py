@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -34,6 +36,7 @@ from google.cloud.dialogflow_v2.services.knowledge_bases import pagers
 from google.cloud.dialogflow_v2.types import knowledge_base
 from google.cloud.dialogflow_v2.types import knowledge_base as gcd_knowledge_base
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import KnowledgeBasesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import KnowledgeBasesGrpcTransport
 from .transports.grpc_asyncio import KnowledgeBasesGrpcAsyncIOTransport
@@ -338,8 +341,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ListKnowledgeBasesRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.ListKnowledgeBases][google.cloud.dialogflow.v2.KnowledgeBases.ListKnowledgeBases].
             parent (str):
                 Required. The project to list of knowledge bases for.
@@ -349,6 +351,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -378,8 +381,10 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, knowledge_base.ListKnowledgeBasesRequest):
             request = knowledge_base.ListKnowledgeBasesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -427,8 +432,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.GetKnowledgeBaseRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.GetKnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBases.GetKnowledgeBase].
             name (str):
                 Required. The name of the knowledge base to retrieve.
@@ -438,6 +442,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -474,8 +479,10 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, knowledge_base.GetKnowledgeBaseRequest):
             request = knowledge_base.GetKnowledgeBaseRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -515,8 +522,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.CreateKnowledgeBaseRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.CreateKnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBases.CreateKnowledgeBase].
             parent (str):
                 Required. The project to create a knowledge base for.
@@ -533,6 +539,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
                 This corresponds to the ``knowledge_base`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -569,8 +576,10 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_knowledge_base.CreateKnowledgeBaseRequest):
             request = gcd_knowledge_base.CreateKnowledgeBaseRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if knowledge_base is not None:
@@ -611,8 +620,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.DeleteKnowledgeBaseRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.DeleteKnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBases.DeleteKnowledgeBase].
             name (str):
                 Required. The name of the knowledge base to delete.
@@ -622,6 +630,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -642,8 +651,10 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, knowledge_base.DeleteKnowledgeBaseRequest):
             request = knowledge_base.DeleteKnowledgeBaseRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -680,8 +691,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.UpdateKnowledgeBaseRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [KnowledgeBases.UpdateKnowledgeBase][google.cloud.dialogflow.v2.KnowledgeBases.UpdateKnowledgeBase].
             knowledge_base (google.cloud.dialogflow_v2.types.KnowledgeBase):
                 Required. The knowledge base to
@@ -698,6 +708,7 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -734,8 +745,10 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_knowledge_base.UpdateKnowledgeBaseRequest):
             request = gcd_knowledge_base.UpdateKnowledgeBaseRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if knowledge_base is not None:
                 request.knowledge_base = knowledge_base
             if update_mask is not None:
@@ -763,6 +776,8 @@ class KnowledgeBasesClient(metaclass=KnowledgeBasesClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

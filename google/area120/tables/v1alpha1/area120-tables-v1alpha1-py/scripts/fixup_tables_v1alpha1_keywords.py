@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,18 +41,19 @@ def partition(
 class tablesCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'batch_create_rows': ('parent', 'requests', ),
-          'batch_delete_rows': ('parent', 'names', ),
-          'batch_update_rows': ('parent', 'requests', ),
-          'create_row': ('parent', 'row', 'view', ),
-          'delete_row': ('name', ),
-          'get_row': ('name', 'view', ),
-          'get_table': ('name', ),
-          'get_workspace': ('name', ),
-          'list_rows': ('parent', 'page_size', 'page_token', 'view', 'filter', ),
-          'list_tables': ('page_size', 'page_token', ),
-          'list_workspaces': ('page_size', 'page_token', ),
-          'update_row': ('row', 'update_mask', 'view', ),
+    'batch_create_rows': ('parent', 'requests', ),
+    'batch_delete_rows': ('parent', 'names', ),
+    'batch_update_rows': ('parent', 'requests', ),
+    'create_row': ('parent', 'row', 'view', ),
+    'delete_row': ('name', ),
+    'get_row': ('name', 'view', ),
+    'get_table': ('name', ),
+    'get_workspace': ('name', ),
+    'list_rows': ('parent', 'page_size', 'page_token', 'view', 'filter', ),
+    'list_tables': ('page_size', 'page_token', ),
+    'list_workspaces': ('page_size', 'page_token', ),
+    'update_row': ('row', 'update_mask', 'view', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -81,7 +84,7 @@ class tablesCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

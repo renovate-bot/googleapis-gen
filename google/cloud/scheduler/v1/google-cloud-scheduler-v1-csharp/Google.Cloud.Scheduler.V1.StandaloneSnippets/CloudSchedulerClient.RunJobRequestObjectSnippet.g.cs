@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Scheduler.V1.Snippets
 {
+    using Google.Cloud.Scheduler.V1;
+
     public sealed partial class GeneratedCloudSchedulerClientStandaloneSnippets
     {
         /// <summary>Snippet for RunJob</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void RunJobRequestObject()
         {
-            // Snippet: RunJob(RunJobRequest, CallSettings)
             // Create client
             CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Scheduler.V1.Snippets
             };
             // Make the request
             Job response = cloudSchedulerClient.RunJob(request);
-            // End snippet
         }
     }
 }

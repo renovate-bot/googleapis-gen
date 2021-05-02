@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Tpu.V1.Snippets
 {
+    using Google.Cloud.Tpu.V1;
+
     public sealed partial class GeneratedTpuClientStandaloneSnippets
     {
         /// <summary>Snippet for GetNode</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetNodeResourceNames()
         {
-            // Snippet: GetNode(NodeName, CallSettings)
             // Create client
             TpuClient tpuClient = TpuClient.Create();
             // Initialize request argument(s)
             NodeName name = NodeName.FromProjectLocationNode("[PROJECT]", "[LOCATION]", "[NODE]");
             // Make the request
             Node response = tpuClient.GetNode(name);
-            // End snippet
         }
     }
 }

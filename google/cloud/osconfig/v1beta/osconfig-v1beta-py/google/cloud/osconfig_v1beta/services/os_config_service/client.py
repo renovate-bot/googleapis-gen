@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -37,6 +39,7 @@ from google.cloud.osconfig_v1beta.types import patch_jobs
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import OsConfigServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import OsConfigServiceGrpcTransport
 from .transports.grpc_asyncio import OsConfigServiceGrpcAsyncIOTransport
@@ -342,9 +345,9 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.ExecutePatchJobRequest):
-                The request object.
-                A request message to initiate
+                The request object. A request message to initiate
                 patching across Google Compute Engine instances.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -366,6 +369,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a patch_jobs.ExecutePatchJobRequest.
         # There's no risk of modifying the input as we've already verified
@@ -409,9 +413,9 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.GetPatchJobRequest):
-                The request object.
-                Request to get an active or
+                The request object. Request to get an active or
                 completed patch job.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -433,6 +437,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a patch_jobs.GetPatchJobRequest.
         # There's no risk of modifying the input as we've already verified
@@ -475,8 +480,8 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.CancelPatchJobRequest):
-                The request object.
-                Message for canceling a patch job.
+                The request object. Message for canceling a patch job.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -498,6 +503,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a patch_jobs.CancelPatchJobRequest.
         # There's no risk of modifying the input as we've already verified
@@ -539,9 +545,9 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.ListPatchJobsRequest):
-                The request object.
-                A request message for listing patch
+                The request object. A request message for listing patch
                 jobs.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -558,6 +564,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a patch_jobs.ListPatchJobsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -609,8 +616,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.ListPatchJobInstanceDetailsRequest):
-                The request object.
-                Request to list details for all
+                The request object. Request to list details for all
                 instances that are part of a patch job.
             parent (str):
                 Required. The parent for the instances are in the form
@@ -619,6 +625,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -648,8 +655,10 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, patch_jobs.ListPatchJobInstanceDetailsRequest):
             request = patch_jobs.ListPatchJobInstanceDetailsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -696,9 +705,9 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.CreatePatchDeploymentRequest):
-                The request object.
-                A request message for creating a
+                The request object. A request message for creating a
                 patch deployment.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -716,6 +725,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a patch_deployments.CreatePatchDeploymentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -757,9 +767,9 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.GetPatchDeploymentRequest):
-                The request object.
-                A request message for retrieving a
+                The request object. A request message for retrieving a
                 patch deployment.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -777,6 +787,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a patch_deployments.GetPatchDeploymentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -818,9 +829,9 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.ListPatchDeploymentsRequest):
-                The request object.
-                A request message for listing patch
+                The request object. A request message for listing patch
                 deployments.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -837,6 +848,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a patch_deployments.ListPatchDeploymentsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -887,9 +899,9 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.DeletePatchDeploymentRequest):
-                The request object.
-                A request message for deleting a
+                The request object. A request message for deleting a
                 patch deployment.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -897,6 +909,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a patch_deployments.DeletePatchDeploymentRequest.
         # There's no risk of modifying the input as we've already verified
@@ -937,8 +950,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.CreateGuestPolicyRequest):
-                The request object.
-                A request message for creating a
+                The request object. A request message for creating a
                 guest policy.
             parent (str):
                 Required. The resource name of the parent using one of
@@ -952,6 +964,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
                 This corresponds to the ``guest_policy`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -983,8 +996,10 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, guest_policies.CreateGuestPolicyRequest):
             request = guest_policies.CreateGuestPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if guest_policy is not None:
@@ -1025,8 +1040,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.GetGuestPolicyRequest):
-                The request object.
-                A request message for retrieving a
+                The request object. A request message for retrieving a
                 guest policy.
             name (str):
                 Required. The resource name of the guest policy using
@@ -1036,6 +1050,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1067,8 +1082,10 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, guest_policies.GetGuestPolicyRequest):
             request = guest_policies.GetGuestPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1107,8 +1124,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.ListGuestPoliciesRequest):
-                The request object.
-                A request message for listing guest
+                The request object. A request message for listing guest
                 policies.
             parent (str):
                 Required. The resource name of the parent using one of
@@ -1117,6 +1133,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1146,8 +1163,10 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, guest_policies.ListGuestPoliciesRequest):
             request = guest_policies.ListGuestPoliciesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -1196,8 +1215,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.UpdateGuestPolicyRequest):
-                The request object.
-                A request message for updating a
+                The request object. A request message for updating a
                 guest policy.
             guest_policy (google.cloud.osconfig_v1beta.types.GuestPolicy):
                 Required. The updated GuestPolicy.
@@ -1211,6 +1229,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1242,8 +1261,10 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, guest_policies.UpdateGuestPolicyRequest):
             request = guest_policies.UpdateGuestPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if guest_policy is not None:
                 request.guest_policy = guest_policy
             if update_mask is not None:
@@ -1284,8 +1305,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.DeleteGuestPolicyRequest):
-                The request object.
-                A request message for deleting a
+                The request object. A request message for deleting a
                 guest policy.
             name (str):
                 Required. The resource name of the guest policy using
@@ -1295,6 +1315,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1315,8 +1336,10 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, guest_policies.DeleteGuestPolicyRequest):
             request = guest_policies.DeleteGuestPolicyRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1353,9 +1376,9 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         Args:
             request (google.cloud.osconfig_v1beta.types.LookupEffectiveGuestPolicyRequest):
-                The request object.
-                A request message for getting the
+                The request object. A request message for getting the
                 effective guest policy assigned to the instance.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1369,6 +1392,7 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a guest_policies.LookupEffectiveGuestPolicyRequest.
         # There's no risk of modifying the input as we've already verified
@@ -1398,6 +1422,8 @@ class OsConfigServiceClient(metaclass=OsConfigServiceClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

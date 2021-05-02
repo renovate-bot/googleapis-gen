@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Billing.V1.Snippets
 {
+    using Google.Cloud.Billing.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudBillingClientStandaloneSnippets
     {
         /// <summary>Snippet for GetProjectBillingInfoAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetProjectBillingInfoRequestObjectAsync()
         {
-            // Snippet: GetProjectBillingInfoAsync(GetProjectBillingInfoRequest, CallSettings)
-            // Additional: GetProjectBillingInfoAsync(GetProjectBillingInfoRequest, CancellationToken)
             // Create client
             CloudBillingClient cloudBillingClient = await CloudBillingClient.CreateAsync();
             // Initialize request argument(s)
             GetProjectBillingInfoRequest request = new GetProjectBillingInfoRequest { Name = "", };
             // Make the request
             ProjectBillingInfo response = await cloudBillingClient.GetProjectBillingInfoAsync(request);
-            // End snippet
         }
     }
 }

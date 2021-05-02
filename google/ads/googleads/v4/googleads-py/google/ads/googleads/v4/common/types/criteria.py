@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.enums.types import age_range_type
 from google.ads.googleads.v4.enums.types import app_payment_model_type
@@ -106,6 +109,7 @@ __protobuf__ = proto.module(
 
 class KeywordInfo(proto.Message):
     r"""A keyword criterion.
+
     Attributes:
         text (google.protobuf.wrappers_pb2.StringValue):
             The text of the keyword (at most 80
@@ -114,14 +118,10 @@ class KeywordInfo(proto.Message):
             The match type of the keyword.
     """
 
-    text = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    text = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
-    match_type = proto.Field(
-        proto.ENUM,
-        number=2,
+    match_type = proto.Field(proto.ENUM, number=2,
         enum=keyword_match_type.KeywordMatchTypeEnum.KeywordMatchType,
     )
 
@@ -136,30 +136,28 @@ class PlacementInfo(proto.Message):
             For example, "http://www.domain.com".
     """
 
-    url = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    url = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class MobileAppCategoryInfo(proto.Message):
     r"""A mobile app category criterion.
+
     Attributes:
         mobile_app_category_constant (google.protobuf.wrappers_pb2.StringValue):
             The mobile app category constant resource
             name.
     """
 
-    mobile_app_category_constant = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    mobile_app_category_constant = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class MobileApplicationInfo(proto.Message):
     r"""A mobile application criterion.
+
     Attributes:
         app_id (google.protobuf.wrappers_pb2.StringValue):
             A string that uniquely identifies a mobile application to
@@ -184,62 +182,56 @@ class MobileApplicationInfo(proto.Message):
             Name of this mobile application.
     """
 
-    app_id = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    app_id = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.StringValue,
     )
-    name = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    name = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.StringValue,
     )
 
 
 class LocationInfo(proto.Message):
     r"""A location criterion.
+
     Attributes:
         geo_target_constant (google.protobuf.wrappers_pb2.StringValue):
             The geo target constant resource name.
     """
 
-    geo_target_constant = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    geo_target_constant = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class DeviceInfo(proto.Message):
     r"""A device criterion.
+
     Attributes:
         type_ (google.ads.googleads.v4.enums.types.DeviceEnum.Device):
             Type of the device.
     """
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=device.DeviceEnum.Device,
     )
 
 
 class PreferredContentInfo(proto.Message):
     r"""A preferred content criterion.
+
     Attributes:
         type_ (google.ads.googleads.v4.enums.types.PreferredContentTypeEnum.PreferredContentType):
             Type of the preferred content.
     """
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=2,
+    type_ = proto.Field(proto.ENUM, number=2,
         enum=preferred_content_type.PreferredContentTypeEnum.PreferredContentType,
     )
 
 
 class ListingGroupInfo(proto.Message):
     r"""A listing group criterion.
+
     Attributes:
         type_ (google.ads.googleads.v4.enums.types.ListingGroupTypeEnum.ListingGroupType):
             Type of the listing group.
@@ -253,39 +245,33 @@ class ListingGroupInfo(proto.Message):
             the root group.
     """
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=listing_group_type.ListingGroupTypeEnum.ListingGroupType,
     )
-    case_value = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    case_value = proto.Field(proto.MESSAGE, number=2,
         message='ListingDimensionInfo',
     )
-    parent_ad_group_criterion = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    parent_ad_group_criterion = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.StringValue,
     )
 
 
 class ListingScopeInfo(proto.Message):
     r"""A listing scope criterion.
+
     Attributes:
         dimensions (Sequence[google.ads.googleads.v4.common.types.ListingDimensionInfo]):
             Scope of the campaign criterion.
     """
 
-    dimensions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    dimensions = proto.RepeatedField(proto.MESSAGE, number=2,
         message='ListingDimensionInfo',
     )
 
 
 class ListingDimensionInfo(proto.Message):
     r"""Listing dimensions for listing group criterion.
+
     Attributes:
         hotel_id (google.ads.googleads.v4.common.types.HotelIdInfo):
             Advertiser-specific hotel ID.
@@ -319,164 +305,118 @@ class ListingDimensionInfo(proto.Message):
             dimension is set.
     """
 
-    hotel_id = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='dimension',
+    hotel_id = proto.Field(proto.MESSAGE, number=2, oneof='dimension',
         message='HotelIdInfo',
     )
-    hotel_class = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='dimension',
+    hotel_class = proto.Field(proto.MESSAGE, number=3, oneof='dimension',
         message='HotelClassInfo',
     )
-    hotel_country_region = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='dimension',
+    hotel_country_region = proto.Field(proto.MESSAGE, number=4, oneof='dimension',
         message='HotelCountryRegionInfo',
     )
-    hotel_state = proto.Field(
-        proto.MESSAGE,
-        number=5,
-        oneof='dimension',
+    hotel_state = proto.Field(proto.MESSAGE, number=5, oneof='dimension',
         message='HotelStateInfo',
     )
-    hotel_city = proto.Field(
-        proto.MESSAGE,
-        number=6,
-        oneof='dimension',
+    hotel_city = proto.Field(proto.MESSAGE, number=6, oneof='dimension',
         message='HotelCityInfo',
     )
-    product_bidding_category = proto.Field(
-        proto.MESSAGE,
-        number=13,
-        oneof='dimension',
+    product_bidding_category = proto.Field(proto.MESSAGE, number=13, oneof='dimension',
         message='ProductBiddingCategoryInfo',
     )
-    product_brand = proto.Field(
-        proto.MESSAGE,
-        number=15,
-        oneof='dimension',
+    product_brand = proto.Field(proto.MESSAGE, number=15, oneof='dimension',
         message='ProductBrandInfo',
     )
-    product_channel = proto.Field(
-        proto.MESSAGE,
-        number=8,
-        oneof='dimension',
+    product_channel = proto.Field(proto.MESSAGE, number=8, oneof='dimension',
         message='ProductChannelInfo',
     )
-    product_channel_exclusivity = proto.Field(
-        proto.MESSAGE,
-        number=9,
-        oneof='dimension',
+    product_channel_exclusivity = proto.Field(proto.MESSAGE, number=9, oneof='dimension',
         message='ProductChannelExclusivityInfo',
     )
-    product_condition = proto.Field(
-        proto.MESSAGE,
-        number=10,
-        oneof='dimension',
+    product_condition = proto.Field(proto.MESSAGE, number=10, oneof='dimension',
         message='ProductConditionInfo',
     )
-    product_custom_attribute = proto.Field(
-        proto.MESSAGE,
-        number=16,
-        oneof='dimension',
+    product_custom_attribute = proto.Field(proto.MESSAGE, number=16, oneof='dimension',
         message='ProductCustomAttributeInfo',
     )
-    product_item_id = proto.Field(
-        proto.MESSAGE,
-        number=11,
-        oneof='dimension',
+    product_item_id = proto.Field(proto.MESSAGE, number=11, oneof='dimension',
         message='ProductItemIdInfo',
     )
-    product_type = proto.Field(
-        proto.MESSAGE,
-        number=12,
-        oneof='dimension',
+    product_type = proto.Field(proto.MESSAGE, number=12, oneof='dimension',
         message='ProductTypeInfo',
     )
-    unknown_listing_dimension = proto.Field(
-        proto.MESSAGE,
-        number=14,
-        oneof='dimension',
+    unknown_listing_dimension = proto.Field(proto.MESSAGE, number=14, oneof='dimension',
         message='UnknownListingDimensionInfo',
     )
 
 
 class HotelIdInfo(proto.Message):
     r"""Advertiser-specific hotel ID.
+
     Attributes:
         value (google.protobuf.wrappers_pb2.StringValue):
             String value of the hotel ID.
     """
 
-    value = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    value = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class HotelClassInfo(proto.Message):
     r"""Class of the hotel as a number of stars 1 to 5.
+
     Attributes:
         value (google.protobuf.wrappers_pb2.Int64Value):
             Long value of the hotel class.
     """
 
-    value = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    value = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.Int64Value,
     )
 
 
 class HotelCountryRegionInfo(proto.Message):
     r"""Country or Region the hotel is located in.
+
     Attributes:
         country_region_criterion (google.protobuf.wrappers_pb2.StringValue):
             The Geo Target Constant resource name.
     """
 
-    country_region_criterion = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    country_region_criterion = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class HotelStateInfo(proto.Message):
     r"""State the hotel is located in.
+
     Attributes:
         state_criterion (google.protobuf.wrappers_pb2.StringValue):
             The Geo Target Constant resource name.
     """
 
-    state_criterion = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    state_criterion = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class HotelCityInfo(proto.Message):
     r"""City the hotel is located in.
+
     Attributes:
         city_criterion (google.protobuf.wrappers_pb2.StringValue):
             The Geo Target Constant resource name.
     """
 
-    city_criterion = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    city_criterion = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class ProductBiddingCategoryInfo(proto.Message):
     r"""Bidding category of a product offer.
+
     Attributes:
         id (google.protobuf.wrappers_pb2.Int64Value):
             ID of the product bidding category.
@@ -492,81 +432,72 @@ class ProductBiddingCategoryInfo(proto.Message):
             Level of the product bidding category.
     """
 
-    id = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    id = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.Int64Value,
     )
-    country_code = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    country_code = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.StringValue,
     )
-    level = proto.Field(
-        proto.ENUM,
-        number=3,
+    level = proto.Field(proto.ENUM, number=3,
         enum=product_bidding_category_level.ProductBiddingCategoryLevelEnum.ProductBiddingCategoryLevel,
     )
 
 
 class ProductBrandInfo(proto.Message):
     r"""Brand of the product.
+
     Attributes:
         value (google.protobuf.wrappers_pb2.StringValue):
             String value of the product brand.
     """
 
-    value = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    value = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class ProductChannelInfo(proto.Message):
     r"""Locality of a product offer.
+
     Attributes:
         channel (google.ads.googleads.v4.enums.types.ProductChannelEnum.ProductChannel):
             Value of the locality.
     """
 
-    channel = proto.Field(
-        proto.ENUM,
-        number=1,
+    channel = proto.Field(proto.ENUM, number=1,
         enum=gage_product_channel.ProductChannelEnum.ProductChannel,
     )
 
 
 class ProductChannelExclusivityInfo(proto.Message):
     r"""Availability of a product offer.
+
     Attributes:
         channel_exclusivity (google.ads.googleads.v4.enums.types.ProductChannelExclusivityEnum.ProductChannelExclusivity):
             Value of the availability.
     """
 
-    channel_exclusivity = proto.Field(
-        proto.ENUM,
-        number=1,
+    channel_exclusivity = proto.Field(proto.ENUM, number=1,
         enum=gage_product_channel_exclusivity.ProductChannelExclusivityEnum.ProductChannelExclusivity,
     )
 
 
 class ProductConditionInfo(proto.Message):
     r"""Condition of a product offer.
+
     Attributes:
         condition (google.ads.googleads.v4.enums.types.ProductConditionEnum.ProductCondition):
             Value of the condition.
     """
 
-    condition = proto.Field(
-        proto.ENUM,
-        number=1,
+    condition = proto.Field(proto.ENUM, number=1,
         enum=gage_product_condition.ProductConditionEnum.ProductCondition,
     )
 
 
 class ProductCustomAttributeInfo(proto.Message):
     r"""Custom attribute of a product offer.
+
     Attributes:
         value (google.protobuf.wrappers_pb2.StringValue):
             String value of the product custom attribute.
@@ -574,34 +505,30 @@ class ProductCustomAttributeInfo(proto.Message):
             Indicates the index of the custom attribute.
     """
 
-    value = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    value = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
-    index = proto.Field(
-        proto.ENUM,
-        number=2,
+    index = proto.Field(proto.ENUM, number=2,
         enum=product_custom_attribute_index.ProductCustomAttributeIndexEnum.ProductCustomAttributeIndex,
     )
 
 
 class ProductItemIdInfo(proto.Message):
     r"""Item id of a product offer.
+
     Attributes:
         value (google.protobuf.wrappers_pb2.StringValue):
             Value of the id.
     """
 
-    value = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    value = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class ProductTypeInfo(proto.Message):
     r"""Type of a product offer.
+
     Attributes:
         value (google.protobuf.wrappers_pb2.StringValue):
             Value of the type.
@@ -609,20 +536,16 @@ class ProductTypeInfo(proto.Message):
             Level of the type.
     """
 
-    value = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    value = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
-    level = proto.Field(
-        proto.ENUM,
-        number=2,
+    level = proto.Field(proto.ENUM, number=2,
         enum=product_type_level.ProductTypeLevelEnum.ProductTypeLevel,
     )
 
 
 class UnknownListingDimensionInfo(proto.Message):
-    r"""Unknown listing dimension.    """
+    r"""Unknown listing dimension."""
 
 
 class HotelDateSelectionTypeInfo(proto.Message):
@@ -634,9 +557,7 @@ class HotelDateSelectionTypeInfo(proto.Message):
             Type of the hotel date selection
     """
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=hotel_date_selection_type.HotelDateSelectionTypeEnum.HotelDateSelectionType,
     )
 
@@ -654,20 +575,17 @@ class HotelAdvanceBookingWindowInfo(proto.Message):
             stay.
     """
 
-    min_days = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    min_days = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.Int64Value,
     )
-    max_days = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    max_days = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.Int64Value,
     )
 
 
 class HotelLengthOfStayInfo(proto.Message):
     r"""Criterion for length of hotel stay in nights.
+
     Attributes:
         min_nights (google.protobuf.wrappers_pb2.Int64Value):
             Low end of the number of nights in the stay.
@@ -675,42 +593,36 @@ class HotelLengthOfStayInfo(proto.Message):
             High end of the number of nights in the stay.
     """
 
-    min_nights = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    min_nights = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.Int64Value,
     )
-    max_nights = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    max_nights = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.Int64Value,
     )
 
 
 class HotelCheckInDayInfo(proto.Message):
     r"""Criterion for day of the week the booking is for.
+
     Attributes:
         day_of_week (google.ads.googleads.v4.enums.types.DayOfWeekEnum.DayOfWeek):
             The day of the week.
     """
 
-    day_of_week = proto.Field(
-        proto.ENUM,
-        number=1,
+    day_of_week = proto.Field(proto.ENUM, number=1,
         enum=gage_day_of_week.DayOfWeekEnum.DayOfWeek,
     )
 
 
 class InteractionTypeInfo(proto.Message):
     r"""Criterion for Interaction Type.
+
     Attributes:
         type_ (google.ads.googleads.v4.enums.types.InteractionTypeEnum.InteractionType):
             The interaction type.
     """
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=interaction_type.InteractionTypeEnum.InteractionType,
     )
 
@@ -751,115 +663,99 @@ class AdScheduleInfo(proto.Message):
             is prohibited on UPDATE operations.
     """
 
-    start_minute = proto.Field(
-        proto.ENUM,
-        number=1,
+    start_minute = proto.Field(proto.ENUM, number=1,
         enum=minute_of_hour.MinuteOfHourEnum.MinuteOfHour,
     )
-    end_minute = proto.Field(
-        proto.ENUM,
-        number=2,
+    end_minute = proto.Field(proto.ENUM, number=2,
         enum=minute_of_hour.MinuteOfHourEnum.MinuteOfHour,
     )
-    start_hour = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    start_hour = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.Int32Value,
     )
-    end_hour = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    end_hour = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.Int32Value,
     )
-    day_of_week = proto.Field(
-        proto.ENUM,
-        number=5,
+    day_of_week = proto.Field(proto.ENUM, number=5,
         enum=gage_day_of_week.DayOfWeekEnum.DayOfWeek,
     )
 
 
 class AgeRangeInfo(proto.Message):
     r"""An age range criterion.
+
     Attributes:
         type_ (google.ads.googleads.v4.enums.types.AgeRangeTypeEnum.AgeRangeType):
             Type of the age range.
     """
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=age_range_type.AgeRangeTypeEnum.AgeRangeType,
     )
 
 
 class GenderInfo(proto.Message):
     r"""A gender criterion.
+
     Attributes:
         type_ (google.ads.googleads.v4.enums.types.GenderTypeEnum.GenderType):
             Type of the gender.
     """
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=gender_type.GenderTypeEnum.GenderType,
     )
 
 
 class IncomeRangeInfo(proto.Message):
     r"""An income range criterion.
+
     Attributes:
         type_ (google.ads.googleads.v4.enums.types.IncomeRangeTypeEnum.IncomeRangeType):
             Type of the income range.
     """
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=income_range_type.IncomeRangeTypeEnum.IncomeRangeType,
     )
 
 
 class ParentalStatusInfo(proto.Message):
     r"""A parental status criterion.
+
     Attributes:
         type_ (google.ads.googleads.v4.enums.types.ParentalStatusTypeEnum.ParentalStatusType):
             Type of the parental status.
     """
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=parental_status_type.ParentalStatusTypeEnum.ParentalStatusType,
     )
 
 
 class YouTubeVideoInfo(proto.Message):
     r"""A YouTube Video criterion.
+
     Attributes:
         video_id (google.protobuf.wrappers_pb2.StringValue):
             YouTube video id as it appears on the YouTube
             watch page.
     """
 
-    video_id = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    video_id = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class YouTubeChannelInfo(proto.Message):
     r"""A YouTube Channel criterion.
+
     Attributes:
         channel_id (google.protobuf.wrappers_pb2.StringValue):
             The YouTube uploader channel id or the
             channel code of a YouTube channel.
     """
 
-    channel_id = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    channel_id = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
@@ -873,9 +769,7 @@ class UserListInfo(proto.Message):
             The User List resource name.
     """
 
-    user_list = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    user_list = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
@@ -902,30 +796,23 @@ class ProximityInfo(proto.Message):
             Full address.
     """
 
-    geo_point = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    geo_point = proto.Field(proto.MESSAGE, number=1,
         message='GeoPointInfo',
     )
-    radius = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    radius = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.DoubleValue,
     )
-    radius_units = proto.Field(
-        proto.ENUM,
-        number=3,
+    radius_units = proto.Field(proto.ENUM, number=3,
         enum=proximity_radius_units.ProximityRadiusUnitsEnum.ProximityRadiusUnits,
     )
-    address = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    address = proto.Field(proto.MESSAGE, number=4,
         message='AddressInfo',
     )
 
 
 class GeoPointInfo(proto.Message):
     r"""Geo point for proximity criterion.
+
     Attributes:
         longitude_in_micro_degrees (google.protobuf.wrappers_pb2.Int32Value):
             Micro degrees for the longitude.
@@ -933,20 +820,17 @@ class GeoPointInfo(proto.Message):
             Micro degrees for the latitude.
     """
 
-    longitude_in_micro_degrees = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    longitude_in_micro_degrees = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.Int32Value,
     )
-    latitude_in_micro_degrees = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    latitude_in_micro_degrees = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.Int32Value,
     )
 
 
 class AddressInfo(proto.Message):
     r"""Address for proximity criterion.
+
     Attributes:
         postal_code (google.protobuf.wrappers_pb2.StringValue):
             Postal code.
@@ -966,39 +850,25 @@ class AddressInfo(proto.Message):
             Name of the city.
     """
 
-    postal_code = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    postal_code = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
-    province_code = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    province_code = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.StringValue,
     )
-    country_code = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    country_code = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.StringValue,
     )
-    province_name = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    province_name = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.StringValue,
     )
-    street_address = proto.Field(
-        proto.MESSAGE,
-        number=5,
+    street_address = proto.Field(proto.MESSAGE, number=5,
         message=wrappers.StringValue,
     )
-    street_address2 = proto.Field(
-        proto.MESSAGE,
-        number=6,
+    street_address2 = proto.Field(proto.MESSAGE, number=6,
         message=wrappers.StringValue,
     )
-    city_name = proto.Field(
-        proto.MESSAGE,
-        number=7,
+    city_name = proto.Field(proto.MESSAGE, number=7,
         message=wrappers.StringValue,
     )
 
@@ -1019,28 +889,23 @@ class TopicInfo(proto.Message):
             Animals/Pets/Dogs" category.
     """
 
-    topic_constant = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    topic_constant = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
-    path = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    path = proto.RepeatedField(proto.MESSAGE, number=2,
         message=wrappers.StringValue,
     )
 
 
 class LanguageInfo(proto.Message):
     r"""A language criterion.
+
     Attributes:
         language_constant (google.protobuf.wrappers_pb2.StringValue):
             The language constant resource name.
     """
 
-    language_constant = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    language_constant = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
@@ -1057,52 +922,47 @@ class IpBlockInfo(proto.Message):
             The IP address of this IP block.
     """
 
-    ip_address = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    ip_address = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class ContentLabelInfo(proto.Message):
     r"""Content Label for category exclusion.
+
     Attributes:
         type_ (google.ads.googleads.v4.enums.types.ContentLabelTypeEnum.ContentLabelType):
             Content label type, required for CREATE
             operations.
     """
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=content_label_type.ContentLabelTypeEnum.ContentLabelType,
     )
 
 
 class CarrierInfo(proto.Message):
     r"""Represents a Carrier Criterion.
+
     Attributes:
         carrier_constant (google.protobuf.wrappers_pb2.StringValue):
             The Carrier constant resource name.
     """
 
-    carrier_constant = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    carrier_constant = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class UserInterestInfo(proto.Message):
     r"""Represents a particular interest-based topic to be targeted.
+
     Attributes:
         user_interest_category (google.protobuf.wrappers_pb2.StringValue):
             The UserInterest resource name.
     """
 
-    user_interest_category = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    user_interest_category = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
@@ -1130,14 +990,10 @@ class WebpageInfo(proto.Message):
             is prohibited on UPDATE operations.
     """
 
-    criterion_name = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    criterion_name = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
-    conditions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    conditions = proto.RepeatedField(proto.MESSAGE, number=2,
         message='WebpageConditionInfo',
     )
 
@@ -1155,62 +1011,53 @@ class WebpageConditionInfo(proto.Message):
             Argument of webpage targeting condition.
     """
 
-    operand = proto.Field(
-        proto.ENUM,
-        number=1,
+    operand = proto.Field(proto.ENUM, number=1,
         enum=webpage_condition_operand.WebpageConditionOperandEnum.WebpageConditionOperand,
     )
-    operator = proto.Field(
-        proto.ENUM,
-        number=2,
+    operator = proto.Field(proto.ENUM, number=2,
         enum=webpage_condition_operator.WebpageConditionOperatorEnum.WebpageConditionOperator,
     )
-    argument = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    argument = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.StringValue,
     )
 
 
 class OperatingSystemVersionInfo(proto.Message):
     r"""Represents an operating system version to be targeted.
+
     Attributes:
         operating_system_version_constant (google.protobuf.wrappers_pb2.StringValue):
             The operating system version constant
             resource name.
     """
 
-    operating_system_version_constant = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    operating_system_version_constant = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class AppPaymentModelInfo(proto.Message):
     r"""An app payment model criterion.
+
     Attributes:
         type_ (google.ads.googleads.v4.enums.types.AppPaymentModelTypeEnum.AppPaymentModelType):
             Type of the app payment model.
     """
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=app_payment_model_type.AppPaymentModelTypeEnum.AppPaymentModelType,
     )
 
 
 class MobileDeviceInfo(proto.Message):
     r"""A mobile device criterion.
+
     Attributes:
         mobile_device_constant (google.protobuf.wrappers_pb2.StringValue):
             The mobile device constant resource name.
     """
 
-    mobile_device_constant = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    mobile_device_constant = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
@@ -1224,9 +1071,7 @@ class CustomAffinityInfo(proto.Message):
             The CustomInterest resource name.
     """
 
-    custom_affinity = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    custom_affinity = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
@@ -1240,15 +1085,14 @@ class CustomIntentInfo(proto.Message):
             The CustomInterest resource name.
     """
 
-    custom_intent = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    custom_intent = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class LocationGroupInfo(proto.Message):
     r"""A radius around a list of locations specified via a feed.
+
     Attributes:
         feed (google.protobuf.wrappers_pb2.StringValue):
             Feed specifying locations for targeting.
@@ -1271,24 +1115,16 @@ class LocationGroupInfo(proto.Message):
             operations.
     """
 
-    feed = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    feed = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
-    geo_target_constants = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    geo_target_constants = proto.RepeatedField(proto.MESSAGE, number=2,
         message=wrappers.StringValue,
     )
-    radius = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    radius = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.Int64Value,
     )
-    radius_units = proto.Field(
-        proto.ENUM,
-        number=4,
+    radius_units = proto.Field(proto.ENUM, number=4,
         enum=location_group_radius_units.LocationGroupRadiusUnitsEnum.LocationGroupRadiusUnits,
     )
 

@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Datastore.V1.Snippets
 {
+    using Google.Cloud.Datastore.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedDatastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for ReserveIds</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ReserveIds()
         {
-            // Snippet: ReserveIds(string, IEnumerable<Key>, CallSettings)
             // Create client
             DatastoreClient datastoreClient = DatastoreClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Datastore.V1.Snippets
             IEnumerable<Key> keys = new Key[] { new Key(), };
             // Make the request
             ReserveIdsResponse response = datastoreClient.ReserveIds(projectId, keys);
-            // End snippet
         }
     }
 }

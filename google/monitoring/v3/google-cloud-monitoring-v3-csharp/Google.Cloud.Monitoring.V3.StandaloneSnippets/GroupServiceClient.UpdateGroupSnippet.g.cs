@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
+
     public sealed partial class GeneratedGroupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateGroup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateGroup()
         {
-            // Snippet: UpdateGroup(Group, CallSettings)
             // Create client
             GroupServiceClient groupServiceClient = GroupServiceClient.Create();
             // Initialize request argument(s)
             Group group = new Group();
             // Make the request
             Group response = groupServiceClient.UpdateGroup(group);
-            // End snippet
         }
     }
 }

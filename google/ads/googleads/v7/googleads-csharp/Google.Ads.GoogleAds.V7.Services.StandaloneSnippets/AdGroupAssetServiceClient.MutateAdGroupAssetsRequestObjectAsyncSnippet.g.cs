@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupAssetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateAdGroupAssetsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateAdGroupAssetsRequestObjectAsync()
         {
-            // Snippet: MutateAdGroupAssetsAsync(MutateAdGroupAssetsRequest, CallSettings)
-            // Additional: MutateAdGroupAssetsAsync(MutateAdGroupAssetsRequest, CancellationToken)
             // Create client
             AdGroupAssetServiceClient adGroupAssetServiceClient = await AdGroupAssetServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateAdGroupAssetsResponse response = await adGroupAssetServiceClient.MutateAdGroupAssetsAsync(request);
-            // End snippet
         }
     }
 }

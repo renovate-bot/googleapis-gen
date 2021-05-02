@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Iot.V1.Snippets
 {
+    using Google.Cloud.Iot.V1;
+
     public sealed partial class GeneratedDeviceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for BindDeviceToGateway</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BindDeviceToGatewayResourceNames()
         {
-            // Snippet: BindDeviceToGateway(RegistryName, string, string, CallSettings)
             // Create client
             DeviceManagerClient deviceManagerClient = DeviceManagerClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.Iot.V1.Snippets
             string deviceId = "";
             // Make the request
             BindDeviceToGatewayResponse response = deviceManagerClient.BindDeviceToGateway(parent, gatewayId, deviceId);
-            // End snippet
         }
     }
 }

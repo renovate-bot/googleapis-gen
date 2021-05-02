@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.ApiGateway.V1.Snippets
 {
+    using Google.Cloud.ApiGateway.V1;
+
     public sealed partial class GeneratedApiGatewayServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetApi</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetApiResourceNames()
         {
-            // Snippet: GetApi(ApiName, CallSettings)
             // Create client
             ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.Create();
             // Initialize request argument(s)
             ApiName name = ApiName.FromProjectApi("[PROJECT]", "[API]");
             // Make the request
             Api response = apiGatewayServiceClient.GetApi(name);
-            // End snippet
         }
     }
 }

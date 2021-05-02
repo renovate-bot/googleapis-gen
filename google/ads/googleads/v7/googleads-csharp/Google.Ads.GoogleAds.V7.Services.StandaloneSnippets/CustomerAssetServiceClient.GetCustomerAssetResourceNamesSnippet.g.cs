@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedCustomerAssetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomerAsset</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCustomerAssetResourceNames()
         {
-            // Snippet: GetCustomerAsset(CustomerAssetName, CallSettings)
             // Create client
             CustomerAssetServiceClient customerAssetServiceClient = CustomerAssetServiceClient.Create();
             // Initialize request argument(s)
             CustomerAssetName resourceName = CustomerAssetName.FromCustomerAssetFieldType("[CUSTOMER_ID]", "[ASSET_ID]", "[FIELD_TYPE]");
             // Make the request
             CustomerAsset response = customerAssetServiceClient.GetCustomerAsset(resourceName);
-            // End snippet
         }
     }
 }

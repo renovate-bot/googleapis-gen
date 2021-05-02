@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.ServiceControl.V1.Snippets
 {
+    using Google.Cloud.ServiceControl.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServiceControllerClientStandaloneSnippets
     {
         /// <summary>Snippet for CheckAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CheckRequestObjectAsync()
         {
-            // Snippet: CheckAsync(CheckRequest, CallSettings)
-            // Additional: CheckAsync(CheckRequest, CancellationToken)
             // Create client
             ServiceControllerClient serviceControllerClient = await ServiceControllerClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.ServiceControl.V1.Snippets
             };
             // Make the request
             CheckResponse response = await serviceControllerClient.CheckAsync(request);
-            // End snippet
         }
     }
 }

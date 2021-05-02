@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +25,8 @@ from google.cloud.asset_v1p1beta1.types.assets import IamPolicySearchResult
 from google.cloud.asset_v1p1beta1.types.assets import Permissions
 from google.cloud.asset_v1p1beta1.types.assets import StandardResourceMetadata
 
-__all__ = ('AssetServiceAsyncClient',
+__all__ = (
+    'AssetServiceAsyncClient',
     'AssetServiceClient',
     'IamPolicySearchResult',
     'Permissions',

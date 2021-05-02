@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.SecurityCenter.V1.Snippets
 {
+    using Google.Cloud.SecurityCenter.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateNotificationConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateNotificationConfig2()
         {
-            // Snippet: UpdateNotificationConfig(NotificationConfig, FieldMask, CallSettings)
             // Create client
             SecurityCenterClient securityCenterClient = SecurityCenterClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.SecurityCenter.V1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             NotificationConfig response = securityCenterClient.UpdateNotificationConfig(notificationConfig, updateMask);
-            // End snippet
         }
     }
 }

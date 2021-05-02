@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Spanner.Admin.Instance.V1.Snippets
 {
+    using Google.Cloud.Spanner.Admin.Instance.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInstanceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetInstanceRequestObjectAsync()
         {
-            // Snippet: GetInstanceAsync(GetInstanceRequest, CallSettings)
-            // Additional: GetInstanceAsync(GetInstanceRequest, CancellationToken)
             // Create client
             InstanceAdminClient instanceAdminClient = await InstanceAdminClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Spanner.Admin.Instance.V1.Snippets
             };
             // Make the request
             Instance response = await instanceAdminClient.GetInstanceAsync(request);
-            // End snippet
         }
     }
 }

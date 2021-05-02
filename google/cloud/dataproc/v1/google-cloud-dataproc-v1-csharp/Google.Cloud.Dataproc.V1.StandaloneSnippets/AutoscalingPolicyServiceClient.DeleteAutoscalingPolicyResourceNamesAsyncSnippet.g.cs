@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
+    using Google.Cloud.Dataproc.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAutoscalingPolicyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteAutoscalingPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteAutoscalingPolicyResourceNamesAsync()
         {
-            // Snippet: DeleteAutoscalingPolicyAsync(AutoscalingPolicyName, CallSettings)
-            // Additional: DeleteAutoscalingPolicyAsync(AutoscalingPolicyName, CancellationToken)
             // Create client
             AutoscalingPolicyServiceClient autoscalingPolicyServiceClient = await AutoscalingPolicyServiceClient.CreateAsync();
             // Initialize request argument(s)
             AutoscalingPolicyName name = AutoscalingPolicyName.FromProjectLocationAutoscalingPolicy("[PROJECT]", "[LOCATION]", "[AUTOSCALING_POLICY]");
             // Make the request
             await autoscalingPolicyServiceClient.DeleteAutoscalingPolicyAsync(name);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -54,7 +55,8 @@ from google.cloud.spanner_v1.types.type import StructType
 from google.cloud.spanner_v1.types.type import Type
 from google.cloud.spanner_v1.types.type import TypeCode
 
-__all__ = ('BatchCreateSessionsRequest',
+__all__ = (
+    'BatchCreateSessionsRequest',
     'BatchCreateSessionsResponse',
     'BeginTransactionRequest',
     'CommitRequest',

@@ -17,15 +17,19 @@
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Talent.V4Beta1;
     using Google.LongRunning;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchUpdateJobs</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BatchUpdateJobsResourceNames2()
         {
-            // Snippet: BatchUpdateJobs(ProjectName, IEnumerable<Job>, CallSettings)
             // Create client
             JobServiceClient jobServiceClient = JobServiceClient.Create();
             // Initialize request argument(s)
@@ -49,7 +53,6 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
                 // If it has completed, then access the result
                 JobOperationResult retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

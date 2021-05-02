@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v7.resources.types import gender_view
 from google.ads.googleads.v7.services.types import gender_view_service
+
 from .base import GenderViewServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class GenderViewServiceGrpcTransport(GenderViewServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class GenderViewServiceGrpcTransport(GenderViewServiceTransport):
     def get_gender_view(self) -> Callable[
             [gender_view_service.GetGenderViewRequest],
             gender_view.GenderView]:
-        r"""Return a callable for the
-        get gender view
-          method over gRPC.
+        r"""Return a callable for the get gender view method over gRPC.
 
         Returns the requested gender view in full detail.
 

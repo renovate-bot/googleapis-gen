@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v7.resources.types import mobile_app_category_constant
 from google.ads.googleads.v7.services.types import mobile_app_category_constant_service
+
 from .base import MobileAppCategoryConstantServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class MobileAppCategoryConstantServiceGrpcTransport(MobileAppCategoryConstantSer
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,10 +203,8 @@ class MobileAppCategoryConstantServiceGrpcTransport(MobileAppCategoryConstantSer
     def get_mobile_app_category_constant(self) -> Callable[
             [mobile_app_category_constant_service.GetMobileAppCategoryConstantRequest],
             mobile_app_category_constant.MobileAppCategoryConstant]:
-        r"""Return a callable for the
-        get mobile app category
-        constant
-          method over gRPC.
+        r"""Return a callable for the get mobile app category
+        constant method over gRPC.
 
         Returns the requested mobile app category constant.
 

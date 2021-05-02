@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 
@@ -129,55 +132,33 @@ class Agent(proto.Message):
         TIER_ENTERPRISE = 2
         TIER_ENTERPRISE_PLUS = 3
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    display_name = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    default_language_code = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    supported_language_codes = proto.RepeatedField(
-        proto.STRING,
-        number=4,
-    )
-    time_zone = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=6,
-    )
-    avatar_uri = proto.Field(
-        proto.STRING,
-        number=7,
-    )
-    enable_logging = proto.Field(
-        proto.BOOL,
-        number=8,
-    )
-    match_mode = proto.Field(
-        proto.ENUM,
-        number=9,
+    parent = proto.Field(proto.STRING, number=1)
+
+    display_name = proto.Field(proto.STRING, number=2)
+
+    default_language_code = proto.Field(proto.STRING, number=3)
+
+    supported_language_codes = proto.RepeatedField(proto.STRING, number=4)
+
+    time_zone = proto.Field(proto.STRING, number=5)
+
+    description = proto.Field(proto.STRING, number=6)
+
+    avatar_uri = proto.Field(proto.STRING, number=7)
+
+    enable_logging = proto.Field(proto.BOOL, number=8)
+
+    match_mode = proto.Field(proto.ENUM, number=9,
         enum=MatchMode,
     )
-    classification_threshold = proto.Field(
-        proto.FLOAT,
-        number=10,
-    )
-    api_version = proto.Field(
-        proto.ENUM,
-        number=14,
+
+    classification_threshold = proto.Field(proto.FLOAT, number=10)
+
+    api_version = proto.Field(proto.ENUM, number=14,
         enum=ApiVersion,
     )
-    tier = proto.Field(
-        proto.ENUM,
-        number=15,
+
+    tier = proto.Field(proto.ENUM, number=15,
         enum=Tier,
     )
 
@@ -192,10 +173,7 @@ class GetAgentRequest(proto.Message):
             with. Format: ``projects/<Project ID>``.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    parent = proto.Field(proto.STRING, number=1)
 
 
 class SetAgentRequest(proto.Message):
@@ -210,14 +188,11 @@ class SetAgentRequest(proto.Message):
             get updated.
     """
 
-    agent = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    agent = proto.Field(proto.MESSAGE, number=1,
         message='Agent',
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
 
@@ -232,10 +207,7 @@ class DeleteAgentRequest(proto.Message):
             with. Format: ``projects/<Project ID>``.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    parent = proto.Field(proto.STRING, number=1)
 
 
 class SearchAgentsRequest(proto.Message):
@@ -255,18 +227,11 @@ class SearchAgentsRequest(proto.Message):
             request.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
 
 
 class SearchAgentsResponse(proto.Message):
@@ -287,15 +252,11 @@ class SearchAgentsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    agents = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    agents = proto.RepeatedField(proto.MESSAGE, number=1,
         message='Agent',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class TrainAgentRequest(proto.Message):
@@ -308,10 +269,7 @@ class TrainAgentRequest(proto.Message):
             with. Format: ``projects/<Project ID>``.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    parent = proto.Field(proto.STRING, number=1)
 
 
 class ExportAgentRequest(proto.Message):
@@ -330,14 +288,9 @@ class ExportAgentRequest(proto.Message):
             the serialized agent is returned inline.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    agent_uri = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    agent_uri = proto.Field(proto.STRING, number=2)
 
 
 class ExportAgentResponse(proto.Message):
@@ -353,16 +306,9 @@ class ExportAgentResponse(proto.Message):
             Zip compressed raw byte content for agent.
     """
 
-    agent_uri = proto.Field(
-        proto.STRING,
-        number=1,
-        oneof='agent',
-    )
-    agent_content = proto.Field(
-        proto.BYTES,
-        number=2,
-        oneof='agent',
-    )
+    agent_uri = proto.Field(proto.STRING, number=1, oneof='agent')
+
+    agent_content = proto.Field(proto.BYTES, number=2, oneof='agent')
 
 
 class ImportAgentRequest(proto.Message):
@@ -381,20 +327,11 @@ class ImportAgentRequest(proto.Message):
             Zip compressed raw byte content for agent.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    agent_uri = proto.Field(
-        proto.STRING,
-        number=2,
-        oneof='agent',
-    )
-    agent_content = proto.Field(
-        proto.BYTES,
-        number=3,
-        oneof='agent',
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    agent_uri = proto.Field(proto.STRING, number=2, oneof='agent')
+
+    agent_content = proto.Field(proto.BYTES, number=3, oneof='agent')
 
 
 class RestoreAgentRequest(proto.Message):
@@ -413,20 +350,11 @@ class RestoreAgentRequest(proto.Message):
             Zip compressed raw byte content for agent.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    agent_uri = proto.Field(
-        proto.STRING,
-        number=2,
-        oneof='agent',
-    )
-    agent_content = proto.Field(
-        proto.BYTES,
-        number=3,
-        oneof='agent',
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    agent_uri = proto.Field(proto.STRING, number=2, oneof='agent')
+
+    agent_content = proto.Field(proto.BYTES, number=3, oneof='agent')
 
 
 class GetValidationResultRequest(proto.Message):
@@ -446,14 +374,9 @@ class GetValidationResultRequest(proto.Message):
             before they can be used.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    language_code = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    language_code = proto.Field(proto.STRING, number=3)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

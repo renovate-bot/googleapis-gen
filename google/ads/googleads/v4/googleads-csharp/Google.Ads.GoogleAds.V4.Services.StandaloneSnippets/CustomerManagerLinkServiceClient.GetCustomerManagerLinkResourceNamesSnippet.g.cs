@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedCustomerManagerLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomerManagerLink</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCustomerManagerLinkResourceNames()
         {
-            // Snippet: GetCustomerManagerLink(CustomerManagerLinkName, CallSettings)
             // Create client
             CustomerManagerLinkServiceClient customerManagerLinkServiceClient = CustomerManagerLinkServiceClient.Create();
             // Initialize request argument(s)
             CustomerManagerLinkName resourceName = CustomerManagerLinkName.FromCustomerCustomerManagerLink("[CUSTOMER]", "[CUSTOMER_MANAGER_LINK]");
             // Make the request
             CustomerManagerLink response = customerManagerLinkServiceClient.GetCustomerManagerLink(resourceName);
-            // End snippet
         }
     }
 }

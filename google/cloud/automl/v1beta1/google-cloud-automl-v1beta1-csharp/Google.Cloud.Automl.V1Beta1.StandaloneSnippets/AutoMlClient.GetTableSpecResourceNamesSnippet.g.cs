@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Automl.V1Beta1.Snippets
 {
+    using Google.Cloud.Automl.V1Beta1;
+
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTableSpec</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetTableSpecResourceNames()
         {
-            // Snippet: GetTableSpec(TableSpecName, CallSettings)
             // Create client
             AutoMlClient autoMlClient = AutoMlClient.Create();
             // Initialize request argument(s)
             TableSpecName name = TableSpecName.FromProjectLocationDatasetTableSpec("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]");
             // Make the request
             TableSpec response = autoMlClient.GetTableSpec(name);
-            // End snippet
         }
     }
 }

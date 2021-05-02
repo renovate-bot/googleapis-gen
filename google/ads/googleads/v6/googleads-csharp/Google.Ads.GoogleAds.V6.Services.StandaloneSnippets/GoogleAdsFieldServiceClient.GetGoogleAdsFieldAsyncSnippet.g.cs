@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGoogleAdsFieldServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGoogleAdsFieldAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetGoogleAdsFieldAsync()
         {
-            // Snippet: GetGoogleAdsFieldAsync(string, CallSettings)
-            // Additional: GetGoogleAdsFieldAsync(string, CancellationToken)
             // Create client
             GoogleAdsFieldServiceClient googleAdsFieldServiceClient = await GoogleAdsFieldServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "googleAdsFields/[GOOGLE_ADS_FIELD]";
             // Make the request
             GoogleAdsField response = await googleAdsFieldServiceClient.GetGoogleAdsFieldAsync(resourceName);
-            // End snippet
         }
     }
 }

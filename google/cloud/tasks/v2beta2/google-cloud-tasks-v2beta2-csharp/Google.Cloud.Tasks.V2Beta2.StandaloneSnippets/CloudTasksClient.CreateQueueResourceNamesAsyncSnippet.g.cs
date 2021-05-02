@@ -17,15 +17,18 @@
 namespace Google.Cloud.Tasks.V2Beta2.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Tasks.V2Beta2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateQueueAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateQueueResourceNamesAsync()
         {
-            // Snippet: CreateQueueAsync(LocationName, Queue, CallSettings)
-            // Additional: CreateQueueAsync(LocationName, Queue, CancellationToken)
             // Create client
             CloudTasksClient cloudTasksClient = await CloudTasksClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Tasks.V2Beta2.Snippets
             Queue queue = new Queue();
             // Make the request
             Queue response = await cloudTasksClient.CreateQueueAsync(parent, queue);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import feed_item_set
 from google.ads.googleads.v6.services.types import feed_item_set_service
+
 from .base import FeedItemSetServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class FeedItemSetServiceGrpcTransport(FeedItemSetServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class FeedItemSetServiceGrpcTransport(FeedItemSetServiceTransport):
     def get_feed_item_set(self) -> Callable[
             [feed_item_set_service.GetFeedItemSetRequest],
             feed_item_set.FeedItemSet]:
-        r"""Return a callable for the
-        get feed item set
-          method over gRPC.
+        r"""Return a callable for the get feed item set method over gRPC.
 
         Returns the requested feed item set in full detail.
 
@@ -229,9 +229,7 @@ class FeedItemSetServiceGrpcTransport(FeedItemSetServiceTransport):
     def mutate_feed_item_sets(self) -> Callable[
             [feed_item_set_service.MutateFeedItemSetsRequest],
             feed_item_set_service.MutateFeedItemSetsResponse]:
-        r"""Return a callable for the
-        mutate feed item sets
-          method over gRPC.
+        r"""Return a callable for the mutate feed item sets method over gRPC.
 
         Creates, updates or removes feed item sets. Operation
         statuses are returned.

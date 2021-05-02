@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
+
     public sealed partial class GeneratedCustomerServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCustomer</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateCustomer()
         {
-            // Snippet: MutateCustomer(string, CustomerOperation, CallSettings)
             // Create client
             CustomerServiceClient customerServiceClient = CustomerServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             CustomerOperation operation = new CustomerOperation();
             // Make the request
             MutateCustomerResponse response = customerServiceClient.MutateCustomer(customerId, operation);
-            // End snippet
         }
     }
 }

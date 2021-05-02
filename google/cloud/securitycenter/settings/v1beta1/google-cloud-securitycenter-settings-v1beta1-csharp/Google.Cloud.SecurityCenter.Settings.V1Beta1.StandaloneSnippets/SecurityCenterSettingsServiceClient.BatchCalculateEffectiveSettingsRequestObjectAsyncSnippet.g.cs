@@ -17,15 +17,18 @@
 namespace Google.Cloud.SecurityCenter.Settings.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.SecurityCenter.Settings.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecurityCenterSettingsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchCalculateEffectiveSettingsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchCalculateEffectiveSettingsRequestObjectAsync()
         {
-            // Snippet: BatchCalculateEffectiveSettingsAsync(BatchCalculateEffectiveSettingsRequest, CallSettings)
-            // Additional: BatchCalculateEffectiveSettingsAsync(BatchCalculateEffectiveSettingsRequest, CancellationToken)
             // Create client
             SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = await SecurityCenterSettingsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -39,7 +42,6 @@ namespace Google.Cloud.SecurityCenter.Settings.V1Beta1.Snippets
             };
             // Make the request
             BatchCalculateEffectiveSettingsResponse response = await securityCenterSettingsServiceClient.BatchCalculateEffectiveSettingsAsync(request);
-            // End snippet
         }
     }
 }

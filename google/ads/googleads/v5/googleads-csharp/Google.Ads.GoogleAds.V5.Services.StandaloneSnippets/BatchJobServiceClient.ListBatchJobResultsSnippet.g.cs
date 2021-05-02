@@ -16,15 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using Google.Api.Gax;
     using System;
 
     public sealed partial class GeneratedBatchJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListBatchJobResults</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListBatchJobResults()
         {
-            // Snippet: ListBatchJobResults(string, string, int?, CallSettings)
             // Create client
             BatchJobServiceClient batchJobServiceClient = BatchJobServiceClient.Create();
             // Initialize request argument(s)
@@ -63,7 +67,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

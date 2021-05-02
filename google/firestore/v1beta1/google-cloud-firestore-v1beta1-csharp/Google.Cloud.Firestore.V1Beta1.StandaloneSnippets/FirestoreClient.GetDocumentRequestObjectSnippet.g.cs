@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Firestore.V1Beta1.Snippets
 {
+    using Google.Cloud.Firestore.V1Beta1;
     using Google.Protobuf;
-    using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedFirestoreClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDocument</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDocumentRequestObject()
         {
-            // Snippet: GetDocument(GetDocumentRequest, CallSettings)
             // Create client
             FirestoreClient firestoreClient = FirestoreClient.Create();
             // Initialize request argument(s)
@@ -33,11 +36,9 @@ namespace Google.Cloud.Firestore.V1Beta1.Snippets
                 Name = "",
                 Mask = new DocumentMask(),
                 Transaction = ByteString.Empty,
-                ReadTime = new Timestamp(),
             };
             // Make the request
             Document response = firestoreClient.GetDocument(request);
-            // End snippet
         }
     }
 }

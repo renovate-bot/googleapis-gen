@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -31,7 +33,7 @@ class CriterionCategoryChannelAvailabilityModeEnum(proto.Message):
     advertising channels, or a particular channel with all its
     channel subtypes, or a channel with a certain subset of channel
     subtypes.
-        """
+    """
     class CriterionCategoryChannelAvailabilityMode(proto.Enum):
         r"""Enum containing the possible
         CriterionCategoryChannelAvailabilityMode.

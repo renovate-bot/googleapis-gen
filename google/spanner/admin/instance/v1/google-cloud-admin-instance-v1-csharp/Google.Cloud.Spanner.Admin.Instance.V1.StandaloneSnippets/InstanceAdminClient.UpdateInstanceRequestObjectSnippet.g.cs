@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Spanner.Admin.Instance.V1.Snippets
 {
+    using Google.Cloud.Spanner.Admin.Instance.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateInstance</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateInstanceRequestObject()
         {
-            // Snippet: UpdateInstance(UpdateInstanceRequest, CallSettings)
             // Create client
             InstanceAdminClient instanceAdminClient = InstanceAdminClient.Create();
             // Initialize request argument(s)
@@ -51,7 +55,6 @@ namespace Google.Cloud.Spanner.Admin.Instance.V1.Snippets
                 // If it has completed, then access the result
                 Instance retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchUpdateUserLinksAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchUpdateUserLinksRequestObjectAsync()
         {
-            // Snippet: BatchUpdateUserLinksAsync(BatchUpdateUserLinksRequest, CallSettings)
-            // Additional: BatchUpdateUserLinksAsync(BatchUpdateUserLinksRequest, CancellationToken)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = await AnalyticsAdminServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -38,7 +41,6 @@ namespace Google.Analytics.Admin.V1Alpha.Snippets
             };
             // Make the request
             BatchUpdateUserLinksResponse response = await analyticsAdminServiceClient.BatchUpdateUserLinksAsync(request);
-            // End snippet
         }
     }
 }

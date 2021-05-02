@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v7.resources.types import customer_user_access_invitation
 from google.ads.googleads.v7.services.types import customer_user_access_invitation_service
+
 from .base import CustomerUserAccessInvitationServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -57,8 +60,7 @@ class CustomerUserAccessInvitationServiceGrpcTransport(CustomerUserAccessInvitat
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,10 +204,8 @@ class CustomerUserAccessInvitationServiceGrpcTransport(CustomerUserAccessInvitat
     def get_customer_user_access_invitation(self) -> Callable[
             [customer_user_access_invitation_service.GetCustomerUserAccessInvitationRequest],
             customer_user_access_invitation.CustomerUserAccessInvitation]:
-        r"""Return a callable for the
-        get customer user access
-        invitation
-          method over gRPC.
+        r"""Return a callable for the get customer user access
+        invitation method over gRPC.
 
         Returns the requested access invitation in full detail.
 
@@ -235,10 +235,8 @@ class CustomerUserAccessInvitationServiceGrpcTransport(CustomerUserAccessInvitat
     def mutate_customer_user_access_invitation(self) -> Callable[
             [customer_user_access_invitation_service.MutateCustomerUserAccessInvitationRequest],
             customer_user_access_invitation_service.MutateCustomerUserAccessInvitationResponse]:
-        r"""Return a callable for the
-        mutate customer user access
-        invitation
-          method over gRPC.
+        r"""Return a callable for the mutate customer user access
+        invitation method over gRPC.
 
         Creates or removes an access invitation.
 

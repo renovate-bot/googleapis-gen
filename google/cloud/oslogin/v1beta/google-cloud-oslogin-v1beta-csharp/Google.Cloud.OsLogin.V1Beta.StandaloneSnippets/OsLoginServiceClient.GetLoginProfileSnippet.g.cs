@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.OsLogin.V1Beta.Snippets
 {
+    using Google.Cloud.OsLogin.V1Beta;
+
     public sealed partial class GeneratedOsLoginServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetLoginProfile</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetLoginProfile()
         {
-            // Snippet: GetLoginProfile(string, CallSettings)
             // Create client
             OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.Create();
             // Initialize request argument(s)
             string name = "users/[USER]";
             // Make the request
             LoginProfile response = osLoginServiceClient.GetLoginProfile(name);
-            // End snippet
         }
     }
 }

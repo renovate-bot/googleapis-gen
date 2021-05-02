@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -40,7 +41,8 @@ from google.cloud.language_v1.types.language_service import Sentiment
 from google.cloud.language_v1.types.language_service import TextSpan
 from google.cloud.language_v1.types.language_service import Token
 
-__all__ = ('AnalyzeEntitiesRequest',
+__all__ = (
+    'AnalyzeEntitiesRequest',
     'AnalyzeEntitiesResponse',
     'AnalyzeEntitySentimentRequest',
     'AnalyzeEntitySentimentResponse',

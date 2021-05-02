@@ -227,7 +227,7 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBatchJobResults</summary>
+        /// <summary>Snippet for ListBatchJobResultsAsync</summary>
         public async Task ListBatchJobResultsRequestObjectAsync()
         {
             // Snippet: ListBatchJobResultsAsync(ListBatchJobResultsRequest, CallSettings)
@@ -320,7 +320,7 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBatchJobResults</summary>
+        /// <summary>Snippet for ListBatchJobResultsAsync</summary>
         public async Task ListBatchJobResultsAsync()
         {
             // Snippet: ListBatchJobResultsAsync(string, string, int?, CallSettings)
@@ -410,7 +410,7 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListBatchJobResults</summary>
+        /// <summary>Snippet for ListBatchJobResultsAsync</summary>
         public async Task ListBatchJobResultsResourceNamesAsync()
         {
             // Snippet: ListBatchJobResultsAsync(BatchJobName, string, int?, CallSettings)

@@ -16,19 +16,23 @@
 
 namespace Google.Home.Graph.V1.Snippets
 {
+    using Google.Home.Graph.V1;
+
     public sealed partial class GeneratedHomeGraphApiServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for RequestSyncDevices</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void RequestSyncDevices()
         {
-            // Snippet: RequestSyncDevices(string, CallSettings)
             // Create client
             HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.Create();
             // Initialize request argument(s)
             string agentUserId = "";
             // Make the request
             RequestSyncDevicesResponse response = homeGraphApiServiceClient.RequestSyncDevices(agentUserId);
-            // End snippet
         }
     }
 }

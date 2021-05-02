@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Trace.V1.Snippets
 {
+    using Google.Cloud.Trace.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTraceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for PatchTracesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task PatchTracesRequestObjectAsync()
         {
-            // Snippet: PatchTracesAsync(PatchTracesRequest, CallSettings)
-            // Additional: PatchTracesAsync(PatchTracesRequest, CancellationToken)
             // Create client
             TraceServiceClient traceServiceClient = await TraceServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Trace.V1.Snippets
             };
             // Make the request
             await traceServiceClient.PatchTracesAsync(request);
-            // End snippet
         }
     }
 }

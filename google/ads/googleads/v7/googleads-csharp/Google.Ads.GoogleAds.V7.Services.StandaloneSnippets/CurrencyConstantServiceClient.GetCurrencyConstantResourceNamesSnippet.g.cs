@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedCurrencyConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCurrencyConstant</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCurrencyConstantResourceNames()
         {
-            // Snippet: GetCurrencyConstant(CurrencyConstantName, CallSettings)
             // Create client
             CurrencyConstantServiceClient currencyConstantServiceClient = CurrencyConstantServiceClient.Create();
             // Initialize request argument(s)
             CurrencyConstantName resourceName = CurrencyConstantName.FromCode("[CODE]");
             // Make the request
             CurrencyConstant response = currencyConstantServiceClient.GetCurrencyConstant(resourceName);
-            // End snippet
         }
     }
 }

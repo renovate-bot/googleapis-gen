@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.asset_v1.types import assets as gca_assets
 from google.protobuf import duration_pb2 as duration  # type: ignore
@@ -71,6 +74,7 @@ class ContentType(proto.Enum):
 
 class ExportAssetsRequest(proto.Message):
     r"""Export asset request.
+
     Attributes:
         parent (str):
             Required. The relative name of the root
@@ -119,27 +123,19 @@ class ExportAssetsRequest(proto.Message):
             where the results will be output to.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    read_time = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    read_time = proto.Field(proto.MESSAGE, number=2,
         message=timestamp.Timestamp,
     )
-    asset_types = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
-    content_type = proto.Field(
-        proto.ENUM,
-        number=4,
+
+    asset_types = proto.RepeatedField(proto.STRING, number=3)
+
+    content_type = proto.Field(proto.ENUM, number=4,
         enum='ContentType',
     )
-    output_config = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    output_config = proto.Field(proto.MESSAGE, number=5,
         message='OutputConfig',
     )
 
@@ -166,25 +162,22 @@ class ExportAssetsResponse(proto.Message):
             it exceeds a single Google Cloud Storage object limit.
     """
 
-    read_time = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    read_time = proto.Field(proto.MESSAGE, number=1,
         message=timestamp.Timestamp,
     )
-    output_config = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    output_config = proto.Field(proto.MESSAGE, number=2,
         message='OutputConfig',
     )
-    output_result = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    output_result = proto.Field(proto.MESSAGE, number=3,
         message='OutputResult',
     )
 
 
 class BatchGetAssetsHistoryRequest(proto.Message):
     r"""Batch get assets history request.
+
     Attributes:
         parent (str):
             Required. The relative name of the root
@@ -214,42 +207,35 @@ class BatchGetAssetsHistoryRequest(proto.Message):
             whose time window overlap with read_time_window.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    asset_names = proto.RepeatedField(
-        proto.STRING,
-        number=2,
-    )
-    content_type = proto.Field(
-        proto.ENUM,
-        number=3,
+    parent = proto.Field(proto.STRING, number=1)
+
+    asset_names = proto.RepeatedField(proto.STRING, number=2)
+
+    content_type = proto.Field(proto.ENUM, number=3,
         enum='ContentType',
     )
-    read_time_window = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    read_time_window = proto.Field(proto.MESSAGE, number=4,
         message=gca_assets.TimeWindow,
     )
 
 
 class BatchGetAssetsHistoryResponse(proto.Message):
     r"""Batch get assets history response.
+
     Attributes:
         assets (Sequence[google.cloud.asset_v1.types.TemporalAsset]):
             A list of assets with valid time windows.
     """
 
-    assets = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    assets = proto.RepeatedField(proto.MESSAGE, number=1,
         message=gca_assets.TemporalAsset,
     )
 
 
 class CreateFeedRequest(proto.Message):
     r"""Create asset feed request.
+
     Attributes:
         parent (str):
             Required. The name of the
@@ -272,23 +258,18 @@ class CreateFeedRequest(proto.Message):
             organizations/organization_number/feeds/feed_id
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    feed_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    feed = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    parent = proto.Field(proto.STRING, number=1)
+
+    feed_id = proto.Field(proto.STRING, number=2)
+
+    feed = proto.Field(proto.MESSAGE, number=3,
         message='Feed',
     )
 
 
 class GetFeedRequest(proto.Message):
     r"""Get asset feed request.
+
     Attributes:
         name (str):
             Required. The name of the Feed and it must be in the format
@@ -297,14 +278,12 @@ class GetFeedRequest(proto.Message):
             organizations/organization_number/feeds/feed_id
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ListFeedsRequest(proto.Message):
     r"""List asset feeds request.
+
     Attributes:
         parent (str):
             Required. The parent
@@ -315,28 +294,25 @@ class ListFeedsRequest(proto.Message):
             "projects/my-project-id").
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    parent = proto.Field(proto.STRING, number=1)
 
 
 class ListFeedsResponse(proto.Message):
     r"""
+
     Attributes:
         feeds (Sequence[google.cloud.asset_v1.types.Feed]):
             A list of feeds.
     """
 
-    feeds = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    feeds = proto.RepeatedField(proto.MESSAGE, number=1,
         message='Feed',
     )
 
 
 class UpdateFeedRequest(proto.Message):
     r"""Update asset feed request.
+
     Attributes:
         feed (google.cloud.asset_v1.types.Feed):
             Required. The new values of feed details. It must match an
@@ -350,20 +326,18 @@ class UpdateFeedRequest(proto.Message):
             contain fields that are immutable or only set by the server.
     """
 
-    feed = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    feed = proto.Field(proto.MESSAGE, number=1,
         message='Feed',
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
 
 
 class DeleteFeedRequest(proto.Message):
     r"""
+
     Attributes:
         name (str):
             Required. The name of the feed and it must be in the format
@@ -372,14 +346,12 @@ class DeleteFeedRequest(proto.Message):
             organizations/organization_number/feeds/feed_id
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class OutputConfig(proto.Message):
     r"""Output configuration for export assets destination.
+
     Attributes:
         gcs_destination (google.cloud.asset_v1.types.GcsDestination):
             Destination on Cloud Storage.
@@ -389,51 +361,43 @@ class OutputConfig(proto.Message):
             BigQuery.
     """
 
-    gcs_destination = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='destination',
+    gcs_destination = proto.Field(proto.MESSAGE, number=1, oneof='destination',
         message='GcsDestination',
     )
-    bigquery_destination = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='destination',
+
+    bigquery_destination = proto.Field(proto.MESSAGE, number=2, oneof='destination',
         message='BigQueryDestination',
     )
 
 
 class OutputResult(proto.Message):
     r"""Output result of export assets.
+
     Attributes:
         gcs_result (google.cloud.asset_v1.types.GcsOutputResult):
             Export result on Cloud Storage.
     """
 
-    gcs_result = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='result',
+    gcs_result = proto.Field(proto.MESSAGE, number=1, oneof='result',
         message='GcsOutputResult',
     )
 
 
 class GcsOutputResult(proto.Message):
     r"""A Cloud Storage output result.
+
     Attributes:
         uris (Sequence[str]):
             List of uris of the Cloud Storage objects. Example:
             "gs://bucket_name/object_name".
     """
 
-    uris = proto.RepeatedField(
-        proto.STRING,
-        number=1,
-    )
+    uris = proto.RepeatedField(proto.STRING, number=1)
 
 
 class GcsDestination(proto.Message):
     r"""A Cloud Storage location.
+
     Attributes:
         uri (str):
             The uri of the Cloud Storage object. It's the same uri that
@@ -453,20 +417,14 @@ class GcsDestination(proto.Message):
             "gs://bucket_name/object_name_prefix" already exists.
     """
 
-    uri = proto.Field(
-        proto.STRING,
-        number=1,
-        oneof='object_uri',
-    )
-    uri_prefix = proto.Field(
-        proto.STRING,
-        number=2,
-        oneof='object_uri',
-    )
+    uri = proto.Field(proto.STRING, number=1, oneof='object_uri')
+
+    uri_prefix = proto.Field(proto.STRING, number=2, oneof='object_uri')
 
 
 class BigQueryDestination(proto.Message):
     r"""A BigQuery destination for exporting assets to.
+
     Attributes:
         dataset (str):
             Required. The BigQuery dataset in format
@@ -542,27 +500,17 @@ class BigQueryDestination(proto.Message):
             a table.
     """
 
-    dataset = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    table = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    force = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    partition_spec = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    dataset = proto.Field(proto.STRING, number=1)
+
+    table = proto.Field(proto.STRING, number=2)
+
+    force = proto.Field(proto.BOOL, number=3)
+
+    partition_spec = proto.Field(proto.MESSAGE, number=4,
         message='PartitionSpec',
     )
-    separate_tables_per_asset_type = proto.Field(
-        proto.BOOL,
-        number=5,
-    )
+
+    separate_tables_per_asset_type = proto.Field(proto.BOOL, number=5)
 
 
 class PartitionSpec(proto.Message):
@@ -585,38 +533,32 @@ class PartitionSpec(proto.Message):
         READ_TIME = 1
         REQUEST_TIME = 2
 
-    partition_key = proto.Field(
-        proto.ENUM,
-        number=1,
+    partition_key = proto.Field(proto.ENUM, number=1,
         enum=PartitionKey,
     )
 
 
 class PubsubDestination(proto.Message):
     r"""A Pub/Sub destination.
+
     Attributes:
         topic (str):
             The name of the Pub/Sub topic to publish to. Example:
             ``projects/PROJECT_ID/topics/TOPIC_ID``.
     """
 
-    topic = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    topic = proto.Field(proto.STRING, number=1)
 
 
 class FeedOutputConfig(proto.Message):
     r"""Output configuration for asset feed destination.
+
     Attributes:
         pubsub_destination (google.cloud.asset_v1.types.PubsubDestination):
             Destination on Pub/Sub.
     """
 
-    pubsub_destination = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='destination',
+    pubsub_destination = proto.Field(proto.MESSAGE, number=1, oneof='destination',
         message='PubsubDestination',
     )
 
@@ -682,37 +624,28 @@ class Feed(proto.Message):
             for detailed instructions.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    asset_names = proto.RepeatedField(
-        proto.STRING,
-        number=2,
-    )
-    asset_types = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
-    content_type = proto.Field(
-        proto.ENUM,
-        number=4,
+    name = proto.Field(proto.STRING, number=1)
+
+    asset_names = proto.RepeatedField(proto.STRING, number=2)
+
+    asset_types = proto.RepeatedField(proto.STRING, number=3)
+
+    content_type = proto.Field(proto.ENUM, number=4,
         enum='ContentType',
     )
-    feed_output_config = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    feed_output_config = proto.Field(proto.MESSAGE, number=5,
         message='FeedOutputConfig',
     )
-    condition = proto.Field(
-        proto.MESSAGE,
-        number=6,
+
+    condition = proto.Field(proto.MESSAGE, number=6,
         message=expr.Expr,
     )
 
 
 class SearchAllResourcesRequest(proto.Message):
     r"""Search all resources request.
+
     Attributes:
         scope (str):
             Required. A scope can be a project, a folder, or an
@@ -796,34 +729,22 @@ class SearchAllResourcesRequest(proto.Message):
             ``additionalAttributes``) are not supported.
     """
 
-    scope = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    query = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    asset_types = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=4,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    order_by = proto.Field(
-        proto.STRING,
-        number=6,
-    )
+    scope = proto.Field(proto.STRING, number=1)
+
+    query = proto.Field(proto.STRING, number=2)
+
+    asset_types = proto.RepeatedField(proto.STRING, number=3)
+
+    page_size = proto.Field(proto.INT32, number=4)
+
+    page_token = proto.Field(proto.STRING, number=5)
+
+    order_by = proto.Field(proto.STRING, number=6)
 
 
 class SearchAllResourcesResponse(proto.Message):
     r"""Search all resources response.
+
     Attributes:
         results (Sequence[google.cloud.asset_v1.types.ResourceSearchResult]):
             A list of Resources that match the search
@@ -840,19 +761,16 @@ class SearchAllResourcesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    results = proto.RepeatedField(proto.MESSAGE, number=1,
         message=gca_assets.ResourceSearchResult,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class SearchAllIamPoliciesRequest(proto.Message):
     r"""Search all IAM policies request.
+
     Attributes:
         scope (str):
             Required. A scope can be a project, a folder, or an
@@ -912,26 +830,18 @@ class SearchAllIamPoliciesRequest(proto.Message):
             identical to those in the previous call.
     """
 
-    scope = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    query = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=3,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+    scope = proto.Field(proto.STRING, number=1)
+
+    query = proto.Field(proto.STRING, number=2)
+
+    page_size = proto.Field(proto.INT32, number=3)
+
+    page_token = proto.Field(proto.STRING, number=4)
 
 
 class SearchAllIamPoliciesResponse(proto.Message):
     r"""Search all IAM policies response.
+
     Attributes:
         results (Sequence[google.cloud.asset_v1.types.IamPolicySearchResult]):
             A list of IamPolicy that match the search
@@ -948,19 +858,16 @@ class SearchAllIamPoliciesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    results = proto.RepeatedField(proto.MESSAGE, number=1,
         message=gca_assets.IamPolicySearchResult,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class IamPolicyAnalysisQuery(proto.Message):
     r"""IAM policy analysis query message.
+
     Attributes:
         scope (str):
             Required. The relative name of the root asset. Only
@@ -988,7 +895,6 @@ class IamPolicyAnalysisQuery(proto.Message):
         options_ (google.cloud.asset_v1.types.IamPolicyAnalysisQuery.Options):
             Optional. The query options.
     """
-
     class ResourceSelector(proto.Message):
         r"""Specifies the resource to analyze for access policies, which
         may be set directly on the resource, or on ancestors such as
@@ -1002,10 +908,7 @@ class IamPolicyAnalysisQuery(proto.Message):
                 types <https://cloud.google.com/asset-inventory/docs/supported-asset-types#analyzable_asset_types>`__.
         """
 
-        full_resource_name = proto.Field(
-            proto.STRING,
-            number=1,
-        )
+        full_resource_name = proto.Field(proto.STRING, number=1)
 
     class IdentitySelector(proto.Message):
         r"""Specifies an identity for which to determine resource access,
@@ -1027,10 +930,7 @@ class IamPolicyAnalysisQuery(proto.Message):
                 supported. You must give a specific identity.
         """
 
-        identity = proto.Field(
-            proto.STRING,
-            number=1,
-        )
+        identity = proto.Field(proto.STRING, number=1)
 
     class AccessSelector(proto.Message):
         r"""Specifies roles and/or permissions to analyze, to determine
@@ -1047,17 +947,13 @@ class IamPolicyAnalysisQuery(proto.Message):
                 result.
         """
 
-        roles = proto.RepeatedField(
-            proto.STRING,
-            number=1,
-        )
-        permissions = proto.RepeatedField(
-            proto.STRING,
-            number=2,
-        )
+        roles = proto.RepeatedField(proto.STRING, number=1)
+
+        permissions = proto.RepeatedField(proto.STRING, number=2)
 
     class Options(proto.Message):
         r"""Contains query options.
+
         Attributes:
             expand_groups (bool):
                 Optional. If true, the identities section of the result will
@@ -1147,53 +1043,33 @@ class IamPolicyAnalysisQuery(proto.Message):
                 Default is false.
         """
 
-        expand_groups = proto.Field(
-            proto.BOOL,
-            number=1,
-        )
-        expand_roles = proto.Field(
-            proto.BOOL,
-            number=2,
-        )
-        expand_resources = proto.Field(
-            proto.BOOL,
-            number=3,
-        )
-        output_resource_edges = proto.Field(
-            proto.BOOL,
-            number=4,
-        )
-        output_group_edges = proto.Field(
-            proto.BOOL,
-            number=5,
-        )
-        analyze_service_account_impersonation = proto.Field(
-            proto.BOOL,
-            number=6,
-        )
+        expand_groups = proto.Field(proto.BOOL, number=1)
 
-    scope = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    resource_selector = proto.Field(
-        proto.MESSAGE,
-        number=2,
+        expand_roles = proto.Field(proto.BOOL, number=2)
+
+        expand_resources = proto.Field(proto.BOOL, number=3)
+
+        output_resource_edges = proto.Field(proto.BOOL, number=4)
+
+        output_group_edges = proto.Field(proto.BOOL, number=5)
+
+        analyze_service_account_impersonation = proto.Field(proto.BOOL, number=6)
+
+    scope = proto.Field(proto.STRING, number=1)
+
+    resource_selector = proto.Field(proto.MESSAGE, number=2,
         message=ResourceSelector,
     )
-    identity_selector = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    identity_selector = proto.Field(proto.MESSAGE, number=3,
         message=IdentitySelector,
     )
-    access_selector = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    access_selector = proto.Field(proto.MESSAGE, number=4,
         message=AccessSelector,
     )
-    options_ = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    options_ = proto.Field(proto.MESSAGE, number=5,
         message=Options,
     )
 
@@ -1220,14 +1096,11 @@ class AnalyzeIamPolicyRequest(proto.Message):
             Default is empty.
     """
 
-    analysis_query = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    analysis_query = proto.Field(proto.MESSAGE, number=1,
         message='IamPolicyAnalysisQuery',
     )
-    execution_timeout = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    execution_timeout = proto.Field(proto.MESSAGE, number=2,
         message=duration.Duration,
     )
 
@@ -1251,9 +1124,9 @@ class AnalyzeIamPolicyResponse(proto.Message):
             [service_account_impersonation_analysis][google.cloud.asset.v1.AnalyzeIamPolicyResponse.service_account_impersonation_analysis]
             have been fully explored to answer the query in the request.
     """
-
     class IamPolicyAnalysis(proto.Message):
         r"""An analysis message to group the query and results.
+
         Attributes:
             analysis_query (google.cloud.asset_v1.types.IamPolicyAnalysisQuery):
                 The analysis query.
@@ -1271,40 +1144,29 @@ class AnalyzeIamPolicyResponse(proto.Message):
                 the query handling.
         """
 
-        analysis_query = proto.Field(
-            proto.MESSAGE,
-            number=1,
+        analysis_query = proto.Field(proto.MESSAGE, number=1,
             message='IamPolicyAnalysisQuery',
         )
-        analysis_results = proto.RepeatedField(
-            proto.MESSAGE,
-            number=2,
+
+        analysis_results = proto.RepeatedField(proto.MESSAGE, number=2,
             message=gca_assets.IamPolicyAnalysisResult,
         )
-        fully_explored = proto.Field(
-            proto.BOOL,
-            number=3,
-        )
-        non_critical_errors = proto.RepeatedField(
-            proto.MESSAGE,
-            number=5,
+
+        fully_explored = proto.Field(proto.BOOL, number=3)
+
+        non_critical_errors = proto.RepeatedField(proto.MESSAGE, number=5,
             message=gca_assets.IamPolicyAnalysisState,
         )
 
-    main_analysis = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    main_analysis = proto.Field(proto.MESSAGE, number=1,
         message=IamPolicyAnalysis,
     )
-    service_account_impersonation_analysis = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+
+    service_account_impersonation_analysis = proto.RepeatedField(proto.MESSAGE, number=2,
         message=IamPolicyAnalysis,
     )
-    fully_explored = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
+
+    fully_explored = proto.Field(proto.BOOL, number=3)
 
 
 class IamPolicyAnalysisOutputConfig(proto.Message):
@@ -1317,9 +1179,9 @@ class IamPolicyAnalysisOutputConfig(proto.Message):
         bigquery_destination (google.cloud.asset_v1.types.IamPolicyAnalysisOutputConfig.BigQueryDestination):
             Destination on BigQuery.
     """
-
     class GcsDestination(proto.Message):
         r"""A Cloud Storage location.
+
         Attributes:
             uri (str):
                 Required. The uri of the Cloud Storage object. It's the same
@@ -1330,13 +1192,11 @@ class IamPolicyAnalysisOutputConfig(proto.Message):
                 for examples.
         """
 
-        uri = proto.Field(
-            proto.STRING,
-            number=1,
-        )
+        uri = proto.Field(proto.STRING, number=1)
 
     class BigQueryDestination(proto.Message):
         r"""A BigQuery destination.
+
         Attributes:
             dataset (str):
                 Required. The BigQuery dataset in format
@@ -1387,34 +1247,21 @@ class IamPolicyAnalysisOutputConfig(proto.Message):
             PARTITION_KEY_UNSPECIFIED = 0
             REQUEST_TIME = 1
 
-        dataset = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        table_prefix = proto.Field(
-            proto.STRING,
-            number=2,
-        )
-        partition_key = proto.Field(
-            proto.ENUM,
-            number=3,
+        dataset = proto.Field(proto.STRING, number=1)
+
+        table_prefix = proto.Field(proto.STRING, number=2)
+
+        partition_key = proto.Field(proto.ENUM, number=3,
             enum='IamPolicyAnalysisOutputConfig.BigQueryDestination.PartitionKey',
         )
-        write_disposition = proto.Field(
-            proto.STRING,
-            number=4,
-        )
 
-    gcs_destination = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='destination',
+        write_disposition = proto.Field(proto.STRING, number=4)
+
+    gcs_destination = proto.Field(proto.MESSAGE, number=1, oneof='destination',
         message=GcsDestination,
     )
-    bigquery_destination = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='destination',
+
+    bigquery_destination = proto.Field(proto.MESSAGE, number=2, oneof='destination',
         message=BigQueryDestination,
     )
 
@@ -1431,14 +1278,11 @@ class AnalyzeIamPolicyLongrunningRequest(proto.Message):
             where the results will be output to.
     """
 
-    analysis_query = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    analysis_query = proto.Field(proto.MESSAGE, number=1,
         message='IamPolicyAnalysisQuery',
     )
-    output_config = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    output_config = proto.Field(proto.MESSAGE, number=2,
         message='IamPolicyAnalysisOutputConfig',
     )
 
@@ -1446,7 +1290,7 @@ class AnalyzeIamPolicyLongrunningRequest(proto.Message):
 class AnalyzeIamPolicyLongrunningResponse(proto.Message):
     r"""A response message for
     [AssetService.AnalyzeIamPolicyLongrunning][google.cloud.asset.v1.AssetService.AnalyzeIamPolicyLongrunning].
-        """
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

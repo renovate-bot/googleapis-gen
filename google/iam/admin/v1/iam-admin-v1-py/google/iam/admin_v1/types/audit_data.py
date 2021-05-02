@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -33,7 +35,6 @@ class AuditData(proto.Message):
         permission_delta (google.iam.admin_v1.types.AuditData.PermissionDelta):
             The permission_delta when when creating or updating a Role.
     """
-
     class PermissionDelta(proto.Message):
         r"""A PermissionDelta message to record the added_permissions and
         removed_permissions inside a role.
@@ -45,18 +46,11 @@ class AuditData(proto.Message):
                 Removed permissions.
         """
 
-        added_permissions = proto.RepeatedField(
-            proto.STRING,
-            number=1,
-        )
-        removed_permissions = proto.RepeatedField(
-            proto.STRING,
-            number=2,
-        )
+        added_permissions = proto.RepeatedField(proto.STRING, number=1)
 
-    permission_delta = proto.Field(
-        proto.MESSAGE,
-        number=1,
+        removed_permissions = proto.RepeatedField(proto.STRING, number=2)
+
+    permission_delta = proto.Field(proto.MESSAGE, number=1,
         message=PermissionDelta,
     )
 

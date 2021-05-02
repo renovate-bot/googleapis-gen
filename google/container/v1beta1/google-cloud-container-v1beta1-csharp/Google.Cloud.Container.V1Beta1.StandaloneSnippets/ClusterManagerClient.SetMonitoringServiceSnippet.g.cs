@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Container.V1Beta1.Snippets
 {
+    using Google.Cloud.Container.V1Beta1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for SetMonitoringService</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SetMonitoringService()
         {
-            // Snippet: SetMonitoringService(string, string, string, string, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
             string monitoringService = "";
             // Make the request
             Operation response = clusterManagerClient.SetMonitoringService(projectId, zone, clusterId, monitoringService);
-            // End snippet
         }
     }
 }

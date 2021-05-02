@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.WebRisk.V1.Snippets
 {
+    using Google.Cloud.WebRisk.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedWebRiskServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for SearchUris</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SearchUris()
         {
-            // Snippet: SearchUris(string, IEnumerable<ThreatType>, CallSettings)
             // Create client
             WebRiskServiceClient webRiskServiceClient = WebRiskServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.WebRisk.V1.Snippets
             };
             // Make the request
             SearchUrisResponse response = webRiskServiceClient.SearchUris(uri, threatTypes);
-            // End snippet
         }
     }
 }

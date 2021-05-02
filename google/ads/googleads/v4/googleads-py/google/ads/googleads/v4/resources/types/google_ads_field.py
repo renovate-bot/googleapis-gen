@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.enums.types import google_ads_field_category
 from google.ads.googleads.v4.enums.types import google_ads_field_data_type
@@ -31,6 +34,7 @@ __protobuf__ = proto.module(
 
 class GoogleAdsField(proto.Message):
     r"""A field or resource (artifact) used by GoogleAdsService.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the artifact. Artifact
@@ -102,73 +106,44 @@ class GoogleAdsField(proto.Message):
             repeated.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    name = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    name = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.StringValue,
     )
-    category = proto.Field(
-        proto.ENUM,
-        number=3,
+    category = proto.Field(proto.ENUM, number=3,
         enum=google_ads_field_category.GoogleAdsFieldCategoryEnum.GoogleAdsFieldCategory,
     )
-    selectable = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    selectable = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.BoolValue,
     )
-    filterable = proto.Field(
-        proto.MESSAGE,
-        number=5,
+    filterable = proto.Field(proto.MESSAGE, number=5,
         message=wrappers.BoolValue,
     )
-    sortable = proto.Field(
-        proto.MESSAGE,
-        number=6,
+    sortable = proto.Field(proto.MESSAGE, number=6,
         message=wrappers.BoolValue,
     )
-    selectable_with = proto.RepeatedField(
-        proto.MESSAGE,
-        number=7,
+    selectable_with = proto.RepeatedField(proto.MESSAGE, number=7,
         message=wrappers.StringValue,
     )
-    attribute_resources = proto.RepeatedField(
-        proto.MESSAGE,
-        number=8,
+    attribute_resources = proto.RepeatedField(proto.MESSAGE, number=8,
         message=wrappers.StringValue,
     )
-    metrics = proto.RepeatedField(
-        proto.MESSAGE,
-        number=9,
+    metrics = proto.RepeatedField(proto.MESSAGE, number=9,
         message=wrappers.StringValue,
     )
-    segments = proto.RepeatedField(
-        proto.MESSAGE,
-        number=10,
+    segments = proto.RepeatedField(proto.MESSAGE, number=10,
         message=wrappers.StringValue,
     )
-    enum_values = proto.RepeatedField(
-        proto.MESSAGE,
-        number=11,
+    enum_values = proto.RepeatedField(proto.MESSAGE, number=11,
         message=wrappers.StringValue,
     )
-    data_type = proto.Field(
-        proto.ENUM,
-        number=12,
+    data_type = proto.Field(proto.ENUM, number=12,
         enum=google_ads_field_data_type.GoogleAdsFieldDataTypeEnum.GoogleAdsFieldDataType,
     )
-    type_url = proto.Field(
-        proto.MESSAGE,
-        number=13,
+    type_url = proto.Field(proto.MESSAGE, number=13,
         message=wrappers.StringValue,
     )
-    is_repeated = proto.Field(
-        proto.MESSAGE,
-        number=14,
+    is_repeated = proto.Field(proto.MESSAGE, number=14,
         message=wrappers.BoolValue,
     )
 

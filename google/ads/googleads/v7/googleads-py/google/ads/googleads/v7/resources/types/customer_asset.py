@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.enums.types import asset_field_type
 from google.ads.googleads.v7.enums.types import asset_link_status
@@ -30,6 +33,7 @@ __protobuf__ = proto.module(
 
 class CustomerAsset(proto.Message):
     r"""A link between a customer and an asset.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the customer asset.
@@ -46,22 +50,12 @@ class CustomerAsset(proto.Message):
             Status of the customer asset.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    asset = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    field_type = proto.Field(
-        proto.ENUM,
-        number=3,
+    resource_name = proto.Field(proto.STRING, number=1)
+    asset = proto.Field(proto.STRING, number=2)
+    field_type = proto.Field(proto.ENUM, number=3,
         enum=asset_field_type.AssetFieldTypeEnum.AssetFieldType,
     )
-    status = proto.Field(
-        proto.ENUM,
-        number=4,
+    status = proto.Field(proto.ENUM, number=4,
         enum=asset_link_status.AssetLinkStatusEnum.AssetLinkStatus,
     )
 

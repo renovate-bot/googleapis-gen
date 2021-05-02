@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.common.types import simulation
 from google.ads.googleads.v6.enums.types import simulation_modification_method
@@ -66,44 +69,18 @@ class CampaignCriterionSimulation(proto.Message):
             BID_MODIFIER.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    campaign_id = proto.Field(
-        proto.INT64,
-        number=9,
-        optional=True,
-    )
-    criterion_id = proto.Field(
-        proto.INT64,
-        number=10,
-        optional=True,
-    )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=4,
+    resource_name = proto.Field(proto.STRING, number=1)
+    campaign_id = proto.Field(proto.INT64, number=9, optional=True)
+    criterion_id = proto.Field(proto.INT64, number=10, optional=True)
+    type_ = proto.Field(proto.ENUM, number=4,
         enum=simulation_type.SimulationTypeEnum.SimulationType,
     )
-    modification_method = proto.Field(
-        proto.ENUM,
-        number=5,
+    modification_method = proto.Field(proto.ENUM, number=5,
         enum=simulation_modification_method.SimulationModificationMethodEnum.SimulationModificationMethod,
     )
-    start_date = proto.Field(
-        proto.STRING,
-        number=11,
-        optional=True,
-    )
-    end_date = proto.Field(
-        proto.STRING,
-        number=12,
-        optional=True,
-    )
-    bid_modifier_point_list = proto.Field(
-        proto.MESSAGE,
-        number=8,
-        oneof='point_list',
+    start_date = proto.Field(proto.STRING, number=11, optional=True)
+    end_date = proto.Field(proto.STRING, number=12, optional=True)
+    bid_modifier_point_list = proto.Field(proto.MESSAGE, number=8, oneof='point_list',
         message=simulation.BidModifierSimulationPointList,
     )
 

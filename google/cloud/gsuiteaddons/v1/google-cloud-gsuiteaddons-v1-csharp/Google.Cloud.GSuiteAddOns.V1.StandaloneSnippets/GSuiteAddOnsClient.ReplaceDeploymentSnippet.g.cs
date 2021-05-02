@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.GSuiteAddOns.V1.Snippets
 {
+    using Google.Cloud.GSuiteAddOns.V1;
+
     public sealed partial class GeneratedGSuiteAddOnsClientStandaloneSnippets
     {
         /// <summary>Snippet for ReplaceDeployment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ReplaceDeployment()
         {
-            // Snippet: ReplaceDeployment(Deployment, CallSettings)
             // Create client
             GSuiteAddOnsClient gSuiteAddOnsClient = GSuiteAddOnsClient.Create();
             // Initialize request argument(s)
             Deployment deployment = new Deployment();
             // Make the request
             Deployment response = gSuiteAddOnsClient.ReplaceDeployment(deployment);
-            // End snippet
         }
     }
 }

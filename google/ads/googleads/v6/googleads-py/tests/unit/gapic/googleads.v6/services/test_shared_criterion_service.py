@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -267,23 +269,34 @@ def test_get_shared_criterion(transport: str = 'grpc', request_type=shared_crite
         # Designate an appropriate return value for the call.
         call.return_value = shared_criterion.SharedCriterion(
             resource_name='resource_name_value',
+
             shared_set='shared_set_value',
+
             criterion_id=1275,
+
             type_=criterion_type.CriterionTypeEnum.CriterionType.UNKNOWN,
+
             keyword=criteria.KeywordInfo(text='text_value'),
         )
+
         response = client.get_shared_criterion(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == shared_criterion_service.GetSharedCriterionRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, shared_criterion.SharedCriterion)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.shared_set == 'shared_set_value'
+
     assert response.criterion_id == 1275
+
     assert response.type_ == criterion_type.CriterionTypeEnum.CriterionType.UNKNOWN
 
 
@@ -299,7 +312,6 @@ def test_get_shared_criterion_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = shared_criterion_service.GetSharedCriterionRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -307,6 +319,7 @@ def test_get_shared_criterion_field_headers():
             type(client.transport.get_shared_criterion),
             '__call__') as call:
         call.return_value = shared_criterion.SharedCriterion()
+
         client.get_shared_criterion(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -333,6 +346,7 @@ def test_get_shared_criterion_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = shared_criterion.SharedCriterion()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_shared_criterion(
@@ -343,6 +357,7 @@ def test_get_shared_criterion_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -377,14 +392,17 @@ def test_mutate_shared_criteria(transport: str = 'grpc', request_type=shared_cri
         # Designate an appropriate return value for the call.
         call.return_value = shared_criterion_service.MutateSharedCriteriaResponse(
         )
+
         response = client.mutate_shared_criteria(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == shared_criterion_service.MutateSharedCriteriaRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, shared_criterion_service.MutateSharedCriteriaResponse)
 
 
@@ -400,7 +418,6 @@ def test_mutate_shared_criteria_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = shared_criterion_service.MutateSharedCriteriaRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -408,6 +425,7 @@ def test_mutate_shared_criteria_field_headers():
             type(client.transport.mutate_shared_criteria),
             '__call__') as call:
         call.return_value = shared_criterion_service.MutateSharedCriteriaResponse()
+
         client.mutate_shared_criteria(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -434,6 +452,7 @@ def test_mutate_shared_criteria_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = shared_criterion_service.MutateSharedCriteriaResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_shared_criteria(
@@ -445,7 +464,9 @@ def test_mutate_shared_criteria_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [shared_criterion_service.SharedCriterionOperation(create=shared_criterion.SharedCriterion(resource_name='resource_name_value'))]
 
 
@@ -528,7 +549,7 @@ def test_shared_criterion_service_base_transport():
     methods = (
         'get_shared_criterion',
         'mutate_shared_criteria',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -681,6 +702,7 @@ def test_shared_criterion_path():
     customer_id = "squid"
     shared_set_id = "clam"
     criterion_id = "whelk"
+
     expected = "customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}".format(customer_id=customer_id, shared_set_id=shared_set_id, criterion_id=criterion_id, )
     actual = SharedCriterionServiceClient.shared_criterion_path(customer_id, shared_set_id, criterion_id)
     assert expected == actual
@@ -688,9 +710,10 @@ def test_shared_criterion_path():
 
 def test_parse_shared_criterion_path():
     expected = {
-        "customer_id": "octopus",
-        "shared_set_id": "oyster",
-        "criterion_id": "nudibranch",
+    "customer_id": "octopus",
+    "shared_set_id": "oyster",
+    "criterion_id": "nudibranch",
+
     }
     path = SharedCriterionServiceClient.shared_criterion_path(**expected)
 
@@ -701,6 +724,7 @@ def test_parse_shared_criterion_path():
 def test_shared_set_path():
     customer_id = "cuttlefish"
     shared_set_id = "mussel"
+
     expected = "customers/{customer_id}/sharedSets/{shared_set_id}".format(customer_id=customer_id, shared_set_id=shared_set_id, )
     actual = SharedCriterionServiceClient.shared_set_path(customer_id, shared_set_id)
     assert expected == actual
@@ -708,8 +732,9 @@ def test_shared_set_path():
 
 def test_parse_shared_set_path():
     expected = {
-        "customer_id": "winkle",
-        "shared_set_id": "nautilus",
+    "customer_id": "winkle",
+    "shared_set_id": "nautilus",
+
     }
     path = SharedCriterionServiceClient.shared_set_path(**expected)
 
@@ -719,6 +744,7 @@ def test_parse_shared_set_path():
 
 def test_common_billing_account_path():
     billing_account = "scallop"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = SharedCriterionServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -726,7 +752,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "abalone",
+    "billing_account": "abalone",
+
     }
     path = SharedCriterionServiceClient.common_billing_account_path(**expected)
 
@@ -736,6 +763,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "squid"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = SharedCriterionServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -743,7 +771,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "clam",
+    "folder": "clam",
+
     }
     path = SharedCriterionServiceClient.common_folder_path(**expected)
 
@@ -753,6 +782,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "whelk"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = SharedCriterionServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -760,7 +790,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "octopus",
+    "organization": "octopus",
+
     }
     path = SharedCriterionServiceClient.common_organization_path(**expected)
 
@@ -770,6 +801,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "oyster"
+
     expected = "projects/{project}".format(project=project, )
     actual = SharedCriterionServiceClient.common_project_path(project)
     assert expected == actual
@@ -777,7 +809,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nudibranch",
+    "project": "nudibranch",
+
     }
     path = SharedCriterionServiceClient.common_project_path(**expected)
 
@@ -788,6 +821,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "cuttlefish"
     location = "mussel"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = SharedCriterionServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -795,8 +829,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "winkle",
-        "location": "nautilus",
+    "project": "winkle",
+    "location": "nautilus",
+
     }
     path = SharedCriterionServiceClient.common_location_path(**expected)
 

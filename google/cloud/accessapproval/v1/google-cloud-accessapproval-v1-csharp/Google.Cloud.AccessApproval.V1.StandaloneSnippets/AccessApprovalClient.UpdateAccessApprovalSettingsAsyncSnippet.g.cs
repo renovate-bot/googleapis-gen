@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.AccessApproval.V1.Snippets
 {
+    using Google.Cloud.AccessApproval.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAccessApprovalClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateAccessApprovalSettingsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateAccessApprovalSettingsAsync()
         {
-            // Snippet: UpdateAccessApprovalSettingsAsync(AccessApprovalSettings, FieldMask, CallSettings)
-            // Additional: UpdateAccessApprovalSettingsAsync(AccessApprovalSettings, FieldMask, CancellationToken)
             // Create client
             AccessApprovalClient accessApprovalClient = await AccessApprovalClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.AccessApproval.V1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             AccessApprovalSettings response = await accessApprovalClient.UpdateAccessApprovalSettingsAsync(settings, updateMask);
-            // End snippet
         }
     }
 }

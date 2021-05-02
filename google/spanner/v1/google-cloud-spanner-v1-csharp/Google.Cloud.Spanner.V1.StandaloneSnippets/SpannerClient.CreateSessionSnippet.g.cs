@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Spanner.V1.Snippets
 {
+    using Google.Cloud.Spanner.V1;
+
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateSession</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateSession()
         {
-            // Snippet: CreateSession(string, CallSettings)
             // Create client
             SpannerClient spannerClient = SpannerClient.Create();
             // Initialize request argument(s)
             string database = "projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE]";
             // Make the request
             Session response = spannerClient.CreateSession(database);
-            // End snippet
         }
     }
 }

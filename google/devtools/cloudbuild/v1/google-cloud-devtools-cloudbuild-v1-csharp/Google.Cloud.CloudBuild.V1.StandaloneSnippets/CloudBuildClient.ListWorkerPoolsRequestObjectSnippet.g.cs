@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.CloudBuild.V1.Snippets
 {
+    using Google.Cloud.CloudBuild.V1;
+
     public sealed partial class GeneratedCloudBuildClientStandaloneSnippets
     {
         /// <summary>Snippet for ListWorkerPools</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListWorkerPoolsRequestObject()
         {
-            // Snippet: ListWorkerPools(ListWorkerPoolsRequest, CallSettings)
             // Create client
             CloudBuildClient cloudBuildClient = CloudBuildClient.Create();
             // Initialize request argument(s)
             ListWorkerPoolsRequest request = new ListWorkerPoolsRequest { Parent = "", };
             // Make the request
             ListWorkerPoolsResponse response = cloudBuildClient.ListWorkerPools(request);
-            // End snippet
         }
     }
 }

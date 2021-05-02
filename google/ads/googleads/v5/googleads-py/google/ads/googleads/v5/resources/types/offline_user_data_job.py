@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v5.common.types import offline_user_data
 from google.ads.googleads.v5.enums.types import offline_user_data_job_failure_reason
@@ -64,45 +67,26 @@ class OfflineUserDataJob(proto.Message):
             update.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.Int64Value,
     )
-    external_id = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    external_id = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.Int64Value,
     )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=4,
+    type_ = proto.Field(proto.ENUM, number=4,
         enum=offline_user_data_job_type.OfflineUserDataJobTypeEnum.OfflineUserDataJobType,
     )
-    status = proto.Field(
-        proto.ENUM,
-        number=5,
+    status = proto.Field(proto.ENUM, number=5,
         enum=offline_user_data_job_status.OfflineUserDataJobStatusEnum.OfflineUserDataJobStatus,
     )
-    failure_reason = proto.Field(
-        proto.ENUM,
-        number=6,
+    failure_reason = proto.Field(proto.ENUM, number=6,
         enum=offline_user_data_job_failure_reason.OfflineUserDataJobFailureReasonEnum.OfflineUserDataJobFailureReason,
     )
-    customer_match_user_list_metadata = proto.Field(
-        proto.MESSAGE,
-        number=7,
-        oneof='metadata',
+    customer_match_user_list_metadata = proto.Field(proto.MESSAGE, number=7, oneof='metadata',
         message=offline_user_data.CustomerMatchUserListMetadata,
     )
-    store_sales_metadata = proto.Field(
-        proto.MESSAGE,
-        number=8,
-        oneof='metadata',
+    store_sales_metadata = proto.Field(proto.MESSAGE, number=8, oneof='metadata',
         message=offline_user_data.StoreSalesMetadata,
     )
 

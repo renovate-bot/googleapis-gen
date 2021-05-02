@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedVideoServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetVideo</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetVideoResourceNames()
         {
-            // Snippet: GetVideo(VideoName, CallSettings)
             // Create client
             VideoServiceClient videoServiceClient = VideoServiceClient.Create();
             // Initialize request argument(s)
             VideoName resourceName = VideoName.FromCustomerVideo("[CUSTOMER_ID]", "[VIDEO_ID]");
             // Make the request
             Video response = videoServiceClient.GetVideo(resourceName);
-            // End snippet
         }
     }
 }

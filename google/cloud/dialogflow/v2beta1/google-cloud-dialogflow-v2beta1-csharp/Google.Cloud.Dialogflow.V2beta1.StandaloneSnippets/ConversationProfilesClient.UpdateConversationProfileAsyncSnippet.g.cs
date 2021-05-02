@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConversationProfilesClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateConversationProfileAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateConversationProfileAsync()
         {
-            // Snippet: UpdateConversationProfileAsync(ConversationProfile, FieldMask, CallSettings)
-            // Additional: UpdateConversationProfileAsync(ConversationProfile, FieldMask, CancellationToken)
             // Create client
             ConversationProfilesClient conversationProfilesClient = await ConversationProfilesClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             ConversationProfile response = await conversationProfilesClient.UpdateConversationProfileAsync(conversationProfile, updateMask);
-            // End snippet
         }
     }
 }

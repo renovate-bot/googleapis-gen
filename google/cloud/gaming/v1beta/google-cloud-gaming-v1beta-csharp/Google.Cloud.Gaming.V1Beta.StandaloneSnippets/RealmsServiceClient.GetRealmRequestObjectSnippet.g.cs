@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Gaming.V1Beta.Snippets
 {
+    using Google.Cloud.Gaming.V1Beta;
+
     public sealed partial class GeneratedRealmsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetRealm</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetRealmRequestObject()
         {
-            // Snippet: GetRealm(GetRealmRequest, CallSettings)
             // Create client
             RealmsServiceClient realmsServiceClient = RealmsServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Gaming.V1Beta.Snippets
             };
             // Make the request
             Realm response = realmsServiceClient.GetRealm(request);
-            // End snippet
         }
     }
 }

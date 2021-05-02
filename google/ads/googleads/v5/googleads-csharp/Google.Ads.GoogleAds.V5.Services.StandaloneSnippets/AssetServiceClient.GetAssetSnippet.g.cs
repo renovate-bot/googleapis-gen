@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedAssetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAsset</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAsset()
         {
-            // Snippet: GetAsset(string, CallSettings)
             // Create client
             AssetServiceClient assetServiceClient = AssetServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/assets/[ASSET]";
             // Make the request
             Asset response = assetServiceClient.GetAsset(resourceName);
-            // End snippet
         }
     }
 }

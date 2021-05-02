@@ -16,22 +16,24 @@
 
 namespace Google.Example.Library.V1.Snippets
 {
+    using Google.Example.Library.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLibraryServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteBookAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteBookResourceNamesAsync()
         {
-            // Snippet: DeleteBookAsync(BookName, CallSettings)
-            // Additional: DeleteBookAsync(BookName, CancellationToken)
             // Create client
             LibraryServiceClient libraryServiceClient = await LibraryServiceClient.CreateAsync();
             // Initialize request argument(s)
             BookName name = BookName.FromShelfBook("[SHELF]", "[BOOK]");
             // Make the request
             await libraryServiceClient.DeleteBookAsync(name);
-            // End snippet
         }
     }
 }

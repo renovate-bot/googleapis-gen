@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.SecurityCenter.Settings.V1Beta1.Snippets
 {
+    using Google.Cloud.SecurityCenter.Settings.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecurityCenterSettingsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateComponentSettingsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateComponentSettingsAsync()
         {
-            // Snippet: UpdateComponentSettingsAsync(ComponentSettings, FieldMask, CallSettings)
-            // Additional: UpdateComponentSettingsAsync(ComponentSettings, FieldMask, CancellationToken)
             // Create client
             SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = await SecurityCenterSettingsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.SecurityCenter.Settings.V1Beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             ComponentSettings response = await securityCenterSettingsServiceClient.UpdateComponentSettingsAsync(componentSettings, updateMask);
-            // End snippet
         }
     }
 }

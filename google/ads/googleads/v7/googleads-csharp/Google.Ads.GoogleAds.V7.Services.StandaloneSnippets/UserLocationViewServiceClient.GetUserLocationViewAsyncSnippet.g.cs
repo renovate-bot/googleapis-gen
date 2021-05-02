@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedUserLocationViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetUserLocationViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetUserLocationViewAsync()
         {
-            // Snippet: GetUserLocationViewAsync(string, CallSettings)
-            // Additional: GetUserLocationViewAsync(string, CancellationToken)
             // Create client
             UserLocationViewServiceClient userLocationViewServiceClient = await UserLocationViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/userLocationViews/[COUNTRY_CRITERION_ID]~[IS_TARGETING_LOCATION]";
             // Make the request
             UserLocationView response = await userLocationViewServiceClient.GetUserLocationViewAsync(resourceName);
-            // End snippet
         }
     }
 }

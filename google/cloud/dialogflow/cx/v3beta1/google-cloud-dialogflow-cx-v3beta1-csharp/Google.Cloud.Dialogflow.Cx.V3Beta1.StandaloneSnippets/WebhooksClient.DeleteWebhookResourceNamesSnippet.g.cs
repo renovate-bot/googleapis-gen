@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedWebhooksClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteWebhook</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteWebhookResourceNames()
         {
-            // Snippet: DeleteWebhook(WebhookName, CallSettings)
             // Create client
             WebhooksClient webhooksClient = WebhooksClient.Create();
             // Initialize request argument(s)
             WebhookName name = WebhookName.FromProjectLocationAgentWebhook("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]");
             // Make the request
             webhooksClient.DeleteWebhook(name);
-            // End snippet
         }
     }
 }

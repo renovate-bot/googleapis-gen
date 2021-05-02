@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.AutoML.V1.Snippets
 {
+    using Google.Cloud.AutoML.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAnnotationSpecAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAnnotationSpecResourceNamesAsync()
         {
-            // Snippet: GetAnnotationSpecAsync(AnnotationSpecName, CallSettings)
-            // Additional: GetAnnotationSpecAsync(AnnotationSpecName, CancellationToken)
             // Create client
             AutoMlClient autoMlClient = await AutoMlClient.CreateAsync();
             // Initialize request argument(s)
             AnnotationSpecName name = AnnotationSpecName.FromProjectLocationDatasetAnnotationSpec("[PROJECT]", "[LOCATION]", "[DATASET]", "[ANNOTATION_SPEC]");
             // Make the request
             AnnotationSpec response = await autoMlClient.GetAnnotationSpecAsync(name);
-            // End snippet
         }
     }
 }

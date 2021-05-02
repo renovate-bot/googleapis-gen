@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -27,6 +29,7 @@ __protobuf__ = proto.module(
 
 class ClickLocation(proto.Message):
     r"""Location criteria associated with a click.
+
     Attributes:
         city (str):
             The city location criterion associated with
@@ -45,31 +48,11 @@ class ClickLocation(proto.Message):
             the impression.
     """
 
-    city = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
-    country = proto.Field(
-        proto.STRING,
-        number=7,
-        optional=True,
-    )
-    metro = proto.Field(
-        proto.STRING,
-        number=8,
-        optional=True,
-    )
-    most_specific = proto.Field(
-        proto.STRING,
-        number=9,
-        optional=True,
-    )
-    region = proto.Field(
-        proto.STRING,
-        number=10,
-        optional=True,
-    )
+    city = proto.Field(proto.STRING, number=6, optional=True)
+    country = proto.Field(proto.STRING, number=7, optional=True)
+    metro = proto.Field(proto.STRING, number=8, optional=True)
+    most_specific = proto.Field(proto.STRING, number=9, optional=True)
+    region = proto.Field(proto.STRING, number=10, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

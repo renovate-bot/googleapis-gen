@@ -16,25 +16,28 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
+
     public sealed partial class GeneratedGeoTargetConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for SuggestGeoTargetConstants</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SuggestGeoTargetConstantsRequestObject()
         {
-            // Snippet: SuggestGeoTargetConstants(SuggestGeoTargetConstantsRequest, CallSettings)
             // Create client
             GeoTargetConstantServiceClient geoTargetConstantServiceClient = GeoTargetConstantServiceClient.Create();
             // Initialize request argument(s)
             SuggestGeoTargetConstantsRequest request = new SuggestGeoTargetConstantsRequest
             {
                 LocationNames = new SuggestGeoTargetConstantsRequest.Types.LocationNames(),
-                GeoTargets = new SuggestGeoTargetConstantsRequest.Types.GeoTargets(),
                 Locale = "",
                 CountryCode = "",
             };
             // Make the request
             SuggestGeoTargetConstantsResponse response = geoTargetConstantServiceClient.SuggestGeoTargetConstants(request);
-            // End snippet
         }
     }
 }

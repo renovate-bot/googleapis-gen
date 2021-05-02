@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.AutoML.V1.Snippets
 {
+    using Google.Cloud.AutoML.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateDataset</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateDatasetRequestObject()
         {
-            // Snippet: UpdateDataset(UpdateDatasetRequest, CallSettings)
             // Create client
             AutoMlClient autoMlClient = AutoMlClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.AutoML.V1.Snippets
             };
             // Make the request
             Dataset response = autoMlClient.UpdateDataset(request);
-            // End snippet
         }
     }
 }

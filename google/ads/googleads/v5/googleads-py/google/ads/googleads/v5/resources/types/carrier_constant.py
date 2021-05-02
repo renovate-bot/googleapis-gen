@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -27,6 +29,7 @@ __protobuf__ = proto.module(
 
 class CarrierConstant(proto.Message):
     r"""A carrier criterion that can be used in campaign targeting.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the carrier criterion.
@@ -44,25 +47,10 @@ class CarrierConstant(proto.Message):
             etc.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.INT64,
-        number=5,
-        optional=True,
-    )
-    name = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
-    country_code = proto.Field(
-        proto.STRING,
-        number=7,
-        optional=True,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.INT64, number=5, optional=True)
+    name = proto.Field(proto.STRING, number=6, optional=True)
+    country_code = proto.Field(proto.STRING, number=7, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

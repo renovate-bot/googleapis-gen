@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Iot.V1.Snippets
 {
+    using Google.Cloud.Iot.V1;
+
     public sealed partial class GeneratedDeviceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDeviceRegistry</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDeviceRegistry()
         {
-            // Snippet: GetDeviceRegistry(string, CallSettings)
             // Create client
             DeviceManagerClient deviceManagerClient = DeviceManagerClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/registries/[REGISTRY]";
             // Make the request
             DeviceRegistry response = deviceManagerClient.GetDeviceRegistry(name);
-            // End snippet
         }
     }
 }

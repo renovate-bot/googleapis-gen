@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -25,6 +27,7 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 import grpc  # type: ignore
 
 from google.ads.googleads.v6.services.types import invoice_service
+
 from .base import InvoiceServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class InvoiceServiceGrpcTransport(InvoiceServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class InvoiceServiceGrpcTransport(InvoiceServiceTransport):
     def list_invoices(self) -> Callable[
             [invoice_service.ListInvoicesRequest],
             invoice_service.ListInvoicesResponse]:
-        r"""Return a callable for the
-        list invoices
-          method over gRPC.
+        r"""Return a callable for the list invoices method over gRPC.
 
         Returns all invoices associated with a billing setup,
         for a given month.

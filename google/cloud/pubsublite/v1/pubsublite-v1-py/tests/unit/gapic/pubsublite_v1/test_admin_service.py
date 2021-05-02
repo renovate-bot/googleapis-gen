@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -36,36 +36,12 @@ from google.cloud.pubsublite_v1.services.admin_service import AdminServiceAsyncC
 from google.cloud.pubsublite_v1.services.admin_service import AdminServiceClient
 from google.cloud.pubsublite_v1.services.admin_service import pagers
 from google.cloud.pubsublite_v1.services.admin_service import transports
-from google.cloud.pubsublite_v1.services.admin_service.transports.base import _API_CORE_VERSION
-from google.cloud.pubsublite_v1.services.admin_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.pubsublite_v1.types import admin
 from google.cloud.pubsublite_v1.types import common
 from google.oauth2 import service_account
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -233,10 +209,12 @@ def test_admin_service_client_client_options(client_class, transport_class, tran
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (AdminServiceClient, transports.AdminServiceGrpcTransport, "grpc", "true"),
     (AdminServiceAsyncClient, transports.AdminServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (AdminServiceClient, transports.AdminServiceGrpcTransport, "grpc", "false"),
     (AdminServiceAsyncClient, transports.AdminServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(AdminServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(AdminServiceClient))
 @mock.patch.object(AdminServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(AdminServiceAsyncClient))
@@ -391,16 +369,21 @@ def test_create_topic(transport: str = 'grpc', request_type=admin.CreateTopicReq
         # Designate an appropriate return value for the call.
         call.return_value = common.Topic(
             name='name_value',
+
         )
+
         response = client.create_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.CreateTopicRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, common.Topic)
+
     assert response.name == 'name_value'
 
 
@@ -423,8 +406,8 @@ def test_create_topic_empty_call():
         client.create_topic()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == admin.CreateTopicRequest()
 
+        assert args[0] == admin.CreateTopicRequest()
 
 @pytest.mark.asyncio
 async def test_create_topic_async(transport: str = 'grpc_asyncio', request_type=admin.CreateTopicRequest):
@@ -442,18 +425,21 @@ async def test_create_topic_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.create_topic),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(common.Topic(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.Topic(
             name='name_value',
         ))
+
         response = await client.create_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.CreateTopicRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, common.Topic)
+
     assert response.name == 'name_value'
 
 
@@ -470,7 +456,6 @@ def test_create_topic_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.CreateTopicRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -478,6 +463,7 @@ def test_create_topic_field_headers():
             type(client.transport.create_topic),
             '__call__') as call:
         call.return_value = common.Topic()
+
         client.create_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -502,7 +488,6 @@ async def test_create_topic_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.CreateTopicRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -510,6 +495,7 @@ async def test_create_topic_field_headers_async():
             type(client.transport.create_topic),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.Topic())
+
         await client.create_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -536,6 +522,7 @@ def test_create_topic_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = common.Topic()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_topic(
@@ -548,8 +535,11 @@ def test_create_topic_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].topic == common.Topic(name='name_value')
+
         assert args[0].topic_id == 'topic_id_value'
 
 
@@ -595,8 +585,11 @@ async def test_create_topic_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].topic == common.Topic(name='name_value')
+
         assert args[0].topic_id == 'topic_id_value'
 
 
@@ -634,16 +627,21 @@ def test_get_topic(transport: str = 'grpc', request_type=admin.GetTopicRequest):
         # Designate an appropriate return value for the call.
         call.return_value = common.Topic(
             name='name_value',
+
         )
+
         response = client.get_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.GetTopicRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, common.Topic)
+
     assert response.name == 'name_value'
 
 
@@ -666,8 +664,8 @@ def test_get_topic_empty_call():
         client.get_topic()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == admin.GetTopicRequest()
 
+        assert args[0] == admin.GetTopicRequest()
 
 @pytest.mark.asyncio
 async def test_get_topic_async(transport: str = 'grpc_asyncio', request_type=admin.GetTopicRequest):
@@ -685,18 +683,21 @@ async def test_get_topic_async(transport: str = 'grpc_asyncio', request_type=adm
             type(client.transport.get_topic),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(common.Topic(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.Topic(
             name='name_value',
         ))
+
         response = await client.get_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.GetTopicRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, common.Topic)
+
     assert response.name == 'name_value'
 
 
@@ -713,7 +714,6 @@ def test_get_topic_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.GetTopicRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -721,6 +721,7 @@ def test_get_topic_field_headers():
             type(client.transport.get_topic),
             '__call__') as call:
         call.return_value = common.Topic()
+
         client.get_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -745,7 +746,6 @@ async def test_get_topic_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.GetTopicRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -753,6 +753,7 @@ async def test_get_topic_field_headers_async():
             type(client.transport.get_topic),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.Topic())
+
         await client.get_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -779,6 +780,7 @@ def test_get_topic_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = common.Topic()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_topic(
@@ -789,6 +791,7 @@ def test_get_topic_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -830,6 +833,7 @@ async def test_get_topic_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -865,16 +869,21 @@ def test_get_topic_partitions(transport: str = 'grpc', request_type=admin.GetTop
         # Designate an appropriate return value for the call.
         call.return_value = admin.TopicPartitions(
             partition_count=1634,
+
         )
+
         response = client.get_topic_partitions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.GetTopicPartitionsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, admin.TopicPartitions)
+
     assert response.partition_count == 1634
 
 
@@ -897,8 +906,8 @@ def test_get_topic_partitions_empty_call():
         client.get_topic_partitions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == admin.GetTopicPartitionsRequest()
 
+        assert args[0] == admin.GetTopicPartitionsRequest()
 
 @pytest.mark.asyncio
 async def test_get_topic_partitions_async(transport: str = 'grpc_asyncio', request_type=admin.GetTopicPartitionsRequest):
@@ -916,18 +925,21 @@ async def test_get_topic_partitions_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.get_topic_partitions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(admin.TopicPartitions(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(admin.TopicPartitions(
             partition_count=1634,
         ))
+
         response = await client.get_topic_partitions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.GetTopicPartitionsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, admin.TopicPartitions)
+
     assert response.partition_count == 1634
 
 
@@ -944,7 +956,6 @@ def test_get_topic_partitions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.GetTopicPartitionsRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -952,6 +963,7 @@ def test_get_topic_partitions_field_headers():
             type(client.transport.get_topic_partitions),
             '__call__') as call:
         call.return_value = admin.TopicPartitions()
+
         client.get_topic_partitions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -976,7 +988,6 @@ async def test_get_topic_partitions_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.GetTopicPartitionsRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -984,6 +995,7 @@ async def test_get_topic_partitions_field_headers_async():
             type(client.transport.get_topic_partitions),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(admin.TopicPartitions())
+
         await client.get_topic_partitions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1010,6 +1022,7 @@ def test_get_topic_partitions_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = admin.TopicPartitions()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_topic_partitions(
@@ -1020,6 +1033,7 @@ def test_get_topic_partitions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1061,6 +1075,7 @@ async def test_get_topic_partitions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1096,16 +1111,21 @@ def test_list_topics(transport: str = 'grpc', request_type=admin.ListTopicsReque
         # Designate an appropriate return value for the call.
         call.return_value = admin.ListTopicsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_topics(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.ListTopicsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListTopicsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1128,8 +1148,8 @@ def test_list_topics_empty_call():
         client.list_topics()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == admin.ListTopicsRequest()
 
+        assert args[0] == admin.ListTopicsRequest()
 
 @pytest.mark.asyncio
 async def test_list_topics_async(transport: str = 'grpc_asyncio', request_type=admin.ListTopicsRequest):
@@ -1147,18 +1167,21 @@ async def test_list_topics_async(transport: str = 'grpc_asyncio', request_type=a
             type(client.transport.list_topics),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(admin.ListTopicsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(admin.ListTopicsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_topics(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.ListTopicsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTopicsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1175,7 +1198,6 @@ def test_list_topics_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.ListTopicsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1183,6 +1205,7 @@ def test_list_topics_field_headers():
             type(client.transport.list_topics),
             '__call__') as call:
         call.return_value = admin.ListTopicsResponse()
+
         client.list_topics(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1207,7 +1230,6 @@ async def test_list_topics_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.ListTopicsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1215,6 +1237,7 @@ async def test_list_topics_field_headers_async():
             type(client.transport.list_topics),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(admin.ListTopicsResponse())
+
         await client.list_topics(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1241,6 +1264,7 @@ def test_list_topics_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = admin.ListTopicsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_topics(
@@ -1251,6 +1275,7 @@ def test_list_topics_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1292,6 +1317,7 @@ async def test_list_topics_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1496,6 +1522,7 @@ async def test_list_topics_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_update_topic(transport: str = 'grpc', request_type=admin.UpdateTopicRequest):
     client = AdminServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1513,16 +1540,21 @@ def test_update_topic(transport: str = 'grpc', request_type=admin.UpdateTopicReq
         # Designate an appropriate return value for the call.
         call.return_value = common.Topic(
             name='name_value',
+
         )
+
         response = client.update_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.UpdateTopicRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, common.Topic)
+
     assert response.name == 'name_value'
 
 
@@ -1545,8 +1577,8 @@ def test_update_topic_empty_call():
         client.update_topic()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == admin.UpdateTopicRequest()
 
+        assert args[0] == admin.UpdateTopicRequest()
 
 @pytest.mark.asyncio
 async def test_update_topic_async(transport: str = 'grpc_asyncio', request_type=admin.UpdateTopicRequest):
@@ -1564,18 +1596,21 @@ async def test_update_topic_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.update_topic),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(common.Topic(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.Topic(
             name='name_value',
         ))
+
         response = await client.update_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.UpdateTopicRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, common.Topic)
+
     assert response.name == 'name_value'
 
 
@@ -1592,7 +1627,6 @@ def test_update_topic_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.UpdateTopicRequest()
-
     request.topic.name = 'topic.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1600,6 +1634,7 @@ def test_update_topic_field_headers():
             type(client.transport.update_topic),
             '__call__') as call:
         call.return_value = common.Topic()
+
         client.update_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1624,7 +1659,6 @@ async def test_update_topic_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.UpdateTopicRequest()
-
     request.topic.name = 'topic.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1632,6 +1666,7 @@ async def test_update_topic_field_headers_async():
             type(client.transport.update_topic),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.Topic())
+
         await client.update_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1658,6 +1693,7 @@ def test_update_topic_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = common.Topic()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_topic(
@@ -1669,7 +1705,9 @@ def test_update_topic_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].topic == common.Topic(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1713,7 +1751,9 @@ async def test_update_topic_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].topic == common.Topic(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1749,11 +1789,13 @@ def test_delete_topic(transport: str = 'grpc', request_type=admin.DeleteTopicReq
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.DeleteTopicRequest()
 
     # Establish that the response is the type that we expect.
@@ -1779,8 +1821,8 @@ def test_delete_topic_empty_call():
         client.delete_topic()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == admin.DeleteTopicRequest()
 
+        assert args[0] == admin.DeleteTopicRequest()
 
 @pytest.mark.asyncio
 async def test_delete_topic_async(transport: str = 'grpc_asyncio', request_type=admin.DeleteTopicRequest):
@@ -1799,11 +1841,13 @@ async def test_delete_topic_async(transport: str = 'grpc_asyncio', request_type=
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.DeleteTopicRequest()
 
     # Establish that the response is the type that we expect.
@@ -1823,7 +1867,6 @@ def test_delete_topic_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.DeleteTopicRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1831,6 +1874,7 @@ def test_delete_topic_field_headers():
             type(client.transport.delete_topic),
             '__call__') as call:
         call.return_value = None
+
         client.delete_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1855,7 +1899,6 @@ async def test_delete_topic_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.DeleteTopicRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1863,6 +1906,7 @@ async def test_delete_topic_field_headers_async():
             type(client.transport.delete_topic),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_topic(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1889,6 +1933,7 @@ def test_delete_topic_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_topic(
@@ -1899,6 +1944,7 @@ def test_delete_topic_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1940,6 +1986,7 @@ async def test_delete_topic_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1975,18 +2022,25 @@ def test_list_topic_subscriptions(transport: str = 'grpc', request_type=admin.Li
         # Designate an appropriate return value for the call.
         call.return_value = admin.ListTopicSubscriptionsResponse(
             subscriptions=['subscriptions_value'],
+
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_topic_subscriptions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.ListTopicSubscriptionsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListTopicSubscriptionsPager)
+
     assert response.subscriptions == ['subscriptions_value']
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2009,8 +2063,8 @@ def test_list_topic_subscriptions_empty_call():
         client.list_topic_subscriptions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == admin.ListTopicSubscriptionsRequest()
 
+        assert args[0] == admin.ListTopicSubscriptionsRequest()
 
 @pytest.mark.asyncio
 async def test_list_topic_subscriptions_async(transport: str = 'grpc_asyncio', request_type=admin.ListTopicSubscriptionsRequest):
@@ -2028,20 +2082,24 @@ async def test_list_topic_subscriptions_async(transport: str = 'grpc_asyncio', r
             type(client.transport.list_topic_subscriptions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(admin.ListTopicSubscriptionsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(admin.ListTopicSubscriptionsResponse(
             subscriptions=['subscriptions_value'],
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_topic_subscriptions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.ListTopicSubscriptionsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTopicSubscriptionsAsyncPager)
+
     assert response.subscriptions == ['subscriptions_value']
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2058,7 +2116,6 @@ def test_list_topic_subscriptions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.ListTopicSubscriptionsRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2066,6 +2123,7 @@ def test_list_topic_subscriptions_field_headers():
             type(client.transport.list_topic_subscriptions),
             '__call__') as call:
         call.return_value = admin.ListTopicSubscriptionsResponse()
+
         client.list_topic_subscriptions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2090,7 +2148,6 @@ async def test_list_topic_subscriptions_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.ListTopicSubscriptionsRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2098,6 +2155,7 @@ async def test_list_topic_subscriptions_field_headers_async():
             type(client.transport.list_topic_subscriptions),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(admin.ListTopicSubscriptionsResponse())
+
         await client.list_topic_subscriptions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2124,6 +2182,7 @@ def test_list_topic_subscriptions_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = admin.ListTopicSubscriptionsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_topic_subscriptions(
@@ -2134,6 +2193,7 @@ def test_list_topic_subscriptions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2175,6 +2235,7 @@ async def test_list_topic_subscriptions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2379,6 +2440,7 @@ async def test_list_topic_subscriptions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_create_subscription(transport: str = 'grpc', request_type=admin.CreateSubscriptionRequest):
     client = AdminServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2396,18 +2458,25 @@ def test_create_subscription(transport: str = 'grpc', request_type=admin.CreateS
         # Designate an appropriate return value for the call.
         call.return_value = common.Subscription(
             name='name_value',
+
             topic='topic_value',
+
         )
+
         response = client.create_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.CreateSubscriptionRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, common.Subscription)
+
     assert response.name == 'name_value'
+
     assert response.topic == 'topic_value'
 
 
@@ -2430,8 +2499,8 @@ def test_create_subscription_empty_call():
         client.create_subscription()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == admin.CreateSubscriptionRequest()
 
+        assert args[0] == admin.CreateSubscriptionRequest()
 
 @pytest.mark.asyncio
 async def test_create_subscription_async(transport: str = 'grpc_asyncio', request_type=admin.CreateSubscriptionRequest):
@@ -2449,20 +2518,24 @@ async def test_create_subscription_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.create_subscription),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(common.Subscription(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.Subscription(
             name='name_value',
             topic='topic_value',
         ))
+
         response = await client.create_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.CreateSubscriptionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, common.Subscription)
+
     assert response.name == 'name_value'
+
     assert response.topic == 'topic_value'
 
 
@@ -2479,7 +2552,6 @@ def test_create_subscription_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.CreateSubscriptionRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2487,6 +2559,7 @@ def test_create_subscription_field_headers():
             type(client.transport.create_subscription),
             '__call__') as call:
         call.return_value = common.Subscription()
+
         client.create_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2511,7 +2584,6 @@ async def test_create_subscription_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.CreateSubscriptionRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2519,6 +2591,7 @@ async def test_create_subscription_field_headers_async():
             type(client.transport.create_subscription),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.Subscription())
+
         await client.create_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2545,6 +2618,7 @@ def test_create_subscription_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = common.Subscription()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_subscription(
@@ -2557,8 +2631,11 @@ def test_create_subscription_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].subscription == common.Subscription(name='name_value')
+
         assert args[0].subscription_id == 'subscription_id_value'
 
 
@@ -2604,8 +2681,11 @@ async def test_create_subscription_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].subscription == common.Subscription(name='name_value')
+
         assert args[0].subscription_id == 'subscription_id_value'
 
 
@@ -2643,18 +2723,25 @@ def test_get_subscription(transport: str = 'grpc', request_type=admin.GetSubscri
         # Designate an appropriate return value for the call.
         call.return_value = common.Subscription(
             name='name_value',
+
             topic='topic_value',
+
         )
+
         response = client.get_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.GetSubscriptionRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, common.Subscription)
+
     assert response.name == 'name_value'
+
     assert response.topic == 'topic_value'
 
 
@@ -2677,8 +2764,8 @@ def test_get_subscription_empty_call():
         client.get_subscription()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == admin.GetSubscriptionRequest()
 
+        assert args[0] == admin.GetSubscriptionRequest()
 
 @pytest.mark.asyncio
 async def test_get_subscription_async(transport: str = 'grpc_asyncio', request_type=admin.GetSubscriptionRequest):
@@ -2696,20 +2783,24 @@ async def test_get_subscription_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.get_subscription),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(common.Subscription(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.Subscription(
             name='name_value',
             topic='topic_value',
         ))
+
         response = await client.get_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.GetSubscriptionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, common.Subscription)
+
     assert response.name == 'name_value'
+
     assert response.topic == 'topic_value'
 
 
@@ -2726,7 +2817,6 @@ def test_get_subscription_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.GetSubscriptionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2734,6 +2824,7 @@ def test_get_subscription_field_headers():
             type(client.transport.get_subscription),
             '__call__') as call:
         call.return_value = common.Subscription()
+
         client.get_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2758,7 +2849,6 @@ async def test_get_subscription_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.GetSubscriptionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2766,6 +2856,7 @@ async def test_get_subscription_field_headers_async():
             type(client.transport.get_subscription),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.Subscription())
+
         await client.get_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2792,6 +2883,7 @@ def test_get_subscription_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = common.Subscription()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_subscription(
@@ -2802,6 +2894,7 @@ def test_get_subscription_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2843,6 +2936,7 @@ async def test_get_subscription_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2878,16 +2972,21 @@ def test_list_subscriptions(transport: str = 'grpc', request_type=admin.ListSubs
         # Designate an appropriate return value for the call.
         call.return_value = admin.ListSubscriptionsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_subscriptions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.ListSubscriptionsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListSubscriptionsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2910,8 +3009,8 @@ def test_list_subscriptions_empty_call():
         client.list_subscriptions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == admin.ListSubscriptionsRequest()
 
+        assert args[0] == admin.ListSubscriptionsRequest()
 
 @pytest.mark.asyncio
 async def test_list_subscriptions_async(transport: str = 'grpc_asyncio', request_type=admin.ListSubscriptionsRequest):
@@ -2929,18 +3028,21 @@ async def test_list_subscriptions_async(transport: str = 'grpc_asyncio', request
             type(client.transport.list_subscriptions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(admin.ListSubscriptionsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(admin.ListSubscriptionsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_subscriptions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.ListSubscriptionsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListSubscriptionsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2957,7 +3059,6 @@ def test_list_subscriptions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.ListSubscriptionsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2965,6 +3066,7 @@ def test_list_subscriptions_field_headers():
             type(client.transport.list_subscriptions),
             '__call__') as call:
         call.return_value = admin.ListSubscriptionsResponse()
+
         client.list_subscriptions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2989,7 +3091,6 @@ async def test_list_subscriptions_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.ListSubscriptionsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2997,6 +3098,7 @@ async def test_list_subscriptions_field_headers_async():
             type(client.transport.list_subscriptions),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(admin.ListSubscriptionsResponse())
+
         await client.list_subscriptions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3023,6 +3125,7 @@ def test_list_subscriptions_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = admin.ListSubscriptionsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_subscriptions(
@@ -3033,6 +3136,7 @@ def test_list_subscriptions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -3074,6 +3178,7 @@ async def test_list_subscriptions_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -3278,6 +3383,7 @@ async def test_list_subscriptions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_update_subscription(transport: str = 'grpc', request_type=admin.UpdateSubscriptionRequest):
     client = AdminServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -3295,18 +3401,25 @@ def test_update_subscription(transport: str = 'grpc', request_type=admin.UpdateS
         # Designate an appropriate return value for the call.
         call.return_value = common.Subscription(
             name='name_value',
+
             topic='topic_value',
+
         )
+
         response = client.update_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.UpdateSubscriptionRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, common.Subscription)
+
     assert response.name == 'name_value'
+
     assert response.topic == 'topic_value'
 
 
@@ -3329,8 +3442,8 @@ def test_update_subscription_empty_call():
         client.update_subscription()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == admin.UpdateSubscriptionRequest()
 
+        assert args[0] == admin.UpdateSubscriptionRequest()
 
 @pytest.mark.asyncio
 async def test_update_subscription_async(transport: str = 'grpc_asyncio', request_type=admin.UpdateSubscriptionRequest):
@@ -3348,20 +3461,24 @@ async def test_update_subscription_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.update_subscription),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(common.Subscription(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.Subscription(
             name='name_value',
             topic='topic_value',
         ))
+
         response = await client.update_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.UpdateSubscriptionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, common.Subscription)
+
     assert response.name == 'name_value'
+
     assert response.topic == 'topic_value'
 
 
@@ -3378,7 +3495,6 @@ def test_update_subscription_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.UpdateSubscriptionRequest()
-
     request.subscription.name = 'subscription.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3386,6 +3502,7 @@ def test_update_subscription_field_headers():
             type(client.transport.update_subscription),
             '__call__') as call:
         call.return_value = common.Subscription()
+
         client.update_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3410,7 +3527,6 @@ async def test_update_subscription_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.UpdateSubscriptionRequest()
-
     request.subscription.name = 'subscription.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3418,6 +3534,7 @@ async def test_update_subscription_field_headers_async():
             type(client.transport.update_subscription),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(common.Subscription())
+
         await client.update_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3444,6 +3561,7 @@ def test_update_subscription_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = common.Subscription()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_subscription(
@@ -3455,7 +3573,9 @@ def test_update_subscription_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].subscription == common.Subscription(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -3499,7 +3619,9 @@ async def test_update_subscription_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].subscription == common.Subscription(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -3535,11 +3657,13 @@ def test_delete_subscription(transport: str = 'grpc', request_type=admin.DeleteS
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.DeleteSubscriptionRequest()
 
     # Establish that the response is the type that we expect.
@@ -3565,8 +3689,8 @@ def test_delete_subscription_empty_call():
         client.delete_subscription()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == admin.DeleteSubscriptionRequest()
 
+        assert args[0] == admin.DeleteSubscriptionRequest()
 
 @pytest.mark.asyncio
 async def test_delete_subscription_async(transport: str = 'grpc_asyncio', request_type=admin.DeleteSubscriptionRequest):
@@ -3585,11 +3709,13 @@ async def test_delete_subscription_async(transport: str = 'grpc_asyncio', reques
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == admin.DeleteSubscriptionRequest()
 
     # Establish that the response is the type that we expect.
@@ -3609,7 +3735,6 @@ def test_delete_subscription_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.DeleteSubscriptionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3617,6 +3742,7 @@ def test_delete_subscription_field_headers():
             type(client.transport.delete_subscription),
             '__call__') as call:
         call.return_value = None
+
         client.delete_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3641,7 +3767,6 @@ async def test_delete_subscription_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = admin.DeleteSubscriptionRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3649,6 +3774,7 @@ async def test_delete_subscription_field_headers_async():
             type(client.transport.delete_subscription),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_subscription(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3675,6 +3801,7 @@ def test_delete_subscription_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_subscription(
@@ -3685,6 +3812,7 @@ def test_delete_subscription_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3726,6 +3854,7 @@ async def test_delete_subscription_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3784,6 +3913,7 @@ def test_transport_instance():
     client = AdminServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.AdminServiceGrpcTransport(
@@ -3798,6 +3928,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.AdminServiceGrpcTransport,
     transports.AdminServiceGrpcAsyncIOTransport,
@@ -3809,6 +3940,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = AdminServiceClient(
@@ -3818,6 +3950,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.AdminServiceGrpcTransport,
     )
+
 
 def test_admin_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -3851,33 +3984,15 @@ def test_admin_service_base_transport():
         'list_subscriptions',
         'update_subscription',
         'delete_subscription',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_admin_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.pubsublite_v1.services.admin_service.transports.AdminServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.AdminServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_admin_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.pubsublite_v1.services.admin_service.transports.AdminServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.pubsublite_v1.services.admin_service.transports.AdminServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.AdminServiceTransport(
@@ -3893,182 +4008,33 @@ def test_admin_service_base_transport_with_credentials_file_old_google_auth():
 
 def test_admin_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.pubsublite_v1.services.admin_service.transports.AdminServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.pubsublite_v1.services.admin_service.transports.AdminServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.AdminServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_admin_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         AdminServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_admin_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        AdminServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.AdminServiceGrpcTransport,
-        transports.AdminServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_admin_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.AdminServiceGrpcTransport,
-        transports.AdminServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_admin_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.AdminServiceGrpcTransport, grpc_helpers),
-        (transports.AdminServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_admin_service_transport_create_channel(transport_class, grpc_helpers):
+def test_admin_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.AdminServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "pubsublite.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="pubsublite.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.AdminServiceGrpcTransport, grpc_helpers),
-        (transports.AdminServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_admin_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "pubsublite.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.AdminServiceGrpcTransport, grpc_helpers),
-        (transports.AdminServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_admin_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "pubsublite.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -4130,6 +4096,7 @@ def test_admin_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='pubsublite.googleapis.com:8000'),
     )
     assert client.transport._host == 'pubsublite.googleapis.com:8000'
+
 
 def test_admin_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -4249,6 +4216,7 @@ def test_subscription_path():
     project = "squid"
     location = "clam"
     subscription = "whelk"
+
     expected = "projects/{project}/locations/{location}/subscriptions/{subscription}".format(project=project, location=location, subscription=subscription, )
     actual = AdminServiceClient.subscription_path(project, location, subscription)
     assert expected == actual
@@ -4256,9 +4224,10 @@ def test_subscription_path():
 
 def test_parse_subscription_path():
     expected = {
-        "project": "octopus",
-        "location": "oyster",
-        "subscription": "nudibranch",
+    "project": "octopus",
+    "location": "oyster",
+    "subscription": "nudibranch",
+
     }
     path = AdminServiceClient.subscription_path(**expected)
 
@@ -4270,6 +4239,7 @@ def test_topic_path():
     project = "cuttlefish"
     location = "mussel"
     topic = "winkle"
+
     expected = "projects/{project}/locations/{location}/topics/{topic}".format(project=project, location=location, topic=topic, )
     actual = AdminServiceClient.topic_path(project, location, topic)
     assert expected == actual
@@ -4277,9 +4247,10 @@ def test_topic_path():
 
 def test_parse_topic_path():
     expected = {
-        "project": "nautilus",
-        "location": "scallop",
-        "topic": "abalone",
+    "project": "nautilus",
+    "location": "scallop",
+    "topic": "abalone",
+
     }
     path = AdminServiceClient.topic_path(**expected)
 
@@ -4289,6 +4260,7 @@ def test_parse_topic_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AdminServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -4296,7 +4268,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = AdminServiceClient.common_billing_account_path(**expected)
 
@@ -4306,6 +4279,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = AdminServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -4313,7 +4287,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = AdminServiceClient.common_folder_path(**expected)
 
@@ -4323,6 +4298,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AdminServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -4330,7 +4306,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = AdminServiceClient.common_organization_path(**expected)
 
@@ -4340,6 +4317,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = AdminServiceClient.common_project_path(project)
     assert expected == actual
@@ -4347,7 +4325,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = AdminServiceClient.common_project_path(**expected)
 
@@ -4358,6 +4337,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AdminServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -4365,8 +4345,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = AdminServiceClient.common_location_path(**expected)
 

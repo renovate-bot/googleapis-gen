@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedHotelPerformanceViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetHotelPerformanceView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetHotelPerformanceViewRequestObject()
         {
-            // Snippet: GetHotelPerformanceView(GetHotelPerformanceViewRequest, CallSettings)
             // Create client
             HotelPerformanceViewServiceClient hotelPerformanceViewServiceClient = HotelPerformanceViewServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             HotelPerformanceView response = hotelPerformanceViewServiceClient.GetHotelPerformanceView(request);
-            // End snippet
         }
     }
 }

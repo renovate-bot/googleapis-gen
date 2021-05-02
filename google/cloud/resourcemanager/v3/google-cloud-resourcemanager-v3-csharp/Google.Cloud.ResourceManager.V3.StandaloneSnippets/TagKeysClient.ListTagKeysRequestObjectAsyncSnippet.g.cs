@@ -17,16 +17,20 @@
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.ResourceManager.V3;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTagKeysClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListTagKeys</summary>
+        /// <summary>Snippet for ListTagKeysAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListTagKeysRequestObjectAsync()
         {
-            // Snippet: ListTagKeysAsync(ListTagKeysRequest, CallSettings)
             // Create client
             TagKeysClient tagKeysClient = await TagKeysClient.CreateAsync();
             // Initialize request argument(s)
@@ -68,7 +72,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

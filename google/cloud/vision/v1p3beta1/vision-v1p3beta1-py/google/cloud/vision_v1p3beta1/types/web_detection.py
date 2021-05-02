@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -26,6 +28,7 @@ __protobuf__ = proto.module(
 
 class WebDetection(proto.Message):
     r"""Relevant information for the image from the Internet.
+
     Attributes:
         web_entities (Sequence[google.cloud.vision_v1p3beta1.types.WebDetection.WebEntity]):
             Deduced entities from similar images on the
@@ -47,9 +50,9 @@ class WebDetection(proto.Message):
         best_guess_labels (Sequence[google.cloud.vision_v1p3beta1.types.WebDetection.WebLabel]):
             Best guess text labels for the request image.
     """
-
     class WebEntity(proto.Message):
         r"""Entity deduced from similar images on the Internet.
+
         Attributes:
             entity_id (str):
                 Opaque entity ID.
@@ -62,21 +65,15 @@ class WebDetection(proto.Message):
                 English.
         """
 
-        entity_id = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        score = proto.Field(
-            proto.FLOAT,
-            number=2,
-        )
-        description = proto.Field(
-            proto.STRING,
-            number=3,
-        )
+        entity_id = proto.Field(proto.STRING, number=1)
+
+        score = proto.Field(proto.FLOAT, number=2)
+
+        description = proto.Field(proto.STRING, number=3)
 
     class WebImage(proto.Message):
         r"""Metadata for online images.
+
         Attributes:
             url (str):
                 The result image URL.
@@ -85,17 +82,13 @@ class WebDetection(proto.Message):
                 image.
         """
 
-        url = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        score = proto.Field(
-            proto.FLOAT,
-            number=2,
-        )
+        url = proto.Field(proto.STRING, number=1)
+
+        score = proto.Field(proto.FLOAT, number=2)
 
     class WebPage(proto.Message):
         r"""Metadata for web pages.
+
         Attributes:
             url (str):
                 The result web page URL.
@@ -116,31 +109,23 @@ class WebDetection(proto.Message):
                 crops.
         """
 
-        url = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        score = proto.Field(
-            proto.FLOAT,
-            number=2,
-        )
-        page_title = proto.Field(
-            proto.STRING,
-            number=3,
-        )
-        full_matching_images = proto.RepeatedField(
-            proto.MESSAGE,
-            number=4,
+        url = proto.Field(proto.STRING, number=1)
+
+        score = proto.Field(proto.FLOAT, number=2)
+
+        page_title = proto.Field(proto.STRING, number=3)
+
+        full_matching_images = proto.RepeatedField(proto.MESSAGE, number=4,
             message='WebDetection.WebImage',
         )
-        partial_matching_images = proto.RepeatedField(
-            proto.MESSAGE,
-            number=5,
+
+        partial_matching_images = proto.RepeatedField(proto.MESSAGE, number=5,
             message='WebDetection.WebImage',
         )
 
     class WebLabel(proto.Message):
         r"""Label to provide extra metadata for the web detection.
+
         Attributes:
             label (str):
                 Label for extra metadata.
@@ -150,43 +135,31 @@ class WebDetection(proto.Message):
                 http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
         """
 
-        label = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        language_code = proto.Field(
-            proto.STRING,
-            number=2,
-        )
+        label = proto.Field(proto.STRING, number=1)
 
-    web_entities = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+        language_code = proto.Field(proto.STRING, number=2)
+
+    web_entities = proto.RepeatedField(proto.MESSAGE, number=1,
         message=WebEntity,
     )
-    full_matching_images = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+
+    full_matching_images = proto.RepeatedField(proto.MESSAGE, number=2,
         message=WebImage,
     )
-    partial_matching_images = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+
+    partial_matching_images = proto.RepeatedField(proto.MESSAGE, number=3,
         message=WebImage,
     )
-    pages_with_matching_images = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+
+    pages_with_matching_images = proto.RepeatedField(proto.MESSAGE, number=4,
         message=WebPage,
     )
-    visually_similar_images = proto.RepeatedField(
-        proto.MESSAGE,
-        number=6,
+
+    visually_similar_images = proto.RepeatedField(proto.MESSAGE, number=6,
         message=WebImage,
     )
-    best_guess_labels = proto.RepeatedField(
-        proto.MESSAGE,
-        number=8,
+
+    best_guess_labels = proto.RepeatedField(proto.MESSAGE, number=8,
         message=WebLabel,
     )
 

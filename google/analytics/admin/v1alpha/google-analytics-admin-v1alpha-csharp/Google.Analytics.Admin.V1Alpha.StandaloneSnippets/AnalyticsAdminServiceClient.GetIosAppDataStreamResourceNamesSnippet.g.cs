@@ -16,19 +16,23 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
+
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIosAppDataStream</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetIosAppDataStreamResourceNames()
         {
-            // Snippet: GetIosAppDataStream(IosAppDataStreamName, CallSettings)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.Create();
             // Initialize request argument(s)
             IosAppDataStreamName name = IosAppDataStreamName.FromPropertyIosAppDataStream("[PROPERTY]", "[IOS_APP_DATA_STREAM]");
             // Make the request
             IosAppDataStream response = analyticsAdminServiceClient.GetIosAppDataStream(name);
-            // End snippet
         }
     }
 }

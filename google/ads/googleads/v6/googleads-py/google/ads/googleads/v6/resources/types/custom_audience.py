@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.enums.types import custom_audience_member_type
 from google.ads.googleads.v6.enums.types import custom_audience_status
@@ -32,6 +35,7 @@ __protobuf__ = proto.module(
 
 class CustomAudience(proto.Message):
     r"""A custom audience. This is a list of users by interest.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the custom audience. Custom
@@ -63,35 +67,17 @@ class CustomAudience(proto.Message):
             members will be overridden.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.INT64,
-        number=2,
-    )
-    status = proto.Field(
-        proto.ENUM,
-        number=3,
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.INT64, number=2)
+    status = proto.Field(proto.ENUM, number=3,
         enum=custom_audience_status.CustomAudienceStatusEnum.CustomAudienceStatus,
     )
-    name = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=5,
+    name = proto.Field(proto.STRING, number=4)
+    type_ = proto.Field(proto.ENUM, number=5,
         enum=custom_audience_type.CustomAudienceTypeEnum.CustomAudienceType,
     )
-    description = proto.Field(
-        proto.STRING,
-        number=6,
-    )
-    members = proto.RepeatedField(
-        proto.MESSAGE,
-        number=7,
+    description = proto.Field(proto.STRING, number=6)
+    members = proto.RepeatedField(proto.MESSAGE, number=7,
         message='CustomAudienceMember',
     )
 
@@ -123,31 +109,13 @@ class CustomAudienceMember(proto.Message):
             installed such as com.google.example.
     """
 
-    member_type = proto.Field(
-        proto.ENUM,
-        number=1,
+    member_type = proto.Field(proto.ENUM, number=1,
         enum=custom_audience_member_type.CustomAudienceMemberTypeEnum.CustomAudienceMemberType,
     )
-    keyword = proto.Field(
-        proto.STRING,
-        number=2,
-        oneof='value',
-    )
-    url = proto.Field(
-        proto.STRING,
-        number=3,
-        oneof='value',
-    )
-    place_category = proto.Field(
-        proto.INT64,
-        number=4,
-        oneof='value',
-    )
-    app = proto.Field(
-        proto.STRING,
-        number=5,
-        oneof='value',
-    )
+    keyword = proto.Field(proto.STRING, number=2, oneof='value')
+    url = proto.Field(proto.STRING, number=3, oneof='value')
+    place_category = proto.Field(proto.INT64, number=4, oneof='value')
+    app = proto.Field(proto.STRING, number=5, oneof='value')
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

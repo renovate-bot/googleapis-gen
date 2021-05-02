@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConversationProfilesClientStandaloneSnippets
     {
         /// <summary>Snippet for GetConversationProfileAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetConversationProfileAsync()
         {
-            // Snippet: GetConversationProfileAsync(string, CallSettings)
-            // Additional: GetConversationProfileAsync(string, CancellationToken)
             // Create client
             ConversationProfilesClient conversationProfilesClient = await ConversationProfilesClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/conversationProfiles/[CONVERSATION_PROFILE]";
             // Make the request
             ConversationProfile response = await conversationProfilesClient.GetConversationProfileAsync(name);
-            // End snippet
         }
     }
 }

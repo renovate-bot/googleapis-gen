@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -262,14 +264,17 @@ def test_upload_click_conversions(transport: str = 'grpc', request_type=conversi
         # Designate an appropriate return value for the call.
         call.return_value = conversion_upload_service.UploadClickConversionsResponse(
         )
+
         response = client.upload_click_conversions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == conversion_upload_service.UploadClickConversionsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, conversion_upload_service.UploadClickConversionsResponse)
 
 
@@ -285,7 +290,6 @@ def test_upload_click_conversions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = conversion_upload_service.UploadClickConversionsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -293,6 +297,7 @@ def test_upload_click_conversions_field_headers():
             type(client.transport.upload_click_conversions),
             '__call__') as call:
         call.return_value = conversion_upload_service.UploadClickConversionsResponse()
+
         client.upload_click_conversions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -319,6 +324,7 @@ def test_upload_click_conversions_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = conversion_upload_service.UploadClickConversionsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.upload_click_conversions(
@@ -331,8 +337,11 @@ def test_upload_click_conversions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].conversions == [conversion_upload_service.ClickConversion(gclid='gclid_value')]
+
         assert args[0].partial_failure == True
 
 
@@ -369,14 +378,17 @@ def test_upload_call_conversions(transport: str = 'grpc', request_type=conversio
         # Designate an appropriate return value for the call.
         call.return_value = conversion_upload_service.UploadCallConversionsResponse(
         )
+
         response = client.upload_call_conversions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == conversion_upload_service.UploadCallConversionsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, conversion_upload_service.UploadCallConversionsResponse)
 
 
@@ -392,7 +404,6 @@ def test_upload_call_conversions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = conversion_upload_service.UploadCallConversionsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -400,6 +411,7 @@ def test_upload_call_conversions_field_headers():
             type(client.transport.upload_call_conversions),
             '__call__') as call:
         call.return_value = conversion_upload_service.UploadCallConversionsResponse()
+
         client.upload_call_conversions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -426,6 +438,7 @@ def test_upload_call_conversions_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = conversion_upload_service.UploadCallConversionsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.upload_call_conversions(
@@ -438,8 +451,11 @@ def test_upload_call_conversions_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].conversions == [conversion_upload_service.CallConversion(caller_id='caller_id_value')]
+
         assert args[0].partial_failure == True
 
 
@@ -523,7 +539,7 @@ def test_conversion_upload_service_base_transport():
     methods = (
         'upload_click_conversions',
         'upload_call_conversions',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -675,6 +691,7 @@ def test_conversion_upload_service_transport_channel_mtls_with_adc(
 def test_conversion_custom_variable_path():
     customer_id = "squid"
     conversion_custom_variable_id = "clam"
+
     expected = "customers/{customer_id}/conversionCustomVariables/{conversion_custom_variable_id}".format(customer_id=customer_id, conversion_custom_variable_id=conversion_custom_variable_id, )
     actual = ConversionUploadServiceClient.conversion_custom_variable_path(customer_id, conversion_custom_variable_id)
     assert expected == actual
@@ -682,8 +699,9 @@ def test_conversion_custom_variable_path():
 
 def test_parse_conversion_custom_variable_path():
     expected = {
-        "customer_id": "whelk",
-        "conversion_custom_variable_id": "octopus",
+    "customer_id": "whelk",
+    "conversion_custom_variable_id": "octopus",
+
     }
     path = ConversionUploadServiceClient.conversion_custom_variable_path(**expected)
 
@@ -693,6 +711,7 @@ def test_parse_conversion_custom_variable_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ConversionUploadServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -700,7 +719,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = ConversionUploadServiceClient.common_billing_account_path(**expected)
 
@@ -710,6 +730,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ConversionUploadServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -717,7 +738,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = ConversionUploadServiceClient.common_folder_path(**expected)
 
@@ -727,6 +749,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ConversionUploadServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -734,7 +757,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = ConversionUploadServiceClient.common_organization_path(**expected)
 
@@ -744,6 +768,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = ConversionUploadServiceClient.common_project_path(project)
     assert expected == actual
@@ -751,7 +776,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = ConversionUploadServiceClient.common_project_path(**expected)
 
@@ -762,6 +788,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ConversionUploadServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -769,8 +796,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = ConversionUploadServiceClient.common_location_path(**expected)
 

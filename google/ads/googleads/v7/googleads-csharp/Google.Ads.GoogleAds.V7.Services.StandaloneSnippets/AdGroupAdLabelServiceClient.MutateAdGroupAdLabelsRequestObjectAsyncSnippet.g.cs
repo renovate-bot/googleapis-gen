@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupAdLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateAdGroupAdLabelsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateAdGroupAdLabelsRequestObjectAsync()
         {
-            // Snippet: MutateAdGroupAdLabelsAsync(MutateAdGroupAdLabelsRequest, CallSettings)
-            // Additional: MutateAdGroupAdLabelsAsync(MutateAdGroupAdLabelsRequest, CancellationToken)
             // Create client
             AdGroupAdLabelServiceClient adGroupAdLabelServiceClient = await AdGroupAdLabelServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateAdGroupAdLabelsResponse response = await adGroupAdLabelServiceClient.MutateAdGroupAdLabelsAsync(request);
-            // End snippet
         }
     }
 }

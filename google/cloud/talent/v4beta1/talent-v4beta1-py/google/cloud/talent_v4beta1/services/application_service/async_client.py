@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -34,6 +36,7 @@ from google.cloud.talent_v4beta1.types import common
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 from google.type import date_pb2 as date  # type: ignore
+
 from .transports.base import ApplicationServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ApplicationServiceGrpcAsyncIOTransport
 from .client import ApplicationServiceClient
@@ -57,14 +60,19 @@ class ApplicationServiceAsyncClient:
     parse_job_path = staticmethod(ApplicationServiceClient.parse_job_path)
     profile_path = staticmethod(ApplicationServiceClient.profile_path)
     parse_profile_path = staticmethod(ApplicationServiceClient.parse_profile_path)
+
     common_billing_account_path = staticmethod(ApplicationServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ApplicationServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(ApplicationServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(ApplicationServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(ApplicationServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(ApplicationServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(ApplicationServiceClient.common_project_path)
     parse_common_project_path = staticmethod(ApplicationServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(ApplicationServiceClient.common_location_path)
     parse_common_location_path = staticmethod(ApplicationServiceClient.parse_common_location_path)
 
@@ -149,6 +157,7 @@ class ApplicationServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = ApplicationServiceClient(
             credentials=credentials,
             transport=transport,
@@ -170,8 +179,7 @@ class ApplicationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.talent_v4beta1.types.CreateApplicationRequest`):
-                The request object.
-                The Request of the CreateApplication
+                The request object. The Request of the CreateApplication
                 method.
             parent (:class:`str`):
                 Required. Resource name of the profile under which the
@@ -191,6 +199,7 @@ class ApplicationServiceAsyncClient:
                 This corresponds to the ``application`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -215,6 +224,7 @@ class ApplicationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if application is not None:
@@ -259,8 +269,7 @@ class ApplicationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.talent_v4beta1.types.GetApplicationRequest`):
-                The request object.
-                Request for getting a application by
+                The request object. Request for getting a application by
                 name.
             name (:class:`str`):
                 Required. The resource name of the application to be
@@ -274,6 +283,7 @@ class ApplicationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -298,6 +308,7 @@ class ApplicationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -306,7 +317,10 @@ class ApplicationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_application,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -347,8 +361,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.talent_v4beta1.types.UpdateApplicationRequest`):
-                The request object.
-                Request for updating a specified
+                The request object. Request for updating a specified
                 application.
             application (:class:`google.cloud.talent_v4beta1.types.Application`):
                 Required. The application resource to
@@ -358,6 +371,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``application`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -382,6 +396,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if application is not None:
             request.application = application
 
@@ -424,8 +439,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.talent_v4beta1.types.DeleteApplicationRequest`):
-                The request object.
-                Request to delete a application.
+                The request object. Request to delete a application.
             name (:class:`str`):
                 Required. The resource name of the application to be
                 deleted.
@@ -438,6 +452,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -456,6 +471,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -464,7 +480,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_application,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -502,8 +521,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.talent_v4beta1.types.ListApplicationsRequest`):
-                The request object.
-                List applications for which the
+                The request object. List applications for which the
                 client has ACL visibility.
             parent (:class:`str`):
                 Required. Resource name of the profile under which the
@@ -516,6 +534,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -543,6 +562,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -551,7 +571,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_applications,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -588,6 +611,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

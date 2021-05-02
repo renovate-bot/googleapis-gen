@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.ServiceDirectory.V1.Snippets
 {
+    using Google.Cloud.ServiceDirectory.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRegistrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteEndpointAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteEndpointAsync()
         {
-            // Snippet: DeleteEndpointAsync(string, CallSettings)
-            // Additional: DeleteEndpointAsync(string, CancellationToken)
             // Create client
             RegistrationServiceClient registrationServiceClient = await RegistrationServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/namespaces/[NAMESPACE]/services/[SERVICE]/endpoints/[ENDPOINT]";
             // Make the request
             await registrationServiceClient.DeleteEndpointAsync(name);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.automl_v1beta1.types import annotation_payload
 from google.cloud.automl_v1beta1.types import data_items
@@ -68,20 +71,13 @@ class PredictRequest(proto.Message):
                TablesAnnotation. The default is false.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    payload = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    payload = proto.Field(proto.MESSAGE, number=2,
         message=data_items.ExamplePayload,
     )
-    params = proto.MapField(
-        proto.STRING,
-        proto.STRING,
-        number=3
-    )
+
+    params = proto.MapField(proto.STRING, proto.STRING, number=3)
 
 
 class PredictResponse(proto.Message):
@@ -120,21 +116,15 @@ class PredictResponse(proto.Message):
                Analysis API.
     """
 
-    payload = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    payload = proto.RepeatedField(proto.MESSAGE, number=1,
         message=annotation_payload.AnnotationPayload,
     )
-    preprocessed_input = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    preprocessed_input = proto.Field(proto.MESSAGE, number=3,
         message=data_items.ExamplePayload,
     )
-    metadata = proto.MapField(
-        proto.STRING,
-        proto.STRING,
-        number=2
-    )
+
+    metadata = proto.MapField(proto.STRING, proto.STRING, number=2)
 
 
 class BatchPredictRequest(proto.Message):
@@ -231,25 +221,17 @@ class BatchPredictRequest(proto.Message):
                returned. Value in 0 to 1 range. Default is 0.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    input_config = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    input_config = proto.Field(proto.MESSAGE, number=3,
         message=io.BatchPredictInputConfig,
     )
-    output_config = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    output_config = proto.Field(proto.MESSAGE, number=4,
         message=io.BatchPredictOutputConfig,
     )
-    params = proto.MapField(
-        proto.STRING,
-        proto.STRING,
-        number=5
-    )
+
+    params = proto.MapField(proto.STRING, proto.STRING, number=5)
 
 
 class BatchPredictResult(proto.Message):
@@ -271,11 +253,7 @@ class BatchPredictResult(proto.Message):
                have been returned.
     """
 
-    metadata = proto.MapField(
-        proto.STRING,
-        proto.STRING,
-        number=1
-    )
+    metadata = proto.MapField(proto.STRING, proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

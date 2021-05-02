@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +25,8 @@ from google.cloud.workflows.executions_v1.types.executions import GetExecutionRe
 from google.cloud.workflows.executions_v1.types.executions import ListExecutionsRequest
 from google.cloud.workflows.executions_v1.types.executions import ListExecutionsResponse
 
-__all__ = ('CancelExecutionRequest',
+__all__ = (
+    'CancelExecutionRequest',
     'CreateExecutionRequest',
     'Execution',
     'ExecutionView',

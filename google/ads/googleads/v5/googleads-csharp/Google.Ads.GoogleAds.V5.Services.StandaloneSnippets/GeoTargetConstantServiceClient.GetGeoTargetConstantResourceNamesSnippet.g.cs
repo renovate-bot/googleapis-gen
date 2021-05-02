@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedGeoTargetConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGeoTargetConstant</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetGeoTargetConstantResourceNames()
         {
-            // Snippet: GetGeoTargetConstant(GeoTargetConstantName, CallSettings)
             // Create client
             GeoTargetConstantServiceClient geoTargetConstantServiceClient = GeoTargetConstantServiceClient.Create();
             // Initialize request argument(s)
             GeoTargetConstantName resourceName = GeoTargetConstantName.FromGeoTargetConstant("[GEO_TARGET_CONSTANT]");
             // Make the request
             GeoTargetConstant response = geoTargetConstantServiceClient.GetGeoTargetConstant(resourceName);
-            // End snippet
         }
     }
 }

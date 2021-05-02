@@ -18,14 +18,18 @@ namespace Google.Cloud.OsConfig.V1.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.OsConfig.V1;
     using System;
 
     public sealed partial class GeneratedOsConfigServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListPatchJobs</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListPatchJobsRequestObject()
         {
-            // Snippet: ListPatchJobs(ListPatchJobsRequest, CallSettings)
             // Create client
             OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.Create();
             // Initialize request argument(s)
@@ -68,7 +72,6 @@ namespace Google.Cloud.OsConfig.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

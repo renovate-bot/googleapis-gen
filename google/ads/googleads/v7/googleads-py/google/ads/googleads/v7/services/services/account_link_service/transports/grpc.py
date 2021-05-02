@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v7.resources.types import account_link
 from google.ads.googleads.v7.services.types import account_link_service
+
 from .base import AccountLinkServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -57,8 +60,7 @@ class AccountLinkServiceGrpcTransport(AccountLinkServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,9 +204,7 @@ class AccountLinkServiceGrpcTransport(AccountLinkServiceTransport):
     def get_account_link(self) -> Callable[
             [account_link_service.GetAccountLinkRequest],
             account_link.AccountLink]:
-        r"""Return a callable for the
-        get account link
-          method over gRPC.
+        r"""Return a callable for the get account link method over gRPC.
 
         Returns the account link in full detail.
 
@@ -234,9 +234,7 @@ class AccountLinkServiceGrpcTransport(AccountLinkServiceTransport):
     def create_account_link(self) -> Callable[
             [account_link_service.CreateAccountLinkRequest],
             account_link_service.CreateAccountLinkResponse]:
-        r"""Return a callable for the
-        create account link
-          method over gRPC.
+        r"""Return a callable for the create account link method over gRPC.
 
         Creates an account link.
 
@@ -268,9 +266,7 @@ class AccountLinkServiceGrpcTransport(AccountLinkServiceTransport):
     def mutate_account_link(self) -> Callable[
             [account_link_service.MutateAccountLinkRequest],
             account_link_service.MutateAccountLinkResponse]:
-        r"""Return a callable for the
-        mutate account link
-          method over gRPC.
+        r"""Return a callable for the mutate account link method over gRPC.
 
         Creates or removes an account link. From V5, create is not
         supported through AccountLinkService.MutateAccountLink. Please

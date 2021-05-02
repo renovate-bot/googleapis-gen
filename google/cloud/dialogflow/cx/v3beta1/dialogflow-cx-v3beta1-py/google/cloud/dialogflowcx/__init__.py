@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -225,7 +226,8 @@ from google.cloud.dialogflowcx_v3beta1.types.webhook import Webhook
 from google.cloud.dialogflowcx_v3beta1.types.webhook import WebhookRequest
 from google.cloud.dialogflowcx_v3beta1.types.webhook import WebhookResponse
 
-__all__ = ('Agent',
+__all__ = (
+    'Agent',
     'AgentValidationResult',
     'AgentsAsyncClient',
     'AgentsClient',

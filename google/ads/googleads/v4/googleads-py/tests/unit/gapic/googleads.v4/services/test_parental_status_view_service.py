@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -262,16 +264,21 @@ def test_get_parental_status_view(transport: str = 'grpc', request_type=parental
         # Designate an appropriate return value for the call.
         call.return_value = parental_status_view.ParentalStatusView(
             resource_name='resource_name_value',
+
         )
+
         response = client.get_parental_status_view(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == parental_status_view_service.GetParentalStatusViewRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, parental_status_view.ParentalStatusView)
+
     assert response.resource_name == 'resource_name_value'
 
 
@@ -287,7 +294,6 @@ def test_get_parental_status_view_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = parental_status_view_service.GetParentalStatusViewRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -295,6 +301,7 @@ def test_get_parental_status_view_field_headers():
             type(client.transport.get_parental_status_view),
             '__call__') as call:
         call.return_value = parental_status_view.ParentalStatusView()
+
         client.get_parental_status_view(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -321,6 +328,7 @@ def test_get_parental_status_view_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = parental_status_view.ParentalStatusView()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_parental_status_view(
@@ -331,6 +339,7 @@ def test_get_parental_status_view_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -411,7 +420,7 @@ def test_parental_status_view_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_parental_status_view',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -563,6 +572,7 @@ def test_parental_status_view_service_transport_channel_mtls_with_adc(
 def test_parental_status_view_path():
     customer = "squid"
     parental_status_view = "clam"
+
     expected = "customers/{customer}/parentalStatusViews/{parental_status_view}".format(customer=customer, parental_status_view=parental_status_view, )
     actual = ParentalStatusViewServiceClient.parental_status_view_path(customer, parental_status_view)
     assert expected == actual
@@ -570,8 +580,9 @@ def test_parental_status_view_path():
 
 def test_parse_parental_status_view_path():
     expected = {
-        "customer": "whelk",
-        "parental_status_view": "octopus",
+    "customer": "whelk",
+    "parental_status_view": "octopus",
+
     }
     path = ParentalStatusViewServiceClient.parental_status_view_path(**expected)
 
@@ -581,6 +592,7 @@ def test_parse_parental_status_view_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ParentalStatusViewServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -588,7 +600,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = ParentalStatusViewServiceClient.common_billing_account_path(**expected)
 
@@ -598,6 +611,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ParentalStatusViewServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -605,7 +619,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = ParentalStatusViewServiceClient.common_folder_path(**expected)
 
@@ -615,6 +630,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ParentalStatusViewServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -622,7 +638,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = ParentalStatusViewServiceClient.common_organization_path(**expected)
 
@@ -632,6 +649,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = ParentalStatusViewServiceClient.common_project_path(project)
     assert expected == actual
@@ -639,7 +657,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = ParentalStatusViewServiceClient.common_project_path(**expected)
 
@@ -650,6 +669,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ParentalStatusViewServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -657,8 +677,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = ParentalStatusViewServiceClient.common_location_path(**expected)
 

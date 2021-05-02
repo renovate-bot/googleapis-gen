@@ -17,15 +17,18 @@
 namespace Google.Cloud.Domains.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Domains.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDomainsClientStandaloneSnippets
     {
         /// <summary>Snippet for SearchDomainsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SearchDomainsRequestObjectAsync()
         {
-            // Snippet: SearchDomainsAsync(SearchDomainsRequest, CallSettings)
-            // Additional: SearchDomainsAsync(SearchDomainsRequest, CancellationToken)
             // Create client
             DomainsClient domainsClient = await DomainsClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Domains.V1Beta1.Snippets
             };
             // Make the request
             SearchDomainsResponse response = await domainsClient.SearchDomainsAsync(request);
-            // End snippet
         }
     }
 }

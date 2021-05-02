@@ -16,16 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomerManagerLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCustomerManagerLinkAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateCustomerManagerLinkAsync()
         {
-            // Snippet: MutateCustomerManagerLinkAsync(string, IEnumerable<CustomerManagerLinkOperation>, CallSettings)
-            // Additional: MutateCustomerManagerLinkAsync(string, IEnumerable<CustomerManagerLinkOperation>, CancellationToken)
             // Create client
             CustomerManagerLinkServiceClient customerManagerLinkServiceClient = await CustomerManagerLinkServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateCustomerManagerLinkResponse response = await customerManagerLinkServiceClient.MutateCustomerManagerLinkAsync(customerId, operations);
-            // End snippet
         }
     }
 }

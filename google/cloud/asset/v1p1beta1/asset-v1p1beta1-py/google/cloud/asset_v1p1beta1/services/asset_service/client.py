@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -33,6 +35,7 @@ from google.oauth2 import service_account                         # type: ignore
 from google.cloud.asset_v1p1beta1.services.asset_service import pagers
 from google.cloud.asset_v1p1beta1.types import asset_service
 from google.cloud.asset_v1p1beta1.types import assets
+
 from .transports.base import AssetServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AssetServiceGrpcTransport
 from .transports.grpc_asyncio import AssetServiceGrpcAsyncIOTransport
@@ -331,8 +334,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p1beta1.types.SearchAllResourcesRequest):
-                The request object.
-                Search all resources request.
+                The request object. Search all resources request.
             scope (str):
                 Required. The relative name of an asset. The search is
                 limited to the resources within the ``scope``. The
@@ -360,6 +362,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 This corresponds to the ``asset_types`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -388,8 +391,10 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.SearchAllResourcesRequest):
             request = asset_service.SearchAllResourcesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if scope is not None:
                 request.scope = scope
             if query is not None:
@@ -449,8 +454,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         Args:
             request (google.cloud.asset_v1p1beta1.types.SearchAllIamPoliciesRequest):
-                The request object.
-                Search all IAM policies request.
+                The request object. Search all IAM policies request.
             scope (str):
                 Required. The relative name of an asset. The search is
                 limited to the resources within the ``scope``. The
@@ -473,6 +477,7 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
                 This corresponds to the ``query`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -501,8 +506,10 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, asset_service.SearchAllIamPoliciesRequest):
             request = asset_service.SearchAllIamPoliciesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if scope is not None:
                 request.scope = scope
             if query is not None:
@@ -539,6 +546,8 @@ class AssetServiceClient(metaclass=AssetServiceClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

@@ -16,22 +16,24 @@
 
 namespace Google.Iam.Admin.V1.Snippets
 {
+    using Google.Iam.Admin.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIAMClientStandaloneSnippets
     {
         /// <summary>Snippet for EnableServiceAccountAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task EnableServiceAccountRequestObjectAsync()
         {
-            // Snippet: EnableServiceAccountAsync(EnableServiceAccountRequest, CallSettings)
-            // Additional: EnableServiceAccountAsync(EnableServiceAccountRequest, CancellationToken)
             // Create client
             IAMClient iAMClient = await IAMClient.CreateAsync();
             // Initialize request argument(s)
             EnableServiceAccountRequest request = new EnableServiceAccountRequest { Name = "", };
             // Make the request
             await iAMClient.EnableServiceAccountAsync(request);
-            // End snippet
         }
     }
 }

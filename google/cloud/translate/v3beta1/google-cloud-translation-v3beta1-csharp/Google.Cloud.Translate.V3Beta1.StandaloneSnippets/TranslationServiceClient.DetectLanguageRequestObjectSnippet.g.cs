@@ -17,13 +17,17 @@
 namespace Google.Cloud.Translate.V3Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Translate.V3Beta1;
 
     public sealed partial class GeneratedTranslationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DetectLanguage</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DetectLanguageRequestObject()
         {
-            // Snippet: DetectLanguage(DetectLanguageRequest, CallSettings)
             // Create client
             TranslationServiceClient translationServiceClient = TranslationServiceClient.Create();
             // Initialize request argument(s)
@@ -37,7 +41,6 @@ namespace Google.Cloud.Translate.V3Beta1.Snippets
             };
             // Make the request
             DetectLanguageResponse response = translationServiceClient.DetectLanguage(request);
-            // End snippet
         }
     }
 }

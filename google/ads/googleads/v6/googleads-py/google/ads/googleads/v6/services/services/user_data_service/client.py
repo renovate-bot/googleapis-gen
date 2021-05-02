@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -31,6 +33,7 @@ from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
 from google.ads.googleads.v6.services.types import user_data_service
+
 from .transports.base import UserDataServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import UserDataServiceGrpcTransport
 
@@ -322,9 +325,9 @@ class UserDataServiceClient(metaclass=UserDataServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v6.services.types.UploadUserDataRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UserDataService.UploadUserData][google.ads.googleads.v6.services.UserDataService.UploadUserData]
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -338,7 +341,8 @@ class UserDataServiceClient(metaclass=UserDataServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-           # Minor optimization to avoid making a copy if the user passes
+
+        # Minor optimization to avoid making a copy if the user passes
         # in a user_data_service.UploadUserDataRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
@@ -360,7 +364,7 @@ class UserDataServiceClient(metaclass=UserDataServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

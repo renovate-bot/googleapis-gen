@@ -17,16 +17,19 @@
 namespace Google.Partner.Aistreams.V1Alpha1.Snippets
 {
     using Google.LongRunning;
+    using Google.Partner.Aistreams.V1Alpha1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAIStreamsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateClusterAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateClusterAsync()
         {
-            // Snippet: UpdateClusterAsync(Cluster, FieldMask, CallSettings)
-            // Additional: UpdateClusterAsync(Cluster, FieldMask, CancellationToken)
             // Create client
             AIStreamsClient aIStreamsClient = await AIStreamsClient.CreateAsync();
             // Initialize request argument(s)
@@ -50,7 +53,6 @@ namespace Google.Partner.Aistreams.V1Alpha1.Snippets
                 // If it has completed, then access the result
                 Cluster retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

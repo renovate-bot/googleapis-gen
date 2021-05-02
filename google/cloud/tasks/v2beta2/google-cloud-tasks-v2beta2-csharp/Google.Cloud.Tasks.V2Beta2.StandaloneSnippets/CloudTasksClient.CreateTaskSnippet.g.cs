@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Tasks.V2Beta2.Snippets
 {
+    using Google.Cloud.Tasks.V2Beta2;
+
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateTask</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateTask()
         {
-            // Snippet: CreateTask(string, Task, CallSettings)
             // Create client
             CloudTasksClient cloudTasksClient = CloudTasksClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Tasks.V2Beta2.Snippets
             Task task = new Task();
             // Make the request
             Task response = cloudTasksClient.CreateTask(parent, task);
-            // End snippet
         }
     }
 }

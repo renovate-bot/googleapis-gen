@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Retail.V2Alpha.Snippets
 {
+    using Google.Cloud.Retail.V2Alpha;
+
     public sealed partial class GeneratedProductServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateProduct</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateProductResourceNames()
         {
-            // Snippet: CreateProduct(BranchName, Product, string, CallSettings)
             // Create client
             ProductServiceClient productServiceClient = ProductServiceClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.Retail.V2Alpha.Snippets
             string productId = "";
             // Make the request
             Product response = productServiceClient.CreateProduct(parent, product, productId);
-            // End snippet
         }
     }
 }

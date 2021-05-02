@@ -17,13 +17,17 @@
 namespace Google.Cloud.OsLogin.V1Beta.Snippets
 {
     using Google.Cloud.OsLogin.Common;
+    using Google.Cloud.OsLogin.V1Beta;
 
     public sealed partial class GeneratedOsLoginServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeletePosixAccount</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeletePosixAccountRequestObject()
         {
-            // Snippet: DeletePosixAccount(DeletePosixAccountRequest, CallSettings)
             // Create client
             OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Cloud.OsLogin.V1Beta.Snippets
             };
             // Make the request
             osLoginServiceClient.DeletePosixAccount(request);
-            // End snippet
         }
     }
 }

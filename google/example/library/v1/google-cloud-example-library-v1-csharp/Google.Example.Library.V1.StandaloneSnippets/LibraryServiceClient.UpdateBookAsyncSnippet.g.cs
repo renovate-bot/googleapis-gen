@@ -16,16 +16,19 @@
 
 namespace Google.Example.Library.V1.Snippets
 {
+    using Google.Example.Library.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLibraryServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateBookAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateBookAsync()
         {
-            // Snippet: UpdateBookAsync(Book, FieldMask, CallSettings)
-            // Additional: UpdateBookAsync(Book, FieldMask, CancellationToken)
             // Create client
             LibraryServiceClient libraryServiceClient = await LibraryServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Example.Library.V1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Book response = await libraryServiceClient.UpdateBookAsync(book, updateMask);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,7 +26,8 @@ from google.iam.credentials_v1.types.common import SignBlobResponse
 from google.iam.credentials_v1.types.common import SignJwtRequest
 from google.iam.credentials_v1.types.common import SignJwtResponse
 
-__all__ = ('GenerateAccessTokenRequest',
+__all__ = (
+    'GenerateAccessTokenRequest',
     'GenerateAccessTokenResponse',
     'GenerateIdTokenRequest',
     'GenerateIdTokenResponse',

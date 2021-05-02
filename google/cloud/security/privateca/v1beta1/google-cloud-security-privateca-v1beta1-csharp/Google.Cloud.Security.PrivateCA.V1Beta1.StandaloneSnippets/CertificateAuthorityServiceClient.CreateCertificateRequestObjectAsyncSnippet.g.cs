@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Security.PrivateCA.V1Beta1.Snippets
 {
+    using Google.Cloud.Security.PrivateCA.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCertificateAuthorityServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateCertificateAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateCertificateRequestObjectAsync()
         {
-            // Snippet: CreateCertificateAsync(CreateCertificateRequest, CallSettings)
-            // Additional: CreateCertificateAsync(CreateCertificateRequest, CancellationToken)
             // Create client
             CertificateAuthorityServiceClient certificateAuthorityServiceClient = await CertificateAuthorityServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Security.PrivateCA.V1Beta1.Snippets
             };
             // Make the request
             Certificate response = await certificateAuthorityServiceClient.CreateCertificateAsync(request);
-            // End snippet
         }
     }
 }

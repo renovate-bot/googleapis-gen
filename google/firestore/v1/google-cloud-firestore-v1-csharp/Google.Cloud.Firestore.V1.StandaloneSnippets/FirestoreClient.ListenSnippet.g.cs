@@ -17,14 +17,18 @@
 namespace Google.Cloud.Firestore.V1.Snippets
 {
     using Google.Api.Gax.Grpc;
+    using Google.Cloud.Firestore.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFirestoreClientStandaloneSnippets
     {
         /// <summary>Snippet for Listen</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task Listen()
         {
-            // Snippet: Listen(CallSettings, BidirectionalStreamingSettings)
             // Create client
             FirestoreClient firestoreClient = FirestoreClient.Create();
             // Initialize streaming call, retrieving the stream object
@@ -55,7 +59,6 @@ namespace Google.Cloud.Firestore.V1.Snippets
                 {
                     Database = "",
                     AddTarget = new Target(),
-                    RemoveTarget = 0,
                     Labels = { { "", "" }, },
                 };
                 // Stream a request to the server
@@ -68,7 +71,6 @@ namespace Google.Cloud.Firestore.V1.Snippets
             // Await the response handler
             // This will complete once all server responses have been processed
             await responseHandlerTask;
-            // End snippet
         }
     }
 }

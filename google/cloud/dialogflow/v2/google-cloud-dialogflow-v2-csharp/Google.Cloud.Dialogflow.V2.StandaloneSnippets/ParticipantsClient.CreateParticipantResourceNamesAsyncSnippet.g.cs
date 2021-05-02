@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateParticipantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateParticipantResourceNamesAsync()
         {
-            // Snippet: CreateParticipantAsync(ConversationName, Participant, CallSettings)
-            // Additional: CreateParticipantAsync(ConversationName, Participant, CancellationToken)
             // Create client
             ParticipantsClient participantsClient = await ParticipantsClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             Participant participant = new Participant();
             // Make the request
             Participant response = await participantsClient.CreateParticipantAsync(parent, participant);
-            // End snippet
         }
     }
 }

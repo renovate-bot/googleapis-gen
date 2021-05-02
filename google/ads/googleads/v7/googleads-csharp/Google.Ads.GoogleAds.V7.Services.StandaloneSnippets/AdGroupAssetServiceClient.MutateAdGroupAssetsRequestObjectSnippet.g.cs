@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
+
     public sealed partial class GeneratedAdGroupAssetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateAdGroupAssets</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateAdGroupAssetsRequestObject()
         {
-            // Snippet: MutateAdGroupAssets(MutateAdGroupAssetsRequest, CallSettings)
             // Create client
             AdGroupAssetServiceClient adGroupAssetServiceClient = AdGroupAssetServiceClient.Create();
             // Initialize request argument(s)
@@ -37,7 +42,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateAdGroupAssetsResponse response = adGroupAssetServiceClient.MutateAdGroupAssets(request);
-            // End snippet
         }
     }
 }

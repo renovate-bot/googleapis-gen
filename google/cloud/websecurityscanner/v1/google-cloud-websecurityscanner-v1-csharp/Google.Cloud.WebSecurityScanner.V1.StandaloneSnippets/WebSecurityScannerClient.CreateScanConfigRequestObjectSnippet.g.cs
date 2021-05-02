@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.WebSecurityScanner.V1.Snippets
 {
+    using Google.Cloud.WebSecurityScanner.V1;
+
     public sealed partial class GeneratedWebSecurityScannerClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateScanConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateScanConfigRequestObject()
         {
-            // Snippet: CreateScanConfig(CreateScanConfigRequest, CallSettings)
             // Create client
             WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.WebSecurityScanner.V1.Snippets
             };
             // Make the request
             ScanConfig response = webSecurityScannerClient.CreateScanConfig(request);
-            // End snippet
         }
     }
 }

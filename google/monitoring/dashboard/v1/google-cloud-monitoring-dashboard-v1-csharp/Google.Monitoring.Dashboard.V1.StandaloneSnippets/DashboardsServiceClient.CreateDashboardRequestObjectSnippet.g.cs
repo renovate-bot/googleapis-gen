@@ -16,12 +16,17 @@
 
 namespace Google.Monitoring.Dashboard.V1.Snippets
 {
+    using Google.Monitoring.Dashboard.V1;
+
     public sealed partial class GeneratedDashboardsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateDashboard</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateDashboardRequestObject()
         {
-            // Snippet: CreateDashboard(CreateDashboardRequest, CallSettings)
             // Create client
             DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Monitoring.Dashboard.V1.Snippets
             };
             // Make the request
             Dashboard response = dashboardsServiceClient.CreateDashboard(request);
-            // End snippet
         }
     }
 }

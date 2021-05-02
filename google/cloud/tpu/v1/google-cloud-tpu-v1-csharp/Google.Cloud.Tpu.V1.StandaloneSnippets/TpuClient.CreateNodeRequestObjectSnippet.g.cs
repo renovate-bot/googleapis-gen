@@ -17,14 +17,18 @@
 namespace Google.Cloud.Tpu.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Tpu.V1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedTpuClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateNode</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateNodeRequestObject()
         {
-            // Snippet: CreateNode(CreateNodeRequest, CallSettings)
             // Create client
             TpuClient tpuClient = TpuClient.Create();
             // Initialize request argument(s)
@@ -52,7 +56,6 @@ namespace Google.Cloud.Tpu.V1.Snippets
                 // If it has completed, then access the result
                 Node retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

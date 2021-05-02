@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedVersionsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteVersion</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteVersionResourceNames()
         {
-            // Snippet: DeleteVersion(VersionName, CallSettings)
             // Create client
             VersionsClient versionsClient = VersionsClient.Create();
             // Initialize request argument(s)
             VersionName name = VersionName.FromProjectLocationAgentFlowVersion("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]");
             // Make the request
             versionsClient.DeleteVersion(name);
-            // End snippet
         }
     }
 }

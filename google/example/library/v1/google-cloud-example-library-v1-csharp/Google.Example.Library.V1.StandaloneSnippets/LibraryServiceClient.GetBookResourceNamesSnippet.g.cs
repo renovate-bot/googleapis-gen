@@ -16,19 +16,23 @@
 
 namespace Google.Example.Library.V1.Snippets
 {
+    using Google.Example.Library.V1;
+
     public sealed partial class GeneratedLibraryServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBook</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetBookResourceNames()
         {
-            // Snippet: GetBook(BookName, CallSettings)
             // Create client
             LibraryServiceClient libraryServiceClient = LibraryServiceClient.Create();
             // Initialize request argument(s)
             BookName name = BookName.FromShelfBook("[SHELF]", "[BOOK]");
             // Make the request
             Book response = libraryServiceClient.GetBook(name);
-            // End snippet
         }
     }
 }

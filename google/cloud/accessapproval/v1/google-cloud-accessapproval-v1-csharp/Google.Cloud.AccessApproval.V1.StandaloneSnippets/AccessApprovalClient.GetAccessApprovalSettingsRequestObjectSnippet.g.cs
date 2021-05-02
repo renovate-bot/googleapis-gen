@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.AccessApproval.V1.Snippets
 {
+    using Google.Cloud.AccessApproval.V1;
+
     public sealed partial class GeneratedAccessApprovalClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAccessApprovalSettings</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAccessApprovalSettingsRequestObject()
         {
-            // Snippet: GetAccessApprovalSettings(GetAccessApprovalSettingsMessage, CallSettings)
             // Create client
             AccessApprovalClient accessApprovalClient = AccessApprovalClient.Create();
             // Initialize request argument(s)
             GetAccessApprovalSettingsMessage request = new GetAccessApprovalSettingsMessage { Name = "", };
             // Make the request
             AccessApprovalSettings response = accessApprovalClient.GetAccessApprovalSettings(request);
-            // End snippet
         }
     }
 }

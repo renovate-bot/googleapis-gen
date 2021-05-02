@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
+    using Google.Cloud.Dataproc.V1;
+
     public sealed partial class GeneratedJobControllerClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteJob</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteJobRequestObject()
         {
-            // Snippet: DeleteJob(DeleteJobRequest, CallSettings)
             // Create client
             JobControllerClient jobControllerClient = JobControllerClient.Create();
             // Initialize request argument(s)
@@ -33,7 +38,6 @@ namespace Google.Cloud.Dataproc.V1.Snippets
             };
             // Make the request
             jobControllerClient.DeleteJob(request);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignDraftServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCampaignDraftsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateCampaignDraftsRequestObjectAsync()
         {
-            // Snippet: MutateCampaignDraftsAsync(MutateCampaignDraftsRequest, CallSettings)
-            // Additional: MutateCampaignDraftsAsync(MutateCampaignDraftsRequest, CancellationToken)
             // Create client
             CampaignDraftServiceClient campaignDraftServiceClient = await CampaignDraftServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             MutateCampaignDraftsResponse response = await campaignDraftServiceClient.MutateCampaignDraftsAsync(request);
-            // End snippet
         }
     }
 }

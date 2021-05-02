@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
+
     public sealed partial class GeneratedGoogleAdsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for Mutate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateRequestObject()
         {
-            // Snippet: Mutate(MutateGoogleAdsRequest, CallSettings)
             // Create client
             GoogleAdsServiceClient googleAdsServiceClient = GoogleAdsServiceClient.Create();
             // Initialize request argument(s)
@@ -37,7 +42,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             MutateGoogleAdsResponse response = googleAdsServiceClient.Mutate(request);
-            // End snippet
         }
     }
 }

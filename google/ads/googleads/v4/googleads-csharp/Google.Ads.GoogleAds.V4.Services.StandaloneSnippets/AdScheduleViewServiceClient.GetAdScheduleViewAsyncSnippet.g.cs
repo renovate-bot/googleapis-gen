@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdScheduleViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdScheduleViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdScheduleViewAsync()
         {
-            // Snippet: GetAdScheduleViewAsync(string, CallSettings)
-            // Additional: GetAdScheduleViewAsync(string, CancellationToken)
             // Create client
             AdScheduleViewServiceClient adScheduleViewServiceClient = await AdScheduleViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/adScheduleViews/[AD_SCHEDULE_VIEW]";
             // Make the request
             AdScheduleView response = await adScheduleViewServiceClient.GetAdScheduleViewAsync(resourceName);
-            // End snippet
         }
     }
 }

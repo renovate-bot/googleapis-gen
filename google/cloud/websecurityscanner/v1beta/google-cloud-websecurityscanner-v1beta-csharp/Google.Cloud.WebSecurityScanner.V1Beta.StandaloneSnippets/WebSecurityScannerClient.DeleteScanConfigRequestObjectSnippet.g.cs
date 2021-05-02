@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
 {
+    using Google.Cloud.WebSecurityScanner.V1Beta;
+
     public sealed partial class GeneratedWebSecurityScannerClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteScanConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteScanConfigRequestObject()
         {
-            // Snippet: DeleteScanConfig(DeleteScanConfigRequest, CallSettings)
             // Create client
             WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             };
             // Make the request
             webSecurityScannerClient.DeleteScanConfig(request);
-            // End snippet
         }
     }
 }

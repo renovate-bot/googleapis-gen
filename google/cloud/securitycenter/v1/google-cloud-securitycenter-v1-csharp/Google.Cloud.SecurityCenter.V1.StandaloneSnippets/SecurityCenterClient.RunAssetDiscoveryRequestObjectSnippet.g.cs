@@ -17,15 +17,19 @@
 namespace Google.Cloud.SecurityCenter.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.SecurityCenter.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for RunAssetDiscovery</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void RunAssetDiscoveryRequestObject()
         {
-            // Snippet: RunAssetDiscovery(RunAssetDiscoveryRequest, CallSettings)
             // Create client
             SecurityCenterClient securityCenterClient = SecurityCenterClient.Create();
             // Initialize request argument(s)
@@ -51,7 +55,6 @@ namespace Google.Cloud.SecurityCenter.V1.Snippets
                 // If it has completed, then access the result
                 RunAssetDiscoveryResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

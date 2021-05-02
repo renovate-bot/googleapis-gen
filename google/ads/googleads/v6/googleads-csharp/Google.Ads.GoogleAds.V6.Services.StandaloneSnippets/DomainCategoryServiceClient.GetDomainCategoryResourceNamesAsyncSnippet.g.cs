@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDomainCategoryServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDomainCategoryAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetDomainCategoryResourceNamesAsync()
         {
-            // Snippet: GetDomainCategoryAsync(DomainCategoryName, CallSettings)
-            // Additional: GetDomainCategoryAsync(DomainCategoryName, CancellationToken)
             // Create client
             DomainCategoryServiceClient domainCategoryServiceClient = await DomainCategoryServiceClient.CreateAsync();
             // Initialize request argument(s)
             DomainCategoryName resourceName = DomainCategoryName.FromCustomerCampaignBase64CategoryLanguageCode("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[BASE64_CATEGORY]", "[LANGUAGE_CODE]");
             // Make the request
             DomainCategory response = await domainCategoryServiceClient.GetDomainCategoryAsync(resourceName);
-            // End snippet
         }
     }
 }

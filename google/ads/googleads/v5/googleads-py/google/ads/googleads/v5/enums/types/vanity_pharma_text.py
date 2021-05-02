@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -29,7 +31,7 @@ class VanityPharmaTextEnum(proto.Message):
     r"""The text that will be displayed in display URL of the text ad
     when website description is the selected display mode for vanity
     pharma URLs.
-        """
+    """
     class VanityPharmaText(proto.Enum):
         r"""Enum describing possible text."""
         UNSPECIFIED = 0

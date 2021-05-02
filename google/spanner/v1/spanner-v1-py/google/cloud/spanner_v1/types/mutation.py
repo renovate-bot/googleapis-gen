@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.spanner_v1.types import keys
 from google.protobuf import struct_pb2 as struct  # type: ignore
@@ -70,7 +73,6 @@ class Mutation(proto.Message):
             Delete rows from a table. Succeeds whether or
             not the named rows were present.
     """
-
     class Write(proto.Message):
         r"""Arguments to [insert][google.spanner.v1.Mutation.insert],
         [update][google.spanner.v1.Mutation.update],
@@ -104,22 +106,17 @@ class Mutation(proto.Message):
                 [here][google.spanner.v1.TypeCode].
         """
 
-        table = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        columns = proto.RepeatedField(
-            proto.STRING,
-            number=2,
-        )
-        values = proto.RepeatedField(
-            proto.MESSAGE,
-            number=3,
+        table = proto.Field(proto.STRING, number=1)
+
+        columns = proto.RepeatedField(proto.STRING, number=2)
+
+        values = proto.RepeatedField(proto.MESSAGE, number=3,
             message=struct.ListValue,
         )
 
     class Delete(proto.Message):
         r"""Arguments to [delete][google.spanner.v1.Mutation.delete] operations.
+
         Attributes:
             table (str):
                 Required. The table whose rows will be
@@ -134,44 +131,29 @@ class Mutation(proto.Message):
                 succeed even if some or all rows do not exist.
         """
 
-        table = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        key_set = proto.Field(
-            proto.MESSAGE,
-            number=2,
+        table = proto.Field(proto.STRING, number=1)
+
+        key_set = proto.Field(proto.MESSAGE, number=2,
             message=keys.KeySet,
         )
 
-    insert = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='operation',
+    insert = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=Write,
     )
-    update = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='operation',
+
+    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
         message=Write,
     )
-    insert_or_update = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='operation',
+
+    insert_or_update = proto.Field(proto.MESSAGE, number=3, oneof='operation',
         message=Write,
     )
-    replace = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='operation',
+
+    replace = proto.Field(proto.MESSAGE, number=4, oneof='operation',
         message=Write,
     )
-    delete = proto.Field(
-        proto.MESSAGE,
-        number=5,
-        oneof='operation',
+
+    delete = proto.Field(proto.MESSAGE, number=5, oneof='operation',
         message=Delete,
     )
 

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Container.V1Beta1.Snippets
 {
+    using Google.Cloud.Container.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteNodePoolAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteNodePoolRequestObjectAsync()
         {
-            // Snippet: DeleteNodePoolAsync(DeleteNodePoolRequest, CallSettings)
-            // Additional: DeleteNodePoolAsync(DeleteNodePoolRequest, CancellationToken)
             // Create client
             ClusterManagerClient clusterManagerClient = await ClusterManagerClient.CreateAsync();
             // Initialize request argument(s)
             DeleteNodePoolRequest request = new DeleteNodePoolRequest { Name = "", };
             // Make the request
             Operation response = await clusterManagerClient.DeleteNodePoolAsync(request);
-            // End snippet
         }
     }
 }

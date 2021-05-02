@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedAdGroupAudienceViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupAudienceView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAdGroupAudienceViewResourceNames()
         {
-            // Snippet: GetAdGroupAudienceView(AdGroupAudienceViewName, CallSettings)
             // Create client
             AdGroupAudienceViewServiceClient adGroupAudienceViewServiceClient = AdGroupAudienceViewServiceClient.Create();
             // Initialize request argument(s)
             AdGroupAudienceViewName resourceName = AdGroupAudienceViewName.FromCustomerAdGroupAudienceView("[CUSTOMER]", "[AD_GROUP_AUDIENCE_VIEW]");
             // Make the request
             AdGroupAudienceView response = adGroupAudienceViewServiceClient.GetAdGroupAudienceView(resourceName);
-            // End snippet
         }
     }
 }

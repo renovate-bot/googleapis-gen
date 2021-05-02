@@ -17,15 +17,18 @@
 namespace Google.Cloud.ErrorReporting.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.ErrorReporting.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedReportErrorsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ReportErrorEventAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ReportErrorEventResourceNamesAsync()
         {
-            // Snippet: ReportErrorEventAsync(ProjectName, ReportedErrorEvent, CallSettings)
-            // Additional: ReportErrorEventAsync(ProjectName, ReportedErrorEvent, CancellationToken)
             // Create client
             ReportErrorsServiceClient reportErrorsServiceClient = await ReportErrorsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.ErrorReporting.V1Beta1.Snippets
             ReportedErrorEvent @event = new ReportedErrorEvent();
             // Make the request
             ReportErrorEventResponse response = await reportErrorsServiceClient.ReportErrorEventAsync(projectName, @event);
-            // End snippet
         }
     }
 }

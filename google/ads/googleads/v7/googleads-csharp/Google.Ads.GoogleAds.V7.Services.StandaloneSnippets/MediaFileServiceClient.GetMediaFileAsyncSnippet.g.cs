@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMediaFileServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMediaFileAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetMediaFileAsync()
         {
-            // Snippet: GetMediaFileAsync(string, CallSettings)
-            // Additional: GetMediaFileAsync(string, CancellationToken)
             // Create client
             MediaFileServiceClient mediaFileServiceClient = await MediaFileServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/mediaFiles/[MEDIA_FILE_ID]";
             // Make the request
             MediaFile response = await mediaFileServiceClient.GetMediaFileAsync(resourceName);
-            // End snippet
         }
     }
 }

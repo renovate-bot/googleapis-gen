@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -28,6 +30,7 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.billing_v1.services.cloud_catalog import pagers
 from google.cloud.billing_v1.types import cloud_catalog
+
 from .transports.base import CloudCatalogTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import CloudCatalogGrpcAsyncIOTransport
 from .client import CloudCatalogClient
@@ -48,14 +51,19 @@ class CloudCatalogAsyncClient:
     parse_service_path = staticmethod(CloudCatalogClient.parse_service_path)
     sku_path = staticmethod(CloudCatalogClient.sku_path)
     parse_sku_path = staticmethod(CloudCatalogClient.parse_sku_path)
+
     common_billing_account_path = staticmethod(CloudCatalogClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(CloudCatalogClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(CloudCatalogClient.common_folder_path)
     parse_common_folder_path = staticmethod(CloudCatalogClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(CloudCatalogClient.common_organization_path)
     parse_common_organization_path = staticmethod(CloudCatalogClient.parse_common_organization_path)
+
     common_project_path = staticmethod(CloudCatalogClient.common_project_path)
     parse_common_project_path = staticmethod(CloudCatalogClient.parse_common_project_path)
+
     common_location_path = staticmethod(CloudCatalogClient.common_location_path)
     parse_common_location_path = staticmethod(CloudCatalogClient.parse_common_location_path)
 
@@ -140,6 +148,7 @@ class CloudCatalogAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = CloudCatalogClient(
             credentials=credentials,
             transport=transport,
@@ -159,8 +168,8 @@ class CloudCatalogAsyncClient:
 
         Args:
             request (:class:`google.cloud.billing_v1.types.ListServicesRequest`):
-                The request object.
-                Request message for `ListServices`.
+                The request object. Request message for `ListServices`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -176,6 +185,7 @@ class CloudCatalogAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = cloud_catalog.ListServicesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -219,8 +229,7 @@ class CloudCatalogAsyncClient:
 
         Args:
             request (:class:`google.cloud.billing_v1.types.ListSkusRequest`):
-                The request object.
-                Request message for `ListSkus`.
+                The request object. Request message for `ListSkus`.
             parent (:class:`str`):
                 Required. The name of the service.
                 Example: "services/DA34-426B-A397"
@@ -228,6 +237,7 @@ class CloudCatalogAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -254,6 +264,7 @@ class CloudCatalogAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -292,6 +303,8 @@ class CloudCatalogAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

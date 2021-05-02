@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Iam.Credentials.V1.Snippets
 {
+    using Google.Cloud.Iam.Credentials.V1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIAMCredentialsClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateIdTokenAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GenerateIdTokenResourceNamesAsync()
         {
-            // Snippet: GenerateIdTokenAsync(ServiceAccountName, IEnumerable<string>, string, bool, CallSettings)
-            // Additional: GenerateIdTokenAsync(ServiceAccountName, IEnumerable<string>, string, bool, CancellationToken)
             // Create client
             IAMCredentialsClient iAMCredentialsClient = await IAMCredentialsClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Iam.Credentials.V1.Snippets
             bool includeEmail = false;
             // Make the request
             GenerateIdTokenResponse response = await iAMCredentialsClient.GenerateIdTokenAsync(name, delegates, audience, includeEmail);
-            // End snippet
         }
     }
 }

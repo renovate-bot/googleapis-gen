@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import custom_audience
 from google.ads.googleads.v6.services.types import custom_audience_service
+
 from .base import CustomAudienceServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class CustomAudienceServiceGrpcTransport(CustomAudienceServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class CustomAudienceServiceGrpcTransport(CustomAudienceServiceTransport):
     def get_custom_audience(self) -> Callable[
             [custom_audience_service.GetCustomAudienceRequest],
             custom_audience.CustomAudience]:
-        r"""Return a callable for the
-        get custom audience
-          method over gRPC.
+        r"""Return a callable for the get custom audience method over gRPC.
 
         Returns the requested custom audience in full detail.
 
@@ -229,9 +229,7 @@ class CustomAudienceServiceGrpcTransport(CustomAudienceServiceTransport):
     def mutate_custom_audiences(self) -> Callable[
             [custom_audience_service.MutateCustomAudiencesRequest],
             custom_audience_service.MutateCustomAudiencesResponse]:
-        r"""Return a callable for the
-        mutate custom audiences
-          method over gRPC.
+        r"""Return a callable for the mutate custom audiences method over gRPC.
 
         Creates or updates custom audiences. Operation
         statuses are returned.

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -44,7 +45,8 @@ from google.cloud.notebooks_v1beta1.types.service import StopInstanceRequest
 from google.cloud.notebooks_v1beta1.types.service import UpgradeInstanceInternalRequest
 from google.cloud.notebooks_v1beta1.types.service import UpgradeInstanceRequest
 
-__all__ = ('ContainerImage',
+__all__ = (
+    'ContainerImage',
     'CreateEnvironmentRequest',
     'CreateInstanceRequest',
     'DeleteEnvironmentRequest',

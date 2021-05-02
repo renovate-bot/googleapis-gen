@@ -23,9 +23,12 @@ namespace Google.Cloud.AppEngine.V1.Snippets
     public sealed partial class GeneratedVersionsClientStandaloneSnippets
     {
         /// <summary>Snippet for ListVersions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListVersionsRequestObject()
         {
-            // Snippet: ListVersions(ListVersionsRequest, CallSettings)
             // Create client
             VersionsClient versionsClient = VersionsClient.Create();
             // Initialize request argument(s)
@@ -68,7 +71,6 @@ namespace Google.Cloud.AppEngine.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

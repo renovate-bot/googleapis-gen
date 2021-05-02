@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMobileDeviceConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMobileDeviceConstantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetMobileDeviceConstantRequestObjectAsync()
         {
-            // Snippet: GetMobileDeviceConstantAsync(GetMobileDeviceConstantRequest, CallSettings)
-            // Additional: GetMobileDeviceConstantAsync(GetMobileDeviceConstantRequest, CancellationToken)
             // Create client
             MobileDeviceConstantServiceClient mobileDeviceConstantServiceClient = await MobileDeviceConstantServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             MobileDeviceConstant response = await mobileDeviceConstantServiceClient.GetMobileDeviceConstantAsync(request);
-            // End snippet
         }
     }
 }

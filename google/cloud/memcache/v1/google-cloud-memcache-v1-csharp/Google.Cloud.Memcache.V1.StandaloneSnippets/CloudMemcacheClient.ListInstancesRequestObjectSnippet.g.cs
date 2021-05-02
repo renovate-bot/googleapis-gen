@@ -18,14 +18,18 @@ namespace Google.Cloud.Memcache.V1.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Memcache.V1;
     using System;
 
     public sealed partial class GeneratedCloudMemcacheClientStandaloneSnippets
     {
         /// <summary>Snippet for ListInstances</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListInstancesRequestObject()
         {
-            // Snippet: ListInstances(ListInstancesRequest, CallSettings)
             // Create client
             CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.Create();
             // Initialize request argument(s)
@@ -69,7 +73,6 @@ namespace Google.Cloud.Memcache.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

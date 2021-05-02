@@ -18,15 +18,18 @@ namespace Google.Cloud.ServiceDirectory.V1Beta1.Snippets
 {
     using Google.Api.Gax;
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.ServiceDirectory.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRegistrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIamPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetIamPolicyRequestObjectAsync()
         {
-            // Snippet: GetIamPolicyAsync(GetIamPolicyRequest, CallSettings)
-            // Additional: GetIamPolicyAsync(GetIamPolicyRequest, CancellationToken)
             // Create client
             RegistrationServiceClient registrationServiceClient = await RegistrationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.ServiceDirectory.V1Beta1.Snippets
             };
             // Make the request
             Policy response = await registrationServiceClient.GetIamPolicyAsync(request);
-            // End snippet
         }
     }
 }

@@ -17,13 +17,17 @@
 namespace Google.Cloud.Vision.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Vision.V1;
 
     public sealed partial class GeneratedProductSearchClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateProduct</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateProductResourceNames()
         {
-            // Snippet: CreateProduct(LocationName, Product, string, CallSettings)
             // Create client
             ProductSearchClient productSearchClient = ProductSearchClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.Vision.V1.Snippets
             string productId = "";
             // Make the request
             Product response = productSearchClient.CreateProduct(parent, product, productId);
-            // End snippet
         }
     }
 }

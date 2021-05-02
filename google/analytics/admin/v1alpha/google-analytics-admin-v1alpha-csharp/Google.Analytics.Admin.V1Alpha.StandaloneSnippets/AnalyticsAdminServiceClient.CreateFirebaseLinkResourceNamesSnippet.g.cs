@@ -16,12 +16,17 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
+
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateFirebaseLink</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateFirebaseLinkResourceNames()
         {
-            // Snippet: CreateFirebaseLink(PropertyName, FirebaseLink, CallSettings)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Analytics.Admin.V1Alpha.Snippets
             FirebaseLink firebaseLink = new FirebaseLink();
             // Make the request
             FirebaseLink response = analyticsAdminServiceClient.CreateFirebaseLink(parent, firebaseLink);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Monitoring.Dashboard.V1.Snippets
 {
+    using Google.Monitoring.Dashboard.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDashboardsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDashboardAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetDashboardRequestObjectAsync()
         {
-            // Snippet: GetDashboardAsync(GetDashboardRequest, CallSettings)
-            // Additional: GetDashboardAsync(GetDashboardRequest, CancellationToken)
             // Create client
             DashboardsServiceClient dashboardsServiceClient = await DashboardsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Monitoring.Dashboard.V1.Snippets
             };
             // Make the request
             Dashboard response = await dashboardsServiceClient.GetDashboardAsync(request);
-            // End snippet
         }
     }
 }

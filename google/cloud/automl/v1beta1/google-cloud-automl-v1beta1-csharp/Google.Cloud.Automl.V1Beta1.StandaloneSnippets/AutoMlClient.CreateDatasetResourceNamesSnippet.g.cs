@@ -17,13 +17,17 @@
 namespace Google.Cloud.Automl.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Automl.V1Beta1;
 
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateDataset</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateDatasetResourceNames()
         {
-            // Snippet: CreateDataset(LocationName, Dataset, CallSettings)
             // Create client
             AutoMlClient autoMlClient = AutoMlClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Automl.V1Beta1.Snippets
             Dataset dataset = new Dataset();
             // Make the request
             Dataset response = autoMlClient.CreateDataset(parent, dataset);
-            // End snippet
         }
     }
 }

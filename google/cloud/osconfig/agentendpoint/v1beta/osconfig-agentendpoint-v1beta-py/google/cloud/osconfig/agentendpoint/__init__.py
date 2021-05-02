@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -56,7 +57,8 @@ from google.cloud.osconfig.agentendpoint_v1beta.types.tasks import Task
 from google.cloud.osconfig.agentendpoint_v1beta.types.tasks import TaskDirective
 from google.cloud.osconfig.agentendpoint_v1beta.types.tasks import TaskType
 
-__all__ = ('AgentEndpointServiceAsyncClient',
+__all__ = (
+    'AgentEndpointServiceAsyncClient',
     'AgentEndpointServiceClient',
     'ApplyPatchesTask',
     'ApplyPatchesTaskOutput',

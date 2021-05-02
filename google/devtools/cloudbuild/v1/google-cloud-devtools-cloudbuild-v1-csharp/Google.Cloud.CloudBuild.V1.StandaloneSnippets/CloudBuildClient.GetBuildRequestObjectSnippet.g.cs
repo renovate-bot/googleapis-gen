@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.CloudBuild.V1.Snippets
 {
+    using Google.Cloud.CloudBuild.V1;
+
     public sealed partial class GeneratedCloudBuildClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBuild</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetBuildRequestObject()
         {
-            // Snippet: GetBuild(GetBuildRequest, CallSettings)
             // Create client
             CloudBuildClient cloudBuildClient = CloudBuildClient.Create();
             // Initialize request argument(s)
@@ -33,7 +38,6 @@ namespace Google.Cloud.CloudBuild.V1.Snippets
             };
             // Make the request
             Build response = cloudBuildClient.GetBuild(request);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedEntityTypesClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateEntityTypeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateEntityType2ResourceNamesAsync()
         {
-            // Snippet: CreateEntityTypeAsync(AgentName, EntityType, string, CallSettings)
-            // Additional: CreateEntityTypeAsync(AgentName, EntityType, string, CancellationToken)
             // Create client
             EntityTypesClient entityTypesClient = await EntityTypesClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             string languageCode = "";
             // Make the request
             EntityType response = await entityTypesClient.CreateEntityTypeAsync(parent, entityType, languageCode);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Logging.V2.Snippets
 {
+    using Google.Cloud.Logging.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLoggingServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteLogAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteLogRequestObjectAsync()
         {
-            // Snippet: DeleteLogAsync(DeleteLogRequest, CallSettings)
-            // Additional: DeleteLogAsync(DeleteLogRequest, CancellationToken)
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = await LoggingServiceV2Client.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             };
             // Make the request
             await loggingServiceV2Client.DeleteLogAsync(request);
-            // End snippet
         }
     }
 }

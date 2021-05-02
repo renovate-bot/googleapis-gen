@@ -622,7 +622,7 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCampaignExperimentAsyncErrors</summary>
+        /// <summary>Snippet for ListCampaignExperimentAsyncErrorsAsync</summary>
         public async Task ListCampaignExperimentAsyncErrorsRequestObjectAsync()
         {
             // Snippet: ListCampaignExperimentAsyncErrorsAsync(ListCampaignExperimentAsyncErrorsRequest, CallSettings)
@@ -715,7 +715,7 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCampaignExperimentAsyncErrors</summary>
+        /// <summary>Snippet for ListCampaignExperimentAsyncErrorsAsync</summary>
         public async Task ListCampaignExperimentAsyncErrorsAsync()
         {
             // Snippet: ListCampaignExperimentAsyncErrorsAsync(string, string, int?, CallSettings)
@@ -805,7 +805,7 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCampaignExperimentAsyncErrors</summary>
+        /// <summary>Snippet for ListCampaignExperimentAsyncErrorsAsync</summary>
         public async Task ListCampaignExperimentAsyncErrorsResourceNamesAsync()
         {
             // Snippet: ListCampaignExperimentAsyncErrorsAsync(CampaignExperimentName, string, int?, CallSettings)

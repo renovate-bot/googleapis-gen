@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Bigquery.Storage.V1Beta1.Snippets
 {
+    using Google.Cloud.Bigquery.Storage.V1Beta1;
+
     public sealed partial class GeneratedBigQueryStorageClientStandaloneSnippets
     {
         /// <summary>Snippet for FinalizeStream</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void FinalizeStream()
         {
-            // Snippet: FinalizeStream(Stream, CallSettings)
             // Create client
             BigQueryStorageClient bigQueryStorageClient = BigQueryStorageClient.Create();
             // Initialize request argument(s)
             Stream stream = new Stream();
             // Make the request
             bigQueryStorageClient.FinalizeStream(stream);
-            // End snippet
         }
     }
 }

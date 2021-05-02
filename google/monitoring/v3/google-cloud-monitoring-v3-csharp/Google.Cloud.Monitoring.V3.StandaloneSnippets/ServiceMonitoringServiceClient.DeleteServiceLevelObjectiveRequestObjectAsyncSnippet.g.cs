@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServiceMonitoringServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteServiceLevelObjectiveAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteServiceLevelObjectiveRequestObjectAsync()
         {
-            // Snippet: DeleteServiceLevelObjectiveAsync(DeleteServiceLevelObjectiveRequest, CallSettings)
-            // Additional: DeleteServiceLevelObjectiveAsync(DeleteServiceLevelObjectiveRequest, CancellationToken)
             // Create client
             ServiceMonitoringServiceClient serviceMonitoringServiceClient = await ServiceMonitoringServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             };
             // Make the request
             await serviceMonitoringServiceClient.DeleteServiceLevelObjectiveAsync(request);
-            // End snippet
         }
     }
 }

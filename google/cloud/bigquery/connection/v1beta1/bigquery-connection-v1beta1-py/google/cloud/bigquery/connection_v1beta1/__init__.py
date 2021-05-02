@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.connection_service import ConnectionServiceClient
-
 from .types.connection import CloudSqlCredential
 from .types.connection import CloudSqlProperties
 from .types.connection import Connection
@@ -27,6 +27,7 @@ from .types.connection import ListConnectionsRequest
 from .types.connection import ListConnectionsResponse
 from .types.connection import UpdateConnectionCredentialRequest
 from .types.connection import UpdateConnectionRequest
+
 
 __all__ = (
     'CloudSqlCredential',

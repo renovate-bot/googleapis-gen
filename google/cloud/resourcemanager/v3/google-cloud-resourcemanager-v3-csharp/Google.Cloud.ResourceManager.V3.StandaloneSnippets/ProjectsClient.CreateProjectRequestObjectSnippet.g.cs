@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
+    using Google.Cloud.ResourceManager.V3;
     using Google.LongRunning;
 
     public sealed partial class GeneratedProjectsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateProject</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateProjectRequestObject()
         {
-            // Snippet: CreateProject(CreateProjectRequest, CallSettings)
             // Create client
             ProjectsClient projectsClient = ProjectsClient.Create();
             // Initialize request argument(s)
@@ -49,7 +53,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
                 // If it has completed, then access the result
                 Project retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

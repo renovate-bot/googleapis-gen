@@ -18,14 +18,18 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System;
 
     public sealed partial class GeneratedAgentsClientStandaloneSnippets
     {
         /// <summary>Snippet for ListAgents</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListAgentsRequestObject()
         {
-            // Snippet: ListAgents(ListAgentsRequest, CallSettings)
             // Create client
             AgentsClient agentsClient = AgentsClient.Create();
             // Initialize request argument(s)
@@ -67,7 +71,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

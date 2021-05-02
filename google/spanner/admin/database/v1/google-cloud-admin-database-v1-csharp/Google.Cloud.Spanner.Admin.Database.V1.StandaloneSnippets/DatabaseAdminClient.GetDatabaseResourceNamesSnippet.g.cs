@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
 {
+    using Google.Cloud.Spanner.Admin.Database.V1;
+
     public sealed partial class GeneratedDatabaseAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDatabase</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDatabaseResourceNames()
         {
-            // Snippet: GetDatabase(DatabaseName, CallSettings)
             // Create client
             DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.Create();
             // Initialize request argument(s)
             DatabaseName name = DatabaseName.FromProjectInstanceDatabase("[PROJECT]", "[INSTANCE]", "[DATABASE]");
             // Make the request
             Database response = databaseAdminClient.GetDatabase(name);
-            // End snippet
         }
     }
 }

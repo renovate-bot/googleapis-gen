@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Debugger.V2.Snippets
 {
+    using Google.Cloud.Debugger.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedController2ClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateActiveBreakpointAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateActiveBreakpointRequestObjectAsync()
         {
-            // Snippet: UpdateActiveBreakpointAsync(UpdateActiveBreakpointRequest, CallSettings)
-            // Additional: UpdateActiveBreakpointAsync(UpdateActiveBreakpointRequest, CancellationToken)
             // Create client
             Controller2Client controller2Client = await Controller2Client.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Debugger.V2.Snippets
             };
             // Make the request
             UpdateActiveBreakpointResponse response = await controller2Client.UpdateActiveBreakpointAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Grafeas.V1.Snippets
 {
+    using Grafeas.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGrafeasClientStandaloneSnippets
     {
         /// <summary>Snippet for GetOccurrenceNoteAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetOccurrenceNoteAsync()
         {
-            // Snippet: GetOccurrenceNoteAsync(string, CallSettings)
-            // Additional: GetOccurrenceNoteAsync(string, CancellationToken)
             // Create client
             GrafeasClient grafeasClient = await GrafeasClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/occurrences/[OCCURRENCE]";
             // Make the request
             Note response = await grafeasClient.GetOccurrenceNoteAsync(name);
-            // End snippet
         }
     }
 }

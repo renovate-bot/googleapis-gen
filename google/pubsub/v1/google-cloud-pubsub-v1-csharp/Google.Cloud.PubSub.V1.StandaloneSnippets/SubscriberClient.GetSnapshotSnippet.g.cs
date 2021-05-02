@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
+
     public sealed partial class GeneratedSubscriberClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSnapshot</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetSnapshot()
         {
-            // Snippet: GetSnapshot(string, CallSettings)
             // Create client
             SubscriberClient subscriberClient = SubscriberClient.Create();
             // Initialize request argument(s)
             string snapshot = "projects/[PROJECT]/snapshots/[SNAPSHOT]";
             // Make the request
             Snapshot response = subscriberClient.GetSnapshot(snapshot);
-            // End snippet
         }
     }
 }

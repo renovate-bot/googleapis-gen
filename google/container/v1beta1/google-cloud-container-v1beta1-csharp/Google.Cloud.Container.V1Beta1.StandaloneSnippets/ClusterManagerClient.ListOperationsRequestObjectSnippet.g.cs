@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Container.V1Beta1.Snippets
 {
+    using Google.Cloud.Container.V1Beta1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for ListOperations</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListOperationsRequestObject()
         {
-            // Snippet: ListOperations(ListOperationsRequest, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
             ListOperationsRequest request = new ListOperationsRequest { Parent = "", };
             // Make the request
             ListOperationsResponse response = clusterManagerClient.ListOperations(request);
-            // End snippet
         }
     }
 }

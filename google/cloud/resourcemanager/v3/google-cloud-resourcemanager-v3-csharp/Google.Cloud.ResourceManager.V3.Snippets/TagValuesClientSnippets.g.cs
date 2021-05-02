@@ -76,7 +76,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTagValues</summary>
+        /// <summary>Snippet for ListTagValuesAsync</summary>
         public async Task ListTagValuesRequestObjectAsync()
         {
             // Snippet: ListTagValuesAsync(ListTagValuesRequest, CallSettings)
@@ -169,7 +169,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTagValues</summary>
+        /// <summary>Snippet for ListTagValuesAsync</summary>
         public async Task ListTagValuesAsync()
         {
             // Snippet: ListTagValuesAsync(string, string, int?, CallSettings)
@@ -259,7 +259,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTagValues</summary>
+        /// <summary>Snippet for ListTagValuesAsync</summary>
         public async Task ListTagValuesResourceNamesAsync()
         {
             // Snippet: ListTagValuesAsync(IResourceName, string, int?, CallSettings)

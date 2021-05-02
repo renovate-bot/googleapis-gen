@@ -16,16 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedKeywordPlanAdGroupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateKeywordPlanAdGroupsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateKeywordPlanAdGroupsAsync()
         {
-            // Snippet: MutateKeywordPlanAdGroupsAsync(string, IEnumerable<KeywordPlanAdGroupOperation>, CallSettings)
-            // Additional: MutateKeywordPlanAdGroupsAsync(string, IEnumerable<KeywordPlanAdGroupOperation>, CancellationToken)
             // Create client
             KeywordPlanAdGroupServiceClient keywordPlanAdGroupServiceClient = await KeywordPlanAdGroupServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             MutateKeywordPlanAdGroupsResponse response = await keywordPlanAdGroupServiceClient.MutateKeywordPlanAdGroupsAsync(customerId, operations);
-            // End snippet
         }
     }
 }

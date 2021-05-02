@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGeographicViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGeographicViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetGeographicViewResourceNamesAsync()
         {
-            // Snippet: GetGeographicViewAsync(GeographicViewName, CallSettings)
-            // Additional: GetGeographicViewAsync(GeographicViewName, CancellationToken)
             // Create client
             GeographicViewServiceClient geographicViewServiceClient = await GeographicViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             GeographicViewName resourceName = GeographicViewName.FromCustomerCountryCriterionLocationType("[CUSTOMER_ID]", "[COUNTRY_CRITERION_ID]", "[LOCATION_TYPE]");
             // Make the request
             GeographicView response = await geographicViewServiceClient.GetGeographicViewAsync(resourceName);
-            // End snippet
         }
     }
 }

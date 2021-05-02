@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.SecurityCenter.V1.Snippets
 {
+    using Google.Cloud.SecurityCenter.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteNotificationConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteNotificationConfigAsync()
         {
-            // Snippet: DeleteNotificationConfigAsync(string, CallSettings)
-            // Additional: DeleteNotificationConfigAsync(string, CancellationToken)
             // Create client
             SecurityCenterClient securityCenterClient = await SecurityCenterClient.CreateAsync();
             // Initialize request argument(s)
             string name = "organizations/[ORGANIZATION]/notificationConfigs/[NOTIFICATION_CONFIG]";
             // Make the request
             await securityCenterClient.DeleteNotificationConfigAsync(name);
-            // End snippet
         }
     }
 }

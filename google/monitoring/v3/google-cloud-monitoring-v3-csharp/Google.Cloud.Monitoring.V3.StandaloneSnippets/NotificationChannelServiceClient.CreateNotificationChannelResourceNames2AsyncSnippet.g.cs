@@ -17,15 +17,18 @@
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedNotificationChannelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateNotificationChannelAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateNotificationChannelResourceNames2Async()
         {
-            // Snippet: CreateNotificationChannelAsync(OrganizationName, NotificationChannel, CallSettings)
-            // Additional: CreateNotificationChannelAsync(OrganizationName, NotificationChannel, CancellationToken)
             // Create client
             NotificationChannelServiceClient notificationChannelServiceClient = await NotificationChannelServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             NotificationChannel notificationChannel = new NotificationChannel();
             // Make the request
             NotificationChannel response = await notificationChannelServiceClient.CreateNotificationChannelAsync(name, notificationChannel);
-            // End snippet
         }
     }
 }

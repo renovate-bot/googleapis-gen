@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedExperimentsClientStandaloneSnippets
     {
         /// <summary>Snippet for StartExperimentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task StartExperimentRequestObjectAsync()
         {
-            // Snippet: StartExperimentAsync(StartExperimentRequest, CallSettings)
-            // Additional: StartExperimentAsync(StartExperimentRequest, CancellationToken)
             // Create client
             ExperimentsClient experimentsClient = await ExperimentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             };
             // Make the request
             Experiment response = await experimentsClient.StartExperimentAsync(request);
-            // End snippet
         }
     }
 }

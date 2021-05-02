@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
 {
+    using Google.Cloud.Spanner.Admin.Database.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDatabaseAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteBackupAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteBackupResourceNamesAsync()
         {
-            // Snippet: DeleteBackupAsync(BackupName, CallSettings)
-            // Additional: DeleteBackupAsync(BackupName, CancellationToken)
             // Create client
             DatabaseAdminClient databaseAdminClient = await DatabaseAdminClient.CreateAsync();
             // Initialize request argument(s)
             BackupName name = BackupName.FromProjectInstanceBackup("[PROJECT]", "[INSTANCE]", "[BACKUP]");
             // Make the request
             await databaseAdminClient.DeleteBackupAsync(name);
-            // End snippet
         }
     }
 }

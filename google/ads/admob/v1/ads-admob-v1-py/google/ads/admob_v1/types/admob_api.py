@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.admob_v1.types import admob_resources
 
@@ -34,16 +37,14 @@ __protobuf__ = proto.module(
 
 class GetPublisherAccountRequest(proto.Message):
     r"""Request to retrieve the specified publisher account.
+
     Attributes:
         name (str):
             Resource name of the publisher account to
             retrieve. Example: accounts/pub-9876543210987654
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ListPublisherAccountsRequest(proto.Message):
@@ -61,18 +62,14 @@ class ListPublisherAccountsRequest(proto.Message):
             that the system should return the next page of data.
     """
 
-    page_size = proto.Field(
-        proto.INT32,
-        number=1,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    page_size = proto.Field(proto.INT32, number=1)
+
+    page_token = proto.Field(proto.STRING, number=2)
 
 
 class ListPublisherAccountsResponse(proto.Message):
     r"""Response for the publisher account list request.
+
     Attributes:
         account (Sequence[google.ads.admob_v1.types.PublisherAccount]):
             Publisher that the client credentials can
@@ -87,19 +84,16 @@ class ListPublisherAccountsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    account = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    account = proto.RepeatedField(proto.MESSAGE, number=1,
         message=admob_resources.PublisherAccount,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class GenerateMediationReportRequest(proto.Message):
     r"""Request to generate an AdMob Mediation report.
+
     Attributes:
         parent (str):
             Resource name of the account to generate the
@@ -109,13 +103,9 @@ class GenerateMediationReportRequest(proto.Message):
             Network report specification.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    report_spec = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    report_spec = proto.Field(proto.MESSAGE, number=2,
         message=admob_resources.MediationReportSpec,
     )
 
@@ -171,28 +161,22 @@ class GenerateMediationReportResponse(proto.Message):
             report, such as warnings about the data.
     """
 
-    header = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='payload',
+    header = proto.Field(proto.MESSAGE, number=1, oneof='payload',
         message=admob_resources.ReportHeader,
     )
-    row = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='payload',
+
+    row = proto.Field(proto.MESSAGE, number=2, oneof='payload',
         message=admob_resources.ReportRow,
     )
-    footer = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='payload',
+
+    footer = proto.Field(proto.MESSAGE, number=3, oneof='payload',
         message=admob_resources.ReportFooter,
     )
 
 
 class GenerateNetworkReportRequest(proto.Message):
     r"""Request to generate an AdMob Network report.
+
     Attributes:
         parent (str):
             Resource name of the account to generate the
@@ -202,13 +186,9 @@ class GenerateNetworkReportRequest(proto.Message):
             Network report specification.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    report_spec = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    report_spec = proto.Field(proto.MESSAGE, number=2,
         message=admob_resources.NetworkReportSpec,
     )
 
@@ -264,22 +244,15 @@ class GenerateNetworkReportResponse(proto.Message):
             report, such as warnings about the data.
     """
 
-    header = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='payload',
+    header = proto.Field(proto.MESSAGE, number=1, oneof='payload',
         message=admob_resources.ReportHeader,
     )
-    row = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='payload',
+
+    row = proto.Field(proto.MESSAGE, number=2, oneof='payload',
         message=admob_resources.ReportRow,
     )
-    footer = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='payload',
+
+    footer = proto.Field(proto.MESSAGE, number=3, oneof='payload',
         message=admob_resources.ReportFooter,
     )
 

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -35,8 +35,6 @@ from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.bigquery.storage_v1alpha2.services.big_query_write import BigQueryWriteAsyncClient
 from google.cloud.bigquery.storage_v1alpha2.services.big_query_write import BigQueryWriteClient
 from google.cloud.bigquery.storage_v1alpha2.services.big_query_write import transports
-from google.cloud.bigquery.storage_v1alpha2.services.big_query_write.transports.base import _API_CORE_VERSION
-from google.cloud.bigquery.storage_v1alpha2.services.big_query_write.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.bigquery.storage_v1alpha2.types import protobuf
 from google.cloud.bigquery.storage_v1alpha2.types import storage
 from google.cloud.bigquery.storage_v1alpha2.types import stream
@@ -47,28 +45,6 @@ from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -236,10 +212,12 @@ def test_big_query_write_client_client_options(client_class, transport_class, tr
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (BigQueryWriteClient, transports.BigQueryWriteGrpcTransport, "grpc", "true"),
     (BigQueryWriteAsyncClient, transports.BigQueryWriteGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (BigQueryWriteClient, transports.BigQueryWriteGrpcTransport, "grpc", "false"),
     (BigQueryWriteAsyncClient, transports.BigQueryWriteGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(BigQueryWriteClient, "DEFAULT_ENDPOINT", modify_default_endpoint(BigQueryWriteClient))
 @mock.patch.object(BigQueryWriteAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(BigQueryWriteAsyncClient))
@@ -394,20 +372,29 @@ def test_create_write_stream(transport: str = 'grpc', request_type=storage.Creat
         # Designate an appropriate return value for the call.
         call.return_value = stream.WriteStream(
             name='name_value',
+
             type_=stream.WriteStream.Type.COMMITTED,
+
             external_id='external_id_value',
+
         )
+
         response = client.create_write_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.CreateWriteStreamRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, stream.WriteStream)
+
     assert response.name == 'name_value'
+
     assert response.type_ == stream.WriteStream.Type.COMMITTED
+
     assert response.external_id == 'external_id_value'
 
 
@@ -430,8 +417,8 @@ def test_create_write_stream_empty_call():
         client.create_write_stream()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.CreateWriteStreamRequest()
 
+        assert args[0] == storage.CreateWriteStreamRequest()
 
 @pytest.mark.asyncio
 async def test_create_write_stream_async(transport: str = 'grpc_asyncio', request_type=storage.CreateWriteStreamRequest):
@@ -449,22 +436,27 @@ async def test_create_write_stream_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.create_write_stream),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(stream.WriteStream(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(stream.WriteStream(
             name='name_value',
             type_=stream.WriteStream.Type.COMMITTED,
             external_id='external_id_value',
         ))
+
         response = await client.create_write_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.CreateWriteStreamRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, stream.WriteStream)
+
     assert response.name == 'name_value'
+
     assert response.type_ == stream.WriteStream.Type.COMMITTED
+
     assert response.external_id == 'external_id_value'
 
 
@@ -481,7 +473,6 @@ def test_create_write_stream_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.CreateWriteStreamRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -489,6 +480,7 @@ def test_create_write_stream_field_headers():
             type(client.transport.create_write_stream),
             '__call__') as call:
         call.return_value = stream.WriteStream()
+
         client.create_write_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -513,7 +505,6 @@ async def test_create_write_stream_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.CreateWriteStreamRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -521,6 +512,7 @@ async def test_create_write_stream_field_headers_async():
             type(client.transport.create_write_stream),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(stream.WriteStream())
+
         await client.create_write_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -547,6 +539,7 @@ def test_create_write_stream_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = stream.WriteStream()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_write_stream(
@@ -558,7 +551,9 @@ def test_create_write_stream_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].write_stream == stream.WriteStream(name='name_value')
 
 
@@ -602,7 +597,9 @@ async def test_create_write_stream_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].write_stream == stream.WriteStream(name='name_value')
 
 
@@ -631,6 +628,7 @@ def test_append_rows(transport: str = 'grpc', request_type=storage.AppendRowsReq
     # Everything is optional in proto3 as far as the runtime is concerned,
     # and we are mocking out the actual API, so just send an empty request.
     request = request_type()
+
     requests = [request]
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -639,11 +637,13 @@ def test_append_rows(transport: str = 'grpc', request_type=storage.AppendRowsReq
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([storage.AppendRowsResponse()])
+
         response = client.append_rows(iter(requests))
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert next(args[0]) == request
 
     # Establish that the response is the type that we expect.
@@ -665,6 +665,7 @@ async def test_append_rows_async(transport: str = 'grpc_asyncio', request_type=s
     # Everything is optional in proto3 as far as the runtime is concerned,
     # and we are mocking out the actual API, so just send an empty request.
     request = request_type()
+
     requests = [request]
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -674,11 +675,13 @@ async def test_append_rows_async(transport: str = 'grpc_asyncio', request_type=s
         # Designate an appropriate return value for the call.
         call.return_value = mock.Mock(aio.StreamStreamCall, autospec=True)
         call.return_value.read = mock.AsyncMock(side_effect=[storage.AppendRowsResponse()])
+
         response = await client.append_rows(iter(requests))
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert next(args[0]) == request
 
     # Establish that the response is the type that we expect.
@@ -702,6 +705,7 @@ def test_append_rows_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([storage.AppendRowsResponse()])
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.append_rows(
@@ -712,6 +716,7 @@ def test_append_rows_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].write_stream == 'write_stream_value'
 
 
@@ -753,6 +758,7 @@ async def test_append_rows_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].write_stream == 'write_stream_value'
 
 
@@ -788,20 +794,29 @@ def test_get_write_stream(transport: str = 'grpc', request_type=storage.GetWrite
         # Designate an appropriate return value for the call.
         call.return_value = stream.WriteStream(
             name='name_value',
+
             type_=stream.WriteStream.Type.COMMITTED,
+
             external_id='external_id_value',
+
         )
+
         response = client.get_write_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetWriteStreamRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, stream.WriteStream)
+
     assert response.name == 'name_value'
+
     assert response.type_ == stream.WriteStream.Type.COMMITTED
+
     assert response.external_id == 'external_id_value'
 
 
@@ -824,8 +839,8 @@ def test_get_write_stream_empty_call():
         client.get_write_stream()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.GetWriteStreamRequest()
 
+        assert args[0] == storage.GetWriteStreamRequest()
 
 @pytest.mark.asyncio
 async def test_get_write_stream_async(transport: str = 'grpc_asyncio', request_type=storage.GetWriteStreamRequest):
@@ -843,22 +858,27 @@ async def test_get_write_stream_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.get_write_stream),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(stream.WriteStream(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(stream.WriteStream(
             name='name_value',
             type_=stream.WriteStream.Type.COMMITTED,
             external_id='external_id_value',
         ))
+
         response = await client.get_write_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.GetWriteStreamRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, stream.WriteStream)
+
     assert response.name == 'name_value'
+
     assert response.type_ == stream.WriteStream.Type.COMMITTED
+
     assert response.external_id == 'external_id_value'
 
 
@@ -875,7 +895,6 @@ def test_get_write_stream_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.GetWriteStreamRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -883,6 +902,7 @@ def test_get_write_stream_field_headers():
             type(client.transport.get_write_stream),
             '__call__') as call:
         call.return_value = stream.WriteStream()
+
         client.get_write_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -907,7 +927,6 @@ async def test_get_write_stream_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.GetWriteStreamRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -915,6 +934,7 @@ async def test_get_write_stream_field_headers_async():
             type(client.transport.get_write_stream),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(stream.WriteStream())
+
         await client.get_write_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -941,6 +961,7 @@ def test_get_write_stream_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = stream.WriteStream()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_write_stream(
@@ -951,6 +972,7 @@ def test_get_write_stream_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -992,6 +1014,7 @@ async def test_get_write_stream_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1027,16 +1050,21 @@ def test_finalize_write_stream(transport: str = 'grpc', request_type=storage.Fin
         # Designate an appropriate return value for the call.
         call.return_value = storage.FinalizeWriteStreamResponse(
             row_count=992,
+
         )
+
         response = client.finalize_write_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.FinalizeWriteStreamRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage.FinalizeWriteStreamResponse)
+
     assert response.row_count == 992
 
 
@@ -1059,8 +1087,8 @@ def test_finalize_write_stream_empty_call():
         client.finalize_write_stream()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.FinalizeWriteStreamRequest()
 
+        assert args[0] == storage.FinalizeWriteStreamRequest()
 
 @pytest.mark.asyncio
 async def test_finalize_write_stream_async(transport: str = 'grpc_asyncio', request_type=storage.FinalizeWriteStreamRequest):
@@ -1078,18 +1106,21 @@ async def test_finalize_write_stream_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.finalize_write_stream),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage.FinalizeWriteStreamResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.FinalizeWriteStreamResponse(
             row_count=992,
         ))
+
         response = await client.finalize_write_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.FinalizeWriteStreamRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage.FinalizeWriteStreamResponse)
+
     assert response.row_count == 992
 
 
@@ -1106,7 +1137,6 @@ def test_finalize_write_stream_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.FinalizeWriteStreamRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1114,6 +1144,7 @@ def test_finalize_write_stream_field_headers():
             type(client.transport.finalize_write_stream),
             '__call__') as call:
         call.return_value = storage.FinalizeWriteStreamResponse()
+
         client.finalize_write_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1138,7 +1169,6 @@ async def test_finalize_write_stream_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.FinalizeWriteStreamRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1146,6 +1176,7 @@ async def test_finalize_write_stream_field_headers_async():
             type(client.transport.finalize_write_stream),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.FinalizeWriteStreamResponse())
+
         await client.finalize_write_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1172,6 +1203,7 @@ def test_finalize_write_stream_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = storage.FinalizeWriteStreamResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.finalize_write_stream(
@@ -1182,6 +1214,7 @@ def test_finalize_write_stream_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1223,6 +1256,7 @@ async def test_finalize_write_stream_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1258,14 +1292,17 @@ def test_batch_commit_write_streams(transport: str = 'grpc', request_type=storag
         # Designate an appropriate return value for the call.
         call.return_value = storage.BatchCommitWriteStreamsResponse(
         )
+
         response = client.batch_commit_write_streams(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.BatchCommitWriteStreamsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage.BatchCommitWriteStreamsResponse)
 
 
@@ -1288,8 +1325,8 @@ def test_batch_commit_write_streams_empty_call():
         client.batch_commit_write_streams()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.BatchCommitWriteStreamsRequest()
 
+        assert args[0] == storage.BatchCommitWriteStreamsRequest()
 
 @pytest.mark.asyncio
 async def test_batch_commit_write_streams_async(transport: str = 'grpc_asyncio', request_type=storage.BatchCommitWriteStreamsRequest):
@@ -1307,13 +1344,15 @@ async def test_batch_commit_write_streams_async(transport: str = 'grpc_asyncio',
             type(client.transport.batch_commit_write_streams),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage.BatchCommitWriteStreamsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.BatchCommitWriteStreamsResponse(
         ))
+
         response = await client.batch_commit_write_streams(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.BatchCommitWriteStreamsRequest()
 
     # Establish that the response is the type that we expect.
@@ -1333,7 +1372,6 @@ def test_batch_commit_write_streams_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.BatchCommitWriteStreamsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1341,6 +1379,7 @@ def test_batch_commit_write_streams_field_headers():
             type(client.transport.batch_commit_write_streams),
             '__call__') as call:
         call.return_value = storage.BatchCommitWriteStreamsResponse()
+
         client.batch_commit_write_streams(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1365,7 +1404,6 @@ async def test_batch_commit_write_streams_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.BatchCommitWriteStreamsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1373,6 +1411,7 @@ async def test_batch_commit_write_streams_field_headers_async():
             type(client.transport.batch_commit_write_streams),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.BatchCommitWriteStreamsResponse())
+
         await client.batch_commit_write_streams(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1399,6 +1438,7 @@ def test_batch_commit_write_streams_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = storage.BatchCommitWriteStreamsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.batch_commit_write_streams(
@@ -1409,6 +1449,7 @@ def test_batch_commit_write_streams_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1450,6 +1491,7 @@ async def test_batch_commit_write_streams_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1485,16 +1527,21 @@ def test_flush_rows(transport: str = 'grpc', request_type=storage.FlushRowsReque
         # Designate an appropriate return value for the call.
         call.return_value = storage.FlushRowsResponse(
             offset=647,
+
         )
+
         response = client.flush_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.FlushRowsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage.FlushRowsResponse)
+
     assert response.offset == 647
 
 
@@ -1517,8 +1564,8 @@ def test_flush_rows_empty_call():
         client.flush_rows()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.FlushRowsRequest()
 
+        assert args[0] == storage.FlushRowsRequest()
 
 @pytest.mark.asyncio
 async def test_flush_rows_async(transport: str = 'grpc_asyncio', request_type=storage.FlushRowsRequest):
@@ -1536,18 +1583,21 @@ async def test_flush_rows_async(transport: str = 'grpc_asyncio', request_type=st
             type(client.transport.flush_rows),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage.FlushRowsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.FlushRowsResponse(
             offset=647,
         ))
+
         response = await client.flush_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.FlushRowsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage.FlushRowsResponse)
+
     assert response.offset == 647
 
 
@@ -1564,7 +1614,6 @@ def test_flush_rows_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.FlushRowsRequest()
-
     request.write_stream = 'write_stream/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1572,6 +1621,7 @@ def test_flush_rows_field_headers():
             type(client.transport.flush_rows),
             '__call__') as call:
         call.return_value = storage.FlushRowsResponse()
+
         client.flush_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1596,7 +1646,6 @@ async def test_flush_rows_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.FlushRowsRequest()
-
     request.write_stream = 'write_stream/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1604,6 +1653,7 @@ async def test_flush_rows_field_headers_async():
             type(client.transport.flush_rows),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.FlushRowsResponse())
+
         await client.flush_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1630,6 +1680,7 @@ def test_flush_rows_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = storage.FlushRowsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.flush_rows(
@@ -1640,6 +1691,7 @@ def test_flush_rows_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].write_stream == 'write_stream_value'
 
 
@@ -1681,6 +1733,7 @@ async def test_flush_rows_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].write_stream == 'write_stream_value'
 
 
@@ -1739,6 +1792,7 @@ def test_transport_instance():
     client = BigQueryWriteClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.BigQueryWriteGrpcTransport(
@@ -1753,6 +1807,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.BigQueryWriteGrpcTransport,
     transports.BigQueryWriteGrpcAsyncIOTransport,
@@ -1764,6 +1819,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = BigQueryWriteClient(
@@ -1773,6 +1829,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.BigQueryWriteGrpcTransport,
     )
+
 
 def test_big_query_write_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1800,33 +1857,15 @@ def test_big_query_write_base_transport():
         'finalize_write_stream',
         'batch_commit_write_streams',
         'flush_rows',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_big_query_write_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.bigquery.storage_v1alpha2.services.big_query_write.transports.BigQueryWriteTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.BigQueryWriteTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/bigquery',            'https://www.googleapis.com/auth/bigquery.insertdata',            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_big_query_write_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.bigquery.storage_v1alpha2.services.big_query_write.transports.BigQueryWriteTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.bigquery.storage_v1alpha2.services.big_query_write.transports.BigQueryWriteTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.BigQueryWriteTransport(
@@ -1844,186 +1883,37 @@ def test_big_query_write_base_transport_with_credentials_file_old_google_auth():
 
 def test_big_query_write_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.bigquery.storage_v1alpha2.services.big_query_write.transports.BigQueryWriteTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.bigquery.storage_v1alpha2.services.big_query_write.transports.BigQueryWriteTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.BigQueryWriteTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_big_query_write_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         BigQueryWriteClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/bigquery',
-            'https://www.googleapis.com/auth/bigquery.insertdata',
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_big_query_write_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        BigQueryWriteClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.insertdata',                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.BigQueryWriteGrpcTransport,
-        transports.BigQueryWriteGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_big_query_write_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.insertdata',                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.BigQueryWriteGrpcTransport,
-        transports.BigQueryWriteGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_big_query_write_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/bigquery',
             'https://www.googleapis.com/auth/bigquery.insertdata',
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.BigQueryWriteGrpcTransport, grpc_helpers),
-        (transports.BigQueryWriteGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_big_query_write_transport_create_channel(transport_class, grpc_helpers):
+def test_big_query_write_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.BigQueryWriteGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/bigquery',
+            'https://www.googleapis.com/auth/bigquery.insertdata',
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "bigquerystorage.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.insertdata',                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="bigquerystorage.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.BigQueryWriteGrpcTransport, grpc_helpers),
-        (transports.BigQueryWriteGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_big_query_write_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "bigquerystorage.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.insertdata',                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.BigQueryWriteGrpcTransport, grpc_helpers),
-        (transports.BigQueryWriteGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_big_query_write_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "bigquerystorage.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -2087,6 +1977,7 @@ def test_big_query_write_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='bigquerystorage.googleapis.com:8000'),
     )
     assert client.transport._host == 'bigquerystorage.googleapis.com:8000'
+
 
 def test_big_query_write_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -2210,6 +2101,7 @@ def test_table_path():
     project = "squid"
     dataset = "clam"
     table = "whelk"
+
     expected = "projects/{project}/datasets/{dataset}/tables/{table}".format(project=project, dataset=dataset, table=table, )
     actual = BigQueryWriteClient.table_path(project, dataset, table)
     assert expected == actual
@@ -2217,9 +2109,10 @@ def test_table_path():
 
 def test_parse_table_path():
     expected = {
-        "project": "octopus",
-        "dataset": "oyster",
-        "table": "nudibranch",
+    "project": "octopus",
+    "dataset": "oyster",
+    "table": "nudibranch",
+
     }
     path = BigQueryWriteClient.table_path(**expected)
 
@@ -2232,6 +2125,7 @@ def test_write_stream_path():
     dataset = "mussel"
     table = "winkle"
     stream = "nautilus"
+
     expected = "projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}".format(project=project, dataset=dataset, table=table, stream=stream, )
     actual = BigQueryWriteClient.write_stream_path(project, dataset, table, stream)
     assert expected == actual
@@ -2239,10 +2133,11 @@ def test_write_stream_path():
 
 def test_parse_write_stream_path():
     expected = {
-        "project": "scallop",
-        "dataset": "abalone",
-        "table": "squid",
-        "stream": "clam",
+    "project": "scallop",
+    "dataset": "abalone",
+    "table": "squid",
+    "stream": "clam",
+
     }
     path = BigQueryWriteClient.write_stream_path(**expected)
 
@@ -2252,6 +2147,7 @@ def test_parse_write_stream_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = BigQueryWriteClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2259,7 +2155,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = BigQueryWriteClient.common_billing_account_path(**expected)
 
@@ -2269,6 +2166,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = BigQueryWriteClient.common_folder_path(folder)
     assert expected == actual
@@ -2276,7 +2174,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = BigQueryWriteClient.common_folder_path(**expected)
 
@@ -2286,6 +2185,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = BigQueryWriteClient.common_organization_path(organization)
     assert expected == actual
@@ -2293,7 +2193,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = BigQueryWriteClient.common_organization_path(**expected)
 
@@ -2303,6 +2204,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = BigQueryWriteClient.common_project_path(project)
     assert expected == actual
@@ -2310,7 +2212,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = BigQueryWriteClient.common_project_path(**expected)
 
@@ -2321,6 +2224,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = BigQueryWriteClient.common_location_path(project, location)
     assert expected == actual
@@ -2328,8 +2232,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = BigQueryWriteClient.common_location_path(**expected)
 

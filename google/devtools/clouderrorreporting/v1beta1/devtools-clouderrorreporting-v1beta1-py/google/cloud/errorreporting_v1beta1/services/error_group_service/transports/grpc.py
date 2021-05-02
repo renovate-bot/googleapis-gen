@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.cloud.errorreporting_v1beta1.types import common
 from google.cloud.errorreporting_v1beta1.types import error_group_service
+
 from .base import ErrorGroupServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,8 +62,7 @@ class ErrorGroupServiceGrpcTransport(ErrorGroupServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -199,15 +201,13 @@ class ErrorGroupServiceGrpcTransport(ErrorGroupServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -221,9 +221,7 @@ class ErrorGroupServiceGrpcTransport(ErrorGroupServiceTransport):
     def get_group(self) -> Callable[
             [error_group_service.GetGroupRequest],
             common.ErrorGroup]:
-        r"""Return a callable for the
-        get group
-          method over gRPC.
+        r"""Return a callable for the get group method over gRPC.
 
         Get the specified group.
 
@@ -249,9 +247,7 @@ class ErrorGroupServiceGrpcTransport(ErrorGroupServiceTransport):
     def update_group(self) -> Callable[
             [error_group_service.UpdateGroupRequest],
             common.ErrorGroup]:
-        r"""Return a callable for the
-        update group
-          method over gRPC.
+        r"""Return a callable for the update group method over gRPC.
 
         Replace the data for the specified group.
         Fails if the group does not exist.

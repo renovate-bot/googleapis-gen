@@ -17,16 +17,20 @@
 namespace Google.Streetview.Publish.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Streetview.Publish.V1;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedStreetViewPublishServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListPhotos</summary>
+        /// <summary>Snippet for ListPhotosAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListPhotosAsync()
         {
-            // Snippet: ListPhotosAsync(PhotoView, string, string, int?, CallSettings)
             // Create client
             StreetViewPublishServiceClient streetViewPublishServiceClient = await StreetViewPublishServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -66,7 +70,6 @@ namespace Google.Streetview.Publish.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

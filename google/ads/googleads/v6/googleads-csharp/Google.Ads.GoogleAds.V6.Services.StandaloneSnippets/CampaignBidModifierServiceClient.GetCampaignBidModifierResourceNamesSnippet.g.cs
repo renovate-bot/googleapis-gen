@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedCampaignBidModifierServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignBidModifier</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCampaignBidModifierResourceNames()
         {
-            // Snippet: GetCampaignBidModifier(CampaignBidModifierName, CallSettings)
             // Create client
             CampaignBidModifierServiceClient campaignBidModifierServiceClient = CampaignBidModifierServiceClient.Create();
             // Initialize request argument(s)
             CampaignBidModifierName resourceName = CampaignBidModifierName.FromCustomerCampaignCriterion("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[CRITERION_ID]");
             // Make the request
             CampaignBidModifier response = campaignBidModifierServiceClient.GetCampaignBidModifier(resourceName);
-            // End snippet
         }
     }
 }

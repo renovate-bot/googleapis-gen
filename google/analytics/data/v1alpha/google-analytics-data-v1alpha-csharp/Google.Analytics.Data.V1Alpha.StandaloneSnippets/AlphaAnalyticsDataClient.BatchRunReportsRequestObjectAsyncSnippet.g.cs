@@ -16,15 +16,18 @@
 
 namespace Google.Analytics.Data.V1Alpha.Snippets
 {
+    using Google.Analytics.Data.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAlphaAnalyticsDataClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchRunReportsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchRunReportsRequestObjectAsync()
         {
-            // Snippet: BatchRunReportsAsync(BatchRunReportsRequest, CallSettings)
-            // Additional: BatchRunReportsAsync(BatchRunReportsRequest, CancellationToken)
             // Create client
             AlphaAnalyticsDataClient alphaAnalyticsDataClient = await AlphaAnalyticsDataClient.CreateAsync();
             // Initialize request argument(s)
@@ -38,7 +41,6 @@ namespace Google.Analytics.Data.V1Alpha.Snippets
             };
             // Make the request
             BatchRunReportsResponse response = await alphaAnalyticsDataClient.BatchRunReportsAsync(request);
-            // End snippet
         }
     }
 }

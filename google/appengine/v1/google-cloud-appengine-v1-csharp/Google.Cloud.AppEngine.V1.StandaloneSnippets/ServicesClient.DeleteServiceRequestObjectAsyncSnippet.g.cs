@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.AppEngine.V1.Snippets
     public sealed partial class GeneratedServicesClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteServiceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteServiceRequestObjectAsync()
         {
-            // Snippet: DeleteServiceAsync(DeleteServiceRequest, CallSettings)
-            // Additional: DeleteServiceAsync(DeleteServiceRequest, CancellationToken)
             // Create client
             ServicesClient servicesClient = await ServicesClient.CreateAsync();
             // Initialize request argument(s)
@@ -49,7 +52,6 @@ namespace Google.Cloud.AppEngine.V1.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

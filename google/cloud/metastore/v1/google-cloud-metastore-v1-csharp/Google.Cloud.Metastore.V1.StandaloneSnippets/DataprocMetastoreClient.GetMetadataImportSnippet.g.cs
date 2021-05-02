@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Metastore.V1.Snippets
 {
+    using Google.Cloud.Metastore.V1;
+
     public sealed partial class GeneratedDataprocMetastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMetadataImport</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetMetadataImport()
         {
-            // Snippet: GetMetadataImport(string, CallSettings)
             // Create client
             DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/services/[SERVICE]/metadataImports/[METADATA_IMPORT]";
             // Make the request
             MetadataImport response = dataprocMetastoreClient.GetMetadataImport(name);
-            // End snippet
         }
     }
 }

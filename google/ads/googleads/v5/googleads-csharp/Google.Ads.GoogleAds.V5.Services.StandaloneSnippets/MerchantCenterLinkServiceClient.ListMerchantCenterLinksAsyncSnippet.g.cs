@@ -16,22 +16,24 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMerchantCenterLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListMerchantCenterLinksAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListMerchantCenterLinksAsync()
         {
-            // Snippet: ListMerchantCenterLinksAsync(string, CallSettings)
-            // Additional: ListMerchantCenterLinksAsync(string, CancellationToken)
             // Create client
             MerchantCenterLinkServiceClient merchantCenterLinkServiceClient = await MerchantCenterLinkServiceClient.CreateAsync();
             // Initialize request argument(s)
             string customerId = "";
             // Make the request
             ListMerchantCenterLinksResponse response = await merchantCenterLinkServiceClient.ListMerchantCenterLinksAsync(customerId);
-            // End snippet
         }
     }
 }

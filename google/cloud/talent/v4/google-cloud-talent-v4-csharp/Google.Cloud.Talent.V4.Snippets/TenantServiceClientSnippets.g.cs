@@ -404,7 +404,7 @@ namespace Google.Cloud.Talent.V4.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTenants</summary>
+        /// <summary>Snippet for ListTenantsAsync</summary>
         public async Task ListTenantsRequestObjectAsync()
         {
             // Snippet: ListTenantsAsync(ListTenantsRequest, CallSettings)
@@ -497,7 +497,7 @@ namespace Google.Cloud.Talent.V4.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTenants</summary>
+        /// <summary>Snippet for ListTenantsAsync</summary>
         public async Task ListTenantsAsync()
         {
             // Snippet: ListTenantsAsync(string, string, int?, CallSettings)
@@ -587,7 +587,7 @@ namespace Google.Cloud.Talent.V4.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTenants</summary>
+        /// <summary>Snippet for ListTenantsAsync</summary>
         public async Task ListTenantsResourceNamesAsync()
         {
             // Snippet: ListTenantsAsync(ProjectName, string, int?, CallSettings)

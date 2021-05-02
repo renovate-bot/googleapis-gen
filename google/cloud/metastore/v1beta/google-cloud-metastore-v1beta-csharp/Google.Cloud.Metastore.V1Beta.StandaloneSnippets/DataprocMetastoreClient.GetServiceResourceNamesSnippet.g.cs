@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Metastore.V1Beta.Snippets
 {
+    using Google.Cloud.Metastore.V1Beta;
+
     public sealed partial class GeneratedDataprocMetastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for GetService</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetServiceResourceNames()
         {
-            // Snippet: GetService(ServiceName, CallSettings)
             // Create client
             DataprocMetastoreClient dataprocMetastoreClient = DataprocMetastoreClient.Create();
             // Initialize request argument(s)
             ServiceName name = ServiceName.FromProjectLocationService("[PROJECT]", "[LOCATION]", "[SERVICE]");
             // Make the request
             Service response = dataprocMetastoreClient.GetService(name);
-            // End snippet
         }
     }
 }

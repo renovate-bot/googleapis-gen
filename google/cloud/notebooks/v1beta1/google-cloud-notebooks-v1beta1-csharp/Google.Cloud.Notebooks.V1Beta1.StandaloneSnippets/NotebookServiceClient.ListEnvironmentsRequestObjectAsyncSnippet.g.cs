@@ -24,10 +24,13 @@ namespace Google.Cloud.Notebooks.V1Beta1.Snippets
 
     public sealed partial class GeneratedNotebookServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListEnvironments</summary>
+        /// <summary>Snippet for ListEnvironmentsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListEnvironmentsRequestObjectAsync()
         {
-            // Snippet: ListEnvironmentsAsync(ListEnvironmentsRequest, CallSettings)
             // Create client
             NotebookServiceClient notebookServiceClient = await NotebookServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -66,7 +69,6 @@ namespace Google.Cloud.Notebooks.V1Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

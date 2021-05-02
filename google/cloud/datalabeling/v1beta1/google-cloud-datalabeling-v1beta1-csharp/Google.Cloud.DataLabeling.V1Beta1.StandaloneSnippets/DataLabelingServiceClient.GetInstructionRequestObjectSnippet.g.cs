@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
+
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInstruction</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetInstructionRequestObject()
         {
-            // Snippet: GetInstruction(GetInstructionRequest, CallSettings)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
             };
             // Make the request
             Instruction response = dataLabelingServiceClient.GetInstruction(request);
-            // End snippet
         }
     }
 }

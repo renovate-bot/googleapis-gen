@@ -17,16 +17,19 @@
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.DataLabeling.V1Beta1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateInstructionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateInstructionRequestObjectAsync()
         {
-            // Snippet: CreateInstructionAsync(CreateInstructionRequest, CallSettings)
-            // Additional: CreateInstructionAsync(CreateInstructionRequest, CancellationToken)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = await DataLabelingServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -53,7 +56,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
                 // If it has completed, then access the result
                 Instruction retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

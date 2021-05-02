@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
+
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInspectTemplate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetInspectTemplateRequestObject()
         {
-            // Snippet: GetInspectTemplate(GetInspectTemplateRequest, CallSettings)
             // Create client
             DlpServiceClient dlpServiceClient = DlpServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Dlp.V2.Snippets
             };
             // Make the request
             InspectTemplate response = dlpServiceClient.GetInspectTemplate(request);
-            // End snippet
         }
     }
 }

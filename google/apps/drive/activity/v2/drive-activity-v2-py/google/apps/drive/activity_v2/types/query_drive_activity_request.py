@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -27,6 +29,7 @@ __protobuf__ = proto.module(
 
 class QueryDriveActivityRequest(proto.Message):
     r"""The request message for querying Drive activity.
+
     Attributes:
         item_name (str):
             Return activities for this Drive item. The format is
@@ -74,33 +77,19 @@ class QueryDriveActivityRequest(proto.Message):
                -  ``-detail.action_detail_case:MOVE``
     """
 
-    item_name = proto.Field(
-        proto.STRING,
-        number=1,
-        oneof='key',
-    )
-    ancestor_name = proto.Field(
-        proto.STRING,
-        number=2,
-        oneof='key',
-    )
-    consolidation_strategy = proto.Field(
-        proto.MESSAGE,
-        number=5,
+    item_name = proto.Field(proto.STRING, number=1, oneof='key')
+
+    ancestor_name = proto.Field(proto.STRING, number=2, oneof='key')
+
+    consolidation_strategy = proto.Field(proto.MESSAGE, number=5,
         message='ConsolidationStrategy',
     )
-    page_size = proto.Field(
-        proto.INT32,
-        number=6,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=7,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=8,
-    )
+
+    page_size = proto.Field(proto.INT32, number=6)
+
+    page_token = proto.Field(proto.STRING, number=7)
+
+    filter = proto.Field(proto.STRING, number=8)
 
 
 class ConsolidationStrategy(proto.Message):
@@ -119,11 +108,10 @@ class ConsolidationStrategy(proto.Message):
             The individual activities are consolidated
             using the legacy strategy.
     """
-
     class NoConsolidation(proto.Message):
         r"""A strategy which does no consolidation of individual
         activities.
-            """
+        """
 
     class Legacy(proto.Message):
         r"""A strategy which consolidates activities using the grouping
@@ -132,18 +120,13 @@ class ConsolidationStrategy(proto.Message):
         (such as moving a set of files at once) or multiple actors (such
         as several users editing the same item). Grouping rules for this
         strategy are specific to each type of action.
-            """
+        """
 
-    none = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='strategy',
+    none = proto.Field(proto.MESSAGE, number=1, oneof='strategy',
         message=NoConsolidation,
     )
-    legacy = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='strategy',
+
+    legacy = proto.Field(proto.MESSAGE, number=2, oneof='strategy',
         message=Legacy,
     )
 

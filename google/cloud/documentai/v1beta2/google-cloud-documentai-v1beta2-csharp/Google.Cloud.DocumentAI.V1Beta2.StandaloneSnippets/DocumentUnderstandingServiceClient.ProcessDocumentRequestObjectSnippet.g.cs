@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.DocumentAI.V1Beta2.Snippets
 {
+    using Google.Cloud.DocumentAI.V1Beta2;
+
     public sealed partial class GeneratedDocumentUnderstandingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ProcessDocument</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ProcessDocumentRequestObject()
         {
-            // Snippet: ProcessDocument(ProcessDocumentRequest, CallSettings)
             // Create client
             DocumentUnderstandingServiceClient documentUnderstandingServiceClient = DocumentUnderstandingServiceClient.Create();
             // Initialize request argument(s)
@@ -39,7 +44,6 @@ namespace Google.Cloud.DocumentAI.V1Beta2.Snippets
             };
             // Make the request
             Document response = documentUnderstandingServiceClient.ProcessDocument(request);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta.Snippets
 {
+    using Google.Cloud.Osconfig.Agentendpoint.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAgentEndpointServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for LookupEffectiveGuestPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task LookupEffectiveGuestPolicyAsync()
         {
-            // Snippet: LookupEffectiveGuestPolicyAsync(string, string, string, string, CallSettings)
-            // Additional: LookupEffectiveGuestPolicyAsync(string, string, string, string, CancellationToken)
             // Create client
             AgentEndpointServiceClient agentEndpointServiceClient = await AgentEndpointServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta.Snippets
             string osArchitecture = "";
             // Make the request
             EffectiveGuestPolicy response = await agentEndpointServiceClient.LookupEffectiveGuestPolicyAsync(instanceIdToken, osShortName, osVersion, osArchitecture);
-            // End snippet
         }
     }
 }

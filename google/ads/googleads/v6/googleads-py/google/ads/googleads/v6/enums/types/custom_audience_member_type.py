@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -26,7 +28,7 @@ __protobuf__ = proto.module(
 
 
 class CustomAudienceMemberTypeEnum(proto.Message):
-    r"""The type of custom audience member.    """
+    r"""The type of custom audience member."""
     class CustomAudienceMemberType(proto.Enum):
         r"""Enum containing possible custom audience member types."""
         UNSPECIFIED = 0

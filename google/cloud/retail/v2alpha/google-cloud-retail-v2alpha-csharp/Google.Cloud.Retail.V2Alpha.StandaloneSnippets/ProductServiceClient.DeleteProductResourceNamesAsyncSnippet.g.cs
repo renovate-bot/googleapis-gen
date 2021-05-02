@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Retail.V2Alpha.Snippets
 {
+    using Google.Cloud.Retail.V2Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedProductServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteProductAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteProductResourceNamesAsync()
         {
-            // Snippet: DeleteProductAsync(ProductName, CallSettings)
-            // Additional: DeleteProductAsync(ProductName, CancellationToken)
             // Create client
             ProductServiceClient productServiceClient = await ProductServiceClient.CreateAsync();
             // Initialize request argument(s)
             ProductName name = ProductName.FromProjectLocationCatalogBranchProduct("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]");
             // Make the request
             await productServiceClient.DeleteProductAsync(name);
-            // End snippet
         }
     }
 }

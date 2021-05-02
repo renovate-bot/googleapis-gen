@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedTestCasesClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTestCaseResult</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetTestCaseResultResourceNames()
         {
-            // Snippet: GetTestCaseResult(TestCaseResultName, CallSettings)
             // Create client
             TestCasesClient testCasesClient = TestCasesClient.Create();
             // Initialize request argument(s)
             TestCaseResultName name = TestCaseResultName.FromProjectLocationAgentTestCaseResult("[PROJECT]", "[LOCATION]", "[AGENT]", "[TEST_CASE]", "[RESULT]");
             // Make the request
             TestCaseResult response = testCasesClient.GetTestCaseResult(name);
-            // End snippet
         }
     }
 }

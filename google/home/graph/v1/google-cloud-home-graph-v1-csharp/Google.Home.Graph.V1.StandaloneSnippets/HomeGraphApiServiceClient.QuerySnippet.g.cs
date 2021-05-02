@@ -16,14 +16,18 @@
 
 namespace Google.Home.Graph.V1.Snippets
 {
+    using Google.Home.Graph.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedHomeGraphApiServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for Query</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void Query()
         {
-            // Snippet: Query(string, string, IEnumerable<QueryRequestInput>, CallSettings)
             // Create client
             HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Home.Graph.V1.Snippets
             };
             // Make the request
             QueryResponse response = homeGraphApiServiceClient.Query(requestId, agentUserId, inputs);
-            // End snippet
         }
     }
 }

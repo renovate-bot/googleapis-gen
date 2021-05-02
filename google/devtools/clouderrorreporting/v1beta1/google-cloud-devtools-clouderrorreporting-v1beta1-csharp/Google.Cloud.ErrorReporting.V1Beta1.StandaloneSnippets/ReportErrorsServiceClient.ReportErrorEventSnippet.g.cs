@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.ErrorReporting.V1Beta1.Snippets
 {
+    using Google.Cloud.ErrorReporting.V1Beta1;
+
     public sealed partial class GeneratedReportErrorsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ReportErrorEvent</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ReportErrorEvent()
         {
-            // Snippet: ReportErrorEvent(string, ReportedErrorEvent, CallSettings)
             // Create client
             ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.ErrorReporting.V1Beta1.Snippets
             ReportedErrorEvent @event = new ReportedErrorEvent();
             // Make the request
             ReportErrorEventResponse response = reportErrorsServiceClient.ReportErrorEvent(projectName, @event);
-            // End snippet
         }
     }
 }

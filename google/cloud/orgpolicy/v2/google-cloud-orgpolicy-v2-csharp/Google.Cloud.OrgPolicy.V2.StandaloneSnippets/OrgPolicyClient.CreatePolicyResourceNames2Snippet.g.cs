@@ -17,13 +17,17 @@
 namespace Google.Cloud.OrgPolicy.V2.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.OrgPolicy.V2;
 
     public sealed partial class GeneratedOrgPolicyClientStandaloneSnippets
     {
         /// <summary>Snippet for CreatePolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreatePolicyResourceNames2()
         {
-            // Snippet: CreatePolicy(FolderName, Policy, CallSettings)
             // Create client
             OrgPolicyClient orgPolicyClient = OrgPolicyClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.OrgPolicy.V2.Snippets
             Policy policy = new Policy();
             // Make the request
             Policy response = orgPolicyClient.CreatePolicy(parent, policy);
-            // End snippet
         }
     }
 }

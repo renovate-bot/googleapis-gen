@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIntentsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIntentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetIntent1Async()
         {
-            // Snippet: GetIntentAsync(string, CallSettings)
-            // Additional: GetIntentAsync(string, CancellationToken)
             // Create client
             IntentsClient intentsClient = await IntentsClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/agent/intents/[INTENT]";
             // Make the request
             Intent response = await intentsClient.GetIntentAsync(name);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Billing.V1.Snippets
 {
+    using Google.Cloud.Billing.V1;
     using Google.Cloud.Iam.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedCloudBillingClientStandaloneSnippets
     {
         /// <summary>Snippet for TestIamPermissions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void TestIamPermissions()
         {
-            // Snippet: TestIamPermissions(string, IEnumerable<string>, CallSettings)
             // Create client
             CloudBillingClient cloudBillingClient = CloudBillingClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.Billing.V1.Snippets
             IEnumerable<string> permissions = new string[] { "", };
             // Make the request
             TestIamPermissionsResponse response = cloudBillingClient.TestIamPermissions(resource, permissions);
-            // End snippet
         }
     }
 }

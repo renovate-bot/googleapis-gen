@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Osconfig.V1Beta.Snippets
 {
+    using Google.Cloud.Osconfig.V1Beta;
+
     public sealed partial class GeneratedOsConfigServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteGuestPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteGuestPolicyResourceNames()
         {
-            // Snippet: DeleteGuestPolicy(GuestPolicyName, CallSettings)
             // Create client
             OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.Create();
             // Initialize request argument(s)
             GuestPolicyName name = GuestPolicyName.FromProjectGuestPolicy("[PROJECT]", "[GUEST_POLICY]");
             // Make the request
             osConfigServiceClient.DeleteGuestPolicy(name);
-            // End snippet
         }
     }
 }

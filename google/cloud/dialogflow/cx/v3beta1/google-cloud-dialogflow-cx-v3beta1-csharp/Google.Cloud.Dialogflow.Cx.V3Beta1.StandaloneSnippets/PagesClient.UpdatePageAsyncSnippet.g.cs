@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPagesClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdatePageAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdatePageAsync()
         {
-            // Snippet: UpdatePageAsync(Page, FieldMask, CallSettings)
-            // Additional: UpdatePageAsync(Page, FieldMask, CancellationToken)
             // Create client
             PagesClient pagesClient = await PagesClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Page response = await pagesClient.UpdatePageAsync(page, updateMask);
-            // End snippet
         }
     }
 }

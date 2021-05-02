@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -130,7 +131,8 @@ from google.container_v1beta1.types.cluster_service import VerticalPodAutoscalin
 from google.container_v1beta1.types.cluster_service import WorkloadIdentityConfig
 from google.container_v1beta1.types.cluster_service import WorkloadMetadataConfig
 
-__all__ = ('AcceleratorConfig',
+__all__ = (
+    'AcceleratorConfig',
     'AddonsConfig',
     'AuthenticatorGroupsConfig',
     'AutoUpgradeOptions',

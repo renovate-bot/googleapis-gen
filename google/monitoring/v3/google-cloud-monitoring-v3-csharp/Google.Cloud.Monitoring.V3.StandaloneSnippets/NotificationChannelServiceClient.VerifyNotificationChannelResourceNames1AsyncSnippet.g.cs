@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedNotificationChannelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for VerifyNotificationChannelAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task VerifyNotificationChannelResourceNames1Async()
         {
-            // Snippet: VerifyNotificationChannelAsync(NotificationChannelName, string, CallSettings)
-            // Additional: VerifyNotificationChannelAsync(NotificationChannelName, string, CancellationToken)
             // Create client
             NotificationChannelServiceClient notificationChannelServiceClient = await NotificationChannelServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             string code = "";
             // Make the request
             NotificationChannel response = await notificationChannelServiceClient.VerifyNotificationChannelAsync(name, code);
-            // End snippet
         }
     }
 }

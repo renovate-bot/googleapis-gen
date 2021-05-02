@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClickViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetClickViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetClickViewRequestObjectAsync()
         {
-            // Snippet: GetClickViewAsync(GetClickViewRequest, CallSettings)
-            // Additional: GetClickViewAsync(GetClickViewRequest, CancellationToken)
             // Create client
             ClickViewServiceClient clickViewServiceClient = await ClickViewServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             ClickView response = await clickViewServiceClient.GetClickViewAsync(request);
-            // End snippet
         }
     }
 }

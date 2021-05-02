@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -269,24 +271,37 @@ def test_get_campaign_budget(transport: str = 'grpc', request_type=campaign_budg
         # Designate an appropriate return value for the call.
         call.return_value = campaign_budget.CampaignBudget(
             resource_name='resource_name_value',
+
             status=budget_status.BudgetStatusEnum.BudgetStatus.UNKNOWN,
+
             delivery_method=budget_delivery_method.BudgetDeliveryMethodEnum.BudgetDeliveryMethod.UNKNOWN,
+
             period=budget_period.BudgetPeriodEnum.BudgetPeriod.UNKNOWN,
+
             type_=budget_type.BudgetTypeEnum.BudgetType.UNKNOWN,
+
         )
+
         response = client.get_campaign_budget(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_budget_service.GetCampaignBudgetRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign_budget.CampaignBudget)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.status == budget_status.BudgetStatusEnum.BudgetStatus.UNKNOWN
+
     assert response.delivery_method == budget_delivery_method.BudgetDeliveryMethodEnum.BudgetDeliveryMethod.UNKNOWN
+
     assert response.period == budget_period.BudgetPeriodEnum.BudgetPeriod.UNKNOWN
+
     assert response.type_ == budget_type.BudgetTypeEnum.BudgetType.UNKNOWN
 
 
@@ -302,7 +317,6 @@ def test_get_campaign_budget_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_budget_service.GetCampaignBudgetRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -310,6 +324,7 @@ def test_get_campaign_budget_field_headers():
             type(client.transport.get_campaign_budget),
             '__call__') as call:
         call.return_value = campaign_budget.CampaignBudget()
+
         client.get_campaign_budget(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -336,6 +351,7 @@ def test_get_campaign_budget_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_budget.CampaignBudget()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_campaign_budget(
@@ -346,6 +362,7 @@ def test_get_campaign_budget_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -380,14 +397,17 @@ def test_mutate_campaign_budgets(transport: str = 'grpc', request_type=campaign_
         # Designate an appropriate return value for the call.
         call.return_value = campaign_budget_service.MutateCampaignBudgetsResponse(
         )
+
         response = client.mutate_campaign_budgets(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_budget_service.MutateCampaignBudgetsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign_budget_service.MutateCampaignBudgetsResponse)
 
 
@@ -403,7 +423,6 @@ def test_mutate_campaign_budgets_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_budget_service.MutateCampaignBudgetsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -411,6 +430,7 @@ def test_mutate_campaign_budgets_field_headers():
             type(client.transport.mutate_campaign_budgets),
             '__call__') as call:
         call.return_value = campaign_budget_service.MutateCampaignBudgetsResponse()
+
         client.mutate_campaign_budgets(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -437,6 +457,7 @@ def test_mutate_campaign_budgets_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_budget_service.MutateCampaignBudgetsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_campaign_budgets(
@@ -448,7 +469,9 @@ def test_mutate_campaign_budgets_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [campaign_budget_service.CampaignBudgetOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -531,7 +554,7 @@ def test_campaign_budget_service_base_transport():
     methods = (
         'get_campaign_budget',
         'mutate_campaign_budgets',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -683,6 +706,7 @@ def test_campaign_budget_service_transport_channel_mtls_with_adc(
 def test_campaign_budget_path():
     customer = "squid"
     campaign_budget = "clam"
+
     expected = "customers/{customer}/campaignBudgets/{campaign_budget}".format(customer=customer, campaign_budget=campaign_budget, )
     actual = CampaignBudgetServiceClient.campaign_budget_path(customer, campaign_budget)
     assert expected == actual
@@ -690,8 +714,9 @@ def test_campaign_budget_path():
 
 def test_parse_campaign_budget_path():
     expected = {
-        "customer": "whelk",
-        "campaign_budget": "octopus",
+    "customer": "whelk",
+    "campaign_budget": "octopus",
+
     }
     path = CampaignBudgetServiceClient.campaign_budget_path(**expected)
 
@@ -701,6 +726,7 @@ def test_parse_campaign_budget_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CampaignBudgetServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -708,7 +734,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = CampaignBudgetServiceClient.common_billing_account_path(**expected)
 
@@ -718,6 +745,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = CampaignBudgetServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -725,7 +753,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = CampaignBudgetServiceClient.common_folder_path(**expected)
 
@@ -735,6 +764,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CampaignBudgetServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -742,7 +772,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = CampaignBudgetServiceClient.common_organization_path(**expected)
 
@@ -752,6 +783,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = CampaignBudgetServiceClient.common_project_path(project)
     assert expected == actual
@@ -759,7 +791,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = CampaignBudgetServiceClient.common_project_path(**expected)
 
@@ -770,6 +803,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CampaignBudgetServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -777,8 +811,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = CampaignBudgetServiceClient.common_location_path(**expected)
 

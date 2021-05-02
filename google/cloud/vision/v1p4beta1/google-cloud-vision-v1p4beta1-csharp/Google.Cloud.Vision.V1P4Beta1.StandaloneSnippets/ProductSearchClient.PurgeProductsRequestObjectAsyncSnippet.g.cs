@@ -17,6 +17,7 @@
 namespace Google.Cloud.Vision.V1P4Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Vision.V1P4Beta1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -24,10 +25,12 @@ namespace Google.Cloud.Vision.V1P4Beta1.Snippets
     public sealed partial class GeneratedProductSearchClientStandaloneSnippets
     {
         /// <summary>Snippet for PurgeProductsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task PurgeProductsRequestObjectAsync()
         {
-            // Snippet: PurgeProductsAsync(PurgeProductsRequest, CallSettings)
-            // Additional: PurgeProductsAsync(PurgeProductsRequest, CancellationToken)
             // Create client
             ProductSearchClient productSearchClient = await ProductSearchClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Vision.V1P4Beta1.Snippets
             {
                 ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 ProductSetPurgeConfig = new ProductSetPurgeConfig(),
-                DeleteOrphanProducts = false,
                 Force = false,
             };
             // Make the request
@@ -56,7 +58,6 @@ namespace Google.Cloud.Vision.V1P4Beta1.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedConversionActionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetConversionAction</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetConversionActionRequestObject()
         {
-            // Snippet: GetConversionAction(GetConversionActionRequest, CallSettings)
             // Create client
             ConversionActionServiceClient conversionActionServiceClient = ConversionActionServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             ConversionAction response = conversionActionServiceClient.GetConversionAction(request);
-            // End snippet
         }
     }
 }

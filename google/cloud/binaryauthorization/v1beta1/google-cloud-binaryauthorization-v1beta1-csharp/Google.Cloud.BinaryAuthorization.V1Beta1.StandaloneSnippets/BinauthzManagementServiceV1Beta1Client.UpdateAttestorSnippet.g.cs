@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.BinaryAuthorization.V1Beta1.Snippets
 {
+    using Google.Cloud.BinaryAuthorization.V1Beta1;
+
     public sealed partial class GeneratedBinauthzManagementServiceV1Beta1ClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateAttestor</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateAttestor()
         {
-            // Snippet: UpdateAttestor(Attestor, CallSettings)
             // Create client
             BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client = BinauthzManagementServiceV1Beta1Client.Create();
             // Initialize request argument(s)
             Attestor attestor = new Attestor();
             // Make the request
             Attestor response = binauthzManagementServiceV1Beta1Client.UpdateAttestor(attestor);
-            // End snippet
         }
     }
 }

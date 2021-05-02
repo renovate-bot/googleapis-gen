@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -27,6 +29,7 @@ from google.auth import credentials                    # type: ignore
 from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.language_v1beta2.types import language_service
+
 from .transports.base import LanguageServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import LanguageServiceGrpcAsyncIOTransport
 from .client import LanguageServiceClient
@@ -44,12 +47,16 @@ class LanguageServiceAsyncClient:
 
     common_billing_account_path = staticmethod(LanguageServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(LanguageServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(LanguageServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(LanguageServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(LanguageServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(LanguageServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(LanguageServiceClient.common_project_path)
     parse_common_project_path = staticmethod(LanguageServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(LanguageServiceClient.common_location_path)
     parse_common_location_path = staticmethod(LanguageServiceClient.parse_common_location_path)
 
@@ -134,6 +141,7 @@ class LanguageServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = LanguageServiceClient(
             credentials=credentials,
             transport=transport,
@@ -155,8 +163,7 @@ class LanguageServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.language_v1beta2.types.AnalyzeSentimentRequest`):
-                The request object.
-                The sentiment analysis request
+                The request object. The sentiment analysis request
                 message.
             document (:class:`google.cloud.language_v1beta2.types.Document`):
                 Required. Input document.
@@ -171,6 +178,7 @@ class LanguageServiceAsyncClient:
                 This corresponds to the ``encoding_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -195,6 +203,7 @@ class LanguageServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if document is not None:
             request.document = document
         if encoding_type is not None:
@@ -205,7 +214,10 @@ class LanguageServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.analyze_sentiment,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -242,8 +254,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.language_v1beta2.types.AnalyzeEntitiesRequest`):
-                The request object.
-                The entity analysis request message.
+                The request object. The entity analysis request message.
             document (:class:`google.cloud.language_v1beta2.types.Document`):
                 Required. Input document.
                 This corresponds to the ``document`` field
@@ -256,6 +267,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``encoding_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -278,6 +290,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if document is not None:
             request.document = document
         if encoding_type is not None:
@@ -288,7 +301,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.analyze_entities,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -325,8 +341,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.language_v1beta2.types.AnalyzeEntitySentimentRequest`):
-                The request object.
-                The entity-level sentiment analysis
+                The request object. The entity-level sentiment analysis
                 request message.
             document (:class:`google.cloud.language_v1beta2.types.Document`):
                 Required. Input document.
@@ -340,6 +355,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``encoding_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -364,6 +380,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if document is not None:
             request.document = document
         if encoding_type is not None:
@@ -374,7 +391,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.analyze_entity_sentiment,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -410,8 +430,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.language_v1beta2.types.AnalyzeSyntaxRequest`):
-                The request object.
-                The syntax analysis request message.
+                The request object. The syntax analysis request message.
             document (:class:`google.cloud.language_v1beta2.types.Document`):
                 Required. Input document.
                 This corresponds to the ``document`` field
@@ -424,6 +443,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``encoding_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -446,6 +466,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if document is not None:
             request.document = document
         if encoding_type is not None:
@@ -456,7 +477,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.analyze_syntax,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -489,14 +513,14 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.language_v1beta2.types.ClassifyTextRequest`):
-                The request object.
-                The document classification request
+                The request object. The document classification request
                 message.
             document (:class:`google.cloud.language_v1beta2.types.Document`):
                 Required. Input document.
                 This corresponds to the ``document`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -521,6 +545,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if document is not None:
             request.document = document
 
@@ -529,7 +554,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.classify_text,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -566,8 +594,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.language_v1beta2.types.AnnotateTextRequest`):
-                The request object.
-                The request message for the text
+                The request object. The request message for the text
                 annotation API, which can perform multiple analysis
                 types (sentiment, entities, and syntax) in one call.
             document (:class:`google.cloud.language_v1beta2.types.Document`):
@@ -587,6 +614,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``encoding_type`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -611,6 +639,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if document is not None:
             request.document = document
         if features is not None:
@@ -623,7 +652,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.annotate_text,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -643,6 +675,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

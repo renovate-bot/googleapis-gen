@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedHotelGroupViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetHotelGroupView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetHotelGroupViewResourceNames()
         {
-            // Snippet: GetHotelGroupView(HotelGroupViewName, CallSettings)
             // Create client
             HotelGroupViewServiceClient hotelGroupViewServiceClient = HotelGroupViewServiceClient.Create();
             // Initialize request argument(s)
             HotelGroupViewName resourceName = HotelGroupViewName.FromCustomerAdGroupCriterion("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
             // Make the request
             HotelGroupView response = hotelGroupViewServiceClient.GetHotelGroupView(resourceName);
-            // End snippet
         }
     }
 }

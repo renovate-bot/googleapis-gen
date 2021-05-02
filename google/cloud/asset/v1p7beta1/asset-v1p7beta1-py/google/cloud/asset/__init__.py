@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,7 +32,8 @@ from google.cloud.asset_v1p7beta1.types.assets import RelatedAssets
 from google.cloud.asset_v1p7beta1.types.assets import RelationshipAttributes
 from google.cloud.asset_v1p7beta1.types.assets import Resource
 
-__all__ = ('Asset',
+__all__ = (
+    'Asset',
     'AssetServiceAsyncClient',
     'AssetServiceClient',
     'BigQueryDestination',

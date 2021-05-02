@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Talent.V4.Snippets
 {
+    using Google.Cloud.Talent.V4;
+
     public sealed partial class GeneratedJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteJob</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteJobResourceNames()
         {
-            // Snippet: DeleteJob(JobName, CallSettings)
             // Create client
             JobServiceClient jobServiceClient = JobServiceClient.Create();
             // Initialize request argument(s)
             JobName name = JobName.FromProjectTenantJob("[PROJECT]", "[TENANT]", "[JOB]");
             // Make the request
             jobServiceClient.DeleteJob(name);
-            // End snippet
         }
     }
 }

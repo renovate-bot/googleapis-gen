@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Firestore.Admin.V1.Snippets
 {
+    using Google.Cloud.Firestore.Admin.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFirestoreAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteIndexAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteIndexResourceNamesAsync()
         {
-            // Snippet: DeleteIndexAsync(IndexName, CallSettings)
-            // Additional: DeleteIndexAsync(IndexName, CancellationToken)
             // Create client
             FirestoreAdminClient firestoreAdminClient = await FirestoreAdminClient.CreateAsync();
             // Initialize request argument(s)
             IndexName name = IndexName.FromProjectDatabaseCollectionIndex("[PROJECT]", "[DATABASE]", "[COLLECTION]", "[INDEX]");
             // Make the request
             await firestoreAdminClient.DeleteIndexAsync(name);
-            // End snippet
         }
     }
 }

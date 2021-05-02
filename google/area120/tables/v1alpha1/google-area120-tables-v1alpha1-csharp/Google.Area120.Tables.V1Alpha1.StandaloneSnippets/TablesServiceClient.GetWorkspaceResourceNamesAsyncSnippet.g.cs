@@ -16,22 +16,24 @@
 
 namespace Google.Area120.Tables.V1Alpha1.Snippets
 {
+    using Google.Area120.Tables.V1Alpha1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTablesServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetWorkspaceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetWorkspaceResourceNamesAsync()
         {
-            // Snippet: GetWorkspaceAsync(WorkspaceName, CallSettings)
-            // Additional: GetWorkspaceAsync(WorkspaceName, CancellationToken)
             // Create client
             TablesServiceClient tablesServiceClient = await TablesServiceClient.CreateAsync();
             // Initialize request argument(s)
             WorkspaceName name = WorkspaceName.FromWorkspace("[WORKSPACE]");
             // Make the request
             Workspace response = await tablesServiceClient.GetWorkspaceAsync(name);
-            // End snippet
         }
     }
 }

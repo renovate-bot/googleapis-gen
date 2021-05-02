@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
+    using Google.Cloud.Talent.V4Beta1;
+
     public sealed partial class GeneratedCompanyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteCompany</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteCompanyRequestObject()
         {
-            // Snippet: DeleteCompany(DeleteCompanyRequest, CallSettings)
             // Create client
             CompanyServiceClient companyServiceClient = CompanyServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
             };
             // Make the request
             companyServiceClient.DeleteCompany(request);
-            // End snippet
         }
     }
 }

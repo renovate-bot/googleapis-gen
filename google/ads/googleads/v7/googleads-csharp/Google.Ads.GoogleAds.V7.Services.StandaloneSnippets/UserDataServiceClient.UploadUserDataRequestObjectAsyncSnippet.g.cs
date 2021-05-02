@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Common;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedUserDataServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UploadUserDataAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UploadUserDataRequestObjectAsync()
         {
-            // Snippet: UploadUserDataAsync(UploadUserDataRequest, CallSettings)
-            // Additional: UploadUserDataAsync(UploadUserDataRequest, CancellationToken)
             // Create client
             UserDataServiceClient userDataServiceClient = await UserDataServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             UploadUserDataResponse response = await userDataServiceClient.UploadUserDataAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Analytics.Data.V1Beta.Snippets
 {
+    using Google.Analytics.Data.V1Beta;
+
     public sealed partial class GeneratedBetaAnalyticsDataClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMetadata</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetMetadataResourceNames()
         {
-            // Snippet: GetMetadata(MetadataName, CallSettings)
             // Create client
             BetaAnalyticsDataClient betaAnalyticsDataClient = BetaAnalyticsDataClient.Create();
             // Initialize request argument(s)
             MetadataName name = MetadataName.FromProperty("[PROPERTY]");
             // Make the request
             Metadata response = betaAnalyticsDataClient.GetMetadata(name);
-            // End snippet
         }
     }
 }

@@ -16,16 +16,20 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud;
+    using Google.Cloud.PubSub.V1;
     using Google.Protobuf;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSchemaServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ValidateMessageAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ValidateMessageRequestObjectAsync()
         {
-            // Snippet: ValidateMessageAsync(ValidateMessageRequest, CallSettings)
-            // Additional: ValidateMessageAsync(ValidateMessageRequest, CancellationToken)
             // Create client
             SchemaServiceClient schemaServiceClient = await SchemaServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,13 +37,11 @@ namespace Google.Cloud.PubSub.V1.Snippets
             {
                 ParentAsProjectName = ProjectName.FromProject("[PROJECT]"),
                 SchemaName = SchemaName.FromProjectSchema("[PROJECT]", "[SCHEMA]"),
-                Schema = new Schema(),
                 Message = ByteString.Empty,
                 Encoding = Encoding.Unspecified,
             };
             // Make the request
             ValidateMessageResponse response = await schemaServiceClient.ValidateMessageAsync(request);
-            // End snippet
         }
     }
 }

@@ -17,14 +17,18 @@
 namespace Google.Cloud.Retail.V2.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Retail.V2;
     using System;
 
     public sealed partial class GeneratedCatalogServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListCatalogs</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListCatalogs()
         {
-            // Snippet: ListCatalogs(string, string, int?, CallSettings)
             // Create client
             CatalogServiceClient catalogServiceClient = CatalogServiceClient.Create();
             // Initialize request argument(s)
@@ -63,7 +67,6 @@ namespace Google.Cloud.Retail.V2.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

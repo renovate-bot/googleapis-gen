@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -267,22 +269,33 @@ def test_get_label(transport: str = 'grpc', request_type=label_service.GetLabelR
         # Designate an appropriate return value for the call.
         call.return_value = label.Label(
             resource_name='resource_name_value',
+
             id=205,
+
             name='name_value',
+
             status=label_status.LabelStatusEnum.LabelStatus.UNKNOWN,
+
         )
+
         response = client.get_label(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == label_service.GetLabelRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, label.Label)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.id == 205
+
     assert response.name == 'name_value'
+
     assert response.status == label_status.LabelStatusEnum.LabelStatus.UNKNOWN
 
 
@@ -298,7 +311,6 @@ def test_get_label_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = label_service.GetLabelRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -306,6 +318,7 @@ def test_get_label_field_headers():
             type(client.transport.get_label),
             '__call__') as call:
         call.return_value = label.Label()
+
         client.get_label(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -332,6 +345,7 @@ def test_get_label_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = label.Label()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_label(
@@ -342,6 +356,7 @@ def test_get_label_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -376,14 +391,17 @@ def test_mutate_labels(transport: str = 'grpc', request_type=label_service.Mutat
         # Designate an appropriate return value for the call.
         call.return_value = label_service.MutateLabelsResponse(
         )
+
         response = client.mutate_labels(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == label_service.MutateLabelsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, label_service.MutateLabelsResponse)
 
 
@@ -399,7 +417,6 @@ def test_mutate_labels_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = label_service.MutateLabelsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -407,6 +424,7 @@ def test_mutate_labels_field_headers():
             type(client.transport.mutate_labels),
             '__call__') as call:
         call.return_value = label_service.MutateLabelsResponse()
+
         client.mutate_labels(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -433,6 +451,7 @@ def test_mutate_labels_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = label_service.MutateLabelsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_labels(
@@ -444,7 +463,9 @@ def test_mutate_labels_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [label_service.LabelOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -527,7 +548,7 @@ def test_label_service_base_transport():
     methods = (
         'get_label',
         'mutate_labels',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -679,6 +700,7 @@ def test_label_service_transport_channel_mtls_with_adc(
 def test_label_path():
     customer_id = "squid"
     label_id = "clam"
+
     expected = "customers/{customer_id}/labels/{label_id}".format(customer_id=customer_id, label_id=label_id, )
     actual = LabelServiceClient.label_path(customer_id, label_id)
     assert expected == actual
@@ -686,8 +708,9 @@ def test_label_path():
 
 def test_parse_label_path():
     expected = {
-        "customer_id": "whelk",
-        "label_id": "octopus",
+    "customer_id": "whelk",
+    "label_id": "octopus",
+
     }
     path = LabelServiceClient.label_path(**expected)
 
@@ -697,6 +720,7 @@ def test_parse_label_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = LabelServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -704,7 +728,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = LabelServiceClient.common_billing_account_path(**expected)
 
@@ -714,6 +739,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = LabelServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -721,7 +747,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = LabelServiceClient.common_folder_path(**expected)
 
@@ -731,6 +758,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = LabelServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -738,7 +766,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = LabelServiceClient.common_organization_path(**expected)
 
@@ -748,6 +777,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = LabelServiceClient.common_project_path(project)
     assert expected == actual
@@ -755,7 +785,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = LabelServiceClient.common_project_path(**expected)
 
@@ -766,6 +797,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = LabelServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -773,8 +805,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = LabelServiceClient.common_location_path(**expected)
 

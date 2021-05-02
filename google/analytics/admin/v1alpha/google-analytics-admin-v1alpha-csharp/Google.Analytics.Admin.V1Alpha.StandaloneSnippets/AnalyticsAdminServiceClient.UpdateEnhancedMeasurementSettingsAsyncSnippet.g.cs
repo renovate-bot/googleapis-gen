@@ -16,16 +16,19 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateEnhancedMeasurementSettingsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateEnhancedMeasurementSettingsAsync()
         {
-            // Snippet: UpdateEnhancedMeasurementSettingsAsync(EnhancedMeasurementSettings, FieldMask, CallSettings)
-            // Additional: UpdateEnhancedMeasurementSettingsAsync(EnhancedMeasurementSettings, FieldMask, CancellationToken)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = await AnalyticsAdminServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Analytics.Admin.V1Alpha.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             EnhancedMeasurementSettings response = await analyticsAdminServiceClient.UpdateEnhancedMeasurementSettingsAsync(enhancedMeasurementSettings, updateMask);
-            // End snippet
         }
     }
 }

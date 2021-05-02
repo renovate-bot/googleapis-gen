@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.devtools.clouddebugger_v2.types import data
 
@@ -33,6 +36,7 @@ __protobuf__ = proto.module(
 
 class RegisterDebuggeeRequest(proto.Message):
     r"""Request to register a debuggee.
+
     Attributes:
         debuggee (google.devtools.clouddebugger_v2.types.Debuggee):
             Required. Debuggee information to register. The fields
@@ -40,15 +44,14 @@ class RegisterDebuggeeRequest(proto.Message):
             ``agent_version`` of the debuggee must be set.
     """
 
-    debuggee = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    debuggee = proto.Field(proto.MESSAGE, number=1,
         message=data.Debuggee,
     )
 
 
 class RegisterDebuggeeResponse(proto.Message):
     r"""Response for registering a debuggee.
+
     Attributes:
         debuggee (google.devtools.clouddebugger_v2.types.Debuggee):
             Debuggee resource. The field ``id`` is guaranteed to be set
@@ -59,15 +62,14 @@ class RegisterDebuggeeResponse(proto.Message):
             ``RegisterDebuggee`` until reenabled.
     """
 
-    debuggee = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    debuggee = proto.Field(proto.MESSAGE, number=1,
         message=data.Debuggee,
     )
 
 
 class ListActiveBreakpointsRequest(proto.Message):
     r"""Request to list active breakpoints.
+
     Attributes:
         debuggee_id (str):
             Required. Identifies the debuggee.
@@ -88,22 +90,16 @@ class ListActiveBreakpointsRequest(proto.Message):
             timeout has expired.
     """
 
-    debuggee_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    wait_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    success_on_timeout = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
+    debuggee_id = proto.Field(proto.STRING, number=1)
+
+    wait_token = proto.Field(proto.STRING, number=2)
+
+    success_on_timeout = proto.Field(proto.BOOL, number=3)
 
 
 class ListActiveBreakpointsResponse(proto.Message):
     r"""Response for listing active breakpoints.
+
     Attributes:
         breakpoints (Sequence[google.devtools.clouddebugger_v2.types.Breakpoint]):
             List of all active breakpoints. The fields ``id`` and
@@ -119,23 +115,18 @@ class ListActiveBreakpointsResponse(proto.Message):
             should be ignored.
     """
 
-    breakpoints = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    breakpoints = proto.RepeatedField(proto.MESSAGE, number=1,
         message=data.Breakpoint,
     )
-    next_wait_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    wait_expired = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
+
+    next_wait_token = proto.Field(proto.STRING, number=2)
+
+    wait_expired = proto.Field(proto.BOOL, number=3)
 
 
 class UpdateActiveBreakpointRequest(proto.Message):
     r"""Request to update an active breakpoint.
+
     Attributes:
         debuggee_id (str):
             Required. Identifies the debuggee being
@@ -146,13 +137,9 @@ class UpdateActiveBreakpointRequest(proto.Message):
             specification fields in the update.
     """
 
-    debuggee_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    breakpoint_ = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    debuggee_id = proto.Field(proto.STRING, number=1)
+
+    breakpoint_ = proto.Field(proto.MESSAGE, number=2,
         message=data.Breakpoint,
     )
 
@@ -160,7 +147,7 @@ class UpdateActiveBreakpointRequest(proto.Message):
 class UpdateActiveBreakpointResponse(proto.Message):
     r"""Response for updating an active breakpoint.
     The message is defined to allow future extensions.
-        """
+    """
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

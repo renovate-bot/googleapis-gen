@@ -17,13 +17,17 @@
 namespace Google.Cloud.GSuiteAddOns.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.GSuiteAddOns.V1;
 
     public sealed partial class GeneratedGSuiteAddOnsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateDeployment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateDeploymentRequestObject()
         {
-            // Snippet: CreateDeployment(CreateDeploymentRequest, CallSettings)
             // Create client
             GSuiteAddOnsClient gSuiteAddOnsClient = GSuiteAddOnsClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.GSuiteAddOns.V1.Snippets
             };
             // Make the request
             Deployment response = gSuiteAddOnsClient.CreateDeployment(request);
-            // End snippet
         }
     }
 }

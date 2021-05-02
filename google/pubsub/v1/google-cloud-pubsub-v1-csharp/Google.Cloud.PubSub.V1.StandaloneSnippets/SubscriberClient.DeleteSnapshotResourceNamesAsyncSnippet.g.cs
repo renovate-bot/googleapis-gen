@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSubscriberClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteSnapshotAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteSnapshotResourceNamesAsync()
         {
-            // Snippet: DeleteSnapshotAsync(SnapshotName, CallSettings)
-            // Additional: DeleteSnapshotAsync(SnapshotName, CancellationToken)
             // Create client
             SubscriberClient subscriberClient = await SubscriberClient.CreateAsync();
             // Initialize request argument(s)
             SnapshotName snapshot = SnapshotName.FromProjectSnapshot("[PROJECT]", "[SNAPSHOT]");
             // Make the request
             await subscriberClient.DeleteSnapshotAsync(snapshot);
-            // End snippet
         }
     }
 }

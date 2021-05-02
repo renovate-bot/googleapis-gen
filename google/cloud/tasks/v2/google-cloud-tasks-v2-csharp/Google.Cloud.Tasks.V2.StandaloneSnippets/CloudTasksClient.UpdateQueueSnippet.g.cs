@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Tasks.V2.Snippets
 {
+    using Google.Cloud.Tasks.V2;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateQueue</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateQueue()
         {
-            // Snippet: UpdateQueue(Queue, FieldMask, CallSettings)
             // Create client
             CloudTasksClient cloudTasksClient = CloudTasksClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Tasks.V2.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Queue response = cloudTasksClient.UpdateQueue(queue, updateMask);
-            // End snippet
         }
     }
 }

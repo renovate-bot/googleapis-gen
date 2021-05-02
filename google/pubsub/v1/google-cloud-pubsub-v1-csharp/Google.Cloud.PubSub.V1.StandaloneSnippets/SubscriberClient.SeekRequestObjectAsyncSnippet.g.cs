@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSubscriberClientStandaloneSnippets
     {
         /// <summary>Snippet for SeekAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SeekRequestObjectAsync()
         {
-            // Snippet: SeekAsync(SeekRequest, CallSettings)
-            // Additional: SeekAsync(SeekRequest, CancellationToken)
             // Create client
             SubscriberClient subscriberClient = await SubscriberClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,11 +36,9 @@ namespace Google.Cloud.PubSub.V1.Snippets
             {
                 SubscriptionAsSubscriptionName = SubscriptionName.FromProjectSubscription("[PROJECT]", "[SUBSCRIPTION]"),
                 Time = new Timestamp(),
-                SnapshotAsSnapshotName = SnapshotName.FromProjectSnapshot("[PROJECT]", "[SNAPSHOT]"),
             };
             // Make the request
             SeekResponse response = await subscriberClient.SeekAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Functions.V1.Snippets
 {
+    using Google.Cloud.Functions.V1;
+
     public sealed partial class GeneratedCloudFunctionsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateUploadUrl</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GenerateUploadUrlRequestObject()
         {
-            // Snippet: GenerateUploadUrl(GenerateUploadUrlRequest, CallSettings)
             // Create client
             CloudFunctionsServiceClient cloudFunctionsServiceClient = CloudFunctionsServiceClient.Create();
             // Initialize request argument(s)
             GenerateUploadUrlRequest request = new GenerateUploadUrlRequest { Parent = "", };
             // Make the request
             GenerateUploadUrlResponse response = cloudFunctionsServiceClient.GenerateUploadUrl(request);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.SecretManager.V1.Snippets
 {
+    using Google.Cloud.SecretManager.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecretManagerServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateSecretAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateSecretAsync()
         {
-            // Snippet: CreateSecretAsync(string, string, Secret, CallSettings)
-            // Additional: CreateSecretAsync(string, string, Secret, CancellationToken)
             // Create client
             SecretManagerServiceClient secretManagerServiceClient = await SecretManagerServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.SecretManager.V1.Snippets
             Secret secret = new Secret();
             // Make the request
             Secret response = await secretManagerServiceClient.CreateSecretAsync(parent, secretId, secret);
-            // End snippet
         }
     }
 }

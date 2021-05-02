@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.ManagedIdentities.V1.Snippets
 {
+    using Google.Cloud.ManagedIdentities.V1;
+
     public sealed partial class GeneratedManagedIdentitiesServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDomain</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDomain()
         {
-            // Snippet: GetDomain(string, CallSettings)
             // Create client
             ManagedIdentitiesServiceClient managedIdentitiesServiceClient = ManagedIdentitiesServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/domains/[DOMAIN]";
             // Make the request
             Domain response = managedIdentitiesServiceClient.GetDomain(name);
-            // End snippet
         }
     }
 }

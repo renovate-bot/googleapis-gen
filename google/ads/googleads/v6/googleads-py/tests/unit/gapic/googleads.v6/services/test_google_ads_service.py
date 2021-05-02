@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -557,18 +559,25 @@ def test_search(transport: str = 'grpc', request_type=google_ads_service.SearchG
         # Designate an appropriate return value for the call.
         call.return_value = google_ads_service.SearchGoogleAdsResponse(
             next_page_token='next_page_token_value',
+
             total_results_count=2077,
+
         )
+
         response = client.search(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == google_ads_service.SearchGoogleAdsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.SearchPager)
+
     assert response.next_page_token == 'next_page_token_value'
+
     assert response.total_results_count == 2077
 
 
@@ -584,7 +593,6 @@ def test_search_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = google_ads_service.SearchGoogleAdsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -592,6 +600,7 @@ def test_search_field_headers():
             type(client.transport.search),
             '__call__') as call:
         call.return_value = google_ads_service.SearchGoogleAdsResponse()
+
         client.search(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -618,6 +627,7 @@ def test_search_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = google_ads_service.SearchGoogleAdsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.search(
@@ -629,7 +639,9 @@ def test_search_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].query == 'query_value'
 
 
@@ -742,6 +754,7 @@ def test_search_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_search_stream(transport: str = 'grpc', request_type=google_ads_service.SearchGoogleAdsStreamRequest):
     client = GoogleAdsServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -758,11 +771,13 @@ def test_search_stream(transport: str = 'grpc', request_type=google_ads_service.
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([google_ads_service.SearchGoogleAdsStreamResponse()])
+
         response = client.search_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == google_ads_service.SearchGoogleAdsStreamRequest()
 
     # Establish that the response is the type that we expect.
@@ -782,7 +797,6 @@ def test_search_stream_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = google_ads_service.SearchGoogleAdsStreamRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -790,6 +804,7 @@ def test_search_stream_field_headers():
             type(client.transport.search_stream),
             '__call__') as call:
         call.return_value = iter([google_ads_service.SearchGoogleAdsStreamResponse()])
+
         client.search_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -816,6 +831,7 @@ def test_search_stream_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([google_ads_service.SearchGoogleAdsStreamResponse()])
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.search_stream(
@@ -827,7 +843,9 @@ def test_search_stream_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].query == 'query_value'
 
 
@@ -863,14 +881,17 @@ def test_mutate(transport: str = 'grpc', request_type=google_ads_service.MutateG
         # Designate an appropriate return value for the call.
         call.return_value = google_ads_service.MutateGoogleAdsResponse(
         )
+
         response = client.mutate(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == google_ads_service.MutateGoogleAdsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, google_ads_service.MutateGoogleAdsResponse)
 
 
@@ -886,7 +907,6 @@ def test_mutate_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = google_ads_service.MutateGoogleAdsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -894,6 +914,7 @@ def test_mutate_field_headers():
             type(client.transport.mutate),
             '__call__') as call:
         call.return_value = google_ads_service.MutateGoogleAdsResponse()
+
         client.mutate(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -920,6 +941,7 @@ def test_mutate_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = google_ads_service.MutateGoogleAdsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate(
@@ -931,7 +953,9 @@ def test_mutate_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].mutate_operations == [google_ads_service.MutateOperation(ad_group_ad_label_operation=ad_group_ad_label_service.AdGroupAdLabelOperation(create=ad_group_ad_label.AdGroupAdLabel(resource_name='resource_name_value')))]
 
 
@@ -1015,7 +1039,7 @@ def test_google_ads_service_base_transport():
         'search',
         'search_stream',
         'mutate',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -1167,6 +1191,7 @@ def test_google_ads_service_transport_channel_mtls_with_adc(
 def test_account_budget_path():
     customer_id = "squid"
     account_budget_id = "clam"
+
     expected = "customers/{customer_id}/accountBudgets/{account_budget_id}".format(customer_id=customer_id, account_budget_id=account_budget_id, )
     actual = GoogleAdsServiceClient.account_budget_path(customer_id, account_budget_id)
     assert expected == actual
@@ -1174,8 +1199,9 @@ def test_account_budget_path():
 
 def test_parse_account_budget_path():
     expected = {
-        "customer_id": "whelk",
-        "account_budget_id": "octopus",
+    "customer_id": "whelk",
+    "account_budget_id": "octopus",
+
     }
     path = GoogleAdsServiceClient.account_budget_path(**expected)
 
@@ -1186,6 +1212,7 @@ def test_parse_account_budget_path():
 def test_account_budget_proposal_path():
     customer_id = "oyster"
     account_budget_proposal_id = "nudibranch"
+
     expected = "customers/{customer_id}/accountBudgetProposals/{account_budget_proposal_id}".format(customer_id=customer_id, account_budget_proposal_id=account_budget_proposal_id, )
     actual = GoogleAdsServiceClient.account_budget_proposal_path(customer_id, account_budget_proposal_id)
     assert expected == actual
@@ -1193,8 +1220,9 @@ def test_account_budget_proposal_path():
 
 def test_parse_account_budget_proposal_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "account_budget_proposal_id": "mussel",
+    "customer_id": "cuttlefish",
+    "account_budget_proposal_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.account_budget_proposal_path(**expected)
 
@@ -1205,6 +1233,7 @@ def test_parse_account_budget_proposal_path():
 def test_account_link_path():
     customer_id = "winkle"
     account_link_id = "nautilus"
+
     expected = "customers/{customer_id}/accountLinks/{account_link_id}".format(customer_id=customer_id, account_link_id=account_link_id, )
     actual = GoogleAdsServiceClient.account_link_path(customer_id, account_link_id)
     assert expected == actual
@@ -1212,8 +1241,9 @@ def test_account_link_path():
 
 def test_parse_account_link_path():
     expected = {
-        "customer_id": "scallop",
-        "account_link_id": "abalone",
+    "customer_id": "scallop",
+    "account_link_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.account_link_path(**expected)
 
@@ -1224,6 +1254,7 @@ def test_parse_account_link_path():
 def test_ad_path():
     customer_id = "squid"
     ad_id = "clam"
+
     expected = "customers/{customer_id}/ads/{ad_id}".format(customer_id=customer_id, ad_id=ad_id, )
     actual = GoogleAdsServiceClient.ad_path(customer_id, ad_id)
     assert expected == actual
@@ -1231,8 +1262,9 @@ def test_ad_path():
 
 def test_parse_ad_path():
     expected = {
-        "customer_id": "whelk",
-        "ad_id": "octopus",
+    "customer_id": "whelk",
+    "ad_id": "octopus",
+
     }
     path = GoogleAdsServiceClient.ad_path(**expected)
 
@@ -1243,6 +1275,7 @@ def test_parse_ad_path():
 def test_ad_group_path():
     customer_id = "oyster"
     ad_group_id = "nudibranch"
+
     expected = "customers/{customer_id}/adGroups/{ad_group_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, )
     actual = GoogleAdsServiceClient.ad_group_path(customer_id, ad_group_id)
     assert expected == actual
@@ -1250,8 +1283,9 @@ def test_ad_group_path():
 
 def test_parse_ad_group_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "ad_group_id": "mussel",
+    "customer_id": "cuttlefish",
+    "ad_group_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.ad_group_path(**expected)
 
@@ -1263,6 +1297,7 @@ def test_ad_group_ad_path():
     customer_id = "winkle"
     ad_group_id = "nautilus"
     ad_id = "scallop"
+
     expected = "customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, ad_id=ad_id, )
     actual = GoogleAdsServiceClient.ad_group_ad_path(customer_id, ad_group_id, ad_id)
     assert expected == actual
@@ -1270,9 +1305,10 @@ def test_ad_group_ad_path():
 
 def test_parse_ad_group_ad_path():
     expected = {
-        "customer_id": "abalone",
-        "ad_group_id": "squid",
-        "ad_id": "clam",
+    "customer_id": "abalone",
+    "ad_group_id": "squid",
+    "ad_id": "clam",
+
     }
     path = GoogleAdsServiceClient.ad_group_ad_path(**expected)
 
@@ -1286,6 +1322,7 @@ def test_ad_group_ad_asset_view_path():
     ad_id = "oyster"
     asset_id = "nudibranch"
     field_type = "cuttlefish"
+
     expected = "customers/{customer_id}/adGroupAdAssetViews/{ad_group_id}~{ad_id}~{asset_id}~{field_type}".format(customer_id=customer_id, ad_group_id=ad_group_id, ad_id=ad_id, asset_id=asset_id, field_type=field_type, )
     actual = GoogleAdsServiceClient.ad_group_ad_asset_view_path(customer_id, ad_group_id, ad_id, asset_id, field_type)
     assert expected == actual
@@ -1293,11 +1330,12 @@ def test_ad_group_ad_asset_view_path():
 
 def test_parse_ad_group_ad_asset_view_path():
     expected = {
-        "customer_id": "mussel",
-        "ad_group_id": "winkle",
-        "ad_id": "nautilus",
-        "asset_id": "scallop",
-        "field_type": "abalone",
+    "customer_id": "mussel",
+    "ad_group_id": "winkle",
+    "ad_id": "nautilus",
+    "asset_id": "scallop",
+    "field_type": "abalone",
+
     }
     path = GoogleAdsServiceClient.ad_group_ad_asset_view_path(**expected)
 
@@ -1310,6 +1348,7 @@ def test_ad_group_ad_label_path():
     ad_group_id = "clam"
     ad_id = "whelk"
     label_id = "octopus"
+
     expected = "customers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id}~{label_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, ad_id=ad_id, label_id=label_id, )
     actual = GoogleAdsServiceClient.ad_group_ad_label_path(customer_id, ad_group_id, ad_id, label_id)
     assert expected == actual
@@ -1317,10 +1356,11 @@ def test_ad_group_ad_label_path():
 
 def test_parse_ad_group_ad_label_path():
     expected = {
-        "customer_id": "oyster",
-        "ad_group_id": "nudibranch",
-        "ad_id": "cuttlefish",
-        "label_id": "mussel",
+    "customer_id": "oyster",
+    "ad_group_id": "nudibranch",
+    "ad_id": "cuttlefish",
+    "label_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.ad_group_ad_label_path(**expected)
 
@@ -1332,6 +1372,7 @@ def test_ad_group_audience_view_path():
     customer_id = "winkle"
     ad_group_id = "nautilus"
     criterion_id = "scallop"
+
     expected = "customers/{customer_id}/adGroupAudienceViews/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.ad_group_audience_view_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -1339,9 +1380,10 @@ def test_ad_group_audience_view_path():
 
 def test_parse_ad_group_audience_view_path():
     expected = {
-        "customer_id": "abalone",
-        "ad_group_id": "squid",
-        "criterion_id": "clam",
+    "customer_id": "abalone",
+    "ad_group_id": "squid",
+    "criterion_id": "clam",
+
     }
     path = GoogleAdsServiceClient.ad_group_audience_view_path(**expected)
 
@@ -1353,6 +1395,7 @@ def test_ad_group_bid_modifier_path():
     customer_id = "whelk"
     ad_group_id = "octopus"
     criterion_id = "oyster"
+
     expected = "customers/{customer_id}/adGroupBidModifiers/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.ad_group_bid_modifier_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -1360,9 +1403,10 @@ def test_ad_group_bid_modifier_path():
 
 def test_parse_ad_group_bid_modifier_path():
     expected = {
-        "customer_id": "nudibranch",
-        "ad_group_id": "cuttlefish",
-        "criterion_id": "mussel",
+    "customer_id": "nudibranch",
+    "ad_group_id": "cuttlefish",
+    "criterion_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.ad_group_bid_modifier_path(**expected)
 
@@ -1374,6 +1418,7 @@ def test_ad_group_criterion_path():
     customer_id = "winkle"
     ad_group_id = "nautilus"
     criterion_id = "scallop"
+
     expected = "customers/{customer_id}/adGroupCriteria/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.ad_group_criterion_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -1381,9 +1426,10 @@ def test_ad_group_criterion_path():
 
 def test_parse_ad_group_criterion_path():
     expected = {
-        "customer_id": "abalone",
-        "ad_group_id": "squid",
-        "criterion_id": "clam",
+    "customer_id": "abalone",
+    "ad_group_id": "squid",
+    "criterion_id": "clam",
+
     }
     path = GoogleAdsServiceClient.ad_group_criterion_path(**expected)
 
@@ -1396,6 +1442,7 @@ def test_ad_group_criterion_label_path():
     ad_group_id = "octopus"
     criterion_id = "oyster"
     label_id = "nudibranch"
+
     expected = "customers/{customer_id}/adGroupCriterionLabels/{ad_group_id}~{criterion_id}~{label_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, label_id=label_id, )
     actual = GoogleAdsServiceClient.ad_group_criterion_label_path(customer_id, ad_group_id, criterion_id, label_id)
     assert expected == actual
@@ -1403,10 +1450,11 @@ def test_ad_group_criterion_label_path():
 
 def test_parse_ad_group_criterion_label_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "ad_group_id": "mussel",
-        "criterion_id": "winkle",
-        "label_id": "nautilus",
+    "customer_id": "cuttlefish",
+    "ad_group_id": "mussel",
+    "criterion_id": "winkle",
+    "label_id": "nautilus",
+
     }
     path = GoogleAdsServiceClient.ad_group_criterion_label_path(**expected)
 
@@ -1422,6 +1470,7 @@ def test_ad_group_criterion_simulation_path():
     modification_method = "whelk"
     start_date = "octopus"
     end_date = "oyster"
+
     expected = "customers/{customer_id}/adGroupCriterionSimulations/{ad_group_id}~{criterion_id}~{type}~{modification_method}~{start_date}~{end_date}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, type=type, modification_method=modification_method, start_date=start_date, end_date=end_date, )
     actual = GoogleAdsServiceClient.ad_group_criterion_simulation_path(customer_id, ad_group_id, criterion_id, type, modification_method, start_date, end_date)
     assert expected == actual
@@ -1429,13 +1478,14 @@ def test_ad_group_criterion_simulation_path():
 
 def test_parse_ad_group_criterion_simulation_path():
     expected = {
-        "customer_id": "nudibranch",
-        "ad_group_id": "cuttlefish",
-        "criterion_id": "mussel",
-        "type": "winkle",
-        "modification_method": "nautilus",
-        "start_date": "scallop",
-        "end_date": "abalone",
+    "customer_id": "nudibranch",
+    "ad_group_id": "cuttlefish",
+    "criterion_id": "mussel",
+    "type": "winkle",
+    "modification_method": "nautilus",
+    "start_date": "scallop",
+    "end_date": "abalone",
+
     }
     path = GoogleAdsServiceClient.ad_group_criterion_simulation_path(**expected)
 
@@ -1447,6 +1497,7 @@ def test_ad_group_extension_setting_path():
     customer_id = "squid"
     ad_group_id = "clam"
     extension_type = "whelk"
+
     expected = "customers/{customer_id}/adGroupExtensionSettings/{ad_group_id}~{extension_type}".format(customer_id=customer_id, ad_group_id=ad_group_id, extension_type=extension_type, )
     actual = GoogleAdsServiceClient.ad_group_extension_setting_path(customer_id, ad_group_id, extension_type)
     assert expected == actual
@@ -1454,9 +1505,10 @@ def test_ad_group_extension_setting_path():
 
 def test_parse_ad_group_extension_setting_path():
     expected = {
-        "customer_id": "octopus",
-        "ad_group_id": "oyster",
-        "extension_type": "nudibranch",
+    "customer_id": "octopus",
+    "ad_group_id": "oyster",
+    "extension_type": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.ad_group_extension_setting_path(**expected)
 
@@ -1468,6 +1520,7 @@ def test_ad_group_feed_path():
     customer_id = "cuttlefish"
     ad_group_id = "mussel"
     feed_id = "winkle"
+
     expected = "customers/{customer_id}/adGroupFeeds/{ad_group_id}~{feed_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, feed_id=feed_id, )
     actual = GoogleAdsServiceClient.ad_group_feed_path(customer_id, ad_group_id, feed_id)
     assert expected == actual
@@ -1475,9 +1528,10 @@ def test_ad_group_feed_path():
 
 def test_parse_ad_group_feed_path():
     expected = {
-        "customer_id": "nautilus",
-        "ad_group_id": "scallop",
-        "feed_id": "abalone",
+    "customer_id": "nautilus",
+    "ad_group_id": "scallop",
+    "feed_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.ad_group_feed_path(**expected)
 
@@ -1489,6 +1543,7 @@ def test_ad_group_label_path():
     customer_id = "squid"
     ad_group_id = "clam"
     label_id = "whelk"
+
     expected = "customers/{customer_id}/adGroupLabels/{ad_group_id}~{label_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, label_id=label_id, )
     actual = GoogleAdsServiceClient.ad_group_label_path(customer_id, ad_group_id, label_id)
     assert expected == actual
@@ -1496,9 +1551,10 @@ def test_ad_group_label_path():
 
 def test_parse_ad_group_label_path():
     expected = {
-        "customer_id": "octopus",
-        "ad_group_id": "oyster",
-        "label_id": "nudibranch",
+    "customer_id": "octopus",
+    "ad_group_id": "oyster",
+    "label_id": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.ad_group_label_path(**expected)
 
@@ -1513,6 +1569,7 @@ def test_ad_group_simulation_path():
     modification_method = "nautilus"
     start_date = "scallop"
     end_date = "abalone"
+
     expected = "customers/{customer_id}/adGroupSimulations/{ad_group_id}~{type}~{modification_method}~{start_date}~{end_date}".format(customer_id=customer_id, ad_group_id=ad_group_id, type=type, modification_method=modification_method, start_date=start_date, end_date=end_date, )
     actual = GoogleAdsServiceClient.ad_group_simulation_path(customer_id, ad_group_id, type, modification_method, start_date, end_date)
     assert expected == actual
@@ -1520,12 +1577,13 @@ def test_ad_group_simulation_path():
 
 def test_parse_ad_group_simulation_path():
     expected = {
-        "customer_id": "squid",
-        "ad_group_id": "clam",
-        "type": "whelk",
-        "modification_method": "octopus",
-        "start_date": "oyster",
-        "end_date": "nudibranch",
+    "customer_id": "squid",
+    "ad_group_id": "clam",
+    "type": "whelk",
+    "modification_method": "octopus",
+    "start_date": "oyster",
+    "end_date": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.ad_group_simulation_path(**expected)
 
@@ -1538,6 +1596,7 @@ def test_ad_parameter_path():
     ad_group_id = "mussel"
     criterion_id = "winkle"
     parameter_index = "nautilus"
+
     expected = "customers/{customer_id}/adParameters/{ad_group_id}~{criterion_id}~{parameter_index}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, parameter_index=parameter_index, )
     actual = GoogleAdsServiceClient.ad_parameter_path(customer_id, ad_group_id, criterion_id, parameter_index)
     assert expected == actual
@@ -1545,10 +1604,11 @@ def test_ad_parameter_path():
 
 def test_parse_ad_parameter_path():
     expected = {
-        "customer_id": "scallop",
-        "ad_group_id": "abalone",
-        "criterion_id": "squid",
-        "parameter_index": "clam",
+    "customer_id": "scallop",
+    "ad_group_id": "abalone",
+    "criterion_id": "squid",
+    "parameter_index": "clam",
+
     }
     path = GoogleAdsServiceClient.ad_parameter_path(**expected)
 
@@ -1560,6 +1620,7 @@ def test_ad_schedule_view_path():
     customer_id = "whelk"
     campaign_id = "octopus"
     criterion_id = "oyster"
+
     expected = "customers/{customer_id}/adScheduleViews/{campaign_id}~{criterion_id}".format(customer_id=customer_id, campaign_id=campaign_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.ad_schedule_view_path(customer_id, campaign_id, criterion_id)
     assert expected == actual
@@ -1567,9 +1628,10 @@ def test_ad_schedule_view_path():
 
 def test_parse_ad_schedule_view_path():
     expected = {
-        "customer_id": "nudibranch",
-        "campaign_id": "cuttlefish",
-        "criterion_id": "mussel",
+    "customer_id": "nudibranch",
+    "campaign_id": "cuttlefish",
+    "criterion_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.ad_schedule_view_path(**expected)
 
@@ -1581,6 +1643,7 @@ def test_age_range_view_path():
     customer_id = "winkle"
     ad_group_id = "nautilus"
     criterion_id = "scallop"
+
     expected = "customers/{customer_id}/ageRangeViews/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.age_range_view_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -1588,9 +1651,10 @@ def test_age_range_view_path():
 
 def test_parse_age_range_view_path():
     expected = {
-        "customer_id": "abalone",
-        "ad_group_id": "squid",
-        "criterion_id": "clam",
+    "customer_id": "abalone",
+    "ad_group_id": "squid",
+    "criterion_id": "clam",
+
     }
     path = GoogleAdsServiceClient.age_range_view_path(**expected)
 
@@ -1601,6 +1665,7 @@ def test_parse_age_range_view_path():
 def test_asset_path():
     customer_id = "whelk"
     asset_id = "octopus"
+
     expected = "customers/{customer_id}/assets/{asset_id}".format(customer_id=customer_id, asset_id=asset_id, )
     actual = GoogleAdsServiceClient.asset_path(customer_id, asset_id)
     assert expected == actual
@@ -1608,8 +1673,9 @@ def test_asset_path():
 
 def test_parse_asset_path():
     expected = {
-        "customer_id": "oyster",
-        "asset_id": "nudibranch",
+    "customer_id": "oyster",
+    "asset_id": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.asset_path(**expected)
 
@@ -1620,6 +1686,7 @@ def test_parse_asset_path():
 def test_batch_job_path():
     customer_id = "cuttlefish"
     batch_job_id = "mussel"
+
     expected = "customers/{customer_id}/batchJobs/{batch_job_id}".format(customer_id=customer_id, batch_job_id=batch_job_id, )
     actual = GoogleAdsServiceClient.batch_job_path(customer_id, batch_job_id)
     assert expected == actual
@@ -1627,8 +1694,9 @@ def test_batch_job_path():
 
 def test_parse_batch_job_path():
     expected = {
-        "customer_id": "winkle",
-        "batch_job_id": "nautilus",
+    "customer_id": "winkle",
+    "batch_job_id": "nautilus",
+
     }
     path = GoogleAdsServiceClient.batch_job_path(**expected)
 
@@ -1639,6 +1707,7 @@ def test_parse_batch_job_path():
 def test_bidding_strategy_path():
     customer_id = "scallop"
     bidding_strategy_id = "abalone"
+
     expected = "customers/{customer_id}/biddingStrategies/{bidding_strategy_id}".format(customer_id=customer_id, bidding_strategy_id=bidding_strategy_id, )
     actual = GoogleAdsServiceClient.bidding_strategy_path(customer_id, bidding_strategy_id)
     assert expected == actual
@@ -1646,8 +1715,9 @@ def test_bidding_strategy_path():
 
 def test_parse_bidding_strategy_path():
     expected = {
-        "customer_id": "squid",
-        "bidding_strategy_id": "clam",
+    "customer_id": "squid",
+    "bidding_strategy_id": "clam",
+
     }
     path = GoogleAdsServiceClient.bidding_strategy_path(**expected)
 
@@ -1658,6 +1728,7 @@ def test_parse_bidding_strategy_path():
 def test_billing_setup_path():
     customer_id = "whelk"
     billing_setup_id = "octopus"
+
     expected = "customers/{customer_id}/billingSetups/{billing_setup_id}".format(customer_id=customer_id, billing_setup_id=billing_setup_id, )
     actual = GoogleAdsServiceClient.billing_setup_path(customer_id, billing_setup_id)
     assert expected == actual
@@ -1665,8 +1736,9 @@ def test_billing_setup_path():
 
 def test_parse_billing_setup_path():
     expected = {
-        "customer_id": "oyster",
-        "billing_setup_id": "nudibranch",
+    "customer_id": "oyster",
+    "billing_setup_id": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.billing_setup_path(**expected)
 
@@ -1677,6 +1749,7 @@ def test_parse_billing_setup_path():
 def test_call_view_path():
     customer_id = "cuttlefish"
     call_detail_id = "mussel"
+
     expected = "customers/{customer_id}/callViews/{call_detail_id}".format(customer_id=customer_id, call_detail_id=call_detail_id, )
     actual = GoogleAdsServiceClient.call_view_path(customer_id, call_detail_id)
     assert expected == actual
@@ -1684,8 +1757,9 @@ def test_call_view_path():
 
 def test_parse_call_view_path():
     expected = {
-        "customer_id": "winkle",
-        "call_detail_id": "nautilus",
+    "customer_id": "winkle",
+    "call_detail_id": "nautilus",
+
     }
     path = GoogleAdsServiceClient.call_view_path(**expected)
 
@@ -1696,6 +1770,7 @@ def test_parse_call_view_path():
 def test_campaign_path():
     customer_id = "scallop"
     campaign_id = "abalone"
+
     expected = "customers/{customer_id}/campaigns/{campaign_id}".format(customer_id=customer_id, campaign_id=campaign_id, )
     actual = GoogleAdsServiceClient.campaign_path(customer_id, campaign_id)
     assert expected == actual
@@ -1703,8 +1778,9 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-        "customer_id": "squid",
-        "campaign_id": "clam",
+    "customer_id": "squid",
+    "campaign_id": "clam",
+
     }
     path = GoogleAdsServiceClient.campaign_path(**expected)
 
@@ -1717,6 +1793,7 @@ def test_campaign_asset_path():
     campaign_id = "octopus"
     asset_id = "oyster"
     field_type = "nudibranch"
+
     expected = "customers/{customer_id}/campaignAssets/{campaign_id}~{asset_id}~{field_type}".format(customer_id=customer_id, campaign_id=campaign_id, asset_id=asset_id, field_type=field_type, )
     actual = GoogleAdsServiceClient.campaign_asset_path(customer_id, campaign_id, asset_id, field_type)
     assert expected == actual
@@ -1724,10 +1801,11 @@ def test_campaign_asset_path():
 
 def test_parse_campaign_asset_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "campaign_id": "mussel",
-        "asset_id": "winkle",
-        "field_type": "nautilus",
+    "customer_id": "cuttlefish",
+    "campaign_id": "mussel",
+    "asset_id": "winkle",
+    "field_type": "nautilus",
+
     }
     path = GoogleAdsServiceClient.campaign_asset_path(**expected)
 
@@ -1739,6 +1817,7 @@ def test_campaign_audience_view_path():
     customer_id = "scallop"
     campaign_id = "abalone"
     criterion_id = "squid"
+
     expected = "customers/{customer_id}/campaignAudienceViews/{campaign_id}~{criterion_id}".format(customer_id=customer_id, campaign_id=campaign_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.campaign_audience_view_path(customer_id, campaign_id, criterion_id)
     assert expected == actual
@@ -1746,9 +1825,10 @@ def test_campaign_audience_view_path():
 
 def test_parse_campaign_audience_view_path():
     expected = {
-        "customer_id": "clam",
-        "campaign_id": "whelk",
-        "criterion_id": "octopus",
+    "customer_id": "clam",
+    "campaign_id": "whelk",
+    "criterion_id": "octopus",
+
     }
     path = GoogleAdsServiceClient.campaign_audience_view_path(**expected)
 
@@ -1760,6 +1840,7 @@ def test_campaign_bid_modifier_path():
     customer_id = "oyster"
     campaign_id = "nudibranch"
     criterion_id = "cuttlefish"
+
     expected = "customers/{customer_id}/campaignBidModifiers/{campaign_id}~{criterion_id}".format(customer_id=customer_id, campaign_id=campaign_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.campaign_bid_modifier_path(customer_id, campaign_id, criterion_id)
     assert expected == actual
@@ -1767,9 +1848,10 @@ def test_campaign_bid_modifier_path():
 
 def test_parse_campaign_bid_modifier_path():
     expected = {
-        "customer_id": "mussel",
-        "campaign_id": "winkle",
-        "criterion_id": "nautilus",
+    "customer_id": "mussel",
+    "campaign_id": "winkle",
+    "criterion_id": "nautilus",
+
     }
     path = GoogleAdsServiceClient.campaign_bid_modifier_path(**expected)
 
@@ -1780,6 +1862,7 @@ def test_parse_campaign_bid_modifier_path():
 def test_campaign_budget_path():
     customer_id = "scallop"
     campaign_budget_id = "abalone"
+
     expected = "customers/{customer_id}/campaignBudgets/{campaign_budget_id}".format(customer_id=customer_id, campaign_budget_id=campaign_budget_id, )
     actual = GoogleAdsServiceClient.campaign_budget_path(customer_id, campaign_budget_id)
     assert expected == actual
@@ -1787,8 +1870,9 @@ def test_campaign_budget_path():
 
 def test_parse_campaign_budget_path():
     expected = {
-        "customer_id": "squid",
-        "campaign_budget_id": "clam",
+    "customer_id": "squid",
+    "campaign_budget_id": "clam",
+
     }
     path = GoogleAdsServiceClient.campaign_budget_path(**expected)
 
@@ -1800,6 +1884,7 @@ def test_campaign_criterion_path():
     customer_id = "whelk"
     campaign_id = "octopus"
     criterion_id = "oyster"
+
     expected = "customers/{customer_id}/campaignCriteria/{campaign_id}~{criterion_id}".format(customer_id=customer_id, campaign_id=campaign_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.campaign_criterion_path(customer_id, campaign_id, criterion_id)
     assert expected == actual
@@ -1807,9 +1892,10 @@ def test_campaign_criterion_path():
 
 def test_parse_campaign_criterion_path():
     expected = {
-        "customer_id": "nudibranch",
-        "campaign_id": "cuttlefish",
-        "criterion_id": "mussel",
+    "customer_id": "nudibranch",
+    "campaign_id": "cuttlefish",
+    "criterion_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.campaign_criterion_path(**expected)
 
@@ -1825,6 +1911,7 @@ def test_campaign_criterion_simulation_path():
     modification_method = "squid"
     start_date = "clam"
     end_date = "whelk"
+
     expected = "customers/{customer_id}/campaignCriterionSimulations/{campaign_id}~{criterion_id}~{type}~{modification_method}~{start_date}~{end_date}".format(customer_id=customer_id, campaign_id=campaign_id, criterion_id=criterion_id, type=type, modification_method=modification_method, start_date=start_date, end_date=end_date, )
     actual = GoogleAdsServiceClient.campaign_criterion_simulation_path(customer_id, campaign_id, criterion_id, type, modification_method, start_date, end_date)
     assert expected == actual
@@ -1832,13 +1919,14 @@ def test_campaign_criterion_simulation_path():
 
 def test_parse_campaign_criterion_simulation_path():
     expected = {
-        "customer_id": "octopus",
-        "campaign_id": "oyster",
-        "criterion_id": "nudibranch",
-        "type": "cuttlefish",
-        "modification_method": "mussel",
-        "start_date": "winkle",
-        "end_date": "nautilus",
+    "customer_id": "octopus",
+    "campaign_id": "oyster",
+    "criterion_id": "nudibranch",
+    "type": "cuttlefish",
+    "modification_method": "mussel",
+    "start_date": "winkle",
+    "end_date": "nautilus",
+
     }
     path = GoogleAdsServiceClient.campaign_criterion_simulation_path(**expected)
 
@@ -1850,6 +1938,7 @@ def test_campaign_draft_path():
     customer_id = "scallop"
     base_campaign_id = "abalone"
     draft_id = "squid"
+
     expected = "customers/{customer_id}/campaignDrafts/{base_campaign_id}~{draft_id}".format(customer_id=customer_id, base_campaign_id=base_campaign_id, draft_id=draft_id, )
     actual = GoogleAdsServiceClient.campaign_draft_path(customer_id, base_campaign_id, draft_id)
     assert expected == actual
@@ -1857,9 +1946,10 @@ def test_campaign_draft_path():
 
 def test_parse_campaign_draft_path():
     expected = {
-        "customer_id": "clam",
-        "base_campaign_id": "whelk",
-        "draft_id": "octopus",
+    "customer_id": "clam",
+    "base_campaign_id": "whelk",
+    "draft_id": "octopus",
+
     }
     path = GoogleAdsServiceClient.campaign_draft_path(**expected)
 
@@ -1870,6 +1960,7 @@ def test_parse_campaign_draft_path():
 def test_campaign_experiment_path():
     customer_id = "oyster"
     campaign_experiment_id = "nudibranch"
+
     expected = "customers/{customer_id}/campaignExperiments/{campaign_experiment_id}".format(customer_id=customer_id, campaign_experiment_id=campaign_experiment_id, )
     actual = GoogleAdsServiceClient.campaign_experiment_path(customer_id, campaign_experiment_id)
     assert expected == actual
@@ -1877,8 +1968,9 @@ def test_campaign_experiment_path():
 
 def test_parse_campaign_experiment_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "campaign_experiment_id": "mussel",
+    "customer_id": "cuttlefish",
+    "campaign_experiment_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.campaign_experiment_path(**expected)
 
@@ -1890,6 +1982,7 @@ def test_campaign_extension_setting_path():
     customer_id = "winkle"
     campaign_id = "nautilus"
     extension_type = "scallop"
+
     expected = "customers/{customer_id}/campaignExtensionSettings/{campaign_id}~{extension_type}".format(customer_id=customer_id, campaign_id=campaign_id, extension_type=extension_type, )
     actual = GoogleAdsServiceClient.campaign_extension_setting_path(customer_id, campaign_id, extension_type)
     assert expected == actual
@@ -1897,9 +1990,10 @@ def test_campaign_extension_setting_path():
 
 def test_parse_campaign_extension_setting_path():
     expected = {
-        "customer_id": "abalone",
-        "campaign_id": "squid",
-        "extension_type": "clam",
+    "customer_id": "abalone",
+    "campaign_id": "squid",
+    "extension_type": "clam",
+
     }
     path = GoogleAdsServiceClient.campaign_extension_setting_path(**expected)
 
@@ -1911,6 +2005,7 @@ def test_campaign_feed_path():
     customer_id = "whelk"
     campaign_id = "octopus"
     feed_id = "oyster"
+
     expected = "customers/{customer_id}/campaignFeeds/{campaign_id}~{feed_id}".format(customer_id=customer_id, campaign_id=campaign_id, feed_id=feed_id, )
     actual = GoogleAdsServiceClient.campaign_feed_path(customer_id, campaign_id, feed_id)
     assert expected == actual
@@ -1918,9 +2013,10 @@ def test_campaign_feed_path():
 
 def test_parse_campaign_feed_path():
     expected = {
-        "customer_id": "nudibranch",
-        "campaign_id": "cuttlefish",
-        "feed_id": "mussel",
+    "customer_id": "nudibranch",
+    "campaign_id": "cuttlefish",
+    "feed_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.campaign_feed_path(**expected)
 
@@ -1932,6 +2028,7 @@ def test_campaign_label_path():
     customer_id = "winkle"
     campaign_id = "nautilus"
     label_id = "scallop"
+
     expected = "customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}".format(customer_id=customer_id, campaign_id=campaign_id, label_id=label_id, )
     actual = GoogleAdsServiceClient.campaign_label_path(customer_id, campaign_id, label_id)
     assert expected == actual
@@ -1939,9 +2036,10 @@ def test_campaign_label_path():
 
 def test_parse_campaign_label_path():
     expected = {
-        "customer_id": "abalone",
-        "campaign_id": "squid",
-        "label_id": "clam",
+    "customer_id": "abalone",
+    "campaign_id": "squid",
+    "label_id": "clam",
+
     }
     path = GoogleAdsServiceClient.campaign_label_path(**expected)
 
@@ -1953,6 +2051,7 @@ def test_campaign_shared_set_path():
     customer_id = "whelk"
     campaign_id = "octopus"
     shared_set_id = "oyster"
+
     expected = "customers/{customer_id}/campaignSharedSets/{campaign_id}~{shared_set_id}".format(customer_id=customer_id, campaign_id=campaign_id, shared_set_id=shared_set_id, )
     actual = GoogleAdsServiceClient.campaign_shared_set_path(customer_id, campaign_id, shared_set_id)
     assert expected == actual
@@ -1960,9 +2059,10 @@ def test_campaign_shared_set_path():
 
 def test_parse_campaign_shared_set_path():
     expected = {
-        "customer_id": "nudibranch",
-        "campaign_id": "cuttlefish",
-        "shared_set_id": "mussel",
+    "customer_id": "nudibranch",
+    "campaign_id": "cuttlefish",
+    "shared_set_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.campaign_shared_set_path(**expected)
 
@@ -1972,6 +2072,7 @@ def test_parse_campaign_shared_set_path():
 
 def test_carrier_constant_path():
     criterion_id = "winkle"
+
     expected = "carrierConstants/{criterion_id}".format(criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.carrier_constant_path(criterion_id)
     assert expected == actual
@@ -1979,7 +2080,8 @@ def test_carrier_constant_path():
 
 def test_parse_carrier_constant_path():
     expected = {
-        "criterion_id": "nautilus",
+    "criterion_id": "nautilus",
+
     }
     path = GoogleAdsServiceClient.carrier_constant_path(**expected)
 
@@ -1992,6 +2094,7 @@ def test_change_event_path():
     timestamp_micros = "abalone"
     command_index = "squid"
     mutate_index = "clam"
+
     expected = "customers/{customer_id}/changeEvents/{timestamp_micros}~{command_index}~{mutate_index}".format(customer_id=customer_id, timestamp_micros=timestamp_micros, command_index=command_index, mutate_index=mutate_index, )
     actual = GoogleAdsServiceClient.change_event_path(customer_id, timestamp_micros, command_index, mutate_index)
     assert expected == actual
@@ -1999,10 +2102,11 @@ def test_change_event_path():
 
 def test_parse_change_event_path():
     expected = {
-        "customer_id": "whelk",
-        "timestamp_micros": "octopus",
-        "command_index": "oyster",
-        "mutate_index": "nudibranch",
+    "customer_id": "whelk",
+    "timestamp_micros": "octopus",
+    "command_index": "oyster",
+    "mutate_index": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.change_event_path(**expected)
 
@@ -2013,6 +2117,7 @@ def test_parse_change_event_path():
 def test_change_status_path():
     customer_id = "cuttlefish"
     change_status_id = "mussel"
+
     expected = "customers/{customer_id}/changeStatus/{change_status_id}".format(customer_id=customer_id, change_status_id=change_status_id, )
     actual = GoogleAdsServiceClient.change_status_path(customer_id, change_status_id)
     assert expected == actual
@@ -2020,8 +2125,9 @@ def test_change_status_path():
 
 def test_parse_change_status_path():
     expected = {
-        "customer_id": "winkle",
-        "change_status_id": "nautilus",
+    "customer_id": "winkle",
+    "change_status_id": "nautilus",
+
     }
     path = GoogleAdsServiceClient.change_status_path(**expected)
 
@@ -2033,6 +2139,7 @@ def test_click_view_path():
     customer_id = "scallop"
     date = "abalone"
     gclid = "squid"
+
     expected = "customers/{customer_id}/clickViews/{date}~{gclid}".format(customer_id=customer_id, date=date, gclid=gclid, )
     actual = GoogleAdsServiceClient.click_view_path(customer_id, date, gclid)
     assert expected == actual
@@ -2040,9 +2147,10 @@ def test_click_view_path():
 
 def test_parse_click_view_path():
     expected = {
-        "customer_id": "clam",
-        "date": "whelk",
-        "gclid": "octopus",
+    "customer_id": "clam",
+    "date": "whelk",
+    "gclid": "octopus",
+
     }
     path = GoogleAdsServiceClient.click_view_path(**expected)
 
@@ -2053,6 +2161,7 @@ def test_parse_click_view_path():
 def test_combined_audience_path():
     customer_id = "oyster"
     combined_audience_id = "nudibranch"
+
     expected = "customers/{customer_id}/combinedAudiences/{combined_audience_id}".format(customer_id=customer_id, combined_audience_id=combined_audience_id, )
     actual = GoogleAdsServiceClient.combined_audience_path(customer_id, combined_audience_id)
     assert expected == actual
@@ -2060,8 +2169,9 @@ def test_combined_audience_path():
 
 def test_parse_combined_audience_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "combined_audience_id": "mussel",
+    "customer_id": "cuttlefish",
+    "combined_audience_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.combined_audience_path(**expected)
 
@@ -2072,6 +2182,7 @@ def test_parse_combined_audience_path():
 def test_conversion_action_path():
     customer_id = "winkle"
     conversion_action_id = "nautilus"
+
     expected = "customers/{customer_id}/conversionActions/{conversion_action_id}".format(customer_id=customer_id, conversion_action_id=conversion_action_id, )
     actual = GoogleAdsServiceClient.conversion_action_path(customer_id, conversion_action_id)
     assert expected == actual
@@ -2079,8 +2190,9 @@ def test_conversion_action_path():
 
 def test_parse_conversion_action_path():
     expected = {
-        "customer_id": "scallop",
-        "conversion_action_id": "abalone",
+    "customer_id": "scallop",
+    "conversion_action_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.conversion_action_path(**expected)
 
@@ -2090,6 +2202,7 @@ def test_parse_conversion_action_path():
 
 def test_currency_constant_path():
     code = "squid"
+
     expected = "currencyConstants/{code}".format(code=code, )
     actual = GoogleAdsServiceClient.currency_constant_path(code)
     assert expected == actual
@@ -2097,7 +2210,8 @@ def test_currency_constant_path():
 
 def test_parse_currency_constant_path():
     expected = {
-        "code": "clam",
+    "code": "clam",
+
     }
     path = GoogleAdsServiceClient.currency_constant_path(**expected)
 
@@ -2108,6 +2222,7 @@ def test_parse_currency_constant_path():
 def test_custom_audience_path():
     customer_id = "whelk"
     custom_audience_id = "octopus"
+
     expected = "customers/{customer_id}/customAudiences/{custom_audience_id}".format(customer_id=customer_id, custom_audience_id=custom_audience_id, )
     actual = GoogleAdsServiceClient.custom_audience_path(customer_id, custom_audience_id)
     assert expected == actual
@@ -2115,8 +2230,9 @@ def test_custom_audience_path():
 
 def test_parse_custom_audience_path():
     expected = {
-        "customer_id": "oyster",
-        "custom_audience_id": "nudibranch",
+    "customer_id": "oyster",
+    "custom_audience_id": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.custom_audience_path(**expected)
 
@@ -2126,6 +2242,7 @@ def test_parse_custom_audience_path():
 
 def test_customer_path():
     customer_id = "cuttlefish"
+
     expected = "customers/{customer_id}".format(customer_id=customer_id, )
     actual = GoogleAdsServiceClient.customer_path(customer_id)
     assert expected == actual
@@ -2133,7 +2250,8 @@ def test_customer_path():
 
 def test_parse_customer_path():
     expected = {
-        "customer_id": "mussel",
+    "customer_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.customer_path(**expected)
 
@@ -2144,6 +2262,7 @@ def test_parse_customer_path():
 def test_customer_client_path():
     customer_id = "winkle"
     client_customer_id = "nautilus"
+
     expected = "customers/{customer_id}/customerClients/{client_customer_id}".format(customer_id=customer_id, client_customer_id=client_customer_id, )
     actual = GoogleAdsServiceClient.customer_client_path(customer_id, client_customer_id)
     assert expected == actual
@@ -2151,8 +2270,9 @@ def test_customer_client_path():
 
 def test_parse_customer_client_path():
     expected = {
-        "customer_id": "scallop",
-        "client_customer_id": "abalone",
+    "customer_id": "scallop",
+    "client_customer_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.customer_client_path(**expected)
 
@@ -2164,6 +2284,7 @@ def test_customer_client_link_path():
     customer_id = "squid"
     client_customer_id = "clam"
     manager_link_id = "whelk"
+
     expected = "customers/{customer_id}/customerClientLinks/{client_customer_id}~{manager_link_id}".format(customer_id=customer_id, client_customer_id=client_customer_id, manager_link_id=manager_link_id, )
     actual = GoogleAdsServiceClient.customer_client_link_path(customer_id, client_customer_id, manager_link_id)
     assert expected == actual
@@ -2171,9 +2292,10 @@ def test_customer_client_link_path():
 
 def test_parse_customer_client_link_path():
     expected = {
-        "customer_id": "octopus",
-        "client_customer_id": "oyster",
-        "manager_link_id": "nudibranch",
+    "customer_id": "octopus",
+    "client_customer_id": "oyster",
+    "manager_link_id": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.customer_client_link_path(**expected)
 
@@ -2184,6 +2306,7 @@ def test_parse_customer_client_link_path():
 def test_customer_extension_setting_path():
     customer_id = "cuttlefish"
     extension_type = "mussel"
+
     expected = "customers/{customer_id}/customerExtensionSettings/{extension_type}".format(customer_id=customer_id, extension_type=extension_type, )
     actual = GoogleAdsServiceClient.customer_extension_setting_path(customer_id, extension_type)
     assert expected == actual
@@ -2191,8 +2314,9 @@ def test_customer_extension_setting_path():
 
 def test_parse_customer_extension_setting_path():
     expected = {
-        "customer_id": "winkle",
-        "extension_type": "nautilus",
+    "customer_id": "winkle",
+    "extension_type": "nautilus",
+
     }
     path = GoogleAdsServiceClient.customer_extension_setting_path(**expected)
 
@@ -2203,6 +2327,7 @@ def test_parse_customer_extension_setting_path():
 def test_customer_feed_path():
     customer_id = "scallop"
     feed_id = "abalone"
+
     expected = "customers/{customer_id}/customerFeeds/{feed_id}".format(customer_id=customer_id, feed_id=feed_id, )
     actual = GoogleAdsServiceClient.customer_feed_path(customer_id, feed_id)
     assert expected == actual
@@ -2210,8 +2335,9 @@ def test_customer_feed_path():
 
 def test_parse_customer_feed_path():
     expected = {
-        "customer_id": "squid",
-        "feed_id": "clam",
+    "customer_id": "squid",
+    "feed_id": "clam",
+
     }
     path = GoogleAdsServiceClient.customer_feed_path(**expected)
 
@@ -2222,6 +2348,7 @@ def test_parse_customer_feed_path():
 def test_customer_label_path():
     customer_id = "whelk"
     label_id = "octopus"
+
     expected = "customers/{customer_id}/customerLabels/{label_id}".format(customer_id=customer_id, label_id=label_id, )
     actual = GoogleAdsServiceClient.customer_label_path(customer_id, label_id)
     assert expected == actual
@@ -2229,8 +2356,9 @@ def test_customer_label_path():
 
 def test_parse_customer_label_path():
     expected = {
-        "customer_id": "oyster",
-        "label_id": "nudibranch",
+    "customer_id": "oyster",
+    "label_id": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.customer_label_path(**expected)
 
@@ -2242,6 +2370,7 @@ def test_customer_manager_link_path():
     customer_id = "cuttlefish"
     manager_customer_id = "mussel"
     manager_link_id = "winkle"
+
     expected = "customers/{customer_id}/customerManagerLinks/{manager_customer_id}~{manager_link_id}".format(customer_id=customer_id, manager_customer_id=manager_customer_id, manager_link_id=manager_link_id, )
     actual = GoogleAdsServiceClient.customer_manager_link_path(customer_id, manager_customer_id, manager_link_id)
     assert expected == actual
@@ -2249,9 +2378,10 @@ def test_customer_manager_link_path():
 
 def test_parse_customer_manager_link_path():
     expected = {
-        "customer_id": "nautilus",
-        "manager_customer_id": "scallop",
-        "manager_link_id": "abalone",
+    "customer_id": "nautilus",
+    "manager_customer_id": "scallop",
+    "manager_link_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.customer_manager_link_path(**expected)
 
@@ -2262,6 +2392,7 @@ def test_parse_customer_manager_link_path():
 def test_customer_negative_criterion_path():
     customer_id = "squid"
     criterion_id = "clam"
+
     expected = "customers/{customer_id}/customerNegativeCriteria/{criterion_id}".format(customer_id=customer_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.customer_negative_criterion_path(customer_id, criterion_id)
     assert expected == actual
@@ -2269,8 +2400,9 @@ def test_customer_negative_criterion_path():
 
 def test_parse_customer_negative_criterion_path():
     expected = {
-        "customer_id": "whelk",
-        "criterion_id": "octopus",
+    "customer_id": "whelk",
+    "criterion_id": "octopus",
+
     }
     path = GoogleAdsServiceClient.customer_negative_criterion_path(**expected)
 
@@ -2281,6 +2413,7 @@ def test_parse_customer_negative_criterion_path():
 def test_customer_user_access_path():
     customer_id = "oyster"
     user_id = "nudibranch"
+
     expected = "customers/{customer_id}/customerUserAccesses/{user_id}".format(customer_id=customer_id, user_id=user_id, )
     actual = GoogleAdsServiceClient.customer_user_access_path(customer_id, user_id)
     assert expected == actual
@@ -2288,8 +2421,9 @@ def test_customer_user_access_path():
 
 def test_parse_customer_user_access_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "user_id": "mussel",
+    "customer_id": "cuttlefish",
+    "user_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.customer_user_access_path(**expected)
 
@@ -2300,6 +2434,7 @@ def test_parse_customer_user_access_path():
 def test_customer_user_access_invitation_path():
     customer_id = "winkle"
     invitation_id = "nautilus"
+
     expected = "customers/{customer_id}/customerUserAccessInvitations/{invitation_id}".format(customer_id=customer_id, invitation_id=invitation_id, )
     actual = GoogleAdsServiceClient.customer_user_access_invitation_path(customer_id, invitation_id)
     assert expected == actual
@@ -2307,8 +2442,9 @@ def test_customer_user_access_invitation_path():
 
 def test_parse_customer_user_access_invitation_path():
     expected = {
-        "customer_id": "scallop",
-        "invitation_id": "abalone",
+    "customer_id": "scallop",
+    "invitation_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.customer_user_access_invitation_path(**expected)
 
@@ -2319,6 +2455,7 @@ def test_parse_customer_user_access_invitation_path():
 def test_custom_interest_path():
     customer_id = "squid"
     custom_interest_id = "clam"
+
     expected = "customers/{customer_id}/customInterests/{custom_interest_id}".format(customer_id=customer_id, custom_interest_id=custom_interest_id, )
     actual = GoogleAdsServiceClient.custom_interest_path(customer_id, custom_interest_id)
     assert expected == actual
@@ -2326,8 +2463,9 @@ def test_custom_interest_path():
 
 def test_parse_custom_interest_path():
     expected = {
-        "customer_id": "whelk",
-        "custom_interest_id": "octopus",
+    "customer_id": "whelk",
+    "custom_interest_id": "octopus",
+
     }
     path = GoogleAdsServiceClient.custom_interest_path(**expected)
 
@@ -2339,6 +2477,7 @@ def test_detail_placement_view_path():
     customer_id = "oyster"
     ad_group_id = "nudibranch"
     base64_placement = "cuttlefish"
+
     expected = "customers/{customer_id}/detailPlacementViews/{ad_group_id}~{base64_placement}".format(customer_id=customer_id, ad_group_id=ad_group_id, base64_placement=base64_placement, )
     actual = GoogleAdsServiceClient.detail_placement_view_path(customer_id, ad_group_id, base64_placement)
     assert expected == actual
@@ -2346,9 +2485,10 @@ def test_detail_placement_view_path():
 
 def test_parse_detail_placement_view_path():
     expected = {
-        "customer_id": "mussel",
-        "ad_group_id": "winkle",
-        "base64_placement": "nautilus",
+    "customer_id": "mussel",
+    "ad_group_id": "winkle",
+    "base64_placement": "nautilus",
+
     }
     path = GoogleAdsServiceClient.detail_placement_view_path(**expected)
 
@@ -2360,6 +2500,7 @@ def test_display_keyword_view_path():
     customer_id = "scallop"
     ad_group_id = "abalone"
     criterion_id = "squid"
+
     expected = "customers/{customer_id}/displayKeywordViews/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.display_keyword_view_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -2367,9 +2508,10 @@ def test_display_keyword_view_path():
 
 def test_parse_display_keyword_view_path():
     expected = {
-        "customer_id": "clam",
-        "ad_group_id": "whelk",
-        "criterion_id": "octopus",
+    "customer_id": "clam",
+    "ad_group_id": "whelk",
+    "criterion_id": "octopus",
+
     }
     path = GoogleAdsServiceClient.display_keyword_view_path(**expected)
 
@@ -2381,6 +2523,7 @@ def test_distance_view_path():
     customer_id = "oyster"
     placeholder_chain_id = "nudibranch"
     distance_bucket = "cuttlefish"
+
     expected = "customers/{customer_id}/distanceViews/{placeholder_chain_id}~{distance_bucket}".format(customer_id=customer_id, placeholder_chain_id=placeholder_chain_id, distance_bucket=distance_bucket, )
     actual = GoogleAdsServiceClient.distance_view_path(customer_id, placeholder_chain_id, distance_bucket)
     assert expected == actual
@@ -2388,9 +2531,10 @@ def test_distance_view_path():
 
 def test_parse_distance_view_path():
     expected = {
-        "customer_id": "mussel",
-        "placeholder_chain_id": "winkle",
-        "distance_bucket": "nautilus",
+    "customer_id": "mussel",
+    "placeholder_chain_id": "winkle",
+    "distance_bucket": "nautilus",
+
     }
     path = GoogleAdsServiceClient.distance_view_path(**expected)
 
@@ -2403,6 +2547,7 @@ def test_domain_category_path():
     campaign_id = "abalone"
     base64_category = "squid"
     language_code = "clam"
+
     expected = "customers/{customer_id}/domainCategories/{campaign_id}~{base64_category}~{language_code}".format(customer_id=customer_id, campaign_id=campaign_id, base64_category=base64_category, language_code=language_code, )
     actual = GoogleAdsServiceClient.domain_category_path(customer_id, campaign_id, base64_category, language_code)
     assert expected == actual
@@ -2410,10 +2555,11 @@ def test_domain_category_path():
 
 def test_parse_domain_category_path():
     expected = {
-        "customer_id": "whelk",
-        "campaign_id": "octopus",
-        "base64_category": "oyster",
-        "language_code": "nudibranch",
+    "customer_id": "whelk",
+    "campaign_id": "octopus",
+    "base64_category": "oyster",
+    "language_code": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.domain_category_path(**expected)
 
@@ -2428,6 +2574,7 @@ def test_dynamic_search_ads_search_term_view_path():
     headline_fingerprint = "nautilus"
     landing_page_fingerprint = "scallop"
     page_url_fingerprint = "abalone"
+
     expected = "customers/{customer_id}/dynamicSearchAdsSearchTermViews/{ad_group_id}~{search_term_fingerprint}~{headline_fingerprint}~{landing_page_fingerprint}~{page_url_fingerprint}".format(customer_id=customer_id, ad_group_id=ad_group_id, search_term_fingerprint=search_term_fingerprint, headline_fingerprint=headline_fingerprint, landing_page_fingerprint=landing_page_fingerprint, page_url_fingerprint=page_url_fingerprint, )
     actual = GoogleAdsServiceClient.dynamic_search_ads_search_term_view_path(customer_id, ad_group_id, search_term_fingerprint, headline_fingerprint, landing_page_fingerprint, page_url_fingerprint)
     assert expected == actual
@@ -2435,12 +2582,13 @@ def test_dynamic_search_ads_search_term_view_path():
 
 def test_parse_dynamic_search_ads_search_term_view_path():
     expected = {
-        "customer_id": "squid",
-        "ad_group_id": "clam",
-        "search_term_fingerprint": "whelk",
-        "headline_fingerprint": "octopus",
-        "landing_page_fingerprint": "oyster",
-        "page_url_fingerprint": "nudibranch",
+    "customer_id": "squid",
+    "ad_group_id": "clam",
+    "search_term_fingerprint": "whelk",
+    "headline_fingerprint": "octopus",
+    "landing_page_fingerprint": "oyster",
+    "page_url_fingerprint": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.dynamic_search_ads_search_term_view_path(**expected)
 
@@ -2451,6 +2599,7 @@ def test_parse_dynamic_search_ads_search_term_view_path():
 def test_expanded_landing_page_view_path():
     customer_id = "cuttlefish"
     expanded_final_url_fingerprint = "mussel"
+
     expected = "customers/{customer_id}/expandedLandingPageViews/{expanded_final_url_fingerprint}".format(customer_id=customer_id, expanded_final_url_fingerprint=expanded_final_url_fingerprint, )
     actual = GoogleAdsServiceClient.expanded_landing_page_view_path(customer_id, expanded_final_url_fingerprint)
     assert expected == actual
@@ -2458,8 +2607,9 @@ def test_expanded_landing_page_view_path():
 
 def test_parse_expanded_landing_page_view_path():
     expected = {
-        "customer_id": "winkle",
-        "expanded_final_url_fingerprint": "nautilus",
+    "customer_id": "winkle",
+    "expanded_final_url_fingerprint": "nautilus",
+
     }
     path = GoogleAdsServiceClient.expanded_landing_page_view_path(**expected)
 
@@ -2470,6 +2620,7 @@ def test_parse_expanded_landing_page_view_path():
 def test_extension_feed_item_path():
     customer_id = "scallop"
     feed_item_id = "abalone"
+
     expected = "customers/{customer_id}/extensionFeedItems/{feed_item_id}".format(customer_id=customer_id, feed_item_id=feed_item_id, )
     actual = GoogleAdsServiceClient.extension_feed_item_path(customer_id, feed_item_id)
     assert expected == actual
@@ -2477,8 +2628,9 @@ def test_extension_feed_item_path():
 
 def test_parse_extension_feed_item_path():
     expected = {
-        "customer_id": "squid",
-        "feed_item_id": "clam",
+    "customer_id": "squid",
+    "feed_item_id": "clam",
+
     }
     path = GoogleAdsServiceClient.extension_feed_item_path(**expected)
 
@@ -2489,6 +2641,7 @@ def test_parse_extension_feed_item_path():
 def test_feed_path():
     customer_id = "whelk"
     feed_id = "octopus"
+
     expected = "customers/{customer_id}/feeds/{feed_id}".format(customer_id=customer_id, feed_id=feed_id, )
     actual = GoogleAdsServiceClient.feed_path(customer_id, feed_id)
     assert expected == actual
@@ -2496,8 +2649,9 @@ def test_feed_path():
 
 def test_parse_feed_path():
     expected = {
-        "customer_id": "oyster",
-        "feed_id": "nudibranch",
+    "customer_id": "oyster",
+    "feed_id": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.feed_path(**expected)
 
@@ -2509,6 +2663,7 @@ def test_feed_item_path():
     customer_id = "cuttlefish"
     feed_id = "mussel"
     feed_item_id = "winkle"
+
     expected = "customers/{customer_id}/feedItems/{feed_id}~{feed_item_id}".format(customer_id=customer_id, feed_id=feed_id, feed_item_id=feed_item_id, )
     actual = GoogleAdsServiceClient.feed_item_path(customer_id, feed_id, feed_item_id)
     assert expected == actual
@@ -2516,9 +2671,10 @@ def test_feed_item_path():
 
 def test_parse_feed_item_path():
     expected = {
-        "customer_id": "nautilus",
-        "feed_id": "scallop",
-        "feed_item_id": "abalone",
+    "customer_id": "nautilus",
+    "feed_id": "scallop",
+    "feed_item_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.feed_item_path(**expected)
 
@@ -2530,6 +2686,7 @@ def test_feed_item_set_path():
     customer_id = "squid"
     feed_id = "clam"
     feed_item_set_id = "whelk"
+
     expected = "customers/{customer_id}/feedItemSets/{feed_id}~{feed_item_set_id}".format(customer_id=customer_id, feed_id=feed_id, feed_item_set_id=feed_item_set_id, )
     actual = GoogleAdsServiceClient.feed_item_set_path(customer_id, feed_id, feed_item_set_id)
     assert expected == actual
@@ -2537,9 +2694,10 @@ def test_feed_item_set_path():
 
 def test_parse_feed_item_set_path():
     expected = {
-        "customer_id": "octopus",
-        "feed_id": "oyster",
-        "feed_item_set_id": "nudibranch",
+    "customer_id": "octopus",
+    "feed_id": "oyster",
+    "feed_item_set_id": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.feed_item_set_path(**expected)
 
@@ -2552,6 +2710,7 @@ def test_feed_item_set_link_path():
     feed_id = "mussel"
     feed_item_set_id = "winkle"
     feed_item_id = "nautilus"
+
     expected = "customers/{customer_id}/feedItemSetLinks/{feed_id}~{feed_item_set_id}~{feed_item_id}".format(customer_id=customer_id, feed_id=feed_id, feed_item_set_id=feed_item_set_id, feed_item_id=feed_item_id, )
     actual = GoogleAdsServiceClient.feed_item_set_link_path(customer_id, feed_id, feed_item_set_id, feed_item_id)
     assert expected == actual
@@ -2559,10 +2718,11 @@ def test_feed_item_set_link_path():
 
 def test_parse_feed_item_set_link_path():
     expected = {
-        "customer_id": "scallop",
-        "feed_id": "abalone",
-        "feed_item_set_id": "squid",
-        "feed_item_id": "clam",
+    "customer_id": "scallop",
+    "feed_id": "abalone",
+    "feed_item_set_id": "squid",
+    "feed_item_id": "clam",
+
     }
     path = GoogleAdsServiceClient.feed_item_set_link_path(**expected)
 
@@ -2576,6 +2736,7 @@ def test_feed_item_target_path():
     feed_item_id = "oyster"
     feed_item_target_type = "nudibranch"
     feed_item_target_id = "cuttlefish"
+
     expected = "customers/{customer_id}/feedItemTargets/{feed_id}~{feed_item_id}~{feed_item_target_type}~{feed_item_target_id}".format(customer_id=customer_id, feed_id=feed_id, feed_item_id=feed_item_id, feed_item_target_type=feed_item_target_type, feed_item_target_id=feed_item_target_id, )
     actual = GoogleAdsServiceClient.feed_item_target_path(customer_id, feed_id, feed_item_id, feed_item_target_type, feed_item_target_id)
     assert expected == actual
@@ -2583,11 +2744,12 @@ def test_feed_item_target_path():
 
 def test_parse_feed_item_target_path():
     expected = {
-        "customer_id": "mussel",
-        "feed_id": "winkle",
-        "feed_item_id": "nautilus",
-        "feed_item_target_type": "scallop",
-        "feed_item_target_id": "abalone",
+    "customer_id": "mussel",
+    "feed_id": "winkle",
+    "feed_item_id": "nautilus",
+    "feed_item_target_type": "scallop",
+    "feed_item_target_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.feed_item_target_path(**expected)
 
@@ -2599,6 +2761,7 @@ def test_feed_mapping_path():
     customer_id = "squid"
     feed_id = "clam"
     feed_mapping_id = "whelk"
+
     expected = "customers/{customer_id}/feedMappings/{feed_id}~{feed_mapping_id}".format(customer_id=customer_id, feed_id=feed_id, feed_mapping_id=feed_mapping_id, )
     actual = GoogleAdsServiceClient.feed_mapping_path(customer_id, feed_id, feed_mapping_id)
     assert expected == actual
@@ -2606,9 +2769,10 @@ def test_feed_mapping_path():
 
 def test_parse_feed_mapping_path():
     expected = {
-        "customer_id": "octopus",
-        "feed_id": "oyster",
-        "feed_mapping_id": "nudibranch",
+    "customer_id": "octopus",
+    "feed_id": "oyster",
+    "feed_mapping_id": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.feed_mapping_path(**expected)
 
@@ -2619,6 +2783,7 @@ def test_parse_feed_mapping_path():
 def test_feed_placeholder_view_path():
     customer_id = "cuttlefish"
     placeholder_type = "mussel"
+
     expected = "customers/{customer_id}/feedPlaceholderViews/{placeholder_type}".format(customer_id=customer_id, placeholder_type=placeholder_type, )
     actual = GoogleAdsServiceClient.feed_placeholder_view_path(customer_id, placeholder_type)
     assert expected == actual
@@ -2626,8 +2791,9 @@ def test_feed_placeholder_view_path():
 
 def test_parse_feed_placeholder_view_path():
     expected = {
-        "customer_id": "winkle",
-        "placeholder_type": "nautilus",
+    "customer_id": "winkle",
+    "placeholder_type": "nautilus",
+
     }
     path = GoogleAdsServiceClient.feed_placeholder_view_path(**expected)
 
@@ -2639,6 +2805,7 @@ def test_gender_view_path():
     customer_id = "scallop"
     ad_group_id = "abalone"
     criterion_id = "squid"
+
     expected = "customers/{customer_id}/genderViews/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.gender_view_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -2646,9 +2813,10 @@ def test_gender_view_path():
 
 def test_parse_gender_view_path():
     expected = {
-        "customer_id": "clam",
-        "ad_group_id": "whelk",
-        "criterion_id": "octopus",
+    "customer_id": "clam",
+    "ad_group_id": "whelk",
+    "criterion_id": "octopus",
+
     }
     path = GoogleAdsServiceClient.gender_view_path(**expected)
 
@@ -2660,6 +2828,7 @@ def test_geographic_view_path():
     customer_id = "oyster"
     country_criterion_id = "nudibranch"
     location_type = "cuttlefish"
+
     expected = "customers/{customer_id}/geographicViews/{country_criterion_id}~{location_type}".format(customer_id=customer_id, country_criterion_id=country_criterion_id, location_type=location_type, )
     actual = GoogleAdsServiceClient.geographic_view_path(customer_id, country_criterion_id, location_type)
     assert expected == actual
@@ -2667,9 +2836,10 @@ def test_geographic_view_path():
 
 def test_parse_geographic_view_path():
     expected = {
-        "customer_id": "mussel",
-        "country_criterion_id": "winkle",
-        "location_type": "nautilus",
+    "customer_id": "mussel",
+    "country_criterion_id": "winkle",
+    "location_type": "nautilus",
+
     }
     path = GoogleAdsServiceClient.geographic_view_path(**expected)
 
@@ -2679,6 +2849,7 @@ def test_parse_geographic_view_path():
 
 def test_geo_target_constant_path():
     criterion_id = "scallop"
+
     expected = "geoTargetConstants/{criterion_id}".format(criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.geo_target_constant_path(criterion_id)
     assert expected == actual
@@ -2686,7 +2857,8 @@ def test_geo_target_constant_path():
 
 def test_parse_geo_target_constant_path():
     expected = {
-        "criterion_id": "abalone",
+    "criterion_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.geo_target_constant_path(**expected)
 
@@ -2698,6 +2870,7 @@ def test_group_placement_view_path():
     customer_id = "squid"
     ad_group_id = "clam"
     base64_placement = "whelk"
+
     expected = "customers/{customer_id}/groupPlacementViews/{ad_group_id}~{base64_placement}".format(customer_id=customer_id, ad_group_id=ad_group_id, base64_placement=base64_placement, )
     actual = GoogleAdsServiceClient.group_placement_view_path(customer_id, ad_group_id, base64_placement)
     assert expected == actual
@@ -2705,9 +2878,10 @@ def test_group_placement_view_path():
 
 def test_parse_group_placement_view_path():
     expected = {
-        "customer_id": "octopus",
-        "ad_group_id": "oyster",
-        "base64_placement": "nudibranch",
+    "customer_id": "octopus",
+    "ad_group_id": "oyster",
+    "base64_placement": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.group_placement_view_path(**expected)
 
@@ -2719,6 +2893,7 @@ def test_hotel_group_view_path():
     customer_id = "cuttlefish"
     ad_group_id = "mussel"
     criterion_id = "winkle"
+
     expected = "customers/{customer_id}/hotelGroupViews/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.hotel_group_view_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -2726,9 +2901,10 @@ def test_hotel_group_view_path():
 
 def test_parse_hotel_group_view_path():
     expected = {
-        "customer_id": "nautilus",
-        "ad_group_id": "scallop",
-        "criterion_id": "abalone",
+    "customer_id": "nautilus",
+    "ad_group_id": "scallop",
+    "criterion_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.hotel_group_view_path(**expected)
 
@@ -2738,6 +2914,7 @@ def test_parse_hotel_group_view_path():
 
 def test_hotel_performance_view_path():
     customer_id = "squid"
+
     expected = "customers/{customer_id}/hotelPerformanceView".format(customer_id=customer_id, )
     actual = GoogleAdsServiceClient.hotel_performance_view_path(customer_id)
     assert expected == actual
@@ -2745,7 +2922,8 @@ def test_hotel_performance_view_path():
 
 def test_parse_hotel_performance_view_path():
     expected = {
-        "customer_id": "clam",
+    "customer_id": "clam",
+
     }
     path = GoogleAdsServiceClient.hotel_performance_view_path(**expected)
 
@@ -2757,6 +2935,7 @@ def test_income_range_view_path():
     customer_id = "whelk"
     ad_group_id = "octopus"
     criterion_id = "oyster"
+
     expected = "customers/{customer_id}/incomeRangeViews/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.income_range_view_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -2764,9 +2943,10 @@ def test_income_range_view_path():
 
 def test_parse_income_range_view_path():
     expected = {
-        "customer_id": "nudibranch",
-        "ad_group_id": "cuttlefish",
-        "criterion_id": "mussel",
+    "customer_id": "nudibranch",
+    "ad_group_id": "cuttlefish",
+    "criterion_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.income_range_view_path(**expected)
 
@@ -2777,6 +2957,7 @@ def test_parse_income_range_view_path():
 def test_keyword_plan_path():
     customer_id = "winkle"
     keyword_plan_id = "nautilus"
+
     expected = "customers/{customer_id}/keywordPlans/{keyword_plan_id}".format(customer_id=customer_id, keyword_plan_id=keyword_plan_id, )
     actual = GoogleAdsServiceClient.keyword_plan_path(customer_id, keyword_plan_id)
     assert expected == actual
@@ -2784,8 +2965,9 @@ def test_keyword_plan_path():
 
 def test_parse_keyword_plan_path():
     expected = {
-        "customer_id": "scallop",
-        "keyword_plan_id": "abalone",
+    "customer_id": "scallop",
+    "keyword_plan_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.keyword_plan_path(**expected)
 
@@ -2796,6 +2978,7 @@ def test_parse_keyword_plan_path():
 def test_keyword_plan_ad_group_path():
     customer_id = "squid"
     keyword_plan_ad_group_id = "clam"
+
     expected = "customers/{customer_id}/keywordPlanAdGroups/{keyword_plan_ad_group_id}".format(customer_id=customer_id, keyword_plan_ad_group_id=keyword_plan_ad_group_id, )
     actual = GoogleAdsServiceClient.keyword_plan_ad_group_path(customer_id, keyword_plan_ad_group_id)
     assert expected == actual
@@ -2803,8 +2986,9 @@ def test_keyword_plan_ad_group_path():
 
 def test_parse_keyword_plan_ad_group_path():
     expected = {
-        "customer_id": "whelk",
-        "keyword_plan_ad_group_id": "octopus",
+    "customer_id": "whelk",
+    "keyword_plan_ad_group_id": "octopus",
+
     }
     path = GoogleAdsServiceClient.keyword_plan_ad_group_path(**expected)
 
@@ -2815,6 +2999,7 @@ def test_parse_keyword_plan_ad_group_path():
 def test_keyword_plan_ad_group_keyword_path():
     customer_id = "oyster"
     keyword_plan_ad_group_keyword_id = "nudibranch"
+
     expected = "customers/{customer_id}/keywordPlanAdGroupKeywords/{keyword_plan_ad_group_keyword_id}".format(customer_id=customer_id, keyword_plan_ad_group_keyword_id=keyword_plan_ad_group_keyword_id, )
     actual = GoogleAdsServiceClient.keyword_plan_ad_group_keyword_path(customer_id, keyword_plan_ad_group_keyword_id)
     assert expected == actual
@@ -2822,8 +3007,9 @@ def test_keyword_plan_ad_group_keyword_path():
 
 def test_parse_keyword_plan_ad_group_keyword_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "keyword_plan_ad_group_keyword_id": "mussel",
+    "customer_id": "cuttlefish",
+    "keyword_plan_ad_group_keyword_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.keyword_plan_ad_group_keyword_path(**expected)
 
@@ -2834,6 +3020,7 @@ def test_parse_keyword_plan_ad_group_keyword_path():
 def test_keyword_plan_campaign_path():
     customer_id = "winkle"
     keyword_plan_campaign_id = "nautilus"
+
     expected = "customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}".format(customer_id=customer_id, keyword_plan_campaign_id=keyword_plan_campaign_id, )
     actual = GoogleAdsServiceClient.keyword_plan_campaign_path(customer_id, keyword_plan_campaign_id)
     assert expected == actual
@@ -2841,8 +3028,9 @@ def test_keyword_plan_campaign_path():
 
 def test_parse_keyword_plan_campaign_path():
     expected = {
-        "customer_id": "scallop",
-        "keyword_plan_campaign_id": "abalone",
+    "customer_id": "scallop",
+    "keyword_plan_campaign_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.keyword_plan_campaign_path(**expected)
 
@@ -2853,6 +3041,7 @@ def test_parse_keyword_plan_campaign_path():
 def test_keyword_plan_campaign_keyword_path():
     customer_id = "squid"
     keyword_plan_campaign_keyword_id = "clam"
+
     expected = "customers/{customer_id}/keywordPlanCampaignKeywords/{keyword_plan_campaign_keyword_id}".format(customer_id=customer_id, keyword_plan_campaign_keyword_id=keyword_plan_campaign_keyword_id, )
     actual = GoogleAdsServiceClient.keyword_plan_campaign_keyword_path(customer_id, keyword_plan_campaign_keyword_id)
     assert expected == actual
@@ -2860,8 +3049,9 @@ def test_keyword_plan_campaign_keyword_path():
 
 def test_parse_keyword_plan_campaign_keyword_path():
     expected = {
-        "customer_id": "whelk",
-        "keyword_plan_campaign_keyword_id": "octopus",
+    "customer_id": "whelk",
+    "keyword_plan_campaign_keyword_id": "octopus",
+
     }
     path = GoogleAdsServiceClient.keyword_plan_campaign_keyword_path(**expected)
 
@@ -2873,6 +3063,7 @@ def test_keyword_view_path():
     customer_id = "oyster"
     ad_group_id = "nudibranch"
     criterion_id = "cuttlefish"
+
     expected = "customers/{customer_id}/keywordViews/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.keyword_view_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -2880,9 +3071,10 @@ def test_keyword_view_path():
 
 def test_parse_keyword_view_path():
     expected = {
-        "customer_id": "mussel",
-        "ad_group_id": "winkle",
-        "criterion_id": "nautilus",
+    "customer_id": "mussel",
+    "ad_group_id": "winkle",
+    "criterion_id": "nautilus",
+
     }
     path = GoogleAdsServiceClient.keyword_view_path(**expected)
 
@@ -2893,6 +3085,7 @@ def test_parse_keyword_view_path():
 def test_label_path():
     customer_id = "scallop"
     label_id = "abalone"
+
     expected = "customers/{customer_id}/labels/{label_id}".format(customer_id=customer_id, label_id=label_id, )
     actual = GoogleAdsServiceClient.label_path(customer_id, label_id)
     assert expected == actual
@@ -2900,8 +3093,9 @@ def test_label_path():
 
 def test_parse_label_path():
     expected = {
-        "customer_id": "squid",
-        "label_id": "clam",
+    "customer_id": "squid",
+    "label_id": "clam",
+
     }
     path = GoogleAdsServiceClient.label_path(**expected)
 
@@ -2912,6 +3106,7 @@ def test_parse_label_path():
 def test_landing_page_view_path():
     customer_id = "whelk"
     unexpanded_final_url_fingerprint = "octopus"
+
     expected = "customers/{customer_id}/landingPageViews/{unexpanded_final_url_fingerprint}".format(customer_id=customer_id, unexpanded_final_url_fingerprint=unexpanded_final_url_fingerprint, )
     actual = GoogleAdsServiceClient.landing_page_view_path(customer_id, unexpanded_final_url_fingerprint)
     assert expected == actual
@@ -2919,8 +3114,9 @@ def test_landing_page_view_path():
 
 def test_parse_landing_page_view_path():
     expected = {
-        "customer_id": "oyster",
-        "unexpanded_final_url_fingerprint": "nudibranch",
+    "customer_id": "oyster",
+    "unexpanded_final_url_fingerprint": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.landing_page_view_path(**expected)
 
@@ -2930,6 +3126,7 @@ def test_parse_landing_page_view_path():
 
 def test_language_constant_path():
     criterion_id = "cuttlefish"
+
     expected = "languageConstants/{criterion_id}".format(criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.language_constant_path(criterion_id)
     assert expected == actual
@@ -2937,7 +3134,8 @@ def test_language_constant_path():
 
 def test_parse_language_constant_path():
     expected = {
-        "criterion_id": "mussel",
+    "criterion_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.language_constant_path(**expected)
 
@@ -2949,6 +3147,7 @@ def test_location_view_path():
     customer_id = "winkle"
     campaign_id = "nautilus"
     criterion_id = "scallop"
+
     expected = "customers/{customer_id}/locationViews/{campaign_id}~{criterion_id}".format(customer_id=customer_id, campaign_id=campaign_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.location_view_path(customer_id, campaign_id, criterion_id)
     assert expected == actual
@@ -2956,9 +3155,10 @@ def test_location_view_path():
 
 def test_parse_location_view_path():
     expected = {
-        "customer_id": "abalone",
-        "campaign_id": "squid",
-        "criterion_id": "clam",
+    "customer_id": "abalone",
+    "campaign_id": "squid",
+    "criterion_id": "clam",
+
     }
     path = GoogleAdsServiceClient.location_view_path(**expected)
 
@@ -2970,6 +3170,7 @@ def test_managed_placement_view_path():
     customer_id = "whelk"
     ad_group_id = "octopus"
     criterion_id = "oyster"
+
     expected = "customers/{customer_id}/managedPlacementViews/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.managed_placement_view_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -2977,9 +3178,10 @@ def test_managed_placement_view_path():
 
 def test_parse_managed_placement_view_path():
     expected = {
-        "customer_id": "nudibranch",
-        "ad_group_id": "cuttlefish",
-        "criterion_id": "mussel",
+    "customer_id": "nudibranch",
+    "ad_group_id": "cuttlefish",
+    "criterion_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.managed_placement_view_path(**expected)
 
@@ -2990,6 +3192,7 @@ def test_parse_managed_placement_view_path():
 def test_media_file_path():
     customer_id = "winkle"
     media_file_id = "nautilus"
+
     expected = "customers/{customer_id}/mediaFiles/{media_file_id}".format(customer_id=customer_id, media_file_id=media_file_id, )
     actual = GoogleAdsServiceClient.media_file_path(customer_id, media_file_id)
     assert expected == actual
@@ -2997,8 +3200,9 @@ def test_media_file_path():
 
 def test_parse_media_file_path():
     expected = {
-        "customer_id": "scallop",
-        "media_file_id": "abalone",
+    "customer_id": "scallop",
+    "media_file_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.media_file_path(**expected)
 
@@ -3008,6 +3212,7 @@ def test_parse_media_file_path():
 
 def test_mobile_app_category_constant_path():
     mobile_app_category_id = "squid"
+
     expected = "mobileAppCategoryConstants/{mobile_app_category_id}".format(mobile_app_category_id=mobile_app_category_id, )
     actual = GoogleAdsServiceClient.mobile_app_category_constant_path(mobile_app_category_id)
     assert expected == actual
@@ -3015,7 +3220,8 @@ def test_mobile_app_category_constant_path():
 
 def test_parse_mobile_app_category_constant_path():
     expected = {
-        "mobile_app_category_id": "clam",
+    "mobile_app_category_id": "clam",
+
     }
     path = GoogleAdsServiceClient.mobile_app_category_constant_path(**expected)
 
@@ -3025,6 +3231,7 @@ def test_parse_mobile_app_category_constant_path():
 
 def test_mobile_device_constant_path():
     criterion_id = "whelk"
+
     expected = "mobileDeviceConstants/{criterion_id}".format(criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.mobile_device_constant_path(criterion_id)
     assert expected == actual
@@ -3032,7 +3239,8 @@ def test_mobile_device_constant_path():
 
 def test_parse_mobile_device_constant_path():
     expected = {
-        "criterion_id": "octopus",
+    "criterion_id": "octopus",
+
     }
     path = GoogleAdsServiceClient.mobile_device_constant_path(**expected)
 
@@ -3043,6 +3251,7 @@ def test_parse_mobile_device_constant_path():
 def test_offline_user_data_job_path():
     customer_id = "oyster"
     offline_user_data_update_id = "nudibranch"
+
     expected = "customers/{customer_id}/offlineUserDataJobs/{offline_user_data_update_id}".format(customer_id=customer_id, offline_user_data_update_id=offline_user_data_update_id, )
     actual = GoogleAdsServiceClient.offline_user_data_job_path(customer_id, offline_user_data_update_id)
     assert expected == actual
@@ -3050,8 +3259,9 @@ def test_offline_user_data_job_path():
 
 def test_parse_offline_user_data_job_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "offline_user_data_update_id": "mussel",
+    "customer_id": "cuttlefish",
+    "offline_user_data_update_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.offline_user_data_job_path(**expected)
 
@@ -3061,6 +3271,7 @@ def test_parse_offline_user_data_job_path():
 
 def test_operating_system_version_constant_path():
     criterion_id = "winkle"
+
     expected = "operatingSystemVersionConstants/{criterion_id}".format(criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.operating_system_version_constant_path(criterion_id)
     assert expected == actual
@@ -3068,7 +3279,8 @@ def test_operating_system_version_constant_path():
 
 def test_parse_operating_system_version_constant_path():
     expected = {
-        "criterion_id": "nautilus",
+    "criterion_id": "nautilus",
+
     }
     path = GoogleAdsServiceClient.operating_system_version_constant_path(**expected)
 
@@ -3081,6 +3293,7 @@ def test_paid_organic_search_term_view_path():
     campaign_id = "abalone"
     ad_group_id = "squid"
     base64_search_term = "clam"
+
     expected = "customers/{customer_id}/paidOrganicSearchTermViews/{campaign_id}~{ad_group_id}~{base64_search_term}".format(customer_id=customer_id, campaign_id=campaign_id, ad_group_id=ad_group_id, base64_search_term=base64_search_term, )
     actual = GoogleAdsServiceClient.paid_organic_search_term_view_path(customer_id, campaign_id, ad_group_id, base64_search_term)
     assert expected == actual
@@ -3088,10 +3301,11 @@ def test_paid_organic_search_term_view_path():
 
 def test_parse_paid_organic_search_term_view_path():
     expected = {
-        "customer_id": "whelk",
-        "campaign_id": "octopus",
-        "ad_group_id": "oyster",
-        "base64_search_term": "nudibranch",
+    "customer_id": "whelk",
+    "campaign_id": "octopus",
+    "ad_group_id": "oyster",
+    "base64_search_term": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.paid_organic_search_term_view_path(**expected)
 
@@ -3103,6 +3317,7 @@ def test_parental_status_view_path():
     customer_id = "cuttlefish"
     ad_group_id = "mussel"
     criterion_id = "winkle"
+
     expected = "customers/{customer_id}/parentalStatusViews/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.parental_status_view_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -3110,9 +3325,10 @@ def test_parental_status_view_path():
 
 def test_parse_parental_status_view_path():
     expected = {
-        "customer_id": "nautilus",
-        "ad_group_id": "scallop",
-        "criterion_id": "abalone",
+    "customer_id": "nautilus",
+    "ad_group_id": "scallop",
+    "criterion_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.parental_status_view_path(**expected)
 
@@ -3123,6 +3339,7 @@ def test_parse_parental_status_view_path():
 def test_payments_account_path():
     customer_id = "squid"
     payments_account_id = "clam"
+
     expected = "customers/{customer_id}/paymentsAccounts/{payments_account_id}".format(customer_id=customer_id, payments_account_id=payments_account_id, )
     actual = GoogleAdsServiceClient.payments_account_path(customer_id, payments_account_id)
     assert expected == actual
@@ -3130,8 +3347,9 @@ def test_payments_account_path():
 
 def test_parse_payments_account_path():
     expected = {
-        "customer_id": "whelk",
-        "payments_account_id": "octopus",
+    "customer_id": "whelk",
+    "payments_account_id": "octopus",
+
     }
     path = GoogleAdsServiceClient.payments_account_path(**expected)
 
@@ -3143,6 +3361,7 @@ def test_product_bidding_category_constant_path():
     country_code = "oyster"
     level = "nudibranch"
     id = "cuttlefish"
+
     expected = "productBiddingCategoryConstants/{country_code}~{level}~{id}".format(country_code=country_code, level=level, id=id, )
     actual = GoogleAdsServiceClient.product_bidding_category_constant_path(country_code, level, id)
     assert expected == actual
@@ -3150,9 +3369,10 @@ def test_product_bidding_category_constant_path():
 
 def test_parse_product_bidding_category_constant_path():
     expected = {
-        "country_code": "mussel",
-        "level": "winkle",
-        "id": "nautilus",
+    "country_code": "mussel",
+    "level": "winkle",
+    "id": "nautilus",
+
     }
     path = GoogleAdsServiceClient.product_bidding_category_constant_path(**expected)
 
@@ -3164,6 +3384,7 @@ def test_product_group_view_path():
     customer_id = "scallop"
     adgroup_id = "abalone"
     criterion_id = "squid"
+
     expected = "customers/{customer_id}/productGroupViews/{adgroup_id}~{criterion_id}".format(customer_id=customer_id, adgroup_id=adgroup_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.product_group_view_path(customer_id, adgroup_id, criterion_id)
     assert expected == actual
@@ -3171,9 +3392,10 @@ def test_product_group_view_path():
 
 def test_parse_product_group_view_path():
     expected = {
-        "customer_id": "clam",
-        "adgroup_id": "whelk",
-        "criterion_id": "octopus",
+    "customer_id": "clam",
+    "adgroup_id": "whelk",
+    "criterion_id": "octopus",
+
     }
     path = GoogleAdsServiceClient.product_group_view_path(**expected)
 
@@ -3184,6 +3406,7 @@ def test_parse_product_group_view_path():
 def test_recommendation_path():
     customer_id = "oyster"
     recommendation_id = "nudibranch"
+
     expected = "customers/{customer_id}/recommendations/{recommendation_id}".format(customer_id=customer_id, recommendation_id=recommendation_id, )
     actual = GoogleAdsServiceClient.recommendation_path(customer_id, recommendation_id)
     assert expected == actual
@@ -3191,8 +3414,9 @@ def test_recommendation_path():
 
 def test_parse_recommendation_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "recommendation_id": "mussel",
+    "customer_id": "cuttlefish",
+    "recommendation_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.recommendation_path(**expected)
 
@@ -3203,6 +3427,7 @@ def test_parse_recommendation_path():
 def test_remarketing_action_path():
     customer_id = "winkle"
     remarketing_action_id = "nautilus"
+
     expected = "customers/{customer_id}/remarketingActions/{remarketing_action_id}".format(customer_id=customer_id, remarketing_action_id=remarketing_action_id, )
     actual = GoogleAdsServiceClient.remarketing_action_path(customer_id, remarketing_action_id)
     assert expected == actual
@@ -3210,8 +3435,9 @@ def test_remarketing_action_path():
 
 def test_parse_remarketing_action_path():
     expected = {
-        "customer_id": "scallop",
-        "remarketing_action_id": "abalone",
+    "customer_id": "scallop",
+    "remarketing_action_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.remarketing_action_path(**expected)
 
@@ -3224,6 +3450,7 @@ def test_search_term_view_path():
     campaign_id = "clam"
     ad_group_id = "whelk"
     query = "octopus"
+
     expected = "customers/{customer_id}/searchTermViews/{campaign_id}~{ad_group_id}~{query}".format(customer_id=customer_id, campaign_id=campaign_id, ad_group_id=ad_group_id, query=query, )
     actual = GoogleAdsServiceClient.search_term_view_path(customer_id, campaign_id, ad_group_id, query)
     assert expected == actual
@@ -3231,10 +3458,11 @@ def test_search_term_view_path():
 
 def test_parse_search_term_view_path():
     expected = {
-        "customer_id": "oyster",
-        "campaign_id": "nudibranch",
-        "ad_group_id": "cuttlefish",
-        "query": "mussel",
+    "customer_id": "oyster",
+    "campaign_id": "nudibranch",
+    "ad_group_id": "cuttlefish",
+    "query": "mussel",
+
     }
     path = GoogleAdsServiceClient.search_term_view_path(**expected)
 
@@ -3246,6 +3474,7 @@ def test_shared_criterion_path():
     customer_id = "winkle"
     shared_set_id = "nautilus"
     criterion_id = "scallop"
+
     expected = "customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}".format(customer_id=customer_id, shared_set_id=shared_set_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.shared_criterion_path(customer_id, shared_set_id, criterion_id)
     assert expected == actual
@@ -3253,9 +3482,10 @@ def test_shared_criterion_path():
 
 def test_parse_shared_criterion_path():
     expected = {
-        "customer_id": "abalone",
-        "shared_set_id": "squid",
-        "criterion_id": "clam",
+    "customer_id": "abalone",
+    "shared_set_id": "squid",
+    "criterion_id": "clam",
+
     }
     path = GoogleAdsServiceClient.shared_criterion_path(**expected)
 
@@ -3266,6 +3496,7 @@ def test_parse_shared_criterion_path():
 def test_shared_set_path():
     customer_id = "whelk"
     shared_set_id = "octopus"
+
     expected = "customers/{customer_id}/sharedSets/{shared_set_id}".format(customer_id=customer_id, shared_set_id=shared_set_id, )
     actual = GoogleAdsServiceClient.shared_set_path(customer_id, shared_set_id)
     assert expected == actual
@@ -3273,8 +3504,9 @@ def test_shared_set_path():
 
 def test_parse_shared_set_path():
     expected = {
-        "customer_id": "oyster",
-        "shared_set_id": "nudibranch",
+    "customer_id": "oyster",
+    "shared_set_id": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.shared_set_path(**expected)
 
@@ -3284,6 +3516,7 @@ def test_parse_shared_set_path():
 
 def test_shopping_performance_view_path():
     customer_id = "cuttlefish"
+
     expected = "customers/{customer_id}/shoppingPerformanceView".format(customer_id=customer_id, )
     actual = GoogleAdsServiceClient.shopping_performance_view_path(customer_id)
     assert expected == actual
@@ -3291,7 +3524,8 @@ def test_shopping_performance_view_path():
 
 def test_parse_shopping_performance_view_path():
     expected = {
-        "customer_id": "mussel",
+    "customer_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.shopping_performance_view_path(**expected)
 
@@ -3302,6 +3536,7 @@ def test_parse_shopping_performance_view_path():
 def test_third_party_app_analytics_link_path():
     customer_id = "winkle"
     customer_link_id = "nautilus"
+
     expected = "customers/{customer_id}/thirdPartyAppAnalyticsLinks/{customer_link_id}".format(customer_id=customer_id, customer_link_id=customer_link_id, )
     actual = GoogleAdsServiceClient.third_party_app_analytics_link_path(customer_id, customer_link_id)
     assert expected == actual
@@ -3309,8 +3544,9 @@ def test_third_party_app_analytics_link_path():
 
 def test_parse_third_party_app_analytics_link_path():
     expected = {
-        "customer_id": "scallop",
-        "customer_link_id": "abalone",
+    "customer_id": "scallop",
+    "customer_link_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.third_party_app_analytics_link_path(**expected)
 
@@ -3320,6 +3556,7 @@ def test_parse_third_party_app_analytics_link_path():
 
 def test_topic_constant_path():
     topic_id = "squid"
+
     expected = "topicConstants/{topic_id}".format(topic_id=topic_id, )
     actual = GoogleAdsServiceClient.topic_constant_path(topic_id)
     assert expected == actual
@@ -3327,7 +3564,8 @@ def test_topic_constant_path():
 
 def test_parse_topic_constant_path():
     expected = {
-        "topic_id": "clam",
+    "topic_id": "clam",
+
     }
     path = GoogleAdsServiceClient.topic_constant_path(**expected)
 
@@ -3339,6 +3577,7 @@ def test_topic_view_path():
     customer_id = "whelk"
     ad_group_id = "octopus"
     criterion_id = "oyster"
+
     expected = "customers/{customer_id}/topicViews/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = GoogleAdsServiceClient.topic_view_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -3346,9 +3585,10 @@ def test_topic_view_path():
 
 def test_parse_topic_view_path():
     expected = {
-        "customer_id": "nudibranch",
-        "ad_group_id": "cuttlefish",
-        "criterion_id": "mussel",
+    "customer_id": "nudibranch",
+    "ad_group_id": "cuttlefish",
+    "criterion_id": "mussel",
+
     }
     path = GoogleAdsServiceClient.topic_view_path(**expected)
 
@@ -3359,6 +3599,7 @@ def test_parse_topic_view_path():
 def test_user_interest_path():
     customer_id = "winkle"
     user_interest_id = "nautilus"
+
     expected = "customers/{customer_id}/userInterests/{user_interest_id}".format(customer_id=customer_id, user_interest_id=user_interest_id, )
     actual = GoogleAdsServiceClient.user_interest_path(customer_id, user_interest_id)
     assert expected == actual
@@ -3366,8 +3607,9 @@ def test_user_interest_path():
 
 def test_parse_user_interest_path():
     expected = {
-        "customer_id": "scallop",
-        "user_interest_id": "abalone",
+    "customer_id": "scallop",
+    "user_interest_id": "abalone",
+
     }
     path = GoogleAdsServiceClient.user_interest_path(**expected)
 
@@ -3378,6 +3620,7 @@ def test_parse_user_interest_path():
 def test_user_list_path():
     customer_id = "squid"
     user_list_id = "clam"
+
     expected = "customers/{customer_id}/userLists/{user_list_id}".format(customer_id=customer_id, user_list_id=user_list_id, )
     actual = GoogleAdsServiceClient.user_list_path(customer_id, user_list_id)
     assert expected == actual
@@ -3385,8 +3628,9 @@ def test_user_list_path():
 
 def test_parse_user_list_path():
     expected = {
-        "customer_id": "whelk",
-        "user_list_id": "octopus",
+    "customer_id": "whelk",
+    "user_list_id": "octopus",
+
     }
     path = GoogleAdsServiceClient.user_list_path(**expected)
 
@@ -3398,6 +3642,7 @@ def test_user_location_view_path():
     customer_id = "oyster"
     country_criterion_id = "nudibranch"
     is_targeting_location = "cuttlefish"
+
     expected = "customers/{customer_id}/userLocationViews/{country_criterion_id}~{is_targeting_location}".format(customer_id=customer_id, country_criterion_id=country_criterion_id, is_targeting_location=is_targeting_location, )
     actual = GoogleAdsServiceClient.user_location_view_path(customer_id, country_criterion_id, is_targeting_location)
     assert expected == actual
@@ -3405,9 +3650,10 @@ def test_user_location_view_path():
 
 def test_parse_user_location_view_path():
     expected = {
-        "customer_id": "mussel",
-        "country_criterion_id": "winkle",
-        "is_targeting_location": "nautilus",
+    "customer_id": "mussel",
+    "country_criterion_id": "winkle",
+    "is_targeting_location": "nautilus",
+
     }
     path = GoogleAdsServiceClient.user_location_view_path(**expected)
 
@@ -3418,6 +3664,7 @@ def test_parse_user_location_view_path():
 def test_video_path():
     customer_id = "scallop"
     video_id = "abalone"
+
     expected = "customers/{customer_id}/videos/{video_id}".format(customer_id=customer_id, video_id=video_id, )
     actual = GoogleAdsServiceClient.video_path(customer_id, video_id)
     assert expected == actual
@@ -3425,8 +3672,9 @@ def test_video_path():
 
 def test_parse_video_path():
     expected = {
-        "customer_id": "squid",
-        "video_id": "clam",
+    "customer_id": "squid",
+    "video_id": "clam",
+
     }
     path = GoogleAdsServiceClient.video_path(**expected)
 
@@ -3436,6 +3684,7 @@ def test_parse_video_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = GoogleAdsServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -3443,7 +3692,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = GoogleAdsServiceClient.common_billing_account_path(**expected)
 
@@ -3453,6 +3703,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = GoogleAdsServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -3460,7 +3711,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = GoogleAdsServiceClient.common_folder_path(**expected)
 
@@ -3470,6 +3722,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = GoogleAdsServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -3477,7 +3730,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = GoogleAdsServiceClient.common_organization_path(**expected)
 
@@ -3487,6 +3741,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = GoogleAdsServiceClient.common_project_path(project)
     assert expected == actual
@@ -3494,7 +3749,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = GoogleAdsServiceClient.common_project_path(**expected)
 
@@ -3505,6 +3761,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = GoogleAdsServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -3512,8 +3769,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = GoogleAdsServiceClient.common_location_path(**expected)
 

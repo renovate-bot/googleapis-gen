@@ -16,22 +16,24 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignExperimentServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for EndCampaignExperimentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task EndCampaignExperimentAsync()
         {
-            // Snippet: EndCampaignExperimentAsync(string, CallSettings)
-            // Additional: EndCampaignExperimentAsync(string, CancellationToken)
             // Create client
             CampaignExperimentServiceClient campaignExperimentServiceClient = await CampaignExperimentServiceClient.CreateAsync();
             // Initialize request argument(s)
             string campaignExperiment = "";
             // Make the request
             await campaignExperimentServiceClient.EndCampaignExperimentAsync(campaignExperiment);
-            // End snippet
         }
     }
 }

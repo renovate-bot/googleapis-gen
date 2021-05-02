@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.websecurityscanner_v1.types import crawled_url
 from google.cloud.websecurityscanner_v1.types import finding
@@ -50,6 +53,7 @@ __protobuf__ = proto.module(
 
 class CreateScanConfigRequest(proto.Message):
     r"""Request for the ``CreateScanConfig`` method.
+
     Attributes:
         parent (str):
             Required. The parent resource name where the
@@ -60,19 +64,16 @@ class CreateScanConfigRequest(proto.Message):
             Required. The ScanConfig to be created.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    scan_config = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    scan_config = proto.Field(proto.MESSAGE, number=2,
         message=gcw_scan_config.ScanConfig,
     )
 
 
 class DeleteScanConfigRequest(proto.Message):
     r"""Request for the ``DeleteScanConfig`` method.
+
     Attributes:
         name (str):
             Required. The resource name of the ScanConfig
@@ -80,14 +81,12 @@ class DeleteScanConfigRequest(proto.Message):
             'projects/{projectId}/scanConfigs/{scanConfigId}'.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class GetScanConfigRequest(proto.Message):
     r"""Request for the ``GetScanConfig`` method.
+
     Attributes:
         name (str):
             Required. The resource name of the ScanConfig
@@ -95,14 +94,12 @@ class GetScanConfigRequest(proto.Message):
             'projects/{projectId}/scanConfigs/{scanConfigId}'.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ListScanConfigsRequest(proto.Message):
     r"""Request for the ``ListScanConfigs`` method.
+
     Attributes:
         parent (str):
             Required. The parent resource name, which
@@ -120,22 +117,16 @@ class ListScanConfigsRequest(proto.Message):
             reasonable value.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_token = proto.Field(proto.STRING, number=2)
+
+    page_size = proto.Field(proto.INT32, number=3)
 
 
 class UpdateScanConfigRequest(proto.Message):
     r"""Request for the ``UpdateScanConfigRequest`` method.
+
     Attributes:
         scan_config (google.cloud.websecurityscanner_v1.types.ScanConfig):
             Required. The ScanConfig to be updated. The
@@ -148,20 +139,18 @@ class UpdateScanConfigRequest(proto.Message):
             https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
     """
 
-    scan_config = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    scan_config = proto.Field(proto.MESSAGE, number=2,
         message=gcw_scan_config.ScanConfig,
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    update_mask = proto.Field(proto.MESSAGE, number=3,
         message=field_mask.FieldMask,
     )
 
 
 class ListScanConfigsResponse(proto.Message):
     r"""Response for the ``ListScanConfigs`` method.
+
     Attributes:
         scan_configs (Sequence[google.cloud.websecurityscanner_v1.types.ScanConfig]):
             The list of ScanConfigs returned.
@@ -175,19 +164,16 @@ class ListScanConfigsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    scan_configs = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    scan_configs = proto.RepeatedField(proto.MESSAGE, number=1,
         message=gcw_scan_config.ScanConfig,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class StartScanRunRequest(proto.Message):
     r"""Request for the ``StartScanRun`` method.
+
     Attributes:
         name (str):
             Required. The resource name of the ScanConfig
@@ -195,14 +181,12 @@ class StartScanRunRequest(proto.Message):
             'projects/{projectId}/scanConfigs/{scanConfigId}'.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class GetScanRunRequest(proto.Message):
     r"""Request for the ``GetScanRun`` method.
+
     Attributes:
         name (str):
             Required. The resource name of the ScanRun to
@@ -210,14 +194,12 @@ class GetScanRunRequest(proto.Message):
             'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ListScanRunsRequest(proto.Message):
     r"""Request for the ``ListScanRuns`` method.
+
     Attributes:
         parent (str):
             Required. The parent resource name, which
@@ -235,22 +217,16 @@ class ListScanRunsRequest(proto.Message):
             reasonable value.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_token = proto.Field(proto.STRING, number=2)
+
+    page_size = proto.Field(proto.INT32, number=3)
 
 
 class ListScanRunsResponse(proto.Message):
     r"""Response for the ``ListScanRuns`` method.
+
     Attributes:
         scan_runs (Sequence[google.cloud.websecurityscanner_v1.types.ScanRun]):
             The list of ScanRuns returned.
@@ -264,19 +240,16 @@ class ListScanRunsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    scan_runs = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    scan_runs = proto.RepeatedField(proto.MESSAGE, number=1,
         message=scan_run.ScanRun,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class StopScanRunRequest(proto.Message):
     r"""Request for the ``StopScanRun`` method.
+
     Attributes:
         name (str):
             Required. The resource name of the ScanRun to
@@ -284,14 +257,12 @@ class StopScanRunRequest(proto.Message):
             'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ListCrawledUrlsRequest(proto.Message):
     r"""Request for the ``ListCrawledUrls`` method.
+
     Attributes:
         parent (str):
             Required. The parent resource name, which
@@ -309,22 +280,16 @@ class ListCrawledUrlsRequest(proto.Message):
             reasonable value.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_token = proto.Field(proto.STRING, number=2)
+
+    page_size = proto.Field(proto.INT32, number=3)
 
 
 class ListCrawledUrlsResponse(proto.Message):
     r"""Response for the ``ListCrawledUrls`` method.
+
     Attributes:
         crawled_urls (Sequence[google.cloud.websecurityscanner_v1.types.CrawledUrl]):
             The list of CrawledUrls returned.
@@ -338,19 +303,16 @@ class ListCrawledUrlsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    crawled_urls = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    crawled_urls = proto.RepeatedField(proto.MESSAGE, number=1,
         message=crawled_url.CrawledUrl,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class GetFindingRequest(proto.Message):
     r"""Request for the ``GetFinding`` method.
+
     Attributes:
         name (str):
             Required. The resource name of the Finding to
@@ -358,14 +320,12 @@ class GetFindingRequest(proto.Message):
             'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}/findings/{findingId}'.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ListFindingsRequest(proto.Message):
     r"""Request for the ``ListFindings`` method.
+
     Attributes:
         parent (str):
             Required. The parent resource name, which
@@ -386,26 +346,18 @@ class ListFindingsRequest(proto.Message):
             reasonable value.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=4,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    filter = proto.Field(proto.STRING, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
+
+    page_size = proto.Field(proto.INT32, number=4)
 
 
 class ListFindingsResponse(proto.Message):
     r"""Response for the ``ListFindings`` method.
+
     Attributes:
         findings (Sequence[google.cloud.websecurityscanner_v1.types.Finding]):
             The list of Findings returned.
@@ -419,19 +371,16 @@ class ListFindingsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    findings = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    findings = proto.RepeatedField(proto.MESSAGE, number=1,
         message=finding.Finding,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class ListFindingTypeStatsRequest(proto.Message):
     r"""Request for the ``ListFindingTypeStats`` method.
+
     Attributes:
         parent (str):
             Required. The parent resource name, which
@@ -439,22 +388,18 @@ class ListFindingTypeStatsRequest(proto.Message):
             'projects/{projectId}/scanConfigs/{scanConfigId}/scanRuns/{scanRunId}'.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    parent = proto.Field(proto.STRING, number=1)
 
 
 class ListFindingTypeStatsResponse(proto.Message):
     r"""Response for the ``ListFindingTypeStats`` method.
+
     Attributes:
         finding_type_stats (Sequence[google.cloud.websecurityscanner_v1.types.FindingTypeStats]):
             The list of FindingTypeStats returned.
     """
 
-    finding_type_stats = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    finding_type_stats = proto.RepeatedField(proto.MESSAGE, number=1,
         message=gcw_finding_type_stats.FindingTypeStats,
     )
 

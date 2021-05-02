@@ -17,13 +17,17 @@
 namespace Google.Cloud.OsLogin.V1.Snippets
 {
     using Google.Cloud.OsLogin.Common;
+    using Google.Cloud.OsLogin.V1;
 
     public sealed partial class GeneratedOsLoginServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ImportSshPublicKey</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ImportSshPublicKeyRequestObject()
         {
-            // Snippet: ImportSshPublicKey(ImportSshPublicKeyRequest, CallSettings)
             // Create client
             OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.OsLogin.V1.Snippets
             };
             // Make the request
             ImportSshPublicKeyResponse response = osLoginServiceClient.ImportSshPublicKey(request);
-            // End snippet
         }
     }
 }

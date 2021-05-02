@@ -17,15 +17,18 @@
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dialogflow.V2beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedKnowledgeBasesClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateKnowledgeBaseAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateKnowledgeBaseResourceNames2Async()
         {
-            // Snippet: CreateKnowledgeBaseAsync(LocationName, KnowledgeBase, CallSettings)
-            // Additional: CreateKnowledgeBaseAsync(LocationName, KnowledgeBase, CancellationToken)
             // Create client
             KnowledgeBasesClient knowledgeBasesClient = await KnowledgeBasesClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             KnowledgeBase knowledgeBase = new KnowledgeBase();
             // Make the request
             KnowledgeBase response = await knowledgeBasesClient.CreateKnowledgeBaseAsync(parent, knowledgeBase);
-            // End snippet
         }
     }
 }

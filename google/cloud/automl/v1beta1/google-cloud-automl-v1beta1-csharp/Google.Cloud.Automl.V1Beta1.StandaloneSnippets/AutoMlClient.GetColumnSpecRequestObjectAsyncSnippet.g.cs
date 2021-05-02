@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Automl.V1Beta1.Snippets
 {
+    using Google.Cloud.Automl.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for GetColumnSpecAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetColumnSpecRequestObjectAsync()
         {
-            // Snippet: GetColumnSpecAsync(GetColumnSpecRequest, CallSettings)
-            // Additional: GetColumnSpecAsync(GetColumnSpecRequest, CancellationToken)
             // Create client
             AutoMlClient autoMlClient = await AutoMlClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Automl.V1Beta1.Snippets
             };
             // Make the request
             ColumnSpec response = await autoMlClient.GetColumnSpecAsync(request);
-            // End snippet
         }
     }
 }

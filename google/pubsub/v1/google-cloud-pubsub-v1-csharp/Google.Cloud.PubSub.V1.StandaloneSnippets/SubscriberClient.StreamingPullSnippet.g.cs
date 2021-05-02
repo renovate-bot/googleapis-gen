@@ -17,14 +17,18 @@
 namespace Google.Cloud.PubSub.V1.Snippets
 {
     using Google.Api.Gax.Grpc;
+    using Google.Cloud.PubSub.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSubscriberClientStandaloneSnippets
     {
         /// <summary>Snippet for StreamingPull</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task StreamingPull()
         {
-            // Snippet: StreamingPull(CallSettings, BidirectionalStreamingSettings)
             // Create client
             SubscriberClient subscriberClient = SubscriberClient.Create();
             // Initialize streaming call, retrieving the stream object
@@ -72,7 +76,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
             // Await the response handler
             // This will complete once all server responses have been processed
             await responseHandlerTask;
-            // End snippet
         }
     }
 }

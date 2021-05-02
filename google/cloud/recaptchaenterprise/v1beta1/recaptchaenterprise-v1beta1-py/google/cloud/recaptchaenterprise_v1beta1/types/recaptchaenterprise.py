@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -44,6 +47,7 @@ __protobuf__ = proto.module(
 
 class CreateAssessmentRequest(proto.Message):
     r"""The create assessment request message.
+
     Attributes:
         parent (str):
             Required. The name of the project in which the assessment
@@ -52,19 +56,16 @@ class CreateAssessmentRequest(proto.Message):
             Required. The assessment details.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    assessment = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    assessment = proto.Field(proto.MESSAGE, number=2,
         message='Assessment',
     )
 
 
 class AnnotateAssessmentRequest(proto.Message):
     r"""The request message to annotate an Assessment.
+
     Attributes:
         name (str):
             Required. The resource name of the Assessment, in the format
@@ -79,23 +80,20 @@ class AnnotateAssessmentRequest(proto.Message):
         LEGITIMATE = 1
         FRAUDULENT = 2
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    annotation = proto.Field(
-        proto.ENUM,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    annotation = proto.Field(proto.ENUM, number=2,
         enum=Annotation,
     )
 
 
 class AnnotateAssessmentResponse(proto.Message):
-    r"""Empty response for AnnotateAssessment.    """
+    r"""Empty response for AnnotateAssessment."""
 
 
 class Assessment(proto.Message):
     r"""A recaptcha assessment resource.
+
     Attributes:
         name (str):
             Output only. The resource name for the Assessment in the
@@ -126,33 +124,26 @@ class Assessment(proto.Message):
         UNEXPECTED_USAGE_PATTERNS = 4
         LOW_CONFIDENCE_SCORE = 5
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    event = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    event = proto.Field(proto.MESSAGE, number=2,
         message='Event',
     )
-    score = proto.Field(
-        proto.FLOAT,
-        number=3,
-    )
-    token_properties = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    score = proto.Field(proto.FLOAT, number=3)
+
+    token_properties = proto.Field(proto.MESSAGE, number=4,
         message='TokenProperties',
     )
-    reasons = proto.RepeatedField(
-        proto.ENUM,
-        number=5,
+
+    reasons = proto.RepeatedField(proto.ENUM, number=5,
         enum=ClassificationReason,
     )
 
 
 class Event(proto.Message):
     r"""
+
     Attributes:
         token (str):
             Optional. The user response token provided by
@@ -177,30 +168,20 @@ class Event(proto.Message):
             enterprise.
     """
 
-    token = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    site_key = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    user_agent = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    user_ip_address = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    expected_action = proto.Field(
-        proto.STRING,
-        number=5,
-    )
+    token = proto.Field(proto.STRING, number=1)
+
+    site_key = proto.Field(proto.STRING, number=2)
+
+    user_agent = proto.Field(proto.STRING, number=3)
+
+    user_ip_address = proto.Field(proto.STRING, number=4)
+
+    expected_action = proto.Field(proto.STRING, number=5)
 
 
 class TokenProperties(proto.Message):
     r"""
+
     Attributes:
         valid (bool):
             Whether the provided user response token is
@@ -229,32 +210,24 @@ class TokenProperties(proto.Message):
         SITE_MISMATCH = 5
         MISSING = 6
 
-    valid = proto.Field(
-        proto.BOOL,
-        number=1,
-    )
-    invalid_reason = proto.Field(
-        proto.ENUM,
-        number=2,
+    valid = proto.Field(proto.BOOL, number=1)
+
+    invalid_reason = proto.Field(proto.ENUM, number=2,
         enum=InvalidReason,
     )
-    create_time = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    create_time = proto.Field(proto.MESSAGE, number=3,
         message=timestamp.Timestamp,
     )
-    hostname = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    action = proto.Field(
-        proto.STRING,
-        number=5,
-    )
+
+    hostname = proto.Field(proto.STRING, number=4)
+
+    action = proto.Field(proto.STRING, number=5)
 
 
 class CreateKeyRequest(proto.Message):
     r"""The create key request message.
+
     Attributes:
         parent (str):
             Required. The name of the project in which the key will be
@@ -264,19 +237,16 @@ class CreateKeyRequest(proto.Message):
             Enterprise key.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    key = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    key = proto.Field(proto.MESSAGE, number=2,
         message='Key',
     )
 
 
 class ListKeysRequest(proto.Message):
     r"""The list keys request message.
+
     Attributes:
         parent (str):
             Required. The name of the project that contains the keys
@@ -290,22 +260,16 @@ class ListKeysRequest(proto.Message):
             previous. ListKeysRequest, if any.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
 
 
 class ListKeysResponse(proto.Message):
     r"""Response to request to list keys in a project.
+
     Attributes:
         keys (Sequence[google.cloud.recaptchaenterprise_v1beta1.types.Key]):
             Key details.
@@ -318,33 +282,28 @@ class ListKeysResponse(proto.Message):
     def raw_page(self):
         return self
 
-    keys = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    keys = proto.RepeatedField(proto.MESSAGE, number=1,
         message='Key',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class GetKeyRequest(proto.Message):
     r"""The get key request message.
+
     Attributes:
         name (str):
             Required. The name of the requested key, in the format
             "projects/{project_number}/keys/{key_id}".
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class UpdateKeyRequest(proto.Message):
     r"""The update key request message.
+
     Attributes:
         key (google.cloud.recaptchaenterprise_v1beta1.types.Key):
             Required. The key to update.
@@ -354,30 +313,25 @@ class UpdateKeyRequest(proto.Message):
             all fields will be updated.
     """
 
-    key = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    key = proto.Field(proto.MESSAGE, number=1,
         message='Key',
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
 
 
 class DeleteKeyRequest(proto.Message):
     r"""The delete key request message.
+
     Attributes:
         name (str):
             Required. The name of the key to be deleted, in the format
             "projects/{project_number}/keys/{key_id}".
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class Key(proto.Message):
@@ -402,36 +356,26 @@ class Key(proto.Message):
             apps.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    display_name = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    web_settings = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='platform_settings',
+    name = proto.Field(proto.STRING, number=1)
+
+    display_name = proto.Field(proto.STRING, number=2)
+
+    web_settings = proto.Field(proto.MESSAGE, number=3, oneof='platform_settings',
         message='WebKeySettings',
     )
-    android_settings = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='platform_settings',
+
+    android_settings = proto.Field(proto.MESSAGE, number=4, oneof='platform_settings',
         message='AndroidKeySettings',
     )
-    ios_settings = proto.Field(
-        proto.MESSAGE,
-        number=5,
-        oneof='platform_settings',
+
+    ios_settings = proto.Field(proto.MESSAGE, number=5, oneof='platform_settings',
         message='IOSKeySettings',
     )
 
 
 class WebKeySettings(proto.Message):
     r"""Settings specific to keys that can be used by websites.
+
     Attributes:
         enforce_allowed_domains (bool):
             Whether allowed_domains is enforced or not.
@@ -470,46 +414,36 @@ class WebKeySettings(proto.Message):
         BALANCED = 2
         SECURITY = 3
 
-    enforce_allowed_domains = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    allowed_domains = proto.RepeatedField(
-        proto.STRING,
-        number=1,
-    )
-    allow_amp_traffic = proto.Field(
-        proto.BOOL,
-        number=2,
-    )
-    integration_type = proto.Field(
-        proto.ENUM,
-        number=4,
+    enforce_allowed_domains = proto.Field(proto.BOOL, number=3)
+
+    allowed_domains = proto.RepeatedField(proto.STRING, number=1)
+
+    allow_amp_traffic = proto.Field(proto.BOOL, number=2)
+
+    integration_type = proto.Field(proto.ENUM, number=4,
         enum=IntegrationType,
     )
-    challenge_security_preference = proto.Field(
-        proto.ENUM,
-        number=5,
+
+    challenge_security_preference = proto.Field(proto.ENUM, number=5,
         enum=ChallengeSecurityPreference,
     )
 
 
 class AndroidKeySettings(proto.Message):
     r"""Settings specific to keys that can be used by Android apps.
+
     Attributes:
         allowed_package_names (Sequence[str]):
             Android package names of apps allowed to use
             the key. Example: 'com.companyname.appname'
     """
 
-    allowed_package_names = proto.RepeatedField(
-        proto.STRING,
-        number=1,
-    )
+    allowed_package_names = proto.RepeatedField(proto.STRING, number=1)
 
 
 class IOSKeySettings(proto.Message):
     r"""Settings specific to keys that can be used by iOS apps.
+
     Attributes:
         allowed_bundle_ids (Sequence[str]):
             iOS bundle ids of apps allowed to use the
@@ -517,10 +451,7 @@ class IOSKeySettings(proto.Message):
             'com.companyname.productname.appname'
     """
 
-    allowed_bundle_ids = proto.RepeatedField(
-        proto.STRING,
-        number=1,
-    )
+    allowed_bundle_ids = proto.RepeatedField(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

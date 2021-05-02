@@ -17,14 +17,18 @@
 namespace Google.Partner.Aistreams.V1Alpha1.Snippets
 {
     using Google.LongRunning;
+    using Google.Partner.Aistreams.V1Alpha1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedAIStreamsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateStream</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateStreamRequestObject()
         {
-            // Snippet: UpdateStream(UpdateStreamRequest, CallSettings)
             // Create client
             AIStreamsClient aIStreamsClient = AIStreamsClient.Create();
             // Initialize request argument(s)
@@ -52,7 +56,6 @@ namespace Google.Partner.Aistreams.V1Alpha1.Snippets
                 // If it has completed, then access the result
                 Stream retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Chromeos.Moblab.V1Beta1.Snippets
 {
+    using Google.Chromeos.Moblab.V1Beta1;
+
     public sealed partial class GeneratedBuildServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CheckBuildStageStatus</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CheckBuildStageStatus()
         {
-            // Snippet: CheckBuildStageStatus(string, CallSettings)
             // Create client
             BuildServiceClient buildServiceClient = BuildServiceClient.Create();
             // Initialize request argument(s)
             string name = "buildTargets/[BUILD_TARGET]/models/[MODEL]/builds/[BUILD]/artifacts/[ARTIFACT]";
             // Make the request
             CheckBuildStageStatusResponse response = buildServiceClient.CheckBuildStageStatus(name);
-            // End snippet
         }
     }
 }

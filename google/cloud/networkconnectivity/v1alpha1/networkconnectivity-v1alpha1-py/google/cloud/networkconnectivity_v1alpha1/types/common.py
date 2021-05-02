@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -28,6 +31,7 @@ __protobuf__ = proto.module(
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -55,36 +59,23 @@ class OperationMetadata(proto.Message):
             operation.
     """
 
-    create_time = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    create_time = proto.Field(proto.MESSAGE, number=1,
         message=timestamp.Timestamp,
     )
-    end_time = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    end_time = proto.Field(proto.MESSAGE, number=2,
         message=timestamp.Timestamp,
     )
-    target = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    verb = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    status_message = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    requested_cancellation = proto.Field(
-        proto.BOOL,
-        number=6,
-    )
-    api_version = proto.Field(
-        proto.STRING,
-        number=7,
-    )
+
+    target = proto.Field(proto.STRING, number=3)
+
+    verb = proto.Field(proto.STRING, number=4)
+
+    status_message = proto.Field(proto.STRING, number=5)
+
+    requested_cancellation = proto.Field(proto.BOOL, number=6)
+
+    api_version = proto.Field(proto.STRING, number=7)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.DocumentAI.V1Beta3.Snippets
 {
+    using Google.Cloud.DocumentAI.V1Beta3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDocumentProcessorServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ProcessDocumentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ProcessDocumentResourceNamesAsync()
         {
-            // Snippet: ProcessDocumentAsync(ProcessorName, CallSettings)
-            // Additional: ProcessDocumentAsync(ProcessorName, CancellationToken)
             // Create client
             DocumentProcessorServiceClient documentProcessorServiceClient = await DocumentProcessorServiceClient.CreateAsync();
             // Initialize request argument(s)
             ProcessorName name = ProcessorName.FromProjectLocationProcessor("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
             // Make the request
             ProcessResponse response = await documentProcessorServiceClient.ProcessDocumentAsync(name);
-            // End snippet
         }
     }
 }

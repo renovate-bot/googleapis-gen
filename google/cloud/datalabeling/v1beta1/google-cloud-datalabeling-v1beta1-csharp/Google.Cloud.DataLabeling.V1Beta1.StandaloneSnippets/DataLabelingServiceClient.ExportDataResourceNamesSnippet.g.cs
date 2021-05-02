@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ExportData</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ExportDataResourceNames()
         {
-            // Snippet: ExportData(DatasetName, AnnotatedDatasetName, string, OutputConfig, CallSettings)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.Create();
             // Initialize request argument(s)
@@ -49,7 +53,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
                 // If it has completed, then access the result
                 ExportDataOperationResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

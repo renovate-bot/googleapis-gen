@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -29,6 +31,7 @@ from google.cloud.dialogflow_v2beta1.types import entity_type
 from google.cloud.dialogflow_v2beta1.types import entity_type as gcd_entity_type
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import EntityTypesTransport, DEFAULT_CLIENT_INFO
 
 
@@ -63,8 +66,7 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -204,15 +206,13 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -242,9 +242,7 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
     def list_entity_types(self) -> Callable[
             [entity_type.ListEntityTypesRequest],
             entity_type.ListEntityTypesResponse]:
-        r"""Return a callable for the
-        list entity types
-          method over gRPC.
+        r"""Return a callable for the list entity types method over gRPC.
 
         Returns the list of all entity types in the specified
         agent.
@@ -271,9 +269,7 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
     def get_entity_type(self) -> Callable[
             [entity_type.GetEntityTypeRequest],
             entity_type.EntityType]:
-        r"""Return a callable for the
-        get entity type
-          method over gRPC.
+        r"""Return a callable for the get entity type method over gRPC.
 
         Retrieves the specified entity type.
 
@@ -299,9 +295,7 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
     def create_entity_type(self) -> Callable[
             [gcd_entity_type.CreateEntityTypeRequest],
             gcd_entity_type.EntityType]:
-        r"""Return a callable for the
-        create entity type
-          method over gRPC.
+        r"""Return a callable for the create entity type method over gRPC.
 
         Creates an entity type in the specified agent.
 
@@ -327,9 +321,7 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
     def update_entity_type(self) -> Callable[
             [gcd_entity_type.UpdateEntityTypeRequest],
             gcd_entity_type.EntityType]:
-        r"""Return a callable for the
-        update entity type
-          method over gRPC.
+        r"""Return a callable for the update entity type method over gRPC.
 
         Updates the specified entity type.
 
@@ -355,9 +347,7 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
     def delete_entity_type(self) -> Callable[
             [entity_type.DeleteEntityTypeRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete entity type
-          method over gRPC.
+        r"""Return a callable for the delete entity type method over gRPC.
 
         Deletes the specified entity type.
 
@@ -383,9 +373,7 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
     def batch_update_entity_types(self) -> Callable[
             [entity_type.BatchUpdateEntityTypesRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        batch update entity types
-          method over gRPC.
+        r"""Return a callable for the batch update entity types method over gRPC.
 
         Updates/Creates multiple entity types in the specified agent.
         Operation <response:
@@ -413,9 +401,7 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
     def batch_delete_entity_types(self) -> Callable[
             [entity_type.BatchDeleteEntityTypesRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        batch delete entity types
-          method over gRPC.
+        r"""Return a callable for the batch delete entity types method over gRPC.
 
         Deletes entity types in the specified agent. Operation
         <response: [google.protobuf.Empty][google.protobuf.Empty]>
@@ -442,9 +428,7 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
     def batch_create_entities(self) -> Callable[
             [entity_type.BatchCreateEntitiesRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        batch create entities
-          method over gRPC.
+        r"""Return a callable for the batch create entities method over gRPC.
 
         Creates multiple new entities in the specified entity type.
 
@@ -473,9 +457,7 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
     def batch_update_entities(self) -> Callable[
             [entity_type.BatchUpdateEntitiesRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        batch update entities
-          method over gRPC.
+        r"""Return a callable for the batch update entities method over gRPC.
 
         Updates or creates multiple entities in the specified entity
         type. This method does not affect entities in the entity type
@@ -506,9 +488,7 @@ class EntityTypesGrpcTransport(EntityTypesTransport):
     def batch_delete_entities(self) -> Callable[
             [entity_type.BatchDeleteEntitiesRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        batch delete entities
-          method over gRPC.
+        r"""Return a callable for the batch delete entities method over gRPC.
 
         Deletes entities in the specified entity type.
 

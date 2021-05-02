@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedBigtableTableAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateBackup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateBackup()
         {
-            // Snippet: UpdateBackup(Backup, FieldMask, CallSettings)
             // Create client
             BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Backup response = bigtableTableAdminClient.UpdateBackup(backup, updateMask);
-            // End snippet
         }
     }
 }

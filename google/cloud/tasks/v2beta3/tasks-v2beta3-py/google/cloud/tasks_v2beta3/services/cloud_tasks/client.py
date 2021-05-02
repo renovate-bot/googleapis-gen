@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -42,6 +44,7 @@ from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import CloudTasksTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import CloudTasksGrpcTransport
 from .transports.grpc_asyncio import CloudTasksGrpcAsyncIOTransport
@@ -357,8 +360,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.cloud.tasks_v2beta3.types.ListQueuesRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ListQueues][google.cloud.tasks.v2beta3.CloudTasks.ListQueues].
             parent (str):
                 Required. The location name. For example:
@@ -367,6 +369,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -396,8 +399,10 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudtasks.ListQueuesRequest):
             request = cloudtasks.ListQueuesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -445,8 +450,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.cloud.tasks_v2beta3.types.GetQueueRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [GetQueue][google.cloud.tasks.v2beta3.CloudTasks.GetQueue].
             name (str):
                 Required. The resource name of the queue. For example:
@@ -455,6 +459,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -485,8 +490,10 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudtasks.GetQueueRequest):
             request = cloudtasks.GetQueueRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -536,8 +543,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.cloud.tasks_v2beta3.types.CreateQueueRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue].
             parent (str):
                 Required. The location name in which the queue will be
@@ -560,6 +566,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``queue`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -590,8 +597,10 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudtasks.CreateQueueRequest):
             request = cloudtasks.CreateQueueRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if queue is not None:
@@ -646,8 +655,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.cloud.tasks_v2beta3.types.UpdateQueueRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UpdateQueue][google.cloud.tasks.v2beta3.CloudTasks.UpdateQueue].
             queue (google.cloud.tasks_v2beta3.types.Queue):
                 Required. The queue to create or update.
@@ -674,6 +682,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -704,8 +713,10 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudtasks.UpdateQueueRequest):
             request = cloudtasks.UpdateQueueRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if queue is not None:
                 request.queue = queue
             if update_mask is not None:
@@ -757,8 +768,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.cloud.tasks_v2beta3.types.DeleteQueueRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DeleteQueue][google.cloud.tasks.v2beta3.CloudTasks.DeleteQueue].
             name (str):
                 Required. The queue name. For example:
@@ -767,6 +777,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -787,8 +798,10 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudtasks.DeleteQueueRequest):
             request = cloudtasks.DeleteQueueRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -829,8 +842,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.cloud.tasks_v2beta3.types.PurgeQueueRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue].
             name (str):
                 Required. The queue name. For example:
@@ -839,6 +851,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -869,8 +882,10 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudtasks.PurgeQueueRequest):
             request = cloudtasks.PurgeQueueRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -916,8 +931,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.cloud.tasks_v2beta3.types.PauseQueueRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue].
             name (str):
                 Required. The queue name. For example:
@@ -926,6 +940,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -956,8 +971,10 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudtasks.PauseQueueRequest):
             request = cloudtasks.PauseQueueRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1010,8 +1027,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.cloud.tasks_v2beta3.types.ResumeQueueRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue].
             name (str):
                 Required. The queue name. For example:
@@ -1020,6 +1036,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1050,8 +1067,10 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudtasks.ResumeQueueRequest):
             request = cloudtasks.ResumeQueueRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1098,8 +1117,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1110,6 +1128,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1183,14 +1202,15 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.GetIamPolicyRequest()
-             if resource is not None:
+
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1240,8 +1260,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1252,6 +1271,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1325,14 +1345,15 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.SetIamPolicyRequest()
-             if resource is not None:
+
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1379,8 +1400,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1400,6 +1420,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1418,15 +1439,17 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.TestIamPermissionsRequest()
-             if resource is not None:
+
+            if resource is not None:
                 request.resource = resource
+
             if permissions:
                 request.permissions.extend(permissions)
 
@@ -1474,8 +1497,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.cloud.tasks_v2beta3.types.ListTasksRequest):
-                The request object.
-                Request message for listing tasks
+                The request object. Request message for listing tasks
                 using
                 [ListTasks][google.cloud.tasks.v2beta3.CloudTasks.ListTasks].
             parent (str):
@@ -1485,6 +1507,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1514,8 +1537,10 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudtasks.ListTasksRequest):
             request = cloudtasks.ListTasksRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -1563,8 +1588,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.cloud.tasks_v2beta3.types.GetTaskRequest):
-                The request object.
-                Request message for getting a task
+                The request object. Request message for getting a task
                 using
                 [GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
             name (str):
@@ -1574,6 +1598,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1598,8 +1623,10 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudtasks.GetTaskRequest):
             request = cloudtasks.GetTaskRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1644,8 +1671,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.cloud.tasks_v2beta3.types.CreateTaskRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
             parent (str):
                 Required. The queue name. For example:
@@ -1702,6 +1728,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``task`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1726,8 +1753,10 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudtasks.CreateTaskRequest):
             request = cloudtasks.CreateTaskRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if task is not None:
@@ -1771,8 +1800,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.cloud.tasks_v2beta3.types.DeleteTaskRequest):
-                The request object.
-                Request message for deleting a task
+                The request object. Request message for deleting a task
                 using
                 [DeleteTask][google.cloud.tasks.v2beta3.CloudTasks.DeleteTask].
             name (str):
@@ -1782,6 +1810,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1802,8 +1831,10 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudtasks.DeleteTaskRequest):
             request = cloudtasks.DeleteTaskRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1866,8 +1897,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         Args:
             request (google.cloud.tasks_v2beta3.types.RunTaskRequest):
-                The request object.
-                Request message for forcing a task
+                The request object. Request message for forcing a task
                 to run now using
                 [RunTask][google.cloud.tasks.v2beta3.CloudTasks.RunTask].
             name (str):
@@ -1877,6 +1907,7 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1901,8 +1932,10 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudtasks.RunTaskRequest):
             request = cloudtasks.RunTaskRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1928,6 +1961,8 @@ class CloudTasksClient(metaclass=CloudTasksClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

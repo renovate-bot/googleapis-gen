@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.EssentialContacts.V1.Snippets
 {
+    using Google.Cloud.EssentialContacts.V1;
+
     public sealed partial class GeneratedEssentialContactsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteContact</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteContactRequestObject()
         {
-            // Snippet: DeleteContact(DeleteContactRequest, CallSettings)
             // Create client
             EssentialContactsServiceClient essentialContactsServiceClient = EssentialContactsServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.EssentialContacts.V1.Snippets
             };
             // Make the request
             essentialContactsServiceClient.DeleteContact(request);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedFlowsClientStandaloneSnippets
     {
         /// <summary>Snippet for ExportFlow</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ExportFlowRequestObject()
         {
-            // Snippet: ExportFlow(ExportFlowRequest, CallSettings)
             // Create client
             FlowsClient flowsClient = FlowsClient.Create();
             // Initialize request argument(s)
@@ -52,7 +56,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
                 // If it has completed, then access the result
                 ExportFlowResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

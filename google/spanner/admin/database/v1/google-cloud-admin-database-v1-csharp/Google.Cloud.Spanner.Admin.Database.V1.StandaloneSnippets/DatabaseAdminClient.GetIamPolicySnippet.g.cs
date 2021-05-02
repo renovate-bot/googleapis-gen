@@ -17,20 +17,23 @@
 namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
 {
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.Spanner.Admin.Database.V1;
 
     public sealed partial class GeneratedDatabaseAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIamPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetIamPolicy()
         {
-            // Snippet: GetIamPolicy(string, CallSettings)
             // Create client
             DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.Create();
             // Initialize request argument(s)
             string resource = "a/wildcard/resource";
             // Make the request
             Policy response = databaseAdminClient.GetIamPolicy(resource);
-            // End snippet
         }
     }
 }

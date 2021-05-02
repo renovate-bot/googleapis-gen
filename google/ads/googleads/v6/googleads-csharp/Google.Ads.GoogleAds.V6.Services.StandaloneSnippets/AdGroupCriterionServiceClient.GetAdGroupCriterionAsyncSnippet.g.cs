@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupCriterionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupCriterionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdGroupCriterionAsync()
         {
-            // Snippet: GetAdGroupCriterionAsync(string, CallSettings)
-            // Additional: GetAdGroupCriterionAsync(string, CancellationToken)
             // Create client
             AdGroupCriterionServiceClient adGroupCriterionServiceClient = await AdGroupCriterionServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/adGroupCriteria/[AD_GROUP_ID]~[CRITERION_ID]";
             // Make the request
             AdGroupCriterion response = await adGroupCriterionServiceClient.GetAdGroupCriterionAsync(resourceName);
-            // End snippet
         }
     }
 }

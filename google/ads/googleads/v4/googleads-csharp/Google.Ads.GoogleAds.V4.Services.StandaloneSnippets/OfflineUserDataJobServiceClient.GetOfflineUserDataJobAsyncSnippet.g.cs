@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOfflineUserDataJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetOfflineUserDataJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetOfflineUserDataJobAsync()
         {
-            // Snippet: GetOfflineUserDataJobAsync(string, CallSettings)
-            // Additional: GetOfflineUserDataJobAsync(string, CancellationToken)
             // Create client
             OfflineUserDataJobServiceClient offlineUserDataJobServiceClient = await OfflineUserDataJobServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/offlineUserDataJobs/[OFFLINE_USER_DATA_JOB]";
             // Make the request
             OfflineUserDataJob response = await offlineUserDataJobServiceClient.GetOfflineUserDataJobAsync(resourceName);
-            // End snippet
         }
     }
 }

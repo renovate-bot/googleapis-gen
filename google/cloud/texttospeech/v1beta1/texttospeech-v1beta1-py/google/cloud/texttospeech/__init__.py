@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,7 +29,8 @@ from google.cloud.texttospeech_v1beta1.types.cloud_tts import Timepoint
 from google.cloud.texttospeech_v1beta1.types.cloud_tts import Voice
 from google.cloud.texttospeech_v1beta1.types.cloud_tts import VoiceSelectionParams
 
-__all__ = ('AudioConfig',
+__all__ = (
+    'AudioConfig',
     'AudioEncoding',
     'ListVoicesRequest',
     'ListVoicesResponse',

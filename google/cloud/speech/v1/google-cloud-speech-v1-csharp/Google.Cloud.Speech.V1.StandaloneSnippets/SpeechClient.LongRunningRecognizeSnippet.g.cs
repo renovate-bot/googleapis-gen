@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Speech.V1.Snippets
 {
+    using Google.Cloud.Speech.V1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedSpeechClientStandaloneSnippets
     {
         /// <summary>Snippet for LongRunningRecognize</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void LongRunningRecognize()
         {
-            // Snippet: LongRunningRecognize(RecognitionConfig, RecognitionAudio, CallSettings)
             // Create client
             SpeechClient speechClient = SpeechClient.Create();
             // Initialize request argument(s)
@@ -47,7 +51,6 @@ namespace Google.Cloud.Speech.V1.Snippets
                 // If it has completed, then access the result
                 LongRunningRecognizeResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

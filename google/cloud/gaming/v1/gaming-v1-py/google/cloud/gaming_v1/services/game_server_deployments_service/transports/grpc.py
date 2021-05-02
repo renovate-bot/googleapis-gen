@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -27,6 +29,7 @@ import grpc  # type: ignore
 
 from google.cloud.gaming_v1.types import game_server_deployments
 from google.longrunning import operations_pb2 as operations  # type: ignore
+
 from .base import GameServerDeploymentsServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -61,8 +64,7 @@ class GameServerDeploymentsServiceGrpcTransport(GameServerDeploymentsServiceTran
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,15 +204,13 @@ class GameServerDeploymentsServiceGrpcTransport(GameServerDeploymentsServiceTran
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -240,9 +240,7 @@ class GameServerDeploymentsServiceGrpcTransport(GameServerDeploymentsServiceTran
     def list_game_server_deployments(self) -> Callable[
             [game_server_deployments.ListGameServerDeploymentsRequest],
             game_server_deployments.ListGameServerDeploymentsResponse]:
-        r"""Return a callable for the
-        list game server deployments
-          method over gRPC.
+        r"""Return a callable for the list game server deployments method over gRPC.
 
         Lists game server deployments in a given project and
         location.
@@ -269,9 +267,7 @@ class GameServerDeploymentsServiceGrpcTransport(GameServerDeploymentsServiceTran
     def get_game_server_deployment(self) -> Callable[
             [game_server_deployments.GetGameServerDeploymentRequest],
             game_server_deployments.GameServerDeployment]:
-        r"""Return a callable for the
-        get game server deployment
-          method over gRPC.
+        r"""Return a callable for the get game server deployment method over gRPC.
 
         Gets details of a single game server deployment.
 
@@ -297,9 +293,7 @@ class GameServerDeploymentsServiceGrpcTransport(GameServerDeploymentsServiceTran
     def create_game_server_deployment(self) -> Callable[
             [game_server_deployments.CreateGameServerDeploymentRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create game server deployment
-          method over gRPC.
+        r"""Return a callable for the create game server deployment method over gRPC.
 
         Creates a new game server deployment in a given
         project and location.
@@ -326,9 +320,7 @@ class GameServerDeploymentsServiceGrpcTransport(GameServerDeploymentsServiceTran
     def delete_game_server_deployment(self) -> Callable[
             [game_server_deployments.DeleteGameServerDeploymentRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete game server deployment
-          method over gRPC.
+        r"""Return a callable for the delete game server deployment method over gRPC.
 
         Deletes a single game server deployment.
 
@@ -354,9 +346,7 @@ class GameServerDeploymentsServiceGrpcTransport(GameServerDeploymentsServiceTran
     def update_game_server_deployment(self) -> Callable[
             [game_server_deployments.UpdateGameServerDeploymentRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update game server deployment
-          method over gRPC.
+        r"""Return a callable for the update game server deployment method over gRPC.
 
         Patches a game server deployment.
 
@@ -382,10 +372,8 @@ class GameServerDeploymentsServiceGrpcTransport(GameServerDeploymentsServiceTran
     def get_game_server_deployment_rollout(self) -> Callable[
             [game_server_deployments.GetGameServerDeploymentRolloutRequest],
             game_server_deployments.GameServerDeploymentRollout]:
-        r"""Return a callable for the
-        get game server deployment
-        rollout
-          method over gRPC.
+        r"""Return a callable for the get game server deployment
+        rollout method over gRPC.
 
         Gets details a single game server deployment rollout.
 
@@ -411,10 +399,8 @@ class GameServerDeploymentsServiceGrpcTransport(GameServerDeploymentsServiceTran
     def update_game_server_deployment_rollout(self) -> Callable[
             [game_server_deployments.UpdateGameServerDeploymentRolloutRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update game server deployment
-        rollout
-          method over gRPC.
+        r"""Return a callable for the update game server deployment
+        rollout method over gRPC.
 
         Patches a single game server deployment rollout. The method will
         not return an error if the update does not affect any existing
@@ -446,10 +432,8 @@ class GameServerDeploymentsServiceGrpcTransport(GameServerDeploymentsServiceTran
     def preview_game_server_deployment_rollout(self) -> Callable[
             [game_server_deployments.PreviewGameServerDeploymentRolloutRequest],
             game_server_deployments.PreviewGameServerDeploymentRolloutResponse]:
-        r"""Return a callable for the
-        preview game server deployment
-        rollout
-          method over gRPC.
+        r"""Return a callable for the preview game server deployment
+        rollout method over gRPC.
 
         Previews the game server deployment rollout. This API
         does not mutate the rollout resource.
@@ -476,9 +460,7 @@ class GameServerDeploymentsServiceGrpcTransport(GameServerDeploymentsServiceTran
     def fetch_deployment_state(self) -> Callable[
             [game_server_deployments.FetchDeploymentStateRequest],
             game_server_deployments.FetchDeploymentStateResponse]:
-        r"""Return a callable for the
-        fetch deployment state
-          method over gRPC.
+        r"""Return a callable for the fetch deployment state method over gRPC.
 
         Retrieves information about the current state of the
         game server deployment. Gathers all the Agones fleets

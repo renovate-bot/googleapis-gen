@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
@@ -22,13 +24,13 @@ from google.api_core import operations_v1              # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.longrunning import operations_pb2 as operations  # type: ignore
 from google.partner.aistreams_v1alpha1.types import aistreams
+
 from .base import AIStreamsTransport, DEFAULT_CLIENT_INFO
 from .grpc import AIStreamsGrpcTransport
 
@@ -78,15 +80,13 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -106,8 +106,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -166,6 +165,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -244,9 +244,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def list_clusters(self) -> Callable[
             [aistreams.ListClustersRequest],
             Awaitable[aistreams.ListClustersResponse]]:
-        r"""Return a callable for the
-        list clusters
-          method over gRPC.
+        r"""Return a callable for the list clusters method over gRPC.
 
         Lists Clusters in a given project and location.
 
@@ -272,9 +270,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def get_cluster(self) -> Callable[
             [aistreams.GetClusterRequest],
             Awaitable[aistreams.Cluster]]:
-        r"""Return a callable for the
-        get cluster
-          method over gRPC.
+        r"""Return a callable for the get cluster method over gRPC.
 
         Gets details of a single Cluster.
 
@@ -300,9 +296,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def create_cluster(self) -> Callable[
             [aistreams.CreateClusterRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create cluster
-          method over gRPC.
+        r"""Return a callable for the create cluster method over gRPC.
 
         Creates a new Cluster in a given project and
         location.
@@ -329,9 +323,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def update_cluster(self) -> Callable[
             [aistreams.UpdateClusterRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update cluster
-          method over gRPC.
+        r"""Return a callable for the update cluster method over gRPC.
 
         Updates the parameters of a single Cluster.
 
@@ -357,9 +349,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def delete_cluster(self) -> Callable[
             [aistreams.DeleteClusterRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete cluster
-          method over gRPC.
+        r"""Return a callable for the delete cluster method over gRPC.
 
         Deletes a single Cluster.
 
@@ -385,9 +375,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def list_streams(self) -> Callable[
             [aistreams.ListStreamsRequest],
             Awaitable[aistreams.ListStreamsResponse]]:
-        r"""Return a callable for the
-        list streams
-          method over gRPC.
+        r"""Return a callable for the list streams method over gRPC.
 
         Lists Streams in a given project, location and
         cluster.
@@ -414,9 +402,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def get_stream(self) -> Callable[
             [aistreams.GetStreamRequest],
             Awaitable[aistreams.Stream]]:
-        r"""Return a callable for the
-        get stream
-          method over gRPC.
+        r"""Return a callable for the get stream method over gRPC.
 
         Gets details of a single Stream.
 
@@ -442,9 +428,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def create_stream(self) -> Callable[
             [aistreams.CreateStreamRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        create stream
-          method over gRPC.
+        r"""Return a callable for the create stream method over gRPC.
 
         Creates a new Stream in a given project and location.
 
@@ -470,9 +454,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def update_stream(self) -> Callable[
             [aistreams.UpdateStreamRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        update stream
-          method over gRPC.
+        r"""Return a callable for the update stream method over gRPC.
 
         Updates the parameters of a single Stream.
 
@@ -498,9 +480,7 @@ class AIStreamsGrpcAsyncIOTransport(AIStreamsTransport):
     def delete_stream(self) -> Callable[
             [aistreams.DeleteStreamRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        delete stream
-          method over gRPC.
+        r"""Return a callable for the delete stream method over gRPC.
 
         Deletes a single Stream.
 

@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Iot.V1.Snippets
 {
+    using Google.Cloud.Iot.V1;
     using Google.Protobuf;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDeviceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for SendCommandToDeviceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SendCommandToDevice2ResourceNamesAsync()
         {
-            // Snippet: SendCommandToDeviceAsync(DeviceName, ByteString, string, CallSettings)
-            // Additional: SendCommandToDeviceAsync(DeviceName, ByteString, string, CancellationToken)
             // Create client
             DeviceManagerClient deviceManagerClient = await DeviceManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Iot.V1.Snippets
             string subfolder = "";
             // Make the request
             SendCommandToDeviceResponse response = await deviceManagerClient.SendCommandToDeviceAsync(name, binaryData, subfolder);
-            // End snippet
         }
     }
 }

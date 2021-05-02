@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Asset.V1P4Beta1.Snippets
 {
+    using Google.Cloud.Asset.V1P4Beta1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAssetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ExportIamPolicyAnalysisAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ExportIamPolicyAnalysisRequestObjectAsync()
         {
-            // Snippet: ExportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest, CallSettings)
-            // Additional: ExportIamPolicyAnalysisAsync(ExportIamPolicyAnalysisRequest, CancellationToken)
             // Create client
             AssetServiceClient assetServiceClient = await AssetServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -53,7 +56,6 @@ namespace Google.Cloud.Asset.V1P4Beta1.Snippets
                 // If it has completed, then access the result
                 ExportIamPolicyAnalysisResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

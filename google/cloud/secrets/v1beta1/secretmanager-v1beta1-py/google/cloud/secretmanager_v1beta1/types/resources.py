@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -68,29 +71,22 @@ class Secret(proto.Message):
             No more than 64 labels can be assigned to a given resource.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    replication = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    replication = proto.Field(proto.MESSAGE, number=2,
         message='Replication',
     )
-    create_time = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    create_time = proto.Field(proto.MESSAGE, number=3,
         message=timestamp.Timestamp,
     )
-    labels = proto.MapField(
-        proto.STRING,
-        proto.STRING,
-        number=4
-    )
+
+    labels = proto.MapField(proto.STRING, proto.STRING, number=4)
 
 
 class SecretVersion(proto.Message):
     r"""A secret version resource in the Secret Manager API.
+
     Attributes:
         name (str):
             Output only. The resource name of the
@@ -125,29 +121,24 @@ class SecretVersion(proto.Message):
         DISABLED = 2
         DESTROYED = 3
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    create_time = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    create_time = proto.Field(proto.MESSAGE, number=2,
         message=timestamp.Timestamp,
     )
-    destroy_time = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    destroy_time = proto.Field(proto.MESSAGE, number=3,
         message=timestamp.Timestamp,
     )
-    state = proto.Field(
-        proto.ENUM,
-        number=4,
+
+    state = proto.Field(proto.ENUM, number=4,
         enum=State,
     )
 
 
 class Replication(proto.Message):
     r"""A policy that defines the replication configuration of data.
+
     Attributes:
         automatic (google.cloud.secretmanager_v1beta1.types.Replication.Automatic):
             The [Secret][google.cloud.secrets.v1beta1.Secret] will
@@ -156,12 +147,11 @@ class Replication(proto.Message):
             The [Secret][google.cloud.secrets.v1beta1.Secret] will only
             be replicated into the locations specified.
     """
-
     class Automatic(proto.Message):
         r"""A replication policy that replicates the
         [Secret][google.cloud.secrets.v1beta1.Secret] payload without any
         restrictions.
-            """
+        """
 
     class UserManaged(proto.Message):
         r"""A replication policy that replicates the
@@ -175,7 +165,6 @@ class Replication(proto.Message):
 
                 Cannot be empty.
         """
-
         class Replica(proto.Message):
             r"""Represents a Replica for this
             [Secret][google.cloud.secrets.v1beta1.Secret].
@@ -186,27 +175,17 @@ class Replication(proto.Message):
                     example: ``"us-east1"``.
             """
 
-            location = proto.Field(
-                proto.STRING,
-                number=1,
-            )
+            location = proto.Field(proto.STRING, number=1)
 
-        replicas = proto.RepeatedField(
-            proto.MESSAGE,
-            number=1,
+        replicas = proto.RepeatedField(proto.MESSAGE, number=1,
             message='Replication.UserManaged.Replica',
         )
 
-    automatic = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='replication',
+    automatic = proto.Field(proto.MESSAGE, number=1, oneof='replication',
         message=Automatic,
     )
-    user_managed = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='replication',
+
+    user_managed = proto.Field(proto.MESSAGE, number=2, oneof='replication',
         message=UserManaged,
     )
 
@@ -222,10 +201,7 @@ class SecretPayload(proto.Message):
             64KiB.
     """
 
-    data = proto.Field(
-        proto.BYTES,
-        number=1,
-    )
+    data = proto.Field(proto.BYTES, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

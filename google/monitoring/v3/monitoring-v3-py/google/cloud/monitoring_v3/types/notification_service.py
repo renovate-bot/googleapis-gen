@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.monitoring_v3.types import notification
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -42,6 +45,7 @@ __protobuf__ = proto.module(
 
 class ListNotificationChannelDescriptorsRequest(proto.Message):
     r"""The ``ListNotificationChannelDescriptors`` request.
+
     Attributes:
         name (str):
             Required. The REST resource name of the parent from which to
@@ -68,22 +72,16 @@ class ListNotificationChannelDescriptorsRequest(proto.Message):
             the next set of results.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    name = proto.Field(proto.STRING, number=4)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
 
 
 class ListNotificationChannelDescriptorsResponse(proto.Message):
     r"""The ``ListNotificationChannelDescriptors`` response.
+
     Attributes:
         channel_descriptors (Sequence[google.cloud.monitoring_v3.types.NotificationChannelDescriptor]):
             The monitored resource descriptors supported
@@ -99,19 +97,16 @@ class ListNotificationChannelDescriptorsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    channel_descriptors = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    channel_descriptors = proto.RepeatedField(proto.MESSAGE, number=1,
         message=notification.NotificationChannelDescriptor,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class GetNotificationChannelDescriptorRequest(proto.Message):
     r"""The ``GetNotificationChannelDescriptor`` response.
+
     Attributes:
         name (str):
             Required. The channel type for which to execute the request.
@@ -122,14 +117,12 @@ class GetNotificationChannelDescriptorRequest(proto.Message):
                 projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE]
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    name = proto.Field(proto.STRING, number=3)
 
 
 class CreateNotificationChannelRequest(proto.Message):
     r"""The ``CreateNotificationChannel`` request.
+
     Attributes:
         name (str):
             Required. The project on which to execute the request. The
@@ -150,19 +143,16 @@ class CreateNotificationChannelRequest(proto.Message):
             create.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    notification_channel = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    name = proto.Field(proto.STRING, number=3)
+
+    notification_channel = proto.Field(proto.MESSAGE, number=2,
         message=notification.NotificationChannel,
     )
 
 
 class ListNotificationChannelsRequest(proto.Message):
     r"""The ``ListNotificationChannels`` request.
+
     Attributes:
         name (str):
             Required. The project on which to execute the request. The
@@ -202,30 +192,20 @@ class ListNotificationChannelsRequest(proto.Message):
             the next set of results.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=6,
-    )
-    order_by = proto.Field(
-        proto.STRING,
-        number=7,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=3,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+    name = proto.Field(proto.STRING, number=5)
+
+    filter = proto.Field(proto.STRING, number=6)
+
+    order_by = proto.Field(proto.STRING, number=7)
+
+    page_size = proto.Field(proto.INT32, number=3)
+
+    page_token = proto.Field(proto.STRING, number=4)
 
 
 class ListNotificationChannelsResponse(proto.Message):
     r"""The ``ListNotificationChannels`` response.
+
     Attributes:
         notification_channels (Sequence[google.cloud.monitoring_v3.types.NotificationChannel]):
             The notification channels defined for the
@@ -246,23 +226,18 @@ class ListNotificationChannelsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    notification_channels = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    notification_channels = proto.RepeatedField(proto.MESSAGE, number=3,
         message=notification.NotificationChannel,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    total_size = proto.Field(
-        proto.INT32,
-        number=4,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
+
+    total_size = proto.Field(proto.INT32, number=4)
 
 
 class GetNotificationChannelRequest(proto.Message):
     r"""The ``GetNotificationChannel`` request.
+
     Attributes:
         name (str):
             Required. The channel for which to execute the request. The
@@ -273,14 +248,12 @@ class GetNotificationChannelRequest(proto.Message):
                 projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID]
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    name = proto.Field(proto.STRING, number=3)
 
 
 class UpdateNotificationChannelRequest(proto.Message):
     r"""The ``UpdateNotificationChannel`` request.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             The fields to update.
@@ -291,20 +264,18 @@ class UpdateNotificationChannelRequest(proto.Message):
             fields should also be included in the ``update_mask``.
     """
 
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
-    notification_channel = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    notification_channel = proto.Field(proto.MESSAGE, number=3,
         message=notification.NotificationChannel,
     )
 
 
 class DeleteNotificationChannelRequest(proto.Message):
     r"""The ``DeleteNotificationChannel`` request.
+
     Attributes:
         name (str):
             Required. The channel for which to execute the request. The
@@ -322,32 +293,26 @@ class DeleteNotificationChannelRequest(proto.Message):
             fail to be deleted in a delete operation.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    force = proto.Field(
-        proto.BOOL,
-        number=5,
-    )
+    name = proto.Field(proto.STRING, number=3)
+
+    force = proto.Field(proto.BOOL, number=5)
 
 
 class SendNotificationChannelVerificationCodeRequest(proto.Message):
     r"""The ``SendNotificationChannelVerificationCode`` request.
+
     Attributes:
         name (str):
             Required. The notification channel to which
             to send a verification code.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class GetNotificationChannelVerificationCodeRequest(proto.Message):
     r"""The ``GetNotificationChannelVerificationCode`` request.
+
     Attributes:
         name (str):
             Required. The notification channel for which
@@ -372,19 +337,16 @@ class GetNotificationChannelVerificationCodeRequest(proto.Message):
             that is permitted).
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    expire_time = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    expire_time = proto.Field(proto.MESSAGE, number=2,
         message=timestamp.Timestamp,
     )
 
 
 class GetNotificationChannelVerificationCodeResponse(proto.Message):
     r"""The ``GetNotificationChannelVerificationCode`` request.
+
     Attributes:
         code (str):
             The verification code, which may be used to
@@ -401,19 +363,16 @@ class GetNotificationChannelVerificationCodeResponse(proto.Message):
             permitted expiration.
     """
 
-    code = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    expire_time = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    code = proto.Field(proto.STRING, number=1)
+
+    expire_time = proto.Field(proto.MESSAGE, number=2,
         message=timestamp.Timestamp,
     )
 
 
 class VerifyNotificationChannelRequest(proto.Message):
     r"""The ``VerifyNotificationChannel`` request.
+
     Attributes:
         name (str):
             Required. The notification channel to verify.
@@ -429,14 +388,9 @@ class VerifyNotificationChannelRequest(proto.Message):
             structure or format of the code).
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    code = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    name = proto.Field(proto.STRING, number=1)
+
+    code = proto.Field(proto.STRING, number=2)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

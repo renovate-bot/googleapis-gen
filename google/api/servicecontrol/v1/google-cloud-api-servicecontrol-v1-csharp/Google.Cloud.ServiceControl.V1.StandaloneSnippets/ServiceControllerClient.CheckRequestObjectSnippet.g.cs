@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.ServiceControl.V1.Snippets
 {
+    using Google.Cloud.ServiceControl.V1;
+
     public sealed partial class GeneratedServiceControllerClientStandaloneSnippets
     {
         /// <summary>Snippet for Check</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CheckRequestObject()
         {
-            // Snippet: Check(CheckRequest, CallSettings)
             // Create client
             ServiceControllerClient serviceControllerClient = ServiceControllerClient.Create();
             // Initialize request argument(s)
@@ -33,7 +38,6 @@ namespace Google.Cloud.ServiceControl.V1.Snippets
             };
             // Make the request
             CheckResponse response = serviceControllerClient.Check(request);
-            // End snippet
         }
     }
 }

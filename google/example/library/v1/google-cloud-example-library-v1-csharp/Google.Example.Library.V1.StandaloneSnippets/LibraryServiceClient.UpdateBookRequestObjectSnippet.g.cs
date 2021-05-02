@@ -16,14 +16,18 @@
 
 namespace Google.Example.Library.V1.Snippets
 {
+    using Google.Example.Library.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedLibraryServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateBook</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateBookRequestObject()
         {
-            // Snippet: UpdateBook(UpdateBookRequest, CallSettings)
             // Create client
             LibraryServiceClient libraryServiceClient = LibraryServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Example.Library.V1.Snippets
             };
             // Make the request
             Book response = libraryServiceClient.UpdateBook(request);
-            // End snippet
         }
     }
 }

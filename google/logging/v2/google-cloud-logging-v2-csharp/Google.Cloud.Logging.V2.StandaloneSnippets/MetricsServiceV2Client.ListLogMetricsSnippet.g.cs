@@ -17,14 +17,18 @@
 namespace Google.Cloud.Logging.V2.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Logging.V2;
     using System;
 
     public sealed partial class GeneratedMetricsServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for ListLogMetrics</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListLogMetrics()
         {
-            // Snippet: ListLogMetrics(string, string, int?, CallSettings)
             // Create client
             MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.Create();
             // Initialize request argument(s)
@@ -63,7 +67,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

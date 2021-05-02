@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import product_bidding_category_constant
 from google.ads.googleads.v6.services.types import product_bidding_category_constant_service
+
 from .base import ProductBiddingCategoryConstantServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class ProductBiddingCategoryConstantServiceGrpcTransport(ProductBiddingCategoryC
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,10 +203,8 @@ class ProductBiddingCategoryConstantServiceGrpcTransport(ProductBiddingCategoryC
     def get_product_bidding_category_constant(self) -> Callable[
             [product_bidding_category_constant_service.GetProductBiddingCategoryConstantRequest],
             product_bidding_category_constant.ProductBiddingCategoryConstant]:
-        r"""Return a callable for the
-        get product bidding category
-        constant
-          method over gRPC.
+        r"""Return a callable for the get product bidding category
+        constant method over gRPC.
 
         Returns the requested Product Bidding Category in
         full detail.

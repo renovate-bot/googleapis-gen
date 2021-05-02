@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBiddingStrategyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBiddingStrategyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetBiddingStrategyResourceNamesAsync()
         {
-            // Snippet: GetBiddingStrategyAsync(BiddingStrategyName, CallSettings)
-            // Additional: GetBiddingStrategyAsync(BiddingStrategyName, CancellationToken)
             // Create client
             BiddingStrategyServiceClient biddingStrategyServiceClient = await BiddingStrategyServiceClient.CreateAsync();
             // Initialize request argument(s)
             BiddingStrategyName resourceName = BiddingStrategyName.FromCustomerBiddingStrategy("[CUSTOMER]", "[BIDDING_STRATEGY]");
             // Make the request
             BiddingStrategy response = await biddingStrategyServiceClient.GetBiddingStrategyAsync(resourceName);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Iam.Admin.V1.Snippets
 {
+    using Google.Iam.Admin.V1;
+
     public sealed partial class GeneratedIAMClientStandaloneSnippets
     {
         /// <summary>Snippet for GetServiceAccountKey</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetServiceAccountKeyResourceNames()
         {
-            // Snippet: GetServiceAccountKey(KeyName, ServiceAccountPublicKeyType, CallSettings)
             // Create client
             IAMClient iAMClient = IAMClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Iam.Admin.V1.Snippets
             ServiceAccountPublicKeyType publicKeyType = ServiceAccountPublicKeyType.TypeNone;
             // Make the request
             ServiceAccountKey response = iAMClient.GetServiceAccountKey(name, publicKeyType);
-            // End snippet
         }
     }
 }

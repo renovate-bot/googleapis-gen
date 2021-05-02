@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedIntentsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteIntent</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteIntentResourceNames()
         {
-            // Snippet: DeleteIntent(IntentName, CallSettings)
             // Create client
             IntentsClient intentsClient = IntentsClient.Create();
             // Initialize request argument(s)
             IntentName name = IntentName.FromProjectIntent("[PROJECT]", "[INTENT]");
             // Make the request
             intentsClient.DeleteIntent(name);
-            // End snippet
         }
     }
 }

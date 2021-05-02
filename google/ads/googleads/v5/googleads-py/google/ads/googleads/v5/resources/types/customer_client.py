@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 
@@ -71,53 +74,32 @@ class CustomerClient(proto.Message):
             Read only.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    client_customer = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    resource_name = proto.Field(proto.STRING, number=1)
+    client_customer = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.StringValue,
     )
-    hidden = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    hidden = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.BoolValue,
     )
-    level = proto.Field(
-        proto.MESSAGE,
-        number=5,
+    level = proto.Field(proto.MESSAGE, number=5,
         message=wrappers.Int64Value,
     )
-    time_zone = proto.Field(
-        proto.MESSAGE,
-        number=6,
+    time_zone = proto.Field(proto.MESSAGE, number=6,
         message=wrappers.StringValue,
     )
-    test_account = proto.Field(
-        proto.MESSAGE,
-        number=7,
+    test_account = proto.Field(proto.MESSAGE, number=7,
         message=wrappers.BoolValue,
     )
-    manager = proto.Field(
-        proto.MESSAGE,
-        number=8,
+    manager = proto.Field(proto.MESSAGE, number=8,
         message=wrappers.BoolValue,
     )
-    descriptive_name = proto.Field(
-        proto.MESSAGE,
-        number=9,
+    descriptive_name = proto.Field(proto.MESSAGE, number=9,
         message=wrappers.StringValue,
     )
-    currency_code = proto.Field(
-        proto.MESSAGE,
-        number=10,
+    currency_code = proto.Field(proto.MESSAGE, number=10,
         message=wrappers.StringValue,
     )
-    id = proto.Field(
-        proto.MESSAGE,
-        number=11,
+    id = proto.Field(proto.MESSAGE, number=11,
         message=wrappers.Int64Value,
     )
 

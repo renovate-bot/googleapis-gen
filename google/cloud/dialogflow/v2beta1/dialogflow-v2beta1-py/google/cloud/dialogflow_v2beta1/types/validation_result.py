@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -27,6 +29,7 @@ __protobuf__ = proto.module(
 
 class ValidationError(proto.Message):
     r"""Represents a single validation error.
+
     Attributes:
         severity (google.cloud.dialogflow_v2beta1.types.ValidationError.Severity):
             The severity of the error.
@@ -61,31 +64,24 @@ class ValidationError(proto.Message):
         ERROR = 3
         CRITICAL = 4
 
-    severity = proto.Field(
-        proto.ENUM,
-        number=1,
+    severity = proto.Field(proto.ENUM, number=1,
         enum=Severity,
     )
-    entries = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
-    error_message = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+
+    entries = proto.RepeatedField(proto.STRING, number=3)
+
+    error_message = proto.Field(proto.STRING, number=4)
 
 
 class ValidationResult(proto.Message):
     r"""Represents the output of agent validation.
+
     Attributes:
         validation_errors (Sequence[google.cloud.dialogflow_v2beta1.types.ValidationError]):
             Contains all validation errors.
     """
 
-    validation_errors = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    validation_errors = proto.RepeatedField(proto.MESSAGE, number=1,
         message='ValidationError',
     )
 

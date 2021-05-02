@@ -17,6 +17,7 @@
 namespace Google.Cloud.Asset.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Asset.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -24,10 +25,12 @@ namespace Google.Cloud.Asset.V1.Snippets
     public sealed partial class GeneratedAssetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ExportAssetsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ExportAssetsRequestObjectAsync()
         {
-            // Snippet: ExportAssetsAsync(ExportAssetsRequest, CallSettings)
-            // Additional: ExportAssetsAsync(ExportAssetsRequest, CancellationToken)
             // Create client
             AssetServiceClient assetServiceClient = await AssetServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -57,7 +60,6 @@ namespace Google.Cloud.Asset.V1.Snippets
                 // If it has completed, then access the result
                 ExportAssetsResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

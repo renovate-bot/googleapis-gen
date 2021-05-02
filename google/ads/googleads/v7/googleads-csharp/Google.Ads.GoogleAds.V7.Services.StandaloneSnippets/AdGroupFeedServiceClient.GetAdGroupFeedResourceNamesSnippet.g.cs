@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedAdGroupFeedServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupFeed</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAdGroupFeedResourceNames()
         {
-            // Snippet: GetAdGroupFeed(AdGroupFeedName, CallSettings)
             // Create client
             AdGroupFeedServiceClient adGroupFeedServiceClient = AdGroupFeedServiceClient.Create();
             // Initialize request argument(s)
             AdGroupFeedName resourceName = AdGroupFeedName.FromCustomerAdGroupFeed("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[FEED_ID]");
             // Make the request
             AdGroupFeed response = adGroupFeedServiceClient.GetAdGroupFeed(resourceName);
-            // End snippet
         }
     }
 }

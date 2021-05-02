@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.ServiceManagement.V1.Snippets
 {
+    using Google.Cloud.ServiceManagement.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServiceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetServiceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetServiceRequestObjectAsync()
         {
-            // Snippet: GetServiceAsync(GetServiceRequest, CallSettings)
-            // Additional: GetServiceAsync(GetServiceRequest, CancellationToken)
             // Create client
             ServiceManagerClient serviceManagerClient = await ServiceManagerClient.CreateAsync();
             // Initialize request argument(s)
             GetServiceRequest request = new GetServiceRequest { ServiceName = "", };
             // Make the request
             ManagedService response = await serviceManagerClient.GetServiceAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.OsConfig.V1.Snippets
 {
+    using Google.Cloud.OsConfig.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOsConfigServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPatchJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetPatchJobResourceNamesAsync()
         {
-            // Snippet: GetPatchJobAsync(PatchJobName, CallSettings)
-            // Additional: GetPatchJobAsync(PatchJobName, CancellationToken)
             // Create client
             OsConfigServiceClient osConfigServiceClient = await OsConfigServiceClient.CreateAsync();
             // Initialize request argument(s)
             PatchJobName name = PatchJobName.FromProjectPatchJob("[PROJECT]", "[PATCH_JOB]");
             // Make the request
             PatchJob response = await osConfigServiceClient.GetPatchJobAsync(name);
-            // End snippet
         }
     }
 }

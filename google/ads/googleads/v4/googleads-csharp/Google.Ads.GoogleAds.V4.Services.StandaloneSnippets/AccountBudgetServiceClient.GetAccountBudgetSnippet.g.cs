@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedAccountBudgetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAccountBudget</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAccountBudget()
         {
-            // Snippet: GetAccountBudget(string, CallSettings)
             // Create client
             AccountBudgetServiceClient accountBudgetServiceClient = AccountBudgetServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/accountBudgets/[ACCOUNT_BUDGET]";
             // Make the request
             AccountBudget response = accountBudgetServiceClient.GetAccountBudget(resourceName);
-            // End snippet
         }
     }
 }

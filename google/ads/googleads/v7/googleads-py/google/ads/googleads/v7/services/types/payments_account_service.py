@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.resources.types import payments_account
 
@@ -38,10 +41,7 @@ class ListPaymentsAccountsRequest(proto.Message):
             PaymentsAccount list operation to.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    customer_id = proto.Field(proto.STRING, number=1)
 
 
 class ListPaymentsAccountsResponse(proto.Message):
@@ -53,9 +53,7 @@ class ListPaymentsAccountsResponse(proto.Message):
             The list of accessible payments accounts.
     """
 
-    payments_accounts = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    payments_accounts = proto.RepeatedField(proto.MESSAGE, number=1,
         message=payments_account.PaymentsAccount,
     )
 

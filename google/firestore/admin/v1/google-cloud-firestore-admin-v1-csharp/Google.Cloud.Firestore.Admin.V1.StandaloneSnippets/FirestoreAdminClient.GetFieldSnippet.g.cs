@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Firestore.Admin.V1.Snippets
 {
+    using Google.Cloud.Firestore.Admin.V1;
+
     public sealed partial class GeneratedFirestoreAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for GetField</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetField()
         {
-            // Snippet: GetField(string, CallSettings)
             // Create client
             FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/databases/[DATABASE]/collectionGroups/[COLLECTION]/fields/[FIELD]";
             // Make the request
             Field response = firestoreAdminClient.GetField(name);
-            // End snippet
         }
     }
 }

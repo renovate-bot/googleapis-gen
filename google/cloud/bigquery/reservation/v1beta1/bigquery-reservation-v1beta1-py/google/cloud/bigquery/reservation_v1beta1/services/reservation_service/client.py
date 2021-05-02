@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -36,6 +38,7 @@ from google.cloud.bigquery.reservation_v1beta1.types import reservation as gcbr_
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
+
 from .transports.base import ReservationServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ReservationServiceGrpcTransport
 from .transports.grpc_asyncio import ReservationServiceGrpcAsyncIOTransport
@@ -389,8 +392,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.CreateReservationRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.CreateReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.CreateReservation].
             parent (str):
                 Required. Project, location. E.g.,
@@ -415,6 +417,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``reservation_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -441,8 +444,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcbr_reservation.CreateReservationRequest):
             request = gcbr_reservation.CreateReservationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if reservation is not None:
@@ -486,8 +491,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.ListReservationsRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.ListReservations][google.cloud.bigquery.reservation.v1beta1.ReservationService.ListReservations].
             parent (str):
                 Required. The parent resource name containing project
@@ -496,6 +500,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -525,8 +530,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.ListReservationsRequest):
             request = reservation.ListReservationsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -574,8 +581,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.GetReservationRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.GetReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.GetReservation].
             name (str):
                 Required. Resource name of the reservation to retrieve.
@@ -585,6 +591,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -611,8 +618,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.GetReservationRequest):
             request = reservation.GetReservationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -653,8 +662,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.DeleteReservationRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.DeleteReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.DeleteReservation].
             name (str):
                 Required. Resource name of the reservation to retrieve.
@@ -664,6 +672,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -684,8 +693,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.DeleteReservationRequest):
             request = reservation.DeleteReservationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -722,8 +733,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.UpdateReservationRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.UpdateReservation][google.cloud.bigquery.reservation.v1beta1.ReservationService.UpdateReservation].
             reservation (google.cloud.bigquery.reservation_v1beta1.types.Reservation):
                 Content of the reservation to update.
@@ -737,6 +747,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -763,8 +774,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcbr_reservation.UpdateReservationRequest):
             request = gcbr_reservation.UpdateReservationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if reservation is not None:
                 request.reservation = reservation
             if update_mask is not None:
@@ -806,8 +819,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.CreateCapacityCommitmentRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.CreateCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.CreateCapacityCommitment].
             parent (str):
                 Required. Resource name of the parent reservation. E.g.,
@@ -823,6 +835,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``capacity_commitment`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -861,8 +874,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.CreateCapacityCommitmentRequest):
             request = reservation.CreateCapacityCommitmentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if capacity_commitment is not None:
@@ -903,9 +918,9 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.ListCapacityCommitmentsRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.ListCapacityCommitments][google.cloud.bigquery.reservation.v1beta1.ReservationService.ListCapacityCommitments].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -922,6 +937,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a reservation.ListCapacityCommitmentsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -973,8 +989,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.GetCapacityCommitmentRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.GetCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.GetCapacityCommitment].
             name (str):
                 Required. Resource name of the capacity commitment to
@@ -984,6 +999,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1022,8 +1038,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.GetCapacityCommitmentRequest):
             request = reservation.GetCapacityCommitmentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1064,8 +1082,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.DeleteCapacityCommitmentRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.DeleteCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.DeleteCapacityCommitment].
             name (str):
                 Required. Resource name of the capacity commitment to
@@ -1075,6 +1092,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1095,8 +1113,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.DeleteCapacityCommitmentRequest):
             request = reservation.DeleteCapacityCommitmentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1140,8 +1160,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.UpdateCapacityCommitmentRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.UpdateCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.UpdateCapacityCommitment].
             capacity_commitment (google.cloud.bigquery.reservation_v1beta1.types.CapacityCommitment):
                 Content of the capacity commitment to
@@ -1157,6 +1176,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1195,8 +1215,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.UpdateCapacityCommitmentRequest):
             request = reservation.UpdateCapacityCommitmentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if capacity_commitment is not None:
                 request.capacity_commitment = capacity_commitment
             if update_mask is not None:
@@ -1246,8 +1268,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.SplitCapacityCommitmentRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.SplitCapacityCommitment][google.cloud.bigquery.reservation.v1beta1.ReservationService.SplitCapacityCommitment].
             name (str):
                 Required. The resource name e.g.,:
@@ -1263,6 +1284,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``slot_count`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1289,8 +1311,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.SplitCapacityCommitmentRequest):
             request = reservation.SplitCapacityCommitmentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
             if slot_count is not None:
@@ -1341,8 +1365,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.MergeCapacityCommitmentsRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.MergeCapacityCommitments][google.cloud.bigquery.reservation.v1beta1.ReservationService.MergeCapacityCommitments].
             parent (str):
                 Parent resource that identifies admin project and
@@ -1360,6 +1383,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``capacity_commitment_ids`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1398,8 +1422,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.MergeCapacityCommitmentsRequest):
             request = reservation.MergeCapacityCommitmentsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if capacity_commitment_ids is not None:
@@ -1472,8 +1498,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.CreateAssignmentRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.CreateAssignment][google.cloud.bigquery.reservation.v1beta1.ReservationService.CreateAssignment].
                 Note: "bigquery.reservationAssignments.create"
                 permission is required on the related assignee.
@@ -1490,6 +1515,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``assignment`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1517,8 +1543,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.CreateAssignmentRequest):
             request = reservation.CreateAssignmentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if assignment is not None:
@@ -1580,8 +1608,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.ListAssignmentsRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.ListAssignments][google.cloud.bigquery.reservation.v1beta1.ReservationService.ListAssignments].
             parent (str):
                 Required. The parent resource name e.g.:
@@ -1595,6 +1622,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1624,8 +1652,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.ListAssignmentsRequest):
             request = reservation.ListAssignmentsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -1688,8 +1718,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.DeleteAssignmentRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.DeleteAssignment][google.cloud.bigquery.reservation.v1beta1.ReservationService.DeleteAssignment].
                 Note: "bigquery.reservationAssignments.delete"
                 permission is required on the related assignee.
@@ -1700,6 +1729,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1720,8 +1750,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.DeleteAssignmentRequest):
             request = reservation.DeleteAssignmentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1782,8 +1814,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.SearchAssignmentsRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.SearchAssignments][google.cloud.bigquery.reservation.v1beta1.ReservationService.SearchAssignments].
                 Note: "bigquery.reservationAssignments.search"
                 permission is required on the related assignee.
@@ -1807,6 +1838,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``query`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1836,8 +1868,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.SearchAssignmentsRequest):
             request = reservation.SearchAssignmentsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if query is not None:
@@ -1892,8 +1926,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.MoveAssignmentRequest):
-                The request object.
-                The request for
+                The request object. The request for
                 [ReservationService.MoveAssignment][google.cloud.bigquery.reservation.v1beta1.ReservationService.MoveAssignment].
                 **Note**: "bigquery.reservationAssignments.create"
                 permission is required on the destination_id.
@@ -1915,6 +1948,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``destination_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1942,8 +1976,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.MoveAssignmentRequest):
             request = reservation.MoveAssignmentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
             if destination_id is not None:
@@ -1984,8 +2020,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.GetBiReservationRequest):
-                The request object.
-                A request to get a singleton BI
+                The request object. A request to get a singleton BI
                 reservation.
             name (str):
                 Required. Name of the requested reservation, for
@@ -1995,6 +2030,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2019,8 +2055,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, reservation.GetBiReservationRequest):
             request = reservation.GetBiReservationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -2067,8 +2105,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.reservation_v1beta1.types.UpdateBiReservationRequest):
-                The request object.
-                A request to update a BI
+                The request object. A request to update a BI
                 reservation.
             reservation (google.cloud.bigquery.reservation_v1beta1.types.BiReservation):
                 A reservation to update.
@@ -2082,6 +2119,7 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2106,8 +2144,10 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcbr_reservation.UpdateBiReservationRequest):
             request = gcbr_reservation.UpdateBiReservationRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if reservation is not None:
                 request.reservation = reservation
             if update_mask is not None:
@@ -2135,6 +2175,8 @@ class ReservationServiceClient(metaclass=ReservationServiceClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

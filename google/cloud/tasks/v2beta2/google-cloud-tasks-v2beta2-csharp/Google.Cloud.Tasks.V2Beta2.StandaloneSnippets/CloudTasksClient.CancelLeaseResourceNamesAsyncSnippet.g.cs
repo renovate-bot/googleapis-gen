@@ -23,10 +23,12 @@ namespace Google.Cloud.Tasks.V2Beta2.Snippets
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for CancelLeaseAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CancelLeaseResourceNamesAsync()
         {
-            // Snippet: CancelLeaseAsync(TaskName, Timestamp, CallSettings)
-            // Additional: CancelLeaseAsync(TaskName, Timestamp, CancellationToken)
             // Create client
             CloudTasksClient cloudTasksClient = await CloudTasksClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +36,6 @@ namespace Google.Cloud.Tasks.V2Beta2.Snippets
             Timestamp scheduleTime = new Timestamp();
             // Make the request
             gctv::Task response = await cloudTasksClient.CancelLeaseAsync(name, scheduleTime);
-            // End snippet
         }
     }
 }

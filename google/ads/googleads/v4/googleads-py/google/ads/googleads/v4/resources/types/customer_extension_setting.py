@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.enums.types import extension_setting_device
 from google.ads.googleads.v4.enums.types import extension_type as gage_extension_type
@@ -31,6 +34,7 @@ __protobuf__ = proto.module(
 
 class CustomerExtensionSetting(proto.Message):
     r"""A customer extension setting.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the customer extension
@@ -52,23 +56,14 @@ class CustomerExtensionSetting(proto.Message):
             serve. Optional.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    extension_type = proto.Field(
-        proto.ENUM,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    extension_type = proto.Field(proto.ENUM, number=2,
         enum=gage_extension_type.ExtensionTypeEnum.ExtensionType,
     )
-    extension_feed_items = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    extension_feed_items = proto.RepeatedField(proto.MESSAGE, number=3,
         message=wrappers.StringValue,
     )
-    device = proto.Field(
-        proto.ENUM,
-        number=4,
+    device = proto.Field(proto.ENUM, number=4,
         enum=extension_setting_device.ExtensionSettingDeviceEnum.ExtensionSettingDevice,
     )
 

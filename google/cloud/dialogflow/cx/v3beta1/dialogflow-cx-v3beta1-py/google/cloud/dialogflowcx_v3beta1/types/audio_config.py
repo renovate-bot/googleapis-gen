@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import duration_pb2 as duration  # type: ignore
 
@@ -90,6 +93,7 @@ class OutputAudioEncoding(proto.Enum):
 
 class SpeechWordInfo(proto.Message):
     r"""Information for a word recognized by the speech recognizer.
+
     Attributes:
         word (str):
             The word this info is for.
@@ -116,24 +120,17 @@ class SpeechWordInfo(proto.Message):
             also not rely on it to always be provided.
     """
 
-    word = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    start_offset = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    word = proto.Field(proto.STRING, number=3)
+
+    start_offset = proto.Field(proto.MESSAGE, number=1,
         message=duration.Duration,
     )
-    end_offset = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    end_offset = proto.Field(proto.MESSAGE, number=2,
         message=duration.Duration,
     )
-    confidence = proto.Field(
-        proto.FLOAT,
-        number=4,
-    )
+
+    confidence = proto.Field(proto.FLOAT, number=4)
 
 
 class InputAudioConfig(proto.Message):
@@ -192,40 +189,28 @@ class InputAudioConfig(proto.Message):
             is relevant only for streaming methods.
     """
 
-    audio_encoding = proto.Field(
-        proto.ENUM,
-        number=1,
+    audio_encoding = proto.Field(proto.ENUM, number=1,
         enum='AudioEncoding',
     )
-    sample_rate_hertz = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    enable_word_info = proto.Field(
-        proto.BOOL,
-        number=13,
-    )
-    phrase_hints = proto.RepeatedField(
-        proto.STRING,
-        number=4,
-    )
-    model = proto.Field(
-        proto.STRING,
-        number=7,
-    )
-    model_variant = proto.Field(
-        proto.ENUM,
-        number=10,
+
+    sample_rate_hertz = proto.Field(proto.INT32, number=2)
+
+    enable_word_info = proto.Field(proto.BOOL, number=13)
+
+    phrase_hints = proto.RepeatedField(proto.STRING, number=4)
+
+    model = proto.Field(proto.STRING, number=7)
+
+    model_variant = proto.Field(proto.ENUM, number=10,
         enum='SpeechModelVariant',
     )
-    single_utterance = proto.Field(
-        proto.BOOL,
-        number=8,
-    )
+
+    single_utterance = proto.Field(proto.BOOL, number=8)
 
 
 class VoiceSelectionParams(proto.Message):
     r"""Description of which voice to use for speech synthesis.
+
     Attributes:
         name (str):
             Optional. The name of the voice. If not set, the service
@@ -247,19 +232,16 @@ class VoiceSelectionParams(proto.Message):
             gender rather than failing the request.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    ssml_gender = proto.Field(
-        proto.ENUM,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    ssml_gender = proto.Field(proto.ENUM, number=2,
         enum='SsmlVoiceGender',
     )
 
 
 class SynthesizeSpeechConfig(proto.Message):
     r"""Configuration of how speech should be synthesized.
+
     Attributes:
         speaking_rate (float):
             Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0
@@ -293,25 +275,15 @@ class SynthesizeSpeechConfig(proto.Message):
             synthesized audio.
     """
 
-    speaking_rate = proto.Field(
-        proto.DOUBLE,
-        number=1,
-    )
-    pitch = proto.Field(
-        proto.DOUBLE,
-        number=2,
-    )
-    volume_gain_db = proto.Field(
-        proto.DOUBLE,
-        number=3,
-    )
-    effects_profile_id = proto.RepeatedField(
-        proto.STRING,
-        number=5,
-    )
-    voice = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    speaking_rate = proto.Field(proto.DOUBLE, number=1)
+
+    pitch = proto.Field(proto.DOUBLE, number=2)
+
+    volume_gain_db = proto.Field(proto.DOUBLE, number=3)
+
+    effects_profile_id = proto.RepeatedField(proto.STRING, number=5)
+
+    voice = proto.Field(proto.MESSAGE, number=4,
         message='VoiceSelectionParams',
     )
 
@@ -338,18 +310,13 @@ class OutputAudioConfig(proto.Message):
             be synthesized.
     """
 
-    audio_encoding = proto.Field(
-        proto.ENUM,
-        number=1,
+    audio_encoding = proto.Field(proto.ENUM, number=1,
         enum='OutputAudioEncoding',
     )
-    sample_rate_hertz = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    synthesize_speech_config = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    sample_rate_hertz = proto.Field(proto.INT32, number=2)
+
+    synthesize_speech_config = proto.Field(proto.MESSAGE, number=3,
         message='SynthesizeSpeechConfig',
     )
 

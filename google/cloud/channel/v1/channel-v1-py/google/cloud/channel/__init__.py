@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -111,7 +112,8 @@ from google.cloud.channel_v1.types.subscriber_event import CustomerEvent
 from google.cloud.channel_v1.types.subscriber_event import EntitlementEvent
 from google.cloud.channel_v1.types.subscriber_event import SubscriberEvent
 
-__all__ = ('ActivateEntitlementRequest',
+__all__ = (
+    'ActivateEntitlementRequest',
     'AdminUser',
     'AssociationInfo',
     'CancelEntitlementRequest',

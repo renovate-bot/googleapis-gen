@@ -17,13 +17,17 @@
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dialogflow.V2;
 
     public sealed partial class GeneratedConversationsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateConversation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateConversationRequestObject()
         {
-            // Snippet: CreateConversation(CreateConversationRequest, CallSettings)
             // Create client
             ConversationsClient conversationsClient = ConversationsClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             };
             // Make the request
             Conversation response = conversationsClient.CreateConversation(request);
-            // End snippet
         }
     }
 }

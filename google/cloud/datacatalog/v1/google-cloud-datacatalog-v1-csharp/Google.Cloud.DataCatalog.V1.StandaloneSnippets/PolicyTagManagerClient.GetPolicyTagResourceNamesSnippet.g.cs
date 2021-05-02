@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.DataCatalog.V1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1;
+
     public sealed partial class GeneratedPolicyTagManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPolicyTag</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetPolicyTagResourceNames()
         {
-            // Snippet: GetPolicyTag(PolicyTagName, CallSettings)
             // Create client
             PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.Create();
             // Initialize request argument(s)
             PolicyTagName name = PolicyTagName.FromProjectLocationTaxonomyPolicyTag("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
             // Make the request
             PolicyTag response = policyTagManagerClient.GetPolicyTag(name);
-            // End snippet
         }
     }
 }

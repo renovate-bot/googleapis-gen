@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Gaming.V1.Snippets
 {
+    using Google.Cloud.Gaming.V1;
+
     public sealed partial class GeneratedRealmsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetRealm</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetRealmResourceNames()
         {
-            // Snippet: GetRealm(RealmName, CallSettings)
             // Create client
             RealmsServiceClient realmsServiceClient = RealmsServiceClient.Create();
             // Initialize request argument(s)
             RealmName name = RealmName.FromProjectLocationRealm("[PROJECT]", "[LOCATION]", "[REALM]");
             // Make the request
             Realm response = realmsServiceClient.GetRealm(name);
-            // End snippet
         }
     }
 }

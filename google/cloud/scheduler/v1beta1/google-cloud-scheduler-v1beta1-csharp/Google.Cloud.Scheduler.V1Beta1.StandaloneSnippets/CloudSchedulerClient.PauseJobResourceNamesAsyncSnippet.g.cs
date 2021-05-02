@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Scheduler.V1Beta1.Snippets
 {
+    using Google.Cloud.Scheduler.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudSchedulerClientStandaloneSnippets
     {
         /// <summary>Snippet for PauseJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task PauseJobResourceNamesAsync()
         {
-            // Snippet: PauseJobAsync(JobName, CallSettings)
-            // Additional: PauseJobAsync(JobName, CancellationToken)
             // Create client
             CloudSchedulerClient cloudSchedulerClient = await CloudSchedulerClient.CreateAsync();
             // Initialize request argument(s)
             JobName name = JobName.FromProjectLocationJob("[PROJECT]", "[LOCATION]", "[JOB]");
             // Make the request
             Job response = await cloudSchedulerClient.PauseJobAsync(name);
-            // End snippet
         }
     }
 }

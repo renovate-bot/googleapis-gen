@@ -18,13 +18,17 @@ namespace Google.Iam.Admin.V1.Snippets
 {
     using Google.Api.Gax;
     using Google.Cloud.Iam.V1;
+    using Google.Iam.Admin.V1;
 
     public sealed partial class GeneratedIAMClientStandaloneSnippets
     {
         /// <summary>Snippet for SetIamPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SetIamPolicyResourceNames()
         {
-            // Snippet: SetIamPolicy(IResourceName, Policy, CallSettings)
             // Create client
             IAMClient iAMClient = IAMClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Iam.Admin.V1.Snippets
             Policy policy = new Policy();
             // Make the request
             Policy response = iAMClient.SetIamPolicy(resource, policy);
-            // End snippet
         }
     }
 }

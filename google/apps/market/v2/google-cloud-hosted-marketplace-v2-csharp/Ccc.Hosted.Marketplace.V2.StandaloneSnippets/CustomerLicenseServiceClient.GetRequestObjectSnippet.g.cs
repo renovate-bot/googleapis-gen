@@ -16,12 +16,17 @@
 
 namespace Ccc.Hosted.Marketplace.V2.Snippets
 {
+    using Ccc.Hosted.Marketplace.V2;
+
     public sealed partial class GeneratedCustomerLicenseServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for Get</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetRequestObject()
         {
-            // Snippet: Get(CustomerLicenseGetRequest, CallSettings)
             // Create client
             CustomerLicenseServiceClient customerLicenseServiceClient = CustomerLicenseServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Ccc.Hosted.Marketplace.V2.Snippets
             };
             // Make the request
             CustomerLicense response = customerLicenseServiceClient.Get(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -30,16 +32,14 @@ __protobuf__ = proto.module(
 
 class BuildTarget(proto.Message):
     r"""Resource that represents a build target.
+
     Attributes:
         name (str):
             The resource name of the build target. Format:
             buildTargets/{build_target}
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class Model(proto.Message):
@@ -53,24 +53,19 @@ class Model(proto.Message):
             buildTargets/{build_target}/models/{model}
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class Milestone(proto.Message):
     r"""Resource that represents a chrome OS milestone.
+
     Attributes:
         name (str):
             The resource name of the milestone.
             Format: milestones/{milestone}
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class Build(proto.Message):
@@ -109,32 +104,21 @@ class Build(proto.Message):
         RELEASE = 1
         FIRMWARE = 2
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    milestone = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    build_version = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    status = proto.Field(
-        proto.ENUM,
-        number=4,
+    name = proto.Field(proto.STRING, number=1)
+
+    milestone = proto.Field(proto.STRING, number=2)
+
+    build_version = proto.Field(proto.STRING, number=3)
+
+    status = proto.Field(proto.ENUM, number=4,
         enum=BuildStatus,
     )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=5,
+
+    type_ = proto.Field(proto.ENUM, number=5,
         enum=BuildType,
     )
-    branch = proto.Field(
-        proto.STRING,
-        number=6,
-    )
+
+    branch = proto.Field(proto.STRING, number=6)
 
 
 class BuildArtifact(proto.Message):
@@ -162,26 +146,15 @@ class BuildArtifact(proto.Message):
             artifact.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    build = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    bucket = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    path = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    object_count = proto.Field(
-        proto.UINT32,
-        number=5,
-    )
+    name = proto.Field(proto.STRING, number=1)
+
+    build = proto.Field(proto.STRING, number=2)
+
+    bucket = proto.Field(proto.STRING, number=3)
+
+    path = proto.Field(proto.STRING, number=4)
+
+    object_count = proto.Field(proto.UINT32, number=5)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

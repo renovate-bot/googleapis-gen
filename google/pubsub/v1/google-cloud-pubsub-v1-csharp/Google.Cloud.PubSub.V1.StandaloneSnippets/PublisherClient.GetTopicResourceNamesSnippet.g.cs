@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
+
     public sealed partial class GeneratedPublisherClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTopic</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetTopicResourceNames()
         {
-            // Snippet: GetTopic(TopicName, CallSettings)
             // Create client
             PublisherClient publisherClient = PublisherClient.Create();
             // Initialize request argument(s)
             TopicName topic = TopicName.FromProjectTopic("[PROJECT]", "[TOPIC]");
             // Make the request
             Topic response = publisherClient.GetTopic(topic);
-            // End snippet
         }
     }
 }

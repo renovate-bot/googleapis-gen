@@ -17,15 +17,18 @@
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.ResourceManager.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedProjectsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetProjectAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetProjectRequestObjectAsync()
         {
-            // Snippet: GetProjectAsync(GetProjectRequest, CallSettings)
-            // Additional: GetProjectAsync(GetProjectRequest, CancellationToken)
             // Create client
             ProjectsClient projectsClient = await ProjectsClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             };
             // Make the request
             Project response = await projectsClient.GetProjectAsync(request);
-            // End snippet
         }
     }
 }

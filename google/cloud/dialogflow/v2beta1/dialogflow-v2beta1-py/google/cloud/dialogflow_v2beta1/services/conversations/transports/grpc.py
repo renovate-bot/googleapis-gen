@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.cloud.dialogflow_v2beta1.types import conversation
 from google.cloud.dialogflow_v2beta1.types import conversation as gcd_conversation
+
 from .base import ConversationsTransport, DEFAULT_CLIENT_INFO
 
 
@@ -60,8 +63,7 @@ class ConversationsGrpcTransport(ConversationsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -200,15 +202,13 @@ class ConversationsGrpcTransport(ConversationsTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -222,9 +222,7 @@ class ConversationsGrpcTransport(ConversationsTransport):
     def create_conversation(self) -> Callable[
             [gcd_conversation.CreateConversationRequest],
             gcd_conversation.Conversation]:
-        r"""Return a callable for the
-        create conversation
-          method over gRPC.
+        r"""Return a callable for the create conversation method over gRPC.
 
         Creates a new conversation. Conversations are auto-completed
         after 24 hours.
@@ -270,9 +268,7 @@ class ConversationsGrpcTransport(ConversationsTransport):
     def list_conversations(self) -> Callable[
             [conversation.ListConversationsRequest],
             conversation.ListConversationsResponse]:
-        r"""Return a callable for the
-        list conversations
-          method over gRPC.
+        r"""Return a callable for the list conversations method over gRPC.
 
         Returns the list of all conversations in the
         specified project.
@@ -299,9 +295,7 @@ class ConversationsGrpcTransport(ConversationsTransport):
     def get_conversation(self) -> Callable[
             [conversation.GetConversationRequest],
             conversation.Conversation]:
-        r"""Return a callable for the
-        get conversation
-          method over gRPC.
+        r"""Return a callable for the get conversation method over gRPC.
 
         Retrieves the specific conversation.
 
@@ -327,9 +321,7 @@ class ConversationsGrpcTransport(ConversationsTransport):
     def complete_conversation(self) -> Callable[
             [conversation.CompleteConversationRequest],
             conversation.Conversation]:
-        r"""Return a callable for the
-        complete conversation
-          method over gRPC.
+        r"""Return a callable for the complete conversation method over gRPC.
 
         Completes the specified conversation. Finished
         conversations are purged from the database after 30
@@ -357,9 +349,7 @@ class ConversationsGrpcTransport(ConversationsTransport):
     def batch_create_messages(self) -> Callable[
             [conversation.BatchCreateMessagesRequest],
             conversation.BatchCreateMessagesResponse]:
-        r"""Return a callable for the
-        batch create messages
-          method over gRPC.
+        r"""Return a callable for the batch create messages method over gRPC.
 
         Batch ingests messages to conversation. Customers can
         use this RPC to ingest historical messages to
@@ -387,9 +377,7 @@ class ConversationsGrpcTransport(ConversationsTransport):
     def list_messages(self) -> Callable[
             [conversation.ListMessagesRequest],
             conversation.ListMessagesResponse]:
-        r"""Return a callable for the
-        list messages
-          method over gRPC.
+        r"""Return a callable for the list messages method over gRPC.
 
         Lists messages that belong to a given conversation. ``messages``
         are ordered by ``create_time`` in descending order. To fetch

@@ -16,16 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConversionAdjustmentUploadServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UploadConversionAdjustmentsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UploadConversionAdjustmentsAsync()
         {
-            // Snippet: UploadConversionAdjustmentsAsync(string, IEnumerable<ConversionAdjustment>, bool, CallSettings)
-            // Additional: UploadConversionAdjustmentsAsync(string, IEnumerable<ConversionAdjustment>, bool, CancellationToken)
             // Create client
             ConversionAdjustmentUploadServiceClient conversionAdjustmentUploadServiceClient = await ConversionAdjustmentUploadServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             bool partialFailure = false;
             // Make the request
             UploadConversionAdjustmentsResponse response = await conversionAdjustmentUploadServiceClient.UploadConversionAdjustmentsAsync(customerId, conversionAdjustments, partialFailure);
-            // End snippet
         }
     }
 }

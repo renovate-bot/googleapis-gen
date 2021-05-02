@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.enums.types import call_tracking_display_location as gage_call_tracking_display_location
 from google.ads.googleads.v6.enums.types import call_type
@@ -62,43 +65,19 @@ class CallView(proto.Message):
             Output only. The status of the call.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    caller_region_code = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    caller_area_code = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    call_duration_seconds = proto.Field(
-        proto.INT64,
-        number=4,
-    )
-    start_call_date_time = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    end_call_date_time = proto.Field(
-        proto.STRING,
-        number=6,
-    )
-    call_tracking_display_location = proto.Field(
-        proto.ENUM,
-        number=7,
+    resource_name = proto.Field(proto.STRING, number=1)
+    caller_region_code = proto.Field(proto.STRING, number=2)
+    caller_area_code = proto.Field(proto.STRING, number=3)
+    call_duration_seconds = proto.Field(proto.INT64, number=4)
+    start_call_date_time = proto.Field(proto.STRING, number=5)
+    end_call_date_time = proto.Field(proto.STRING, number=6)
+    call_tracking_display_location = proto.Field(proto.ENUM, number=7,
         enum=gage_call_tracking_display_location.CallTrackingDisplayLocationEnum.CallTrackingDisplayLocation,
     )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=8,
+    type_ = proto.Field(proto.ENUM, number=8,
         enum=call_type.CallTypeEnum.CallType,
     )
-    call_status = proto.Field(
-        proto.ENUM,
-        number=9,
+    call_status = proto.Field(proto.ENUM, number=9,
         enum=google_voice_call_status.GoogleVoiceCallStatusEnum.GoogleVoiceCallStatus,
     )
 

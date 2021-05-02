@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedSharedCriterionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSharedCriterion</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetSharedCriterionResourceNames()
         {
-            // Snippet: GetSharedCriterion(SharedCriterionName, CallSettings)
             // Create client
             SharedCriterionServiceClient sharedCriterionServiceClient = SharedCriterionServiceClient.Create();
             // Initialize request argument(s)
             SharedCriterionName resourceName = SharedCriterionName.FromCustomerSharedSetCriterion("[CUSTOMER_ID]", "[SHARED_SET_ID]", "[CRITERION_ID]");
             // Make the request
             SharedCriterion response = sharedCriterionServiceClient.GetSharedCriterion(resourceName);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -36,33 +36,9 @@ from google.cloud.privatecatalog_v1beta1.services.private_catalog import Private
 from google.cloud.privatecatalog_v1beta1.services.private_catalog import PrivateCatalogClient
 from google.cloud.privatecatalog_v1beta1.services.private_catalog import pagers
 from google.cloud.privatecatalog_v1beta1.services.private_catalog import transports
-from google.cloud.privatecatalog_v1beta1.services.private_catalog.transports.base import _API_CORE_VERSION
-from google.cloud.privatecatalog_v1beta1.services.private_catalog.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.privatecatalog_v1beta1.types import private_catalog
 from google.oauth2 import service_account
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -230,10 +206,12 @@ def test_private_catalog_client_client_options(client_class, transport_class, tr
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (PrivateCatalogClient, transports.PrivateCatalogGrpcTransport, "grpc", "true"),
     (PrivateCatalogAsyncClient, transports.PrivateCatalogGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (PrivateCatalogClient, transports.PrivateCatalogGrpcTransport, "grpc", "false"),
     (PrivateCatalogAsyncClient, transports.PrivateCatalogGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(PrivateCatalogClient, "DEFAULT_ENDPOINT", modify_default_endpoint(PrivateCatalogClient))
 @mock.patch.object(PrivateCatalogAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(PrivateCatalogAsyncClient))
@@ -388,16 +366,21 @@ def test_search_catalogs(transport: str = 'grpc', request_type=private_catalog.S
         # Designate an appropriate return value for the call.
         call.return_value = private_catalog.SearchCatalogsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.search_catalogs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == private_catalog.SearchCatalogsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.SearchCatalogsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -420,8 +403,8 @@ def test_search_catalogs_empty_call():
         client.search_catalogs()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == private_catalog.SearchCatalogsRequest()
 
+        assert args[0] == private_catalog.SearchCatalogsRequest()
 
 @pytest.mark.asyncio
 async def test_search_catalogs_async(transport: str = 'grpc_asyncio', request_type=private_catalog.SearchCatalogsRequest):
@@ -439,18 +422,21 @@ async def test_search_catalogs_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.search_catalogs),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(private_catalog.SearchCatalogsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(private_catalog.SearchCatalogsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.search_catalogs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == private_catalog.SearchCatalogsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.SearchCatalogsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -467,7 +453,6 @@ def test_search_catalogs_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = private_catalog.SearchCatalogsRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -475,6 +460,7 @@ def test_search_catalogs_field_headers():
             type(client.transport.search_catalogs),
             '__call__') as call:
         call.return_value = private_catalog.SearchCatalogsResponse()
+
         client.search_catalogs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -499,7 +485,6 @@ async def test_search_catalogs_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = private_catalog.SearchCatalogsRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -507,6 +492,7 @@ async def test_search_catalogs_field_headers_async():
             type(client.transport.search_catalogs),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(private_catalog.SearchCatalogsResponse())
+
         await client.search_catalogs(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -708,6 +694,7 @@ async def test_search_catalogs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_search_products(transport: str = 'grpc', request_type=private_catalog.SearchProductsRequest):
     client = PrivateCatalogClient(
         credentials=credentials.AnonymousCredentials(),
@@ -725,16 +712,21 @@ def test_search_products(transport: str = 'grpc', request_type=private_catalog.S
         # Designate an appropriate return value for the call.
         call.return_value = private_catalog.SearchProductsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.search_products(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == private_catalog.SearchProductsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.SearchProductsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -757,8 +749,8 @@ def test_search_products_empty_call():
         client.search_products()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == private_catalog.SearchProductsRequest()
 
+        assert args[0] == private_catalog.SearchProductsRequest()
 
 @pytest.mark.asyncio
 async def test_search_products_async(transport: str = 'grpc_asyncio', request_type=private_catalog.SearchProductsRequest):
@@ -776,18 +768,21 @@ async def test_search_products_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.search_products),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(private_catalog.SearchProductsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(private_catalog.SearchProductsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.search_products(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == private_catalog.SearchProductsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.SearchProductsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -804,7 +799,6 @@ def test_search_products_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = private_catalog.SearchProductsRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -812,6 +806,7 @@ def test_search_products_field_headers():
             type(client.transport.search_products),
             '__call__') as call:
         call.return_value = private_catalog.SearchProductsResponse()
+
         client.search_products(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -836,7 +831,6 @@ async def test_search_products_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = private_catalog.SearchProductsRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -844,6 +838,7 @@ async def test_search_products_field_headers_async():
             type(client.transport.search_products),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(private_catalog.SearchProductsResponse())
+
         await client.search_products(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1045,6 +1040,7 @@ async def test_search_products_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_search_versions(transport: str = 'grpc', request_type=private_catalog.SearchVersionsRequest):
     client = PrivateCatalogClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1062,16 +1058,21 @@ def test_search_versions(transport: str = 'grpc', request_type=private_catalog.S
         # Designate an appropriate return value for the call.
         call.return_value = private_catalog.SearchVersionsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.search_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == private_catalog.SearchVersionsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.SearchVersionsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1094,8 +1095,8 @@ def test_search_versions_empty_call():
         client.search_versions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == private_catalog.SearchVersionsRequest()
 
+        assert args[0] == private_catalog.SearchVersionsRequest()
 
 @pytest.mark.asyncio
 async def test_search_versions_async(transport: str = 'grpc_asyncio', request_type=private_catalog.SearchVersionsRequest):
@@ -1113,18 +1114,21 @@ async def test_search_versions_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.search_versions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(private_catalog.SearchVersionsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(private_catalog.SearchVersionsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.search_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == private_catalog.SearchVersionsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.SearchVersionsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1141,7 +1145,6 @@ def test_search_versions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = private_catalog.SearchVersionsRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1149,6 +1152,7 @@ def test_search_versions_field_headers():
             type(client.transport.search_versions),
             '__call__') as call:
         call.return_value = private_catalog.SearchVersionsResponse()
+
         client.search_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1173,7 +1177,6 @@ async def test_search_versions_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = private_catalog.SearchVersionsRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1181,6 +1184,7 @@ async def test_search_versions_field_headers_async():
             type(client.transport.search_versions),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(private_catalog.SearchVersionsResponse())
+
         await client.search_versions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1423,6 +1427,7 @@ def test_transport_instance():
     client = PrivateCatalogClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.PrivateCatalogGrpcTransport(
@@ -1437,6 +1442,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.PrivateCatalogGrpcTransport,
     transports.PrivateCatalogGrpcAsyncIOTransport,
@@ -1448,6 +1454,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = PrivateCatalogClient(
@@ -1457,6 +1464,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.PrivateCatalogGrpcTransport,
     )
+
 
 def test_private_catalog_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1481,33 +1489,15 @@ def test_private_catalog_base_transport():
         'search_catalogs',
         'search_products',
         'search_versions',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_private_catalog_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.privatecatalog_v1beta1.services.private_catalog.transports.PrivateCatalogTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.PrivateCatalogTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_private_catalog_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.privatecatalog_v1beta1.services.private_catalog.transports.PrivateCatalogTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.privatecatalog_v1beta1.services.private_catalog.transports.PrivateCatalogTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.PrivateCatalogTransport(
@@ -1523,182 +1513,33 @@ def test_private_catalog_base_transport_with_credentials_file_old_google_auth():
 
 def test_private_catalog_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.privatecatalog_v1beta1.services.private_catalog.transports.PrivateCatalogTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.privatecatalog_v1beta1.services.private_catalog.transports.PrivateCatalogTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.PrivateCatalogTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_private_catalog_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         PrivateCatalogClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_private_catalog_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        PrivateCatalogClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.PrivateCatalogGrpcTransport,
-        transports.PrivateCatalogGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_private_catalog_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.PrivateCatalogGrpcTransport,
-        transports.PrivateCatalogGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_private_catalog_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.PrivateCatalogGrpcTransport, grpc_helpers),
-        (transports.PrivateCatalogGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_private_catalog_transport_create_channel(transport_class, grpc_helpers):
+def test_private_catalog_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.PrivateCatalogGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "cloudprivatecatalog.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="cloudprivatecatalog.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.PrivateCatalogGrpcTransport, grpc_helpers),
-        (transports.PrivateCatalogGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_private_catalog_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "cloudprivatecatalog.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.PrivateCatalogGrpcTransport, grpc_helpers),
-        (transports.PrivateCatalogGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_private_catalog_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "cloudprivatecatalog.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -1760,6 +1601,7 @@ def test_private_catalog_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='cloudprivatecatalog.googleapis.com:8000'),
     )
     assert client.transport._host == 'cloudprivatecatalog.googleapis.com:8000'
+
 
 def test_private_catalog_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1877,6 +1719,7 @@ def test_private_catalog_transport_channel_mtls_with_adc(
 
 def test_catalog_path():
     catalog = "squid"
+
     expected = "catalogs/{catalog}".format(catalog=catalog, )
     actual = PrivateCatalogClient.catalog_path(catalog)
     assert expected == actual
@@ -1884,7 +1727,8 @@ def test_catalog_path():
 
 def test_parse_catalog_path():
     expected = {
-        "catalog": "clam",
+    "catalog": "clam",
+
     }
     path = PrivateCatalogClient.catalog_path(**expected)
 
@@ -1894,6 +1738,7 @@ def test_parse_catalog_path():
 
 def test_product_path():
     product = "whelk"
+
     expected = "products/{product}".format(product=product, )
     actual = PrivateCatalogClient.product_path(product)
     assert expected == actual
@@ -1901,7 +1746,8 @@ def test_product_path():
 
 def test_parse_product_path():
     expected = {
-        "product": "octopus",
+    "product": "octopus",
+
     }
     path = PrivateCatalogClient.product_path(**expected)
 
@@ -1913,6 +1759,7 @@ def test_version_path():
     catalog = "oyster"
     product = "nudibranch"
     version = "cuttlefish"
+
     expected = "catalogs/{catalog}/products/{product}/versions/{version}".format(catalog=catalog, product=product, version=version, )
     actual = PrivateCatalogClient.version_path(catalog, product, version)
     assert expected == actual
@@ -1920,9 +1767,10 @@ def test_version_path():
 
 def test_parse_version_path():
     expected = {
-        "catalog": "mussel",
-        "product": "winkle",
-        "version": "nautilus",
+    "catalog": "mussel",
+    "product": "winkle",
+    "version": "nautilus",
+
     }
     path = PrivateCatalogClient.version_path(**expected)
 
@@ -1932,6 +1780,7 @@ def test_parse_version_path():
 
 def test_common_billing_account_path():
     billing_account = "scallop"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = PrivateCatalogClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1939,7 +1788,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "abalone",
+    "billing_account": "abalone",
+
     }
     path = PrivateCatalogClient.common_billing_account_path(**expected)
 
@@ -1949,6 +1799,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "squid"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = PrivateCatalogClient.common_folder_path(folder)
     assert expected == actual
@@ -1956,7 +1807,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "clam",
+    "folder": "clam",
+
     }
     path = PrivateCatalogClient.common_folder_path(**expected)
 
@@ -1966,6 +1818,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "whelk"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = PrivateCatalogClient.common_organization_path(organization)
     assert expected == actual
@@ -1973,7 +1826,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "octopus",
+    "organization": "octopus",
+
     }
     path = PrivateCatalogClient.common_organization_path(**expected)
 
@@ -1983,6 +1837,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "oyster"
+
     expected = "projects/{project}".format(project=project, )
     actual = PrivateCatalogClient.common_project_path(project)
     assert expected == actual
@@ -1990,7 +1845,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nudibranch",
+    "project": "nudibranch",
+
     }
     path = PrivateCatalogClient.common_project_path(**expected)
 
@@ -2001,6 +1857,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "cuttlefish"
     location = "mussel"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = PrivateCatalogClient.common_location_path(project, location)
     assert expected == actual
@@ -2008,8 +1865,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "winkle",
-        "location": "nautilus",
+    "project": "winkle",
+    "location": "nautilus",
+
     }
     path = PrivateCatalogClient.common_location_path(**expected)
 

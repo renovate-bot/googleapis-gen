@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.os_config_service import OsConfigServiceClient
-
 from .types.guest_policies import AptRepository
 from .types.guest_policies import Assignment
 from .types.guest_policies import CreateGuestPolicyRequest
@@ -65,6 +65,7 @@ from .types.patch_jobs import PatchJobInstanceDetails
 from .types.patch_jobs import WindowsUpdateSettings
 from .types.patch_jobs import YumSettings
 from .types.patch_jobs import ZypperSettings
+
 
 __all__ = (
     'AptRepository',

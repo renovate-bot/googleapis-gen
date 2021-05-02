@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateCluster</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateCluster1()
         {
-            // Snippet: CreateCluster(string, string, Cluster, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.Container.V1.Snippets
             Cluster cluster = new Cluster();
             // Make the request
             Operation response = clusterManagerClient.CreateCluster(projectId, zone, cluster);
-            // End snippet
         }
     }
 }

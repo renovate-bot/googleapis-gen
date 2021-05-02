@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.NetworkConnectivity.V1Alpha1.Snippets
 {
+    using Google.Cloud.NetworkConnectivity.V1Alpha1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedHubServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateSpoke</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateSpoke()
         {
-            // Snippet: CreateSpoke(string, Spoke, string, CallSettings)
             // Create client
             HubServiceClient hubServiceClient = HubServiceClient.Create();
             // Initialize request argument(s)
@@ -48,7 +52,6 @@ namespace Google.Cloud.NetworkConnectivity.V1Alpha1.Snippets
                 // If it has completed, then access the result
                 Spoke retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

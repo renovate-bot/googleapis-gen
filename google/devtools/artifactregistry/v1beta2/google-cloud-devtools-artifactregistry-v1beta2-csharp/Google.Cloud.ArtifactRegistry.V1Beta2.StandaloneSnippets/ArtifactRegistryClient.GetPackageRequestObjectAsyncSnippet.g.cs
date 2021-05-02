@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
 {
+    using Google.Cloud.ArtifactRegistry.V1Beta2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPackageAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetPackageRequestObjectAsync()
         {
-            // Snippet: GetPackageAsync(GetPackageRequest, CallSettings)
-            // Additional: GetPackageAsync(GetPackageRequest, CancellationToken)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = await ArtifactRegistryClient.CreateAsync();
             // Initialize request argument(s)
             GetPackageRequest request = new GetPackageRequest { Name = "", };
             // Make the request
             Package response = await artifactRegistryClient.GetPackageAsync(request);
-            // End snippet
         }
     }
 }

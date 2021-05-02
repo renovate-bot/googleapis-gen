@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateDlpJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateDlpJob1Async()
         {
-            // Snippet: CreateDlpJobAsync(string, InspectJobConfig, CallSettings)
-            // Additional: CreateDlpJobAsync(string, InspectJobConfig, CancellationToken)
             // Create client
             DlpServiceClient dlpServiceClient = await DlpServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Dlp.V2.Snippets
             InspectJobConfig inspectJob = new InspectJobConfig();
             // Make the request
             DlpJob response = await dlpServiceClient.CreateDlpJobAsync(parent, inspectJob);
-            // End snippet
         }
     }
 }

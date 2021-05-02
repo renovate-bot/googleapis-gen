@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Osconfig.V1Beta.Snippets
 {
+    using Google.Cloud.Osconfig.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOsConfigServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateGuestPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateGuestPolicyAsync()
         {
-            // Snippet: CreateGuestPolicyAsync(string, GuestPolicy, CallSettings)
-            // Additional: CreateGuestPolicyAsync(string, GuestPolicy, CancellationToken)
             // Create client
             OsConfigServiceClient osConfigServiceClient = await OsConfigServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Osconfig.V1Beta.Snippets
             GuestPolicy guestPolicy = new GuestPolicy();
             // Make the request
             GuestPolicy response = await osConfigServiceClient.CreateGuestPolicyAsync(parent, guestPolicy);
-            // End snippet
         }
     }
 }

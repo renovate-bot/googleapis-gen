@@ -16,22 +16,24 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetWebDataStreamAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetWebDataStreamResourceNamesAsync()
         {
-            // Snippet: GetWebDataStreamAsync(WebDataStreamName, CallSettings)
-            // Additional: GetWebDataStreamAsync(WebDataStreamName, CancellationToken)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = await AnalyticsAdminServiceClient.CreateAsync();
             // Initialize request argument(s)
             WebDataStreamName name = WebDataStreamName.FromPropertyWebDataStream("[PROPERTY]", "[WEB_DATA_STREAM]");
             // Make the request
             WebDataStream response = await analyticsAdminServiceClient.GetWebDataStreamAsync(name);
-            // End snippet
         }
     }
 }

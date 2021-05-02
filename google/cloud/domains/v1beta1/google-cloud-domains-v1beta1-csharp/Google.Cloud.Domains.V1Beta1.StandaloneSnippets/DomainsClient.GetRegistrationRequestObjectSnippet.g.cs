@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Domains.V1Beta1.Snippets
 {
+    using Google.Cloud.Domains.V1Beta1;
+
     public sealed partial class GeneratedDomainsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetRegistration</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetRegistrationRequestObject()
         {
-            // Snippet: GetRegistration(GetRegistrationRequest, CallSettings)
             // Create client
             DomainsClient domainsClient = DomainsClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Domains.V1Beta1.Snippets
             };
             // Make the request
             Registration response = domainsClient.GetRegistration(request);
-            // End snippet
         }
     }
 }

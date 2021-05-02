@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.ErrorReporting.V1Beta1.Snippets
 {
+    using Google.Cloud.ErrorReporting.V1Beta1;
+
     public sealed partial class GeneratedErrorGroupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateGroup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateGroup()
         {
-            // Snippet: UpdateGroup(ErrorGroup, CallSettings)
             // Create client
             ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.Create();
             // Initialize request argument(s)
             ErrorGroup group = new ErrorGroup();
             // Make the request
             ErrorGroup response = errorGroupServiceClient.UpdateGroup(group);
-            // End snippet
         }
     }
 }

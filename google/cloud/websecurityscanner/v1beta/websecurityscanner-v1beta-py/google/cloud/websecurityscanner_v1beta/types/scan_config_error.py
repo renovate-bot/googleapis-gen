@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -45,7 +47,7 @@ class ScanConfigError(proto.Message):
         Defines an error reason code.
         Next id: 44
         """
-         _pb_options = {'allow_alias': True}
+        _pb_options = {'allow_alias': True}
         CODE_UNSPECIFIED = 0
         OK = 0
         INTERNAL_ERROR = 1
@@ -89,15 +91,11 @@ class ScanConfigError(proto.Message):
         UNSUPPORTED_FINDING_TYPE = 41
         UNSUPPORTED_URL_SCHEME = 42
 
-    code = proto.Field(
-        proto.ENUM,
-        number=1,
+    code = proto.Field(proto.ENUM, number=1,
         enum=Code,
     )
-    field_name = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    field_name = proto.Field(proto.STRING, number=2)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

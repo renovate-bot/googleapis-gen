@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.DataQnA.V1Alpha.Snippets
 {
+    using Google.Cloud.DataQnA.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedQuestionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ExecuteQuestionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ExecuteQuestionAsync()
         {
-            // Snippet: ExecuteQuestionAsync(string, int, CallSettings)
-            // Additional: ExecuteQuestionAsync(string, int, CancellationToken)
             // Create client
             QuestionServiceClient questionServiceClient = await QuestionServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.DataQnA.V1Alpha.Snippets
             int interpretationIndex = 0;
             // Make the request
             Question response = await questionServiceClient.ExecuteQuestionAsync(name, interpretationIndex);
-            // End snippet
         }
     }
 }

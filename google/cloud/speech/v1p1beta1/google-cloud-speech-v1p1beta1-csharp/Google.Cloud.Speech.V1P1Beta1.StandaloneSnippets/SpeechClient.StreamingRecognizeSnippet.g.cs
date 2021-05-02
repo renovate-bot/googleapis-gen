@@ -17,15 +17,18 @@
 namespace Google.Cloud.Speech.V1P1Beta1.Snippets
 {
     using Google.Api.Gax.Grpc;
-    using Google.Protobuf;
+    using Google.Cloud.Speech.V1P1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSpeechClientStandaloneSnippets
     {
         /// <summary>Snippet for StreamingRecognize</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task StreamingRecognize()
         {
-            // Snippet: StreamingRecognize(CallSettings, BidirectionalStreamingSettings)
             // Create client
             SpeechClient speechClient = SpeechClient.Create();
             // Initialize streaming call, retrieving the stream object
@@ -55,7 +58,6 @@ namespace Google.Cloud.Speech.V1P1Beta1.Snippets
                 StreamingRecognizeRequest request = new StreamingRecognizeRequest
                 {
                     StreamingConfig = new StreamingRecognitionConfig(),
-                    AudioContent = ByteString.Empty,
                 };
                 // Stream a request to the server
                 await response.WriteAsync(request);
@@ -67,7 +69,6 @@ namespace Google.Cloud.Speech.V1P1Beta1.Snippets
             // Await the response handler
             // This will complete once all server responses have been processed
             await responseHandlerTask;
-            // End snippet
         }
     }
 }

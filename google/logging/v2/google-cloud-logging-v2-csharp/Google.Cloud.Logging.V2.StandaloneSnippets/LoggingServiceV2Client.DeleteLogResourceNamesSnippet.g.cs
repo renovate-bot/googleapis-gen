@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Logging.V2.Snippets
 {
+    using Google.Cloud.Logging.V2;
+
     public sealed partial class GeneratedLoggingServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteLog</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteLogResourceNames()
         {
-            // Snippet: DeleteLog(LogName, CallSettings)
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.Create();
             // Initialize request argument(s)
             LogName logName = LogName.FromProjectLog("[PROJECT]", "[LOG]");
             // Make the request
             loggingServiceV2Client.DeleteLog(logName);
-            // End snippet
         }
     }
 }

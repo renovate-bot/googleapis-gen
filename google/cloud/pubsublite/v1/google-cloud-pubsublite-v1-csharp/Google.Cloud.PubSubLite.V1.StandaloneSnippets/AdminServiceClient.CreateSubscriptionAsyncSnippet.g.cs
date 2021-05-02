@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.PubSubLite.V1.Snippets
 {
+    using Google.Cloud.PubSubLite.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateSubscriptionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateSubscriptionAsync()
         {
-            // Snippet: CreateSubscriptionAsync(string, Subscription, string, CallSettings)
-            // Additional: CreateSubscriptionAsync(string, Subscription, string, CancellationToken)
             // Create client
             AdminServiceClient adminServiceClient = await AdminServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             string subscriptionId = "";
             // Make the request
             Subscription response = await adminServiceClient.CreateSubscriptionAsync(parent, subscription, subscriptionId);
-            // End snippet
         }
     }
 }

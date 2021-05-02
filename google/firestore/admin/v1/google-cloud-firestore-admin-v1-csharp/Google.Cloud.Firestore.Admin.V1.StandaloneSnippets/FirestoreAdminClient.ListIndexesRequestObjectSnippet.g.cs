@@ -23,9 +23,12 @@ namespace Google.Cloud.Firestore.Admin.V1.Snippets
     public sealed partial class GeneratedFirestoreAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for ListIndexes</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListIndexesRequestObject()
         {
-            // Snippet: ListIndexes(ListIndexesRequest, CallSettings)
             // Create client
             FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.Create();
             // Initialize request argument(s)
@@ -68,7 +71,6 @@ namespace Google.Cloud.Firestore.Admin.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

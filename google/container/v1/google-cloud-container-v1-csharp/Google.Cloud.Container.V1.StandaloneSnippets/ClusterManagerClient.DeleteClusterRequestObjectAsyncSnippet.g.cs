@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteClusterAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteClusterRequestObjectAsync()
         {
-            // Snippet: DeleteClusterAsync(DeleteClusterRequest, CallSettings)
-            // Additional: DeleteClusterAsync(DeleteClusterRequest, CancellationToken)
             // Create client
             ClusterManagerClient clusterManagerClient = await ClusterManagerClient.CreateAsync();
             // Initialize request argument(s)
             DeleteClusterRequest request = new DeleteClusterRequest { Name = "", };
             // Make the request
             Operation response = await clusterManagerClient.DeleteClusterAsync(request);
-            // End snippet
         }
     }
 }

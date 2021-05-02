@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.enums.types import batch_job_status
 
@@ -56,7 +59,6 @@ class BatchJob(proto.Message):
             completion. Only set when the batch job status
             is RUNNING or DONE.
     """
-
     class BatchJobMetadata(proto.Message):
         r"""Additional information about the batch job. This message is
         also used as metadata returned in batch job Long Running
@@ -88,66 +90,23 @@ class BatchJob(proto.Message):
                 job has started running.
         """
 
-        creation_date_time = proto.Field(
-            proto.STRING,
-            number=8,
-            optional=True,
-        )
-        start_date_time = proto.Field(
-            proto.STRING,
-            number=7,
-            optional=True,
-        )
-        completion_date_time = proto.Field(
-            proto.STRING,
-            number=9,
-            optional=True,
-        )
-        estimated_completion_ratio = proto.Field(
-            proto.DOUBLE,
-            number=10,
-            optional=True,
-        )
-        operation_count = proto.Field(
-            proto.INT64,
-            number=11,
-            optional=True,
-        )
-        executed_operation_count = proto.Field(
-            proto.INT64,
-            number=12,
-            optional=True,
-        )
+        creation_date_time = proto.Field(proto.STRING, number=8, optional=True)
+        start_date_time = proto.Field(proto.STRING, number=7, optional=True)
+        completion_date_time = proto.Field(proto.STRING, number=9, optional=True)
+        estimated_completion_ratio = proto.Field(proto.DOUBLE, number=10, optional=True)
+        operation_count = proto.Field(proto.INT64, number=11, optional=True)
+        executed_operation_count = proto.Field(proto.INT64, number=12, optional=True)
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.INT64,
-        number=7,
-        optional=True,
-    )
-    next_add_sequence_token = proto.Field(
-        proto.STRING,
-        number=8,
-        optional=True,
-    )
-    metadata = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.INT64, number=7, optional=True)
+    next_add_sequence_token = proto.Field(proto.STRING, number=8, optional=True)
+    metadata = proto.Field(proto.MESSAGE, number=4,
         message=BatchJobMetadata,
     )
-    status = proto.Field(
-        proto.ENUM,
-        number=5,
+    status = proto.Field(proto.ENUM, number=5,
         enum=batch_job_status.BatchJobStatusEnum.BatchJobStatus,
     )
-    long_running_operation = proto.Field(
-        proto.STRING,
-        number=9,
-        optional=True,
-    )
+    long_running_operation = proto.Field(proto.STRING, number=9, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -16,22 +16,24 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPaymentsAccountServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListPaymentsAccountsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListPaymentsAccountsRequestObjectAsync()
         {
-            // Snippet: ListPaymentsAccountsAsync(ListPaymentsAccountsRequest, CallSettings)
-            // Additional: ListPaymentsAccountsAsync(ListPaymentsAccountsRequest, CancellationToken)
             // Create client
             PaymentsAccountServiceClient paymentsAccountServiceClient = await PaymentsAccountServiceClient.CreateAsync();
             // Initialize request argument(s)
             ListPaymentsAccountsRequest request = new ListPaymentsAccountsRequest { CustomerId = "", };
             // Make the request
             ListPaymentsAccountsResponse response = await paymentsAccountServiceClient.ListPaymentsAccountsAsync(request);
-            // End snippet
         }
     }
 }

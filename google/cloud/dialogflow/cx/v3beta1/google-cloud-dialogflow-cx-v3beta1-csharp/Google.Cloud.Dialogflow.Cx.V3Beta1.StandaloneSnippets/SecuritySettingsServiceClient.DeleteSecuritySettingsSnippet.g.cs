@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedSecuritySettingsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteSecuritySettings</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteSecuritySettings()
         {
-            // Snippet: DeleteSecuritySettings(string, CallSettings)
             // Create client
             SecuritySettingsServiceClient securitySettingsServiceClient = SecuritySettingsServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/securitySettings/[SECURITY_SETTINGS]";
             // Make the request
             securitySettingsServiceClient.DeleteSecuritySettings(name);
-            // End snippet
         }
     }
 }

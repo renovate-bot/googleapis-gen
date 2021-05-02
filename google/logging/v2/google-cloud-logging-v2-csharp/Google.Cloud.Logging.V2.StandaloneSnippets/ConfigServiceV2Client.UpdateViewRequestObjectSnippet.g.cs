@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Logging.V2.Snippets
 {
+    using Google.Cloud.Logging.V2;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedConfigServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateViewRequestObject()
         {
-            // Snippet: UpdateView(UpdateViewRequest, CallSettings)
             // Create client
             ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             };
             // Make the request
             LogView response = configServiceV2Client.UpdateView(request);
-            // End snippet
         }
     }
 }

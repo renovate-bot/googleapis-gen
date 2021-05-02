@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -47,7 +48,8 @@ from google.cloud.securitycenter.settings_v1beta1.types.securitycenter_settings_
 from google.cloud.securitycenter.settings_v1beta1.types.settings import Settings
 from google.cloud.securitycenter.settings_v1beta1.types.sink_settings import SinkSettings
 
-__all__ = ('BatchCalculateEffectiveSettingsRequest',
+__all__ = (
+    'BatchCalculateEffectiveSettingsRequest',
     'BatchCalculateEffectiveSettingsResponse',
     'BatchGetSettingsRequest',
     'BatchGetSettingsResponse',

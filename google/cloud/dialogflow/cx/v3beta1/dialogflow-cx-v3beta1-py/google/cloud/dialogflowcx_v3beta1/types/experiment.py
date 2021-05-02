@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -40,6 +43,7 @@ __protobuf__ = proto.module(
 
 class Experiment(proto.Message):
     r"""Represents an experiment in an environment.
+
     Attributes:
         name (str):
             The name of the experiment.
@@ -92,6 +96,7 @@ class Experiment(proto.Message):
 
     class Definition(proto.Message):
         r"""Definition of the experiment.
+
         Attributes:
             condition (str):
                 The condition defines which subset of sessions are selected
@@ -104,14 +109,9 @@ class Experiment(proto.Message):
                 experiment.
         """
 
-        condition = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        version_variants = proto.Field(
-            proto.MESSAGE,
-            number=2,
-            oneof='variants',
+        condition = proto.Field(proto.STRING, number=1)
+
+        version_variants = proto.Field(proto.MESSAGE, number=2, oneof='variants',
             message='VersionVariants',
         )
 
@@ -161,25 +161,17 @@ class Experiment(proto.Message):
                     Upper bound of the interval.
             """
 
-            confidence_level = proto.Field(
-                proto.DOUBLE,
-                number=1,
-            )
-            ratio = proto.Field(
-                proto.DOUBLE,
-                number=2,
-            )
-            lower_bound = proto.Field(
-                proto.DOUBLE,
-                number=3,
-            )
-            upper_bound = proto.Field(
-                proto.DOUBLE,
-                number=4,
-            )
+            confidence_level = proto.Field(proto.DOUBLE, number=1)
+
+            ratio = proto.Field(proto.DOUBLE, number=2)
+
+            lower_bound = proto.Field(proto.DOUBLE, number=3)
+
+            upper_bound = proto.Field(proto.DOUBLE, number=4)
 
         class Metric(proto.Message):
             r"""Metric and corresponding confidence intervals.
+
             Attributes:
                 type_ (google.cloud.dialogflowcx_v3beta1.types.Experiment.Result.MetricType):
                     Ratio-based metric type. Only one of type or count_type is
@@ -196,34 +188,25 @@ class Experiment(proto.Message):
                     than all other treatments in the experiment
             """
 
-            type_ = proto.Field(
-                proto.ENUM,
-                number=1,
+            type_ = proto.Field(proto.ENUM, number=1,
                 enum='Experiment.Result.MetricType',
             )
-            count_type = proto.Field(
-                proto.ENUM,
-                number=5,
+
+            count_type = proto.Field(proto.ENUM, number=5,
                 enum='Experiment.Result.CountType',
             )
-            ratio = proto.Field(
-                proto.DOUBLE,
-                number=2,
-                oneof='value',
-            )
-            count = proto.Field(
-                proto.DOUBLE,
-                number=4,
-                oneof='value',
-            )
-            confidence_interval = proto.Field(
-                proto.MESSAGE,
-                number=3,
+
+            ratio = proto.Field(proto.DOUBLE, number=2, oneof='value')
+
+            count = proto.Field(proto.DOUBLE, number=4, oneof='value')
+
+            confidence_interval = proto.Field(proto.MESSAGE, number=3,
                 message='Experiment.Result.ConfidenceInterval',
             )
 
         class VersionMetrics(proto.Message):
             r"""Version variant and associated metrics.
+
             Attributes:
                 version (str):
                     The name of the flow
@@ -238,99 +221,75 @@ class Experiment(proto.Message):
                     this version.
             """
 
-            version = proto.Field(
-                proto.STRING,
-                number=1,
-            )
-            metrics = proto.RepeatedField(
-                proto.MESSAGE,
-                number=2,
+            version = proto.Field(proto.STRING, number=1)
+
+            metrics = proto.RepeatedField(proto.MESSAGE, number=2,
                 message='Experiment.Result.Metric',
             )
-            session_count = proto.Field(
-                proto.INT32,
-                number=3,
-            )
 
-        version_metrics = proto.RepeatedField(
-            proto.MESSAGE,
-            number=1,
+            session_count = proto.Field(proto.INT32, number=3)
+
+        version_metrics = proto.RepeatedField(proto.MESSAGE, number=1,
             message='Experiment.Result.VersionMetrics',
         )
-        last_update_time = proto.Field(
-            proto.MESSAGE,
-            number=2,
+
+        last_update_time = proto.Field(proto.MESSAGE, number=2,
             message=timestamp.Timestamp,
         )
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    display_name = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    state = proto.Field(
-        proto.ENUM,
-        number=4,
+    name = proto.Field(proto.STRING, number=1)
+
+    display_name = proto.Field(proto.STRING, number=2)
+
+    description = proto.Field(proto.STRING, number=3)
+
+    state = proto.Field(proto.ENUM, number=4,
         enum=State,
     )
-    definition = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    definition = proto.Field(proto.MESSAGE, number=5,
         message=Definition,
     )
-    result = proto.Field(
-        proto.MESSAGE,
-        number=6,
+
+    result = proto.Field(proto.MESSAGE, number=6,
         message=Result,
     )
-    create_time = proto.Field(
-        proto.MESSAGE,
-        number=7,
+
+    create_time = proto.Field(proto.MESSAGE, number=7,
         message=timestamp.Timestamp,
     )
-    start_time = proto.Field(
-        proto.MESSAGE,
-        number=8,
+
+    start_time = proto.Field(proto.MESSAGE, number=8,
         message=timestamp.Timestamp,
     )
-    end_time = proto.Field(
-        proto.MESSAGE,
-        number=9,
+
+    end_time = proto.Field(proto.MESSAGE, number=9,
         message=timestamp.Timestamp,
     )
-    last_update_time = proto.Field(
-        proto.MESSAGE,
-        number=10,
+
+    last_update_time = proto.Field(proto.MESSAGE, number=10,
         message=timestamp.Timestamp,
     )
-    experiment_length = proto.Field(
-        proto.MESSAGE,
-        number=11,
+
+    experiment_length = proto.Field(proto.MESSAGE, number=11,
         message=duration.Duration,
     )
-    variants_history = proto.RepeatedField(
-        proto.MESSAGE,
-        number=12,
+
+    variants_history = proto.RepeatedField(proto.MESSAGE, number=12,
         message='VariantsHistory',
     )
 
 
 class VersionVariants(proto.Message):
     r"""A list of flow version variants.
+
     Attributes:
         variants (Sequence[google.cloud.dialogflowcx_v3beta1.types.VersionVariants.Variant]):
             A list of flow version variants.
     """
-
     class Variant(proto.Message):
         r"""A single flow version with specified traffic allocation.
+
         Attributes:
             version (str):
                 The name of the flow version. Format:
@@ -343,28 +302,20 @@ class VersionVariants(proto.Message):
                 Whether the variant is for the control group.
         """
 
-        version = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        traffic_allocation = proto.Field(
-            proto.FLOAT,
-            number=2,
-        )
-        is_control_group = proto.Field(
-            proto.BOOL,
-            number=3,
-        )
+        version = proto.Field(proto.STRING, number=1)
 
-    variants = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+        traffic_allocation = proto.Field(proto.FLOAT, number=2)
+
+        is_control_group = proto.Field(proto.BOOL, number=3)
+
+    variants = proto.RepeatedField(proto.MESSAGE, number=1,
         message=Variant,
     )
 
 
 class VariantsHistory(proto.Message):
     r"""The history of variants update.
+
     Attributes:
         version_variants (google.cloud.dialogflowcx_v3beta1.types.VersionVariants):
             The flow versions as the variants.
@@ -372,15 +323,11 @@ class VariantsHistory(proto.Message):
             Update time of the variants.
     """
 
-    version_variants = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='variants',
+    version_variants = proto.Field(proto.MESSAGE, number=1, oneof='variants',
         message='VersionVariants',
     )
-    update_time = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    update_time = proto.Field(proto.MESSAGE, number=2,
         message=timestamp.Timestamp,
     )
 
@@ -403,18 +350,11 @@ class ListExperimentsRequest(proto.Message):
             request.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
 
 
 class ListExperimentsResponse(proto.Message):
@@ -437,15 +377,11 @@ class ListExperimentsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    experiments = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    experiments = proto.RepeatedField(proto.MESSAGE, number=1,
         message='Experiment',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class GetExperimentRequest(proto.Message):
@@ -460,10 +396,7 @@ class GetExperimentRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/environments/<Environment ID>/experiments/<Experiment ID>``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class CreateExperimentRequest(proto.Message):
@@ -482,13 +415,9 @@ class CreateExperimentRequest(proto.Message):
             Required. The experiment to create.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    experiment = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    experiment = proto.Field(proto.MESSAGE, number=2,
         message='Experiment',
     )
 
@@ -505,14 +434,11 @@ class UpdateExperimentRequest(proto.Message):
             get updated.
     """
 
-    experiment = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    experiment = proto.Field(proto.MESSAGE, number=1,
         message='Experiment',
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
 
@@ -529,10 +455,7 @@ class DeleteExperimentRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/environments/<Environment ID>/experiments/<Experiment ID>``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class StartExperimentRequest(proto.Message):
@@ -545,10 +468,7 @@ class StartExperimentRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/environments/<Environment ID>/experiments/<Experiment ID>``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class StopExperimentRequest(proto.Message):
@@ -561,10 +481,7 @@ class StopExperimentRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/environments/<Environment ID>/experiments/<Experiment ID>``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v5.resources.types import ad_group
 from google.ads.googleads.v5.services.types import ad_group_service
+
 from .base import AdGroupServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class AdGroupServiceGrpcTransport(AdGroupServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class AdGroupServiceGrpcTransport(AdGroupServiceTransport):
     def get_ad_group(self) -> Callable[
             [ad_group_service.GetAdGroupRequest],
             ad_group.AdGroup]:
-        r"""Return a callable for the
-        get ad group
-          method over gRPC.
+        r"""Return a callable for the get ad group method over gRPC.
 
         Returns the requested ad group in full detail.
 
@@ -229,9 +229,7 @@ class AdGroupServiceGrpcTransport(AdGroupServiceTransport):
     def mutate_ad_groups(self) -> Callable[
             [ad_group_service.MutateAdGroupsRequest],
             ad_group_service.MutateAdGroupsResponse]:
-        r"""Return a callable for the
-        mutate ad groups
-          method over gRPC.
+        r"""Return a callable for the mutate ad groups method over gRPC.
 
         Creates, updates, or removes ad groups. Operation
         statuses are returned.

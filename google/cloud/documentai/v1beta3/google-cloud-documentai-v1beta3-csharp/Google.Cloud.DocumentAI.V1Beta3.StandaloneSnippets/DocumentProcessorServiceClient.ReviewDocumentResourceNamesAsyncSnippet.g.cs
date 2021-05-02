@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.DocumentAI.V1Beta3.Snippets
 {
+    using Google.Cloud.DocumentAI.V1Beta3;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDocumentProcessorServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ReviewDocumentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ReviewDocumentResourceNamesAsync()
         {
-            // Snippet: ReviewDocumentAsync(HumanReviewConfigName, CallSettings)
-            // Additional: ReviewDocumentAsync(HumanReviewConfigName, CancellationToken)
             // Create client
             DocumentProcessorServiceClient documentProcessorServiceClient = await DocumentProcessorServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -48,7 +51,6 @@ namespace Google.Cloud.DocumentAI.V1Beta3.Snippets
                 // If it has completed, then access the result
                 ReviewDocumentResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

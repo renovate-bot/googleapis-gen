@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +23,8 @@ from google.cloud.asset_v1p5beta1.types.asset_service import ListAssetsResponse
 from google.cloud.asset_v1p5beta1.types.assets import Asset
 from google.cloud.asset_v1p5beta1.types.assets import Resource
 
-__all__ = ('Asset',
+__all__ = (
+    'Asset',
     'AssetServiceAsyncClient',
     'AssetServiceClient',
     'ContentType',

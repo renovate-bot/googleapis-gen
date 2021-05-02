@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Billing.Budgets.V1Beta1.Snippets
 {
+    using Google.Cloud.Billing.Budgets.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBudgetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBudgetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetBudgetRequestObjectAsync()
         {
-            // Snippet: GetBudgetAsync(GetBudgetRequest, CallSettings)
-            // Additional: GetBudgetAsync(GetBudgetRequest, CancellationToken)
             // Create client
             BudgetServiceClient budgetServiceClient = await BudgetServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Billing.Budgets.V1Beta1.Snippets
             };
             // Make the request
             Budget response = await budgetServiceClient.GetBudgetAsync(request);
-            // End snippet
         }
     }
 }

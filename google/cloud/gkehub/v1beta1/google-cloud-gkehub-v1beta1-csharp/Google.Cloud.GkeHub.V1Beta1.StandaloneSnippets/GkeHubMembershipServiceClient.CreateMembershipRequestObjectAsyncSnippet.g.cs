@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.GkeHub.V1Beta1.Snippets
 {
+    using Google.Cloud.GkeHub.V1Beta1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGkeHubMembershipServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateMembershipAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateMembershipRequestObjectAsync()
         {
-            // Snippet: CreateMembershipAsync(CreateMembershipRequest, CallSettings)
-            // Additional: CreateMembershipAsync(CreateMembershipRequest, CancellationToken)
             // Create client
             GkeHubMembershipServiceClient gkeHubMembershipServiceClient = await GkeHubMembershipServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -53,7 +56,6 @@ namespace Google.Cloud.GkeHub.V1Beta1.Snippets
                 // If it has completed, then access the result
                 Membership retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

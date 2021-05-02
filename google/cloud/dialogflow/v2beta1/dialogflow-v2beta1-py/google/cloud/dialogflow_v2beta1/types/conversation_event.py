@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.dialogflow_v2beta1.types import participant
 from google.rpc import status_pb2 as status  # type: ignore
@@ -53,24 +56,17 @@ class ConversationEvent(proto.Message):
         NEW_MESSAGE = 5
         UNRECOVERABLE_ERROR = 4
 
-    conversation = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=2,
+    conversation = proto.Field(proto.STRING, number=1)
+
+    type_ = proto.Field(proto.ENUM, number=2,
         enum=Type,
     )
-    error_status = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    error_status = proto.Field(proto.MESSAGE, number=3,
         message=status.Status,
     )
-    new_message_payload = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='payload',
+
+    new_message_payload = proto.Field(proto.MESSAGE, number=4, oneof='payload',
         message=participant.Message,
     )
 

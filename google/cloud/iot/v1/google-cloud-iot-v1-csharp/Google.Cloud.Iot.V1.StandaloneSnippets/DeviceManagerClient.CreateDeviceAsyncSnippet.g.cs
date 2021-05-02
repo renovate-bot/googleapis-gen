@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Iot.V1.Snippets
 {
+    using Google.Cloud.Iot.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDeviceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateDeviceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateDeviceAsync()
         {
-            // Snippet: CreateDeviceAsync(string, Device, CallSettings)
-            // Additional: CreateDeviceAsync(string, Device, CancellationToken)
             // Create client
             DeviceManagerClient deviceManagerClient = await DeviceManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Iot.V1.Snippets
             Device device = new Device();
             // Make the request
             Device response = await deviceManagerClient.CreateDeviceAsync(parent, device);
-            // End snippet
         }
     }
 }

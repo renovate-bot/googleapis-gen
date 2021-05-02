@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta.Snippets
 {
+    using Google.Cloud.Osconfig.Agentendpoint.V1Beta;
+
     public sealed partial class GeneratedAgentEndpointServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for StartNextTask</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void StartNextTask()
         {
-            // Snippet: StartNextTask(string, CallSettings)
             // Create client
             AgentEndpointServiceClient agentEndpointServiceClient = AgentEndpointServiceClient.Create();
             // Initialize request argument(s)
             string instanceIdToken = "";
             // Make the request
             StartNextTaskResponse response = agentEndpointServiceClient.StartNextTask(instanceIdToken);
-            // End snippet
         }
     }
 }

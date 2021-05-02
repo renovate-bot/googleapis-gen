@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.api import auth_pb2 as ga_auth  # type: ignore
 from google.api import documentation_pb2 as ga_documentation  # type: ignore
@@ -47,6 +50,7 @@ class State(proto.Enum):
 
 class Service(proto.Message):
     r"""A service that is available for use by the consumer.
+
     Attributes:
         name (str):
             The resource name of the consumer and
@@ -68,28 +72,22 @@ class Service(proto.Message):
             for use by the consumer.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    parent = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    config = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    parent = proto.Field(proto.STRING, number=5)
+
+    config = proto.Field(proto.MESSAGE, number=2,
         message='ServiceConfig',
     )
-    state = proto.Field(
-        proto.ENUM,
-        number=4,
+
+    state = proto.Field(proto.ENUM, number=4,
         enum='State',
     )
 
 
 class ServiceConfig(proto.Message):
     r"""The configuration of the service.
+
     Attributes:
         name (str):
             The DNS address at which this service is available.
@@ -127,52 +125,39 @@ class ServiceConfig(proto.Message):
             'producer_destinations' field.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    title = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    apis = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    title = proto.Field(proto.STRING, number=2)
+
+    apis = proto.RepeatedField(proto.MESSAGE, number=3,
         message=api.Api,
     )
-    documentation = proto.Field(
-        proto.MESSAGE,
-        number=6,
+
+    documentation = proto.Field(proto.MESSAGE, number=6,
         message=ga_documentation.Documentation,
     )
-    quota = proto.Field(
-        proto.MESSAGE,
-        number=10,
+
+    quota = proto.Field(proto.MESSAGE, number=10,
         message=ga_quota.Quota,
     )
-    authentication = proto.Field(
-        proto.MESSAGE,
-        number=11,
+
+    authentication = proto.Field(proto.MESSAGE, number=11,
         message=ga_auth.Authentication,
     )
-    usage = proto.Field(
-        proto.MESSAGE,
-        number=15,
+
+    usage = proto.Field(proto.MESSAGE, number=15,
         message=ga_usage.Usage,
     )
-    endpoints = proto.RepeatedField(
-        proto.MESSAGE,
-        number=18,
+
+    endpoints = proto.RepeatedField(proto.MESSAGE, number=18,
         message=endpoint.Endpoint,
     )
-    monitored_resources = proto.RepeatedField(
-        proto.MESSAGE,
-        number=25,
+
+    monitored_resources = proto.RepeatedField(proto.MESSAGE, number=25,
         message=monitored_resource.MonitoredResourceDescriptor,
     )
-    monitoring = proto.Field(
-        proto.MESSAGE,
-        number=28,
+
+    monitoring = proto.Field(proto.MESSAGE, number=28,
         message=ga_monitoring.Monitoring,
     )
 
@@ -187,10 +172,7 @@ class OperationMetadata(proto.Message):
             operation is directly associated with.
     """
 
-    resource_names = proto.RepeatedField(
-        proto.STRING,
-        number=2,
-    )
+    resource_names = proto.RepeatedField(proto.STRING, number=2)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteAnnotationSpecSetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteAnnotationSpecSetAsync()
         {
-            // Snippet: DeleteAnnotationSpecSetAsync(string, CallSettings)
-            // Additional: DeleteAnnotationSpecSetAsync(string, CancellationToken)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = await DataLabelingServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/annotationSpecSets/[ANNOTATION_SPEC_SET]";
             // Make the request
             await dataLabelingServiceClient.DeleteAnnotationSpecSetAsync(name);
-            // End snippet
         }
     }
 }

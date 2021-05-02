@@ -17,15 +17,18 @@
 namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Bigquery.Migration.V2Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMigrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateMigrationWorkflowAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateMigrationWorkflowRequestObjectAsync()
         {
-            // Snippet: CreateMigrationWorkflowAsync(CreateMigrationWorkflowRequest, CallSettings)
-            // Additional: CreateMigrationWorkflowAsync(CreateMigrationWorkflowRequest, CancellationToken)
             // Create client
             MigrationServiceClient migrationServiceClient = await MigrationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
             };
             // Make the request
             MigrationWorkflow response = await migrationServiceClient.CreateMigrationWorkflowAsync(request);
-            // End snippet
         }
     }
 }

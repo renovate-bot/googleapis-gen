@@ -16,12 +16,17 @@
 
 namespace Google.Iam.Admin.V1.Snippets
 {
+    using Google.Iam.Admin.V1;
+
     public sealed partial class GeneratedIAMClientStandaloneSnippets
     {
         /// <summary>Snippet for SignJwt</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SignJwtResourceNames()
         {
-            // Snippet: SignJwt(ServiceAccountName, string, CallSettings)
             // Create client
             IAMClient iAMClient = IAMClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Iam.Admin.V1.Snippets
             string payload = "";
             // Make the request
             SignJwtResponse response = iAMClient.SignJwt(name, payload);
-            // End snippet
         }
     }
 }

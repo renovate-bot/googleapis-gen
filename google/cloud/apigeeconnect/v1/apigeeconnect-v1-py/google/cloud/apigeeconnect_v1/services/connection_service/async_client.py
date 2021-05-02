@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -28,6 +30,7 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.apigeeconnect_v1.services.connection_service import pagers
 from google.cloud.apigeeconnect_v1.types import connection
+
 from .transports.base import ConnectionServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ConnectionServiceGrpcAsyncIOTransport
 from .client import ConnectionServiceClient
@@ -45,14 +48,19 @@ class ConnectionServiceAsyncClient:
 
     endpoint_path = staticmethod(ConnectionServiceClient.endpoint_path)
     parse_endpoint_path = staticmethod(ConnectionServiceClient.parse_endpoint_path)
+
     common_billing_account_path = staticmethod(ConnectionServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ConnectionServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(ConnectionServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(ConnectionServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(ConnectionServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(ConnectionServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(ConnectionServiceClient.common_project_path)
     parse_common_project_path = staticmethod(ConnectionServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(ConnectionServiceClient.common_location_path)
     parse_common_location_path = staticmethod(ConnectionServiceClient.parse_common_location_path)
 
@@ -137,6 +145,7 @@ class ConnectionServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = ConnectionServiceClient(
             credentials=credentials,
             transport=transport,
@@ -158,8 +167,7 @@ class ConnectionServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.apigeeconnect_v1.types.ListConnectionsRequest`):
-                The request object.
-                The request for
+                The request object. The request for
                 [ListConnections][Management.ListConnections].
             parent (:class:`str`):
                 Required. Parent name of the form:
@@ -168,6 +176,7 @@ class ConnectionServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -195,6 +204,7 @@ class ConnectionServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -203,7 +213,10 @@ class ConnectionServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_connections,
             default_retry=retries.Retry(
-initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                     exceptions.Unknown,
                 ),
@@ -240,6 +253,8 @@ initial=1.0,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

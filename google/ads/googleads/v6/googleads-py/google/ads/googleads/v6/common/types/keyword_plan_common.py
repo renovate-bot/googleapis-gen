@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.enums.types import keyword_plan_competition_level
 from google.ads.googleads.v6.enums.types import month_of_year
@@ -59,40 +62,21 @@ class KeywordPlanHistoricalMetrics(proto.Message):
             in micros for the keyword.
     """
 
-    avg_monthly_searches = proto.Field(
-        proto.INT64,
-        number=7,
-        optional=True,
-    )
-    monthly_search_volumes = proto.RepeatedField(
-        proto.MESSAGE,
-        number=6,
+    avg_monthly_searches = proto.Field(proto.INT64, number=7, optional=True)
+    monthly_search_volumes = proto.RepeatedField(proto.MESSAGE, number=6,
         message='MonthlySearchVolume',
     )
-    competition = proto.Field(
-        proto.ENUM,
-        number=2,
+    competition = proto.Field(proto.ENUM, number=2,
         enum=keyword_plan_competition_level.KeywordPlanCompetitionLevelEnum.KeywordPlanCompetitionLevel,
     )
-    competition_index = proto.Field(
-        proto.INT64,
-        number=8,
-        optional=True,
-    )
-    low_top_of_page_bid_micros = proto.Field(
-        proto.INT64,
-        number=9,
-        optional=True,
-    )
-    high_top_of_page_bid_micros = proto.Field(
-        proto.INT64,
-        number=10,
-        optional=True,
-    )
+    competition_index = proto.Field(proto.INT64, number=8, optional=True)
+    low_top_of_page_bid_micros = proto.Field(proto.INT64, number=9, optional=True)
+    high_top_of_page_bid_micros = proto.Field(proto.INT64, number=10, optional=True)
 
 
 class MonthlySearchVolume(proto.Message):
     r"""Monthly search volume.
+
     Attributes:
         year (int):
             The year of the search volume (e.g. 2020).
@@ -104,21 +88,11 @@ class MonthlySearchVolume(proto.Message):
             unavailable for that month.
     """
 
-    year = proto.Field(
-        proto.INT64,
-        number=4,
-        optional=True,
-    )
-    month = proto.Field(
-        proto.ENUM,
-        number=2,
+    year = proto.Field(proto.INT64, number=4, optional=True)
+    month = proto.Field(proto.ENUM, number=2,
         enum=month_of_year.MonthOfYearEnum.MonthOfYear,
     )
-    monthly_searches = proto.Field(
-        proto.INT64,
-        number=5,
-        optional=True,
-    )
+    monthly_searches = proto.Field(proto.INT64, number=5, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

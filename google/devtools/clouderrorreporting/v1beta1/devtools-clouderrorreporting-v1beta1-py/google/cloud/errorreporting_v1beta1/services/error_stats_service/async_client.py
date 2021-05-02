@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -29,6 +31,7 @@ from google.oauth2 import service_account              # type: ignore
 from google.cloud.errorreporting_v1beta1.services.error_stats_service import pagers
 from google.cloud.errorreporting_v1beta1.types import common
 from google.cloud.errorreporting_v1beta1.types import error_stats_service
+
 from .transports.base import ErrorStatsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ErrorStatsServiceGrpcAsyncIOTransport
 from .client import ErrorStatsServiceClient
@@ -46,14 +49,19 @@ class ErrorStatsServiceAsyncClient:
 
     error_group_path = staticmethod(ErrorStatsServiceClient.error_group_path)
     parse_error_group_path = staticmethod(ErrorStatsServiceClient.parse_error_group_path)
+
     common_billing_account_path = staticmethod(ErrorStatsServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ErrorStatsServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(ErrorStatsServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(ErrorStatsServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(ErrorStatsServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(ErrorStatsServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(ErrorStatsServiceClient.common_project_path)
     parse_common_project_path = staticmethod(ErrorStatsServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(ErrorStatsServiceClient.common_location_path)
     parse_common_location_path = staticmethod(ErrorStatsServiceClient.parse_common_location_path)
 
@@ -138,6 +146,7 @@ class ErrorStatsServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = ErrorStatsServiceClient(
             credentials=credentials,
             transport=transport,
@@ -159,8 +168,7 @@ class ErrorStatsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.errorreporting_v1beta1.types.ListGroupStatsRequest`):
-                The request object.
-                Specifies a set of `ErrorGroupStats`
+                The request object. Specifies a set of `ErrorGroupStats`
                 to return.
             project_name (:class:`str`):
                 Required. The resource name of the Google Cloud Platform
@@ -188,6 +196,7 @@ class ErrorStatsServiceAsyncClient:
                 This corresponds to the ``time_range`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -215,6 +224,7 @@ class ErrorStatsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_name is not None:
             request.project_name = project_name
         if time_range is not None:
@@ -269,8 +279,7 @@ class ErrorStatsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.errorreporting_v1beta1.types.ListEventsRequest`):
-                The request object.
-                Specifies a set of error events to
+                The request object. Specifies a set of error events to
                 return.
             project_name (:class:`str`):
                 Required. The resource name of the Google Cloud Platform
@@ -290,6 +299,7 @@ class ErrorStatsServiceAsyncClient:
                 This corresponds to the ``group_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -317,6 +327,7 @@ class ErrorStatsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_name is not None:
             request.project_name = project_name
         if group_id is not None:
@@ -370,8 +381,7 @@ class ErrorStatsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.errorreporting_v1beta1.types.DeleteEventsRequest`):
-                The request object.
-                Deletes all events in the project.
+                The request object. Deletes all events in the project.
             project_name (:class:`str`):
                 Required. The resource name of the Google Cloud Platform
                 project. Written as ``projects/{projectID}``, where
@@ -383,6 +393,7 @@ class ErrorStatsServiceAsyncClient:
                 This corresponds to the ``project_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -407,6 +418,7 @@ class ErrorStatsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if project_name is not None:
             request.project_name = project_name
 
@@ -436,6 +448,8 @@ class ErrorStatsServiceAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

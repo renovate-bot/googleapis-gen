@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.ApiGateway.V1.Snippets
 {
+    using Google.Cloud.ApiGateway.V1;
+
     public sealed partial class GeneratedApiGatewayServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetApiConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetApiConfig()
         {
-            // Snippet: GetApiConfig(string, CallSettings)
             // Create client
             ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/global/apis/[API]/configs/[API_CONFIG]";
             // Make the request
             ApiConfig response = apiGatewayServiceClient.GetApiConfig(name);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.BinaryAuthorization.V1Beta1.Snippets
 {
+    using Google.Cloud.BinaryAuthorization.V1Beta1;
+
     public sealed partial class GeneratedBinauthzManagementServiceV1Beta1ClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteAttestor</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteAttestor()
         {
-            // Snippet: DeleteAttestor(string, CallSettings)
             // Create client
             BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client = BinauthzManagementServiceV1Beta1Client.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/attestors/[ATTESTOR]";
             // Make the request
             binauthzManagementServiceV1Beta1Client.DeleteAttestor(name);
-            // End snippet
         }
     }
 }

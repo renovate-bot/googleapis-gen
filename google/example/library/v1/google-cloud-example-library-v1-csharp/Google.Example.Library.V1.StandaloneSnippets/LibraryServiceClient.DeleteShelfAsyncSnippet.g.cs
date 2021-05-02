@@ -16,22 +16,24 @@
 
 namespace Google.Example.Library.V1.Snippets
 {
+    using Google.Example.Library.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLibraryServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteShelfAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteShelfAsync()
         {
-            // Snippet: DeleteShelfAsync(string, CallSettings)
-            // Additional: DeleteShelfAsync(string, CancellationToken)
             // Create client
             LibraryServiceClient libraryServiceClient = await LibraryServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "shelves/[SHELF_ID]";
             // Make the request
             await libraryServiceClient.DeleteShelfAsync(name);
-            // End snippet
         }
     }
 }

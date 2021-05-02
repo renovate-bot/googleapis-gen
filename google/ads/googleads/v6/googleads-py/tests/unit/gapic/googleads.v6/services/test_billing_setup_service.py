@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -264,24 +266,36 @@ def test_get_billing_setup(transport: str = 'grpc', request_type=billing_setup_s
         # Designate an appropriate return value for the call.
         call.return_value = billing_setup.BillingSetup(
             resource_name='resource_name_value',
+
             id=205,
+
             status=billing_setup_status.BillingSetupStatusEnum.BillingSetupStatus.UNKNOWN,
+
             payments_account='payments_account_value',
+
             start_date_time='start_date_time_value',
+
             end_date_time='end_date_time_value',
         )
+
         response = client.get_billing_setup(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == billing_setup_service.GetBillingSetupRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, billing_setup.BillingSetup)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.id == 205
+
     assert response.status == billing_setup_status.BillingSetupStatusEnum.BillingSetupStatus.UNKNOWN
+
     assert response.payments_account == 'payments_account_value'
 
 
@@ -297,7 +311,6 @@ def test_get_billing_setup_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = billing_setup_service.GetBillingSetupRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -305,6 +318,7 @@ def test_get_billing_setup_field_headers():
             type(client.transport.get_billing_setup),
             '__call__') as call:
         call.return_value = billing_setup.BillingSetup()
+
         client.get_billing_setup(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -331,6 +345,7 @@ def test_get_billing_setup_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = billing_setup.BillingSetup()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_billing_setup(
@@ -341,6 +356,7 @@ def test_get_billing_setup_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -375,14 +391,17 @@ def test_mutate_billing_setup(transport: str = 'grpc', request_type=billing_setu
         # Designate an appropriate return value for the call.
         call.return_value = billing_setup_service.MutateBillingSetupResponse(
         )
+
         response = client.mutate_billing_setup(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == billing_setup_service.MutateBillingSetupRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, billing_setup_service.MutateBillingSetupResponse)
 
 
@@ -398,7 +417,6 @@ def test_mutate_billing_setup_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = billing_setup_service.MutateBillingSetupRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -406,6 +424,7 @@ def test_mutate_billing_setup_field_headers():
             type(client.transport.mutate_billing_setup),
             '__call__') as call:
         call.return_value = billing_setup_service.MutateBillingSetupResponse()
+
         client.mutate_billing_setup(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -432,6 +451,7 @@ def test_mutate_billing_setup_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = billing_setup_service.MutateBillingSetupResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_billing_setup(
@@ -443,7 +463,9 @@ def test_mutate_billing_setup_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operation == billing_setup_service.BillingSetupOperation(create=billing_setup.BillingSetup(resource_name='resource_name_value'))
 
 
@@ -526,7 +548,7 @@ def test_billing_setup_service_base_transport():
     methods = (
         'get_billing_setup',
         'mutate_billing_setup',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -678,6 +700,7 @@ def test_billing_setup_service_transport_channel_mtls_with_adc(
 def test_billing_setup_path():
     customer_id = "squid"
     billing_setup_id = "clam"
+
     expected = "customers/{customer_id}/billingSetups/{billing_setup_id}".format(customer_id=customer_id, billing_setup_id=billing_setup_id, )
     actual = BillingSetupServiceClient.billing_setup_path(customer_id, billing_setup_id)
     assert expected == actual
@@ -685,8 +708,9 @@ def test_billing_setup_path():
 
 def test_parse_billing_setup_path():
     expected = {
-        "customer_id": "whelk",
-        "billing_setup_id": "octopus",
+    "customer_id": "whelk",
+    "billing_setup_id": "octopus",
+
     }
     path = BillingSetupServiceClient.billing_setup_path(**expected)
 
@@ -697,6 +721,7 @@ def test_parse_billing_setup_path():
 def test_payments_account_path():
     customer_id = "oyster"
     payments_account_id = "nudibranch"
+
     expected = "customers/{customer_id}/paymentsAccounts/{payments_account_id}".format(customer_id=customer_id, payments_account_id=payments_account_id, )
     actual = BillingSetupServiceClient.payments_account_path(customer_id, payments_account_id)
     assert expected == actual
@@ -704,8 +729,9 @@ def test_payments_account_path():
 
 def test_parse_payments_account_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "payments_account_id": "mussel",
+    "customer_id": "cuttlefish",
+    "payments_account_id": "mussel",
+
     }
     path = BillingSetupServiceClient.payments_account_path(**expected)
 
@@ -715,6 +741,7 @@ def test_parse_payments_account_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = BillingSetupServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -722,7 +749,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nautilus",
+    "billing_account": "nautilus",
+
     }
     path = BillingSetupServiceClient.common_billing_account_path(**expected)
 
@@ -732,6 +760,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = BillingSetupServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -739,7 +768,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "abalone",
+    "folder": "abalone",
+
     }
     path = BillingSetupServiceClient.common_folder_path(**expected)
 
@@ -749,6 +779,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = BillingSetupServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -756,7 +787,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "clam",
+    "organization": "clam",
+
     }
     path = BillingSetupServiceClient.common_organization_path(**expected)
 
@@ -766,6 +798,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
+
     expected = "projects/{project}".format(project=project, )
     actual = BillingSetupServiceClient.common_project_path(project)
     assert expected == actual
@@ -773,7 +806,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "octopus",
+    "project": "octopus",
+
     }
     path = BillingSetupServiceClient.common_project_path(**expected)
 
@@ -784,6 +818,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = BillingSetupServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -791,8 +826,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "cuttlefish",
-        "location": "mussel",
+    "project": "cuttlefish",
+    "location": "mussel",
+
     }
     path = BillingSetupServiceClient.common_location_path(**expected)
 

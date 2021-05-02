@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -263,20 +265,29 @@ def test_get_campaign_label(transport: str = 'grpc', request_type=campaign_label
         # Designate an appropriate return value for the call.
         call.return_value = campaign_label.CampaignLabel(
             resource_name='resource_name_value',
+
             campaign='campaign_value',
+
             label='label_value',
+
         )
+
         response = client.get_campaign_label(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_label_service.GetCampaignLabelRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign_label.CampaignLabel)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.campaign == 'campaign_value'
+
     assert response.label == 'label_value'
 
 
@@ -292,7 +303,6 @@ def test_get_campaign_label_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_label_service.GetCampaignLabelRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -300,6 +310,7 @@ def test_get_campaign_label_field_headers():
             type(client.transport.get_campaign_label),
             '__call__') as call:
         call.return_value = campaign_label.CampaignLabel()
+
         client.get_campaign_label(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -326,6 +337,7 @@ def test_get_campaign_label_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_label.CampaignLabel()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_campaign_label(
@@ -336,6 +348,7 @@ def test_get_campaign_label_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -370,14 +383,17 @@ def test_mutate_campaign_labels(transport: str = 'grpc', request_type=campaign_l
         # Designate an appropriate return value for the call.
         call.return_value = campaign_label_service.MutateCampaignLabelsResponse(
         )
+
         response = client.mutate_campaign_labels(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_label_service.MutateCampaignLabelsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign_label_service.MutateCampaignLabelsResponse)
 
 
@@ -393,7 +409,6 @@ def test_mutate_campaign_labels_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_label_service.MutateCampaignLabelsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -401,6 +416,7 @@ def test_mutate_campaign_labels_field_headers():
             type(client.transport.mutate_campaign_labels),
             '__call__') as call:
         call.return_value = campaign_label_service.MutateCampaignLabelsResponse()
+
         client.mutate_campaign_labels(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -427,6 +443,7 @@ def test_mutate_campaign_labels_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_label_service.MutateCampaignLabelsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_campaign_labels(
@@ -438,7 +455,9 @@ def test_mutate_campaign_labels_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [campaign_label_service.CampaignLabelOperation(create=campaign_label.CampaignLabel(resource_name='resource_name_value'))]
 
 
@@ -521,7 +540,7 @@ def test_campaign_label_service_base_transport():
     methods = (
         'get_campaign_label',
         'mutate_campaign_labels',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -673,6 +692,7 @@ def test_campaign_label_service_transport_channel_mtls_with_adc(
 def test_campaign_path():
     customer_id = "squid"
     campaign_id = "clam"
+
     expected = "customers/{customer_id}/campaigns/{campaign_id}".format(customer_id=customer_id, campaign_id=campaign_id, )
     actual = CampaignLabelServiceClient.campaign_path(customer_id, campaign_id)
     assert expected == actual
@@ -680,8 +700,9 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-        "customer_id": "whelk",
-        "campaign_id": "octopus",
+    "customer_id": "whelk",
+    "campaign_id": "octopus",
+
     }
     path = CampaignLabelServiceClient.campaign_path(**expected)
 
@@ -693,6 +714,7 @@ def test_campaign_label_path():
     customer_id = "oyster"
     campaign_id = "nudibranch"
     label_id = "cuttlefish"
+
     expected = "customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}".format(customer_id=customer_id, campaign_id=campaign_id, label_id=label_id, )
     actual = CampaignLabelServiceClient.campaign_label_path(customer_id, campaign_id, label_id)
     assert expected == actual
@@ -700,9 +722,10 @@ def test_campaign_label_path():
 
 def test_parse_campaign_label_path():
     expected = {
-        "customer_id": "mussel",
-        "campaign_id": "winkle",
-        "label_id": "nautilus",
+    "customer_id": "mussel",
+    "campaign_id": "winkle",
+    "label_id": "nautilus",
+
     }
     path = CampaignLabelServiceClient.campaign_label_path(**expected)
 
@@ -713,6 +736,7 @@ def test_parse_campaign_label_path():
 def test_label_path():
     customer_id = "scallop"
     label_id = "abalone"
+
     expected = "customers/{customer_id}/labels/{label_id}".format(customer_id=customer_id, label_id=label_id, )
     actual = CampaignLabelServiceClient.label_path(customer_id, label_id)
     assert expected == actual
@@ -720,8 +744,9 @@ def test_label_path():
 
 def test_parse_label_path():
     expected = {
-        "customer_id": "squid",
-        "label_id": "clam",
+    "customer_id": "squid",
+    "label_id": "clam",
+
     }
     path = CampaignLabelServiceClient.label_path(**expected)
 
@@ -731,6 +756,7 @@ def test_parse_label_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CampaignLabelServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -738,7 +764,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = CampaignLabelServiceClient.common_billing_account_path(**expected)
 
@@ -748,6 +775,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = CampaignLabelServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -755,7 +783,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = CampaignLabelServiceClient.common_folder_path(**expected)
 
@@ -765,6 +794,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CampaignLabelServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -772,7 +802,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = CampaignLabelServiceClient.common_organization_path(**expected)
 
@@ -782,6 +813,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = CampaignLabelServiceClient.common_project_path(project)
     assert expected == actual
@@ -789,7 +821,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = CampaignLabelServiceClient.common_project_path(**expected)
 
@@ -800,6 +833,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CampaignLabelServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -807,8 +841,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = CampaignLabelServiceClient.common_location_path(**expected)
 

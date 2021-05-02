@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -36,34 +36,10 @@ from google.cloud.trace_v1.services.trace_service import TraceServiceAsyncClient
 from google.cloud.trace_v1.services.trace_service import TraceServiceClient
 from google.cloud.trace_v1.services.trace_service import pagers
 from google.cloud.trace_v1.services.trace_service import transports
-from google.cloud.trace_v1.services.trace_service.transports.base import _API_CORE_VERSION
-from google.cloud.trace_v1.services.trace_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.trace_v1.types import trace
 from google.oauth2 import service_account
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -231,10 +207,12 @@ def test_trace_service_client_client_options(client_class, transport_class, tran
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (TraceServiceClient, transports.TraceServiceGrpcTransport, "grpc", "true"),
     (TraceServiceAsyncClient, transports.TraceServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (TraceServiceClient, transports.TraceServiceGrpcTransport, "grpc", "false"),
     (TraceServiceAsyncClient, transports.TraceServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(TraceServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(TraceServiceClient))
 @mock.patch.object(TraceServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(TraceServiceAsyncClient))
@@ -389,16 +367,21 @@ def test_list_traces(transport: str = 'grpc', request_type=trace.ListTracesReque
         # Designate an appropriate return value for the call.
         call.return_value = trace.ListTracesResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_traces(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == trace.ListTracesRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListTracesPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -421,8 +404,8 @@ def test_list_traces_empty_call():
         client.list_traces()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == trace.ListTracesRequest()
 
+        assert args[0] == trace.ListTracesRequest()
 
 @pytest.mark.asyncio
 async def test_list_traces_async(transport: str = 'grpc_asyncio', request_type=trace.ListTracesRequest):
@@ -440,18 +423,21 @@ async def test_list_traces_async(transport: str = 'grpc_asyncio', request_type=t
             type(client.transport.list_traces),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(trace.ListTracesResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(trace.ListTracesResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_traces(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == trace.ListTracesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTracesAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -471,6 +457,7 @@ def test_list_traces_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = trace.ListTracesResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_traces(
@@ -481,6 +468,7 @@ def test_list_traces_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
 
 
@@ -522,6 +510,7 @@ async def test_list_traces_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
 
 
@@ -721,6 +710,7 @@ async def test_list_traces_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_trace(transport: str = 'grpc', request_type=trace.GetTraceRequest):
     client = TraceServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -738,18 +728,25 @@ def test_get_trace(transport: str = 'grpc', request_type=trace.GetTraceRequest):
         # Designate an appropriate return value for the call.
         call.return_value = trace.Trace(
             project_id='project_id_value',
+
             trace_id='trace_id_value',
+
         )
+
         response = client.get_trace(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == trace.GetTraceRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, trace.Trace)
+
     assert response.project_id == 'project_id_value'
+
     assert response.trace_id == 'trace_id_value'
 
 
@@ -772,8 +769,8 @@ def test_get_trace_empty_call():
         client.get_trace()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == trace.GetTraceRequest()
 
+        assert args[0] == trace.GetTraceRequest()
 
 @pytest.mark.asyncio
 async def test_get_trace_async(transport: str = 'grpc_asyncio', request_type=trace.GetTraceRequest):
@@ -791,20 +788,24 @@ async def test_get_trace_async(transport: str = 'grpc_asyncio', request_type=tra
             type(client.transport.get_trace),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(trace.Trace(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(trace.Trace(
             project_id='project_id_value',
             trace_id='trace_id_value',
         ))
+
         response = await client.get_trace(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == trace.GetTraceRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, trace.Trace)
+
     assert response.project_id == 'project_id_value'
+
     assert response.trace_id == 'trace_id_value'
 
 
@@ -824,6 +825,7 @@ def test_get_trace_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = trace.Trace()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_trace(
@@ -835,7 +837,9 @@ def test_get_trace_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].trace_id == 'trace_id_value'
 
 
@@ -879,7 +883,9 @@ async def test_get_trace_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].trace_id == 'trace_id_value'
 
 
@@ -915,11 +921,13 @@ def test_patch_traces(transport: str = 'grpc', request_type=trace.PatchTracesReq
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.patch_traces(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == trace.PatchTracesRequest()
 
     # Establish that the response is the type that we expect.
@@ -945,8 +953,8 @@ def test_patch_traces_empty_call():
         client.patch_traces()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == trace.PatchTracesRequest()
 
+        assert args[0] == trace.PatchTracesRequest()
 
 @pytest.mark.asyncio
 async def test_patch_traces_async(transport: str = 'grpc_asyncio', request_type=trace.PatchTracesRequest):
@@ -965,11 +973,13 @@ async def test_patch_traces_async(transport: str = 'grpc_asyncio', request_type=
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.patch_traces(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == trace.PatchTracesRequest()
 
     # Establish that the response is the type that we expect.
@@ -992,6 +1002,7 @@ def test_patch_traces_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.patch_traces(
@@ -1003,7 +1014,9 @@ def test_patch_traces_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].traces == trace.Traces(traces=[trace.Trace(project_id='project_id_value')])
 
 
@@ -1047,7 +1060,9 @@ async def test_patch_traces_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].traces == trace.Traces(traces=[trace.Trace(project_id='project_id_value')])
 
 
@@ -1107,6 +1122,7 @@ def test_transport_instance():
     client = TraceServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.TraceServiceGrpcTransport(
@@ -1121,6 +1137,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.TraceServiceGrpcTransport,
     transports.TraceServiceGrpcAsyncIOTransport,
@@ -1132,6 +1149,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = TraceServiceClient(
@@ -1141,6 +1159,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.TraceServiceGrpcTransport,
     )
+
 
 def test_trace_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1165,33 +1184,15 @@ def test_trace_service_base_transport():
         'list_traces',
         'get_trace',
         'patch_traces',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_trace_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.trace_v1.services.trace_service.transports.TraceServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.TraceServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/trace.append',            'https://www.googleapis.com/auth/trace.readonly',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_trace_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.trace_v1.services.trace_service.transports.TraceServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.trace_v1.services.trace_service.transports.TraceServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.TraceServiceTransport(
@@ -1209,186 +1210,37 @@ def test_trace_service_base_transport_with_credentials_file_old_google_auth():
 
 def test_trace_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.trace_v1.services.trace_service.transports.TraceServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.trace_v1.services.trace_service.transports.TraceServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.TraceServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_trace_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         TraceServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/trace.append',
-            'https://www.googleapis.com/auth/trace.readonly',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_trace_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        TraceServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/trace.append',                'https://www.googleapis.com/auth/trace.readonly',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.TraceServiceGrpcTransport,
-        transports.TraceServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_trace_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/trace.append',                'https://www.googleapis.com/auth/trace.readonly',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.TraceServiceGrpcTransport,
-        transports.TraceServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_trace_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
             'https://www.googleapis.com/auth/trace.append',
-            'https://www.googleapis.com/auth/trace.readonly',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/trace.readonly',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.TraceServiceGrpcTransport, grpc_helpers),
-        (transports.TraceServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_trace_service_transport_create_channel(transport_class, grpc_helpers):
+def test_trace_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.TraceServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/trace.append',
+            'https://www.googleapis.com/auth/trace.readonly',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "cloudtrace.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/trace.append',                'https://www.googleapis.com/auth/trace.readonly',),
-            scopes=["1", "2"],
-            default_host="cloudtrace.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.TraceServiceGrpcTransport, grpc_helpers),
-        (transports.TraceServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_trace_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "cloudtrace.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/trace.append',                'https://www.googleapis.com/auth/trace.readonly',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.TraceServiceGrpcTransport, grpc_helpers),
-        (transports.TraceServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_trace_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "cloudtrace.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -1452,6 +1304,7 @@ def test_trace_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='cloudtrace.googleapis.com:8000'),
     )
     assert client.transport._host == 'cloudtrace.googleapis.com:8000'
+
 
 def test_trace_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1573,6 +1426,7 @@ def test_trace_service_transport_channel_mtls_with_adc(
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = TraceServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1580,7 +1434,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = TraceServiceClient.common_billing_account_path(**expected)
 
@@ -1590,6 +1445,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = TraceServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1597,7 +1453,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = TraceServiceClient.common_folder_path(**expected)
 
@@ -1607,6 +1464,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = TraceServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1614,7 +1472,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = TraceServiceClient.common_organization_path(**expected)
 
@@ -1624,6 +1483,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = TraceServiceClient.common_project_path(project)
     assert expected == actual
@@ -1631,7 +1491,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = TraceServiceClient.common_project_path(**expected)
 
@@ -1642,6 +1503,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = TraceServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1649,8 +1511,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = TraceServiceClient.common_location_path(**expected)
 

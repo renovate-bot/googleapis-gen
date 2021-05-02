@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServiceMonitoringServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetServiceLevelObjectiveAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetServiceLevelObjectiveAsync()
         {
-            // Snippet: GetServiceLevelObjectiveAsync(string, CallSettings)
-            // Additional: GetServiceLevelObjectiveAsync(string, CancellationToken)
             // Create client
             ServiceMonitoringServiceClient serviceMonitoringServiceClient = await ServiceMonitoringServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/services/[SERVICE]/serviceLevelObjectives/[SERVICE_LEVEL_OBJECTIVE]";
             // Make the request
             ServiceLevelObjective response = await serviceMonitoringServiceClient.GetServiceLevelObjectiveAsync(name);
-            // End snippet
         }
     }
 }

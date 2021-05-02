@@ -18,15 +18,18 @@ namespace Google.Cloud.Spanner.Admin.Instance.V1.Snippets
 {
     using Google.Api.Gax;
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.Spanner.Admin.Instance.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for SetIamPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SetIamPolicyResourceNamesAsync()
         {
-            // Snippet: SetIamPolicyAsync(IResourceName, Policy, CallSettings)
-            // Additional: SetIamPolicyAsync(IResourceName, Policy, CancellationToken)
             // Create client
             InstanceAdminClient instanceAdminClient = await InstanceAdminClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Spanner.Admin.Instance.V1.Snippets
             Policy policy = new Policy();
             // Make the request
             Policy response = await instanceAdminClient.SetIamPolicyAsync(resource, policy);
-            // End snippet
         }
     }
 }

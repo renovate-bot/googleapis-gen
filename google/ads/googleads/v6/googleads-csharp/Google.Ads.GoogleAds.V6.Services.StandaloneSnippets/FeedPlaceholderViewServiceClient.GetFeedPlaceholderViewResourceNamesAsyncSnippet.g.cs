@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFeedPlaceholderViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetFeedPlaceholderViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetFeedPlaceholderViewResourceNamesAsync()
         {
-            // Snippet: GetFeedPlaceholderViewAsync(FeedPlaceholderViewName, CallSettings)
-            // Additional: GetFeedPlaceholderViewAsync(FeedPlaceholderViewName, CancellationToken)
             // Create client
             FeedPlaceholderViewServiceClient feedPlaceholderViewServiceClient = await FeedPlaceholderViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             FeedPlaceholderViewName resourceName = FeedPlaceholderViewName.FromCustomerPlaceholderType("[CUSTOMER_ID]", "[PLACEHOLDER_TYPE]");
             // Make the request
             FeedPlaceholderView response = await feedPlaceholderViewServiceClient.GetFeedPlaceholderViewAsync(resourceName);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -36,33 +36,9 @@ from google.cloud.resourcesettings_v1.services.resource_settings_service import 
 from google.cloud.resourcesettings_v1.services.resource_settings_service import ResourceSettingsServiceClient
 from google.cloud.resourcesettings_v1.services.resource_settings_service import pagers
 from google.cloud.resourcesettings_v1.services.resource_settings_service import transports
-from google.cloud.resourcesettings_v1.services.resource_settings_service.transports.base import _API_CORE_VERSION
-from google.cloud.resourcesettings_v1.services.resource_settings_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.resourcesettings_v1.types import resource_settings
 from google.oauth2 import service_account
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -230,10 +206,12 @@ def test_resource_settings_service_client_client_options(client_class, transport
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (ResourceSettingsServiceClient, transports.ResourceSettingsServiceGrpcTransport, "grpc", "true"),
     (ResourceSettingsServiceAsyncClient, transports.ResourceSettingsServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (ResourceSettingsServiceClient, transports.ResourceSettingsServiceGrpcTransport, "grpc", "false"),
     (ResourceSettingsServiceAsyncClient, transports.ResourceSettingsServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(ResourceSettingsServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ResourceSettingsServiceClient))
 @mock.patch.object(ResourceSettingsServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ResourceSettingsServiceAsyncClient))
@@ -388,16 +366,21 @@ def test_list_settings(transport: str = 'grpc', request_type=resource_settings.L
         # Designate an appropriate return value for the call.
         call.return_value = resource_settings.ListSettingsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_settings(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == resource_settings.ListSettingsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListSettingsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -420,8 +403,8 @@ def test_list_settings_empty_call():
         client.list_settings()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == resource_settings.ListSettingsRequest()
 
+        assert args[0] == resource_settings.ListSettingsRequest()
 
 @pytest.mark.asyncio
 async def test_list_settings_async(transport: str = 'grpc_asyncio', request_type=resource_settings.ListSettingsRequest):
@@ -439,18 +422,21 @@ async def test_list_settings_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.list_settings),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.ListSettingsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.ListSettingsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_settings(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == resource_settings.ListSettingsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListSettingsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -467,7 +453,6 @@ def test_list_settings_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = resource_settings.ListSettingsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -475,6 +460,7 @@ def test_list_settings_field_headers():
             type(client.transport.list_settings),
             '__call__') as call:
         call.return_value = resource_settings.ListSettingsResponse()
+
         client.list_settings(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -499,7 +485,6 @@ async def test_list_settings_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = resource_settings.ListSettingsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -507,6 +492,7 @@ async def test_list_settings_field_headers_async():
             type(client.transport.list_settings),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.ListSettingsResponse())
+
         await client.list_settings(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -533,6 +519,7 @@ def test_list_settings_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resource_settings.ListSettingsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_settings(
@@ -543,6 +530,7 @@ def test_list_settings_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -584,6 +572,7 @@ async def test_list_settings_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -788,6 +777,7 @@ async def test_list_settings_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_setting(transport: str = 'grpc', request_type=resource_settings.GetSettingRequest):
     client = ResourceSettingsServiceClient(
         credentials=credentials.AnonymousCredentials(),
@@ -805,18 +795,25 @@ def test_get_setting(transport: str = 'grpc', request_type=resource_settings.Get
         # Designate an appropriate return value for the call.
         call.return_value = resource_settings.Setting(
             name='name_value',
+
             etag='etag_value',
+
         )
+
         response = client.get_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == resource_settings.GetSettingRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, resource_settings.Setting)
+
     assert response.name == 'name_value'
+
     assert response.etag == 'etag_value'
 
 
@@ -839,8 +836,8 @@ def test_get_setting_empty_call():
         client.get_setting()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == resource_settings.GetSettingRequest()
 
+        assert args[0] == resource_settings.GetSettingRequest()
 
 @pytest.mark.asyncio
 async def test_get_setting_async(transport: str = 'grpc_asyncio', request_type=resource_settings.GetSettingRequest):
@@ -858,20 +855,24 @@ async def test_get_setting_async(transport: str = 'grpc_asyncio', request_type=r
             type(client.transport.get_setting),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.Setting(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.Setting(
             name='name_value',
             etag='etag_value',
         ))
+
         response = await client.get_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == resource_settings.GetSettingRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resource_settings.Setting)
+
     assert response.name == 'name_value'
+
     assert response.etag == 'etag_value'
 
 
@@ -888,7 +889,6 @@ def test_get_setting_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = resource_settings.GetSettingRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -896,6 +896,7 @@ def test_get_setting_field_headers():
             type(client.transport.get_setting),
             '__call__') as call:
         call.return_value = resource_settings.Setting()
+
         client.get_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -920,7 +921,6 @@ async def test_get_setting_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = resource_settings.GetSettingRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -928,6 +928,7 @@ async def test_get_setting_field_headers_async():
             type(client.transport.get_setting),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.Setting())
+
         await client.get_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -954,6 +955,7 @@ def test_get_setting_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resource_settings.Setting()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_setting(
@@ -964,6 +966,7 @@ def test_get_setting_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1005,6 +1008,7 @@ async def test_get_setting_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1040,18 +1044,25 @@ def test_update_setting(transport: str = 'grpc', request_type=resource_settings.
         # Designate an appropriate return value for the call.
         call.return_value = resource_settings.Setting(
             name='name_value',
+
             etag='etag_value',
+
         )
+
         response = client.update_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == resource_settings.UpdateSettingRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, resource_settings.Setting)
+
     assert response.name == 'name_value'
+
     assert response.etag == 'etag_value'
 
 
@@ -1074,8 +1085,8 @@ def test_update_setting_empty_call():
         client.update_setting()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == resource_settings.UpdateSettingRequest()
 
+        assert args[0] == resource_settings.UpdateSettingRequest()
 
 @pytest.mark.asyncio
 async def test_update_setting_async(transport: str = 'grpc_asyncio', request_type=resource_settings.UpdateSettingRequest):
@@ -1093,20 +1104,24 @@ async def test_update_setting_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.update_setting),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.Setting(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.Setting(
             name='name_value',
             etag='etag_value',
         ))
+
         response = await client.update_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == resource_settings.UpdateSettingRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resource_settings.Setting)
+
     assert response.name == 'name_value'
+
     assert response.etag == 'etag_value'
 
 
@@ -1123,7 +1138,6 @@ def test_update_setting_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = resource_settings.UpdateSettingRequest()
-
     request.setting.name = 'setting.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1131,6 +1145,7 @@ def test_update_setting_field_headers():
             type(client.transport.update_setting),
             '__call__') as call:
         call.return_value = resource_settings.Setting()
+
         client.update_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1155,7 +1170,6 @@ async def test_update_setting_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = resource_settings.UpdateSettingRequest()
-
     request.setting.name = 'setting.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1163,6 +1177,7 @@ async def test_update_setting_field_headers_async():
             type(client.transport.update_setting),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource_settings.Setting())
+
         await client.update_setting(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1218,6 +1233,7 @@ def test_transport_instance():
     client = ResourceSettingsServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ResourceSettingsServiceGrpcTransport(
@@ -1232,6 +1248,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.ResourceSettingsServiceGrpcTransport,
     transports.ResourceSettingsServiceGrpcAsyncIOTransport,
@@ -1243,6 +1260,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = ResourceSettingsServiceClient(
@@ -1252,6 +1270,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.ResourceSettingsServiceGrpcTransport,
     )
+
 
 def test_resource_settings_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1276,33 +1295,15 @@ def test_resource_settings_service_base_transport():
         'list_settings',
         'get_setting',
         'update_setting',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_resource_settings_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.resourcesettings_v1.services.resource_settings_service.transports.ResourceSettingsServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.ResourceSettingsServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_resource_settings_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.resourcesettings_v1.services.resource_settings_service.transports.ResourceSettingsServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.resourcesettings_v1.services.resource_settings_service.transports.ResourceSettingsServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ResourceSettingsServiceTransport(
@@ -1318,182 +1319,33 @@ def test_resource_settings_service_base_transport_with_credentials_file_old_goog
 
 def test_resource_settings_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.resourcesettings_v1.services.resource_settings_service.transports.ResourceSettingsServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.resourcesettings_v1.services.resource_settings_service.transports.ResourceSettingsServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ResourceSettingsServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_resource_settings_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         ResourceSettingsServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_resource_settings_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        ResourceSettingsServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ResourceSettingsServiceGrpcTransport,
-        transports.ResourceSettingsServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_resource_settings_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ResourceSettingsServiceGrpcTransport,
-        transports.ResourceSettingsServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_resource_settings_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ResourceSettingsServiceGrpcTransport, grpc_helpers),
-        (transports.ResourceSettingsServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_resource_settings_service_transport_create_channel(transport_class, grpc_helpers):
+def test_resource_settings_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.ResourceSettingsServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "resourcesettings.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="resourcesettings.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ResourceSettingsServiceGrpcTransport, grpc_helpers),
-        (transports.ResourceSettingsServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_resource_settings_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "resourcesettings.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ResourceSettingsServiceGrpcTransport, grpc_helpers),
-        (transports.ResourceSettingsServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_resource_settings_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "resourcesettings.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -1555,6 +1407,7 @@ def test_resource_settings_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='resourcesettings.googleapis.com:8000'),
     )
     assert client.transport._host == 'resourcesettings.googleapis.com:8000'
+
 
 def test_resource_settings_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1673,6 +1526,7 @@ def test_resource_settings_service_transport_channel_mtls_with_adc(
 def test_setting_path():
     project_number = "squid"
     setting_name = "clam"
+
     expected = "projects/{project_number}/settings/{setting_name}".format(project_number=project_number, setting_name=setting_name, )
     actual = ResourceSettingsServiceClient.setting_path(project_number, setting_name)
     assert expected == actual
@@ -1680,8 +1534,9 @@ def test_setting_path():
 
 def test_parse_setting_path():
     expected = {
-        "project_number": "whelk",
-        "setting_name": "octopus",
+    "project_number": "whelk",
+    "setting_name": "octopus",
+
     }
     path = ResourceSettingsServiceClient.setting_path(**expected)
 
@@ -1691,6 +1546,7 @@ def test_parse_setting_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ResourceSettingsServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1698,7 +1554,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = ResourceSettingsServiceClient.common_billing_account_path(**expected)
 
@@ -1708,6 +1565,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ResourceSettingsServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1715,7 +1573,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = ResourceSettingsServiceClient.common_folder_path(**expected)
 
@@ -1725,6 +1584,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ResourceSettingsServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1732,7 +1592,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = ResourceSettingsServiceClient.common_organization_path(**expected)
 
@@ -1742,6 +1603,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = ResourceSettingsServiceClient.common_project_path(project)
     assert expected == actual
@@ -1749,7 +1611,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = ResourceSettingsServiceClient.common_project_path(**expected)
 
@@ -1760,6 +1623,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ResourceSettingsServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1767,8 +1631,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = ResourceSettingsServiceClient.common_location_path(**expected)
 

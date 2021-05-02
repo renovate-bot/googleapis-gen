@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -291,27 +293,42 @@ def test_get_recommendation(transport: str = 'grpc', request_type=recommendation
         # Designate an appropriate return value for the call.
         call.return_value = recommendation.Recommendation(
             resource_name='resource_name_value',
+
             type_=recommendation_type.RecommendationTypeEnum.RecommendationType.UNKNOWN,
+
             campaign_budget='campaign_budget_value',
+
             campaign='campaign_value',
+
             ad_group='ad_group_value',
+
             dismissed=True,
+
             campaign_budget_recommendation=recommendation.Recommendation.CampaignBudgetRecommendation(current_budget_amount_micros=3004),
         )
+
         response = client.get_recommendation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == recommendation_service.GetRecommendationRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, recommendation.Recommendation)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.type_ == recommendation_type.RecommendationTypeEnum.RecommendationType.UNKNOWN
+
     assert response.campaign_budget == 'campaign_budget_value'
+
     assert response.campaign == 'campaign_value'
+
     assert response.ad_group == 'ad_group_value'
+
     assert response.dismissed is True
 
 
@@ -327,7 +344,6 @@ def test_get_recommendation_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = recommendation_service.GetRecommendationRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -335,6 +351,7 @@ def test_get_recommendation_field_headers():
             type(client.transport.get_recommendation),
             '__call__') as call:
         call.return_value = recommendation.Recommendation()
+
         client.get_recommendation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -361,6 +378,7 @@ def test_get_recommendation_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = recommendation.Recommendation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_recommendation(
@@ -371,6 +389,7 @@ def test_get_recommendation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -405,14 +424,17 @@ def test_apply_recommendation(transport: str = 'grpc', request_type=recommendati
         # Designate an appropriate return value for the call.
         call.return_value = recommendation_service.ApplyRecommendationResponse(
         )
+
         response = client.apply_recommendation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == recommendation_service.ApplyRecommendationRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, recommendation_service.ApplyRecommendationResponse)
 
 
@@ -428,7 +450,6 @@ def test_apply_recommendation_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = recommendation_service.ApplyRecommendationRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -436,6 +457,7 @@ def test_apply_recommendation_field_headers():
             type(client.transport.apply_recommendation),
             '__call__') as call:
         call.return_value = recommendation_service.ApplyRecommendationResponse()
+
         client.apply_recommendation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -462,6 +484,7 @@ def test_apply_recommendation_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = recommendation_service.ApplyRecommendationResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.apply_recommendation(
@@ -473,7 +496,9 @@ def test_apply_recommendation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [recommendation_service.ApplyRecommendationOperation(resource_name='resource_name_value')]
 
 
@@ -509,14 +534,17 @@ def test_dismiss_recommendation(transport: str = 'grpc', request_type=recommenda
         # Designate an appropriate return value for the call.
         call.return_value = recommendation_service.DismissRecommendationResponse(
         )
+
         response = client.dismiss_recommendation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == recommendation_service.DismissRecommendationRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, recommendation_service.DismissRecommendationResponse)
 
 
@@ -532,7 +560,6 @@ def test_dismiss_recommendation_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = recommendation_service.DismissRecommendationRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -540,6 +567,7 @@ def test_dismiss_recommendation_field_headers():
             type(client.transport.dismiss_recommendation),
             '__call__') as call:
         call.return_value = recommendation_service.DismissRecommendationResponse()
+
         client.dismiss_recommendation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -566,6 +594,7 @@ def test_dismiss_recommendation_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = recommendation_service.DismissRecommendationResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.dismiss_recommendation(
@@ -577,7 +606,9 @@ def test_dismiss_recommendation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [recommendation_service.DismissRecommendationRequest.DismissRecommendationOperation(resource_name='resource_name_value')]
 
 
@@ -661,7 +692,7 @@ def test_recommendation_service_base_transport():
         'get_recommendation',
         'apply_recommendation',
         'dismiss_recommendation',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -813,6 +844,7 @@ def test_recommendation_service_transport_channel_mtls_with_adc(
 def test_ad_path():
     customer_id = "squid"
     ad_id = "clam"
+
     expected = "customers/{customer_id}/ads/{ad_id}".format(customer_id=customer_id, ad_id=ad_id, )
     actual = RecommendationServiceClient.ad_path(customer_id, ad_id)
     assert expected == actual
@@ -820,8 +852,9 @@ def test_ad_path():
 
 def test_parse_ad_path():
     expected = {
-        "customer_id": "whelk",
-        "ad_id": "octopus",
+    "customer_id": "whelk",
+    "ad_id": "octopus",
+
     }
     path = RecommendationServiceClient.ad_path(**expected)
 
@@ -832,6 +865,7 @@ def test_parse_ad_path():
 def test_ad_group_path():
     customer_id = "oyster"
     ad_group_id = "nudibranch"
+
     expected = "customers/{customer_id}/adGroups/{ad_group_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, )
     actual = RecommendationServiceClient.ad_group_path(customer_id, ad_group_id)
     assert expected == actual
@@ -839,8 +873,9 @@ def test_ad_group_path():
 
 def test_parse_ad_group_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "ad_group_id": "mussel",
+    "customer_id": "cuttlefish",
+    "ad_group_id": "mussel",
+
     }
     path = RecommendationServiceClient.ad_group_path(**expected)
 
@@ -851,6 +886,7 @@ def test_parse_ad_group_path():
 def test_campaign_path():
     customer_id = "winkle"
     campaign_id = "nautilus"
+
     expected = "customers/{customer_id}/campaigns/{campaign_id}".format(customer_id=customer_id, campaign_id=campaign_id, )
     actual = RecommendationServiceClient.campaign_path(customer_id, campaign_id)
     assert expected == actual
@@ -858,8 +894,9 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-        "customer_id": "scallop",
-        "campaign_id": "abalone",
+    "customer_id": "scallop",
+    "campaign_id": "abalone",
+
     }
     path = RecommendationServiceClient.campaign_path(**expected)
 
@@ -870,6 +907,7 @@ def test_parse_campaign_path():
 def test_campaign_budget_path():
     customer_id = "squid"
     campaign_budget_id = "clam"
+
     expected = "customers/{customer_id}/campaignBudgets/{campaign_budget_id}".format(customer_id=customer_id, campaign_budget_id=campaign_budget_id, )
     actual = RecommendationServiceClient.campaign_budget_path(customer_id, campaign_budget_id)
     assert expected == actual
@@ -877,8 +915,9 @@ def test_campaign_budget_path():
 
 def test_parse_campaign_budget_path():
     expected = {
-        "customer_id": "whelk",
-        "campaign_budget_id": "octopus",
+    "customer_id": "whelk",
+    "campaign_budget_id": "octopus",
+
     }
     path = RecommendationServiceClient.campaign_budget_path(**expected)
 
@@ -889,6 +928,7 @@ def test_parse_campaign_budget_path():
 def test_recommendation_path():
     customer_id = "oyster"
     recommendation_id = "nudibranch"
+
     expected = "customers/{customer_id}/recommendations/{recommendation_id}".format(customer_id=customer_id, recommendation_id=recommendation_id, )
     actual = RecommendationServiceClient.recommendation_path(customer_id, recommendation_id)
     assert expected == actual
@@ -896,8 +936,9 @@ def test_recommendation_path():
 
 def test_parse_recommendation_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "recommendation_id": "mussel",
+    "customer_id": "cuttlefish",
+    "recommendation_id": "mussel",
+
     }
     path = RecommendationServiceClient.recommendation_path(**expected)
 
@@ -907,6 +948,7 @@ def test_parse_recommendation_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = RecommendationServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -914,7 +956,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nautilus",
+    "billing_account": "nautilus",
+
     }
     path = RecommendationServiceClient.common_billing_account_path(**expected)
 
@@ -924,6 +967,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = RecommendationServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -931,7 +975,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "abalone",
+    "folder": "abalone",
+
     }
     path = RecommendationServiceClient.common_folder_path(**expected)
 
@@ -941,6 +986,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = RecommendationServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -948,7 +994,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "clam",
+    "organization": "clam",
+
     }
     path = RecommendationServiceClient.common_organization_path(**expected)
 
@@ -958,6 +1005,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
+
     expected = "projects/{project}".format(project=project, )
     actual = RecommendationServiceClient.common_project_path(project)
     assert expected == actual
@@ -965,7 +1013,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "octopus",
+    "project": "octopus",
+
     }
     path = RecommendationServiceClient.common_project_path(**expected)
 
@@ -976,6 +1025,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = RecommendationServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -983,8 +1033,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "cuttlefish",
-        "location": "mussel",
+    "project": "cuttlefish",
+    "location": "mussel",
+
     }
     path = RecommendationServiceClient.common_location_path(**expected)
 

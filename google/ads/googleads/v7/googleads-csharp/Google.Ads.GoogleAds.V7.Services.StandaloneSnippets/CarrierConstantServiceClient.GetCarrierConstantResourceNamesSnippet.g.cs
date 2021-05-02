@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedCarrierConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCarrierConstant</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCarrierConstantResourceNames()
         {
-            // Snippet: GetCarrierConstant(CarrierConstantName, CallSettings)
             // Create client
             CarrierConstantServiceClient carrierConstantServiceClient = CarrierConstantServiceClient.Create();
             // Initialize request argument(s)
             CarrierConstantName resourceName = CarrierConstantName.FromCriterion("[CRITERION_ID]");
             // Make the request
             CarrierConstant response = carrierConstantServiceClient.GetCarrierConstant(resourceName);
-            // End snippet
         }
     }
 }

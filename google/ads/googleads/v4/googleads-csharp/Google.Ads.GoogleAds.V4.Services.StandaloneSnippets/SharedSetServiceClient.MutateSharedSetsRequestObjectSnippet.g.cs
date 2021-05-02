@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
+
     public sealed partial class GeneratedSharedSetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateSharedSets</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateSharedSetsRequestObject()
         {
-            // Snippet: MutateSharedSets(MutateSharedSetsRequest, CallSettings)
             // Create client
             SharedSetServiceClient sharedSetServiceClient = SharedSetServiceClient.Create();
             // Initialize request argument(s)
@@ -37,7 +42,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             MutateSharedSetsResponse response = sharedSetServiceClient.MutateSharedSets(request);
-            // End snippet
         }
     }
 }

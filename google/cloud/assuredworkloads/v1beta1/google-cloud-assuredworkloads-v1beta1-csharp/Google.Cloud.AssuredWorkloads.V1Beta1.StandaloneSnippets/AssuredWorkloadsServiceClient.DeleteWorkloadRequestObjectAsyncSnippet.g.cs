@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.AssuredWorkloads.V1Beta1.Snippets
 {
+    using Google.Cloud.AssuredWorkloads.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAssuredWorkloadsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteWorkloadAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteWorkloadRequestObjectAsync()
         {
-            // Snippet: DeleteWorkloadAsync(DeleteWorkloadRequest, CallSettings)
-            // Additional: DeleteWorkloadAsync(DeleteWorkloadRequest, CancellationToken)
             // Create client
             AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = await AssuredWorkloadsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.AssuredWorkloads.V1Beta1.Snippets
             };
             // Make the request
             await assuredWorkloadsServiceClient.DeleteWorkloadAsync(request);
-            // End snippet
         }
     }
 }

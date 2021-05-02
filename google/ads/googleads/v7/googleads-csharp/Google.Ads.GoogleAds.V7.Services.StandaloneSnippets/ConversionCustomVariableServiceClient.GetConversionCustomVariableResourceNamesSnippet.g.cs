@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedConversionCustomVariableServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetConversionCustomVariable</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetConversionCustomVariableResourceNames()
         {
-            // Snippet: GetConversionCustomVariable(ConversionCustomVariableName, CallSettings)
             // Create client
             ConversionCustomVariableServiceClient conversionCustomVariableServiceClient = ConversionCustomVariableServiceClient.Create();
             // Initialize request argument(s)
             ConversionCustomVariableName resourceName = ConversionCustomVariableName.FromCustomerConversionCustomVariable("[CUSTOMER_ID]", "[CONVERSION_CUSTOM_VARIABLE_ID]");
             // Make the request
             ConversionCustomVariable response = conversionCustomVariableServiceClient.GetConversionCustomVariable(resourceName);
-            // End snippet
         }
     }
 }

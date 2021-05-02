@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1Beta1;
+
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateEntry</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateEntry()
         {
-            // Snippet: CreateEntry(string, string, Entry, CallSettings)
             // Create client
             DataCatalogClient dataCatalogClient = DataCatalogClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             Entry entry = new Entry();
             // Make the request
             Entry response = dataCatalogClient.CreateEntry(parent, entryId, entry);
-            // End snippet
         }
     }
 }

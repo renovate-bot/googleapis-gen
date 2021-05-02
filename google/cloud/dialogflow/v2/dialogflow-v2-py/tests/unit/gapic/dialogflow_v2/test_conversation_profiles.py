@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -36,8 +36,6 @@ from google.cloud.dialogflow_v2.services.conversation_profiles import Conversati
 from google.cloud.dialogflow_v2.services.conversation_profiles import ConversationProfilesClient
 from google.cloud.dialogflow_v2.services.conversation_profiles import pagers
 from google.cloud.dialogflow_v2.services.conversation_profiles import transports
-from google.cloud.dialogflow_v2.services.conversation_profiles.transports.base import _API_CORE_VERSION
-from google.cloud.dialogflow_v2.services.conversation_profiles.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.dialogflow_v2.types import audio_config
 from google.cloud.dialogflow_v2.types import conversation_profile
 from google.cloud.dialogflow_v2.types import conversation_profile as gcd_conversation_profile
@@ -45,28 +43,6 @@ from google.oauth2 import service_account
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -234,10 +210,12 @@ def test_conversation_profiles_client_client_options(client_class, transport_cla
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (ConversationProfilesClient, transports.ConversationProfilesGrpcTransport, "grpc", "true"),
     (ConversationProfilesAsyncClient, transports.ConversationProfilesGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (ConversationProfilesClient, transports.ConversationProfilesGrpcTransport, "grpc", "false"),
     (ConversationProfilesAsyncClient, transports.ConversationProfilesGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(ConversationProfilesClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ConversationProfilesClient))
 @mock.patch.object(ConversationProfilesAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ConversationProfilesAsyncClient))
@@ -392,16 +370,21 @@ def test_list_conversation_profiles(transport: str = 'grpc', request_type=conver
         # Designate an appropriate return value for the call.
         call.return_value = conversation_profile.ListConversationProfilesResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_conversation_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == conversation_profile.ListConversationProfilesRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListConversationProfilesPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -424,8 +407,8 @@ def test_list_conversation_profiles_empty_call():
         client.list_conversation_profiles()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == conversation_profile.ListConversationProfilesRequest()
 
+        assert args[0] == conversation_profile.ListConversationProfilesRequest()
 
 @pytest.mark.asyncio
 async def test_list_conversation_profiles_async(transport: str = 'grpc_asyncio', request_type=conversation_profile.ListConversationProfilesRequest):
@@ -443,18 +426,21 @@ async def test_list_conversation_profiles_async(transport: str = 'grpc_asyncio',
             type(client.transport.list_conversation_profiles),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(conversation_profile.ListConversationProfilesResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(conversation_profile.ListConversationProfilesResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_conversation_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == conversation_profile.ListConversationProfilesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListConversationProfilesAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -471,7 +457,6 @@ def test_list_conversation_profiles_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = conversation_profile.ListConversationProfilesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -479,6 +464,7 @@ def test_list_conversation_profiles_field_headers():
             type(client.transport.list_conversation_profiles),
             '__call__') as call:
         call.return_value = conversation_profile.ListConversationProfilesResponse()
+
         client.list_conversation_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -503,7 +489,6 @@ async def test_list_conversation_profiles_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = conversation_profile.ListConversationProfilesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -511,6 +496,7 @@ async def test_list_conversation_profiles_field_headers_async():
             type(client.transport.list_conversation_profiles),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(conversation_profile.ListConversationProfilesResponse())
+
         await client.list_conversation_profiles(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -537,6 +523,7 @@ def test_list_conversation_profiles_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = conversation_profile.ListConversationProfilesResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_conversation_profiles(
@@ -547,6 +534,7 @@ def test_list_conversation_profiles_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -588,6 +576,7 @@ async def test_list_conversation_profiles_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -792,6 +781,7 @@ async def test_list_conversation_profiles_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_conversation_profile(transport: str = 'grpc', request_type=conversation_profile.GetConversationProfileRequest):
     client = ConversationProfilesClient(
         credentials=credentials.AnonymousCredentials(),
@@ -809,20 +799,29 @@ def test_get_conversation_profile(transport: str = 'grpc', request_type=conversa
         # Designate an appropriate return value for the call.
         call.return_value = conversation_profile.ConversationProfile(
             name='name_value',
+
             display_name='display_name_value',
+
             language_code='language_code_value',
+
         )
+
         response = client.get_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == conversation_profile.GetConversationProfileRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, conversation_profile.ConversationProfile)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.language_code == 'language_code_value'
 
 
@@ -845,8 +844,8 @@ def test_get_conversation_profile_empty_call():
         client.get_conversation_profile()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == conversation_profile.GetConversationProfileRequest()
 
+        assert args[0] == conversation_profile.GetConversationProfileRequest()
 
 @pytest.mark.asyncio
 async def test_get_conversation_profile_async(transport: str = 'grpc_asyncio', request_type=conversation_profile.GetConversationProfileRequest):
@@ -864,22 +863,27 @@ async def test_get_conversation_profile_async(transport: str = 'grpc_asyncio', r
             type(client.transport.get_conversation_profile),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(conversation_profile.ConversationProfile(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(conversation_profile.ConversationProfile(
             name='name_value',
             display_name='display_name_value',
             language_code='language_code_value',
         ))
+
         response = await client.get_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == conversation_profile.GetConversationProfileRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, conversation_profile.ConversationProfile)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.language_code == 'language_code_value'
 
 
@@ -896,7 +900,6 @@ def test_get_conversation_profile_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = conversation_profile.GetConversationProfileRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -904,6 +907,7 @@ def test_get_conversation_profile_field_headers():
             type(client.transport.get_conversation_profile),
             '__call__') as call:
         call.return_value = conversation_profile.ConversationProfile()
+
         client.get_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -928,7 +932,6 @@ async def test_get_conversation_profile_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = conversation_profile.GetConversationProfileRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -936,6 +939,7 @@ async def test_get_conversation_profile_field_headers_async():
             type(client.transport.get_conversation_profile),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(conversation_profile.ConversationProfile())
+
         await client.get_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -962,6 +966,7 @@ def test_get_conversation_profile_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = conversation_profile.ConversationProfile()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_conversation_profile(
@@ -972,6 +977,7 @@ def test_get_conversation_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1013,6 +1019,7 @@ async def test_get_conversation_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1048,20 +1055,29 @@ def test_create_conversation_profile(transport: str = 'grpc', request_type=gcd_c
         # Designate an appropriate return value for the call.
         call.return_value = gcd_conversation_profile.ConversationProfile(
             name='name_value',
+
             display_name='display_name_value',
+
             language_code='language_code_value',
+
         )
+
         response = client.create_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcd_conversation_profile.CreateConversationProfileRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gcd_conversation_profile.ConversationProfile)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.language_code == 'language_code_value'
 
 
@@ -1084,8 +1100,8 @@ def test_create_conversation_profile_empty_call():
         client.create_conversation_profile()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gcd_conversation_profile.CreateConversationProfileRequest()
 
+        assert args[0] == gcd_conversation_profile.CreateConversationProfileRequest()
 
 @pytest.mark.asyncio
 async def test_create_conversation_profile_async(transport: str = 'grpc_asyncio', request_type=gcd_conversation_profile.CreateConversationProfileRequest):
@@ -1103,22 +1119,27 @@ async def test_create_conversation_profile_async(transport: str = 'grpc_asyncio'
             type(client.transport.create_conversation_profile),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gcd_conversation_profile.ConversationProfile(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcd_conversation_profile.ConversationProfile(
             name='name_value',
             display_name='display_name_value',
             language_code='language_code_value',
         ))
+
         response = await client.create_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcd_conversation_profile.CreateConversationProfileRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcd_conversation_profile.ConversationProfile)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.language_code == 'language_code_value'
 
 
@@ -1135,7 +1156,6 @@ def test_create_conversation_profile_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcd_conversation_profile.CreateConversationProfileRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1143,6 +1163,7 @@ def test_create_conversation_profile_field_headers():
             type(client.transport.create_conversation_profile),
             '__call__') as call:
         call.return_value = gcd_conversation_profile.ConversationProfile()
+
         client.create_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1167,7 +1188,6 @@ async def test_create_conversation_profile_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcd_conversation_profile.CreateConversationProfileRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1175,6 +1195,7 @@ async def test_create_conversation_profile_field_headers_async():
             type(client.transport.create_conversation_profile),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcd_conversation_profile.ConversationProfile())
+
         await client.create_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1201,6 +1222,7 @@ def test_create_conversation_profile_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gcd_conversation_profile.ConversationProfile()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_conversation_profile(
@@ -1212,7 +1234,9 @@ def test_create_conversation_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].conversation_profile == gcd_conversation_profile.ConversationProfile(name='name_value')
 
 
@@ -1256,7 +1280,9 @@ async def test_create_conversation_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].conversation_profile == gcd_conversation_profile.ConversationProfile(name='name_value')
 
 
@@ -1293,20 +1319,29 @@ def test_update_conversation_profile(transport: str = 'grpc', request_type=gcd_c
         # Designate an appropriate return value for the call.
         call.return_value = gcd_conversation_profile.ConversationProfile(
             name='name_value',
+
             display_name='display_name_value',
+
             language_code='language_code_value',
+
         )
+
         response = client.update_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcd_conversation_profile.UpdateConversationProfileRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gcd_conversation_profile.ConversationProfile)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.language_code == 'language_code_value'
 
 
@@ -1329,8 +1364,8 @@ def test_update_conversation_profile_empty_call():
         client.update_conversation_profile()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gcd_conversation_profile.UpdateConversationProfileRequest()
 
+        assert args[0] == gcd_conversation_profile.UpdateConversationProfileRequest()
 
 @pytest.mark.asyncio
 async def test_update_conversation_profile_async(transport: str = 'grpc_asyncio', request_type=gcd_conversation_profile.UpdateConversationProfileRequest):
@@ -1348,22 +1383,27 @@ async def test_update_conversation_profile_async(transport: str = 'grpc_asyncio'
             type(client.transport.update_conversation_profile),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gcd_conversation_profile.ConversationProfile(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcd_conversation_profile.ConversationProfile(
             name='name_value',
             display_name='display_name_value',
             language_code='language_code_value',
         ))
+
         response = await client.update_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcd_conversation_profile.UpdateConversationProfileRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcd_conversation_profile.ConversationProfile)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.language_code == 'language_code_value'
 
 
@@ -1380,7 +1420,6 @@ def test_update_conversation_profile_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcd_conversation_profile.UpdateConversationProfileRequest()
-
     request.conversation_profile.name = 'conversation_profile.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1388,6 +1427,7 @@ def test_update_conversation_profile_field_headers():
             type(client.transport.update_conversation_profile),
             '__call__') as call:
         call.return_value = gcd_conversation_profile.ConversationProfile()
+
         client.update_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1412,7 +1452,6 @@ async def test_update_conversation_profile_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = gcd_conversation_profile.UpdateConversationProfileRequest()
-
     request.conversation_profile.name = 'conversation_profile.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1420,6 +1459,7 @@ async def test_update_conversation_profile_field_headers_async():
             type(client.transport.update_conversation_profile),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcd_conversation_profile.ConversationProfile())
+
         await client.update_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1446,6 +1486,7 @@ def test_update_conversation_profile_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gcd_conversation_profile.ConversationProfile()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_conversation_profile(
@@ -1457,7 +1498,9 @@ def test_update_conversation_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].conversation_profile == gcd_conversation_profile.ConversationProfile(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1501,7 +1544,9 @@ async def test_update_conversation_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].conversation_profile == gcd_conversation_profile.ConversationProfile(name='name_value')
+
         assert args[0].update_mask == field_mask.FieldMask(paths=['paths_value'])
 
 
@@ -1537,11 +1582,13 @@ def test_delete_conversation_profile(transport: str = 'grpc', request_type=conve
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == conversation_profile.DeleteConversationProfileRequest()
 
     # Establish that the response is the type that we expect.
@@ -1567,8 +1614,8 @@ def test_delete_conversation_profile_empty_call():
         client.delete_conversation_profile()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == conversation_profile.DeleteConversationProfileRequest()
 
+        assert args[0] == conversation_profile.DeleteConversationProfileRequest()
 
 @pytest.mark.asyncio
 async def test_delete_conversation_profile_async(transport: str = 'grpc_asyncio', request_type=conversation_profile.DeleteConversationProfileRequest):
@@ -1587,11 +1634,13 @@ async def test_delete_conversation_profile_async(transport: str = 'grpc_asyncio'
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == conversation_profile.DeleteConversationProfileRequest()
 
     # Establish that the response is the type that we expect.
@@ -1611,7 +1660,6 @@ def test_delete_conversation_profile_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = conversation_profile.DeleteConversationProfileRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1619,6 +1667,7 @@ def test_delete_conversation_profile_field_headers():
             type(client.transport.delete_conversation_profile),
             '__call__') as call:
         call.return_value = None
+
         client.delete_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1643,7 +1692,6 @@ async def test_delete_conversation_profile_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = conversation_profile.DeleteConversationProfileRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1651,6 +1699,7 @@ async def test_delete_conversation_profile_field_headers_async():
             type(client.transport.delete_conversation_profile),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_conversation_profile(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1677,6 +1726,7 @@ def test_delete_conversation_profile_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_conversation_profile(
@@ -1687,6 +1737,7 @@ def test_delete_conversation_profile_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1728,6 +1779,7 @@ async def test_delete_conversation_profile_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1786,6 +1838,7 @@ def test_transport_instance():
     client = ConversationProfilesClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ConversationProfilesGrpcTransport(
@@ -1800,6 +1853,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.ConversationProfilesGrpcTransport,
     transports.ConversationProfilesGrpcAsyncIOTransport,
@@ -1811,6 +1865,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = ConversationProfilesClient(
@@ -1820,6 +1875,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.ConversationProfilesGrpcTransport,
     )
+
 
 def test_conversation_profiles_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1846,33 +1902,15 @@ def test_conversation_profiles_base_transport():
         'create_conversation_profile',
         'update_conversation_profile',
         'delete_conversation_profile',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_conversation_profiles_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.dialogflow_v2.services.conversation_profiles.transports.ConversationProfilesTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.ConversationProfilesTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/dialogflow',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_conversation_profiles_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.dialogflow_v2.services.conversation_profiles.transports.ConversationProfilesTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.dialogflow_v2.services.conversation_profiles.transports.ConversationProfilesTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ConversationProfilesTransport(
@@ -1889,184 +1927,35 @@ def test_conversation_profiles_base_transport_with_credentials_file_old_google_a
 
 def test_conversation_profiles_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.dialogflow_v2.services.conversation_profiles.transports.ConversationProfilesTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.dialogflow_v2.services.conversation_profiles.transports.ConversationProfilesTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ConversationProfilesTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_conversation_profiles_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         ConversationProfilesClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/dialogflow',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_conversation_profiles_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        ConversationProfilesClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ConversationProfilesGrpcTransport,
-        transports.ConversationProfilesGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_conversation_profiles_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ConversationProfilesGrpcTransport,
-        transports.ConversationProfilesGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_conversation_profiles_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/dialogflow',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/dialogflow',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ConversationProfilesGrpcTransport, grpc_helpers),
-        (transports.ConversationProfilesGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_conversation_profiles_transport_create_channel(transport_class, grpc_helpers):
+def test_conversation_profiles_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.ConversationProfilesGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/dialogflow',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "dialogflow.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            scopes=["1", "2"],
-            default_host="dialogflow.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ConversationProfilesGrpcTransport, grpc_helpers),
-        (transports.ConversationProfilesGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_conversation_profiles_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "dialogflow.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/dialogflow',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ConversationProfilesGrpcTransport, grpc_helpers),
-        (transports.ConversationProfilesGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_conversation_profiles_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "dialogflow.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -2129,6 +2018,7 @@ def test_conversation_profiles_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='dialogflow.googleapis.com:8000'),
     )
     assert client.transport._host == 'dialogflow.googleapis.com:8000'
+
 
 def test_conversation_profiles_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -2248,6 +2138,7 @@ def test_conversation_profiles_transport_channel_mtls_with_adc(
 
 def test_agent_path():
     project = "squid"
+
     expected = "projects/{project}/agent".format(project=project, )
     actual = ConversationProfilesClient.agent_path(project)
     assert expected == actual
@@ -2255,7 +2146,8 @@ def test_agent_path():
 
 def test_parse_agent_path():
     expected = {
-        "project": "clam",
+    "project": "clam",
+
     }
     path = ConversationProfilesClient.agent_path(**expected)
 
@@ -2266,6 +2158,7 @@ def test_parse_agent_path():
 def test_conversation_profile_path():
     project = "whelk"
     conversation_profile = "octopus"
+
     expected = "projects/{project}/conversationProfiles/{conversation_profile}".format(project=project, conversation_profile=conversation_profile, )
     actual = ConversationProfilesClient.conversation_profile_path(project, conversation_profile)
     assert expected == actual
@@ -2273,8 +2166,9 @@ def test_conversation_profile_path():
 
 def test_parse_conversation_profile_path():
     expected = {
-        "project": "oyster",
-        "conversation_profile": "nudibranch",
+    "project": "oyster",
+    "conversation_profile": "nudibranch",
+
     }
     path = ConversationProfilesClient.conversation_profile_path(**expected)
 
@@ -2286,6 +2180,7 @@ def test_document_path():
     project = "cuttlefish"
     knowledge_base = "mussel"
     document = "winkle"
+
     expected = "projects/{project}/knowledgeBases/{knowledge_base}/documents/{document}".format(project=project, knowledge_base=knowledge_base, document=document, )
     actual = ConversationProfilesClient.document_path(project, knowledge_base, document)
     assert expected == actual
@@ -2293,9 +2188,10 @@ def test_document_path():
 
 def test_parse_document_path():
     expected = {
-        "project": "nautilus",
-        "knowledge_base": "scallop",
-        "document": "abalone",
+    "project": "nautilus",
+    "knowledge_base": "scallop",
+    "document": "abalone",
+
     }
     path = ConversationProfilesClient.document_path(**expected)
 
@@ -2306,6 +2202,7 @@ def test_parse_document_path():
 def test_knowledge_base_path():
     project = "squid"
     knowledge_base = "clam"
+
     expected = "projects/{project}/knowledgeBases/{knowledge_base}".format(project=project, knowledge_base=knowledge_base, )
     actual = ConversationProfilesClient.knowledge_base_path(project, knowledge_base)
     assert expected == actual
@@ -2313,8 +2210,9 @@ def test_knowledge_base_path():
 
 def test_parse_knowledge_base_path():
     expected = {
-        "project": "whelk",
-        "knowledge_base": "octopus",
+    "project": "whelk",
+    "knowledge_base": "octopus",
+
     }
     path = ConversationProfilesClient.knowledge_base_path(**expected)
 
@@ -2324,6 +2222,7 @@ def test_parse_knowledge_base_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ConversationProfilesClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2331,7 +2230,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = ConversationProfilesClient.common_billing_account_path(**expected)
 
@@ -2341,6 +2241,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ConversationProfilesClient.common_folder_path(folder)
     assert expected == actual
@@ -2348,7 +2249,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = ConversationProfilesClient.common_folder_path(**expected)
 
@@ -2358,6 +2260,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ConversationProfilesClient.common_organization_path(organization)
     assert expected == actual
@@ -2365,7 +2268,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = ConversationProfilesClient.common_organization_path(**expected)
 
@@ -2375,6 +2279,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = ConversationProfilesClient.common_project_path(project)
     assert expected == actual
@@ -2382,7 +2287,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = ConversationProfilesClient.common_project_path(**expected)
 
@@ -2393,6 +2299,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ConversationProfilesClient.common_location_path(project, location)
     assert expected == actual
@@ -2400,8 +2307,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = ConversationProfilesClient.common_location_path(**expected)
 

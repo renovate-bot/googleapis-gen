@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Security.PrivateCA.V1.Snippets
 {
+    using Google.Cloud.Security.PrivateCA.V1;
+
     public sealed partial class GeneratedCertificateAuthorityServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for FetchCertificateAuthorityCsr</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void FetchCertificateAuthorityCsrResourceNames()
         {
-            // Snippet: FetchCertificateAuthorityCsr(CertificateAuthorityName, CallSettings)
             // Create client
             CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.Create();
             // Initialize request argument(s)
             CertificateAuthorityName name = CertificateAuthorityName.FromProjectLocationCaPoolCertificateAuthority("[PROJECT]", "[LOCATION]", "[CA_POOL]", "[CERTIFICATE_AUTHORITY]");
             // Make the request
             FetchCertificateAuthorityCsrResponse response = certificateAuthorityServiceClient.FetchCertificateAuthorityCsr(name);
-            // End snippet
         }
     }
 }

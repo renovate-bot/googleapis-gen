@@ -16,12 +16,17 @@
 
 namespace Google.Iam.V1Beta.Snippets
 {
+    using Google.Iam.V1Beta;
+
     public sealed partial class GeneratedWorkloadIdentityPoolsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetWorkloadIdentityPool</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetWorkloadIdentityPoolRequestObject()
         {
-            // Snippet: GetWorkloadIdentityPool(GetWorkloadIdentityPoolRequest, CallSettings)
             // Create client
             WorkloadIdentityPoolsClient workloadIdentityPoolsClient = WorkloadIdentityPoolsClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Iam.V1Beta.Snippets
             };
             // Make the request
             WorkloadIdentityPool response = workloadIdentityPoolsClient.GetWorkloadIdentityPool(request);
-            // End snippet
         }
     }
 }

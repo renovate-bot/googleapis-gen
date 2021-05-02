@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Enums;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedBiddingStrategyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateBiddingStrategies</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateBiddingStrategiesRequestObject()
         {
-            // Snippet: MutateBiddingStrategies(MutateBiddingStrategiesRequest, CallSettings)
             // Create client
             BiddingStrategyServiceClient biddingStrategyServiceClient = BiddingStrategyServiceClient.Create();
             // Initialize request argument(s)
@@ -40,7 +44,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateBiddingStrategiesResponse response = biddingStrategyServiceClient.MutateBiddingStrategies(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.image_annotator import ImageAnnotatorClient
-
 from .types.geometry import BoundingPoly
 from .types.geometry import NormalizedVertex
 from .types.geometry import Position
@@ -61,6 +61,7 @@ from .types.text_annotation import Symbol
 from .types.text_annotation import TextAnnotation
 from .types.text_annotation import Word
 from .types.web_detection import WebDetection
+
 
 __all__ = (
     'AnnotateFileResponse',

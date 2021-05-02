@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -34,6 +36,7 @@ from google.cloud.managedidentities_v1.types import resource
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import ManagedIdentitiesServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ManagedIdentitiesServiceGrpcAsyncIOTransport
 from .client import ManagedIdentitiesServiceClient
@@ -84,14 +87,19 @@ class ManagedIdentitiesServiceAsyncClient:
 
     domain_path = staticmethod(ManagedIdentitiesServiceClient.domain_path)
     parse_domain_path = staticmethod(ManagedIdentitiesServiceClient.parse_domain_path)
+
     common_billing_account_path = staticmethod(ManagedIdentitiesServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ManagedIdentitiesServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(ManagedIdentitiesServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(ManagedIdentitiesServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(ManagedIdentitiesServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(ManagedIdentitiesServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(ManagedIdentitiesServiceClient.common_project_path)
     parse_common_project_path = staticmethod(ManagedIdentitiesServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(ManagedIdentitiesServiceClient.common_location_path)
     parse_common_location_path = staticmethod(ManagedIdentitiesServiceClient.parse_common_location_path)
 
@@ -176,6 +184,7 @@ class ManagedIdentitiesServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = ManagedIdentitiesServiceClient(
             credentials=credentials,
             transport=transport,
@@ -198,8 +207,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.CreateMicrosoftAdDomainRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateMicrosoftAdDomain][google.cloud.managedidentities.v1.CreateMicrosoftAdDomain]
             parent (:class:`str`):
                 Required. The resource project name and location using
@@ -234,6 +242,7 @@ class ManagedIdentitiesServiceAsyncClient:
                 This corresponds to the ``domain`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -261,6 +270,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if domain_name is not None:
@@ -315,8 +325,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.ResetAdminPasswordRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ResetAdminPassword][google.cloud.managedidentities.v1.ResetAdminPassword]
             name (:class:`str`):
                 Required. The domain resource name using the form:
@@ -325,6 +334,7 @@ class ManagedIdentitiesServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -349,6 +359,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -391,8 +402,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.ListDomainsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ListDomains][google.cloud.managedidentities.v1.ListDomains]
             parent (:class:`str`):
                 Required. The resource name of the domain location using
@@ -401,6 +411,7 @@ class ManagedIdentitiesServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -428,6 +439,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -479,8 +491,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.GetDomainRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [GetDomain][google.cloud.managedidentities.v1.GetDomain]
             name (:class:`str`):
                 Required. The domain resource name using the form:
@@ -489,6 +500,7 @@ class ManagedIdentitiesServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -513,6 +525,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -556,8 +569,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.UpdateDomainRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UpdateDomain][google.cloud.managedidentities.v1.UpdateDomain]
             domain (:class:`google.cloud.managedidentities_v1.types.Domain`):
                 Required. Domain message with updated fields. Only
@@ -579,6 +591,7 @@ class ManagedIdentitiesServiceAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -606,6 +619,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if domain is not None:
             request.domain = domain
         if update_mask is not None:
@@ -658,8 +672,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.DeleteDomainRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DeleteDomain][google.cloud.managedidentities.v1.DeleteDomain]
             name (:class:`str`):
                 Required. The domain resource name using the form:
@@ -668,6 +681,7 @@ class ManagedIdentitiesServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -705,6 +719,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -756,8 +771,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.AttachTrustRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AttachTrust][google.cloud.managedidentities.v1.AttachTrust]
             name (:class:`str`):
                 Required. The resource domain name, project name and
@@ -772,6 +786,7 @@ class ManagedIdentitiesServiceAsyncClient:
                 This corresponds to the ``trust`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -799,6 +814,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if trust is not None:
@@ -853,8 +869,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.ReconfigureTrustRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ReconfigureTrust][google.cloud.managedidentities.v1.ReconfigureTrust]
             name (:class:`str`):
                 Required. The resource domain name, project name and
@@ -880,6 +895,7 @@ class ManagedIdentitiesServiceAsyncClient:
                 This corresponds to the ``target_dns_ip_addresses`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -907,10 +923,12 @@ class ManagedIdentitiesServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if target_domain_name is not None:
             request.target_domain_name = target_domain_name
+
         if target_dns_ip_addresses:
             request.target_dns_ip_addresses.extend(target_dns_ip_addresses)
 
@@ -962,8 +980,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.DetachTrustRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [DetachTrust][google.cloud.managedidentities.v1.DetachTrust]
             name (:class:`str`):
                 Required. The resource domain name, project name, and
@@ -980,6 +997,7 @@ class ManagedIdentitiesServiceAsyncClient:
                 This corresponds to the ``trust`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1007,6 +1025,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if trust is not None:
@@ -1062,8 +1081,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.managedidentities_v1.types.ValidateTrustRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ValidateTrust][google.cloud.managedidentities.v1.ValidateTrust]
             name (:class:`str`):
                 Required. The resource domain name, project name, and
@@ -1080,6 +1098,7 @@ class ManagedIdentitiesServiceAsyncClient:
                 This corresponds to the ``trust`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1107,6 +1126,7 @@ class ManagedIdentitiesServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if trust is not None:
@@ -1146,6 +1166,8 @@ class ManagedIdentitiesServiceAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

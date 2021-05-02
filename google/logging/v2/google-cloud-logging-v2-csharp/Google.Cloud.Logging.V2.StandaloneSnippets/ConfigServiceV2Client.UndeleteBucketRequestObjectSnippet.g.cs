@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Logging.V2.Snippets
 {
+    using Google.Cloud.Logging.V2;
+
     public sealed partial class GeneratedConfigServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for UndeleteBucket</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UndeleteBucketRequestObject()
         {
-            // Snippet: UndeleteBucket(UndeleteBucketRequest, CallSettings)
             // Create client
             ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             };
             // Make the request
             configServiceV2Client.UndeleteBucket(request);
-            // End snippet
         }
     }
 }

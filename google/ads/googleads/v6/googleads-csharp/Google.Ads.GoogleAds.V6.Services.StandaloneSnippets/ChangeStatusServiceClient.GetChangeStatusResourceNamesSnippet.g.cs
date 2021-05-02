@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedChangeStatusServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetChangeStatus</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetChangeStatusResourceNames()
         {
-            // Snippet: GetChangeStatus(ChangeStatusName, CallSettings)
             // Create client
             ChangeStatusServiceClient changeStatusServiceClient = ChangeStatusServiceClient.Create();
             // Initialize request argument(s)
             ChangeStatusName resourceName = ChangeStatusName.FromCustomerChangeStatus("[CUSTOMER_ID]", "[CHANGE_STATUS_ID]");
             // Make the request
             ChangeStatus response = changeStatusServiceClient.GetChangeStatus(resourceName);
-            // End snippet
         }
     }
 }

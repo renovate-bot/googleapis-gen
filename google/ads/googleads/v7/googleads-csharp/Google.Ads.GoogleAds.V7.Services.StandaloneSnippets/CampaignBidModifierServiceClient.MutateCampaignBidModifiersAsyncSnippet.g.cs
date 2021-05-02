@@ -16,16 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignBidModifierServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCampaignBidModifiersAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateCampaignBidModifiersAsync()
         {
-            // Snippet: MutateCampaignBidModifiersAsync(string, IEnumerable<CampaignBidModifierOperation>, CallSettings)
-            // Additional: MutateCampaignBidModifiersAsync(string, IEnumerable<CampaignBidModifierOperation>, CancellationToken)
             // Create client
             CampaignBidModifierServiceClient campaignBidModifierServiceClient = await CampaignBidModifierServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateCampaignBidModifiersResponse response = await campaignBidModifierServiceClient.MutateCampaignBidModifiersAsync(customerId, operations);
-            // End snippet
         }
     }
 }

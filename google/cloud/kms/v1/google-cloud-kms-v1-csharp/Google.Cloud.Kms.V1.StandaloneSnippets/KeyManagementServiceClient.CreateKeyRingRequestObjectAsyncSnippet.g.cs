@@ -17,15 +17,18 @@
 namespace Google.Cloud.Kms.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Kms.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedKeyManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateKeyRingAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateKeyRingRequestObjectAsync()
         {
-            // Snippet: CreateKeyRingAsync(CreateKeyRingRequest, CallSettings)
-            // Additional: CreateKeyRingAsync(CreateKeyRingRequest, CancellationToken)
             // Create client
             KeyManagementServiceClient keyManagementServiceClient = await KeyManagementServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Kms.V1.Snippets
             };
             // Make the request
             KeyRing response = await keyManagementServiceClient.CreateKeyRingAsync(request);
-            // End snippet
         }
     }
 }

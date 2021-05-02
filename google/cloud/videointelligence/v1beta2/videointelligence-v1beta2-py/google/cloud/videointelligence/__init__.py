@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,7 +42,8 @@ from google.cloud.videointelligence_v1beta2.types.video_intelligence import Vide
 from google.cloud.videointelligence_v1beta2.types.video_intelligence import VideoContext
 from google.cloud.videointelligence_v1beta2.types.video_intelligence import VideoSegment
 
-__all__ = ('AnnotateVideoProgress',
+__all__ = (
+    'AnnotateVideoProgress',
     'AnnotateVideoRequest',
     'AnnotateVideoResponse',
     'Entity',

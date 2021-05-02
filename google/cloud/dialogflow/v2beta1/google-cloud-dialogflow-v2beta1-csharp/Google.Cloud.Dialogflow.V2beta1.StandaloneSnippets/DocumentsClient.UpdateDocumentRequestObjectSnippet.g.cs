@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedDocumentsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateDocument</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateDocumentRequestObject()
         {
-            // Snippet: UpdateDocument(UpdateDocumentRequest, CallSettings)
             // Create client
             DocumentsClient documentsClient = DocumentsClient.Create();
             // Initialize request argument(s)
@@ -51,7 +55,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
                 // If it has completed, then access the result
                 Document retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

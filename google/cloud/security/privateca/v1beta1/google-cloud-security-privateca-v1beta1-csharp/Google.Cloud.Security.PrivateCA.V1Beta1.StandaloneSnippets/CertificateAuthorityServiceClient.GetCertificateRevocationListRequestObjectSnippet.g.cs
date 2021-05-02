@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Security.PrivateCA.V1Beta1.Snippets
 {
+    using Google.Cloud.Security.PrivateCA.V1Beta1;
+
     public sealed partial class GeneratedCertificateAuthorityServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCertificateRevocationList</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCertificateRevocationListRequestObject()
         {
-            // Snippet: GetCertificateRevocationList(GetCertificateRevocationListRequest, CallSettings)
             // Create client
             CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Security.PrivateCA.V1Beta1.Snippets
             };
             // Make the request
             CertificateRevocationList response = certificateAuthorityServiceClient.GetCertificateRevocationList(request);
-            // End snippet
         }
     }
 }

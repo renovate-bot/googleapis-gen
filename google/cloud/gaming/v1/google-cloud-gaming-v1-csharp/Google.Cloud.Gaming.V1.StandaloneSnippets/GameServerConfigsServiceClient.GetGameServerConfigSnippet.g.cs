@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Gaming.V1.Snippets
 {
+    using Google.Cloud.Gaming.V1;
+
     public sealed partial class GeneratedGameServerConfigsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGameServerConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetGameServerConfig()
         {
-            // Snippet: GetGameServerConfig(string, CallSettings)
             // Create client
             GameServerConfigsServiceClient gameServerConfigsServiceClient = GameServerConfigsServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/gameServerDeployments/[DEPLOYMENT]/configs/[CONFIG]";
             // Make the request
             GameServerConfig response = gameServerConfigsServiceClient.GetGameServerConfig(name);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
+
     public sealed partial class GeneratedServiceMonitoringServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateServiceLevelObjective</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateServiceLevelObjective()
         {
-            // Snippet: UpdateServiceLevelObjective(ServiceLevelObjective, CallSettings)
             // Create client
             ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.Create();
             // Initialize request argument(s)
             ServiceLevelObjective serviceLevelObjective = new ServiceLevelObjective();
             // Make the request
             ServiceLevelObjective response = serviceMonitoringServiceClient.UpdateServiceLevelObjective(serviceLevelObjective);
-            // End snippet
         }
     }
 }

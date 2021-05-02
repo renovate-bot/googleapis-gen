@@ -18,14 +18,18 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Api.Gax;
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.ResourceManager.V3;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedFoldersClientStandaloneSnippets
     {
         /// <summary>Snippet for TestIamPermissions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void TestIamPermissionsResourceNames()
         {
-            // Snippet: TestIamPermissions(IResourceName, IEnumerable<string>, CallSettings)
             // Create client
             FoldersClient foldersClient = FoldersClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             IEnumerable<string> permissions = new string[] { "", };
             // Make the request
             TestIamPermissionsResponse response = foldersClient.TestIamPermissions(resource, permissions);
-            // End snippet
         }
     }
 }

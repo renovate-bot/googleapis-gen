@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v4.resources.types import campaign_budget
 from google.ads.googleads.v4.services.types import campaign_budget_service
+
 from .base import CampaignBudgetServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class CampaignBudgetServiceGrpcTransport(CampaignBudgetServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class CampaignBudgetServiceGrpcTransport(CampaignBudgetServiceTransport):
     def get_campaign_budget(self) -> Callable[
             [campaign_budget_service.GetCampaignBudgetRequest],
             campaign_budget.CampaignBudget]:
-        r"""Return a callable for the
-        get campaign budget
-          method over gRPC.
+        r"""Return a callable for the get campaign budget method over gRPC.
 
         Returns the requested Campaign Budget in full detail.
 
@@ -229,9 +229,7 @@ class CampaignBudgetServiceGrpcTransport(CampaignBudgetServiceTransport):
     def mutate_campaign_budgets(self) -> Callable[
             [campaign_budget_service.MutateCampaignBudgetsRequest],
             campaign_budget_service.MutateCampaignBudgetsResponse]:
-        r"""Return a callable for the
-        mutate campaign budgets
-          method over gRPC.
+        r"""Return a callable for the mutate campaign budgets method over gRPC.
 
         Creates, updates, or removes campaign budgets.
         Operation statuses are returned.

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for ListNodePools</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListNodePoolsRequestObject()
         {
-            // Snippet: ListNodePools(ListNodePoolsRequest, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
             ListNodePoolsRequest request = new ListNodePoolsRequest { Parent = "", };
             // Make the request
             ListNodePoolsResponse response = clusterManagerClient.ListNodePools(request);
-            // End snippet
         }
     }
 }

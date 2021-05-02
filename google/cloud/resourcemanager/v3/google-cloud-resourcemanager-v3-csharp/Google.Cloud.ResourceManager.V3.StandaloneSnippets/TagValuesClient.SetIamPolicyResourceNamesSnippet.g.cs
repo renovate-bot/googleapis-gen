@@ -18,13 +18,17 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Api.Gax;
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.ResourceManager.V3;
 
     public sealed partial class GeneratedTagValuesClientStandaloneSnippets
     {
         /// <summary>Snippet for SetIamPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SetIamPolicyResourceNames()
         {
-            // Snippet: SetIamPolicy(IResourceName, Policy, CallSettings)
             // Create client
             TagValuesClient tagValuesClient = TagValuesClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             Policy policy = new Policy();
             // Make the request
             Policy response = tagValuesClient.SetIamPolicy(resource, policy);
-            // End snippet
         }
     }
 }

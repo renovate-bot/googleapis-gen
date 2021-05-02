@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomerUserAccessServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomerUserAccessAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCustomerUserAccessRequestObjectAsync()
         {
-            // Snippet: GetCustomerUserAccessAsync(GetCustomerUserAccessRequest, CallSettings)
-            // Additional: GetCustomerUserAccessAsync(GetCustomerUserAccessRequest, CancellationToken)
             // Create client
             CustomerUserAccessServiceClient customerUserAccessServiceClient = await CustomerUserAccessServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             CustomerUserAccess response = await customerUserAccessServiceClient.GetCustomerUserAccessAsync(request);
-            // End snippet
         }
     }
 }

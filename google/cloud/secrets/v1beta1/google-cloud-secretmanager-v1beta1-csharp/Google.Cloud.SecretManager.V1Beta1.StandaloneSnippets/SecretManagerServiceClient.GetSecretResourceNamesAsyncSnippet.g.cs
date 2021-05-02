@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.SecretManager.V1Beta1.Snippets
 {
+    using Google.Cloud.SecretManager.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecretManagerServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSecretAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetSecretResourceNamesAsync()
         {
-            // Snippet: GetSecretAsync(SecretName, CallSettings)
-            // Additional: GetSecretAsync(SecretName, CancellationToken)
             // Create client
             SecretManagerServiceClient secretManagerServiceClient = await SecretManagerServiceClient.CreateAsync();
             // Initialize request argument(s)
             SecretName name = SecretName.FromProjectSecret("[PROJECT]", "[SECRET]");
             // Make the request
             Secret response = await secretManagerServiceClient.GetSecretAsync(name);
-            // End snippet
         }
     }
 }

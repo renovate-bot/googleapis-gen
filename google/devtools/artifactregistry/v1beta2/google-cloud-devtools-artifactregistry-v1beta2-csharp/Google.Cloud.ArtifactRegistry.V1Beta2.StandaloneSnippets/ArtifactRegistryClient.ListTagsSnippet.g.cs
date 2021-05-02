@@ -17,14 +17,18 @@
 namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.ArtifactRegistry.V1Beta2;
     using System;
 
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
     {
         /// <summary>Snippet for ListTags</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListTags()
         {
-            // Snippet: ListTags(string, string, int?, CallSettings)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.Create();
             // Initialize request argument(s)
@@ -63,7 +67,6 @@ namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

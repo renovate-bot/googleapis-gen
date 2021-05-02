@@ -18,6 +18,7 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Common;
     using Google.Ads.GoogleAds.V7.Enums;
+    using Google.Ads.GoogleAds.V7.Services;
     using Google.Api.Gax;
     using System;
     using System.Linq;
@@ -25,10 +26,13 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
 
     public sealed partial class GeneratedKeywordPlanIdeaServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for GenerateKeywordIdeas</summary>
+        /// <summary>Snippet for GenerateKeywordIdeasAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GenerateKeywordIdeasRequestObjectAsync()
         {
-            // Snippet: GenerateKeywordIdeasAsync(GenerateKeywordIdeasRequest, CallSettings)
             // Create client
             KeywordPlanIdeaServiceClient keywordPlanIdeaServiceClient = await KeywordPlanIdeaServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,11 +40,8 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             {
                 CustomerId = "",
                 KeywordAndUrlSeed = new KeywordAndUrlSeed(),
-                KeywordSeed = new KeywordSeed(),
-                UrlSeed = new UrlSeed(),
                 KeywordPlanNetwork = KeywordPlanNetworkEnum.Types.KeywordPlanNetwork.Unspecified,
                 IncludeAdultKeywords = false,
-                SiteSeed = new SiteSeed(),
                 Language = "",
                 GeoTargetConstants = { "", },
                 AggregateMetrics = new KeywordPlanAggregateMetrics(),
@@ -84,7 +85,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

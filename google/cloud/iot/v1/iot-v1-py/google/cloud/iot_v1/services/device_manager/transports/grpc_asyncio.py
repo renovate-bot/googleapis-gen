@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,15 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -31,6 +32,7 @@ from google.cloud.iot_v1.types import resources
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import DeviceManagerTransport, DEFAULT_CLIENT_INFO
 from .grpc import DeviceManagerGrpcTransport
 
@@ -81,15 +83,13 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -109,8 +109,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -168,6 +167,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -230,9 +230,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def create_device_registry(self) -> Callable[
             [device_manager.CreateDeviceRegistryRequest],
             Awaitable[resources.DeviceRegistry]]:
-        r"""Return a callable for the
-        create device registry
-          method over gRPC.
+        r"""Return a callable for the create device registry method over gRPC.
 
         Creates a device registry that contains devices.
 
@@ -258,9 +256,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def get_device_registry(self) -> Callable[
             [device_manager.GetDeviceRegistryRequest],
             Awaitable[resources.DeviceRegistry]]:
-        r"""Return a callable for the
-        get device registry
-          method over gRPC.
+        r"""Return a callable for the get device registry method over gRPC.
 
         Gets a device registry configuration.
 
@@ -286,9 +282,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def update_device_registry(self) -> Callable[
             [device_manager.UpdateDeviceRegistryRequest],
             Awaitable[resources.DeviceRegistry]]:
-        r"""Return a callable for the
-        update device registry
-          method over gRPC.
+        r"""Return a callable for the update device registry method over gRPC.
 
         Updates a device registry configuration.
 
@@ -314,9 +308,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def delete_device_registry(self) -> Callable[
             [device_manager.DeleteDeviceRegistryRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete device registry
-          method over gRPC.
+        r"""Return a callable for the delete device registry method over gRPC.
 
         Deletes a device registry configuration.
 
@@ -342,9 +334,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def list_device_registries(self) -> Callable[
             [device_manager.ListDeviceRegistriesRequest],
             Awaitable[device_manager.ListDeviceRegistriesResponse]]:
-        r"""Return a callable for the
-        list device registries
-          method over gRPC.
+        r"""Return a callable for the list device registries method over gRPC.
 
         Lists device registries.
 
@@ -370,9 +360,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def create_device(self) -> Callable[
             [device_manager.CreateDeviceRequest],
             Awaitable[resources.Device]]:
-        r"""Return a callable for the
-        create device
-          method over gRPC.
+        r"""Return a callable for the create device method over gRPC.
 
         Creates a device in a device registry.
 
@@ -398,9 +386,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def get_device(self) -> Callable[
             [device_manager.GetDeviceRequest],
             Awaitable[resources.Device]]:
-        r"""Return a callable for the
-        get device
-          method over gRPC.
+        r"""Return a callable for the get device method over gRPC.
 
         Gets details about a device.
 
@@ -426,9 +412,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def update_device(self) -> Callable[
             [device_manager.UpdateDeviceRequest],
             Awaitable[resources.Device]]:
-        r"""Return a callable for the
-        update device
-          method over gRPC.
+        r"""Return a callable for the update device method over gRPC.
 
         Updates a device.
 
@@ -454,9 +438,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def delete_device(self) -> Callable[
             [device_manager.DeleteDeviceRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete device
-          method over gRPC.
+        r"""Return a callable for the delete device method over gRPC.
 
         Deletes a device.
 
@@ -482,9 +464,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def list_devices(self) -> Callable[
             [device_manager.ListDevicesRequest],
             Awaitable[device_manager.ListDevicesResponse]]:
-        r"""Return a callable for the
-        list devices
-          method over gRPC.
+        r"""Return a callable for the list devices method over gRPC.
 
         List devices in a device registry.
 
@@ -510,9 +490,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def modify_cloud_to_device_config(self) -> Callable[
             [device_manager.ModifyCloudToDeviceConfigRequest],
             Awaitable[resources.DeviceConfig]]:
-        r"""Return a callable for the
-        modify cloud to device config
-          method over gRPC.
+        r"""Return a callable for the modify cloud to device config method over gRPC.
 
         Modifies the configuration for the device, which is
         eventually sent from the Cloud IoT Core servers. Returns
@@ -540,9 +518,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def list_device_config_versions(self) -> Callable[
             [device_manager.ListDeviceConfigVersionsRequest],
             Awaitable[device_manager.ListDeviceConfigVersionsResponse]]:
-        r"""Return a callable for the
-        list device config versions
-          method over gRPC.
+        r"""Return a callable for the list device config versions method over gRPC.
 
         Lists the last few versions of the device
         configuration in descending order (i.e.: newest first).
@@ -569,9 +545,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def list_device_states(self) -> Callable[
             [device_manager.ListDeviceStatesRequest],
             Awaitable[device_manager.ListDeviceStatesResponse]]:
-        r"""Return a callable for the
-        list device states
-          method over gRPC.
+        r"""Return a callable for the list device states method over gRPC.
 
         Lists the last few versions of the device state in
         descending order (i.e.: newest first).
@@ -598,9 +572,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the access control policy on the specified
         resource. Replaces any existing policy.
@@ -627,9 +599,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             Awaitable[gi_policy.Policy]]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the access control policy for a resource.
         Returns an empty policy if the resource exists and does
@@ -657,9 +627,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             Awaitable[iam_policy.TestIamPermissionsResponse]]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns permissions that a caller has on the specified resource.
         If the resource does not exist, this will return an empty set of
@@ -687,9 +655,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def send_command_to_device(self) -> Callable[
             [device_manager.SendCommandToDeviceRequest],
             Awaitable[device_manager.SendCommandToDeviceResponse]]:
-        r"""Return a callable for the
-        send command to device
-          method over gRPC.
+        r"""Return a callable for the send command to device method over gRPC.
 
         Sends a command to the specified device. In order for a device
         to be able to receive commands, it must:
@@ -731,9 +697,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def bind_device_to_gateway(self) -> Callable[
             [device_manager.BindDeviceToGatewayRequest],
             Awaitable[device_manager.BindDeviceToGatewayResponse]]:
-        r"""Return a callable for the
-        bind device to gateway
-          method over gRPC.
+        r"""Return a callable for the bind device to gateway method over gRPC.
 
         Associates the device with the gateway.
 
@@ -759,9 +723,7 @@ class DeviceManagerGrpcAsyncIOTransport(DeviceManagerTransport):
     def unbind_device_from_gateway(self) -> Callable[
             [device_manager.UnbindDeviceFromGatewayRequest],
             Awaitable[device_manager.UnbindDeviceFromGatewayResponse]]:
-        r"""Return a callable for the
-        unbind device from gateway
-          method over gRPC.
+        r"""Return a callable for the unbind device from gateway method over gRPC.
 
         Deletes the association between the device and the
         gateway.

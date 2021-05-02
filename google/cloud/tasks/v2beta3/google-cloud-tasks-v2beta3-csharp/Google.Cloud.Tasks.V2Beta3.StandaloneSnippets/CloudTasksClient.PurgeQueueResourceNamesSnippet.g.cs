@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Tasks.V2Beta3.Snippets
 {
+    using Google.Cloud.Tasks.V2Beta3;
+
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for PurgeQueue</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void PurgeQueueResourceNames()
         {
-            // Snippet: PurgeQueue(QueueName, CallSettings)
             // Create client
             CloudTasksClient cloudTasksClient = CloudTasksClient.Create();
             // Initialize request argument(s)
             QueueName name = QueueName.FromProjectLocationQueue("[PROJECT]", "[LOCATION]", "[QUEUE]");
             // Make the request
             Queue response = cloudTasksClient.PurgeQueue(name);
-            // End snippet
         }
     }
 }

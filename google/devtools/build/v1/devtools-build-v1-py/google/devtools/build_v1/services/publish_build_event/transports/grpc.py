@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.devtools.build_v1.types import publish_build_event
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import PublishBuildEventTransport, DEFAULT_CLIENT_INFO
 
 
@@ -75,8 +78,7 @@ class PublishBuildEventGrpcTransport(PublishBuildEventTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -215,15 +217,13 @@ class PublishBuildEventGrpcTransport(PublishBuildEventTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -237,9 +237,7 @@ class PublishBuildEventGrpcTransport(PublishBuildEventTransport):
     def publish_lifecycle_event(self) -> Callable[
             [publish_build_event.PublishLifecycleEventRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        publish lifecycle event
-          method over gRPC.
+        r"""Return a callable for the publish lifecycle event method over gRPC.
 
         Publish a build event stating the new state of a build
         (typically from the build queue). The BuildEnqueued event must
@@ -274,10 +272,8 @@ class PublishBuildEventGrpcTransport(PublishBuildEventTransport):
     def publish_build_tool_event_stream(self) -> Callable[
             [publish_build_event.PublishBuildToolEventStreamRequest],
             publish_build_event.PublishBuildToolEventStreamResponse]:
-        r"""Return a callable for the
-        publish build tool event
-        stream
-          method over gRPC.
+        r"""Return a callable for the publish build tool event
+        stream method over gRPC.
 
         Publish build tool events belonging to the same
         stream to a backend job using bidirectional streaming.

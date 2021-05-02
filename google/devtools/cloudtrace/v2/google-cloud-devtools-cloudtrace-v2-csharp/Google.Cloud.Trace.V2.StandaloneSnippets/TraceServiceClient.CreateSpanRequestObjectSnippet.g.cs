@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Trace.V2.Snippets
 {
+    using Google.Cloud.Trace.V2;
     using Google.Protobuf.WellKnownTypes;
     using Google.Rpc;
 
     public sealed partial class GeneratedTraceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateSpan</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateSpanRequestObject()
         {
-            // Snippet: CreateSpan(Span, CallSettings)
             // Create client
             TraceServiceClient traceServiceClient = TraceServiceClient.Create();
             // Initialize request argument(s)
@@ -47,7 +51,6 @@ namespace Google.Cloud.Trace.V2.Snippets
             };
             // Make the request
             Span response = traceServiceClient.CreateSpan(request);
-            // End snippet
         }
     }
 }

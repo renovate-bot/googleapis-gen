@@ -17,13 +17,17 @@
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api;
+    using Google.Cloud.Monitoring.V3;
 
     public sealed partial class GeneratedMetricServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateMetricDescriptor</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateMetricDescriptor()
         {
-            // Snippet: CreateMetricDescriptor(string, MetricDescriptor, CallSettings)
             // Create client
             MetricServiceClient metricServiceClient = MetricServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             MetricDescriptor metricDescriptor = new MetricDescriptor();
             // Make the request
             MetricDescriptor response = metricServiceClient.CreateMetricDescriptor(name, metricDescriptor);
-            // End snippet
         }
     }
 }

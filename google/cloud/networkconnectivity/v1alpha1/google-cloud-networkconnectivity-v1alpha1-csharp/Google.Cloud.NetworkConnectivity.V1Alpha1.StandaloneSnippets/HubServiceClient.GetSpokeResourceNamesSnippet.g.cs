@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.NetworkConnectivity.V1Alpha1.Snippets
 {
+    using Google.Cloud.NetworkConnectivity.V1Alpha1;
+
     public sealed partial class GeneratedHubServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSpoke</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetSpokeResourceNames()
         {
-            // Snippet: GetSpoke(SpokeName, CallSettings)
             // Create client
             HubServiceClient hubServiceClient = HubServiceClient.Create();
             // Initialize request argument(s)
             SpokeName name = SpokeName.FromProjectLocationSpoke("[PROJECT]", "[LOCATION]", "[SPOKE]");
             // Make the request
             Spoke response = hubServiceClient.GetSpoke(name);
-            // End snippet
         }
     }
 }

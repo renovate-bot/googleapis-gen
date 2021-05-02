@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMobileAppCategoryConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMobileAppCategoryConstantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetMobileAppCategoryConstantAsync()
         {
-            // Snippet: GetMobileAppCategoryConstantAsync(string, CallSettings)
-            // Additional: GetMobileAppCategoryConstantAsync(string, CancellationToken)
             // Create client
             MobileAppCategoryConstantServiceClient mobileAppCategoryConstantServiceClient = await MobileAppCategoryConstantServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "mobileAppCategoryConstants/[MOBILE_APP_CATEGORY_ID]";
             // Make the request
             MobileAppCategoryConstant response = await mobileAppCategoryConstantServiceClient.GetMobileAppCategoryConstantAsync(resourceName);
-            // End snippet
         }
     }
 }

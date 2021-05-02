@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v7.resources.types import label
 from google.ads.googleads.v7.services.types import label_service
+
 from .base import LabelServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class LabelServiceGrpcTransport(LabelServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class LabelServiceGrpcTransport(LabelServiceTransport):
     def get_label(self) -> Callable[
             [label_service.GetLabelRequest],
             label.Label]:
-        r"""Return a callable for the
-        get label
-          method over gRPC.
+        r"""Return a callable for the get label method over gRPC.
 
         Returns the requested label in full detail.
 
@@ -233,9 +233,7 @@ class LabelServiceGrpcTransport(LabelServiceTransport):
     def mutate_labels(self) -> Callable[
             [label_service.MutateLabelsRequest],
             label_service.MutateLabelsResponse]:
-        r"""Return a callable for the
-        mutate labels
-          method over gRPC.
+        r"""Return a callable for the mutate labels method over gRPC.
 
         Creates, updates, or removes labels. Operation statuses are
         returned.

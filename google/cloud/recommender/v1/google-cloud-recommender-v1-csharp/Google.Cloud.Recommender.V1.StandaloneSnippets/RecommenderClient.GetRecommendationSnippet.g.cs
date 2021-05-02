@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Recommender.V1.Snippets
 {
+    using Google.Cloud.Recommender.V1;
+
     public sealed partial class GeneratedRecommenderClientStandaloneSnippets
     {
         /// <summary>Snippet for GetRecommendation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetRecommendation()
         {
-            // Snippet: GetRecommendation(string, CallSettings)
             // Create client
             RecommenderClient recommenderClient = RecommenderClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/recommenders/[RECOMMENDER]/recommendations/[RECOMMENDATION]";
             // Make the request
             Recommendation response = recommenderClient.GetRecommendation(name);
-            // End snippet
         }
     }
 }

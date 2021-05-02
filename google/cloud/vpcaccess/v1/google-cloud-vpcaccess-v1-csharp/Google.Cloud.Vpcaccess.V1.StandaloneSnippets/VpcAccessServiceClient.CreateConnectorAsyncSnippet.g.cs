@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Vpcaccess.V1.Snippets
 {
+    using Google.Cloud.Vpcaccess.V1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedVpcAccessServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateConnectorAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateConnectorAsync()
         {
-            // Snippet: CreateConnectorAsync(string, string, Connector, CallSettings)
-            // Additional: CreateConnectorAsync(string, string, Connector, CancellationToken)
             // Create client
             VpcAccessServiceClient vpcAccessServiceClient = await VpcAccessServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -50,7 +53,6 @@ namespace Google.Cloud.Vpcaccess.V1.Snippets
                 // If it has completed, then access the result
                 Connector retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

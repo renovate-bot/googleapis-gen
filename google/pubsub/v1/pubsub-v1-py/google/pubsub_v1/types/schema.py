@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -53,6 +55,7 @@ class Encoding(proto.Enum):
 
 class Schema(proto.Message):
     r"""A schema resource.
+
     Attributes:
         name (str):
             Required. Name of the schema. Format is
@@ -70,23 +73,18 @@ class Schema(proto.Message):
         PROTOCOL_BUFFER = 1
         AVRO = 2
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    type_ = proto.Field(proto.ENUM, number=2,
         enum=Type,
     )
-    definition = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+
+    definition = proto.Field(proto.STRING, number=3)
 
 
 class CreateSchemaRequest(proto.Message):
     r"""Request for the CreateSchema method.
+
     Attributes:
         parent (str):
             Required. The name of the project in which to create the
@@ -106,23 +104,18 @@ class CreateSchemaRequest(proto.Message):
             for resource name constraints.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    schema = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    schema = proto.Field(proto.MESSAGE, number=2,
         message='Schema',
     )
-    schema_id = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+
+    schema_id = proto.Field(proto.STRING, number=3)
 
 
 class GetSchemaRequest(proto.Message):
     r"""Request for the GetSchema method.
+
     Attributes:
         name (str):
             Required. The name of the schema to get. Format is
@@ -133,19 +126,16 @@ class GetSchemaRequest(proto.Message):
             ``definition``. Set to ``FULL`` to retrieve all fields.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    view = proto.Field(
-        proto.ENUM,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    view = proto.Field(proto.ENUM, number=2,
         enum='SchemaView',
     )
 
 
 class ListSchemasRequest(proto.Message):
     r"""Request for the ``ListSchemas`` method.
+
     Attributes:
         parent (str):
             Required. The name of the project in which to list schemas.
@@ -163,27 +153,20 @@ class ListSchemasRequest(proto.Message):
             next page of data.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    view = proto.Field(
-        proto.ENUM,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    view = proto.Field(proto.ENUM, number=2,
         enum='SchemaView',
     )
-    page_size = proto.Field(
-        proto.INT32,
-        number=3,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+
+    page_size = proto.Field(proto.INT32, number=3)
+
+    page_token = proto.Field(proto.STRING, number=4)
 
 
 class ListSchemasResponse(proto.Message):
     r"""Response for the ``ListSchemas`` method.
+
     Attributes:
         schemas (Sequence[google.pubsub_v1.types.Schema]):
             The resulting schemas.
@@ -197,33 +180,28 @@ class ListSchemasResponse(proto.Message):
     def raw_page(self):
         return self
 
-    schemas = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    schemas = proto.RepeatedField(proto.MESSAGE, number=1,
         message='Schema',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class DeleteSchemaRequest(proto.Message):
     r"""Request for the ``DeleteSchema`` method.
+
     Attributes:
         name (str):
             Required. Name of the schema to delete. Format is
             ``projects/{project}/schemas/{schema}``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ValidateSchemaRequest(proto.Message):
     r"""Request for the ``ValidateSchema`` method.
+
     Attributes:
         parent (str):
             Required. The name of the project in which to validate
@@ -232,23 +210,20 @@ class ValidateSchemaRequest(proto.Message):
             Required. The schema object to validate.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    schema = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    schema = proto.Field(proto.MESSAGE, number=2,
         message='Schema',
     )
 
 
 class ValidateSchemaResponse(proto.Message):
-    r"""Response for the ``ValidateSchema`` method.    """
+    r"""Response for the ``ValidateSchema`` method."""
 
 
 class ValidateMessageRequest(proto.Message):
     r"""Request for the ``ValidateMessage`` method.
+
     Attributes:
         parent (str):
             Required. The name of the project in which to validate
@@ -265,34 +240,23 @@ class ValidateMessageRequest(proto.Message):
             The encoding expected for messages
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    name = proto.Field(
-        proto.STRING,
-        number=2,
-        oneof='schema_spec',
-    )
-    schema = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='schema_spec',
+    parent = proto.Field(proto.STRING, number=1)
+
+    name = proto.Field(proto.STRING, number=2, oneof='schema_spec')
+
+    schema = proto.Field(proto.MESSAGE, number=3, oneof='schema_spec',
         message='Schema',
     )
-    message = proto.Field(
-        proto.BYTES,
-        number=4,
-    )
-    encoding = proto.Field(
-        proto.ENUM,
-        number=5,
+
+    message = proto.Field(proto.BYTES, number=4)
+
+    encoding = proto.Field(proto.ENUM, number=5,
         enum='Encoding',
     )
 
 
 class ValidateMessageResponse(proto.Message):
-    r"""Response for the ``ValidateMessage`` method.    """
+    r"""Response for the ``ValidateMessage`` method."""
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

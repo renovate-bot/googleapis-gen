@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Talent.V4.Snippets
 {
+    using Google.Cloud.Talent.V4;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteJobResourceNamesAsync()
         {
-            // Snippet: DeleteJobAsync(JobName, CallSettings)
-            // Additional: DeleteJobAsync(JobName, CancellationToken)
             // Create client
             JobServiceClient jobServiceClient = await JobServiceClient.CreateAsync();
             // Initialize request argument(s)
             JobName name = JobName.FromProjectTenantJob("[PROJECT]", "[TENANT]", "[JOB]");
             // Make the request
             await jobServiceClient.DeleteJobAsync(name);
-            // End snippet
         }
     }
 }

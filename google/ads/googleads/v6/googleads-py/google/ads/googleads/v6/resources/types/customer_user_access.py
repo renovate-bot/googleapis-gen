@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.enums.types import access_role as gage_access_role
 
@@ -55,34 +58,14 @@ class CustomerUserAccess(proto.Message):
             user. Read only field
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    user_id = proto.Field(
-        proto.INT64,
-        number=2,
-    )
-    email_address = proto.Field(
-        proto.STRING,
-        number=3,
-        optional=True,
-    )
-    access_role = proto.Field(
-        proto.ENUM,
-        number=4,
+    resource_name = proto.Field(proto.STRING, number=1)
+    user_id = proto.Field(proto.INT64, number=2)
+    email_address = proto.Field(proto.STRING, number=3, optional=True)
+    access_role = proto.Field(proto.ENUM, number=4,
         enum=gage_access_role.AccessRoleEnum.AccessRole,
     )
-    access_creation_date_time = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
-    inviter_user_email_address = proto.Field(
-        proto.STRING,
-        number=7,
-        optional=True,
-    )
+    access_creation_date_time = proto.Field(proto.STRING, number=6, optional=True)
+    inviter_user_email_address = proto.Field(proto.STRING, number=7, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

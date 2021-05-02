@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSessionsClientStandaloneSnippets
     {
         /// <summary>Snippet for MatchIntentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MatchIntentRequestObjectAsync()
         {
-            // Snippet: MatchIntentAsync(MatchIntentRequest, CallSettings)
-            // Additional: MatchIntentAsync(MatchIntentRequest, CancellationToken)
             // Create client
             SessionsClient sessionsClient = await SessionsClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             };
             // Make the request
             MatchIntentResponse response = await sessionsClient.MatchIntentAsync(request);
-            // End snippet
         }
     }
 }

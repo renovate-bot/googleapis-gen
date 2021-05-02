@@ -55,7 +55,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
                 PartitionAssignmentRequest request = new PartitionAssignmentRequest
                 {
                     Initial = new InitialPartitionAssignmentRequest(),
-                    Ack = new PartitionAssignmentAck(),
                 };
                 // Stream a request to the server
                 await response.WriteAsync(request);

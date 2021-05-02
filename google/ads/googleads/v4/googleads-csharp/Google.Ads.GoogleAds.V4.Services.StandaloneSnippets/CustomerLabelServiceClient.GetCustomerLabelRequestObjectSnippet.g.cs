@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedCustomerLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomerLabel</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCustomerLabelRequestObject()
         {
-            // Snippet: GetCustomerLabel(GetCustomerLabelRequest, CallSettings)
             // Create client
             CustomerLabelServiceClient customerLabelServiceClient = CustomerLabelServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             CustomerLabel response = customerLabelServiceClient.GetCustomerLabel(request);
-            // End snippet
         }
     }
 }

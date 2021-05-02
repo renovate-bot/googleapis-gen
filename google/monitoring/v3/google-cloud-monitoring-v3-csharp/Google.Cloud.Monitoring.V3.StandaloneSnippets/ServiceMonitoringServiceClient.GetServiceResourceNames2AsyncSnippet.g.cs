@@ -17,22 +17,24 @@
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServiceMonitoringServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetServiceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetServiceResourceNames2Async()
         {
-            // Snippet: GetServiceAsync(IResourceName, CallSettings)
-            // Additional: GetServiceAsync(IResourceName, CancellationToken)
             // Create client
             ServiceMonitoringServiceClient serviceMonitoringServiceClient = await ServiceMonitoringServiceClient.CreateAsync();
             // Initialize request argument(s)
             IResourceName name = new UnparsedResourceName("a/wildcard/resource");
             // Make the request
             Service response = await serviceMonitoringServiceClient.GetServiceAsync(name);
-            // End snippet
         }
     }
 }

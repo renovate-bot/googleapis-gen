@@ -17,15 +17,18 @@
 namespace Google.Cloud.ServiceManagement.V1.Snippets
 {
     using Google.Api;
+    using Google.Cloud.ServiceManagement.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServiceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetServiceConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetServiceConfigAsync()
         {
-            // Snippet: GetServiceConfigAsync(string, string, GetServiceConfigRequest.Types.ConfigView, CallSettings)
-            // Additional: GetServiceConfigAsync(string, string, GetServiceConfigRequest.Types.ConfigView, CancellationToken)
             // Create client
             ServiceManagerClient serviceManagerClient = await ServiceManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.ServiceManagement.V1.Snippets
             GetServiceConfigRequest.Types.ConfigView view = GetServiceConfigRequest.Types.ConfigView.Basic;
             // Make the request
             Service response = await serviceManagerClient.GetServiceConfigAsync(serviceName, configId, view);
-            // End snippet
         }
     }
 }

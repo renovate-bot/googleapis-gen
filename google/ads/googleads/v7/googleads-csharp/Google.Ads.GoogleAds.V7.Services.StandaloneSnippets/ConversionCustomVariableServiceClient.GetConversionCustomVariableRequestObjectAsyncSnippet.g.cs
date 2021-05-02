@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConversionCustomVariableServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetConversionCustomVariableAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetConversionCustomVariableRequestObjectAsync()
         {
-            // Snippet: GetConversionCustomVariableAsync(GetConversionCustomVariableRequest, CallSettings)
-            // Additional: GetConversionCustomVariableAsync(GetConversionCustomVariableRequest, CancellationToken)
             // Create client
             ConversionCustomVariableServiceClient conversionCustomVariableServiceClient = await ConversionCustomVariableServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             ConversionCustomVariable response = await conversionCustomVariableServiceClient.GetConversionCustomVariableAsync(request);
-            // End snippet
         }
     }
 }

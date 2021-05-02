@@ -17,15 +17,18 @@
 namespace Google.Cloud.Iot.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Iot.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDeviceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateDeviceRegistryAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateDeviceRegistryResourceNamesAsync()
         {
-            // Snippet: CreateDeviceRegistryAsync(LocationName, DeviceRegistry, CallSettings)
-            // Additional: CreateDeviceRegistryAsync(LocationName, DeviceRegistry, CancellationToken)
             // Create client
             DeviceManagerClient deviceManagerClient = await DeviceManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Iot.V1.Snippets
             DeviceRegistry deviceRegistry = new DeviceRegistry();
             // Make the request
             DeviceRegistry response = await deviceManagerClient.CreateDeviceRegistryAsync(parent, deviceRegistry);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
 {
+    using Google.Cloud.WebSecurityScanner.V1Beta;
+
     public sealed partial class GeneratedWebSecurityScannerClientStandaloneSnippets
     {
         /// <summary>Snippet for ListFindingTypeStats</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListFindingTypeStatsResourceNames()
         {
-            // Snippet: ListFindingTypeStats(ScanRunName, CallSettings)
             // Create client
             WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.Create();
             // Initialize request argument(s)
             ScanRunName parent = ScanRunName.FromProjectScanConfigScanRun("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
             // Make the request
             ListFindingTypeStatsResponse response = webSecurityScannerClient.ListFindingTypeStats(parent);
-            // End snippet
         }
     }
 }

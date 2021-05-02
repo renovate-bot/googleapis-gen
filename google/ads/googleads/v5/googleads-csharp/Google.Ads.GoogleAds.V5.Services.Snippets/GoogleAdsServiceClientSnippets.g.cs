@@ -79,7 +79,7 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for Search</summary>
+        /// <summary>Snippet for SearchAsync</summary>
         public async Task SearchRequestObjectAsync()
         {
             // Snippet: SearchAsync(SearchGoogleAdsRequest, CallSettings)
@@ -177,7 +177,7 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for Search</summary>
+        /// <summary>Snippet for SearchAsync</summary>
         public async Task SearchAsync()
         {
             // Snippet: SearchAsync(string, string, string, int?, CallSettings)

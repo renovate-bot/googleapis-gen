@@ -18,22 +18,24 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Api.Gax;
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.ResourceManager.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTagKeysClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIamPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetIamPolicyResourceNamesAsync()
         {
-            // Snippet: GetIamPolicyAsync(IResourceName, CallSettings)
-            // Additional: GetIamPolicyAsync(IResourceName, CancellationToken)
             // Create client
             TagKeysClient tagKeysClient = await TagKeysClient.CreateAsync();
             // Initialize request argument(s)
             IResourceName resource = new UnparsedResourceName("a/wildcard/resource");
             // Make the request
             Policy response = await tagKeysClient.GetIamPolicyAsync(resource);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.SecurityCenter.Settings.V1Beta1.Snippets
 {
+    using Google.Cloud.SecurityCenter.Settings.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecurityCenterSettingsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ResetSettingsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ResetSettingsRequestObjectAsync()
         {
-            // Snippet: ResetSettingsAsync(ResetSettingsRequest, CallSettings)
-            // Additional: ResetSettingsAsync(ResetSettingsRequest, CancellationToken)
             // Create client
             SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient = await SecurityCenterSettingsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.SecurityCenter.Settings.V1Beta1.Snippets
             };
             // Make the request
             await securityCenterSettingsServiceClient.ResetSettingsAsync(request);
-            // End snippet
         }
     }
 }

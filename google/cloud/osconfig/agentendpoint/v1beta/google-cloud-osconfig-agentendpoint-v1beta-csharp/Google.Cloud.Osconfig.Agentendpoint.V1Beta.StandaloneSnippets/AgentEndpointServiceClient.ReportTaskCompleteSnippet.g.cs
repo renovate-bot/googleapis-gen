@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta.Snippets
 {
+    using Google.Cloud.Osconfig.Agentendpoint.V1Beta;
+
     public sealed partial class GeneratedAgentEndpointServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ReportTaskComplete</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ReportTaskComplete()
         {
-            // Snippet: ReportTaskComplete(string, string, TaskType, string, CallSettings)
             // Create client
             AgentEndpointServiceClient agentEndpointServiceClient = AgentEndpointServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta.Snippets
             string errorMessage = "";
             // Make the request
             ReportTaskCompleteResponse response = agentEndpointServiceClient.ReportTaskComplete(instanceIdToken, taskId, taskType, errorMessage);
-            // End snippet
         }
     }
 }

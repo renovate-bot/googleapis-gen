@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.AutoML.V1.Snippets
 {
+    using Google.Cloud.AutoML.V1;
+
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAnnotationSpec</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAnnotationSpecRequestObject()
         {
-            // Snippet: GetAnnotationSpec(GetAnnotationSpecRequest, CallSettings)
             // Create client
             AutoMlClient autoMlClient = AutoMlClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.AutoML.V1.Snippets
             };
             // Make the request
             AnnotationSpec response = autoMlClient.GetAnnotationSpec(request);
-            // End snippet
         }
     }
 }

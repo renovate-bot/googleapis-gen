@@ -16,12 +16,17 @@
 
 namespace Google.Api.ServiceUsage.V1Beta1.Snippets
 {
+    using Google.Api.ServiceUsage.V1Beta1;
+
     public sealed partial class GeneratedServiceUsageClientStandaloneSnippets
     {
         /// <summary>Snippet for GetConsumerQuotaLimit</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetConsumerQuotaLimitRequestObject()
         {
-            // Snippet: GetConsumerQuotaLimit(GetConsumerQuotaLimitRequest, CallSettings)
             // Create client
             ServiceUsageClient serviceUsageClient = ServiceUsageClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
             };
             // Make the request
             ConsumerQuotaLimit response = serviceUsageClient.GetConsumerQuotaLimit(request);
-            // End snippet
         }
     }
 }

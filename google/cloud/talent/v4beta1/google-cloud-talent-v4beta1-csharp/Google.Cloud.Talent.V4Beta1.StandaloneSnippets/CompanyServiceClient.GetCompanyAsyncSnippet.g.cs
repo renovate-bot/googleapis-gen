@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
+    using Google.Cloud.Talent.V4Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCompanyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCompanyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCompanyAsync()
         {
-            // Snippet: GetCompanyAsync(string, CallSettings)
-            // Additional: GetCompanyAsync(string, CancellationToken)
             // Create client
             CompanyServiceClient companyServiceClient = await CompanyServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/tenants/[TENANT]/companies/[COMPANY]";
             // Make the request
             Company response = await companyServiceClient.GetCompanyAsync(name);
-            // End snippet
         }
     }
 }

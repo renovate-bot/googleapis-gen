@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ImportData</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ImportData()
         {
-            // Snippet: ImportData(string, InputConfig, CallSettings)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.Create();
             // Initialize request argument(s)
@@ -47,7 +51,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
                 // If it has completed, then access the result
                 ImportDataOperationResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

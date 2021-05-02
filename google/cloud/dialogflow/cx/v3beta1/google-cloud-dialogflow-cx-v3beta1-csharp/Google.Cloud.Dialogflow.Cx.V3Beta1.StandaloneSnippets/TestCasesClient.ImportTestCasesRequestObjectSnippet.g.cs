@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using Google.LongRunning;
-    using Google.Protobuf;
 
     public sealed partial class GeneratedTestCasesClientStandaloneSnippets
     {
         /// <summary>Snippet for ImportTestCases</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ImportTestCasesRequestObject()
         {
-            // Snippet: ImportTestCases(ImportTestCasesRequest, CallSettings)
             // Create client
             TestCasesClient testCasesClient = TestCasesClient.Create();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             {
                 ParentAsAgentName = AgentName.FromProjectLocationAgent("[PROJECT]", "[LOCATION]", "[AGENT]"),
                 GcsUri = "",
-                Content = ByteString.Empty,
             };
             // Make the request
             Operation<ImportTestCasesResponse, ImportTestCasesMetadata> response = testCasesClient.ImportTestCases(request);
@@ -52,7 +54,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
                 // If it has completed, then access the result
                 ImportTestCasesResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

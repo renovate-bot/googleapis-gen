@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -35,8 +35,6 @@ from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.bigquery_storage_v1.services.big_query_read import BigQueryReadAsyncClient
 from google.cloud.bigquery_storage_v1.services.big_query_read import BigQueryReadClient
 from google.cloud.bigquery_storage_v1.services.big_query_read import transports
-from google.cloud.bigquery_storage_v1.services.big_query_read.transports.base import _API_CORE_VERSION
-from google.cloud.bigquery_storage_v1.services.big_query_read.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.bigquery_storage_v1.types import arrow
 from google.cloud.bigquery_storage_v1.types import avro
 from google.cloud.bigquery_storage_v1.types import storage
@@ -44,28 +42,6 @@ from google.cloud.bigquery_storage_v1.types import stream
 from google.oauth2 import service_account
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -233,10 +209,12 @@ def test_big_query_read_client_client_options(client_class, transport_class, tra
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (BigQueryReadClient, transports.BigQueryReadGrpcTransport, "grpc", "true"),
     (BigQueryReadAsyncClient, transports.BigQueryReadGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (BigQueryReadClient, transports.BigQueryReadGrpcTransport, "grpc", "false"),
     (BigQueryReadAsyncClient, transports.BigQueryReadGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(BigQueryReadClient, "DEFAULT_ENDPOINT", modify_default_endpoint(BigQueryReadClient))
 @mock.patch.object(BigQueryReadAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(BigQueryReadAsyncClient))
@@ -391,21 +369,30 @@ def test_create_read_session(transport: str = 'grpc', request_type=storage.Creat
         # Designate an appropriate return value for the call.
         call.return_value = stream.ReadSession(
             name='name_value',
+
             data_format=stream.DataFormat.AVRO,
+
             table='table_value',
+
             avro_schema=avro.AvroSchema(schema='schema_value'),
         )
+
         response = client.create_read_session(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.CreateReadSessionRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, stream.ReadSession)
+
     assert response.name == 'name_value'
+
     assert response.data_format == stream.DataFormat.AVRO
+
     assert response.table == 'table_value'
 
 
@@ -428,8 +415,8 @@ def test_create_read_session_empty_call():
         client.create_read_session()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.CreateReadSessionRequest()
 
+        assert args[0] == storage.CreateReadSessionRequest()
 
 @pytest.mark.asyncio
 async def test_create_read_session_async(transport: str = 'grpc_asyncio', request_type=storage.CreateReadSessionRequest):
@@ -447,22 +434,27 @@ async def test_create_read_session_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.create_read_session),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(stream.ReadSession(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(stream.ReadSession(
             name='name_value',
             data_format=stream.DataFormat.AVRO,
             table='table_value',
         ))
+
         response = await client.create_read_session(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.CreateReadSessionRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, stream.ReadSession)
+
     assert response.name == 'name_value'
+
     assert response.data_format == stream.DataFormat.AVRO
+
     assert response.table == 'table_value'
 
 
@@ -479,7 +471,6 @@ def test_create_read_session_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.CreateReadSessionRequest()
-
     request.read_session.table = 'read_session.table/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -487,6 +478,7 @@ def test_create_read_session_field_headers():
             type(client.transport.create_read_session),
             '__call__') as call:
         call.return_value = stream.ReadSession()
+
         client.create_read_session(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -511,7 +503,6 @@ async def test_create_read_session_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.CreateReadSessionRequest()
-
     request.read_session.table = 'read_session.table/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -519,6 +510,7 @@ async def test_create_read_session_field_headers_async():
             type(client.transport.create_read_session),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(stream.ReadSession())
+
         await client.create_read_session(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -545,6 +537,7 @@ def test_create_read_session_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = stream.ReadSession()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_read_session(
@@ -557,8 +550,11 @@ def test_create_read_session_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].read_session == stream.ReadSession(name='name_value')
+
         assert args[0].max_stream_count == 1721
 
 
@@ -604,8 +600,11 @@ async def test_create_read_session_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].read_session == stream.ReadSession(name='name_value')
+
         assert args[0].max_stream_count == 1721
 
 
@@ -642,11 +641,13 @@ def test_read_rows(transport: str = 'grpc', request_type=storage.ReadRowsRequest
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([storage.ReadRowsResponse()])
+
         response = client.read_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ReadRowsRequest()
 
     # Establish that the response is the type that we expect.
@@ -673,8 +674,8 @@ def test_read_rows_empty_call():
         client.read_rows()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.ReadRowsRequest()
 
+        assert args[0] == storage.ReadRowsRequest()
 
 @pytest.mark.asyncio
 async def test_read_rows_async(transport: str = 'grpc_asyncio', request_type=storage.ReadRowsRequest):
@@ -694,11 +695,13 @@ async def test_read_rows_async(transport: str = 'grpc_asyncio', request_type=sto
         # Designate an appropriate return value for the call.
         call.return_value = mock.Mock(aio.UnaryStreamCall, autospec=True)
         call.return_value.read = mock.AsyncMock(side_effect=[storage.ReadRowsResponse()])
+
         response = await client.read_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.ReadRowsRequest()
 
     # Establish that the response is the type that we expect.
@@ -719,7 +722,6 @@ def test_read_rows_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.ReadRowsRequest()
-
     request.read_stream = 'read_stream/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -727,6 +729,7 @@ def test_read_rows_field_headers():
             type(client.transport.read_rows),
             '__call__') as call:
         call.return_value = iter([storage.ReadRowsResponse()])
+
         client.read_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -751,7 +754,6 @@ async def test_read_rows_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.ReadRowsRequest()
-
     request.read_stream = 'read_stream/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -760,6 +762,7 @@ async def test_read_rows_field_headers_async():
             '__call__') as call:
         call.return_value = mock.Mock(aio.UnaryStreamCall, autospec=True)
         call.return_value.read = mock.AsyncMock(side_effect=[storage.ReadRowsResponse()])
+
         await client.read_rows(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -786,6 +789,7 @@ def test_read_rows_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iter([storage.ReadRowsResponse()])
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.read_rows(
@@ -797,7 +801,9 @@ def test_read_rows_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].read_stream == 'read_stream_value'
+
         assert args[0].offset == 647
 
 
@@ -841,7 +847,9 @@ async def test_read_rows_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].read_stream == 'read_stream_value'
+
         assert args[0].offset == 647
 
 
@@ -878,14 +886,17 @@ def test_split_read_stream(transport: str = 'grpc', request_type=storage.SplitRe
         # Designate an appropriate return value for the call.
         call.return_value = storage.SplitReadStreamResponse(
         )
+
         response = client.split_read_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.SplitReadStreamRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, storage.SplitReadStreamResponse)
 
 
@@ -908,8 +919,8 @@ def test_split_read_stream_empty_call():
         client.split_read_stream()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == storage.SplitReadStreamRequest()
 
+        assert args[0] == storage.SplitReadStreamRequest()
 
 @pytest.mark.asyncio
 async def test_split_read_stream_async(transport: str = 'grpc_asyncio', request_type=storage.SplitReadStreamRequest):
@@ -927,13 +938,15 @@ async def test_split_read_stream_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.split_read_stream),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(storage.SplitReadStreamResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.SplitReadStreamResponse(
         ))
+
         response = await client.split_read_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == storage.SplitReadStreamRequest()
 
     # Establish that the response is the type that we expect.
@@ -953,7 +966,6 @@ def test_split_read_stream_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.SplitReadStreamRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -961,6 +973,7 @@ def test_split_read_stream_field_headers():
             type(client.transport.split_read_stream),
             '__call__') as call:
         call.return_value = storage.SplitReadStreamResponse()
+
         client.split_read_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -985,7 +998,6 @@ async def test_split_read_stream_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = storage.SplitReadStreamRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -993,6 +1005,7 @@ async def test_split_read_stream_field_headers_async():
             type(client.transport.split_read_stream),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(storage.SplitReadStreamResponse())
+
         await client.split_read_stream(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1048,6 +1061,7 @@ def test_transport_instance():
     client = BigQueryReadClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.BigQueryReadGrpcTransport(
@@ -1062,6 +1076,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.BigQueryReadGrpcTransport,
     transports.BigQueryReadGrpcAsyncIOTransport,
@@ -1073,6 +1088,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = BigQueryReadClient(
@@ -1082,6 +1098,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.BigQueryReadGrpcTransport,
     )
+
 
 def test_big_query_read_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1106,33 +1123,15 @@ def test_big_query_read_base_transport():
         'create_read_session',
         'read_rows',
         'split_read_stream',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_big_query_read_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.bigquery_storage_v1.services.big_query_read.transports.BigQueryReadTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.BigQueryReadTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/bigquery',            'https://www.googleapis.com/auth/bigquery.readonly',            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_big_query_read_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.bigquery_storage_v1.services.big_query_read.transports.BigQueryReadTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.bigquery_storage_v1.services.big_query_read.transports.BigQueryReadTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.BigQueryReadTransport(
@@ -1150,186 +1149,37 @@ def test_big_query_read_base_transport_with_credentials_file_old_google_auth():
 
 def test_big_query_read_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.bigquery_storage_v1.services.big_query_read.transports.BigQueryReadTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.bigquery_storage_v1.services.big_query_read.transports.BigQueryReadTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.BigQueryReadTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_big_query_read_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         BigQueryReadClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/bigquery',
-            'https://www.googleapis.com/auth/bigquery.readonly',
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_big_query_read_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        BigQueryReadClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.readonly',                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.BigQueryReadGrpcTransport,
-        transports.BigQueryReadGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_big_query_read_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.readonly',                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.BigQueryReadGrpcTransport,
-        transports.BigQueryReadGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_big_query_read_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/bigquery',
             'https://www.googleapis.com/auth/bigquery.readonly',
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.BigQueryReadGrpcTransport, grpc_helpers),
-        (transports.BigQueryReadGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_big_query_read_transport_create_channel(transport_class, grpc_helpers):
+def test_big_query_read_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.BigQueryReadGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/bigquery',
+            'https://www.googleapis.com/auth/bigquery.readonly',
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "bigquerystorage.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.readonly',                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="bigquerystorage.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.BigQueryReadGrpcTransport, grpc_helpers),
-        (transports.BigQueryReadGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_big_query_read_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "bigquerystorage.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.readonly',                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.BigQueryReadGrpcTransport, grpc_helpers),
-        (transports.BigQueryReadGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_big_query_read_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "bigquerystorage.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -1393,6 +1243,7 @@ def test_big_query_read_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='bigquerystorage.googleapis.com:8000'),
     )
     assert client.transport._host == 'bigquerystorage.googleapis.com:8000'
+
 
 def test_big_query_read_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1516,6 +1367,7 @@ def test_read_session_path():
     project = "squid"
     location = "clam"
     session = "whelk"
+
     expected = "projects/{project}/locations/{location}/sessions/{session}".format(project=project, location=location, session=session, )
     actual = BigQueryReadClient.read_session_path(project, location, session)
     assert expected == actual
@@ -1523,9 +1375,10 @@ def test_read_session_path():
 
 def test_parse_read_session_path():
     expected = {
-        "project": "octopus",
-        "location": "oyster",
-        "session": "nudibranch",
+    "project": "octopus",
+    "location": "oyster",
+    "session": "nudibranch",
+
     }
     path = BigQueryReadClient.read_session_path(**expected)
 
@@ -1538,6 +1391,7 @@ def test_read_stream_path():
     location = "mussel"
     session = "winkle"
     stream = "nautilus"
+
     expected = "projects/{project}/locations/{location}/sessions/{session}/streams/{stream}".format(project=project, location=location, session=session, stream=stream, )
     actual = BigQueryReadClient.read_stream_path(project, location, session, stream)
     assert expected == actual
@@ -1545,10 +1399,11 @@ def test_read_stream_path():
 
 def test_parse_read_stream_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
-        "session": "squid",
-        "stream": "clam",
+    "project": "scallop",
+    "location": "abalone",
+    "session": "squid",
+    "stream": "clam",
+
     }
     path = BigQueryReadClient.read_stream_path(**expected)
 
@@ -1560,6 +1415,7 @@ def test_table_path():
     project = "whelk"
     dataset = "octopus"
     table = "oyster"
+
     expected = "projects/{project}/datasets/{dataset}/tables/{table}".format(project=project, dataset=dataset, table=table, )
     actual = BigQueryReadClient.table_path(project, dataset, table)
     assert expected == actual
@@ -1567,9 +1423,10 @@ def test_table_path():
 
 def test_parse_table_path():
     expected = {
-        "project": "nudibranch",
-        "dataset": "cuttlefish",
-        "table": "mussel",
+    "project": "nudibranch",
+    "dataset": "cuttlefish",
+    "table": "mussel",
+
     }
     path = BigQueryReadClient.table_path(**expected)
 
@@ -1579,6 +1436,7 @@ def test_parse_table_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = BigQueryReadClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1586,7 +1444,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nautilus",
+    "billing_account": "nautilus",
+
     }
     path = BigQueryReadClient.common_billing_account_path(**expected)
 
@@ -1596,6 +1455,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = BigQueryReadClient.common_folder_path(folder)
     assert expected == actual
@@ -1603,7 +1463,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "abalone",
+    "folder": "abalone",
+
     }
     path = BigQueryReadClient.common_folder_path(**expected)
 
@@ -1613,6 +1474,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = BigQueryReadClient.common_organization_path(organization)
     assert expected == actual
@@ -1620,7 +1482,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "clam",
+    "organization": "clam",
+
     }
     path = BigQueryReadClient.common_organization_path(**expected)
 
@@ -1630,6 +1493,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
+
     expected = "projects/{project}".format(project=project, )
     actual = BigQueryReadClient.common_project_path(project)
     assert expected == actual
@@ -1637,7 +1501,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "octopus",
+    "project": "octopus",
+
     }
     path = BigQueryReadClient.common_project_path(**expected)
 
@@ -1648,6 +1513,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = BigQueryReadClient.common_location_path(project, location)
     assert expected == actual
@@ -1655,8 +1521,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "cuttlefish",
-        "location": "mussel",
+    "project": "cuttlefish",
+    "location": "mussel",
+
     }
     path = BigQueryReadClient.common_location_path(**expected)
 

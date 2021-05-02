@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.apps.drive.activity_v2.types import action
 from google.apps.drive.activity_v2.types import actor
@@ -33,6 +36,7 @@ __protobuf__ = proto.module(
 
 class QueryDriveActivityResponse(proto.Message):
     r"""Response message for querying Drive activity.
+
     Attributes:
         activities (Sequence[google.apps.drive.activity_v2.types.DriveActivity]):
             List of activity requested.
@@ -46,15 +50,11 @@ class QueryDriveActivityResponse(proto.Message):
     def raw_page(self):
         return self
 
-    activities = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    activities = proto.RepeatedField(proto.MESSAGE, number=1,
         message='DriveActivity',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class DriveActivity(proto.Message):
@@ -89,36 +89,27 @@ class DriveActivity(proto.Message):
             The activity occurred over this time range.
     """
 
-    primary_action_detail = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    primary_action_detail = proto.Field(proto.MESSAGE, number=2,
         message=action.ActionDetail,
     )
-    actors = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+
+    actors = proto.RepeatedField(proto.MESSAGE, number=3,
         message=actor.Actor,
     )
-    actions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+
+    actions = proto.RepeatedField(proto.MESSAGE, number=4,
         message=action.Action,
     )
-    targets = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+
+    targets = proto.RepeatedField(proto.MESSAGE, number=5,
         message=target.Target,
     )
-    timestamp = proto.Field(
-        proto.MESSAGE,
-        number=6,
-        oneof='time',
+
+    timestamp = proto.Field(proto.MESSAGE, number=6, oneof='time',
         message=gp_timestamp.Timestamp,
     )
-    time_range = proto.Field(
-        proto.MESSAGE,
-        number=7,
-        oneof='time',
+
+    time_range = proto.Field(proto.MESSAGE, number=7, oneof='time',
         message=common.TimeRange,
     )
 

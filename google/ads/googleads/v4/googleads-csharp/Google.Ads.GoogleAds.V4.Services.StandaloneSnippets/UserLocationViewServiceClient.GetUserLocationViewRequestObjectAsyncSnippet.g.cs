@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedUserLocationViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetUserLocationViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetUserLocationViewRequestObjectAsync()
         {
-            // Snippet: GetUserLocationViewAsync(GetUserLocationViewRequest, CallSettings)
-            // Additional: GetUserLocationViewAsync(GetUserLocationViewRequest, CancellationToken)
             // Create client
             UserLocationViewServiceClient userLocationViewServiceClient = await UserLocationViewServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             UserLocationView response = await userLocationViewServiceClient.GetUserLocationViewAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Vision.V1P4Beta1.Snippets
 {
+    using Google.Cloud.Vision.V1P4Beta1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedProductSearchClientStandaloneSnippets
     {
         /// <summary>Snippet for ImportProductSets</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ImportProductSets()
         {
-            // Snippet: ImportProductSets(string, ImportProductSetsInputConfig, CallSettings)
             // Create client
             ProductSearchClient productSearchClient = ProductSearchClient.Create();
             // Initialize request argument(s)
@@ -47,7 +51,6 @@ namespace Google.Cloud.Vision.V1P4Beta1.Snippets
                 // If it has completed, then access the result
                 ImportProductSetsResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

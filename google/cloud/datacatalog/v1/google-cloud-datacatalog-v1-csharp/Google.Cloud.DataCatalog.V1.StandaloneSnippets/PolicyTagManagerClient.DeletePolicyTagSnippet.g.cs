@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.DataCatalog.V1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1;
+
     public sealed partial class GeneratedPolicyTagManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for DeletePolicyTag</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeletePolicyTag()
         {
-            // Snippet: DeletePolicyTag(string, CallSettings)
             // Create client
             PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/taxonomies/[TAXONOMY]/policyTags/[POLICY_TAG]";
             // Make the request
             policyTagManagerClient.DeletePolicyTag(name);
-            // End snippet
         }
     }
 }

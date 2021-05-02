@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedKeywordPlanServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateForecastMetricsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GenerateForecastMetricsResourceNamesAsync()
         {
-            // Snippet: GenerateForecastMetricsAsync(KeywordPlanName, CallSettings)
-            // Additional: GenerateForecastMetricsAsync(KeywordPlanName, CancellationToken)
             // Create client
             KeywordPlanServiceClient keywordPlanServiceClient = await KeywordPlanServiceClient.CreateAsync();
             // Initialize request argument(s)
             KeywordPlanName keywordPlan = KeywordPlanName.FromCustomerKeywordPlan("[CUSTOMER_ID]", "[KEYWORD_PLAN_ID]");
             // Make the request
             GenerateForecastMetricsResponse response = await keywordPlanServiceClient.GenerateForecastMetricsAsync(keywordPlan);
-            // End snippet
         }
     }
 }

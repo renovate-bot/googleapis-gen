@@ -16,18 +16,20 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using Google.LongRunning;
-    using Google.Protobuf;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFlowsClientStandaloneSnippets
     {
         /// <summary>Snippet for ImportFlowAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ImportFlowRequestObjectAsync()
         {
-            // Snippet: ImportFlowAsync(ImportFlowRequest, CallSettings)
-            // Additional: ImportFlowAsync(ImportFlowRequest, CancellationToken)
             // Create client
             FlowsClient flowsClient = await FlowsClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +37,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             {
                 ParentAsAgentName = AgentName.FromProjectLocationAgent("[PROJECT]", "[LOCATION]", "[AGENT]"),
                 FlowUri = "",
-                FlowContent = ByteString.Empty,
                 ImportOption = ImportFlowRequest.Types.ImportOption.Unspecified,
             };
             // Make the request
@@ -56,7 +57,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
                 // If it has completed, then access the result
                 ImportFlowResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

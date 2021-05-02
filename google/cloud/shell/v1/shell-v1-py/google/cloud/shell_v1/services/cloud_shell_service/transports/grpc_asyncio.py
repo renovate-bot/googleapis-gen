@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
@@ -22,13 +24,13 @@ from google.api_core import operations_v1              # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.shell_v1.types import cloudshell
 from google.longrunning import operations_pb2 as operations  # type: ignore
+
 from .base import CloudShellServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import CloudShellServiceGrpcTransport
 
@@ -85,15 +87,13 @@ class CloudShellServiceGrpcAsyncIOTransport(CloudShellServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -113,8 +113,7 @@ class CloudShellServiceGrpcAsyncIOTransport(CloudShellServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -173,6 +172,7 @@ class CloudShellServiceGrpcAsyncIOTransport(CloudShellServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -251,9 +251,7 @@ class CloudShellServiceGrpcAsyncIOTransport(CloudShellServiceTransport):
     def get_environment(self) -> Callable[
             [cloudshell.GetEnvironmentRequest],
             Awaitable[cloudshell.Environment]]:
-        r"""Return a callable for the
-        get environment
-          method over gRPC.
+        r"""Return a callable for the get environment method over gRPC.
 
         Gets an environment. Returns NOT_FOUND if the environment does
         not exist.
@@ -280,9 +278,7 @@ class CloudShellServiceGrpcAsyncIOTransport(CloudShellServiceTransport):
     def start_environment(self) -> Callable[
             [cloudshell.StartEnvironmentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        start environment
-          method over gRPC.
+        r"""Return a callable for the start environment method over gRPC.
 
         Starts an existing environment, allowing clients to
         connect to it. The returned operation will contain an
@@ -315,9 +311,7 @@ class CloudShellServiceGrpcAsyncIOTransport(CloudShellServiceTransport):
     def authorize_environment(self) -> Callable[
             [cloudshell.AuthorizeEnvironmentRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        authorize environment
-          method over gRPC.
+        r"""Return a callable for the authorize environment method over gRPC.
 
         Sends OAuth credentials to a running environment on
         behalf of a user. When this completes, the environment
@@ -347,9 +341,7 @@ class CloudShellServiceGrpcAsyncIOTransport(CloudShellServiceTransport):
     def add_public_key(self) -> Callable[
             [cloudshell.AddPublicKeyRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        add public key
-          method over gRPC.
+        r"""Return a callable for the add public key method over gRPC.
 
         Adds a public SSH key to an environment, allowing clients with
         the corresponding private key to connect to that environment via
@@ -378,9 +370,7 @@ class CloudShellServiceGrpcAsyncIOTransport(CloudShellServiceTransport):
     def remove_public_key(self) -> Callable[
             [cloudshell.RemovePublicKeyRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        remove public key
-          method over gRPC.
+        r"""Return a callable for the remove public key method over gRPC.
 
         Removes a public SSH key from an environment. Clients will no
         longer be able to connect to the environment using the

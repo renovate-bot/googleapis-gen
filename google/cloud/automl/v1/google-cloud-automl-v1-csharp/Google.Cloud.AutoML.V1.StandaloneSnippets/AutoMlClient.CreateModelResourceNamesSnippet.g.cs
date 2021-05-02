@@ -17,14 +17,18 @@
 namespace Google.Cloud.AutoML.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.AutoML.V1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateModel</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateModelResourceNames()
         {
-            // Snippet: CreateModel(LocationName, Model, CallSettings)
             // Create client
             AutoMlClient autoMlClient = AutoMlClient.Create();
             // Initialize request argument(s)
@@ -48,7 +52,6 @@ namespace Google.Cloud.AutoML.V1.Snippets
                 // If it has completed, then access the result
                 Model retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

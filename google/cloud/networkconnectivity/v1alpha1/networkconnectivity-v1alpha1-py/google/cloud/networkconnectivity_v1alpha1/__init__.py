@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.hub_service import HubServiceClient
-
 from .types.common import OperationMetadata
 from .types.hub import CreateHubRequest
 from .types.hub import CreateSpokeRequest
@@ -33,6 +33,7 @@ from .types.hub import Spoke
 from .types.hub import State
 from .types.hub import UpdateHubRequest
 from .types.hub import UpdateSpokeRequest
+
 
 __all__ = (
     'CreateHubRequest',

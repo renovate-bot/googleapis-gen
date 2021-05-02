@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedCampaignExtensionSettingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignExtensionSetting</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCampaignExtensionSetting()
         {
-            // Snippet: GetCampaignExtensionSetting(string, CallSettings)
             // Create client
             CampaignExtensionSettingServiceClient campaignExtensionSettingServiceClient = CampaignExtensionSettingServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/campaignExtensionSettings/[CAMPAIGN_EXTENSION_SETTING]";
             // Make the request
             CampaignExtensionSetting response = campaignExtensionSettingServiceClient.GetCampaignExtensionSetting(resourceName);
-            // End snippet
         }
     }
 }

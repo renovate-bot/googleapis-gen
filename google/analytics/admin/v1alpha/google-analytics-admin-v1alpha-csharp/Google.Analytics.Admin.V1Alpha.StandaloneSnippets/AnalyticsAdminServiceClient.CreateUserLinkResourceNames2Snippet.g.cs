@@ -16,12 +16,17 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
+
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateUserLink</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateUserLinkResourceNames2()
         {
-            // Snippet: CreateUserLink(PropertyName, UserLink, CallSettings)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Analytics.Admin.V1Alpha.Snippets
             UserLink userLink = new UserLink();
             // Make the request
             UserLink response = analyticsAdminServiceClient.CreateUserLink(parent, userLink);
-            // End snippet
         }
     }
 }

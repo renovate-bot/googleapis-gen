@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,18 +41,19 @@ def partition(
 class iamCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_workload_identity_pool': ('parent', 'workload_identity_pool', 'workload_identity_pool_id', ),
-          'create_workload_identity_pool_provider': ('parent', 'workload_identity_pool_provider', 'workload_identity_pool_provider_id', ),
-          'delete_workload_identity_pool': ('name', ),
-          'delete_workload_identity_pool_provider': ('name', ),
-          'get_workload_identity_pool': ('name', ),
-          'get_workload_identity_pool_provider': ('name', ),
-          'list_workload_identity_pool_providers': ('parent', 'page_size', 'page_token', 'show_deleted', ),
-          'list_workload_identity_pools': ('parent', 'page_size', 'page_token', 'show_deleted', ),
-          'undelete_workload_identity_pool': ('name', ),
-          'undelete_workload_identity_pool_provider': ('name', ),
-          'update_workload_identity_pool': ('workload_identity_pool', 'update_mask', ),
-          'update_workload_identity_pool_provider': ('workload_identity_pool_provider', 'update_mask', ),
+    'create_workload_identity_pool': ('parent', 'workload_identity_pool', 'workload_identity_pool_id', ),
+    'create_workload_identity_pool_provider': ('parent', 'workload_identity_pool_provider', 'workload_identity_pool_provider_id', ),
+    'delete_workload_identity_pool': ('name', ),
+    'delete_workload_identity_pool_provider': ('name', ),
+    'get_workload_identity_pool': ('name', ),
+    'get_workload_identity_pool_provider': ('name', ),
+    'list_workload_identity_pool_providers': ('parent', 'page_size', 'page_token', 'show_deleted', ),
+    'list_workload_identity_pools': ('parent', 'page_size', 'page_token', 'show_deleted', ),
+    'undelete_workload_identity_pool': ('name', ),
+    'undelete_workload_identity_pool_provider': ('name', ),
+    'update_workload_identity_pool': ('workload_identity_pool', 'update_mask', ),
+    'update_workload_identity_pool_provider': ('workload_identity_pool_provider', 'update_mask', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -81,7 +84,7 @@ class iamCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

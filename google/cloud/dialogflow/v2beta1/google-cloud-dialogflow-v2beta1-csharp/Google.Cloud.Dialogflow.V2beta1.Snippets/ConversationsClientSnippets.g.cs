@@ -198,7 +198,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConversations</summary>
+        /// <summary>Snippet for ListConversationsAsync</summary>
         public async Task ListConversationsRequestObjectAsync()
         {
             // Snippet: ListConversationsAsync(ListConversationsRequest, CallSettings)
@@ -292,7 +292,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConversations</summary>
+        /// <summary>Snippet for ListConversationsAsync</summary>
         public async Task ListConversationsAsync()
         {
             // Snippet: ListConversationsAsync(string, string, int?, CallSettings)
@@ -382,7 +382,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConversations</summary>
+        /// <summary>Snippet for ListConversationsAsync</summary>
         public async Task ListConversationsResourceNames1Async()
         {
             // Snippet: ListConversationsAsync(ProjectName, string, int?, CallSettings)
@@ -472,7 +472,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConversations</summary>
+        /// <summary>Snippet for ListConversationsAsync</summary>
         public async Task ListConversationsResourceNames2Async()
         {
             // Snippet: ListConversationsAsync(LocationName, string, int?, CallSettings)
@@ -835,7 +835,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListMessages</summary>
+        /// <summary>Snippet for ListMessagesAsync</summary>
         public async Task ListMessagesRequestObjectAsync()
         {
             // Snippet: ListMessagesAsync(ListMessagesRequest, CallSettings)
@@ -929,7 +929,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListMessages</summary>
+        /// <summary>Snippet for ListMessagesAsync</summary>
         public async Task ListMessagesAsync()
         {
             // Snippet: ListMessagesAsync(string, string, int?, CallSettings)
@@ -1019,7 +1019,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListMessages</summary>
+        /// <summary>Snippet for ListMessagesAsync</summary>
         public async Task ListMessagesResourceNamesAsync()
         {
             // Snippet: ListMessagesAsync(ConversationName, string, int?, CallSettings)

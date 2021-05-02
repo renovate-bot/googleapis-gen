@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -64,7 +65,8 @@ from google.cloud.recommendationengine_v1beta1.types.user_event_service import P
 from google.cloud.recommendationengine_v1beta1.types.user_event_service import PurgeUserEventsResponse
 from google.cloud.recommendationengine_v1beta1.types.user_event_service import WriteUserEventRequest
 
-__all__ = ('CatalogInlineSource',
+__all__ = (
+    'CatalogInlineSource',
     'CatalogItem',
     'CatalogServiceAsyncClient',
     'CatalogServiceClient',

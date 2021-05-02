@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.asset_v1p1beta1.types import assets
 
@@ -31,6 +34,7 @@ __protobuf__ = proto.module(
 
 class SearchAllResourcesRequest(proto.Message):
     r"""Search all resources request.
+
     Attributes:
         scope (str):
             Required. The relative name of an asset. The search is
@@ -69,34 +73,22 @@ class SearchAllResourcesRequest(proto.Message):
             example, "  foo ,  bar  desc  ".
     """
 
-    scope = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    query = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    asset_types = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=4,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    order_by = proto.Field(
-        proto.STRING,
-        number=10,
-    )
+    scope = proto.Field(proto.STRING, number=1)
+
+    query = proto.Field(proto.STRING, number=2)
+
+    asset_types = proto.RepeatedField(proto.STRING, number=3)
+
+    page_size = proto.Field(proto.INT32, number=4)
+
+    page_token = proto.Field(proto.STRING, number=5)
+
+    order_by = proto.Field(proto.STRING, number=10)
 
 
 class SearchAllResourcesResponse(proto.Message):
     r"""Search all resources response.
+
     Attributes:
         results (Sequence[google.cloud.asset_v1p1beta1.types.StandardResourceMetadata]):
             A list of resource that match the search
@@ -112,19 +104,16 @@ class SearchAllResourcesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    results = proto.RepeatedField(proto.MESSAGE, number=1,
         message=assets.StandardResourceMetadata,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class SearchAllIamPoliciesRequest(proto.Message):
     r"""Search all IAM policies request.
+
     Attributes:
         scope (str):
             Required. The relative name of an asset. The search is
@@ -155,26 +144,18 @@ class SearchAllIamPoliciesRequest(proto.Message):
             identical to those in the previous call.
     """
 
-    scope = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    query = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=3,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+    scope = proto.Field(proto.STRING, number=1)
+
+    query = proto.Field(proto.STRING, number=2)
+
+    page_size = proto.Field(proto.INT32, number=3)
+
+    page_token = proto.Field(proto.STRING, number=4)
 
 
 class SearchAllIamPoliciesResponse(proto.Message):
     r"""Search all IAM policies response.
+
     Attributes:
         results (Sequence[google.cloud.asset_v1p1beta1.types.IamPolicySearchResult]):
             A list of IamPolicy that match the search
@@ -191,15 +172,11 @@ class SearchAllIamPoliciesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    results = proto.RepeatedField(proto.MESSAGE, number=1,
         message=assets.IamPolicySearchResult,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

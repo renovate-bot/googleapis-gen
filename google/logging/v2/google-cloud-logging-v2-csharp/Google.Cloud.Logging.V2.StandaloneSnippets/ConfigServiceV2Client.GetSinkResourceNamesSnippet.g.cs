@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Logging.V2.Snippets
 {
+    using Google.Cloud.Logging.V2;
+
     public sealed partial class GeneratedConfigServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSink</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetSinkResourceNames()
         {
-            // Snippet: GetSink(LogSinkName, CallSettings)
             // Create client
             ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.Create();
             // Initialize request argument(s)
             LogSinkName sinkName = LogSinkName.FromProjectSink("[PROJECT]", "[SINK]");
             // Make the request
             LogSink response = configServiceV2Client.GetSink(sinkName);
-            // End snippet
         }
     }
 }

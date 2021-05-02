@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Language.V1.Snippets
 {
+    using Google.Cloud.Language.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLanguageServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for AnalyzeSentimentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task AnalyzeSentimentRequestObjectAsync()
         {
-            // Snippet: AnalyzeSentimentAsync(AnalyzeSentimentRequest, CallSettings)
-            // Additional: AnalyzeSentimentAsync(AnalyzeSentimentRequest, CancellationToken)
             // Create client
             LanguageServiceClient languageServiceClient = await LanguageServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Language.V1.Snippets
             };
             // Make the request
             AnalyzeSentimentResponse response = await languageServiceClient.AnalyzeSentimentAsync(request);
-            // End snippet
         }
     }
 }

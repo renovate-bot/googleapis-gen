@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.DocumentAI.V1Beta3.Snippets
 {
+    using Google.Cloud.DocumentAI.V1Beta3;
+
     public sealed partial class GeneratedDocumentProcessorServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ProcessDocument</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ProcessDocumentRequestObject()
         {
-            // Snippet: ProcessDocument(ProcessRequest, CallSettings)
             // Create client
             DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.Create();
             // Initialize request argument(s)
@@ -30,11 +35,9 @@ namespace Google.Cloud.DocumentAI.V1Beta3.Snippets
                 ProcessorName = ProcessorName.FromProjectLocationProcessor("[PROJECT]", "[LOCATION]", "[PROCESSOR]"),
                 SkipHumanReview = false,
                 InlineDocument = new Document(),
-                RawDocument = new RawDocument(),
             };
             // Make the request
             ProcessResponse response = documentProcessorServiceClient.ProcessDocument(request);
-            // End snippet
         }
     }
 }

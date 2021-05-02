@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -25,6 +27,7 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 import grpc  # type: ignore
 
 from google.cloud.language_v1.types import language_service
+
 from .base import LanguageServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -59,8 +62,7 @@ class LanguageServiceGrpcTransport(LanguageServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -199,15 +201,13 @@ class LanguageServiceGrpcTransport(LanguageServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -221,9 +221,7 @@ class LanguageServiceGrpcTransport(LanguageServiceTransport):
     def analyze_sentiment(self) -> Callable[
             [language_service.AnalyzeSentimentRequest],
             language_service.AnalyzeSentimentResponse]:
-        r"""Return a callable for the
-        analyze sentiment
-          method over gRPC.
+        r"""Return a callable for the analyze sentiment method over gRPC.
 
         Analyzes the sentiment of the provided text.
 
@@ -249,9 +247,7 @@ class LanguageServiceGrpcTransport(LanguageServiceTransport):
     def analyze_entities(self) -> Callable[
             [language_service.AnalyzeEntitiesRequest],
             language_service.AnalyzeEntitiesResponse]:
-        r"""Return a callable for the
-        analyze entities
-          method over gRPC.
+        r"""Return a callable for the analyze entities method over gRPC.
 
         Finds named entities (currently proper names and
         common nouns) in the text along with entity types,
@@ -280,9 +276,7 @@ class LanguageServiceGrpcTransport(LanguageServiceTransport):
     def analyze_entity_sentiment(self) -> Callable[
             [language_service.AnalyzeEntitySentimentRequest],
             language_service.AnalyzeEntitySentimentResponse]:
-        r"""Return a callable for the
-        analyze entity sentiment
-          method over gRPC.
+        r"""Return a callable for the analyze entity sentiment method over gRPC.
 
         Finds entities, similar to
         [AnalyzeEntities][google.cloud.language.v1.LanguageService.AnalyzeEntities]
@@ -311,9 +305,7 @@ class LanguageServiceGrpcTransport(LanguageServiceTransport):
     def analyze_syntax(self) -> Callable[
             [language_service.AnalyzeSyntaxRequest],
             language_service.AnalyzeSyntaxResponse]:
-        r"""Return a callable for the
-        analyze syntax
-          method over gRPC.
+        r"""Return a callable for the analyze syntax method over gRPC.
 
         Analyzes the syntax of the text and provides sentence
         boundaries and tokenization along with part of speech
@@ -341,9 +333,7 @@ class LanguageServiceGrpcTransport(LanguageServiceTransport):
     def classify_text(self) -> Callable[
             [language_service.ClassifyTextRequest],
             language_service.ClassifyTextResponse]:
-        r"""Return a callable for the
-        classify text
-          method over gRPC.
+        r"""Return a callable for the classify text method over gRPC.
 
         Classifies a document into categories.
 
@@ -369,9 +359,7 @@ class LanguageServiceGrpcTransport(LanguageServiceTransport):
     def annotate_text(self) -> Callable[
             [language_service.AnnotateTextRequest],
             language_service.AnnotateTextResponse]:
-        r"""Return a callable for the
-        annotate text
-          method over gRPC.
+        r"""Return a callable for the annotate text method over gRPC.
 
         A convenience method that provides all the features
         that analyzeSentiment, analyzeEntities, and

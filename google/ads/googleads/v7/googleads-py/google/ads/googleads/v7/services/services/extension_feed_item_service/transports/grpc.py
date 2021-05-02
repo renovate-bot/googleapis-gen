@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v7.resources.types import extension_feed_item
 from google.ads.googleads.v7.services.types import extension_feed_item_service
+
 from .base import ExtensionFeedItemServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class ExtensionFeedItemServiceGrpcTransport(ExtensionFeedItemServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class ExtensionFeedItemServiceGrpcTransport(ExtensionFeedItemServiceTransport):
     def get_extension_feed_item(self) -> Callable[
             [extension_feed_item_service.GetExtensionFeedItemRequest],
             extension_feed_item.ExtensionFeedItem]:
-        r"""Return a callable for the
-        get extension feed item
-          method over gRPC.
+        r"""Return a callable for the get extension feed item method over gRPC.
 
         Returns the requested extension feed item in full detail.
 
@@ -233,9 +233,7 @@ class ExtensionFeedItemServiceGrpcTransport(ExtensionFeedItemServiceTransport):
     def mutate_extension_feed_items(self) -> Callable[
             [extension_feed_item_service.MutateExtensionFeedItemsRequest],
             extension_feed_item_service.MutateExtensionFeedItemsResponse]:
-        r"""Return a callable for the
-        mutate extension feed items
-          method over gRPC.
+        r"""Return a callable for the mutate extension feed items method over gRPC.
 
         Creates, updates, or removes extension feed items. Operation
         statuses are returned.

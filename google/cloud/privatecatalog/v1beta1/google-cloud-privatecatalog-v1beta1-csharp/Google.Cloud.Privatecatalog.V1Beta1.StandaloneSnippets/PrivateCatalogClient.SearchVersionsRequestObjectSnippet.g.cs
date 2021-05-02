@@ -23,9 +23,12 @@ namespace Google.Cloud.Privatecatalog.V1Beta1.Snippets
     public sealed partial class GeneratedPrivateCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for SearchVersions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SearchVersionsRequestObject()
         {
-            // Snippet: SearchVersions(SearchVersionsRequest, CallSettings)
             // Create client
             PrivateCatalogClient privateCatalogClient = PrivateCatalogClient.Create();
             // Initialize request argument(s)
@@ -68,7 +71,6 @@ namespace Google.Cloud.Privatecatalog.V1Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

@@ -16,16 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRecommendationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ApplyRecommendationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ApplyRecommendationAsync()
         {
-            // Snippet: ApplyRecommendationAsync(string, IEnumerable<ApplyRecommendationOperation>, CallSettings)
-            // Additional: ApplyRecommendationAsync(string, IEnumerable<ApplyRecommendationOperation>, CancellationToken)
             // Create client
             RecommendationServiceClient recommendationServiceClient = await RecommendationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             ApplyRecommendationResponse response = await recommendationServiceClient.ApplyRecommendationAsync(customerId, operations);
-            // End snippet
         }
     }
 }

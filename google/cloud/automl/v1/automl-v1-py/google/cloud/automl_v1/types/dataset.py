@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.automl_v1.types import image
 from google.cloud.automl_v1.types import text
@@ -86,72 +89,45 @@ class Dataset(proto.Message):
             on and examples of labels.
     """
 
-    translation_dataset_metadata = proto.Field(
-        proto.MESSAGE,
-        number=23,
-        oneof='dataset_metadata',
+    translation_dataset_metadata = proto.Field(proto.MESSAGE, number=23, oneof='dataset_metadata',
         message=translation.TranslationDatasetMetadata,
     )
-    image_classification_dataset_metadata = proto.Field(
-        proto.MESSAGE,
-        number=24,
-        oneof='dataset_metadata',
+
+    image_classification_dataset_metadata = proto.Field(proto.MESSAGE, number=24, oneof='dataset_metadata',
         message=image.ImageClassificationDatasetMetadata,
     )
-    text_classification_dataset_metadata = proto.Field(
-        proto.MESSAGE,
-        number=25,
-        oneof='dataset_metadata',
+
+    text_classification_dataset_metadata = proto.Field(proto.MESSAGE, number=25, oneof='dataset_metadata',
         message=text.TextClassificationDatasetMetadata,
     )
-    image_object_detection_dataset_metadata = proto.Field(
-        proto.MESSAGE,
-        number=26,
-        oneof='dataset_metadata',
+
+    image_object_detection_dataset_metadata = proto.Field(proto.MESSAGE, number=26, oneof='dataset_metadata',
         message=image.ImageObjectDetectionDatasetMetadata,
     )
-    text_extraction_dataset_metadata = proto.Field(
-        proto.MESSAGE,
-        number=28,
-        oneof='dataset_metadata',
+
+    text_extraction_dataset_metadata = proto.Field(proto.MESSAGE, number=28, oneof='dataset_metadata',
         message=text.TextExtractionDatasetMetadata,
     )
-    text_sentiment_dataset_metadata = proto.Field(
-        proto.MESSAGE,
-        number=30,
-        oneof='dataset_metadata',
+
+    text_sentiment_dataset_metadata = proto.Field(proto.MESSAGE, number=30, oneof='dataset_metadata',
         message=text.TextSentimentDatasetMetadata,
     )
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    display_name = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    example_count = proto.Field(
-        proto.INT32,
-        number=21,
-    )
-    create_time = proto.Field(
-        proto.MESSAGE,
-        number=14,
+
+    name = proto.Field(proto.STRING, number=1)
+
+    display_name = proto.Field(proto.STRING, number=2)
+
+    description = proto.Field(proto.STRING, number=3)
+
+    example_count = proto.Field(proto.INT32, number=21)
+
+    create_time = proto.Field(proto.MESSAGE, number=14,
         message=timestamp.Timestamp,
     )
-    etag = proto.Field(
-        proto.STRING,
-        number=17,
-    )
-    labels = proto.MapField(
-        proto.STRING,
-        proto.STRING,
-        number=39
-    )
+
+    etag = proto.Field(proto.STRING, number=17)
+
+    labels = proto.MapField(proto.STRING, proto.STRING, number=39)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

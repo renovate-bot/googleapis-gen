@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -36,6 +38,7 @@ from google.cloud.automl_v1beta1.types import service
 from google.cloud.automl_v1beta1.types import table_spec
 from google.cloud.automl_v1beta1.types import table_spec as gca_table_spec
 from google.longrunning import operations_pb2 as operations  # type: ignore
+
 from .base import AutoMlTransport, DEFAULT_CLIENT_INFO
 
 
@@ -83,8 +86,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -224,15 +226,13 @@ class AutoMlGrpcTransport(AutoMlTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -262,9 +262,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def create_dataset(self) -> Callable[
             [service.CreateDatasetRequest],
             gca_dataset.Dataset]:
-        r"""Return a callable for the
-        create dataset
-          method over gRPC.
+        r"""Return a callable for the create dataset method over gRPC.
 
         Creates a dataset.
 
@@ -290,9 +288,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def get_dataset(self) -> Callable[
             [service.GetDatasetRequest],
             dataset.Dataset]:
-        r"""Return a callable for the
-        get dataset
-          method over gRPC.
+        r"""Return a callable for the get dataset method over gRPC.
 
         Gets a dataset.
 
@@ -318,9 +314,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def list_datasets(self) -> Callable[
             [service.ListDatasetsRequest],
             service.ListDatasetsResponse]:
-        r"""Return a callable for the
-        list datasets
-          method over gRPC.
+        r"""Return a callable for the list datasets method over gRPC.
 
         Lists datasets in a project.
 
@@ -346,9 +340,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def update_dataset(self) -> Callable[
             [service.UpdateDatasetRequest],
             gca_dataset.Dataset]:
-        r"""Return a callable for the
-        update dataset
-          method over gRPC.
+        r"""Return a callable for the update dataset method over gRPC.
 
         Updates a dataset.
 
@@ -374,9 +366,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def delete_dataset(self) -> Callable[
             [service.DeleteDatasetRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete dataset
-          method over gRPC.
+        r"""Return a callable for the delete dataset method over gRPC.
 
         Deletes a dataset and all of its contents. Returns empty
         response in the
@@ -406,9 +396,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def import_data(self) -> Callable[
             [service.ImportDataRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        import data
-          method over gRPC.
+        r"""Return a callable for the import data method over gRPC.
 
         Imports data into a dataset. For Tables this method can only be
         called on an empty Dataset.
@@ -443,9 +431,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def export_data(self) -> Callable[
             [service.ExportDataRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        export data
-          method over gRPC.
+        r"""Return a callable for the export data method over gRPC.
 
         Exports dataset's data to the provided output location. Returns
         an empty response in the
@@ -474,9 +460,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def get_annotation_spec(self) -> Callable[
             [service.GetAnnotationSpecRequest],
             annotation_spec.AnnotationSpec]:
-        r"""Return a callable for the
-        get annotation spec
-          method over gRPC.
+        r"""Return a callable for the get annotation spec method over gRPC.
 
         Gets an annotation spec.
 
@@ -502,9 +486,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def get_table_spec(self) -> Callable[
             [service.GetTableSpecRequest],
             table_spec.TableSpec]:
-        r"""Return a callable for the
-        get table spec
-          method over gRPC.
+        r"""Return a callable for the get table spec method over gRPC.
 
         Gets a table spec.
 
@@ -530,9 +512,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def list_table_specs(self) -> Callable[
             [service.ListTableSpecsRequest],
             service.ListTableSpecsResponse]:
-        r"""Return a callable for the
-        list table specs
-          method over gRPC.
+        r"""Return a callable for the list table specs method over gRPC.
 
         Lists table specs in a dataset.
 
@@ -558,9 +538,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def update_table_spec(self) -> Callable[
             [service.UpdateTableSpecRequest],
             gca_table_spec.TableSpec]:
-        r"""Return a callable for the
-        update table spec
-          method over gRPC.
+        r"""Return a callable for the update table spec method over gRPC.
 
         Updates a table spec.
 
@@ -586,9 +564,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def get_column_spec(self) -> Callable[
             [service.GetColumnSpecRequest],
             column_spec.ColumnSpec]:
-        r"""Return a callable for the
-        get column spec
-          method over gRPC.
+        r"""Return a callable for the get column spec method over gRPC.
 
         Gets a column spec.
 
@@ -614,9 +590,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def list_column_specs(self) -> Callable[
             [service.ListColumnSpecsRequest],
             service.ListColumnSpecsResponse]:
-        r"""Return a callable for the
-        list column specs
-          method over gRPC.
+        r"""Return a callable for the list column specs method over gRPC.
 
         Lists column specs in a table spec.
 
@@ -642,9 +616,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def update_column_spec(self) -> Callable[
             [service.UpdateColumnSpecRequest],
             gca_column_spec.ColumnSpec]:
-        r"""Return a callable for the
-        update column spec
-          method over gRPC.
+        r"""Return a callable for the update column spec method over gRPC.
 
         Updates a column spec.
 
@@ -670,9 +642,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def create_model(self) -> Callable[
             [service.CreateModelRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create model
-          method over gRPC.
+        r"""Return a callable for the create model method over gRPC.
 
         Creates a model. Returns a Model in the
         [response][google.longrunning.Operation.response] field when it
@@ -702,9 +672,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def get_model(self) -> Callable[
             [service.GetModelRequest],
             model.Model]:
-        r"""Return a callable for the
-        get model
-          method over gRPC.
+        r"""Return a callable for the get model method over gRPC.
 
         Gets a model.
 
@@ -730,9 +698,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def list_models(self) -> Callable[
             [service.ListModelsRequest],
             service.ListModelsResponse]:
-        r"""Return a callable for the
-        list models
-          method over gRPC.
+        r"""Return a callable for the list models method over gRPC.
 
         Lists models.
 
@@ -758,9 +724,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def delete_model(self) -> Callable[
             [service.DeleteModelRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete model
-          method over gRPC.
+        r"""Return a callable for the delete model method over gRPC.
 
         Deletes a model. Returns ``google.protobuf.Empty`` in the
         [response][google.longrunning.Operation.response] field when it
@@ -789,9 +753,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def deploy_model(self) -> Callable[
             [service.DeployModelRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        deploy model
-          method over gRPC.
+        r"""Return a callable for the deploy model method over gRPC.
 
         Deploys a model. If a model is already deployed, deploying it
         with the same parameters has no effect. Deploying with different
@@ -831,9 +793,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def undeploy_model(self) -> Callable[
             [service.UndeployModelRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        undeploy model
-          method over gRPC.
+        r"""Return a callable for the undeploy model method over gRPC.
 
         Undeploys a model. If the model is not deployed this method has
         no effect.
@@ -867,9 +827,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def export_model(self) -> Callable[
             [service.ExportModelRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        export model
-          method over gRPC.
+        r"""Return a callable for the export model method over gRPC.
 
         Exports a trained, "export-able", model to a user specified
         Google Cloud Storage location. A model is considered export-able
@@ -903,9 +861,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def export_evaluated_examples(self) -> Callable[
             [service.ExportEvaluatedExamplesRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        export evaluated examples
-          method over gRPC.
+        r"""Return a callable for the export evaluated examples method over gRPC.
 
         Exports examples on which the model was evaluated (i.e. which
         were in the TEST set of the dataset the model was created from),
@@ -945,9 +901,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def get_model_evaluation(self) -> Callable[
             [service.GetModelEvaluationRequest],
             model_evaluation.ModelEvaluation]:
-        r"""Return a callable for the
-        get model evaluation
-          method over gRPC.
+        r"""Return a callable for the get model evaluation method over gRPC.
 
         Gets a model evaluation.
 
@@ -973,9 +927,7 @@ class AutoMlGrpcTransport(AutoMlTransport):
     def list_model_evaluations(self) -> Callable[
             [service.ListModelEvaluationsRequest],
             service.ListModelEvaluationsResponse]:
-        r"""Return a callable for the
-        list model evaluations
-          method over gRPC.
+        r"""Return a callable for the list model evaluations method over gRPC.
 
         Lists model evaluations.
 

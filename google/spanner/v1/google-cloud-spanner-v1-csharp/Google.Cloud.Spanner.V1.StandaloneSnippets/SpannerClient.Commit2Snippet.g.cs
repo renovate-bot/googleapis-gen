@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Spanner.V1.Snippets
 {
+    using Google.Cloud.Spanner.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for Commit</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void Commit2()
         {
-            // Snippet: Commit(string, TransactionOptions, IEnumerable<Mutation>, CallSettings)
             // Create client
             SpannerClient spannerClient = SpannerClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.Spanner.V1.Snippets
             IEnumerable<Mutation> mutations = new Mutation[] { new Mutation(), };
             // Make the request
             CommitResponse response = spannerClient.Commit(session, singleUseTransaction, mutations);
-            // End snippet
         }
     }
 }

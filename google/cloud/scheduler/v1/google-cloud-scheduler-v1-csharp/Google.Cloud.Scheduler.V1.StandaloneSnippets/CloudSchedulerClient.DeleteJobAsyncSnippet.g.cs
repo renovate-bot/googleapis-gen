@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Scheduler.V1.Snippets
 {
+    using Google.Cloud.Scheduler.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudSchedulerClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteJobAsync()
         {
-            // Snippet: DeleteJobAsync(string, CallSettings)
-            // Additional: DeleteJobAsync(string, CancellationToken)
             // Create client
             CloudSchedulerClient cloudSchedulerClient = await CloudSchedulerClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/jobs/[JOB]";
             // Make the request
             await cloudSchedulerClient.DeleteJobAsync(name);
-            // End snippet
         }
     }
 }

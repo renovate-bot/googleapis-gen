@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.OrgPolicy.V2.Snippets
 {
+    using Google.Cloud.OrgPolicy.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOrgPolicyClientStandaloneSnippets
     {
         /// <summary>Snippet for GetEffectivePolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetEffectivePolicyRequestObjectAsync()
         {
-            // Snippet: GetEffectivePolicyAsync(GetEffectivePolicyRequest, CallSettings)
-            // Additional: GetEffectivePolicyAsync(GetEffectivePolicyRequest, CancellationToken)
             // Create client
             OrgPolicyClient orgPolicyClient = await OrgPolicyClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.OrgPolicy.V2.Snippets
             };
             // Make the request
             Policy response = await orgPolicyClient.GetEffectivePolicyAsync(request);
-            // End snippet
         }
     }
 }

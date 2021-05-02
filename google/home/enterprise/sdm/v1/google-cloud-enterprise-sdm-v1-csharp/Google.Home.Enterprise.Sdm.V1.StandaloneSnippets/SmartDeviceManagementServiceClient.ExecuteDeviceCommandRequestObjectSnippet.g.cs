@@ -16,14 +16,18 @@
 
 namespace Google.Home.Enterprise.Sdm.V1.Snippets
 {
+    using Google.Home.Enterprise.Sdm.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedSmartDeviceManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ExecuteDeviceCommand</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ExecuteDeviceCommandRequestObject()
         {
-            // Snippet: ExecuteDeviceCommand(ExecuteDeviceCommandRequest, CallSettings)
             // Create client
             SmartDeviceManagementServiceClient smartDeviceManagementServiceClient = SmartDeviceManagementServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Home.Enterprise.Sdm.V1.Snippets
             };
             // Make the request
             ExecuteDeviceCommandResponse response = smartDeviceManagementServiceClient.ExecuteDeviceCommand(request);
-            // End snippet
         }
     }
 }

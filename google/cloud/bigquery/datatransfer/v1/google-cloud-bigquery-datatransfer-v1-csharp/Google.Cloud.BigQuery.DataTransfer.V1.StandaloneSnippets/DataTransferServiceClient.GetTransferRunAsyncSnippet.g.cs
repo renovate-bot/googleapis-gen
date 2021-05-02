@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
 {
+    using Google.Cloud.BigQuery.DataTransfer.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataTransferServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTransferRunAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTransferRunAsync()
         {
-            // Snippet: GetTransferRunAsync(string, CallSettings)
-            // Additional: GetTransferRunAsync(string, CancellationToken)
             // Create client
             DataTransferServiceClient dataTransferServiceClient = await DataTransferServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/transferConfigs/[TRANSFER_CONFIG]/runs/[RUN]";
             // Make the request
             TransferRun response = await dataTransferServiceClient.GetTransferRunAsync(name);
-            // End snippet
         }
     }
 }

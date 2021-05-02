@@ -18,15 +18,18 @@ namespace Google.Cloud.Tasks.V2.Snippets
 {
     using Google.Api.Gax;
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.Tasks.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for TestIamPermissionsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task TestIamPermissionsRequestObjectAsync()
         {
-            // Snippet: TestIamPermissionsAsync(TestIamPermissionsRequest, CallSettings)
-            // Additional: TestIamPermissionsAsync(TestIamPermissionsRequest, CancellationToken)
             // Create client
             CloudTasksClient cloudTasksClient = await CloudTasksClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Tasks.V2.Snippets
             };
             // Make the request
             TestIamPermissionsResponse response = await cloudTasksClient.TestIamPermissionsAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigtableTableAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBackupAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetBackupAsync()
         {
-            // Snippet: GetBackupAsync(string, CallSettings)
-            // Additional: GetBackupAsync(string, CancellationToken)
             // Create client
             BigtableTableAdminClient bigtableTableAdminClient = await BigtableTableAdminClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/instances/[INSTANCE]/clusters/[CLUSTER]/backups/[BACKUP]";
             // Make the request
             Backup response = await bigtableTableAdminClient.GetBackupAsync(name);
-            // End snippet
         }
     }
 }

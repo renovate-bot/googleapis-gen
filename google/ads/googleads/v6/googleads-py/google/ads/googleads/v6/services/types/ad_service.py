@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.common.types import policy as gagc_policy
 from google.ads.googleads.v6.enums.types import response_content_type as gage_response_content_type
@@ -44,10 +47,7 @@ class GetAdRequest(proto.Message):
             fetch.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateAdsRequest(proto.Message):
@@ -67,24 +67,18 @@ class MutateAdsRequest(proto.Message):
             resource name should be returned post mutation.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operations = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operations = proto.RepeatedField(proto.MESSAGE, number=2,
         message='AdOperation',
     )
-    response_content_type = proto.Field(
-        proto.ENUM,
-        number=5,
+    response_content_type = proto.Field(proto.ENUM, number=5,
         enum=gage_response_content_type.ResponseContentTypeEnum.ResponseContentType,
     )
 
 
 class AdOperation(proto.Message):
     r"""A single update operation on an ad.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             FieldMask that determines which resource
@@ -98,40 +92,33 @@ class AdOperation(proto.Message):
             ``customers/{customer_id}/ads/{ad_id}``
     """
 
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
-    policy_validation_parameter = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    policy_validation_parameter = proto.Field(proto.MESSAGE, number=3,
         message=gagc_policy.PolicyValidationParameter,
     )
-    update = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='operation',
+    update = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=gagr_ad.Ad,
     )
 
 
 class MutateAdsResponse(proto.Message):
     r"""Response message for an ad mutate.
+
     Attributes:
         results (Sequence[google.ads.googleads.v6.services.types.MutateAdResult]):
             All results for the mutate.
     """
 
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    results = proto.RepeatedField(proto.MESSAGE, number=2,
         message='MutateAdResult',
     )
 
 
 class MutateAdResult(proto.Message):
     r"""The result for the ad mutate.
+
     Attributes:
         resource_name (str):
             The resource name returned for successful
@@ -142,13 +129,8 @@ class MutateAdResult(proto.Message):
             set to "MUTABLE_RESOURCE".
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    ad = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    ad = proto.Field(proto.MESSAGE, number=2,
         message=gagr_ad.Ad,
     )
 

@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateJobTriggerAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateJobTriggerRequestObjectAsync()
         {
-            // Snippet: UpdateJobTriggerAsync(UpdateJobTriggerRequest, CallSettings)
-            // Additional: UpdateJobTriggerAsync(UpdateJobTriggerRequest, CancellationToken)
             // Create client
             DlpServiceClient dlpServiceClient = await DlpServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Dlp.V2.Snippets
             };
             // Make the request
             JobTrigger response = await dlpServiceClient.UpdateJobTriggerAsync(request);
-            // End snippet
         }
     }
 }

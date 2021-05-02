@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
+    using Google.Cloud.Talent.V4Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTenantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteTenantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteTenantAsync()
         {
-            // Snippet: DeleteTenantAsync(string, CallSettings)
-            // Additional: DeleteTenantAsync(string, CancellationToken)
             // Create client
             TenantServiceClient tenantServiceClient = await TenantServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/tenants/[TENANT]";
             // Make the request
             await tenantServiceClient.DeleteTenantAsync(name);
-            // End snippet
         }
     }
 }

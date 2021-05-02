@@ -16,12 +16,17 @@
 
 namespace Google.Home.Graph.V1.Snippets
 {
+    using Google.Home.Graph.V1;
+
     public sealed partial class GeneratedHomeGraphApiServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ReportStateAndNotification</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ReportStateAndNotification()
         {
-            // Snippet: ReportStateAndNotification(string, string, string, StateAndNotificationPayload, CallSettings)
             // Create client
             HomeGraphApiServiceClient homeGraphApiServiceClient = HomeGraphApiServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Home.Graph.V1.Snippets
             StateAndNotificationPayload payload = new StateAndNotificationPayload();
             // Make the request
             ReportStateAndNotificationResponse response = homeGraphApiServiceClient.ReportStateAndNotification(requestId, eventId, agentUserId, payload);
-            // End snippet
         }
     }
 }

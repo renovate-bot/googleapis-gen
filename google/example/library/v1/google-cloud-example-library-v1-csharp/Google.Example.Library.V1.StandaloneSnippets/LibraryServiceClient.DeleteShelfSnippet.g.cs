@@ -16,19 +16,23 @@
 
 namespace Google.Example.Library.V1.Snippets
 {
+    using Google.Example.Library.V1;
+
     public sealed partial class GeneratedLibraryServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteShelf</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteShelf()
         {
-            // Snippet: DeleteShelf(string, CallSettings)
             // Create client
             LibraryServiceClient libraryServiceClient = LibraryServiceClient.Create();
             // Initialize request argument(s)
             string name = "shelves/[SHELF_ID]";
             // Make the request
             libraryServiceClient.DeleteShelf(name);
-            // End snippet
         }
     }
 }

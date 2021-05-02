@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteStoredInfoTypeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteStoredInfoTypeResourceNamesAsync()
         {
-            // Snippet: DeleteStoredInfoTypeAsync(StoredInfoTypeName, CallSettings)
-            // Additional: DeleteStoredInfoTypeAsync(StoredInfoTypeName, CancellationToken)
             // Create client
             DlpServiceClient dlpServiceClient = await DlpServiceClient.CreateAsync();
             // Initialize request argument(s)
             StoredInfoTypeName name = StoredInfoTypeName.FromOrganizationStoredInfoType("[ORGANIZATION]", "[STORED_INFO_TYPE]");
             // Make the request
             await dlpServiceClient.DeleteStoredInfoTypeAsync(name);
-            // End snippet
         }
     }
 }

@@ -341,7 +341,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListScanConfigs</summary>
+        /// <summary>Snippet for ListScanConfigsAsync</summary>
         public async Task ListScanConfigsRequestObjectAsync()
         {
             // Snippet: ListScanConfigsAsync(ListScanConfigsRequest, CallSettings)
@@ -434,7 +434,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListScanConfigs</summary>
+        /// <summary>Snippet for ListScanConfigsAsync</summary>
         public async Task ListScanConfigsAsync()
         {
             // Snippet: ListScanConfigsAsync(string, string, int?, CallSettings)
@@ -524,7 +524,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListScanConfigs</summary>
+        /// <summary>Snippet for ListScanConfigsAsync</summary>
         public async Task ListScanConfigsResourceNamesAsync()
         {
             // Snippet: ListScanConfigsAsync(ProjectName, string, int?, CallSettings)
@@ -855,7 +855,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListScanRuns</summary>
+        /// <summary>Snippet for ListScanRunsAsync</summary>
         public async Task ListScanRunsRequestObjectAsync()
         {
             // Snippet: ListScanRunsAsync(ListScanRunsRequest, CallSettings)
@@ -948,7 +948,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListScanRuns</summary>
+        /// <summary>Snippet for ListScanRunsAsync</summary>
         public async Task ListScanRunsAsync()
         {
             // Snippet: ListScanRunsAsync(string, string, int?, CallSettings)
@@ -1038,7 +1038,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListScanRuns</summary>
+        /// <summary>Snippet for ListScanRunsAsync</summary>
         public async Task ListScanRunsResourceNamesAsync()
         {
             // Snippet: ListScanRunsAsync(ScanConfigName, string, int?, CallSettings)
@@ -1218,7 +1218,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCrawledUrls</summary>
+        /// <summary>Snippet for ListCrawledUrlsAsync</summary>
         public async Task ListCrawledUrlsRequestObjectAsync()
         {
             // Snippet: ListCrawledUrlsAsync(ListCrawledUrlsRequest, CallSettings)
@@ -1311,7 +1311,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCrawledUrls</summary>
+        /// <summary>Snippet for ListCrawledUrlsAsync</summary>
         public async Task ListCrawledUrlsAsync()
         {
             // Snippet: ListCrawledUrlsAsync(string, string, int?, CallSettings)
@@ -1401,7 +1401,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCrawledUrls</summary>
+        /// <summary>Snippet for ListCrawledUrlsAsync</summary>
         public async Task ListCrawledUrlsResourceNamesAsync()
         {
             // Snippet: ListCrawledUrlsAsync(ScanRunName, string, int?, CallSettings)
@@ -1582,7 +1582,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListFindings</summary>
+        /// <summary>Snippet for ListFindingsAsync</summary>
         public async Task ListFindingsRequestObjectAsync()
         {
             // Snippet: ListFindingsAsync(ListFindingsRequest, CallSettings)
@@ -1677,7 +1677,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListFindings</summary>
+        /// <summary>Snippet for ListFindingsAsync</summary>
         public async Task ListFindingsAsync()
         {
             // Snippet: ListFindingsAsync(string, string, string, int?, CallSettings)
@@ -1769,7 +1769,7 @@ namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListFindings</summary>
+        /// <summary>Snippet for ListFindingsAsync</summary>
         public async Task ListFindingsResourceNamesAsync()
         {
             // Snippet: ListFindingsAsync(ScanRunName, string, string, int?, CallSettings)

@@ -16,21 +16,24 @@
 
 namespace Google.Cloud.DevTools.ContainerAnalysis.V1.Snippets
 {
+    using Google.Cloud.DevTools.ContainerAnalysis.V1;
     using Google.Cloud.Iam.V1;
 
     public sealed partial class GeneratedContainerAnalysisClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIamPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetIamPolicy()
         {
-            // Snippet: GetIamPolicy(string, CallSettings)
             // Create client
             ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.Create();
             // Initialize request argument(s)
             string resource = "a/wildcard/resource";
             // Make the request
             Policy response = containerAnalysisClient.GetIamPolicy(resource);
-            // End snippet
         }
     }
 }

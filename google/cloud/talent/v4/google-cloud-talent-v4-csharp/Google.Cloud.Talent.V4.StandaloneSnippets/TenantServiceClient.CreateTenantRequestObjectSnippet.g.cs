@@ -16,12 +16,18 @@
 
 namespace Google.Cloud.Talent.V4.Snippets
 {
+    using Google.Cloud;
+    using Google.Cloud.Talent.V4;
+
     public sealed partial class GeneratedTenantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateTenant</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateTenantRequestObject()
         {
-            // Snippet: CreateTenant(CreateTenantRequest, CallSettings)
             // Create client
             TenantServiceClient tenantServiceClient = TenantServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +38,6 @@ namespace Google.Cloud.Talent.V4.Snippets
             };
             // Make the request
             Tenant response = tenantServiceClient.CreateTenant(request);
-            // End snippet
         }
     }
 }

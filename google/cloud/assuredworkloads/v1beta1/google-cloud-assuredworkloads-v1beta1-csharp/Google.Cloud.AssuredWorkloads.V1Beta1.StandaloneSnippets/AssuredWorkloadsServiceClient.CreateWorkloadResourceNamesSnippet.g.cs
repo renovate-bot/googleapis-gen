@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.AssuredWorkloads.V1Beta1.Snippets
 {
+    using Google.Cloud.AssuredWorkloads.V1Beta1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedAssuredWorkloadsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateWorkload</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateWorkloadResourceNames()
         {
-            // Snippet: CreateWorkload(LocationName, Workload, CallSettings)
             // Create client
             AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.Create();
             // Initialize request argument(s)
@@ -47,7 +51,6 @@ namespace Google.Cloud.AssuredWorkloads.V1Beta1.Snippets
                 // If it has completed, then access the result
                 Workload retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.common.types import policy as gagc_policy
 from google.ads.googleads.v7.enums.types import policy_approval_status
@@ -31,6 +34,7 @@ __protobuf__ = proto.module(
 
 class AdAssetPolicySummary(proto.Message):
     r"""Contains policy information for an asset inside an ad.
+
     Attributes:
         policy_topic_entries (Sequence[google.ads.googleads.v7.common.types.PolicyTopicEntry]):
             The list of policy findings for this asset.
@@ -42,19 +46,13 @@ class AdAssetPolicySummary(proto.Message):
             individual policy topic entries.
     """
 
-    policy_topic_entries = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    policy_topic_entries = proto.RepeatedField(proto.MESSAGE, number=1,
         message=gagc_policy.PolicyTopicEntry,
     )
-    review_status = proto.Field(
-        proto.ENUM,
-        number=2,
+    review_status = proto.Field(proto.ENUM, number=2,
         enum=policy_review_status.PolicyReviewStatusEnum.PolicyReviewStatus,
     )
-    approval_status = proto.Field(
-        proto.ENUM,
-        number=3,
+    approval_status = proto.Field(proto.ENUM, number=3,
         enum=policy_approval_status.PolicyApprovalStatusEnum.PolicyApprovalStatus,
     )
 

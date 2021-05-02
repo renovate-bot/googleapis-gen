@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Language.V1Beta2.Snippets
 {
+    using Google.Cloud.Language.V1Beta2;
+
     public sealed partial class GeneratedLanguageServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for AnnotateText</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void AnnotateText2()
         {
-            // Snippet: AnnotateText(Document, AnnotateTextRequest.Types.Features, CallSettings)
             // Create client
             LanguageServiceClient languageServiceClient = LanguageServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Language.V1Beta2.Snippets
             AnnotateTextRequest.Types.Features features = new AnnotateTextRequest.Types.Features();
             // Make the request
             AnnotateTextResponse response = languageServiceClient.AnnotateText(document, features);
-            // End snippet
         }
     }
 }

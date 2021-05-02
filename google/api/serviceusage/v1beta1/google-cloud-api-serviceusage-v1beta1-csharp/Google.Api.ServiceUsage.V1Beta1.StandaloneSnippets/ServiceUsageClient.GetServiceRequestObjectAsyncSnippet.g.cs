@@ -16,22 +16,24 @@
 
 namespace Google.Api.ServiceUsage.V1Beta1.Snippets
 {
+    using Google.Api.ServiceUsage.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServiceUsageClientStandaloneSnippets
     {
         /// <summary>Snippet for GetServiceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetServiceRequestObjectAsync()
         {
-            // Snippet: GetServiceAsync(GetServiceRequest, CallSettings)
-            // Additional: GetServiceAsync(GetServiceRequest, CancellationToken)
             // Create client
             ServiceUsageClient serviceUsageClient = await ServiceUsageClient.CreateAsync();
             // Initialize request argument(s)
             GetServiceRequest request = new GetServiceRequest { Name = "", };
             // Make the request
             Service response = await serviceUsageClient.GetServiceAsync(request);
-            // End snippet
         }
     }
 }

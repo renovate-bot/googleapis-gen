@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -40,7 +41,8 @@ from google.cloud.metastore_v1.types.metastore import Service
 from google.cloud.metastore_v1.types.metastore import UpdateMetadataImportRequest
 from google.cloud.metastore_v1.types.metastore import UpdateServiceRequest
 
-__all__ = ('CreateMetadataImportRequest',
+__all__ = (
+    'CreateMetadataImportRequest',
     'CreateServiceRequest',
     'DatabaseDumpSpec',
     'DataprocMetastoreAsyncClient',

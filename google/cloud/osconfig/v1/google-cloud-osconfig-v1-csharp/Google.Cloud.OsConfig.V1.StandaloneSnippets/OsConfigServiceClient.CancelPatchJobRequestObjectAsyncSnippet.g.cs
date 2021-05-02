@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.OsConfig.V1.Snippets
 {
+    using Google.Cloud.OsConfig.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOsConfigServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CancelPatchJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CancelPatchJobRequestObjectAsync()
         {
-            // Snippet: CancelPatchJobAsync(CancelPatchJobRequest, CallSettings)
-            // Additional: CancelPatchJobAsync(CancelPatchJobRequest, CancellationToken)
             // Create client
             OsConfigServiceClient osConfigServiceClient = await OsConfigServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.OsConfig.V1.Snippets
             };
             // Make the request
             PatchJob response = await osConfigServiceClient.CancelPatchJobAsync(request);
-            // End snippet
         }
     }
 }

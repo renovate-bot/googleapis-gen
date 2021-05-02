@@ -16,14 +16,18 @@
 
 namespace Google.Chromeos.Moblab.V1Beta1.Snippets
 {
+    using Google.Chromeos.Moblab.V1Beta1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedBuildServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for StageBuild</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void StageBuildResourceNames()
         {
-            // Snippet: StageBuild(BuildArtifactName, CallSettings)
             // Create client
             BuildServiceClient buildServiceClient = BuildServiceClient.Create();
             // Initialize request argument(s)
@@ -46,7 +50,6 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
                 // If it has completed, then access the result
                 StageBuildResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

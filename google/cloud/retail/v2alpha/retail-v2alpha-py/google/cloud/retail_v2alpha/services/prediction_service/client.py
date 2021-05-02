@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -31,6 +33,7 @@ from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.retail_v2alpha.types import prediction_service
+
 from .transports.base import PredictionServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import PredictionServiceGrpcTransport
 from .transports.grpc_asyncio import PredictionServiceGrpcAsyncIOTransport
@@ -331,8 +334,8 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
 
         Args:
             request (google.cloud.retail_v2alpha.types.PredictRequest):
-                The request object.
-                Request message for Predict method.
+                The request object. Request message for Predict method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -344,6 +347,7 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
                 Response message for predict method.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a prediction_service.PredictRequest.
         # There's no risk of modifying the input as we've already verified
@@ -373,6 +377,8 @@ class PredictionServiceClient(metaclass=PredictionServiceClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
+
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteInspectTemplate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteInspectTemplate()
         {
-            // Snippet: DeleteInspectTemplate(string, CallSettings)
             // Create client
             DlpServiceClient dlpServiceClient = DlpServiceClient.Create();
             // Initialize request argument(s)
             string name = "organizations/[ORGANIZATION]/inspectTemplates/[INSPECT_TEMPLATE]";
             // Make the request
             dlpServiceClient.DeleteInspectTemplate(name);
-            // End snippet
         }
     }
 }

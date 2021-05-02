@@ -74,7 +74,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTagBindings</summary>
+        /// <summary>Snippet for ListTagBindingsAsync</summary>
         public async Task ListTagBindingsRequestObjectAsync()
         {
             // Snippet: ListTagBindingsAsync(ListTagBindingsRequest, CallSettings)
@@ -167,7 +167,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTagBindings</summary>
+        /// <summary>Snippet for ListTagBindingsAsync</summary>
         public async Task ListTagBindingsAsync()
         {
             // Snippet: ListTagBindingsAsync(string, string, int?, CallSettings)
@@ -257,7 +257,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTagBindings</summary>
+        /// <summary>Snippet for ListTagBindingsAsync</summary>
         public async Task ListTagBindingsResourceNamesAsync()
         {
             // Snippet: ListTagBindingsAsync(IResourceName, string, int?, CallSettings)

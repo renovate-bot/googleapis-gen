@@ -17,16 +17,19 @@
 namespace Google.Cloud.Workflows.V1Beta.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Workflows.V1Beta;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWorkflowsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateWorkflowAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateWorkflowRequestObjectAsync()
         {
-            // Snippet: CreateWorkflowAsync(CreateWorkflowRequest, CallSettings)
-            // Additional: CreateWorkflowAsync(CreateWorkflowRequest, CancellationToken)
             // Create client
             WorkflowsClient workflowsClient = await WorkflowsClient.CreateAsync();
             // Initialize request argument(s)
@@ -54,7 +57,6 @@ namespace Google.Cloud.Workflows.V1Beta.Snippets
                 // If it has completed, then access the result
                 Workflow retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

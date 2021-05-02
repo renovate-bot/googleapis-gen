@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Container.V1Beta1.Snippets
 {
+    using Google.Cloud.Container.V1Beta1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for RollbackNodePoolUpgrade</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void RollbackNodePoolUpgrade()
         {
-            // Snippet: RollbackNodePoolUpgrade(string, string, string, string, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
             string nodePoolId = "";
             // Make the request
             Operation response = clusterManagerClient.RollbackNodePoolUpgrade(projectId, zone, clusterId, nodePoolId);
-            // End snippet
         }
     }
 }

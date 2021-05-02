@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -29,6 +31,7 @@ from google.cloud.spanner_v1.types import result_set
 from google.cloud.spanner_v1.types import spanner
 from google.cloud.spanner_v1.types import transaction
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import SpannerTransport, DEFAULT_CLIENT_INFO
 
 
@@ -64,8 +67,7 @@ class SpannerGrpcTransport(SpannerTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -204,15 +206,13 @@ class SpannerGrpcTransport(SpannerTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -226,9 +226,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def create_session(self) -> Callable[
             [spanner.CreateSessionRequest],
             spanner.Session]:
-        r"""Return a callable for the
-        create session
-          method over gRPC.
+        r"""Return a callable for the create session method over gRPC.
 
         Creates a new session. A session can be used to perform
         transactions that read and/or modify data in a Cloud Spanner
@@ -272,9 +270,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def batch_create_sessions(self) -> Callable[
             [spanner.BatchCreateSessionsRequest],
             spanner.BatchCreateSessionsResponse]:
-        r"""Return a callable for the
-        batch create sessions
-          method over gRPC.
+        r"""Return a callable for the batch create sessions method over gRPC.
 
         Creates multiple new sessions.
         This API can be used to initialize a session cache on
@@ -303,9 +299,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def get_session(self) -> Callable[
             [spanner.GetSessionRequest],
             spanner.Session]:
-        r"""Return a callable for the
-        get session
-          method over gRPC.
+        r"""Return a callable for the get session method over gRPC.
 
         Gets a session. Returns ``NOT_FOUND`` if the session does not
         exist. This is mainly useful for determining whether a session
@@ -333,9 +327,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def list_sessions(self) -> Callable[
             [spanner.ListSessionsRequest],
             spanner.ListSessionsResponse]:
-        r"""Return a callable for the
-        list sessions
-          method over gRPC.
+        r"""Return a callable for the list sessions method over gRPC.
 
         Lists all sessions in a given database.
 
@@ -361,9 +353,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def delete_session(self) -> Callable[
             [spanner.DeleteSessionRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete session
-          method over gRPC.
+        r"""Return a callable for the delete session method over gRPC.
 
         Ends a session, releasing server resources associated
         with it. This will asynchronously trigger cancellation
@@ -391,9 +381,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def execute_sql(self) -> Callable[
             [spanner.ExecuteSqlRequest],
             result_set.ResultSet]:
-        r"""Return a callable for the
-        execute sql
-          method over gRPC.
+        r"""Return a callable for the execute sql method over gRPC.
 
         Executes an SQL statement, returning all results in a single
         reply. This method cannot be used to return a result set larger
@@ -432,9 +420,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def execute_streaming_sql(self) -> Callable[
             [spanner.ExecuteSqlRequest],
             result_set.PartialResultSet]:
-        r"""Return a callable for the
-        execute streaming sql
-          method over gRPC.
+        r"""Return a callable for the execute streaming sql method over gRPC.
 
         Like [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql], except
         returns the result set as a stream. Unlike
@@ -465,9 +451,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def execute_batch_dml(self) -> Callable[
             [spanner.ExecuteBatchDmlRequest],
             spanner.ExecuteBatchDmlResponse]:
-        r"""Return a callable for the
-        execute batch dml
-          method over gRPC.
+        r"""Return a callable for the execute batch dml method over gRPC.
 
         Executes a batch of SQL DML statements. This method allows many
         statements to be run with lower latency than submitting them
@@ -506,9 +490,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def read(self) -> Callable[
             [spanner.ReadRequest],
             result_set.ResultSet]:
-        r"""Return a callable for the
-        read
-          method over gRPC.
+        r"""Return a callable for the read method over gRPC.
 
         Reads rows from the database using key lookups and scans, as a
         simple key/value style alternative to
@@ -548,9 +530,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def streaming_read(self) -> Callable[
             [spanner.ReadRequest],
             result_set.PartialResultSet]:
-        r"""Return a callable for the
-        streaming read
-          method over gRPC.
+        r"""Return a callable for the streaming read method over gRPC.
 
         Like [Read][google.spanner.v1.Spanner.Read], except returns the
         result set as a stream. Unlike
@@ -581,9 +561,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def begin_transaction(self) -> Callable[
             [spanner.BeginTransactionRequest],
             transaction.Transaction]:
-        r"""Return a callable for the
-        begin transaction
-          method over gRPC.
+        r"""Return a callable for the begin transaction method over gRPC.
 
         Begins a new transaction. This step can often be skipped:
         [Read][google.spanner.v1.Spanner.Read],
@@ -613,9 +591,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def commit(self) -> Callable[
             [spanner.CommitRequest],
             commit_response.CommitResponse]:
-        r"""Return a callable for the
-        commit
-          method over gRPC.
+        r"""Return a callable for the commit method over gRPC.
 
         Commits a transaction. The request includes the mutations to be
         applied to rows in the database.
@@ -656,9 +632,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def rollback(self) -> Callable[
             [spanner.RollbackRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        rollback
-          method over gRPC.
+        r"""Return a callable for the rollback method over gRPC.
 
         Rolls back a transaction, releasing any locks it holds. It is a
         good idea to call this for any transaction that includes one or
@@ -693,9 +667,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def partition_query(self) -> Callable[
             [spanner.PartitionQueryRequest],
             spanner.PartitionResponse]:
-        r"""Return a callable for the
-        partition query
-          method over gRPC.
+        r"""Return a callable for the partition query method over gRPC.
 
         Creates a set of partition tokens that can be used to execute a
         query operation in parallel. Each of the returned partition
@@ -734,9 +706,7 @@ class SpannerGrpcTransport(SpannerTransport):
     def partition_read(self) -> Callable[
             [spanner.PartitionReadRequest],
             spanner.PartitionResponse]:
-        r"""Return a callable for the
-        partition read
-          method over gRPC.
+        r"""Return a callable for the partition read method over gRPC.
 
         Creates a set of partition tokens that can be used to execute a
         read operation in parallel. Each of the returned partition

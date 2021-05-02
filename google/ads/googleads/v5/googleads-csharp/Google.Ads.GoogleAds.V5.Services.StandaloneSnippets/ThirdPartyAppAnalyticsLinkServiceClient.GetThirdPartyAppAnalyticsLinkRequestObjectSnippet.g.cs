@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedThirdPartyAppAnalyticsLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetThirdPartyAppAnalyticsLink</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetThirdPartyAppAnalyticsLinkRequestObject()
         {
-            // Snippet: GetThirdPartyAppAnalyticsLink(GetThirdPartyAppAnalyticsLinkRequest, CallSettings)
             // Create client
             ThirdPartyAppAnalyticsLinkServiceClient thirdPartyAppAnalyticsLinkServiceClient = ThirdPartyAppAnalyticsLinkServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             ThirdPartyAppAnalyticsLink response = thirdPartyAppAnalyticsLinkServiceClient.GetThirdPartyAppAnalyticsLink(request);
-            // End snippet
         }
     }
 }

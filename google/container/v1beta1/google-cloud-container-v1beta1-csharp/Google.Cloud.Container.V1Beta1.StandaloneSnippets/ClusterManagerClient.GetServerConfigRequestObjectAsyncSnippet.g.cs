@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Container.V1Beta1.Snippets
 {
+    using Google.Cloud.Container.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetServerConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetServerConfigRequestObjectAsync()
         {
-            // Snippet: GetServerConfigAsync(GetServerConfigRequest, CallSettings)
-            // Additional: GetServerConfigAsync(GetServerConfigRequest, CancellationToken)
             // Create client
             ClusterManagerClient clusterManagerClient = await ClusterManagerClient.CreateAsync();
             // Initialize request argument(s)
             GetServerConfigRequest request = new GetServerConfigRequest { Name = "", };
             // Make the request
             ServerConfig response = await clusterManagerClient.GetServerConfigAsync(request);
-            // End snippet
         }
     }
 }

@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedBillingSetupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBillingSetup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetBillingSetupResourceNames()
         {
-            // Snippet: GetBillingSetup(BillingSetupName, CallSettings)
             // Create client
             BillingSetupServiceClient billingSetupServiceClient = BillingSetupServiceClient.Create();
             // Initialize request argument(s)
             BillingSetupName resourceName = BillingSetupName.FromCustomerBillingSetup("[CUSTOMER]", "[BILLING_SETUP]");
             // Make the request
             BillingSetup response = billingSetupServiceClient.GetBillingSetup(resourceName);
-            // End snippet
         }
     }
 }

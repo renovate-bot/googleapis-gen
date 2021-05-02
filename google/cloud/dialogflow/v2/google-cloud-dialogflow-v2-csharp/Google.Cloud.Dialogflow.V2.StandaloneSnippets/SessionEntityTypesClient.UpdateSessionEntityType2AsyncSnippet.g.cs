@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSessionEntityTypesClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateSessionEntityTypeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateSessionEntityType2Async()
         {
-            // Snippet: UpdateSessionEntityTypeAsync(SessionEntityType, FieldMask, CallSettings)
-            // Additional: UpdateSessionEntityTypeAsync(SessionEntityType, FieldMask, CancellationToken)
             // Create client
             SessionEntityTypesClient sessionEntityTypesClient = await SessionEntityTypesClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             SessionEntityType response = await sessionEntityTypesClient.UpdateSessionEntityTypeAsync(sessionEntityType, updateMask);
-            // End snippet
         }
     }
 }

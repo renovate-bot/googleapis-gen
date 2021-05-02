@@ -17,7 +17,6 @@
 namespace Google.Cloud.VideoIntelligence.V1P3Beta1.Snippets
 {
     using Google.Api.Gax.Grpc;
-    using Google.Protobuf;
     using System.Threading.Tasks;
 
     /// <summary>Generated snippets.</summary>
@@ -56,7 +55,6 @@ namespace Google.Cloud.VideoIntelligence.V1P3Beta1.Snippets
                 StreamingAnnotateVideoRequest request = new StreamingAnnotateVideoRequest
                 {
                     VideoConfig = new StreamingVideoConfig(),
-                    InputContent = ByteString.Empty,
                 };
                 // Stream a request to the server
                 await response.WriteAsync(request);

@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
+    using Google.Cloud.Dataproc.V1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedJobControllerClientStandaloneSnippets
     {
         /// <summary>Snippet for SubmitJobAsOperationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SubmitJobAsOperationAsync()
         {
-            // Snippet: SubmitJobAsOperationAsync(string, string, Job, CallSettings)
-            // Additional: SubmitJobAsOperationAsync(string, string, Job, CancellationToken)
             // Create client
             JobControllerClient jobControllerClient = await JobControllerClient.CreateAsync();
             // Initialize request argument(s)
@@ -50,7 +53,6 @@ namespace Google.Cloud.Dataproc.V1.Snippets
                 // If it has completed, then access the result
                 Job retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

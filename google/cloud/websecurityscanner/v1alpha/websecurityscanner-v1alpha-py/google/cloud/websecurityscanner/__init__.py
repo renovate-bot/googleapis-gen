@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -45,7 +46,8 @@ from google.cloud.websecurityscanner_v1alpha.types.web_security_scanner import S
 from google.cloud.websecurityscanner_v1alpha.types.web_security_scanner import StopScanRunRequest
 from google.cloud.websecurityscanner_v1alpha.types.web_security_scanner import UpdateScanConfigRequest
 
-__all__ = ('CrawledUrl',
+__all__ = (
+    'CrawledUrl',
     'CreateScanConfigRequest',
     'DeleteScanConfigRequest',
     'Finding',

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -37,6 +39,7 @@ from google.cloud.bigquery.migration_v2alpha.types import migration_metrics
 from google.cloud.bigquery.migration_v2alpha.types import migration_service
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import error_details_pb2 as error_details  # type: ignore
+
 from .transports.base import MigrationServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import MigrationServiceGrpcTransport
 from .transports.grpc_asyncio import MigrationServiceGrpcAsyncIOTransport
@@ -350,8 +353,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.migration_v2alpha.types.CreateMigrationWorkflowRequest):
-                The request object.
-                Request to create a migration
+                The request object. Request to create a migration
                 workflow resource.
             parent (str):
                 Required. The name of the project to which this
@@ -368,6 +370,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 This corresponds to the ``migration_workflow`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -395,8 +398,10 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, migration_service.CreateMigrationWorkflowRequest):
             request = migration_service.CreateMigrationWorkflowRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if migration_workflow is not None:
@@ -437,8 +442,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.migration_v2alpha.types.GetMigrationWorkflowRequest):
-                The request object.
-                A request to get a previously
+                The request object. A request to get a previously
                 created migration workflow.
             name (str):
                 Required. The unique identifier for the migration
@@ -448,6 +452,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -475,8 +480,10 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, migration_service.GetMigrationWorkflowRequest):
             request = migration_service.GetMigrationWorkflowRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -515,8 +522,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.migration_v2alpha.types.ListMigrationWorkflowsRequest):
-                The request object.
-                A request to list previously created
+                The request object. A request to list previously created
                 migration workflows.
             parent (str):
                 Required. The project and location of the migration
@@ -526,6 +532,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -554,8 +561,10 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, migration_service.ListMigrationWorkflowsRequest):
             request = migration_service.ListMigrationWorkflowsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -603,8 +612,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.migration_v2alpha.types.DeleteMigrationWorkflowRequest):
-                The request object.
-                A request to delete a previously
+                The request object. A request to delete a previously
                 created migration workflow.
             name (str):
                 Required. The unique identifier for the migration
@@ -614,6 +622,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -634,8 +643,10 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, migration_service.DeleteMigrationWorkflowRequest):
             request = migration_service.DeleteMigrationWorkflowRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -675,8 +686,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.migration_v2alpha.types.StartMigrationWorkflowRequest):
-                The request object.
-                A request to start a previously
+                The request object. A request to start a previously
                 created migration workflow.
             name (str):
                 Required. The unique identifier for the migration
@@ -686,6 +696,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -706,8 +717,10 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, migration_service.StartMigrationWorkflowRequest):
             request = migration_service.StartMigrationWorkflowRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -743,8 +756,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.migration_v2alpha.types.GetMigrationSubtaskRequest):
-                The request object.
-                A request to get a previously
+                The request object. A request to get a previously
                 created migration subtasks.
             name (str):
                 Required. The unique identifier for the migration
@@ -754,6 +766,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -784,8 +797,10 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, migration_service.GetMigrationSubtaskRequest):
             request = migration_service.GetMigrationSubtaskRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -824,8 +839,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         Args:
             request (google.cloud.bigquery.migration_v2alpha.types.ListMigrationSubtasksRequest):
-                The request object.
-                A request to list previously created
+                The request object. A request to list previously created
                 migration subtasks.
             parent (str):
                 Required. The migration task of the subtasks to list.
@@ -834,6 +848,7 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -862,8 +877,10 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, migration_service.ListMigrationSubtasksRequest):
             request = migration_service.ListMigrationSubtasksRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -898,6 +915,8 @@ class MigrationServiceClient(metaclass=MigrationServiceClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

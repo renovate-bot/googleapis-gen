@@ -16,19 +16,23 @@
 
 namespace Google.Home.Enterprise.Sdm.V1.Snippets
 {
+    using Google.Home.Enterprise.Sdm.V1;
+
     public sealed partial class GeneratedSmartDeviceManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDevice</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDeviceRequestObject()
         {
-            // Snippet: GetDevice(GetDeviceRequest, CallSettings)
             // Create client
             SmartDeviceManagementServiceClient smartDeviceManagementServiceClient = SmartDeviceManagementServiceClient.Create();
             // Initialize request argument(s)
             GetDeviceRequest request = new GetDeviceRequest { Name = "", };
             // Make the request
             Device response = smartDeviceManagementServiceClient.GetDevice(request);
-            // End snippet
         }
     }
 }

@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Spanner.V1.Snippets
 {
+    using Google.Cloud.Spanner.V1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for CommitAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task Commit2Async()
         {
-            // Snippet: CommitAsync(string, TransactionOptions, IEnumerable<Mutation>, CallSettings)
-            // Additional: CommitAsync(string, TransactionOptions, IEnumerable<Mutation>, CancellationToken)
             // Create client
             SpannerClient spannerClient = await SpannerClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Spanner.V1.Snippets
             IEnumerable<Mutation> mutations = new Mutation[] { new Mutation(), };
             // Make the request
             CommitResponse response = await spannerClient.CommitAsync(session, singleUseTransaction, mutations);
-            // End snippet
         }
     }
 }

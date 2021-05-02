@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.WebRisk.V1Beta1.Snippets
 {
+    using Google.Cloud.WebRisk.V1Beta1;
     using Google.Protobuf;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedWebRiskServiceV1Beta1ClientStandaloneSnippets
     {
         /// <summary>Snippet for SearchHashes</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SearchHashes()
         {
-            // Snippet: SearchHashes(ByteString, IEnumerable<ThreatType>, CallSettings)
             // Create client
             WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client = WebRiskServiceV1Beta1Client.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.WebRisk.V1Beta1.Snippets
             };
             // Make the request
             SearchHashesResponse response = webRiskServiceV1Beta1Client.SearchHashes(hashPrefix, threatTypes);
-            // End snippet
         }
     }
 }

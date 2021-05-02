@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -79,7 +80,8 @@ from google.cloud.gaming_v1beta.types.realms import PreviewRealmUpdateResponse
 from google.cloud.gaming_v1beta.types.realms import Realm
 from google.cloud.gaming_v1beta.types.realms import UpdateRealmRequest
 
-__all__ = ('CreateGameServerClusterRequest',
+__all__ = (
+    'CreateGameServerClusterRequest',
     'CreateGameServerConfigRequest',
     'CreateGameServerDeploymentRequest',
     'CreateRealmRequest',

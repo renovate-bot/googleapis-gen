@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedKeywordPlanCampaignServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetKeywordPlanCampaign</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetKeywordPlanCampaign()
         {
-            // Snippet: GetKeywordPlanCampaign(string, CallSettings)
             // Create client
             KeywordPlanCampaignServiceClient keywordPlanCampaignServiceClient = KeywordPlanCampaignServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/keywordPlanCampaigns/[KEYWORD_PLAN_CAMPAIGN]";
             // Make the request
             KeywordPlanCampaign response = keywordPlanCampaignServiceClient.GetKeywordPlanCampaign(resourceName);
-            // End snippet
         }
     }
 }

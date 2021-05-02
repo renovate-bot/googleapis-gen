@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -26,6 +28,7 @@ __protobuf__ = proto.module(
 
 class Resource(proto.Message):
     r"""Information related to the Google Cloud resource.
+
     Attributes:
         name (str):
             The full resource name of the resource. See:
@@ -42,26 +45,15 @@ class Resource(proto.Message):
             The human readable name of resource's parent.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    project = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    project_display_name = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    parent = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    parent_display_name = proto.Field(
-        proto.STRING,
-        number=5,
-    )
+    name = proto.Field(proto.STRING, number=1)
+
+    project = proto.Field(proto.STRING, number=2)
+
+    project_display_name = proto.Field(proto.STRING, number=3)
+
+    parent = proto.Field(proto.STRING, number=4)
+
+    parent_display_name = proto.Field(proto.STRING, number=5)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

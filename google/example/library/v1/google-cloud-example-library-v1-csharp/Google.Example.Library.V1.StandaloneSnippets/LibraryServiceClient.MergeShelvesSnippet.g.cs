@@ -16,12 +16,17 @@
 
 namespace Google.Example.Library.V1.Snippets
 {
+    using Google.Example.Library.V1;
+
     public sealed partial class GeneratedLibraryServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MergeShelves</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MergeShelves()
         {
-            // Snippet: MergeShelves(string, string, CallSettings)
             // Create client
             LibraryServiceClient libraryServiceClient = LibraryServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Example.Library.V1.Snippets
             string otherShelf = "shelves/[SHELF_ID]";
             // Make the request
             Shelf response = libraryServiceClient.MergeShelves(name, otherShelf);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Speech.V1.Snippets
 {
+    using Google.Cloud.Speech.V1;
+
     public sealed partial class GeneratedSpeechClientStandaloneSnippets
     {
         /// <summary>Snippet for Recognize</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void RecognizeRequestObject()
         {
-            // Snippet: Recognize(RecognizeRequest, CallSettings)
             // Create client
             SpeechClient speechClient = SpeechClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.Speech.V1.Snippets
             };
             // Make the request
             RecognizeResponse response = speechClient.Recognize(request);
-            // End snippet
         }
     }
 }

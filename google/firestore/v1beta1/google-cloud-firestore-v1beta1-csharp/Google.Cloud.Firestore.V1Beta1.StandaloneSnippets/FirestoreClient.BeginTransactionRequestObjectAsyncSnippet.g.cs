@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Firestore.V1Beta1.Snippets
 {
+    using Google.Cloud.Firestore.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFirestoreClientStandaloneSnippets
     {
         /// <summary>Snippet for BeginTransactionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BeginTransactionRequestObjectAsync()
         {
-            // Snippet: BeginTransactionAsync(BeginTransactionRequest, CallSettings)
-            // Additional: BeginTransactionAsync(BeginTransactionRequest, CancellationToken)
             // Create client
             FirestoreClient firestoreClient = await FirestoreClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Firestore.V1Beta1.Snippets
             };
             // Make the request
             BeginTransactionResponse response = await firestoreClient.BeginTransactionAsync(request);
-            // End snippet
         }
     }
 }

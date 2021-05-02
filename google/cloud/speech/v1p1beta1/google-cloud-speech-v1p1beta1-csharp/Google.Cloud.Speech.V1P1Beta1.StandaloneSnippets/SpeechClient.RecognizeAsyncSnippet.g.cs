@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Speech.V1P1Beta1.Snippets
 {
+    using Google.Cloud.Speech.V1P1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSpeechClientStandaloneSnippets
     {
         /// <summary>Snippet for RecognizeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task RecognizeAsync()
         {
-            // Snippet: RecognizeAsync(RecognitionConfig, RecognitionAudio, CallSettings)
-            // Additional: RecognizeAsync(RecognitionConfig, RecognitionAudio, CancellationToken)
             // Create client
             SpeechClient speechClient = await SpeechClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Speech.V1P1Beta1.Snippets
             RecognitionAudio audio = new RecognitionAudio();
             // Make the request
             RecognizeResponse response = await speechClient.RecognizeAsync(config, audio);
-            // End snippet
         }
     }
 }

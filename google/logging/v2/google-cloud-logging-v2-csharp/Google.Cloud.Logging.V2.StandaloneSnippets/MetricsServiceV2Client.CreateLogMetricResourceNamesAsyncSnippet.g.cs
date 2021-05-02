@@ -17,15 +17,18 @@
 namespace Google.Cloud.Logging.V2.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Logging.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMetricsServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateLogMetricAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateLogMetricResourceNamesAsync()
         {
-            // Snippet: CreateLogMetricAsync(ProjectName, LogMetric, CallSettings)
-            // Additional: CreateLogMetricAsync(ProjectName, LogMetric, CancellationToken)
             // Create client
             MetricsServiceV2Client metricsServiceV2Client = await MetricsServiceV2Client.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             LogMetric metric = new LogMetric();
             // Make the request
             LogMetric response = await metricsServiceV2Client.CreateLogMetricAsync(parent, metric);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -54,7 +55,8 @@ from google.cloud.translate_v3beta1.types.translation_service import TranslateTe
 from google.cloud.translate_v3beta1.types.translation_service import TranslateTextResponse
 from google.cloud.translate_v3beta1.types.translation_service import Translation
 
-__all__ = ('BatchDocumentInputConfig',
+__all__ = (
+    'BatchDocumentInputConfig',
     'BatchDocumentOutputConfig',
     'BatchTranslateDocumentMetadata',
     'BatchTranslateDocumentRequest',

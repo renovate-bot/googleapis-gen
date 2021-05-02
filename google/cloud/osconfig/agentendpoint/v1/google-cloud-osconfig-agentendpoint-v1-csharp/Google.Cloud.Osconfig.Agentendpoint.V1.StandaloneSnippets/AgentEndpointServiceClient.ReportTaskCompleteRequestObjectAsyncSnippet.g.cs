@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Osconfig.Agentendpoint.V1.Snippets
 {
+    using Google.Cloud.Osconfig.Agentendpoint.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAgentEndpointServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ReportTaskCompleteAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ReportTaskCompleteRequestObjectAsync()
         {
-            // Snippet: ReportTaskCompleteAsync(ReportTaskCompleteRequest, CallSettings)
-            // Additional: ReportTaskCompleteAsync(ReportTaskCompleteRequest, CancellationToken)
             // Create client
             AgentEndpointServiceClient agentEndpointServiceClient = await AgentEndpointServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,12 +38,9 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1.Snippets
                 TaskType = TaskType.Unspecified,
                 ErrorMessage = "",
                 ApplyPatchesTaskOutput = new ApplyPatchesTaskOutput(),
-                ExecStepTaskOutput = new ExecStepTaskOutput(),
-                ApplyConfigTaskOutput = new ApplyConfigTaskOutput(),
             };
             // Make the request
             ReportTaskCompleteResponse response = await agentEndpointServiceClient.ReportTaskCompleteAsync(request);
-            // End snippet
         }
     }
 }

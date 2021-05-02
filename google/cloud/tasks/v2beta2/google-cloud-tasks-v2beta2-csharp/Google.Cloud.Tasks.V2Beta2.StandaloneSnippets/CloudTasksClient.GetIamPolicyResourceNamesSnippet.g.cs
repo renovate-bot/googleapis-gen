@@ -18,20 +18,23 @@ namespace Google.Cloud.Tasks.V2Beta2.Snippets
 {
     using Google.Api.Gax;
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.Tasks.V2Beta2;
 
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIamPolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetIamPolicyResourceNames()
         {
-            // Snippet: GetIamPolicy(IResourceName, CallSettings)
             // Create client
             CloudTasksClient cloudTasksClient = CloudTasksClient.Create();
             // Initialize request argument(s)
             IResourceName resource = new UnparsedResourceName("a/wildcard/resource");
             // Make the request
             Policy response = cloudTasksClient.GetIamPolicy(resource);
-            // End snippet
         }
     }
 }

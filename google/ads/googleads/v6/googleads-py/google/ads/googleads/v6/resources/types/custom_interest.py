@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.enums.types import custom_interest_member_type
 from google.ads.googleads.v6.enums.types import custom_interest_status
@@ -32,6 +35,7 @@ __protobuf__ = proto.module(
 
 class CustomInterest(proto.Message):
     r"""A custom interest. This is a list of users by interest.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the custom interest. Custom
@@ -62,38 +66,17 @@ class CustomInterest(proto.Message):
             members will be overridden.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.INT64,
-        number=8,
-        optional=True,
-    )
-    status = proto.Field(
-        proto.ENUM,
-        number=3,
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.INT64, number=8, optional=True)
+    status = proto.Field(proto.ENUM, number=3,
         enum=custom_interest_status.CustomInterestStatusEnum.CustomInterestStatus,
     )
-    name = proto.Field(
-        proto.STRING,
-        number=9,
-        optional=True,
-    )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=5,
+    name = proto.Field(proto.STRING, number=9, optional=True)
+    type_ = proto.Field(proto.ENUM, number=5,
         enum=custom_interest_type.CustomInterestTypeEnum.CustomInterestType,
     )
-    description = proto.Field(
-        proto.STRING,
-        number=10,
-        optional=True,
-    )
-    members = proto.RepeatedField(
-        proto.MESSAGE,
-        number=7,
+    description = proto.Field(proto.STRING, number=10, optional=True)
+    members = proto.RepeatedField(proto.MESSAGE, number=7,
         message='CustomInterestMember',
     )
 
@@ -112,16 +95,10 @@ class CustomInterestMember(proto.Message):
             member_type is URL.
     """
 
-    member_type = proto.Field(
-        proto.ENUM,
-        number=1,
+    member_type = proto.Field(proto.ENUM, number=1,
         enum=custom_interest_member_type.CustomInterestMemberTypeEnum.CustomInterestMemberType,
     )
-    parameter = proto.Field(
-        proto.STRING,
-        number=3,
-        optional=True,
-    )
+    parameter = proto.Field(proto.STRING, number=3, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

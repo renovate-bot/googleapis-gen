@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSessionEntityTypesClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateSessionEntityTypeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateSessionEntityTypeRequestObjectAsync()
         {
-            // Snippet: CreateSessionEntityTypeAsync(CreateSessionEntityTypeRequest, CallSettings)
-            // Additional: CreateSessionEntityTypeAsync(CreateSessionEntityTypeRequest, CancellationToken)
             // Create client
             SessionEntityTypesClient sessionEntityTypesClient = await SessionEntityTypesClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             };
             // Make the request
             SessionEntityType response = await sessionEntityTypesClient.CreateSessionEntityTypeAsync(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -40,31 +43,23 @@ class TableReference(proto.Message):
             The ID of the table in the above dataset.
     """
 
-    project_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    dataset_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    table_id = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    project_id = proto.Field(proto.STRING, number=1)
+
+    dataset_id = proto.Field(proto.STRING, number=2)
+
+    table_id = proto.Field(proto.STRING, number=3)
 
 
 class TableModifiers(proto.Message):
     r"""All fields in this message optional.
+
     Attributes:
         snapshot_time (google.protobuf.timestamp_pb2.Timestamp):
             The snapshot time of the table. If not set,
             interpreted as now.
     """
 
-    snapshot_time = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    snapshot_time = proto.Field(proto.MESSAGE, number=1,
         message=timestamp.Timestamp,
     )
 

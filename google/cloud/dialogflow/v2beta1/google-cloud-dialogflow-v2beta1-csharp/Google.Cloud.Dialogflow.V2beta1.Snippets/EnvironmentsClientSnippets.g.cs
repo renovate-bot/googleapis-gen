@@ -73,7 +73,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListEnvironments</summary>
+        /// <summary>Snippet for ListEnvironmentsAsync</summary>
         public async Task ListEnvironmentsRequestObjectAsync()
         {
             // Snippet: ListEnvironmentsAsync(ListEnvironmentsRequest, CallSettings)
@@ -166,7 +166,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListEnvironments</summary>
+        /// <summary>Snippet for ListEnvironmentsAsync</summary>
         public async Task ListEnvironmentsAsync()
         {
             // Snippet: ListEnvironmentsAsync(string, string, int?, CallSettings)
@@ -256,7 +256,7 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListEnvironments</summary>
+        /// <summary>Snippet for ListEnvironmentsAsync</summary>
         public async Task ListEnvironmentsResourceNamesAsync()
         {
             // Snippet: ListEnvironmentsAsync(AgentName, string, int?, CallSettings)

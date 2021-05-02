@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -33,6 +35,7 @@ from google.oauth2 import service_account                         # type: ignore
 from google.cloud.errorreporting_v1beta1.services.error_stats_service import pagers
 from google.cloud.errorreporting_v1beta1.types import common
 from google.cloud.errorreporting_v1beta1.types import error_stats_service
+
 from .transports.base import ErrorStatsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ErrorStatsServiceGrpcTransport
 from .transports.grpc_asyncio import ErrorStatsServiceGrpcAsyncIOTransport
@@ -337,8 +340,7 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
 
         Args:
             request (google.cloud.errorreporting_v1beta1.types.ListGroupStatsRequest):
-                The request object.
-                Specifies a set of `ErrorGroupStats`
+                The request object. Specifies a set of `ErrorGroupStats`
                 to return.
             project_name (str):
                 Required. The resource name of the Google Cloud Platform
@@ -366,6 +368,7 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
                 This corresponds to the ``time_range`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -395,8 +398,10 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, error_stats_service.ListGroupStatsRequest):
             request = error_stats_service.ListGroupStatsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project_name is not None:
                 request.project_name = project_name
             if time_range is not None:
@@ -447,8 +452,7 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
 
         Args:
             request (google.cloud.errorreporting_v1beta1.types.ListEventsRequest):
-                The request object.
-                Specifies a set of error events to
+                The request object. Specifies a set of error events to
                 return.
             project_name (str):
                 Required. The resource name of the Google Cloud Platform
@@ -468,6 +472,7 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
                 This corresponds to the ``group_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -497,8 +502,10 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, error_stats_service.ListEventsRequest):
             request = error_stats_service.ListEventsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project_name is not None:
                 request.project_name = project_name
             if group_id is not None:
@@ -548,8 +555,7 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
 
         Args:
             request (google.cloud.errorreporting_v1beta1.types.DeleteEventsRequest):
-                The request object.
-                Deletes all events in the project.
+                The request object. Deletes all events in the project.
             project_name (str):
                 Required. The resource name of the Google Cloud Platform
                 project. Written as ``projects/{projectID}``, where
@@ -561,6 +567,7 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
                 This corresponds to the ``project_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -587,8 +594,10 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, error_stats_service.DeleteEventsRequest):
             request = error_stats_service.DeleteEventsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project_name is not None:
                 request.project_name = project_name
 
@@ -614,6 +623,8 @@ class ErrorStatsServiceClient(metaclass=ErrorStatsServiceClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

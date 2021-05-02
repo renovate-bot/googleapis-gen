@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.clouddms_v1.types import clouddms_resources
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -91,30 +94,20 @@ class ListMigrationJobsRequest(proto.Message):
             "name desc".
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    order_by = proto.Field(
-        proto.STRING,
-        number=5,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
+
+    filter = proto.Field(proto.STRING, number=4)
+
+    order_by = proto.Field(proto.STRING, number=5)
 
 
 class ListMigrationJobsResponse(proto.Message):
     r"""Response message for 'ListMigrationJobs' request.
+
     Attributes:
         migration_jobs (Sequence[google.cloud.clouddms_v1.types.MigrationJob]):
             The list of migration jobs objects.
@@ -130,33 +123,25 @@ class ListMigrationJobsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    migration_jobs = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    migration_jobs = proto.RepeatedField(proto.MESSAGE, number=1,
         message=clouddms_resources.MigrationJob,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    unreachable = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
+
+    unreachable = proto.RepeatedField(proto.STRING, number=3)
 
 
 class GetMigrationJobRequest(proto.Message):
     r"""Request message for 'GetMigrationJob' request.
+
     Attributes:
         name (str):
             Required. Name of the migration job resource
             to get.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class CreateMigrationJobRequest(proto.Message):
@@ -185,27 +170,20 @@ class CreateMigrationJobRequest(proto.Message):
             characters.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    migration_job_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    migration_job = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    parent = proto.Field(proto.STRING, number=1)
+
+    migration_job_id = proto.Field(proto.STRING, number=2)
+
+    migration_job = proto.Field(proto.MESSAGE, number=3,
         message=clouddms_resources.MigrationJob,
     )
-    request_id = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+
+    request_id = proto.Field(proto.STRING, number=4)
 
 
 class UpdateMigrationJobRequest(proto.Message):
     r"""Request message for 'UpdateMigrationJob' request.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. Field mask is used to specify the
@@ -226,24 +204,20 @@ class UpdateMigrationJobRequest(proto.Message):
             characters.
     """
 
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    update_mask = proto.Field(proto.MESSAGE, number=1,
         message=field_mask.FieldMask,
     )
-    migration_job = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    migration_job = proto.Field(proto.MESSAGE, number=2,
         message=clouddms_resources.MigrationJob,
     )
-    request_id = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+
+    request_id = proto.Field(proto.STRING, number=3)
 
 
 class DeleteMigrationJobRequest(proto.Message):
     r"""Request message for 'DeleteMigrationJob' request.
+
     Attributes:
         name (str):
             Required. Name of the migration job resource
@@ -265,102 +239,84 @@ class DeleteMigrationJobRequest(proto.Message):
             replica database is also deleted.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    request_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    force = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
+    name = proto.Field(proto.STRING, number=1)
+
+    request_id = proto.Field(proto.STRING, number=2)
+
+    force = proto.Field(proto.BOOL, number=3)
 
 
 class StartMigrationJobRequest(proto.Message):
     r"""Request message for 'StartMigrationJob' request.
+
     Attributes:
         name (str):
             Name of the migration job resource to start.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class StopMigrationJobRequest(proto.Message):
     r"""Request message for 'StopMigrationJob' request.
+
     Attributes:
         name (str):
             Name of the migration job resource to stop.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ResumeMigrationJobRequest(proto.Message):
     r"""Request message for 'ResumeMigrationJob' request.
+
     Attributes:
         name (str):
             Name of the migration job resource to resume.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class PromoteMigrationJobRequest(proto.Message):
     r"""Request message for 'PromoteMigrationJob' request.
+
     Attributes:
         name (str):
             Name of the migration job resource to
             promote.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class VerifyMigrationJobRequest(proto.Message):
     r"""Request message for 'VerifyMigrationJob' request.
+
     Attributes:
         name (str):
             Name of the migration job resource to verify.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class RestartMigrationJobRequest(proto.Message):
     r"""Request message for 'RestartMigrationJob' request.
+
     Attributes:
         name (str):
             Name of the migration job resource to
             restart.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class GenerateSshScriptRequest(proto.Message):
     r"""Request message for 'GenerateSshScript' request.
+
     Attributes:
         migration_job (str):
             Name of the migration job resource to
@@ -377,34 +333,24 @@ class GenerateSshScriptRequest(proto.Message):
             host
     """
 
-    migration_job = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    vm = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    vm_creation_config = proto.Field(
-        proto.MESSAGE,
-        number=100,
-        oneof='vm_config',
+    migration_job = proto.Field(proto.STRING, number=1)
+
+    vm = proto.Field(proto.STRING, number=2)
+
+    vm_creation_config = proto.Field(proto.MESSAGE, number=100, oneof='vm_config',
         message='VmCreationConfig',
     )
-    vm_selection_config = proto.Field(
-        proto.MESSAGE,
-        number=101,
-        oneof='vm_config',
+
+    vm_selection_config = proto.Field(proto.MESSAGE, number=101, oneof='vm_config',
         message='VmSelectionConfig',
     )
-    vm_port = proto.Field(
-        proto.INT32,
-        number=3,
-    )
+
+    vm_port = proto.Field(proto.INT32, number=3)
 
 
 class VmCreationConfig(proto.Message):
     r"""VM creation configuration message
+
     Attributes:
         vm_machine_type (str):
             Required. VM instance machine type to create.
@@ -416,49 +362,39 @@ class VmCreationConfig(proto.Message):
             in.
     """
 
-    vm_machine_type = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    vm_zone = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    subnet = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    vm_machine_type = proto.Field(proto.STRING, number=1)
+
+    vm_zone = proto.Field(proto.STRING, number=2)
+
+    subnet = proto.Field(proto.STRING, number=3)
 
 
 class VmSelectionConfig(proto.Message):
     r"""VM selection configuration message
+
     Attributes:
         vm_zone (str):
             Required. The Google Cloud Platform zone the
             VM is located.
     """
 
-    vm_zone = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    vm_zone = proto.Field(proto.STRING, number=1)
 
 
 class SshScript(proto.Message):
     r"""Response message for 'GenerateSshScript' request.
+
     Attributes:
         script (str):
             The ssh configuration script.
     """
 
-    script = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    script = proto.Field(proto.STRING, number=1)
 
 
 class ListConnectionProfilesRequest(proto.Message):
     r"""Request message for 'ListConnectionProfiles' request.
+
     Attributes:
         parent (str):
             Required. The parent, which owns this
@@ -493,30 +429,20 @@ class ListConnectionProfilesRequest(proto.Message):
             the order by fields for the result.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    order_by = proto.Field(
-        proto.STRING,
-        number=5,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
+
+    filter = proto.Field(proto.STRING, number=4)
+
+    order_by = proto.Field(proto.STRING, number=5)
 
 
 class ListConnectionProfilesResponse(proto.Message):
     r"""Response message for 'ListConnectionProfiles' request.
+
     Attributes:
         connection_profiles (Sequence[google.cloud.clouddms_v1.types.ConnectionProfile]):
             The response list of connection profiles.
@@ -532,37 +458,30 @@ class ListConnectionProfilesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    connection_profiles = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    connection_profiles = proto.RepeatedField(proto.MESSAGE, number=1,
         message=clouddms_resources.ConnectionProfile,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    unreachable = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
+
+    unreachable = proto.RepeatedField(proto.STRING, number=3)
 
 
 class GetConnectionProfileRequest(proto.Message):
     r"""Request message for 'GetConnectionProfile' request.
+
     Attributes:
         name (str):
             Required. Name of the connection profile
             resource to get.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class CreateConnectionProfileRequest(proto.Message):
     r"""Request message for 'CreateConnectionProfile' request.
+
     Attributes:
         parent (str):
             Required. The parent, which owns this
@@ -584,27 +503,20 @@ class CreateConnectionProfileRequest(proto.Message):
             characters.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    connection_profile_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    connection_profile = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    parent = proto.Field(proto.STRING, number=1)
+
+    connection_profile_id = proto.Field(proto.STRING, number=2)
+
+    connection_profile = proto.Field(proto.MESSAGE, number=3,
         message=clouddms_resources.ConnectionProfile,
     )
-    request_id = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+
+    request_id = proto.Field(proto.STRING, number=4)
 
 
 class UpdateConnectionProfileRequest(proto.Message):
     r"""Request message for 'UpdateConnectionProfile' request.
+
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
             Required. Field mask is used to specify the
@@ -625,24 +537,20 @@ class UpdateConnectionProfileRequest(proto.Message):
             characters.
     """
 
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    update_mask = proto.Field(proto.MESSAGE, number=1,
         message=field_mask.FieldMask,
     )
-    connection_profile = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    connection_profile = proto.Field(proto.MESSAGE, number=2,
         message=clouddms_resources.ConnectionProfile,
     )
-    request_id = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+
+    request_id = proto.Field(proto.STRING, number=3)
 
 
 class DeleteConnectionProfileRequest(proto.Message):
     r"""Request message for 'DeleteConnectionProfile' request.
+
     Attributes:
         name (str):
             Required. Name of the connection profile
@@ -663,22 +571,16 @@ class DeleteConnectionProfileRequest(proto.Message):
             connection profile).
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    request_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    force = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
+    name = proto.Field(proto.STRING, number=1)
+
+    request_id = proto.Field(proto.STRING, number=2)
+
+    force = proto.Field(proto.BOOL, number=3)
 
 
 class OperationMetadata(proto.Message):
     r"""Represents the metadata of the long-running operation.
+
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the operation was
@@ -706,36 +608,23 @@ class OperationMetadata(proto.Message):
             operation.
     """
 
-    create_time = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    create_time = proto.Field(proto.MESSAGE, number=1,
         message=timestamp.Timestamp,
     )
-    end_time = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    end_time = proto.Field(proto.MESSAGE, number=2,
         message=timestamp.Timestamp,
     )
-    target = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    verb = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    status_message = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    requested_cancellation = proto.Field(
-        proto.BOOL,
-        number=6,
-    )
-    api_version = proto.Field(
-        proto.STRING,
-        number=7,
-    )
+
+    target = proto.Field(proto.STRING, number=3)
+
+    verb = proto.Field(proto.STRING, number=4)
+
+    status_message = proto.Field(proto.STRING, number=5)
+
+    requested_cancellation = proto.Field(proto.BOOL, number=6)
+
+    api_version = proto.Field(proto.STRING, number=7)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

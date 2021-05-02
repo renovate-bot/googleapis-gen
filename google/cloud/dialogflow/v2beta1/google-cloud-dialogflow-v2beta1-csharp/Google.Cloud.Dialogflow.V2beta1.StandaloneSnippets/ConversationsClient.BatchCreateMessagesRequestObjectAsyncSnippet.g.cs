@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConversationsClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchCreateMessagesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchCreateMessagesRequestObjectAsync()
         {
-            // Snippet: BatchCreateMessagesAsync(BatchCreateMessagesRequest, CallSettings)
-            // Additional: BatchCreateMessagesAsync(BatchCreateMessagesRequest, CancellationToken)
             // Create client
             ConversationsClient conversationsClient = await ConversationsClient.CreateAsync();
             // Initialize request argument(s)
@@ -38,7 +41,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             };
             // Make the request
             BatchCreateMessagesResponse response = await conversationsClient.BatchCreateMessagesAsync(request);
-            // End snippet
         }
     }
 }

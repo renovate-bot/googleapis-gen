@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,12 +41,13 @@ def partition(
 class serviceusageCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'batch_enable_services': ('parent', 'service_ids', ),
-          'batch_get_services': ('parent', 'names', ),
-          'disable_service': ('name', 'disable_dependent_services', 'check_if_service_has_usage', ),
-          'enable_service': ('name', ),
-          'get_service': ('name', ),
-          'list_services': ('parent', 'page_size', 'page_token', 'filter', ),
+    'batch_enable_services': ('parent', 'service_ids', ),
+    'batch_get_services': ('parent', 'names', ),
+    'disable_service': ('name', 'disable_dependent_services', 'check_if_service_has_usage', ),
+    'enable_service': ('name', ),
+    'get_service': ('name', ),
+    'list_services': ('parent', 'page_size', 'page_token', 'filter', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -75,7 +78,7 @@ class serviceusageCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

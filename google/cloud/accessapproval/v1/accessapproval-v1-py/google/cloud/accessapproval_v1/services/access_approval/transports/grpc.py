@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.cloud.accessapproval_v1.types import accessapproval
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import AccessApprovalTransport, DEFAULT_CLIENT_INFO
 
 
@@ -93,8 +96,7 @@ class AccessApprovalGrpcTransport(AccessApprovalTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -233,15 +235,13 @@ class AccessApprovalGrpcTransport(AccessApprovalTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -255,9 +255,7 @@ class AccessApprovalGrpcTransport(AccessApprovalTransport):
     def list_approval_requests(self) -> Callable[
             [accessapproval.ListApprovalRequestsMessage],
             accessapproval.ListApprovalRequestsResponse]:
-        r"""Return a callable for the
-        list approval requests
-          method over gRPC.
+        r"""Return a callable for the list approval requests method over gRPC.
 
         Lists approval requests associated with a project,
         folder, or organization. Approval requests can be
@@ -286,9 +284,7 @@ class AccessApprovalGrpcTransport(AccessApprovalTransport):
     def get_approval_request(self) -> Callable[
             [accessapproval.GetApprovalRequestMessage],
             accessapproval.ApprovalRequest]:
-        r"""Return a callable for the
-        get approval request
-          method over gRPC.
+        r"""Return a callable for the get approval request method over gRPC.
 
         Gets an approval request. Returns NOT_FOUND if the request does
         not exist.
@@ -315,9 +311,7 @@ class AccessApprovalGrpcTransport(AccessApprovalTransport):
     def approve_approval_request(self) -> Callable[
             [accessapproval.ApproveApprovalRequestMessage],
             accessapproval.ApprovalRequest]:
-        r"""Return a callable for the
-        approve approval request
-          method over gRPC.
+        r"""Return a callable for the approve approval request method over gRPC.
 
         Approves a request and returns the updated ApprovalRequest.
 
@@ -347,9 +341,7 @@ class AccessApprovalGrpcTransport(AccessApprovalTransport):
     def dismiss_approval_request(self) -> Callable[
             [accessapproval.DismissApprovalRequestMessage],
             accessapproval.ApprovalRequest]:
-        r"""Return a callable for the
-        dismiss approval request
-          method over gRPC.
+        r"""Return a callable for the dismiss approval request method over gRPC.
 
         Dismisses a request. Returns the updated ApprovalRequest.
 
@@ -384,9 +376,7 @@ class AccessApprovalGrpcTransport(AccessApprovalTransport):
     def get_access_approval_settings(self) -> Callable[
             [accessapproval.GetAccessApprovalSettingsMessage],
             accessapproval.AccessApprovalSettings]:
-        r"""Return a callable for the
-        get access approval settings
-          method over gRPC.
+        r"""Return a callable for the get access approval settings method over gRPC.
 
         Gets the settings associated with a project, folder,
         or organization.
@@ -413,10 +403,8 @@ class AccessApprovalGrpcTransport(AccessApprovalTransport):
     def update_access_approval_settings(self) -> Callable[
             [accessapproval.UpdateAccessApprovalSettingsMessage],
             accessapproval.AccessApprovalSettings]:
-        r"""Return a callable for the
-        update access approval
-        settings
-          method over gRPC.
+        r"""Return a callable for the update access approval
+        settings method over gRPC.
 
         Updates the settings associated with a project, folder, or
         organization. Settings to update are determined by the value of
@@ -444,10 +432,8 @@ class AccessApprovalGrpcTransport(AccessApprovalTransport):
     def delete_access_approval_settings(self) -> Callable[
             [accessapproval.DeleteAccessApprovalSettingsMessage],
             empty.Empty]:
-        r"""Return a callable for the
-        delete access approval
-        settings
-          method over gRPC.
+        r"""Return a callable for the delete access approval
+        settings method over gRPC.
 
         Deletes the settings associated with a project,
         folder, or organization. This will have the effect of

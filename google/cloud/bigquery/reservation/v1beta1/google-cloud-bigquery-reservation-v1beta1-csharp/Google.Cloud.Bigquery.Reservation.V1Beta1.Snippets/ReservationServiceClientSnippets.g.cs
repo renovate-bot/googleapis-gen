@@ -175,7 +175,7 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListReservations</summary>
+        /// <summary>Snippet for ListReservationsAsync</summary>
         public async Task ListReservationsRequestObjectAsync()
         {
             // Snippet: ListReservationsAsync(ListReservationsRequest, CallSettings)
@@ -269,7 +269,7 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListReservations</summary>
+        /// <summary>Snippet for ListReservationsAsync</summary>
         public async Task ListReservationsAsync()
         {
             // Snippet: ListReservationsAsync(string, string, int?, CallSettings)
@@ -359,7 +359,7 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListReservations</summary>
+        /// <summary>Snippet for ListReservationsAsync</summary>
         public async Task ListReservationsResourceNamesAsync()
         {
             // Snippet: ListReservationsAsync(LocationName, string, int?, CallSettings)
@@ -785,7 +785,7 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCapacityCommitments</summary>
+        /// <summary>Snippet for ListCapacityCommitmentsAsync</summary>
         public async Task ListCapacityCommitmentsRequestObjectAsync()
         {
             // Snippet: ListCapacityCommitmentsAsync(ListCapacityCommitmentsRequest, CallSettings)
@@ -1398,7 +1398,7 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListAssignments</summary>
+        /// <summary>Snippet for ListAssignmentsAsync</summary>
         public async Task ListAssignmentsRequestObjectAsync()
         {
             // Snippet: ListAssignmentsAsync(ListAssignmentsRequest, CallSettings)
@@ -1491,7 +1491,7 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListAssignments</summary>
+        /// <summary>Snippet for ListAssignmentsAsync</summary>
         public async Task ListAssignmentsAsync()
         {
             // Snippet: ListAssignmentsAsync(string, string, int?, CallSettings)
@@ -1581,7 +1581,7 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListAssignments</summary>
+        /// <summary>Snippet for ListAssignmentsAsync</summary>
         public async Task ListAssignmentsResourceNamesAsync()
         {
             // Snippet: ListAssignmentsAsync(ReservationName, string, int?, CallSettings)
@@ -1762,7 +1762,7 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchAssignments</summary>
+        /// <summary>Snippet for SearchAssignmentsAsync</summary>
         public async Task SearchAssignmentsRequestObjectAsync()
         {
             // Snippet: SearchAssignmentsAsync(SearchAssignmentsRequest, CallSettings)
@@ -1857,7 +1857,7 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchAssignments</summary>
+        /// <summary>Snippet for SearchAssignmentsAsync</summary>
         public async Task SearchAssignmentsAsync()
         {
             // Snippet: SearchAssignmentsAsync(string, string, string, int?, CallSettings)
@@ -1949,7 +1949,7 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for SearchAssignments</summary>
+        /// <summary>Snippet for SearchAssignmentsAsync</summary>
         public async Task SearchAssignmentsResourceNamesAsync()
         {
             // Snippet: SearchAssignmentsAsync(LocationName, string, string, int?, CallSettings)

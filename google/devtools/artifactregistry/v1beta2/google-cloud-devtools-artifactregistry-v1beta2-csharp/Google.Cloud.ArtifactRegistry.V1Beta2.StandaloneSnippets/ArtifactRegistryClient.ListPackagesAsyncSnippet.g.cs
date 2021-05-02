@@ -17,16 +17,20 @@
 namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.ArtifactRegistry.V1Beta2;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListPackages</summary>
+        /// <summary>Snippet for ListPackagesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListPackagesAsync()
         {
-            // Snippet: ListPackagesAsync(string, string, int?, CallSettings)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = await ArtifactRegistryClient.CreateAsync();
             // Initialize request argument(s)
@@ -65,7 +69,6 @@ namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

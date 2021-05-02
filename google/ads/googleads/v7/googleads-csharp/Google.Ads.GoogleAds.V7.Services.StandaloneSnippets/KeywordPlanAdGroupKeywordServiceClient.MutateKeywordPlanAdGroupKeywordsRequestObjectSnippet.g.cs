@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
+
     public sealed partial class GeneratedKeywordPlanAdGroupKeywordServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateKeywordPlanAdGroupKeywords</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateKeywordPlanAdGroupKeywordsRequestObject()
         {
-            // Snippet: MutateKeywordPlanAdGroupKeywords(MutateKeywordPlanAdGroupKeywordsRequest, CallSettings)
             // Create client
             KeywordPlanAdGroupKeywordServiceClient keywordPlanAdGroupKeywordServiceClient = KeywordPlanAdGroupKeywordServiceClient.Create();
             // Initialize request argument(s)
@@ -37,7 +42,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateKeywordPlanAdGroupKeywordsResponse response = keywordPlanAdGroupKeywordServiceClient.MutateKeywordPlanAdGroupKeywords(request);
-            // End snippet
         }
     }
 }

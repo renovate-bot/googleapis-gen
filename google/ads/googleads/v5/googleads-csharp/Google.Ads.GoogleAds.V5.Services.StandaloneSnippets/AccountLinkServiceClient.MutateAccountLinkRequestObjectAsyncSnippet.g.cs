@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAccountLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateAccountLinkAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateAccountLinkRequestObjectAsync()
         {
-            // Snippet: MutateAccountLinkAsync(MutateAccountLinkRequest, CallSettings)
-            // Additional: MutateAccountLinkAsync(MutateAccountLinkRequest, CancellationToken)
             // Create client
             AccountLinkServiceClient accountLinkServiceClient = await AccountLinkServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateAccountLinkResponse response = await accountLinkServiceClient.MutateAccountLinkAsync(request);
-            // End snippet
         }
     }
 }

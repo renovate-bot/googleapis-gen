@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Clouddms.V1.Snippets
 {
+    using Google.Cloud.Clouddms.V1;
+
     public sealed partial class GeneratedDataMigrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMigrationJob</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetMigrationJob()
         {
-            // Snippet: GetMigrationJob(string, CallSettings)
             // Create client
             DataMigrationServiceClient dataMigrationServiceClient = DataMigrationServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/migrationJobs/[MIGRATION_JOB]";
             // Make the request
             MigrationJob response = dataMigrationServiceClient.GetMigrationJob(name);
-            // End snippet
         }
     }
 }

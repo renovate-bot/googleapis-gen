@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetEvaluationJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetEvaluationJobResourceNamesAsync()
         {
-            // Snippet: GetEvaluationJobAsync(EvaluationJobName, CallSettings)
-            // Additional: GetEvaluationJobAsync(EvaluationJobName, CancellationToken)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = await DataLabelingServiceClient.CreateAsync();
             // Initialize request argument(s)
             EvaluationJobName name = EvaluationJobName.FromProjectEvaluationJob("[PROJECT]", "[EVALUATION_JOB]");
             // Make the request
             EvaluationJob response = await dataLabelingServiceClient.GetEvaluationJobAsync(name);
-            // End snippet
         }
     }
 }

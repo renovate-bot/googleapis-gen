@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.CloudBuild.V1.Snippets
 {
+    using Google.Cloud.CloudBuild.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudBuildClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateBuildTriggerAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateBuildTriggerAsync()
         {
-            // Snippet: CreateBuildTriggerAsync(string, BuildTrigger, CallSettings)
-            // Additional: CreateBuildTriggerAsync(string, BuildTrigger, CancellationToken)
             // Create client
             CloudBuildClient cloudBuildClient = await CloudBuildClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.CloudBuild.V1.Snippets
             BuildTrigger trigger = new BuildTrigger();
             // Make the request
             BuildTrigger response = await cloudBuildClient.CreateBuildTriggerAsync(projectId, trigger);
-            // End snippet
         }
     }
 }

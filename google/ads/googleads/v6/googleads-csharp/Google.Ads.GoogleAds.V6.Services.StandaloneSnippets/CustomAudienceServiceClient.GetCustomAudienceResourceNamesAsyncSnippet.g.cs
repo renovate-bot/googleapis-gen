@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomAudienceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomAudienceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCustomAudienceResourceNamesAsync()
         {
-            // Snippet: GetCustomAudienceAsync(CustomAudienceName, CallSettings)
-            // Additional: GetCustomAudienceAsync(CustomAudienceName, CancellationToken)
             // Create client
             CustomAudienceServiceClient customAudienceServiceClient = await CustomAudienceServiceClient.CreateAsync();
             // Initialize request argument(s)
             CustomAudienceName resourceName = CustomAudienceName.FromCustomerCustomAudience("[CUSTOMER_ID]", "[CUSTOM_AUDIENCE_ID]");
             // Make the request
             CustomAudience response = await customAudienceServiceClient.GetCustomAudienceAsync(resourceName);
-            // End snippet
         }
     }
 }

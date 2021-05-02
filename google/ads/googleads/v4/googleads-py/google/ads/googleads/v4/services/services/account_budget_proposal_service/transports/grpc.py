@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v4.resources.types import account_budget_proposal
 from google.ads.googleads.v4.services.types import account_budget_proposal_service
+
 from .base import AccountBudgetProposalServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -68,8 +71,7 @@ class AccountBudgetProposalServiceGrpcTransport(AccountBudgetProposalServiceTran
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -213,9 +215,7 @@ class AccountBudgetProposalServiceGrpcTransport(AccountBudgetProposalServiceTran
     def get_account_budget_proposal(self) -> Callable[
             [account_budget_proposal_service.GetAccountBudgetProposalRequest],
             account_budget_proposal.AccountBudgetProposal]:
-        r"""Return a callable for the
-        get account budget proposal
-          method over gRPC.
+        r"""Return a callable for the get account budget proposal method over gRPC.
 
         Returns an account-level budget proposal in full
         detail.
@@ -242,9 +242,7 @@ class AccountBudgetProposalServiceGrpcTransport(AccountBudgetProposalServiceTran
     def mutate_account_budget_proposal(self) -> Callable[
             [account_budget_proposal_service.MutateAccountBudgetProposalRequest],
             account_budget_proposal_service.MutateAccountBudgetProposalResponse]:
-        r"""Return a callable for the
-        mutate account budget proposal
-          method over gRPC.
+        r"""Return a callable for the mutate account budget proposal method over gRPC.
 
         Creates, updates, or removes account budget
         proposals.  Operation statuses are returned.

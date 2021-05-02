@@ -18,16 +18,20 @@ namespace Google.Cloud.Gaming.V1Beta.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Gaming.V1Beta;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGameServerDeploymentsServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListGameServerDeployments</summary>
+        /// <summary>Snippet for ListGameServerDeploymentsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListGameServerDeploymentsResourceNamesAsync()
         {
-            // Snippet: ListGameServerDeploymentsAsync(LocationName, string, int?, CallSettings)
             // Create client
             GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = await GameServerDeploymentsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -66,7 +70,6 @@ namespace Google.Cloud.Gaming.V1Beta.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

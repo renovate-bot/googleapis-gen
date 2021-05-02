@@ -16,22 +16,24 @@
 
 namespace Google.Home.Enterprise.Sdm.V1.Snippets
 {
+    using Google.Home.Enterprise.Sdm.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSmartDeviceManagementServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetRoomAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetRoomRequestObjectAsync()
         {
-            // Snippet: GetRoomAsync(GetRoomRequest, CallSettings)
-            // Additional: GetRoomAsync(GetRoomRequest, CancellationToken)
             // Create client
             SmartDeviceManagementServiceClient smartDeviceManagementServiceClient = await SmartDeviceManagementServiceClient.CreateAsync();
             // Initialize request argument(s)
             GetRoomRequest request = new GetRoomRequest { Name = "", };
             // Make the request
             Room response = await smartDeviceManagementServiceClient.GetRoomAsync(request);
-            // End snippet
         }
     }
 }

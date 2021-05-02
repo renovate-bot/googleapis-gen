@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -62,7 +63,8 @@ from google.cloud.iot_v1.types.resources import RegistryCredential
 from google.cloud.iot_v1.types.resources import StateNotificationConfig
 from google.cloud.iot_v1.types.resources import X509CertificateDetails
 
-__all__ = ('BindDeviceToGatewayRequest',
+__all__ = (
+    'BindDeviceToGatewayRequest',
     'BindDeviceToGatewayResponse',
     'CreateDeviceRegistryRequest',
     'CreateDeviceRequest',

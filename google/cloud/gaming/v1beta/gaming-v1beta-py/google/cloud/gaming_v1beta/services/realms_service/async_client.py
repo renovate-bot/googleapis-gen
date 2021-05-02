@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -34,6 +36,7 @@ from google.cloud.gaming_v1beta.types import realms
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import RealmsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import RealmsServiceGrpcAsyncIOTransport
 from .client import RealmsServiceClient
@@ -51,14 +54,19 @@ class RealmsServiceAsyncClient:
 
     realm_path = staticmethod(RealmsServiceClient.realm_path)
     parse_realm_path = staticmethod(RealmsServiceClient.parse_realm_path)
+
     common_billing_account_path = staticmethod(RealmsServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(RealmsServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(RealmsServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(RealmsServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(RealmsServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(RealmsServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(RealmsServiceClient.common_project_path)
     parse_common_project_path = staticmethod(RealmsServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(RealmsServiceClient.common_location_path)
     parse_common_location_path = staticmethod(RealmsServiceClient.parse_common_location_path)
 
@@ -143,6 +151,7 @@ class RealmsServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = RealmsServiceClient(
             credentials=credentials,
             transport=transport,
@@ -163,8 +172,7 @@ class RealmsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.ListRealmsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 RealmsService.ListRealms.
             parent (:class:`str`):
                 Required. The parent resource name. Uses the form:
@@ -173,6 +181,7 @@ class RealmsServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -200,6 +209,7 @@ class RealmsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -208,7 +218,10 @@ class RealmsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_realms,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -257,8 +270,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.GetRealmRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 RealmsService.GetRealm.
             name (:class:`str`):
                 Required. The name of the realm to retrieve. Uses the
@@ -268,6 +280,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -290,6 +303,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -298,7 +312,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_realm,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -340,8 +357,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.CreateRealmRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 RealmsService.CreateRealm.
             parent (:class:`str`):
                 Required. The parent resource name. Uses the form:
@@ -364,6 +380,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``realm_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -391,6 +408,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if realm is not None:
@@ -445,8 +463,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.DeleteRealmRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 RealmsService.DeleteRealm.
             name (:class:`str`):
                 Required. The name of the realm to delete. Uses the
@@ -456,6 +473,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -493,6 +511,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -544,8 +563,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.UpdateRealmRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 RealmsService.UpdateRealm.
             realm (:class:`google.cloud.gaming_v1beta.types.Realm`):
                 Required. The realm to be updated. Only fields specified
@@ -564,6 +582,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -591,6 +610,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if realm is not None:
             request.realm = realm
         if update_mask is not None:
@@ -642,9 +662,9 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1beta.types.PreviewRealmUpdateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 RealmsService.PreviewRealmUpdate.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -658,6 +678,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         # Create or coerce a protobuf request object.
+
         request = realms.PreviewRealmUpdateRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -665,7 +686,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.preview_realm_update,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -692,6 +716,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

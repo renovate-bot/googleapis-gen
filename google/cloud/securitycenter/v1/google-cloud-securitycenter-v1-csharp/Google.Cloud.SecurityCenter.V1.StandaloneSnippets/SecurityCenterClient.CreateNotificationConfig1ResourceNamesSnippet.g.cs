@@ -17,13 +17,17 @@
 namespace Google.Cloud.SecurityCenter.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.SecurityCenter.V1;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateNotificationConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateNotificationConfig1ResourceNames()
         {
-            // Snippet: CreateNotificationConfig(OrganizationName, string, NotificationConfig, CallSettings)
             // Create client
             SecurityCenterClient securityCenterClient = SecurityCenterClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.SecurityCenter.V1.Snippets
             NotificationConfig notificationConfig = new NotificationConfig();
             // Make the request
             NotificationConfig response = securityCenterClient.CreateNotificationConfig(parent, configId, notificationConfig);
-            // End snippet
         }
     }
 }

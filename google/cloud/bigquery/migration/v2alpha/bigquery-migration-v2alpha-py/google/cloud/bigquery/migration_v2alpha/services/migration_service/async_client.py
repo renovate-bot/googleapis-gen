@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -33,6 +35,7 @@ from google.cloud.bigquery.migration_v2alpha.types import migration_metrics
 from google.cloud.bigquery.migration_v2alpha.types import migration_service
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import error_details_pb2 as error_details  # type: ignore
+
 from .transports.base import MigrationServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import MigrationServiceGrpcAsyncIOTransport
 from .client import MigrationServiceClient
@@ -50,14 +53,19 @@ class MigrationServiceAsyncClient:
     parse_migration_subtask_path = staticmethod(MigrationServiceClient.parse_migration_subtask_path)
     migration_workflow_path = staticmethod(MigrationServiceClient.migration_workflow_path)
     parse_migration_workflow_path = staticmethod(MigrationServiceClient.parse_migration_workflow_path)
+
     common_billing_account_path = staticmethod(MigrationServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(MigrationServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(MigrationServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(MigrationServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(MigrationServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(MigrationServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(MigrationServiceClient.common_project_path)
     parse_common_project_path = staticmethod(MigrationServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(MigrationServiceClient.common_location_path)
     parse_common_location_path = staticmethod(MigrationServiceClient.parse_common_location_path)
 
@@ -142,6 +150,7 @@ class MigrationServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = MigrationServiceClient(
             credentials=credentials,
             transport=transport,
@@ -163,8 +172,7 @@ class MigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.migration_v2alpha.types.CreateMigrationWorkflowRequest`):
-                The request object.
-                Request to create a migration
+                The request object. Request to create a migration
                 workflow resource.
             parent (:class:`str`):
                 Required. The name of the project to which this
@@ -181,6 +189,7 @@ class MigrationServiceAsyncClient:
                 This corresponds to the ``migration_workflow`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -206,6 +215,7 @@ class MigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if migration_workflow is not None:
@@ -250,8 +260,7 @@ class MigrationServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery.migration_v2alpha.types.GetMigrationWorkflowRequest`):
-                The request object.
-                A request to get a previously
+                The request object. A request to get a previously
                 created migration workflow.
             name (:class:`str`):
                 Required. The unique identifier for the migration
@@ -261,6 +270,7 @@ class MigrationServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -286,6 +296,7 @@ class MigrationServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -294,7 +305,10 @@ class MigrationServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_migration_workflow,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=120.0,
@@ -334,8 +348,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.migration_v2alpha.types.ListMigrationWorkflowsRequest`):
-                The request object.
-                A request to list previously created
+                The request object. A request to list previously created
                 migration workflows.
             parent (:class:`str`):
                 Required. The project and location of the migration
@@ -345,6 +358,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -371,6 +385,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -379,7 +394,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_migration_workflows,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=120.0,
@@ -428,8 +446,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.migration_v2alpha.types.DeleteMigrationWorkflowRequest`):
-                The request object.
-                A request to delete a previously
+                The request object. A request to delete a previously
                 created migration workflow.
             name (:class:`str`):
                 Required. The unique identifier for the migration
@@ -439,6 +456,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -457,6 +475,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -500,8 +519,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.migration_v2alpha.types.StartMigrationWorkflowRequest`):
-                The request object.
-                A request to start a previously
+                The request object. A request to start a previously
                 created migration workflow.
             name (:class:`str`):
                 Required. The unique identifier for the migration
@@ -511,6 +529,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -529,6 +548,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -537,7 +557,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.start_migration_workflow,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=120.0,
@@ -574,8 +597,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.migration_v2alpha.types.GetMigrationSubtaskRequest`):
-                The request object.
-                A request to get a previously
+                The request object. A request to get a previously
                 created migration subtasks.
             name (:class:`str`):
                 Required. The unique identifier for the migration
@@ -585,6 +607,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -613,6 +636,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -621,7 +645,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_migration_subtask,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=120.0,
@@ -661,8 +688,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery.migration_v2alpha.types.ListMigrationSubtasksRequest`):
-                The request object.
-                A request to list previously created
+                The request object. A request to list previously created
                 migration subtasks.
             parent (:class:`str`):
                 Required. The migration task of the subtasks to list.
@@ -671,6 +697,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -697,6 +724,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -705,7 +733,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_migration_subtasks,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=120.0,
@@ -741,6 +772,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

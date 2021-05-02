@@ -16,19 +16,23 @@
 
 namespace Google.Streetview.Publish.V1.Snippets
 {
+    using Google.Streetview.Publish.V1;
+
     public sealed partial class GeneratedStreetViewPublishServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreatePhoto</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreatePhoto()
         {
-            // Snippet: CreatePhoto(Photo, CallSettings)
             // Create client
             StreetViewPublishServiceClient streetViewPublishServiceClient = StreetViewPublishServiceClient.Create();
             // Initialize request argument(s)
             Photo photo = new Photo();
             // Make the request
             Photo response = streetViewPublishServiceClient.CreatePhoto(photo);
-            // End snippet
         }
     }
 }

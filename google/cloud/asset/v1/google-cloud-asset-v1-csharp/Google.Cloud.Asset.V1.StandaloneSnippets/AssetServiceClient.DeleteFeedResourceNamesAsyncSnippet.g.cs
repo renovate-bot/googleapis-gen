@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Asset.V1.Snippets
 {
+    using Google.Cloud.Asset.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAssetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteFeedAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteFeedResourceNamesAsync()
         {
-            // Snippet: DeleteFeedAsync(FeedName, CallSettings)
-            // Additional: DeleteFeedAsync(FeedName, CancellationToken)
             // Create client
             AssetServiceClient assetServiceClient = await AssetServiceClient.CreateAsync();
             // Initialize request argument(s)
             FeedName name = FeedName.FromProjectFeed("[PROJECT]", "[FEED]");
             // Make the request
             await assetServiceClient.DeleteFeedAsync(name);
-            // End snippet
         }
     }
 }

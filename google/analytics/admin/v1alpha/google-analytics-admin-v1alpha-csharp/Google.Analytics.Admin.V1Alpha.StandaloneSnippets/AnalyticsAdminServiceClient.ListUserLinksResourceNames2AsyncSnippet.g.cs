@@ -16,6 +16,7 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using Google.Api.Gax;
     using System;
     using System.Linq;
@@ -23,10 +24,13 @@ namespace Google.Analytics.Admin.V1Alpha.Snippets
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListUserLinks</summary>
+        /// <summary>Snippet for ListUserLinksAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListUserLinksResourceNames2Async()
         {
-            // Snippet: ListUserLinksAsync(PropertyName, string, int?, CallSettings)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = await AnalyticsAdminServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -65,7 +69,6 @@ namespace Google.Analytics.Admin.V1Alpha.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

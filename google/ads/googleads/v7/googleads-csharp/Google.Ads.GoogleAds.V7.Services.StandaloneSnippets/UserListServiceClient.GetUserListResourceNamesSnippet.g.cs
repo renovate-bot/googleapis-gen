@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedUserListServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetUserList</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetUserListResourceNames()
         {
-            // Snippet: GetUserList(UserListName, CallSettings)
             // Create client
             UserListServiceClient userListServiceClient = UserListServiceClient.Create();
             // Initialize request argument(s)
             UserListName resourceName = UserListName.FromCustomerUserList("[CUSTOMER_ID]", "[USER_LIST_ID]");
             // Make the request
             UserList response = userListServiceClient.GetUserList(resourceName);
-            // End snippet
         }
     }
 }

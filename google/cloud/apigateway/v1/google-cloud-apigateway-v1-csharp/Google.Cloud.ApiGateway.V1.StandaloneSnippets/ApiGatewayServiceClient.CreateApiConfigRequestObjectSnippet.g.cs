@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.ApiGateway.V1.Snippets
 {
+    using Google.Cloud.ApiGateway.V1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedApiGatewayServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateApiConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateApiConfigRequestObject()
         {
-            // Snippet: CreateApiConfig(CreateApiConfigRequest, CallSettings)
             // Create client
             ApiGatewayServiceClient apiGatewayServiceClient = ApiGatewayServiceClient.Create();
             // Initialize request argument(s)
@@ -51,7 +55,6 @@ namespace Google.Cloud.ApiGateway.V1.Snippets
                 // If it has completed, then access the result
                 ApiConfig retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

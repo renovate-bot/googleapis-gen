@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLocationViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetLocationViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetLocationViewRequestObjectAsync()
         {
-            // Snippet: GetLocationViewAsync(GetLocationViewRequest, CallSettings)
-            // Additional: GetLocationViewAsync(GetLocationViewRequest, CancellationToken)
             // Create client
             LocationViewServiceClient locationViewServiceClient = await LocationViewServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             LocationView response = await locationViewServiceClient.GetLocationViewAsync(request);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Channel.V1.Snippets
 {
+    using Google.Cloud.Channel.V1;
+
     public sealed partial class GeneratedCloudChannelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UnregisterSubscriber</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UnregisterSubscriberRequestObject()
         {
-            // Snippet: UnregisterSubscriber(UnregisterSubscriberRequest, CallSettings)
             // Create client
             CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.Channel.V1.Snippets
             };
             // Make the request
             UnregisterSubscriberResponse response = cloudChannelServiceClient.UnregisterSubscriber(request);
-            // End snippet
         }
     }
 }

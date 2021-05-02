@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Recommender.V1Beta1.Snippets
 {
+    using Google.Cloud.Recommender.V1Beta1;
+
     public sealed partial class GeneratedRecommenderClientStandaloneSnippets
     {
         /// <summary>Snippet for MarkRecommendationFailed</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MarkRecommendationFailedRequestObject()
         {
-            // Snippet: MarkRecommendationFailed(MarkRecommendationFailedRequest, CallSettings)
             // Create client
             RecommenderClient recommenderClient = RecommenderClient.Create();
             // Initialize request argument(s)
@@ -33,7 +38,6 @@ namespace Google.Cloud.Recommender.V1Beta1.Snippets
             };
             // Make the request
             Recommendation response = recommenderClient.MarkRecommendationFailed(request);
-            // End snippet
         }
     }
 }

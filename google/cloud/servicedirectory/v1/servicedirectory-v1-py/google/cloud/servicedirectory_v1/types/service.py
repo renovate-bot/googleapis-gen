@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.servicedirectory_v1.types import endpoint
 
@@ -68,18 +71,11 @@ class Service(proto.Message):
             RegistrationService.ListEndpoints.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    annotations = proto.MapField(
-        proto.STRING,
-        proto.STRING,
-        number=4
-    )
-    endpoints = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    annotations = proto.MapField(proto.STRING, proto.STRING, number=4)
+
+    endpoints = proto.RepeatedField(proto.MESSAGE, number=3,
         message=endpoint.Endpoint,
     )
 

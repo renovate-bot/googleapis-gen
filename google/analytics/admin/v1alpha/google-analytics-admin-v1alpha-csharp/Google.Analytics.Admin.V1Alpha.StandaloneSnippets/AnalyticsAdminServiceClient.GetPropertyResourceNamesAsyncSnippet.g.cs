@@ -16,22 +16,24 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPropertyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetPropertyResourceNamesAsync()
         {
-            // Snippet: GetPropertyAsync(PropertyName, CallSettings)
-            // Additional: GetPropertyAsync(PropertyName, CancellationToken)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = await AnalyticsAdminServiceClient.CreateAsync();
             // Initialize request argument(s)
             PropertyName name = PropertyName.FromProperty("[PROPERTY]");
             // Make the request
             Property response = await analyticsAdminServiceClient.GetPropertyAsync(name);
-            // End snippet
         }
     }
 }

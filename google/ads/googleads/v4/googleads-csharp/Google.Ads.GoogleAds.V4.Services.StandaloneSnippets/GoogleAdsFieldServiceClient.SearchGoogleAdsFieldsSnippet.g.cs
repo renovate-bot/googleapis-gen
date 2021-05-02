@@ -17,15 +17,19 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using Google.Api.Gax;
     using System;
 
     public sealed partial class GeneratedGoogleAdsFieldServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for SearchGoogleAdsFields</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SearchGoogleAdsFields()
         {
-            // Snippet: SearchGoogleAdsFields(string, string, int?, CallSettings)
             // Create client
             GoogleAdsFieldServiceClient googleAdsFieldServiceClient = GoogleAdsFieldServiceClient.Create();
             // Initialize request argument(s)
@@ -64,7 +68,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

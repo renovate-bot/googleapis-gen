@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.firestore import FirestoreClient
-
 from .types.common import DocumentMask
 from .types.common import Precondition
 from .types.common import TransactionOptions
@@ -59,6 +59,7 @@ from .types.write import DocumentTransform
 from .types.write import ExistenceFilter
 from .types.write import Write
 from .types.write import WriteResult
+
 
 __all__ = (
     'ArrayValue',

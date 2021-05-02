@@ -18,15 +18,19 @@ namespace Google.Cloud.Logging.V2.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Logging.V2;
     using System;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedLoggingServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for ListLogEntries</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListLogEntriesResourceNames3()
         {
-            // Snippet: ListLogEntries(IEnumerable<FolderName>, string, string, string, int?, CallSettings)
             // Create client
             LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.Create();
             // Initialize request argument(s)
@@ -70,7 +74,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

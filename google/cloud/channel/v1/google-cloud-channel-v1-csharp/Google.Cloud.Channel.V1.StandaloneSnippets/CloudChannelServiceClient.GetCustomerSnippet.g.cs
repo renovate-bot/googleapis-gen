@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Channel.V1.Snippets
 {
+    using Google.Cloud.Channel.V1;
+
     public sealed partial class GeneratedCloudChannelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomer</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCustomer()
         {
-            // Snippet: GetCustomer(string, CallSettings)
             // Create client
             CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.Create();
             // Initialize request argument(s)
             string name = "accounts/[ACCOUNT]/customers/[CUSTOMER]";
             // Make the request
             Customer response = cloudChannelServiceClient.GetCustomer(name);
-            // End snippet
         }
     }
 }

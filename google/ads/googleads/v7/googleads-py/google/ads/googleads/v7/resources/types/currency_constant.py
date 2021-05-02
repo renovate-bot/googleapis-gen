@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -27,6 +29,7 @@ __protobuf__ = proto.module(
 
 class CurrencyConstant(proto.Message):
     r"""A currency constant.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the currency constant.
@@ -48,30 +51,11 @@ class CurrencyConstant(proto.Message):
             this value.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    code = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
-    name = proto.Field(
-        proto.STRING,
-        number=7,
-        optional=True,
-    )
-    symbol = proto.Field(
-        proto.STRING,
-        number=8,
-        optional=True,
-    )
-    billable_unit_micros = proto.Field(
-        proto.INT64,
-        number=9,
-        optional=True,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
+    code = proto.Field(proto.STRING, number=6, optional=True)
+    name = proto.Field(proto.STRING, number=7, optional=True)
+    symbol = proto.Field(proto.STRING, number=8, optional=True)
+    billable_unit_micros = proto.Field(proto.INT64, number=9, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPolicyTagManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdatePolicyTagAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdatePolicyTagAsync()
         {
-            // Snippet: UpdatePolicyTagAsync(PolicyTag, CallSettings)
-            // Additional: UpdatePolicyTagAsync(PolicyTag, CancellationToken)
             // Create client
             PolicyTagManagerClient policyTagManagerClient = await PolicyTagManagerClient.CreateAsync();
             // Initialize request argument(s)
             PolicyTag policyTag = new PolicyTag();
             // Make the request
             PolicyTag response = await policyTagManagerClient.UpdatePolicyTagAsync(policyTag);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.dashboards_service import DashboardsServiceClient
-
 from .types.common import Aggregation
 from .types.common import PickTimeSeriesFilter
 from .types.common import StatisticalTimeSeriesFilter
@@ -40,6 +40,7 @@ from .types.text import Text
 from .types.widget import Widget
 from .types.xychart import ChartOptions
 from .types.xychart import XyChart
+
 
 __all__ = (
     'Aggregation',

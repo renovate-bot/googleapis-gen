@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
+    using Google.Cloud.Talent.V4Beta1;
+
     public sealed partial class GeneratedProfileServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteProfile</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteProfile()
         {
-            // Snippet: DeleteProfile(string, CallSettings)
             // Create client
             ProfileServiceClient profileServiceClient = ProfileServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/tenants/[TENANT]/profiles/[PROFILE]";
             // Make the request
             profileServiceClient.DeleteProfile(name);
-            // End snippet
         }
     }
 }

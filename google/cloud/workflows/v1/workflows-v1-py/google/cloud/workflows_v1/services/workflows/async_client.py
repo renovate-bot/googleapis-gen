@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -33,6 +35,7 @@ from google.cloud.workflows_v1.types import workflows
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import WorkflowsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import WorkflowsGrpcAsyncIOTransport
 from .client import WorkflowsClient
@@ -51,14 +54,19 @@ class WorkflowsAsyncClient:
 
     workflow_path = staticmethod(WorkflowsClient.workflow_path)
     parse_workflow_path = staticmethod(WorkflowsClient.parse_workflow_path)
+
     common_billing_account_path = staticmethod(WorkflowsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(WorkflowsClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(WorkflowsClient.common_folder_path)
     parse_common_folder_path = staticmethod(WorkflowsClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(WorkflowsClient.common_organization_path)
     parse_common_organization_path = staticmethod(WorkflowsClient.parse_common_organization_path)
+
     common_project_path = staticmethod(WorkflowsClient.common_project_path)
     parse_common_project_path = staticmethod(WorkflowsClient.parse_common_project_path)
+
     common_location_path = staticmethod(WorkflowsClient.common_location_path)
     parse_common_location_path = staticmethod(WorkflowsClient.parse_common_location_path)
 
@@ -143,6 +151,7 @@ class WorkflowsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = WorkflowsClient(
             credentials=credentials,
             transport=transport,
@@ -164,8 +173,7 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1.types.ListWorkflowsRequest`):
-                The request object.
-                Request for the
+                The request object. Request for the
                 [ListWorkflows][google.cloud.workflows.v1.Workflows.ListWorkflows]
                 method.
             parent (:class:`str`):
@@ -177,6 +185,7 @@ class WorkflowsAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -205,6 +214,7 @@ class WorkflowsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -256,8 +266,7 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1.types.GetWorkflowRequest`):
-                The request object.
-                Request for the
+                The request object. Request for the
                 [GetWorkflow][google.cloud.workflows.v1.Workflows.GetWorkflow]
                 method.
             name (:class:`str`):
@@ -268,6 +277,7 @@ class WorkflowsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -292,6 +302,7 @@ class WorkflowsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -339,8 +350,7 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1.types.CreateWorkflowRequest`):
-                The request object.
-                Request for the
+                The request object. Request for the
                 [CreateWorkflow][google.cloud.workflows.v1.Workflows.CreateWorkflow]
                 method.
             parent (:class:`str`):
@@ -372,6 +382,7 @@ class WorkflowsAsyncClient:
                 This corresponds to the ``workflow_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -399,6 +410,7 @@ class WorkflowsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if workflow is not None:
@@ -455,8 +467,7 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1.types.DeleteWorkflowRequest`):
-                The request object.
-                Request for the
+                The request object. Request for the
                 [DeleteWorkflow][google.cloud.workflows.v1.Workflows.DeleteWorkflow]
                 method.
             name (:class:`str`):
@@ -467,6 +478,7 @@ class WorkflowsAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -504,6 +516,7 @@ class WorkflowsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -560,8 +573,7 @@ class WorkflowsAsyncClient:
 
         Args:
             request (:class:`google.cloud.workflows_v1.types.UpdateWorkflowRequest`):
-                The request object.
-                Request for the
+                The request object. Request for the
                 [UpdateWorkflow][google.cloud.workflows.v1.Workflows.UpdateWorkflow]
                 method.
             workflow (:class:`google.cloud.workflows_v1.types.Workflow`):
@@ -577,6 +589,7 @@ class WorkflowsAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -604,6 +617,7 @@ class WorkflowsAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if workflow is not None:
             request.workflow = workflow
         if update_mask is not None:
@@ -643,6 +657,8 @@ class WorkflowsAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

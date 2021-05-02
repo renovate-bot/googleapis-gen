@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -262,16 +264,21 @@ def test_get_campaign_audience_view(transport: str = 'grpc', request_type=campai
         # Designate an appropriate return value for the call.
         call.return_value = campaign_audience_view.CampaignAudienceView(
             resource_name='resource_name_value',
+
         )
+
         response = client.get_campaign_audience_view(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_audience_view_service.GetCampaignAudienceViewRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign_audience_view.CampaignAudienceView)
+
     assert response.resource_name == 'resource_name_value'
 
 
@@ -287,7 +294,6 @@ def test_get_campaign_audience_view_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_audience_view_service.GetCampaignAudienceViewRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -295,6 +301,7 @@ def test_get_campaign_audience_view_field_headers():
             type(client.transport.get_campaign_audience_view),
             '__call__') as call:
         call.return_value = campaign_audience_view.CampaignAudienceView()
+
         client.get_campaign_audience_view(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -321,6 +328,7 @@ def test_get_campaign_audience_view_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_audience_view.CampaignAudienceView()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_campaign_audience_view(
@@ -331,6 +339,7 @@ def test_get_campaign_audience_view_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -411,7 +420,7 @@ def test_campaign_audience_view_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_campaign_audience_view',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -563,6 +572,7 @@ def test_campaign_audience_view_service_transport_channel_mtls_with_adc(
 def test_campaign_audience_view_path():
     customer = "squid"
     campaign_audience_view = "clam"
+
     expected = "customers/{customer}/campaignAudienceViews/{campaign_audience_view}".format(customer=customer, campaign_audience_view=campaign_audience_view, )
     actual = CampaignAudienceViewServiceClient.campaign_audience_view_path(customer, campaign_audience_view)
     assert expected == actual
@@ -570,8 +580,9 @@ def test_campaign_audience_view_path():
 
 def test_parse_campaign_audience_view_path():
     expected = {
-        "customer": "whelk",
-        "campaign_audience_view": "octopus",
+    "customer": "whelk",
+    "campaign_audience_view": "octopus",
+
     }
     path = CampaignAudienceViewServiceClient.campaign_audience_view_path(**expected)
 
@@ -581,6 +592,7 @@ def test_parse_campaign_audience_view_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CampaignAudienceViewServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -588,7 +600,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = CampaignAudienceViewServiceClient.common_billing_account_path(**expected)
 
@@ -598,6 +611,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = CampaignAudienceViewServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -605,7 +619,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = CampaignAudienceViewServiceClient.common_folder_path(**expected)
 
@@ -615,6 +630,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CampaignAudienceViewServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -622,7 +638,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = CampaignAudienceViewServiceClient.common_organization_path(**expected)
 
@@ -632,6 +649,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = CampaignAudienceViewServiceClient.common_project_path(project)
     assert expected == actual
@@ -639,7 +657,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = CampaignAudienceViewServiceClient.common_project_path(**expected)
 
@@ -650,6 +669,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CampaignAudienceViewServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -657,8 +677,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = CampaignAudienceViewServiceClient.common_location_path(**expected)
 

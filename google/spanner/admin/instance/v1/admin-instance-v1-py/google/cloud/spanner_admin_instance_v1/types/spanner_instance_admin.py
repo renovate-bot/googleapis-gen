@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import field_mask_pb2 as gp_field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -42,6 +45,7 @@ __protobuf__ = proto.module(
 
 class ReplicaInfo(proto.Message):
     r"""
+
     Attributes:
         location (str):
             The location of the serving resources, e.g.
@@ -65,19 +69,13 @@ class ReplicaInfo(proto.Message):
         READ_ONLY = 2
         WITNESS = 3
 
-    location = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=2,
+    location = proto.Field(proto.STRING, number=1)
+
+    type_ = proto.Field(proto.ENUM, number=2,
         enum=ReplicaType,
     )
-    default_leader_location = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
+
+    default_leader_location = proto.Field(proto.BOOL, number=3)
 
 
 class InstanceConfig(proto.Message):
@@ -99,17 +97,11 @@ class InstanceConfig(proto.Message):
             properties.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    display_name = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    replicas = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    display_name = proto.Field(proto.STRING, number=2)
+
+    replicas = proto.RepeatedField(proto.MESSAGE, number=3,
         message='ReplicaInfo',
     )
 
@@ -191,36 +183,21 @@ class Instance(proto.Message):
         CREATING = 1
         READY = 2
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    config = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    display_name = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    node_count = proto.Field(
-        proto.INT32,
-        number=5,
-    )
-    state = proto.Field(
-        proto.ENUM,
-        number=6,
+    name = proto.Field(proto.STRING, number=1)
+
+    config = proto.Field(proto.STRING, number=2)
+
+    display_name = proto.Field(proto.STRING, number=3)
+
+    node_count = proto.Field(proto.INT32, number=5)
+
+    state = proto.Field(proto.ENUM, number=6,
         enum=State,
     )
-    labels = proto.MapField(
-        proto.STRING,
-        proto.STRING,
-        number=7
-    )
-    endpoint_uris = proto.RepeatedField(
-        proto.STRING,
-        number=8,
-    )
+
+    labels = proto.MapField(proto.STRING, proto.STRING, number=7)
+
+    endpoint_uris = proto.RepeatedField(proto.STRING, number=8)
 
 
 class ListInstanceConfigsRequest(proto.Message):
@@ -243,18 +220,11 @@ class ListInstanceConfigsRequest(proto.Message):
             [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
 
 
 class ListInstanceConfigsResponse(proto.Message):
@@ -275,15 +245,11 @@ class ListInstanceConfigsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    instance_configs = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    instance_configs = proto.RepeatedField(proto.MESSAGE, number=1,
         message='InstanceConfig',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class GetInstanceConfigRequest(proto.Message):
@@ -297,10 +263,7 @@ class GetInstanceConfigRequest(proto.Message):
             ``projects/<project>/instanceConfigs/<config>``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class GetInstanceRequest(proto.Message):
@@ -319,13 +282,9 @@ class GetInstanceRequest(proto.Message):
             are returned.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    field_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    field_mask = proto.Field(proto.MESSAGE, number=2,
         message=gp_field_mask.FieldMask,
     )
 
@@ -348,17 +307,11 @@ class CreateInstanceRequest(proto.Message):
             ``<parent>/instances/<instance_id>``.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    instance_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    instance = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    parent = proto.Field(proto.STRING, number=1)
+
+    instance_id = proto.Field(proto.STRING, number=2)
+
+    instance = proto.Field(proto.MESSAGE, number=3,
         message='Instance',
     )
 
@@ -405,22 +358,13 @@ class ListInstancesRequest(proto.Message):
                containing "dev".
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
+
+    filter = proto.Field(proto.STRING, number=4)
 
 
 class ListInstancesResponse(proto.Message):
@@ -440,15 +384,11 @@ class ListInstancesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    instances = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    instances = proto.RepeatedField(proto.MESSAGE, number=1,
         message='Instance',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class UpdateInstanceRequest(proto.Message):
@@ -471,14 +411,11 @@ class UpdateInstanceRequest(proto.Message):
             them.
     """
 
-    instance = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    instance = proto.Field(proto.MESSAGE, number=1,
         message='Instance',
     )
-    field_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    field_mask = proto.Field(proto.MESSAGE, number=2,
         message=gp_field_mask.FieldMask,
     )
 
@@ -493,10 +430,7 @@ class DeleteInstanceRequest(proto.Message):
             of the form ``projects/<project>/instances/<instance>``
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class CreateInstanceMetadata(proto.Message):
@@ -520,24 +454,19 @@ class CreateInstanceMetadata(proto.Message):
             was completed successfully.
     """
 
-    instance = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    instance = proto.Field(proto.MESSAGE, number=1,
         message='Instance',
     )
-    start_time = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    start_time = proto.Field(proto.MESSAGE, number=2,
         message=timestamp.Timestamp,
     )
-    cancel_time = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    cancel_time = proto.Field(proto.MESSAGE, number=3,
         message=timestamp.Timestamp,
     )
-    end_time = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    end_time = proto.Field(proto.MESSAGE, number=4,
         message=timestamp.Timestamp,
     )
 
@@ -563,24 +492,19 @@ class UpdateInstanceMetadata(proto.Message):
             was completed successfully.
     """
 
-    instance = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    instance = proto.Field(proto.MESSAGE, number=1,
         message='Instance',
     )
-    start_time = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    start_time = proto.Field(proto.MESSAGE, number=2,
         message=timestamp.Timestamp,
     )
-    cancel_time = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    cancel_time = proto.Field(proto.MESSAGE, number=3,
         message=timestamp.Timestamp,
     )
-    end_time = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    end_time = proto.Field(proto.MESSAGE, number=4,
         message=timestamp.Timestamp,
     )
 

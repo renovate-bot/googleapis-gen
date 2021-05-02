@@ -16,14 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedAdGroupFeedServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateAdGroupFeeds</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateAdGroupFeeds()
         {
-            // Snippet: MutateAdGroupFeeds(string, IEnumerable<AdGroupFeedOperation>, CallSettings)
             // Create client
             AdGroupFeedServiceClient adGroupFeedServiceClient = AdGroupFeedServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             MutateAdGroupFeedsResponse response = adGroupFeedServiceClient.MutateAdGroupFeeds(customerId, operations);
-            // End snippet
         }
     }
 }

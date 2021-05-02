@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGroupServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteGroupAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteGroupResourceNames1Async()
         {
-            // Snippet: DeleteGroupAsync(GroupName, CallSettings)
-            // Additional: DeleteGroupAsync(GroupName, CancellationToken)
             // Create client
             GroupServiceClient groupServiceClient = await GroupServiceClient.CreateAsync();
             // Initialize request argument(s)
             GroupName name = GroupName.FromProjectGroup("[PROJECT]", "[GROUP]");
             // Make the request
             await groupServiceClient.DeleteGroupAsync(name);
-            // End snippet
         }
     }
 }

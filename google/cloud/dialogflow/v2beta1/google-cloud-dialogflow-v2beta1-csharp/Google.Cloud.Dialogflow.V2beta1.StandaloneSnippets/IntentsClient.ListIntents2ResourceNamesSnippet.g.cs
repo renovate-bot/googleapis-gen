@@ -17,14 +17,18 @@
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Dialogflow.V2beta1;
     using System;
 
     public sealed partial class GeneratedIntentsClientStandaloneSnippets
     {
         /// <summary>Snippet for ListIntents</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListIntents2ResourceNames()
         {
-            // Snippet: ListIntents(AgentName, string, string, int?, CallSettings)
             // Create client
             IntentsClient intentsClient = IntentsClient.Create();
             // Initialize request argument(s)
@@ -64,7 +68,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

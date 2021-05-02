@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -30,6 +32,7 @@ from google.monitoring.dashboard_v1.services.dashboards_service import pagers
 from google.monitoring.dashboard_v1.types import dashboard
 from google.monitoring.dashboard_v1.types import dashboards_service
 from google.monitoring.dashboard_v1.types import layouts
+
 from .transports.base import DashboardsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import DashboardsServiceGrpcAsyncIOTransport
 from .client import DashboardsServiceClient
@@ -47,14 +50,19 @@ class DashboardsServiceAsyncClient:
 
     dashboard_path = staticmethod(DashboardsServiceClient.dashboard_path)
     parse_dashboard_path = staticmethod(DashboardsServiceClient.parse_dashboard_path)
+
     common_billing_account_path = staticmethod(DashboardsServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(DashboardsServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(DashboardsServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(DashboardsServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(DashboardsServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(DashboardsServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(DashboardsServiceClient.common_project_path)
     parse_common_project_path = staticmethod(DashboardsServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(DashboardsServiceClient.common_location_path)
     parse_common_location_path = staticmethod(DashboardsServiceClient.parse_common_location_path)
 
@@ -139,6 +147,7 @@ class DashboardsServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = DashboardsServiceClient(
             credentials=credentials,
             transport=transport,
@@ -164,8 +173,8 @@ class DashboardsServiceAsyncClient:
 
         Args:
             request (:class:`google.monitoring.dashboard_v1.types.CreateDashboardRequest`):
-                The request object.
-                The `CreateDashboard` request.
+                The request object. The `CreateDashboard` request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -181,6 +190,7 @@ class DashboardsServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = dashboards_service.CreateDashboardRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -226,8 +236,8 @@ class DashboardsServiceAsyncClient:
 
         Args:
             request (:class:`google.monitoring.dashboard_v1.types.ListDashboardsRequest`):
-                The request object.
-                The `ListDashboards` request.
+                The request object. The `ListDashboards` request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -243,6 +253,7 @@ class DashboardsServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = dashboards_service.ListDashboardsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -297,8 +308,8 @@ class DashboardsServiceAsyncClient:
 
         Args:
             request (:class:`google.monitoring.dashboard_v1.types.GetDashboardRequest`):
-                The request object.
-                The `GetDashboard` request.
+                The request object. The `GetDashboard` request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -314,6 +325,7 @@ class DashboardsServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = dashboards_service.GetDashboardRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -359,8 +371,8 @@ class DashboardsServiceAsyncClient:
 
         Args:
             request (:class:`google.monitoring.dashboard_v1.types.DeleteDashboardRequest`):
-                The request object.
-                The `DeleteDashboard` request.
+                The request object. The `DeleteDashboard` request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -368,6 +380,7 @@ class DashboardsServiceAsyncClient:
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         request = dashboards_service.DeleteDashboardRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -410,8 +423,8 @@ class DashboardsServiceAsyncClient:
 
         Args:
             request (:class:`google.monitoring.dashboard_v1.types.UpdateDashboardRequest`):
-                The request object.
-                The `UpdateDashboard` request.
+                The request object. The `UpdateDashboard` request.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -427,6 +440,7 @@ class DashboardsServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = dashboards_service.UpdateDashboardRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -455,6 +469,8 @@ class DashboardsServiceAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

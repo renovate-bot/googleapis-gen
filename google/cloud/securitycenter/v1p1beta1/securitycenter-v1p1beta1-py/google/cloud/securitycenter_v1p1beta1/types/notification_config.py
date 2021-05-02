@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -89,36 +91,21 @@ class NotificationConfig(proto.Message):
                 -  boolean literals ``true`` and ``false`` without quotes.
         """
 
-        filter = proto.Field(
-            proto.STRING,
-            number=1,
-        )
+        filter = proto.Field(proto.STRING, number=1)
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    event_type = proto.Field(
-        proto.ENUM,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    description = proto.Field(proto.STRING, number=2)
+
+    event_type = proto.Field(proto.ENUM, number=3,
         enum=EventType,
     )
-    pubsub_topic = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    service_account = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    streaming_config = proto.Field(
-        proto.MESSAGE,
-        number=6,
-        oneof='notify_config',
+
+    pubsub_topic = proto.Field(proto.STRING, number=4)
+
+    service_account = proto.Field(proto.STRING, number=5)
+
+    streaming_config = proto.Field(proto.MESSAGE, number=6, oneof='notify_config',
         message=StreamingConfig,
     )
 

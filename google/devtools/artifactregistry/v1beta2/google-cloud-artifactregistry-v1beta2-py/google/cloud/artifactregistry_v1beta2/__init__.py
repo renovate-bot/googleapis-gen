@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.artifact_registry import ArtifactRegistryClient
-
 from .types.file import File
 from .types.file import GetFileRequest
 from .types.file import Hash
@@ -47,6 +47,7 @@ from .types.version import ListVersionsRequest
 from .types.version import ListVersionsResponse
 from .types.version import Version
 from .types.version import VersionView
+
 
 __all__ = (
     'CreateRepositoryRequest',

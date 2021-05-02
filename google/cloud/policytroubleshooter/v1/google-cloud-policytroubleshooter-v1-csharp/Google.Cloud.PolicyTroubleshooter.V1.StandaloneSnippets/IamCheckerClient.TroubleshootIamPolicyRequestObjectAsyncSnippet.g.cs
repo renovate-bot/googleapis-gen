@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.PolicyTroubleshooter.V1.Snippets
 {
+    using Google.Cloud.PolicyTroubleshooter.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIamCheckerClientStandaloneSnippets
     {
         /// <summary>Snippet for TroubleshootIamPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task TroubleshootIamPolicyRequestObjectAsync()
         {
-            // Snippet: TroubleshootIamPolicyAsync(TroubleshootIamPolicyRequest, CallSettings)
-            // Additional: TroubleshootIamPolicyAsync(TroubleshootIamPolicyRequest, CancellationToken)
             // Create client
             IamCheckerClient iamCheckerClient = await IamCheckerClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.PolicyTroubleshooter.V1.Snippets
             };
             // Make the request
             TroubleshootIamPolicyResponse response = await iamCheckerClient.TroubleshootIamPolicyAsync(request);
-            // End snippet
         }
     }
 }

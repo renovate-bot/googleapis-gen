@@ -37,11 +37,8 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             {
                 CustomerId = "",
                 KeywordAndUrlSeed = new KeywordAndUrlSeed(),
-                KeywordSeed = new KeywordSeed(),
-                UrlSeed = new UrlSeed(),
                 KeywordPlanNetwork = KeywordPlanNetworkEnum.Types.KeywordPlanNetwork.Unspecified,
                 IncludeAdultKeywords = false,
-                SiteSeed = new SiteSeed(),
                 Language = "",
                 GeoTargetConstants = { "", },
                 AggregateMetrics = new KeywordPlanAggregateMetrics(),
@@ -88,7 +85,7 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for GenerateKeywordIdeas</summary>
+        /// <summary>Snippet for GenerateKeywordIdeasAsync</summary>
         public async Task GenerateKeywordIdeasRequestObjectAsync()
         {
             // Snippet: GenerateKeywordIdeasAsync(GenerateKeywordIdeasRequest, CallSettings)
@@ -99,11 +96,8 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             {
                 CustomerId = "",
                 KeywordAndUrlSeed = new KeywordAndUrlSeed(),
-                KeywordSeed = new KeywordSeed(),
-                UrlSeed = new UrlSeed(),
                 KeywordPlanNetwork = KeywordPlanNetworkEnum.Types.KeywordPlanNetwork.Unspecified,
                 IncludeAdultKeywords = false,
-                SiteSeed = new SiteSeed(),
                 Language = "",
                 GeoTargetConstants = { "", },
                 AggregateMetrics = new KeywordPlanAggregateMetrics(),

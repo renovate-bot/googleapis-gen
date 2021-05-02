@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -28,7 +30,7 @@ __protobuf__ = proto.module(
 class LeadFormPostSubmitCallToActionTypeEnum(proto.Message):
     r"""Describes the type of post-submit call-to-action phrases for
     a lead form.
-        """
+    """
     class LeadFormPostSubmitCallToActionType(proto.Enum):
         r"""Enum describing the type of post-submit call-to-action
         phrases for a lead form.

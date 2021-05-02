@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Securitycenter.V1Beta1.Snippets
 {
+    using Google.Cloud.Securitycenter.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateSecurityMarksAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateSecurityMarksRequestObjectAsync()
         {
-            // Snippet: UpdateSecurityMarksAsync(UpdateSecurityMarksRequest, CallSettings)
-            // Additional: UpdateSecurityMarksAsync(UpdateSecurityMarksRequest, CancellationToken)
             // Create client
             SecurityCenterClient securityCenterClient = await SecurityCenterClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Securitycenter.V1Beta1.Snippets
             };
             // Make the request
             SecurityMarks response = await securityCenterClient.UpdateSecurityMarksAsync(request);
-            // End snippet
         }
     }
 }

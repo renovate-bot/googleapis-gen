@@ -16,15 +16,18 @@
 
 namespace Grafeas.V1.Snippets
 {
+    using Grafeas.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGrafeasClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteOccurrenceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteOccurrenceRequestObjectAsync()
         {
-            // Snippet: DeleteOccurrenceAsync(DeleteOccurrenceRequest, CallSettings)
-            // Additional: DeleteOccurrenceAsync(DeleteOccurrenceRequest, CancellationToken)
             // Create client
             GrafeasClient grafeasClient = await GrafeasClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Grafeas.V1.Snippets
             };
             // Make the request
             await grafeasClient.DeleteOccurrenceAsync(request);
-            // End snippet
         }
     }
 }

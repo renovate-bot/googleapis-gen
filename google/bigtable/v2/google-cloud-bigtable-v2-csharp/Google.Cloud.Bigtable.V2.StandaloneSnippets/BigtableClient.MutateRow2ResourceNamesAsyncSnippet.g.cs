@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Bigtable.V2.Snippets
 {
+    using Google.Cloud.Bigtable.V2;
     using Google.Protobuf;
     using System.Collections.Generic;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Bigtable.V2.Snippets
     public sealed partial class GeneratedBigtableClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateRowAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateRow2ResourceNamesAsync()
         {
-            // Snippet: MutateRowAsync(TableName, ByteString, IEnumerable<Mutation>, string, CallSettings)
-            // Additional: MutateRowAsync(TableName, ByteString, IEnumerable<Mutation>, string, CancellationToken)
             // Create client
             BigtableClient bigtableClient = await BigtableClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Bigtable.V2.Snippets
             string appProfileId = "";
             // Make the request
             MutateRowResponse response = await bigtableClient.MutateRowAsync(tableName, rowKey, mutations, appProfileId);
-            // End snippet
         }
     }
 }

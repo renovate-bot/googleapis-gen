@@ -16,15 +16,18 @@
 
 namespace Google.Analytics.Data.V1Beta.Snippets
 {
+    using Google.Analytics.Data.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBetaAnalyticsDataClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchRunPivotReportsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchRunPivotReportsRequestObjectAsync()
         {
-            // Snippet: BatchRunPivotReportsAsync(BatchRunPivotReportsRequest, CallSettings)
-            // Additional: BatchRunPivotReportsAsync(BatchRunPivotReportsRequest, CancellationToken)
             // Create client
             BetaAnalyticsDataClient betaAnalyticsDataClient = await BetaAnalyticsDataClient.CreateAsync();
             // Initialize request argument(s)
@@ -38,7 +41,6 @@ namespace Google.Analytics.Data.V1Beta.Snippets
             };
             // Make the request
             BatchRunPivotReportsResponse response = await betaAnalyticsDataClient.BatchRunPivotReportsAsync(request);
-            // End snippet
         }
     }
 }

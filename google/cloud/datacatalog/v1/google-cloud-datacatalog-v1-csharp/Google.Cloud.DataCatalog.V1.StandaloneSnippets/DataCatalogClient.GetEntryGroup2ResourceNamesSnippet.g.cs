@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.DataCatalog.V1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for GetEntryGroup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetEntryGroup2ResourceNames()
         {
-            // Snippet: GetEntryGroup(EntryGroupName, FieldMask, CallSettings)
             // Create client
             DataCatalogClient dataCatalogClient = DataCatalogClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             FieldMask readMask = new FieldMask();
             // Make the request
             EntryGroup response = dataCatalogClient.GetEntryGroup(name, readMask);
-            // End snippet
         }
     }
 }

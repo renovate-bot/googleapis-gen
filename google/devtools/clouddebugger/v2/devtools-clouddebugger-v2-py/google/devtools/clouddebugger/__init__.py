@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,7 +42,8 @@ from google.devtools.clouddebugger_v2.types.debugger import ListDebuggeesRespons
 from google.devtools.clouddebugger_v2.types.debugger import SetBreakpointRequest
 from google.devtools.clouddebugger_v2.types.debugger import SetBreakpointResponse
 
-__all__ = ('Breakpoint',
+__all__ = (
+    'Breakpoint',
     'Controller2AsyncClient',
     'Controller2Client',
     'Debuggee',

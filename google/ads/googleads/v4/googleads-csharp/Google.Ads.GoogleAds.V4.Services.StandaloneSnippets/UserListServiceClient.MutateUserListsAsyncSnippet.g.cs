@@ -16,16 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedUserListServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateUserListsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateUserListsAsync()
         {
-            // Snippet: MutateUserListsAsync(string, IEnumerable<UserListOperation>, CallSettings)
-            // Additional: MutateUserListsAsync(string, IEnumerable<UserListOperation>, CancellationToken)
             // Create client
             UserListServiceClient userListServiceClient = await UserListServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             MutateUserListsResponse response = await userListServiceClient.MutateUserListsAsync(customerId, operations);
-            // End snippet
         }
     }
 }

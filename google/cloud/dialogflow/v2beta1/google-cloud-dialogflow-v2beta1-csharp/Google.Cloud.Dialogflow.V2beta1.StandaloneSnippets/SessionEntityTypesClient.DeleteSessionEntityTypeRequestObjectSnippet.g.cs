@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedSessionEntityTypesClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteSessionEntityType</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteSessionEntityTypeRequestObject()
         {
-            // Snippet: DeleteSessionEntityType(DeleteSessionEntityTypeRequest, CallSettings)
             // Create client
             SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             };
             // Make the request
             sessionEntityTypesClient.DeleteSessionEntityType(request);
-            // End snippet
         }
     }
 }

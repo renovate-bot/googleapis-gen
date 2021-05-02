@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateTagAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateTagAsync()
         {
-            // Snippet: CreateTagAsync(string, Tag, CallSettings)
-            // Additional: CreateTagAsync(string, Tag, CancellationToken)
             // Create client
             DataCatalogClient dataCatalogClient = await DataCatalogClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             Tag tag = new Tag();
             // Make the request
             Tag response = await dataCatalogClient.CreateTagAsync(parent, tag);
-            // End snippet
         }
     }
 }

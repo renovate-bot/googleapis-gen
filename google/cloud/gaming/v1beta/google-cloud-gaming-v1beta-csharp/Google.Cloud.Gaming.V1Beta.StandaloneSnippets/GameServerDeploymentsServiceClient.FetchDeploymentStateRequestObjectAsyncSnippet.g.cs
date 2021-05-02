@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Gaming.V1Beta.Snippets
 {
+    using Google.Cloud.Gaming.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGameServerDeploymentsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for FetchDeploymentStateAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task FetchDeploymentStateRequestObjectAsync()
         {
-            // Snippet: FetchDeploymentStateAsync(FetchDeploymentStateRequest, CallSettings)
-            // Additional: FetchDeploymentStateAsync(FetchDeploymentStateRequest, CancellationToken)
             // Create client
             GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = await GameServerDeploymentsServiceClient.CreateAsync();
             // Initialize request argument(s)
             FetchDeploymentStateRequest request = new FetchDeploymentStateRequest { Name = "", };
             // Make the request
             FetchDeploymentStateResponse response = await gameServerDeploymentsServiceClient.FetchDeploymentStateAsync(request);
-            // End snippet
         }
     }
 }

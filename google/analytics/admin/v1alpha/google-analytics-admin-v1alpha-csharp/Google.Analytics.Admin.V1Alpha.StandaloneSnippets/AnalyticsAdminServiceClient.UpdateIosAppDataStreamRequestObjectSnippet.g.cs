@@ -16,14 +16,18 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateIosAppDataStream</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateIosAppDataStreamRequestObject()
         {
-            // Snippet: UpdateIosAppDataStream(UpdateIosAppDataStreamRequest, CallSettings)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Analytics.Admin.V1Alpha.Snippets
             };
             // Make the request
             IosAppDataStream response = analyticsAdminServiceClient.UpdateIosAppDataStream(request);
-            // End snippet
         }
     }
 }

@@ -17,14 +17,18 @@
 namespace Google.Cloud.AssuredWorkloads.V1Beta1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.AssuredWorkloads.V1Beta1;
     using System;
 
     public sealed partial class GeneratedAssuredWorkloadsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListWorkloads</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListWorkloadsRequestObject()
         {
-            // Snippet: ListWorkloads(ListWorkloadsRequest, CallSettings)
             // Create client
             AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.Create();
             // Initialize request argument(s)
@@ -67,7 +71,6 @@ namespace Google.Cloud.AssuredWorkloads.V1Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

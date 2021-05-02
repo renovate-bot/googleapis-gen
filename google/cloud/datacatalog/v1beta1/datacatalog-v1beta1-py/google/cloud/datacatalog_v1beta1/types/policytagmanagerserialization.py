@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.datacatalog_v1beta1.types import policytagmanager
 
@@ -50,17 +53,11 @@ class SerializedTaxonomy(proto.Message):
             taxonomy if any.
     """
 
-    display_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    policy_tags = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    display_name = proto.Field(proto.STRING, number=1)
+
+    description = proto.Field(proto.STRING, number=2)
+
+    policy_tags = proto.RepeatedField(proto.MESSAGE, number=3,
         message='SerializedPolicyTag',
     )
 
@@ -82,17 +79,11 @@ class SerializedPolicyTag(proto.Message):
             Children of the policy tag if any.
     """
 
-    display_name = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    child_policy_tags = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+    display_name = proto.Field(proto.STRING, number=2)
+
+    description = proto.Field(proto.STRING, number=3)
+
+    child_policy_tags = proto.RepeatedField(proto.MESSAGE, number=4,
         message='SerializedPolicyTag',
     )
 
@@ -109,28 +100,22 @@ class ImportTaxonomiesRequest(proto.Message):
             Inline source used for taxonomies import
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    inline_source = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='source',
+    parent = proto.Field(proto.STRING, number=1)
+
+    inline_source = proto.Field(proto.MESSAGE, number=2, oneof='source',
         message='InlineSource',
     )
 
 
 class InlineSource(proto.Message):
     r"""Inline source used for taxonomies import.
+
     Attributes:
         taxonomies (Sequence[google.cloud.datacatalog_v1beta1.types.SerializedTaxonomy]):
             Required. Taxonomies to be imported.
     """
 
-    taxonomies = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    taxonomies = proto.RepeatedField(proto.MESSAGE, number=1,
         message='SerializedTaxonomy',
     )
 
@@ -144,9 +129,7 @@ class ImportTaxonomiesResponse(proto.Message):
             Taxonomies that were imported.
     """
 
-    taxonomies = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    taxonomies = proto.RepeatedField(proto.MESSAGE, number=1,
         message=policytagmanager.Taxonomy,
     )
 
@@ -166,19 +149,11 @@ class ExportTaxonomiesRequest(proto.Message):
             Export taxonomies as serialized taxonomies.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    taxonomies = proto.RepeatedField(
-        proto.STRING,
-        number=2,
-    )
-    serialized_taxonomies = proto.Field(
-        proto.BOOL,
-        number=3,
-        oneof='destination',
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    taxonomies = proto.RepeatedField(proto.STRING, number=2)
+
+    serialized_taxonomies = proto.Field(proto.BOOL, number=3, oneof='destination')
 
 
 class ExportTaxonomiesResponse(proto.Message):
@@ -191,9 +166,7 @@ class ExportTaxonomiesResponse(proto.Message):
             structure.
     """
 
-    taxonomies = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    taxonomies = proto.RepeatedField(proto.MESSAGE, number=1,
         message='SerializedTaxonomy',
     )
 

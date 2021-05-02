@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecuritySettingsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateSecuritySettingsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateSecuritySettingsAsync()
         {
-            // Snippet: UpdateSecuritySettingsAsync(SecuritySettings, FieldMask, CallSettings)
-            // Additional: UpdateSecuritySettingsAsync(SecuritySettings, FieldMask, CancellationToken)
             // Create client
             SecuritySettingsServiceClient securitySettingsServiceClient = await SecuritySettingsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             SecuritySettings response = await securitySettingsServiceClient.UpdateSecuritySettingsAsync(securitySettings, updateMask);
-            // End snippet
         }
     }
 }

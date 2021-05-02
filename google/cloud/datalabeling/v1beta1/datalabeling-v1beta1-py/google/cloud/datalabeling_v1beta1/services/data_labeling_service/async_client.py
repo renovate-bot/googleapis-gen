@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -45,6 +47,7 @@ from google.cloud.datalabeling_v1beta1.types import instruction as gcd_instructi
 from google.cloud.datalabeling_v1beta1.types import operations
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import DataLabelingServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import DataLabelingServiceGrpcAsyncIOTransport
 from .client import DataLabelingServiceClient
@@ -74,14 +77,19 @@ class DataLabelingServiceAsyncClient:
     parse_example_path = staticmethod(DataLabelingServiceClient.parse_example_path)
     instruction_path = staticmethod(DataLabelingServiceClient.instruction_path)
     parse_instruction_path = staticmethod(DataLabelingServiceClient.parse_instruction_path)
+
     common_billing_account_path = staticmethod(DataLabelingServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(DataLabelingServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(DataLabelingServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(DataLabelingServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(DataLabelingServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(DataLabelingServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(DataLabelingServiceClient.common_project_path)
     parse_common_project_path = staticmethod(DataLabelingServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(DataLabelingServiceClient.common_location_path)
     parse_common_location_path = staticmethod(DataLabelingServiceClient.parse_common_location_path)
 
@@ -166,6 +174,7 @@ class DataLabelingServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = DataLabelingServiceClient(
             credentials=credentials,
             transport=transport,
@@ -188,8 +197,7 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.CreateDatasetRequest`):
-                The request object.
-                Request message for CreateDataset.
+                The request object. Request message for CreateDataset.
             parent (:class:`str`):
                 Required. Dataset resource parent, format:
                 projects/{project_id}
@@ -202,6 +210,7 @@ class DataLabelingServiceAsyncClient:
                 This corresponds to the ``dataset`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -228,6 +237,7 @@ class DataLabelingServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if dataset is not None:
@@ -272,8 +282,7 @@ class DataLabelingServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetDatasetRequest`):
-                The request object.
-                Request message for GetDataSet.
+                The request object. Request message for GetDataSet.
             name (:class:`str`):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
@@ -281,6 +290,7 @@ class DataLabelingServiceAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -307,6 +317,7 @@ class DataLabelingServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -315,7 +326,10 @@ class DataLabelingServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_dataset,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -358,8 +372,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ListDatasetsRequest`):
-                The request object.
-                Request message for ListDataset.
+                The request object. Request message for ListDataset.
             parent (:class:`str`):
                 Required. Dataset resource parent, format:
                 projects/{project_id}
@@ -374,6 +387,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -401,6 +415,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -411,7 +426,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_datasets,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -461,8 +479,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.DeleteDatasetRequest`):
-                The request object.
-                Request message for DeleteDataset.
+                The request object. Request message for DeleteDataset.
             name (:class:`str`):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
@@ -470,6 +487,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -488,6 +506,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -496,7 +515,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_dataset,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -540,8 +562,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ImportDataRequest`):
-                The request object.
-                Request message for ImportData API.
+                The request object. Request message for ImportData API.
             name (:class:`str`):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
@@ -556,6 +577,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``input_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -583,6 +605,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if input_config is not None:
@@ -638,8 +661,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ExportDataRequest`):
-                The request object.
-                Request message for ExportData API.
+                The request object. Request message for ExportData API.
             name (:class:`str`):
                 Required. Dataset resource name, format:
                 projects/{project_id}/datasets/{dataset_id}
@@ -671,6 +693,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``output_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -698,6 +721,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if annotated_dataset is not None:
@@ -712,7 +736,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.export_data,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -762,8 +789,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetDataItemRequest`):
-                The request object.
-                Request message for GetDataItem.
+                The request object. Request message for GetDataItem.
             name (:class:`str`):
                 Required. The name of the data item to get, format:
                 projects/{project_id}/datasets/{dataset_id}/dataItems/{data_item_id}
@@ -771,6 +797,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -795,6 +822,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -803,7 +831,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_data_item,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -847,8 +878,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ListDataItemsRequest`):
-                The request object.
-                Request message for ListDataItems.
+                The request object. Request message for ListDataItems.
             parent (:class:`str`):
                 Required. Name of the dataset to list data items,
                 format: projects/{project_id}/datasets/{dataset_id}
@@ -863,6 +893,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -890,6 +921,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -900,7 +932,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_data_items,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -950,8 +985,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetAnnotatedDatasetRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetAnnotatedDataset.
             name (:class:`str`):
                 Required. Name of the annotated dataset to get, format:
@@ -961,6 +995,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -988,6 +1023,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -996,7 +1032,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_annotated_dataset,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1039,8 +1078,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ListAnnotatedDatasetsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListAnnotatedDatasets.
             parent (:class:`str`):
                 Required. Name of the dataset to list annotated
@@ -1057,6 +1095,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1084,6 +1123,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -1094,7 +1134,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_annotated_datasets,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1143,9 +1186,9 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.DeleteAnnotatedDatasetRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteAnnotatedDataset.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1153,6 +1196,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         request = data_labeling_service.DeleteAnnotatedDatasetRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1194,8 +1238,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.LabelImageRequest`):
-                The request object.
-                Request message for starting an
+                The request object. Request message for starting an
                 image labeling task.
             parent (:class:`str`):
                 Required. Name of the dataset to request labeling task,
@@ -1218,6 +1261,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``feature`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1245,6 +1289,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if basic_config is not None:
@@ -1302,8 +1347,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.LabelVideoRequest`):
-                The request object.
-                Request message for LabelVideo.
+                The request object. Request message for LabelVideo.
             parent (:class:`str`):
                 Required. Name of the dataset to request labeling task,
                 format: projects/{project_id}/datasets/{dataset_id}
@@ -1325,6 +1369,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``feature`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1352,6 +1397,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if basic_config is not None:
@@ -1409,8 +1455,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.LabelTextRequest`):
-                The request object.
-                Request message for LabelText.
+                The request object. Request message for LabelText.
             parent (:class:`str`):
                 Required. Name of the data set to request labeling task,
                 format: projects/{project_id}/datasets/{dataset_id}
@@ -1432,6 +1477,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``feature`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1459,6 +1505,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if basic_config is not None:
@@ -1515,8 +1562,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetExampleRequest`):
-                The request object.
-                Request message for GetExample
+                The request object. Request message for GetExample
             name (:class:`str`):
                 Required. Name of example, format:
                 projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/
@@ -1533,6 +1579,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1558,6 +1605,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if filter is not None:
@@ -1568,7 +1616,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_example,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1611,8 +1662,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ListExamplesRequest`):
-                The request object.
-                Request message for ListExamples.
+                The request object. Request message for ListExamples.
             parent (:class:`str`):
                 Required. Example resource parent.
                 This corresponds to the ``parent`` field
@@ -1627,6 +1677,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1654,6 +1705,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -1664,7 +1716,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_examples,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1716,8 +1771,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.CreateAnnotationSpecSetRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateAnnotationSpecSet.
             parent (:class:`str`):
                 Required. AnnotationSpecSet resource parent, format:
@@ -1734,6 +1788,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``annotation_spec_set`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1762,6 +1817,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if annotation_spec_set is not None:
@@ -1806,8 +1862,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetAnnotationSpecSetRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetAnnotationSpecSet.
             name (:class:`str`):
                 Required. AnnotationSpecSet resource name, format:
@@ -1816,6 +1871,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1844,6 +1900,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1852,7 +1909,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_annotation_spec_set,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1895,8 +1955,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ListAnnotationSpecSetsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListAnnotationSpecSets.
             parent (:class:`str`):
                 Required. Parent of AnnotationSpecSet resource, format:
@@ -1912,6 +1971,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1939,6 +1999,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -1949,7 +2010,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_annotation_spec_sets,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -1999,8 +2063,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.DeleteAnnotationSpecSetRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteAnnotationSpecSet.
             name (:class:`str`):
                 Required. AnnotationSpec resource name, format:
@@ -2009,6 +2072,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2027,6 +2091,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2035,7 +2100,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_annotation_spec_set,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2075,8 +2143,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.CreateInstructionRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateInstruction.
             parent (:class:`str`):
                 Required. Instruction resource parent, format:
@@ -2092,6 +2159,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``instruction`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2118,6 +2186,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if instruction is not None:
@@ -2170,8 +2239,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetInstructionRequest`):
-                The request object.
-                Request message for GetInstruction.
+                The request object. Request message for GetInstruction.
             name (:class:`str`):
                 Required. Instruction resource name, format:
                 projects/{project_id}/instructions/{instruction_id}
@@ -2179,6 +2247,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2205,6 +2274,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2213,7 +2283,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_instruction,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2256,8 +2329,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ListInstructionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListInstructions.
             parent (:class:`str`):
                 Required. Instruction resource parent, format:
@@ -2273,6 +2345,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2300,6 +2373,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -2310,7 +2384,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_instructions,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2360,8 +2437,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.DeleteInstructionRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 DeleteInstruction.
             name (:class:`str`):
                 Required. Instruction resource name, format:
@@ -2370,6 +2446,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2388,6 +2465,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2396,7 +2474,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_instruction,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2435,8 +2516,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetEvaluationRequest`):
-                The request object.
-                Request message for GetEvaluation.
+                The request object. Request message for GetEvaluation.
             name (:class:`str`):
                 Required. Name of the evaluation. Format:
 
@@ -2445,6 +2525,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2471,6 +2552,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2479,7 +2561,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_evaluation,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2523,8 +2608,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.SearchEvaluationsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 SearchEvaluation.
             parent (:class:`str`):
                 Required. Evaluation search parent (project ID). Format:
@@ -2571,6 +2655,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2597,6 +2682,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -2607,7 +2693,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.search_evaluations,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -2660,8 +2749,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.SearchExampleComparisonsRequest`):
-                The request object.
-                Request message of
+                The request object. Request message of
                 SearchExampleComparisons.
             parent (:class:`str`):
                 Required. Name of the
@@ -2673,6 +2761,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2700,6 +2789,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -2752,8 +2842,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.CreateEvaluationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 CreateEvaluationJob.
             parent (:class:`str`):
                 Required. Evaluation job resource parent. Format:
@@ -2769,6 +2858,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2797,6 +2887,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if job is not None:
@@ -2849,8 +2940,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.UpdateEvaluationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 UpdateEvaluationJob.
             evaluation_job (:class:`google.cloud.datalabeling_v1beta1.types.EvaluationJob`):
                 Required. Evaluation job that is
@@ -2873,6 +2963,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2901,6 +2992,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if evaluation_job is not None:
             request.evaluation_job = evaluation_job
         if update_mask is not None:
@@ -2945,8 +3037,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.GetEvaluationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GetEvaluationJob.
             name (:class:`str`):
                 Required. Name of the evaluation job. Format:
@@ -2956,6 +3047,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -2984,6 +3076,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -2992,7 +3085,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_evaluation_job,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -3034,8 +3130,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.PauseEvaluationJobRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 PauseEvaluationJob.
             name (:class:`str`):
                 Required. Name of the evaluation job that is going to be
@@ -3046,6 +3141,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3064,6 +3160,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -3105,8 +3202,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ResumeEvaluationJobRequest`):
-                The request object.
-                Request message ResumeEvaluationJob.
+                The request object. Request message ResumeEvaluationJob.
             name (:class:`str`):
                 Required. Name of the evaluation job that is going to be
                 resumed. Format:
@@ -3116,6 +3212,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3134,6 +3231,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -3173,8 +3271,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.DeleteEvaluationJobRequest`):
-                The request object.
-                Request message DeleteEvaluationJob.
+                The request object. Request message DeleteEvaluationJob.
             name (:class:`str`):
                 Required. Name of the evaluation job that is going to be
                 deleted. Format:
@@ -3184,6 +3281,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3202,6 +3300,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -3210,7 +3309,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.delete_evaluation_job,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -3250,8 +3352,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.datalabeling_v1beta1.types.ListEvaluationJobsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 ListEvaluationJobs.
             parent (:class:`str`):
                 Required. Evaluation job resource parent. Format:
@@ -3275,6 +3376,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -3301,6 +3403,7 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if filter is not None:
@@ -3311,7 +3414,10 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_evaluation_jobs,
             default_retry=retries.Retry(
-initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=30.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -3348,6 +3454,8 @@ initial=0.1,maximum=30.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

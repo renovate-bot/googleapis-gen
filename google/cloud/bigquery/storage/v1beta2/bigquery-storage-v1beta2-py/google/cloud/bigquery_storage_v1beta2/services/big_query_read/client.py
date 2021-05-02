@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -35,6 +37,7 @@ from google.cloud.bigquery_storage_v1beta2.types import avro
 from google.cloud.bigquery_storage_v1beta2.types import storage
 from google.cloud.bigquery_storage_v1beta2.types import stream
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import BigQueryReadTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import BigQueryReadGrpcTransport
 from .transports.grpc_asyncio import BigQueryReadGrpcAsyncIOTransport
@@ -386,8 +389,7 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
 
         Args:
             request (google.cloud.bigquery_storage_v1beta2.types.CreateReadSessionRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `CreateReadSession`.
             parent (str):
                 Required. The request project that owns the session, in
@@ -420,6 +422,7 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
                 This corresponds to the ``max_stream_count`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -444,8 +447,10 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.CreateReadSessionRequest):
             request = storage.CreateReadSessionRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if read_session is not None:
@@ -496,8 +501,7 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
 
         Args:
             request (google.cloud.bigquery_storage_v1beta2.types.ReadRowsRequest):
-                The request object.
-                Request message for `ReadRows`.
+                The request object. Request message for `ReadRows`.
             read_stream (str):
                 Required. Stream to read rows from.
                 This corresponds to the ``read_stream`` field
@@ -513,6 +517,7 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
                 This corresponds to the ``offset`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -539,8 +544,10 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
         # there are no flattened fields.
         if not isinstance(request, storage.ReadRowsRequest):
             request = storage.ReadRowsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if read_stream is not None:
                 request.read_stream = read_stream
             if offset is not None:
@@ -592,9 +599,9 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
 
         Args:
             request (google.cloud.bigquery_storage_v1beta2.types.SplitReadStreamRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `SplitReadStream`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -606,6 +613,7 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a storage.SplitReadStreamRequest.
         # There's no risk of modifying the input as we've already verified
@@ -635,6 +643,8 @@ class BigQueryReadClient(metaclass=BigQueryReadClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

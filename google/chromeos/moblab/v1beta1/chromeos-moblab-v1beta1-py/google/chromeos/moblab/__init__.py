@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,7 +30,8 @@ from google.chromeos.moblab_v1beta1.types.resources import BuildTarget
 from google.chromeos.moblab_v1beta1.types.resources import Milestone
 from google.chromeos.moblab_v1beta1.types.resources import Model
 
-__all__ = ('Build',
+__all__ = (
+    'Build',
     'BuildArtifact',
     'BuildServiceAsyncClient',
     'BuildServiceClient',

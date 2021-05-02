@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInstructionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetInstructionResourceNamesAsync()
         {
-            // Snippet: GetInstructionAsync(InstructionName, CallSettings)
-            // Additional: GetInstructionAsync(InstructionName, CancellationToken)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = await DataLabelingServiceClient.CreateAsync();
             // Initialize request argument(s)
             InstructionName name = InstructionName.FromProjectInstruction("[PROJECT]", "[INSTRUCTION]");
             // Make the request
             Instruction response = await dataLabelingServiceClient.GetInstructionAsync(name);
-            // End snippet
         }
     }
 }

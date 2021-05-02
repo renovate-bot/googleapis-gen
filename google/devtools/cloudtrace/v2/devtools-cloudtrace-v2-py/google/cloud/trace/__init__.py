@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +24,8 @@ from google.cloud.trace_v2.types.trace import StackTrace
 from google.cloud.trace_v2.types.trace import TruncatableString
 from google.cloud.trace_v2.types.tracing import BatchWriteSpansRequest
 
-__all__ = ('AttributeValue',
+__all__ = (
+    'AttributeValue',
     'BatchWriteSpansRequest',
     'Module',
     'Span',

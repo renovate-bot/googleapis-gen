@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,7 +31,8 @@ from google.cloud.orgpolicy_v2.types.orgpolicy import Policy
 from google.cloud.orgpolicy_v2.types.orgpolicy import PolicySpec
 from google.cloud.orgpolicy_v2.types.orgpolicy import UpdatePolicyRequest
 
-__all__ = ('AlternatePolicySpec',
+__all__ = (
+    'AlternatePolicySpec',
     'Constraint',
     'CreatePolicyRequest',
     'DeletePolicyRequest',

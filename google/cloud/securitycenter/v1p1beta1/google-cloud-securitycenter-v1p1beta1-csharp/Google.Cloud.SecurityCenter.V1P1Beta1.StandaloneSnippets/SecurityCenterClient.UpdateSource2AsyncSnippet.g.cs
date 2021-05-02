@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.SecurityCenter.V1P1Beta1.Snippets
 {
+    using Google.Cloud.SecurityCenter.V1P1Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateSourceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateSource2Async()
         {
-            // Snippet: UpdateSourceAsync(Source, FieldMask, CallSettings)
-            // Additional: UpdateSourceAsync(Source, FieldMask, CancellationToken)
             // Create client
             SecurityCenterClient securityCenterClient = await SecurityCenterClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.SecurityCenter.V1P1Beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Source response = await securityCenterClient.UpdateSourceAsync(source, updateMask);
-            // End snippet
         }
     }
 }

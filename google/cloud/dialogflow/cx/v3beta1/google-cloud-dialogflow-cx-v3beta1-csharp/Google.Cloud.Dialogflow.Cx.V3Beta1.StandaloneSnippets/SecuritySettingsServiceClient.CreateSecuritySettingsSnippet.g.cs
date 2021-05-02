@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedSecuritySettingsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateSecuritySettings</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateSecuritySettings()
         {
-            // Snippet: CreateSecuritySettings(string, SecuritySettings, CallSettings)
             // Create client
             SecuritySettingsServiceClient securitySettingsServiceClient = SecuritySettingsServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             SecuritySettings securitySettings = new SecuritySettings();
             // Make the request
             SecuritySettings response = securitySettingsServiceClient.CreateSecuritySettings(parent, securitySettings);
-            // End snippet
         }
     }
 }

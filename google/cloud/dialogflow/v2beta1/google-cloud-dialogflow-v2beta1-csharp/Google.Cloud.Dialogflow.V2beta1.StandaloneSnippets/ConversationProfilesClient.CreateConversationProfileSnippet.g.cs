@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedConversationProfilesClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateConversationProfile</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateConversationProfile()
         {
-            // Snippet: CreateConversationProfile(string, ConversationProfile, CallSettings)
             // Create client
             ConversationProfilesClient conversationProfilesClient = ConversationProfilesClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             ConversationProfile conversationProfile = new ConversationProfile();
             // Make the request
             ConversationProfile response = conversationProfilesClient.CreateConversationProfile(parent, conversationProfile);
-            // End snippet
         }
     }
 }

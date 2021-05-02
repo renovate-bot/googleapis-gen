@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
+
     public sealed partial class GeneratedCampaignLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCampaignLabels</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateCampaignLabelsRequestObject()
         {
-            // Snippet: MutateCampaignLabels(MutateCampaignLabelsRequest, CallSettings)
             // Create client
             CampaignLabelServiceClient campaignLabelServiceClient = CampaignLabelServiceClient.Create();
             // Initialize request argument(s)
@@ -37,7 +42,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             MutateCampaignLabelsResponse response = campaignLabelServiceClient.MutateCampaignLabels(request);
-            // End snippet
         }
     }
 }

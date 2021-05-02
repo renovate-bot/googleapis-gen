@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.ServiceControl.V1.Snippets
 {
+    using Google.Cloud.ServiceControl.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServiceControllerClientStandaloneSnippets
     {
         /// <summary>Snippet for ReportAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ReportRequestObjectAsync()
         {
-            // Snippet: ReportAsync(ReportRequest, CallSettings)
-            // Additional: ReportAsync(ReportRequest, CancellationToken)
             // Create client
             ServiceControllerClient serviceControllerClient = await ServiceControllerClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.ServiceControl.V1.Snippets
             };
             // Make the request
             ReportResponse response = await serviceControllerClient.ReportAsync(request);
-            // End snippet
         }
     }
 }

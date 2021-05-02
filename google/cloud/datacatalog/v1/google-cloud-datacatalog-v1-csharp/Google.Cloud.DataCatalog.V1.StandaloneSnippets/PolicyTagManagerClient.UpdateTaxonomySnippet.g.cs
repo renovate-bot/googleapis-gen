@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.DataCatalog.V1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1;
+
     public sealed partial class GeneratedPolicyTagManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateTaxonomy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateTaxonomy()
         {
-            // Snippet: UpdateTaxonomy(Taxonomy, CallSettings)
             // Create client
             PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.Create();
             // Initialize request argument(s)
             Taxonomy taxonomy = new Taxonomy();
             // Make the request
             Taxonomy response = policyTagManagerClient.UpdateTaxonomy(taxonomy);
-            // End snippet
         }
     }
 }

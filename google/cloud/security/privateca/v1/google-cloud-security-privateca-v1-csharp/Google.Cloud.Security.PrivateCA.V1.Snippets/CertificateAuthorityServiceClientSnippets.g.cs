@@ -269,7 +269,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCertificates</summary>
+        /// <summary>Snippet for ListCertificatesAsync</summary>
         public async Task ListCertificatesRequestObjectAsync()
         {
             // Snippet: ListCertificatesAsync(ListCertificatesRequest, CallSettings)
@@ -364,7 +364,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCertificates</summary>
+        /// <summary>Snippet for ListCertificatesAsync</summary>
         public async Task ListCertificatesAsync()
         {
             // Snippet: ListCertificatesAsync(string, string, int?, CallSettings)
@@ -454,7 +454,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCertificates</summary>
+        /// <summary>Snippet for ListCertificatesAsync</summary>
         public async Task ListCertificatesResourceNamesAsync()
         {
             // Snippet: ListCertificatesAsync(CaPoolName, string, int?, CallSettings)
@@ -1636,7 +1636,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCertificateAuthorities</summary>
+        /// <summary>Snippet for ListCertificateAuthoritiesAsync</summary>
         public async Task ListCertificateAuthoritiesRequestObjectAsync()
         {
             // Snippet: ListCertificateAuthoritiesAsync(ListCertificateAuthoritiesRequest, CallSettings)
@@ -1731,7 +1731,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCertificateAuthorities</summary>
+        /// <summary>Snippet for ListCertificateAuthoritiesAsync</summary>
         public async Task ListCertificateAuthoritiesAsync()
         {
             // Snippet: ListCertificateAuthoritiesAsync(string, string, int?, CallSettings)
@@ -1821,7 +1821,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCertificateAuthorities</summary>
+        /// <summary>Snippet for ListCertificateAuthoritiesAsync</summary>
         public async Task ListCertificateAuthoritiesResourceNamesAsync()
         {
             // Snippet: ListCertificateAuthoritiesAsync(CaPoolName, string, int?, CallSettings)
@@ -2832,7 +2832,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCaPools</summary>
+        /// <summary>Snippet for ListCaPoolsAsync</summary>
         public async Task ListCaPoolsRequestObjectAsync()
         {
             // Snippet: ListCaPoolsAsync(ListCaPoolsRequest, CallSettings)
@@ -2927,7 +2927,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCaPools</summary>
+        /// <summary>Snippet for ListCaPoolsAsync</summary>
         public async Task ListCaPoolsAsync()
         {
             // Snippet: ListCaPoolsAsync(string, string, int?, CallSettings)
@@ -3017,7 +3017,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCaPools</summary>
+        /// <summary>Snippet for ListCaPoolsAsync</summary>
         public async Task ListCaPoolsResourceNamesAsync()
         {
             // Snippet: ListCaPoolsAsync(LocationName, string, int?, CallSettings)
@@ -3473,7 +3473,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCertificateRevocationLists</summary>
+        /// <summary>Snippet for ListCertificateRevocationListsAsync</summary>
         public async Task ListCertificateRevocationListsRequestObjectAsync()
         {
             // Snippet: ListCertificateRevocationListsAsync(ListCertificateRevocationListsRequest, CallSettings)
@@ -3568,7 +3568,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCertificateRevocationLists</summary>
+        /// <summary>Snippet for ListCertificateRevocationListsAsync</summary>
         public async Task ListCertificateRevocationListsAsync()
         {
             // Snippet: ListCertificateRevocationListsAsync(string, string, int?, CallSettings)
@@ -3658,7 +3658,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCertificateRevocationLists</summary>
+        /// <summary>Snippet for ListCertificateRevocationListsAsync</summary>
         public async Task ListCertificateRevocationListsResourceNamesAsync()
         {
             // Snippet: ListCertificateRevocationListsAsync(CertificateAuthorityName, string, int?, CallSettings)
@@ -4352,7 +4352,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCertificateTemplates</summary>
+        /// <summary>Snippet for ListCertificateTemplatesAsync</summary>
         public async Task ListCertificateTemplatesRequestObjectAsync()
         {
             // Snippet: ListCertificateTemplatesAsync(ListCertificateTemplatesRequest, CallSettings)
@@ -4447,7 +4447,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCertificateTemplates</summary>
+        /// <summary>Snippet for ListCertificateTemplatesAsync</summary>
         public async Task ListCertificateTemplatesAsync()
         {
             // Snippet: ListCertificateTemplatesAsync(string, string, int?, CallSettings)
@@ -4537,7 +4537,7 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListCertificateTemplates</summary>
+        /// <summary>Snippet for ListCertificateTemplatesAsync</summary>
         public async Task ListCertificateTemplatesResourceNamesAsync()
         {
             // Snippet: ListCertificateTemplatesAsync(LocationName, string, int?, CallSettings)

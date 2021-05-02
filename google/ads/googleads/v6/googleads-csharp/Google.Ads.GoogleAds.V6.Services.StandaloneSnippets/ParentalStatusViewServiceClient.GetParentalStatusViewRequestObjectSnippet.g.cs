@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedParentalStatusViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetParentalStatusView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetParentalStatusViewRequestObject()
         {
-            // Snippet: GetParentalStatusView(GetParentalStatusViewRequest, CallSettings)
             // Create client
             ParentalStatusViewServiceClient parentalStatusViewServiceClient = ParentalStatusViewServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             ParentalStatusView response = parentalStatusViewServiceClient.GetParentalStatusView(request);
-            // End snippet
         }
     }
 }

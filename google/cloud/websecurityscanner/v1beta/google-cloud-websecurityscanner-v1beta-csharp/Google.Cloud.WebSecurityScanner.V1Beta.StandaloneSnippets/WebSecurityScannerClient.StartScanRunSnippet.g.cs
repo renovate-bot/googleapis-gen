@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.WebSecurityScanner.V1Beta.Snippets
 {
+    using Google.Cloud.WebSecurityScanner.V1Beta;
+
     public sealed partial class GeneratedWebSecurityScannerClientStandaloneSnippets
     {
         /// <summary>Snippet for StartScanRun</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void StartScanRun()
         {
-            // Snippet: StartScanRun(string, CallSettings)
             // Create client
             WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/scanConfigs/[SCAN_CONFIG]";
             // Make the request
             ScanRun response = webSecurityScannerClient.StartScanRun(name);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -83,6 +86,7 @@ class Execution(proto.Message):
 
     class Error(proto.Message):
         r"""Error describes why the execution was abnormally terminated.
+
         Attributes:
             payload (str):
                 Error payload returned by the execution,
@@ -92,51 +96,33 @@ class Execution(proto.Message):
                 debugging purposes.
         """
 
-        payload = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        context = proto.Field(
-            proto.STRING,
-            number=2,
-        )
+        payload = proto.Field(proto.STRING, number=1)
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    start_time = proto.Field(
-        proto.MESSAGE,
-        number=2,
+        context = proto.Field(proto.STRING, number=2)
+
+    name = proto.Field(proto.STRING, number=1)
+
+    start_time = proto.Field(proto.MESSAGE, number=2,
         message=timestamp.Timestamp,
     )
-    end_time = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    end_time = proto.Field(proto.MESSAGE, number=3,
         message=timestamp.Timestamp,
     )
-    state = proto.Field(
-        proto.ENUM,
-        number=4,
+
+    state = proto.Field(proto.ENUM, number=4,
         enum=State,
     )
-    argument = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    result = proto.Field(
-        proto.STRING,
-        number=6,
-    )
-    error = proto.Field(
-        proto.MESSAGE,
-        number=7,
+
+    argument = proto.Field(proto.STRING, number=5)
+
+    result = proto.Field(proto.STRING, number=6)
+
+    error = proto.Field(proto.MESSAGE, number=7,
         message=Error,
     )
-    workflow_revision_id = proto.Field(
-        proto.STRING,
-        number=8,
-    )
+
+    workflow_revision_id = proto.Field(proto.STRING, number=8)
 
 
 class ListExecutionsRequest(proto.Message):
@@ -170,21 +156,13 @@ class ListExecutionsRequest(proto.Message):
             will default to the BASIC view.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    view = proto.Field(
-        proto.ENUM,
-        number=4,
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
+
+    view = proto.Field(proto.ENUM, number=4,
         enum='ExecutionView',
     )
 
@@ -207,15 +185,11 @@ class ListExecutionsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    executions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    executions = proto.RepeatedField(proto.MESSAGE, number=1,
         message='Execution',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class CreateExecutionRequest(proto.Message):
@@ -234,13 +208,9 @@ class CreateExecutionRequest(proto.Message):
             Required. Execution to be created.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    execution = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    execution = proto.Field(proto.MESSAGE, number=2,
         message='Execution',
     )
 
@@ -261,13 +231,9 @@ class GetExecutionRequest(proto.Message):
             will default to the FULL view.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    view = proto.Field(
-        proto.ENUM,
-        number=2,
+    name = proto.Field(proto.STRING, number=1)
+
+    view = proto.Field(proto.ENUM, number=2,
         enum='ExecutionView',
     )
 
@@ -284,10 +250,7 @@ class CancelExecutionRequest(proto.Message):
             projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

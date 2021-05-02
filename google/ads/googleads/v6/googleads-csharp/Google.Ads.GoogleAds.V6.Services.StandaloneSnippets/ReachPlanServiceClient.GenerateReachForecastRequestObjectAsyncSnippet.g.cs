@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedReachPlanServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateReachForecastAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GenerateReachForecastRequestObjectAsync()
         {
-            // Snippet: GenerateReachForecastAsync(GenerateReachForecastRequest, CallSettings)
-            // Additional: GenerateReachForecastAsync(GenerateReachForecastRequest, CancellationToken)
             // Create client
             ReachPlanServiceClient reachPlanServiceClient = await ReachPlanServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -44,7 +47,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             GenerateReachForecastResponse response = await reachPlanServiceClient.GenerateReachForecastAsync(request);
-            // End snippet
         }
     }
 }

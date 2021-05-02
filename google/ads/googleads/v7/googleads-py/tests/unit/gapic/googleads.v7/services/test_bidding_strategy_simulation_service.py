@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -265,27 +267,42 @@ def test_get_bidding_strategy_simulation(transport: str = 'grpc', request_type=b
         # Designate an appropriate return value for the call.
         call.return_value = bidding_strategy_simulation.BiddingStrategySimulation(
             resource_name='resource_name_value',
+
             bidding_strategy_id=1999,
+
             type_=simulation_type.SimulationTypeEnum.SimulationType.UNKNOWN,
+
             modification_method=simulation_modification_method.SimulationModificationMethodEnum.SimulationModificationMethod.UNKNOWN,
+
             start_date='start_date_value',
+
             end_date='end_date_value',
+
             target_cpa_point_list=simulation.TargetCpaSimulationPointList(points=[simulation.TargetCpaSimulationPoint(required_budget_amount_micros=3098)]),
         )
+
         response = client.get_bidding_strategy_simulation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == bidding_strategy_simulation_service.GetBiddingStrategySimulationRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, bidding_strategy_simulation.BiddingStrategySimulation)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.bidding_strategy_id == 1999
+
     assert response.type_ == simulation_type.SimulationTypeEnum.SimulationType.UNKNOWN
+
     assert response.modification_method == simulation_modification_method.SimulationModificationMethodEnum.SimulationModificationMethod.UNKNOWN
+
     assert response.start_date == 'start_date_value'
+
     assert response.end_date == 'end_date_value'
 
 
@@ -301,7 +318,6 @@ def test_get_bidding_strategy_simulation_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = bidding_strategy_simulation_service.GetBiddingStrategySimulationRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -309,6 +325,7 @@ def test_get_bidding_strategy_simulation_field_headers():
             type(client.transport.get_bidding_strategy_simulation),
             '__call__') as call:
         call.return_value = bidding_strategy_simulation.BiddingStrategySimulation()
+
         client.get_bidding_strategy_simulation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -335,6 +352,7 @@ def test_get_bidding_strategy_simulation_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = bidding_strategy_simulation.BiddingStrategySimulation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_bidding_strategy_simulation(
@@ -345,6 +363,7 @@ def test_get_bidding_strategy_simulation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -425,7 +444,7 @@ def test_bidding_strategy_simulation_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_bidding_strategy_simulation',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -581,6 +600,7 @@ def test_bidding_strategy_simulation_path():
     modification_method = "octopus"
     start_date = "oyster"
     end_date = "nudibranch"
+
     expected = "customers/{customer_id}/biddingStrategySimulations/{bidding_strategy_id}~{type}~{modification_method}~{start_date}~{end_date}".format(customer_id=customer_id, bidding_strategy_id=bidding_strategy_id, type=type, modification_method=modification_method, start_date=start_date, end_date=end_date, )
     actual = BiddingStrategySimulationServiceClient.bidding_strategy_simulation_path(customer_id, bidding_strategy_id, type, modification_method, start_date, end_date)
     assert expected == actual
@@ -588,12 +608,13 @@ def test_bidding_strategy_simulation_path():
 
 def test_parse_bidding_strategy_simulation_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "bidding_strategy_id": "mussel",
-        "type": "winkle",
-        "modification_method": "nautilus",
-        "start_date": "scallop",
-        "end_date": "abalone",
+    "customer_id": "cuttlefish",
+    "bidding_strategy_id": "mussel",
+    "type": "winkle",
+    "modification_method": "nautilus",
+    "start_date": "scallop",
+    "end_date": "abalone",
+
     }
     path = BiddingStrategySimulationServiceClient.bidding_strategy_simulation_path(**expected)
 
@@ -603,6 +624,7 @@ def test_parse_bidding_strategy_simulation_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = BiddingStrategySimulationServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -610,7 +632,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = BiddingStrategySimulationServiceClient.common_billing_account_path(**expected)
 
@@ -620,6 +643,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = BiddingStrategySimulationServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -627,7 +651,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = BiddingStrategySimulationServiceClient.common_folder_path(**expected)
 
@@ -637,6 +662,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = BiddingStrategySimulationServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -644,7 +670,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = BiddingStrategySimulationServiceClient.common_organization_path(**expected)
 
@@ -654,6 +681,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = BiddingStrategySimulationServiceClient.common_project_path(project)
     assert expected == actual
@@ -661,7 +689,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = BiddingStrategySimulationServiceClient.common_project_path(**expected)
 
@@ -672,6 +701,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = BiddingStrategySimulationServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -679,8 +709,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = BiddingStrategySimulationServiceClient.common_location_path(**expected)
 

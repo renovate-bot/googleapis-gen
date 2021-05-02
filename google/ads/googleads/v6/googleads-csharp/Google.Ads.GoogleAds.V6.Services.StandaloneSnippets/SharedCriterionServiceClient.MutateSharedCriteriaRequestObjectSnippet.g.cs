@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Enums;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedSharedCriterionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateSharedCriteria</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateSharedCriteriaRequestObject()
         {
-            // Snippet: MutateSharedCriteria(MutateSharedCriteriaRequest, CallSettings)
             // Create client
             SharedCriterionServiceClient sharedCriterionServiceClient = SharedCriterionServiceClient.Create();
             // Initialize request argument(s)
@@ -40,7 +44,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             MutateSharedCriteriaResponse response = sharedCriterionServiceClient.MutateSharedCriteria(request);
-            // End snippet
         }
     }
 }

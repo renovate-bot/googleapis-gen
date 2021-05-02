@@ -16,16 +16,19 @@
 
 namespace Google.Iam.Admin.V1.Snippets
 {
+    using Google.Iam.Admin.V1;
     using Google.Type;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIAMClientStandaloneSnippets
     {
         /// <summary>Snippet for LintPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task LintPolicyRequestObjectAsync()
         {
-            // Snippet: LintPolicyAsync(LintPolicyRequest, CallSettings)
-            // Additional: LintPolicyAsync(LintPolicyRequest, CancellationToken)
             // Create client
             IAMClient iAMClient = await IAMClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Iam.Admin.V1.Snippets
             };
             // Make the request
             LintPolicyResponse response = await iAMClient.LintPolicyAsync(request);
-            // End snippet
         }
     }
 }

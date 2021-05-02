@@ -17,15 +17,18 @@
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServiceMonitoringServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateServiceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateServiceResourceNames4Async()
         {
-            // Snippet: CreateServiceAsync(IResourceName, Service, CallSettings)
-            // Additional: CreateServiceAsync(IResourceName, Service, CancellationToken)
             // Create client
             ServiceMonitoringServiceClient serviceMonitoringServiceClient = await ServiceMonitoringServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             Service service = new Service();
             // Make the request
             Service response = await serviceMonitoringServiceClient.CreateServiceAsync(parent, service);
-            // End snippet
         }
     }
 }

@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedAccountLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateAccountLink</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateAccountLink()
         {
-            // Snippet: CreateAccountLink(string, AccountLink, CallSettings)
             // Create client
             AccountLinkServiceClient accountLinkServiceClient = AccountLinkServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             AccountLink accountLink = new AccountLink();
             // Make the request
             CreateAccountLinkResponse response = accountLinkServiceClient.CreateAccountLink(customerId, accountLink);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Notebooks.V1Beta1.Snippets
 {
+    using Google.Cloud.Notebooks.V1Beta1;
+
     public sealed partial class GeneratedNotebookServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInstance</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetInstanceRequestObject()
         {
-            // Snippet: GetInstance(GetInstanceRequest, CallSettings)
             // Create client
             NotebookServiceClient notebookServiceClient = NotebookServiceClient.Create();
             // Initialize request argument(s)
             GetInstanceRequest request = new GetInstanceRequest { Name = "", };
             // Make the request
             Instance response = notebookServiceClient.GetInstance(request);
-            // End snippet
         }
     }
 }

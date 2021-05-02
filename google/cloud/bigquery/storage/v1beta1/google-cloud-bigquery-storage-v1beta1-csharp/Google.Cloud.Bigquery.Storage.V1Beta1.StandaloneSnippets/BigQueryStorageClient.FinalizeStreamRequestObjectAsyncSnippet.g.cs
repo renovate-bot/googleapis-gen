@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Bigquery.Storage.V1Beta1.Snippets
 {
+    using Google.Cloud.Bigquery.Storage.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigQueryStorageClientStandaloneSnippets
     {
         /// <summary>Snippet for FinalizeStreamAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task FinalizeStreamRequestObjectAsync()
         {
-            // Snippet: FinalizeStreamAsync(FinalizeStreamRequest, CallSettings)
-            // Additional: FinalizeStreamAsync(FinalizeStreamRequest, CancellationToken)
             // Create client
             BigQueryStorageClient bigQueryStorageClient = await BigQueryStorageClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Bigquery.Storage.V1Beta1.Snippets
             };
             // Make the request
             await bigQueryStorageClient.FinalizeStreamAsync(request);
-            // End snippet
         }
     }
 }

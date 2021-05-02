@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -32,6 +34,7 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.ads.googleads.v7.resources.types import payments_account
 from google.ads.googleads.v7.services.types import payments_account_service
+
 from .transports.base import PaymentsAccountServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import PaymentsAccountServiceGrpcTransport
 
@@ -172,6 +175,7 @@ class PaymentsAccountServiceClient(metaclass=PaymentsAccountServiceClientMeta):
         """Parse a payments_account path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/paymentsAccounts/(?P<payments_account_id>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -351,8 +355,7 @@ class PaymentsAccountServiceClient(metaclass=PaymentsAccountServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v7.services.types.ListPaymentsAccountsRequest`):
-                The request object.
-                Request message for fetching all
+                The request object. Request message for fetching all
                 accessible payments accounts.
             customer_id (:class:`str`):
                 Required. The ID of the customer to
@@ -362,6 +365,7 @@ class PaymentsAccountServiceClient(metaclass=PaymentsAccountServiceClientMeta):
                 This corresponds to the ``customer_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -381,14 +385,16 @@ class PaymentsAccountServiceClient(metaclass=PaymentsAccountServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a payments_account_service.ListPaymentsAccountsRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, payments_account_service.ListPaymentsAccountsRequest):
             request = payments_account_service.ListPaymentsAccountsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if customer_id is not None:
                 request.customer_id = customer_id
 
@@ -407,7 +413,7 @@ class PaymentsAccountServiceClient(metaclass=PaymentsAccountServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

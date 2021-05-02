@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -27,6 +29,7 @@ __protobuf__ = proto.module(
 
 class DynamicSearchAdsSearchTermView(proto.Message):
     r"""A dynamic search ads search term view.
+
     Attributes:
         resource_name (str):
             Output only. The resource name of the dynamic search ads
@@ -63,45 +66,14 @@ class DynamicSearchAdsSearchTermView(proto.Message):
             This field is read-only.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    search_term = proto.Field(
-        proto.STRING,
-        number=9,
-        optional=True,
-    )
-    headline = proto.Field(
-        proto.STRING,
-        number=10,
-        optional=True,
-    )
-    landing_page = proto.Field(
-        proto.STRING,
-        number=11,
-        optional=True,
-    )
-    page_url = proto.Field(
-        proto.STRING,
-        number=12,
-        optional=True,
-    )
-    has_negative_keyword = proto.Field(
-        proto.BOOL,
-        number=13,
-        optional=True,
-    )
-    has_matching_keyword = proto.Field(
-        proto.BOOL,
-        number=14,
-        optional=True,
-    )
-    has_negative_url = proto.Field(
-        proto.BOOL,
-        number=15,
-        optional=True,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
+    search_term = proto.Field(proto.STRING, number=9, optional=True)
+    headline = proto.Field(proto.STRING, number=10, optional=True)
+    landing_page = proto.Field(proto.STRING, number=11, optional=True)
+    page_url = proto.Field(proto.STRING, number=12, optional=True)
+    has_negative_keyword = proto.Field(proto.BOOL, number=13, optional=True)
+    has_matching_keyword = proto.Field(proto.BOOL, number=14, optional=True)
+    has_negative_url = proto.Field(proto.BOOL, number=15, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -50,7 +51,8 @@ from google.cloud.tasks_v2beta2.types.task import AttemptStatus
 from google.cloud.tasks_v2beta2.types.task import Task
 from google.cloud.tasks_v2beta2.types.task import TaskStatus
 
-__all__ = ('AcknowledgeTaskRequest',
+__all__ = (
+    'AcknowledgeTaskRequest',
     'AppEngineHttpRequest',
     'AppEngineHttpTarget',
     'AppEngineRouting',

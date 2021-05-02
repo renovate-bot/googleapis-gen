@@ -17,13 +17,17 @@
 namespace Google.Cloud.ServiceDirectory.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.ServiceDirectory.V1;
 
     public sealed partial class GeneratedRegistrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateNamespace</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateNamespaceRequestObject()
         {
-            // Snippet: CreateNamespace(CreateNamespaceRequest, CallSettings)
             // Create client
             RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.ServiceDirectory.V1.Snippets
             };
             // Make the request
             Namespace response = registrationServiceClient.CreateNamespace(request);
-            // End snippet
         }
     }
 }

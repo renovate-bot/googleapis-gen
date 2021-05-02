@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.ServiceManagement.V1.Snippets
 {
+    using Google.Cloud.ServiceManagement.V1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServiceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for SubmitConfigSourceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SubmitConfigSourceAsync()
         {
-            // Snippet: SubmitConfigSourceAsync(string, ConfigSource, bool, CallSettings)
-            // Additional: SubmitConfigSourceAsync(string, ConfigSource, bool, CancellationToken)
             // Create client
             ServiceManagerClient serviceManagerClient = await ServiceManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -50,7 +53,6 @@ namespace Google.Cloud.ServiceManagement.V1.Snippets
                 // If it has completed, then access the result
                 SubmitConfigSourceResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

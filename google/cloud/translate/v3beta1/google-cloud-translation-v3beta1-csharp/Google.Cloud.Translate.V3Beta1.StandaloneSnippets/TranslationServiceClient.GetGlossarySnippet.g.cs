@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Translate.V3Beta1.Snippets
 {
+    using Google.Cloud.Translate.V3Beta1;
+
     public sealed partial class GeneratedTranslationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGlossary</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetGlossary()
         {
-            // Snippet: GetGlossary(string, CallSettings)
             // Create client
             TranslationServiceClient translationServiceClient = TranslationServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/glossaries/[GLOSSARY]";
             // Make the request
             Glossary response = translationServiceClient.GetGlossary(name);
-            // End snippet
         }
     }
 }

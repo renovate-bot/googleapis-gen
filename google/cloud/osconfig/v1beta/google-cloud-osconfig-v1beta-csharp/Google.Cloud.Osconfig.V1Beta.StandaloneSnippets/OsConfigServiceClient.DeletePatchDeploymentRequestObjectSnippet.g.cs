@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Osconfig.V1Beta.Snippets
 {
+    using Google.Cloud.Osconfig.V1Beta;
+
     public sealed partial class GeneratedOsConfigServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeletePatchDeployment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeletePatchDeploymentRequestObject()
         {
-            // Snippet: DeletePatchDeployment(DeletePatchDeploymentRequest, CallSettings)
             // Create client
             OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.Create();
             // Initialize request argument(s)
             DeletePatchDeploymentRequest request = new DeletePatchDeploymentRequest { Name = "", };
             // Make the request
             osConfigServiceClient.DeletePatchDeployment(request);
-            // End snippet
         }
     }
 }

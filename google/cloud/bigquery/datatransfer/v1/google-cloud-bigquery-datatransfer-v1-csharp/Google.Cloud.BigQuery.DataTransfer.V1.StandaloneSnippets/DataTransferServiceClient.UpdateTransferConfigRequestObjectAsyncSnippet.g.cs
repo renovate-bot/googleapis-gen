@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
 {
+    using Google.Cloud.BigQuery.DataTransfer.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataTransferServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateTransferConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateTransferConfigRequestObjectAsync()
         {
-            // Snippet: UpdateTransferConfigAsync(UpdateTransferConfigRequest, CallSettings)
-            // Additional: UpdateTransferConfigAsync(UpdateTransferConfigRequest, CancellationToken)
             // Create client
             DataTransferServiceClient dataTransferServiceClient = await DataTransferServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -39,7 +42,6 @@ namespace Google.Cloud.BigQuery.DataTransfer.V1.Snippets
             };
             // Make the request
             TransferConfig response = await dataTransferServiceClient.UpdateTransferConfigAsync(request);
-            // End snippet
         }
     }
 }

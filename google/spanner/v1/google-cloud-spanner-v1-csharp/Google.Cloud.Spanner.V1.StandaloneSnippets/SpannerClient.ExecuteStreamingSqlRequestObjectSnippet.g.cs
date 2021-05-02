@@ -25,9 +25,12 @@ namespace Google.Cloud.Spanner.V1.Snippets
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for ExecuteStreamingSql</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ExecuteStreamingSqlRequestObject()
         {
-            // Snippet: ExecuteStreamingSql(ExecuteSqlRequest, CallSettings)
             // Create client
             SpannerClient spannerClient = SpannerClient.Create();
             // Initialize request argument(s)
@@ -63,7 +66,6 @@ namespace Google.Cloud.Spanner.V1.Snippets
                 // Do something with streamed response
             }
             // The response stream has completed
-            // End snippet
         }
     }
 }

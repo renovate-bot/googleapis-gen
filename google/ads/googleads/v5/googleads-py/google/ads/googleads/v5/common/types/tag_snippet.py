@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v5.enums.types import tracking_code_page_format
 from google.ads.googleads.v5.enums.types import tracking_code_type
@@ -30,6 +33,7 @@ __protobuf__ = proto.module(
 
 class TagSnippet(proto.Message):
     r"""The site tag and event snippet pair for a TrackingCodeType.
+
     Attributes:
         type_ (google.ads.googleads.v5.enums.types.TrackingCodeTypeEnum.TrackingCodeType):
             The type of the generated tag snippets for
@@ -47,26 +51,14 @@ class TagSnippet(proto.Message):
             conversions.
     """
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=tracking_code_type.TrackingCodeTypeEnum.TrackingCodeType,
     )
-    page_format = proto.Field(
-        proto.ENUM,
-        number=2,
+    page_format = proto.Field(proto.ENUM, number=2,
         enum=tracking_code_page_format.TrackingCodePageFormatEnum.TrackingCodePageFormat,
     )
-    global_site_tag = proto.Field(
-        proto.STRING,
-        number=5,
-        optional=True,
-    )
-    event_snippet = proto.Field(
-        proto.STRING,
-        number=6,
-        optional=True,
-    )
+    global_site_tag = proto.Field(proto.STRING, number=5, optional=True)
+    event_snippet = proto.Field(proto.STRING, number=6, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

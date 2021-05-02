@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
     public sealed partial class GeneratedAgentsClientStandaloneSnippets
     {
         /// <summary>Snippet for ExportAgentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ExportAgentAsync()
         {
-            // Snippet: ExportAgentAsync(string, CallSettings)
-            // Additional: ExportAgentAsync(string, CancellationToken)
             // Create client
             AgentsClient agentsClient = await AgentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -49,7 +52,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
                 // If it has completed, then access the result
                 ExportAgentResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

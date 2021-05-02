@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,6 @@
 
 from .services.quota_controller import QuotaControllerClient
 from .services.service_controller import ServiceControllerClient
-
 from .types.check_error import CheckError
 from .types.distribution import Distribution
 from .types.http_request import HttpRequest
@@ -34,6 +34,7 @@ from .types.service_controller import CheckRequest
 from .types.service_controller import CheckResponse
 from .types.service_controller import ReportRequest
 from .types.service_controller import ReportResponse
+
 
 __all__ = (
     'AllocateQuotaRequest',

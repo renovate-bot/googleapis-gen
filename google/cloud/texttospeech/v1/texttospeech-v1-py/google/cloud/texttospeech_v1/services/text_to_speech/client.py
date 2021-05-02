@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -31,6 +33,7 @@ from google.auth.exceptions import MutualTLSChannelError          # type: ignore
 from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.texttospeech_v1.types import cloud_tts
+
 from .transports.base import TextToSpeechTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import TextToSpeechGrpcTransport
 from .transports.grpc_asyncio import TextToSpeechGrpcAsyncIOTransport
@@ -321,8 +324,7 @@ class TextToSpeechClient(metaclass=TextToSpeechClientMeta):
 
         Args:
             request (google.cloud.texttospeech_v1.types.ListVoicesRequest):
-                The request object.
-                The top-level message sent by the
+                The request object. The top-level message sent by the
                 client for the `ListVoices` method.
             language_code (str):
                 Optional. Recommended.
@@ -339,6 +341,7 @@ class TextToSpeechClient(metaclass=TextToSpeechClientMeta):
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -365,8 +368,10 @@ class TextToSpeechClient(metaclass=TextToSpeechClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_tts.ListVoicesRequest):
             request = cloud_tts.ListVoicesRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if language_code is not None:
                 request.language_code = language_code
 
@@ -400,8 +405,7 @@ class TextToSpeechClient(metaclass=TextToSpeechClientMeta):
 
         Args:
             request (google.cloud.texttospeech_v1.types.SynthesizeSpeechRequest):
-                The request object.
-                The top-level message sent by the
+                The request object. The top-level message sent by the
                 client for the `SynthesizeSpeech` method.
             input (google.cloud.texttospeech_v1.types.SynthesisInput):
                 Required. The Synthesizer requires
@@ -424,6 +428,7 @@ class TextToSpeechClient(metaclass=TextToSpeechClientMeta):
                 This corresponds to the ``audio_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -450,8 +455,10 @@ class TextToSpeechClient(metaclass=TextToSpeechClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloud_tts.SynthesizeSpeechRequest):
             request = cloud_tts.SynthesizeSpeechRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if input is not None:
                 request.input = input
             if voice is not None:
@@ -473,6 +480,8 @@ class TextToSpeechClient(metaclass=TextToSpeechClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

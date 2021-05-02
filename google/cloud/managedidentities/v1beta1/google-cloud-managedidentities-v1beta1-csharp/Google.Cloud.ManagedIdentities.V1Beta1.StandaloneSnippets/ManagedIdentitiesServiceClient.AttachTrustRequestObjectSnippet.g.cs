@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
 {
+    using Google.Cloud.ManagedIdentities.V1Beta1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedManagedIdentitiesServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for AttachTrust</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void AttachTrustRequestObject()
         {
-            // Snippet: AttachTrust(AttachTrustRequest, CallSettings)
             // Create client
             ManagedIdentitiesServiceClient managedIdentitiesServiceClient = ManagedIdentitiesServiceClient.Create();
             // Initialize request argument(s)
@@ -50,7 +54,6 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
                 // If it has completed, then access the result
                 Domain retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

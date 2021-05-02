@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Speech.V1P1Beta1.Snippets
 {
+    using Google.Cloud.Speech.V1P1Beta1;
+
     public sealed partial class GeneratedAdaptationClientStandaloneSnippets
     {
         /// <summary>Snippet for CreatePhraseSet</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreatePhraseSet()
         {
-            // Snippet: CreatePhraseSet(string, PhraseSet, string, CallSettings)
             // Create client
             AdaptationClient adaptationClient = AdaptationClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.Speech.V1P1Beta1.Snippets
             string phraseSetId = "";
             // Make the request
             PhraseSet response = adaptationClient.CreatePhraseSet(parent, phraseSet, phraseSetId);
-            // End snippet
         }
     }
 }

@@ -17,14 +17,18 @@
 namespace Google.Cloud.Gaming.V1Beta.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Gaming.V1Beta;
     using Google.LongRunning;
 
     public sealed partial class GeneratedGameServerDeploymentsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateGameServerDeployment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateGameServerDeploymentRequestObject()
         {
-            // Snippet: CreateGameServerDeployment(CreateGameServerDeploymentRequest, CallSettings)
             // Create client
             GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.Create();
             // Initialize request argument(s)
@@ -52,7 +56,6 @@ namespace Google.Cloud.Gaming.V1Beta.Snippets
                 // If it has completed, then access the result
                 GameServerDeployment retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

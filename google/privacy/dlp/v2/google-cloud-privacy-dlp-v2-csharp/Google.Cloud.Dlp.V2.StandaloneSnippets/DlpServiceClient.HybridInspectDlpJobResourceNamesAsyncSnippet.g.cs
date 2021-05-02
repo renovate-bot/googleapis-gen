@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for HybridInspectDlpJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task HybridInspectDlpJobResourceNamesAsync()
         {
-            // Snippet: HybridInspectDlpJobAsync(DlpJobName, CallSettings)
-            // Additional: HybridInspectDlpJobAsync(DlpJobName, CancellationToken)
             // Create client
             DlpServiceClient dlpServiceClient = await DlpServiceClient.CreateAsync();
             // Initialize request argument(s)
             DlpJobName name = DlpJobName.FromProjectDlpJob("[PROJECT]", "[DLP_JOB]");
             // Make the request
             HybridInspectResponse response = await dlpServiceClient.HybridInspectDlpJobAsync(name);
-            // End snippet
         }
     }
 }

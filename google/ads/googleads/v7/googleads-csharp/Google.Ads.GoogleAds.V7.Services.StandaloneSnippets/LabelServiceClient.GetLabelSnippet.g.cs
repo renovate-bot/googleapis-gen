@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetLabel</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetLabel()
         {
-            // Snippet: GetLabel(string, CallSettings)
             // Create client
             LabelServiceClient labelServiceClient = LabelServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/labels/[LABEL_ID]";
             // Make the request
             Label response = labelServiceClient.GetLabel(resourceName);
-            // End snippet
         }
     }
 }

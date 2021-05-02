@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -272,16 +274,21 @@ def test_create_offline_user_data_job(transport: str = 'grpc', request_type=offl
         # Designate an appropriate return value for the call.
         call.return_value = offline_user_data_job_service.CreateOfflineUserDataJobResponse(
             resource_name='resource_name_value',
+
         )
+
         response = client.create_offline_user_data_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == offline_user_data_job_service.CreateOfflineUserDataJobRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, offline_user_data_job_service.CreateOfflineUserDataJobResponse)
+
     assert response.resource_name == 'resource_name_value'
 
 
@@ -297,7 +304,6 @@ def test_create_offline_user_data_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = offline_user_data_job_service.CreateOfflineUserDataJobRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -305,6 +311,7 @@ def test_create_offline_user_data_job_field_headers():
             type(client.transport.create_offline_user_data_job),
             '__call__') as call:
         call.return_value = offline_user_data_job_service.CreateOfflineUserDataJobResponse()
+
         client.create_offline_user_data_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -331,6 +338,7 @@ def test_create_offline_user_data_job_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = offline_user_data_job_service.CreateOfflineUserDataJobResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_offline_user_data_job(
@@ -342,7 +350,9 @@ def test_create_offline_user_data_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].job == offline_user_data_job.OfflineUserDataJob(resource_name='resource_name_value')
 
 
@@ -378,23 +388,34 @@ def test_get_offline_user_data_job(transport: str = 'grpc', request_type=offline
         # Designate an appropriate return value for the call.
         call.return_value = offline_user_data_job.OfflineUserDataJob(
             resource_name='resource_name_value',
+
             type_=offline_user_data_job_type.OfflineUserDataJobTypeEnum.OfflineUserDataJobType.UNKNOWN,
+
             status=offline_user_data_job_status.OfflineUserDataJobStatusEnum.OfflineUserDataJobStatus.UNKNOWN,
+
             failure_reason=offline_user_data_job_failure_reason.OfflineUserDataJobFailureReasonEnum.OfflineUserDataJobFailureReason.UNKNOWN,
+
             customer_match_user_list_metadata=offline_user_data.CustomerMatchUserListMetadata(user_list=wrappers.StringValue(value='value_value')),
         )
+
         response = client.get_offline_user_data_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == offline_user_data_job_service.GetOfflineUserDataJobRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, offline_user_data_job.OfflineUserDataJob)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.type_ == offline_user_data_job_type.OfflineUserDataJobTypeEnum.OfflineUserDataJobType.UNKNOWN
+
     assert response.status == offline_user_data_job_status.OfflineUserDataJobStatusEnum.OfflineUserDataJobStatus.UNKNOWN
+
     assert response.failure_reason == offline_user_data_job_failure_reason.OfflineUserDataJobFailureReasonEnum.OfflineUserDataJobFailureReason.UNKNOWN
 
 
@@ -410,7 +431,6 @@ def test_get_offline_user_data_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = offline_user_data_job_service.GetOfflineUserDataJobRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -418,6 +438,7 @@ def test_get_offline_user_data_job_field_headers():
             type(client.transport.get_offline_user_data_job),
             '__call__') as call:
         call.return_value = offline_user_data_job.OfflineUserDataJob()
+
         client.get_offline_user_data_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -444,6 +465,7 @@ def test_get_offline_user_data_job_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = offline_user_data_job.OfflineUserDataJob()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_offline_user_data_job(
@@ -454,6 +476,7 @@ def test_get_offline_user_data_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -488,14 +511,17 @@ def test_add_offline_user_data_job_operations(transport: str = 'grpc', request_t
         # Designate an appropriate return value for the call.
         call.return_value = offline_user_data_job_service.AddOfflineUserDataJobOperationsResponse(
         )
+
         response = client.add_offline_user_data_job_operations(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == offline_user_data_job_service.AddOfflineUserDataJobOperationsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, offline_user_data_job_service.AddOfflineUserDataJobOperationsResponse)
 
 
@@ -511,7 +537,6 @@ def test_add_offline_user_data_job_operations_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = offline_user_data_job_service.AddOfflineUserDataJobOperationsRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -519,6 +544,7 @@ def test_add_offline_user_data_job_operations_field_headers():
             type(client.transport.add_offline_user_data_job_operations),
             '__call__') as call:
         call.return_value = offline_user_data_job_service.AddOfflineUserDataJobOperationsResponse()
+
         client.add_offline_user_data_job_operations(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -545,6 +571,7 @@ def test_add_offline_user_data_job_operations_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = offline_user_data_job_service.AddOfflineUserDataJobOperationsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.add_offline_user_data_job_operations(
@@ -556,7 +583,9 @@ def test_add_offline_user_data_job_operations_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
+
         assert args[0].operations == [offline_user_data_job_service.OfflineUserDataJobOperation(create=offline_user_data.UserData(user_identifiers=[offline_user_data.UserIdentifier(hashed_email=wrappers.StringValue(value='value_value'))]))]
 
 
@@ -591,11 +620,13 @@ def test_run_offline_user_data_job(transport: str = 'grpc', request_type=offline
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.run_offline_user_data_job(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == offline_user_data_job_service.RunOfflineUserDataJobRequest()
 
     # Establish that the response is the type that we expect.
@@ -614,7 +645,6 @@ def test_run_offline_user_data_job_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = offline_user_data_job_service.RunOfflineUserDataJobRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -622,6 +652,7 @@ def test_run_offline_user_data_job_field_headers():
             type(client.transport.run_offline_user_data_job),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.run_offline_user_data_job(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -648,6 +679,7 @@ def test_run_offline_user_data_job_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.run_offline_user_data_job(
@@ -658,6 +690,7 @@ def test_run_offline_user_data_job_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -741,7 +774,7 @@ def test_offline_user_data_job_service_base_transport():
         'get_offline_user_data_job',
         'add_offline_user_data_job_operations',
         'run_offline_user_data_job',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -911,10 +944,10 @@ def test_offline_user_data_job_service_grpc_lro_client():
     # Ensure that subsequent calls to the property send the exact same object.
     assert transport.operations_client is transport.operations_client
 
-
 def test_offline_user_data_job_path():
     customer = "squid"
     offline_user_data_job = "clam"
+
     expected = "customers/{customer}/offlineUserDataJobs/{offline_user_data_job}".format(customer=customer, offline_user_data_job=offline_user_data_job, )
     actual = OfflineUserDataJobServiceClient.offline_user_data_job_path(customer, offline_user_data_job)
     assert expected == actual
@@ -922,8 +955,9 @@ def test_offline_user_data_job_path():
 
 def test_parse_offline_user_data_job_path():
     expected = {
-        "customer": "whelk",
-        "offline_user_data_job": "octopus",
+    "customer": "whelk",
+    "offline_user_data_job": "octopus",
+
     }
     path = OfflineUserDataJobServiceClient.offline_user_data_job_path(**expected)
 
@@ -933,6 +967,7 @@ def test_parse_offline_user_data_job_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = OfflineUserDataJobServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -940,7 +975,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = OfflineUserDataJobServiceClient.common_billing_account_path(**expected)
 
@@ -950,6 +986,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = OfflineUserDataJobServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -957,7 +994,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = OfflineUserDataJobServiceClient.common_folder_path(**expected)
 
@@ -967,6 +1005,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = OfflineUserDataJobServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -974,7 +1013,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = OfflineUserDataJobServiceClient.common_organization_path(**expected)
 
@@ -984,6 +1024,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = OfflineUserDataJobServiceClient.common_project_path(project)
     assert expected == actual
@@ -991,7 +1032,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = OfflineUserDataJobServiceClient.common_project_path(**expected)
 
@@ -1002,6 +1044,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = OfflineUserDataJobServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1009,8 +1052,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = OfflineUserDataJobServiceClient.common_location_path(**expected)
 

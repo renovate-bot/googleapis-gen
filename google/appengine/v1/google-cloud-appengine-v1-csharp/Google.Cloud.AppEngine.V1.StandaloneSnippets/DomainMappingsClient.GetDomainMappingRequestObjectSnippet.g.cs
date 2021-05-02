@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
+
     public sealed partial class GeneratedDomainMappingsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDomainMapping</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDomainMappingRequestObject()
         {
-            // Snippet: GetDomainMapping(GetDomainMappingRequest, CallSettings)
             // Create client
             DomainMappingsClient domainMappingsClient = DomainMappingsClient.Create();
             // Initialize request argument(s)
             GetDomainMappingRequest request = new GetDomainMappingRequest { Name = "", };
             // Make the request
             DomainMapping response = domainMappingsClient.GetDomainMapping(request);
-            // End snippet
         }
     }
 }

@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Iam.Credentials.V1.Snippets
 {
+    using Google.Cloud.Iam.Credentials.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedIAMCredentialsClientStandaloneSnippets
     {
         /// <summary>Snippet for SignJwt</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SignJwt()
         {
-            // Snippet: SignJwt(string, IEnumerable<string>, string, CallSettings)
             // Create client
             IAMCredentialsClient iAMCredentialsClient = IAMCredentialsClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.Iam.Credentials.V1.Snippets
             string payload = "";
             // Make the request
             SignJwtResponse response = iAMCredentialsClient.SignJwt(name, delegates, payload);
-            // End snippet
         }
     }
 }

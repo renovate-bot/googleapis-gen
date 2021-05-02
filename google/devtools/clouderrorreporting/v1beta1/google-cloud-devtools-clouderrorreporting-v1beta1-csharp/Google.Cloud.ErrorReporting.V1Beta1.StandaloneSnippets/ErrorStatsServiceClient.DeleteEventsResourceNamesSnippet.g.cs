@@ -17,20 +17,23 @@
 namespace Google.Cloud.ErrorReporting.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.ErrorReporting.V1Beta1;
 
     public sealed partial class GeneratedErrorStatsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteEvents</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteEventsResourceNames()
         {
-            // Snippet: DeleteEvents(ProjectName, CallSettings)
             // Create client
             ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.Create();
             // Initialize request argument(s)
             ProjectName projectName = ProjectName.FromProject("[PROJECT]");
             // Make the request
             DeleteEventsResponse response = errorStatsServiceClient.DeleteEvents(projectName);
-            // End snippet
         }
     }
 }

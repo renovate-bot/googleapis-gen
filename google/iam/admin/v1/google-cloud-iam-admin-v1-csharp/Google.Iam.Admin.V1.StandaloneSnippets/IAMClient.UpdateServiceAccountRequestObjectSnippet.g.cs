@@ -16,12 +16,17 @@
 
 namespace Google.Iam.Admin.V1.Snippets
 {
+    using Google.Iam.Admin.V1;
+
     public sealed partial class GeneratedIAMClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateServiceAccount</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateServiceAccountRequestObject()
         {
-            // Snippet: UpdateServiceAccount(ServiceAccount, CallSettings)
             // Create client
             IAMClient iAMClient = IAMClient.Create();
             // Initialize request argument(s)
@@ -38,7 +43,6 @@ namespace Google.Iam.Admin.V1.Snippets
             };
             // Make the request
             ServiceAccount response = iAMClient.UpdateServiceAccount(request);
-            // End snippet
         }
     }
 }

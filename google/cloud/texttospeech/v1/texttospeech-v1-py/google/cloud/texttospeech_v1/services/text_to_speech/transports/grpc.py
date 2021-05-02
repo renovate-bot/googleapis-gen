@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -25,6 +27,7 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 import grpc  # type: ignore
 
 from google.cloud.texttospeech_v1.types import cloud_tts
+
 from .base import TextToSpeechTransport, DEFAULT_CLIENT_INFO
 
 
@@ -58,8 +61,7 @@ class TextToSpeechGrpcTransport(TextToSpeechTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -198,15 +200,13 @@ class TextToSpeechGrpcTransport(TextToSpeechTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -220,9 +220,7 @@ class TextToSpeechGrpcTransport(TextToSpeechTransport):
     def list_voices(self) -> Callable[
             [cloud_tts.ListVoicesRequest],
             cloud_tts.ListVoicesResponse]:
-        r"""Return a callable for the
-        list voices
-          method over gRPC.
+        r"""Return a callable for the list voices method over gRPC.
 
         Returns a list of Voice supported for synthesis.
 
@@ -248,9 +246,7 @@ class TextToSpeechGrpcTransport(TextToSpeechTransport):
     def synthesize_speech(self) -> Callable[
             [cloud_tts.SynthesizeSpeechRequest],
             cloud_tts.SynthesizeSpeechResponse]:
-        r"""Return a callable for the
-        synthesize speech
-          method over gRPC.
+        r"""Return a callable for the synthesize speech method over gRPC.
 
         Synthesizes speech synchronously: receive results
         after all text input has been processed.

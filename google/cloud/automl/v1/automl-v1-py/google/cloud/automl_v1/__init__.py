@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,6 @@
 
 from .services.auto_ml import AutoMlClient
 from .services.prediction_service import PredictionServiceClient
-
 from .types.annotation_payload import AnnotationPayload
 from .types.annotation_spec import AnnotationSpec
 from .types.classification import ClassificationAnnotation
@@ -99,6 +99,7 @@ from .types.translation import TranslationAnnotation
 from .types.translation import TranslationDatasetMetadata
 from .types.translation import TranslationEvaluationMetrics
 from .types.translation import TranslationModelMetadata
+
 
 __all__ = (
     'AnnotationPayload',

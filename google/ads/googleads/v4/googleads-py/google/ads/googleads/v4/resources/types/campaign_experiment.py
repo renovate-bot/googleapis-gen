@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.enums.types import campaign_experiment_status
 from google.ads.googleads.v4.enums.types import campaign_experiment_traffic_split_type
@@ -98,63 +101,38 @@ class CampaignExperiment(proto.Message):
             Example: 2019-04-18
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.Int64Value,
     )
-    campaign_draft = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    campaign_draft = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.StringValue,
     )
-    name = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    name = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.StringValue,
     )
-    description = proto.Field(
-        proto.MESSAGE,
-        number=5,
+    description = proto.Field(proto.MESSAGE, number=5,
         message=wrappers.StringValue,
     )
-    traffic_split_percent = proto.Field(
-        proto.MESSAGE,
-        number=6,
+    traffic_split_percent = proto.Field(proto.MESSAGE, number=6,
         message=wrappers.Int64Value,
     )
-    traffic_split_type = proto.Field(
-        proto.ENUM,
-        number=7,
+    traffic_split_type = proto.Field(proto.ENUM, number=7,
         enum=campaign_experiment_traffic_split_type.CampaignExperimentTrafficSplitTypeEnum.CampaignExperimentTrafficSplitType,
     )
-    experiment_campaign = proto.Field(
-        proto.MESSAGE,
-        number=8,
+    experiment_campaign = proto.Field(proto.MESSAGE, number=8,
         message=wrappers.StringValue,
     )
-    status = proto.Field(
-        proto.ENUM,
-        number=9,
+    status = proto.Field(proto.ENUM, number=9,
         enum=campaign_experiment_status.CampaignExperimentStatusEnum.CampaignExperimentStatus,
     )
-    long_running_operation = proto.Field(
-        proto.MESSAGE,
-        number=10,
+    long_running_operation = proto.Field(proto.MESSAGE, number=10,
         message=wrappers.StringValue,
     )
-    start_date = proto.Field(
-        proto.MESSAGE,
-        number=11,
+    start_date = proto.Field(proto.MESSAGE, number=11,
         message=wrappers.StringValue,
     )
-    end_date = proto.Field(
-        proto.MESSAGE,
-        number=12,
+    end_date = proto.Field(proto.MESSAGE, number=12,
         message=wrappers.StringValue,
     )
 

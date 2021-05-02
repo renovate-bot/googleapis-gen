@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedEnvironmentsClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteEnvironmentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteEnvironmentResourceNamesAsync()
         {
-            // Snippet: DeleteEnvironmentAsync(EnvironmentName, CallSettings)
-            // Additional: DeleteEnvironmentAsync(EnvironmentName, CancellationToken)
             // Create client
             EnvironmentsClient environmentsClient = await EnvironmentsClient.CreateAsync();
             // Initialize request argument(s)
             EnvironmentName name = EnvironmentName.FromProjectLocationAgentEnvironment("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
             // Make the request
             await environmentsClient.DeleteEnvironmentAsync(name);
-            // End snippet
         }
     }
 }

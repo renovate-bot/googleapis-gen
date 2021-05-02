@@ -16,16 +16,19 @@
 
 namespace Google.Chromeos.Moblab.V1Beta1.Snippets
 {
+    using Google.Chromeos.Moblab.V1Beta1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBuildServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for StageBuildAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task StageBuildAsync()
         {
-            // Snippet: StageBuildAsync(string, CallSettings)
-            // Additional: StageBuildAsync(string, CancellationToken)
             // Create client
             BuildServiceClient buildServiceClient = await BuildServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -48,7 +51,6 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
                 // If it has completed, then access the result
                 StageBuildResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

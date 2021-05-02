@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.OsLogin.V1.Snippets
 {
+    using Google.Cloud.OsLogin.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOsLoginServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteSshPublicKeyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteSshPublicKeyAsync()
         {
-            // Snippet: DeleteSshPublicKeyAsync(string, CallSettings)
-            // Additional: DeleteSshPublicKeyAsync(string, CancellationToken)
             // Create client
             OsLoginServiceClient osLoginServiceClient = await OsLoginServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "users/[USER]/sshPublicKeys/[FINGERPRINT]";
             // Make the request
             await osLoginServiceClient.DeleteSshPublicKeyAsync(name);
-            // End snippet
         }
     }
 }

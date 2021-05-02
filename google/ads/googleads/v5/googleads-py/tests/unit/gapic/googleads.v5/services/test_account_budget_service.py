@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -265,41 +267,70 @@ def test_get_account_budget(transport: str = 'grpc', request_type=account_budget
         # Designate an appropriate return value for the call.
         call.return_value = account_budget.AccountBudget(
             resource_name='resource_name_value',
+
             id=205,
+
             billing_setup='billing_setup_value',
+
             status=account_budget_status.AccountBudgetStatusEnum.AccountBudgetStatus.UNKNOWN,
+
             name='name_value',
+
             proposed_start_date_time='proposed_start_date_time_value',
+
             approved_start_date_time='approved_start_date_time_value',
+
             total_adjustments_micros=2593,
+
             amount_served_micros=2152,
+
             purchase_order_number='purchase_order_number_value',
+
             notes='notes_value',
+
             proposed_end_date_time='proposed_end_date_time_value',
+
             approved_end_date_time='approved_end_date_time_value',
+
             proposed_spending_limit_micros=3213,
+
             approved_spending_limit_micros=3202,
+
             adjusted_spending_limit_micros=3189,
         )
+
         response = client.get_account_budget(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == account_budget_service.GetAccountBudgetRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, account_budget.AccountBudget)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.id == 205
+
     assert response.billing_setup == 'billing_setup_value'
+
     assert response.status == account_budget_status.AccountBudgetStatusEnum.AccountBudgetStatus.UNKNOWN
+
     assert response.name == 'name_value'
+
     assert response.proposed_start_date_time == 'proposed_start_date_time_value'
+
     assert response.approved_start_date_time == 'approved_start_date_time_value'
+
     assert response.total_adjustments_micros == 2593
+
     assert response.amount_served_micros == 2152
+
     assert response.purchase_order_number == 'purchase_order_number_value'
+
     assert response.notes == 'notes_value'
 
 
@@ -315,7 +346,6 @@ def test_get_account_budget_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = account_budget_service.GetAccountBudgetRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -323,6 +353,7 @@ def test_get_account_budget_field_headers():
             type(client.transport.get_account_budget),
             '__call__') as call:
         call.return_value = account_budget.AccountBudget()
+
         client.get_account_budget(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -349,6 +380,7 @@ def test_get_account_budget_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = account_budget.AccountBudget()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_account_budget(
@@ -359,6 +391,7 @@ def test_get_account_budget_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -439,7 +472,7 @@ def test_account_budget_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_account_budget',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -591,6 +624,7 @@ def test_account_budget_service_transport_channel_mtls_with_adc(
 def test_account_budget_path():
     customer = "squid"
     account_budget = "clam"
+
     expected = "customers/{customer}/accountBudgets/{account_budget}".format(customer=customer, account_budget=account_budget, )
     actual = AccountBudgetServiceClient.account_budget_path(customer, account_budget)
     assert expected == actual
@@ -598,8 +632,9 @@ def test_account_budget_path():
 
 def test_parse_account_budget_path():
     expected = {
-        "customer": "whelk",
-        "account_budget": "octopus",
+    "customer": "whelk",
+    "account_budget": "octopus",
+
     }
     path = AccountBudgetServiceClient.account_budget_path(**expected)
 
@@ -610,6 +645,7 @@ def test_parse_account_budget_path():
 def test_account_budget_proposal_path():
     customer = "oyster"
     account_budget_proposal = "nudibranch"
+
     expected = "customers/{customer}/accountBudgetProposals/{account_budget_proposal}".format(customer=customer, account_budget_proposal=account_budget_proposal, )
     actual = AccountBudgetServiceClient.account_budget_proposal_path(customer, account_budget_proposal)
     assert expected == actual
@@ -617,8 +653,9 @@ def test_account_budget_proposal_path():
 
 def test_parse_account_budget_proposal_path():
     expected = {
-        "customer": "cuttlefish",
-        "account_budget_proposal": "mussel",
+    "customer": "cuttlefish",
+    "account_budget_proposal": "mussel",
+
     }
     path = AccountBudgetServiceClient.account_budget_proposal_path(**expected)
 
@@ -629,6 +666,7 @@ def test_parse_account_budget_proposal_path():
 def test_billing_setup_path():
     customer = "winkle"
     billing_setup = "nautilus"
+
     expected = "customers/{customer}/billingSetups/{billing_setup}".format(customer=customer, billing_setup=billing_setup, )
     actual = AccountBudgetServiceClient.billing_setup_path(customer, billing_setup)
     assert expected == actual
@@ -636,8 +674,9 @@ def test_billing_setup_path():
 
 def test_parse_billing_setup_path():
     expected = {
-        "customer": "scallop",
-        "billing_setup": "abalone",
+    "customer": "scallop",
+    "billing_setup": "abalone",
+
     }
     path = AccountBudgetServiceClient.billing_setup_path(**expected)
 
@@ -647,6 +686,7 @@ def test_parse_billing_setup_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AccountBudgetServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -654,7 +694,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = AccountBudgetServiceClient.common_billing_account_path(**expected)
 
@@ -664,6 +705,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = AccountBudgetServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -671,7 +713,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = AccountBudgetServiceClient.common_folder_path(**expected)
 
@@ -681,6 +724,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AccountBudgetServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -688,7 +732,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = AccountBudgetServiceClient.common_organization_path(**expected)
 
@@ -698,6 +743,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = AccountBudgetServiceClient.common_project_path(project)
     assert expected == actual
@@ -705,7 +751,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = AccountBudgetServiceClient.common_project_path(**expected)
 
@@ -716,6 +763,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AccountBudgetServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -723,8 +771,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = AccountBudgetServiceClient.common_location_path(**expected)
 

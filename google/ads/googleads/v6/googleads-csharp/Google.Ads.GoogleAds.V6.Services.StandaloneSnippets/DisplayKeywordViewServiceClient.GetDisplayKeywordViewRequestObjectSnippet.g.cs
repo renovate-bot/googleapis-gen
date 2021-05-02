@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedDisplayKeywordViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDisplayKeywordView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDisplayKeywordViewRequestObject()
         {
-            // Snippet: GetDisplayKeywordView(GetDisplayKeywordViewRequest, CallSettings)
             // Create client
             DisplayKeywordViewServiceClient displayKeywordViewServiceClient = DisplayKeywordViewServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             DisplayKeywordView response = displayKeywordViewServiceClient.GetDisplayKeywordView(request);
-            // End snippet
         }
     }
 }

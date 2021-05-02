@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v6.resources.types import ad_group_criterion_simulation
 from google.ads.googleads.v6.services.types import ad_group_criterion_simulation_service
+
 from .base import AdGroupCriterionSimulationServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class AdGroupCriterionSimulationServiceGrpcTransport(AdGroupCriterionSimulationS
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,10 +203,8 @@ class AdGroupCriterionSimulationServiceGrpcTransport(AdGroupCriterionSimulationS
     def get_ad_group_criterion_simulation(self) -> Callable[
             [ad_group_criterion_simulation_service.GetAdGroupCriterionSimulationRequest],
             ad_group_criterion_simulation.AdGroupCriterionSimulation]:
-        r"""Return a callable for the
-        get ad group criterion
-        simulation
-          method over gRPC.
+        r"""Return a callable for the get ad group criterion
+        simulation method over gRPC.
 
         Returns the requested ad group criterion simulation
         in full detail.

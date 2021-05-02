@@ -16,23 +16,25 @@
 
 namespace Google.Streetview.Publish.V1.Snippets
 {
+    using Google.Streetview.Publish.V1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedStreetViewPublishServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchDeletePhotosAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchDeletePhotosAsync()
         {
-            // Snippet: BatchDeletePhotosAsync(IEnumerable<string>, CallSettings)
-            // Additional: BatchDeletePhotosAsync(IEnumerable<string>, CancellationToken)
             // Create client
             StreetViewPublishServiceClient streetViewPublishServiceClient = await StreetViewPublishServiceClient.CreateAsync();
             // Initialize request argument(s)
             IEnumerable<string> photoIds = new string[] { "", };
             // Make the request
             BatchDeletePhotosResponse response = await streetViewPublishServiceClient.BatchDeletePhotosAsync(photoIds);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Scheduler.V1Beta1.Snippets
 {
+    using Google.Cloud.Scheduler.V1Beta1;
+
     public sealed partial class GeneratedCloudSchedulerClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteJob</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteJobResourceNames()
         {
-            // Snippet: DeleteJob(JobName, CallSettings)
             // Create client
             CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.Create();
             // Initialize request argument(s)
             JobName name = JobName.FromProjectLocationJob("[PROJECT]", "[LOCATION]", "[JOB]");
             // Make the request
             cloudSchedulerClient.DeleteJob(name);
-            // End snippet
         }
     }
 }

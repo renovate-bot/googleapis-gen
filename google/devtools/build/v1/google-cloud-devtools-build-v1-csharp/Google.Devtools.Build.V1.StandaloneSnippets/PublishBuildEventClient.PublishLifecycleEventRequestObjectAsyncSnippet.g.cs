@@ -16,16 +16,19 @@
 
 namespace Google.Devtools.Build.V1.Snippets
 {
+    using Google.Devtools.Build.V1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPublishBuildEventClientStandaloneSnippets
     {
         /// <summary>Snippet for PublishLifecycleEventAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task PublishLifecycleEventRequestObjectAsync()
         {
-            // Snippet: PublishLifecycleEventAsync(PublishLifecycleEventRequest, CallSettings)
-            // Additional: PublishLifecycleEventAsync(PublishLifecycleEventRequest, CancellationToken)
             // Create client
             PublishBuildEventClient publishBuildEventClient = await PublishBuildEventClient.CreateAsync();
             // Initialize request argument(s)
@@ -39,7 +42,6 @@ namespace Google.Devtools.Build.V1.Snippets
             };
             // Make the request
             await publishBuildEventClient.PublishLifecycleEventAsync(request);
-            // End snippet
         }
     }
 }

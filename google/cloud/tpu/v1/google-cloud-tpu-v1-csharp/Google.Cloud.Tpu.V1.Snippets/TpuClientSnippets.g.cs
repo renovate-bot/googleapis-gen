@@ -74,7 +74,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListNodes</summary>
+        /// <summary>Snippet for ListNodesAsync</summary>
         public async Task ListNodesRequestObjectAsync()
         {
             // Snippet: ListNodesAsync(ListNodesRequest, CallSettings)
@@ -167,7 +167,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListNodes</summary>
+        /// <summary>Snippet for ListNodesAsync</summary>
         public async Task ListNodesAsync()
         {
             // Snippet: ListNodesAsync(string, string, int?, CallSettings)
@@ -257,7 +257,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListNodes</summary>
+        /// <summary>Snippet for ListNodesAsync</summary>
         public async Task ListNodesResourceNamesAsync()
         {
             // Snippet: ListNodesAsync(NodeName, string, int?, CallSettings)
@@ -1002,7 +1002,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTensorFlowVersions</summary>
+        /// <summary>Snippet for ListTensorFlowVersionsAsync</summary>
         public async Task ListTensorFlowVersionsRequestObjectAsync()
         {
             // Snippet: ListTensorFlowVersionsAsync(ListTensorFlowVersionsRequest, CallSettings)
@@ -1097,7 +1097,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTensorFlowVersions</summary>
+        /// <summary>Snippet for ListTensorFlowVersionsAsync</summary>
         public async Task ListTensorFlowVersionsAsync()
         {
             // Snippet: ListTensorFlowVersionsAsync(string, string, int?, CallSettings)
@@ -1187,7 +1187,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTensorFlowVersions</summary>
+        /// <summary>Snippet for ListTensorFlowVersionsAsync</summary>
         public async Task ListTensorFlowVersionsResourceNamesAsync()
         {
             // Snippet: ListTensorFlowVersionsAsync(TensorFlowVersionName, string, int?, CallSettings)
@@ -1369,7 +1369,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListAcceleratorTypes</summary>
+        /// <summary>Snippet for ListAcceleratorTypesAsync</summary>
         public async Task ListAcceleratorTypesRequestObjectAsync()
         {
             // Snippet: ListAcceleratorTypesAsync(ListAcceleratorTypesRequest, CallSettings)
@@ -1464,7 +1464,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListAcceleratorTypes</summary>
+        /// <summary>Snippet for ListAcceleratorTypesAsync</summary>
         public async Task ListAcceleratorTypesAsync()
         {
             // Snippet: ListAcceleratorTypesAsync(string, string, int?, CallSettings)
@@ -1554,7 +1554,7 @@ namespace Google.Cloud.Tpu.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListAcceleratorTypes</summary>
+        /// <summary>Snippet for ListAcceleratorTypesAsync</summary>
         public async Task ListAcceleratorTypesResourceNamesAsync()
         {
             // Snippet: ListAcceleratorTypesAsync(AcceleratorTypeName, string, int?, CallSettings)

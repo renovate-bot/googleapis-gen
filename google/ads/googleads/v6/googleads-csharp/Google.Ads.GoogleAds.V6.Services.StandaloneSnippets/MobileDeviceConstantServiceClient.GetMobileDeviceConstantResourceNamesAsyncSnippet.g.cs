@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMobileDeviceConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMobileDeviceConstantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetMobileDeviceConstantResourceNamesAsync()
         {
-            // Snippet: GetMobileDeviceConstantAsync(MobileDeviceConstantName, CallSettings)
-            // Additional: GetMobileDeviceConstantAsync(MobileDeviceConstantName, CancellationToken)
             // Create client
             MobileDeviceConstantServiceClient mobileDeviceConstantServiceClient = await MobileDeviceConstantServiceClient.CreateAsync();
             // Initialize request argument(s)
             MobileDeviceConstantName resourceName = MobileDeviceConstantName.FromCriterion("[CRITERION_ID]");
             // Make the request
             MobileDeviceConstant response = await mobileDeviceConstantServiceClient.GetMobileDeviceConstantAsync(resourceName);
-            // End snippet
         }
     }
 }

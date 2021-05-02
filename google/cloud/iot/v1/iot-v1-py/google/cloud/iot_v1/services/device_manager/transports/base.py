@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,13 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import abc
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Union
-import packaging.version
+import typing
 import pkg_resources
 
 from google import auth  # type: ignore
-import google.api_core  # type: ignore
 from google.api_core import exceptions  # type: ignore
 from google.api_core import gapic_v1    # type: ignore
 from google.api_core import retry as retries  # type: ignore
@@ -31,6 +31,7 @@ from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as gi_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
 
+
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
@@ -40,18 +41,6 @@ try:
 except pkg_resources.DistributionNotFound:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
 
-try:
-    # google.auth.__version__ was added in 1.26.0
-    _GOOGLE_AUTH_VERSION = auth.__version__
-except AttributeError:
-    try:  # try pkg_resources if it is available
-        _GOOGLE_AUTH_VERSION = pkg_resources.get_distribution("google-auth").version
-    except pkg_resources.DistributionNotFound:  # pragma: NO COVER
-        _GOOGLE_AUTH_VERSION = None
-
-_API_CORE_VERSION = google.api_core.__version__
-
-
 class DeviceManagerTransport(abc.ABC):
     """Abstract transport class for DeviceManager."""
 
@@ -60,22 +49,20 @@ class DeviceManagerTransport(abc.ABC):
         'https://www.googleapis.com/auth/cloudiot',
     )
 
-    DEFAULT_HOST: str = 'cloudiot.googleapis.com'
     def __init__(
             self, *,
-            host: str = DEFAULT_HOST,
+            host: str = 'cloudiot.googleapis.com',
             credentials: credentials.Credentials = None,
-            credentials_file: Optional[str] = None,
-            scopes: Optional[Sequence[str]] = None,
-            quota_project_id: Optional[str] = None,
+            credentials_file: typing.Optional[str] = None,
+            scopes: typing.Optional[typing.Sequence[str]] = AUTH_SCOPES,
+            quota_project_id: typing.Optional[str] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             **kwargs,
             ) -> None:
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -84,7 +71,7 @@ class DeviceManagerTransport(abc.ABC):
             credentials_file (Optional[str]): A file with credentials that can
                 be loaded with :func:`google.auth.load_credentials_from_file`.
                 This argument is mutually exclusive with credentials.
-            scopes (Optional[Sequence[str]]): A list of scopes.
+            scope (Optional[Sequence[str]]): A list of scopes.
             quota_project_id (Optional[str]): An optional project to use for billing
                 and quota.
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
@@ -98,8 +85,6 @@ class DeviceManagerTransport(abc.ABC):
             host += ':443'
         self._host = host
 
-        scopes_kwargs = self._get_scopes_kwargs(self._host, scopes)
-
         # Save the scopes.
         self._scopes = scopes or self.AUTH_SCOPES
 
@@ -111,56 +96,15 @@ class DeviceManagerTransport(abc.ABC):
         if credentials_file is not None:
             credentials, _ = auth.load_credentials_from_file(
                                 credentials_file,
-                                **scopes_kwargs,
+                                scopes=self._scopes,
                                 quota_project_id=quota_project_id
                             )
 
         elif credentials is None:
-            credentials, _ = auth.default(**scopes_kwargs, quota_project_id=quota_project_id)
+            credentials, _ = auth.default(scopes=self._scopes, quota_project_id=quota_project_id)
 
         # Save the credentials.
         self._credentials = credentials
-
-    # TODO(busunkim): These two class methods are in the base transport
-    # to avoid duplicating code across the transport classes. These functions
-    # should be deleted once the minimum required versions of google-api-core
-    # and google-auth are increased.
-
-    # TODO: Remove this function once google-auth >= 1.25.0 is required
-    @classmethod
-    def _get_scopes_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Optional[Sequence[str]]]:
-        """Returns scopes kwargs to pass to google-auth methods depending on the google-auth version"""
-
-        scopes_kwargs = {}
-
-        if _GOOGLE_AUTH_VERSION and (
-            packaging.version.parse(_GOOGLE_AUTH_VERSION)
-            >= packaging.version.parse("1.25.0")
-        ):
-            scopes_kwargs = {"scopes": scopes, "default_scopes": cls.AUTH_SCOPES}
-        else:
-            scopes_kwargs = {"scopes": scopes or cls.AUTH_SCOPES}
-
-        return scopes_kwargs
-
-    # TODO: Remove this function once google-api-core >= 1.26.0 is required
-    @classmethod
-    def _get_self_signed_jwt_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Union[Optional[Sequence[str]], str]]:
-        """Returns kwargs to pass to grpc_helpers.create_channel depending on the google-api-core version"""
-
-        self_signed_jwt_kwargs: Dict[str, Union[Optional[Sequence[str]], str]] = {}
-
-        if _API_CORE_VERSION and (
-            packaging.version.parse(_API_CORE_VERSION)
-            >= packaging.version.parse("1.26.0")
-        ):
-            self_signed_jwt_kwargs["default_scopes"] = cls.AUTH_SCOPES
-            self_signed_jwt_kwargs["scopes"] = scopes
-            self_signed_jwt_kwargs["default_host"] = cls.DEFAULT_HOST
-        else:
-            self_signed_jwt_kwargs["scopes"] = scopes or cls.AUTH_SCOPES
-
-        return self_signed_jwt_kwargs
 
     def _prep_wrapped_messages(self, client_info):
         # Precompute the wrapped methods.
@@ -173,7 +117,10 @@ class DeviceManagerTransport(abc.ABC):
             self.get_device_registry: gapic_v1.method.wrap_method(
                 self.get_device_registry,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -190,7 +137,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.delete_device_registry: gapic_v1.method.wrap_method(
                 self.delete_device_registry,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -202,7 +152,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.list_device_registries: gapic_v1.method.wrap_method(
                 self.list_device_registries,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -219,7 +172,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.get_device: gapic_v1.method.wrap_method(
                 self.get_device,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -236,7 +192,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.delete_device: gapic_v1.method.wrap_method(
                 self.delete_device,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -248,7 +207,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.list_devices: gapic_v1.method.wrap_method(
                 self.list_devices,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -260,7 +222,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.modify_cloud_to_device_config: gapic_v1.method.wrap_method(
                 self.modify_cloud_to_device_config,
                 default_retry=retries.Retry(
-initial=1.0,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=1.0,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ResourceExhausted,
                         exceptions.ServiceUnavailable,
@@ -273,7 +238,10 @@ initial=1.0,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.list_device_config_versions: gapic_v1.method.wrap_method(
                 self.list_device_config_versions,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -285,7 +253,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.list_device_states: gapic_v1.method.wrap_method(
                 self.list_device_states,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -312,7 +283,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.send_command_to_device: gapic_v1.method.wrap_method(
                 self.send_command_to_device,
                 default_retry=retries.Retry(
-initial=1.0,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=1.0,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ResourceExhausted,
                         exceptions.ServiceUnavailable,
@@ -332,176 +306,177 @@ initial=1.0,maximum=60.0,multiplier=1.3,                    predicate=retries.if
                 default_timeout=120.0,
                 client_info=client_info,
             ),
-         }
+
+        }
 
     @property
-    def create_device_registry(self) -> Callable[
+    def create_device_registry(self) -> typing.Callable[
             [device_manager.CreateDeviceRegistryRequest],
-            Union[
+            typing.Union[
                 resources.DeviceRegistry,
-                Awaitable[resources.DeviceRegistry]
+                typing.Awaitable[resources.DeviceRegistry]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_device_registry(self) -> Callable[
+    def get_device_registry(self) -> typing.Callable[
             [device_manager.GetDeviceRegistryRequest],
-            Union[
+            typing.Union[
                 resources.DeviceRegistry,
-                Awaitable[resources.DeviceRegistry]
+                typing.Awaitable[resources.DeviceRegistry]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_device_registry(self) -> Callable[
+    def update_device_registry(self) -> typing.Callable[
             [device_manager.UpdateDeviceRegistryRequest],
-            Union[
+            typing.Union[
                 resources.DeviceRegistry,
-                Awaitable[resources.DeviceRegistry]
+                typing.Awaitable[resources.DeviceRegistry]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_device_registry(self) -> Callable[
+    def delete_device_registry(self) -> typing.Callable[
             [device_manager.DeleteDeviceRegistryRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_device_registries(self) -> Callable[
+    def list_device_registries(self) -> typing.Callable[
             [device_manager.ListDeviceRegistriesRequest],
-            Union[
+            typing.Union[
                 device_manager.ListDeviceRegistriesResponse,
-                Awaitable[device_manager.ListDeviceRegistriesResponse]
+                typing.Awaitable[device_manager.ListDeviceRegistriesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_device(self) -> Callable[
+    def create_device(self) -> typing.Callable[
             [device_manager.CreateDeviceRequest],
-            Union[
+            typing.Union[
                 resources.Device,
-                Awaitable[resources.Device]
+                typing.Awaitable[resources.Device]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_device(self) -> Callable[
+    def get_device(self) -> typing.Callable[
             [device_manager.GetDeviceRequest],
-            Union[
+            typing.Union[
                 resources.Device,
-                Awaitable[resources.Device]
+                typing.Awaitable[resources.Device]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_device(self) -> Callable[
+    def update_device(self) -> typing.Callable[
             [device_manager.UpdateDeviceRequest],
-            Union[
+            typing.Union[
                 resources.Device,
-                Awaitable[resources.Device]
+                typing.Awaitable[resources.Device]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_device(self) -> Callable[
+    def delete_device(self) -> typing.Callable[
             [device_manager.DeleteDeviceRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_devices(self) -> Callable[
+    def list_devices(self) -> typing.Callable[
             [device_manager.ListDevicesRequest],
-            Union[
+            typing.Union[
                 device_manager.ListDevicesResponse,
-                Awaitable[device_manager.ListDevicesResponse]
+                typing.Awaitable[device_manager.ListDevicesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def modify_cloud_to_device_config(self) -> Callable[
+    def modify_cloud_to_device_config(self) -> typing.Callable[
             [device_manager.ModifyCloudToDeviceConfigRequest],
-            Union[
+            typing.Union[
                 resources.DeviceConfig,
-                Awaitable[resources.DeviceConfig]
+                typing.Awaitable[resources.DeviceConfig]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_device_config_versions(self) -> Callable[
+    def list_device_config_versions(self) -> typing.Callable[
             [device_manager.ListDeviceConfigVersionsRequest],
-            Union[
+            typing.Union[
                 device_manager.ListDeviceConfigVersionsResponse,
-                Awaitable[device_manager.ListDeviceConfigVersionsResponse]
+                typing.Awaitable[device_manager.ListDeviceConfigVersionsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_device_states(self) -> Callable[
+    def list_device_states(self) -> typing.Callable[
             [device_manager.ListDeviceStatesRequest],
-            Union[
+            typing.Union[
                 device_manager.ListDeviceStatesResponse,
-                Awaitable[device_manager.ListDeviceStatesResponse]
+                typing.Awaitable[device_manager.ListDeviceStatesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def set_iam_policy(self) -> Callable[
+    def set_iam_policy(self) -> typing.Callable[
             [iam_policy.SetIamPolicyRequest],
-            Union[
+            typing.Union[
                 gi_policy.Policy,
-                Awaitable[gi_policy.Policy]
+                typing.Awaitable[gi_policy.Policy]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_iam_policy(self) -> Callable[
+    def get_iam_policy(self) -> typing.Callable[
             [iam_policy.GetIamPolicyRequest],
-            Union[
+            typing.Union[
                 gi_policy.Policy,
-                Awaitable[gi_policy.Policy]
+                typing.Awaitable[gi_policy.Policy]
             ]]:
         raise NotImplementedError()
 
     @property
-    def test_iam_permissions(self) -> Callable[
+    def test_iam_permissions(self) -> typing.Callable[
             [iam_policy.TestIamPermissionsRequest],
-            Union[
+            typing.Union[
                 iam_policy.TestIamPermissionsResponse,
-                Awaitable[iam_policy.TestIamPermissionsResponse]
+                typing.Awaitable[iam_policy.TestIamPermissionsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def send_command_to_device(self) -> Callable[
+    def send_command_to_device(self) -> typing.Callable[
             [device_manager.SendCommandToDeviceRequest],
-            Union[
+            typing.Union[
                 device_manager.SendCommandToDeviceResponse,
-                Awaitable[device_manager.SendCommandToDeviceResponse]
+                typing.Awaitable[device_manager.SendCommandToDeviceResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def bind_device_to_gateway(self) -> Callable[
+    def bind_device_to_gateway(self) -> typing.Callable[
             [device_manager.BindDeviceToGatewayRequest],
-            Union[
+            typing.Union[
                 device_manager.BindDeviceToGatewayResponse,
-                Awaitable[device_manager.BindDeviceToGatewayResponse]
+                typing.Awaitable[device_manager.BindDeviceToGatewayResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def unbind_device_from_gateway(self) -> Callable[
+    def unbind_device_from_gateway(self) -> typing.Callable[
             [device_manager.UnbindDeviceFromGatewayRequest],
-            Union[
+            typing.Union[
                 device_manager.UnbindDeviceFromGatewayResponse,
-                Awaitable[device_manager.UnbindDeviceFromGatewayResponse]
+                typing.Awaitable[device_manager.UnbindDeviceFromGatewayResponse]
             ]]:
         raise NotImplementedError()
 

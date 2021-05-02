@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedSessionEntityTypesClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateSessionEntityType</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateSessionEntityType1()
         {
-            // Snippet: UpdateSessionEntityType(SessionEntityType, CallSettings)
             // Create client
             SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.Create();
             // Initialize request argument(s)
             SessionEntityType sessionEntityType = new SessionEntityType();
             // Make the request
             SessionEntityType response = sessionEntityTypesClient.UpdateSessionEntityType(sessionEntityType);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Tpu.V1.Snippets
 {
+    using Google.Cloud.Tpu.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTpuClientStandaloneSnippets
     {
         /// <summary>Snippet for GetNodeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetNodeResourceNamesAsync()
         {
-            // Snippet: GetNodeAsync(NodeName, CallSettings)
-            // Additional: GetNodeAsync(NodeName, CancellationToken)
             // Create client
             TpuClient tpuClient = await TpuClient.CreateAsync();
             // Initialize request argument(s)
             NodeName name = NodeName.FromProjectLocationNode("[PROJECT]", "[LOCATION]", "[NODE]");
             // Make the request
             Node response = await tpuClient.GetNodeAsync(name);
-            // End snippet
         }
     }
 }

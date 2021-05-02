@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Securitycenter.V1Beta1.Snippets
 {
+    using Google.Cloud.Securitycenter.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateOrganizationSettingsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateOrganizationSettingsAsync()
         {
-            // Snippet: UpdateOrganizationSettingsAsync(OrganizationSettings, CallSettings)
-            // Additional: UpdateOrganizationSettingsAsync(OrganizationSettings, CancellationToken)
             // Create client
             SecurityCenterClient securityCenterClient = await SecurityCenterClient.CreateAsync();
             // Initialize request argument(s)
             OrganizationSettings organizationSettings = new OrganizationSettings();
             // Make the request
             OrganizationSettings response = await securityCenterClient.UpdateOrganizationSettingsAsync(organizationSettings);
-            // End snippet
         }
     }
 }

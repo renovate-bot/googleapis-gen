@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Memcache.V1Beta2.Snippets
 {
+    using Google.Cloud.Memcache.V1Beta2;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedCloudMemcacheClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateParameters</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateParameters()
         {
-            // Snippet: UpdateParameters(string, FieldMask, MemcacheParameters, CallSettings)
             // Create client
             CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.Create();
             // Initialize request argument(s)
@@ -49,7 +53,6 @@ namespace Google.Cloud.Memcache.V1Beta2.Snippets
                 // If it has completed, then access the result
                 Instance retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

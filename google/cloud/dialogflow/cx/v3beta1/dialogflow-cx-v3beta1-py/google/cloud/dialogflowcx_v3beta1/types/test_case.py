@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.dialogflowcx_v3beta1.types import flow as gcdc_flow
 from google.cloud.dialogflowcx_v3beta1.types import intent as gcdc_intent
@@ -77,6 +80,7 @@ class TestResult(proto.Enum):
 
 class TestCase(proto.Message):
     r"""Represents a test case.
+
     Attributes:
         name (str):
             The unique identifier of the test case.
@@ -109,40 +113,27 @@ class TestCase(proto.Message):
             The latest test result.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    tags = proto.RepeatedField(
-        proto.STRING,
-        number=2,
-    )
-    display_name = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    notes = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    test_config = proto.Field(
-        proto.MESSAGE,
-        number=13,
+    name = proto.Field(proto.STRING, number=1)
+
+    tags = proto.RepeatedField(proto.STRING, number=2)
+
+    display_name = proto.Field(proto.STRING, number=3)
+
+    notes = proto.Field(proto.STRING, number=4)
+
+    test_config = proto.Field(proto.MESSAGE, number=13,
         message='TestConfig',
     )
-    test_case_conversation_turns = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+
+    test_case_conversation_turns = proto.RepeatedField(proto.MESSAGE, number=5,
         message='ConversationTurn',
     )
-    creation_time = proto.Field(
-        proto.MESSAGE,
-        number=10,
+
+    creation_time = proto.Field(proto.MESSAGE, number=10,
         message=timestamp.Timestamp,
     )
-    last_test_result = proto.Field(
-        proto.MESSAGE,
-        number=12,
+
+    last_test_result = proto.Field(proto.MESSAGE, number=12,
         message='TestCaseResult',
     )
 
@@ -168,33 +159,26 @@ class TestCaseResult(proto.Message):
             The time that the test was run.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    environment = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    conversation_turns = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    environment = proto.Field(proto.STRING, number=2)
+
+    conversation_turns = proto.RepeatedField(proto.MESSAGE, number=3,
         message='ConversationTurn',
     )
-    test_result = proto.Field(
-        proto.ENUM,
-        number=4,
+
+    test_result = proto.Field(proto.ENUM, number=4,
         enum='TestResult',
     )
-    test_time = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    test_time = proto.Field(proto.MESSAGE, number=5,
         message=timestamp.Timestamp,
     )
 
 
 class TestConfig(proto.Message):
     r"""Represents configurations for a test case.
+
     Attributes:
         tracking_parameters (Sequence[str]):
             Session parameters to be compared when
@@ -205,14 +189,9 @@ class TestConfig(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>``.
     """
 
-    tracking_parameters = proto.RepeatedField(
-        proto.STRING,
-        number=1,
-    )
-    flow = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    tracking_parameters = proto.RepeatedField(proto.STRING, number=1)
+
+    flow = proto.Field(proto.STRING, number=2)
 
 
 class ConversationTurn(proto.Message):
@@ -225,9 +204,9 @@ class ConversationTurn(proto.Message):
         virtual_agent_output (google.cloud.dialogflowcx_v3beta1.types.ConversationTurn.VirtualAgentOutput):
             The virtual agent output.
     """
-
     class UserInput(proto.Message):
         r"""The input from the human user.
+
         Attributes:
             input (google.cloud.dialogflowcx_v3beta1.types.QueryInput):
                 Supports [text
@@ -247,23 +226,19 @@ class ConversationTurn(proto.Message):
                 enabled.
         """
 
-        input = proto.Field(
-            proto.MESSAGE,
-            number=5,
+        input = proto.Field(proto.MESSAGE, number=5,
             message=session.QueryInput,
         )
-        injected_parameters = proto.Field(
-            proto.MESSAGE,
-            number=2,
+
+        injected_parameters = proto.Field(proto.MESSAGE, number=2,
             message=struct.Struct,
         )
-        is_webhook_enabled = proto.Field(
-            proto.BOOL,
-            number=3,
-        )
+
+        is_webhook_enabled = proto.Field(proto.BOOL, number=3)
 
     class VirtualAgentOutput(proto.Message):
         r"""The output from the virtual agent.
+
         Attributes:
             session_parameters (google.protobuf.struct_pb2.Struct):
                 The session parameters available to the bot
@@ -294,50 +269,39 @@ class ConversationTurn(proto.Message):
                 result. If set, other output is empty.
         """
 
-        session_parameters = proto.Field(
-            proto.MESSAGE,
-            number=4,
+        session_parameters = proto.Field(proto.MESSAGE, number=4,
             message=struct.Struct,
         )
-        differences = proto.RepeatedField(
-            proto.MESSAGE,
-            number=5,
+
+        differences = proto.RepeatedField(proto.MESSAGE, number=5,
             message='TestRunDifference',
         )
-        diagnostic_info = proto.Field(
-            proto.MESSAGE,
-            number=6,
+
+        diagnostic_info = proto.Field(proto.MESSAGE, number=6,
             message=struct.Struct,
         )
-        triggered_intent = proto.Field(
-            proto.MESSAGE,
-            number=7,
+
+        triggered_intent = proto.Field(proto.MESSAGE, number=7,
             message=gcdc_intent.Intent,
         )
-        current_page = proto.Field(
-            proto.MESSAGE,
-            number=8,
+
+        current_page = proto.Field(proto.MESSAGE, number=8,
             message=gcdc_page.Page,
         )
-        text_responses = proto.RepeatedField(
-            proto.MESSAGE,
-            number=9,
+
+        text_responses = proto.RepeatedField(proto.MESSAGE, number=9,
             message=response_message.ResponseMessage.Text,
         )
-        status = proto.Field(
-            proto.MESSAGE,
-            number=10,
+
+        status = proto.Field(proto.MESSAGE, number=10,
             message=gr_status.Status,
         )
 
-    user_input = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    user_input = proto.Field(proto.MESSAGE, number=1,
         message=UserInput,
     )
-    virtual_agent_output = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    virtual_agent_output = proto.Field(proto.MESSAGE, number=2,
         message=VirtualAgentOutput,
     )
 
@@ -361,15 +325,11 @@ class TestRunDifference(proto.Message):
         PARAMETERS = 3
         UTTERANCE = 4
 
-    type_ = proto.Field(
-        proto.ENUM,
-        number=1,
+    type_ = proto.Field(proto.ENUM, number=1,
         enum=DiffType,
     )
-    description = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    description = proto.Field(proto.STRING, number=2)
 
 
 class TransitionCoverage(proto.Message):
@@ -385,9 +345,9 @@ class TransitionCoverage(proto.Message):
             The percent of transitions in the agent that
             are covered.
     """
-
     class TransitionNode(proto.Message):
         r"""The source or target of a transition.
+
         Attributes:
             page (google.cloud.dialogflowcx_v3beta1.types.Page):
                 Indicates a transition to a
@@ -399,21 +359,17 @@ class TransitionCoverage(proto.Message):
                 fields such as name and displayname will be set.
         """
 
-        page = proto.Field(
-            proto.MESSAGE,
-            number=1,
-            oneof='kind',
+        page = proto.Field(proto.MESSAGE, number=1, oneof='kind',
             message=gcdc_page.Page,
         )
-        flow = proto.Field(
-            proto.MESSAGE,
-            number=2,
-            oneof='kind',
+
+        flow = proto.Field(proto.MESSAGE, number=2, oneof='kind',
             message=gcdc_flow.Flow,
         )
 
     class Transition(proto.Message):
         r"""A transition in a page.
+
         Attributes:
             source (google.cloud.dialogflowcx_v3beta1.types.TransitionCoverage.TransitionNode):
                 The start node of a transition.
@@ -431,46 +387,31 @@ class TransitionCoverage(proto.Message):
                 Event handler.
         """
 
-        source = proto.Field(
-            proto.MESSAGE,
-            number=1,
+        source = proto.Field(proto.MESSAGE, number=1,
             message='TransitionCoverage.TransitionNode',
         )
-        index = proto.Field(
-            proto.INT32,
-            number=4,
-        )
-        target = proto.Field(
-            proto.MESSAGE,
-            number=2,
+
+        index = proto.Field(proto.INT32, number=4)
+
+        target = proto.Field(proto.MESSAGE, number=2,
             message='TransitionCoverage.TransitionNode',
         )
-        covered = proto.Field(
-            proto.BOOL,
-            number=3,
-        )
-        transition_route = proto.Field(
-            proto.MESSAGE,
-            number=5,
-            oneof='detail',
+
+        covered = proto.Field(proto.BOOL, number=3)
+
+        transition_route = proto.Field(proto.MESSAGE, number=5, oneof='detail',
             message=gcdc_page.TransitionRoute,
         )
-        event_handler = proto.Field(
-            proto.MESSAGE,
-            number=6,
-            oneof='detail',
+
+        event_handler = proto.Field(proto.MESSAGE, number=6, oneof='detail',
             message=gcdc_page.EventHandler,
         )
 
-    transitions = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    transitions = proto.RepeatedField(proto.MESSAGE, number=1,
         message=Transition,
     )
-    coverage_score = proto.Field(
-        proto.FLOAT,
-        number=2,
-    )
+
+    coverage_score = proto.Field(proto.FLOAT, number=2)
 
 
 class TransitionRouteGroupCoverage(proto.Message):
@@ -486,9 +427,9 @@ class TransitionRouteGroupCoverage(proto.Message):
             The percent of transition routes in all the
             transition route groups that are covered.
     """
-
     class Coverage(proto.Message):
         r"""Coverage result message for one transition route group.
+
         Attributes:
             route_group (google.cloud.dialogflowcx_v3beta1.types.TransitionRouteGroup):
                 Transition route group metadata. Only name
@@ -500,9 +441,9 @@ class TransitionRouteGroupCoverage(proto.Message):
                 The percent of transition routes in the
                 transition route group that are covered.
         """
-
         class Transition(proto.Message):
             r"""A transition coverage in a transition route group.
+
             Attributes:
                 transition_route (google.cloud.dialogflowcx_v3beta1.types.TransitionRoute):
                     Intent route or condition route.
@@ -512,40 +453,27 @@ class TransitionRouteGroupCoverage(proto.Message):
                     cases.
             """
 
-            transition_route = proto.Field(
-                proto.MESSAGE,
-                number=1,
+            transition_route = proto.Field(proto.MESSAGE, number=1,
                 message=gcdc_page.TransitionRoute,
             )
-            covered = proto.Field(
-                proto.BOOL,
-                number=2,
-            )
 
-        route_group = proto.Field(
-            proto.MESSAGE,
-            number=1,
+            covered = proto.Field(proto.BOOL, number=2)
+
+        route_group = proto.Field(proto.MESSAGE, number=1,
             message=transition_route_group.TransitionRouteGroup,
         )
-        transitions = proto.RepeatedField(
-            proto.MESSAGE,
-            number=2,
+
+        transitions = proto.RepeatedField(proto.MESSAGE, number=2,
             message='TransitionRouteGroupCoverage.Coverage.Transition',
         )
-        coverage_score = proto.Field(
-            proto.FLOAT,
-            number=3,
-        )
 
-    coverages = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+        coverage_score = proto.Field(proto.FLOAT, number=3)
+
+    coverages = proto.RepeatedField(proto.MESSAGE, number=1,
         message=Coverage,
     )
-    coverage_score = proto.Field(
-        proto.FLOAT,
-        number=2,
-    )
+
+    coverage_score = proto.Field(proto.FLOAT, number=2)
 
 
 class IntentCoverage(proto.Message):
@@ -560,9 +488,9 @@ class IntentCoverage(proto.Message):
             The percent of intents in the agent that are
             covered.
     """
-
     class Intent(proto.Message):
         r"""The agent's intent.
+
         Attributes:
             intent (str):
                 The intent full resource name
@@ -571,24 +499,15 @@ class IntentCoverage(proto.Message):
                 least one of the agent's test cases.
         """
 
-        intent = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        covered = proto.Field(
-            proto.BOOL,
-            number=2,
-        )
+        intent = proto.Field(proto.STRING, number=1)
 
-    intents = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+        covered = proto.Field(proto.BOOL, number=2)
+
+    intents = proto.RepeatedField(proto.MESSAGE, number=1,
         message=Intent,
     )
-    coverage_score = proto.Field(
-        proto.FLOAT,
-        number=2,
-    )
+
+    coverage_score = proto.Field(proto.FLOAT, number=2)
 
 
 class CalculateCoverageRequest(proto.Message):
@@ -609,13 +528,9 @@ class CalculateCoverageRequest(proto.Message):
         PAGE_TRANSITION = 2
         TRANSITION_ROUTE_GROUP = 3
 
-    agent = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=2,
+    agent = proto.Field(proto.STRING, number=3)
+
+    type_ = proto.Field(proto.ENUM, number=2,
         enum=CoverageType,
     )
 
@@ -637,26 +552,17 @@ class CalculateCoverageResponse(proto.Message):
             Transition route group coverage.
     """
 
-    agent = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    intent_coverage = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='coverage_type',
+    agent = proto.Field(proto.STRING, number=5)
+
+    intent_coverage = proto.Field(proto.MESSAGE, number=2, oneof='coverage_type',
         message='IntentCoverage',
     )
-    transition_coverage = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='coverage_type',
+
+    transition_coverage = proto.Field(proto.MESSAGE, number=4, oneof='coverage_type',
         message='TransitionCoverage',
     )
-    route_group_coverage = proto.Field(
-        proto.MESSAGE,
-        number=6,
-        oneof='coverage_type',
+
+    route_group_coverage = proto.Field(proto.MESSAGE, number=6, oneof='coverage_type',
         message='TransitionRouteGroupCoverage',
     )
 
@@ -690,21 +596,13 @@ class ListTestCasesRequest(proto.Message):
         BASIC = 1
         FULL = 2
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    view = proto.Field(
-        proto.ENUM,
-        number=4,
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
+
+    view = proto.Field(proto.ENUM, number=4,
         enum=TestCaseView,
     )
 
@@ -727,15 +625,11 @@ class ListTestCasesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    test_cases = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    test_cases = proto.RepeatedField(proto.MESSAGE, number=1,
         message='TestCase',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class BatchDeleteTestCasesRequest(proto.Message):
@@ -751,14 +645,9 @@ class BatchDeleteTestCasesRequest(proto.Message):
             ``projects/<Project ID>/locations/ <Location ID>/agents/<AgentID>/testCases/<TestCase ID>``.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    names = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    names = proto.RepeatedField(proto.STRING, number=3)
 
 
 class CreateTestCaseRequest(proto.Message):
@@ -773,13 +662,9 @@ class CreateTestCaseRequest(proto.Message):
             Required. The test case to create.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    test_case = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    test_case = proto.Field(proto.MESSAGE, number=2,
         message='TestCase',
     )
 
@@ -800,14 +685,11 @@ class UpdateTestCaseRequest(proto.Message):
             cannot be updated.
     """
 
-    test_case = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    test_case = proto.Field(proto.MESSAGE, number=1,
         message='TestCase',
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
 
@@ -822,10 +704,7 @@ class GetTestCaseRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/testCases/<TestCase ID>``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class RunTestCaseRequest(proto.Message):
@@ -842,14 +721,9 @@ class RunTestCaseRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/environments/<Environment ID>``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    environment = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    name = proto.Field(proto.STRING, number=1)
+
+    environment = proto.Field(proto.STRING, number=2)
 
 
 class RunTestCaseResponse(proto.Message):
@@ -861,9 +735,7 @@ class RunTestCaseResponse(proto.Message):
             The result.
     """
 
-    result = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    result = proto.Field(proto.MESSAGE, number=2,
         message='TestCaseResult',
     )
 
@@ -872,7 +744,7 @@ class RunTestCaseMetadata(proto.Message):
     r"""Metadata returned for the
     [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3beta1.TestCases.RunTestCase]
     long running operation.
-        """
+    """
 
 
 class BatchRunTestCasesRequest(proto.Message):
@@ -891,18 +763,11 @@ class BatchRunTestCasesRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/testCases/<TestCase ID>``.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    environment = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    test_cases = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    environment = proto.Field(proto.STRING, number=2)
+
+    test_cases = proto.RepeatedField(proto.STRING, number=3)
 
 
 class BatchRunTestCasesResponse(proto.Message):
@@ -916,9 +781,7 @@ class BatchRunTestCasesResponse(proto.Message):
             are empty in this response.
     """
 
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    results = proto.RepeatedField(proto.MESSAGE, number=1,
         message='TestCaseResult',
     )
 
@@ -933,15 +796,14 @@ class BatchRunTestCasesMetadata(proto.Message):
             The test errors.
     """
 
-    errors = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    errors = proto.RepeatedField(proto.MESSAGE, number=1,
         message='TestError',
     )
 
 
 class TestError(proto.Message):
     r"""Error info for running a test.
+
     Attributes:
         test_case (str):
             The test case resource name.
@@ -951,18 +813,13 @@ class TestError(proto.Message):
             The timestamp when the test was completed.
     """
 
-    test_case = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    status = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    test_case = proto.Field(proto.STRING, number=1)
+
+    status = proto.Field(proto.MESSAGE, number=2,
         message=gr_status.Status,
     )
-    test_time = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    test_time = proto.Field(proto.MESSAGE, number=3,
         message=timestamp.Timestamp,
     )
 
@@ -984,20 +841,11 @@ class ImportTestCasesRequest(proto.Message):
             Uncompressed raw byte content for test cases.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    gcs_uri = proto.Field(
-        proto.STRING,
-        number=2,
-        oneof='source',
-    )
-    content = proto.Field(
-        proto.BYTES,
-        number=3,
-        oneof='source',
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    gcs_uri = proto.Field(proto.STRING, number=2, oneof='source')
+
+    content = proto.Field(proto.BYTES, number=3, oneof='source')
 
 
 class ImportTestCasesResponse(proto.Message):
@@ -1010,10 +858,7 @@ class ImportTestCasesResponse(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/testCases/<TestCase ID>``.
     """
 
-    names = proto.RepeatedField(
-        proto.STRING,
-        number=1,
-    )
+    names = proto.RepeatedField(proto.STRING, number=1)
 
 
 class ImportTestCasesMetadata(proto.Message):
@@ -1026,15 +871,14 @@ class ImportTestCasesMetadata(proto.Message):
             Errors for failed test cases.
     """
 
-    errors = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    errors = proto.RepeatedField(proto.MESSAGE, number=1,
         message='TestCaseError',
     )
 
 
 class TestCaseError(proto.Message):
     r"""Error info for importing a test.
+
     Attributes:
         test_case (google.cloud.dialogflowcx_v3beta1.types.TestCase):
             The test case.
@@ -1042,14 +886,11 @@ class TestCaseError(proto.Message):
             The status associated with the test case.
     """
 
-    test_case = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    test_case = proto.Field(proto.MESSAGE, number=1,
         message='TestCase',
     )
-    status = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    status = proto.Field(proto.MESSAGE, number=2,
         message=gr_status.Status,
     )
 
@@ -1089,24 +930,15 @@ class ExportTestCasesRequest(proto.Message):
         BLOB = 1
         JSON = 2
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    gcs_uri = proto.Field(
-        proto.STRING,
-        number=2,
-        oneof='destination',
-    )
-    data_format = proto.Field(
-        proto.ENUM,
-        number=3,
+    parent = proto.Field(proto.STRING, number=1)
+
+    gcs_uri = proto.Field(proto.STRING, number=2, oneof='destination')
+
+    data_format = proto.Field(proto.ENUM, number=3,
         enum=DataFormat,
     )
-    filter = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+
+    filter = proto.Field(proto.STRING, number=4)
 
 
 class ExportTestCasesResponse(proto.Message):
@@ -1122,23 +954,16 @@ class ExportTestCasesResponse(proto.Message):
             Uncompressed raw byte content for test cases.
     """
 
-    gcs_uri = proto.Field(
-        proto.STRING,
-        number=1,
-        oneof='destination',
-    )
-    content = proto.Field(
-        proto.BYTES,
-        number=2,
-        oneof='destination',
-    )
+    gcs_uri = proto.Field(proto.STRING, number=1, oneof='destination')
+
+    content = proto.Field(proto.BYTES, number=2, oneof='destination')
 
 
 class ExportTestCasesMetadata(proto.Message):
     r"""Metadata returned for the
     [TestCases.ExportTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.ExportTestCases]
     long running operation.
-        """
+    """
 
 
 class ListTestCaseResultsRequest(proto.Message):
@@ -1185,22 +1010,13 @@ class ListTestCaseResultsRequest(proto.Message):
                1602540713.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
+
+    filter = proto.Field(proto.STRING, number=4)
 
 
 class ListTestCaseResultsResponse(proto.Message):
@@ -1220,15 +1036,11 @@ class ListTestCaseResultsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    test_case_results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    test_case_results = proto.RepeatedField(proto.MESSAGE, number=1,
         message='TestCaseResult',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class GetTestCaseResultRequest(proto.Message):
@@ -1241,10 +1053,7 @@ class GetTestCaseResultRequest(proto.Message):
             ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/testCases/<TestCase ID>/results/<TestCaseResult ID>``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

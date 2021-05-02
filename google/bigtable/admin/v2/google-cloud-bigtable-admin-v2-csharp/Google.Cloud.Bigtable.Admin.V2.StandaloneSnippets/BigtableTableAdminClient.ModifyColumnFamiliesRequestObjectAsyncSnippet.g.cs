@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigtableTableAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for ModifyColumnFamiliesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ModifyColumnFamiliesRequestObjectAsync()
         {
-            // Snippet: ModifyColumnFamiliesAsync(ModifyColumnFamiliesRequest, CallSettings)
-            // Additional: ModifyColumnFamiliesAsync(ModifyColumnFamiliesRequest, CancellationToken)
             // Create client
             BigtableTableAdminClient bigtableTableAdminClient = await BigtableTableAdminClient.CreateAsync();
             // Initialize request argument(s)
@@ -38,7 +41,6 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
             };
             // Make the request
             Table response = await bigtableTableAdminClient.ModifyColumnFamiliesAsync(request);
-            // End snippet
         }
     }
 }

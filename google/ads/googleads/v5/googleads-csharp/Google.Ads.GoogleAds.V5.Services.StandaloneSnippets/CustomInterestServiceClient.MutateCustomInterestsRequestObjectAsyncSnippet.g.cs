@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomInterestServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCustomInterestsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateCustomInterestsRequestObjectAsync()
         {
-            // Snippet: MutateCustomInterestsAsync(MutateCustomInterestsRequest, CallSettings)
-            // Additional: MutateCustomInterestsAsync(MutateCustomInterestsRequest, CancellationToken)
             // Create client
             CustomInterestServiceClient customInterestServiceClient = await CustomInterestServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -39,7 +42,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateCustomInterestsResponse response = await customInterestServiceClient.MutateCustomInterestsAsync(request);
-            // End snippet
         }
     }
 }

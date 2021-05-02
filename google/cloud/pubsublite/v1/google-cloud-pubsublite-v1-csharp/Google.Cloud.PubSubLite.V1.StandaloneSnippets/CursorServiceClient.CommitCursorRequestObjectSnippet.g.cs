@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.PubSubLite.V1.Snippets
 {
+    using Google.Cloud.PubSubLite.V1;
+
     public sealed partial class GeneratedCursorServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CommitCursor</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CommitCursorRequestObject()
         {
-            // Snippet: CommitCursor(CommitCursorRequest, CallSettings)
             // Create client
             CursorServiceClient cursorServiceClient = CursorServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +38,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             };
             // Make the request
             CommitCursorResponse response = cursorServiceClient.CommitCursor(request);
-            // End snippet
         }
     }
 }

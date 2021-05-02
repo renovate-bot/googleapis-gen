@@ -17,20 +17,23 @@
 namespace Google.Streetview.Publish.V1.Snippets
 {
     using Google.Protobuf.WellKnownTypes;
+    using Google.Streetview.Publish.V1;
 
     public sealed partial class GeneratedStreetViewPublishServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for StartUpload</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void StartUploadRequestObject()
         {
-            // Snippet: StartUpload(Empty, CallSettings)
             // Create client
             StreetViewPublishServiceClient streetViewPublishServiceClient = StreetViewPublishServiceClient.Create();
             // Initialize request argument(s)
             Empty request = new Empty { };
             // Make the request
             UploadRef response = streetViewPublishServiceClient.StartUpload(request);
-            // End snippet
         }
     }
 }

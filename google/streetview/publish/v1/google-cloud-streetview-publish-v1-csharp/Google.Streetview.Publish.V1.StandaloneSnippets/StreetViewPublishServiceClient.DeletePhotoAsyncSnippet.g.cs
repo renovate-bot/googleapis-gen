@@ -16,22 +16,24 @@
 
 namespace Google.Streetview.Publish.V1.Snippets
 {
+    using Google.Streetview.Publish.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedStreetViewPublishServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeletePhotoAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeletePhotoAsync()
         {
-            // Snippet: DeletePhotoAsync(string, CallSettings)
-            // Additional: DeletePhotoAsync(string, CancellationToken)
             // Create client
             StreetViewPublishServiceClient streetViewPublishServiceClient = await StreetViewPublishServiceClient.CreateAsync();
             // Initialize request argument(s)
             string photoId = "";
             // Make the request
             await streetViewPublishServiceClient.DeletePhotoAsync(photoId);
-            // End snippet
         }
     }
 }

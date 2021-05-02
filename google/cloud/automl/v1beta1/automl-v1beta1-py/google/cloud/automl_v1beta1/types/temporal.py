@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import duration_pb2 as duration  # type: ignore
 
@@ -41,14 +44,11 @@ class TimeSegment(proto.Message):
             start.
     """
 
-    start_time_offset = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    start_time_offset = proto.Field(proto.MESSAGE, number=1,
         message=duration.Duration,
     )
-    end_time_offset = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    end_time_offset = proto.Field(proto.MESSAGE, number=2,
         message=duration.Duration,
     )
 

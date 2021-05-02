@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -101,7 +102,8 @@ from google.cloud.automl_v1.types.translation import TranslationDatasetMetadata
 from google.cloud.automl_v1.types.translation import TranslationEvaluationMetrics
 from google.cloud.automl_v1.types.translation import TranslationModelMetadata
 
-__all__ = ('AnnotationPayload',
+__all__ = (
+    'AnnotationPayload',
     'AnnotationSpec',
     'AutoMlAsyncClient',
     'AutoMlClient',

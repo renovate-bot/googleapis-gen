@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedAdGroupCriterionLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupCriterionLabel</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAdGroupCriterionLabel()
         {
-            // Snippet: GetAdGroupCriterionLabel(string, CallSettings)
             // Create client
             AdGroupCriterionLabelServiceClient adGroupCriterionLabelServiceClient = AdGroupCriterionLabelServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/adGroupCriterionLabels/[AD_GROUP_CRITERION_LABEL]";
             // Make the request
             AdGroupCriterionLabel response = adGroupCriterionLabelServiceClient.GetAdGroupCriterionLabel(resourceName);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -28,6 +30,7 @@ from google.cloud.scheduler_v1beta1.types import cloudscheduler
 from google.cloud.scheduler_v1beta1.types import job
 from google.cloud.scheduler_v1beta1.types import job as gcs_job
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import CloudSchedulerTransport, DEFAULT_CLIENT_INFO
 
 
@@ -62,8 +65,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,15 +204,13 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -224,9 +224,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
     def list_jobs(self) -> Callable[
             [cloudscheduler.ListJobsRequest],
             cloudscheduler.ListJobsResponse]:
-        r"""Return a callable for the
-        list jobs
-          method over gRPC.
+        r"""Return a callable for the list jobs method over gRPC.
 
         Lists jobs.
 
@@ -252,9 +250,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
     def get_job(self) -> Callable[
             [cloudscheduler.GetJobRequest],
             job.Job]:
-        r"""Return a callable for the
-        get job
-          method over gRPC.
+        r"""Return a callable for the get job method over gRPC.
 
         Gets a job.
 
@@ -280,9 +276,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
     def create_job(self) -> Callable[
             [cloudscheduler.CreateJobRequest],
             gcs_job.Job]:
-        r"""Return a callable for the
-        create job
-          method over gRPC.
+        r"""Return a callable for the create job method over gRPC.
 
         Creates a job.
 
@@ -308,9 +302,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
     def update_job(self) -> Callable[
             [cloudscheduler.UpdateJobRequest],
             gcs_job.Job]:
-        r"""Return a callable for the
-        update job
-          method over gRPC.
+        r"""Return a callable for the update job method over gRPC.
 
         Updates a job.
 
@@ -347,9 +339,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
     def delete_job(self) -> Callable[
             [cloudscheduler.DeleteJobRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete job
-          method over gRPC.
+        r"""Return a callable for the delete job method over gRPC.
 
         Deletes a job.
 
@@ -375,9 +365,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
     def pause_job(self) -> Callable[
             [cloudscheduler.PauseJobRequest],
             job.Job]:
-        r"""Return a callable for the
-        pause job
-          method over gRPC.
+        r"""Return a callable for the pause job method over gRPC.
 
         Pauses a job.
 
@@ -414,9 +402,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
     def resume_job(self) -> Callable[
             [cloudscheduler.ResumeJobRequest],
             job.Job]:
-        r"""Return a callable for the
-        resume job
-          method over gRPC.
+        r"""Return a callable for the resume job method over gRPC.
 
         Resume a job.
 
@@ -452,9 +438,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
     def run_job(self) -> Callable[
             [cloudscheduler.RunJobRequest],
             job.Job]:
-        r"""Return a callable for the
-        run job
-          method over gRPC.
+        r"""Return a callable for the run job method over gRPC.
 
         Forces a job to run now.
         When this method is called, Cloud Scheduler will

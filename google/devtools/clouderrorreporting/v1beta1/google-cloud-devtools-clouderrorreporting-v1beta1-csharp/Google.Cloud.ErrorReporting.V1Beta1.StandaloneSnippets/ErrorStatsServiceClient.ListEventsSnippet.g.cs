@@ -17,14 +17,18 @@
 namespace Google.Cloud.ErrorReporting.V1Beta1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.ErrorReporting.V1Beta1;
     using System;
 
     public sealed partial class GeneratedErrorStatsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListEvents</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListEvents()
         {
-            // Snippet: ListEvents(string, string, string, int?, CallSettings)
             // Create client
             ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.Create();
             // Initialize request argument(s)
@@ -64,7 +68,6 @@ namespace Google.Cloud.ErrorReporting.V1Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

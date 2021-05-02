@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.googleads.v5.resources.types import shared_criterion
 from google.ads.googleads.v5.services.types import shared_criterion_service
+
 from .base import SharedCriterionServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -56,8 +59,7 @@ class SharedCriterionServiceGrpcTransport(SharedCriterionServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,9 +203,7 @@ class SharedCriterionServiceGrpcTransport(SharedCriterionServiceTransport):
     def get_shared_criterion(self) -> Callable[
             [shared_criterion_service.GetSharedCriterionRequest],
             shared_criterion.SharedCriterion]:
-        r"""Return a callable for the
-        get shared criterion
-          method over gRPC.
+        r"""Return a callable for the get shared criterion method over gRPC.
 
         Returns the requested shared criterion in full
         detail.
@@ -230,9 +230,7 @@ class SharedCriterionServiceGrpcTransport(SharedCriterionServiceTransport):
     def mutate_shared_criteria(self) -> Callable[
             [shared_criterion_service.MutateSharedCriteriaRequest],
             shared_criterion_service.MutateSharedCriteriaResponse]:
-        r"""Return a callable for the
-        mutate shared criteria
-          method over gRPC.
+        r"""Return a callable for the mutate shared criteria method over gRPC.
 
         Creates or removes shared criteria. Operation
         statuses are returned.

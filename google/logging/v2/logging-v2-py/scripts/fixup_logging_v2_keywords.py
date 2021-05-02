@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,40 +41,41 @@ def partition(
 class loggingCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_bucket': ('parent', 'bucket_id', 'bucket', ),
-          'create_exclusion': ('parent', 'exclusion', ),
-          'create_log_metric': ('parent', 'metric', ),
-          'create_sink': ('parent', 'sink', 'unique_writer_identity', ),
-          'create_view': ('parent', 'view_id', 'view', ),
-          'delete_bucket': ('name', ),
-          'delete_exclusion': ('name', ),
-          'delete_log': ('log_name', ),
-          'delete_log_metric': ('metric_name', ),
-          'delete_sink': ('sink_name', ),
-          'delete_view': ('name', ),
-          'get_bucket': ('name', ),
-          'get_cmek_settings': ('name', ),
-          'get_exclusion': ('name', ),
-          'get_log_metric': ('metric_name', ),
-          'get_sink': ('sink_name', ),
-          'get_view': ('name', ),
-          'list_buckets': ('parent', 'page_token', 'page_size', ),
-          'list_exclusions': ('parent', 'page_token', 'page_size', ),
-          'list_log_entries': ('resource_names', 'filter', 'order_by', 'page_size', 'page_token', ),
-          'list_log_metrics': ('parent', 'page_token', 'page_size', ),
-          'list_logs': ('parent', 'page_size', 'page_token', 'resource_names', ),
-          'list_monitored_resource_descriptors': ('page_size', 'page_token', ),
-          'list_sinks': ('parent', 'page_token', 'page_size', ),
-          'list_views': ('parent', 'page_token', 'page_size', ),
-          'tail_log_entries': ('resource_names', 'filter', 'buffer_window', ),
-          'undelete_bucket': ('name', ),
-          'update_bucket': ('name', 'bucket', 'update_mask', ),
-          'update_cmek_settings': ('name', 'cmek_settings', 'update_mask', ),
-          'update_exclusion': ('name', 'exclusion', 'update_mask', ),
-          'update_log_metric': ('metric_name', 'metric', ),
-          'update_sink': ('sink_name', 'sink', 'unique_writer_identity', 'update_mask', ),
-          'update_view': ('name', 'view', 'update_mask', ),
-          'write_log_entries': ('entries', 'log_name', 'resource', 'labels', 'partial_success', 'dry_run', ),
+    'create_bucket': ('parent', 'bucket_id', 'bucket', ),
+    'create_exclusion': ('parent', 'exclusion', ),
+    'create_log_metric': ('parent', 'metric', ),
+    'create_sink': ('parent', 'sink', 'unique_writer_identity', ),
+    'create_view': ('parent', 'view_id', 'view', ),
+    'delete_bucket': ('name', ),
+    'delete_exclusion': ('name', ),
+    'delete_log': ('log_name', ),
+    'delete_log_metric': ('metric_name', ),
+    'delete_sink': ('sink_name', ),
+    'delete_view': ('name', ),
+    'get_bucket': ('name', ),
+    'get_cmek_settings': ('name', ),
+    'get_exclusion': ('name', ),
+    'get_log_metric': ('metric_name', ),
+    'get_sink': ('sink_name', ),
+    'get_view': ('name', ),
+    'list_buckets': ('parent', 'page_token', 'page_size', ),
+    'list_exclusions': ('parent', 'page_token', 'page_size', ),
+    'list_log_entries': ('resource_names', 'filter', 'order_by', 'page_size', 'page_token', ),
+    'list_log_metrics': ('parent', 'page_token', 'page_size', ),
+    'list_logs': ('parent', 'page_size', 'page_token', 'resource_names', ),
+    'list_monitored_resource_descriptors': ('page_size', 'page_token', ),
+    'list_sinks': ('parent', 'page_token', 'page_size', ),
+    'list_views': ('parent', 'page_token', 'page_size', ),
+    'tail_log_entries': ('resource_names', 'filter', 'buffer_window', ),
+    'undelete_bucket': ('name', ),
+    'update_bucket': ('name', 'bucket', 'update_mask', ),
+    'update_cmek_settings': ('name', 'cmek_settings', 'update_mask', ),
+    'update_exclusion': ('name', 'exclusion', 'update_mask', ),
+    'update_log_metric': ('metric_name', 'metric', ),
+    'update_sink': ('sink_name', 'sink', 'unique_writer_identity', 'update_mask', ),
+    'update_view': ('name', 'view', 'update_mask', ),
+    'write_log_entries': ('entries', 'log_name', 'resource', 'labels', 'partial_success', 'dry_run', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -103,7 +106,7 @@ class loggingCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

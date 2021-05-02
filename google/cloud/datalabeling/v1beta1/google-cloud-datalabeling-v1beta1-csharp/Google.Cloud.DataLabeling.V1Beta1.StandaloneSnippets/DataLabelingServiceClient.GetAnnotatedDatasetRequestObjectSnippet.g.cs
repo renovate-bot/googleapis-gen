@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
+
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAnnotatedDataset</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAnnotatedDatasetRequestObject()
         {
-            // Snippet: GetAnnotatedDataset(GetAnnotatedDatasetRequest, CallSettings)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
             };
             // Make the request
             AnnotatedDataset response = dataLabelingServiceClient.GetAnnotatedDataset(request);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.GSuiteAddOns.V1.Snippets
 {
+    using Google.Cloud.GSuiteAddOns.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGSuiteAddOnsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInstallStatusAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetInstallStatusResourceNamesAsync()
         {
-            // Snippet: GetInstallStatusAsync(InstallStatusName, CallSettings)
-            // Additional: GetInstallStatusAsync(InstallStatusName, CancellationToken)
             // Create client
             GSuiteAddOnsClient gSuiteAddOnsClient = await GSuiteAddOnsClient.CreateAsync();
             // Initialize request argument(s)
             InstallStatusName name = InstallStatusName.FromProjectDeployment("[PROJECT]", "[DEPLOYMENT]");
             // Make the request
             InstallStatus response = await gSuiteAddOnsClient.GetInstallStatusAsync(name);
-            // End snippet
         }
     }
 }

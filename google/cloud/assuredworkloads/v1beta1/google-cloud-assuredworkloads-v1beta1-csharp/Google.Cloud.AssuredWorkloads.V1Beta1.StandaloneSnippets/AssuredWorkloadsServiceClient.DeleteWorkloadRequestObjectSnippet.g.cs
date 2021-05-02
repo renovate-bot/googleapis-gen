@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.AssuredWorkloads.V1Beta1.Snippets
 {
+    using Google.Cloud.AssuredWorkloads.V1Beta1;
+
     public sealed partial class GeneratedAssuredWorkloadsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteWorkload</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteWorkloadRequestObject()
         {
-            // Snippet: DeleteWorkload(DeleteWorkloadRequest, CallSettings)
             // Create client
             AssuredWorkloadsServiceClient assuredWorkloadsServiceClient = AssuredWorkloadsServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.AssuredWorkloads.V1Beta1.Snippets
             };
             // Make the request
             assuredWorkloadsServiceClient.DeleteWorkload(request);
-            // End snippet
         }
     }
 }

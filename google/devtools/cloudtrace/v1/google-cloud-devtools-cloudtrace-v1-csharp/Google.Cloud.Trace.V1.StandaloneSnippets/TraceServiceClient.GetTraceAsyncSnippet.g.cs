@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Trace.V1.Snippets
 {
+    using Google.Cloud.Trace.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTraceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTraceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTraceAsync()
         {
-            // Snippet: GetTraceAsync(string, string, CallSettings)
-            // Additional: GetTraceAsync(string, string, CancellationToken)
             // Create client
             TraceServiceClient traceServiceClient = await TraceServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Trace.V1.Snippets
             string traceId = "";
             // Make the request
             Trace response = await traceServiceClient.GetTraceAsync(projectId, traceId);
-            // End snippet
         }
     }
 }

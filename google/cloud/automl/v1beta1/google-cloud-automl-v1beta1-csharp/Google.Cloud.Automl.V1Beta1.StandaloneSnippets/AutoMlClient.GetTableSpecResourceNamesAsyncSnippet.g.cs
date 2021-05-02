@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Automl.V1Beta1.Snippets
 {
+    using Google.Cloud.Automl.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAutoMlClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTableSpecAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTableSpecResourceNamesAsync()
         {
-            // Snippet: GetTableSpecAsync(TableSpecName, CallSettings)
-            // Additional: GetTableSpecAsync(TableSpecName, CancellationToken)
             // Create client
             AutoMlClient autoMlClient = await AutoMlClient.CreateAsync();
             // Initialize request argument(s)
             TableSpecName name = TableSpecName.FromProjectLocationDatasetTableSpec("[PROJECT]", "[LOCATION]", "[DATASET]", "[TABLE_SPEC]");
             // Make the request
             TableSpec response = await autoMlClient.GetTableSpecAsync(name);
-            // End snippet
         }
     }
 }

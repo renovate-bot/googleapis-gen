@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedProductBiddingCategoryConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetProductBiddingCategoryConstant</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetProductBiddingCategoryConstant()
         {
-            // Snippet: GetProductBiddingCategoryConstant(string, CallSettings)
             // Create client
             ProductBiddingCategoryConstantServiceClient productBiddingCategoryConstantServiceClient = ProductBiddingCategoryConstantServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "productBiddingCategoryConstants/[PRODUCT_BIDDING_CATEGORY_CONSTANT]";
             // Make the request
             ProductBiddingCategoryConstant response = productBiddingCategoryConstantServiceClient.GetProductBiddingCategoryConstant(resourceName);
-            // End snippet
         }
     }
 }

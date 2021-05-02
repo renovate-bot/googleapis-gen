@@ -357,7 +357,7 @@ namespace Google.Cloud.Vpcaccess.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConnectors</summary>
+        /// <summary>Snippet for ListConnectorsAsync</summary>
         public async Task ListConnectorsRequestObjectAsync()
         {
             // Snippet: ListConnectorsAsync(ListConnectorsRequest, CallSettings)
@@ -450,7 +450,7 @@ namespace Google.Cloud.Vpcaccess.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConnectors</summary>
+        /// <summary>Snippet for ListConnectorsAsync</summary>
         public async Task ListConnectorsAsync()
         {
             // Snippet: ListConnectorsAsync(string, string, int?, CallSettings)
@@ -540,7 +540,7 @@ namespace Google.Cloud.Vpcaccess.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConnectors</summary>
+        /// <summary>Snippet for ListConnectorsAsync</summary>
         public async Task ListConnectorsResourceNamesAsync()
         {
             // Snippet: ListConnectorsAsync(LocationName, string, int?, CallSettings)

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.enums.types import affiliate_location_feed_relationship_type
 from google.ads.googleads.v4.enums.types import feed_attribute_type
@@ -35,6 +38,7 @@ __protobuf__ = proto.module(
 
 class Feed(proto.Message):
     r"""A feed.
+
     Attributes:
         resource_name (str):
             Immutable. The resource name of the feed. Feed resource
@@ -69,7 +73,6 @@ class Feed(proto.Message):
             Data used to configure an affiliate location
             feed populated with the specified chains.
     """
-
     class PlacesLocationFeedData(proto.Message):
         r"""Data used to configure a location feed populated from Google
         My Business Locations.
@@ -107,9 +110,9 @@ class Feed(proto.Message):
                 FeedItems. If no entries exist in label_filters, then all
                 listings are candidates for syncing.
         """
-
         class OAuthInfo(proto.Message):
             r"""Data used for authorization using OAuth.
+
             Attributes:
                 http_method (google.protobuf.wrappers_pb2.StringValue):
                     The HTTP method used to obtain authorization.
@@ -121,50 +124,32 @@ class Feed(proto.Message):
                     authorization.
             """
 
-            http_method = proto.Field(
-                proto.MESSAGE,
-                number=1,
+            http_method = proto.Field(proto.MESSAGE, number=1,
                 message=wrappers.StringValue,
             )
-            http_request_url = proto.Field(
-                proto.MESSAGE,
-                number=2,
+            http_request_url = proto.Field(proto.MESSAGE, number=2,
                 message=wrappers.StringValue,
             )
-            http_authorization_header = proto.Field(
-                proto.MESSAGE,
-                number=3,
+            http_authorization_header = proto.Field(proto.MESSAGE, number=3,
                 message=wrappers.StringValue,
             )
 
-        oauth_info = proto.Field(
-            proto.MESSAGE,
-            number=1,
+        oauth_info = proto.Field(proto.MESSAGE, number=1,
             message='Feed.PlacesLocationFeedData.OAuthInfo',
         )
-        email_address = proto.Field(
-            proto.MESSAGE,
-            number=2,
+        email_address = proto.Field(proto.MESSAGE, number=2,
             message=wrappers.StringValue,
         )
-        business_account_id = proto.Field(
-            proto.MESSAGE,
-            number=10,
+        business_account_id = proto.Field(proto.MESSAGE, number=10,
             message=wrappers.StringValue,
         )
-        business_name_filter = proto.Field(
-            proto.MESSAGE,
-            number=4,
+        business_name_filter = proto.Field(proto.MESSAGE, number=4,
             message=wrappers.StringValue,
         )
-        category_filters = proto.RepeatedField(
-            proto.MESSAGE,
-            number=5,
+        category_filters = proto.RepeatedField(proto.MESSAGE, number=5,
             message=wrappers.StringValue,
         )
-        label_filters = proto.RepeatedField(
-            proto.MESSAGE,
-            number=6,
+        label_filters = proto.RepeatedField(proto.MESSAGE, number=6,
             message=wrappers.StringValue,
         )
 
@@ -181,61 +166,36 @@ class Feed(proto.Message):
                 advertiser.
         """
 
-        chain_ids = proto.RepeatedField(
-            proto.MESSAGE,
-            number=1,
+        chain_ids = proto.RepeatedField(proto.MESSAGE, number=1,
             message=wrappers.Int64Value,
         )
-        relationship_type = proto.Field(
-            proto.ENUM,
-            number=2,
+        relationship_type = proto.Field(proto.ENUM, number=2,
             enum=affiliate_location_feed_relationship_type.AffiliateLocationFeedRelationshipTypeEnum.AffiliateLocationFeedRelationshipType,
         )
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    id = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    resource_name = proto.Field(proto.STRING, number=1)
+    id = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.Int64Value,
     )
-    name = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    name = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.StringValue,
     )
-    attributes = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+    attributes = proto.RepeatedField(proto.MESSAGE, number=4,
         message='FeedAttribute',
     )
-    attribute_operations = proto.RepeatedField(
-        proto.MESSAGE,
-        number=9,
+    attribute_operations = proto.RepeatedField(proto.MESSAGE, number=9,
         message='FeedAttributeOperation',
     )
-    origin = proto.Field(
-        proto.ENUM,
-        number=5,
+    origin = proto.Field(proto.ENUM, number=5,
         enum=feed_origin.FeedOriginEnum.FeedOrigin,
     )
-    status = proto.Field(
-        proto.ENUM,
-        number=8,
+    status = proto.Field(proto.ENUM, number=8,
         enum=feed_status.FeedStatusEnum.FeedStatus,
     )
-    places_location_feed_data = proto.Field(
-        proto.MESSAGE,
-        number=6,
-        oneof='system_feed_generation_data',
+    places_location_feed_data = proto.Field(proto.MESSAGE, number=6, oneof='system_feed_generation_data',
         message=PlacesLocationFeedData,
     )
-    affiliate_location_feed_data = proto.Field(
-        proto.MESSAGE,
-        number=7,
-        oneof='system_feed_generation_data',
+    affiliate_location_feed_data = proto.Field(proto.MESSAGE, number=7, oneof='system_feed_generation_data',
         message=AffiliateLocationFeedData,
     )
 
@@ -262,24 +222,16 @@ class FeedAttribute(proto.Message):
             referenced by their feed_item_id.
     """
 
-    id = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    id = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.Int64Value,
     )
-    name = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    name = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.StringValue,
     )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=3,
+    type_ = proto.Field(proto.ENUM, number=3,
         enum=feed_attribute_type.FeedAttributeTypeEnum.FeedAttributeType,
     )
-    is_part_of_key = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    is_part_of_key = proto.Field(proto.MESSAGE, number=4,
         message=wrappers.BoolValue,
     )
 
@@ -302,14 +254,10 @@ class FeedAttributeOperation(proto.Message):
         UNKNOWN = 1
         ADD = 2
 
-    operator = proto.Field(
-        proto.ENUM,
-        number=1,
+    operator = proto.Field(proto.ENUM, number=1,
         enum=Operator,
     )
-    value = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    value = proto.Field(proto.MESSAGE, number=2,
         message='FeedAttribute',
     )
 

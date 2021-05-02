@@ -16,22 +16,24 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteAccountAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteAccountResourceNamesAsync()
         {
-            // Snippet: DeleteAccountAsync(AccountName, CallSettings)
-            // Additional: DeleteAccountAsync(AccountName, CancellationToken)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = await AnalyticsAdminServiceClient.CreateAsync();
             // Initialize request argument(s)
             AccountName name = AccountName.FromAccount("[ACCOUNT]");
             // Make the request
             await analyticsAdminServiceClient.DeleteAccountAsync(name);
-            // End snippet
         }
     }
 }

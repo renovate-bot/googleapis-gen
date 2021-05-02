@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Profiler.V2.Snippets
 {
+    using Google.Cloud.Profiler.V2;
+
     public sealed partial class GeneratedProfilerServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateProfile</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateProfileRequestObject()
         {
-            // Snippet: CreateProfile(CreateProfileRequest, CallSettings)
             // Create client
             ProfilerServiceClient profilerServiceClient = ProfilerServiceClient.Create();
             // Initialize request argument(s)
@@ -36,7 +41,6 @@ namespace Google.Cloud.Profiler.V2.Snippets
             };
             // Make the request
             Profile response = profilerServiceClient.CreateProfile(request);
-            // End snippet
         }
     }
 }

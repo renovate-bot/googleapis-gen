@@ -16,15 +16,18 @@
 
 namespace Google.Maps.Roads.V1Op.Snippets
 {
+    using Google.Maps.Roads.V1Op;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRoadsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListNearestRoadsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListNearestRoadsRequestObjectAsync()
         {
-            // Snippet: ListNearestRoadsAsync(ListNearestRoadsRequest, CallSettings)
-            // Additional: ListNearestRoadsAsync(ListNearestRoadsRequest, CancellationToken)
             // Create client
             RoadsServiceClient roadsServiceClient = await RoadsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Maps.Roads.V1Op.Snippets
             };
             // Make the request
             ListNearestRoadsResponse response = await roadsServiceClient.ListNearestRoadsAsync(request);
-            // End snippet
         }
     }
 }

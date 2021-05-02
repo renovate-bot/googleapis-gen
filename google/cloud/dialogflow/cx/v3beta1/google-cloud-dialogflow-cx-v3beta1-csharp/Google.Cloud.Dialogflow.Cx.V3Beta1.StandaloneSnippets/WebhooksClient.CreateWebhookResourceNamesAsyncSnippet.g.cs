@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWebhooksClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateWebhookAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateWebhookResourceNamesAsync()
         {
-            // Snippet: CreateWebhookAsync(AgentName, Webhook, CallSettings)
-            // Additional: CreateWebhookAsync(AgentName, Webhook, CancellationToken)
             // Create client
             WebhooksClient webhooksClient = await WebhooksClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             Webhook webhook = new Webhook();
             // Make the request
             Webhook response = await webhooksClient.CreateWebhookAsync(parent, webhook);
-            // End snippet
         }
     }
 }

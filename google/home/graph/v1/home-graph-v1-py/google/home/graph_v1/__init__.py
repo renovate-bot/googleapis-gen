@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.home_graph_api_service import HomeGraphApiServiceClient
-
 from .types.device import AgentOtherDeviceId
 from .types.device import Device
 from .types.device import DeviceInfo
@@ -36,6 +36,7 @@ from .types.homegraph import StateAndNotificationPayload
 from .types.homegraph import SyncRequest
 from .types.homegraph import SyncResponse
 from .types.homegraph import SyncResponsePayload
+
 
 __all__ = (
     'AgentDeviceId',

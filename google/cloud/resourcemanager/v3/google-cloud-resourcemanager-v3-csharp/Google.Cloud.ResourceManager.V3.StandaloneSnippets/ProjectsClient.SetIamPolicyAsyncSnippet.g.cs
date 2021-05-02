@@ -17,15 +17,18 @@
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.ResourceManager.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedProjectsClientStandaloneSnippets
     {
         /// <summary>Snippet for SetIamPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SetIamPolicyAsync()
         {
-            // Snippet: SetIamPolicyAsync(string, Policy, CallSettings)
-            // Additional: SetIamPolicyAsync(string, Policy, CancellationToken)
             // Create client
             ProjectsClient projectsClient = await ProjectsClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             Policy policy = new Policy();
             // Make the request
             Policy response = await projectsClient.SetIamPolicyAsync(resource, policy);
-            // End snippet
         }
     }
 }

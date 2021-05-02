@@ -16,14 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedConversionUploadServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UploadClickConversions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UploadClickConversions()
         {
-            // Snippet: UploadClickConversions(string, IEnumerable<ClickConversion>, bool, CallSettings)
             // Create client
             ConversionUploadServiceClient conversionUploadServiceClient = ConversionUploadServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             bool partialFailure = false;
             // Make the request
             UploadClickConversionsResponse response = conversionUploadServiceClient.UploadClickConversions(customerId, conversions, partialFailure);
-            // End snippet
         }
     }
 }

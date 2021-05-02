@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPolicyTagManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPolicyTagAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetPolicyTagResourceNamesAsync()
         {
-            // Snippet: GetPolicyTagAsync(PolicyTagName, CallSettings)
-            // Additional: GetPolicyTagAsync(PolicyTagName, CancellationToken)
             // Create client
             PolicyTagManagerClient policyTagManagerClient = await PolicyTagManagerClient.CreateAsync();
             // Initialize request argument(s)
             PolicyTagName name = PolicyTagName.FromProjectLocationTaxonomyPolicyTag("[PROJECT]", "[LOCATION]", "[TAXONOMY]", "[POLICY_TAG]");
             // Make the request
             PolicyTag response = await policyTagManagerClient.GetPolicyTagAsync(name);
-            // End snippet
         }
     }
 }

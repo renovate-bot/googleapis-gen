@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedBiddingStrategyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBiddingStrategy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetBiddingStrategyResourceNames()
         {
-            // Snippet: GetBiddingStrategy(BiddingStrategyName, CallSettings)
             // Create client
             BiddingStrategyServiceClient biddingStrategyServiceClient = BiddingStrategyServiceClient.Create();
             // Initialize request argument(s)
             BiddingStrategyName resourceName = BiddingStrategyName.FromCustomerBiddingStrategy("[CUSTOMER_ID]", "[BIDDING_STRATEGY_ID]");
             // Make the request
             BiddingStrategy response = biddingStrategyServiceClient.GetBiddingStrategy(resourceName);
-            // End snippet
         }
     }
 }

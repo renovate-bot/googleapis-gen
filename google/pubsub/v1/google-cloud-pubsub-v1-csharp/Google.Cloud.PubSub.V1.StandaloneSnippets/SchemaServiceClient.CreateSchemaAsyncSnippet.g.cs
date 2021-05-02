@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSchemaServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateSchemaAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateSchemaAsync()
         {
-            // Snippet: CreateSchemaAsync(string, Schema, string, CallSettings)
-            // Additional: CreateSchemaAsync(string, Schema, string, CancellationToken)
             // Create client
             SchemaServiceClient schemaServiceClient = await SchemaServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
             string schemaId = "";
             // Make the request
             Schema response = await schemaServiceClient.CreateSchemaAsync(parent, schema, schemaId);
-            // End snippet
         }
     }
 }

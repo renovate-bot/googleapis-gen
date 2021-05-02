@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -41,7 +42,8 @@ from google.cloud.dataqna_v1alpha.types.question_service import GetUserFeedbackR
 from google.cloud.dataqna_v1alpha.types.question_service import UpdateUserFeedbackRequest
 from google.cloud.dataqna_v1alpha.types.user_feedback import UserFeedback
 
-__all__ = ('AnnotatedString',
+__all__ = (
+    'AnnotatedString',
     'AutoSuggestionServiceAsyncClient',
     'AutoSuggestionServiceClient',
     'BigQueryJob',

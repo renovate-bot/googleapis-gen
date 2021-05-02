@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSearchTermViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSearchTermViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetSearchTermViewRequestObjectAsync()
         {
-            // Snippet: GetSearchTermViewAsync(GetSearchTermViewRequest, CallSettings)
-            // Additional: GetSearchTermViewAsync(GetSearchTermViewRequest, CancellationToken)
             // Create client
             SearchTermViewServiceClient searchTermViewServiceClient = await SearchTermViewServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             SearchTermView response = await searchTermViewServiceClient.GetSearchTermViewAsync(request);
-            // End snippet
         }
     }
 }

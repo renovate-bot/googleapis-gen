@@ -17,14 +17,18 @@
 namespace Google.Cloud.Osconfig.Agentendpoint.V1.Snippets
 {
     using Google.Api.Gax.Grpc;
+    using Google.Cloud.Osconfig.Agentendpoint.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAgentEndpointServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ReceiveTaskNotification</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ReceiveTaskNotificationRequestObject()
         {
-            // Snippet: ReceiveTaskNotification(ReceiveTaskNotificationRequest, CallSettings)
             // Create client
             AgentEndpointServiceClient agentEndpointServiceClient = AgentEndpointServiceClient.Create();
             // Initialize request argument(s)
@@ -45,7 +49,6 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1.Snippets
                 // Do something with streamed response
             }
             // The response stream has completed
-            // End snippet
         }
     }
 }

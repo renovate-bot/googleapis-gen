@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.enums.types import access_role as gage_access_role
 from google.ads.googleads.v4.resources.types import customer
@@ -48,10 +51,7 @@ class GetCustomerRequest(proto.Message):
             to fetch.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateCustomerRequest(proto.Message):
@@ -70,19 +70,11 @@ class MutateCustomerRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operation = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operation = proto.Field(proto.MESSAGE, number=4,
         message='CustomerOperation',
     )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=5,
-    )
+    validate_only = proto.Field(proto.BOOL, number=5)
 
 
 class CreateCustomerClientRequest(proto.Message):
@@ -107,29 +99,21 @@ class CreateCustomerClientRequest(proto.Message):
             the allow-list.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    customer_client = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    customer_client = proto.Field(proto.MESSAGE, number=2,
         message=customer.Customer,
     )
-    email_address = proto.Field(
-        proto.MESSAGE,
-        number=3,
+    email_address = proto.Field(proto.MESSAGE, number=3,
         message=wrappers.StringValue,
     )
-    access_role = proto.Field(
-        proto.ENUM,
-        number=4,
+    access_role = proto.Field(proto.ENUM, number=4,
         enum=gage_access_role.AccessRoleEnum.AccessRole,
     )
 
 
 class CustomerOperation(proto.Message):
     r"""A single update on a customer.
+
     Attributes:
         update (google.ads.googleads.v4.resources.types.Customer):
             Mutate operation. Only updates are supported
@@ -139,20 +123,17 @@ class CustomerOperation(proto.Message):
             fields are modified in an update.
     """
 
-    update = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    update = proto.Field(proto.MESSAGE, number=1,
         message=customer.Customer,
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
 
 
 class CreateCustomerClientResponse(proto.Message):
     r"""Response message for CreateCustomerClient mutate.
+
     Attributes:
         resource_name (str):
             The resource name of the newly created
@@ -163,47 +144,38 @@ class CreateCustomerClientResponse(proto.Message):
             only.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    invitation_link = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    resource_name = proto.Field(proto.STRING, number=2)
+    invitation_link = proto.Field(proto.STRING, number=3)
 
 
 class MutateCustomerResponse(proto.Message):
     r"""Response message for customer mutate.
+
     Attributes:
         result (google.ads.googleads.v4.services.types.MutateCustomerResult):
             Result for the mutate.
     """
 
-    result = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    result = proto.Field(proto.MESSAGE, number=2,
         message='MutateCustomerResult',
     )
 
 
 class MutateCustomerResult(proto.Message):
     r"""The result for the customer mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class ListAccessibleCustomersRequest(proto.Message):
     r"""Request message for
     [CustomerService.ListAccessibleCustomers][google.ads.googleads.v4.services.CustomerService.ListAccessibleCustomers].
-        """
+    """
 
 
 class ListAccessibleCustomersResponse(proto.Message):
@@ -216,10 +188,7 @@ class ListAccessibleCustomersResponse(proto.Message):
             accessible by the user authenticating the call.
     """
 
-    resource_names = proto.RepeatedField(
-        proto.STRING,
-        number=1,
-    )
+    resource_names = proto.RepeatedField(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

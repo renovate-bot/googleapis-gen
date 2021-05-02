@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,20 +14,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.servicedirectory_v1beta1.types import lookup_service
+
 from .base import LookupServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import LookupServiceGrpcTransport
 
@@ -76,15 +78,13 @@ class LookupServiceGrpcAsyncIOTransport(LookupServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -104,8 +104,7 @@ class LookupServiceGrpcAsyncIOTransport(LookupServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -163,6 +162,7 @@ class LookupServiceGrpcAsyncIOTransport(LookupServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -225,9 +225,7 @@ class LookupServiceGrpcAsyncIOTransport(LookupServiceTransport):
     def resolve_service(self) -> Callable[
             [lookup_service.ResolveServiceRequest],
             Awaitable[lookup_service.ResolveServiceResponse]]:
-        r"""Return a callable for the
-        resolve service
-          method over gRPC.
+        r"""Return a callable for the resolve service method over gRPC.
 
         Returns a
         [service][google.cloud.servicedirectory.v1beta1.Service] and its

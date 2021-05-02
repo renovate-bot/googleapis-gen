@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.street_view_publish_service import StreetViewPublishServiceClient
-
 from .types.resources import Connection
 from .types.resources import Level
 from .types.resources import Photo
@@ -37,6 +37,7 @@ from .types.rpcmessages import ListPhotosResponse
 from .types.rpcmessages import PhotoResponse
 from .types.rpcmessages import PhotoView
 from .types.rpcmessages import UpdatePhotoRequest
+
 
 __all__ = (
     'BatchDeletePhotosRequest',

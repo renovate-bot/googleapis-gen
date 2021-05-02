@@ -16,19 +16,23 @@
 
 namespace Google.Iam.Admin.V1.Snippets
 {
+    using Google.Iam.Admin.V1;
+
     public sealed partial class GeneratedIAMClientStandaloneSnippets
     {
         /// <summary>Snippet for UndeleteServiceAccount</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UndeleteServiceAccountRequestObject()
         {
-            // Snippet: UndeleteServiceAccount(UndeleteServiceAccountRequest, CallSettings)
             // Create client
             IAMClient iAMClient = IAMClient.Create();
             // Initialize request argument(s)
             UndeleteServiceAccountRequest request = new UndeleteServiceAccountRequest { Name = "", };
             // Make the request
             UndeleteServiceAccountResponse response = iAMClient.UndeleteServiceAccount(request);
-            // End snippet
         }
     }
 }

@@ -17,16 +17,20 @@
 namespace Google.Cloud.Dlp.V2.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Dlp.V2;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListJobTriggers</summary>
+        /// <summary>Snippet for ListJobTriggersAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListJobTriggersAsync()
         {
-            // Snippet: ListJobTriggersAsync(string, string, int?, CallSettings)
             // Create client
             DlpServiceClient dlpServiceClient = await DlpServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -65,7 +69,6 @@ namespace Google.Cloud.Dlp.V2.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

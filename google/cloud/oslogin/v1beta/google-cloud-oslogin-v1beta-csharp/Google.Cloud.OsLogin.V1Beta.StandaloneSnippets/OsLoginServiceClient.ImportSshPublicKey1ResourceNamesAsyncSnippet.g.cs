@@ -17,15 +17,18 @@
 namespace Google.Cloud.OsLogin.V1Beta.Snippets
 {
     using Google.Cloud.OsLogin.Common;
+    using Google.Cloud.OsLogin.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOsLoginServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ImportSshPublicKeyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ImportSshPublicKey1ResourceNamesAsync()
         {
-            // Snippet: ImportSshPublicKeyAsync(UserName, SshPublicKey, CallSettings)
-            // Additional: ImportSshPublicKeyAsync(UserName, SshPublicKey, CancellationToken)
             // Create client
             OsLoginServiceClient osLoginServiceClient = await OsLoginServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.OsLogin.V1Beta.Snippets
             SshPublicKey sshPublicKey = new SshPublicKey();
             // Make the request
             ImportSshPublicKeyResponse response = await osLoginServiceClient.ImportSshPublicKeyAsync(parent, sshPublicKey);
-            // End snippet
         }
     }
 }

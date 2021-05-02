@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -33,6 +35,7 @@ from google.oauth2 import service_account                         # type: ignore
 from google.ads.googleads.v7.resources.types import ad_parameter
 from google.ads.googleads.v7.services.types import ad_parameter_service
 from google.rpc import status_pb2 as status  # type: ignore
+
 from .transports.base import AdParameterServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AdParameterServiceGrpcTransport
 
@@ -171,6 +174,7 @@ class AdParameterServiceClient(metaclass=AdParameterServiceClientMeta):
         """Parse a ad_parameter path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/adParameters/(?P<ad_group_id>.+?)~(?P<criterion_id>.+?)~(?P<parameter_index>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -347,8 +351,7 @@ class AdParameterServiceClient(metaclass=AdParameterServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v7.services.types.GetAdParameterRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AdParameterService.GetAdParameter][google.ads.googleads.v7.services.AdParameterService.GetAdParameter]
             resource_name (:class:`str`):
                 Required. The resource name of the ad
@@ -357,6 +360,7 @@ class AdParameterServiceClient(metaclass=AdParameterServiceClientMeta):
                 This corresponds to the ``resource_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -382,14 +386,16 @@ class AdParameterServiceClient(metaclass=AdParameterServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a ad_parameter_service.GetAdParameterRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, ad_parameter_service.GetAdParameterRequest):
             request = ad_parameter_service.GetAdParameterRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if resource_name is not None:
                 request.resource_name = resource_name
 
@@ -408,7 +414,7 @@ class AdParameterServiceClient(metaclass=AdParameterServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -436,8 +442,7 @@ class AdParameterServiceClient(metaclass=AdParameterServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v7.services.types.MutateAdParametersRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AdParameterService.MutateAdParameters][google.ads.googleads.v7.services.AdParameterService.MutateAdParameters]
             customer_id (:class:`str`):
                 Required. The ID of the customer
@@ -453,6 +458,7 @@ class AdParameterServiceClient(metaclass=AdParameterServiceClientMeta):
                 This corresponds to the ``operations`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -472,14 +478,16 @@ class AdParameterServiceClient(metaclass=AdParameterServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a ad_parameter_service.MutateAdParametersRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, ad_parameter_service.MutateAdParametersRequest):
             request = ad_parameter_service.MutateAdParametersRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if customer_id is not None:
                 request.customer_id = customer_id
             if operations is not None:
@@ -500,7 +508,7 @@ class AdParameterServiceClient(metaclass=AdParameterServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

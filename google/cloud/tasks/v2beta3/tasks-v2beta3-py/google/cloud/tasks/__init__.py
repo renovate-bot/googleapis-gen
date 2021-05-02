@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -47,7 +48,8 @@ from google.cloud.tasks_v2beta3.types.target import PullMessage
 from google.cloud.tasks_v2beta3.types.task import Attempt
 from google.cloud.tasks_v2beta3.types.task import Task
 
-__all__ = ('AppEngineHttpQueue',
+__all__ = (
+    'AppEngineHttpQueue',
     'AppEngineHttpRequest',
     'AppEngineRouting',
     'Attempt',

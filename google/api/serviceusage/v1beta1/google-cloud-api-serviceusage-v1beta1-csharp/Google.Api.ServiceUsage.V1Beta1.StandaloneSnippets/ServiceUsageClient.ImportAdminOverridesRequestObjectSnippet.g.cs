@@ -16,14 +16,18 @@
 
 namespace Google.Api.ServiceUsage.V1Beta1.Snippets
 {
+    using Google.Api.ServiceUsage.V1Beta1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedServiceUsageClientStandaloneSnippets
     {
         /// <summary>Snippet for ImportAdminOverrides</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ImportAdminOverridesRequestObject()
         {
-            // Snippet: ImportAdminOverrides(ImportAdminOverridesRequest, CallSettings)
             // Create client
             ServiceUsageClient serviceUsageClient = ServiceUsageClient.Create();
             // Initialize request argument(s)
@@ -55,7 +59,6 @@ namespace Google.Api.ServiceUsage.V1Beta1.Snippets
                 // If it has completed, then access the result
                 ImportAdminOverridesResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

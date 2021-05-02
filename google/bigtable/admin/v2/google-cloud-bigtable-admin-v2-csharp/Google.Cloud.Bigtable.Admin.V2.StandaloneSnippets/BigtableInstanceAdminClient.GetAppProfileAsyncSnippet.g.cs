@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigtableInstanceAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAppProfileAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAppProfileAsync()
         {
-            // Snippet: GetAppProfileAsync(string, CallSettings)
-            // Additional: GetAppProfileAsync(string, CancellationToken)
             // Create client
             BigtableInstanceAdminClient bigtableInstanceAdminClient = await BigtableInstanceAdminClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/instances/[INSTANCE]/appProfiles/[APP_PROFILE]";
             // Make the request
             AppProfile response = await bigtableInstanceAdminClient.GetAppProfileAsync(name);
-            // End snippet
         }
     }
 }

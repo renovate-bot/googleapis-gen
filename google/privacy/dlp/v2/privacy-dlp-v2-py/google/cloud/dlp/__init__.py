@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -172,7 +173,8 @@ from google.cloud.dlp_v2.types.storage import StorageConfig
 from google.cloud.dlp_v2.types.storage import StoredType
 from google.cloud.dlp_v2.types.storage import TableOptions
 
-__all__ = ('Action',
+__all__ = (
+    'Action',
     'ActivateJobTriggerRequest',
     'AnalyzeDataSourceRiskDetails',
     'BigQueryField',

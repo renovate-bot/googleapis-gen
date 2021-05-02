@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedSessionEntityTypesClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSessionEntityType</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetSessionEntityTypeResourceNames()
         {
-            // Snippet: GetSessionEntityType(SessionEntityTypeName, CallSettings)
             // Create client
             SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.Create();
             // Initialize request argument(s)
             SessionEntityTypeName name = SessionEntityTypeName.FromProjectLocationAgentSessionEntityType("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]");
             // Make the request
             SessionEntityType response = sessionEntityTypesClient.GetSessionEntityType(name);
-            // End snippet
         }
     }
 }

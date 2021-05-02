@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
 {
+    using Google.Cloud.Spanner.Admin.Database.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDatabaseAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for DropDatabaseAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DropDatabaseAsync()
         {
-            // Snippet: DropDatabaseAsync(string, CallSettings)
-            // Additional: DropDatabaseAsync(string, CancellationToken)
             // Create client
             DatabaseAdminClient databaseAdminClient = await DatabaseAdminClient.CreateAsync();
             // Initialize request argument(s)
             string database = "projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE]";
             // Make the request
             await databaseAdminClient.DropDatabaseAsync(database);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Logging.V2.Snippets
 {
+    using Google.Cloud.Logging.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConfigServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateSinkAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateSinkAsync()
         {
-            // Snippet: CreateSinkAsync(string, LogSink, CallSettings)
-            // Additional: CreateSinkAsync(string, LogSink, CancellationToken)
             // Create client
             ConfigServiceV2Client configServiceV2Client = await ConfigServiceV2Client.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             LogSink sink = new LogSink();
             // Make the request
             LogSink response = await configServiceV2Client.CreateSinkAsync(parent, sink);
-            // End snippet
         }
     }
 }

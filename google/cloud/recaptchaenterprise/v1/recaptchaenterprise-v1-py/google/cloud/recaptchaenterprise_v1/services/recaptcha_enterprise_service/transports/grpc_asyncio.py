@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,21 +14,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.recaptchaenterprise_v1.types import recaptchaenterprise
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import RecaptchaEnterpriseServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import RecaptchaEnterpriseServiceGrpcTransport
 
@@ -77,15 +79,13 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -105,8 +105,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -164,6 +163,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -226,9 +226,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
     def create_assessment(self) -> Callable[
             [recaptchaenterprise.CreateAssessmentRequest],
             Awaitable[recaptchaenterprise.Assessment]]:
-        r"""Return a callable for the
-        create assessment
-          method over gRPC.
+        r"""Return a callable for the create assessment method over gRPC.
 
         Creates an Assessment of the likelihood an event is
         legitimate.
@@ -255,9 +253,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
     def annotate_assessment(self) -> Callable[
             [recaptchaenterprise.AnnotateAssessmentRequest],
             Awaitable[recaptchaenterprise.AnnotateAssessmentResponse]]:
-        r"""Return a callable for the
-        annotate assessment
-          method over gRPC.
+        r"""Return a callable for the annotate assessment method over gRPC.
 
         Annotates a previously created Assessment to provide
         additional information on whether the event turned out
@@ -285,9 +281,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
     def create_key(self) -> Callable[
             [recaptchaenterprise.CreateKeyRequest],
             Awaitable[recaptchaenterprise.Key]]:
-        r"""Return a callable for the
-        create key
-          method over gRPC.
+        r"""Return a callable for the create key method over gRPC.
 
         Creates a new reCAPTCHA Enterprise key.
 
@@ -313,9 +307,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
     def list_keys(self) -> Callable[
             [recaptchaenterprise.ListKeysRequest],
             Awaitable[recaptchaenterprise.ListKeysResponse]]:
-        r"""Return a callable for the
-        list keys
-          method over gRPC.
+        r"""Return a callable for the list keys method over gRPC.
 
         Returns the list of all keys that belong to a
         project.
@@ -342,9 +334,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
     def get_key(self) -> Callable[
             [recaptchaenterprise.GetKeyRequest],
             Awaitable[recaptchaenterprise.Key]]:
-        r"""Return a callable for the
-        get key
-          method over gRPC.
+        r"""Return a callable for the get key method over gRPC.
 
         Returns the specified key.
 
@@ -370,9 +360,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
     def update_key(self) -> Callable[
             [recaptchaenterprise.UpdateKeyRequest],
             Awaitable[recaptchaenterprise.Key]]:
-        r"""Return a callable for the
-        update key
-          method over gRPC.
+        r"""Return a callable for the update key method over gRPC.
 
         Updates the specified key.
 
@@ -398,9 +386,7 @@ class RecaptchaEnterpriseServiceGrpcAsyncIOTransport(RecaptchaEnterpriseServiceT
     def delete_key(self) -> Callable[
             [recaptchaenterprise.DeleteKeyRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete key
-          method over gRPC.
+        r"""Return a callable for the delete key method over gRPC.
 
         Deletes the specified key.
 

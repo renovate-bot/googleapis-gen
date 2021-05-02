@@ -16,16 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSharedCriterionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateSharedCriteriaAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateSharedCriteriaAsync()
         {
-            // Snippet: MutateSharedCriteriaAsync(string, IEnumerable<SharedCriterionOperation>, CallSettings)
-            // Additional: MutateSharedCriteriaAsync(string, IEnumerable<SharedCriterionOperation>, CancellationToken)
             // Create client
             SharedCriterionServiceClient sharedCriterionServiceClient = await SharedCriterionServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateSharedCriteriaResponse response = await sharedCriterionServiceClient.MutateSharedCriteriaAsync(customerId, operations);
-            // End snippet
         }
     }
 }

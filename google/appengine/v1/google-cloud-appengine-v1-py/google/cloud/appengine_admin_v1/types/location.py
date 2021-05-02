@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -43,18 +45,11 @@ class LocationMetadata(proto.Message):
             is available in the given location.
     """
 
-    standard_environment_available = proto.Field(
-        proto.BOOL,
-        number=2,
-    )
-    flexible_environment_available = proto.Field(
-        proto.BOOL,
-        number=4,
-    )
-    search_api_available = proto.Field(
-        proto.BOOL,
-        number=6,
-    )
+    standard_environment_available = proto.Field(proto.BOOL, number=2)
+
+    flexible_environment_available = proto.Field(proto.BOOL, number=4)
+
+    search_api_available = proto.Field(proto.BOOL, number=6)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

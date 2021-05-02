@@ -77,7 +77,7 @@ namespace Google.Cloud.Workflows.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListWorkflows</summary>
+        /// <summary>Snippet for ListWorkflowsAsync</summary>
         public async Task ListWorkflowsRequestObjectAsync()
         {
             // Snippet: ListWorkflowsAsync(ListWorkflowsRequest, CallSettings)
@@ -172,7 +172,7 @@ namespace Google.Cloud.Workflows.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListWorkflows</summary>
+        /// <summary>Snippet for ListWorkflowsAsync</summary>
         public async Task ListWorkflowsAsync()
         {
             // Snippet: ListWorkflowsAsync(string, string, int?, CallSettings)
@@ -262,7 +262,7 @@ namespace Google.Cloud.Workflows.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListWorkflows</summary>
+        /// <summary>Snippet for ListWorkflowsAsync</summary>
         public async Task ListWorkflowsResourceNamesAsync()
         {
             // Snippet: ListWorkflowsAsync(LocationName, string, int?, CallSettings)

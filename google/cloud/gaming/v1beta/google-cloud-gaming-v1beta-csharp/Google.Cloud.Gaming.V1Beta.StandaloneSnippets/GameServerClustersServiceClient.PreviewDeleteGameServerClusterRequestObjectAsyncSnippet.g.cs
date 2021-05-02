@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Gaming.V1Beta.Snippets
 {
+    using Google.Cloud.Gaming.V1Beta;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGameServerClustersServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for PreviewDeleteGameServerClusterAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task PreviewDeleteGameServerClusterRequestObjectAsync()
         {
-            // Snippet: PreviewDeleteGameServerClusterAsync(PreviewDeleteGameServerClusterRequest, CallSettings)
-            // Additional: PreviewDeleteGameServerClusterAsync(PreviewDeleteGameServerClusterRequest, CancellationToken)
             // Create client
             GameServerClustersServiceClient gameServerClustersServiceClient = await GameServerClustersServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Gaming.V1Beta.Snippets
             };
             // Make the request
             PreviewDeleteGameServerClusterResponse response = await gameServerClustersServiceClient.PreviewDeleteGameServerClusterAsync(request);
-            // End snippet
         }
     }
 }

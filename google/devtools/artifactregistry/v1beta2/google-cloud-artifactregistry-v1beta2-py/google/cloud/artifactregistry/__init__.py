@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,7 +49,8 @@ from google.cloud.artifactregistry_v1beta2.types.version import ListVersionsResp
 from google.cloud.artifactregistry_v1beta2.types.version import Version
 from google.cloud.artifactregistry_v1beta2.types.version import VersionView
 
-__all__ = ('ArtifactRegistryAsyncClient',
+__all__ = (
+    'ArtifactRegistryAsyncClient',
     'ArtifactRegistryClient',
     'CreateRepositoryRequest',
     'CreateTagRequest',

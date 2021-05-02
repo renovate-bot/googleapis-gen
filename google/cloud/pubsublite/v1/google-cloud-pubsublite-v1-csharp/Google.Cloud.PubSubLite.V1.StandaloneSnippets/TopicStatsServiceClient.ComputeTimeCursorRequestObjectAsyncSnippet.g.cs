@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.PubSubLite.V1.Snippets
 {
+    using Google.Cloud.PubSubLite.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTopicStatsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ComputeTimeCursorAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ComputeTimeCursorRequestObjectAsync()
         {
-            // Snippet: ComputeTimeCursorAsync(ComputeTimeCursorRequest, CallSettings)
-            // Additional: ComputeTimeCursorAsync(ComputeTimeCursorRequest, CancellationToken)
             // Create client
             TopicStatsServiceClient topicStatsServiceClient = await TopicStatsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             };
             // Make the request
             ComputeTimeCursorResponse response = await topicStatsServiceClient.ComputeTimeCursorAsync(request);
-            // End snippet
         }
     }
 }

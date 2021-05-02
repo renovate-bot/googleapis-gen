@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Tasks.V2Beta3.Snippets
 {
+    using Google.Cloud.Tasks.V2Beta3;
+
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteTask</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteTaskResourceNames()
         {
-            // Snippet: DeleteTask(TaskName, CallSettings)
             // Create client
             CloudTasksClient cloudTasksClient = CloudTasksClient.Create();
             // Initialize request argument(s)
             TaskName name = TaskName.FromProjectLocationQueueTask("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]");
             // Make the request
             cloudTasksClient.DeleteTask(name);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.PubSubLite.V1.Snippets
 {
+    using Google.Cloud.PubSubLite.V1;
+
     public sealed partial class GeneratedAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteTopic</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteTopicResourceNames()
         {
-            // Snippet: DeleteTopic(TopicName, CallSettings)
             // Create client
             AdminServiceClient adminServiceClient = AdminServiceClient.Create();
             // Initialize request argument(s)
             TopicName name = TopicName.FromProjectLocationTopic("[PROJECT]", "[LOCATION]", "[TOPIC]");
             // Make the request
             adminServiceClient.DeleteTopic(name);
-            // End snippet
         }
     }
 }

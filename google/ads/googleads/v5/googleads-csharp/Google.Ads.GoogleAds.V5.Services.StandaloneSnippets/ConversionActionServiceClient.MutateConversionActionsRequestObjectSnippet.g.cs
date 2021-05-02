@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
+
     public sealed partial class GeneratedConversionActionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateConversionActions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateConversionActionsRequestObject()
         {
-            // Snippet: MutateConversionActions(MutateConversionActionsRequest, CallSettings)
             // Create client
             ConversionActionServiceClient conversionActionServiceClient = ConversionActionServiceClient.Create();
             // Initialize request argument(s)
@@ -37,7 +42,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateConversionActionsResponse response = conversionActionServiceClient.MutateConversionActions(request);
-            // End snippet
         }
     }
 }

@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOperatingSystemVersionConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetOperatingSystemVersionConstantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetOperatingSystemVersionConstantResourceNamesAsync()
         {
-            // Snippet: GetOperatingSystemVersionConstantAsync(OperatingSystemVersionConstantName, CallSettings)
-            // Additional: GetOperatingSystemVersionConstantAsync(OperatingSystemVersionConstantName, CancellationToken)
             // Create client
             OperatingSystemVersionConstantServiceClient operatingSystemVersionConstantServiceClient = await OperatingSystemVersionConstantServiceClient.CreateAsync();
             // Initialize request argument(s)
             OperatingSystemVersionConstantName resourceName = OperatingSystemVersionConstantName.FromCriterion("[CRITERION_ID]");
             // Make the request
             OperatingSystemVersionConstant response = await operatingSystemVersionConstantServiceClient.GetOperatingSystemVersionConstantAsync(resourceName);
-            // End snippet
         }
     }
 }

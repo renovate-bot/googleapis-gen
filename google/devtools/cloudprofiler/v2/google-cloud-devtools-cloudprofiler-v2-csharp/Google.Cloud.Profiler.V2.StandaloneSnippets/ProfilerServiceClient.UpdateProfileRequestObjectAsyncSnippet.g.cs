@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Profiler.V2.Snippets
 {
+    using Google.Cloud.Profiler.V2;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedProfilerServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateProfileAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateProfileRequestObjectAsync()
         {
-            // Snippet: UpdateProfileAsync(UpdateProfileRequest, CallSettings)
-            // Additional: UpdateProfileAsync(UpdateProfileRequest, CancellationToken)
             // Create client
             ProfilerServiceClient profilerServiceClient = await ProfilerServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Profiler.V2.Snippets
             };
             // Make the request
             Profile response = await profilerServiceClient.UpdateProfileAsync(request);
-            // End snippet
         }
     }
 }

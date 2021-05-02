@@ -76,7 +76,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTagKeys</summary>
+        /// <summary>Snippet for ListTagKeysAsync</summary>
         public async Task ListTagKeysRequestObjectAsync()
         {
             // Snippet: ListTagKeysAsync(ListTagKeysRequest, CallSettings)
@@ -169,7 +169,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTagKeys</summary>
+        /// <summary>Snippet for ListTagKeysAsync</summary>
         public async Task ListTagKeysAsync()
         {
             // Snippet: ListTagKeysAsync(string, string, int?, CallSettings)
@@ -259,7 +259,7 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListTagKeys</summary>
+        /// <summary>Snippet for ListTagKeysAsync</summary>
         public async Task ListTagKeysResourceNamesAsync()
         {
             // Snippet: ListTagKeysAsync(IResourceName, string, int?, CallSettings)

@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Securitycenter.V1Beta1.Snippets
 {
+    using Google.Cloud.Securitycenter.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateFinding</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateFindingRequestObject()
         {
-            // Snippet: UpdateFinding(UpdateFindingRequest, CallSettings)
             // Create client
             SecurityCenterClient securityCenterClient = SecurityCenterClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Securitycenter.V1Beta1.Snippets
             };
             // Make the request
             Finding response = securityCenterClient.UpdateFinding(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,6 @@
 
 from .services.auto_ml import AutoMlClient
 from .services.prediction_service import PredictionServiceClient
-
 from .types.annotation_payload import AnnotationPayload
 from .types.annotation_spec import AnnotationSpec
 from .types.classification import ClassificationAnnotation
@@ -139,6 +139,7 @@ from .types.video import VideoClassificationDatasetMetadata
 from .types.video import VideoClassificationModelMetadata
 from .types.video import VideoObjectTrackingDatasetMetadata
 from .types.video import VideoObjectTrackingModelMetadata
+
 
 __all__ = (
     'AnnotationPayload',

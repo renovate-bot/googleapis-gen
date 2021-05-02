@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -292,35 +294,58 @@ def test_get_campaign(transport: str = 'grpc', request_type=campaign_service.Get
         # Designate an appropriate return value for the call.
         call.return_value = campaign.Campaign(
             resource_name='resource_name_value',
+
             status=campaign_status.CampaignStatusEnum.CampaignStatus.UNKNOWN,
+
             serving_status=campaign_serving_status.CampaignServingStatusEnum.CampaignServingStatus.UNKNOWN,
+
             ad_serving_optimization_status=ad_serving_optimization_status.AdServingOptimizationStatusEnum.AdServingOptimizationStatus.UNKNOWN,
+
             advertising_channel_type=advertising_channel_type.AdvertisingChannelTypeEnum.AdvertisingChannelType.UNKNOWN,
+
             advertising_channel_sub_type=advertising_channel_sub_type.AdvertisingChannelSubTypeEnum.AdvertisingChannelSubType.UNKNOWN,
+
             experiment_type=campaign_experiment_type.CampaignExperimentTypeEnum.CampaignExperimentType.UNKNOWN,
+
             bidding_strategy_type=bidding_strategy_type.BiddingStrategyTypeEnum.BiddingStrategyType.UNKNOWN,
+
             video_brand_safety_suitability=brand_safety_suitability.BrandSafetySuitabilityEnum.BrandSafetySuitability.UNKNOWN,
+
             payment_mode=payment_mode.PaymentModeEnum.PaymentMode.UNKNOWN,
+
             bidding_strategy=wrappers.StringValue(value='value_value'),
         )
+
         response = client.get_campaign(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_service.GetCampaignRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign.Campaign)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.status == campaign_status.CampaignStatusEnum.CampaignStatus.UNKNOWN
+
     assert response.serving_status == campaign_serving_status.CampaignServingStatusEnum.CampaignServingStatus.UNKNOWN
+
     assert response.ad_serving_optimization_status == ad_serving_optimization_status.AdServingOptimizationStatusEnum.AdServingOptimizationStatus.UNKNOWN
+
     assert response.advertising_channel_type == advertising_channel_type.AdvertisingChannelTypeEnum.AdvertisingChannelType.UNKNOWN
+
     assert response.advertising_channel_sub_type == advertising_channel_sub_type.AdvertisingChannelSubTypeEnum.AdvertisingChannelSubType.UNKNOWN
+
     assert response.experiment_type == campaign_experiment_type.CampaignExperimentTypeEnum.CampaignExperimentType.UNKNOWN
+
     assert response.bidding_strategy_type == bidding_strategy_type.BiddingStrategyTypeEnum.BiddingStrategyType.UNKNOWN
+
     assert response.video_brand_safety_suitability == brand_safety_suitability.BrandSafetySuitabilityEnum.BrandSafetySuitability.UNKNOWN
+
     assert response.payment_mode == payment_mode.PaymentModeEnum.PaymentMode.UNKNOWN
 
 
@@ -336,7 +361,6 @@ def test_get_campaign_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_service.GetCampaignRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -344,6 +368,7 @@ def test_get_campaign_field_headers():
             type(client.transport.get_campaign),
             '__call__') as call:
         call.return_value = campaign.Campaign()
+
         client.get_campaign(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -370,6 +395,7 @@ def test_get_campaign_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign.Campaign()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_campaign(
@@ -380,6 +406,7 @@ def test_get_campaign_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -414,14 +441,17 @@ def test_mutate_campaigns(transport: str = 'grpc', request_type=campaign_service
         # Designate an appropriate return value for the call.
         call.return_value = campaign_service.MutateCampaignsResponse(
         )
+
         response = client.mutate_campaigns(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_service.MutateCampaignsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign_service.MutateCampaignsResponse)
 
 
@@ -437,7 +467,6 @@ def test_mutate_campaigns_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_service.MutateCampaignsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -445,6 +474,7 @@ def test_mutate_campaigns_field_headers():
             type(client.transport.mutate_campaigns),
             '__call__') as call:
         call.return_value = campaign_service.MutateCampaignsResponse()
+
         client.mutate_campaigns(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -471,6 +501,7 @@ def test_mutate_campaigns_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_service.MutateCampaignsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_campaigns(
@@ -482,7 +513,9 @@ def test_mutate_campaigns_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [campaign_service.CampaignOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -565,7 +598,7 @@ def test_campaign_service_base_transport():
     methods = (
         'get_campaign',
         'mutate_campaigns',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -717,6 +750,7 @@ def test_campaign_service_transport_channel_mtls_with_adc(
 def test_bidding_strategy_path():
     customer = "squid"
     bidding_strategy = "clam"
+
     expected = "customers/{customer}/biddingStrategies/{bidding_strategy}".format(customer=customer, bidding_strategy=bidding_strategy, )
     actual = CampaignServiceClient.bidding_strategy_path(customer, bidding_strategy)
     assert expected == actual
@@ -724,8 +758,9 @@ def test_bidding_strategy_path():
 
 def test_parse_bidding_strategy_path():
     expected = {
-        "customer": "whelk",
-        "bidding_strategy": "octopus",
+    "customer": "whelk",
+    "bidding_strategy": "octopus",
+
     }
     path = CampaignServiceClient.bidding_strategy_path(**expected)
 
@@ -736,6 +771,7 @@ def test_parse_bidding_strategy_path():
 def test_campaign_path():
     customer = "oyster"
     campaign = "nudibranch"
+
     expected = "customers/{customer}/campaigns/{campaign}".format(customer=customer, campaign=campaign, )
     actual = CampaignServiceClient.campaign_path(customer, campaign)
     assert expected == actual
@@ -743,8 +779,9 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-        "customer": "cuttlefish",
-        "campaign": "mussel",
+    "customer": "cuttlefish",
+    "campaign": "mussel",
+
     }
     path = CampaignServiceClient.campaign_path(**expected)
 
@@ -755,6 +792,7 @@ def test_parse_campaign_path():
 def test_campaign_budget_path():
     customer = "winkle"
     campaign_budget = "nautilus"
+
     expected = "customers/{customer}/campaignBudgets/{campaign_budget}".format(customer=customer, campaign_budget=campaign_budget, )
     actual = CampaignServiceClient.campaign_budget_path(customer, campaign_budget)
     assert expected == actual
@@ -762,8 +800,9 @@ def test_campaign_budget_path():
 
 def test_parse_campaign_budget_path():
     expected = {
-        "customer": "scallop",
-        "campaign_budget": "abalone",
+    "customer": "scallop",
+    "campaign_budget": "abalone",
+
     }
     path = CampaignServiceClient.campaign_budget_path(**expected)
 
@@ -774,6 +813,7 @@ def test_parse_campaign_budget_path():
 def test_campaign_label_path():
     customer = "squid"
     campaign_label = "clam"
+
     expected = "customers/{customer}/campaignLabels/{campaign_label}".format(customer=customer, campaign_label=campaign_label, )
     actual = CampaignServiceClient.campaign_label_path(customer, campaign_label)
     assert expected == actual
@@ -781,8 +821,9 @@ def test_campaign_label_path():
 
 def test_parse_campaign_label_path():
     expected = {
-        "customer": "whelk",
-        "campaign_label": "octopus",
+    "customer": "whelk",
+    "campaign_label": "octopus",
+
     }
     path = CampaignServiceClient.campaign_label_path(**expected)
 
@@ -793,6 +834,7 @@ def test_parse_campaign_label_path():
 def test_conversion_action_path():
     customer = "oyster"
     conversion_action = "nudibranch"
+
     expected = "customers/{customer}/conversionActions/{conversion_action}".format(customer=customer, conversion_action=conversion_action, )
     actual = CampaignServiceClient.conversion_action_path(customer, conversion_action)
     assert expected == actual
@@ -800,8 +842,9 @@ def test_conversion_action_path():
 
 def test_parse_conversion_action_path():
     expected = {
-        "customer": "cuttlefish",
-        "conversion_action": "mussel",
+    "customer": "cuttlefish",
+    "conversion_action": "mussel",
+
     }
     path = CampaignServiceClient.conversion_action_path(**expected)
 
@@ -812,6 +855,7 @@ def test_parse_conversion_action_path():
 def test_feed_path():
     customer = "winkle"
     feed = "nautilus"
+
     expected = "customers/{customer}/feeds/{feed}".format(customer=customer, feed=feed, )
     actual = CampaignServiceClient.feed_path(customer, feed)
     assert expected == actual
@@ -819,8 +863,9 @@ def test_feed_path():
 
 def test_parse_feed_path():
     expected = {
-        "customer": "scallop",
-        "feed": "abalone",
+    "customer": "scallop",
+    "feed": "abalone",
+
     }
     path = CampaignServiceClient.feed_path(**expected)
 
@@ -830,6 +875,7 @@ def test_parse_feed_path():
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CampaignServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -837,7 +883,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = CampaignServiceClient.common_billing_account_path(**expected)
 
@@ -847,6 +894,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = CampaignServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -854,7 +902,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = CampaignServiceClient.common_folder_path(**expected)
 
@@ -864,6 +913,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CampaignServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -871,7 +921,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = CampaignServiceClient.common_organization_path(**expected)
 
@@ -881,6 +932,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = CampaignServiceClient.common_project_path(project)
     assert expected == actual
@@ -888,7 +940,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = CampaignServiceClient.common_project_path(**expected)
 
@@ -899,6 +952,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CampaignServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -906,8 +960,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = CampaignServiceClient.common_location_path(**expected)
 

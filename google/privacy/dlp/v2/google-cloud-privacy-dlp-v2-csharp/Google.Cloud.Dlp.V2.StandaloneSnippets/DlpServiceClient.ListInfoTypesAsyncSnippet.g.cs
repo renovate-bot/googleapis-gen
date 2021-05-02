@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListInfoTypesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListInfoTypesAsync()
         {
-            // Snippet: ListInfoTypesAsync(string, CallSettings)
-            // Additional: ListInfoTypesAsync(string, CancellationToken)
             // Create client
             DlpServiceClient dlpServiceClient = await DlpServiceClient.CreateAsync();
             // Initialize request argument(s)
             string parent = "";
             // Make the request
             ListInfoTypesResponse response = await dlpServiceClient.ListInfoTypesAsync(parent);
-            // End snippet
         }
     }
 }

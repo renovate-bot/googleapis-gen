@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteInstructionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteInstructionRequestObjectAsync()
         {
-            // Snippet: DeleteInstructionAsync(DeleteInstructionRequest, CallSettings)
-            // Additional: DeleteInstructionAsync(DeleteInstructionRequest, CancellationToken)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = await DataLabelingServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
             };
             // Make the request
             await dataLabelingServiceClient.DeleteInstructionAsync(request);
-            // End snippet
         }
     }
 }

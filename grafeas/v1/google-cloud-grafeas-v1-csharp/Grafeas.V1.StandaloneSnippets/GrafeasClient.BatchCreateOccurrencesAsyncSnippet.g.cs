@@ -16,16 +16,19 @@
 
 namespace Grafeas.V1.Snippets
 {
+    using Grafeas.V1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGrafeasClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchCreateOccurrencesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchCreateOccurrencesAsync()
         {
-            // Snippet: BatchCreateOccurrencesAsync(string, IEnumerable<Occurrence>, CallSettings)
-            // Additional: BatchCreateOccurrencesAsync(string, IEnumerable<Occurrence>, CancellationToken)
             // Create client
             GrafeasClient grafeasClient = await GrafeasClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Grafeas.V1.Snippets
             IEnumerable<Occurrence> occurrences = new Occurrence[] { new Occurrence(), };
             // Make the request
             BatchCreateOccurrencesResponse response = await grafeasClient.BatchCreateOccurrencesAsync(parent, occurrences);
-            // End snippet
         }
     }
 }

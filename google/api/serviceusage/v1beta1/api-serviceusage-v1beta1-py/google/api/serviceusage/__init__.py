@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -66,7 +67,8 @@ from google.api.serviceusage_v1beta1.types.serviceusage import UpdateAdminOverri
 from google.api.serviceusage_v1beta1.types.serviceusage import UpdateAdminQuotaPolicyMetadata
 from google.api.serviceusage_v1beta1.types.serviceusage import UpdateConsumerOverrideRequest
 
-__all__ = ('AdminQuotaPolicy',
+__all__ = (
+    'AdminQuotaPolicy',
     'BatchCreateAdminOverridesResponse',
     'BatchCreateConsumerOverridesResponse',
     'BatchEnableServicesRequest',

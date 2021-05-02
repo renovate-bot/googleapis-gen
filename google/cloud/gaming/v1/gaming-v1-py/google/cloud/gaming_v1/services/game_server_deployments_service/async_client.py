@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -34,6 +36,7 @@ from google.cloud.gaming_v1.types import game_server_deployments
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import GameServerDeploymentsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import GameServerDeploymentsServiceGrpcAsyncIOTransport
 from .client import GameServerDeploymentsServiceClient
@@ -53,14 +56,19 @@ class GameServerDeploymentsServiceAsyncClient:
     parse_game_server_deployment_path = staticmethod(GameServerDeploymentsServiceClient.parse_game_server_deployment_path)
     game_server_deployment_rollout_path = staticmethod(GameServerDeploymentsServiceClient.game_server_deployment_rollout_path)
     parse_game_server_deployment_rollout_path = staticmethod(GameServerDeploymentsServiceClient.parse_game_server_deployment_rollout_path)
+
     common_billing_account_path = staticmethod(GameServerDeploymentsServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(GameServerDeploymentsServiceClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(GameServerDeploymentsServiceClient.common_folder_path)
     parse_common_folder_path = staticmethod(GameServerDeploymentsServiceClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(GameServerDeploymentsServiceClient.common_organization_path)
     parse_common_organization_path = staticmethod(GameServerDeploymentsServiceClient.parse_common_organization_path)
+
     common_project_path = staticmethod(GameServerDeploymentsServiceClient.common_project_path)
     parse_common_project_path = staticmethod(GameServerDeploymentsServiceClient.parse_common_project_path)
+
     common_location_path = staticmethod(GameServerDeploymentsServiceClient.common_location_path)
     parse_common_location_path = staticmethod(GameServerDeploymentsServiceClient.parse_common_location_path)
 
@@ -145,6 +153,7 @@ class GameServerDeploymentsServiceAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = GameServerDeploymentsServiceClient(
             credentials=credentials,
             transport=transport,
@@ -166,8 +175,7 @@ class GameServerDeploymentsServiceAsyncClient:
 
         Args:
             request (:class:`google.cloud.gaming_v1.types.ListGameServerDeploymentsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.ListGameServerDeployments.
             parent (:class:`str`):
                 Required. The parent resource name. Uses the form:
@@ -176,6 +184,7 @@ class GameServerDeploymentsServiceAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -203,6 +212,7 @@ class GameServerDeploymentsServiceAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -211,7 +221,10 @@ class GameServerDeploymentsServiceAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_game_server_deployments,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -260,8 +273,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1.types.GetGameServerDeploymentRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.GetGameServerDeployment.
             name (:class:`str`):
                 Required. The name of the game server delpoyment to
@@ -272,6 +284,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -294,6 +307,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -302,7 +316,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_game_server_deployment,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -344,8 +361,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1.types.CreateGameServerDeploymentRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.CreateGameServerDeployment.
             parent (:class:`str`):
                 Required. The parent resource name. Uses the form:
@@ -361,6 +377,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``game_server_deployment`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -388,6 +405,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if game_server_deployment is not None:
@@ -440,8 +458,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1.types.DeleteGameServerDeploymentRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.DeleteGameServerDeployment.
             name (:class:`str`):
                 Required. The name of the game server delpoyment to
@@ -452,6 +469,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -489,6 +507,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -540,8 +559,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1.types.UpdateGameServerDeploymentRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.UpdateGameServerDeployment.
                 Only allows updates for labels.
             game_server_deployment (:class:`google.cloud.gaming_v1.types.GameServerDeployment`):
@@ -562,6 +580,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -589,6 +608,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if game_server_deployment is not None:
             request.game_server_deployment = game_server_deployment
         if update_mask is not None:
@@ -641,8 +661,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1.types.GetGameServerDeploymentRolloutRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.GetGameServerDeploymentRollout.
             name (:class:`str`):
                 Required. The name of the game server delpoyment to
@@ -653,6 +672,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -678,6 +698,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -686,7 +707,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.get_game_server_deployment_rollout,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -733,8 +757,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1.types.UpdateGameServerDeploymentRolloutRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.UpdateGameServerRolloutDeployment.
             rollout (:class:`google.cloud.gaming_v1.types.GameServerDeploymentRollout`):
                 Required. The game server delpoyment rollout to be
@@ -755,6 +778,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -782,6 +806,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if rollout is not None:
             request.rollout = rollout
         if update_mask is not None:
@@ -834,9 +859,9 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1.types.PreviewGameServerDeploymentRolloutRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 PreviewGameServerDeploymentRollout.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -852,6 +877,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         # Create or coerce a protobuf request object.
+
         request = game_server_deployments.PreviewGameServerDeploymentRolloutRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -859,7 +885,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.preview_game_server_deployment_rollout,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=60.0,
@@ -901,9 +930,9 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.gaming_v1.types.FetchDeploymentStateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 GameServerDeploymentsService.FetchDeploymentState.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -917,6 +946,7 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         """
         # Create or coerce a protobuf request object.
+
         request = game_server_deployments.FetchDeploymentStateRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -924,7 +954,10 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.fetch_deployment_state,
             default_retry=retries.Retry(
-initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=1.0,
+                maximum=10.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=120.0,
@@ -951,6 +984,8 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

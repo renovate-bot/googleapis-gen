@@ -17,13 +17,17 @@
 namespace Google.Cloud.Billing.Budgets.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Billing.Budgets.V1;
 
     public sealed partial class GeneratedBudgetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateBudget</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateBudgetRequestObject()
         {
-            // Snippet: CreateBudget(CreateBudgetRequest, CallSettings)
             // Create client
             BudgetServiceClient budgetServiceClient = BudgetServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Billing.Budgets.V1.Snippets
             };
             // Make the request
             Budget response = budgetServiceClient.CreateBudget(request);
-            // End snippet
         }
     }
 }

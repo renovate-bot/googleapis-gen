@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Translate.V3.Snippets
 {
+    using Google.Cloud.Translate.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTranslationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGlossaryAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetGlossaryRequestObjectAsync()
         {
-            // Snippet: GetGlossaryAsync(GetGlossaryRequest, CallSettings)
-            // Additional: GetGlossaryAsync(GetGlossaryRequest, CancellationToken)
             // Create client
             TranslationServiceClient translationServiceClient = await TranslationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Translate.V3.Snippets
             };
             // Make the request
             Glossary response = await translationServiceClient.GetGlossaryAsync(request);
-            // End snippet
         }
     }
 }

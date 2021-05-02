@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import setuptools  # type: ignore
 
 
@@ -29,7 +31,8 @@ setuptools.setup(
         'grpcio >= 1.10.0',
         'proto-plus >= 1.15.0',
     ),
-    python_requires='>=3.7',    setup_requires=[
+    python_requires='>=3.7',
+    setup_requires=[
         'libcst >= 0.2.5',
     ],
     scripts=[

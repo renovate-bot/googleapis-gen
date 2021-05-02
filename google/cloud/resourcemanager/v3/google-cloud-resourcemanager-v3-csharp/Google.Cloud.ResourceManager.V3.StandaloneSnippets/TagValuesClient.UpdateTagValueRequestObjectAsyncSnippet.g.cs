@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
+    using Google.Cloud.ResourceManager.V3;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
     public sealed partial class GeneratedTagValuesClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateTagValueAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateTagValueRequestObjectAsync()
         {
-            // Snippet: UpdateTagValueAsync(UpdateTagValueRequest, CallSettings)
-            // Additional: UpdateTagValueAsync(UpdateTagValueRequest, CancellationToken)
             // Create client
             TagValuesClient tagValuesClient = await TagValuesClient.CreateAsync();
             // Initialize request argument(s)
@@ -54,7 +57,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
                 // If it has completed, then access the result
                 TagValue retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

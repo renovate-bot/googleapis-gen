@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedKnowledgeBasesClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteKnowledgeBaseAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteKnowledgeBaseResourceNamesAsync()
         {
-            // Snippet: DeleteKnowledgeBaseAsync(KnowledgeBaseName, CallSettings)
-            // Additional: DeleteKnowledgeBaseAsync(KnowledgeBaseName, CancellationToken)
             // Create client
             KnowledgeBasesClient knowledgeBasesClient = await KnowledgeBasesClient.CreateAsync();
             // Initialize request argument(s)
             KnowledgeBaseName name = KnowledgeBaseName.FromProjectKnowledgeBase("[PROJECT]", "[KNOWLEDGE_BASE]");
             // Make the request
             await knowledgeBasesClient.DeleteKnowledgeBaseAsync(name);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -25,6 +27,7 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 import grpc  # type: ignore
 
 from google.cloud.resourcesettings_v1.types import resource_settings
+
 from .base import ResourceSettingsServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -70,8 +73,7 @@ class ResourceSettingsServiceGrpcTransport(ResourceSettingsServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -210,15 +212,13 @@ class ResourceSettingsServiceGrpcTransport(ResourceSettingsServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -232,9 +232,7 @@ class ResourceSettingsServiceGrpcTransport(ResourceSettingsServiceTransport):
     def list_settings(self) -> Callable[
             [resource_settings.ListSettingsRequest],
             resource_settings.ListSettingsResponse]:
-        r"""Return a callable for the
-        list settings
-          method over gRPC.
+        r"""Return a callable for the list settings method over gRPC.
 
         Lists all the settings that are available on the Cloud resource
         ``parent``.
@@ -261,9 +259,7 @@ class ResourceSettingsServiceGrpcTransport(ResourceSettingsServiceTransport):
     def get_setting(self) -> Callable[
             [resource_settings.GetSettingRequest],
             resource_settings.Setting]:
-        r"""Return a callable for the
-        get setting
-          method over gRPC.
+        r"""Return a callable for the get setting method over gRPC.
 
         Gets a setting.
 
@@ -292,9 +288,7 @@ class ResourceSettingsServiceGrpcTransport(ResourceSettingsServiceTransport):
     def update_setting(self) -> Callable[
             [resource_settings.UpdateSettingRequest],
             resource_settings.Setting]:
-        r"""Return a callable for the
-        update setting
-          method over gRPC.
+        r"""Return a callable for the update setting method over gRPC.
 
         Updates a setting.
 

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -38,6 +40,7 @@ from google.cloud.gaming_v1beta.types import realms
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import RealmsServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import RealmsServiceGrpcTransport
 from .transports.grpc_asyncio import RealmsServiceGrpcAsyncIOTransport
@@ -341,8 +344,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
 
         Args:
             request (google.cloud.gaming_v1beta.types.ListRealmsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 RealmsService.ListRealms.
             parent (str):
                 Required. The parent resource name. Uses the form:
@@ -351,6 +353,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -380,8 +383,10 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, realms.ListRealmsRequest):
             request = realms.ListRealmsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -429,8 +434,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
 
         Args:
             request (google.cloud.gaming_v1beta.types.GetRealmRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 RealmsService.GetRealm.
             name (str):
                 Required. The name of the realm to retrieve. Uses the
@@ -440,6 +444,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -464,8 +469,10 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, realms.GetRealmRequest):
             request = realms.GetRealmRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -506,8 +513,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
 
         Args:
             request (google.cloud.gaming_v1beta.types.CreateRealmRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 RealmsService.CreateRealm.
             parent (str):
                 Required. The parent resource name. Uses the form:
@@ -530,6 +536,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
                 This corresponds to the ``realm_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -559,8 +566,10 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, realms.CreateRealmRequest):
             request = realms.CreateRealmRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if realm is not None:
@@ -611,8 +620,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
 
         Args:
             request (google.cloud.gaming_v1beta.types.DeleteRealmRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 RealmsService.DeleteRealm.
             name (str):
                 Required. The name of the realm to delete. Uses the
@@ -622,6 +630,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -661,8 +670,10 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, realms.DeleteRealmRequest):
             request = realms.DeleteRealmRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -710,8 +721,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
 
         Args:
             request (google.cloud.gaming_v1beta.types.UpdateRealmRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 RealmsService.UpdateRealm.
             realm (google.cloud.gaming_v1beta.types.Realm):
                 Required. The realm to be updated. Only fields specified
@@ -730,6 +740,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -759,8 +770,10 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
         # there are no flattened fields.
         if not isinstance(request, realms.UpdateRealmRequest):
             request = realms.UpdateRealmRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if realm is not None:
                 request.realm = realm
             if update_mask is not None:
@@ -808,9 +821,9 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
 
         Args:
             request (google.cloud.gaming_v1beta.types.PreviewRealmUpdateRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 RealmsService.PreviewRealmUpdate.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -824,6 +837,7 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a realms.PreviewRealmUpdateRequest.
         # There's no risk of modifying the input as we've already verified
@@ -853,6 +867,8 @@ class RealmsServiceClient(metaclass=RealmsServiceClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdGroupAdLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupAdLabelAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAdGroupAdLabelRequestObjectAsync()
         {
-            // Snippet: GetAdGroupAdLabelAsync(GetAdGroupAdLabelRequest, CallSettings)
-            // Additional: GetAdGroupAdLabelAsync(GetAdGroupAdLabelRequest, CancellationToken)
             // Create client
             AdGroupAdLabelServiceClient adGroupAdLabelServiceClient = await AdGroupAdLabelServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             AdGroupAdLabel response = await adGroupAdLabelServiceClient.GetAdGroupAdLabelAsync(request);
-            // End snippet
         }
     }
 }

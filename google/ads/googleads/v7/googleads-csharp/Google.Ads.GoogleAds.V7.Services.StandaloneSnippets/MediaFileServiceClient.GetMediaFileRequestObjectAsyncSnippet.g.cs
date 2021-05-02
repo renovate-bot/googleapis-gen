@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMediaFileServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMediaFileAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetMediaFileRequestObjectAsync()
         {
-            // Snippet: GetMediaFileAsync(GetMediaFileRequest, CallSettings)
-            // Additional: GetMediaFileAsync(GetMediaFileRequest, CancellationToken)
             // Create client
             MediaFileServiceClient mediaFileServiceClient = await MediaFileServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MediaFile response = await mediaFileServiceClient.GetMediaFileAsync(request);
-            // End snippet
         }
     }
 }

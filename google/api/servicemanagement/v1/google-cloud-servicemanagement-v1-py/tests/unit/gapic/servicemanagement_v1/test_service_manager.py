@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api import auth_pb2 as ga_auth  # type: ignore
@@ -59,8 +59,6 @@ from google.cloud.servicemanagement_v1.services.service_manager import ServiceMa
 from google.cloud.servicemanagement_v1.services.service_manager import ServiceManagerClient
 from google.cloud.servicemanagement_v1.services.service_manager import pagers
 from google.cloud.servicemanagement_v1.services.service_manager import transports
-from google.cloud.servicemanagement_v1.services.service_manager.transports.base import _API_CORE_VERSION
-from google.cloud.servicemanagement_v1.services.service_manager.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.servicemanagement_v1.types import resources
 from google.cloud.servicemanagement_v1.types import servicemanager
 from google.longrunning import operations_pb2
@@ -73,28 +71,6 @@ from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import type_pb2 as gp_type  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -262,10 +238,12 @@ def test_service_manager_client_client_options(client_class, transport_class, tr
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (ServiceManagerClient, transports.ServiceManagerGrpcTransport, "grpc", "true"),
     (ServiceManagerAsyncClient, transports.ServiceManagerGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (ServiceManagerClient, transports.ServiceManagerGrpcTransport, "grpc", "false"),
     (ServiceManagerAsyncClient, transports.ServiceManagerGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(ServiceManagerClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ServiceManagerClient))
 @mock.patch.object(ServiceManagerAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ServiceManagerAsyncClient))
@@ -420,16 +398,21 @@ def test_list_services(transport: str = 'grpc', request_type=servicemanager.List
         # Designate an appropriate return value for the call.
         call.return_value = servicemanager.ListServicesResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_services(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.ListServicesRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListServicesPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -452,8 +435,8 @@ def test_list_services_empty_call():
         client.list_services()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.ListServicesRequest()
 
+        assert args[0] == servicemanager.ListServicesRequest()
 
 @pytest.mark.asyncio
 async def test_list_services_async(transport: str = 'grpc_asyncio', request_type=servicemanager.ListServicesRequest):
@@ -471,18 +454,21 @@ async def test_list_services_async(transport: str = 'grpc_asyncio', request_type
             type(client.transport.list_services),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(servicemanager.ListServicesResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(servicemanager.ListServicesResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_services(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.ListServicesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListServicesAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -502,6 +488,7 @@ def test_list_services_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = servicemanager.ListServicesResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_services(
@@ -513,7 +500,9 @@ def test_list_services_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].producer_project_id == 'producer_project_id_value'
+
         assert args[0].consumer_id == 'consumer_id_value'
 
 
@@ -557,7 +546,9 @@ async def test_list_services_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].producer_project_id == 'producer_project_id_value'
+
         assert args[0].consumer_id == 'consumer_id_value'
 
 
@@ -758,6 +749,7 @@ async def test_list_services_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_service(transport: str = 'grpc', request_type=servicemanager.GetServiceRequest):
     client = ServiceManagerClient(
         credentials=credentials.AnonymousCredentials(),
@@ -775,18 +767,25 @@ def test_get_service(transport: str = 'grpc', request_type=servicemanager.GetSer
         # Designate an appropriate return value for the call.
         call.return_value = resources.ManagedService(
             service_name='service_name_value',
+
             producer_project_id='producer_project_id_value',
+
         )
+
         response = client.get_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.GetServiceRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, resources.ManagedService)
+
     assert response.service_name == 'service_name_value'
+
     assert response.producer_project_id == 'producer_project_id_value'
 
 
@@ -809,8 +808,8 @@ def test_get_service_empty_call():
         client.get_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.GetServiceRequest()
 
+        assert args[0] == servicemanager.GetServiceRequest()
 
 @pytest.mark.asyncio
 async def test_get_service_async(transport: str = 'grpc_asyncio', request_type=servicemanager.GetServiceRequest):
@@ -828,20 +827,24 @@ async def test_get_service_async(transport: str = 'grpc_asyncio', request_type=s
             type(client.transport.get_service),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.ManagedService(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.ManagedService(
             service_name='service_name_value',
             producer_project_id='producer_project_id_value',
         ))
+
         response = await client.get_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.GetServiceRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.ManagedService)
+
     assert response.service_name == 'service_name_value'
+
     assert response.producer_project_id == 'producer_project_id_value'
 
 
@@ -861,6 +864,7 @@ def test_get_service_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.ManagedService()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_service(
@@ -871,6 +875,7 @@ def test_get_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
 
 
@@ -912,6 +917,7 @@ async def test_get_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
 
 
@@ -946,11 +952,13 @@ def test_create_service(transport: str = 'grpc', request_type=servicemanager.Cre
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.create_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.CreateServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -976,8 +984,8 @@ def test_create_service_empty_call():
         client.create_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.CreateServiceRequest()
 
+        assert args[0] == servicemanager.CreateServiceRequest()
 
 @pytest.mark.asyncio
 async def test_create_service_async(transport: str = 'grpc_asyncio', request_type=servicemanager.CreateServiceRequest):
@@ -998,11 +1006,13 @@ async def test_create_service_async(transport: str = 'grpc_asyncio', request_typ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.create_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.CreateServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -1025,6 +1035,7 @@ def test_create_service_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_service(
@@ -1035,6 +1046,7 @@ def test_create_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service == resources.ManagedService(service_name='service_name_value')
 
 
@@ -1078,6 +1090,7 @@ async def test_create_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service == resources.ManagedService(service_name='service_name_value')
 
 
@@ -1112,11 +1125,13 @@ def test_delete_service(transport: str = 'grpc', request_type=servicemanager.Del
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.delete_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.DeleteServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -1142,8 +1157,8 @@ def test_delete_service_empty_call():
         client.delete_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.DeleteServiceRequest()
 
+        assert args[0] == servicemanager.DeleteServiceRequest()
 
 @pytest.mark.asyncio
 async def test_delete_service_async(transport: str = 'grpc_asyncio', request_type=servicemanager.DeleteServiceRequest):
@@ -1164,11 +1179,13 @@ async def test_delete_service_async(transport: str = 'grpc_asyncio', request_typ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.delete_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.DeleteServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -1191,6 +1208,7 @@ def test_delete_service_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_service(
@@ -1201,6 +1219,7 @@ def test_delete_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
 
 
@@ -1244,6 +1263,7 @@ async def test_delete_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
 
 
@@ -1278,11 +1298,13 @@ def test_undelete_service(transport: str = 'grpc', request_type=servicemanager.U
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.undelete_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.UndeleteServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -1308,8 +1330,8 @@ def test_undelete_service_empty_call():
         client.undelete_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.UndeleteServiceRequest()
 
+        assert args[0] == servicemanager.UndeleteServiceRequest()
 
 @pytest.mark.asyncio
 async def test_undelete_service_async(transport: str = 'grpc_asyncio', request_type=servicemanager.UndeleteServiceRequest):
@@ -1330,11 +1352,13 @@ async def test_undelete_service_async(transport: str = 'grpc_asyncio', request_t
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.undelete_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.UndeleteServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -1357,6 +1381,7 @@ def test_undelete_service_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.undelete_service(
@@ -1367,6 +1392,7 @@ def test_undelete_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
 
 
@@ -1410,6 +1436,7 @@ async def test_undelete_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
 
 
@@ -1445,16 +1472,21 @@ def test_list_service_configs(transport: str = 'grpc', request_type=servicemanag
         # Designate an appropriate return value for the call.
         call.return_value = servicemanager.ListServiceConfigsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_service_configs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.ListServiceConfigsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListServiceConfigsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1477,8 +1509,8 @@ def test_list_service_configs_empty_call():
         client.list_service_configs()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.ListServiceConfigsRequest()
 
+        assert args[0] == servicemanager.ListServiceConfigsRequest()
 
 @pytest.mark.asyncio
 async def test_list_service_configs_async(transport: str = 'grpc_asyncio', request_type=servicemanager.ListServiceConfigsRequest):
@@ -1496,18 +1528,21 @@ async def test_list_service_configs_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.list_service_configs),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(servicemanager.ListServiceConfigsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(servicemanager.ListServiceConfigsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_service_configs(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.ListServiceConfigsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListServiceConfigsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1527,6 +1562,7 @@ def test_list_service_configs_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = servicemanager.ListServiceConfigsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_service_configs(
@@ -1537,6 +1573,7 @@ def test_list_service_configs_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
 
 
@@ -1578,6 +1615,7 @@ async def test_list_service_configs_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
 
 
@@ -1777,6 +1815,7 @@ async def test_list_service_configs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_service_config(transport: str = 'grpc', request_type=servicemanager.GetServiceConfigRequest):
     client = ServiceManagerClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1794,22 +1833,33 @@ def test_get_service_config(transport: str = 'grpc', request_type=servicemanager
         # Designate an appropriate return value for the call.
         call.return_value = service.Service(
             name='name_value',
+
             title='title_value',
+
             producer_project_id='producer_project_id_value',
+
             id='id_value',
+
         )
+
         response = client.get_service_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.GetServiceConfigRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, service.Service)
+
     assert response.name == 'name_value'
+
     assert response.title == 'title_value'
+
     assert response.producer_project_id == 'producer_project_id_value'
+
     assert response.id == 'id_value'
 
 
@@ -1832,8 +1882,8 @@ def test_get_service_config_empty_call():
         client.get_service_config()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.GetServiceConfigRequest()
 
+        assert args[0] == servicemanager.GetServiceConfigRequest()
 
 @pytest.mark.asyncio
 async def test_get_service_config_async(transport: str = 'grpc_asyncio', request_type=servicemanager.GetServiceConfigRequest):
@@ -1851,24 +1901,30 @@ async def test_get_service_config_async(transport: str = 'grpc_asyncio', request
             type(client.transport.get_service_config),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.Service(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.Service(
             name='name_value',
             title='title_value',
             producer_project_id='producer_project_id_value',
             id='id_value',
         ))
+
         response = await client.get_service_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.GetServiceConfigRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.Service)
+
     assert response.name == 'name_value'
+
     assert response.title == 'title_value'
+
     assert response.producer_project_id == 'producer_project_id_value'
+
     assert response.id == 'id_value'
 
 
@@ -1888,6 +1944,7 @@ def test_get_service_config_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.Service()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_service_config(
@@ -1900,8 +1957,11 @@ def test_get_service_config_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].config_id == 'config_id_value'
+
         assert args[0].view == servicemanager.GetServiceConfigRequest.ConfigView.FULL
 
 
@@ -1947,8 +2007,11 @@ async def test_get_service_config_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].config_id == 'config_id_value'
+
         assert args[0].view == servicemanager.GetServiceConfigRequest.ConfigView.FULL
 
 
@@ -1986,22 +2049,33 @@ def test_create_service_config(transport: str = 'grpc', request_type=servicemana
         # Designate an appropriate return value for the call.
         call.return_value = service.Service(
             name='name_value',
+
             title='title_value',
+
             producer_project_id='producer_project_id_value',
+
             id='id_value',
+
         )
+
         response = client.create_service_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.CreateServiceConfigRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, service.Service)
+
     assert response.name == 'name_value'
+
     assert response.title == 'title_value'
+
     assert response.producer_project_id == 'producer_project_id_value'
+
     assert response.id == 'id_value'
 
 
@@ -2024,8 +2098,8 @@ def test_create_service_config_empty_call():
         client.create_service_config()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.CreateServiceConfigRequest()
 
+        assert args[0] == servicemanager.CreateServiceConfigRequest()
 
 @pytest.mark.asyncio
 async def test_create_service_config_async(transport: str = 'grpc_asyncio', request_type=servicemanager.CreateServiceConfigRequest):
@@ -2043,24 +2117,30 @@ async def test_create_service_config_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.create_service_config),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(service.Service(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(service.Service(
             name='name_value',
             title='title_value',
             producer_project_id='producer_project_id_value',
             id='id_value',
         ))
+
         response = await client.create_service_config(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.CreateServiceConfigRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.Service)
+
     assert response.name == 'name_value'
+
     assert response.title == 'title_value'
+
     assert response.producer_project_id == 'producer_project_id_value'
+
     assert response.id == 'id_value'
 
 
@@ -2080,6 +2160,7 @@ def test_create_service_config_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = service.Service()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_service_config(
@@ -2091,7 +2172,9 @@ def test_create_service_config_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].service_config == service.Service(name='name_value')
 
 
@@ -2135,7 +2218,9 @@ async def test_create_service_config_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].service_config == service.Service(name='name_value')
 
 
@@ -2171,11 +2256,13 @@ def test_submit_config_source(transport: str = 'grpc', request_type=servicemanag
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.submit_config_source(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.SubmitConfigSourceRequest()
 
     # Establish that the response is the type that we expect.
@@ -2201,8 +2288,8 @@ def test_submit_config_source_empty_call():
         client.submit_config_source()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.SubmitConfigSourceRequest()
 
+        assert args[0] == servicemanager.SubmitConfigSourceRequest()
 
 @pytest.mark.asyncio
 async def test_submit_config_source_async(transport: str = 'grpc_asyncio', request_type=servicemanager.SubmitConfigSourceRequest):
@@ -2223,11 +2310,13 @@ async def test_submit_config_source_async(transport: str = 'grpc_asyncio', reque
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.submit_config_source(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.SubmitConfigSourceRequest()
 
     # Establish that the response is the type that we expect.
@@ -2250,6 +2339,7 @@ def test_submit_config_source_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.submit_config_source(
@@ -2262,8 +2352,11 @@ def test_submit_config_source_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].config_source == resources.ConfigSource(id='id_value')
+
         assert args[0].validate_only == True
 
 
@@ -2311,8 +2404,11 @@ async def test_submit_config_source_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].config_source == resources.ConfigSource(id='id_value')
+
         assert args[0].validate_only == True
 
 
@@ -2350,16 +2446,21 @@ def test_list_service_rollouts(transport: str = 'grpc', request_type=servicemana
         # Designate an appropriate return value for the call.
         call.return_value = servicemanager.ListServiceRolloutsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_service_rollouts(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.ListServiceRolloutsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListServiceRolloutsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2382,8 +2483,8 @@ def test_list_service_rollouts_empty_call():
         client.list_service_rollouts()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.ListServiceRolloutsRequest()
 
+        assert args[0] == servicemanager.ListServiceRolloutsRequest()
 
 @pytest.mark.asyncio
 async def test_list_service_rollouts_async(transport: str = 'grpc_asyncio', request_type=servicemanager.ListServiceRolloutsRequest):
@@ -2401,18 +2502,21 @@ async def test_list_service_rollouts_async(transport: str = 'grpc_asyncio', requ
             type(client.transport.list_service_rollouts),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(servicemanager.ListServiceRolloutsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(servicemanager.ListServiceRolloutsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_service_rollouts(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.ListServiceRolloutsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListServiceRolloutsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2432,6 +2536,7 @@ def test_list_service_rollouts_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = servicemanager.ListServiceRolloutsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_service_rollouts(
@@ -2443,7 +2548,9 @@ def test_list_service_rollouts_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].filter == 'filter_value'
 
 
@@ -2487,7 +2594,9 @@ async def test_list_service_rollouts_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].filter == 'filter_value'
 
 
@@ -2688,6 +2797,7 @@ async def test_list_service_rollouts_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_service_rollout(transport: str = 'grpc', request_type=servicemanager.GetServiceRolloutRequest):
     client = ServiceManagerClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2705,23 +2815,34 @@ def test_get_service_rollout(transport: str = 'grpc', request_type=servicemanage
         # Designate an appropriate return value for the call.
         call.return_value = resources.Rollout(
             rollout_id='rollout_id_value',
+
             created_by='created_by_value',
+
             status=resources.Rollout.RolloutStatus.IN_PROGRESS,
+
             service_name='service_name_value',
+
             traffic_percent_strategy=resources.Rollout.TrafficPercentStrategy(percentages={'key_value': 0.541}),
         )
+
         response = client.get_service_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.GetServiceRolloutRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, resources.Rollout)
+
     assert response.rollout_id == 'rollout_id_value'
+
     assert response.created_by == 'created_by_value'
+
     assert response.status == resources.Rollout.RolloutStatus.IN_PROGRESS
+
     assert response.service_name == 'service_name_value'
 
 
@@ -2744,8 +2865,8 @@ def test_get_service_rollout_empty_call():
         client.get_service_rollout()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.GetServiceRolloutRequest()
 
+        assert args[0] == servicemanager.GetServiceRolloutRequest()
 
 @pytest.mark.asyncio
 async def test_get_service_rollout_async(transport: str = 'grpc_asyncio', request_type=servicemanager.GetServiceRolloutRequest):
@@ -2763,24 +2884,30 @@ async def test_get_service_rollout_async(transport: str = 'grpc_asyncio', reques
             type(client.transport.get_service_rollout),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(resources.Rollout(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resources.Rollout(
             rollout_id='rollout_id_value',
             created_by='created_by_value',
             status=resources.Rollout.RolloutStatus.IN_PROGRESS,
             service_name='service_name_value',
         ))
+
         response = await client.get_service_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.GetServiceRolloutRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Rollout)
+
     assert response.rollout_id == 'rollout_id_value'
+
     assert response.created_by == 'created_by_value'
+
     assert response.status == resources.Rollout.RolloutStatus.IN_PROGRESS
+
     assert response.service_name == 'service_name_value'
 
 
@@ -2800,6 +2927,7 @@ def test_get_service_rollout_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = resources.Rollout()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_service_rollout(
@@ -2811,7 +2939,9 @@ def test_get_service_rollout_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].rollout_id == 'rollout_id_value'
 
 
@@ -2855,7 +2985,9 @@ async def test_get_service_rollout_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].rollout_id == 'rollout_id_value'
 
 
@@ -2891,11 +3023,13 @@ def test_create_service_rollout(transport: str = 'grpc', request_type=serviceman
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.create_service_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.CreateServiceRolloutRequest()
 
     # Establish that the response is the type that we expect.
@@ -2921,8 +3055,8 @@ def test_create_service_rollout_empty_call():
         client.create_service_rollout()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.CreateServiceRolloutRequest()
 
+        assert args[0] == servicemanager.CreateServiceRolloutRequest()
 
 @pytest.mark.asyncio
 async def test_create_service_rollout_async(transport: str = 'grpc_asyncio', request_type=servicemanager.CreateServiceRolloutRequest):
@@ -2943,11 +3077,13 @@ async def test_create_service_rollout_async(transport: str = 'grpc_asyncio', req
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.create_service_rollout(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.CreateServiceRolloutRequest()
 
     # Establish that the response is the type that we expect.
@@ -2970,6 +3106,7 @@ def test_create_service_rollout_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_service_rollout(
@@ -2981,7 +3118,9 @@ def test_create_service_rollout_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].rollout == resources.Rollout(rollout_id='rollout_id_value')
 
 
@@ -3027,7 +3166,9 @@ async def test_create_service_rollout_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].rollout == resources.Rollout(rollout_id='rollout_id_value')
 
 
@@ -3064,18 +3205,25 @@ def test_generate_config_report(transport: str = 'grpc', request_type=serviceman
         # Designate an appropriate return value for the call.
         call.return_value = servicemanager.GenerateConfigReportResponse(
             service_name='service_name_value',
+
             id='id_value',
+
         )
+
         response = client.generate_config_report(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.GenerateConfigReportRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, servicemanager.GenerateConfigReportResponse)
+
     assert response.service_name == 'service_name_value'
+
     assert response.id == 'id_value'
 
 
@@ -3098,8 +3246,8 @@ def test_generate_config_report_empty_call():
         client.generate_config_report()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.GenerateConfigReportRequest()
 
+        assert args[0] == servicemanager.GenerateConfigReportRequest()
 
 @pytest.mark.asyncio
 async def test_generate_config_report_async(transport: str = 'grpc_asyncio', request_type=servicemanager.GenerateConfigReportRequest):
@@ -3117,20 +3265,24 @@ async def test_generate_config_report_async(transport: str = 'grpc_asyncio', req
             type(client.transport.generate_config_report),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(servicemanager.GenerateConfigReportResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(servicemanager.GenerateConfigReportResponse(
             service_name='service_name_value',
             id='id_value',
         ))
+
         response = await client.generate_config_report(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.GenerateConfigReportRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, servicemanager.GenerateConfigReportResponse)
+
     assert response.service_name == 'service_name_value'
+
     assert response.id == 'id_value'
 
 
@@ -3150,6 +3302,7 @@ def test_generate_config_report_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = servicemanager.GenerateConfigReportResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.generate_config_report(
@@ -3161,7 +3314,9 @@ def test_generate_config_report_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].new_config == gp_any.Any(type_url='type_url_value')
+
         assert args[0].old_config == gp_any.Any(type_url='type_url_value')
 
 
@@ -3205,7 +3360,9 @@ async def test_generate_config_report_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].new_config == gp_any.Any(type_url='type_url_value')
+
         assert args[0].old_config == gp_any.Any(type_url='type_url_value')
 
 
@@ -3241,11 +3398,13 @@ def test_enable_service(transport: str = 'grpc', request_type=servicemanager.Ena
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.enable_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.EnableServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -3271,8 +3430,8 @@ def test_enable_service_empty_call():
         client.enable_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.EnableServiceRequest()
 
+        assert args[0] == servicemanager.EnableServiceRequest()
 
 @pytest.mark.asyncio
 async def test_enable_service_async(transport: str = 'grpc_asyncio', request_type=servicemanager.EnableServiceRequest):
@@ -3293,11 +3452,13 @@ async def test_enable_service_async(transport: str = 'grpc_asyncio', request_typ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.enable_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.EnableServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -3320,6 +3481,7 @@ def test_enable_service_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.enable_service(
@@ -3331,7 +3493,9 @@ def test_enable_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].consumer_id == 'consumer_id_value'
 
 
@@ -3377,7 +3541,9 @@ async def test_enable_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].consumer_id == 'consumer_id_value'
 
 
@@ -3413,11 +3579,13 @@ def test_disable_service(transport: str = 'grpc', request_type=servicemanager.Di
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.disable_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.DisableServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -3443,8 +3611,8 @@ def test_disable_service_empty_call():
         client.disable_service()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == servicemanager.DisableServiceRequest()
 
+        assert args[0] == servicemanager.DisableServiceRequest()
 
 @pytest.mark.asyncio
 async def test_disable_service_async(transport: str = 'grpc_asyncio', request_type=servicemanager.DisableServiceRequest):
@@ -3465,11 +3633,13 @@ async def test_disable_service_async(transport: str = 'grpc_asyncio', request_ty
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.disable_service(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == servicemanager.DisableServiceRequest()
 
     # Establish that the response is the type that we expect.
@@ -3492,6 +3662,7 @@ def test_disable_service_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.disable_service(
@@ -3503,7 +3674,9 @@ def test_disable_service_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].consumer_id == 'consumer_id_value'
 
 
@@ -3549,7 +3722,9 @@ async def test_disable_service_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].service_name == 'service_name_value'
+
         assert args[0].consumer_id == 'consumer_id_value'
 
 
@@ -3609,6 +3784,7 @@ def test_transport_instance():
     client = ServiceManagerClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ServiceManagerGrpcTransport(
@@ -3623,6 +3799,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.ServiceManagerGrpcTransport,
     transports.ServiceManagerGrpcAsyncIOTransport,
@@ -3634,6 +3811,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = ServiceManagerClient(
@@ -3643,6 +3821,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.ServiceManagerGrpcTransport,
     )
+
 
 def test_service_manager_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -3679,7 +3858,7 @@ def test_service_manager_base_transport():
         'generate_config_report',
         'enable_service',
         'disable_service',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -3690,27 +3869,9 @@ def test_service_manager_base_transport():
         transport.operations_client
 
 
-@requires_google_auth_gte_1_25_0
 def test_service_manager_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.servicemanagement_v1.services.service_manager.transports.ServiceManagerTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.ServiceManagerTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/cloud-platform.read-only',            'https://www.googleapis.com/auth/service.management',            'https://www.googleapis.com/auth/service.management.readonly',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_service_manager_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.servicemanagement_v1.services.service_manager.transports.ServiceManagerTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.servicemanagement_v1.services.service_manager.transports.ServiceManagerTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ServiceManagerTransport(
@@ -3729,188 +3890,39 @@ def test_service_manager_base_transport_with_credentials_file_old_google_auth():
 
 def test_service_manager_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.servicemanagement_v1.services.service_manager.transports.ServiceManagerTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.servicemanagement_v1.services.service_manager.transports.ServiceManagerTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ServiceManagerTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_service_manager_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         ServiceManagerClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/cloud-platform.read-only',
-            'https://www.googleapis.com/auth/service.management',
-            'https://www.googleapis.com/auth/service.management.readonly',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_service_manager_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        ServiceManagerClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',                'https://www.googleapis.com/auth/service.management',                'https://www.googleapis.com/auth/service.management.readonly',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ServiceManagerGrpcTransport,
-        transports.ServiceManagerGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_service_manager_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',                'https://www.googleapis.com/auth/service.management',                'https://www.googleapis.com/auth/service.management.readonly',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ServiceManagerGrpcTransport,
-        transports.ServiceManagerGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_service_manager_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/cloud-platform',
             'https://www.googleapis.com/auth/cloud-platform.read-only',
             'https://www.googleapis.com/auth/service.management',
-            'https://www.googleapis.com/auth/service.management.readonly',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/service.management.readonly',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ServiceManagerGrpcTransport, grpc_helpers),
-        (transports.ServiceManagerGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_service_manager_transport_create_channel(transport_class, grpc_helpers):
+def test_service_manager_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.ServiceManagerGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/cloud-platform.read-only',
+            'https://www.googleapis.com/auth/service.management',
+            'https://www.googleapis.com/auth/service.management.readonly',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "servicemanagement.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',                'https://www.googleapis.com/auth/service.management',                'https://www.googleapis.com/auth/service.management.readonly',),
-            scopes=["1", "2"],
-            default_host="servicemanagement.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ServiceManagerGrpcTransport, grpc_helpers),
-        (transports.ServiceManagerGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_service_manager_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "servicemanagement.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',                'https://www.googleapis.com/auth/service.management',                'https://www.googleapis.com/auth/service.management.readonly',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ServiceManagerGrpcTransport, grpc_helpers),
-        (transports.ServiceManagerGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_service_manager_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "servicemanagement.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -3975,6 +3987,7 @@ def test_service_manager_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='servicemanagement.googleapis.com:8000'),
     )
     assert client.transport._host == 'servicemanagement.googleapis.com:8000'
+
 
 def test_service_manager_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -4132,6 +4145,7 @@ def test_service_manager_grpc_lro_async_client():
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ServiceManagerClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -4139,7 +4153,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = ServiceManagerClient.common_billing_account_path(**expected)
 
@@ -4149,6 +4164,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ServiceManagerClient.common_folder_path(folder)
     assert expected == actual
@@ -4156,7 +4172,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = ServiceManagerClient.common_folder_path(**expected)
 
@@ -4166,6 +4183,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ServiceManagerClient.common_organization_path(organization)
     assert expected == actual
@@ -4173,7 +4191,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = ServiceManagerClient.common_organization_path(**expected)
 
@@ -4183,6 +4202,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = ServiceManagerClient.common_project_path(project)
     assert expected == actual
@@ -4190,7 +4210,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = ServiceManagerClient.common_project_path(**expected)
 
@@ -4201,6 +4222,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ServiceManagerClient.common_location_path(project, location)
     assert expected == actual
@@ -4208,8 +4230,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = ServiceManagerClient.common_location_path(**expected)
 

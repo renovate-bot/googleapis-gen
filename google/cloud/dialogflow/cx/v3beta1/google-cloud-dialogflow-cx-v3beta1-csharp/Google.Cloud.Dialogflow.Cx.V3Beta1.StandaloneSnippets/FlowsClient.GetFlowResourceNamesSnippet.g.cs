@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedFlowsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetFlow</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetFlowResourceNames()
         {
-            // Snippet: GetFlow(FlowName, CallSettings)
             // Create client
             FlowsClient flowsClient = FlowsClient.Create();
             // Initialize request argument(s)
             FlowName name = FlowName.FromProjectLocationAgentFlow("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
             // Make the request
             Flow response = flowsClient.GetFlow(name);
-            // End snippet
         }
     }
 }

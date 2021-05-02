@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Bigtable.Admin.V2.Snippets
 {
+    using Google.Cloud.Bigtable.Admin.V2;
+
     public sealed partial class GeneratedBigtableTableAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateTable</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateTable()
         {
-            // Snippet: CreateTable(string, string, Table, CallSettings)
             // Create client
             BigtableTableAdminClient bigtableTableAdminClient = BigtableTableAdminClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.Bigtable.Admin.V2.Snippets
             Table table = new Table();
             // Make the request
             Table response = bigtableTableAdminClient.CreateTable(parent, tableId, table);
-            // End snippet
         }
     }
 }

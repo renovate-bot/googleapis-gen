@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.automl_v1.types import io
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -77,113 +80,89 @@ class OperationMetadata(proto.Message):
             updated for the last time.
     """
 
-    delete_details = proto.Field(
-        proto.MESSAGE,
-        number=8,
-        oneof='details',
+    delete_details = proto.Field(proto.MESSAGE, number=8, oneof='details',
         message='DeleteOperationMetadata',
     )
-    deploy_model_details = proto.Field(
-        proto.MESSAGE,
-        number=24,
-        oneof='details',
+
+    deploy_model_details = proto.Field(proto.MESSAGE, number=24, oneof='details',
         message='DeployModelOperationMetadata',
     )
-    undeploy_model_details = proto.Field(
-        proto.MESSAGE,
-        number=25,
-        oneof='details',
+
+    undeploy_model_details = proto.Field(proto.MESSAGE, number=25, oneof='details',
         message='UndeployModelOperationMetadata',
     )
-    create_model_details = proto.Field(
-        proto.MESSAGE,
-        number=10,
-        oneof='details',
+
+    create_model_details = proto.Field(proto.MESSAGE, number=10, oneof='details',
         message='CreateModelOperationMetadata',
     )
-    create_dataset_details = proto.Field(
-        proto.MESSAGE,
-        number=30,
-        oneof='details',
+
+    create_dataset_details = proto.Field(proto.MESSAGE, number=30, oneof='details',
         message='CreateDatasetOperationMetadata',
     )
-    import_data_details = proto.Field(
-        proto.MESSAGE,
-        number=15,
-        oneof='details',
+
+    import_data_details = proto.Field(proto.MESSAGE, number=15, oneof='details',
         message='ImportDataOperationMetadata',
     )
-    batch_predict_details = proto.Field(
-        proto.MESSAGE,
-        number=16,
-        oneof='details',
+
+    batch_predict_details = proto.Field(proto.MESSAGE, number=16, oneof='details',
         message='BatchPredictOperationMetadata',
     )
-    export_data_details = proto.Field(
-        proto.MESSAGE,
-        number=21,
-        oneof='details',
+
+    export_data_details = proto.Field(proto.MESSAGE, number=21, oneof='details',
         message='ExportDataOperationMetadata',
     )
-    export_model_details = proto.Field(
-        proto.MESSAGE,
-        number=22,
-        oneof='details',
+
+    export_model_details = proto.Field(proto.MESSAGE, number=22, oneof='details',
         message='ExportModelOperationMetadata',
     )
-    progress_percent = proto.Field(
-        proto.INT32,
-        number=13,
-    )
-    partial_failures = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+
+    progress_percent = proto.Field(proto.INT32, number=13)
+
+    partial_failures = proto.RepeatedField(proto.MESSAGE, number=2,
         message=status.Status,
     )
-    create_time = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    create_time = proto.Field(proto.MESSAGE, number=3,
         message=timestamp.Timestamp,
     )
-    update_time = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    update_time = proto.Field(proto.MESSAGE, number=4,
         message=timestamp.Timestamp,
     )
 
 
 class DeleteOperationMetadata(proto.Message):
-    r"""Details of operations that perform deletes of any entities.    """
+    r"""Details of operations that perform deletes of any entities."""
 
 
 class DeployModelOperationMetadata(proto.Message):
-    r"""Details of DeployModel operation.    """
+    r"""Details of DeployModel operation."""
 
 
 class UndeployModelOperationMetadata(proto.Message):
-    r"""Details of UndeployModel operation.    """
+    r"""Details of UndeployModel operation."""
 
 
 class CreateDatasetOperationMetadata(proto.Message):
-    r"""Details of CreateDataset operation.    """
+    r"""Details of CreateDataset operation."""
 
 
 class CreateModelOperationMetadata(proto.Message):
-    r"""Details of CreateModel operation.    """
+    r"""Details of CreateModel operation."""
 
 
 class ImportDataOperationMetadata(proto.Message):
-    r"""Details of ImportData operation.    """
+    r"""Details of ImportData operation."""
 
 
 class ExportDataOperationMetadata(proto.Message):
     r"""Details of ExportData operation.
+
     Attributes:
         output_info (google.cloud.automl_v1.types.ExportDataOperationMetadata.ExportDataOutputInfo):
             Output only. Information further describing
             this export data's output.
     """
-
     class ExportDataOutputInfo(proto.Message):
         r"""Further describes this export data's output. Supplements
         [OutputConfig][google.cloud.automl.v1.OutputConfig].
@@ -195,21 +174,16 @@ class ExportDataOperationMetadata(proto.Message):
                 is written.
         """
 
-        gcs_output_directory = proto.Field(
-            proto.STRING,
-            number=1,
-            oneof='output_location',
-        )
+        gcs_output_directory = proto.Field(proto.STRING, number=1, oneof='output_location')
 
-    output_info = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    output_info = proto.Field(proto.MESSAGE, number=1,
         message=ExportDataOutputInfo,
     )
 
 
 class BatchPredictOperationMetadata(proto.Message):
     r"""Details of BatchPredict operation.
+
     Attributes:
         input_config (google.cloud.automl_v1.types.BatchPredictInputConfig):
             Output only. The input config that was given
@@ -218,7 +192,6 @@ class BatchPredictOperationMetadata(proto.Message):
             Output only. Information further describing
             this batch predict's output.
     """
-
     class BatchPredictOutputInfo(proto.Message):
         r"""Further describes this batch predict's output. Supplements
 
@@ -231,32 +204,25 @@ class BatchPredictOperationMetadata(proto.Message):
                 output is written.
         """
 
-        gcs_output_directory = proto.Field(
-            proto.STRING,
-            number=1,
-            oneof='output_location',
-        )
+        gcs_output_directory = proto.Field(proto.STRING, number=1, oneof='output_location')
 
-    input_config = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    input_config = proto.Field(proto.MESSAGE, number=1,
         message=io.BatchPredictInputConfig,
     )
-    output_info = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    output_info = proto.Field(proto.MESSAGE, number=2,
         message=BatchPredictOutputInfo,
     )
 
 
 class ExportModelOperationMetadata(proto.Message):
     r"""Details of ExportModel operation.
+
     Attributes:
         output_info (google.cloud.automl_v1.types.ExportModelOperationMetadata.ExportModelOutputInfo):
             Output only. Information further describing
             the output of this model export.
     """
-
     class ExportModelOutputInfo(proto.Message):
         r"""Further describes the output of model export. Supplements
         [ModelExportOutputConfig][google.cloud.automl.v1.ModelExportOutputConfig].
@@ -268,14 +234,9 @@ class ExportModelOperationMetadata(proto.Message):
                 exported.
         """
 
-        gcs_output_directory = proto.Field(
-            proto.STRING,
-            number=1,
-        )
+        gcs_output_directory = proto.Field(proto.STRING, number=1)
 
-    output_info = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    output_info = proto.Field(proto.MESSAGE, number=2,
         message=ExportModelOutputInfo,
     )
 

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Websecurityscanner.V1Alpha.Snippets
 {
+    using Google.Cloud.Websecurityscanner.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWebSecurityScannerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetScanRunAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetScanRunResourceNamesAsync()
         {
-            // Snippet: GetScanRunAsync(ScanRunName, CallSettings)
-            // Additional: GetScanRunAsync(ScanRunName, CancellationToken)
             // Create client
             WebSecurityScannerClient webSecurityScannerClient = await WebSecurityScannerClient.CreateAsync();
             // Initialize request argument(s)
             ScanRunName name = ScanRunName.FromProjectScanConfigScanRun("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
             // Make the request
             ScanRun response = await webSecurityScannerClient.GetScanRunAsync(name);
-            // End snippet
         }
     }
 }

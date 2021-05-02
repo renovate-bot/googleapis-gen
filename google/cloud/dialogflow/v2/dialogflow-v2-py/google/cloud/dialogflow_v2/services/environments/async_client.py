@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -28,6 +30,7 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.cloud.dialogflow_v2.services.environments import pagers
 from google.cloud.dialogflow_v2.types import environment
+
 from .transports.base import EnvironmentsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import EnvironmentsGrpcAsyncIOTransport
 from .client import EnvironmentsClient
@@ -45,14 +48,19 @@ class EnvironmentsAsyncClient:
 
     environment_path = staticmethod(EnvironmentsClient.environment_path)
     parse_environment_path = staticmethod(EnvironmentsClient.parse_environment_path)
+
     common_billing_account_path = staticmethod(EnvironmentsClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(EnvironmentsClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(EnvironmentsClient.common_folder_path)
     parse_common_folder_path = staticmethod(EnvironmentsClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(EnvironmentsClient.common_organization_path)
     parse_common_organization_path = staticmethod(EnvironmentsClient.parse_common_organization_path)
+
     common_project_path = staticmethod(EnvironmentsClient.common_project_path)
     parse_common_project_path = staticmethod(EnvironmentsClient.parse_common_project_path)
+
     common_location_path = staticmethod(EnvironmentsClient.common_location_path)
     parse_common_location_path = staticmethod(EnvironmentsClient.parse_common_location_path)
 
@@ -137,6 +145,7 @@ class EnvironmentsAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = EnvironmentsClient(
             credentials=credentials,
             transport=transport,
@@ -157,9 +166,9 @@ class EnvironmentsAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2.types.ListEnvironmentsRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [Environments.ListEnvironments][google.cloud.dialogflow.v2.Environments.ListEnvironments].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -176,6 +185,7 @@ class EnvironmentsAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = environment.ListEnvironmentsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -213,6 +223,8 @@ class EnvironmentsAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

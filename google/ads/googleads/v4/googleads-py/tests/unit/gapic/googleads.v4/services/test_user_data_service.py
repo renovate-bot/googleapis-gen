@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -263,14 +265,17 @@ def test_upload_user_data(transport: str = 'grpc', request_type=user_data_servic
         # Designate an appropriate return value for the call.
         call.return_value = user_data_service.UploadUserDataResponse(
         )
+
         response = client.upload_user_data(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == user_data_service.UploadUserDataRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, user_data_service.UploadUserDataResponse)
 
 
@@ -286,7 +291,6 @@ def test_upload_user_data_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = user_data_service.UploadUserDataRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -294,6 +298,7 @@ def test_upload_user_data_field_headers():
             type(client.transport.upload_user_data),
             '__call__') as call:
         call.return_value = user_data_service.UploadUserDataResponse()
+
         client.upload_user_data(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -372,7 +377,7 @@ def test_user_data_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'upload_user_data',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -523,6 +528,7 @@ def test_user_data_service_transport_channel_mtls_with_adc(
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = UserDataServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -530,7 +536,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = UserDataServiceClient.common_billing_account_path(**expected)
 
@@ -540,6 +547,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = UserDataServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -547,7 +555,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = UserDataServiceClient.common_folder_path(**expected)
 
@@ -557,6 +566,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = UserDataServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -564,7 +574,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = UserDataServiceClient.common_organization_path(**expected)
 
@@ -574,6 +585,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = UserDataServiceClient.common_project_path(project)
     assert expected == actual
@@ -581,7 +593,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = UserDataServiceClient.common_project_path(**expected)
 
@@ -592,6 +605,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = UserDataServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -599,8 +613,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = UserDataServiceClient.common_location_path(**expected)
 

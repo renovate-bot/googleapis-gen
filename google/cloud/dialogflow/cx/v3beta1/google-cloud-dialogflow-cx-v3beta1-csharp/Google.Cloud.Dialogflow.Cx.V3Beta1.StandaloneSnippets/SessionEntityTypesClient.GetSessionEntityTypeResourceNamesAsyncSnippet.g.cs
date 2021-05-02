@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSessionEntityTypesClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSessionEntityTypeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetSessionEntityTypeResourceNamesAsync()
         {
-            // Snippet: GetSessionEntityTypeAsync(SessionEntityTypeName, CallSettings)
-            // Additional: GetSessionEntityTypeAsync(SessionEntityTypeName, CancellationToken)
             // Create client
             SessionEntityTypesClient sessionEntityTypesClient = await SessionEntityTypesClient.CreateAsync();
             // Initialize request argument(s)
             SessionEntityTypeName name = SessionEntityTypeName.FromProjectLocationAgentSessionEntityType("[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]", "[ENTITY_TYPE]");
             // Make the request
             SessionEntityType response = await sessionEntityTypesClient.GetSessionEntityTypeAsync(name);
-            // End snippet
         }
     }
 }

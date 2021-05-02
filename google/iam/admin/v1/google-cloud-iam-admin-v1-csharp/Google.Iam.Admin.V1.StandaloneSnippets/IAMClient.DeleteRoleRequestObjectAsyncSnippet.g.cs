@@ -17,16 +17,19 @@
 namespace Google.Iam.Admin.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Iam.Admin.V1;
     using Google.Protobuf;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIAMClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteRoleAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteRoleRequestObjectAsync()
         {
-            // Snippet: DeleteRoleAsync(DeleteRoleRequest, CallSettings)
-            // Additional: DeleteRoleAsync(DeleteRoleRequest, CancellationToken)
             // Create client
             IAMClient iAMClient = await IAMClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Iam.Admin.V1.Snippets
             };
             // Make the request
             Role response = await iAMClient.DeleteRoleAsync(request);
-            // End snippet
         }
     }
 }

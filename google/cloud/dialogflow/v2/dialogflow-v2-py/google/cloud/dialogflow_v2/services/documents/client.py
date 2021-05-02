@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -37,6 +39,7 @@ from google.cloud.dialogflow_v2.types import document
 from google.cloud.dialogflow_v2.types import document as gcd_document
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
+
 from .transports.base import DocumentsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import DocumentsGrpcTransport
 from .transports.grpc_asyncio import DocumentsGrpcAsyncIOTransport
@@ -341,8 +344,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ListDocumentsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [Documents.ListDocuments][google.cloud.dialogflow.v2.Documents.ListDocuments].
             parent (str):
                 Required. The knowledge base to list all documents for.
@@ -352,6 +354,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -381,8 +384,10 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, document.ListDocumentsRequest):
             request = document.ListDocumentsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -430,8 +435,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.GetDocumentRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [Documents.GetDocument][google.cloud.dialogflow.v2.Documents.GetDocument].
             name (str):
                 Required. The name of the document to retrieve. Format
@@ -440,6 +444,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -473,8 +478,10 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, document.GetDocumentRequest):
             request = document.GetDocumentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -518,8 +525,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.CreateDocumentRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [Documents.CreateDocument][google.cloud.dialogflow.v2.Documents.CreateDocument].
             parent (str):
                 Required. The knowledge base to create a document for.
@@ -534,6 +540,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
                 This corresponds to the ``document`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -571,8 +578,10 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_document.CreateDocumentRequest):
             request = gcd_document.CreateDocumentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if document is not None:
@@ -625,8 +634,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.DeleteDocumentRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [Documents.DeleteDocument][google.cloud.dialogflow.v2.Documents.DeleteDocument].
             name (str):
                 Required. The name of the document to delete. Format:
@@ -635,6 +643,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -674,8 +683,10 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, document.DeleteDocumentRequest):
             request = document.DeleteDocumentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -727,8 +738,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.UpdateDocumentRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [Documents.UpdateDocument][google.cloud.dialogflow.v2.Documents.UpdateDocument].
             document (google.cloud.dialogflow_v2.types.Document):
                 Required. The document to update.
@@ -743,6 +753,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -780,8 +791,10 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, gcd_document.UpdateDocumentRequest):
             request = gcd_document.UpdateDocumentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if document is not None:
                 request.document = document
             if update_mask is not None:
@@ -842,8 +855,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
 
         Args:
             request (google.cloud.dialogflow_v2.types.ReloadDocumentRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [Documents.ReloadDocument][google.cloud.dialogflow.v2.Documents.ReloadDocument].
             name (str):
                 Required. The name of the document to reload. Format:
@@ -862,6 +874,7 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
                 This corresponds to the ``content_uri`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -899,8 +912,10 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, document.ReloadDocumentRequest):
             request = document.ReloadDocumentRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
             if content_uri is not None:
@@ -936,6 +951,8 @@ class DocumentsClient(metaclass=DocumentsClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

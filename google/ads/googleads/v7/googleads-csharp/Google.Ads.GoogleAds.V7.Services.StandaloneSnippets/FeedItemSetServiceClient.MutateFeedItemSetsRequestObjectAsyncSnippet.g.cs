@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedFeedItemSetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateFeedItemSetsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateFeedItemSetsRequestObjectAsync()
         {
-            // Snippet: MutateFeedItemSetsAsync(MutateFeedItemSetsRequest, CallSettings)
-            // Additional: MutateFeedItemSetsAsync(MutateFeedItemSetsRequest, CancellationToken)
             // Create client
             FeedItemSetServiceClient feedItemSetServiceClient = await FeedItemSetServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateFeedItemSetsResponse response = await feedItemSetServiceClient.MutateFeedItemSetsAsync(request);
-            // End snippet
         }
     }
 }

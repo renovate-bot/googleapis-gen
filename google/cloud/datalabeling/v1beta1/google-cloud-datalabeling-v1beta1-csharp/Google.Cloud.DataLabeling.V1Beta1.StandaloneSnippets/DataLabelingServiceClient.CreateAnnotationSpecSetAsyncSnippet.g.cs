@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateAnnotationSpecSetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateAnnotationSpecSetAsync()
         {
-            // Snippet: CreateAnnotationSpecSetAsync(string, AnnotationSpecSet, CallSettings)
-            // Additional: CreateAnnotationSpecSetAsync(string, AnnotationSpecSet, CancellationToken)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = await DataLabelingServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
             AnnotationSpecSet annotationSpecSet = new AnnotationSpecSet();
             // Make the request
             AnnotationSpecSet response = await dataLabelingServiceClient.CreateAnnotationSpecSetAsync(parent, annotationSpecSet);
-            // End snippet
         }
     }
 }

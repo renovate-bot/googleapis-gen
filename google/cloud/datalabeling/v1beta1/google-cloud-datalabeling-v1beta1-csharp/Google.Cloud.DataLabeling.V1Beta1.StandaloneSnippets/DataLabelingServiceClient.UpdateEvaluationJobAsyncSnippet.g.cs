@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateEvaluationJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateEvaluationJobAsync()
         {
-            // Snippet: UpdateEvaluationJobAsync(EvaluationJob, FieldMask, CallSettings)
-            // Additional: UpdateEvaluationJobAsync(EvaluationJob, FieldMask, CancellationToken)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = await DataLabelingServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             EvaluationJob response = await dataLabelingServiceClient.UpdateEvaluationJobAsync(evaluationJob, updateMask);
-            // End snippet
         }
     }
 }

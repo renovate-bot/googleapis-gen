@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLanguageConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetLanguageConstantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetLanguageConstantAsync()
         {
-            // Snippet: GetLanguageConstantAsync(string, CallSettings)
-            // Additional: GetLanguageConstantAsync(string, CancellationToken)
             // Create client
             LanguageConstantServiceClient languageConstantServiceClient = await LanguageConstantServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "languageConstants/[LANGUAGE_CONSTANT]";
             // Make the request
             LanguageConstant response = await languageConstantServiceClient.GetLanguageConstantAsync(resourceName);
-            // End snippet
         }
     }
 }

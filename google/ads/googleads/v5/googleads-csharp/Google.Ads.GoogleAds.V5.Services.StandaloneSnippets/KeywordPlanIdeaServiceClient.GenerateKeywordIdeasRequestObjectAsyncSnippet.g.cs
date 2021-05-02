@@ -17,6 +17,7 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Enums;
+    using Google.Ads.GoogleAds.V5.Services;
     using Google.Api.Gax;
     using System;
     using System.Linq;
@@ -24,10 +25,13 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
 
     public sealed partial class GeneratedKeywordPlanIdeaServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for GenerateKeywordIdeas</summary>
+        /// <summary>Snippet for GenerateKeywordIdeasAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GenerateKeywordIdeasRequestObjectAsync()
         {
-            // Snippet: GenerateKeywordIdeasAsync(GenerateKeywordIdeasRequest, CallSettings)
             // Create client
             KeywordPlanIdeaServiceClient keywordPlanIdeaServiceClient = await KeywordPlanIdeaServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,13 +39,10 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             {
                 CustomerId = "",
                 KeywordAndUrlSeed = new KeywordAndUrlSeed(),
-                KeywordSeed = new KeywordSeed(),
-                UrlSeed = new UrlSeed(),
                 Language = "",
                 GeoTargetConstants = { "", },
                 KeywordPlanNetwork = KeywordPlanNetworkEnum.Types.KeywordPlanNetwork.Unspecified,
                 IncludeAdultKeywords = false,
-                SiteSeed = new SiteSeed(),
             };
             // Make the request
             PagedAsyncEnumerable<GenerateKeywordIdeaResponse, GenerateKeywordIdeaResult> response = keywordPlanIdeaServiceClient.GenerateKeywordIdeasAsync(request);
@@ -77,7 +78,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

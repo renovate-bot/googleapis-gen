@@ -17,15 +17,19 @@
 namespace Google.Cloud.Securitycenter.V1Beta1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Securitycenter.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System;
 
     public sealed partial class GeneratedSecurityCenterClientStandaloneSnippets
     {
         /// <summary>Snippet for GroupFindings</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GroupFindingsRequestObject()
         {
-            // Snippet: GroupFindings(GroupFindingsRequest, CallSettings)
             // Create client
             SecurityCenterClient securityCenterClient = SecurityCenterClient.Create();
             // Initialize request argument(s)
@@ -70,7 +74,6 @@ namespace Google.Cloud.Securitycenter.V1Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

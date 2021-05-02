@@ -229,7 +229,7 @@ namespace Google.Api.Serviceusage.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListServices</summary>
+        /// <summary>Snippet for ListServicesAsync</summary>
         public async Task ListServicesRequestObjectAsync()
         {
             // Snippet: ListServicesAsync(ListServicesRequest, CallSettings)

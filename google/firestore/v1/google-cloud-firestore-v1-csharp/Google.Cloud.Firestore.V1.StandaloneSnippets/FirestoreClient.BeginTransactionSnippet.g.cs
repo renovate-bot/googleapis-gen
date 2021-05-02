@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Firestore.V1.Snippets
 {
+    using Google.Cloud.Firestore.V1;
+
     public sealed partial class GeneratedFirestoreClientStandaloneSnippets
     {
         /// <summary>Snippet for BeginTransaction</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BeginTransaction()
         {
-            // Snippet: BeginTransaction(string, CallSettings)
             // Create client
             FirestoreClient firestoreClient = FirestoreClient.Create();
             // Initialize request argument(s)
             string database = "";
             // Make the request
             BeginTransactionResponse response = firestoreClient.BeginTransaction(database);
-            // End snippet
         }
     }
 }

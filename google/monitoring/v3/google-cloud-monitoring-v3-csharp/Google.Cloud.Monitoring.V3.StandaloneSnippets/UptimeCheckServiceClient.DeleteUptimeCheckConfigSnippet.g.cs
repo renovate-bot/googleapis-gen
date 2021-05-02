@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
+
     public sealed partial class GeneratedUptimeCheckServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteUptimeCheckConfig</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteUptimeCheckConfig()
         {
-            // Snippet: DeleteUptimeCheckConfig(string, CallSettings)
             // Create client
             UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/uptimeCheckConfigs/[UPTIME_CHECK_CONFIG]";
             // Make the request
             uptimeCheckServiceClient.DeleteUptimeCheckConfig(name);
-            // End snippet
         }
     }
 }

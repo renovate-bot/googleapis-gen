@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -38,35 +38,11 @@ from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.shell_v1.services.cloud_shell_service import CloudShellServiceAsyncClient
 from google.cloud.shell_v1.services.cloud_shell_service import CloudShellServiceClient
 from google.cloud.shell_v1.services.cloud_shell_service import transports
-from google.cloud.shell_v1.services.cloud_shell_service.transports.base import _API_CORE_VERSION
-from google.cloud.shell_v1.services.cloud_shell_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.shell_v1.types import cloudshell
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -234,10 +210,12 @@ def test_cloud_shell_service_client_client_options(client_class, transport_class
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (CloudShellServiceClient, transports.CloudShellServiceGrpcTransport, "grpc", "true"),
     (CloudShellServiceAsyncClient, transports.CloudShellServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (CloudShellServiceClient, transports.CloudShellServiceGrpcTransport, "grpc", "false"),
     (CloudShellServiceAsyncClient, transports.CloudShellServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(CloudShellServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(CloudShellServiceClient))
 @mock.patch.object(CloudShellServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(CloudShellServiceAsyncClient))
@@ -392,32 +370,53 @@ def test_get_environment(transport: str = 'grpc', request_type=cloudshell.GetEnv
         # Designate an appropriate return value for the call.
         call.return_value = cloudshell.Environment(
             name='name_value',
+
             id='id_value',
+
             docker_image='docker_image_value',
+
             state=cloudshell.Environment.State.SUSPENDED,
+
             web_host='web_host_value',
+
             ssh_username='ssh_username_value',
+
             ssh_host='ssh_host_value',
+
             ssh_port=882,
+
             public_keys=['public_keys_value'],
+
         )
+
         response = client.get_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cloudshell.GetEnvironmentRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, cloudshell.Environment)
+
     assert response.name == 'name_value'
+
     assert response.id == 'id_value'
+
     assert response.docker_image == 'docker_image_value'
+
     assert response.state == cloudshell.Environment.State.SUSPENDED
+
     assert response.web_host == 'web_host_value'
+
     assert response.ssh_username == 'ssh_username_value'
+
     assert response.ssh_host == 'ssh_host_value'
+
     assert response.ssh_port == 882
+
     assert response.public_keys == ['public_keys_value']
 
 
@@ -440,8 +439,8 @@ def test_get_environment_empty_call():
         client.get_environment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cloudshell.GetEnvironmentRequest()
 
+        assert args[0] == cloudshell.GetEnvironmentRequest()
 
 @pytest.mark.asyncio
 async def test_get_environment_async(transport: str = 'grpc_asyncio', request_type=cloudshell.GetEnvironmentRequest):
@@ -459,7 +458,7 @@ async def test_get_environment_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.get_environment),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(cloudshell.Environment(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloudshell.Environment(
             name='name_value',
             id='id_value',
             docker_image='docker_image_value',
@@ -470,23 +469,34 @@ async def test_get_environment_async(transport: str = 'grpc_asyncio', request_ty
             ssh_port=882,
             public_keys=['public_keys_value'],
         ))
+
         response = await client.get_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cloudshell.GetEnvironmentRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloudshell.Environment)
+
     assert response.name == 'name_value'
+
     assert response.id == 'id_value'
+
     assert response.docker_image == 'docker_image_value'
+
     assert response.state == cloudshell.Environment.State.SUSPENDED
+
     assert response.web_host == 'web_host_value'
+
     assert response.ssh_username == 'ssh_username_value'
+
     assert response.ssh_host == 'ssh_host_value'
+
     assert response.ssh_port == 882
+
     assert response.public_keys == ['public_keys_value']
 
 
@@ -503,7 +513,6 @@ def test_get_environment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloudshell.GetEnvironmentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -511,6 +520,7 @@ def test_get_environment_field_headers():
             type(client.transport.get_environment),
             '__call__') as call:
         call.return_value = cloudshell.Environment()
+
         client.get_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -535,7 +545,6 @@ async def test_get_environment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloudshell.GetEnvironmentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -543,6 +552,7 @@ async def test_get_environment_field_headers_async():
             type(client.transport.get_environment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(cloudshell.Environment())
+
         await client.get_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -569,6 +579,7 @@ def test_get_environment_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = cloudshell.Environment()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_environment(
@@ -579,6 +590,7 @@ def test_get_environment_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -620,6 +632,7 @@ async def test_get_environment_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -654,11 +667,13 @@ def test_start_environment(transport: str = 'grpc', request_type=cloudshell.Star
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.start_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cloudshell.StartEnvironmentRequest()
 
     # Establish that the response is the type that we expect.
@@ -684,8 +699,8 @@ def test_start_environment_empty_call():
         client.start_environment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cloudshell.StartEnvironmentRequest()
 
+        assert args[0] == cloudshell.StartEnvironmentRequest()
 
 @pytest.mark.asyncio
 async def test_start_environment_async(transport: str = 'grpc_asyncio', request_type=cloudshell.StartEnvironmentRequest):
@@ -706,11 +721,13 @@ async def test_start_environment_async(transport: str = 'grpc_asyncio', request_
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.start_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cloudshell.StartEnvironmentRequest()
 
     # Establish that the response is the type that we expect.
@@ -730,7 +747,6 @@ def test_start_environment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloudshell.StartEnvironmentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -738,6 +754,7 @@ def test_start_environment_field_headers():
             type(client.transport.start_environment),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.start_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -762,7 +779,6 @@ async def test_start_environment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloudshell.StartEnvironmentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -770,6 +786,7 @@ async def test_start_environment_field_headers_async():
             type(client.transport.start_environment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.start_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -801,11 +818,13 @@ def test_authorize_environment(transport: str = 'grpc', request_type=cloudshell.
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.authorize_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cloudshell.AuthorizeEnvironmentRequest()
 
     # Establish that the response is the type that we expect.
@@ -831,8 +850,8 @@ def test_authorize_environment_empty_call():
         client.authorize_environment()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cloudshell.AuthorizeEnvironmentRequest()
 
+        assert args[0] == cloudshell.AuthorizeEnvironmentRequest()
 
 @pytest.mark.asyncio
 async def test_authorize_environment_async(transport: str = 'grpc_asyncio', request_type=cloudshell.AuthorizeEnvironmentRequest):
@@ -853,11 +872,13 @@ async def test_authorize_environment_async(transport: str = 'grpc_asyncio', requ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.authorize_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cloudshell.AuthorizeEnvironmentRequest()
 
     # Establish that the response is the type that we expect.
@@ -877,7 +898,6 @@ def test_authorize_environment_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloudshell.AuthorizeEnvironmentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -885,6 +905,7 @@ def test_authorize_environment_field_headers():
             type(client.transport.authorize_environment),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.authorize_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -909,7 +930,6 @@ async def test_authorize_environment_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloudshell.AuthorizeEnvironmentRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -917,6 +937,7 @@ async def test_authorize_environment_field_headers_async():
             type(client.transport.authorize_environment),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.authorize_environment(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -948,11 +969,13 @@ def test_add_public_key(transport: str = 'grpc', request_type=cloudshell.AddPubl
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.add_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cloudshell.AddPublicKeyRequest()
 
     # Establish that the response is the type that we expect.
@@ -978,8 +1001,8 @@ def test_add_public_key_empty_call():
         client.add_public_key()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cloudshell.AddPublicKeyRequest()
 
+        assert args[0] == cloudshell.AddPublicKeyRequest()
 
 @pytest.mark.asyncio
 async def test_add_public_key_async(transport: str = 'grpc_asyncio', request_type=cloudshell.AddPublicKeyRequest):
@@ -1000,11 +1023,13 @@ async def test_add_public_key_async(transport: str = 'grpc_asyncio', request_typ
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.add_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cloudshell.AddPublicKeyRequest()
 
     # Establish that the response is the type that we expect.
@@ -1024,7 +1049,6 @@ def test_add_public_key_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloudshell.AddPublicKeyRequest()
-
     request.environment = 'environment/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1032,6 +1056,7 @@ def test_add_public_key_field_headers():
             type(client.transport.add_public_key),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.add_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1056,7 +1081,6 @@ async def test_add_public_key_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloudshell.AddPublicKeyRequest()
-
     request.environment = 'environment/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1064,6 +1088,7 @@ async def test_add_public_key_field_headers_async():
             type(client.transport.add_public_key),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.add_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1095,11 +1120,13 @@ def test_remove_public_key(transport: str = 'grpc', request_type=cloudshell.Remo
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.remove_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cloudshell.RemovePublicKeyRequest()
 
     # Establish that the response is the type that we expect.
@@ -1125,8 +1152,8 @@ def test_remove_public_key_empty_call():
         client.remove_public_key()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == cloudshell.RemovePublicKeyRequest()
 
+        assert args[0] == cloudshell.RemovePublicKeyRequest()
 
 @pytest.mark.asyncio
 async def test_remove_public_key_async(transport: str = 'grpc_asyncio', request_type=cloudshell.RemovePublicKeyRequest):
@@ -1147,11 +1174,13 @@ async def test_remove_public_key_async(transport: str = 'grpc_asyncio', request_
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
             operations_pb2.Operation(name='operations/spam')
         )
+
         response = await client.remove_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == cloudshell.RemovePublicKeyRequest()
 
     # Establish that the response is the type that we expect.
@@ -1171,7 +1200,6 @@ def test_remove_public_key_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloudshell.RemovePublicKeyRequest()
-
     request.environment = 'environment/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1179,6 +1207,7 @@ def test_remove_public_key_field_headers():
             type(client.transport.remove_public_key),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.remove_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1203,7 +1232,6 @@ async def test_remove_public_key_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = cloudshell.RemovePublicKeyRequest()
-
     request.environment = 'environment/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1211,6 +1239,7 @@ async def test_remove_public_key_field_headers_async():
             type(client.transport.remove_public_key),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(operations_pb2.Operation(name='operations/op'))
+
         await client.remove_public_key(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1266,6 +1295,7 @@ def test_transport_instance():
     client = CloudShellServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.CloudShellServiceGrpcTransport(
@@ -1280,6 +1310,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.CloudShellServiceGrpcTransport,
     transports.CloudShellServiceGrpcAsyncIOTransport,
@@ -1291,6 +1322,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = CloudShellServiceClient(
@@ -1300,6 +1332,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.CloudShellServiceGrpcTransport,
     )
+
 
 def test_cloud_shell_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1326,7 +1359,7 @@ def test_cloud_shell_service_base_transport():
         'authorize_environment',
         'add_public_key',
         'remove_public_key',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -1337,27 +1370,9 @@ def test_cloud_shell_service_base_transport():
         transport.operations_client
 
 
-@requires_google_auth_gte_1_25_0
 def test_cloud_shell_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.shell_v1.services.cloud_shell_service.transports.CloudShellServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.CloudShellServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_cloud_shell_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.shell_v1.services.cloud_shell_service.transports.CloudShellServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.shell_v1.services.cloud_shell_service.transports.CloudShellServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.CloudShellServiceTransport(
@@ -1373,182 +1388,33 @@ def test_cloud_shell_service_base_transport_with_credentials_file_old_google_aut
 
 def test_cloud_shell_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.shell_v1.services.cloud_shell_service.transports.CloudShellServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.shell_v1.services.cloud_shell_service.transports.CloudShellServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.CloudShellServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_cloud_shell_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         CloudShellServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_cloud_shell_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        CloudShellServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.CloudShellServiceGrpcTransport,
-        transports.CloudShellServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_cloud_shell_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.CloudShellServiceGrpcTransport,
-        transports.CloudShellServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_cloud_shell_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.CloudShellServiceGrpcTransport, grpc_helpers),
-        (transports.CloudShellServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_cloud_shell_service_transport_create_channel(transport_class, grpc_helpers):
+def test_cloud_shell_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.CloudShellServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "cloudshell.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="cloudshell.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.CloudShellServiceGrpcTransport, grpc_helpers),
-        (transports.CloudShellServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_cloud_shell_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "cloudshell.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.CloudShellServiceGrpcTransport, grpc_helpers),
-        (transports.CloudShellServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_cloud_shell_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "cloudshell.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -1610,6 +1476,7 @@ def test_cloud_shell_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='cloudshell.googleapis.com:8000'),
     )
     assert client.transport._host == 'cloudshell.googleapis.com:8000'
+
 
 def test_cloud_shell_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1762,6 +1629,7 @@ def test_cloud_shell_service_grpc_lro_async_client():
 def test_environment_path():
     user = "squid"
     environment = "clam"
+
     expected = "users/{user}/environments/{environment}".format(user=user, environment=environment, )
     actual = CloudShellServiceClient.environment_path(user, environment)
     assert expected == actual
@@ -1769,8 +1637,9 @@ def test_environment_path():
 
 def test_parse_environment_path():
     expected = {
-        "user": "whelk",
-        "environment": "octopus",
+    "user": "whelk",
+    "environment": "octopus",
+
     }
     path = CloudShellServiceClient.environment_path(**expected)
 
@@ -1780,6 +1649,7 @@ def test_parse_environment_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CloudShellServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1787,7 +1657,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = CloudShellServiceClient.common_billing_account_path(**expected)
 
@@ -1797,6 +1668,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = CloudShellServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1804,7 +1676,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = CloudShellServiceClient.common_folder_path(**expected)
 
@@ -1814,6 +1687,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CloudShellServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1821,7 +1695,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = CloudShellServiceClient.common_organization_path(**expected)
 
@@ -1831,6 +1706,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = CloudShellServiceClient.common_project_path(project)
     assert expected == actual
@@ -1838,7 +1714,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = CloudShellServiceClient.common_project_path(**expected)
 
@@ -1849,6 +1726,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CloudShellServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1856,8 +1734,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = CloudShellServiceClient.common_location_path(**expected)
 

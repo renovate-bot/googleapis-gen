@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
+    using Google.Cloud.ResourceManager.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTagKeysClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTagKeyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTagKeyRequestObjectAsync()
         {
-            // Snippet: GetTagKeyAsync(GetTagKeyRequest, CallSettings)
-            // Additional: GetTagKeyAsync(GetTagKeyRequest, CancellationToken)
             // Create client
             TagKeysClient tagKeysClient = await TagKeysClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             };
             // Make the request
             TagKey response = await tagKeysClient.GetTagKeyAsync(request);
-            // End snippet
         }
     }
 }

@@ -1028,7 +1028,7 @@ namespace Google.Cloud.Bigquery.Storage.V1Beta1
             _callCreateReadSession = clientHelper.BuildApiCall<CreateReadSessionRequest, ReadSession>(grpcClient.CreateReadSessionAsync, grpcClient.CreateReadSession, effectiveSettings.CreateReadSessionSettings).WithGoogleRequestParam("table_reference.project_id", request => request.TableReference?.ProjectId);
             Modify_ApiCall(ref _callCreateReadSession);
             Modify_CreateReadSessionApiCall(ref _callCreateReadSession);
-            _callReadRows = clientHelper.BuildApiCall<ReadRowsRequest, ReadRowsResponse>(grpcClient.ReadRows, effectiveSettings.ReadRowsSettings);
+            _callReadRows = clientHelper.BuildApiCall<ReadRowsRequest, ReadRowsResponse>(grpcClient.ReadRows, effectiveSettings.ReadRowsSettings).WithGoogleRequestParam("read_position.stream.name", request => request.ReadPosition?.Stream?.Name);
             Modify_ApiCall(ref _callReadRows);
             Modify_ReadRowsApiCall(ref _callReadRows);
             _callBatchCreateReadSessionStreams = clientHelper.BuildApiCall<BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>(grpcClient.BatchCreateReadSessionStreamsAsync, grpcClient.BatchCreateReadSessionStreams, effectiveSettings.BatchCreateReadSessionStreamsSettings).WithGoogleRequestParam("session.name", request => request.Session?.Name);

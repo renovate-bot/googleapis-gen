@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Logging.V2.Snippets
 {
+    using Google.Cloud.Logging.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConfigServiceV2ClientStandaloneSnippets
     {
         /// <summary>Snippet for GetExclusionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetExclusionRequestObjectAsync()
         {
-            // Snippet: GetExclusionAsync(GetExclusionRequest, CallSettings)
-            // Additional: GetExclusionAsync(GetExclusionRequest, CancellationToken)
             // Create client
             ConfigServiceV2Client configServiceV2Client = await ConfigServiceV2Client.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Logging.V2.Snippets
             };
             // Make the request
             LogExclusion response = await configServiceV2Client.GetExclusionAsync(request);
-            // End snippet
         }
     }
 }

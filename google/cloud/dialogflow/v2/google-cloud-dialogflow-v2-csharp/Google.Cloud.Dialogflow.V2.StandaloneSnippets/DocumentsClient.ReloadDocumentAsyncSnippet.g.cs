@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDocumentsClientStandaloneSnippets
     {
         /// <summary>Snippet for ReloadDocumentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ReloadDocumentAsync()
         {
-            // Snippet: ReloadDocumentAsync(string, string, CallSettings)
-            // Additional: ReloadDocumentAsync(string, string, CancellationToken)
             // Create client
             DocumentsClient documentsClient = await DocumentsClient.CreateAsync();
             // Initialize request argument(s)
@@ -49,7 +52,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
                 // If it has completed, then access the result
                 Document retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

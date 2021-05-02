@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedCampaignSimulationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignSimulation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCampaignSimulationResourceNames()
         {
-            // Snippet: GetCampaignSimulation(CampaignSimulationName, CallSettings)
             // Create client
             CampaignSimulationServiceClient campaignSimulationServiceClient = CampaignSimulationServiceClient.Create();
             // Initialize request argument(s)
             CampaignSimulationName resourceName = CampaignSimulationName.FromCustomerCampaignTypeModificationMethodStartDateEndDate("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[TYPE]", "[MODIFICATION_METHOD]", "[START_DATE]", "[END_DATE]");
             // Make the request
             CampaignSimulation response = campaignSimulationServiceClient.GetCampaignSimulation(resourceName);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.resources.types import customer_manager_link
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -44,10 +47,7 @@ class GetCustomerManagerLinkRequest(proto.Message):
             CustomerManagerLink to fetch.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateCustomerManagerLinkRequest(proto.Message):
@@ -66,19 +66,11 @@ class MutateCustomerManagerLinkRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operations = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operations = proto.RepeatedField(proto.MESSAGE, number=2,
         message='CustomerManagerLinkOperation',
     )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
+    validate_only = proto.Field(proto.BOOL, number=3)
 
 
 class MoveManagerLinkRequest(proto.Message):
@@ -102,22 +94,10 @@ class MoveManagerLinkRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    previous_customer_manager_link = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    new_manager = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=4,
-    )
+    customer_id = proto.Field(proto.STRING, number=1)
+    previous_customer_manager_link = proto.Field(proto.STRING, number=2)
+    new_manager = proto.Field(proto.STRING, number=3)
+    validate_only = proto.Field(proto.BOOL, number=4)
 
 
 class CustomerManagerLinkOperation(proto.Message):
@@ -137,36 +117,31 @@ class CustomerManagerLinkOperation(proto.Message):
             have a valid resource name.
     """
 
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    update_mask = proto.Field(proto.MESSAGE, number=4,
         message=field_mask.FieldMask,
     )
-    update = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='operation',
+    update = proto.Field(proto.MESSAGE, number=2, oneof='operation',
         message=customer_manager_link.CustomerManagerLink,
     )
 
 
 class MutateCustomerManagerLinkResponse(proto.Message):
     r"""Response message for a CustomerManagerLink mutate.
+
     Attributes:
         results (Sequence[google.ads.googleads.v7.services.types.MutateCustomerManagerLinkResult]):
             A result that identifies the resource
             affected by the mutate request.
     """
 
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    results = proto.RepeatedField(proto.MESSAGE, number=1,
         message='MutateCustomerManagerLinkResult',
     )
 
 
 class MoveManagerLinkResponse(proto.Message):
     r"""Response message for a CustomerManagerLink moveManagerLink.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
@@ -175,23 +150,18 @@ class MoveManagerLinkResponse(proto.Message):
             new manager customer.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateCustomerManagerLinkResult(proto.Message):
     r"""The result for the customer manager link mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSecuritySettingsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSecuritySettingsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetSecuritySettingsAsync()
         {
-            // Snippet: GetSecuritySettingsAsync(string, CallSettings)
-            // Additional: GetSecuritySettingsAsync(string, CancellationToken)
             // Create client
             SecuritySettingsServiceClient securitySettingsServiceClient = await SecuritySettingsServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/securitySettings/[SECURITY_SETTINGS]";
             // Make the request
             SecuritySettings response = await securitySettingsServiceClient.GetSecuritySettingsAsync(name);
-            // End snippet
         }
     }
 }

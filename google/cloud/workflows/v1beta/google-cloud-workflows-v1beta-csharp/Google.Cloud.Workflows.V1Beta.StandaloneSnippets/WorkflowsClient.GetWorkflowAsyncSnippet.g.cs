@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Workflows.V1Beta.Snippets
 {
+    using Google.Cloud.Workflows.V1Beta;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedWorkflowsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetWorkflowAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetWorkflowAsync()
         {
-            // Snippet: GetWorkflowAsync(string, CallSettings)
-            // Additional: GetWorkflowAsync(string, CancellationToken)
             // Create client
             WorkflowsClient workflowsClient = await WorkflowsClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/workflows/[WORKFLOW]";
             // Make the request
             Workflow response = await workflowsClient.GetWorkflowAsync(name);
-            // End snippet
         }
     }
 }

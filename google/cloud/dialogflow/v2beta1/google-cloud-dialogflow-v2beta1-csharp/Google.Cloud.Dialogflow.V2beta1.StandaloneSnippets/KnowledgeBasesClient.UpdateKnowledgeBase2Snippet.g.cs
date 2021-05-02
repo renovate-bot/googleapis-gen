@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
+
     public sealed partial class GeneratedKnowledgeBasesClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateKnowledgeBase</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateKnowledgeBase2()
         {
-            // Snippet: UpdateKnowledgeBase(KnowledgeBase, CallSettings)
             // Create client
             KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.Create();
             // Initialize request argument(s)
             KnowledgeBase knowledgeBase = new KnowledgeBase();
             // Make the request
             KnowledgeBase response = knowledgeBasesClient.UpdateKnowledgeBase(knowledgeBase);
-            // End snippet
         }
     }
 }

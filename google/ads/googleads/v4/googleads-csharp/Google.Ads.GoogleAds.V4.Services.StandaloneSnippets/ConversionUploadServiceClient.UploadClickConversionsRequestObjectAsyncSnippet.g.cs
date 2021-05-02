@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConversionUploadServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UploadClickConversionsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UploadClickConversionsRequestObjectAsync()
         {
-            // Snippet: UploadClickConversionsAsync(UploadClickConversionsRequest, CallSettings)
-            // Additional: UploadClickConversionsAsync(UploadClickConversionsRequest, CancellationToken)
             // Create client
             ConversionUploadServiceClient conversionUploadServiceClient = await ConversionUploadServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -40,7 +43,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             UploadClickConversionsResponse response = await conversionUploadServiceClient.UploadClickConversionsAsync(request);
-            // End snippet
         }
     }
 }

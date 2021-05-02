@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -69,55 +71,16 @@ class CustomerClient(proto.Message):
             Read only.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    client_customer = proto.Field(
-        proto.STRING,
-        number=12,
-        optional=True,
-    )
-    hidden = proto.Field(
-        proto.BOOL,
-        number=13,
-        optional=True,
-    )
-    level = proto.Field(
-        proto.INT64,
-        number=14,
-        optional=True,
-    )
-    time_zone = proto.Field(
-        proto.STRING,
-        number=15,
-        optional=True,
-    )
-    test_account = proto.Field(
-        proto.BOOL,
-        number=16,
-        optional=True,
-    )
-    manager = proto.Field(
-        proto.BOOL,
-        number=17,
-        optional=True,
-    )
-    descriptive_name = proto.Field(
-        proto.STRING,
-        number=18,
-        optional=True,
-    )
-    currency_code = proto.Field(
-        proto.STRING,
-        number=19,
-        optional=True,
-    )
-    id = proto.Field(
-        proto.INT64,
-        number=20,
-        optional=True,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
+    client_customer = proto.Field(proto.STRING, number=12, optional=True)
+    hidden = proto.Field(proto.BOOL, number=13, optional=True)
+    level = proto.Field(proto.INT64, number=14, optional=True)
+    time_zone = proto.Field(proto.STRING, number=15, optional=True)
+    test_account = proto.Field(proto.BOOL, number=16, optional=True)
+    manager = proto.Field(proto.BOOL, number=17, optional=True)
+    descriptive_name = proto.Field(proto.STRING, number=18, optional=True)
+    currency_code = proto.Field(proto.STRING, number=19, optional=True)
+    id = proto.Field(proto.INT64, number=20, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

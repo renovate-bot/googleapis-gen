@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,21 +14,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.dataproc_v1beta2.types import autoscaling_policies
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import AutoscalingPolicyServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import AutoscalingPolicyServiceGrpcTransport
 
@@ -78,15 +80,13 @@ class AutoscalingPolicyServiceGrpcAsyncIOTransport(AutoscalingPolicyServiceTrans
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -106,8 +106,7 @@ class AutoscalingPolicyServiceGrpcAsyncIOTransport(AutoscalingPolicyServiceTrans
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -165,6 +164,7 @@ class AutoscalingPolicyServiceGrpcAsyncIOTransport(AutoscalingPolicyServiceTrans
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -227,9 +227,7 @@ class AutoscalingPolicyServiceGrpcAsyncIOTransport(AutoscalingPolicyServiceTrans
     def create_autoscaling_policy(self) -> Callable[
             [autoscaling_policies.CreateAutoscalingPolicyRequest],
             Awaitable[autoscaling_policies.AutoscalingPolicy]]:
-        r"""Return a callable for the
-        create autoscaling policy
-          method over gRPC.
+        r"""Return a callable for the create autoscaling policy method over gRPC.
 
         Creates new autoscaling policy.
 
@@ -255,9 +253,7 @@ class AutoscalingPolicyServiceGrpcAsyncIOTransport(AutoscalingPolicyServiceTrans
     def update_autoscaling_policy(self) -> Callable[
             [autoscaling_policies.UpdateAutoscalingPolicyRequest],
             Awaitable[autoscaling_policies.AutoscalingPolicy]]:
-        r"""Return a callable for the
-        update autoscaling policy
-          method over gRPC.
+        r"""Return a callable for the update autoscaling policy method over gRPC.
 
         Updates (replaces) autoscaling policy.
 
@@ -286,9 +282,7 @@ class AutoscalingPolicyServiceGrpcAsyncIOTransport(AutoscalingPolicyServiceTrans
     def get_autoscaling_policy(self) -> Callable[
             [autoscaling_policies.GetAutoscalingPolicyRequest],
             Awaitable[autoscaling_policies.AutoscalingPolicy]]:
-        r"""Return a callable for the
-        get autoscaling policy
-          method over gRPC.
+        r"""Return a callable for the get autoscaling policy method over gRPC.
 
         Retrieves autoscaling policy.
 
@@ -314,9 +308,7 @@ class AutoscalingPolicyServiceGrpcAsyncIOTransport(AutoscalingPolicyServiceTrans
     def list_autoscaling_policies(self) -> Callable[
             [autoscaling_policies.ListAutoscalingPoliciesRequest],
             Awaitable[autoscaling_policies.ListAutoscalingPoliciesResponse]]:
-        r"""Return a callable for the
-        list autoscaling policies
-          method over gRPC.
+        r"""Return a callable for the list autoscaling policies method over gRPC.
 
         Lists autoscaling policies in the project.
 
@@ -342,9 +334,7 @@ class AutoscalingPolicyServiceGrpcAsyncIOTransport(AutoscalingPolicyServiceTrans
     def delete_autoscaling_policy(self) -> Callable[
             [autoscaling_policies.DeleteAutoscalingPolicyRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete autoscaling policy
-          method over gRPC.
+        r"""Return a callable for the delete autoscaling policy method over gRPC.
 
         Deletes an autoscaling policy. It is an error to
         delete an autoscaling policy that is in use by one or

@@ -17,15 +17,18 @@
 namespace Google.Cloud.BinaryAuthorization.V1Beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.BinaryAuthorization.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBinauthzManagementServiceV1Beta1ClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateAttestorAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateAttestorResourceNamesAsync()
         {
-            // Snippet: CreateAttestorAsync(ProjectName, string, Attestor, CallSettings)
-            // Additional: CreateAttestorAsync(ProjectName, string, Attestor, CancellationToken)
             // Create client
             BinauthzManagementServiceV1Beta1Client binauthzManagementServiceV1Beta1Client = await BinauthzManagementServiceV1Beta1Client.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.BinaryAuthorization.V1Beta1.Snippets
             Attestor attestor = new Attestor();
             // Make the request
             Attestor response = await binauthzManagementServiceV1Beta1Client.CreateAttestorAsync(parent, attestorId, attestor);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -35,8 +35,6 @@ from google.auth.exceptions import MutualTLSChannelError
 from google.cloud.bigquery_v2.services.model_service import ModelServiceAsyncClient
 from google.cloud.bigquery_v2.services.model_service import ModelServiceClient
 from google.cloud.bigquery_v2.services.model_service import transports
-from google.cloud.bigquery_v2.services.model_service.transports.base import _API_CORE_VERSION
-from google.cloud.bigquery_v2.services.model_service.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.bigquery_v2.types import encryption_config
 from google.cloud.bigquery_v2.types import model
 from google.cloud.bigquery_v2.types import model as gcb_model
@@ -47,28 +45,6 @@ from google.oauth2 import service_account
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -236,10 +212,12 @@ def test_model_service_client_client_options(client_class, transport_class, tran
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (ModelServiceClient, transports.ModelServiceGrpcTransport, "grpc", "true"),
     (ModelServiceAsyncClient, transports.ModelServiceGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (ModelServiceClient, transports.ModelServiceGrpcTransport, "grpc", "false"),
     (ModelServiceAsyncClient, transports.ModelServiceGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(ModelServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ModelServiceClient))
 @mock.patch.object(ModelServiceAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(ModelServiceAsyncClient))
@@ -394,30 +372,49 @@ def test_get_model(transport: str = 'grpc', request_type=model.GetModelRequest):
         # Designate an appropriate return value for the call.
         call.return_value = model.Model(
             etag='etag_value',
+
             creation_time=1379,
+
             last_modified_time=1890,
+
             description='description_value',
+
             friendly_name='friendly_name_value',
+
             expiration_time=1617,
+
             location='location_value',
+
             model_type=model.Model.ModelType.LINEAR_REGRESSION,
+
         )
+
         response = client.get_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == model.GetModelRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, model.Model)
+
     assert response.etag == 'etag_value'
+
     assert response.creation_time == 1379
+
     assert response.last_modified_time == 1890
+
     assert response.description == 'description_value'
+
     assert response.friendly_name == 'friendly_name_value'
+
     assert response.expiration_time == 1617
+
     assert response.location == 'location_value'
+
     assert response.model_type == model.Model.ModelType.LINEAR_REGRESSION
 
 
@@ -440,8 +437,8 @@ def test_get_model_empty_call():
         client.get_model()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == model.GetModelRequest()
 
+        assert args[0] == model.GetModelRequest()
 
 @pytest.mark.asyncio
 async def test_get_model_async(transport: str = 'grpc_asyncio', request_type=model.GetModelRequest):
@@ -459,7 +456,7 @@ async def test_get_model_async(transport: str = 'grpc_asyncio', request_type=mod
             type(client.transport.get_model),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(model.Model(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(model.Model(
             etag='etag_value',
             creation_time=1379,
             last_modified_time=1890,
@@ -469,22 +466,32 @@ async def test_get_model_async(transport: str = 'grpc_asyncio', request_type=mod
             location='location_value',
             model_type=model.Model.ModelType.LINEAR_REGRESSION,
         ))
+
         response = await client.get_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == model.GetModelRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, model.Model)
+
     assert response.etag == 'etag_value'
+
     assert response.creation_time == 1379
+
     assert response.last_modified_time == 1890
+
     assert response.description == 'description_value'
+
     assert response.friendly_name == 'friendly_name_value'
+
     assert response.expiration_time == 1617
+
     assert response.location == 'location_value'
+
     assert response.model_type == model.Model.ModelType.LINEAR_REGRESSION
 
 
@@ -504,6 +511,7 @@ def test_get_model_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = model.Model()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_model(
@@ -516,8 +524,11 @@ def test_get_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].dataset_id == 'dataset_id_value'
+
         assert args[0].model_id == 'model_id_value'
 
 
@@ -563,8 +574,11 @@ async def test_get_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].dataset_id == 'dataset_id_value'
+
         assert args[0].model_id == 'model_id_value'
 
 
@@ -602,17 +616,23 @@ def test_list_models(transport: str = 'grpc', request_type=model.ListModelsReque
         # Designate an appropriate return value for the call.
         call.return_value = model.ListModelsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_models(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == model.ListModelsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert response.raw_page is response
+
     assert isinstance(response, model.ListModelsResponse)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -635,8 +655,8 @@ def test_list_models_empty_call():
         client.list_models()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == model.ListModelsRequest()
 
+        assert args[0] == model.ListModelsRequest()
 
 @pytest.mark.asyncio
 async def test_list_models_async(transport: str = 'grpc_asyncio', request_type=model.ListModelsRequest):
@@ -654,18 +674,21 @@ async def test_list_models_async(transport: str = 'grpc_asyncio', request_type=m
             type(client.transport.list_models),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(model.ListModelsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(model.ListModelsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_models(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == model.ListModelsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, model.ListModelsResponse)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -685,6 +708,7 @@ def test_list_models_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = model.ListModelsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_models(
@@ -697,8 +721,11 @@ def test_list_models_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].dataset_id == 'dataset_id_value'
+
         assert args[0].max_results == wrappers.UInt32Value(value=541)
 
 
@@ -744,8 +771,11 @@ async def test_list_models_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].dataset_id == 'dataset_id_value'
+
         assert args[0].max_results == wrappers.UInt32Value(value=541)
 
 
@@ -783,30 +813,49 @@ def test_patch_model(transport: str = 'grpc', request_type=gcb_model.PatchModelR
         # Designate an appropriate return value for the call.
         call.return_value = gcb_model.Model(
             etag='etag_value',
+
             creation_time=1379,
+
             last_modified_time=1890,
+
             description='description_value',
+
             friendly_name='friendly_name_value',
+
             expiration_time=1617,
+
             location='location_value',
+
             model_type=gcb_model.Model.ModelType.LINEAR_REGRESSION,
+
         )
+
         response = client.patch_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcb_model.PatchModelRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gcb_model.Model)
+
     assert response.etag == 'etag_value'
+
     assert response.creation_time == 1379
+
     assert response.last_modified_time == 1890
+
     assert response.description == 'description_value'
+
     assert response.friendly_name == 'friendly_name_value'
+
     assert response.expiration_time == 1617
+
     assert response.location == 'location_value'
+
     assert response.model_type == gcb_model.Model.ModelType.LINEAR_REGRESSION
 
 
@@ -829,8 +878,8 @@ def test_patch_model_empty_call():
         client.patch_model()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == gcb_model.PatchModelRequest()
 
+        assert args[0] == gcb_model.PatchModelRequest()
 
 @pytest.mark.asyncio
 async def test_patch_model_async(transport: str = 'grpc_asyncio', request_type=gcb_model.PatchModelRequest):
@@ -848,7 +897,7 @@ async def test_patch_model_async(transport: str = 'grpc_asyncio', request_type=g
             type(client.transport.patch_model),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gcb_model.Model(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcb_model.Model(
             etag='etag_value',
             creation_time=1379,
             last_modified_time=1890,
@@ -858,22 +907,32 @@ async def test_patch_model_async(transport: str = 'grpc_asyncio', request_type=g
             location='location_value',
             model_type=gcb_model.Model.ModelType.LINEAR_REGRESSION,
         ))
+
         response = await client.patch_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == gcb_model.PatchModelRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcb_model.Model)
+
     assert response.etag == 'etag_value'
+
     assert response.creation_time == 1379
+
     assert response.last_modified_time == 1890
+
     assert response.description == 'description_value'
+
     assert response.friendly_name == 'friendly_name_value'
+
     assert response.expiration_time == 1617
+
     assert response.location == 'location_value'
+
     assert response.model_type == gcb_model.Model.ModelType.LINEAR_REGRESSION
 
 
@@ -893,6 +952,7 @@ def test_patch_model_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gcb_model.Model()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.patch_model(
@@ -906,9 +966,13 @@ def test_patch_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].dataset_id == 'dataset_id_value'
+
         assert args[0].model_id == 'model_id_value'
+
         assert args[0].model == gcb_model.Model(etag='etag_value')
 
 
@@ -956,9 +1020,13 @@ async def test_patch_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].dataset_id == 'dataset_id_value'
+
         assert args[0].model_id == 'model_id_value'
+
         assert args[0].model == gcb_model.Model(etag='etag_value')
 
 
@@ -996,11 +1064,13 @@ def test_delete_model(transport: str = 'grpc', request_type=model.DeleteModelReq
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == model.DeleteModelRequest()
 
     # Establish that the response is the type that we expect.
@@ -1026,8 +1096,8 @@ def test_delete_model_empty_call():
         client.delete_model()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == model.DeleteModelRequest()
 
+        assert args[0] == model.DeleteModelRequest()
 
 @pytest.mark.asyncio
 async def test_delete_model_async(transport: str = 'grpc_asyncio', request_type=model.DeleteModelRequest):
@@ -1046,11 +1116,13 @@ async def test_delete_model_async(transport: str = 'grpc_asyncio', request_type=
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_model(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == model.DeleteModelRequest()
 
     # Establish that the response is the type that we expect.
@@ -1073,6 +1145,7 @@ def test_delete_model_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_model(
@@ -1085,8 +1158,11 @@ def test_delete_model_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].dataset_id == 'dataset_id_value'
+
         assert args[0].model_id == 'model_id_value'
 
 
@@ -1132,8 +1208,11 @@ async def test_delete_model_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].project_id == 'project_id_value'
+
         assert args[0].dataset_id == 'dataset_id_value'
+
         assert args[0].model_id == 'model_id_value'
 
 
@@ -1194,6 +1273,7 @@ def test_transport_instance():
     client = ModelServiceClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.ModelServiceGrpcTransport(
@@ -1208,6 +1288,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.ModelServiceGrpcTransport,
     transports.ModelServiceGrpcAsyncIOTransport,
@@ -1219,6 +1300,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = ModelServiceClient(
@@ -1228,6 +1310,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.ModelServiceGrpcTransport,
     )
+
 
 def test_model_service_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -1253,33 +1336,15 @@ def test_model_service_base_transport():
         'list_models',
         'patch_model',
         'delete_model',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_model_service_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.bigquery_v2.services.model_service.transports.ModelServiceTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.ModelServiceTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/bigquery',            'https://www.googleapis.com/auth/bigquery.readonly',            'https://www.googleapis.com/auth/cloud-platform',            'https://www.googleapis.com/auth/cloud-platform.read-only',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_model_service_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.bigquery_v2.services.model_service.transports.ModelServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.bigquery_v2.services.model_service.transports.ModelServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ModelServiceTransport(
@@ -1298,188 +1363,39 @@ def test_model_service_base_transport_with_credentials_file_old_google_auth():
 
 def test_model_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.bigquery_v2.services.model_service.transports.ModelServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.bigquery_v2.services.model_service.transports.ModelServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.ModelServiceTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_model_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         ModelServiceClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/bigquery',
-            'https://www.googleapis.com/auth/bigquery.readonly',
-            'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/cloud-platform.read-only',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_model_service_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        ModelServiceClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.readonly',                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ModelServiceGrpcTransport,
-        transports.ModelServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_model_service_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.readonly',                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.ModelServiceGrpcTransport,
-        transports.ModelServiceGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_model_service_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
             'https://www.googleapis.com/auth/bigquery',
             'https://www.googleapis.com/auth/bigquery.readonly',
             'https://www.googleapis.com/auth/cloud-platform',
-            'https://www.googleapis.com/auth/cloud-platform.read-only',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform.read-only',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ModelServiceGrpcTransport, grpc_helpers),
-        (transports.ModelServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_model_service_transport_create_channel(transport_class, grpc_helpers):
+def test_model_service_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.ModelServiceGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/bigquery',
+            'https://www.googleapis.com/auth/bigquery.readonly',
+            'https://www.googleapis.com/auth/cloud-platform',
+            'https://www.googleapis.com/auth/cloud-platform.read-only',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "bigquery.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.readonly',                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
-            scopes=["1", "2"],
-            default_host="bigquery.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ModelServiceGrpcTransport, grpc_helpers),
-        (transports.ModelServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_model_service_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "bigquery.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/bigquery',                'https://www.googleapis.com/auth/bigquery.readonly',                'https://www.googleapis.com/auth/cloud-platform',                'https://www.googleapis.com/auth/cloud-platform.read-only',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.ModelServiceGrpcTransport, grpc_helpers),
-        (transports.ModelServiceGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_model_service_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "bigquery.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -1544,6 +1460,7 @@ def test_model_service_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='bigquery.googleapis.com:8000'),
     )
     assert client.transport._host == 'bigquery.googleapis.com:8000'
+
 
 def test_model_service_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -1667,6 +1584,7 @@ def test_model_service_transport_channel_mtls_with_adc(
 
 def test_common_billing_account_path():
     billing_account = "squid"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ModelServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1674,7 +1592,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+    "billing_account": "clam",
+
     }
     path = ModelServiceClient.common_billing_account_path(**expected)
 
@@ -1684,6 +1603,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "whelk"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = ModelServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1691,7 +1611,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+    "folder": "octopus",
+
     }
     path = ModelServiceClient.common_folder_path(**expected)
 
@@ -1701,6 +1622,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "oyster"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ModelServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1708,7 +1630,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+    "organization": "nudibranch",
+
     }
     path = ModelServiceClient.common_organization_path(**expected)
 
@@ -1718,6 +1641,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "cuttlefish"
+
     expected = "projects/{project}".format(project=project, )
     actual = ModelServiceClient.common_project_path(project)
     assert expected == actual
@@ -1725,7 +1649,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+    "project": "mussel",
+
     }
     path = ModelServiceClient.common_project_path(**expected)
 
@@ -1736,6 +1661,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "winkle"
     location = "nautilus"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ModelServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1743,8 +1669,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+    "project": "scallop",
+    "location": "abalone",
+
     }
     path = ModelServiceClient.common_location_path(**expected)
 

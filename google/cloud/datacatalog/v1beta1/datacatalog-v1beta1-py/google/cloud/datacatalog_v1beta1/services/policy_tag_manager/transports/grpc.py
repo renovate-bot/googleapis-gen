@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -28,6 +30,7 @@ from google.cloud.datacatalog_v1beta1.types import policytagmanager
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import PolicyTagManagerTransport, DEFAULT_CLIENT_INFO
 
 
@@ -62,8 +65,7 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -202,15 +204,13 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -224,9 +224,7 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
     def create_taxonomy(self) -> Callable[
             [policytagmanager.CreateTaxonomyRequest],
             policytagmanager.Taxonomy]:
-        r"""Return a callable for the
-        create taxonomy
-          method over gRPC.
+        r"""Return a callable for the create taxonomy method over gRPC.
 
         Creates a taxonomy in the specified project.
 
@@ -252,9 +250,7 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
     def delete_taxonomy(self) -> Callable[
             [policytagmanager.DeleteTaxonomyRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete taxonomy
-          method over gRPC.
+        r"""Return a callable for the delete taxonomy method over gRPC.
 
         Deletes a taxonomy. This operation will also delete
         all policy tags in this taxonomy along with their
@@ -282,9 +278,7 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
     def update_taxonomy(self) -> Callable[
             [policytagmanager.UpdateTaxonomyRequest],
             policytagmanager.Taxonomy]:
-        r"""Return a callable for the
-        update taxonomy
-          method over gRPC.
+        r"""Return a callable for the update taxonomy method over gRPC.
 
         Updates a taxonomy.
 
@@ -310,9 +304,7 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
     def list_taxonomies(self) -> Callable[
             [policytagmanager.ListTaxonomiesRequest],
             policytagmanager.ListTaxonomiesResponse]:
-        r"""Return a callable for the
-        list taxonomies
-          method over gRPC.
+        r"""Return a callable for the list taxonomies method over gRPC.
 
         Lists all taxonomies in a project in a particular
         location that the caller has permission to view.
@@ -339,9 +331,7 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
     def get_taxonomy(self) -> Callable[
             [policytagmanager.GetTaxonomyRequest],
             policytagmanager.Taxonomy]:
-        r"""Return a callable for the
-        get taxonomy
-          method over gRPC.
+        r"""Return a callable for the get taxonomy method over gRPC.
 
         Gets a taxonomy.
 
@@ -367,9 +357,7 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
     def create_policy_tag(self) -> Callable[
             [policytagmanager.CreatePolicyTagRequest],
             policytagmanager.PolicyTag]:
-        r"""Return a callable for the
-        create policy tag
-          method over gRPC.
+        r"""Return a callable for the create policy tag method over gRPC.
 
         Creates a policy tag in the specified taxonomy.
 
@@ -395,9 +383,7 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
     def delete_policy_tag(self) -> Callable[
             [policytagmanager.DeletePolicyTagRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete policy tag
-          method over gRPC.
+        r"""Return a callable for the delete policy tag method over gRPC.
 
         Deletes a policy tag. Also deletes all of its
         descendant policy tags.
@@ -424,9 +410,7 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
     def update_policy_tag(self) -> Callable[
             [policytagmanager.UpdatePolicyTagRequest],
             policytagmanager.PolicyTag]:
-        r"""Return a callable for the
-        update policy tag
-          method over gRPC.
+        r"""Return a callable for the update policy tag method over gRPC.
 
         Updates a policy tag.
 
@@ -452,9 +436,7 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
     def list_policy_tags(self) -> Callable[
             [policytagmanager.ListPolicyTagsRequest],
             policytagmanager.ListPolicyTagsResponse]:
-        r"""Return a callable for the
-        list policy tags
-          method over gRPC.
+        r"""Return a callable for the list policy tags method over gRPC.
 
         Lists all policy tags in a taxonomy.
 
@@ -480,9 +462,7 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
     def get_policy_tag(self) -> Callable[
             [policytagmanager.GetPolicyTagRequest],
             policytagmanager.PolicyTag]:
-        r"""Return a callable for the
-        get policy tag
-          method over gRPC.
+        r"""Return a callable for the get policy tag method over gRPC.
 
         Gets a policy tag.
 
@@ -508,9 +488,7 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
     def get_iam_policy(self) -> Callable[
             [iam_policy.GetIamPolicyRequest],
             giv_policy.Policy]:
-        r"""Return a callable for the
-        get iam policy
-          method over gRPC.
+        r"""Return a callable for the get iam policy method over gRPC.
 
         Gets the IAM policy for a taxonomy or a policy tag.
 
@@ -536,9 +514,7 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
     def set_iam_policy(self) -> Callable[
             [iam_policy.SetIamPolicyRequest],
             giv_policy.Policy]:
-        r"""Return a callable for the
-        set iam policy
-          method over gRPC.
+        r"""Return a callable for the set iam policy method over gRPC.
 
         Sets the IAM policy for a taxonomy or a policy tag.
 
@@ -564,9 +540,7 @@ class PolicyTagManagerGrpcTransport(PolicyTagManagerTransport):
     def test_iam_permissions(self) -> Callable[
             [iam_policy.TestIamPermissionsRequest],
             iam_policy.TestIamPermissionsResponse]:
-        r"""Return a callable for the
-        test iam permissions
-          method over gRPC.
+        r"""Return a callable for the test iam permissions method over gRPC.
 
         Returns the permissions that a caller has on the
         specified taxonomy or policy tag.

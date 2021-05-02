@@ -16,15 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRecommendationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DismissRecommendationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DismissRecommendationRequestObjectAsync()
         {
-            // Snippet: DismissRecommendationAsync(DismissRecommendationRequest, CallSettings)
-            // Additional: DismissRecommendationAsync(DismissRecommendationRequest, CancellationToken)
             // Create client
             RecommendationServiceClient recommendationServiceClient = await RecommendationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -39,7 +42,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             DismissRecommendationResponse response = await recommendationServiceClient.DismissRecommendationAsync(request);
-            // End snippet
         }
     }
 }

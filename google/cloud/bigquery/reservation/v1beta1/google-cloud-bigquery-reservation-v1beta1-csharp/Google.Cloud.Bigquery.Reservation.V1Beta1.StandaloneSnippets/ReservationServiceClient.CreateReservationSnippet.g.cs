@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
 {
+    using Google.Cloud.Bigquery.Reservation.V1Beta1;
+
     public sealed partial class GeneratedReservationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateReservation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateReservation()
         {
-            // Snippet: CreateReservation(string, Reservation, string, CallSettings)
             // Create client
             ReservationServiceClient reservationServiceClient = ReservationServiceClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
             string reservationId = "";
             // Make the request
             Reservation response = reservationServiceClient.CreateReservation(parent, reservation, reservationId);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -28,6 +30,7 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.devtools.clouddebugger_v2.types import controller
 from google.devtools.clouddebugger_v2.types import data
+
 from .transports.base import Controller2Transport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import Controller2GrpcAsyncIOTransport
 from .client import Controller2Client
@@ -65,12 +68,16 @@ class Controller2AsyncClient:
 
     common_billing_account_path = staticmethod(Controller2Client.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(Controller2Client.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(Controller2Client.common_folder_path)
     parse_common_folder_path = staticmethod(Controller2Client.parse_common_folder_path)
+
     common_organization_path = staticmethod(Controller2Client.common_organization_path)
     parse_common_organization_path = staticmethod(Controller2Client.parse_common_organization_path)
+
     common_project_path = staticmethod(Controller2Client.common_project_path)
     parse_common_project_path = staticmethod(Controller2Client.parse_common_project_path)
+
     common_location_path = staticmethod(Controller2Client.common_location_path)
     parse_common_location_path = staticmethod(Controller2Client.parse_common_location_path)
 
@@ -155,6 +162,7 @@ class Controller2AsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = Controller2Client(
             credentials=credentials,
             transport=transport,
@@ -186,8 +194,7 @@ class Controller2AsyncClient:
 
         Args:
             request (:class:`google.devtools.clouddebugger_v2.types.RegisterDebuggeeRequest`):
-                The request object.
-                Request to register a debuggee.
+                The request object. Request to register a debuggee.
             debuggee (:class:`google.devtools.clouddebugger_v2.types.Debuggee`):
                 Required. Debuggee information to register. The fields
                 ``project``, ``uniquifier``, ``description`` and
@@ -196,6 +203,7 @@ class Controller2AsyncClient:
                 This corresponds to the ``debuggee`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -218,6 +226,7 @@ class Controller2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if debuggee is not None:
             request.debuggee = debuggee
 
@@ -265,13 +274,13 @@ class Controller2AsyncClient:
 
         Args:
             request (:class:`google.devtools.clouddebugger_v2.types.ListActiveBreakpointsRequest`):
-                The request object.
-                Request to list active breakpoints.
+                The request object. Request to list active breakpoints.
             debuggee_id (:class:`str`):
                 Required. Identifies the debuggee.
                 This corresponds to the ``debuggee_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -296,6 +305,7 @@ class Controller2AsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if debuggee_id is not None:
             request.debuggee_id = debuggee_id
 
@@ -304,7 +314,10 @@ class Controller2AsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.list_active_breakpoints,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -346,8 +359,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.devtools.clouddebugger_v2.types.UpdateActiveBreakpointRequest`):
-                The request object.
-                Request to update an active
+                The request object. Request to update an active
                 breakpoint.
             debuggee_id (:class:`str`):
                 Required. Identifies the debuggee
@@ -364,6 +376,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``breakpoint_`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -389,6 +402,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if debuggee_id is not None:
             request.debuggee_id = debuggee_id
         if breakpoint_ is not None:
@@ -399,7 +413,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_active_breakpoint,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -419,6 +436,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

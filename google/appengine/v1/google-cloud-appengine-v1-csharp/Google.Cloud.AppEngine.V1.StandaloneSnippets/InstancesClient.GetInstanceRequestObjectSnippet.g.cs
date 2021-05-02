@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
+
     public sealed partial class GeneratedInstancesClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInstance</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetInstanceRequestObject()
         {
-            // Snippet: GetInstance(GetInstanceRequest, CallSettings)
             // Create client
             InstancesClient instancesClient = InstancesClient.Create();
             // Initialize request argument(s)
             GetInstanceRequest request = new GetInstanceRequest { Name = "", };
             // Make the request
             Instance response = instancesClient.GetInstance(request);
-            // End snippet
         }
     }
 }

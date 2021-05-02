@@ -17,15 +17,18 @@
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dialogflow.V2beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConversationProfilesClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateConversationProfileAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateConversationProfileResourceNames1Async()
         {
-            // Snippet: CreateConversationProfileAsync(ProjectName, ConversationProfile, CallSettings)
-            // Additional: CreateConversationProfileAsync(ProjectName, ConversationProfile, CancellationToken)
             // Create client
             ConversationProfilesClient conversationProfilesClient = await ConversationProfilesClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
             ConversationProfile conversationProfile = new ConversationProfile();
             // Make the request
             ConversationProfile response = await conversationProfilesClient.CreateConversationProfileAsync(parent, conversationProfile);
-            // End snippet
         }
     }
 }

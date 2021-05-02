@@ -16,15 +16,18 @@
 
 namespace Google.Api.Serviceusage.V1.Snippets
 {
+    using Google.Api.Serviceusage.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedServiceUsageClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchGetServicesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchGetServicesRequestObjectAsync()
         {
-            // Snippet: BatchGetServicesAsync(BatchGetServicesRequest, CallSettings)
-            // Additional: BatchGetServicesAsync(BatchGetServicesRequest, CancellationToken)
             // Create client
             ServiceUsageClient serviceUsageClient = await ServiceUsageClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Api.Serviceusage.V1.Snippets
             };
             // Make the request
             BatchGetServicesResponse response = await serviceUsageClient.BatchGetServicesAsync(request);
-            // End snippet
         }
     }
 }

@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Enums;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignExtensionSettingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCampaignExtensionSettingsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateCampaignExtensionSettingsRequestObjectAsync()
         {
-            // Snippet: MutateCampaignExtensionSettingsAsync(MutateCampaignExtensionSettingsRequest, CallSettings)
-            // Additional: MutateCampaignExtensionSettingsAsync(MutateCampaignExtensionSettingsRequest, CancellationToken)
             // Create client
             CampaignExtensionSettingServiceClient campaignExtensionSettingServiceClient = await CampaignExtensionSettingServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -42,7 +45,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateCampaignExtensionSettingsResponse response = await campaignExtensionSettingServiceClient.MutateCampaignExtensionSettingsAsync(request);
-            // End snippet
         }
     }
 }

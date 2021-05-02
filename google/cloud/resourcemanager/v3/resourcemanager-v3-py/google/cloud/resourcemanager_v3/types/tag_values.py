@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
@@ -77,40 +80,25 @@ class TagValue(proto.Message):
             UpdateTagValueRequest for details.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    parent = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    short_name = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    namespaced_name = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    create_time = proto.Field(
-        proto.MESSAGE,
-        number=6,
+    name = proto.Field(proto.STRING, number=1)
+
+    parent = proto.Field(proto.STRING, number=2)
+
+    short_name = proto.Field(proto.STRING, number=3)
+
+    namespaced_name = proto.Field(proto.STRING, number=4)
+
+    description = proto.Field(proto.STRING, number=5)
+
+    create_time = proto.Field(proto.MESSAGE, number=6,
         message=timestamp.Timestamp,
     )
-    update_time = proto.Field(
-        proto.MESSAGE,
-        number=7,
+
+    update_time = proto.Field(proto.MESSAGE, number=7,
         message=timestamp.Timestamp,
     )
-    etag = proto.Field(
-        proto.STRING,
-        number=8,
-    )
+
+    etag = proto.Field(proto.STRING, number=8)
 
 
 class ListTagValuesRequest(proto.Message):
@@ -133,22 +121,16 @@ class ListTagValuesRequest(proto.Message):
             should continue from.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
 
 
 class ListTagValuesResponse(proto.Message):
     r"""The ListTagValues response.
+
     Attributes:
         tag_values (Sequence[google.cloud.resourcemanager_v3.types.TagValue]):
             A possibly paginated list of TagValues that
@@ -165,33 +147,28 @@ class ListTagValuesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    tag_values = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    tag_values = proto.RepeatedField(proto.MESSAGE, number=1,
         message='TagValue',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class GetTagValueRequest(proto.Message):
     r"""The request message for getting a TagValue.
+
     Attributes:
         name (str):
             Required. Resource name for TagValue to be fetched in the
             format ``tagValues/456``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class CreateTagValueRequest(proto.Message):
     r"""The request message for creating a TagValue.
+
     Attributes:
         tag_value (google.cloud.resourcemanager_v3.types.TagValue):
             Required. The TagValue to be created. Only fields
@@ -203,23 +180,20 @@ class CreateTagValueRequest(proto.Message):
             but not actually perform the action.
     """
 
-    tag_value = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    tag_value = proto.Field(proto.MESSAGE, number=1,
         message='TagValue',
     )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=2,
-    )
+
+    validate_only = proto.Field(proto.BOOL, number=2)
 
 
 class CreateTagValueMetadata(proto.Message):
-    r"""Runtime operation information for creating a TagValue.    """
+    r"""Runtime operation information for creating a TagValue."""
 
 
 class UpdateTagValueRequest(proto.Message):
     r"""The request message for updating a TagValue.
+
     Attributes:
         tag_value (google.cloud.resourcemanager_v3.types.TagValue):
             Required. The new definition of the TagValue. Only fields
@@ -235,28 +209,24 @@ class UpdateTagValueRequest(proto.Message):
             actually perform the action.
     """
 
-    tag_value = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    tag_value = proto.Field(proto.MESSAGE, number=1,
         message='TagValue',
     )
-    update_mask = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    update_mask = proto.Field(proto.MESSAGE, number=2,
         message=field_mask.FieldMask,
     )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
+
+    validate_only = proto.Field(proto.BOOL, number=3)
 
 
 class UpdateTagValueMetadata(proto.Message):
-    r"""Runtime operation information for updating a TagValue.    """
+    r"""Runtime operation information for updating a TagValue."""
 
 
 class DeleteTagValueRequest(proto.Message):
     r"""The request message for deleting a TagValue.
+
     Attributes:
         name (str):
             Required. Resource name for TagValue to be
@@ -271,22 +241,15 @@ class DeleteTagValueRequest(proto.Message):
             be used for optimistic concurrency.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=2,
-    )
-    etag = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    name = proto.Field(proto.STRING, number=1)
+
+    validate_only = proto.Field(proto.BOOL, number=2)
+
+    etag = proto.Field(proto.STRING, number=3)
 
 
 class DeleteTagValueMetadata(proto.Message):
-    r"""Runtime operation information for deleting a TagValue.    """
+    r"""Runtime operation information for deleting a TagValue."""
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

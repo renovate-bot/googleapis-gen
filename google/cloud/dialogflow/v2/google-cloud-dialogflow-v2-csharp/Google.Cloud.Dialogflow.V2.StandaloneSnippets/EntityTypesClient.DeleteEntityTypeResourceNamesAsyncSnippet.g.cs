@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedEntityTypesClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteEntityTypeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteEntityTypeResourceNamesAsync()
         {
-            // Snippet: DeleteEntityTypeAsync(EntityTypeName, CallSettings)
-            // Additional: DeleteEntityTypeAsync(EntityTypeName, CancellationToken)
             // Create client
             EntityTypesClient entityTypesClient = await EntityTypesClient.CreateAsync();
             // Initialize request argument(s)
             EntityTypeName name = EntityTypeName.FromProjectEntityType("[PROJECT]", "[ENTITY_TYPE]");
             // Make the request
             await entityTypesClient.DeleteEntityTypeAsync(name);
-            // End snippet
         }
     }
 }

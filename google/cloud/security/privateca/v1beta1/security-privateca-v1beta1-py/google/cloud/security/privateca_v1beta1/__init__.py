@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.certificate_authority_service import CertificateAuthorityServiceClient
-
 from .types.resources import Certificate
 from .types.resources import CertificateAuthority
 from .types.resources import CertificateConfig
@@ -58,6 +58,7 @@ from .types.service import ScheduleDeleteCertificateAuthorityRequest
 from .types.service import UpdateCertificateAuthorityRequest
 from .types.service import UpdateCertificateRequest
 from .types.service import UpdateCertificateRevocationListRequest
+
 
 __all__ = (
     'ActivateCertificateAuthorityRequest',

@@ -16,19 +16,23 @@
 
 namespace Google.Ads.Admob.V1.Snippets
 {
+    using Google.Ads.Admob.V1;
+
     public sealed partial class GeneratedAdMobApiClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPublisherAccount</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetPublisherAccountRequestObject()
         {
-            // Snippet: GetPublisherAccount(GetPublisherAccountRequest, CallSettings)
             // Create client
             AdMobApiClient adMobApiClient = AdMobApiClient.Create();
             // Initialize request argument(s)
             GetPublisherAccountRequest request = new GetPublisherAccountRequest { Name = "", };
             // Make the request
             PublisherAccount response = adMobApiClient.GetPublisherAccount(request);
-            // End snippet
         }
     }
 }

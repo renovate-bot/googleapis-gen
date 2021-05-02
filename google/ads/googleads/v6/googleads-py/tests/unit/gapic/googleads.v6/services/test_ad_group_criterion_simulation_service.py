@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -265,29 +267,46 @@ def test_get_ad_group_criterion_simulation(transport: str = 'grpc', request_type
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_criterion_simulation.AdGroupCriterionSimulation(
             resource_name='resource_name_value',
+
             ad_group_id=1149,
+
             criterion_id=1275,
+
             type_=simulation_type.SimulationTypeEnum.SimulationType.UNKNOWN,
+
             modification_method=simulation_modification_method.SimulationModificationMethodEnum.SimulationModificationMethod.UNKNOWN,
+
             start_date='start_date_value',
+
             end_date='end_date_value',
+
             cpc_bid_point_list=simulation.CpcBidSimulationPointList(points=[simulation.CpcBidSimulationPoint(cpc_bid_micros=1456)]),
         )
+
         response = client.get_ad_group_criterion_simulation(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == ad_group_criterion_simulation_service.GetAdGroupCriterionSimulationRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, ad_group_criterion_simulation.AdGroupCriterionSimulation)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.ad_group_id == 1149
+
     assert response.criterion_id == 1275
+
     assert response.type_ == simulation_type.SimulationTypeEnum.SimulationType.UNKNOWN
+
     assert response.modification_method == simulation_modification_method.SimulationModificationMethodEnum.SimulationModificationMethod.UNKNOWN
+
     assert response.start_date == 'start_date_value'
+
     assert response.end_date == 'end_date_value'
 
 
@@ -303,7 +322,6 @@ def test_get_ad_group_criterion_simulation_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = ad_group_criterion_simulation_service.GetAdGroupCriterionSimulationRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -311,6 +329,7 @@ def test_get_ad_group_criterion_simulation_field_headers():
             type(client.transport.get_ad_group_criterion_simulation),
             '__call__') as call:
         call.return_value = ad_group_criterion_simulation.AdGroupCriterionSimulation()
+
         client.get_ad_group_criterion_simulation(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -337,6 +356,7 @@ def test_get_ad_group_criterion_simulation_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = ad_group_criterion_simulation.AdGroupCriterionSimulation()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_ad_group_criterion_simulation(
@@ -347,6 +367,7 @@ def test_get_ad_group_criterion_simulation_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -427,7 +448,7 @@ def test_ad_group_criterion_simulation_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'get_ad_group_criterion_simulation',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -584,6 +605,7 @@ def test_ad_group_criterion_simulation_path():
     modification_method = "oyster"
     start_date = "nudibranch"
     end_date = "cuttlefish"
+
     expected = "customers/{customer_id}/adGroupCriterionSimulations/{ad_group_id}~{criterion_id}~{type}~{modification_method}~{start_date}~{end_date}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, type=type, modification_method=modification_method, start_date=start_date, end_date=end_date, )
     actual = AdGroupCriterionSimulationServiceClient.ad_group_criterion_simulation_path(customer_id, ad_group_id, criterion_id, type, modification_method, start_date, end_date)
     assert expected == actual
@@ -591,13 +613,14 @@ def test_ad_group_criterion_simulation_path():
 
 def test_parse_ad_group_criterion_simulation_path():
     expected = {
-        "customer_id": "mussel",
-        "ad_group_id": "winkle",
-        "criterion_id": "nautilus",
-        "type": "scallop",
-        "modification_method": "abalone",
-        "start_date": "squid",
-        "end_date": "clam",
+    "customer_id": "mussel",
+    "ad_group_id": "winkle",
+    "criterion_id": "nautilus",
+    "type": "scallop",
+    "modification_method": "abalone",
+    "start_date": "squid",
+    "end_date": "clam",
+
     }
     path = AdGroupCriterionSimulationServiceClient.ad_group_criterion_simulation_path(**expected)
 
@@ -607,6 +630,7 @@ def test_parse_ad_group_criterion_simulation_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AdGroupCriterionSimulationServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -614,7 +638,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = AdGroupCriterionSimulationServiceClient.common_billing_account_path(**expected)
 
@@ -624,6 +649,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = AdGroupCriterionSimulationServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -631,7 +657,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = AdGroupCriterionSimulationServiceClient.common_folder_path(**expected)
 
@@ -641,6 +668,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AdGroupCriterionSimulationServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -648,7 +676,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = AdGroupCriterionSimulationServiceClient.common_organization_path(**expected)
 
@@ -658,6 +687,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = AdGroupCriterionSimulationServiceClient.common_project_path(project)
     assert expected == actual
@@ -665,7 +695,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = AdGroupCriterionSimulationServiceClient.common_project_path(**expected)
 
@@ -676,6 +707,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AdGroupCriterionSimulationServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -683,8 +715,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = AdGroupCriterionSimulationServiceClient.common_location_path(**expected)
 

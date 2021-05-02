@@ -16,14 +16,18 @@
 
 namespace Google.Maps.PlayableLocations.V3.Snippets
 {
+    using Google.Maps.PlayableLocations.V3;
     using Google.Maps.Unity;
 
     public sealed partial class GeneratedPlayableLocationsClientStandaloneSnippets
     {
         /// <summary>Snippet for LogImpressions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void LogImpressionsRequestObject()
         {
-            // Snippet: LogImpressions(LogImpressionsRequest, CallSettings)
             // Create client
             PlayableLocationsClient playableLocationsClient = PlayableLocationsClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Maps.PlayableLocations.V3.Snippets
             };
             // Make the request
             LogImpressionsResponse response = playableLocationsClient.LogImpressions(request);
-            // End snippet
         }
     }
 }

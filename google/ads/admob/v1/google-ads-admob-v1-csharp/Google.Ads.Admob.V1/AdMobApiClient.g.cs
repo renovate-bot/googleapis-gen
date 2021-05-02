@@ -394,10 +394,10 @@ namespace Google.Ads.Admob.V1
             _callListPublisherAccounts = clientHelper.BuildApiCall<ListPublisherAccountsRequest, ListPublisherAccountsResponse>(grpcClient.ListPublisherAccountsAsync, grpcClient.ListPublisherAccounts, effectiveSettings.ListPublisherAccountsSettings);
             Modify_ApiCall(ref _callListPublisherAccounts);
             Modify_ListPublisherAccountsApiCall(ref _callListPublisherAccounts);
-            _callGenerateNetworkReport = clientHelper.BuildApiCall<GenerateNetworkReportRequest, GenerateNetworkReportResponse>(grpcClient.GenerateNetworkReport, effectiveSettings.GenerateNetworkReportSettings);
+            _callGenerateNetworkReport = clientHelper.BuildApiCall<GenerateNetworkReportRequest, GenerateNetworkReportResponse>(grpcClient.GenerateNetworkReport, effectiveSettings.GenerateNetworkReportSettings).WithGoogleRequestParam("parent", request => request.Parent);
             Modify_ApiCall(ref _callGenerateNetworkReport);
             Modify_GenerateNetworkReportApiCall(ref _callGenerateNetworkReport);
-            _callGenerateMediationReport = clientHelper.BuildApiCall<GenerateMediationReportRequest, GenerateMediationReportResponse>(grpcClient.GenerateMediationReport, effectiveSettings.GenerateMediationReportSettings);
+            _callGenerateMediationReport = clientHelper.BuildApiCall<GenerateMediationReportRequest, GenerateMediationReportResponse>(grpcClient.GenerateMediationReport, effectiveSettings.GenerateMediationReportSettings).WithGoogleRequestParam("parent", request => request.Parent);
             Modify_ApiCall(ref _callGenerateMediationReport);
             Modify_GenerateMediationReportApiCall(ref _callGenerateMediationReport);
             OnConstruction(grpcClient, effectiveSettings, clientHelper);

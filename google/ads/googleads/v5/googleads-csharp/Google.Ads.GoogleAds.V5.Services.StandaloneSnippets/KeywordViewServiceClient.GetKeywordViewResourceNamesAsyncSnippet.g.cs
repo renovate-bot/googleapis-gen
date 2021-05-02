@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedKeywordViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetKeywordViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetKeywordViewResourceNamesAsync()
         {
-            // Snippet: GetKeywordViewAsync(KeywordViewName, CallSettings)
-            // Additional: GetKeywordViewAsync(KeywordViewName, CancellationToken)
             // Create client
             KeywordViewServiceClient keywordViewServiceClient = await KeywordViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             KeywordViewName resourceName = KeywordViewName.FromCustomerKeywordView("[CUSTOMER]", "[KEYWORD_VIEW]");
             // Make the request
             KeywordView response = await keywordViewServiceClient.GetKeywordViewAsync(resourceName);
-            // End snippet
         }
     }
 }

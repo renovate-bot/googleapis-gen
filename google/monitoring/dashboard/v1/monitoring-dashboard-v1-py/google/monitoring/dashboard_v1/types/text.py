@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -26,6 +28,7 @@ __protobuf__ = proto.module(
 
 class Text(proto.Message):
     r"""A widget that displays textual content.
+
     Attributes:
         content (str):
             The text content to be displayed.
@@ -38,13 +41,9 @@ class Text(proto.Message):
         MARKDOWN = 1
         RAW = 2
 
-    content = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    format_ = proto.Field(
-        proto.ENUM,
-        number=2,
+    content = proto.Field(proto.STRING, number=1)
+
+    format_ = proto.Field(proto.ENUM, number=2,
         enum=Format,
     )
 

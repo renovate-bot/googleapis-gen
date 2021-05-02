@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.DataCatalog.V1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTagTemplateAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTagTemplateRequestObjectAsync()
         {
-            // Snippet: GetTagTemplateAsync(GetTagTemplateRequest, CallSettings)
-            // Additional: GetTagTemplateAsync(GetTagTemplateRequest, CancellationToken)
             // Create client
             DataCatalogClient dataCatalogClient = await DataCatalogClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             };
             // Make the request
             TagTemplate response = await dataCatalogClient.GetTagTemplateAsync(request);
-            // End snippet
         }
     }
 }

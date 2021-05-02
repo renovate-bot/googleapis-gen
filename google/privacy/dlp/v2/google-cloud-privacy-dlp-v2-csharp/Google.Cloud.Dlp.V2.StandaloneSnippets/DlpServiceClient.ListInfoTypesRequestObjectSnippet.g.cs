@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
+
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListInfoTypes</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListInfoTypesRequestObject()
         {
-            // Snippet: ListInfoTypes(ListInfoTypesRequest, CallSettings)
             // Create client
             DlpServiceClient dlpServiceClient = DlpServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +39,6 @@ namespace Google.Cloud.Dlp.V2.Snippets
             };
             // Make the request
             ListInfoTypesResponse response = dlpServiceClient.ListInfoTypes(request);
-            // End snippet
         }
     }
 }

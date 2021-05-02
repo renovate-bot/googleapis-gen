@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Enums;
+    using Google.Ads.GoogleAds.V7.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCampaignBudgetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCampaignBudgetsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateCampaignBudgetsRequestObjectAsync()
         {
-            // Snippet: MutateCampaignBudgetsAsync(MutateCampaignBudgetsRequest, CallSettings)
-            // Additional: MutateCampaignBudgetsAsync(MutateCampaignBudgetsRequest, CancellationToken)
             // Create client
             CampaignBudgetServiceClient campaignBudgetServiceClient = await CampaignBudgetServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -42,7 +45,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             MutateCampaignBudgetsResponse response = await campaignBudgetServiceClient.MutateCampaignBudgetsAsync(request);
-            // End snippet
         }
     }
 }

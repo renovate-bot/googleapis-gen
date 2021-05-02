@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.common.types import simulation
 from google.ads.googleads.v7.enums.types import simulation_modification_method
@@ -67,42 +70,20 @@ class BiddingStrategySimulation(proto.Message):
             TARGET_ROAS.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    bidding_strategy_id = proto.Field(
-        proto.INT64,
-        number=2,
-    )
-    type_ = proto.Field(
-        proto.ENUM,
-        number=3,
+    resource_name = proto.Field(proto.STRING, number=1)
+    bidding_strategy_id = proto.Field(proto.INT64, number=2)
+    type_ = proto.Field(proto.ENUM, number=3,
         enum=simulation_type.SimulationTypeEnum.SimulationType,
     )
-    modification_method = proto.Field(
-        proto.ENUM,
-        number=4,
+    modification_method = proto.Field(proto.ENUM, number=4,
         enum=simulation_modification_method.SimulationModificationMethodEnum.SimulationModificationMethod,
     )
-    start_date = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    end_date = proto.Field(
-        proto.STRING,
-        number=6,
-    )
-    target_cpa_point_list = proto.Field(
-        proto.MESSAGE,
-        number=7,
-        oneof='point_list',
+    start_date = proto.Field(proto.STRING, number=5)
+    end_date = proto.Field(proto.STRING, number=6)
+    target_cpa_point_list = proto.Field(proto.MESSAGE, number=7, oneof='point_list',
         message=simulation.TargetCpaSimulationPointList,
     )
-    target_roas_point_list = proto.Field(
-        proto.MESSAGE,
-        number=8,
-        oneof='point_list',
+    target_roas_point_list = proto.Field(proto.MESSAGE, number=8, oneof='point_list',
         message=simulation.TargetRoasSimulationPointList,
     )
 

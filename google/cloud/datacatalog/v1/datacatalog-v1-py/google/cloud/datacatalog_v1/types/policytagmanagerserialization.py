@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.datacatalog_v1.types import policytagmanager
 
@@ -54,22 +57,15 @@ class SerializedTaxonomy(proto.Message):
             taxonomy.
     """
 
-    display_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    policy_tags = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    display_name = proto.Field(proto.STRING, number=1)
+
+    description = proto.Field(proto.STRING, number=2)
+
+    policy_tags = proto.RepeatedField(proto.MESSAGE, number=3,
         message='SerializedPolicyTag',
     )
-    activated_policy_types = proto.RepeatedField(
-        proto.ENUM,
-        number=4,
+
+    activated_policy_types = proto.RepeatedField(proto.ENUM, number=4,
         enum=policytagmanager.Taxonomy.PolicyType,
     )
 
@@ -95,21 +91,13 @@ class SerializedPolicyTag(proto.Message):
             Children of the policy tag, if any.
     """
 
-    policy_tag = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    display_name = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    child_policy_tags = proto.RepeatedField(
-        proto.MESSAGE,
-        number=4,
+    policy_tag = proto.Field(proto.STRING, number=1)
+
+    display_name = proto.Field(proto.STRING, number=2)
+
+    description = proto.Field(proto.STRING, number=3)
+
+    child_policy_tags = proto.RepeatedField(proto.MESSAGE, number=4,
         message='SerializedPolicyTag',
     )
 
@@ -129,34 +117,26 @@ class ImportTaxonomiesRequest(proto.Message):
             imported.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    inline_source = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='source',
+    parent = proto.Field(proto.STRING, number=1)
+
+    inline_source = proto.Field(proto.MESSAGE, number=2, oneof='source',
         message='InlineSource',
     )
-    cross_regional_source = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='source',
+
+    cross_regional_source = proto.Field(proto.MESSAGE, number=3, oneof='source',
         message='CrossRegionalSource',
     )
 
 
 class InlineSource(proto.Message):
     r"""Inline source containing taxonomies to import.
+
     Attributes:
         taxonomies (Sequence[google.cloud.datacatalog_v1.types.SerializedTaxonomy]):
             Required. Taxonomies to be imported.
     """
 
-    taxonomies = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    taxonomies = proto.RepeatedField(proto.MESSAGE, number=1,
         message='SerializedTaxonomy',
     )
 
@@ -171,10 +151,7 @@ class CrossRegionalSource(proto.Message):
             taxonomy to be imported.
     """
 
-    taxonomy = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    taxonomy = proto.Field(proto.STRING, number=1)
 
 
 class ImportTaxonomiesResponse(proto.Message):
@@ -186,9 +163,7 @@ class ImportTaxonomiesResponse(proto.Message):
             Taxonomies that were imported.
     """
 
-    taxonomies = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    taxonomies = proto.RepeatedField(proto.MESSAGE, number=1,
         message=policytagmanager.Taxonomy,
     )
 
@@ -210,19 +185,11 @@ class ExportTaxonomiesRequest(proto.Message):
             protos.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    taxonomies = proto.RepeatedField(
-        proto.STRING,
-        number=2,
-    )
-    serialized_taxonomies = proto.Field(
-        proto.BOOL,
-        number=3,
-        oneof='destination',
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    taxonomies = proto.RepeatedField(proto.STRING, number=2)
+
+    serialized_taxonomies = proto.Field(proto.BOOL, number=3, oneof='destination')
 
 
 class ExportTaxonomiesResponse(proto.Message):
@@ -235,9 +202,7 @@ class ExportTaxonomiesResponse(proto.Message):
             protos.
     """
 
-    taxonomies = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    taxonomies = proto.RepeatedField(proto.MESSAGE, number=1,
         message='SerializedTaxonomy',
     )
 

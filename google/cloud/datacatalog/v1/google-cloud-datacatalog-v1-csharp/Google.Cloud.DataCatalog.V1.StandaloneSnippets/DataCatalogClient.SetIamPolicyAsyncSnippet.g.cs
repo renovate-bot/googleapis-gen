@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.DataCatalog.V1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1;
     using Google.Cloud.Iam.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for SetIamPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SetIamPolicyAsync()
         {
-            // Snippet: SetIamPolicyAsync(string, Policy, CallSettings)
-            // Additional: SetIamPolicyAsync(string, Policy, CancellationToken)
             // Create client
             DataCatalogClient dataCatalogClient = await DataCatalogClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             Policy policy = new Policy();
             // Make the request
             Policy response = await dataCatalogClient.SetIamPolicyAsync(resource, policy);
-            // End snippet
         }
     }
 }

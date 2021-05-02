@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.NetworkConnectivity.V1Alpha1.Snippets
 {
+    using Google.Cloud.NetworkConnectivity.V1Alpha1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedHubServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetHubAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetHubResourceNamesAsync()
         {
-            // Snippet: GetHubAsync(HubName, CallSettings)
-            // Additional: GetHubAsync(HubName, CancellationToken)
             // Create client
             HubServiceClient hubServiceClient = await HubServiceClient.CreateAsync();
             // Initialize request argument(s)
             HubName name = HubName.FromProjectHub("[PROJECT]", "[HUB]");
             // Make the request
             Hub response = await hubServiceClient.GetHubAsync(name);
-            // End snippet
         }
     }
 }

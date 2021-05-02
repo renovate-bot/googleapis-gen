@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,6 @@
 
 from .services.adaptation import AdaptationClient
 from .services.speech import SpeechClient
-
 from .types.cloud_speech import LongRunningRecognizeMetadata
 from .types.cloud_speech import LongRunningRecognizeRequest
 from .types.cloud_speech import LongRunningRecognizeResponse
@@ -50,6 +50,7 @@ from .types.cloud_speech_adaptation import UpdatePhraseSetRequest
 from .types.resource import CustomClass
 from .types.resource import PhraseSet
 from .types.resource import SpeechAdaptation
+
 
 __all__ = (
     'CreateCustomClassRequest',

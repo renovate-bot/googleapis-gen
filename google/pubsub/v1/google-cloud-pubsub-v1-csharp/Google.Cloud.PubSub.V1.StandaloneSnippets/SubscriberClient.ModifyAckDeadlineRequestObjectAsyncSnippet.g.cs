@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSubscriberClientStandaloneSnippets
     {
         /// <summary>Snippet for ModifyAckDeadlineAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ModifyAckDeadlineRequestObjectAsync()
         {
-            // Snippet: ModifyAckDeadlineAsync(ModifyAckDeadlineRequest, CallSettings)
-            // Additional: ModifyAckDeadlineAsync(ModifyAckDeadlineRequest, CancellationToken)
             // Create client
             SubscriberClient subscriberClient = await SubscriberClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
             };
             // Make the request
             await subscriberClient.ModifyAckDeadlineAsync(request);
-            // End snippet
         }
     }
 }

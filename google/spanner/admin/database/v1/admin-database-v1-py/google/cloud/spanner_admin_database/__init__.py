@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -51,7 +52,8 @@ from google.cloud.spanner_admin_database_v1.types.spanner_database_admin import 
 from google.cloud.spanner_admin_database_v1.types.spanner_database_admin import UpdateDatabaseDdlMetadata
 from google.cloud.spanner_admin_database_v1.types.spanner_database_admin import UpdateDatabaseDdlRequest
 
-__all__ = ('Backup',
+__all__ = (
+    'Backup',
     'BackupInfo',
     'CreateBackupEncryptionConfig',
     'CreateBackupMetadata',

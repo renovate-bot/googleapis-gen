@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Enums;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateAdsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateAdsRequestObjectAsync()
         {
-            // Snippet: MutateAdsAsync(MutateAdsRequest, CallSettings)
-            // Additional: MutateAdsAsync(MutateAdsRequest, CancellationToken)
             // Create client
             AdServiceClient adServiceClient = await AdServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateAdsResponse response = await adServiceClient.MutateAdsAsync(request);
-            // End snippet
         }
     }
 }

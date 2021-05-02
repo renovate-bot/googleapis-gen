@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedExtensionFeedItemServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetExtensionFeedItemAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetExtensionFeedItemRequestObjectAsync()
         {
-            // Snippet: GetExtensionFeedItemAsync(GetExtensionFeedItemRequest, CallSettings)
-            // Additional: GetExtensionFeedItemAsync(GetExtensionFeedItemRequest, CancellationToken)
             // Create client
             ExtensionFeedItemServiceClient extensionFeedItemServiceClient = await ExtensionFeedItemServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             ExtensionFeedItem response = await extensionFeedItemServiceClient.GetExtensionFeedItemAsync(request);
-            // End snippet
         }
     }
 }

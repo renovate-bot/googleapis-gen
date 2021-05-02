@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.RecaptchaEnterprise.V1Beta1.Snippets
 {
+    using Google.Cloud.RecaptchaEnterprise.V1Beta1;
+
     public sealed partial class GeneratedRecaptchaEnterpriseServiceV1Beta1ClientStandaloneSnippets
     {
         /// <summary>Snippet for GetKey</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetKeyRequestObject()
         {
-            // Snippet: GetKey(GetKeyRequest, CallSettings)
             // Create client
             RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client = RecaptchaEnterpriseServiceV1Beta1Client.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.RecaptchaEnterprise.V1Beta1.Snippets
             };
             // Make the request
             Key response = recaptchaEnterpriseServiceV1Beta1Client.GetKey(request);
-            // End snippet
         }
     }
 }

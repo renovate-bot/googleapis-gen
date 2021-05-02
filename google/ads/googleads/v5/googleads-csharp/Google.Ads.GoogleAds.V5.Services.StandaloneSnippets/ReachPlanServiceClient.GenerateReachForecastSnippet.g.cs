@@ -16,14 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedReachPlanServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GenerateReachForecast</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GenerateReachForecast()
         {
-            // Snippet: GenerateReachForecast(string, CampaignDuration, IEnumerable<PlannedProduct>, CallSettings)
             // Create client
             ReachPlanServiceClient reachPlanServiceClient = ReachPlanServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             GenerateReachForecastResponse response = reachPlanServiceClient.GenerateReachForecast(customerId, campaignDuration, plannedProducts);
-            // End snippet
         }
     }
 }

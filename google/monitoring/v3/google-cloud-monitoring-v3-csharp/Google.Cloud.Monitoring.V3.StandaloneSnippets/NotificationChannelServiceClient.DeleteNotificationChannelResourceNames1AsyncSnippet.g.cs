@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedNotificationChannelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteNotificationChannelAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteNotificationChannelResourceNames1Async()
         {
-            // Snippet: DeleteNotificationChannelAsync(NotificationChannelName, bool, CallSettings)
-            // Additional: DeleteNotificationChannelAsync(NotificationChannelName, bool, CancellationToken)
             // Create client
             NotificationChannelServiceClient notificationChannelServiceClient = await NotificationChannelServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             bool force = false;
             // Make the request
             await notificationChannelServiceClient.DeleteNotificationChannelAsync(name, force);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -66,23 +68,15 @@ class SearchCatalogResult(proto.Message):
             -  ``//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId``
     """
 
-    search_result_type = proto.Field(
-        proto.ENUM,
-        number=1,
+    search_result_type = proto.Field(proto.ENUM, number=1,
         enum='SearchResultType',
     )
-    search_result_subtype = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    relative_resource_name = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    linked_resource = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+
+    search_result_subtype = proto.Field(proto.STRING, number=2)
+
+    relative_resource_name = proto.Field(proto.STRING, number=3)
+
+    linked_resource = proto.Field(proto.STRING, number=4)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

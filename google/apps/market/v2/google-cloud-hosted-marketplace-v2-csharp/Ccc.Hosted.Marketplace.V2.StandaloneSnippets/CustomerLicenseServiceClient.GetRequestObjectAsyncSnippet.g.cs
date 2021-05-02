@@ -16,15 +16,18 @@
 
 namespace Ccc.Hosted.Marketplace.V2.Snippets
 {
+    using Ccc.Hosted.Marketplace.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomerLicenseServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetRequestObjectAsync()
         {
-            // Snippet: GetAsync(CustomerLicenseGetRequest, CallSettings)
-            // Additional: GetAsync(CustomerLicenseGetRequest, CancellationToken)
             // Create client
             CustomerLicenseServiceClient customerLicenseServiceClient = await CustomerLicenseServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Ccc.Hosted.Marketplace.V2.Snippets
             };
             // Make the request
             CustomerLicense response = await customerLicenseServiceClient.GetAsync(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,21 +14,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.logging_v2.types import logging
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import LoggingServiceV2Transport, DEFAULT_CLIENT_INFO
 from .grpc import LoggingServiceV2GrpcTransport
 
@@ -77,15 +79,13 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -105,8 +105,7 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -164,6 +163,7 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -226,9 +226,7 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
     def delete_log(self) -> Callable[
             [logging.DeleteLogRequest],
             Awaitable[empty.Empty]]:
-        r"""Return a callable for the
-        delete log
-          method over gRPC.
+        r"""Return a callable for the delete log method over gRPC.
 
         Deletes all the log entries in a log. The log
         reappears if it receives new entries. Log entries
@@ -258,9 +256,7 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
     def write_log_entries(self) -> Callable[
             [logging.WriteLogEntriesRequest],
             Awaitable[logging.WriteLogEntriesResponse]]:
-        r"""Return a callable for the
-        write log entries
-          method over gRPC.
+        r"""Return a callable for the write log entries method over gRPC.
 
         Writes log entries to Logging. This API method is the
         only way to send log entries to Logging. This method is
@@ -292,9 +288,7 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
     def list_log_entries(self) -> Callable[
             [logging.ListLogEntriesRequest],
             Awaitable[logging.ListLogEntriesResponse]]:
-        r"""Return a callable for the
-        list log entries
-          method over gRPC.
+        r"""Return a callable for the list log entries method over gRPC.
 
         Lists log entries. Use this method to retrieve log entries that
         originated from a project/folder/organization/billing account.
@@ -323,10 +317,8 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
     def list_monitored_resource_descriptors(self) -> Callable[
             [logging.ListMonitoredResourceDescriptorsRequest],
             Awaitable[logging.ListMonitoredResourceDescriptorsResponse]]:
-        r"""Return a callable for the
-        list monitored resource
-        descriptors
-          method over gRPC.
+        r"""Return a callable for the list monitored resource
+        descriptors method over gRPC.
 
         Lists the descriptors for monitored resource types
         used by Logging.
@@ -353,9 +345,7 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
     def list_logs(self) -> Callable[
             [logging.ListLogsRequest],
             Awaitable[logging.ListLogsResponse]]:
-        r"""Return a callable for the
-        list logs
-          method over gRPC.
+        r"""Return a callable for the list logs method over gRPC.
 
         Lists the logs in projects, organizations, folders,
         or billing accounts. Only logs that have entries are
@@ -383,9 +373,7 @@ class LoggingServiceV2GrpcAsyncIOTransport(LoggingServiceV2Transport):
     def tail_log_entries(self) -> Callable[
             [logging.TailLogEntriesRequest],
             Awaitable[logging.TailLogEntriesResponse]]:
-        r"""Return a callable for the
-        tail log entries
-          method over gRPC.
+        r"""Return a callable for the tail log entries method over gRPC.
 
         Streaming read of log entries as they are ingested.
         Until the stream is terminated, it will continue reading

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.CloudBuild.V1.Snippets
 {
+    using Google.Cloud.CloudBuild.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudBuildClientStandaloneSnippets
     {
         /// <summary>Snippet for CancelBuildAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CancelBuildAsync()
         {
-            // Snippet: CancelBuildAsync(string, string, CallSettings)
-            // Additional: CancelBuildAsync(string, string, CancellationToken)
             // Create client
             CloudBuildClient cloudBuildClient = await CloudBuildClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.CloudBuild.V1.Snippets
             string id = "";
             // Make the request
             Build response = await cloudBuildClient.CancelBuildAsync(projectId, id);
-            // End snippet
         }
     }
 }

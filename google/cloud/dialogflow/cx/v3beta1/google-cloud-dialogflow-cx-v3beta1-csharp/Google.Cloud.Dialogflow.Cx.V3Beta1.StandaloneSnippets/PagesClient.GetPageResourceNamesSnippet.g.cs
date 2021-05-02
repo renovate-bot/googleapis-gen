@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedPagesClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPage</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetPageResourceNames()
         {
-            // Snippet: GetPage(PageName, CallSettings)
             // Create client
             PagesClient pagesClient = PagesClient.Create();
             // Initialize request argument(s)
             PageName name = PageName.FromProjectLocationAgentFlowPage("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]");
             // Make the request
             Page response = pagesClient.GetPage(name);
-            // End snippet
         }
     }
 }

@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.Cx.V3Beta1;
+
     public sealed partial class GeneratedTestCasesClientStandaloneSnippets
     {
         /// <summary>Snippet for CalculateCoverage</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CalculateCoverageRequestObject()
         {
-            // Snippet: CalculateCoverage(CalculateCoverageRequest, CallSettings)
             // Create client
             TestCasesClient testCasesClient = TestCasesClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1.Snippets
             };
             // Make the request
             CalculateCoverageResponse response = testCasesClient.CalculateCoverage(request);
-            // End snippet
         }
     }
 }

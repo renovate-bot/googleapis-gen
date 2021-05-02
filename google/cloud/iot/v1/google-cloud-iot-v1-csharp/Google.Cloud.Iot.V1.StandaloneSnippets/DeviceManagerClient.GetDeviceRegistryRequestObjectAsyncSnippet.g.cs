@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Iot.V1.Snippets
 {
+    using Google.Cloud.Iot.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDeviceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDeviceRegistryAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetDeviceRegistryRequestObjectAsync()
         {
-            // Snippet: GetDeviceRegistryAsync(GetDeviceRegistryRequest, CallSettings)
-            // Additional: GetDeviceRegistryAsync(GetDeviceRegistryRequest, CancellationToken)
             // Create client
             DeviceManagerClient deviceManagerClient = await DeviceManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Iot.V1.Snippets
             };
             // Make the request
             DeviceRegistry response = await deviceManagerClient.GetDeviceRegistryAsync(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -33,6 +35,7 @@ from google.oauth2 import service_account                         # type: ignore
 from google.cloud.billing.budgets_v1beta1.services.budget_service import pagers
 from google.cloud.billing.budgets_v1beta1.types import budget_model
 from google.cloud.billing.budgets_v1beta1.types import budget_service
+
 from .transports.base import BudgetServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import BudgetServiceGrpcTransport
 from .transports.grpc_asyncio import BudgetServiceGrpcAsyncIOTransport
@@ -339,8 +342,8 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1beta1.types.CreateBudgetRequest):
-                The request object.
-                Request for CreateBudget
+                The request object. Request for CreateBudget
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -361,6 +364,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a budget_service.CreateBudgetRequest.
         # There's no risk of modifying the input as we've already verified
@@ -406,8 +410,8 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1beta1.types.UpdateBudgetRequest):
-                The request object.
-                Request for UpdateBudget
+                The request object. Request for UpdateBudget
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -428,6 +432,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a budget_service.UpdateBudgetRequest.
         # There's no risk of modifying the input as we've already verified
@@ -474,8 +479,8 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1beta1.types.GetBudgetRequest):
-                The request object.
-                Request for GetBudget
+                The request object. Request for GetBudget
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -496,6 +501,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a budget_service.GetBudgetRequest.
         # There's no risk of modifying the input as we've already verified
@@ -542,8 +548,8 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1beta1.types.ListBudgetsRequest):
-                The request object.
-                Request for ListBudgets
+                The request object. Request for ListBudgets
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -559,6 +565,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a budget_service.ListBudgetsRequest.
         # There's no risk of modifying the input as we've already verified
@@ -610,8 +617,8 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
 
         Args:
             request (google.cloud.billing.budgets_v1beta1.types.DeleteBudgetRequest):
-                The request object.
-                Request for DeleteBudget
+                The request object. Request for DeleteBudget
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -619,6 +626,7 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a budget_service.DeleteBudgetRequest.
         # There's no risk of modifying the input as we've already verified
@@ -645,6 +653,8 @@ class BudgetServiceClient(metaclass=BudgetServiceClientMeta):
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

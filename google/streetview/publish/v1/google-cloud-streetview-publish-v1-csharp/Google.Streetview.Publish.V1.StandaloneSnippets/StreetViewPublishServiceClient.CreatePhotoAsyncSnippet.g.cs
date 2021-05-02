@@ -16,22 +16,24 @@
 
 namespace Google.Streetview.Publish.V1.Snippets
 {
+    using Google.Streetview.Publish.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedStreetViewPublishServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreatePhotoAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreatePhotoAsync()
         {
-            // Snippet: CreatePhotoAsync(Photo, CallSettings)
-            // Additional: CreatePhotoAsync(Photo, CancellationToken)
             // Create client
             StreetViewPublishServiceClient streetViewPublishServiceClient = await StreetViewPublishServiceClient.CreateAsync();
             // Initialize request argument(s)
             Photo photo = new Photo();
             // Make the request
             Photo response = await streetViewPublishServiceClient.CreatePhotoAsync(photo);
-            // End snippet
         }
     }
 }

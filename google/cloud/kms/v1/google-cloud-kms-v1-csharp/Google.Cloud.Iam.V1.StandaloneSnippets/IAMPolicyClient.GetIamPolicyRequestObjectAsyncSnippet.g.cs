@@ -17,15 +17,18 @@
 namespace Google.Cloud.Iam.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Iam.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIAMPolicyClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIamPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetIamPolicyRequestObjectAsync()
         {
-            // Snippet: GetIamPolicyAsync(GetIamPolicyRequest, CallSettings)
-            // Additional: GetIamPolicyAsync(GetIamPolicyRequest, CancellationToken)
             // Create client
             IAMPolicyClient iAMPolicyClient = await IAMPolicyClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Iam.V1.Snippets
             };
             // Make the request
             Policy response = await iAMPolicyClient.GetIamPolicyAsync(request);
-            // End snippet
         }
     }
 }

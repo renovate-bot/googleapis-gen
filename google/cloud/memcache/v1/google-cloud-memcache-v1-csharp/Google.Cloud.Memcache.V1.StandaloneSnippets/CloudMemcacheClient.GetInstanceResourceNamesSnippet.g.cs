@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Memcache.V1.Snippets
 {
+    using Google.Cloud.Memcache.V1;
+
     public sealed partial class GeneratedCloudMemcacheClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInstance</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetInstanceResourceNames()
         {
-            // Snippet: GetInstance(InstanceName, CallSettings)
             // Create client
             CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.Create();
             // Initialize request argument(s)
             InstanceName name = InstanceName.FromProjectLocationInstance("[PROJECT]", "[LOCATION]", "[INSTANCE]");
             // Make the request
             Instance response = cloudMemcacheClient.GetInstance(name);
-            // End snippet
         }
     }
 }

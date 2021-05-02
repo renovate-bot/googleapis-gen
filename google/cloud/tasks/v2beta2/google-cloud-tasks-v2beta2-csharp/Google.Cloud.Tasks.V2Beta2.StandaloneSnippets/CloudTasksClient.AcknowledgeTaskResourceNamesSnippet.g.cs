@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Tasks.V2Beta2.Snippets
 {
+    using Google.Cloud.Tasks.V2Beta2;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for AcknowledgeTask</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void AcknowledgeTaskResourceNames()
         {
-            // Snippet: AcknowledgeTask(TaskName, Timestamp, CallSettings)
             // Create client
             CloudTasksClient cloudTasksClient = CloudTasksClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.Tasks.V2Beta2.Snippets
             Timestamp scheduleTime = new Timestamp();
             // Make the request
             cloudTasksClient.AcknowledgeTask(name, scheduleTime);
-            // End snippet
         }
     }
 }

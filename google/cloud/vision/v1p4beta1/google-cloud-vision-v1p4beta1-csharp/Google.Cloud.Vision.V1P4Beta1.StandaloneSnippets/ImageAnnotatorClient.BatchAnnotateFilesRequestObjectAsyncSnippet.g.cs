@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Vision.V1P4Beta1.Snippets
 {
+    using Google.Cloud.Vision.V1P4Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedImageAnnotatorClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchAnnotateFilesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchAnnotateFilesRequestObjectAsync()
         {
-            // Snippet: BatchAnnotateFilesAsync(BatchAnnotateFilesRequest, CallSettings)
-            // Additional: BatchAnnotateFilesAsync(BatchAnnotateFilesRequest, CancellationToken)
             // Create client
             ImageAnnotatorClient imageAnnotatorClient = await ImageAnnotatorClient.CreateAsync();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Vision.V1P4Beta1.Snippets
             };
             // Make the request
             BatchAnnotateFilesResponse response = await imageAnnotatorClient.BatchAnnotateFilesAsync(request);
-            // End snippet
         }
     }
 }

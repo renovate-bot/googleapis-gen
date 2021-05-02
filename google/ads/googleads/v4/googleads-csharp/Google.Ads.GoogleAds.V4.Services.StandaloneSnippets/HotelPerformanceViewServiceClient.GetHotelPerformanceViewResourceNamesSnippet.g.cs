@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
 
     public sealed partial class GeneratedHotelPerformanceViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetHotelPerformanceView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetHotelPerformanceViewResourceNames()
         {
-            // Snippet: GetHotelPerformanceView(HotelPerformanceViewName, CallSettings)
             // Create client
             HotelPerformanceViewServiceClient hotelPerformanceViewServiceClient = HotelPerformanceViewServiceClient.Create();
             // Initialize request argument(s)
             HotelPerformanceViewName resourceName = HotelPerformanceViewName.FromCustomer("[CUSTOMER]");
             // Make the request
             HotelPerformanceView response = hotelPerformanceViewServiceClient.GetHotelPerformanceView(resourceName);
-            // End snippet
         }
     }
 }

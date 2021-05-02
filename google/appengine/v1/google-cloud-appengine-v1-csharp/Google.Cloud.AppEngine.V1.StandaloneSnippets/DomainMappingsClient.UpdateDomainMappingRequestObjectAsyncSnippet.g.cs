@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
@@ -23,10 +24,12 @@ namespace Google.Cloud.AppEngine.V1.Snippets
     public sealed partial class GeneratedDomainMappingsClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateDomainMappingAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateDomainMappingRequestObjectAsync()
         {
-            // Snippet: UpdateDomainMappingAsync(UpdateDomainMappingRequest, CallSettings)
-            // Additional: UpdateDomainMappingAsync(UpdateDomainMappingRequest, CancellationToken)
             // Create client
             DomainMappingsClient domainMappingsClient = await DomainMappingsClient.CreateAsync();
             // Initialize request argument(s)
@@ -54,7 +57,6 @@ namespace Google.Cloud.AppEngine.V1.Snippets
                 // If it has completed, then access the result
                 DomainMapping retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

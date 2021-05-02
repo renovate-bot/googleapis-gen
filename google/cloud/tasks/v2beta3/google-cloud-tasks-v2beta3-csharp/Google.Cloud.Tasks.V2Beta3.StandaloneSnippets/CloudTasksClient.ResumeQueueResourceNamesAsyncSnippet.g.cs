@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Tasks.V2Beta3.Snippets
 {
+    using Google.Cloud.Tasks.V2Beta3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for ResumeQueueAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ResumeQueueResourceNamesAsync()
         {
-            // Snippet: ResumeQueueAsync(QueueName, CallSettings)
-            // Additional: ResumeQueueAsync(QueueName, CancellationToken)
             // Create client
             CloudTasksClient cloudTasksClient = await CloudTasksClient.CreateAsync();
             // Initialize request argument(s)
             QueueName name = QueueName.FromProjectLocationQueue("[PROJECT]", "[LOCATION]", "[QUEUE]");
             // Make the request
             Queue response = await cloudTasksClient.ResumeQueueAsync(name);
-            // End snippet
         }
     }
 }

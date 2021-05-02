@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Container.V1Beta1.Snippets
 {
+    using Google.Cloud.Container.V1Beta1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for SetLabelsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SetLabelsAsync()
         {
-            // Snippet: SetLabelsAsync(string, string, string, IDictionary<string,string>, string, CallSettings)
-            // Additional: SetLabelsAsync(string, string, string, IDictionary<string,string>, string, CancellationToken)
             // Create client
             ClusterManagerClient clusterManagerClient = await ClusterManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
             string labelFingerprint = "";
             // Make the request
             Operation response = await clusterManagerClient.SetLabelsAsync(projectId, zone, clusterId, resourceLabels, labelFingerprint);
-            // End snippet
         }
     }
 }

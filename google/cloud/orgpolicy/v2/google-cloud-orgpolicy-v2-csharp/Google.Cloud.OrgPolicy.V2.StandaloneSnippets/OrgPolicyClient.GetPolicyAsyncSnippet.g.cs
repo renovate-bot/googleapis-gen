@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.OrgPolicy.V2.Snippets
 {
+    using Google.Cloud.OrgPolicy.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedOrgPolicyClientStandaloneSnippets
     {
         /// <summary>Snippet for GetPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetPolicyAsync()
         {
-            // Snippet: GetPolicyAsync(string, CallSettings)
-            // Additional: GetPolicyAsync(string, CancellationToken)
             // Create client
             OrgPolicyClient orgPolicyClient = await OrgPolicyClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/policies/[POLICY]";
             // Make the request
             Policy response = await orgPolicyClient.GetPolicyAsync(name);
-            // End snippet
         }
     }
 }

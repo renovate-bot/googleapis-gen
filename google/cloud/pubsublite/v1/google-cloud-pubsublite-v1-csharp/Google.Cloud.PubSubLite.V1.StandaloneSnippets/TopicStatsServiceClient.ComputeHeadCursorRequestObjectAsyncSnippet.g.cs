@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.PubSubLite.V1.Snippets
 {
+    using Google.Cloud.PubSubLite.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTopicStatsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ComputeHeadCursorAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ComputeHeadCursorRequestObjectAsync()
         {
-            // Snippet: ComputeHeadCursorAsync(ComputeHeadCursorRequest, CallSettings)
-            // Additional: ComputeHeadCursorAsync(ComputeHeadCursorRequest, CancellationToken)
             // Create client
             TopicStatsServiceClient topicStatsServiceClient = await TopicStatsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             };
             // Make the request
             ComputeHeadCursorResponse response = await topicStatsServiceClient.ComputeHeadCursorAsync(request);
-            // End snippet
         }
     }
 }

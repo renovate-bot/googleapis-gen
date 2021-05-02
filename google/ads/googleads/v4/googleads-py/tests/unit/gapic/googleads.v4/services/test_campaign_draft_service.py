@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -271,18 +273,25 @@ def test_get_campaign_draft(transport: str = 'grpc', request_type=campaign_draft
         # Designate an appropriate return value for the call.
         call.return_value = campaign_draft.CampaignDraft(
             resource_name='resource_name_value',
+
             status=campaign_draft_status.CampaignDraftStatusEnum.CampaignDraftStatus.UNKNOWN,
+
         )
+
         response = client.get_campaign_draft(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_draft_service.GetCampaignDraftRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign_draft.CampaignDraft)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.status == campaign_draft_status.CampaignDraftStatusEnum.CampaignDraftStatus.UNKNOWN
 
 
@@ -298,7 +307,6 @@ def test_get_campaign_draft_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_draft_service.GetCampaignDraftRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -306,6 +314,7 @@ def test_get_campaign_draft_field_headers():
             type(client.transport.get_campaign_draft),
             '__call__') as call:
         call.return_value = campaign_draft.CampaignDraft()
+
         client.get_campaign_draft(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -332,6 +341,7 @@ def test_get_campaign_draft_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_draft.CampaignDraft()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_campaign_draft(
@@ -342,6 +352,7 @@ def test_get_campaign_draft_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -376,14 +387,17 @@ def test_mutate_campaign_drafts(transport: str = 'grpc', request_type=campaign_d
         # Designate an appropriate return value for the call.
         call.return_value = campaign_draft_service.MutateCampaignDraftsResponse(
         )
+
         response = client.mutate_campaign_drafts(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_draft_service.MutateCampaignDraftsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign_draft_service.MutateCampaignDraftsResponse)
 
 
@@ -399,7 +413,6 @@ def test_mutate_campaign_drafts_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_draft_service.MutateCampaignDraftsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -407,6 +420,7 @@ def test_mutate_campaign_drafts_field_headers():
             type(client.transport.mutate_campaign_drafts),
             '__call__') as call:
         call.return_value = campaign_draft_service.MutateCampaignDraftsResponse()
+
         client.mutate_campaign_drafts(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -433,6 +447,7 @@ def test_mutate_campaign_drafts_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_draft_service.MutateCampaignDraftsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_campaign_drafts(
@@ -444,7 +459,9 @@ def test_mutate_campaign_drafts_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [campaign_draft_service.CampaignDraftOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -479,11 +496,13 @@ def test_promote_campaign_draft(transport: str = 'grpc', request_type=campaign_d
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/spam')
+
         response = client.promote_campaign_draft(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_draft_service.PromoteCampaignDraftRequest()
 
     # Establish that the response is the type that we expect.
@@ -502,7 +521,6 @@ def test_promote_campaign_draft_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_draft_service.PromoteCampaignDraftRequest()
-
     request.campaign_draft = 'campaign_draft/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -510,6 +528,7 @@ def test_promote_campaign_draft_field_headers():
             type(client.transport.promote_campaign_draft),
             '__call__') as call:
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         client.promote_campaign_draft(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -536,6 +555,7 @@ def test_promote_campaign_draft_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = operations_pb2.Operation(name='operations/op')
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.promote_campaign_draft(
@@ -546,6 +566,7 @@ def test_promote_campaign_draft_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].campaign_draft == 'campaign_draft_value'
 
 
@@ -580,16 +601,21 @@ def test_list_campaign_draft_async_errors(transport: str = 'grpc', request_type=
         # Designate an appropriate return value for the call.
         call.return_value = campaign_draft_service.ListCampaignDraftAsyncErrorsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_campaign_draft_async_errors(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_draft_service.ListCampaignDraftAsyncErrorsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListCampaignDraftAsyncErrorsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -605,7 +631,6 @@ def test_list_campaign_draft_async_errors_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_draft_service.ListCampaignDraftAsyncErrorsRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -613,6 +638,7 @@ def test_list_campaign_draft_async_errors_field_headers():
             type(client.transport.list_campaign_draft_async_errors),
             '__call__') as call:
         call.return_value = campaign_draft_service.ListCampaignDraftAsyncErrorsResponse()
+
         client.list_campaign_draft_async_errors(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -639,6 +665,7 @@ def test_list_campaign_draft_async_errors_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_draft_service.ListCampaignDraftAsyncErrorsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_campaign_draft_async_errors(
@@ -649,6 +676,7 @@ def test_list_campaign_draft_async_errors_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -827,7 +855,7 @@ def test_campaign_draft_service_base_transport():
         'mutate_campaign_drafts',
         'promote_campaign_draft',
         'list_campaign_draft_async_errors',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -997,10 +1025,10 @@ def test_campaign_draft_service_grpc_lro_client():
     # Ensure that subsequent calls to the property send the exact same object.
     assert transport.operations_client is transport.operations_client
 
-
 def test_campaign_path():
     customer = "squid"
     campaign = "clam"
+
     expected = "customers/{customer}/campaigns/{campaign}".format(customer=customer, campaign=campaign, )
     actual = CampaignDraftServiceClient.campaign_path(customer, campaign)
     assert expected == actual
@@ -1008,8 +1036,9 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-        "customer": "whelk",
-        "campaign": "octopus",
+    "customer": "whelk",
+    "campaign": "octopus",
+
     }
     path = CampaignDraftServiceClient.campaign_path(**expected)
 
@@ -1020,6 +1049,7 @@ def test_parse_campaign_path():
 def test_campaign_draft_path():
     customer = "oyster"
     campaign_draft = "nudibranch"
+
     expected = "customers/{customer}/campaignDrafts/{campaign_draft}".format(customer=customer, campaign_draft=campaign_draft, )
     actual = CampaignDraftServiceClient.campaign_draft_path(customer, campaign_draft)
     assert expected == actual
@@ -1027,8 +1057,9 @@ def test_campaign_draft_path():
 
 def test_parse_campaign_draft_path():
     expected = {
-        "customer": "cuttlefish",
-        "campaign_draft": "mussel",
+    "customer": "cuttlefish",
+    "campaign_draft": "mussel",
+
     }
     path = CampaignDraftServiceClient.campaign_draft_path(**expected)
 
@@ -1038,6 +1069,7 @@ def test_parse_campaign_draft_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CampaignDraftServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1045,7 +1077,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nautilus",
+    "billing_account": "nautilus",
+
     }
     path = CampaignDraftServiceClient.common_billing_account_path(**expected)
 
@@ -1055,6 +1088,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = CampaignDraftServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1062,7 +1096,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "abalone",
+    "folder": "abalone",
+
     }
     path = CampaignDraftServiceClient.common_folder_path(**expected)
 
@@ -1072,6 +1107,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CampaignDraftServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1079,7 +1115,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "clam",
+    "organization": "clam",
+
     }
     path = CampaignDraftServiceClient.common_organization_path(**expected)
 
@@ -1089,6 +1126,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
+
     expected = "projects/{project}".format(project=project, )
     actual = CampaignDraftServiceClient.common_project_path(project)
     assert expected == actual
@@ -1096,7 +1134,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "octopus",
+    "project": "octopus",
+
     }
     path = CampaignDraftServiceClient.common_project_path(**expected)
 
@@ -1107,6 +1146,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CampaignDraftServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1114,8 +1154,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "cuttlefish",
-        "location": "mussel",
+    "project": "cuttlefish",
+    "location": "mussel",
+
     }
     path = CampaignDraftServiceClient.common_location_path(**expected)
 

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.PubSubLite.V1.Snippets
 {
+    using Google.Cloud.PubSubLite.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCursorServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CommitCursorAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CommitCursorRequestObjectAsync()
         {
-            // Snippet: CommitCursorAsync(CommitCursorRequest, CallSettings)
-            // Additional: CommitCursorAsync(CommitCursorRequest, CancellationToken)
             // Create client
             CursorServiceClient cursorServiceClient = await CursorServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.PubSubLite.V1.Snippets
             };
             // Make the request
             CommitCursorResponse response = await cursorServiceClient.CommitCursorAsync(request);
-            // End snippet
         }
     }
 }

@@ -162,7 +162,7 @@ namespace Grafeas.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListOccurrences</summary>
+        /// <summary>Snippet for ListOccurrencesAsync</summary>
         public async Task ListOccurrencesRequestObjectAsync()
         {
             // Snippet: ListOccurrencesAsync(ListOccurrencesRequest, CallSettings)
@@ -257,7 +257,7 @@ namespace Grafeas.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListOccurrences</summary>
+        /// <summary>Snippet for ListOccurrencesAsync</summary>
         public async Task ListOccurrencesAsync()
         {
             // Snippet: ListOccurrencesAsync(string, string, string, int?, CallSettings)
@@ -349,7 +349,7 @@ namespace Grafeas.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListOccurrences</summary>
+        /// <summary>Snippet for ListOccurrencesAsync</summary>
         public async Task ListOccurrencesResourceNamesAsync()
         {
             // Snippet: ListOccurrencesAsync(ProjectName, string, string, int?, CallSettings)
@@ -990,7 +990,7 @@ namespace Grafeas.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListNotes</summary>
+        /// <summary>Snippet for ListNotesAsync</summary>
         public async Task ListNotesRequestObjectAsync()
         {
             // Snippet: ListNotesAsync(ListNotesRequest, CallSettings)
@@ -1085,7 +1085,7 @@ namespace Grafeas.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListNotes</summary>
+        /// <summary>Snippet for ListNotesAsync</summary>
         public async Task ListNotesAsync()
         {
             // Snippet: ListNotesAsync(string, string, string, int?, CallSettings)
@@ -1177,7 +1177,7 @@ namespace Grafeas.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListNotes</summary>
+        /// <summary>Snippet for ListNotesAsync</summary>
         public async Task ListNotesResourceNamesAsync()
         {
             // Snippet: ListNotesAsync(ProjectName, string, string, int?, CallSettings)
@@ -1650,7 +1650,7 @@ namespace Grafeas.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListNoteOccurrences</summary>
+        /// <summary>Snippet for ListNoteOccurrencesAsync</summary>
         public async Task ListNoteOccurrencesRequestObjectAsync()
         {
             // Snippet: ListNoteOccurrencesAsync(ListNoteOccurrencesRequest, CallSettings)
@@ -1745,7 +1745,7 @@ namespace Grafeas.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListNoteOccurrences</summary>
+        /// <summary>Snippet for ListNoteOccurrencesAsync</summary>
         public async Task ListNoteOccurrencesAsync()
         {
             // Snippet: ListNoteOccurrencesAsync(string, string, string, int?, CallSettings)
@@ -1837,7 +1837,7 @@ namespace Grafeas.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListNoteOccurrences</summary>
+        /// <summary>Snippet for ListNoteOccurrencesAsync</summary>
         public async Task ListNoteOccurrencesResourceNamesAsync()
         {
             // Snippet: ListNoteOccurrencesAsync(NoteName, string, string, int?, CallSettings)

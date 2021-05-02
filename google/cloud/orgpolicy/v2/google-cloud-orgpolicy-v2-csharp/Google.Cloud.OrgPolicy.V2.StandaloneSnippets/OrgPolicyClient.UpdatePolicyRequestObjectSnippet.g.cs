@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.OrgPolicy.V2.Snippets
 {
+    using Google.Cloud.OrgPolicy.V2;
+
     public sealed partial class GeneratedOrgPolicyClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdatePolicy</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdatePolicyRequestObject()
         {
-            // Snippet: UpdatePolicy(UpdatePolicyRequest, CallSettings)
             // Create client
             OrgPolicyClient orgPolicyClient = OrgPolicyClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.OrgPolicy.V2.Snippets
             };
             // Make the request
             Policy response = orgPolicyClient.UpdatePolicy(request);
-            // End snippet
         }
     }
 }

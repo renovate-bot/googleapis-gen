@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.bigquery_storage_v1beta2.types import arrow
 from google.cloud.bigquery_storage_v1beta2.types import avro
@@ -52,6 +55,7 @@ __protobuf__ = proto.module(
 
 class CreateReadSessionRequest(proto.Message):
     r"""Request message for ``CreateReadSession``.
+
     Attributes:
         parent (str):
             Required. The request project that owns the session, in the
@@ -72,23 +76,18 @@ class CreateReadSessionRequest(proto.Message):
             Streams must be read starting from offset 0.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    read_session = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    read_session = proto.Field(proto.MESSAGE, number=2,
         message=stream.ReadSession,
     )
-    max_stream_count = proto.Field(
-        proto.INT32,
-        number=3,
-    )
+
+    max_stream_count = proto.Field(proto.INT32, number=3)
 
 
 class ReadRowsRequest(proto.Message):
     r"""Request message for ``ReadRows``.
+
     Attributes:
         read_stream (str):
             Required. Stream to read rows from.
@@ -99,18 +98,14 @@ class ReadRowsRequest(proto.Message):
             reading from offset zero.
     """
 
-    read_stream = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    offset = proto.Field(
-        proto.INT64,
-        number=2,
-    )
+    read_stream = proto.Field(proto.STRING, number=1)
+
+    offset = proto.Field(proto.INT64, number=2)
 
 
 class ThrottleState(proto.Message):
     r"""Information on if the current connection is being throttled.
+
     Attributes:
         throttle_percent (int):
             How much this connection is being throttled.
@@ -118,22 +113,20 @@ class ThrottleState(proto.Message):
             throttled.
     """
 
-    throttle_percent = proto.Field(
-        proto.INT32,
-        number=1,
-    )
+    throttle_percent = proto.Field(proto.INT32, number=1)
 
 
 class StreamStats(proto.Message):
     r"""Estimated stream statistics for a given Stream.
+
     Attributes:
         progress (google.cloud.bigquery_storage_v1beta2.types.StreamStats.Progress):
             Represents the progress of the current
             stream.
     """
-
     class Progress(proto.Message):
         r"""
+
         Attributes:
             at_response_start (float):
                 The fraction of rows assigned to the stream that have been
@@ -153,18 +146,11 @@ class StreamStats(proto.Message):
                 includes the rows in the current response.
         """
 
-        at_response_start = proto.Field(
-            proto.DOUBLE,
-            number=1,
-        )
-        at_response_end = proto.Field(
-            proto.DOUBLE,
-            number=2,
-        )
+        at_response_start = proto.Field(proto.DOUBLE, number=1)
 
-    progress = proto.Field(
-        proto.MESSAGE,
-        number=2,
+        at_response_end = proto.Field(proto.DOUBLE, number=2)
+
+    progress = proto.Field(proto.MESSAGE, number=2,
         message=Progress,
     )
 
@@ -193,48 +179,36 @@ class ReadRowsResponse(proto.Message):
             Output only. Arrow schema.
     """
 
-    avro_rows = proto.Field(
-        proto.MESSAGE,
-        number=3,
-        oneof='rows',
+    avro_rows = proto.Field(proto.MESSAGE, number=3, oneof='rows',
         message=avro.AvroRows,
     )
-    arrow_record_batch = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='rows',
+
+    arrow_record_batch = proto.Field(proto.MESSAGE, number=4, oneof='rows',
         message=arrow.ArrowRecordBatch,
     )
-    row_count = proto.Field(
-        proto.INT64,
-        number=6,
-    )
-    stats = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    row_count = proto.Field(proto.INT64, number=6)
+
+    stats = proto.Field(proto.MESSAGE, number=2,
         message='StreamStats',
     )
-    throttle_state = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    throttle_state = proto.Field(proto.MESSAGE, number=5,
         message='ThrottleState',
     )
-    avro_schema = proto.Field(
-        proto.MESSAGE,
-        number=7,
-        oneof='schema',
+
+    avro_schema = proto.Field(proto.MESSAGE, number=7, oneof='schema',
         message=avro.AvroSchema,
     )
-    arrow_schema = proto.Field(
-        proto.MESSAGE,
-        number=8,
-        oneof='schema',
+
+    arrow_schema = proto.Field(proto.MESSAGE, number=8, oneof='schema',
         message=arrow.ArrowSchema,
     )
 
 
 class SplitReadStreamRequest(proto.Message):
     r"""Request message for ``SplitReadStream``.
+
     Attributes:
         name (str):
             Required. Name of the stream to split.
@@ -253,18 +227,14 @@ class SplitReadStreamRequest(proto.Message):
             side.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    fraction = proto.Field(
-        proto.DOUBLE,
-        number=2,
-    )
+    name = proto.Field(proto.STRING, number=1)
+
+    fraction = proto.Field(proto.DOUBLE, number=2)
 
 
 class SplitReadStreamResponse(proto.Message):
     r"""
+
     Attributes:
         primary_stream (google.cloud.bigquery_storage_v1beta2.types.ReadStream):
             Primary stream, which contains the beginning portion of
@@ -276,20 +246,18 @@ class SplitReadStreamResponse(proto.Message):
             original stream can no longer be split.
     """
 
-    primary_stream = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    primary_stream = proto.Field(proto.MESSAGE, number=1,
         message=stream.ReadStream,
     )
-    remainder_stream = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    remainder_stream = proto.Field(proto.MESSAGE, number=2,
         message=stream.ReadStream,
     )
 
 
 class CreateWriteStreamRequest(proto.Message):
     r"""Request message for ``CreateWriteStream``.
+
     Attributes:
         parent (str):
             Required. Reference to the table to which the stream
@@ -299,19 +267,16 @@ class CreateWriteStreamRequest(proto.Message):
             Required. Stream to be created.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    write_stream = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    parent = proto.Field(proto.STRING, number=1)
+
+    write_stream = proto.Field(proto.MESSAGE, number=2,
         message=stream.WriteStream,
     )
 
 
 class AppendRowsRequest(proto.Message):
     r"""Request message for ``AppendRows``.
+
     Attributes:
         write_stream (str):
             Required. The stream that is the target of the append
@@ -333,9 +298,9 @@ class AppendRowsRequest(proto.Message):
             Id set by client to annotate its identity.
             Only initial request setting is respected.
     """
-
     class ProtoData(proto.Message):
         r"""Proto schema and data.
+
         Attributes:
             writer_schema (google.cloud.bigquery_storage_v1beta2.types.ProtoSchema):
                 Proto schema used to serialize the data.
@@ -344,40 +309,30 @@ class AppendRowsRequest(proto.Message):
                 format.
         """
 
-        writer_schema = proto.Field(
-            proto.MESSAGE,
-            number=1,
+        writer_schema = proto.Field(proto.MESSAGE, number=1,
             message=protobuf.ProtoSchema,
         )
-        rows = proto.Field(
-            proto.MESSAGE,
-            number=2,
+
+        rows = proto.Field(proto.MESSAGE, number=2,
             message=protobuf.ProtoRows,
         )
 
-    write_stream = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    offset = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    write_stream = proto.Field(proto.STRING, number=1)
+
+    offset = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.Int64Value,
     )
-    proto_rows = proto.Field(
-        proto.MESSAGE,
-        number=4,
-        oneof='rows',
+
+    proto_rows = proto.Field(proto.MESSAGE, number=4, oneof='rows',
         message=ProtoData,
     )
-    trace_id = proto.Field(
-        proto.STRING,
-        number=6,
-    )
+
+    trace_id = proto.Field(proto.STRING, number=6)
 
 
 class AppendRowsResponse(proto.Message):
     r"""Response message for ``AppendRows``.
+
     Attributes:
         append_result (google.cloud.bigquery_storage_v1beta2.types.AppendRowsResponse.AppendResult):
             Result if the append is successful.
@@ -411,9 +366,9 @@ class AppendRowsResponse(proto.Message):
             type of message. It will be empty when no schema
             updates have occurred.
     """
-
     class AppendResult(proto.Message):
         r"""AppendResult is returned for successful append requests.
+
         Attributes:
             offset (google.protobuf.wrappers_pb2.Int64Value):
                 The row offset at which the last append
@@ -421,47 +376,38 @@ class AppendRowsResponse(proto.Message):
                 appending using default streams.
         """
 
-        offset = proto.Field(
-            proto.MESSAGE,
-            number=1,
+        offset = proto.Field(proto.MESSAGE, number=1,
             message=wrappers.Int64Value,
         )
 
-    append_result = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='response',
+    append_result = proto.Field(proto.MESSAGE, number=1, oneof='response',
         message=AppendResult,
     )
-    error = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='response',
+
+    error = proto.Field(proto.MESSAGE, number=2, oneof='response',
         message=status.Status,
     )
-    updated_schema = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    updated_schema = proto.Field(proto.MESSAGE, number=3,
         message=table.TableSchema,
     )
 
 
 class GetWriteStreamRequest(proto.Message):
     r"""Request message for ``GetWriteStreamRequest``.
+
     Attributes:
         name (str):
             Required. Name of the stream to get, in the form of
             ``projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class BatchCommitWriteStreamsRequest(proto.Message):
     r"""Request message for ``BatchCommitWriteStreams``.
+
     Attributes:
         parent (str):
             Required. Parent table that all the streams should belong
@@ -472,18 +418,14 @@ class BatchCommitWriteStreamsRequest(proto.Message):
             committed atomically.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    write_streams = proto.RepeatedField(
-        proto.STRING,
-        number=2,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    write_streams = proto.RepeatedField(proto.STRING, number=2)
 
 
 class BatchCommitWriteStreamsResponse(proto.Message):
     r"""Response message for ``BatchCommitWriteStreams``.
+
     Attributes:
         commit_time (google.protobuf.timestamp_pb2.Timestamp):
             The time at which streams were committed in microseconds
@@ -499,47 +441,41 @@ class BatchCommitWriteStreamsResponse(proto.Message):
             due to atomicity guarantee.
     """
 
-    commit_time = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    commit_time = proto.Field(proto.MESSAGE, number=1,
         message=timestamp.Timestamp,
     )
-    stream_errors = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+
+    stream_errors = proto.RepeatedField(proto.MESSAGE, number=2,
         message='StorageError',
     )
 
 
 class FinalizeWriteStreamRequest(proto.Message):
     r"""Request message for invoking ``FinalizeWriteStream``.
+
     Attributes:
         name (str):
             Required. Name of the stream to finalize, in the form of
             ``projects/{project}/datasets/{dataset}/tables/{table}/streams/{stream}``.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class FinalizeWriteStreamResponse(proto.Message):
     r"""Response message for ``FinalizeWriteStream``.
+
     Attributes:
         row_count (int):
             Number of rows in the finalized stream.
     """
 
-    row_count = proto.Field(
-        proto.INT64,
-        number=1,
-    )
+    row_count = proto.Field(proto.INT64, number=1)
 
 
 class FlushRowsRequest(proto.Message):
     r"""Request message for ``FlushRows``.
+
     Attributes:
         write_stream (str):
             Required. The stream that is the target of
@@ -550,29 +486,23 @@ class FlushRowsRequest(proto.Message):
             be flushed.
     """
 
-    write_stream = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    offset = proto.Field(
-        proto.MESSAGE,
-        number=2,
+    write_stream = proto.Field(proto.STRING, number=1)
+
+    offset = proto.Field(proto.MESSAGE, number=2,
         message=wrappers.Int64Value,
     )
 
 
 class FlushRowsResponse(proto.Message):
     r"""Respond message for ``FlushRows``.
+
     Attributes:
         offset (int):
             The rows before this offset (including this
             offset) are flushed.
     """
 
-    offset = proto.Field(
-        proto.INT64,
-        number=1,
-    )
+    offset = proto.Field(proto.INT64, number=1)
 
 
 class StorageError(proto.Message):
@@ -600,19 +530,13 @@ class StorageError(proto.Message):
         INVALID_STREAM_STATE = 5
         STREAM_FINALIZED = 6
 
-    code = proto.Field(
-        proto.ENUM,
-        number=1,
+    code = proto.Field(proto.ENUM, number=1,
         enum=StorageErrorCode,
     )
-    entity = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    error_message = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+
+    entity = proto.Field(proto.STRING, number=2)
+
+    error_message = proto.Field(proto.STRING, number=3)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

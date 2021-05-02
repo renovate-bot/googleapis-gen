@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.DocumentAI.V1Beta3.Snippets
 {
+    using Google.Cloud.DocumentAI.V1Beta3;
     using Google.LongRunning;
 
     public sealed partial class GeneratedDocumentProcessorServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchProcessDocuments</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BatchProcessDocumentsResourceNames()
         {
-            // Snippet: BatchProcessDocuments(ProcessorName, CallSettings)
             // Create client
             DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient.Create();
             // Initialize request argument(s)
@@ -46,7 +50,6 @@ namespace Google.Cloud.DocumentAI.V1Beta3.Snippets
                 // If it has completed, then access the result
                 BatchProcessResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

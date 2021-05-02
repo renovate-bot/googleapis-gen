@@ -17,14 +17,18 @@
 namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.BigQuery.Reservation.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedReservationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MergeCapacityCommitments</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MergeCapacityCommitmentsResourceNames()
         {
-            // Snippet: MergeCapacityCommitments(LocationName, IEnumerable<string>, CallSettings)
             // Create client
             ReservationServiceClient reservationServiceClient = ReservationServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.BigQuery.Reservation.V1.Snippets
             IEnumerable<string> capacityCommitmentIds = new string[] { "", };
             // Make the request
             CapacityCommitment response = reservationServiceClient.MergeCapacityCommitments(parent, capacityCommitmentIds);
-            // End snippet
         }
     }
 }

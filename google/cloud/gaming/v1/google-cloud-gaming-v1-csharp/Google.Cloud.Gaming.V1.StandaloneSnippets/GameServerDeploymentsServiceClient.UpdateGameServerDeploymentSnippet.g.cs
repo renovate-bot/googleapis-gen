@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Gaming.V1.Snippets
 {
+    using Google.Cloud.Gaming.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedGameServerDeploymentsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateGameServerDeployment</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateGameServerDeployment()
         {
-            // Snippet: UpdateGameServerDeployment(GameServerDeployment, FieldMask, CallSettings)
             // Create client
             GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient = GameServerDeploymentsServiceClient.Create();
             // Initialize request argument(s)
@@ -48,7 +52,6 @@ namespace Google.Cloud.Gaming.V1.Snippets
                 // If it has completed, then access the result
                 GameServerDeployment retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

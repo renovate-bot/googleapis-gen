@@ -72,7 +72,7 @@ namespace Google.Cloud.Apigeeconnect.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConnections</summary>
+        /// <summary>Snippet for ListConnectionsAsync</summary>
         public async Task ListConnectionsRequestObjectAsync()
         {
             // Snippet: ListConnectionsAsync(ListConnectionsRequest, CallSettings)
@@ -165,7 +165,7 @@ namespace Google.Cloud.Apigeeconnect.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConnections</summary>
+        /// <summary>Snippet for ListConnectionsAsync</summary>
         public async Task ListConnectionsAsync()
         {
             // Snippet: ListConnectionsAsync(string, string, int?, CallSettings)
@@ -255,7 +255,7 @@ namespace Google.Cloud.Apigeeconnect.V1.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListConnections</summary>
+        /// <summary>Snippet for ListConnectionsAsync</summary>
         public async Task ListConnectionsResourceNamesAsync()
         {
             // Snippet: ListConnectionsAsync(EndpointName, string, int?, CallSettings)

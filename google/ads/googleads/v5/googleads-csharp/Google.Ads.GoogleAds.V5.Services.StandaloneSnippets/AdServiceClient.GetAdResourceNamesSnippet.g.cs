@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedAdServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAd</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAdResourceNames()
         {
-            // Snippet: GetAd(AdName, CallSettings)
             // Create client
             AdServiceClient adServiceClient = AdServiceClient.Create();
             // Initialize request argument(s)
             AdName resourceName = AdName.FromCustomerAd("[CUSTOMER]", "[AD]");
             // Make the request
             Ad response = adServiceClient.GetAd(resourceName);
-            // End snippet
         }
     }
 }

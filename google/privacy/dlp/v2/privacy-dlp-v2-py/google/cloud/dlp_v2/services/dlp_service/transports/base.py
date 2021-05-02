@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,13 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import abc
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Union
-import packaging.version
+import typing
 import pkg_resources
 
 from google import auth  # type: ignore
-import google.api_core  # type: ignore
 from google.api_core import exceptions  # type: ignore
 from google.api_core import gapic_v1    # type: ignore
 from google.api_core import retry as retries  # type: ignore
@@ -27,6 +27,7 @@ from google.auth import credentials  # type: ignore
 
 from google.cloud.dlp_v2.types import dlp
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
@@ -37,18 +38,6 @@ try:
 except pkg_resources.DistributionNotFound:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
 
-try:
-    # google.auth.__version__ was added in 1.26.0
-    _GOOGLE_AUTH_VERSION = auth.__version__
-except AttributeError:
-    try:  # try pkg_resources if it is available
-        _GOOGLE_AUTH_VERSION = pkg_resources.get_distribution("google-auth").version
-    except pkg_resources.DistributionNotFound:  # pragma: NO COVER
-        _GOOGLE_AUTH_VERSION = None
-
-_API_CORE_VERSION = google.api_core.__version__
-
-
 class DlpServiceTransport(abc.ABC):
     """Abstract transport class for DlpService."""
 
@@ -56,22 +45,20 @@ class DlpServiceTransport(abc.ABC):
         'https://www.googleapis.com/auth/cloud-platform',
     )
 
-    DEFAULT_HOST: str = 'dlp.googleapis.com'
     def __init__(
             self, *,
-            host: str = DEFAULT_HOST,
+            host: str = 'dlp.googleapis.com',
             credentials: credentials.Credentials = None,
-            credentials_file: Optional[str] = None,
-            scopes: Optional[Sequence[str]] = None,
-            quota_project_id: Optional[str] = None,
+            credentials_file: typing.Optional[str] = None,
+            scopes: typing.Optional[typing.Sequence[str]] = AUTH_SCOPES,
+            quota_project_id: typing.Optional[str] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             **kwargs,
             ) -> None:
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -80,7 +67,7 @@ class DlpServiceTransport(abc.ABC):
             credentials_file (Optional[str]): A file with credentials that can
                 be loaded with :func:`google.auth.load_credentials_from_file`.
                 This argument is mutually exclusive with credentials.
-            scopes (Optional[Sequence[str]]): A list of scopes.
+            scope (Optional[Sequence[str]]): A list of scopes.
             quota_project_id (Optional[str]): An optional project to use for billing
                 and quota.
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
@@ -94,8 +81,6 @@ class DlpServiceTransport(abc.ABC):
             host += ':443'
         self._host = host
 
-        scopes_kwargs = self._get_scopes_kwargs(self._host, scopes)
-
         # Save the scopes.
         self._scopes = scopes or self.AUTH_SCOPES
 
@@ -107,56 +92,15 @@ class DlpServiceTransport(abc.ABC):
         if credentials_file is not None:
             credentials, _ = auth.load_credentials_from_file(
                                 credentials_file,
-                                **scopes_kwargs,
+                                scopes=self._scopes,
                                 quota_project_id=quota_project_id
                             )
 
         elif credentials is None:
-            credentials, _ = auth.default(**scopes_kwargs, quota_project_id=quota_project_id)
+            credentials, _ = auth.default(scopes=self._scopes, quota_project_id=quota_project_id)
 
         # Save the credentials.
         self._credentials = credentials
-
-    # TODO(busunkim): These two class methods are in the base transport
-    # to avoid duplicating code across the transport classes. These functions
-    # should be deleted once the minimum required versions of google-api-core
-    # and google-auth are increased.
-
-    # TODO: Remove this function once google-auth >= 1.25.0 is required
-    @classmethod
-    def _get_scopes_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Optional[Sequence[str]]]:
-        """Returns scopes kwargs to pass to google-auth methods depending on the google-auth version"""
-
-        scopes_kwargs = {}
-
-        if _GOOGLE_AUTH_VERSION and (
-            packaging.version.parse(_GOOGLE_AUTH_VERSION)
-            >= packaging.version.parse("1.25.0")
-        ):
-            scopes_kwargs = {"scopes": scopes, "default_scopes": cls.AUTH_SCOPES}
-        else:
-            scopes_kwargs = {"scopes": scopes or cls.AUTH_SCOPES}
-
-        return scopes_kwargs
-
-    # TODO: Remove this function once google-api-core >= 1.26.0 is required
-    @classmethod
-    def _get_self_signed_jwt_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Union[Optional[Sequence[str]], str]]:
-        """Returns kwargs to pass to grpc_helpers.create_channel depending on the google-api-core version"""
-
-        self_signed_jwt_kwargs: Dict[str, Union[Optional[Sequence[str]], str]] = {}
-
-        if _API_CORE_VERSION and (
-            packaging.version.parse(_API_CORE_VERSION)
-            >= packaging.version.parse("1.26.0")
-        ):
-            self_signed_jwt_kwargs["default_scopes"] = cls.AUTH_SCOPES
-            self_signed_jwt_kwargs["scopes"] = scopes
-            self_signed_jwt_kwargs["default_host"] = cls.DEFAULT_HOST
-        else:
-            self_signed_jwt_kwargs["scopes"] = scopes or cls.AUTH_SCOPES
-
-        return self_signed_jwt_kwargs
 
     def _prep_wrapped_messages(self, client_info):
         # Precompute the wrapped methods.
@@ -164,7 +108,10 @@ class DlpServiceTransport(abc.ABC):
             self.inspect_content: gapic_v1.method.wrap_method(
                 self.inspect_content,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -176,7 +123,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.redact_image: gapic_v1.method.wrap_method(
                 self.redact_image,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -188,7 +138,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.deidentify_content: gapic_v1.method.wrap_method(
                 self.deidentify_content,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -200,7 +153,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.reidentify_content: gapic_v1.method.wrap_method(
                 self.reidentify_content,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -212,7 +168,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.list_info_types: gapic_v1.method.wrap_method(
                 self.list_info_types,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -234,7 +193,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.get_inspect_template: gapic_v1.method.wrap_method(
                 self.get_inspect_template,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -246,7 +208,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.list_inspect_templates: gapic_v1.method.wrap_method(
                 self.list_inspect_templates,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -258,7 +223,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.delete_inspect_template: gapic_v1.method.wrap_method(
                 self.delete_inspect_template,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -280,7 +248,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.get_deidentify_template: gapic_v1.method.wrap_method(
                 self.get_deidentify_template,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -292,7 +263,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.list_deidentify_templates: gapic_v1.method.wrap_method(
                 self.list_deidentify_templates,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -304,7 +278,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.delete_deidentify_template: gapic_v1.method.wrap_method(
                 self.delete_deidentify_template,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -331,7 +308,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.get_job_trigger: gapic_v1.method.wrap_method(
                 self.get_job_trigger,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -343,7 +323,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.list_job_triggers: gapic_v1.method.wrap_method(
                 self.list_job_triggers,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -355,7 +338,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.delete_job_trigger: gapic_v1.method.wrap_method(
                 self.delete_job_trigger,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -377,7 +363,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.list_dlp_jobs: gapic_v1.method.wrap_method(
                 self.list_dlp_jobs,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -389,7 +378,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.get_dlp_job: gapic_v1.method.wrap_method(
                 self.get_dlp_job,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -401,7 +393,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.delete_dlp_job: gapic_v1.method.wrap_method(
                 self.delete_dlp_job,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -428,7 +423,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.get_stored_info_type: gapic_v1.method.wrap_method(
                 self.get_stored_info_type,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -440,7 +438,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.list_stored_info_types: gapic_v1.method.wrap_method(
                 self.list_stored_info_types,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -452,7 +453,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.delete_stored_info_type: gapic_v1.method.wrap_method(
                 self.delete_stored_info_type,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -471,311 +475,312 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
                 default_timeout=300.0,
                 client_info=client_info,
             ),
-         }
+
+        }
 
     @property
-    def inspect_content(self) -> Callable[
+    def inspect_content(self) -> typing.Callable[
             [dlp.InspectContentRequest],
-            Union[
+            typing.Union[
                 dlp.InspectContentResponse,
-                Awaitable[dlp.InspectContentResponse]
+                typing.Awaitable[dlp.InspectContentResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def redact_image(self) -> Callable[
+    def redact_image(self) -> typing.Callable[
             [dlp.RedactImageRequest],
-            Union[
+            typing.Union[
                 dlp.RedactImageResponse,
-                Awaitable[dlp.RedactImageResponse]
+                typing.Awaitable[dlp.RedactImageResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def deidentify_content(self) -> Callable[
+    def deidentify_content(self) -> typing.Callable[
             [dlp.DeidentifyContentRequest],
-            Union[
+            typing.Union[
                 dlp.DeidentifyContentResponse,
-                Awaitable[dlp.DeidentifyContentResponse]
+                typing.Awaitable[dlp.DeidentifyContentResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def reidentify_content(self) -> Callable[
+    def reidentify_content(self) -> typing.Callable[
             [dlp.ReidentifyContentRequest],
-            Union[
+            typing.Union[
                 dlp.ReidentifyContentResponse,
-                Awaitable[dlp.ReidentifyContentResponse]
+                typing.Awaitable[dlp.ReidentifyContentResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_info_types(self) -> Callable[
+    def list_info_types(self) -> typing.Callable[
             [dlp.ListInfoTypesRequest],
-            Union[
+            typing.Union[
                 dlp.ListInfoTypesResponse,
-                Awaitable[dlp.ListInfoTypesResponse]
+                typing.Awaitable[dlp.ListInfoTypesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_inspect_template(self) -> Callable[
+    def create_inspect_template(self) -> typing.Callable[
             [dlp.CreateInspectTemplateRequest],
-            Union[
+            typing.Union[
                 dlp.InspectTemplate,
-                Awaitable[dlp.InspectTemplate]
+                typing.Awaitable[dlp.InspectTemplate]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_inspect_template(self) -> Callable[
+    def update_inspect_template(self) -> typing.Callable[
             [dlp.UpdateInspectTemplateRequest],
-            Union[
+            typing.Union[
                 dlp.InspectTemplate,
-                Awaitable[dlp.InspectTemplate]
+                typing.Awaitable[dlp.InspectTemplate]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_inspect_template(self) -> Callable[
+    def get_inspect_template(self) -> typing.Callable[
             [dlp.GetInspectTemplateRequest],
-            Union[
+            typing.Union[
                 dlp.InspectTemplate,
-                Awaitable[dlp.InspectTemplate]
+                typing.Awaitable[dlp.InspectTemplate]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_inspect_templates(self) -> Callable[
+    def list_inspect_templates(self) -> typing.Callable[
             [dlp.ListInspectTemplatesRequest],
-            Union[
+            typing.Union[
                 dlp.ListInspectTemplatesResponse,
-                Awaitable[dlp.ListInspectTemplatesResponse]
+                typing.Awaitable[dlp.ListInspectTemplatesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_inspect_template(self) -> Callable[
+    def delete_inspect_template(self) -> typing.Callable[
             [dlp.DeleteInspectTemplateRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_deidentify_template(self) -> Callable[
+    def create_deidentify_template(self) -> typing.Callable[
             [dlp.CreateDeidentifyTemplateRequest],
-            Union[
+            typing.Union[
                 dlp.DeidentifyTemplate,
-                Awaitable[dlp.DeidentifyTemplate]
+                typing.Awaitable[dlp.DeidentifyTemplate]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_deidentify_template(self) -> Callable[
+    def update_deidentify_template(self) -> typing.Callable[
             [dlp.UpdateDeidentifyTemplateRequest],
-            Union[
+            typing.Union[
                 dlp.DeidentifyTemplate,
-                Awaitable[dlp.DeidentifyTemplate]
+                typing.Awaitable[dlp.DeidentifyTemplate]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_deidentify_template(self) -> Callable[
+    def get_deidentify_template(self) -> typing.Callable[
             [dlp.GetDeidentifyTemplateRequest],
-            Union[
+            typing.Union[
                 dlp.DeidentifyTemplate,
-                Awaitable[dlp.DeidentifyTemplate]
+                typing.Awaitable[dlp.DeidentifyTemplate]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_deidentify_templates(self) -> Callable[
+    def list_deidentify_templates(self) -> typing.Callable[
             [dlp.ListDeidentifyTemplatesRequest],
-            Union[
+            typing.Union[
                 dlp.ListDeidentifyTemplatesResponse,
-                Awaitable[dlp.ListDeidentifyTemplatesResponse]
+                typing.Awaitable[dlp.ListDeidentifyTemplatesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_deidentify_template(self) -> Callable[
+    def delete_deidentify_template(self) -> typing.Callable[
             [dlp.DeleteDeidentifyTemplateRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_job_trigger(self) -> Callable[
+    def create_job_trigger(self) -> typing.Callable[
             [dlp.CreateJobTriggerRequest],
-            Union[
+            typing.Union[
                 dlp.JobTrigger,
-                Awaitable[dlp.JobTrigger]
+                typing.Awaitable[dlp.JobTrigger]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_job_trigger(self) -> Callable[
+    def update_job_trigger(self) -> typing.Callable[
             [dlp.UpdateJobTriggerRequest],
-            Union[
+            typing.Union[
                 dlp.JobTrigger,
-                Awaitable[dlp.JobTrigger]
+                typing.Awaitable[dlp.JobTrigger]
             ]]:
         raise NotImplementedError()
 
     @property
-    def hybrid_inspect_job_trigger(self) -> Callable[
+    def hybrid_inspect_job_trigger(self) -> typing.Callable[
             [dlp.HybridInspectJobTriggerRequest],
-            Union[
+            typing.Union[
                 dlp.HybridInspectResponse,
-                Awaitable[dlp.HybridInspectResponse]
+                typing.Awaitable[dlp.HybridInspectResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_job_trigger(self) -> Callable[
+    def get_job_trigger(self) -> typing.Callable[
             [dlp.GetJobTriggerRequest],
-            Union[
+            typing.Union[
                 dlp.JobTrigger,
-                Awaitable[dlp.JobTrigger]
+                typing.Awaitable[dlp.JobTrigger]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_job_triggers(self) -> Callable[
+    def list_job_triggers(self) -> typing.Callable[
             [dlp.ListJobTriggersRequest],
-            Union[
+            typing.Union[
                 dlp.ListJobTriggersResponse,
-                Awaitable[dlp.ListJobTriggersResponse]
+                typing.Awaitable[dlp.ListJobTriggersResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_job_trigger(self) -> Callable[
+    def delete_job_trigger(self) -> typing.Callable[
             [dlp.DeleteJobTriggerRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def activate_job_trigger(self) -> Callable[
+    def activate_job_trigger(self) -> typing.Callable[
             [dlp.ActivateJobTriggerRequest],
-            Union[
+            typing.Union[
                 dlp.DlpJob,
-                Awaitable[dlp.DlpJob]
+                typing.Awaitable[dlp.DlpJob]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_dlp_job(self) -> Callable[
+    def create_dlp_job(self) -> typing.Callable[
             [dlp.CreateDlpJobRequest],
-            Union[
+            typing.Union[
                 dlp.DlpJob,
-                Awaitable[dlp.DlpJob]
+                typing.Awaitable[dlp.DlpJob]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_dlp_jobs(self) -> Callable[
+    def list_dlp_jobs(self) -> typing.Callable[
             [dlp.ListDlpJobsRequest],
-            Union[
+            typing.Union[
                 dlp.ListDlpJobsResponse,
-                Awaitable[dlp.ListDlpJobsResponse]
+                typing.Awaitable[dlp.ListDlpJobsResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_dlp_job(self) -> Callable[
+    def get_dlp_job(self) -> typing.Callable[
             [dlp.GetDlpJobRequest],
-            Union[
+            typing.Union[
                 dlp.DlpJob,
-                Awaitable[dlp.DlpJob]
+                typing.Awaitable[dlp.DlpJob]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_dlp_job(self) -> Callable[
+    def delete_dlp_job(self) -> typing.Callable[
             [dlp.DeleteDlpJobRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def cancel_dlp_job(self) -> Callable[
+    def cancel_dlp_job(self) -> typing.Callable[
             [dlp.CancelDlpJobRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_stored_info_type(self) -> Callable[
+    def create_stored_info_type(self) -> typing.Callable[
             [dlp.CreateStoredInfoTypeRequest],
-            Union[
+            typing.Union[
                 dlp.StoredInfoType,
-                Awaitable[dlp.StoredInfoType]
+                typing.Awaitable[dlp.StoredInfoType]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_stored_info_type(self) -> Callable[
+    def update_stored_info_type(self) -> typing.Callable[
             [dlp.UpdateStoredInfoTypeRequest],
-            Union[
+            typing.Union[
                 dlp.StoredInfoType,
-                Awaitable[dlp.StoredInfoType]
+                typing.Awaitable[dlp.StoredInfoType]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_stored_info_type(self) -> Callable[
+    def get_stored_info_type(self) -> typing.Callable[
             [dlp.GetStoredInfoTypeRequest],
-            Union[
+            typing.Union[
                 dlp.StoredInfoType,
-                Awaitable[dlp.StoredInfoType]
+                typing.Awaitable[dlp.StoredInfoType]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_stored_info_types(self) -> Callable[
+    def list_stored_info_types(self) -> typing.Callable[
             [dlp.ListStoredInfoTypesRequest],
-            Union[
+            typing.Union[
                 dlp.ListStoredInfoTypesResponse,
-                Awaitable[dlp.ListStoredInfoTypesResponse]
+                typing.Awaitable[dlp.ListStoredInfoTypesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_stored_info_type(self) -> Callable[
+    def delete_stored_info_type(self) -> typing.Callable[
             [dlp.DeleteStoredInfoTypeRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def hybrid_inspect_dlp_job(self) -> Callable[
+    def hybrid_inspect_dlp_job(self) -> typing.Callable[
             [dlp.HybridInspectDlpJobRequest],
-            Union[
+            typing.Union[
                 dlp.HybridInspectResponse,
-                Awaitable[dlp.HybridInspectResponse]
+                typing.Awaitable[dlp.HybridInspectResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def finish_dlp_job(self) -> Callable[
+    def finish_dlp_job(self) -> typing.Callable[
             [dlp.FinishDlpJobRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 

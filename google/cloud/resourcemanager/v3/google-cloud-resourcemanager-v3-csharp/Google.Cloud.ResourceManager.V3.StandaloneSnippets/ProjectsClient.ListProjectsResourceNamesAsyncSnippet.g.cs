@@ -17,16 +17,20 @@
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.ResourceManager.V3;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedProjectsClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListProjects</summary>
+        /// <summary>Snippet for ListProjectsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListProjectsResourceNamesAsync()
         {
-            // Snippet: ListProjectsAsync(IResourceName, string, int?, CallSettings)
             // Create client
             ProjectsClient projectsClient = await ProjectsClient.CreateAsync();
             // Initialize request argument(s)
@@ -65,7 +69,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

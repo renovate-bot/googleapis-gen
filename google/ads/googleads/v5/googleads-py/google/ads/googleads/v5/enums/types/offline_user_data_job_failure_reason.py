@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -28,7 +30,7 @@ __protobuf__ = proto.module(
 class OfflineUserDataJobFailureReasonEnum(proto.Message):
     r"""Container for enum describing reasons why an offline user
     data job failed to be processed.
-        """
+    """
     class OfflineUserDataJobFailureReason(proto.Enum):
         r"""The failure reason of an offline user data job."""
         UNSPECIFIED = 0

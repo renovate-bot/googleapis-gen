@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedHotelPerformanceViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetHotelPerformanceViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetHotelPerformanceViewRequestObjectAsync()
         {
-            // Snippet: GetHotelPerformanceViewAsync(GetHotelPerformanceViewRequest, CallSettings)
-            // Additional: GetHotelPerformanceViewAsync(GetHotelPerformanceViewRequest, CancellationToken)
             // Create client
             HotelPerformanceViewServiceClient hotelPerformanceViewServiceClient = await HotelPerformanceViewServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             HotelPerformanceView response = await hotelPerformanceViewServiceClient.GetHotelPerformanceViewAsync(request);
-            // End snippet
         }
     }
 }

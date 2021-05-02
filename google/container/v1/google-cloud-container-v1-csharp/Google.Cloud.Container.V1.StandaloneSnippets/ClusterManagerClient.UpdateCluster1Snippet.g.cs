@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
+
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateCluster</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateCluster1()
         {
-            // Snippet: UpdateCluster(string, string, string, ClusterUpdate, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Container.V1.Snippets
             ClusterUpdate update = new ClusterUpdate();
             // Make the request
             Operation response = clusterManagerClient.UpdateCluster(projectId, zone, clusterId, update);
-            // End snippet
         }
     }
 }

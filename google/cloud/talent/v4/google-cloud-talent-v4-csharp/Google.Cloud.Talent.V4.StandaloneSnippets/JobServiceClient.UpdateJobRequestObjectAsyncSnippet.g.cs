@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Talent.V4.Snippets
 {
+    using Google.Cloud.Talent.V4;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateJobAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateJobRequestObjectAsync()
         {
-            // Snippet: UpdateJobAsync(UpdateJobRequest, CallSettings)
-            // Additional: UpdateJobAsync(UpdateJobRequest, CancellationToken)
             // Create client
             JobServiceClient jobServiceClient = await JobServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Talent.V4.Snippets
             };
             // Make the request
             Job response = await jobServiceClient.UpdateJobAsync(request);
-            // End snippet
         }
     }
 }

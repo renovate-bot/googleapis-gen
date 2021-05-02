@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedInstancesClientStandaloneSnippets
     {
         /// <summary>Snippet for GetInstanceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetInstanceRequestObjectAsync()
         {
-            // Snippet: GetInstanceAsync(GetInstanceRequest, CallSettings)
-            // Additional: GetInstanceAsync(GetInstanceRequest, CancellationToken)
             // Create client
             InstancesClient instancesClient = await InstancesClient.CreateAsync();
             // Initialize request argument(s)
             GetInstanceRequest request = new GetInstanceRequest { Name = "", };
             // Make the request
             Instance response = await instancesClient.GetInstanceAsync(request);
-            // End snippet
         }
     }
 }

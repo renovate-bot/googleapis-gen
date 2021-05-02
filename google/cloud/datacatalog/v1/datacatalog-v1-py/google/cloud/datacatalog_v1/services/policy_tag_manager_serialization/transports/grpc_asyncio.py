@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,20 +14,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.datacatalog_v1.types import policytagmanagerserialization
+
 from .base import PolicyTagManagerSerializationTransport, DEFAULT_CLIENT_INFO
 from .grpc import PolicyTagManagerSerializationGrpcTransport
 
@@ -78,15 +80,13 @@ class PolicyTagManagerSerializationGrpcAsyncIOTransport(PolicyTagManagerSerializ
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -106,8 +106,7 @@ class PolicyTagManagerSerializationGrpcAsyncIOTransport(PolicyTagManagerSerializ
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -165,6 +164,7 @@ class PolicyTagManagerSerializationGrpcAsyncIOTransport(PolicyTagManagerSerializ
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -227,9 +227,7 @@ class PolicyTagManagerSerializationGrpcAsyncIOTransport(PolicyTagManagerSerializ
     def import_taxonomies(self) -> Callable[
             [policytagmanagerserialization.ImportTaxonomiesRequest],
             Awaitable[policytagmanagerserialization.ImportTaxonomiesResponse]]:
-        r"""Return a callable for the
-        import taxonomies
-          method over gRPC.
+        r"""Return a callable for the import taxonomies method over gRPC.
 
         Creates new taxonomies (including their policy tags)
         by importing from inlined source or cross-regional
@@ -265,9 +263,7 @@ class PolicyTagManagerSerializationGrpcAsyncIOTransport(PolicyTagManagerSerializ
     def export_taxonomies(self) -> Callable[
             [policytagmanagerserialization.ExportTaxonomiesRequest],
             Awaitable[policytagmanagerserialization.ExportTaxonomiesResponse]]:
-        r"""Return a callable for the
-        export taxonomies
-          method over gRPC.
+        r"""Return a callable for the export taxonomies method over gRPC.
 
         Exports taxonomies as the requested type and returns
         the taxonomies including their policy tags. The

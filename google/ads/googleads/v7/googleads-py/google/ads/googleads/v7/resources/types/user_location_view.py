@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -46,20 +48,9 @@ class UserLocationView(proto.Message):
             targeted or not.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    country_criterion_id = proto.Field(
-        proto.INT64,
-        number=4,
-        optional=True,
-    )
-    targeting_location = proto.Field(
-        proto.BOOL,
-        number=5,
-        optional=True,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
+    country_criterion_id = proto.Field(proto.INT64, number=4, optional=True)
+    targeting_location = proto.Field(proto.BOOL, number=5, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

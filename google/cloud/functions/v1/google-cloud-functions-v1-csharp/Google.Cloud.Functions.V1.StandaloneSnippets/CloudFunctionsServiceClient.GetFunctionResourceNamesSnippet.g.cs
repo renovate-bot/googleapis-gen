@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Functions.V1.Snippets
 {
+    using Google.Cloud.Functions.V1;
+
     public sealed partial class GeneratedCloudFunctionsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetFunction</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetFunctionResourceNames()
         {
-            // Snippet: GetFunction(CloudFunctionName, CallSettings)
             // Create client
             CloudFunctionsServiceClient cloudFunctionsServiceClient = CloudFunctionsServiceClient.Create();
             // Initialize request argument(s)
             CloudFunctionName name = CloudFunctionName.FromProjectLocationFunction("[PROJECT]", "[LOCATION]", "[FUNCTION]");
             // Make the request
             CloudFunction response = cloudFunctionsServiceClient.GetFunction(name);
-            // End snippet
         }
     }
 }

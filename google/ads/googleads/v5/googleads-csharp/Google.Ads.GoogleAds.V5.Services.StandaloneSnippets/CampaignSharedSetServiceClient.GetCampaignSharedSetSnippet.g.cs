@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedCampaignSharedSetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignSharedSet</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCampaignSharedSet()
         {
-            // Snippet: GetCampaignSharedSet(string, CallSettings)
             // Create client
             CampaignSharedSetServiceClient campaignSharedSetServiceClient = CampaignSharedSetServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/campaignSharedSets/[CAMPAIGN_SHARED_SET]";
             // Make the request
             CampaignSharedSet response = campaignSharedSetServiceClient.GetCampaignSharedSet(resourceName);
-            // End snippet
         }
     }
 }

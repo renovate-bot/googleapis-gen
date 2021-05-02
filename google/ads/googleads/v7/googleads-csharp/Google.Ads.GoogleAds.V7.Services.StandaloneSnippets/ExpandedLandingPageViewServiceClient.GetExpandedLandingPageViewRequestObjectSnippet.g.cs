@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedExpandedLandingPageViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetExpandedLandingPageView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetExpandedLandingPageViewRequestObject()
         {
-            // Snippet: GetExpandedLandingPageView(GetExpandedLandingPageViewRequest, CallSettings)
             // Create client
             ExpandedLandingPageViewServiceClient expandedLandingPageViewServiceClient = ExpandedLandingPageViewServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             ExpandedLandingPageView response = expandedLandingPageViewServiceClient.GetExpandedLandingPageView(request);
-            // End snippet
         }
     }
 }

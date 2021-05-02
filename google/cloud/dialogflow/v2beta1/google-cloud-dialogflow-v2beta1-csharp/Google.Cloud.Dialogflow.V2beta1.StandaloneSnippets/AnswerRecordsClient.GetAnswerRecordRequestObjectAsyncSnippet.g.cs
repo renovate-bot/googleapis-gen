@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAnswerRecordsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAnswerRecordAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAnswerRecordRequestObjectAsync()
         {
-            // Snippet: GetAnswerRecordAsync(GetAnswerRecordRequest, CallSettings)
-            // Additional: GetAnswerRecordAsync(GetAnswerRecordRequest, CancellationToken)
             // Create client
             AnswerRecordsClient answerRecordsClient = await AnswerRecordsClient.CreateAsync();
             // Initialize request argument(s)
             GetAnswerRecordRequest request = new GetAnswerRecordRequest { Name = "", };
             // Make the request
             AnswerRecord response = await answerRecordsClient.GetAnswerRecordAsync(request);
-            // End snippet
         }
     }
 }

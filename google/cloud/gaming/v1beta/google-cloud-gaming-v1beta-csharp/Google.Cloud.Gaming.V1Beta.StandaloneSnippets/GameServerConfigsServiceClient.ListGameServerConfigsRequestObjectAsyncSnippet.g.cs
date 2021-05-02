@@ -17,16 +17,20 @@
 namespace Google.Cloud.Gaming.V1Beta.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Gaming.V1Beta;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGameServerConfigsServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListGameServerConfigs</summary>
+        /// <summary>Snippet for ListGameServerConfigsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListGameServerConfigsRequestObjectAsync()
         {
-            // Snippet: ListGameServerConfigsAsync(ListGameServerConfigsRequest, CallSettings)
             // Create client
             GameServerConfigsServiceClient gameServerConfigsServiceClient = await GameServerConfigsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -70,7 +74,6 @@ namespace Google.Cloud.Gaming.V1Beta.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

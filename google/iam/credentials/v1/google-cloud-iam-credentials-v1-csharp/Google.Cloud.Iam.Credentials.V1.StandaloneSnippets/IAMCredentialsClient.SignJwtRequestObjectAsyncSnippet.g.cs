@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Iam.Credentials.V1.Snippets
 {
+    using Google.Cloud.Iam.Credentials.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIAMCredentialsClientStandaloneSnippets
     {
         /// <summary>Snippet for SignJwtAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SignJwtRequestObjectAsync()
         {
-            // Snippet: SignJwtAsync(SignJwtRequest, CallSettings)
-            // Additional: SignJwtAsync(SignJwtRequest, CancellationToken)
             // Create client
             IAMCredentialsClient iAMCredentialsClient = await IAMCredentialsClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Iam.Credentials.V1.Snippets
             };
             // Make the request
             SignJwtResponse response = await iAMCredentialsClient.SignJwtAsync(request);
-            // End snippet
         }
     }
 }

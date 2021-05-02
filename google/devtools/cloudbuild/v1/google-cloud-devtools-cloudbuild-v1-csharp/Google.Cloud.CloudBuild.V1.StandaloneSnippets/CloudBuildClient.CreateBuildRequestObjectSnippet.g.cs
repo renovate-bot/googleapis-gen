@@ -17,14 +17,18 @@
 namespace Google.Cloud.CloudBuild.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.CloudBuild.V1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedCloudBuildClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateBuild</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateBuildRequestObject()
         {
-            // Snippet: CreateBuild(CreateBuildRequest, CallSettings)
             // Create client
             CloudBuildClient cloudBuildClient = CloudBuildClient.Create();
             // Initialize request argument(s)
@@ -52,7 +56,6 @@ namespace Google.Cloud.CloudBuild.V1.Snippets
                 // If it has completed, then access the result
                 Build retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

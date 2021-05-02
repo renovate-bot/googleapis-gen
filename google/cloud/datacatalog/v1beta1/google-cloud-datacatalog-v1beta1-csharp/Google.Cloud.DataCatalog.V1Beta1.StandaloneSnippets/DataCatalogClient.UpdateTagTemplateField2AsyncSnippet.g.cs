@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateTagTemplateFieldAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateTagTemplateField2Async()
         {
-            // Snippet: UpdateTagTemplateFieldAsync(string, TagTemplateField, FieldMask, CallSettings)
-            // Additional: UpdateTagTemplateFieldAsync(string, TagTemplateField, FieldMask, CancellationToken)
             // Create client
             DataCatalogClient dataCatalogClient = await DataCatalogClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             TagTemplateField response = await dataCatalogClient.UpdateTagTemplateFieldAsync(name, tagTemplateField, updateMask);
-            // End snippet
         }
     }
 }

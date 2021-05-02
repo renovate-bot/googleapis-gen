@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.cloud.dataproc_v1.types import autoscaling_policies
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import AutoscalingPolicyServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -60,8 +63,7 @@ class AutoscalingPolicyServiceGrpcTransport(AutoscalingPolicyServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -200,15 +202,13 @@ class AutoscalingPolicyServiceGrpcTransport(AutoscalingPolicyServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -222,9 +222,7 @@ class AutoscalingPolicyServiceGrpcTransport(AutoscalingPolicyServiceTransport):
     def create_autoscaling_policy(self) -> Callable[
             [autoscaling_policies.CreateAutoscalingPolicyRequest],
             autoscaling_policies.AutoscalingPolicy]:
-        r"""Return a callable for the
-        create autoscaling policy
-          method over gRPC.
+        r"""Return a callable for the create autoscaling policy method over gRPC.
 
         Creates new autoscaling policy.
 
@@ -250,9 +248,7 @@ class AutoscalingPolicyServiceGrpcTransport(AutoscalingPolicyServiceTransport):
     def update_autoscaling_policy(self) -> Callable[
             [autoscaling_policies.UpdateAutoscalingPolicyRequest],
             autoscaling_policies.AutoscalingPolicy]:
-        r"""Return a callable for the
-        update autoscaling policy
-          method over gRPC.
+        r"""Return a callable for the update autoscaling policy method over gRPC.
 
         Updates (replaces) autoscaling policy.
 
@@ -281,9 +277,7 @@ class AutoscalingPolicyServiceGrpcTransport(AutoscalingPolicyServiceTransport):
     def get_autoscaling_policy(self) -> Callable[
             [autoscaling_policies.GetAutoscalingPolicyRequest],
             autoscaling_policies.AutoscalingPolicy]:
-        r"""Return a callable for the
-        get autoscaling policy
-          method over gRPC.
+        r"""Return a callable for the get autoscaling policy method over gRPC.
 
         Retrieves autoscaling policy.
 
@@ -309,9 +303,7 @@ class AutoscalingPolicyServiceGrpcTransport(AutoscalingPolicyServiceTransport):
     def list_autoscaling_policies(self) -> Callable[
             [autoscaling_policies.ListAutoscalingPoliciesRequest],
             autoscaling_policies.ListAutoscalingPoliciesResponse]:
-        r"""Return a callable for the
-        list autoscaling policies
-          method over gRPC.
+        r"""Return a callable for the list autoscaling policies method over gRPC.
 
         Lists autoscaling policies in the project.
 
@@ -337,9 +329,7 @@ class AutoscalingPolicyServiceGrpcTransport(AutoscalingPolicyServiceTransport):
     def delete_autoscaling_policy(self) -> Callable[
             [autoscaling_policies.DeleteAutoscalingPolicyRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete autoscaling policy
-          method over gRPC.
+        r"""Return a callable for the delete autoscaling policy method over gRPC.
 
         Deletes an autoscaling policy. It is an error to
         delete an autoscaling policy that is in use by one or

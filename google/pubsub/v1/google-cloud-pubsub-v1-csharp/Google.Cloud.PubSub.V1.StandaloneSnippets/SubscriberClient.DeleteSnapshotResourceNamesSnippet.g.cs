@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
+
     public sealed partial class GeneratedSubscriberClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteSnapshot</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteSnapshotResourceNames()
         {
-            // Snippet: DeleteSnapshot(SnapshotName, CallSettings)
             // Create client
             SubscriberClient subscriberClient = SubscriberClient.Create();
             // Initialize request argument(s)
             SnapshotName snapshot = SnapshotName.FromProjectSnapshot("[PROJECT]", "[SNAPSHOT]");
             // Make the request
             subscriberClient.DeleteSnapshot(snapshot);
-            // End snippet
         }
     }
 }

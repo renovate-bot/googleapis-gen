@@ -16,22 +16,24 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteUserLinkAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteUserLinkResourceNamesAsync()
         {
-            // Snippet: DeleteUserLinkAsync(UserLinkName, CallSettings)
-            // Additional: DeleteUserLinkAsync(UserLinkName, CancellationToken)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = await AnalyticsAdminServiceClient.CreateAsync();
             // Initialize request argument(s)
             UserLinkName name = UserLinkName.FromAccountUserLink("[ACCOUNT]", "[USER_LINK]");
             // Make the request
             await analyticsAdminServiceClient.DeleteUserLinkAsync(name);
-            // End snippet
         }
     }
 }

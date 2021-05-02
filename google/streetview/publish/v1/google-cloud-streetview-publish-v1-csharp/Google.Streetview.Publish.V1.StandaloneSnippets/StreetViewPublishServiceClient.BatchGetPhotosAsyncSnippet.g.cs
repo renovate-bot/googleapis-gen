@@ -16,16 +16,19 @@
 
 namespace Google.Streetview.Publish.V1.Snippets
 {
+    using Google.Streetview.Publish.V1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedStreetViewPublishServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchGetPhotosAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchGetPhotosAsync()
         {
-            // Snippet: BatchGetPhotosAsync(IEnumerable<string>, PhotoView, CallSettings)
-            // Additional: BatchGetPhotosAsync(IEnumerable<string>, PhotoView, CancellationToken)
             // Create client
             StreetViewPublishServiceClient streetViewPublishServiceClient = await StreetViewPublishServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Streetview.Publish.V1.Snippets
             PhotoView view = PhotoView.Basic;
             // Make the request
             BatchGetPhotosResponse response = await streetViewPublishServiceClient.BatchGetPhotosAsync(photoIds, view);
-            // End snippet
         }
     }
 }

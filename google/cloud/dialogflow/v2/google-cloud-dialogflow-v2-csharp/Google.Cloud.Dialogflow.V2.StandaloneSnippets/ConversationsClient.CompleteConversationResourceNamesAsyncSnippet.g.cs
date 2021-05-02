@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedConversationsClientStandaloneSnippets
     {
         /// <summary>Snippet for CompleteConversationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CompleteConversationResourceNamesAsync()
         {
-            // Snippet: CompleteConversationAsync(ConversationName, CallSettings)
-            // Additional: CompleteConversationAsync(ConversationName, CancellationToken)
             // Create client
             ConversationsClient conversationsClient = await ConversationsClient.CreateAsync();
             // Initialize request argument(s)
             ConversationName name = ConversationName.FromProjectConversation("[PROJECT]", "[CONVERSATION]");
             // Make the request
             Conversation response = await conversationsClient.CompleteConversationAsync(name);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -36,6 +38,7 @@ from google.ads.googleads.v7.enums.types import placeholder_type
 from google.ads.googleads.v7.resources.types import ad_group_feed
 from google.ads.googleads.v7.services.types import ad_group_feed_service
 from google.rpc import status_pb2 as status  # type: ignore
+
 from .transports.base import AdGroupFeedServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import AdGroupFeedServiceGrpcTransport
 
@@ -184,6 +187,7 @@ class AdGroupFeedServiceClient(metaclass=AdGroupFeedServiceClientMeta):
         """Parse a feed path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/feeds/(?P<feed_id>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -360,8 +364,7 @@ class AdGroupFeedServiceClient(metaclass=AdGroupFeedServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v7.services.types.GetAdGroupFeedRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AdGroupFeedService.GetAdGroupFeed][google.ads.googleads.v7.services.AdGroupFeedService.GetAdGroupFeed].
             resource_name (:class:`str`):
                 Required. The resource name of the ad
@@ -370,6 +373,7 @@ class AdGroupFeedServiceClient(metaclass=AdGroupFeedServiceClientMeta):
                 This corresponds to the ``resource_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -387,14 +391,16 @@ class AdGroupFeedServiceClient(metaclass=AdGroupFeedServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a ad_group_feed_service.GetAdGroupFeedRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, ad_group_feed_service.GetAdGroupFeedRequest):
             request = ad_group_feed_service.GetAdGroupFeedRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if resource_name is not None:
                 request.resource_name = resource_name
 
@@ -413,7 +419,7 @@ class AdGroupFeedServiceClient(metaclass=AdGroupFeedServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -445,8 +451,7 @@ class AdGroupFeedServiceClient(metaclass=AdGroupFeedServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v7.services.types.MutateAdGroupFeedsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [AdGroupFeedService.MutateAdGroupFeeds][google.ads.googleads.v7.services.AdGroupFeedService.MutateAdGroupFeeds].
             customer_id (:class:`str`):
                 Required. The ID of the customer
@@ -462,6 +467,7 @@ class AdGroupFeedServiceClient(metaclass=AdGroupFeedServiceClientMeta):
                 This corresponds to the ``operations`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -481,14 +487,16 @@ class AdGroupFeedServiceClient(metaclass=AdGroupFeedServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a ad_group_feed_service.MutateAdGroupFeedsRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, ad_group_feed_service.MutateAdGroupFeedsRequest):
             request = ad_group_feed_service.MutateAdGroupFeedsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if customer_id is not None:
                 request.customer_id = customer_id
             if operations is not None:
@@ -509,7 +517,7 @@ class AdGroupFeedServiceClient(metaclass=AdGroupFeedServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

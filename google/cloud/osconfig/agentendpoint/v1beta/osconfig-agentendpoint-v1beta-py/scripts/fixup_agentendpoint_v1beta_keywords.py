@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,12 +41,13 @@ def partition(
 class agentendpointCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'lookup_effective_guest_policy': ('instance_id_token', 'os_short_name', 'os_version', 'os_architecture', ),
-          'receive_task_notification': ('instance_id_token', 'agent_version', ),
-          'register_agent': ('instance_id_token', 'agent_version', 'supported_capabilities', ),
-          'report_task_complete': ('instance_id_token', 'task_id', 'task_type', 'error_message', 'apply_patches_task_output', 'exec_step_task_output', ),
-          'report_task_progress': ('instance_id_token', 'task_id', 'task_type', 'apply_patches_task_progress', 'exec_step_task_progress', ),
-          'start_next_task': ('instance_id_token', ),
+    'lookup_effective_guest_policy': ('instance_id_token', 'os_short_name', 'os_version', 'os_architecture', ),
+    'receive_task_notification': ('instance_id_token', 'agent_version', ),
+    'register_agent': ('instance_id_token', 'agent_version', 'supported_capabilities', ),
+    'report_task_complete': ('instance_id_token', 'task_id', 'task_type', 'error_message', 'apply_patches_task_output', 'exec_step_task_output', ),
+    'report_task_progress': ('instance_id_token', 'task_id', 'task_type', 'apply_patches_task_progress', 'exec_step_task_progress', ),
+    'start_next_task': ('instance_id_token', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -75,7 +78,7 @@ class agentendpointCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

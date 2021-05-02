@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
+    using Google.Cloud.Talent.V4Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedProfileServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateProfileAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateProfileAsync()
         {
-            // Snippet: CreateProfileAsync(string, Profile, CallSettings)
-            // Additional: CreateProfileAsync(string, Profile, CancellationToken)
             // Create client
             ProfileServiceClient profileServiceClient = await ProfileServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Talent.V4Beta1.Snippets
             Profile profile = new Profile();
             // Make the request
             Profile response = await profileServiceClient.CreateProfileAsync(parent, profile);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for RollbackNodePoolUpgradeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task RollbackNodePoolUpgrade1Async()
         {
-            // Snippet: RollbackNodePoolUpgradeAsync(string, string, string, string, CallSettings)
-            // Additional: RollbackNodePoolUpgradeAsync(string, string, string, string, CancellationToken)
             // Create client
             ClusterManagerClient clusterManagerClient = await ClusterManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Container.V1.Snippets
             string nodePoolId = "";
             // Make the request
             Operation response = await clusterManagerClient.RollbackNodePoolUpgradeAsync(projectId, zone, clusterId, nodePoolId);
-            // End snippet
         }
     }
 }

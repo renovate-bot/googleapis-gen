@@ -17,16 +17,19 @@
 namespace Google.Iam.Admin.V1.Snippets
 {
     using Google.Cloud.Iam.V1;
+    using Google.Iam.Admin.V1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIAMClientStandaloneSnippets
     {
         /// <summary>Snippet for TestIamPermissionsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task TestIamPermissionsAsync()
         {
-            // Snippet: TestIamPermissionsAsync(string, IEnumerable<string>, CallSettings)
-            // Additional: TestIamPermissionsAsync(string, IEnumerable<string>, CancellationToken)
             // Create client
             IAMClient iAMClient = await IAMClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Iam.Admin.V1.Snippets
             IEnumerable<string> permissions = new string[] { "", };
             // Make the request
             TestIamPermissionsResponse response = await iAMClient.TestIamPermissionsAsync(resource, permissions);
-            // End snippet
         }
     }
 }

@@ -16,15 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using Google.Api.Gax.Grpc;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGoogleAdsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for SearchStream</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SearchStream()
         {
-            // Snippet: SearchStream(string, string, CallSettings)
             // Create client
             GoogleAdsServiceClient googleAdsServiceClient = GoogleAdsServiceClient.Create();
             // Initialize request argument(s)
@@ -42,7 +46,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
                 // Do something with streamed response
             }
             // The response stream has completed
-            // End snippet
         }
     }
 }

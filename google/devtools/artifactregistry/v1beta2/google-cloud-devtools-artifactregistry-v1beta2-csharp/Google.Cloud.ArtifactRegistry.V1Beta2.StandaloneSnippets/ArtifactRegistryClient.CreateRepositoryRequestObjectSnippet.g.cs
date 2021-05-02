@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
 {
+    using Google.Cloud.ArtifactRegistry.V1Beta2;
     using Google.LongRunning;
 
     public sealed partial class GeneratedArtifactRegistryClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateRepository</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateRepositoryRequestObject()
         {
-            // Snippet: CreateRepository(CreateRepositoryRequest, CallSettings)
             // Create client
             ArtifactRegistryClient artifactRegistryClient = ArtifactRegistryClient.Create();
             // Initialize request argument(s)
@@ -51,7 +55,6 @@ namespace Google.Cloud.ArtifactRegistry.V1Beta2.Snippets
                 // If it has completed, then access the result
                 Repository retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

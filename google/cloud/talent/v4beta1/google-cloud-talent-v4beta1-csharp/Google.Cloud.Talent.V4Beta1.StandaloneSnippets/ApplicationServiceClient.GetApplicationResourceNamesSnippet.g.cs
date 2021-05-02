@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Talent.V4Beta1.Snippets
 {
+    using Google.Cloud.Talent.V4Beta1;
+
     public sealed partial class GeneratedApplicationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetApplication</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetApplicationResourceNames()
         {
-            // Snippet: GetApplication(ApplicationName, CallSettings)
             // Create client
             ApplicationServiceClient applicationServiceClient = ApplicationServiceClient.Create();
             // Initialize request argument(s)
             ApplicationName name = ApplicationName.FromProjectTenantProfileApplication("[PROJECT]", "[TENANT]", "[PROFILE]", "[APPLICATION]");
             // Make the request
             Application response = applicationServiceClient.GetApplication(name);
-            // End snippet
         }
     }
 }

@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedAdGroupCriterionSimulationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAdGroupCriterionSimulation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAdGroupCriterionSimulation()
         {
-            // Snippet: GetAdGroupCriterionSimulation(string, CallSettings)
             // Create client
             AdGroupCriterionSimulationServiceClient adGroupCriterionSimulationServiceClient = AdGroupCriterionSimulationServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/adGroupCriterionSimulations/[AD_GROUP_CRITERION_SIMULATION]";
             // Make the request
             AdGroupCriterionSimulation response = adGroupCriterionSimulationServiceClient.GetAdGroupCriterionSimulation(resourceName);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v7.enums.types import access_invitation_status
 from google.ads.googleads.v7.enums.types import access_role as gage_access_role
@@ -56,30 +59,14 @@ class CustomerUserAccessInvitation(proto.Message):
             Output only. Invitation status of the user.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    invitation_id = proto.Field(
-        proto.INT64,
-        number=2,
-    )
-    access_role = proto.Field(
-        proto.ENUM,
-        number=3,
+    resource_name = proto.Field(proto.STRING, number=1)
+    invitation_id = proto.Field(proto.INT64, number=2)
+    access_role = proto.Field(proto.ENUM, number=3,
         enum=gage_access_role.AccessRoleEnum.AccessRole,
     )
-    email_address = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    creation_date_time = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    invitation_status = proto.Field(
-        proto.ENUM,
-        number=6,
+    email_address = proto.Field(proto.STRING, number=4)
+    creation_date_time = proto.Field(proto.STRING, number=5)
+    invitation_status = proto.Field(proto.ENUM, number=6,
         enum=access_invitation_status.AccessInvitationStatusEnum.AccessInvitationStatus,
     )
 

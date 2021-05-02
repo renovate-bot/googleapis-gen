@@ -17,15 +17,18 @@
 namespace Google.Cloud.MediaTranslation.V1Beta1.Snippets
 {
     using Google.Api.Gax.Grpc;
-    using Google.Protobuf;
+    using Google.Cloud.MediaTranslation.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSpeechTranslationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for StreamingTranslateSpeech</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task StreamingTranslateSpeech()
         {
-            // Snippet: StreamingTranslateSpeech(CallSettings, BidirectionalStreamingSettings)
             // Create client
             SpeechTranslationServiceClient speechTranslationServiceClient = SpeechTranslationServiceClient.Create();
             // Initialize streaming call, retrieving the stream object
@@ -55,7 +58,6 @@ namespace Google.Cloud.MediaTranslation.V1Beta1.Snippets
                 StreamingTranslateSpeechRequest request = new StreamingTranslateSpeechRequest
                 {
                     StreamingConfig = new StreamingTranslateSpeechConfig(),
-                    AudioContent = ByteString.Empty,
                 };
                 // Stream a request to the server
                 await response.WriteAsync(request);
@@ -67,7 +69,6 @@ namespace Google.Cloud.MediaTranslation.V1Beta1.Snippets
             // Await the response handler
             // This will complete once all server responses have been processed
             await responseHandlerTask;
-            // End snippet
         }
     }
 }

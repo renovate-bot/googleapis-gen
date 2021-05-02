@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Spanner.V1.Snippets
 {
+    using Google.Cloud.Spanner.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedSpannerClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteSessionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteSessionResourceNamesAsync()
         {
-            // Snippet: DeleteSessionAsync(SessionName, CallSettings)
-            // Additional: DeleteSessionAsync(SessionName, CancellationToken)
             // Create client
             SpannerClient spannerClient = await SpannerClient.CreateAsync();
             // Initialize request argument(s)
             SessionName name = SessionName.FromProjectInstanceDatabaseSession("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
             // Make the request
             await spannerClient.DeleteSessionAsync(name);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -30,6 +32,7 @@ from google.cloud.appengine_admin_v1.services.authorized_certificates import pag
 from google.cloud.appengine_admin_v1.types import appengine
 from google.cloud.appengine_admin_v1.types import certificate
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import AuthorizedCertificatesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AuthorizedCertificatesGrpcAsyncIOTransport
 from .client import AuthorizedCertificatesClient
@@ -48,12 +51,16 @@ class AuthorizedCertificatesAsyncClient:
 
     common_billing_account_path = staticmethod(AuthorizedCertificatesClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AuthorizedCertificatesClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(AuthorizedCertificatesClient.common_folder_path)
     parse_common_folder_path = staticmethod(AuthorizedCertificatesClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(AuthorizedCertificatesClient.common_organization_path)
     parse_common_organization_path = staticmethod(AuthorizedCertificatesClient.parse_common_organization_path)
+
     common_project_path = staticmethod(AuthorizedCertificatesClient.common_project_path)
     parse_common_project_path = staticmethod(AuthorizedCertificatesClient.parse_common_project_path)
+
     common_location_path = staticmethod(AuthorizedCertificatesClient.common_location_path)
     parse_common_location_path = staticmethod(AuthorizedCertificatesClient.parse_common_location_path)
 
@@ -138,6 +145,7 @@ class AuthorizedCertificatesAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = AuthorizedCertificatesClient(
             credentials=credentials,
             transport=transport,
@@ -158,9 +166,9 @@ class AuthorizedCertificatesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.ListAuthorizedCertificatesRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `AuthorizedCertificates.ListAuthorizedCertificates`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -177,6 +185,7 @@ class AuthorizedCertificatesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = appengine.ListAuthorizedCertificatesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -226,9 +235,9 @@ class AuthorizedCertificatesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.GetAuthorizedCertificateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `AuthorizedCertificates.GetAuthorizedCertificate`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -245,6 +254,7 @@ class AuthorizedCertificatesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = appengine.GetAuthorizedCertificateRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -285,9 +295,9 @@ class AuthorizedCertificatesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.CreateAuthorizedCertificateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `AuthorizedCertificates.CreateAuthorizedCertificate`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -304,6 +314,7 @@ class AuthorizedCertificatesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = appengine.CreateAuthorizedCertificateRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -349,9 +360,9 @@ class AuthorizedCertificatesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.UpdateAuthorizedCertificateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `AuthorizedCertificates.UpdateAuthorizedCertificate`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -368,6 +379,7 @@ class AuthorizedCertificatesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = appengine.UpdateAuthorizedCertificateRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -408,9 +420,9 @@ class AuthorizedCertificatesAsyncClient:
 
         Args:
             request (:class:`google.cloud.appengine_admin_v1.types.DeleteAuthorizedCertificateRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `AuthorizedCertificates.DeleteAuthorizedCertificate`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -418,6 +430,7 @@ class AuthorizedCertificatesAsyncClient:
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
+
         request = appengine.DeleteAuthorizedCertificateRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -443,6 +456,8 @@ class AuthorizedCertificatesAsyncClient:
             timeout=timeout,
             metadata=metadata,
         )
+
+
 
 
 

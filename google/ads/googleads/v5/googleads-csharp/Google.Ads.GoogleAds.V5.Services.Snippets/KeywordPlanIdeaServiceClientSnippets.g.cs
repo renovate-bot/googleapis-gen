@@ -36,13 +36,10 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             {
                 CustomerId = "",
                 KeywordAndUrlSeed = new KeywordAndUrlSeed(),
-                KeywordSeed = new KeywordSeed(),
-                UrlSeed = new UrlSeed(),
                 Language = "",
                 GeoTargetConstants = { "", },
                 KeywordPlanNetwork = KeywordPlanNetworkEnum.Types.KeywordPlanNetwork.Unspecified,
                 IncludeAdultKeywords = false,
-                SiteSeed = new SiteSeed(),
             };
             // Make the request
             PagedEnumerable<GenerateKeywordIdeaResponse, GenerateKeywordIdeaResult> response = keywordPlanIdeaServiceClient.GenerateKeywordIdeas(request);
@@ -81,7 +78,7 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for GenerateKeywordIdeas</summary>
+        /// <summary>Snippet for GenerateKeywordIdeasAsync</summary>
         public async Task GenerateKeywordIdeasRequestObjectAsync()
         {
             // Snippet: GenerateKeywordIdeasAsync(GenerateKeywordIdeasRequest, CallSettings)
@@ -92,13 +89,10 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             {
                 CustomerId = "",
                 KeywordAndUrlSeed = new KeywordAndUrlSeed(),
-                KeywordSeed = new KeywordSeed(),
-                UrlSeed = new UrlSeed(),
                 Language = "",
                 GeoTargetConstants = { "", },
                 KeywordPlanNetwork = KeywordPlanNetworkEnum.Types.KeywordPlanNetwork.Unspecified,
                 IncludeAdultKeywords = false,
-                SiteSeed = new SiteSeed(),
             };
             // Make the request
             PagedAsyncEnumerable<GenerateKeywordIdeaResponse, GenerateKeywordIdeaResult> response = keywordPlanIdeaServiceClient.GenerateKeywordIdeasAsync(request);

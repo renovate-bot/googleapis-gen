@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedCustomInterestServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomInterest</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCustomInterestResourceNames()
         {
-            // Snippet: GetCustomInterest(CustomInterestName, CallSettings)
             // Create client
             CustomInterestServiceClient customInterestServiceClient = CustomInterestServiceClient.Create();
             // Initialize request argument(s)
             CustomInterestName resourceName = CustomInterestName.FromCustomerCustomInterest("[CUSTOMER_ID]", "[CUSTOM_INTEREST_ID]");
             // Make the request
             CustomInterest response = customInterestServiceClient.GetCustomInterest(resourceName);
-            // End snippet
         }
     }
 }

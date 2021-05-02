@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Workflows.Executions.V1Beta.Snippets
 {
+    using Google.Cloud.Workflows.Executions.V1Beta;
+
     public sealed partial class GeneratedExecutionsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateExecution</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateExecutionRequestObject()
         {
-            // Snippet: CreateExecution(CreateExecutionRequest, CallSettings)
             // Create client
             ExecutionsClient executionsClient = ExecutionsClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Cloud.Workflows.Executions.V1Beta.Snippets
             };
             // Make the request
             Execution response = executionsClient.CreateExecution(request);
-            // End snippet
         }
     }
 }

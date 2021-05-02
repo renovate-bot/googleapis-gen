@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Talent.V4.Snippets
 {
+    using Google.Cloud.Talent.V4;
     using Google.LongRunning;
 
     public sealed partial class GeneratedJobServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchDeleteJobs</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BatchDeleteJobsRequestObject()
         {
-            // Snippet: BatchDeleteJobs(BatchDeleteJobsRequest, CallSettings)
             // Create client
             JobServiceClient jobServiceClient = JobServiceClient.Create();
             // Initialize request argument(s)
@@ -53,7 +57,6 @@ namespace Google.Cloud.Talent.V4.Snippets
                 // If it has completed, then access the result
                 BatchDeleteJobsResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

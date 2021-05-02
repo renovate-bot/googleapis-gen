@@ -18,14 +18,18 @@ namespace Google.Cloud.RecaptchaEnterprise.V1.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.RecaptchaEnterprise.V1;
     using System;
 
     public sealed partial class GeneratedRecaptchaEnterpriseServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ListKeys</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListKeysRequestObject()
         {
-            // Snippet: ListKeys(ListKeysRequest, CallSettings)
             // Create client
             RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient.Create();
             // Initialize request argument(s)
@@ -67,7 +71,6 @@ namespace Google.Cloud.RecaptchaEnterprise.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

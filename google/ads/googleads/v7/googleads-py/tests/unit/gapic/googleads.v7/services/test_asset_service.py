@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -286,31 +288,50 @@ def test_get_asset(transport: str = 'grpc', request_type=asset_service.GetAssetR
         # Designate an appropriate return value for the call.
         call.return_value = asset.Asset(
             resource_name='resource_name_value',
+
             id=205,
+
             name='name_value',
+
             type_=asset_type.AssetTypeEnum.AssetType.UNKNOWN,
+
             final_urls=['final_urls_value'],
+
             final_mobile_urls=['final_mobile_urls_value'],
+
             tracking_url_template='tracking_url_template_value',
+
             final_url_suffix='final_url_suffix_value',
+
             youtube_video_asset=asset_types.YoutubeVideoAsset(youtube_video_id='youtube_video_id_value'),
         )
+
         response = client.get_asset(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == asset_service.GetAssetRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, asset.Asset)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.id == 205
+
     assert response.name == 'name_value'
+
     assert response.type_ == asset_type.AssetTypeEnum.AssetType.UNKNOWN
+
     assert response.final_urls == ['final_urls_value']
+
     assert response.final_mobile_urls == ['final_mobile_urls_value']
+
     assert response.tracking_url_template == 'tracking_url_template_value'
+
     assert response.final_url_suffix == 'final_url_suffix_value'
 
 
@@ -326,7 +347,6 @@ def test_get_asset_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = asset_service.GetAssetRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -334,6 +354,7 @@ def test_get_asset_field_headers():
             type(client.transport.get_asset),
             '__call__') as call:
         call.return_value = asset.Asset()
+
         client.get_asset(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -360,6 +381,7 @@ def test_get_asset_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = asset.Asset()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_asset(
@@ -370,6 +392,7 @@ def test_get_asset_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -404,14 +427,17 @@ def test_mutate_assets(transport: str = 'grpc', request_type=asset_service.Mutat
         # Designate an appropriate return value for the call.
         call.return_value = asset_service.MutateAssetsResponse(
         )
+
         response = client.mutate_assets(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == asset_service.MutateAssetsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, asset_service.MutateAssetsResponse)
 
 
@@ -427,7 +453,6 @@ def test_mutate_assets_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = asset_service.MutateAssetsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -435,6 +460,7 @@ def test_mutate_assets_field_headers():
             type(client.transport.mutate_assets),
             '__call__') as call:
         call.return_value = asset_service.MutateAssetsResponse()
+
         client.mutate_assets(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -461,6 +487,7 @@ def test_mutate_assets_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = asset_service.MutateAssetsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_assets(
@@ -472,7 +499,9 @@ def test_mutate_assets_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [asset_service.AssetOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -555,7 +584,7 @@ def test_asset_service_base_transport():
     methods = (
         'get_asset',
         'mutate_assets',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -707,6 +736,7 @@ def test_asset_service_transport_channel_mtls_with_adc(
 def test_asset_path():
     customer_id = "squid"
     asset_id = "clam"
+
     expected = "customers/{customer_id}/assets/{asset_id}".format(customer_id=customer_id, asset_id=asset_id, )
     actual = AssetServiceClient.asset_path(customer_id, asset_id)
     assert expected == actual
@@ -714,8 +744,9 @@ def test_asset_path():
 
 def test_parse_asset_path():
     expected = {
-        "customer_id": "whelk",
-        "asset_id": "octopus",
+    "customer_id": "whelk",
+    "asset_id": "octopus",
+
     }
     path = AssetServiceClient.asset_path(**expected)
 
@@ -725,6 +756,7 @@ def test_parse_asset_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = AssetServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -732,7 +764,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = AssetServiceClient.common_billing_account_path(**expected)
 
@@ -742,6 +775,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = AssetServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -749,7 +783,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = AssetServiceClient.common_folder_path(**expected)
 
@@ -759,6 +794,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = AssetServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -766,7 +802,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = AssetServiceClient.common_organization_path(**expected)
 
@@ -776,6 +813,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = AssetServiceClient.common_project_path(project)
     assert expected == actual
@@ -783,7 +821,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = AssetServiceClient.common_project_path(**expected)
 
@@ -794,6 +833,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = AssetServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -801,8 +841,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = AssetServiceClient.common_location_path(**expected)
 

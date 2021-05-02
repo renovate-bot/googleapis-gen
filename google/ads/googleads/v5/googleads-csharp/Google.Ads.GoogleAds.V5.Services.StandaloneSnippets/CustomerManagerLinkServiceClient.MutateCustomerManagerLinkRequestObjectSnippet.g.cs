@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
+
     public sealed partial class GeneratedCustomerManagerLinkServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCustomerManagerLink</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateCustomerManagerLinkRequestObject()
         {
-            // Snippet: MutateCustomerManagerLink(MutateCustomerManagerLinkRequest, CallSettings)
             // Create client
             CustomerManagerLinkServiceClient customerManagerLinkServiceClient = CustomerManagerLinkServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +40,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateCustomerManagerLinkResponse response = customerManagerLinkServiceClient.MutateCustomerManagerLink(request);
-            // End snippet
         }
     }
 }

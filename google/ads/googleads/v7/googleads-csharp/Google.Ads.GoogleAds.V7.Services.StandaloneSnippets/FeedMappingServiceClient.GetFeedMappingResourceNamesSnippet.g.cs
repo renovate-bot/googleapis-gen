@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedFeedMappingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetFeedMapping</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetFeedMappingResourceNames()
         {
-            // Snippet: GetFeedMapping(FeedMappingName, CallSettings)
             // Create client
             FeedMappingServiceClient feedMappingServiceClient = FeedMappingServiceClient.Create();
             // Initialize request argument(s)
             FeedMappingName resourceName = FeedMappingName.FromCustomerFeedFeedMapping("[CUSTOMER_ID]", "[FEED_ID]", "[FEED_MAPPING_ID]");
             // Make the request
             FeedMapping response = feedMappingServiceClient.GetFeedMapping(resourceName);
-            // End snippet
         }
     }
 }

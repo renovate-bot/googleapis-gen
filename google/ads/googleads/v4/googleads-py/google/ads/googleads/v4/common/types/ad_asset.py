@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v4.enums.types import served_asset_field_type
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
@@ -33,6 +36,7 @@ __protobuf__ = proto.module(
 
 class AdTextAsset(proto.Message):
     r"""A text asset used inside an ad.
+
     Attributes:
         text (google.protobuf.wrappers_pb2.StringValue):
             Asset text.
@@ -45,56 +49,49 @@ class AdTextAsset(proto.Message):
             some other asset has been pinned.
     """
 
-    text = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    text = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
-    pinned_field = proto.Field(
-        proto.ENUM,
-        number=2,
+    pinned_field = proto.Field(proto.ENUM, number=2,
         enum=served_asset_field_type.ServedAssetFieldTypeEnum.ServedAssetFieldType,
     )
 
 
 class AdImageAsset(proto.Message):
     r"""An image asset used inside an ad.
+
     Attributes:
         asset (google.protobuf.wrappers_pb2.StringValue):
             The Asset resource name of this image.
     """
 
-    asset = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    asset = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class AdVideoAsset(proto.Message):
     r"""A video asset used inside an ad.
+
     Attributes:
         asset (google.protobuf.wrappers_pb2.StringValue):
             The Asset resource name of this video.
     """
 
-    asset = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    asset = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 
 
 class AdMediaBundleAsset(proto.Message):
     r"""A media bundle asset used inside an ad.
+
     Attributes:
         asset (google.protobuf.wrappers_pb2.StringValue):
             The Asset resource name of this media bundle.
     """
 
-    asset = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    asset = proto.Field(proto.MESSAGE, number=1,
         message=wrappers.StringValue,
     )
 

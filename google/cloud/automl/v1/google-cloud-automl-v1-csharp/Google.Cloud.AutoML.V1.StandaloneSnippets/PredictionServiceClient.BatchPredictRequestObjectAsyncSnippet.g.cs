@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.AutoML.V1.Snippets
 {
+    using Google.Cloud.AutoML.V1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPredictionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchPredictAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchPredictRequestObjectAsync()
         {
-            // Snippet: BatchPredictAsync(BatchPredictRequest, CallSettings)
-            // Additional: BatchPredictAsync(BatchPredictRequest, CancellationToken)
             // Create client
             PredictionServiceClient predictionServiceClient = await PredictionServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -54,7 +57,6 @@ namespace Google.Cloud.AutoML.V1.Snippets
                 // If it has completed, then access the result
                 BatchPredictResult retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

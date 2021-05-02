@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import operations_v1  # type: ignore
@@ -28,6 +30,7 @@ import grpc  # type: ignore
 from google.cloud.networkconnectivity_v1alpha1.types import hub
 from google.cloud.networkconnectivity_v1alpha1.types import hub as gcn_hub
 from google.longrunning import operations_pb2 as operations  # type: ignore
+
 from .base import HubServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -64,8 +67,7 @@ class HubServiceGrpcTransport(HubServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -205,15 +207,13 @@ class HubServiceGrpcTransport(HubServiceTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -243,9 +243,7 @@ class HubServiceGrpcTransport(HubServiceTransport):
     def list_hubs(self) -> Callable[
             [hub.ListHubsRequest],
             hub.ListHubsResponse]:
-        r"""Return a callable for the
-        list hubs
-          method over gRPC.
+        r"""Return a callable for the list hubs method over gRPC.
 
         Lists Hubs in a given project and location.
 
@@ -271,9 +269,7 @@ class HubServiceGrpcTransport(HubServiceTransport):
     def get_hub(self) -> Callable[
             [hub.GetHubRequest],
             hub.Hub]:
-        r"""Return a callable for the
-        get hub
-          method over gRPC.
+        r"""Return a callable for the get hub method over gRPC.
 
         Gets details of a single Hub.
 
@@ -299,9 +295,7 @@ class HubServiceGrpcTransport(HubServiceTransport):
     def create_hub(self) -> Callable[
             [gcn_hub.CreateHubRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create hub
-          method over gRPC.
+        r"""Return a callable for the create hub method over gRPC.
 
         Creates a new Hub in a given project and location.
 
@@ -327,9 +321,7 @@ class HubServiceGrpcTransport(HubServiceTransport):
     def update_hub(self) -> Callable[
             [gcn_hub.UpdateHubRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update hub
-          method over gRPC.
+        r"""Return a callable for the update hub method over gRPC.
 
         Updates the parameters of a single Hub.
 
@@ -355,9 +347,7 @@ class HubServiceGrpcTransport(HubServiceTransport):
     def delete_hub(self) -> Callable[
             [hub.DeleteHubRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete hub
-          method over gRPC.
+        r"""Return a callable for the delete hub method over gRPC.
 
         Deletes a single Hub.
 
@@ -383,9 +373,7 @@ class HubServiceGrpcTransport(HubServiceTransport):
     def list_spokes(self) -> Callable[
             [hub.ListSpokesRequest],
             hub.ListSpokesResponse]:
-        r"""Return a callable for the
-        list spokes
-          method over gRPC.
+        r"""Return a callable for the list spokes method over gRPC.
 
         Lists Spokes in a given project and location.
 
@@ -411,9 +399,7 @@ class HubServiceGrpcTransport(HubServiceTransport):
     def get_spoke(self) -> Callable[
             [hub.GetSpokeRequest],
             hub.Spoke]:
-        r"""Return a callable for the
-        get spoke
-          method over gRPC.
+        r"""Return a callable for the get spoke method over gRPC.
 
         Gets details of a single Spoke.
 
@@ -439,9 +425,7 @@ class HubServiceGrpcTransport(HubServiceTransport):
     def create_spoke(self) -> Callable[
             [hub.CreateSpokeRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        create spoke
-          method over gRPC.
+        r"""Return a callable for the create spoke method over gRPC.
 
         Creates a new Spoke in a given project and location.
 
@@ -467,9 +451,7 @@ class HubServiceGrpcTransport(HubServiceTransport):
     def update_spoke(self) -> Callable[
             [hub.UpdateSpokeRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        update spoke
-          method over gRPC.
+        r"""Return a callable for the update spoke method over gRPC.
 
         Updates the parameters of a single Spoke.
 
@@ -495,9 +477,7 @@ class HubServiceGrpcTransport(HubServiceTransport):
     def delete_spoke(self) -> Callable[
             [hub.DeleteSpokeRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        delete spoke
-          method over gRPC.
+        r"""Return a callable for the delete spoke method over gRPC.
 
         Deletes a single Spoke.
 

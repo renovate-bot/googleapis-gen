@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -266,24 +268,37 @@ def test_get_campaign_asset(transport: str = 'grpc', request_type=campaign_asset
         # Designate an appropriate return value for the call.
         call.return_value = campaign_asset.CampaignAsset(
             resource_name='resource_name_value',
+
             campaign='campaign_value',
+
             asset='asset_value',
+
             field_type=asset_field_type.AssetFieldTypeEnum.AssetFieldType.UNKNOWN,
+
             status=asset_link_status.AssetLinkStatusEnum.AssetLinkStatus.UNKNOWN,
+
         )
+
         response = client.get_campaign_asset(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_asset_service.GetCampaignAssetRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign_asset.CampaignAsset)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.campaign == 'campaign_value'
+
     assert response.asset == 'asset_value'
+
     assert response.field_type == asset_field_type.AssetFieldTypeEnum.AssetFieldType.UNKNOWN
+
     assert response.status == asset_link_status.AssetLinkStatusEnum.AssetLinkStatus.UNKNOWN
 
 
@@ -299,7 +314,6 @@ def test_get_campaign_asset_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_asset_service.GetCampaignAssetRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -307,6 +321,7 @@ def test_get_campaign_asset_field_headers():
             type(client.transport.get_campaign_asset),
             '__call__') as call:
         call.return_value = campaign_asset.CampaignAsset()
+
         client.get_campaign_asset(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -333,6 +348,7 @@ def test_get_campaign_asset_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_asset.CampaignAsset()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_campaign_asset(
@@ -343,6 +359,7 @@ def test_get_campaign_asset_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -377,14 +394,17 @@ def test_mutate_campaign_assets(transport: str = 'grpc', request_type=campaign_a
         # Designate an appropriate return value for the call.
         call.return_value = campaign_asset_service.MutateCampaignAssetsResponse(
         )
+
         response = client.mutate_campaign_assets(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == campaign_asset_service.MutateCampaignAssetsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, campaign_asset_service.MutateCampaignAssetsResponse)
 
 
@@ -400,7 +420,6 @@ def test_mutate_campaign_assets_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = campaign_asset_service.MutateCampaignAssetsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -408,6 +427,7 @@ def test_mutate_campaign_assets_field_headers():
             type(client.transport.mutate_campaign_assets),
             '__call__') as call:
         call.return_value = campaign_asset_service.MutateCampaignAssetsResponse()
+
         client.mutate_campaign_assets(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -434,6 +454,7 @@ def test_mutate_campaign_assets_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = campaign_asset_service.MutateCampaignAssetsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_campaign_assets(
@@ -445,7 +466,9 @@ def test_mutate_campaign_assets_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [campaign_asset_service.CampaignAssetOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -528,7 +551,7 @@ def test_campaign_asset_service_base_transport():
     methods = (
         'get_campaign_asset',
         'mutate_campaign_assets',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -680,6 +703,7 @@ def test_campaign_asset_service_transport_channel_mtls_with_adc(
 def test_asset_path():
     customer_id = "squid"
     asset_id = "clam"
+
     expected = "customers/{customer_id}/assets/{asset_id}".format(customer_id=customer_id, asset_id=asset_id, )
     actual = CampaignAssetServiceClient.asset_path(customer_id, asset_id)
     assert expected == actual
@@ -687,8 +711,9 @@ def test_asset_path():
 
 def test_parse_asset_path():
     expected = {
-        "customer_id": "whelk",
-        "asset_id": "octopus",
+    "customer_id": "whelk",
+    "asset_id": "octopus",
+
     }
     path = CampaignAssetServiceClient.asset_path(**expected)
 
@@ -699,6 +724,7 @@ def test_parse_asset_path():
 def test_campaign_path():
     customer_id = "oyster"
     campaign_id = "nudibranch"
+
     expected = "customers/{customer_id}/campaigns/{campaign_id}".format(customer_id=customer_id, campaign_id=campaign_id, )
     actual = CampaignAssetServiceClient.campaign_path(customer_id, campaign_id)
     assert expected == actual
@@ -706,8 +732,9 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "campaign_id": "mussel",
+    "customer_id": "cuttlefish",
+    "campaign_id": "mussel",
+
     }
     path = CampaignAssetServiceClient.campaign_path(**expected)
 
@@ -720,6 +747,7 @@ def test_campaign_asset_path():
     campaign_id = "nautilus"
     asset_id = "scallop"
     field_type = "abalone"
+
     expected = "customers/{customer_id}/campaignAssets/{campaign_id}~{asset_id}~{field_type}".format(customer_id=customer_id, campaign_id=campaign_id, asset_id=asset_id, field_type=field_type, )
     actual = CampaignAssetServiceClient.campaign_asset_path(customer_id, campaign_id, asset_id, field_type)
     assert expected == actual
@@ -727,10 +755,11 @@ def test_campaign_asset_path():
 
 def test_parse_campaign_asset_path():
     expected = {
-        "customer_id": "squid",
-        "campaign_id": "clam",
-        "asset_id": "whelk",
-        "field_type": "octopus",
+    "customer_id": "squid",
+    "campaign_id": "clam",
+    "asset_id": "whelk",
+    "field_type": "octopus",
+
     }
     path = CampaignAssetServiceClient.campaign_asset_path(**expected)
 
@@ -740,6 +769,7 @@ def test_parse_campaign_asset_path():
 
 def test_common_billing_account_path():
     billing_account = "oyster"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CampaignAssetServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -747,7 +777,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nudibranch",
+    "billing_account": "nudibranch",
+
     }
     path = CampaignAssetServiceClient.common_billing_account_path(**expected)
 
@@ -757,6 +788,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "cuttlefish"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = CampaignAssetServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -764,7 +796,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "mussel",
+    "folder": "mussel",
+
     }
     path = CampaignAssetServiceClient.common_folder_path(**expected)
 
@@ -774,6 +807,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "winkle"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CampaignAssetServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -781,7 +815,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nautilus",
+    "organization": "nautilus",
+
     }
     path = CampaignAssetServiceClient.common_organization_path(**expected)
 
@@ -791,6 +826,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "scallop"
+
     expected = "projects/{project}".format(project=project, )
     actual = CampaignAssetServiceClient.common_project_path(project)
     assert expected == actual
@@ -798,7 +834,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "abalone",
+    "project": "abalone",
+
     }
     path = CampaignAssetServiceClient.common_project_path(**expected)
 
@@ -809,6 +846,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "squid"
     location = "clam"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CampaignAssetServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -816,8 +854,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "whelk",
-        "location": "octopus",
+    "project": "whelk",
+    "location": "octopus",
+
     }
     path = CampaignAssetServiceClient.common_location_path(**expected)
 

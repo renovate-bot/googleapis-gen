@@ -16,19 +16,23 @@
 
 namespace Google.Area120.Tables.V1Alpha1.Snippets
 {
+    using Google.Area120.Tables.V1Alpha1;
+
     public sealed partial class GeneratedTablesServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTable</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetTableResourceNames()
         {
-            // Snippet: GetTable(TableName, CallSettings)
             // Create client
             TablesServiceClient tablesServiceClient = TablesServiceClient.Create();
             // Initialize request argument(s)
             TableName name = TableName.FromTable("[TABLE]");
             // Make the request
             Table response = tablesServiceClient.GetTable(name);
-            // End snippet
         }
     }
 }

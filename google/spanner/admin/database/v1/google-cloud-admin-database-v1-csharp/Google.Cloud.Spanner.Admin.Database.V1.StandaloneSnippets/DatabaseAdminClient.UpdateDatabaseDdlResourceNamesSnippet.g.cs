@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
 {
+    using Google.Cloud.Spanner.Admin.Database.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Collections.Generic;
@@ -23,9 +24,12 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
     public sealed partial class GeneratedDatabaseAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateDatabaseDdl</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateDatabaseDdlResourceNames()
         {
-            // Snippet: UpdateDatabaseDdl(DatabaseName, IEnumerable<string>, CallSettings)
             // Create client
             DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.Create();
             // Initialize request argument(s)
@@ -49,7 +53,6 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

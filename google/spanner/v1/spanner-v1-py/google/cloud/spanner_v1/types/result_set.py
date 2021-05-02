@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.spanner_v1.types import query_plan as gs_query_plan
 from google.cloud.spanner_v1.types import transaction as gs_transaction
@@ -60,19 +63,15 @@ class ResultSet(proto.Message):
             [ExecuteSqlRequest.query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode].
     """
 
-    metadata = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    metadata = proto.Field(proto.MESSAGE, number=1,
         message='ResultSetMetadata',
     )
-    rows = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+
+    rows = proto.RepeatedField(proto.MESSAGE, number=2,
         message=struct.ListValue,
     )
-    stats = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    stats = proto.Field(proto.MESSAGE, number=3,
         message='ResultSetStats',
     )
 
@@ -192,27 +191,19 @@ class PartialResultSet(proto.Message):
             statements.
     """
 
-    metadata = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    metadata = proto.Field(proto.MESSAGE, number=1,
         message='ResultSetMetadata',
     )
-    values = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+
+    values = proto.RepeatedField(proto.MESSAGE, number=2,
         message=struct.Value,
     )
-    chunked_value = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    resume_token = proto.Field(
-        proto.BYTES,
-        number=4,
-    )
-    stats = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    chunked_value = proto.Field(proto.BOOL, number=3)
+
+    resume_token = proto.Field(proto.BYTES, number=4)
+
+    stats = proto.Field(proto.MESSAGE, number=5,
         message='ResultSetStats',
     )
 
@@ -240,14 +231,11 @@ class ResultSetMetadata(proto.Message):
             transaction is yielded here.
     """
 
-    row_type = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    row_type = proto.Field(proto.MESSAGE, number=1,
         message=gs_type.StructType,
     )
-    transaction = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    transaction = proto.Field(proto.MESSAGE, number=2,
         message=gs_transaction.Transaction,
     )
 
@@ -282,26 +270,17 @@ class ResultSetStats(proto.Message):
             rows modified.
     """
 
-    query_plan = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    query_plan = proto.Field(proto.MESSAGE, number=1,
         message=gs_query_plan.QueryPlan,
     )
-    query_stats = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    query_stats = proto.Field(proto.MESSAGE, number=2,
         message=struct.Struct,
     )
-    row_count_exact = proto.Field(
-        proto.INT64,
-        number=3,
-        oneof='row_count',
-    )
-    row_count_lower_bound = proto.Field(
-        proto.INT64,
-        number=4,
-        oneof='row_count',
-    )
+
+    row_count_exact = proto.Field(proto.INT64, number=3, oneof='row_count')
+
+    row_count_lower_bound = proto.Field(proto.INT64, number=4, oneof='row_count')
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

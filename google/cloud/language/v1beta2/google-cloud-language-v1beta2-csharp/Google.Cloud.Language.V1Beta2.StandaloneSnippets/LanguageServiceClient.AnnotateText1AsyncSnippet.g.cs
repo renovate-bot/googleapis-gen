@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Language.V1Beta2.Snippets
 {
+    using Google.Cloud.Language.V1Beta2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLanguageServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for AnnotateTextAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task AnnotateText1Async()
         {
-            // Snippet: AnnotateTextAsync(Document, AnnotateTextRequest.Types.Features, EncodingType, CallSettings)
-            // Additional: AnnotateTextAsync(Document, AnnotateTextRequest.Types.Features, EncodingType, CancellationToken)
             // Create client
             LanguageServiceClient languageServiceClient = await LanguageServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.Language.V1Beta2.Snippets
             EncodingType encodingType = EncodingType.None;
             // Make the request
             AnnotateTextResponse response = await languageServiceClient.AnnotateTextAsync(document, features, encodingType);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
+
     public sealed partial class GeneratedNotificationChannelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetNotificationChannelDescriptor</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetNotificationChannelDescriptor()
         {
-            // Snippet: GetNotificationChannelDescriptor(string, CallSettings)
             // Create client
             NotificationChannelServiceClient notificationChannelServiceClient = NotificationChannelServiceClient.Create();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/notificationChannelDescriptors/[CHANNEL_DESCRIPTOR]";
             // Make the request
             NotificationChannelDescriptor response = notificationChannelServiceClient.GetNotificationChannelDescriptor(name);
-            // End snippet
         }
     }
 }

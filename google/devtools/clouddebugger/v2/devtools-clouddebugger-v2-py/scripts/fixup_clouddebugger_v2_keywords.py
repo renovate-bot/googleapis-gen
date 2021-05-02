@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,14 +41,15 @@ def partition(
 class clouddebuggerCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'delete_breakpoint': ('debuggee_id', 'breakpoint_id', 'client_version', ),
-          'get_breakpoint': ('debuggee_id', 'breakpoint_id', 'client_version', ),
-          'list_active_breakpoints': ('debuggee_id', 'wait_token', 'success_on_timeout', ),
-          'list_breakpoints': ('debuggee_id', 'client_version', 'include_all_users', 'include_inactive', 'action', 'strip_results', 'wait_token', ),
-          'list_debuggees': ('project', 'client_version', 'include_inactive', ),
-          'register_debuggee': ('debuggee', ),
-          'set_breakpoint': ('debuggee_id', 'breakpoint_', 'client_version', ),
-          'update_active_breakpoint': ('debuggee_id', 'breakpoint_', ),
+    'delete_breakpoint': ('debuggee_id', 'breakpoint_id', 'client_version', ),
+    'get_breakpoint': ('debuggee_id', 'breakpoint_id', 'client_version', ),
+    'list_active_breakpoints': ('debuggee_id', 'wait_token', 'success_on_timeout', ),
+    'list_breakpoints': ('debuggee_id', 'client_version', 'include_all_users', 'include_inactive', 'action', 'strip_results', 'wait_token', ),
+    'list_debuggees': ('project', 'client_version', 'include_inactive', ),
+    'register_debuggee': ('debuggee', ),
+    'set_breakpoint': ('debuggee_id', 'breakpoint_', 'client_version', ),
+    'update_active_breakpoint': ('debuggee_id', 'breakpoint_', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -77,7 +80,7 @@ class clouddebuggerCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.DataQnA.V1Alpha.Snippets
 {
+    using Google.Cloud.DataQnA.V1Alpha;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedQuestionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateUserFeedback</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateUserFeedback()
         {
-            // Snippet: UpdateUserFeedback(UserFeedback, FieldMask, CallSettings)
             // Create client
             QuestionServiceClient questionServiceClient = QuestionServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.DataQnA.V1Alpha.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             UserFeedback response = questionServiceClient.UpdateUserFeedback(userFeedback, updateMask);
-            // End snippet
         }
     }
 }

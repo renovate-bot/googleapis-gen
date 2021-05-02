@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
+
     public sealed partial class GeneratedEntityTypesClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateEntityType</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateEntityType2()
         {
-            // Snippet: UpdateEntityType(EntityType, string, CallSettings)
             // Create client
             EntityTypesClient entityTypesClient = EntityTypesClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             string languageCode = "";
             // Make the request
             EntityType response = entityTypesClient.UpdateEntityType(entityType, languageCode);
-            // End snippet
         }
     }
 }

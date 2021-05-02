@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedGroupPlacementViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGroupPlacementView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetGroupPlacementViewResourceNames()
         {
-            // Snippet: GetGroupPlacementView(GroupPlacementViewName, CallSettings)
             // Create client
             GroupPlacementViewServiceClient groupPlacementViewServiceClient = GroupPlacementViewServiceClient.Create();
             // Initialize request argument(s)
             GroupPlacementViewName resourceName = GroupPlacementViewName.FromCustomerGroupPlacementView("[CUSTOMER]", "[GROUP_PLACEMENT_VIEW]");
             // Make the request
             GroupPlacementView response = groupPlacementViewServiceClient.GetGroupPlacementView(resourceName);
-            // End snippet
         }
     }
 }

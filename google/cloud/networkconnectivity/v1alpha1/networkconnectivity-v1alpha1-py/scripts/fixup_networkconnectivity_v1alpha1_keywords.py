@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,16 +41,17 @@ def partition(
 class networkconnectivityCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_hub': ('parent', 'hub', 'hub_id', 'request_id', ),
-          'create_spoke': ('parent', 'spoke', 'spoke_id', 'request_id', ),
-          'delete_hub': ('name', 'request_id', ),
-          'delete_spoke': ('name', 'request_id', ),
-          'get_hub': ('name', ),
-          'get_spoke': ('name', ),
-          'list_hubs': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'list_spokes': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'update_hub': ('hub', 'update_mask', 'request_id', ),
-          'update_spoke': ('spoke', 'update_mask', 'request_id', ),
+    'create_hub': ('parent', 'hub', 'hub_id', 'request_id', ),
+    'create_spoke': ('parent', 'spoke', 'spoke_id', 'request_id', ),
+    'delete_hub': ('name', 'request_id', ),
+    'delete_spoke': ('name', 'request_id', ),
+    'get_hub': ('name', ),
+    'get_spoke': ('name', ),
+    'list_hubs': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+    'list_spokes': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+    'update_hub': ('hub', 'update_mask', 'request_id', ),
+    'update_spoke': ('spoke', 'update_mask', 'request_id', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -79,7 +82,7 @@ class networkconnectivityCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

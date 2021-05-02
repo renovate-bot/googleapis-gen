@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.TextToSpeech.V1.Snippets
 {
+    using Google.Cloud.TextToSpeech.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTextToSpeechClientStandaloneSnippets
     {
         /// <summary>Snippet for SynthesizeSpeechAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SynthesizeSpeechAsync()
         {
-            // Snippet: SynthesizeSpeechAsync(SynthesisInput, VoiceSelectionParams, AudioConfig, CallSettings)
-            // Additional: SynthesizeSpeechAsync(SynthesisInput, VoiceSelectionParams, AudioConfig, CancellationToken)
             // Create client
             TextToSpeechClient textToSpeechClient = await TextToSpeechClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.TextToSpeech.V1.Snippets
             AudioConfig audioConfig = new AudioConfig();
             // Make the request
             SynthesizeSpeechResponse response = await textToSpeechClient.SynthesizeSpeechAsync(input, voice, audioConfig);
-            // End snippet
         }
     }
 }

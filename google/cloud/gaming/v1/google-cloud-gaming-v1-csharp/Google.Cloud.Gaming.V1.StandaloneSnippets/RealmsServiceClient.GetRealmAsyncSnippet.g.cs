@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Gaming.V1.Snippets
 {
+    using Google.Cloud.Gaming.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRealmsServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetRealmAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetRealmAsync()
         {
-            // Snippet: GetRealmAsync(string, CallSettings)
-            // Additional: GetRealmAsync(string, CancellationToken)
             // Create client
             RealmsServiceClient realmsServiceClient = await RealmsServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/locations/[LOCATION]/realms/[REALM]";
             // Make the request
             Realm response = await realmsServiceClient.GetRealmAsync(name);
-            // End snippet
         }
     }
 }

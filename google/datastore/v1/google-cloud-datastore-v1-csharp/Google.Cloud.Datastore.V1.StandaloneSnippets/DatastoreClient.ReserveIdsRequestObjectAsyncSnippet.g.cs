@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Datastore.V1.Snippets
 {
+    using Google.Cloud.Datastore.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDatastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for ReserveIdsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ReserveIdsRequestObjectAsync()
         {
-            // Snippet: ReserveIdsAsync(ReserveIdsRequest, CallSettings)
-            // Additional: ReserveIdsAsync(ReserveIdsRequest, CancellationToken)
             // Create client
             DatastoreClient datastoreClient = await DatastoreClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Cloud.Datastore.V1.Snippets
             };
             // Make the request
             ReserveIdsResponse response = await datastoreClient.ReserveIdsAsync(request);
-            // End snippet
         }
     }
 }

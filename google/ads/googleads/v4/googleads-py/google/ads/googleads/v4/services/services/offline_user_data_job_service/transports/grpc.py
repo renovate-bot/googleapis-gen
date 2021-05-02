@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
 from typing import Callable, Dict, Optional, Sequence, Tuple
 
@@ -28,6 +30,7 @@ import grpc  # type: ignore
 from google.ads.googleads.v4.resources.types import offline_user_data_job
 from google.ads.googleads.v4.services.types import offline_user_data_job_service
 from google.longrunning import operations_pb2 as operations  # type: ignore
+
 from .base import OfflineUserDataJobServiceTransport, DEFAULT_CLIENT_INFO
 
 
@@ -58,8 +61,7 @@ class OfflineUserDataJobServiceGrpcTransport(OfflineUserDataJobServiceTransport)
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -219,9 +221,7 @@ class OfflineUserDataJobServiceGrpcTransport(OfflineUserDataJobServiceTransport)
     def create_offline_user_data_job(self) -> Callable[
             [offline_user_data_job_service.CreateOfflineUserDataJobRequest],
             offline_user_data_job_service.CreateOfflineUserDataJobResponse]:
-        r"""Return a callable for the
-        create offline user data job
-          method over gRPC.
+        r"""Return a callable for the create offline user data job method over gRPC.
 
         Creates an offline user data job.
 
@@ -247,9 +247,7 @@ class OfflineUserDataJobServiceGrpcTransport(OfflineUserDataJobServiceTransport)
     def get_offline_user_data_job(self) -> Callable[
             [offline_user_data_job_service.GetOfflineUserDataJobRequest],
             offline_user_data_job.OfflineUserDataJob]:
-        r"""Return a callable for the
-        get offline user data job
-          method over gRPC.
+        r"""Return a callable for the get offline user data job method over gRPC.
 
         Returns the offline user data job.
 
@@ -275,10 +273,8 @@ class OfflineUserDataJobServiceGrpcTransport(OfflineUserDataJobServiceTransport)
     def add_offline_user_data_job_operations(self) -> Callable[
             [offline_user_data_job_service.AddOfflineUserDataJobOperationsRequest],
             offline_user_data_job_service.AddOfflineUserDataJobOperationsResponse]:
-        r"""Return a callable for the
-        add offline user data job
-        operations
-          method over gRPC.
+        r"""Return a callable for the add offline user data job
+        operations method over gRPC.
 
         Adds operations to the offline user data job.
 
@@ -304,9 +300,7 @@ class OfflineUserDataJobServiceGrpcTransport(OfflineUserDataJobServiceTransport)
     def run_offline_user_data_job(self) -> Callable[
             [offline_user_data_job_service.RunOfflineUserDataJobRequest],
             operations.Operation]:
-        r"""Return a callable for the
-        run offline user data job
-          method over gRPC.
+        r"""Return a callable for the run offline user data job method over gRPC.
 
         Runs the offline user data job.
         When finished, the long running operation will contain

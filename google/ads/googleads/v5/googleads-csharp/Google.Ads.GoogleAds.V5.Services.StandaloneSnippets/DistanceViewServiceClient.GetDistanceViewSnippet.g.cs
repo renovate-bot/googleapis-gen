@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedDistanceViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetDistanceView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetDistanceView()
         {
-            // Snippet: GetDistanceView(string, CallSettings)
             // Create client
             DistanceViewServiceClient distanceViewServiceClient = DistanceViewServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/distanceViews/[DISTANCE_VIEW]";
             // Make the request
             DistanceView response = distanceViewServiceClient.GetDistanceView(resourceName);
-            // End snippet
         }
     }
 }

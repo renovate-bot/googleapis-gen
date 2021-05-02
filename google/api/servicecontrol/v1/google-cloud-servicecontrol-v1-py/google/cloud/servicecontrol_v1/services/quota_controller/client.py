@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -32,6 +34,7 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.cloud.servicecontrol_v1.types import metric_value
 from google.cloud.servicecontrol_v1.types import quota_controller
+
 from .transports.base import QuotaControllerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import QuotaControllerGrpcTransport
 from .transports.grpc_asyncio import QuotaControllerGrpcAsyncIOTransport
@@ -337,9 +340,9 @@ class QuotaControllerClient(metaclass=QuotaControllerClientMeta):
 
         Args:
             request (google.cloud.servicecontrol_v1.types.AllocateQuotaRequest):
-                The request object.
-                Request message for the
+                The request object. Request message for the
                 AllocateQuota method.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -353,6 +356,7 @@ class QuotaControllerClient(metaclass=QuotaControllerClientMeta):
 
         """
         # Create or coerce a protobuf request object.
+
         # Minor optimization to avoid making a copy if the user passes
         # in a quota_controller.AllocateQuotaRequest.
         # There's no risk of modifying the input as we've already verified
@@ -374,6 +378,8 @@ class QuotaControllerClient(metaclass=QuotaControllerClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

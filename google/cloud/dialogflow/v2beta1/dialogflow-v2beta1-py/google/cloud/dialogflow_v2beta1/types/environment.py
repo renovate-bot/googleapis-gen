@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -89,26 +92,17 @@ class Environment(proto.Message):
         LOADING = 2
         RUNNING = 3
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    agent_version = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    state = proto.Field(
-        proto.ENUM,
-        number=4,
+    name = proto.Field(proto.STRING, number=1)
+
+    description = proto.Field(proto.STRING, number=2)
+
+    agent_version = proto.Field(proto.STRING, number=3)
+
+    state = proto.Field(proto.ENUM, number=4,
         enum=State,
     )
-    update_time = proto.Field(
-        proto.MESSAGE,
-        number=5,
+
+    update_time = proto.Field(proto.MESSAGE, number=5,
         message=timestamp.Timestamp,
     )
 
@@ -132,18 +126,11 @@ class ListEnvironmentsRequest(proto.Message):
             list request.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
 
 
 class ListEnvironmentsResponse(proto.Message):
@@ -165,15 +152,11 @@ class ListEnvironmentsResponse(proto.Message):
     def raw_page(self):
         return self
 
-    environments = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    environments = proto.RepeatedField(proto.MESSAGE, number=1,
         message='Environment',
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

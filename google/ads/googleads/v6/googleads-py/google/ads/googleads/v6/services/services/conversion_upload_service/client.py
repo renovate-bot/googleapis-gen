@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -32,6 +34,7 @@ from google.oauth2 import service_account                         # type: ignore
 
 from google.ads.googleads.v6.services.types import conversion_upload_service
 from google.rpc import status_pb2 as status  # type: ignore
+
 from .transports.base import ConversionUploadServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ConversionUploadServiceGrpcTransport
 
@@ -324,8 +327,7 @@ class ConversionUploadServiceClient(metaclass=ConversionUploadServiceClientMeta)
 
         Args:
             request (:class:`google.ads.googleads.v6.services.types.UploadClickConversionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ConversionUploadService.UploadClickConversions][google.ads.googleads.v6.services.ConversionUploadService.UploadClickConversions].
             customer_id (:class:`str`):
                 Required. The ID of the customer
@@ -358,6 +360,7 @@ class ConversionUploadServiceClient(metaclass=ConversionUploadServiceClientMeta)
                 This corresponds to the ``partial_failure`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -377,14 +380,16 @@ class ConversionUploadServiceClient(metaclass=ConversionUploadServiceClientMeta)
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a conversion_upload_service.UploadClickConversionsRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, conversion_upload_service.UploadClickConversionsRequest):
             request = conversion_upload_service.UploadClickConversionsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if customer_id is not None:
                 request.customer_id = customer_id
             if conversions is not None:
@@ -407,7 +412,7 @@ class ConversionUploadServiceClient(metaclass=ConversionUploadServiceClientMeta)
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -429,8 +434,7 @@ class ConversionUploadServiceClient(metaclass=ConversionUploadServiceClientMeta)
 
         Args:
             request (:class:`google.ads.googleads.v6.services.types.UploadCallConversionsRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ConversionUploadService.UploadCallConversions][google.ads.googleads.v6.services.ConversionUploadService.UploadCallConversions].
             customer_id (:class:`str`):
                 Required. The ID of the customer
@@ -463,6 +467,7 @@ class ConversionUploadServiceClient(metaclass=ConversionUploadServiceClientMeta)
                 This corresponds to the ``partial_failure`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -482,14 +487,16 @@ class ConversionUploadServiceClient(metaclass=ConversionUploadServiceClientMeta)
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a conversion_upload_service.UploadCallConversionsRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, conversion_upload_service.UploadCallConversionsRequest):
             request = conversion_upload_service.UploadCallConversionsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if customer_id is not None:
                 request.customer_id = customer_id
             if conversions is not None:
@@ -512,7 +519,7 @@ class ConversionUploadServiceClient(metaclass=ConversionUploadServiceClientMeta)
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

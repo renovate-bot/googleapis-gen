@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -33,6 +35,7 @@ from google.cloud.dialogflowcx_v3beta1.types import test_case
 from google.cloud.dialogflowcx_v3beta1.types import test_case as gcdc_test_case
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import TestCasesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import TestCasesGrpcAsyncIOTransport
 from .client import TestCasesClient
@@ -69,14 +72,19 @@ class TestCasesAsyncClient:
     parse_transition_route_group_path = staticmethod(TestCasesClient.parse_transition_route_group_path)
     webhook_path = staticmethod(TestCasesClient.webhook_path)
     parse_webhook_path = staticmethod(TestCasesClient.parse_webhook_path)
+
     common_billing_account_path = staticmethod(TestCasesClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(TestCasesClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(TestCasesClient.common_folder_path)
     parse_common_folder_path = staticmethod(TestCasesClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(TestCasesClient.common_organization_path)
     parse_common_organization_path = staticmethod(TestCasesClient.parse_common_organization_path)
+
     common_project_path = staticmethod(TestCasesClient.common_project_path)
     parse_common_project_path = staticmethod(TestCasesClient.parse_common_project_path)
+
     common_location_path = staticmethod(TestCasesClient.common_location_path)
     parse_common_location_path = staticmethod(TestCasesClient.parse_common_location_path)
 
@@ -161,6 +169,7 @@ class TestCasesAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = TestCasesClient(
             credentials=credentials,
             transport=transport,
@@ -181,8 +190,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.ListTestCasesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.ListTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.ListTestCases].
             parent (:class:`str`):
                 Required. The agent to list all pages for. Format:
@@ -191,6 +199,7 @@ class TestCasesAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -218,6 +227,7 @@ class TestCasesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -269,8 +279,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.BatchDeleteTestCasesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.BatchDeleteTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.BatchDeleteTestCases].
             parent (:class:`str`):
                 Required. The agent to delete test cases from. Format:
@@ -279,6 +288,7 @@ class TestCasesAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -297,6 +307,7 @@ class TestCasesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -336,8 +347,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.GetTestCaseRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.GetTestCase][google.cloud.dialogflow.cx.v3beta1.TestCases.GetTestCase].
             name (:class:`str`):
                 Required. The name of the testcase. Format:
@@ -346,6 +356,7 @@ class TestCasesAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -368,6 +379,7 @@ class TestCasesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -411,8 +423,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.CreateTestCaseRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.CreateTestCase][google.cloud.dialogflow.cx.v3beta1.TestCases.CreateTestCase].
             parent (:class:`str`):
                 Required. The agent to create the test case for. Format:
@@ -426,6 +437,7 @@ class TestCasesAsyncClient:
                 This corresponds to the ``test_case`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -448,6 +460,7 @@ class TestCasesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if test_case is not None:
@@ -493,8 +506,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.UpdateTestCaseRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.UpdateTestCase][google.cloud.dialogflow.cx.v3beta1.TestCases.UpdateTestCase].
             test_case (:class:`google.cloud.dialogflowcx_v3beta1.types.TestCase`):
                 Required. The test case to update.
@@ -512,6 +524,7 @@ class TestCasesAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -534,6 +547,7 @@ class TestCasesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if test_case is not None:
             request.test_case = test_case
         if update_mask is not None:
@@ -577,9 +591,9 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.RunTestCaseRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.RunTestCase][google.cloud.dialogflow.cx.v3beta1.TestCases.RunTestCase].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -597,6 +611,7 @@ class TestCasesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = test_case.RunTestCaseRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -645,9 +660,9 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.BatchRunTestCasesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.BatchRunTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.BatchRunTestCases].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -665,6 +680,7 @@ class TestCasesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = test_case.BatchRunTestCasesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -713,9 +729,9 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.CalculateCoverageRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.CalculateCoverage][google.cloud.dialogflow.cx.v3beta1.TestCases.CalculateCoverage].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -729,6 +745,7 @@ class TestCasesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = test_case.CalculateCoverageRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -772,9 +789,9 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.ImportTestCasesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.ImportTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.ImportTestCases].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -792,6 +809,7 @@ class TestCasesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = test_case.ImportTestCasesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -842,9 +860,9 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.ExportTestCasesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.ExportTestCases][google.cloud.dialogflow.cx.v3beta1.TestCases.ExportTestCases].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -862,6 +880,7 @@ class TestCasesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = test_case.ExportTestCasesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -911,8 +930,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.ListTestCaseResultsRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.ListTestCaseResults][google.cloud.dialogflow.cx.v3beta1.TestCases.ListTestCaseResults].
             parent (:class:`str`):
                 Required. The test case to list results for. Format:
@@ -923,6 +941,7 @@ class TestCasesAsyncClient:
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -950,6 +969,7 @@ class TestCasesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
 
@@ -1001,8 +1021,7 @@ class TestCasesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflowcx_v3beta1.types.GetTestCaseResultRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [TestCases.GetTestCaseResult][google.cloud.dialogflow.cx.v3beta1.TestCases.GetTestCaseResult].
             name (:class:`str`):
                 Required. The name of the testcase. Format:
@@ -1011,6 +1030,7 @@ class TestCasesAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1035,6 +1055,7 @@ class TestCasesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -1064,6 +1085,8 @@ class TestCasesAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

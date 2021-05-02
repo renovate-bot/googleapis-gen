@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCustomerNegativeCriterionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomerNegativeCriterionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCustomerNegativeCriterionResourceNamesAsync()
         {
-            // Snippet: GetCustomerNegativeCriterionAsync(CustomerNegativeCriterionName, CallSettings)
-            // Additional: GetCustomerNegativeCriterionAsync(CustomerNegativeCriterionName, CancellationToken)
             // Create client
             CustomerNegativeCriterionServiceClient customerNegativeCriterionServiceClient = await CustomerNegativeCriterionServiceClient.CreateAsync();
             // Initialize request argument(s)
             CustomerNegativeCriterionName resourceName = CustomerNegativeCriterionName.FromCustomerCustomerNegativeCriterion("[CUSTOMER]", "[CUSTOMER_NEGATIVE_CRITERION]");
             // Make the request
             CustomerNegativeCriterion response = await customerNegativeCriterionServiceClient.GetCustomerNegativeCriterionAsync(resourceName);
-            // End snippet
         }
     }
 }

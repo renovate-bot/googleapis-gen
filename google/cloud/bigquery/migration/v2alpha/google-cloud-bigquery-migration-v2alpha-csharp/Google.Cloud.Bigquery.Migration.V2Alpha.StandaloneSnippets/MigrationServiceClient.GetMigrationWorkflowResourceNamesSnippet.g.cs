@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Bigquery.Migration.V2Alpha.Snippets
 {
+    using Google.Cloud.Bigquery.Migration.V2Alpha;
+
     public sealed partial class GeneratedMigrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMigrationWorkflow</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetMigrationWorkflowResourceNames()
         {
-            // Snippet: GetMigrationWorkflow(MigrationWorkflowName, CallSettings)
             // Create client
             MigrationServiceClient migrationServiceClient = MigrationServiceClient.Create();
             // Initialize request argument(s)
             MigrationWorkflowName name = MigrationWorkflowName.FromProjectLocationWorkflow("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
             // Make the request
             MigrationWorkflow response = migrationServiceClient.GetMigrationWorkflow(name);
-            // End snippet
         }
     }
 }

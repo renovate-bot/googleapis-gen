@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -64,25 +66,10 @@ class AdParameter(proto.Message):
             valid.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    ad_group_criterion = proto.Field(
-        proto.STRING,
-        number=5,
-        optional=True,
-    )
-    parameter_index = proto.Field(
-        proto.INT64,
-        number=6,
-        optional=True,
-    )
-    insertion_text = proto.Field(
-        proto.STRING,
-        number=7,
-        optional=True,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
+    ad_group_criterion = proto.Field(proto.STRING, number=5, optional=True)
+    parameter_index = proto.Field(proto.INT64, number=6, optional=True)
+    insertion_text = proto.Field(proto.STRING, number=7, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

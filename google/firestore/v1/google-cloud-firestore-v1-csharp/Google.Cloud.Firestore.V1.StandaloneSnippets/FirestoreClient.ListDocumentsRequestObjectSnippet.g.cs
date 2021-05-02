@@ -17,16 +17,19 @@
 namespace Google.Cloud.Firestore.V1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Firestore.V1;
     using Google.Protobuf;
-    using Google.Protobuf.WellKnownTypes;
     using System;
 
     public sealed partial class GeneratedFirestoreClientStandaloneSnippets
     {
         /// <summary>Snippet for ListDocuments</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListDocumentsRequestObject()
         {
-            // Snippet: ListDocuments(ListDocumentsRequest, CallSettings)
             // Create client
             FirestoreClient firestoreClient = FirestoreClient.Create();
             // Initialize request argument(s)
@@ -37,7 +40,6 @@ namespace Google.Cloud.Firestore.V1.Snippets
                 OrderBy = "",
                 Mask = new DocumentMask(),
                 Transaction = ByteString.Empty,
-                ReadTime = new Timestamp(),
                 ShowMissing = false,
             };
             // Make the request
@@ -74,7 +76,6 @@ namespace Google.Cloud.Firestore.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

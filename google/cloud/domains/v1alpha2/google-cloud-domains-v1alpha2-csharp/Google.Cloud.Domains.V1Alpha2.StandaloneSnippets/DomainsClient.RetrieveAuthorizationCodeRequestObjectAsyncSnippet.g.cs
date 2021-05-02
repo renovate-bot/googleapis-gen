@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Domains.V1Alpha2.Snippets
 {
+    using Google.Cloud.Domains.V1Alpha2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDomainsClientStandaloneSnippets
     {
         /// <summary>Snippet for RetrieveAuthorizationCodeAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task RetrieveAuthorizationCodeRequestObjectAsync()
         {
-            // Snippet: RetrieveAuthorizationCodeAsync(RetrieveAuthorizationCodeRequest, CallSettings)
-            // Additional: RetrieveAuthorizationCodeAsync(RetrieveAuthorizationCodeRequest, CancellationToken)
             // Create client
             DomainsClient domainsClient = await DomainsClient.CreateAsync();
             // Initialize request argument(s)
@@ -34,7 +37,6 @@ namespace Google.Cloud.Domains.V1Alpha2.Snippets
             };
             // Make the request
             AuthorizationCode response = await domainsClient.RetrieveAuthorizationCodeAsync(request);
-            // End snippet
         }
     }
 }

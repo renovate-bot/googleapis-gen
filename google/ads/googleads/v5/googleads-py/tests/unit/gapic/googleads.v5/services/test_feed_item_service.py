@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 from unittest import mock
 
@@ -282,20 +284,29 @@ def test_get_feed_item(transport: str = 'grpc', request_type=feed_item_service.G
         # Designate an appropriate return value for the call.
         call.return_value = feed_item.FeedItem(
             resource_name='resource_name_value',
+
             geo_targeting_restriction=geo_targeting_restriction.GeoTargetingRestrictionEnum.GeoTargetingRestriction.UNKNOWN,
+
             status=feed_item_status.FeedItemStatusEnum.FeedItemStatus.UNKNOWN,
+
         )
+
         response = client.get_feed_item(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == feed_item_service.GetFeedItemRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, feed_item.FeedItem)
+
     assert response.resource_name == 'resource_name_value'
+
     assert response.geo_targeting_restriction == geo_targeting_restriction.GeoTargetingRestrictionEnum.GeoTargetingRestriction.UNKNOWN
+
     assert response.status == feed_item_status.FeedItemStatusEnum.FeedItemStatus.UNKNOWN
 
 
@@ -311,7 +322,6 @@ def test_get_feed_item_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = feed_item_service.GetFeedItemRequest()
-
     request.resource_name = 'resource_name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -319,6 +329,7 @@ def test_get_feed_item_field_headers():
             type(client.transport.get_feed_item),
             '__call__') as call:
         call.return_value = feed_item.FeedItem()
+
         client.get_feed_item(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -345,6 +356,7 @@ def test_get_feed_item_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = feed_item.FeedItem()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_feed_item(
@@ -355,6 +367,7 @@ def test_get_feed_item_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].resource_name == 'resource_name_value'
 
 
@@ -389,14 +402,17 @@ def test_mutate_feed_items(transport: str = 'grpc', request_type=feed_item_servi
         # Designate an appropriate return value for the call.
         call.return_value = feed_item_service.MutateFeedItemsResponse(
         )
+
         response = client.mutate_feed_items(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == feed_item_service.MutateFeedItemsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, feed_item_service.MutateFeedItemsResponse)
 
 
@@ -412,7 +428,6 @@ def test_mutate_feed_items_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = feed_item_service.MutateFeedItemsRequest()
-
     request.customer_id = 'customer_id/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -420,6 +435,7 @@ def test_mutate_feed_items_field_headers():
             type(client.transport.mutate_feed_items),
             '__call__') as call:
         call.return_value = feed_item_service.MutateFeedItemsResponse()
+
         client.mutate_feed_items(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -446,6 +462,7 @@ def test_mutate_feed_items_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = feed_item_service.MutateFeedItemsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.mutate_feed_items(
@@ -457,7 +474,9 @@ def test_mutate_feed_items_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].customer_id == 'customer_id_value'
+
         assert args[0].operations == [feed_item_service.FeedItemOperation(update_mask=field_mask.FieldMask(paths=['paths_value']))]
 
 
@@ -540,7 +559,7 @@ def test_feed_item_service_base_transport():
     methods = (
         'get_feed_item',
         'mutate_feed_items',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
@@ -692,6 +711,7 @@ def test_feed_item_service_transport_channel_mtls_with_adc(
 def test_feed_path():
     customer = "squid"
     feed = "clam"
+
     expected = "customers/{customer}/feeds/{feed}".format(customer=customer, feed=feed, )
     actual = FeedItemServiceClient.feed_path(customer, feed)
     assert expected == actual
@@ -699,8 +719,9 @@ def test_feed_path():
 
 def test_parse_feed_path():
     expected = {
-        "customer": "whelk",
-        "feed": "octopus",
+    "customer": "whelk",
+    "feed": "octopus",
+
     }
     path = FeedItemServiceClient.feed_path(**expected)
 
@@ -711,6 +732,7 @@ def test_parse_feed_path():
 def test_feed_item_path():
     customer = "oyster"
     feed_item = "nudibranch"
+
     expected = "customers/{customer}/feedItems/{feed_item}".format(customer=customer, feed_item=feed_item, )
     actual = FeedItemServiceClient.feed_item_path(customer, feed_item)
     assert expected == actual
@@ -718,8 +740,9 @@ def test_feed_item_path():
 
 def test_parse_feed_item_path():
     expected = {
-        "customer": "cuttlefish",
-        "feed_item": "mussel",
+    "customer": "cuttlefish",
+    "feed_item": "mussel",
+
     }
     path = FeedItemServiceClient.feed_item_path(**expected)
 
@@ -729,6 +752,7 @@ def test_parse_feed_item_path():
 
 def test_common_billing_account_path():
     billing_account = "winkle"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = FeedItemServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -736,7 +760,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nautilus",
+    "billing_account": "nautilus",
+
     }
     path = FeedItemServiceClient.common_billing_account_path(**expected)
 
@@ -746,6 +771,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "scallop"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = FeedItemServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -753,7 +779,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "abalone",
+    "folder": "abalone",
+
     }
     path = FeedItemServiceClient.common_folder_path(**expected)
 
@@ -763,6 +790,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "squid"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = FeedItemServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -770,7 +798,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "clam",
+    "organization": "clam",
+
     }
     path = FeedItemServiceClient.common_organization_path(**expected)
 
@@ -780,6 +809,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "whelk"
+
     expected = "projects/{project}".format(project=project, )
     actual = FeedItemServiceClient.common_project_path(project)
     assert expected == actual
@@ -787,7 +817,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "octopus",
+    "project": "octopus",
+
     }
     path = FeedItemServiceClient.common_project_path(**expected)
 
@@ -798,6 +829,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "oyster"
     location = "nudibranch"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = FeedItemServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -805,8 +837,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "cuttlefish",
-        "location": "mussel",
+    "project": "cuttlefish",
+    "location": "mussel",
+
     }
     path = FeedItemServiceClient.common_location_path(**expected)
 

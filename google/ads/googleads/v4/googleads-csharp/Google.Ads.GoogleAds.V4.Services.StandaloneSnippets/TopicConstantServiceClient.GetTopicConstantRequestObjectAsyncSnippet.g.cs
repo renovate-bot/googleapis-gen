@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
     using Google.Ads.GoogleAds.V4.Resources;
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTopicConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTopicConstantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTopicConstantRequestObjectAsync()
         {
-            // Snippet: GetTopicConstantAsync(GetTopicConstantRequest, CallSettings)
-            // Additional: GetTopicConstantAsync(GetTopicConstantRequest, CancellationToken)
             // Create client
             TopicConstantServiceClient topicConstantServiceClient = await TopicConstantServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             TopicConstant response = await topicConstantServiceClient.GetTopicConstantAsync(request);
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -26,6 +28,7 @@ import grpc  # type: ignore
 
 from google.ads.admob_v1.types import admob_api
 from google.ads.admob_v1.types import admob_resources
+
 from .base import AdMobApiTransport, DEFAULT_CLIENT_INFO
 
 
@@ -60,8 +63,7 @@ class AdMobApiGrpcTransport(AdMobApiTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -200,15 +202,13 @@ class AdMobApiGrpcTransport(AdMobApiTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -222,9 +222,7 @@ class AdMobApiGrpcTransport(AdMobApiTransport):
     def get_publisher_account(self) -> Callable[
             [admob_api.GetPublisherAccountRequest],
             admob_resources.PublisherAccount]:
-        r"""Return a callable for the
-        get publisher account
-          method over gRPC.
+        r"""Return a callable for the get publisher account method over gRPC.
 
         Gets information about the specified AdMob publisher
         account.
@@ -251,9 +249,7 @@ class AdMobApiGrpcTransport(AdMobApiTransport):
     def list_publisher_accounts(self) -> Callable[
             [admob_api.ListPublisherAccountsRequest],
             admob_api.ListPublisherAccountsResponse]:
-        r"""Return a callable for the
-        list publisher accounts
-          method over gRPC.
+        r"""Return a callable for the list publisher accounts method over gRPC.
 
         Lists the AdMob publisher account accessible with the
         client credential. Currently, all credentials have
@@ -281,9 +277,7 @@ class AdMobApiGrpcTransport(AdMobApiTransport):
     def generate_network_report(self) -> Callable[
             [admob_api.GenerateNetworkReportRequest],
             admob_api.GenerateNetworkReportResponse]:
-        r"""Return a callable for the
-        generate network report
-          method over gRPC.
+        r"""Return a callable for the generate network report method over gRPC.
 
         Generates an AdMob Network report based on the
         provided report specification.
@@ -310,9 +304,7 @@ class AdMobApiGrpcTransport(AdMobApiTransport):
     def generate_mediation_report(self) -> Callable[
             [admob_api.GenerateMediationReportRequest],
             admob_api.GenerateMediationReportResponse]:
-        r"""Return a callable for the
-        generate mediation report
-          method over gRPC.
+        r"""Return a callable for the generate mediation report method over gRPC.
 
         Generates an AdMob Mediation report based on the
         provided report specification.

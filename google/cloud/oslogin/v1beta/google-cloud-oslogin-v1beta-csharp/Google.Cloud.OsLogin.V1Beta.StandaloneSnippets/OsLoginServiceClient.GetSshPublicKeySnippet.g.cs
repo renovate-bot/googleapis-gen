@@ -17,20 +17,23 @@
 namespace Google.Cloud.OsLogin.V1Beta.Snippets
 {
     using Google.Cloud.OsLogin.Common;
+    using Google.Cloud.OsLogin.V1Beta;
 
     public sealed partial class GeneratedOsLoginServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetSshPublicKey</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetSshPublicKey()
         {
-            // Snippet: GetSshPublicKey(string, CallSettings)
             // Create client
             OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.Create();
             // Initialize request argument(s)
             string name = "users/[USER]/sshPublicKeys/[FINGERPRINT]";
             // Make the request
             SshPublicKey response = osLoginServiceClient.GetSshPublicKey(name);
-            // End snippet
         }
     }
 }

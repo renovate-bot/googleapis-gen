@@ -16,12 +16,17 @@
 
 namespace Google.Api.Serviceusage.V1.Snippets
 {
+    using Google.Api.Serviceusage.V1;
+
     public sealed partial class GeneratedServiceUsageClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchGetServices</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void BatchGetServicesRequestObject()
         {
-            // Snippet: BatchGetServices(BatchGetServicesRequest, CallSettings)
             // Create client
             ServiceUsageClient serviceUsageClient = ServiceUsageClient.Create();
             // Initialize request argument(s)
@@ -32,7 +37,6 @@ namespace Google.Api.Serviceusage.V1.Snippets
             };
             // Make the request
             BatchGetServicesResponse response = serviceUsageClient.BatchGetServices(request);
-            // End snippet
         }
     }
 }

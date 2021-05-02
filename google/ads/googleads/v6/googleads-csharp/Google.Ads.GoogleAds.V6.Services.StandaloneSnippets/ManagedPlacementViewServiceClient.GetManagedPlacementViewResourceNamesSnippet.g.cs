@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedManagedPlacementViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetManagedPlacementView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetManagedPlacementViewResourceNames()
         {
-            // Snippet: GetManagedPlacementView(ManagedPlacementViewName, CallSettings)
             // Create client
             ManagedPlacementViewServiceClient managedPlacementViewServiceClient = ManagedPlacementViewServiceClient.Create();
             // Initialize request argument(s)
             ManagedPlacementViewName resourceName = ManagedPlacementViewName.FromCustomerAdGroupCriterion("[CUSTOMER_ID]", "[AD_GROUP_ID]", "[CRITERION_ID]");
             // Make the request
             ManagedPlacementView response = managedPlacementViewServiceClient.GetManagedPlacementView(resourceName);
-            // End snippet
         }
     }
 }

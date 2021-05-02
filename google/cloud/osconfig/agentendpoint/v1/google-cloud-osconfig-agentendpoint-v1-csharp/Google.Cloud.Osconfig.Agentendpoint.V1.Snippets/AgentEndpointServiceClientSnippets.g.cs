@@ -147,8 +147,6 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1.Snippets
                 TaskId = "",
                 TaskType = TaskType.Unspecified,
                 ApplyPatchesTaskProgress = new ApplyPatchesTaskProgress(),
-                ExecStepTaskProgress = new ExecStepTaskProgress(),
-                ApplyConfigTaskProgress = new ApplyConfigTaskProgress(),
             };
             // Make the request
             ReportTaskProgressResponse response = agentEndpointServiceClient.ReportTaskProgress(request);
@@ -169,8 +167,6 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1.Snippets
                 TaskId = "",
                 TaskType = TaskType.Unspecified,
                 ApplyPatchesTaskProgress = new ApplyPatchesTaskProgress(),
-                ExecStepTaskProgress = new ExecStepTaskProgress(),
-                ApplyConfigTaskProgress = new ApplyConfigTaskProgress(),
             };
             // Make the request
             ReportTaskProgressResponse response = await agentEndpointServiceClient.ReportTaskProgressAsync(request);
@@ -222,8 +218,6 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1.Snippets
                 TaskType = TaskType.Unspecified,
                 ErrorMessage = "",
                 ApplyPatchesTaskOutput = new ApplyPatchesTaskOutput(),
-                ExecStepTaskOutput = new ExecStepTaskOutput(),
-                ApplyConfigTaskOutput = new ApplyConfigTaskOutput(),
             };
             // Make the request
             ReportTaskCompleteResponse response = agentEndpointServiceClient.ReportTaskComplete(request);
@@ -245,8 +239,6 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1.Snippets
                 TaskType = TaskType.Unspecified,
                 ErrorMessage = "",
                 ApplyPatchesTaskOutput = new ApplyPatchesTaskOutput(),
-                ExecStepTaskOutput = new ExecStepTaskOutput(),
-                ApplyConfigTaskOutput = new ApplyConfigTaskOutput(),
             };
             // Make the request
             ReportTaskCompleteResponse response = await agentEndpointServiceClient.ReportTaskCompleteAsync(request);

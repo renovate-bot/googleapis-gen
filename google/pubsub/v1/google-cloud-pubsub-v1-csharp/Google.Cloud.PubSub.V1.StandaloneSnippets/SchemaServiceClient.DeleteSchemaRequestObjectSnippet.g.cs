@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.PubSub.V1.Snippets
 {
+    using Google.Cloud.PubSub.V1;
+
     public sealed partial class GeneratedSchemaServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteSchema</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteSchemaRequestObject()
         {
-            // Snippet: DeleteSchema(DeleteSchemaRequest, CallSettings)
             // Create client
             SchemaServiceClient schemaServiceClient = SchemaServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.PubSub.V1.Snippets
             };
             // Make the request
             schemaServiceClient.DeleteSchema(request);
-            // End snippet
         }
     }
 }

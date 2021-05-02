@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedOperatingSystemVersionConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetOperatingSystemVersionConstant</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetOperatingSystemVersionConstant()
         {
-            // Snippet: GetOperatingSystemVersionConstant(string, CallSettings)
             // Create client
             OperatingSystemVersionConstantServiceClient operatingSystemVersionConstantServiceClient = OperatingSystemVersionConstantServiceClient.Create();
             // Initialize request argument(s)
             string resourceName = "operatingSystemVersionConstants/[CRITERION_ID]";
             // Make the request
             OperatingSystemVersionConstant response = operatingSystemVersionConstantServiceClient.GetOperatingSystemVersionConstant(resourceName);
-            // End snippet
         }
     }
 }

@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.AppEngine.V1.Snippets
 {
+    using Google.Cloud.AppEngine.V1;
+
     public sealed partial class GeneratedFirewallClientStandaloneSnippets
     {
         /// <summary>Snippet for GetIngressRule</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetIngressRuleRequestObject()
         {
-            // Snippet: GetIngressRule(GetIngressRuleRequest, CallSettings)
             // Create client
             FirewallClient firewallClient = FirewallClient.Create();
             // Initialize request argument(s)
             GetIngressRuleRequest request = new GetIngressRuleRequest { Name = "", };
             // Make the request
             FirewallRule response = firewallClient.GetIngressRule(request);
-            // End snippet
         }
     }
 }

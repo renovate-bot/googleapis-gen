@@ -17,15 +17,19 @@
 namespace Google.Cloud.Dataproc.V1.Snippets
 {
     using Google.Api.Gax.ResourceNames;
+    using Google.Cloud.Dataproc.V1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedWorkflowTemplateServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for InstantiateInlineWorkflowTemplate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void InstantiateInlineWorkflowTemplateResourceNames2()
         {
-            // Snippet: InstantiateInlineWorkflowTemplate(LocationName, WorkflowTemplate, CallSettings)
             // Create client
             WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.Create();
             // Initialize request argument(s)
@@ -49,7 +53,6 @@ namespace Google.Cloud.Dataproc.V1.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

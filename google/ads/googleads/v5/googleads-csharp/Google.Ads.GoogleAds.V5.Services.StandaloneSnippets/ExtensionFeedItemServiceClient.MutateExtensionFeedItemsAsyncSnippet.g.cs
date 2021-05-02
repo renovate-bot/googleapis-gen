@@ -16,16 +16,19 @@
 
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedExtensionFeedItemServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateExtensionFeedItemsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task MutateExtensionFeedItemsAsync()
         {
-            // Snippet: MutateExtensionFeedItemsAsync(string, IEnumerable<ExtensionFeedItemOperation>, CallSettings)
-            // Additional: MutateExtensionFeedItemsAsync(string, IEnumerable<ExtensionFeedItemOperation>, CancellationToken)
             // Create client
             ExtensionFeedItemServiceClient extensionFeedItemServiceClient = await ExtensionFeedItemServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Ads.GoogleAds.V5.Services.Snippets
             };
             // Make the request
             MutateExtensionFeedItemsResponse response = await extensionFeedItemServiceClient.MutateExtensionFeedItemsAsync(customerId, operations);
-            // End snippet
         }
     }
 }

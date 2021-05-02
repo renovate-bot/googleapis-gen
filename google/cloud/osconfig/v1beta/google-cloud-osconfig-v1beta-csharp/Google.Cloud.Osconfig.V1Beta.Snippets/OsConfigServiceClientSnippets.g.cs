@@ -174,7 +174,7 @@ namespace Google.Cloud.Osconfig.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListPatchJobs</summary>
+        /// <summary>Snippet for ListPatchJobsAsync</summary>
         public async Task ListPatchJobsRequestObjectAsync()
         {
             // Snippet: ListPatchJobsAsync(ListPatchJobsRequest, CallSettings)
@@ -272,7 +272,7 @@ namespace Google.Cloud.Osconfig.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListPatchJobInstanceDetails</summary>
+        /// <summary>Snippet for ListPatchJobInstanceDetailsAsync</summary>
         public async Task ListPatchJobInstanceDetailsRequestObjectAsync()
         {
             // Snippet: ListPatchJobInstanceDetailsAsync(ListPatchJobInstanceDetailsRequest, CallSettings)
@@ -366,7 +366,7 @@ namespace Google.Cloud.Osconfig.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListPatchJobInstanceDetails</summary>
+        /// <summary>Snippet for ListPatchJobInstanceDetailsAsync</summary>
         public async Task ListPatchJobInstanceDetailsAsync()
         {
             // Snippet: ListPatchJobInstanceDetailsAsync(string, string, int?, CallSettings)
@@ -520,7 +520,7 @@ namespace Google.Cloud.Osconfig.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListPatchDeployments</summary>
+        /// <summary>Snippet for ListPatchDeploymentsAsync</summary>
         public async Task ListPatchDeploymentsRequestObjectAsync()
         {
             // Snippet: ListPatchDeploymentsAsync(ListPatchDeploymentsRequest, CallSettings)
@@ -822,7 +822,7 @@ namespace Google.Cloud.Osconfig.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListGuestPolicies</summary>
+        /// <summary>Snippet for ListGuestPoliciesAsync</summary>
         public async Task ListGuestPoliciesRequestObjectAsync()
         {
             // Snippet: ListGuestPoliciesAsync(ListGuestPoliciesRequest, CallSettings)
@@ -915,7 +915,7 @@ namespace Google.Cloud.Osconfig.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListGuestPolicies</summary>
+        /// <summary>Snippet for ListGuestPoliciesAsync</summary>
         public async Task ListGuestPoliciesAsync()
         {
             // Snippet: ListGuestPoliciesAsync(string, string, int?, CallSettings)
@@ -1005,7 +1005,7 @@ namespace Google.Cloud.Osconfig.V1Beta.Snippets
             // End snippet
         }
 
-        /// <summary>Snippet for ListGuestPolicies</summary>
+        /// <summary>Snippet for ListGuestPoliciesAsync</summary>
         public async Task ListGuestPoliciesResourceNamesAsync()
         {
             // Snippet: ListGuestPoliciesAsync(ProjectName, string, int?, CallSettings)

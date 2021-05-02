@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Security.PrivateCA.V1.Snippets
 {
+    using Google.Cloud.Security.PrivateCA.V1;
+
     public sealed partial class GeneratedCertificateAuthorityServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateCertificate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateCertificate()
         {
-            // Snippet: CreateCertificate(string, Certificate, string, CallSettings)
             // Create client
             CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             string certificateId = "";
             // Make the request
             Certificate response = certificateAuthorityServiceClient.CreateCertificate(parent, certificate, certificateId);
-            // End snippet
         }
     }
 }

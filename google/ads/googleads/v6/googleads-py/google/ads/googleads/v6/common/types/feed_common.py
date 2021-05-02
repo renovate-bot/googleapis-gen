@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -27,6 +29,7 @@ __protobuf__ = proto.module(
 
 class Money(proto.Message):
     r"""Represents a price in a particular currency.
+
     Attributes:
         currency_code (str):
             Three-character ISO 4217 currency code.
@@ -35,16 +38,8 @@ class Money(proto.Message):
             to one unit.
     """
 
-    currency_code = proto.Field(
-        proto.STRING,
-        number=3,
-        optional=True,
-    )
-    amount_micros = proto.Field(
-        proto.INT64,
-        number=4,
-        optional=True,
-    )
+    currency_code = proto.Field(proto.STRING, number=3, optional=True)
+    amount_micros = proto.Field(proto.INT64, number=4, optional=True)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

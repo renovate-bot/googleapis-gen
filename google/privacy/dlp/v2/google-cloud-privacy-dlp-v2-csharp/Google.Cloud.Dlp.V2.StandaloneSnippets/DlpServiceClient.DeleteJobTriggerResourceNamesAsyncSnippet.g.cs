@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteJobTriggerAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteJobTriggerResourceNamesAsync()
         {
-            // Snippet: DeleteJobTriggerAsync(JobTriggerName, CallSettings)
-            // Additional: DeleteJobTriggerAsync(JobTriggerName, CancellationToken)
             // Create client
             DlpServiceClient dlpServiceClient = await DlpServiceClient.CreateAsync();
             // Initialize request argument(s)
             JobTriggerName name = JobTriggerName.FromProjectJobTrigger("[PROJECT]", "[JOB_TRIGGER]");
             // Make the request
             await dlpServiceClient.DeleteJobTriggerAsync(name);
-            // End snippet
         }
     }
 }

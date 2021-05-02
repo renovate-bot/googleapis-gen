@@ -5,6 +5,7 @@ MigrationService
     :members:
     :inherited-members:
 
+
 .. automodule:: google.cloud.bigquery.migration_v2alpha.services.migration_service.pagers
     :members:
     :inherited-members:

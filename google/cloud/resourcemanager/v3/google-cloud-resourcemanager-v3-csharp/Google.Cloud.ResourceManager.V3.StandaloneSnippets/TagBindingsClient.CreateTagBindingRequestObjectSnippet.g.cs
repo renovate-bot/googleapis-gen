@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.ResourceManager.V3.Snippets
 {
+    using Google.Cloud.ResourceManager.V3;
     using Google.LongRunning;
 
     public sealed partial class GeneratedTagBindingsClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateTagBinding</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateTagBindingRequestObject()
         {
-            // Snippet: CreateTagBinding(CreateTagBindingRequest, CallSettings)
             // Create client
             TagBindingsClient tagBindingsClient = TagBindingsClient.Create();
             // Initialize request argument(s)
@@ -50,7 +54,6 @@ namespace Google.Cloud.ResourceManager.V3.Snippets
                 // If it has completed, then access the result
                 TagBinding retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

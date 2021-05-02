@@ -16,14 +16,18 @@
 
 namespace Google.Ads.GoogleAds.V4.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V4.Services;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedCustomInterestServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateCustomInterests</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateCustomInterests()
         {
-            // Snippet: MutateCustomInterests(string, IEnumerable<CustomInterestOperation>, CallSettings)
             // Create client
             CustomInterestServiceClient customInterestServiceClient = CustomInterestServiceClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Ads.GoogleAds.V4.Services.Snippets
             };
             // Make the request
             MutateCustomInterestsResponse response = customInterestServiceClient.MutateCustomInterests(customerId, operations);
-            // End snippet
         }
     }
 }

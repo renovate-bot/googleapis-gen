@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import grpc_helpers   # type: ignore
 from google.api_core import gapic_v1       # type: ignore
@@ -27,6 +29,7 @@ import grpc  # type: ignore
 from google.cloud.dialogflow_v2beta1.types import context
 from google.cloud.dialogflow_v2beta1.types import context as gcd_context
 from google.protobuf import empty_pb2 as empty  # type: ignore
+
 from .base import ContextsTransport, DEFAULT_CLIENT_INFO
 
 
@@ -61,8 +64,7 @@ class ContextsGrpcTransport(ContextsTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -201,15 +203,13 @@ class ContextsGrpcTransport(ContextsTransport):
             google.api_core.exceptions.DuplicateCredentialArgs: If both ``credentials``
               and ``credentials_file`` are passed.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -223,9 +223,7 @@ class ContextsGrpcTransport(ContextsTransport):
     def list_contexts(self) -> Callable[
             [context.ListContextsRequest],
             context.ListContextsResponse]:
-        r"""Return a callable for the
-        list contexts
-          method over gRPC.
+        r"""Return a callable for the list contexts method over gRPC.
 
         Returns the list of all contexts in the specified
         session.
@@ -252,9 +250,7 @@ class ContextsGrpcTransport(ContextsTransport):
     def get_context(self) -> Callable[
             [context.GetContextRequest],
             context.Context]:
-        r"""Return a callable for the
-        get context
-          method over gRPC.
+        r"""Return a callable for the get context method over gRPC.
 
         Retrieves the specified context.
 
@@ -280,9 +276,7 @@ class ContextsGrpcTransport(ContextsTransport):
     def create_context(self) -> Callable[
             [gcd_context.CreateContextRequest],
             gcd_context.Context]:
-        r"""Return a callable for the
-        create context
-          method over gRPC.
+        r"""Return a callable for the create context method over gRPC.
 
         Creates a context.
         If the specified context already exists, overrides the
@@ -310,9 +304,7 @@ class ContextsGrpcTransport(ContextsTransport):
     def update_context(self) -> Callable[
             [gcd_context.UpdateContextRequest],
             gcd_context.Context]:
-        r"""Return a callable for the
-        update context
-          method over gRPC.
+        r"""Return a callable for the update context method over gRPC.
 
         Updates the specified context.
 
@@ -338,9 +330,7 @@ class ContextsGrpcTransport(ContextsTransport):
     def delete_context(self) -> Callable[
             [context.DeleteContextRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete context
-          method over gRPC.
+        r"""Return a callable for the delete context method over gRPC.
 
         Deletes the specified context.
 
@@ -366,9 +356,7 @@ class ContextsGrpcTransport(ContextsTransport):
     def delete_all_contexts(self) -> Callable[
             [context.DeleteAllContextsRequest],
             empty.Empty]:
-        r"""Return a callable for the
-        delete all contexts
-          method over gRPC.
+        r"""Return a callable for the delete all contexts method over gRPC.
 
         Deletes all active contexts in the specified session.
 

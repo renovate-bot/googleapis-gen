@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -41,30 +43,21 @@ class CustomClass(proto.Message):
         items (Sequence[google.cloud.speech_v1p1beta1.types.CustomClass.ClassItem]):
             A collection of class items.
     """
-
     class ClassItem(proto.Message):
         r"""An item of the class.
+
         Attributes:
             value (str):
                 The class item's value.
         """
 
-        value = proto.Field(
-            proto.STRING,
-            number=1,
-        )
+        value = proto.Field(proto.STRING, number=1)
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    custom_class_id = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    items = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    custom_class_id = proto.Field(proto.STRING, number=2)
+
+    items = proto.RepeatedField(proto.MESSAGE, number=3,
         message=ClassItem,
     )
 
@@ -91,7 +84,6 @@ class PhraseSet(proto.Message):
             finding the optimal value for your use case. Speech
             recognition will skip PhraseSets with a boost value of 0.
     """
-
     class Phrase(proto.Message):
         r"""A phrases containing words and phrase "hints" so that the speech
         recognition is more likely to recognize them. This can be used to
@@ -134,32 +126,22 @@ class PhraseSet(proto.Message):
                 skip PhraseSets with a boost value of 0.
         """
 
-        value = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        boost = proto.Field(
-            proto.FLOAT,
-            number=2,
-        )
+        value = proto.Field(proto.STRING, number=1)
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    phrases = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+        boost = proto.Field(proto.FLOAT, number=2)
+
+    name = proto.Field(proto.STRING, number=1)
+
+    phrases = proto.RepeatedField(proto.MESSAGE, number=2,
         message=Phrase,
     )
-    boost = proto.Field(
-        proto.FLOAT,
-        number=4,
-    )
+
+    boost = proto.Field(proto.FLOAT, number=4)
 
 
 class SpeechAdaptation(proto.Message):
     r"""Speech adaptation configuration.
+
     Attributes:
         phrase_sets (Sequence[google.cloud.speech_v1p1beta1.types.PhraseSet]):
             A collection of phrase sets. To specify the hints inline,
@@ -176,18 +158,13 @@ class SpeechAdaptation(proto.Message):
             ``custom_class_id``.
     """
 
-    phrase_sets = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    phrase_sets = proto.RepeatedField(proto.MESSAGE, number=1,
         message='PhraseSet',
     )
-    phrase_set_references = proto.RepeatedField(
-        proto.STRING,
-        number=2,
-    )
-    custom_classes = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
+
+    phrase_set_references = proto.RepeatedField(proto.STRING, number=2)
+
+    custom_classes = proto.RepeatedField(proto.MESSAGE, number=3,
         message='CustomClass',
     )
 

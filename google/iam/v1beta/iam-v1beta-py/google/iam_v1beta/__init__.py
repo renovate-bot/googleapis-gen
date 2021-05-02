@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.workload_identity_pools import WorkloadIdentityPoolsClient
-
 from .types.workload_identity_pool import CreateWorkloadIdentityPoolProviderRequest
 from .types.workload_identity_pool import CreateWorkloadIdentityPoolRequest
 from .types.workload_identity_pool import DeleteWorkloadIdentityPoolProviderRequest
@@ -34,6 +34,7 @@ from .types.workload_identity_pool import WorkloadIdentityPool
 from .types.workload_identity_pool import WorkloadIdentityPoolOperationMetadata
 from .types.workload_identity_pool import WorkloadIdentityPoolProvider
 from .types.workload_identity_pool import WorkloadIdentityPoolProviderOperationMetadata
+
 
 __all__ = (
     'CreateWorkloadIdentityPoolProviderRequest',

@@ -16,19 +16,23 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
+
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAccount</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetAccountResourceNames()
         {
-            // Snippet: GetAccount(AccountName, CallSettings)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = AnalyticsAdminServiceClient.Create();
             // Initialize request argument(s)
             AccountName name = AccountName.FromAccount("[ACCOUNT]");
             // Make the request
             Account response = analyticsAdminServiceClient.GetAccount(name);
-            // End snippet
         }
     }
 }

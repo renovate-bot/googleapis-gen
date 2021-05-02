@@ -16,15 +16,18 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateGoogleAdsLinkAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateGoogleAdsLinkAsync()
         {
-            // Snippet: CreateGoogleAdsLinkAsync(string, GoogleAdsLink, CallSettings)
-            // Additional: CreateGoogleAdsLinkAsync(string, GoogleAdsLink, CancellationToken)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = await AnalyticsAdminServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Analytics.Admin.V1Alpha.Snippets
             GoogleAdsLink googleAdsLink = new GoogleAdsLink();
             // Make the request
             GoogleAdsLink response = await analyticsAdminServiceClient.CreateGoogleAdsLinkAsync(parent, googleAdsLink);
-            // End snippet
         }
     }
 }

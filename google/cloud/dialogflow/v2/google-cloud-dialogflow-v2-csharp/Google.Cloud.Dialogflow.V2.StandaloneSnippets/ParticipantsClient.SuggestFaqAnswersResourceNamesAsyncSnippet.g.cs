@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for SuggestFaqAnswersAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SuggestFaqAnswersResourceNamesAsync()
         {
-            // Snippet: SuggestFaqAnswersAsync(ParticipantName, CallSettings)
-            // Additional: SuggestFaqAnswersAsync(ParticipantName, CancellationToken)
             // Create client
             ParticipantsClient participantsClient = await ParticipantsClient.CreateAsync();
             // Initialize request argument(s)
             ParticipantName parent = ParticipantName.FromProjectConversationParticipant("[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]");
             // Make the request
             SuggestFaqAnswersResponse response = await participantsClient.SuggestFaqAnswersAsync(parent);
-            // End snippet
         }
     }
 }

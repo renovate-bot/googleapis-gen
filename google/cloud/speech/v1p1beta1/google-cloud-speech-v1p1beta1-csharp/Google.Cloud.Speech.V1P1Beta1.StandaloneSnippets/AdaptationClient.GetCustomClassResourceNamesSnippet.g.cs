@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Speech.V1P1Beta1.Snippets
 {
+    using Google.Cloud.Speech.V1P1Beta1;
+
     public sealed partial class GeneratedAdaptationClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCustomClass</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCustomClassResourceNames()
         {
-            // Snippet: GetCustomClass(CustomClassName, CallSettings)
             // Create client
             AdaptationClient adaptationClient = AdaptationClient.Create();
             // Initialize request argument(s)
             CustomClassName name = CustomClassName.FromProjectLocationCustomClass("[PROJECT]", "[LOCATION]", "[CUSTOM_CLASS]");
             // Make the request
             CustomClass response = adaptationClient.GetCustomClass(name);
-            // End snippet
         }
     }
 }

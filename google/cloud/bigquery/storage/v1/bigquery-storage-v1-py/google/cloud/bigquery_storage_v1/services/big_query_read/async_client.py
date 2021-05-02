@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -31,6 +33,7 @@ from google.cloud.bigquery_storage_v1.types import avro
 from google.cloud.bigquery_storage_v1.types import storage
 from google.cloud.bigquery_storage_v1.types import stream
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import BigQueryReadTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import BigQueryReadGrpcAsyncIOTransport
 from .client import BigQueryReadClient
@@ -52,14 +55,19 @@ class BigQueryReadAsyncClient:
     parse_read_stream_path = staticmethod(BigQueryReadClient.parse_read_stream_path)
     table_path = staticmethod(BigQueryReadClient.table_path)
     parse_table_path = staticmethod(BigQueryReadClient.parse_table_path)
+
     common_billing_account_path = staticmethod(BigQueryReadClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(BigQueryReadClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(BigQueryReadClient.common_folder_path)
     parse_common_folder_path = staticmethod(BigQueryReadClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(BigQueryReadClient.common_organization_path)
     parse_common_organization_path = staticmethod(BigQueryReadClient.parse_common_organization_path)
+
     common_project_path = staticmethod(BigQueryReadClient.common_project_path)
     parse_common_project_path = staticmethod(BigQueryReadClient.parse_common_project_path)
+
     common_location_path = staticmethod(BigQueryReadClient.common_location_path)
     parse_common_location_path = staticmethod(BigQueryReadClient.parse_common_location_path)
 
@@ -144,6 +152,7 @@ class BigQueryReadAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = BigQueryReadClient(
             credentials=credentials,
             transport=transport,
@@ -188,8 +197,7 @@ class BigQueryReadAsyncClient:
 
         Args:
             request (:class:`google.cloud.bigquery_storage_v1.types.CreateReadSessionRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `CreateReadSession`.
             parent (:class:`str`):
                 Required. The request project that owns the session, in
@@ -222,6 +230,7 @@ class BigQueryReadAsyncClient:
                 This corresponds to the ``max_stream_count`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -244,6 +253,7 @@ class BigQueryReadAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if read_session is not None:
@@ -256,7 +266,10 @@ class BigQueryReadAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_read_session,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -305,8 +318,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_storage_v1.types.ReadRowsRequest`):
-                The request object.
-                Request message for `ReadRows`.
+                The request object. Request message for `ReadRows`.
             read_stream (:class:`str`):
                 Required. Stream to read rows from.
                 This corresponds to the ``read_stream`` field
@@ -322,6 +334,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 This corresponds to the ``offset`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -346,6 +359,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if read_stream is not None:
             request.read_stream = read_stream
         if offset is not None:
@@ -356,7 +370,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.read_rows,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.ServiceUnavailable,
                 ),
                 deadline=86400.0,
@@ -407,9 +424,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         Args:
             request (:class:`google.cloud.bigquery_storage_v1.types.SplitReadStreamRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `SplitReadStream`.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -421,6 +438,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 Response message for SplitReadStream.
         """
         # Create or coerce a protobuf request object.
+
         request = storage.SplitReadStreamRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -428,7 +446,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.split_read_stream,
             default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exception_type(
+                initial=0.1,
+                maximum=60.0,
+                multiplier=1.3,
+                predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded,
                     exceptions.ServiceUnavailable,
                 ),
@@ -456,6 +477,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
         # Done; return the response.
         return response
+
+
 
 
 

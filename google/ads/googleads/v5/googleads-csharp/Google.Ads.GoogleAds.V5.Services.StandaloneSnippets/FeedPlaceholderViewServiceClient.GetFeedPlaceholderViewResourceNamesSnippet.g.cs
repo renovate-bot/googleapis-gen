@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
 
     public sealed partial class GeneratedFeedPlaceholderViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetFeedPlaceholderView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetFeedPlaceholderViewResourceNames()
         {
-            // Snippet: GetFeedPlaceholderView(FeedPlaceholderViewName, CallSettings)
             // Create client
             FeedPlaceholderViewServiceClient feedPlaceholderViewServiceClient = FeedPlaceholderViewServiceClient.Create();
             // Initialize request argument(s)
             FeedPlaceholderViewName resourceName = FeedPlaceholderViewName.FromCustomerFeedPlaceholderView("[CUSTOMER]", "[FEED_PLACEHOLDER_VIEW]");
             // Make the request
             FeedPlaceholderView response = feedPlaceholderViewServiceClient.GetFeedPlaceholderView(resourceName);
-            // End snippet
         }
     }
 }

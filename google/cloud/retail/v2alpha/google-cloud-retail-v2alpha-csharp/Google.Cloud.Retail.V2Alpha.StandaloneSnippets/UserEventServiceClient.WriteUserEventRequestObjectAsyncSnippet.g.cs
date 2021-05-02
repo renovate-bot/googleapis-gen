@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Retail.V2Alpha.Snippets
 {
+    using Google.Cloud.Retail.V2Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedUserEventServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for WriteUserEventAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task WriteUserEventRequestObjectAsync()
         {
-            // Snippet: WriteUserEventAsync(WriteUserEventRequest, CallSettings)
-            // Additional: WriteUserEventAsync(WriteUserEventRequest, CancellationToken)
             // Create client
             UserEventServiceClient userEventServiceClient = await UserEventServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Cloud.Retail.V2Alpha.Snippets
             };
             // Make the request
             UserEvent response = await userEventServiceClient.WriteUserEventAsync(request);
-            // End snippet
         }
     }
 }

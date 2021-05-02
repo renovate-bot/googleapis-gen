@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import os
 import mock
-import packaging.version
 
 import grpc
 from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
-
 
 from google import auth
 from google.api_core import client_options
@@ -36,8 +36,6 @@ from google.cloud.datacatalog_v1.services.policy_tag_manager import PolicyTagMan
 from google.cloud.datacatalog_v1.services.policy_tag_manager import PolicyTagManagerClient
 from google.cloud.datacatalog_v1.services.policy_tag_manager import pagers
 from google.cloud.datacatalog_v1.services.policy_tag_manager import transports
-from google.cloud.datacatalog_v1.services.policy_tag_manager.transports.base import _API_CORE_VERSION
-from google.cloud.datacatalog_v1.services.policy_tag_manager.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.datacatalog_v1.types import policytagmanager
 from google.cloud.datacatalog_v1.types import timestamps
 from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
@@ -48,28 +46,6 @@ from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.type import expr_pb2 as expr  # type: ignore
 
-
-# TODO(busunkim): Once google-api-core >= 1.26.0 is required:
-# - Delete all the api-core and auth "less than" test cases
-# - Delete these pytest markers (Make the "greater than or equal to" tests the default).
-requires_google_auth_lt_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) >= packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth < 1.25.0",
-)
-requires_google_auth_gte_1_25_0 = pytest.mark.skipif(
-    packaging.version.parse(_GOOGLE_AUTH_VERSION) < packaging.version.parse("1.25.0"),
-    reason="This test requires google-auth >= 1.25.0",
-)
-
-requires_api_core_lt_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) >= packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core < 1.26.0",
-)
-
-requires_api_core_gte_1_26_0 = pytest.mark.skipif(
-    packaging.version.parse(_API_CORE_VERSION) < packaging.version.parse("1.26.0"),
-    reason="This test requires google-api-core >= 1.26.0",
-)
 
 def client_cert_source_callback():
     return b"cert bytes", b"key bytes"
@@ -237,10 +213,12 @@ def test_policy_tag_manager_client_client_options(client_class, transport_class,
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+
     (PolicyTagManagerClient, transports.PolicyTagManagerGrpcTransport, "grpc", "true"),
     (PolicyTagManagerAsyncClient, transports.PolicyTagManagerGrpcAsyncIOTransport, "grpc_asyncio", "true"),
     (PolicyTagManagerClient, transports.PolicyTagManagerGrpcTransport, "grpc", "false"),
     (PolicyTagManagerAsyncClient, transports.PolicyTagManagerGrpcAsyncIOTransport, "grpc_asyncio", "false"),
+
 ])
 @mock.patch.object(PolicyTagManagerClient, "DEFAULT_ENDPOINT", modify_default_endpoint(PolicyTagManagerClient))
 @mock.patch.object(PolicyTagManagerAsyncClient, "DEFAULT_ENDPOINT", modify_default_endpoint(PolicyTagManagerAsyncClient))
@@ -395,24 +373,37 @@ def test_create_taxonomy(transport: str = 'grpc', request_type=policytagmanager.
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.Taxonomy(
             name='name_value',
+
             display_name='display_name_value',
+
             description='description_value',
+
             policy_tag_count=1715,
+
             activated_policy_types=[policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL],
+
         )
+
         response = client.create_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.CreateTaxonomyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, policytagmanager.Taxonomy)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.policy_tag_count == 1715
+
     assert response.activated_policy_types == [policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL]
 
 
@@ -435,8 +426,8 @@ def test_create_taxonomy_empty_call():
         client.create_taxonomy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == policytagmanager.CreateTaxonomyRequest()
 
+        assert args[0] == policytagmanager.CreateTaxonomyRequest()
 
 @pytest.mark.asyncio
 async def test_create_taxonomy_async(transport: str = 'grpc_asyncio', request_type=policytagmanager.CreateTaxonomyRequest):
@@ -454,26 +445,33 @@ async def test_create_taxonomy_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.create_taxonomy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.Taxonomy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.Taxonomy(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
             policy_tag_count=1715,
             activated_policy_types=[policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL],
         ))
+
         response = await client.create_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.CreateTaxonomyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, policytagmanager.Taxonomy)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.policy_tag_count == 1715
+
     assert response.activated_policy_types == [policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL]
 
 
@@ -490,7 +488,6 @@ def test_create_taxonomy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.CreateTaxonomyRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -498,6 +495,7 @@ def test_create_taxonomy_field_headers():
             type(client.transport.create_taxonomy),
             '__call__') as call:
         call.return_value = policytagmanager.Taxonomy()
+
         client.create_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -522,7 +520,6 @@ async def test_create_taxonomy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.CreateTaxonomyRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -530,6 +527,7 @@ async def test_create_taxonomy_field_headers_async():
             type(client.transport.create_taxonomy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.Taxonomy())
+
         await client.create_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -556,6 +554,7 @@ def test_create_taxonomy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.Taxonomy()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_taxonomy(
@@ -567,7 +566,9 @@ def test_create_taxonomy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].taxonomy == policytagmanager.Taxonomy(name='name_value')
 
 
@@ -611,7 +612,9 @@ async def test_create_taxonomy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].taxonomy == policytagmanager.Taxonomy(name='name_value')
 
 
@@ -647,11 +650,13 @@ def test_delete_taxonomy(transport: str = 'grpc', request_type=policytagmanager.
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.DeleteTaxonomyRequest()
 
     # Establish that the response is the type that we expect.
@@ -677,8 +682,8 @@ def test_delete_taxonomy_empty_call():
         client.delete_taxonomy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == policytagmanager.DeleteTaxonomyRequest()
 
+        assert args[0] == policytagmanager.DeleteTaxonomyRequest()
 
 @pytest.mark.asyncio
 async def test_delete_taxonomy_async(transport: str = 'grpc_asyncio', request_type=policytagmanager.DeleteTaxonomyRequest):
@@ -697,11 +702,13 @@ async def test_delete_taxonomy_async(transport: str = 'grpc_asyncio', request_ty
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.DeleteTaxonomyRequest()
 
     # Establish that the response is the type that we expect.
@@ -721,7 +728,6 @@ def test_delete_taxonomy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.DeleteTaxonomyRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -729,6 +735,7 @@ def test_delete_taxonomy_field_headers():
             type(client.transport.delete_taxonomy),
             '__call__') as call:
         call.return_value = None
+
         client.delete_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -753,7 +760,6 @@ async def test_delete_taxonomy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.DeleteTaxonomyRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -761,6 +767,7 @@ async def test_delete_taxonomy_field_headers_async():
             type(client.transport.delete_taxonomy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -787,6 +794,7 @@ def test_delete_taxonomy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_taxonomy(
@@ -797,6 +805,7 @@ def test_delete_taxonomy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -838,6 +847,7 @@ async def test_delete_taxonomy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -873,24 +883,37 @@ def test_update_taxonomy(transport: str = 'grpc', request_type=policytagmanager.
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.Taxonomy(
             name='name_value',
+
             display_name='display_name_value',
+
             description='description_value',
+
             policy_tag_count=1715,
+
             activated_policy_types=[policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL],
+
         )
+
         response = client.update_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.UpdateTaxonomyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, policytagmanager.Taxonomy)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.policy_tag_count == 1715
+
     assert response.activated_policy_types == [policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL]
 
 
@@ -913,8 +936,8 @@ def test_update_taxonomy_empty_call():
         client.update_taxonomy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == policytagmanager.UpdateTaxonomyRequest()
 
+        assert args[0] == policytagmanager.UpdateTaxonomyRequest()
 
 @pytest.mark.asyncio
 async def test_update_taxonomy_async(transport: str = 'grpc_asyncio', request_type=policytagmanager.UpdateTaxonomyRequest):
@@ -932,26 +955,33 @@ async def test_update_taxonomy_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.update_taxonomy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.Taxonomy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.Taxonomy(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
             policy_tag_count=1715,
             activated_policy_types=[policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL],
         ))
+
         response = await client.update_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.UpdateTaxonomyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, policytagmanager.Taxonomy)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.policy_tag_count == 1715
+
     assert response.activated_policy_types == [policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL]
 
 
@@ -968,7 +998,6 @@ def test_update_taxonomy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.UpdateTaxonomyRequest()
-
     request.taxonomy.name = 'taxonomy.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -976,6 +1005,7 @@ def test_update_taxonomy_field_headers():
             type(client.transport.update_taxonomy),
             '__call__') as call:
         call.return_value = policytagmanager.Taxonomy()
+
         client.update_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1000,7 +1030,6 @@ async def test_update_taxonomy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.UpdateTaxonomyRequest()
-
     request.taxonomy.name = 'taxonomy.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1008,6 +1037,7 @@ async def test_update_taxonomy_field_headers_async():
             type(client.transport.update_taxonomy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.Taxonomy())
+
         await client.update_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1034,6 +1064,7 @@ def test_update_taxonomy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.Taxonomy()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_taxonomy(
@@ -1044,6 +1075,7 @@ def test_update_taxonomy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].taxonomy == policytagmanager.Taxonomy(name='name_value')
 
 
@@ -1085,6 +1117,7 @@ async def test_update_taxonomy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].taxonomy == policytagmanager.Taxonomy(name='name_value')
 
 
@@ -1120,16 +1153,21 @@ def test_list_taxonomies(transport: str = 'grpc', request_type=policytagmanager.
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.ListTaxonomiesResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_taxonomies(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.ListTaxonomiesRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListTaxonomiesPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1152,8 +1190,8 @@ def test_list_taxonomies_empty_call():
         client.list_taxonomies()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == policytagmanager.ListTaxonomiesRequest()
 
+        assert args[0] == policytagmanager.ListTaxonomiesRequest()
 
 @pytest.mark.asyncio
 async def test_list_taxonomies_async(transport: str = 'grpc_asyncio', request_type=policytagmanager.ListTaxonomiesRequest):
@@ -1171,18 +1209,21 @@ async def test_list_taxonomies_async(transport: str = 'grpc_asyncio', request_ty
             type(client.transport.list_taxonomies),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.ListTaxonomiesResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.ListTaxonomiesResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_taxonomies(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.ListTaxonomiesRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTaxonomiesAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -1199,7 +1240,6 @@ def test_list_taxonomies_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.ListTaxonomiesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1207,6 +1247,7 @@ def test_list_taxonomies_field_headers():
             type(client.transport.list_taxonomies),
             '__call__') as call:
         call.return_value = policytagmanager.ListTaxonomiesResponse()
+
         client.list_taxonomies(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1231,7 +1272,6 @@ async def test_list_taxonomies_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.ListTaxonomiesRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1239,6 +1279,7 @@ async def test_list_taxonomies_field_headers_async():
             type(client.transport.list_taxonomies),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.ListTaxonomiesResponse())
+
         await client.list_taxonomies(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1265,6 +1306,7 @@ def test_list_taxonomies_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.ListTaxonomiesResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_taxonomies(
@@ -1275,6 +1317,7 @@ def test_list_taxonomies_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1316,6 +1359,7 @@ async def test_list_taxonomies_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -1520,6 +1564,7 @@ async def test_list_taxonomies_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_taxonomy(transport: str = 'grpc', request_type=policytagmanager.GetTaxonomyRequest):
     client = PolicyTagManagerClient(
         credentials=credentials.AnonymousCredentials(),
@@ -1537,24 +1582,37 @@ def test_get_taxonomy(transport: str = 'grpc', request_type=policytagmanager.Get
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.Taxonomy(
             name='name_value',
+
             display_name='display_name_value',
+
             description='description_value',
+
             policy_tag_count=1715,
+
             activated_policy_types=[policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL],
+
         )
+
         response = client.get_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.GetTaxonomyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, policytagmanager.Taxonomy)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.policy_tag_count == 1715
+
     assert response.activated_policy_types == [policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL]
 
 
@@ -1577,8 +1635,8 @@ def test_get_taxonomy_empty_call():
         client.get_taxonomy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == policytagmanager.GetTaxonomyRequest()
 
+        assert args[0] == policytagmanager.GetTaxonomyRequest()
 
 @pytest.mark.asyncio
 async def test_get_taxonomy_async(transport: str = 'grpc_asyncio', request_type=policytagmanager.GetTaxonomyRequest):
@@ -1596,26 +1654,33 @@ async def test_get_taxonomy_async(transport: str = 'grpc_asyncio', request_type=
             type(client.transport.get_taxonomy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.Taxonomy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.Taxonomy(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
             policy_tag_count=1715,
             activated_policy_types=[policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL],
         ))
+
         response = await client.get_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.GetTaxonomyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, policytagmanager.Taxonomy)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.policy_tag_count == 1715
+
     assert response.activated_policy_types == [policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL]
 
 
@@ -1632,7 +1697,6 @@ def test_get_taxonomy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.GetTaxonomyRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1640,6 +1704,7 @@ def test_get_taxonomy_field_headers():
             type(client.transport.get_taxonomy),
             '__call__') as call:
         call.return_value = policytagmanager.Taxonomy()
+
         client.get_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1664,7 +1729,6 @@ async def test_get_taxonomy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.GetTaxonomyRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1672,6 +1736,7 @@ async def test_get_taxonomy_field_headers_async():
             type(client.transport.get_taxonomy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.Taxonomy())
+
         await client.get_taxonomy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1698,6 +1763,7 @@ def test_get_taxonomy_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.Taxonomy()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_taxonomy(
@@ -1708,6 +1774,7 @@ def test_get_taxonomy_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1749,6 +1816,7 @@ async def test_get_taxonomy_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -1784,24 +1852,37 @@ def test_create_policy_tag(transport: str = 'grpc', request_type=policytagmanage
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.PolicyTag(
             name='name_value',
+
             display_name='display_name_value',
+
             description='description_value',
+
             parent_policy_tag='parent_policy_tag_value',
+
             child_policy_tags=['child_policy_tags_value'],
+
         )
+
         response = client.create_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.CreatePolicyTagRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, policytagmanager.PolicyTag)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.parent_policy_tag == 'parent_policy_tag_value'
+
     assert response.child_policy_tags == ['child_policy_tags_value']
 
 
@@ -1824,8 +1905,8 @@ def test_create_policy_tag_empty_call():
         client.create_policy_tag()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == policytagmanager.CreatePolicyTagRequest()
 
+        assert args[0] == policytagmanager.CreatePolicyTagRequest()
 
 @pytest.mark.asyncio
 async def test_create_policy_tag_async(transport: str = 'grpc_asyncio', request_type=policytagmanager.CreatePolicyTagRequest):
@@ -1843,26 +1924,33 @@ async def test_create_policy_tag_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.create_policy_tag),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.PolicyTag(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.PolicyTag(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
             parent_policy_tag='parent_policy_tag_value',
             child_policy_tags=['child_policy_tags_value'],
         ))
+
         response = await client.create_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.CreatePolicyTagRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, policytagmanager.PolicyTag)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.parent_policy_tag == 'parent_policy_tag_value'
+
     assert response.child_policy_tags == ['child_policy_tags_value']
 
 
@@ -1879,7 +1967,6 @@ def test_create_policy_tag_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.CreatePolicyTagRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1887,6 +1974,7 @@ def test_create_policy_tag_field_headers():
             type(client.transport.create_policy_tag),
             '__call__') as call:
         call.return_value = policytagmanager.PolicyTag()
+
         client.create_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1911,7 +1999,6 @@ async def test_create_policy_tag_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.CreatePolicyTagRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1919,6 +2006,7 @@ async def test_create_policy_tag_field_headers_async():
             type(client.transport.create_policy_tag),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.PolicyTag())
+
         await client.create_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -1945,6 +2033,7 @@ def test_create_policy_tag_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.PolicyTag()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.create_policy_tag(
@@ -1956,7 +2045,9 @@ def test_create_policy_tag_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].policy_tag == policytagmanager.PolicyTag(name='name_value')
 
 
@@ -2000,7 +2091,9 @@ async def test_create_policy_tag_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
+
         assert args[0].policy_tag == policytagmanager.PolicyTag(name='name_value')
 
 
@@ -2036,11 +2129,13 @@ def test_delete_policy_tag(transport: str = 'grpc', request_type=policytagmanage
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         response = client.delete_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.DeletePolicyTagRequest()
 
     # Establish that the response is the type that we expect.
@@ -2066,8 +2161,8 @@ def test_delete_policy_tag_empty_call():
         client.delete_policy_tag()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == policytagmanager.DeletePolicyTagRequest()
 
+        assert args[0] == policytagmanager.DeletePolicyTagRequest()
 
 @pytest.mark.asyncio
 async def test_delete_policy_tag_async(transport: str = 'grpc_asyncio', request_type=policytagmanager.DeletePolicyTagRequest):
@@ -2086,11 +2181,13 @@ async def test_delete_policy_tag_async(transport: str = 'grpc_asyncio', request_
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         response = await client.delete_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.DeletePolicyTagRequest()
 
     # Establish that the response is the type that we expect.
@@ -2110,7 +2207,6 @@ def test_delete_policy_tag_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.DeletePolicyTagRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2118,6 +2214,7 @@ def test_delete_policy_tag_field_headers():
             type(client.transport.delete_policy_tag),
             '__call__') as call:
         call.return_value = None
+
         client.delete_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2142,7 +2239,6 @@ async def test_delete_policy_tag_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.DeletePolicyTagRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2150,6 +2246,7 @@ async def test_delete_policy_tag_field_headers_async():
             type(client.transport.delete_policy_tag),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+
         await client.delete_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2176,6 +2273,7 @@ def test_delete_policy_tag_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = None
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.delete_policy_tag(
@@ -2186,6 +2284,7 @@ def test_delete_policy_tag_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2227,6 +2326,7 @@ async def test_delete_policy_tag_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -2262,24 +2362,37 @@ def test_update_policy_tag(transport: str = 'grpc', request_type=policytagmanage
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.PolicyTag(
             name='name_value',
+
             display_name='display_name_value',
+
             description='description_value',
+
             parent_policy_tag='parent_policy_tag_value',
+
             child_policy_tags=['child_policy_tags_value'],
+
         )
+
         response = client.update_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.UpdatePolicyTagRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, policytagmanager.PolicyTag)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.parent_policy_tag == 'parent_policy_tag_value'
+
     assert response.child_policy_tags == ['child_policy_tags_value']
 
 
@@ -2302,8 +2415,8 @@ def test_update_policy_tag_empty_call():
         client.update_policy_tag()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == policytagmanager.UpdatePolicyTagRequest()
 
+        assert args[0] == policytagmanager.UpdatePolicyTagRequest()
 
 @pytest.mark.asyncio
 async def test_update_policy_tag_async(transport: str = 'grpc_asyncio', request_type=policytagmanager.UpdatePolicyTagRequest):
@@ -2321,26 +2434,33 @@ async def test_update_policy_tag_async(transport: str = 'grpc_asyncio', request_
             type(client.transport.update_policy_tag),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.PolicyTag(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.PolicyTag(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
             parent_policy_tag='parent_policy_tag_value',
             child_policy_tags=['child_policy_tags_value'],
         ))
+
         response = await client.update_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.UpdatePolicyTagRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, policytagmanager.PolicyTag)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.parent_policy_tag == 'parent_policy_tag_value'
+
     assert response.child_policy_tags == ['child_policy_tags_value']
 
 
@@ -2357,7 +2477,6 @@ def test_update_policy_tag_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.UpdatePolicyTagRequest()
-
     request.policy_tag.name = 'policy_tag.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2365,6 +2484,7 @@ def test_update_policy_tag_field_headers():
             type(client.transport.update_policy_tag),
             '__call__') as call:
         call.return_value = policytagmanager.PolicyTag()
+
         client.update_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2389,7 +2509,6 @@ async def test_update_policy_tag_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.UpdatePolicyTagRequest()
-
     request.policy_tag.name = 'policy_tag.name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2397,6 +2516,7 @@ async def test_update_policy_tag_field_headers_async():
             type(client.transport.update_policy_tag),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.PolicyTag())
+
         await client.update_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2423,6 +2543,7 @@ def test_update_policy_tag_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.PolicyTag()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.update_policy_tag(
@@ -2433,6 +2554,7 @@ def test_update_policy_tag_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].policy_tag == policytagmanager.PolicyTag(name='name_value')
 
 
@@ -2474,6 +2596,7 @@ async def test_update_policy_tag_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].policy_tag == policytagmanager.PolicyTag(name='name_value')
 
 
@@ -2509,16 +2632,21 @@ def test_list_policy_tags(transport: str = 'grpc', request_type=policytagmanager
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.ListPolicyTagsResponse(
             next_page_token='next_page_token_value',
+
         )
+
         response = client.list_policy_tags(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.ListPolicyTagsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, pagers.ListPolicyTagsPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2541,8 +2669,8 @@ def test_list_policy_tags_empty_call():
         client.list_policy_tags()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == policytagmanager.ListPolicyTagsRequest()
 
+        assert args[0] == policytagmanager.ListPolicyTagsRequest()
 
 @pytest.mark.asyncio
 async def test_list_policy_tags_async(transport: str = 'grpc_asyncio', request_type=policytagmanager.ListPolicyTagsRequest):
@@ -2560,18 +2688,21 @@ async def test_list_policy_tags_async(transport: str = 'grpc_asyncio', request_t
             type(client.transport.list_policy_tags),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.ListPolicyTagsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.ListPolicyTagsResponse(
             next_page_token='next_page_token_value',
         ))
+
         response = await client.list_policy_tags(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.ListPolicyTagsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPolicyTagsAsyncPager)
+
     assert response.next_page_token == 'next_page_token_value'
 
 
@@ -2588,7 +2719,6 @@ def test_list_policy_tags_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.ListPolicyTagsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2596,6 +2726,7 @@ def test_list_policy_tags_field_headers():
             type(client.transport.list_policy_tags),
             '__call__') as call:
         call.return_value = policytagmanager.ListPolicyTagsResponse()
+
         client.list_policy_tags(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2620,7 +2751,6 @@ async def test_list_policy_tags_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.ListPolicyTagsRequest()
-
     request.parent = 'parent/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2628,6 +2758,7 @@ async def test_list_policy_tags_field_headers_async():
             type(client.transport.list_policy_tags),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.ListPolicyTagsResponse())
+
         await client.list_policy_tags(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -2654,6 +2785,7 @@ def test_list_policy_tags_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.ListPolicyTagsResponse()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.list_policy_tags(
@@ -2664,6 +2796,7 @@ def test_list_policy_tags_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -2705,6 +2838,7 @@ async def test_list_policy_tags_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].parent == 'parent_value'
 
 
@@ -2909,6 +3043,7 @@ async def test_list_policy_tags_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
+
 def test_get_policy_tag(transport: str = 'grpc', request_type=policytagmanager.GetPolicyTagRequest):
     client = PolicyTagManagerClient(
         credentials=credentials.AnonymousCredentials(),
@@ -2926,24 +3061,37 @@ def test_get_policy_tag(transport: str = 'grpc', request_type=policytagmanager.G
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.PolicyTag(
             name='name_value',
+
             display_name='display_name_value',
+
             description='description_value',
+
             parent_policy_tag='parent_policy_tag_value',
+
             child_policy_tags=['child_policy_tags_value'],
+
         )
+
         response = client.get_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.GetPolicyTagRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, policytagmanager.PolicyTag)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.parent_policy_tag == 'parent_policy_tag_value'
+
     assert response.child_policy_tags == ['child_policy_tags_value']
 
 
@@ -2966,8 +3114,8 @@ def test_get_policy_tag_empty_call():
         client.get_policy_tag()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == policytagmanager.GetPolicyTagRequest()
 
+        assert args[0] == policytagmanager.GetPolicyTagRequest()
 
 @pytest.mark.asyncio
 async def test_get_policy_tag_async(transport: str = 'grpc_asyncio', request_type=policytagmanager.GetPolicyTagRequest):
@@ -2985,26 +3133,33 @@ async def test_get_policy_tag_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.get_policy_tag),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.PolicyTag(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.PolicyTag(
             name='name_value',
             display_name='display_name_value',
             description='description_value',
             parent_policy_tag='parent_policy_tag_value',
             child_policy_tags=['child_policy_tags_value'],
         ))
+
         response = await client.get_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == policytagmanager.GetPolicyTagRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, policytagmanager.PolicyTag)
+
     assert response.name == 'name_value'
+
     assert response.display_name == 'display_name_value'
+
     assert response.description == 'description_value'
+
     assert response.parent_policy_tag == 'parent_policy_tag_value'
+
     assert response.child_policy_tags == ['child_policy_tags_value']
 
 
@@ -3021,7 +3176,6 @@ def test_get_policy_tag_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.GetPolicyTagRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3029,6 +3183,7 @@ def test_get_policy_tag_field_headers():
             type(client.transport.get_policy_tag),
             '__call__') as call:
         call.return_value = policytagmanager.PolicyTag()
+
         client.get_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3053,7 +3208,6 @@ async def test_get_policy_tag_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = policytagmanager.GetPolicyTagRequest()
-
     request.name = 'name/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3061,6 +3215,7 @@ async def test_get_policy_tag_field_headers_async():
             type(client.transport.get_policy_tag),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(policytagmanager.PolicyTag())
+
         await client.get_policy_tag(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3087,6 +3242,7 @@ def test_get_policy_tag_flattened():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = policytagmanager.PolicyTag()
+
         # Call the method with a truthy value for each flattened field,
         # using the keyword arguments to the method.
         client.get_policy_tag(
@@ -3097,6 +3253,7 @@ def test_get_policy_tag_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3138,6 +3295,7 @@ async def test_get_policy_tag_flattened_async():
         # request object values.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0].name == 'name_value'
 
 
@@ -3173,18 +3331,25 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy.GetIamP
         # Designate an appropriate return value for the call.
         call.return_value = gi_policy.Policy(
             version=774,
+
             etag=b'etag_blob',
+
         )
+
         response = client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == iam_policy.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -3207,8 +3372,8 @@ def test_get_iam_policy_empty_call():
         client.get_iam_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == iam_policy.GetIamPolicyRequest()
 
+        assert args[0] == iam_policy.GetIamPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.GetIamPolicyRequest):
@@ -3226,20 +3391,24 @@ async def test_get_iam_policy_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.get_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
             version=774,
             etag=b'etag_blob',
         ))
+
         response = await client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == iam_policy.GetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -3256,7 +3425,6 @@ def test_get_iam_policy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.GetIamPolicyRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3264,6 +3432,7 @@ def test_get_iam_policy_field_headers():
             type(client.transport.get_iam_policy),
             '__call__') as call:
         call.return_value = gi_policy.Policy()
+
         client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3288,7 +3457,6 @@ async def test_get_iam_policy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.GetIamPolicyRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3296,6 +3464,7 @@ async def test_get_iam_policy_field_headers_async():
             type(client.transport.get_iam_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy())
+
         await client.get_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3310,6 +3479,7 @@ async def test_get_iam_policy_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
+
 def test_get_iam_policy_from_dict_foreign():
     client = PolicyTagManagerClient(
         credentials=credentials.AnonymousCredentials(),
@@ -3320,6 +3490,7 @@ def test_get_iam_policy_from_dict_foreign():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gi_policy.Policy()
+
         response = client.get_iam_policy(request={
             'resource': 'resource_value',
             'options_': gi_options.GetPolicyOptions(requested_policy_version=2598),
@@ -3345,18 +3516,25 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy.SetIamP
         # Designate an appropriate return value for the call.
         call.return_value = gi_policy.Policy(
             version=774,
+
             etag=b'etag_blob',
+
         )
+
         response = client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == iam_policy.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -3379,8 +3557,8 @@ def test_set_iam_policy_empty_call():
         client.set_iam_policy()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == iam_policy.SetIamPolicyRequest()
 
+        assert args[0] == iam_policy.SetIamPolicyRequest()
 
 @pytest.mark.asyncio
 async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_type=iam_policy.SetIamPolicyRequest):
@@ -3398,20 +3576,24 @@ async def test_set_iam_policy_async(transport: str = 'grpc_asyncio', request_typ
             type(client.transport.set_iam_policy),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy(
             version=774,
             etag=b'etag_blob',
         ))
+
         response = await client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == iam_policy.SetIamPolicyRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, gi_policy.Policy)
+
     assert response.version == 774
+
     assert response.etag == b'etag_blob'
 
 
@@ -3428,7 +3610,6 @@ def test_set_iam_policy_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.SetIamPolicyRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3436,6 +3617,7 @@ def test_set_iam_policy_field_headers():
             type(client.transport.set_iam_policy),
             '__call__') as call:
         call.return_value = gi_policy.Policy()
+
         client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3460,7 +3642,6 @@ async def test_set_iam_policy_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.SetIamPolicyRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3468,6 +3649,7 @@ async def test_set_iam_policy_field_headers_async():
             type(client.transport.set_iam_policy),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gi_policy.Policy())
+
         await client.set_iam_policy(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3482,6 +3664,7 @@ async def test_set_iam_policy_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
+
 def test_set_iam_policy_from_dict_foreign():
     client = PolicyTagManagerClient(
         credentials=credentials.AnonymousCredentials(),
@@ -3492,6 +3675,7 @@ def test_set_iam_policy_from_dict_foreign():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = gi_policy.Policy()
+
         response = client.set_iam_policy(request={
             'resource': 'resource_value',
             'policy_': gi_policy.Policy(version=774),
@@ -3517,16 +3701,21 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy.T
         # Designate an appropriate return value for the call.
         call.return_value = iam_policy.TestIamPermissionsResponse(
             permissions=['permissions_value'],
+
         )
+
         response = client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == iam_policy.TestIamPermissionsRequest()
 
     # Establish that the response is the type that we expect.
+
     assert isinstance(response, iam_policy.TestIamPermissionsResponse)
+
     assert response.permissions == ['permissions_value']
 
 
@@ -3549,8 +3738,8 @@ def test_test_iam_permissions_empty_call():
         client.test_iam_permissions()
         call.assert_called()
         _, args, _ = call.mock_calls[0]
-        assert args[0] == iam_policy.TestIamPermissionsRequest()
 
+        assert args[0] == iam_policy.TestIamPermissionsRequest()
 
 @pytest.mark.asyncio
 async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', request_type=iam_policy.TestIamPermissionsRequest):
@@ -3568,18 +3757,21 @@ async def test_test_iam_permissions_async(transport: str = 'grpc_asyncio', reque
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         # Designate an appropriate return value for the call.
-        call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse(
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse(
             permissions=['permissions_value'],
         ))
+
         response = await client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
         assert len(call.mock_calls)
         _, args, _ = call.mock_calls[0]
+
         assert args[0] == iam_policy.TestIamPermissionsRequest()
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy.TestIamPermissionsResponse)
+
     assert response.permissions == ['permissions_value']
 
 
@@ -3596,7 +3788,6 @@ def test_test_iam_permissions_field_headers():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.TestIamPermissionsRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3604,6 +3795,7 @@ def test_test_iam_permissions_field_headers():
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         call.return_value = iam_policy.TestIamPermissionsResponse()
+
         client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3628,7 +3820,6 @@ async def test_test_iam_permissions_field_headers_async():
     # Any value that is part of the HTTP/1.1 URI should be sent as
     # a field header. Set these to a non-empty value.
     request = iam_policy.TestIamPermissionsRequest()
-
     request.resource = 'resource/value'
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3636,6 +3827,7 @@ async def test_test_iam_permissions_field_headers_async():
             type(client.transport.test_iam_permissions),
             '__call__') as call:
         call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(iam_policy.TestIamPermissionsResponse())
+
         await client.test_iam_permissions(request)
 
         # Establish that the underlying gRPC stub method was called.
@@ -3650,6 +3842,7 @@ async def test_test_iam_permissions_field_headers_async():
         'resource=resource/value',
     ) in kw['metadata']
 
+
 def test_test_iam_permissions_from_dict_foreign():
     client = PolicyTagManagerClient(
         credentials=credentials.AnonymousCredentials(),
@@ -3660,6 +3853,7 @@ def test_test_iam_permissions_from_dict_foreign():
             '__call__') as call:
         # Designate an appropriate return value for the call.
         call.return_value = iam_policy.TestIamPermissionsResponse()
+
         response = client.test_iam_permissions(request={
             'resource': 'resource_value',
             'permissions': ['permissions_value'],
@@ -3708,6 +3902,7 @@ def test_transport_instance():
     client = PolicyTagManagerClient(transport=transport)
     assert client.transport is transport
 
+
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.PolicyTagManagerGrpcTransport(
@@ -3722,6 +3917,7 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
 @pytest.mark.parametrize("transport_class", [
     transports.PolicyTagManagerGrpcTransport,
     transports.PolicyTagManagerGrpcAsyncIOTransport,
@@ -3733,6 +3929,7 @@ def test_transport_adc(transport_class):
         transport_class()
         adc.assert_called_once()
 
+
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
     client = PolicyTagManagerClient(
@@ -3742,6 +3939,7 @@ def test_transport_grpc_default():
         client.transport,
         transports.PolicyTagManagerGrpcTransport,
     )
+
 
 def test_policy_tag_manager_base_transport_error():
     # Passing both a credentials object and credentials_file should raise an error
@@ -3776,33 +3974,15 @@ def test_policy_tag_manager_base_transport():
         'get_iam_policy',
         'set_iam_policy',
         'test_iam_permissions',
-    )
+        )
     for method in methods:
         with pytest.raises(NotImplementedError):
             getattr(transport, method)(request=object())
 
 
-@requires_google_auth_gte_1_25_0
 def test_policy_tag_manager_base_transport_with_credentials_file():
     # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.datacatalog_v1.services.policy_tag_manager.transports.PolicyTagManagerTransport._prep_wrapped_messages') as Transport:
-        Transport.return_value = None
-        load_creds.return_value = (credentials.AnonymousCredentials(), None)
-        transport = transports.PolicyTagManagerTransport(
-            credentials_file="credentials.json",
-            quota_project_id="octopus",
-        )
-        load_creds.assert_called_once_with("credentials.json",
-            scopes=None,
-            default_scopes=(            'https://www.googleapis.com/auth/cloud-platform',            ),
-            quota_project_id="octopus",
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_policy_tag_manager_base_transport_with_credentials_file_old_google_auth():
-    # Instantiate the base transport with a credentials file
-    with mock.patch.object(auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.cloud.datacatalog_v1.services.policy_tag_manager.transports.PolicyTagManagerTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'load_credentials_from_file') as load_creds, mock.patch('google.cloud.datacatalog_v1.services.policy_tag_manager.transports.PolicyTagManagerTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         load_creds.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.PolicyTagManagerTransport(
@@ -3818,182 +3998,33 @@ def test_policy_tag_manager_base_transport_with_credentials_file_old_google_auth
 
 def test_policy_tag_manager_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(auth, 'default', autospec=True) as adc, mock.patch('google.cloud.datacatalog_v1.services.policy_tag_manager.transports.PolicyTagManagerTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(auth, 'default') as adc, mock.patch('google.cloud.datacatalog_v1.services.policy_tag_manager.transports.PolicyTagManagerTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (credentials.AnonymousCredentials(), None)
         transport = transports.PolicyTagManagerTransport()
         adc.assert_called_once()
 
 
-@requires_google_auth_gte_1_25_0
 def test_policy_tag_manager_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
+    with mock.patch.object(auth, 'default') as adc:
         adc.return_value = (credentials.AnonymousCredentials(), None)
         PolicyTagManagerClient()
-        adc.assert_called_once_with(
-            scopes=None,
-            default_scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-
-            quota_project_id=None,
-        )
-
-
-@requires_google_auth_lt_1_25_0
-def test_policy_tag_manager_auth_adc_old_google_auth():
-    # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        PolicyTagManagerClient()
-        adc.assert_called_once_with(
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id=None,
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.PolicyTagManagerGrpcTransport,
-        transports.PolicyTagManagerGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_gte_1_25_0
-def test_policy_tag_manager_transport_auth_adc(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, 'default', autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-        adc.assert_called_once_with(
-            scopes=["1", "2"],
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            quota_project_id="octopus",
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class",
-    [
-        transports.PolicyTagManagerGrpcTransport,
-        transports.PolicyTagManagerGrpcAsyncIOTransport,
-    ],
-)
-@requires_google_auth_lt_1_25_0
-def test_policy_tag_manager_transport_auth_adc_old_google_auth(transport_class):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc:
-        adc.return_value = (credentials.AnonymousCredentials(), None)
-        transport_class(quota_project_id="octopus")
         adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/cloud-platform',
-),
-            quota_project_id="octopus",
+            'https://www.googleapis.com/auth/cloud-platform',),
+            quota_project_id=None,
         )
 
 
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.PolicyTagManagerGrpcTransport, grpc_helpers),
-        (transports.PolicyTagManagerGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_gte_1_26_0
-def test_policy_tag_manager_transport_create_channel(transport_class, grpc_helpers):
+def test_policy_tag_manager_transport_auth_adc():
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(
+    with mock.patch.object(auth, 'default') as adc:
+        adc.return_value = (credentials.AnonymousCredentials(), None)
+        transports.PolicyTagManagerGrpcTransport(host="squid.clam.whelk", quota_project_id="octopus")
+        adc.assert_called_once_with(scopes=(
+            'https://www.googleapis.com/auth/cloud-platform',),
             quota_project_id="octopus",
-            scopes=["1", "2"]
-        )
-
-        create_channel.assert_called_with(
-            "datacatalog.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            default_scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            scopes=["1", "2"],
-            default_host="datacatalog.googleapis.com",
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.PolicyTagManagerGrpcTransport, grpc_helpers),
-        (transports.PolicyTagManagerGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_policy_tag_manager_transport_create_channel_old_api_core(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-        transport_class(quota_project_id="octopus")
-
-        create_channel.assert_called_with(
-            "datacatalog.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=(                'https://www.googleapis.com/auth/cloud-platform',),
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
-        )
-
-
-@pytest.mark.parametrize(
-    "transport_class,grpc_helpers",
-    [
-        (transports.PolicyTagManagerGrpcTransport, grpc_helpers),
-        (transports.PolicyTagManagerGrpcAsyncIOTransport, grpc_helpers_async)
-    ],
-)
-@requires_api_core_lt_1_26_0
-def test_policy_tag_manager_transport_create_channel_user_scopes(transport_class, grpc_helpers):
-    # If credentials and host are not provided, the transport class should use
-    # ADC credentials.
-    with mock.patch.object(auth, "default", autospec=True) as adc, mock.patch.object(
-        grpc_helpers, "create_channel", autospec=True
-    ) as create_channel:
-        creds = credentials.AnonymousCredentials()
-        adc.return_value = (creds, None)
-
-        transport_class(quota_project_id="octopus", scopes=["1", "2"])
-
-        create_channel.assert_called_with(
-            "datacatalog.googleapis.com",
-            credentials=creds,
-            credentials_file=None,
-            quota_project_id="octopus",
-            scopes=["1", "2"],
-            ssl_credentials=None,
-            options=[
-                ("grpc.max_send_message_length", -1),
-                ("grpc.max_receive_message_length", -1),
-            ],
         )
 
 
@@ -4055,6 +4086,7 @@ def test_policy_tag_manager_host_with_port():
         client_options=client_options.ClientOptions(api_endpoint='datacatalog.googleapis.com:8000'),
     )
     assert client.transport._host == 'datacatalog.googleapis.com:8000'
+
 
 def test_policy_tag_manager_grpc_transport_channel():
     channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
@@ -4175,6 +4207,7 @@ def test_policy_tag_path():
     location = "clam"
     taxonomy = "whelk"
     policy_tag = "octopus"
+
     expected = "projects/{project}/locations/{location}/taxonomies/{taxonomy}/policyTags/{policy_tag}".format(project=project, location=location, taxonomy=taxonomy, policy_tag=policy_tag, )
     actual = PolicyTagManagerClient.policy_tag_path(project, location, taxonomy, policy_tag)
     assert expected == actual
@@ -4182,10 +4215,11 @@ def test_policy_tag_path():
 
 def test_parse_policy_tag_path():
     expected = {
-        "project": "oyster",
-        "location": "nudibranch",
-        "taxonomy": "cuttlefish",
-        "policy_tag": "mussel",
+    "project": "oyster",
+    "location": "nudibranch",
+    "taxonomy": "cuttlefish",
+    "policy_tag": "mussel",
+
     }
     path = PolicyTagManagerClient.policy_tag_path(**expected)
 
@@ -4197,6 +4231,7 @@ def test_taxonomy_path():
     project = "winkle"
     location = "nautilus"
     taxonomy = "scallop"
+
     expected = "projects/{project}/locations/{location}/taxonomies/{taxonomy}".format(project=project, location=location, taxonomy=taxonomy, )
     actual = PolicyTagManagerClient.taxonomy_path(project, location, taxonomy)
     assert expected == actual
@@ -4204,9 +4239,10 @@ def test_taxonomy_path():
 
 def test_parse_taxonomy_path():
     expected = {
-        "project": "abalone",
-        "location": "squid",
-        "taxonomy": "clam",
+    "project": "abalone",
+    "location": "squid",
+    "taxonomy": "clam",
+
     }
     path = PolicyTagManagerClient.taxonomy_path(**expected)
 
@@ -4216,6 +4252,7 @@ def test_parse_taxonomy_path():
 
 def test_common_billing_account_path():
     billing_account = "whelk"
+
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = PolicyTagManagerClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -4223,7 +4260,8 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+    "billing_account": "octopus",
+
     }
     path = PolicyTagManagerClient.common_billing_account_path(**expected)
 
@@ -4233,6 +4271,7 @@ def test_parse_common_billing_account_path():
 
 def test_common_folder_path():
     folder = "oyster"
+
     expected = "folders/{folder}".format(folder=folder, )
     actual = PolicyTagManagerClient.common_folder_path(folder)
     assert expected == actual
@@ -4240,7 +4279,8 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+    "folder": "nudibranch",
+
     }
     path = PolicyTagManagerClient.common_folder_path(**expected)
 
@@ -4250,6 +4290,7 @@ def test_parse_common_folder_path():
 
 def test_common_organization_path():
     organization = "cuttlefish"
+
     expected = "organizations/{organization}".format(organization=organization, )
     actual = PolicyTagManagerClient.common_organization_path(organization)
     assert expected == actual
@@ -4257,7 +4298,8 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+    "organization": "mussel",
+
     }
     path = PolicyTagManagerClient.common_organization_path(**expected)
 
@@ -4267,6 +4309,7 @@ def test_parse_common_organization_path():
 
 def test_common_project_path():
     project = "winkle"
+
     expected = "projects/{project}".format(project=project, )
     actual = PolicyTagManagerClient.common_project_path(project)
     assert expected == actual
@@ -4274,7 +4317,8 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+    "project": "nautilus",
+
     }
     path = PolicyTagManagerClient.common_project_path(**expected)
 
@@ -4285,6 +4329,7 @@ def test_parse_common_project_path():
 def test_common_location_path():
     project = "scallop"
     location = "abalone"
+
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = PolicyTagManagerClient.common_location_path(project, location)
     assert expected == actual
@@ -4292,8 +4337,9 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+    "project": "squid",
+    "location": "clam",
+
     }
     path = PolicyTagManagerClient.common_location_path(**expected)
 

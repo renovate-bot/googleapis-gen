@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.ApiGateway.V1.Snippets
 {
+    using Google.Cloud.ApiGateway.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedApiGatewayServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetApiConfigAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetApiConfigResourceNamesAsync()
         {
-            // Snippet: GetApiConfigAsync(ApiConfigName, CallSettings)
-            // Additional: GetApiConfigAsync(ApiConfigName, CancellationToken)
             // Create client
             ApiGatewayServiceClient apiGatewayServiceClient = await ApiGatewayServiceClient.CreateAsync();
             // Initialize request argument(s)
             ApiConfigName name = ApiConfigName.FromProjectApiApiConfig("[PROJECT]", "[API]", "[API_CONFIG]");
             // Make the request
             ApiConfig response = await apiGatewayServiceClient.GetApiConfigAsync(name);
-            // End snippet
         }
     }
 }

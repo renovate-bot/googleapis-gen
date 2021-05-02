@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateStoredInfoType</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateStoredInfoType()
         {
-            // Snippet: UpdateStoredInfoType(string, StoredInfoTypeConfig, FieldMask, CallSettings)
             // Create client
             DlpServiceClient dlpServiceClient = DlpServiceClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.Dlp.V2.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             StoredInfoType response = dlpServiceClient.UpdateStoredInfoType(name, config, updateMask);
-            // End snippet
         }
     }
 }

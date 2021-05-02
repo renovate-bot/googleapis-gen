@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.DataCatalog.V1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateTagTemplate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateTagTemplate2()
         {
-            // Snippet: UpdateTagTemplate(TagTemplate, FieldMask, CallSettings)
             // Create client
             DataCatalogClient dataCatalogClient = DataCatalogClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.DataCatalog.V1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             TagTemplate response = dataCatalogClient.UpdateTagTemplate(tagTemplate, updateMask);
-            // End snippet
         }
     }
 }

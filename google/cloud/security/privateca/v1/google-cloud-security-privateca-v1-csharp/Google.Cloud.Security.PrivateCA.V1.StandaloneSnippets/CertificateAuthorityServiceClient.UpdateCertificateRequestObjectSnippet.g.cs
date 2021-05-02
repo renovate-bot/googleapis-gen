@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Security.PrivateCA.V1.Snippets
 {
+    using Google.Cloud.Security.PrivateCA.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedCertificateAuthorityServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateCertificate</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateCertificateRequestObject()
         {
-            // Snippet: UpdateCertificate(UpdateCertificateRequest, CallSettings)
             // Create client
             CertificateAuthorityServiceClient certificateAuthorityServiceClient = CertificateAuthorityServiceClient.Create();
             // Initialize request argument(s)
@@ -35,7 +39,6 @@ namespace Google.Cloud.Security.PrivateCA.V1.Snippets
             };
             // Make the request
             Certificate response = certificateAuthorityServiceClient.UpdateCertificate(request);
-            // End snippet
         }
     }
 }

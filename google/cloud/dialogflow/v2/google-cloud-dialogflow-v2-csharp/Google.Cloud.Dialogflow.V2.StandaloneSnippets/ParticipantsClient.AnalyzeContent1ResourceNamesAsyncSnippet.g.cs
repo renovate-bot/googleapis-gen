@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Dialogflow.V2.Snippets
 {
+    using Google.Cloud.Dialogflow.V2;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedParticipantsClientStandaloneSnippets
     {
         /// <summary>Snippet for AnalyzeContentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task AnalyzeContent1ResourceNamesAsync()
         {
-            // Snippet: AnalyzeContentAsync(ParticipantName, TextInput, CallSettings)
-            // Additional: AnalyzeContentAsync(ParticipantName, TextInput, CancellationToken)
             // Create client
             ParticipantsClient participantsClient = await ParticipantsClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             TextInput textInput = new TextInput();
             // Make the request
             AnalyzeContentResponse response = await participantsClient.AnalyzeContentAsync(participant, textInput);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Datastore.V1.Snippets
 {
+    using Google.Cloud.Datastore.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDatastoreClientStandaloneSnippets
     {
         /// <summary>Snippet for BeginTransactionAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BeginTransactionAsync()
         {
-            // Snippet: BeginTransactionAsync(string, CallSettings)
-            // Additional: BeginTransactionAsync(string, CancellationToken)
             // Create client
             DatastoreClient datastoreClient = await DatastoreClient.CreateAsync();
             // Initialize request argument(s)
             string projectId = "";
             // Make the request
             BeginTransactionResponse response = await datastoreClient.BeginTransactionAsync(projectId);
-            // End snippet
         }
     }
 }

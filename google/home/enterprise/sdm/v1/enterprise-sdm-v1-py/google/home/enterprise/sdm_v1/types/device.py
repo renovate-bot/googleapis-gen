@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import struct_pb2 as struct  # type: ignore
 
@@ -48,22 +51,15 @@ class Device(proto.Message):
             Assignee details of the device.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    type_ = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    traits = proto.Field(
-        proto.MESSAGE,
-        number=4,
+    name = proto.Field(proto.STRING, number=1)
+
+    type_ = proto.Field(proto.STRING, number=2)
+
+    traits = proto.Field(proto.MESSAGE, number=4,
         message=struct.Struct,
     )
-    parent_relations = proto.RepeatedField(
-        proto.MESSAGE,
-        number=5,
+
+    parent_relations = proto.RepeatedField(proto.MESSAGE, number=5,
         message='ParentRelation',
     )
 
@@ -86,14 +82,9 @@ class ParentRelation(proto.Message):
             assigned to.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    display_name = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    display_name = proto.Field(proto.STRING, number=2)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

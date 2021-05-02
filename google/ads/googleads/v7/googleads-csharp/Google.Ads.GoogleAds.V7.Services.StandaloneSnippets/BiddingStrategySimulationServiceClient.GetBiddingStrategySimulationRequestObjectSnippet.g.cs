@@ -17,13 +17,17 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedBiddingStrategySimulationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetBiddingStrategySimulation</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetBiddingStrategySimulationRequestObject()
         {
-            // Snippet: GetBiddingStrategySimulation(GetBiddingStrategySimulationRequest, CallSettings)
             // Create client
             BiddingStrategySimulationServiceClient biddingStrategySimulationServiceClient = BiddingStrategySimulationServiceClient.Create();
             // Initialize request argument(s)
@@ -33,7 +37,6 @@ namespace Google.Ads.GoogleAds.V7.Services.Snippets
             };
             // Make the request
             BiddingStrategySimulation response = biddingStrategySimulationServiceClient.GetBiddingStrategySimulation(request);
-            // End snippet
         }
     }
 }

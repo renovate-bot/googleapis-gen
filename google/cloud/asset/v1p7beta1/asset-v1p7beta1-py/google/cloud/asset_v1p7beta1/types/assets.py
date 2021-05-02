@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.orgpolicy.v1 import orgpolicy_pb2 as orgpolicy  # type: ignore
 from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
@@ -109,65 +112,48 @@ class Asset(proto.Message):
             ``["projects/123456789", "folders/5432", "organizations/1234"]``
     """
 
-    update_time = proto.Field(
-        proto.MESSAGE,
-        number=11,
+    update_time = proto.Field(proto.MESSAGE, number=11,
         message=timestamp.Timestamp,
     )
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    asset_type = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    resource = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    name = proto.Field(proto.STRING, number=1)
+
+    asset_type = proto.Field(proto.STRING, number=2)
+
+    resource = proto.Field(proto.MESSAGE, number=3,
         message='Resource',
     )
-    iam_policy = proto.Field(
-        proto.MESSAGE,
-        number=4,
+
+    iam_policy = proto.Field(proto.MESSAGE, number=4,
         message=giv_policy.Policy,
     )
-    org_policy = proto.RepeatedField(
-        proto.MESSAGE,
-        number=6,
+
+    org_policy = proto.RepeatedField(proto.MESSAGE, number=6,
         message=orgpolicy.Policy,
     )
-    access_policy = proto.Field(
-        proto.MESSAGE,
-        number=7,
-        oneof='access_context_policy',
+
+    access_policy = proto.Field(proto.MESSAGE, number=7, oneof='access_context_policy',
         message=giav_access_policy.AccessPolicy,
     )
-    access_level = proto.Field(
-        proto.MESSAGE,
-        number=8,
-        oneof='access_context_policy',
+
+    access_level = proto.Field(proto.MESSAGE, number=8, oneof='access_context_policy',
         message=giav_access_level.AccessLevel,
     )
-    service_perimeter = proto.Field(
-        proto.MESSAGE,
-        number=9,
-        oneof='access_context_policy',
+
+    service_perimeter = proto.Field(proto.MESSAGE, number=9, oneof='access_context_policy',
         message=giav_service_perimeter.ServicePerimeter,
     )
-    related_assets = proto.Field(
-        proto.MESSAGE,
-        number=13,
+
+    related_assets = proto.Field(proto.MESSAGE, number=13,
         message='RelatedAssets',
     )
-    ancestors = proto.RepeatedField(
-        proto.STRING,
-        number=10,
-    )
+
+    ancestors = proto.RepeatedField(proto.STRING, number=10)
 
 
 class Resource(proto.Message):
     r"""A representation of a Google Cloud resource.
+
     Attributes:
         version (str):
             The API version. Example: ``v1``
@@ -214,39 +200,26 @@ class Resource(proto.Message):
             https://cloud.google.com/about/locations/.
     """
 
-    version = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    discovery_document_uri = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    discovery_name = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    resource_url = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    parent = proto.Field(
-        proto.STRING,
-        number=5,
-    )
-    data = proto.Field(
-        proto.MESSAGE,
-        number=6,
+    version = proto.Field(proto.STRING, number=1)
+
+    discovery_document_uri = proto.Field(proto.STRING, number=2)
+
+    discovery_name = proto.Field(proto.STRING, number=3)
+
+    resource_url = proto.Field(proto.STRING, number=4)
+
+    parent = proto.Field(proto.STRING, number=5)
+
+    data = proto.Field(proto.MESSAGE, number=6,
         message=struct.Struct,
     )
-    location = proto.Field(
-        proto.STRING,
-        number=8,
-    )
+
+    location = proto.Field(proto.STRING, number=8)
 
 
 class RelatedAssets(proto.Message):
     r"""The detailed related assets with the ``relationship_type``.
+
     Attributes:
         relationship_attributes (google.cloud.asset_v1p7beta1.types.RelationshipAttributes):
             The detailed relation attributes.
@@ -254,14 +227,11 @@ class RelatedAssets(proto.Message):
             The peer resources of the relationship.
     """
 
-    relationship_attributes = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    relationship_attributes = proto.Field(proto.MESSAGE, number=1,
         message='RelationshipAttributes',
     )
-    assets = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+
+    assets = proto.RepeatedField(proto.MESSAGE, number=2,
         message='RelatedAsset',
     )
 
@@ -285,22 +255,13 @@ class RelationshipAttributes(proto.Message):
             ``attaches``
     """
 
-    type_ = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    source_resource_type = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    target_resource_type = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    action = proto.Field(
-        proto.STRING,
-        number=3,
-    )
+    type_ = proto.Field(proto.STRING, number=4)
+
+    source_resource_type = proto.Field(proto.STRING, number=1)
+
+    target_resource_type = proto.Field(proto.STRING, number=2)
+
+    action = proto.Field(proto.STRING, number=3)
 
 
 class RelatedAsset(proto.Message):
@@ -340,18 +301,11 @@ class RelatedAsset(proto.Message):
             ``["projects/123456789", "folders/5432", "organizations/1234"]``
     """
 
-    asset = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    asset_type = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    ancestors = proto.RepeatedField(
-        proto.STRING,
-        number=3,
-    )
+    asset = proto.Field(proto.STRING, number=1)
+
+    asset_type = proto.Field(proto.STRING, number=2)
+
+    ancestors = proto.RepeatedField(proto.STRING, number=3)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

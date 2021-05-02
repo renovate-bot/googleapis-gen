@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -29,6 +31,7 @@ from google.oauth2 import service_account              # type: ignore
 from google.ads.admob_v1.services.ad_mob_api import pagers
 from google.ads.admob_v1.types import admob_api
 from google.ads.admob_v1.types import admob_resources
+
 from .transports.base import AdMobApiTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import AdMobApiGrpcAsyncIOTransport
 from .client import AdMobApiClient
@@ -46,14 +49,19 @@ class AdMobApiAsyncClient:
 
     publisher_account_path = staticmethod(AdMobApiClient.publisher_account_path)
     parse_publisher_account_path = staticmethod(AdMobApiClient.parse_publisher_account_path)
+
     common_billing_account_path = staticmethod(AdMobApiClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(AdMobApiClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(AdMobApiClient.common_folder_path)
     parse_common_folder_path = staticmethod(AdMobApiClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(AdMobApiClient.common_organization_path)
     parse_common_organization_path = staticmethod(AdMobApiClient.parse_common_organization_path)
+
     common_project_path = staticmethod(AdMobApiClient.common_project_path)
     parse_common_project_path = staticmethod(AdMobApiClient.parse_common_project_path)
+
     common_location_path = staticmethod(AdMobApiClient.common_location_path)
     parse_common_location_path = staticmethod(AdMobApiClient.parse_common_location_path)
 
@@ -138,6 +146,7 @@ class AdMobApiAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = AdMobApiClient(
             credentials=credentials,
             transport=transport,
@@ -159,8 +168,7 @@ class AdMobApiAsyncClient:
 
         Args:
             request (:class:`google.ads.admob_v1.types.GetPublisherAccountRequest`):
-                The request object.
-                Request to retrieve the specified
+                The request object. Request to retrieve the specified
                 publisher account.
             name (:class:`str`):
                 Resource name of the publisher
@@ -170,6 +178,7 @@ class AdMobApiAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -196,6 +205,7 @@ class AdMobApiAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -239,11 +249,11 @@ class AdMobApiAsyncClient:
 
         Args:
             request (:class:`google.ads.admob_v1.types.ListPublisherAccountsRequest`):
-                The request object.
-                Request to retrieve the AdMob
+                The request object. Request to retrieve the AdMob
                 publisher account accessible with the client credential.
                 Currently all credentials have access to at most 1
                 account.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -260,6 +270,7 @@ class AdMobApiAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = admob_api.ListPublisherAccountsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -302,9 +313,9 @@ class AdMobApiAsyncClient:
 
         Args:
             request (:class:`google.ads.admob_v1.types.GenerateNetworkReportRequest`):
-                The request object.
-                Request to generate an AdMob Network
+                The request object. Request to generate an AdMob Network
                 report.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -341,6 +352,7 @@ class AdMobApiAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = admob_api.GenerateNetworkReportRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -382,9 +394,9 @@ class AdMobApiAsyncClient:
 
         Args:
             request (:class:`google.ads.admob_v1.types.GenerateMediationReportRequest`):
-                The request object.
-                Request to generate an AdMob
+                The request object. Request to generate an AdMob
                 Mediation report.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -423,6 +435,7 @@ class AdMobApiAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = admob_api.GenerateMediationReportRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -451,6 +464,8 @@ class AdMobApiAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

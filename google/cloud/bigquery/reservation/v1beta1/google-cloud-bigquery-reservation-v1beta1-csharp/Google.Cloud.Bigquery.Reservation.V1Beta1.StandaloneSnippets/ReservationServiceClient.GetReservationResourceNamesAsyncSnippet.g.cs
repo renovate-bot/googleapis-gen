@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Bigquery.Reservation.V1Beta1.Snippets
 {
+    using Google.Cloud.Bigquery.Reservation.V1Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedReservationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetReservationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetReservationResourceNamesAsync()
         {
-            // Snippet: GetReservationAsync(ReservationName, CallSettings)
-            // Additional: GetReservationAsync(ReservationName, CancellationToken)
             // Create client
             ReservationServiceClient reservationServiceClient = await ReservationServiceClient.CreateAsync();
             // Initialize request argument(s)
             ReservationName name = ReservationName.FromProjectLocationReservation("[PROJECT]", "[LOCATION]", "[RESERVATION]");
             // Make the request
             Reservation response = await reservationServiceClient.GetReservationAsync(name);
-            // End snippet
         }
     }
 }

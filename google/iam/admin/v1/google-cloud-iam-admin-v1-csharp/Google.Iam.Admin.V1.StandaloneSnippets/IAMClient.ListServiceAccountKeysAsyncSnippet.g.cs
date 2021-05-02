@@ -16,16 +16,19 @@
 
 namespace Google.Iam.Admin.V1.Snippets
 {
+    using Google.Iam.Admin.V1;
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedIAMClientStandaloneSnippets
     {
         /// <summary>Snippet for ListServiceAccountKeysAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListServiceAccountKeysAsync()
         {
-            // Snippet: ListServiceAccountKeysAsync(string, IEnumerable<ListServiceAccountKeysRequest.Types.KeyType>, CallSettings)
-            // Additional: ListServiceAccountKeysAsync(string, IEnumerable<ListServiceAccountKeysRequest.Types.KeyType>, CancellationToken)
             // Create client
             IAMClient iAMClient = await IAMClient.CreateAsync();
             // Initialize request argument(s)
@@ -36,7 +39,6 @@ namespace Google.Iam.Admin.V1.Snippets
             };
             // Make the request
             ListServiceAccountKeysResponse response = await iAMClient.ListServiceAccountKeysAsync(name, keyTypes);
-            // End snippet
         }
     }
 }

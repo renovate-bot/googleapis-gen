@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.TextToSpeech.V1beta1.Snippets
 {
+    using Google.Cloud.TextToSpeech.V1beta1;
+
     public sealed partial class GeneratedTextToSpeechClientStandaloneSnippets
     {
         /// <summary>Snippet for SynthesizeSpeech</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void SynthesizeSpeechRequestObject()
         {
-            // Snippet: SynthesizeSpeech(SynthesizeSpeechRequest, CallSettings)
             // Create client
             TextToSpeechClient textToSpeechClient = TextToSpeechClient.Create();
             // Initialize request argument(s)
@@ -37,7 +42,6 @@ namespace Google.Cloud.TextToSpeech.V1beta1.Snippets
             };
             // Make the request
             SynthesizeSpeechResponse response = textToSpeechClient.SynthesizeSpeech(request);
-            // End snippet
         }
     }
 }

@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.GSuiteAddOns.V1.Snippets
 {
+    using Google.Cloud.GSuiteAddOns.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGSuiteAddOnsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAuthorizationAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAuthorizationResourceNamesAsync()
         {
-            // Snippet: GetAuthorizationAsync(AuthorizationName, CallSettings)
-            // Additional: GetAuthorizationAsync(AuthorizationName, CancellationToken)
             // Create client
             GSuiteAddOnsClient gSuiteAddOnsClient = await GSuiteAddOnsClient.CreateAsync();
             // Initialize request argument(s)
             AuthorizationName name = AuthorizationName.FromProject("[PROJECT]");
             // Make the request
             Authorization response = await gSuiteAddOnsClient.GetAuthorizationAsync(name);
-            // End snippet
         }
     }
 }

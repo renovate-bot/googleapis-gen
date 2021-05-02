@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
 {
+    using Google.Cloud.DataCatalog.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataCatalogClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateEntryAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task UpdateEntry2Async()
         {
-            // Snippet: UpdateEntryAsync(Entry, FieldMask, CallSettings)
-            // Additional: UpdateEntryAsync(Entry, FieldMask, CancellationToken)
             // Create client
             DataCatalogClient dataCatalogClient = await DataCatalogClient.CreateAsync();
             // Initialize request argument(s)
@@ -33,7 +36,6 @@ namespace Google.Cloud.DataCatalog.V1Beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             Entry response = await dataCatalogClient.UpdateEntryAsync(entry, updateMask);
-            // End snippet
         }
     }
 }

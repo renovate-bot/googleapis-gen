@@ -16,22 +16,24 @@
 
 namespace Google.Analytics.Admin.V1Alpha.Snippets
 {
+    using Google.Analytics.Admin.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAnalyticsAdminServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAndroidAppDataStreamAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAndroidAppDataStreamResourceNamesAsync()
         {
-            // Snippet: GetAndroidAppDataStreamAsync(AndroidAppDataStreamName, CallSettings)
-            // Additional: GetAndroidAppDataStreamAsync(AndroidAppDataStreamName, CancellationToken)
             // Create client
             AnalyticsAdminServiceClient analyticsAdminServiceClient = await AnalyticsAdminServiceClient.CreateAsync();
             // Initialize request argument(s)
             AndroidAppDataStreamName name = AndroidAppDataStreamName.FromPropertyAndroidAppDataStream("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]");
             // Make the request
             AndroidAppDataStream response = await analyticsAdminServiceClient.GetAndroidAppDataStreamAsync(name);
-            // End snippet
         }
     }
 }

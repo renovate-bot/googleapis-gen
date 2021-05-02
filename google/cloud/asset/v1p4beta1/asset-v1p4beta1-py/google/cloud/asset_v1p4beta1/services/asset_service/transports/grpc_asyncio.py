@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,8 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
 
 from google.api_core import gapic_v1                   # type: ignore
 from google.api_core import grpc_helpers_async         # type: ignore
@@ -22,13 +24,13 @@ from google.api_core import operations_v1              # type: ignore
 from google import auth                                # type: ignore
 from google.auth import credentials                    # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
-import packaging.version
 
 import grpc                        # type: ignore
 from grpc.experimental import aio  # type: ignore
 
 from google.cloud.asset_v1p4beta1.types import asset_service
 from google.longrunning import operations_pb2 as operations  # type: ignore
+
 from .base import AssetServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import AssetServiceGrpcTransport
 
@@ -78,15 +80,13 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-
-        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
-
+        scopes = scopes or cls.AUTH_SCOPES
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
+            scopes=scopes,
             quota_project_id=quota_project_id,
-            **self_signed_jwt_kwargs,
             **kwargs
         )
 
@@ -106,8 +106,7 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -166,6 +165,7 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
+
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -244,9 +244,7 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def analyze_iam_policy(self) -> Callable[
             [asset_service.AnalyzeIamPolicyRequest],
             Awaitable[asset_service.AnalyzeIamPolicyResponse]]:
-        r"""Return a callable for the
-        analyze iam policy
-          method over gRPC.
+        r"""Return a callable for the analyze iam policy method over gRPC.
 
         Analyzes IAM policies based on the specified request. Returns a
         list of
@@ -275,9 +273,7 @@ class AssetServiceGrpcAsyncIOTransport(AssetServiceTransport):
     def export_iam_policy_analysis(self) -> Callable[
             [asset_service.ExportIamPolicyAnalysisRequest],
             Awaitable[operations.Operation]]:
-        r"""Return a callable for the
-        export iam policy analysis
-          method over gRPC.
+        r"""Return a callable for the export iam policy analysis method over gRPC.
 
         Exports IAM policy analysis based on the specified request. This
         API implements the

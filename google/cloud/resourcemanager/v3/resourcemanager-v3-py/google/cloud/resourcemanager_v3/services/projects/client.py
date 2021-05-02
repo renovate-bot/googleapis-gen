@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -38,6 +40,7 @@ from google.iam.v1 import iam_policy_pb2 as iam_policy  # type: ignore
 from google.iam.v1 import policy_pb2 as giv_policy  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
+
 from .transports.base import ProjectsTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import ProjectsGrpcTransport
 from .transports.grpc_asyncio import ProjectsGrpcAsyncIOTransport
@@ -343,8 +346,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.GetProjectRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [GetProject][google.cloud.resourcemanager.v3.Projects.GetProject]
                 method.
             name (str):
@@ -354,6 +356,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -382,8 +385,10 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.GetProjectRequest):
             request = projects.GetProjectRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -428,8 +433,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.ListProjectsRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [ListProjects][google.cloud.resourcemanager.v3.Projects.ListProjects]
                 method.
             parent (str):
@@ -442,6 +446,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -479,8 +484,10 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.ListProjectsRequest):
             request = projects.ListProjectsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -532,8 +539,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.SearchProjectsRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [SearchProjects][google.cloud.resourcemanager.v3.Projects.SearchProjects]
                 method.
             query (str):
@@ -581,6 +587,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``query`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -615,8 +622,10 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.SearchProjectsRequest):
             request = projects.SearchProjectsRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if query is not None:
                 request.query = query
 
@@ -661,8 +670,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.CreateProjectRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [CreateProject][google.cloud.resourcemanager.v3.Projects.CreateProject]
                 method.
             project (google.cloud.resourcemanager_v3.types.Project):
@@ -680,6 +688,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``project`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -709,8 +718,10 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.CreateProjectRequest):
             request = projects.CreateProjectRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project is not None:
                 request.project = project
 
@@ -756,8 +767,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.UpdateProjectRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [UpdateProject][google.cloud.resourcemanager.v3.Projects.UpdateProject]
                 method.
 
@@ -779,6 +789,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -808,8 +819,10 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.UpdateProjectRequest):
             request = projects.UpdateProjectRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if project is not None:
                 request.project = project
             if update_mask is not None:
@@ -870,8 +883,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.MoveProjectRequest):
-                The request object.
-                The request sent to
+                The request object. The request sent to
                 [MoveProject][google.cloud.resourcemanager.v3.Projects.MoveProject]
                 method.
             name (str):
@@ -888,6 +900,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``destination_parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -917,8 +930,10 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.MoveProjectRequest):
             request = projects.MoveProjectRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
             if destination_parent is not None:
@@ -1001,8 +1016,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.DeleteProjectRequest):
-                The request object.
-                [DeleteProject][google.cloud.resourcemanager.v3.Projects.DeleteProject]
+                The request object. [DeleteProject][google.cloud.resourcemanager.v3.Projects.DeleteProject]
                 method.
             name (str):
                 Required. The name of the Project (for example,
@@ -1011,6 +1025,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1040,8 +1055,10 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.DeleteProjectRequest):
             request = projects.DeleteProjectRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1095,8 +1112,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
 
         Args:
             request (google.cloud.resourcemanager_v3.types.UndeleteProjectRequest):
-                The request object.
-                The request sent to the
+                The request object. The request sent to the
                 [UndeleteProject]
                 [google.cloud.resourcemanager.v3.Projects.UndeleteProject]
                 method.
@@ -1109,6 +1125,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1138,8 +1155,10 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
         # there are no flattened fields.
         if not isinstance(request, projects.UndeleteProjectRequest):
             request = projects.UndeleteProjectRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -1188,8 +1207,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.GetIamPolicyRequest):
-                The request object.
-                Request message for `GetIamPolicy`
+                The request object. Request message for `GetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1200,6 +1218,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1273,14 +1292,15 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.GetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.GetIamPolicyRequest()
-             if resource is not None:
+
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1369,8 +1389,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.SetIamPolicyRequest):
-                The request object.
-                Request message for `SetIamPolicy`
+                The request object. Request message for `SetIamPolicy`
                 method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1381,6 +1400,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``resource`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1454,14 +1474,15 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.SetIamPolicyRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.SetIamPolicyRequest()
-             if resource is not None:
+
+            if resource is not None:
                 request.resource = resource
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -1501,8 +1522,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
 
         Args:
             request (google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 `TestIamPermissions` method.
             resource (str):
                 REQUIRED: The resource for which the
@@ -1522,6 +1542,7 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
                 This corresponds to the ``permissions`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1540,15 +1561,17 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-         if isinstance(request, dict):
+        if isinstance(request, dict):
             # The request isn't a proto-plus wrapped type,
             # so it must be constructed via keyword expansion.
             request = iam_policy.TestIamPermissionsRequest(**request)
         elif not request:
             # Null request, just make one.
             request = iam_policy.TestIamPermissionsRequest()
-             if resource is not None:
+
+            if resource is not None:
                 request.resource = resource
+
             if permissions:
                 request.permissions.extend(permissions)
 
@@ -1574,6 +1597,8 @@ class ProjectsClient(metaclass=ProjectsClientMeta):
 
         # Done; return the response.
         return response
+
+
 
 
 

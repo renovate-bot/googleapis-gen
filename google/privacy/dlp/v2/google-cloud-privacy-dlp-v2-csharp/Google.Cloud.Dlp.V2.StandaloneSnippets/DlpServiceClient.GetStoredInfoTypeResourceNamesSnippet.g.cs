@@ -16,19 +16,23 @@
 
 namespace Google.Cloud.Dlp.V2.Snippets
 {
+    using Google.Cloud.Dlp.V2;
+
     public sealed partial class GeneratedDlpServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetStoredInfoType</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetStoredInfoTypeResourceNames()
         {
-            // Snippet: GetStoredInfoType(StoredInfoTypeName, CallSettings)
             // Create client
             DlpServiceClient dlpServiceClient = DlpServiceClient.Create();
             // Initialize request argument(s)
             StoredInfoTypeName name = StoredInfoTypeName.FromOrganizationStoredInfoType("[ORGANIZATION]", "[STORED_INFO_TYPE]");
             // Make the request
             StoredInfoType response = dlpServiceClient.GetStoredInfoType(name);
-            // End snippet
         }
     }
 }

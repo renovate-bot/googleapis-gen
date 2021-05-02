@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import argparse
 import os
 import libcst as cst
@@ -39,23 +41,24 @@ def partition(
 class clouddmsCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
-          'create_connection_profile': ('parent', 'connection_profile_id', 'connection_profile', 'request_id', ),
-          'create_migration_job': ('parent', 'migration_job_id', 'migration_job', 'request_id', ),
-          'delete_connection_profile': ('name', 'request_id', 'force', ),
-          'delete_migration_job': ('name', 'request_id', 'force', ),
-          'generate_ssh_script': ('vm', 'migration_job', 'vm_creation_config', 'vm_selection_config', 'vm_port', ),
-          'get_connection_profile': ('name', ),
-          'get_migration_job': ('name', ),
-          'list_connection_profiles': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'list_migration_jobs': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
-          'promote_migration_job': ('name', ),
-          'restart_migration_job': ('name', ),
-          'resume_migration_job': ('name', ),
-          'start_migration_job': ('name', ),
-          'stop_migration_job': ('name', ),
-          'update_connection_profile': ('update_mask', 'connection_profile', 'request_id', ),
-          'update_migration_job': ('update_mask', 'migration_job', 'request_id', ),
-          'verify_migration_job': ('name', ),
+    'create_connection_profile': ('parent', 'connection_profile_id', 'connection_profile', 'request_id', ),
+    'create_migration_job': ('parent', 'migration_job_id', 'migration_job', 'request_id', ),
+    'delete_connection_profile': ('name', 'request_id', 'force', ),
+    'delete_migration_job': ('name', 'request_id', 'force', ),
+    'generate_ssh_script': ('vm', 'migration_job', 'vm_creation_config', 'vm_selection_config', 'vm_port', ),
+    'get_connection_profile': ('name', ),
+    'get_migration_job': ('name', ),
+    'list_connection_profiles': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+    'list_migration_jobs': ('parent', 'page_size', 'page_token', 'filter', 'order_by', ),
+    'promote_migration_job': ('name', ),
+    'restart_migration_job': ('name', ),
+    'resume_migration_job': ('name', ),
+    'start_migration_job': ('name', ),
+    'stop_migration_job': ('name', ),
+    'update_connection_profile': ('update_mask', 'connection_profile', 'request_id', ),
+    'update_migration_job': ('update_mask', 'migration_job', 'request_id', ),
+    'verify_migration_job': ('name', ),
+
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:
@@ -86,7 +89,7 @@ class clouddmsCallTransformer(cst.CSTTransformer):
             value=cst.Dict([
                 cst.DictElement(
                     cst.SimpleString("'{}'".format(name)),
-cst.Element(value=arg.value)
+                    cst.Element(value=arg.value)
                 )
                 # Note: the args + kwargs looks silly, but keep in mind that
                 # the control parameters had to be stripped out, and that

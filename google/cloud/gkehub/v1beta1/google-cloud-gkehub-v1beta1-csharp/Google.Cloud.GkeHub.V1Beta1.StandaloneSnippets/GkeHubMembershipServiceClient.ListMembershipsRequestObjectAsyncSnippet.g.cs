@@ -17,16 +17,20 @@
 namespace Google.Cloud.GkeHub.V1Beta1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.GkeHub.V1Beta1;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGkeHubMembershipServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListMemberships</summary>
+        /// <summary>Snippet for ListMembershipsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListMembershipsRequestObjectAsync()
         {
-            // Snippet: ListMembershipsAsync(ListMembershipsRequest, CallSettings)
             // Create client
             GkeHubMembershipServiceClient gkeHubMembershipServiceClient = await GkeHubMembershipServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -70,7 +74,6 @@ namespace Google.Cloud.GkeHub.V1Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

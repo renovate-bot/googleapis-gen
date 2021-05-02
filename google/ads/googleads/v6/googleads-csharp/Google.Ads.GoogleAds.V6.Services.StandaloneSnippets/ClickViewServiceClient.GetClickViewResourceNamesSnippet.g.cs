@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
 
     public sealed partial class GeneratedClickViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetClickView</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetClickViewResourceNames()
         {
-            // Snippet: GetClickView(ClickViewName, CallSettings)
             // Create client
             ClickViewServiceClient clickViewServiceClient = ClickViewServiceClient.Create();
             // Initialize request argument(s)
             ClickViewName resourceName = ClickViewName.FromCustomerDateGclid("[CUSTOMER_ID]", "[DATE]", "[GCLID]");
             // Make the request
             ClickView response = clickViewServiceClient.GetClickView(resourceName);
-            // End snippet
         }
     }
 }

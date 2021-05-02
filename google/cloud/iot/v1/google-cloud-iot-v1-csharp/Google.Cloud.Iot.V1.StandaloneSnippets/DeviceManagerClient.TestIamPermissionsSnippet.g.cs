@@ -17,14 +17,18 @@
 namespace Google.Cloud.Iot.V1.Snippets
 {
     using Google.Cloud.Iam.V1;
+    using Google.Cloud.Iot.V1;
     using System.Collections.Generic;
 
     public sealed partial class GeneratedDeviceManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for TestIamPermissions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void TestIamPermissions()
         {
-            // Snippet: TestIamPermissions(string, IEnumerable<string>, CallSettings)
             // Create client
             DeviceManagerClient deviceManagerClient = DeviceManagerClient.Create();
             // Initialize request argument(s)
@@ -32,7 +36,6 @@ namespace Google.Cloud.Iot.V1.Snippets
             IEnumerable<string> permissions = new string[] { "", };
             // Make the request
             TestIamPermissionsResponse response = deviceManagerClient.TestIamPermissions(resource, permissions);
-            // End snippet
         }
     }
 }

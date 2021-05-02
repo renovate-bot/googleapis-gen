@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
 
 
@@ -51,7 +53,6 @@ class NotificationConfig(proto.Message):
             The config for triggering streaming-based
             notifications.
     """
-
     class StreamingConfig(proto.Message):
         r"""The config for streaming-based notifications, which send each
         event as soon as it is detected.
@@ -83,31 +84,17 @@ class NotificationConfig(proto.Message):
                 -  boolean literals ``true`` and ``false`` without quotes.
         """
 
-        filter = proto.Field(
-            proto.STRING,
-            number=1,
-        )
+        filter = proto.Field(proto.STRING, number=1)
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    description = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    pubsub_topic = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    service_account = proto.Field(
-        proto.STRING,
-        number=4,
-    )
-    streaming_config = proto.Field(
-        proto.MESSAGE,
-        number=5,
-        oneof='notify_config',
+    name = proto.Field(proto.STRING, number=1)
+
+    description = proto.Field(proto.STRING, number=2)
+
+    pubsub_topic = proto.Field(proto.STRING, number=3)
+
+    service_account = proto.Field(proto.STRING, number=4)
+
+    streaming_config = proto.Field(proto.MESSAGE, number=5, oneof='notify_config',
         message=StreamingConfig,
     )
 

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.ads.googleads.v6.resources.types import feed_item_set_link
 
@@ -33,16 +36,14 @@ __protobuf__ = proto.module(
 
 class GetFeedItemSetLinkRequest(proto.Message):
     r"""Request message for [FeedItemSetLinkService.GetFeedItemSetLinks][].
+
     Attributes:
         resource_name (str):
             Required. The resource name of the feed item
             set link to fetch.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 class MutateFeedItemSetLinksRequest(proto.Message):
@@ -67,23 +68,12 @@ class MutateFeedItemSetLinksRequest(proto.Message):
             executed. Only errors are returned, not results.
     """
 
-    customer_id = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    operations = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+    customer_id = proto.Field(proto.STRING, number=1)
+    operations = proto.RepeatedField(proto.MESSAGE, number=2,
         message='FeedItemSetLinkOperation',
     )
-    partial_failure = proto.Field(
-        proto.BOOL,
-        number=3,
-    )
-    validate_only = proto.Field(
-        proto.BOOL,
-        number=4,
-    )
+    partial_failure = proto.Field(proto.BOOL, number=3)
+    validate_only = proto.Field(proto.BOOL, number=4)
 
 
 class FeedItemSetLinkOperation(proto.Message):
@@ -101,44 +91,34 @@ class FeedItemSetLinkOperation(proto.Message):
             ``customers/{customer_id}/feedItemSetLinks/{feed_id}_{feed_item_set_id}_{feed_item_id}``
     """
 
-    create = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        oneof='operation',
+    create = proto.Field(proto.MESSAGE, number=1, oneof='operation',
         message=feed_item_set_link.FeedItemSetLink,
     )
-    remove = proto.Field(
-        proto.STRING,
-        number=2,
-        oneof='operation',
-    )
+    remove = proto.Field(proto.STRING, number=2, oneof='operation')
 
 
 class MutateFeedItemSetLinksResponse(proto.Message):
     r"""Response message for a feed item set link mutate.
+
     Attributes:
         results (Sequence[google.ads.googleads.v6.services.types.MutateFeedItemSetLinkResult]):
             All results for the mutate.
     """
 
-    results = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    results = proto.RepeatedField(proto.MESSAGE, number=1,
         message='MutateFeedItemSetLinkResult',
     )
 
 
 class MutateFeedItemSetLinkResult(proto.Message):
     r"""The result for the feed item set link mutate.
+
     Attributes:
         resource_name (str):
             Returned for successful operations.
     """
 
-    resource_name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    resource_name = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

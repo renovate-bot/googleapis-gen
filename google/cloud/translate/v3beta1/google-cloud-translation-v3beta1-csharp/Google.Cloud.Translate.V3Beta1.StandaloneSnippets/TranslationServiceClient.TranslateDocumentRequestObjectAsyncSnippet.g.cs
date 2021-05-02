@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Translate.V3Beta1.Snippets
 {
+    using Google.Cloud.Translate.V3Beta1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedTranslationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for TranslateDocumentAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task TranslateDocumentRequestObjectAsync()
         {
-            // Snippet: TranslateDocumentAsync(TranslateDocumentRequest, CallSettings)
-            // Additional: TranslateDocumentAsync(TranslateDocumentRequest, CancellationToken)
             // Create client
             TranslationServiceClient translationServiceClient = await TranslationServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -41,7 +44,6 @@ namespace Google.Cloud.Translate.V3Beta1.Snippets
             };
             // Make the request
             TranslateDocumentResponse response = await translationServiceClient.TranslateDocumentAsync(request);
-            // End snippet
         }
     }
 }

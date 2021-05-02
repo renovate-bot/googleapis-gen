@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.ServiceDirectory.V1.Snippets
 {
+    using Google.Cloud.ServiceDirectory.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedRegistrationServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteNamespaceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteNamespaceResourceNamesAsync()
         {
-            // Snippet: DeleteNamespaceAsync(NamespaceName, CallSettings)
-            // Additional: DeleteNamespaceAsync(NamespaceName, CancellationToken)
             // Create client
             RegistrationServiceClient registrationServiceClient = await RegistrationServiceClient.CreateAsync();
             // Initialize request argument(s)
             NamespaceName name = NamespaceName.FromProjectLocationNamespace("[PROJECT]", "[LOCATION]", "[NAMESPACE]");
             // Make the request
             await registrationServiceClient.DeleteNamespaceAsync(name);
-            // End snippet
         }
     }
 }

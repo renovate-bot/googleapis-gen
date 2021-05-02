@@ -17,16 +17,20 @@
 namespace Google.Cloud.Speech.V1P1Beta1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Speech.V1P1Beta1;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAdaptationClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListCustomClasses</summary>
+        /// <summary>Snippet for ListCustomClassesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListCustomClassesAsync()
         {
-            // Snippet: ListCustomClassesAsync(string, string, int?, CallSettings)
             // Create client
             AdaptationClient adaptationClient = await AdaptationClient.CreateAsync();
             // Initialize request argument(s)
@@ -65,7 +69,6 @@ namespace Google.Cloud.Speech.V1P1Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 import functools
 import re
@@ -34,6 +36,7 @@ from google.cloud.dialogflow_v2beta1.types import entity_type as gcd_entity_type
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import struct_pb2 as struct  # type: ignore
+
 from .transports.base import EntityTypesTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import EntityTypesGrpcAsyncIOTransport
 from .client import EntityTypesClient
@@ -51,14 +54,19 @@ class EntityTypesAsyncClient:
 
     entity_type_path = staticmethod(EntityTypesClient.entity_type_path)
     parse_entity_type_path = staticmethod(EntityTypesClient.parse_entity_type_path)
+
     common_billing_account_path = staticmethod(EntityTypesClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(EntityTypesClient.parse_common_billing_account_path)
+
     common_folder_path = staticmethod(EntityTypesClient.common_folder_path)
     parse_common_folder_path = staticmethod(EntityTypesClient.parse_common_folder_path)
+
     common_organization_path = staticmethod(EntityTypesClient.common_organization_path)
     parse_common_organization_path = staticmethod(EntityTypesClient.parse_common_organization_path)
+
     common_project_path = staticmethod(EntityTypesClient.common_project_path)
     parse_common_project_path = staticmethod(EntityTypesClient.parse_common_project_path)
+
     common_location_path = staticmethod(EntityTypesClient.common_location_path)
     parse_common_location_path = staticmethod(EntityTypesClient.parse_common_location_path)
 
@@ -143,6 +151,7 @@ class EntityTypesAsyncClient:
             google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
+
         self._client = EntityTypesClient(
             credentials=credentials,
             transport=transport,
@@ -165,8 +174,7 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.ListEntityTypesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.ListEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.ListEntityTypes].
             parent (:class:`str`):
                 Required. The agent to list all entity types from.
@@ -188,6 +196,7 @@ class EntityTypesAsyncClient:
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -215,6 +224,7 @@ class EntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if language_code is not None:
@@ -269,8 +279,7 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.GetEntityTypeRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.GetEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.GetEntityType].
             name (:class:`str`):
                 Required. The name of the entity type. Supported
@@ -292,6 +301,7 @@ class EntityTypesAsyncClient:
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -329,6 +339,7 @@ class EntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
         if language_code is not None:
@@ -375,8 +386,7 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.CreateEntityTypeRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.CreateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.CreateEntityType].
             parent (:class:`str`):
                 Required. The agent to create a entity type for.
@@ -403,6 +413,7 @@ class EntityTypesAsyncClient:
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -440,6 +451,7 @@ class EntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if entity_type is not None:
@@ -488,8 +500,7 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.UpdateEntityTypeRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.UpdateEntityType].
             entity_type (:class:`google.cloud.dialogflow_v2beta1.types.EntityType`):
                 Required. The entity type to update.
@@ -513,6 +524,7 @@ class EntityTypesAsyncClient:
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -550,6 +562,7 @@ class EntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if entity_type is not None:
             request.entity_type = entity_type
         if language_code is not None:
@@ -596,8 +609,7 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.DeleteEntityTypeRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.DeleteEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.DeleteEntityType].
             name (:class:`str`):
                 Required. The name of the entity type to delete.
@@ -609,6 +621,7 @@ class EntityTypesAsyncClient:
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -627,6 +640,7 @@ class EntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if name is not None:
             request.name = name
 
@@ -667,9 +681,9 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.BatchUpdateEntityTypesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntityTypes].
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -687,6 +701,7 @@ class EntityTypesAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+
         request = entity_type.BatchUpdateEntityTypesRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
@@ -738,8 +753,7 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.BatchDeleteEntityTypesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchDeleteEntityTypes][google.cloud.dialogflow.v2beta1.EntityTypes.BatchDeleteEntityTypes].
             parent (:class:`str`):
                 Required. The name of the agent to delete all entities
@@ -758,6 +772,7 @@ class EntityTypesAsyncClient:
                 This corresponds to the ``entity_type_names`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -795,8 +810,10 @@ class EntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
+
         if entity_type_names:
             request.entity_type_names.extend(entity_type_names)
 
@@ -852,8 +869,7 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.BatchCreateEntitiesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchCreateEntities][google.cloud.dialogflow.v2beta1.EntityTypes.BatchCreateEntities].
             parent (:class:`str`):
                 Required. The name of the entity type to create entities
@@ -880,6 +896,7 @@ class EntityTypesAsyncClient:
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -917,10 +934,12 @@ class EntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if language_code is not None:
             request.language_code = language_code
+
         if entities:
             request.entities.extend(entities)
 
@@ -978,8 +997,7 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.BatchUpdateEntitiesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchUpdateEntities][google.cloud.dialogflow.v2beta1.EntityTypes.BatchUpdateEntities].
             parent (:class:`str`):
                 Required. The name of the entity type to update or
@@ -1008,6 +1026,7 @@ class EntityTypesAsyncClient:
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1045,10 +1064,12 @@ class EntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if language_code is not None:
             request.language_code = language_code
+
         if entities:
             request.entities.extend(entities)
 
@@ -1104,8 +1125,7 @@ class EntityTypesAsyncClient:
 
         Args:
             request (:class:`google.cloud.dialogflow_v2beta1.types.BatchDeleteEntitiesRequest`):
-                The request object.
-                The request message for
+                The request object. The request message for
                 [EntityTypes.BatchDeleteEntities][google.cloud.dialogflow.v2beta1.EntityTypes.BatchDeleteEntities].
             parent (:class:`str`):
                 Required. The name of the entity type to delete entries
@@ -1135,6 +1155,7 @@ class EntityTypesAsyncClient:
                 This corresponds to the ``language_code`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -1172,10 +1193,12 @@ class EntityTypesAsyncClient:
 
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
+
         if parent is not None:
             request.parent = parent
         if language_code is not None:
             request.language_code = language_code
+
         if entity_values:
             request.entity_values.extend(entity_values)
 
@@ -1213,6 +1236,8 @@ class EntityTypesAsyncClient:
 
         # Done; return the response.
         return response
+
+
 
 
 

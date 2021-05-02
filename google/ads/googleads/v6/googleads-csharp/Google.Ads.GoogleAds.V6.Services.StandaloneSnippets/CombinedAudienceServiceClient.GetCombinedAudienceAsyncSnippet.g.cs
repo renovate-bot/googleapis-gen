@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCombinedAudienceServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCombinedAudienceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetCombinedAudienceAsync()
         {
-            // Snippet: GetCombinedAudienceAsync(string, CallSettings)
-            // Additional: GetCombinedAudienceAsync(string, CancellationToken)
             // Create client
             CombinedAudienceServiceClient combinedAudienceServiceClient = await CombinedAudienceServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER_ID]/combinedAudiences/[COMBINED_AUDIENCE_ID]";
             // Make the request
             CombinedAudience response = await combinedAudienceServiceClient.GetCombinedAudienceAsync(resourceName);
-            // End snippet
         }
     }
 }

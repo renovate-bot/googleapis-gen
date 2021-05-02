@@ -17,15 +17,18 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAccountBudgetServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetAccountBudgetAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetAccountBudgetRequestObjectAsync()
         {
-            // Snippet: GetAccountBudgetAsync(GetAccountBudgetRequest, CallSettings)
-            // Additional: GetAccountBudgetAsync(GetAccountBudgetRequest, CancellationToken)
             // Create client
             AccountBudgetServiceClient accountBudgetServiceClient = await AccountBudgetServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,7 +38,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             AccountBudget response = await accountBudgetServiceClient.GetAccountBudgetAsync(request);
-            // End snippet
         }
     }
 }

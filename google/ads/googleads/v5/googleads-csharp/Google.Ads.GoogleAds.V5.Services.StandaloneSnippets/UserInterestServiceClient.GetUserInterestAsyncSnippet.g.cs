@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedUserInterestServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetUserInterestAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetUserInterestAsync()
         {
-            // Snippet: GetUserInterestAsync(string, CallSettings)
-            // Additional: GetUserInterestAsync(string, CancellationToken)
             // Create client
             UserInterestServiceClient userInterestServiceClient = await UserInterestServiceClient.CreateAsync();
             // Initialize request argument(s)
             string resourceName = "customers/[CUSTOMER]/userInterests/[USER_INTEREST]";
             // Make the request
             UserInterest response = await userInterestServiceClient.GetUserInterestAsync(resourceName);
-            // End snippet
         }
     }
 }

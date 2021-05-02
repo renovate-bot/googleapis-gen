@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
+
     public sealed partial class GeneratedMetricServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteMetricDescriptor</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void DeleteMetricDescriptorRequestObject()
         {
-            // Snippet: DeleteMetricDescriptor(DeleteMetricDescriptorRequest, CallSettings)
             // Create client
             MetricServiceClient metricServiceClient = MetricServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Cloud.Monitoring.V3.Snippets
             };
             // Make the request
             metricServiceClient.DeleteMetricDescriptor(request);
-            // End snippet
         }
     }
 }

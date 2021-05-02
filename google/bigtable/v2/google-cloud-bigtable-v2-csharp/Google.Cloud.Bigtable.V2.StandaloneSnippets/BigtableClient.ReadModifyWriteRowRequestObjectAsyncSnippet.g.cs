@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.Bigtable.V2.Snippets
 {
+    using Google.Cloud.Bigtable.V2;
     using Google.Protobuf;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedBigtableClientStandaloneSnippets
     {
         /// <summary>Snippet for ReadModifyWriteRowAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ReadModifyWriteRowRequestObjectAsync()
         {
-            // Snippet: ReadModifyWriteRowAsync(ReadModifyWriteRowRequest, CallSettings)
-            // Additional: ReadModifyWriteRowAsync(ReadModifyWriteRowRequest, CancellationToken)
             // Create client
             BigtableClient bigtableClient = await BigtableClient.CreateAsync();
             // Initialize request argument(s)
@@ -41,7 +44,6 @@ namespace Google.Cloud.Bigtable.V2.Snippets
             };
             // Make the request
             ReadModifyWriteRowResponse response = await bigtableClient.ReadModifyWriteRowAsync(request);
-            // End snippet
         }
     }
 }

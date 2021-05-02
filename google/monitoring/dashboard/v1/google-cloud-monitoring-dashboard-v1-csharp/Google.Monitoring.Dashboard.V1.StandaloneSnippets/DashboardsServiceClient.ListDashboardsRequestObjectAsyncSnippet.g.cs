@@ -18,16 +18,20 @@ namespace Google.Monitoring.Dashboard.V1.Snippets
 {
     using Google.Api.Gax;
     using Google.Api.Gax.ResourceNames;
+    using Google.Monitoring.Dashboard.V1;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDashboardsServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListDashboards</summary>
+        /// <summary>Snippet for ListDashboardsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListDashboardsRequestObjectAsync()
         {
-            // Snippet: ListDashboardsAsync(ListDashboardsRequest, CallSettings)
             // Create client
             DashboardsServiceClient dashboardsServiceClient = await DashboardsServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -69,7 +73,6 @@ namespace Google.Monitoring.Dashboard.V1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

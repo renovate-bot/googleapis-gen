@@ -16,15 +16,19 @@
 
 namespace Google.Cloud.Retail.V2Beta.Snippets
 {
+    using Google.Cloud.Retail.V2Beta;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedProductServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ImportProducts</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ImportProductsRequestObject()
         {
-            // Snippet: ImportProducts(ImportProductsRequest, CallSettings)
             // Create client
             ProductServiceClient productServiceClient = ProductServiceClient.Create();
             // Initialize request argument(s)
@@ -53,7 +57,6 @@ namespace Google.Cloud.Retail.V2Beta.Snippets
                 // If it has completed, then access the result
                 ImportProductsResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.smart_device_management_service import SmartDeviceManagementServiceClient
-
 from .types.device import Device
 from .types.device import ParentRelation
 from .types.site import Room
@@ -31,6 +31,7 @@ from .types.smart_device_management_service import ListRoomsRequest
 from .types.smart_device_management_service import ListRoomsResponse
 from .types.smart_device_management_service import ListStructuresRequest
 from .types.smart_device_management_service import ListStructuresResponse
+
 
 __all__ = (
     'Device',

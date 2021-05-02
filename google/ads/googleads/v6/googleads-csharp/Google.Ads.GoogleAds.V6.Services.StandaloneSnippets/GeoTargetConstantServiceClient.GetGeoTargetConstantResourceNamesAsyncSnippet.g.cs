@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
     using Google.Ads.GoogleAds.V6.Resources;
+    using Google.Ads.GoogleAds.V6.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGeoTargetConstantServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGeoTargetConstantAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetGeoTargetConstantResourceNamesAsync()
         {
-            // Snippet: GetGeoTargetConstantAsync(GeoTargetConstantName, CallSettings)
-            // Additional: GetGeoTargetConstantAsync(GeoTargetConstantName, CancellationToken)
             // Create client
             GeoTargetConstantServiceClient geoTargetConstantServiceClient = await GeoTargetConstantServiceClient.CreateAsync();
             // Initialize request argument(s)
             GeoTargetConstantName resourceName = GeoTargetConstantName.FromCriterion("[CRITERION_ID]");
             // Make the request
             GeoTargetConstant response = await geoTargetConstantServiceClient.GetGeoTargetConstantAsync(resourceName);
-            // End snippet
         }
     }
 }

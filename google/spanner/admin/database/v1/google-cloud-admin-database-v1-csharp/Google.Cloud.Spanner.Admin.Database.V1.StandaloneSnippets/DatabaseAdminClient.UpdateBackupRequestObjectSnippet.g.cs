@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
 {
+    using Google.Cloud.Spanner.Admin.Database.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedDatabaseAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateBackup</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateBackupRequestObject()
         {
-            // Snippet: UpdateBackup(UpdateBackupRequest, CallSettings)
             // Create client
             DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Spanner.Admin.Database.V1.Snippets
             };
             // Make the request
             Backup response = databaseAdminClient.UpdateBackup(request);
-            // End snippet
         }
     }
 }

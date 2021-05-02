@@ -16,12 +16,17 @@
 
 namespace Google.Partner.Aistreams.V1Alpha1.Snippets
 {
+    using Google.Partner.Aistreams.V1Alpha1;
+
     public sealed partial class GeneratedAIStreamsClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCluster</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetClusterRequestObject()
         {
-            // Snippet: GetCluster(GetClusterRequest, CallSettings)
             // Create client
             AIStreamsClient aIStreamsClient = AIStreamsClient.Create();
             // Initialize request argument(s)
@@ -31,7 +36,6 @@ namespace Google.Partner.Aistreams.V1Alpha1.Snippets
             };
             // Make the request
             Cluster response = aIStreamsClient.GetCluster(request);
-            // End snippet
         }
     }
 }

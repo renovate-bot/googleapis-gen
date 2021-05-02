@@ -16,22 +16,24 @@
 
 namespace Google.Example.Library.V1.Snippets
 {
+    using Google.Example.Library.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedLibraryServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateShelfAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task CreateShelfRequestObjectAsync()
         {
-            // Snippet: CreateShelfAsync(CreateShelfRequest, CallSettings)
-            // Additional: CreateShelfAsync(CreateShelfRequest, CancellationToken)
             // Create client
             LibraryServiceClient libraryServiceClient = await LibraryServiceClient.CreateAsync();
             // Initialize request argument(s)
             CreateShelfRequest request = new CreateShelfRequest { Shelf = new Shelf(), };
             // Make the request
             Shelf response = await libraryServiceClient.CreateShelfAsync(request);
-            // End snippet
         }
     }
 }

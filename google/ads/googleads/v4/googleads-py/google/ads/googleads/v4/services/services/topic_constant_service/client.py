@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -33,6 +35,7 @@ from google.oauth2 import service_account                         # type: ignore
 from google.ads.googleads.v4.resources.types import topic_constant
 from google.ads.googleads.v4.services.types import topic_constant_service
 from google.protobuf import wrappers_pb2 as wrappers  # type: ignore
+
 from .transports.base import TopicConstantServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import TopicConstantServiceGrpcTransport
 
@@ -161,6 +164,7 @@ class TopicConstantServiceClient(metaclass=TopicConstantServiceClientMeta):
         """Parse a topic_constant path into its component segments."""
         m = re.match(r"^topicConstants/(?P<topic_constant>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Return a fully-qualified billing_account string."""
@@ -333,8 +337,7 @@ class TopicConstantServiceClient(metaclass=TopicConstantServiceClientMeta):
 
         Args:
             request (:class:`google.ads.googleads.v4.services.types.GetTopicConstantRequest`):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [TopicConstantService.GetTopicConstant][google.ads.googleads.v4.services.TopicConstantService.GetTopicConstant].
             resource_name (:class:`str`):
                 Required. Resource name of the Topic
@@ -343,6 +346,7 @@ class TopicConstantServiceClient(metaclass=TopicConstantServiceClientMeta):
                 This corresponds to the ``resource_name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -365,14 +369,16 @@ class TopicConstantServiceClient(metaclass=TopicConstantServiceClientMeta):
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a topic_constant_service.GetTopicConstantRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
         if not isinstance(request, topic_constant_service.GetTopicConstantRequest):
             request = topic_constant_service.GetTopicConstantRequest(request)
-             # If we have keyword arguments corresponding to fields on the
+
+            # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if resource_name is not None:
                 request.resource_name = resource_name
 
@@ -391,7 +397,7 @@ class TopicConstantServiceClient(metaclass=TopicConstantServiceClientMeta):
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )

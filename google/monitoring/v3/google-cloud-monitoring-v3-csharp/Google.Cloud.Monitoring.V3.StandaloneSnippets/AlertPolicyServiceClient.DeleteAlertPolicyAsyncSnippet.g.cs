@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Monitoring.V3.Snippets
 {
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAlertPolicyServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for DeleteAlertPolicyAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task DeleteAlertPolicyAsync()
         {
-            // Snippet: DeleteAlertPolicyAsync(string, CallSettings)
-            // Additional: DeleteAlertPolicyAsync(string, CancellationToken)
             // Create client
             AlertPolicyServiceClient alertPolicyServiceClient = await AlertPolicyServiceClient.CreateAsync();
             // Initialize request argument(s)
             string name = "projects/[PROJECT]/alertPolicies/[ALERT_POLICY]";
             // Make the request
             await alertPolicyServiceClient.DeleteAlertPolicyAsync(name);
-            // End snippet
         }
     }
 }

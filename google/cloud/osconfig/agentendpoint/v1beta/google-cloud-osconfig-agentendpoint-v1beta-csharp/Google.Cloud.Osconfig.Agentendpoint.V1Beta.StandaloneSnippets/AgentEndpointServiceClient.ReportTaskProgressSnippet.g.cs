@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta.Snippets
 {
+    using Google.Cloud.Osconfig.Agentendpoint.V1Beta;
+
     public sealed partial class GeneratedAgentEndpointServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for ReportTaskProgress</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ReportTaskProgress()
         {
-            // Snippet: ReportTaskProgress(string, string, TaskType, CallSettings)
             // Create client
             AgentEndpointServiceClient agentEndpointServiceClient = AgentEndpointServiceClient.Create();
             // Initialize request argument(s)
@@ -30,7 +35,6 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1Beta.Snippets
             TaskType taskType = TaskType.Unspecified;
             // Make the request
             ReportTaskProgressResponse response = agentEndpointServiceClient.ReportTaskProgress(instanceIdToken, taskId, taskType);
-            // End snippet
         }
     }
 }

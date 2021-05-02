@@ -16,22 +16,24 @@
 
 namespace Google.Cloud.Gaming.V1.Snippets
 {
+    using Google.Cloud.Gaming.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGameServerClustersServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGameServerClusterAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetGameServerClusterResourceNamesAsync()
         {
-            // Snippet: GetGameServerClusterAsync(GameServerClusterName, CallSettings)
-            // Additional: GetGameServerClusterAsync(GameServerClusterName, CancellationToken)
             // Create client
             GameServerClustersServiceClient gameServerClustersServiceClient = await GameServerClustersServiceClient.CreateAsync();
             // Initialize request argument(s)
             GameServerClusterName name = GameServerClusterName.FromProjectLocationRealmCluster("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]");
             // Make the request
             GameServerCluster response = await gameServerClustersServiceClient.GetGameServerClusterAsync(name);
-            // End snippet
         }
     }
 }

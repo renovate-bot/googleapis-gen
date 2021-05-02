@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,13 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import abc
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Union
-import packaging.version
+import typing
 import pkg_resources
 
 from google import auth  # type: ignore
-import google.api_core  # type: ignore
 from google.api_core import exceptions  # type: ignore
 from google.api_core import gapic_v1    # type: ignore
 from google.api_core import retry as retries  # type: ignore
@@ -27,6 +27,7 @@ from google.auth import credentials  # type: ignore
 
 from google.protobuf import empty_pb2 as empty  # type: ignore
 from grafeas.grafeas_v1.types import grafeas
+
 
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
@@ -37,40 +38,26 @@ try:
 except pkg_resources.DistributionNotFound:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
 
-try:
-    # google.auth.__version__ was added in 1.26.0
-    _GOOGLE_AUTH_VERSION = auth.__version__
-except AttributeError:
-    try:  # try pkg_resources if it is available
-        _GOOGLE_AUTH_VERSION = pkg_resources.get_distribution("google-auth").version
-    except pkg_resources.DistributionNotFound:  # pragma: NO COVER
-        _GOOGLE_AUTH_VERSION = None
-
-_API_CORE_VERSION = google.api_core.__version__
-
-
 class GrafeasTransport(abc.ABC):
     """Abstract transport class for Grafeas."""
 
     AUTH_SCOPES = (
     )
 
-    DEFAULT_HOST: str = 'containeranalysis.googleapis.com'
     def __init__(
             self, *,
-            host: str = DEFAULT_HOST,
+            host: str = 'containeranalysis.googleapis.com',
             credentials: credentials.Credentials = None,
-            credentials_file: Optional[str] = None,
-            scopes: Optional[Sequence[str]] = None,
-            quota_project_id: Optional[str] = None,
+            credentials_file: typing.Optional[str] = None,
+            scopes: typing.Optional[typing.Sequence[str]] = AUTH_SCOPES,
+            quota_project_id: typing.Optional[str] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             **kwargs,
             ) -> None:
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]):
-                 The hostname to connect to.
+            host (Optional[str]): The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -79,7 +66,7 @@ class GrafeasTransport(abc.ABC):
             credentials_file (Optional[str]): A file with credentials that can
                 be loaded with :func:`google.auth.load_credentials_from_file`.
                 This argument is mutually exclusive with credentials.
-            scopes (Optional[Sequence[str]]): A list of scopes.
+            scope (Optional[Sequence[str]]): A list of scopes.
             quota_project_id (Optional[str]): An optional project to use for billing
                 and quota.
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
@@ -93,8 +80,6 @@ class GrafeasTransport(abc.ABC):
             host += ':443'
         self._host = host
 
-        scopes_kwargs = self._get_scopes_kwargs(self._host, scopes)
-
         # Save the scopes.
         self._scopes = scopes or self.AUTH_SCOPES
 
@@ -106,56 +91,15 @@ class GrafeasTransport(abc.ABC):
         if credentials_file is not None:
             credentials, _ = auth.load_credentials_from_file(
                                 credentials_file,
-                                **scopes_kwargs,
+                                scopes=self._scopes,
                                 quota_project_id=quota_project_id
                             )
 
         elif credentials is None:
-            credentials, _ = auth.default(**scopes_kwargs, quota_project_id=quota_project_id)
+            credentials, _ = auth.default(scopes=self._scopes, quota_project_id=quota_project_id)
 
         # Save the credentials.
         self._credentials = credentials
-
-    # TODO(busunkim): These two class methods are in the base transport
-    # to avoid duplicating code across the transport classes. These functions
-    # should be deleted once the minimum required versions of google-api-core
-    # and google-auth are increased.
-
-    # TODO: Remove this function once google-auth >= 1.25.0 is required
-    @classmethod
-    def _get_scopes_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Optional[Sequence[str]]]:
-        """Returns scopes kwargs to pass to google-auth methods depending on the google-auth version"""
-
-        scopes_kwargs = {}
-
-        if _GOOGLE_AUTH_VERSION and (
-            packaging.version.parse(_GOOGLE_AUTH_VERSION)
-            >= packaging.version.parse("1.25.0")
-        ):
-            scopes_kwargs = {"scopes": scopes, "default_scopes": cls.AUTH_SCOPES}
-        else:
-            scopes_kwargs = {"scopes": scopes or cls.AUTH_SCOPES}
-
-        return scopes_kwargs
-
-    # TODO: Remove this function once google-api-core >= 1.26.0 is required
-    @classmethod
-    def _get_self_signed_jwt_kwargs(cls, host: str, scopes: Optional[Sequence[str]]) -> Dict[str, Union[Optional[Sequence[str]], str]]:
-        """Returns kwargs to pass to grpc_helpers.create_channel depending on the google-api-core version"""
-
-        self_signed_jwt_kwargs: Dict[str, Union[Optional[Sequence[str]], str]] = {}
-
-        if _API_CORE_VERSION and (
-            packaging.version.parse(_API_CORE_VERSION)
-            >= packaging.version.parse("1.26.0")
-        ):
-            self_signed_jwt_kwargs["default_scopes"] = cls.AUTH_SCOPES
-            self_signed_jwt_kwargs["scopes"] = scopes
-            self_signed_jwt_kwargs["default_host"] = cls.DEFAULT_HOST
-        else:
-            self_signed_jwt_kwargs["scopes"] = scopes or cls.AUTH_SCOPES
-
-        return self_signed_jwt_kwargs
 
     def _prep_wrapped_messages(self, client_info):
         # Precompute the wrapped methods.
@@ -163,7 +107,10 @@ class GrafeasTransport(abc.ABC):
             self.get_occurrence: gapic_v1.method.wrap_method(
                 self.get_occurrence,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -175,7 +122,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.list_occurrences: gapic_v1.method.wrap_method(
                 self.list_occurrences,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -187,7 +137,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.delete_occurrence: gapic_v1.method.wrap_method(
                 self.delete_occurrence,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -214,7 +167,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.get_occurrence_note: gapic_v1.method.wrap_method(
                 self.get_occurrence_note,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -226,7 +182,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.get_note: gapic_v1.method.wrap_method(
                 self.get_note,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -238,7 +197,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.list_notes: gapic_v1.method.wrap_method(
                 self.list_notes,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -250,7 +212,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.delete_note: gapic_v1.method.wrap_method(
                 self.delete_note,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -277,7 +242,10 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             self.list_note_occurrences: gapic_v1.method.wrap_method(
                 self.list_note_occurrences,
                 default_retry=retries.Retry(
-initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if_exception_type(
+                    initial=0.1,
+                    maximum=60.0,
+                    multiplier=1.3,
+                    predicate=retries.if_exception_type(
                         exceptions.DeadlineExceeded,
                         exceptions.ServiceUnavailable,
                     ),
@@ -286,131 +254,132 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
                 default_timeout=30.0,
                 client_info=client_info,
             ),
-         }
+
+        }
 
     @property
-    def get_occurrence(self) -> Callable[
+    def get_occurrence(self) -> typing.Callable[
             [grafeas.GetOccurrenceRequest],
-            Union[
+            typing.Union[
                 grafeas.Occurrence,
-                Awaitable[grafeas.Occurrence]
+                typing.Awaitable[grafeas.Occurrence]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_occurrences(self) -> Callable[
+    def list_occurrences(self) -> typing.Callable[
             [grafeas.ListOccurrencesRequest],
-            Union[
+            typing.Union[
                 grafeas.ListOccurrencesResponse,
-                Awaitable[grafeas.ListOccurrencesResponse]
+                typing.Awaitable[grafeas.ListOccurrencesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_occurrence(self) -> Callable[
+    def delete_occurrence(self) -> typing.Callable[
             [grafeas.DeleteOccurrenceRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_occurrence(self) -> Callable[
+    def create_occurrence(self) -> typing.Callable[
             [grafeas.CreateOccurrenceRequest],
-            Union[
+            typing.Union[
                 grafeas.Occurrence,
-                Awaitable[grafeas.Occurrence]
+                typing.Awaitable[grafeas.Occurrence]
             ]]:
         raise NotImplementedError()
 
     @property
-    def batch_create_occurrences(self) -> Callable[
+    def batch_create_occurrences(self) -> typing.Callable[
             [grafeas.BatchCreateOccurrencesRequest],
-            Union[
+            typing.Union[
                 grafeas.BatchCreateOccurrencesResponse,
-                Awaitable[grafeas.BatchCreateOccurrencesResponse]
+                typing.Awaitable[grafeas.BatchCreateOccurrencesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_occurrence(self) -> Callable[
+    def update_occurrence(self) -> typing.Callable[
             [grafeas.UpdateOccurrenceRequest],
-            Union[
+            typing.Union[
                 grafeas.Occurrence,
-                Awaitable[grafeas.Occurrence]
+                typing.Awaitable[grafeas.Occurrence]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_occurrence_note(self) -> Callable[
+    def get_occurrence_note(self) -> typing.Callable[
             [grafeas.GetOccurrenceNoteRequest],
-            Union[
+            typing.Union[
                 grafeas.Note,
-                Awaitable[grafeas.Note]
+                typing.Awaitable[grafeas.Note]
             ]]:
         raise NotImplementedError()
 
     @property
-    def get_note(self) -> Callable[
+    def get_note(self) -> typing.Callable[
             [grafeas.GetNoteRequest],
-            Union[
+            typing.Union[
                 grafeas.Note,
-                Awaitable[grafeas.Note]
+                typing.Awaitable[grafeas.Note]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_notes(self) -> Callable[
+    def list_notes(self) -> typing.Callable[
             [grafeas.ListNotesRequest],
-            Union[
+            typing.Union[
                 grafeas.ListNotesResponse,
-                Awaitable[grafeas.ListNotesResponse]
+                typing.Awaitable[grafeas.ListNotesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def delete_note(self) -> Callable[
+    def delete_note(self) -> typing.Callable[
             [grafeas.DeleteNoteRequest],
-            Union[
+            typing.Union[
                 empty.Empty,
-                Awaitable[empty.Empty]
+                typing.Awaitable[empty.Empty]
             ]]:
         raise NotImplementedError()
 
     @property
-    def create_note(self) -> Callable[
+    def create_note(self) -> typing.Callable[
             [grafeas.CreateNoteRequest],
-            Union[
+            typing.Union[
                 grafeas.Note,
-                Awaitable[grafeas.Note]
+                typing.Awaitable[grafeas.Note]
             ]]:
         raise NotImplementedError()
 
     @property
-    def batch_create_notes(self) -> Callable[
+    def batch_create_notes(self) -> typing.Callable[
             [grafeas.BatchCreateNotesRequest],
-            Union[
+            typing.Union[
                 grafeas.BatchCreateNotesResponse,
-                Awaitable[grafeas.BatchCreateNotesResponse]
+                typing.Awaitable[grafeas.BatchCreateNotesResponse]
             ]]:
         raise NotImplementedError()
 
     @property
-    def update_note(self) -> Callable[
+    def update_note(self) -> typing.Callable[
             [grafeas.UpdateNoteRequest],
-            Union[
+            typing.Union[
                 grafeas.Note,
-                Awaitable[grafeas.Note]
+                typing.Awaitable[grafeas.Note]
             ]]:
         raise NotImplementedError()
 
     @property
-    def list_note_occurrences(self) -> Callable[
+    def list_note_occurrences(self) -> typing.Callable[
             [grafeas.ListNoteOccurrencesRequest],
-            Union[
+            typing.Union[
                 grafeas.ListNoteOccurrencesResponse,
-                Awaitable[grafeas.ListNoteOccurrencesResponse]
+                typing.Awaitable[grafeas.ListNoteOccurrencesResponse]
             ]]:
         raise NotImplementedError()
 

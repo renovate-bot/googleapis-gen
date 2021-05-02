@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.api.serviceusage_v1.types import resources
 
@@ -38,6 +41,7 @@ __protobuf__ = proto.module(
 
 class EnableServiceRequest(proto.Message):
     r"""Request message for the ``EnableService`` method.
+
     Attributes:
         name (str):
             Name of the consumer and service to enable the service on.
@@ -53,10 +57,7 @@ class EnableServiceRequest(proto.Message):
             ``123`` is the project number.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class EnableServiceResponse(proto.Message):
@@ -69,15 +70,14 @@ class EnableServiceResponse(proto.Message):
             The new state of the service after enabling.
     """
 
-    service = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    service = proto.Field(proto.MESSAGE, number=1,
         message=resources.Service,
     )
 
 
 class DisableServiceRequest(proto.Message):
     r"""Request message for the ``DisableService`` method.
+
     Attributes:
         name (str):
             Name of the consumer and service to disable the service on.
@@ -108,17 +108,11 @@ class DisableServiceRequest(proto.Message):
         SKIP = 1
         CHECK = 2
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    disable_dependent_services = proto.Field(
-        proto.BOOL,
-        number=2,
-    )
-    check_if_service_has_usage = proto.Field(
-        proto.ENUM,
-        number=3,
+    name = proto.Field(proto.STRING, number=1)
+
+    disable_dependent_services = proto.Field(proto.BOOL, number=2)
+
+    check_if_service_has_usage = proto.Field(proto.ENUM, number=3,
         enum=CheckIfServiceHasUsage,
     )
 
@@ -133,15 +127,14 @@ class DisableServiceResponse(proto.Message):
             The new state of the service after disabling.
     """
 
-    service = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    service = proto.Field(proto.MESSAGE, number=1,
         message=resources.Service,
     )
 
 
 class GetServiceRequest(proto.Message):
     r"""Request message for the ``GetService`` method.
+
     Attributes:
         name (str):
             Name of the consumer and service to get the
@@ -152,14 +145,12 @@ class GetServiceRequest(proto.Message):
             ``123`` is the project number.
     """
 
-    name = proto.Field(
-        proto.STRING,
-        number=1,
-    )
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ListServicesRequest(proto.Message):
     r"""Request message for the ``ListServices`` method.
+
     Attributes:
         parent (str):
             Parent to search for services on.
@@ -179,26 +170,18 @@ class ListServicesRequest(proto.Message):
             ``state:DISABLED``.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    page_size = proto.Field(
-        proto.INT32,
-        number=2,
-    )
-    page_token = proto.Field(
-        proto.STRING,
-        number=3,
-    )
-    filter = proto.Field(
-        proto.STRING,
-        number=4,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=2)
+
+    page_token = proto.Field(proto.STRING, number=3)
+
+    filter = proto.Field(proto.STRING, number=4)
 
 
 class ListServicesResponse(proto.Message):
     r"""Response message for the ``ListServices`` method.
+
     Attributes:
         services (Sequence[google.api.serviceusage_v1.types.Service]):
             The available services for the requested
@@ -212,19 +195,16 @@ class ListServicesResponse(proto.Message):
     def raw_page(self):
         return self
 
-    services = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    services = proto.RepeatedField(proto.MESSAGE, number=1,
         message=resources.Service,
     )
-    next_page_token = proto.Field(
-        proto.STRING,
-        number=2,
-    )
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class BatchEnableServicesRequest(proto.Message):
     r"""Request message for the ``BatchEnableServices`` method.
+
     Attributes:
         parent (str):
             Parent to enable services on.
@@ -250,14 +230,9 @@ class BatchEnableServicesRequest(proto.Message):
             changes will occur.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    service_ids = proto.RepeatedField(
-        proto.STRING,
-        number=2,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    service_ids = proto.RepeatedField(proto.STRING, number=2)
 
 
 class BatchEnableServicesResponse(proto.Message):
@@ -273,9 +248,9 @@ class BatchEnableServicesResponse(proto.Message):
             could not be enabled, this field contains the details about
             each failure.
     """
-
     class EnableFailure(proto.Message):
         r"""Provides error messages for the failing services.
+
         Attributes:
             service_id (str):
                 The service id of a service that could not be
@@ -285,29 +260,22 @@ class BatchEnableServicesResponse(proto.Message):
                 could not be enabled.
         """
 
-        service_id = proto.Field(
-            proto.STRING,
-            number=1,
-        )
-        error_message = proto.Field(
-            proto.STRING,
-            number=2,
-        )
+        service_id = proto.Field(proto.STRING, number=1)
 
-    services = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+        error_message = proto.Field(proto.STRING, number=2)
+
+    services = proto.RepeatedField(proto.MESSAGE, number=1,
         message=resources.Service,
     )
-    failures = proto.RepeatedField(
-        proto.MESSAGE,
-        number=2,
+
+    failures = proto.RepeatedField(proto.MESSAGE, number=2,
         message=EnableFailure,
     )
 
 
 class BatchGetServicesRequest(proto.Message):
     r"""Request message for the ``BatchGetServices`` method.
+
     Attributes:
         parent (str):
             Parent to retrieve services from. If this is set, the parent
@@ -324,26 +292,20 @@ class BatchGetServicesRequest(proto.Message):
             maximum of 30 services at a time.
     """
 
-    parent = proto.Field(
-        proto.STRING,
-        number=1,
-    )
-    names = proto.RepeatedField(
-        proto.STRING,
-        number=2,
-    )
+    parent = proto.Field(proto.STRING, number=1)
+
+    names = proto.RepeatedField(proto.STRING, number=2)
 
 
 class BatchGetServicesResponse(proto.Message):
     r"""Response message for the ``BatchGetServices`` method.
+
     Attributes:
         services (Sequence[google.api.serviceusage_v1.types.Service]):
             The requested Service states.
     """
 
-    services = proto.RepeatedField(
-        proto.MESSAGE,
-        number=1,
+    services = proto.RepeatedField(proto.MESSAGE, number=1,
         message=resources.Service,
     )
 

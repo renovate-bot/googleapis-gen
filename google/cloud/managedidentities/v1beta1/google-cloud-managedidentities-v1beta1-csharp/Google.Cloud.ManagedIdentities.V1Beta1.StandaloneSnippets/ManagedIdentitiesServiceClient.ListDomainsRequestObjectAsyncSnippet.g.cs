@@ -17,16 +17,20 @@
 namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.ManagedIdentities.V1Beta1;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedManagedIdentitiesServiceClientStandaloneSnippets
     {
-        /// <summary>Snippet for ListDomains</summary>
+        /// <summary>Snippet for ListDomainsAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task ListDomainsRequestObjectAsync()
         {
-            // Snippet: ListDomainsAsync(ListDomainsRequest, CallSettings)
             // Create client
             ManagedIdentitiesServiceClient managedIdentitiesServiceClient = await ManagedIdentitiesServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -70,7 +74,6 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

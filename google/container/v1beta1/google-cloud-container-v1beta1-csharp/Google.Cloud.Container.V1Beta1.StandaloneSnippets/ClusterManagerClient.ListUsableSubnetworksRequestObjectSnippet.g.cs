@@ -17,14 +17,18 @@
 namespace Google.Cloud.Container.V1Beta1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Cloud.Container.V1Beta1;
     using System;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for ListUsableSubnetworks</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ListUsableSubnetworksRequestObject()
         {
-            // Snippet: ListUsableSubnetworks(ListUsableSubnetworksRequest, CallSettings)
             // Create client
             ClusterManagerClient clusterManagerClient = ClusterManagerClient.Create();
             // Initialize request argument(s)
@@ -67,7 +71,6 @@ namespace Google.Cloud.Container.V1Beta1.Snippets
             }
             // Store the pageToken, for when the next page is required.
             string nextPageToken = singlePage.NextPageToken;
-            // End snippet
         }
     }
 }

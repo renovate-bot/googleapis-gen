@@ -22,17 +22,18 @@ namespace Google.Cloud.Tasks.V2Beta2.Snippets
     public sealed partial class GeneratedCloudTasksClientStandaloneSnippets
     {
         /// <summary>Snippet for GetTaskAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetTaskResourceNamesAsync()
         {
-            // Snippet: GetTaskAsync(TaskName, CallSettings)
-            // Additional: GetTaskAsync(TaskName, CancellationToken)
             // Create client
             CloudTasksClient cloudTasksClient = await CloudTasksClient.CreateAsync();
             // Initialize request argument(s)
             TaskName name = TaskName.FromProjectLocationQueueTask("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]");
             // Make the request
             gctv::Task response = await cloudTasksClient.GetTaskAsync(name);
-            // End snippet
         }
     }
 }

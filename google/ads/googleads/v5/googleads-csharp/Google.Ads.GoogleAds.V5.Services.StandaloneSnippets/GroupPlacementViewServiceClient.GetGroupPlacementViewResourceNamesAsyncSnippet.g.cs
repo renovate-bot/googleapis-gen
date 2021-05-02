@@ -17,22 +17,24 @@
 namespace Google.Ads.GoogleAds.V5.Services.Snippets
 {
     using Google.Ads.GoogleAds.V5.Resources;
+    using Google.Ads.GoogleAds.V5.Services;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedGroupPlacementViewServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetGroupPlacementViewAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetGroupPlacementViewResourceNamesAsync()
         {
-            // Snippet: GetGroupPlacementViewAsync(GroupPlacementViewName, CallSettings)
-            // Additional: GetGroupPlacementViewAsync(GroupPlacementViewName, CancellationToken)
             // Create client
             GroupPlacementViewServiceClient groupPlacementViewServiceClient = await GroupPlacementViewServiceClient.CreateAsync();
             // Initialize request argument(s)
             GroupPlacementViewName resourceName = GroupPlacementViewName.FromCustomerGroupPlacementView("[CUSTOMER]", "[GROUP_PLACEMENT_VIEW]");
             // Make the request
             GroupPlacementView response = await groupPlacementViewServiceClient.GetGroupPlacementViewAsync(resourceName);
-            // End snippet
         }
     }
 }

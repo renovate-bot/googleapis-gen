@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.Dialogflow.V2beta1.Snippets
 {
+    using Google.Cloud.Dialogflow.V2beta1;
     using Google.LongRunning;
     using Google.Protobuf.WellKnownTypes;
     using System.Collections.Generic;
@@ -24,10 +25,12 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
     public sealed partial class GeneratedEntityTypesClientStandaloneSnippets
     {
         /// <summary>Snippet for BatchCreateEntitiesAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task BatchCreateEntities1ResourceNamesAsync()
         {
-            // Snippet: BatchCreateEntitiesAsync(EntityTypeName, IEnumerable<EntityType.Types.Entity>, CallSettings)
-            // Additional: BatchCreateEntitiesAsync(EntityTypeName, IEnumerable<EntityType.Types.Entity>, CancellationToken)
             // Create client
             EntityTypesClient entityTypesClient = await EntityTypesClient.CreateAsync();
             // Initialize request argument(s)
@@ -54,7 +57,6 @@ namespace Google.Cloud.Dialogflow.V2beta1.Snippets
                 // If it has completed, then access the result
                 Empty retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

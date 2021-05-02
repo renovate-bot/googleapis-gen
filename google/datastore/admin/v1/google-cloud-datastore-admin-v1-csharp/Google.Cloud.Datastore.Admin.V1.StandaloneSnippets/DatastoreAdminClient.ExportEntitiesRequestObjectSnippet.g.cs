@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Datastore.Admin.V1.Snippets
 {
+    using Google.Cloud.Datastore.Admin.V1;
     using Google.LongRunning;
 
     public sealed partial class GeneratedDatastoreAdminClientStandaloneSnippets
     {
         /// <summary>Snippet for ExportEntities</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void ExportEntitiesRequestObject()
         {
-            // Snippet: ExportEntities(ExportEntitiesRequest, CallSettings)
             // Create client
             DatastoreAdminClient datastoreAdminClient = DatastoreAdminClient.Create();
             // Initialize request argument(s)
@@ -52,7 +56,6 @@ namespace Google.Cloud.Datastore.Admin.V1.Snippets
                 // If it has completed, then access the result
                 ExportEntitiesResponse retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

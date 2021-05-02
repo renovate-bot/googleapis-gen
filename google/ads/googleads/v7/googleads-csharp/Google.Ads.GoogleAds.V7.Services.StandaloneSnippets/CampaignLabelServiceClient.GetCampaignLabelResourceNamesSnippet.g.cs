@@ -17,20 +17,23 @@
 namespace Google.Ads.GoogleAds.V7.Services.Snippets
 {
     using Google.Ads.GoogleAds.V7.Resources;
+    using Google.Ads.GoogleAds.V7.Services;
 
     public sealed partial class GeneratedCampaignLabelServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetCampaignLabel</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void GetCampaignLabelResourceNames()
         {
-            // Snippet: GetCampaignLabel(CampaignLabelName, CallSettings)
             // Create client
             CampaignLabelServiceClient campaignLabelServiceClient = CampaignLabelServiceClient.Create();
             // Initialize request argument(s)
             CampaignLabelName resourceName = CampaignLabelName.FromCustomerCampaignLabel("[CUSTOMER_ID]", "[CAMPAIGN_ID]", "[LABEL_ID]");
             // Make the request
             CampaignLabel response = campaignLabelServiceClient.GetCampaignLabel(resourceName);
-            // End snippet
         }
     }
 }

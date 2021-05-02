@@ -16,15 +16,18 @@
 
 namespace Google.Cloud.Container.V1.Snippets
 {
+    using Google.Cloud.Container.V1;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedClusterManagerClientStandaloneSnippets
     {
         /// <summary>Snippet for SetMonitoringServiceAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task SetMonitoringService2Async()
         {
-            // Snippet: SetMonitoringServiceAsync(string, string, CallSettings)
-            // Additional: SetMonitoringServiceAsync(string, string, CancellationToken)
             // Create client
             ClusterManagerClient clusterManagerClient = await ClusterManagerClient.CreateAsync();
             // Initialize request argument(s)
@@ -32,7 +35,6 @@ namespace Google.Cloud.Container.V1.Snippets
             string monitoringService = "";
             // Make the request
             Operation response = await clusterManagerClient.SetMonitoringServiceAsync(name, monitoringService);
-            // End snippet
         }
     }
 }

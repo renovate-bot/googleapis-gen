@@ -18,22 +18,24 @@ namespace Google.Cloud.Monitoring.V3.Snippets
 {
     using Google.Api;
     using Google.Api.Gax;
+    using Google.Cloud.Monitoring.V3;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedMetricServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for GetMonitoredResourceDescriptorAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task GetMonitoredResourceDescriptorResourceNames2Async()
         {
-            // Snippet: GetMonitoredResourceDescriptorAsync(IResourceName, CallSettings)
-            // Additional: GetMonitoredResourceDescriptorAsync(IResourceName, CancellationToken)
             // Create client
             MetricServiceClient metricServiceClient = await MetricServiceClient.CreateAsync();
             // Initialize request argument(s)
             IResourceName name = new UnparsedResourceName("a/wildcard/resource");
             // Make the request
             MonitoredResourceDescriptor response = await metricServiceClient.GetMonitoredResourceDescriptorAsync(name);
-            // End snippet
         }
     }
 }

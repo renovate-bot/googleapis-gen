@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -108,7 +109,8 @@ from google.cloud.dataproc_v1beta2.types.workflow_templates import WorkflowNode
 from google.cloud.dataproc_v1beta2.types.workflow_templates import WorkflowTemplate
 from google.cloud.dataproc_v1beta2.types.workflow_templates import WorkflowTemplatePlacement
 
-__all__ = ('AcceleratorConfig',
+__all__ = (
+    'AcceleratorConfig',
     'AutoscalingConfig',
     'AutoscalingPolicy',
     'AutoscalingPolicyServiceAsyncClient',

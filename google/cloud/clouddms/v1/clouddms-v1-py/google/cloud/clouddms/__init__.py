@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -56,7 +57,8 @@ from google.cloud.clouddms_v1.types.clouddms_resources import SslConfig
 from google.cloud.clouddms_v1.types.clouddms_resources import StaticIpConnectivity
 from google.cloud.clouddms_v1.types.clouddms_resources import VpcPeeringConnectivity
 
-__all__ = ('CloudSqlConnectionProfile',
+__all__ = (
+    'CloudSqlConnectionProfile',
     'CloudSqlSettings',
     'ConnectionProfile',
     'CreateConnectionProfileRequest',

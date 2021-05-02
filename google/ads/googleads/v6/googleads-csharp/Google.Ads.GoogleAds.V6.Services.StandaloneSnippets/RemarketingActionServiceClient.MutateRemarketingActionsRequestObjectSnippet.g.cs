@@ -16,12 +16,17 @@
 
 namespace Google.Ads.GoogleAds.V6.Services.Snippets
 {
+    using Google.Ads.GoogleAds.V6.Services;
+
     public sealed partial class GeneratedRemarketingActionServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for MutateRemarketingActions</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void MutateRemarketingActionsRequestObject()
         {
-            // Snippet: MutateRemarketingActions(MutateRemarketingActionsRequest, CallSettings)
             // Create client
             RemarketingActionServiceClient remarketingActionServiceClient = RemarketingActionServiceClient.Create();
             // Initialize request argument(s)
@@ -37,7 +42,6 @@ namespace Google.Ads.GoogleAds.V6.Services.Snippets
             };
             // Make the request
             MutateRemarketingActionsResponse response = remarketingActionServiceClient.MutateRemarketingActions(request);
-            // End snippet
         }
     }
 }

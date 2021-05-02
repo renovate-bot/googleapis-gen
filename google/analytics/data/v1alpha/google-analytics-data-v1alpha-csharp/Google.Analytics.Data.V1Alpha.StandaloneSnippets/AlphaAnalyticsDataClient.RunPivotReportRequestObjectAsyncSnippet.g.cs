@@ -16,15 +16,18 @@
 
 namespace Google.Analytics.Data.V1Alpha.Snippets
 {
+    using Google.Analytics.Data.V1Alpha;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedAlphaAnalyticsDataClientStandaloneSnippets
     {
         /// <summary>Snippet for RunPivotReportAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task RunPivotReportRequestObjectAsync()
         {
-            // Snippet: RunPivotReportAsync(RunPivotReportRequest, CallSettings)
-            // Additional: RunPivotReportAsync(RunPivotReportRequest, CancellationToken)
             // Create client
             AlphaAnalyticsDataClient alphaAnalyticsDataClient = await AlphaAnalyticsDataClient.CreateAsync();
             // Initialize request argument(s)
@@ -44,7 +47,6 @@ namespace Google.Analytics.Data.V1Alpha.Snippets
             };
             // Make the request
             RunPivotReportResponse response = await alphaAnalyticsDataClient.RunPivotReportAsync(request);
-            // End snippet
         }
     }
 }

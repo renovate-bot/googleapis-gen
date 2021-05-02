@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.Vision.V1.Snippets
 {
+    using Google.Cloud.Vision.V1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedProductSearchClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateProductSet</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateProductSetRequestObject()
         {
-            // Snippet: UpdateProductSet(UpdateProductSetRequest, CallSettings)
             // Create client
             ProductSearchClient productSearchClient = ProductSearchClient.Create();
             // Initialize request argument(s)
@@ -34,7 +38,6 @@ namespace Google.Cloud.Vision.V1.Snippets
             };
             // Make the request
             ProductSet response = productSearchClient.UpdateProductSet(request);
-            // End snippet
         }
     }
 }

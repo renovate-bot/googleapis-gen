@@ -16,12 +16,17 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
+
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for CreateDataset</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void CreateDataset()
         {
-            // Snippet: CreateDataset(string, Dataset, CallSettings)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.Create();
             // Initialize request argument(s)
@@ -29,7 +34,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
             Dataset dataset = new Dataset();
             // Make the request
             Dataset response = dataLabelingServiceClient.CreateDataset(parent, dataset);
-            // End snippet
         }
     }
 }

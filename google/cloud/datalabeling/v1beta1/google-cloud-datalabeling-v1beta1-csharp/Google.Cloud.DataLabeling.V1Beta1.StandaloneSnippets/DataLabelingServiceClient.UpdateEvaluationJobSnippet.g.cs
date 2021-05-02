@@ -16,14 +16,18 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
     using Google.Protobuf.WellKnownTypes;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for UpdateEvaluationJob</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public void UpdateEvaluationJob()
         {
-            // Snippet: UpdateEvaluationJob(EvaluationJob, FieldMask, CallSettings)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.Create();
             // Initialize request argument(s)
@@ -31,7 +35,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
             FieldMask updateMask = new FieldMask();
             // Make the request
             EvaluationJob response = dataLabelingServiceClient.UpdateEvaluationJob(evaluationJob, updateMask);
-            // End snippet
         }
     }
 }

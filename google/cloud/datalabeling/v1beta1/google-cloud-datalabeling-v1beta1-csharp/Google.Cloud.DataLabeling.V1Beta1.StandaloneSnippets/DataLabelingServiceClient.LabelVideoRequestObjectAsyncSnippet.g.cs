@@ -16,16 +16,19 @@
 
 namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
 {
+    using Google.Cloud.DataLabeling.V1Beta1;
     using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedDataLabelingServiceClientStandaloneSnippets
     {
         /// <summary>Snippet for LabelVideoAsync</summary>
+        /// <remarks>
+        /// This snippet has been automatically generated for illustrative purposes only.
+        /// It may require modifications to work in your environment.
+        /// </remarks>
         public async Task LabelVideoRequestObjectAsync()
         {
-            // Snippet: LabelVideoAsync(LabelVideoRequest, CallSettings)
-            // Additional: LabelVideoAsync(LabelVideoRequest, CancellationToken)
             // Create client
             DataLabelingServiceClient dataLabelingServiceClient = await DataLabelingServiceClient.CreateAsync();
             // Initialize request argument(s)
@@ -35,9 +38,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
                 BasicConfig = new HumanAnnotationConfig(),
                 Feature = LabelVideoRequest.Types.Feature.Unspecified,
                 VideoClassificationConfig = new VideoClassificationConfig(),
-                ObjectDetectionConfig = new ObjectDetectionConfig(),
-                ObjectTrackingConfig = new ObjectTrackingConfig(),
-                EventConfig = new EventConfig(),
             };
             // Make the request
             Operation<AnnotatedDataset, LabelOperationMetadata> response = await dataLabelingServiceClient.LabelVideoAsync(request);
@@ -57,7 +57,6 @@ namespace Google.Cloud.DataLabeling.V1Beta1.Snippets
                 // If it has completed, then access the result
                 AnnotatedDataset retrievedResult = retrievedResponse.Result;
             }
-            // End snippet
         }
     }
 }

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 
@@ -43,19 +46,15 @@ class SystemTimestamps(proto.Message):
             apllicable to BigQuery resources.
     """
 
-    create_time = proto.Field(
-        proto.MESSAGE,
-        number=1,
+    create_time = proto.Field(proto.MESSAGE, number=1,
         message=timestamp.Timestamp,
     )
-    update_time = proto.Field(
-        proto.MESSAGE,
-        number=2,
+
+    update_time = proto.Field(proto.MESSAGE, number=2,
         message=timestamp.Timestamp,
     )
-    expire_time = proto.Field(
-        proto.MESSAGE,
-        number=3,
+
+    expire_time = proto.Field(proto.MESSAGE, number=3,
         message=timestamp.Timestamp,
     )
 
