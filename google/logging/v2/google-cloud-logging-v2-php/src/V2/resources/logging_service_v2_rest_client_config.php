@@ -37,15 +37,6 @@ return [
                 'uriTemplate' => '/v2/entries:list',
                 'body' => '*',
             ],
-            'WriteLogEntries' => [
-                'method' => 'post',
-                'uriTemplate' => '/v2/entries:write',
-                'body' => '*',
-            ],
-            'ListMonitoredResourceDescriptors' => [
-                'method' => 'get',
-                'uriTemplate' => '/v2/monitoredResourceDescriptors',
-            ],
             'ListLogs' => [
                 'method' => 'get',
                 'uriTemplate' => '/v2/{parent=*/*}/logs',
@@ -74,6 +65,15 @@ return [
                         ],
                     ],
                 ],
+            ],
+            'ListMonitoredResourceDescriptors' => [
+                'method' => 'get',
+                'uriTemplate' => '/v2/monitoredResourceDescriptors',
+            ],
+            'WriteLogEntries' => [
+                'method' => 'post',
+                'uriTemplate' => '/v2/entries:write',
+                'body' => '*',
             ],
         ],
     ],

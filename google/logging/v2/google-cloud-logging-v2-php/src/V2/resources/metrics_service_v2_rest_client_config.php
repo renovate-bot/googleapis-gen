@@ -3,10 +3,21 @@
 return [
     'interfaces' => [
         'google.logging.v2.MetricsServiceV2' => [
-            'UpdateLogMetric' => [
-                'method' => 'put',
-                'uriTemplate' => '/v2/{metric_name=projects/*/metrics/*}',
+            'CreateLogMetric' => [
+                'method' => 'post',
+                'uriTemplate' => '/v2/{parent=projects/*}/metrics',
                 'body' => 'metric',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteLogMetric' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v2/{metric_name=projects/*/metrics/*}',
                 'placeholders' => [
                     'metric_name' => [
                         'getters' => [
@@ -15,8 +26,8 @@ return [
                     ],
                 ],
             ],
-            'DeleteLogMetric' => [
-                'method' => 'delete',
+            'GetLogMetric' => [
+                'method' => 'get',
                 'uriTemplate' => '/v2/{metric_name=projects/*/metrics/*}',
                 'placeholders' => [
                     'metric_name' => [
@@ -37,25 +48,14 @@ return [
                     ],
                 ],
             ],
-            'GetLogMetric' => [
-                'method' => 'get',
+            'UpdateLogMetric' => [
+                'method' => 'put',
                 'uriTemplate' => '/v2/{metric_name=projects/*/metrics/*}',
+                'body' => 'metric',
                 'placeholders' => [
                     'metric_name' => [
                         'getters' => [
                             'getMetricName',
-                        ],
-                    ],
-                ],
-            ],
-            'CreateLogMetric' => [
-                'method' => 'post',
-                'uriTemplate' => '/v2/{parent=projects/*}/metrics',
-                'body' => 'metric',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
                         ],
                     ],
                 ],

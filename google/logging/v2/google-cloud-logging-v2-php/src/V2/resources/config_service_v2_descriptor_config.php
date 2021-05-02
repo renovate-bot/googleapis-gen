@@ -13,14 +13,14 @@ return [
                     'resourcesGetMethod' => 'getBuckets',
                 ],
             ],
-            'ListViews' => [
+            'ListExclusions' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
                     'requestPageTokenSetMethod' => 'setPageToken',
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getViews',
+                    'resourcesGetMethod' => 'getExclusions',
                 ],
             ],
             'ListSinks' => [
@@ -33,14 +33,14 @@ return [
                     'resourcesGetMethod' => 'getSinks',
                 ],
             ],
-            'ListExclusions' => [
+            'ListViews' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',
                     'requestPageTokenSetMethod' => 'setPageToken',
                     'requestPageSizeGetMethod' => 'getPageSize',
                     'requestPageSizeSetMethod' => 'setPageSize',
                     'responsePageTokenGetMethod' => 'getNextPageToken',
-                    'resourcesGetMethod' => 'getExclusions',
+                    'resourcesGetMethod' => 'getViews',
                 ],
             ],
         ],
