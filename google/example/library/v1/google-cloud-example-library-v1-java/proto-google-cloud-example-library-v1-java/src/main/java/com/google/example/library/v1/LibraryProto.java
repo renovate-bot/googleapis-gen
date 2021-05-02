@@ -183,10 +183,11 @@ public final class LibraryProto {
       "1.MoveBookRequest\032\037.google.example.libra" +
       "ry.v1.Book\"D\202\323\344\223\002&\"!/v1/{name=shelves/*/" +
       "books/*}:move:\001*\332A\025name,other_shelf_name" +
-      "\032!\312A\036library-example.googleapis.comBq\n\035c" +
-      "om.google.example.library.v1B\014LibraryPro" +
-      "toP\001Z@google.golang.org/genproto/googlea" +
-      "pis/example/library/v1;libraryb\006proto3"
+      "\032!\312A\036library-example.googleapis.comB\223\001\n\035" +
+      "com.google.example.library.v1B\014LibraryPr" +
+      "otoP\001Z@google.golang.org/genproto/google" +
+      "apis/example/library/v1;library\312\002\037Google" +
+      "\\Cloud\\Example\\Library\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

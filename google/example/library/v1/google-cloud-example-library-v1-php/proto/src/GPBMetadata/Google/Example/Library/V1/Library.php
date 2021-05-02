@@ -22,7 +22,7 @@ class Library
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-»
+Î
 \'google/example/library/v1/library.protogoogle.example.library.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.protogoogle/protobuf/empty.proto google/protobuf/field_mask.proto"â
 Book
 name (	
@@ -95,8 +95,8 @@ CreateBook,.google.example.library.v1.CreateBookRequest.google.example.librar
 DeleteBook,.google.example.library.v1.DeleteBookRequest.google.protobuf.Empty"+Ç”‰ì*/v1/{name=shelves/*/books/*}⁄Anameü
 
 UpdateBook,.google.example.library.v1.UpdateBookRequest.google.example.library.v1.Book"BÇ”‰ì)2!/v1/{book.name=shelves/*/books/*}:book⁄Abook,update_maskù
-MoveBook*.google.example.library.v1.MoveBookRequest.google.example.library.v1.Book"DÇ”‰ì&"!/v1/{name=shelves/*/books/*}:move:*⁄Aname,other_shelf_name! Alibrary-example.googleapis.comBq
-com.google.example.library.v1BLibraryProtoPZ@google.golang.org/genproto/googleapis/example/library/v1;librarybproto3'
+MoveBook*.google.example.library.v1.MoveBookRequest.google.example.library.v1.Book"DÇ”‰ì&"!/v1/{name=shelves/*/books/*}:move:*⁄Aname,other_shelf_name! Alibrary-example.googleapis.comBì
+com.google.example.library.v1BLibraryProtoPZ@google.golang.org/genproto/googleapis/example/library/v1;library Google\\Cloud\\Example\\Library\\V1bproto3'
         , true);
 
         static::$is_initialized = true;

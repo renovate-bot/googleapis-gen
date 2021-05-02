@@ -3,49 +3,6 @@
 return [
     'interfaces' => [
         'google.example.library.v1.LibraryService' => [
-            'CreateShelf' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/shelves',
-                'body' => 'shelf',
-            ],
-            'GetShelf' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/{name=shelves/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'ListShelves' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1/shelves',
-            ],
-            'DeleteShelf' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=shelves/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'MergeShelves' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{name=shelves/*}:merge',
-                'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
             'CreateBook' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1/{parent=shelves/*}/books',
@@ -58,9 +15,47 @@ return [
                     ],
                 ],
             ],
+            'CreateShelf' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/shelves',
+                'body' => 'shelf',
+            ],
+            'DeleteBook' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=shelves/*/books/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteShelf' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=shelves/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'GetBook' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1/{name=shelves/*/books/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'GetShelf' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/{name=shelves/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -80,9 +75,26 @@ return [
                     ],
                 ],
             ],
-            'DeleteBook' => [
-                'method' => 'delete',
-                'uriTemplate' => '/v1/{name=shelves/*/books/*}',
+            'ListShelves' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1/shelves',
+            ],
+            'MergeShelves' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=shelves/*}:merge',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'MoveBook' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=shelves/*/books/*}:move',
+                'body' => '*',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -99,18 +111,6 @@ return [
                     'book.name' => [
                         'getters' => [
                             'getBook',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'MoveBook' => [
-                'method' => 'post',
-                'uriTemplate' => '/v1/{name=shelves/*/books/*}:move',
-                'body' => '*',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
                             'getName',
                         ],
                     ],

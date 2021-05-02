@@ -17,7 +17,7 @@
 // limitations under the License.
 //
 //
-namespace Google\Example\Library\V1;
+namespace Google\Cloud\Example\Library\V1;
 
 /**
  * This API represents a simple digital library.  It lets you manage Shelf
@@ -43,58 +43,58 @@ class LibraryServiceGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Creates a shelf, and returns the new Shelf.
-     * @param \Google\Example\Library\V1\CreateShelfRequest $argument input argument
+     * @param \Google\Cloud\Example\Library\V1\CreateShelfRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function CreateShelf(\Google\Example\Library\V1\CreateShelfRequest $argument,
+    public function CreateShelf(\Google\Cloud\Example\Library\V1\CreateShelfRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.example.library.v1.LibraryService/CreateShelf',
         $argument,
-        ['\Google\Example\Library\V1\Shelf', 'decode'],
+        ['\Google\Cloud\Example\Library\V1\Shelf', 'decode'],
         $metadata, $options);
     }
 
     /**
      * Gets a shelf. Returns NOT_FOUND if the shelf does not exist.
-     * @param \Google\Example\Library\V1\GetShelfRequest $argument input argument
+     * @param \Google\Cloud\Example\Library\V1\GetShelfRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function GetShelf(\Google\Example\Library\V1\GetShelfRequest $argument,
+    public function GetShelf(\Google\Cloud\Example\Library\V1\GetShelfRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.example.library.v1.LibraryService/GetShelf',
         $argument,
-        ['\Google\Example\Library\V1\Shelf', 'decode'],
+        ['\Google\Cloud\Example\Library\V1\Shelf', 'decode'],
         $metadata, $options);
     }
 
     /**
      * Lists shelves. The order is unspecified but deterministic. Newly created
      * shelves will not necessarily be added to the end of this list.
-     * @param \Google\Example\Library\V1\ListShelvesRequest $argument input argument
+     * @param \Google\Cloud\Example\Library\V1\ListShelvesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function ListShelves(\Google\Example\Library\V1\ListShelvesRequest $argument,
+    public function ListShelves(\Google\Cloud\Example\Library\V1\ListShelvesRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.example.library.v1.LibraryService/ListShelves',
         $argument,
-        ['\Google\Example\Library\V1\ListShelvesResponse', 'decode'],
+        ['\Google\Cloud\Example\Library\V1\ListShelvesResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
      * Deletes a shelf. Returns NOT_FOUND if the shelf does not exist.
-     * @param \Google\Example\Library\V1\DeleteShelfRequest $argument input argument
+     * @param \Google\Cloud\Example\Library\V1\DeleteShelfRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function DeleteShelf(\Google\Example\Library\V1\DeleteShelfRequest $argument,
+    public function DeleteShelf(\Google\Cloud\Example\Library\V1\DeleteShelfRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.example.library.v1.LibraryService/DeleteShelf',
         $argument,
@@ -110,46 +110,46 @@ class LibraryServiceGrpcClient extends \Grpc\BaseStub {
      *
      * Returns NOT_FOUND if either shelf does not exist.
      * This call is a no-op if the specified shelves are the same.
-     * @param \Google\Example\Library\V1\MergeShelvesRequest $argument input argument
+     * @param \Google\Cloud\Example\Library\V1\MergeShelvesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function MergeShelves(\Google\Example\Library\V1\MergeShelvesRequest $argument,
+    public function MergeShelves(\Google\Cloud\Example\Library\V1\MergeShelvesRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.example.library.v1.LibraryService/MergeShelves',
         $argument,
-        ['\Google\Example\Library\V1\Shelf', 'decode'],
+        ['\Google\Cloud\Example\Library\V1\Shelf', 'decode'],
         $metadata, $options);
     }
 
     /**
      * Creates a book, and returns the new Book.
-     * @param \Google\Example\Library\V1\CreateBookRequest $argument input argument
+     * @param \Google\Cloud\Example\Library\V1\CreateBookRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function CreateBook(\Google\Example\Library\V1\CreateBookRequest $argument,
+    public function CreateBook(\Google\Cloud\Example\Library\V1\CreateBookRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.example.library.v1.LibraryService/CreateBook',
         $argument,
-        ['\Google\Example\Library\V1\Book', 'decode'],
+        ['\Google\Cloud\Example\Library\V1\Book', 'decode'],
         $metadata, $options);
     }
 
     /**
      * Gets a book. Returns NOT_FOUND if the book does not exist.
-     * @param \Google\Example\Library\V1\GetBookRequest $argument input argument
+     * @param \Google\Cloud\Example\Library\V1\GetBookRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function GetBook(\Google\Example\Library\V1\GetBookRequest $argument,
+    public function GetBook(\Google\Cloud\Example\Library\V1\GetBookRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.example.library.v1.LibraryService/GetBook',
         $argument,
-        ['\Google\Example\Library\V1\Book', 'decode'],
+        ['\Google\Cloud\Example\Library\V1\Book', 'decode'],
         $metadata, $options);
     }
 
@@ -157,27 +157,27 @@ class LibraryServiceGrpcClient extends \Grpc\BaseStub {
      * Lists books in a shelf. The order is unspecified but deterministic. Newly
      * created books will not necessarily be added to the end of this list.
      * Returns NOT_FOUND if the shelf does not exist.
-     * @param \Google\Example\Library\V1\ListBooksRequest $argument input argument
+     * @param \Google\Cloud\Example\Library\V1\ListBooksRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function ListBooks(\Google\Example\Library\V1\ListBooksRequest $argument,
+    public function ListBooks(\Google\Cloud\Example\Library\V1\ListBooksRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.example.library.v1.LibraryService/ListBooks',
         $argument,
-        ['\Google\Example\Library\V1\ListBooksResponse', 'decode'],
+        ['\Google\Cloud\Example\Library\V1\ListBooksResponse', 'decode'],
         $metadata, $options);
     }
 
     /**
      * Deletes a book. Returns NOT_FOUND if the book does not exist.
-     * @param \Google\Example\Library\V1\DeleteBookRequest $argument input argument
+     * @param \Google\Cloud\Example\Library\V1\DeleteBookRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function DeleteBook(\Google\Example\Library\V1\DeleteBookRequest $argument,
+    public function DeleteBook(\Google\Cloud\Example\Library\V1\DeleteBookRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.example.library.v1.LibraryService/DeleteBook',
         $argument,
@@ -188,32 +188,32 @@ class LibraryServiceGrpcClient extends \Grpc\BaseStub {
     /**
      * Updates a book. Returns INVALID_ARGUMENT if the name of the book
      * is non-empty and does not equal the existing name.
-     * @param \Google\Example\Library\V1\UpdateBookRequest $argument input argument
+     * @param \Google\Cloud\Example\Library\V1\UpdateBookRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function UpdateBook(\Google\Example\Library\V1\UpdateBookRequest $argument,
+    public function UpdateBook(\Google\Cloud\Example\Library\V1\UpdateBookRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.example.library.v1.LibraryService/UpdateBook',
         $argument,
-        ['\Google\Example\Library\V1\Book', 'decode'],
+        ['\Google\Cloud\Example\Library\V1\Book', 'decode'],
         $metadata, $options);
     }
 
     /**
      * Moves a book to another shelf, and returns the new book. The book
      * id of the new book may not be the same as the original book.
-     * @param \Google\Example\Library\V1\MoveBookRequest $argument input argument
+     * @param \Google\Cloud\Example\Library\V1\MoveBookRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
      * @return \Grpc\UnaryCall
      */
-    public function MoveBook(\Google\Example\Library\V1\MoveBookRequest $argument,
+    public function MoveBook(\Google\Cloud\Example\Library\V1\MoveBookRequest $argument,
       $metadata = [], $options = []) {
         return $this->_simpleRequest('/google.example.library.v1.LibraryService/MoveBook',
         $argument,
-        ['\Google\Example\Library\V1\Book', 'decode'],
+        ['\Google\Cloud\Example\Library\V1\Book', 'decode'],
         $metadata, $options);
     }
 

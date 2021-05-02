@@ -1,0 +1,73 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.example.library.v1",
+    "libraryPackage": "Google\\Cloud\\Example\\Library\\V1",
+    "services": {
+        "LibraryService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "LibraryServiceGapicClient",
+                    "rpcs": {
+                        "CreateBook": {
+                            "methods": [
+                                "createBook"
+                            ]
+                        },
+                        "CreateShelf": {
+                            "methods": [
+                                "createShelf"
+                            ]
+                        },
+                        "DeleteBook": {
+                            "methods": [
+                                "deleteBook"
+                            ]
+                        },
+                        "DeleteShelf": {
+                            "methods": [
+                                "deleteShelf"
+                            ]
+                        },
+                        "GetBook": {
+                            "methods": [
+                                "getBook"
+                            ]
+                        },
+                        "GetShelf": {
+                            "methods": [
+                                "getShelf"
+                            ]
+                        },
+                        "ListBooks": {
+                            "methods": [
+                                "listBooks"
+                            ]
+                        },
+                        "ListShelves": {
+                            "methods": [
+                                "listShelves"
+                            ]
+                        },
+                        "MergeShelves": {
+                            "methods": [
+                                "mergeShelves"
+                            ]
+                        },
+                        "MoveBook": {
+                            "methods": [
+                                "moveBook"
+                            ]
+                        },
+                        "UpdateBook": {
+                            "methods": [
+                                "updateBook"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
