@@ -3,6 +3,37 @@
 return [
     'interfaces' => [
         'google.cloud.dialogflow.v2beta1.Participants' => [
+            'AnalyzeContent' => [
+                'method' => 'post',
+                'uriTemplate' => '/v2beta1/{participant=projects/*/conversations/*/participants/*}:analyzeContent',
+                'body' => '*',
+                'additionalBindings' => [
+                    [
+                        'method' => 'post',
+                        'uriTemplate' => '/v2beta1/{participant=projects/*/locations/*/conversations/*/participants/*}:analyzeContent',
+                        'body' => '*',
+                    ],
+                ],
+                'placeholders' => [
+                    'participant' => [
+                        'getters' => [
+                            'getParticipant',
+                        ],
+                    ],
+                ],
+            ],
+            'CompileSuggestion' => [
+                'method' => 'post',
+                'uriTemplate' => '/v2beta1/{parent=projects/*/conversations/*/participants/*}/suggestions:compile',
+                'body' => '*',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'CreateParticipant' => [
                 'method' => 'post',
                 'uriTemplate' => '/v2beta1/{parent=projects/*/conversations/*}/participants',
@@ -56,41 +87,13 @@ return [
                     ],
                 ],
             ],
-            'UpdateParticipant' => [
-                'method' => 'patch',
-                'uriTemplate' => '/v2beta1/{participant.name=projects/*/conversations/*/participants/*}',
-                'body' => 'participant',
-                'additionalBindings' => [
-                    [
-                        'method' => 'patch',
-                        'uriTemplate' => '/v2beta1/{participant.name=projects/*/locations/*/conversations/*/participants/*}',
-                        'body' => 'participant',
-                    ],
-                ],
+            'ListSuggestions' => [
+                'method' => 'get',
+                'uriTemplate' => '/v2beta1/{parent=projects/*/conversations/*/participants/*}/suggestions',
                 'placeholders' => [
-                    'participant.name' => [
+                    'parent' => [
                         'getters' => [
-                            'getParticipant',
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'AnalyzeContent' => [
-                'method' => 'post',
-                'uriTemplate' => '/v2beta1/{participant=projects/*/conversations/*/participants/*}:analyzeContent',
-                'body' => '*',
-                'additionalBindings' => [
-                    [
-                        'method' => 'post',
-                        'uriTemplate' => '/v2beta1/{participant=projects/*/locations/*/conversations/*/participants/*}:analyzeContent',
-                        'body' => '*',
-                    ],
-                ],
-                'placeholders' => [
-                    'participant' => [
-                        'getters' => [
-                            'getParticipant',
+                            'getParent',
                         ],
                     ],
                 ],
@@ -152,25 +155,22 @@ return [
                     ],
                 ],
             ],
-            'ListSuggestions' => [
-                'method' => 'get',
-                'uriTemplate' => '/v2beta1/{parent=projects/*/conversations/*/participants/*}/suggestions',
-                'placeholders' => [
-                    'parent' => [
-                        'getters' => [
-                            'getParent',
-                        ],
+            'UpdateParticipant' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v2beta1/{participant.name=projects/*/conversations/*/participants/*}',
+                'body' => 'participant',
+                'additionalBindings' => [
+                    [
+                        'method' => 'patch',
+                        'uriTemplate' => '/v2beta1/{participant.name=projects/*/locations/*/conversations/*/participants/*}',
+                        'body' => 'participant',
                     ],
                 ],
-            ],
-            'CompileSuggestion' => [
-                'method' => 'post',
-                'uriTemplate' => '/v2beta1/{parent=projects/*/conversations/*/participants/*}/suggestions:compile',
-                'body' => '*',
                 'placeholders' => [
-                    'parent' => [
+                    'participant.name' => [
                         'getters' => [
-                            'getParent',
+                            'getParticipant',
+                            'getName',
                         ],
                     ],
                 ],

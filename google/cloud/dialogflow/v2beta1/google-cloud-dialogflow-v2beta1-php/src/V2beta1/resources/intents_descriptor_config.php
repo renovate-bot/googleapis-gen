@@ -3,9 +3,9 @@
 return [
     'interfaces' => [
         'google.cloud.dialogflow.v2beta1.Intents' => [
-            'BatchUpdateIntents' => [
+            'BatchDeleteIntents' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Dialogflow\V2beta1\BatchUpdateIntentsResponse',
+                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
                     'metadataReturnType' => '\Google\Protobuf\Struct',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
@@ -13,9 +13,9 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'BatchDeleteIntents' => [
+            'BatchUpdateIntents' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
+                    'operationReturnType' => '\Google\Cloud\Dialogflow\V2beta1\BatchUpdateIntentsResponse',
                     'metadataReturnType' => '\Google\Protobuf\Struct',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',

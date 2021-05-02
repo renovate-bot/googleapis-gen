@@ -3,15 +3,15 @@
 return [
     'interfaces' => [
         'google.cloud.dialogflow.v2beta1.Conversations' => [
-            'CreateConversation' => [
+            'BatchCreateMessages' => [
                 'method' => 'post',
-                'uriTemplate' => '/v2beta1/{parent=projects/*}/conversations',
-                'body' => 'conversation',
+                'uriTemplate' => '/v2beta1/{parent=projects/*/conversations/*}/messages:batchCreate',
+                'body' => '*',
                 'additionalBindings' => [
                     [
                         'method' => 'post',
-                        'uriTemplate' => '/v2beta1/{parent=projects/*/locations/*}/conversations',
-                        'body' => 'conversation',
+                        'uriTemplate' => '/v2beta1/{parent=projects/*/locations/*/conversations/*}/messages:batchCreate',
+                        'body' => '*',
                     ],
                 ],
                 'placeholders' => [
@@ -22,13 +22,34 @@ return [
                     ],
                 ],
             ],
-            'ListConversations' => [
-                'method' => 'get',
-                'uriTemplate' => '/v2beta1/{parent=projects/*}/conversations',
+            'CompleteConversation' => [
+                'method' => 'post',
+                'uriTemplate' => '/v2beta1/{name=projects/*/conversations/*}:complete',
+                'body' => '*',
                 'additionalBindings' => [
                     [
-                        'method' => 'get',
+                        'method' => 'post',
+                        'uriTemplate' => '/v2beta1/{name=projects/*/locations/*/conversations/*}:complete',
+                        'body' => '*',
+                    ],
+                ],
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'CreateConversation' => [
+                'method' => 'post',
+                'uriTemplate' => '/v2beta1/{parent=projects/*}/conversations',
+                'body' => 'conversation',
+                'additionalBindings' => [
+                    [
+                        'method' => 'post',
                         'uriTemplate' => '/v2beta1/{parent=projects/*/locations/*}/conversations',
+                        'body' => 'conversation',
                     ],
                 ],
                 'placeholders' => [
@@ -56,34 +77,13 @@ return [
                     ],
                 ],
             ],
-            'CompleteConversation' => [
-                'method' => 'post',
-                'uriTemplate' => '/v2beta1/{name=projects/*/conversations/*}:complete',
-                'body' => '*',
+            'ListConversations' => [
+                'method' => 'get',
+                'uriTemplate' => '/v2beta1/{parent=projects/*}/conversations',
                 'additionalBindings' => [
                     [
-                        'method' => 'post',
-                        'uriTemplate' => '/v2beta1/{name=projects/*/locations/*/conversations/*}:complete',
-                        'body' => '*',
-                    ],
-                ],
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'BatchCreateMessages' => [
-                'method' => 'post',
-                'uriTemplate' => '/v2beta1/{parent=projects/*/conversations/*}/messages:batchCreate',
-                'body' => '*',
-                'additionalBindings' => [
-                    [
-                        'method' => 'post',
-                        'uriTemplate' => '/v2beta1/{parent=projects/*/locations/*/conversations/*}/messages:batchCreate',
-                        'body' => '*',
+                        'method' => 'get',
+                        'uriTemplate' => '/v2beta1/{parent=projects/*/locations/*}/conversations',
                     ],
                 ],
                 'placeholders' => [

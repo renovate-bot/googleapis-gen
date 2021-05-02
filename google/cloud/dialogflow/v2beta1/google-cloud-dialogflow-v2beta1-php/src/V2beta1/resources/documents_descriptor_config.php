@@ -13,16 +13,6 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'ImportDocuments' => [
-                'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Dialogflow\V2beta1\ImportDocumentsResponse',
-                    'metadataReturnType' => '\Google\Cloud\Dialogflow\V2beta1\KnowledgeOperationMetadata',
-                    'initialPollDelayMillis' => '500',
-                    'pollDelayMultiplier' => '1.5',
-                    'maxPollDelayMillis' => '5000',
-                    'totalPollTimeoutMillis' => '300000',
-                ],
-            ],
             'DeleteDocument' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
@@ -33,7 +23,17 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'UpdateDocument' => [
+            'ImportDocuments' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Dialogflow\V2beta1\ImportDocumentsResponse',
+                    'metadataReturnType' => '\Google\Cloud\Dialogflow\V2beta1\KnowledgeOperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'ReloadDocument' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\Dialogflow\V2beta1\Document',
                     'metadataReturnType' => '\Google\Cloud\Dialogflow\V2beta1\KnowledgeOperationMetadata',
@@ -43,7 +43,7 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
-            'ReloadDocument' => [
+            'UpdateDocument' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\Dialogflow\V2beta1\Document',
                     'metadataReturnType' => '\Google\Cloud\Dialogflow\V2beta1\KnowledgeOperationMetadata',
