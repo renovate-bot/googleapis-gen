@@ -1,0 +1,37 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.cloud.videointelligence.v1p3beta1",
+    "libraryPackage": "Google\\Cloud\\VideoIntelligence\\V1p3beta1",
+    "services": {
+        "VideoIntelligenceService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "VideoIntelligenceServiceGapicClient",
+                    "rpcs": {
+                        "AnnotateVideo": {
+                            "methods": [
+                                "annotateVideo"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "StreamingVideoIntelligenceService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "StreamingVideoIntelligenceServiceGapicClient",
+                    "rpcs": {
+                        "StreamingAnnotateVideo": {
+                            "methods": [
+                                "streamingAnnotateVideo"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,22 +20,26 @@
  * This file was automatically generated - do not edit!
  */
 
+declare(strict_types=1);
+
 namespace Google\Cloud\VideoIntelligence\Tests\Unit\V1p3beta1;
 
-use Google\Cloud\VideoIntelligence\V1p3beta1\StreamingVideoIntelligenceServiceClient;
 use Google\ApiCore\ApiException;
+
 use Google\ApiCore\BidiStream;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
+
 use Google\ApiCore\Testing\MockTransport;
 use Google\Cloud\VideoIntelligence\V1p3beta1\StreamingAnnotateVideoRequest;
 use Google\Cloud\VideoIntelligence\V1p3beta1\StreamingAnnotateVideoResponse;
-use Google\Protobuf\Any;
+use Google\Cloud\VideoIntelligence\V1p3beta1\StreamingVideoIntelligenceServiceClient;
 use Google\Rpc\Code;
 use stdClass;
 
 /**
  * @group videointelligence
+ *
  * @group gapic
  */
 class StreamingVideoIntelligenceServiceClientTest extends GeneratedTest
@@ -53,9 +57,7 @@ class StreamingVideoIntelligenceServiceClientTest extends GeneratedTest
      */
     private function createCredentials()
     {
-        return $this->getMockBuilder(CredentialsWrapper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMockBuilder(CredentialsWrapper::class)->disableOriginalConstructor()->getMock();
     }
 
     /**
@@ -66,7 +68,6 @@ class StreamingVideoIntelligenceServiceClientTest extends GeneratedTest
         $options += [
             'credentials' => $this->createCredentials(),
         ];
-
         return new StreamingVideoIntelligenceServiceClient($options);
     }
 
@@ -76,10 +77,10 @@ class StreamingVideoIntelligenceServiceClientTest extends GeneratedTest
     public function streamingAnnotateVideoTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $this->assertTrue($transport->isExhausted());
-
         // Mock response
         $annotationResultsUri = 'annotationResultsUri-238075757';
         $expectedResponse = new StreamingAnnotateVideoResponse();
@@ -93,20 +94,19 @@ class StreamingVideoIntelligenceServiceClientTest extends GeneratedTest
         $expectedResponse3 = new StreamingAnnotateVideoResponse();
         $expectedResponse3->setAnnotationResultsUri($annotationResultsUri3);
         $transport->addResponse($expectedResponse3);
-
         // Mock request
         $request = new StreamingAnnotateVideoRequest();
         $request2 = new StreamingAnnotateVideoRequest();
         $request3 = new StreamingAnnotateVideoRequest();
-
         $bidi = $client->streamingAnnotateVideo();
         $this->assertInstanceOf(BidiStream::class, $bidi);
-
         $bidi->write($request);
         $responses = [];
         $responses[] = $bidi->read();
-
-        $bidi->writeAll([$request2, $request3]);
+        $bidi->writeAll([
+            $request2,
+            $request3,
+        ]);
         foreach ($bidi->closeWriteAndReadAll() as $response) {
             $responses[] = $response;
         }
@@ -116,25 +116,21 @@ class StreamingVideoIntelligenceServiceClientTest extends GeneratedTest
         $expectedResponses[] = $expectedResponse2;
         $expectedResponses[] = $expectedResponse3;
         $this->assertEquals($expectedResponses, $responses);
-
         $createStreamRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($createStreamRequests));
         $streamFuncCall = $createStreamRequests[0]->getFuncCall();
         $streamRequestObject = $createStreamRequests[0]->getRequestObject();
         $this->assertSame('/google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceService/StreamingAnnotateVideo', $streamFuncCall);
         $this->assertNull($streamRequestObject);
-
         $callObjects = $transport->popCallObjects();
         $this->assertSame(1, count($callObjects));
         $bidiCall = $callObjects[0];
-
         $writeRequests = $bidiCall->popReceivedCalls();
         $expectedRequests = [];
         $expectedRequests[] = $request;
         $expectedRequests[] = $request2;
         $expectedRequests[] = $request3;
         $this->assertEquals($expectedRequests, $writeRequests);
-
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -144,26 +140,22 @@ class StreamingVideoIntelligenceServiceClientTest extends GeneratedTest
     public function streamingAnnotateVideoExceptionTest()
     {
         $transport = $this->createTransport();
-        $client = $this->createClient(['transport' => $transport]);
-
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
         $status = new stdClass();
         $status->code = Code::DATA_LOSS;
         $status->details = 'internal error';
-
         $expectedExceptionMessage = json_encode([
-           'message' => 'internal error',
-           'code' => Code::DATA_LOSS,
-           'status' => 'DATA_LOSS',
-           'details' => [],
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
         ], JSON_PRETTY_PRINT);
-
         $transport->setStreamingStatus($status);
-
         $this->assertTrue($transport->isExhausted());
-
         $bidi = $client->streamingAnnotateVideo();
         $results = $bidi->closeWriteAndReadAll();
-
         try {
             iterator_to_array($results);
             // If the close stream method call did not throw, fail the test
@@ -172,7 +164,6 @@ class StreamingVideoIntelligenceServiceClientTest extends GeneratedTest
             $this->assertEquals($status->code, $ex->getCode());
             $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
         }
-
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());

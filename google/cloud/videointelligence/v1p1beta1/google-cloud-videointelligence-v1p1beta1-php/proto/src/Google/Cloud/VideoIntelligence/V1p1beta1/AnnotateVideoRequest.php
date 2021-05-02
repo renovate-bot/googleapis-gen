@@ -20,10 +20,11 @@ class AnnotateVideoRequest extends \Google\Protobuf\Internal\Message
      * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
-     * A video URI may include wildcards in `object-id`, and thus identify
-     * multiple videos. Supported wildcards: '*' to match 0 or more characters;
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request
+     * URIs](https://cloud.google.com/storage/docs/request-endpoints). A video URI
+     * may include wildcards in `object-id`, and thus identify multiple videos.
+     * Supported wildcards: '*' to match 0 or more characters;
      * '?' to match 1 character. If unset, the input video should be embedded
      * in the request as `input_content`. If set, `input_content` should be unset.
      *
@@ -55,8 +56,9 @@ class AnnotateVideoRequest extends \Google\Protobuf\Internal\Message
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
      * URIs are supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request
+     * URIs](https://cloud.google.com/storage/docs/request-endpoints).
      *
      * Generated from protobuf field <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -81,10 +83,11 @@ class AnnotateVideoRequest extends \Google\Protobuf\Internal\Message
      *           [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
      *           supported, which must be specified in the following format:
      *           `gs://bucket-id/object-id` (other URI formats return
-     *           [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     *           [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
-     *           A video URI may include wildcards in `object-id`, and thus identify
-     *           multiple videos. Supported wildcards: '*' to match 0 or more characters;
+     *           [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     *           more information, see [Request
+     *           URIs](https://cloud.google.com/storage/docs/request-endpoints). A video URI
+     *           may include wildcards in `object-id`, and thus identify multiple videos.
+     *           Supported wildcards: '*' to match 0 or more characters;
      *           '?' to match 1 character. If unset, the input video should be embedded
      *           in the request as `input_content`. If set, `input_content` should be unset.
      *     @type string $input_content
@@ -100,8 +103,9 @@ class AnnotateVideoRequest extends \Google\Protobuf\Internal\Message
      *           Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
      *           URIs are supported, which must be specified in the following format:
      *           `gs://bucket-id/object-id` (other URI formats return
-     *           [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     *           [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
+     *           [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     *           more information, see [Request
+     *           URIs](https://cloud.google.com/storage/docs/request-endpoints).
      *     @type string $location_id
      *           Optional. Cloud region where annotation should take place. Supported cloud
      *           regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
@@ -118,10 +122,11 @@ class AnnotateVideoRequest extends \Google\Protobuf\Internal\Message
      * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
-     * A video URI may include wildcards in `object-id`, and thus identify
-     * multiple videos. Supported wildcards: '*' to match 0 or more characters;
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request
+     * URIs](https://cloud.google.com/storage/docs/request-endpoints). A video URI
+     * may include wildcards in `object-id`, and thus identify multiple videos.
+     * Supported wildcards: '*' to match 0 or more characters;
      * '?' to match 1 character. If unset, the input video should be embedded
      * in the request as `input_content`. If set, `input_content` should be unset.
      *
@@ -138,10 +143,11 @@ class AnnotateVideoRequest extends \Google\Protobuf\Internal\Message
      * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
-     * A video URI may include wildcards in `object-id`, and thus identify
-     * multiple videos. Supported wildcards: '*' to match 0 or more characters;
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request
+     * URIs](https://cloud.google.com/storage/docs/request-endpoints). A video URI
+     * may include wildcards in `object-id`, and thus identify multiple videos.
+     * Supported wildcards: '*' to match 0 or more characters;
      * '?' to match 1 character. If unset, the input video should be embedded
      * in the request as `input_content`. If set, `input_content` should be unset.
      *
@@ -254,8 +260,9 @@ class AnnotateVideoRequest extends \Google\Protobuf\Internal\Message
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
      * URIs are supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request
+     * URIs](https://cloud.google.com/storage/docs/request-endpoints).
      *
      * Generated from protobuf field <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
@@ -270,8 +277,9 @@ class AnnotateVideoRequest extends \Google\Protobuf\Internal\Message
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
      * URIs are supported, which must be specified in the following format:
      * `gs://bucket-id/object-id` (other URI formats return
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-     * [Request URIs](https://cloud.google.com/storage/docs/request-endpoints).
+     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For
+     * more information, see [Request
+     * URIs](https://cloud.google.com/storage/docs/request-endpoints).
      *
      * Generated from protobuf field <code>string output_uri = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
